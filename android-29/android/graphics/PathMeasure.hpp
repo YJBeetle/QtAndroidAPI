@@ -1,0 +1,153 @@
+#pragma once
+
+#ifndef ANDROID_GRAPHICS_PATHMEASURE
+#define ANDROID_GRAPHICS_PATHMEASURE
+
+#include "../../__JniBaseClass.hpp"
+
+namespace __jni_impl::android::graphics
+{
+	class Path;
+}
+namespace __jni_impl::android::graphics
+{
+	class Matrix;
+}
+
+namespace __jni_impl::android::graphics
+{
+	class PathMeasure : public __JniBaseClass
+	{
+	public:
+		// Fields
+		static jint POSITION_MATRIX_FLAG();
+		static jint TANGENT_MATRIX_FLAG();
+		
+		// Constructors
+		void __constructor();
+		void __constructor(__jni_impl::android::graphics::Path arg0, jboolean arg1);
+		
+		// Methods
+		jfloat getLength();
+		void setPath(__jni_impl::android::graphics::Path arg0, jboolean arg1);
+		jboolean getPosTan(jfloat arg0, jfloatArray arg1, jfloatArray arg2);
+		jboolean getSegment(jfloat arg0, jfloat arg1, __jni_impl::android::graphics::Path arg2, jboolean arg3);
+		jboolean nextContour();
+		jboolean getMatrix(jfloat arg0, __jni_impl::android::graphics::Matrix arg1, jint arg2);
+		jboolean isClosed();
+	};
+} // namespace __jni_impl::android::graphics
+
+#include "Path.hpp"
+#include "Matrix.hpp"
+
+namespace __jni_impl::android::graphics
+{
+	// Fields
+	jint PathMeasure::POSITION_MATRIX_FLAG()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"android.graphics.PathMeasure",
+			"POSITION_MATRIX_FLAG");
+	}
+	jint PathMeasure::TANGENT_MATRIX_FLAG()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"android.graphics.PathMeasure",
+			"TANGENT_MATRIX_FLAG");
+	}
+	
+	// Constructors
+	void PathMeasure::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.graphics.PathMeasure",
+			"()V");
+	}
+	void PathMeasure::__constructor(__jni_impl::android::graphics::Path arg0, jboolean arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.graphics.PathMeasure",
+			"(Landroid/graphics/Path;Z)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	
+	// Methods
+	jfloat PathMeasure::getLength()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getLength",
+			"()F");
+	}
+	void PathMeasure::setPath(__jni_impl::android::graphics::Path arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setPath",
+			"(Landroid/graphics/Path;Z)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jboolean PathMeasure::getPosTan(jfloat arg0, jfloatArray arg1, jfloatArray arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getPosTan",
+			"(F[F[F)Z",
+			arg0,
+			arg1,
+			arg2);
+	}
+	jboolean PathMeasure::getSegment(jfloat arg0, jfloat arg1, __jni_impl::android::graphics::Path arg2, jboolean arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getSegment",
+			"(FFLandroid/graphics/Path;Z)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3);
+	}
+	jboolean PathMeasure::nextContour()
+	{
+		return __thiz.callMethod<jboolean>(
+			"nextContour",
+			"()Z");
+	}
+	jboolean PathMeasure::getMatrix(jfloat arg0, __jni_impl::android::graphics::Matrix arg1, jint arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getMatrix",
+			"(FLandroid/graphics/Matrix;I)Z",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2);
+	}
+	jboolean PathMeasure::isClosed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClosed",
+			"()Z");
+	}
+} // namespace __jni_impl::android::graphics
+
+namespace android::graphics
+{
+	class PathMeasure : public __jni_impl::android::graphics::PathMeasure
+	{
+	public:
+		PathMeasure(QAndroidJniObject obj) { __thiz = obj; }
+		PathMeasure()
+		{
+			__constructor();
+		}
+		PathMeasure(__jni_impl::android::graphics::Path arg0, jboolean arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+	};
+} // namespace android::graphics
+
+#endif // ANDROID_GRAPHICS_PATHMEASURE
+

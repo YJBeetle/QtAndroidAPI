@@ -1,0 +1,79 @@
+#pragma once
+
+#ifndef ANDROID_MEDIA_AUDIOFX_PRESETREVERB_SETTINGS
+#define ANDROID_MEDIA_AUDIOFX_PRESETREVERB_SETTINGS
+
+#include "../../../__JniBaseClass.hpp"
+
+
+namespace __jni_impl::android::media::audiofx
+{
+	class PresetReverb_Settings : public __JniBaseClass
+	{
+	public:
+		// Fields
+		jshort preset();
+		
+		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		
+		// Methods
+		QAndroidJniObject toString();
+	};
+} // namespace __jni_impl::android::media::audiofx
+
+
+namespace __jni_impl::android::media::audiofx
+{
+	// Fields
+	jshort PresetReverb_Settings::preset()
+	{
+		return __thiz.getField<jshort>(
+			"preset");
+	}
+	
+	// Constructors
+	void PresetReverb_Settings::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.audiofx.PresetReverb$Settings",
+			"()V");
+	}
+	void PresetReverb_Settings::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.audiofx.PresetReverb$Settings",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	
+	// Methods
+	QAndroidJniObject PresetReverb_Settings::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;");
+	}
+} // namespace __jni_impl::android::media::audiofx
+
+namespace android::media::audiofx
+{
+	class PresetReverb_Settings : public __jni_impl::android::media::audiofx::PresetReverb_Settings
+	{
+	public:
+		PresetReverb_Settings(QAndroidJniObject obj) { __thiz = obj; }
+		PresetReverb_Settings()
+		{
+			__constructor();
+		}
+		PresetReverb_Settings(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
+	};
+} // namespace android::media::audiofx
+
+#endif // ANDROID_MEDIA_AUDIOFX_PRESETREVERB_SETTINGS
+

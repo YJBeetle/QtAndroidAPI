@@ -1,0 +1,118 @@
+#pragma once
+
+#ifndef JAVA_SECURITY_PKCS12ATTRIBUTE
+#define JAVA_SECURITY_PKCS12ATTRIBUTE
+
+#include "../../__JniBaseClass.hpp"
+
+namespace __jni_impl::java::util::regex
+{
+	class Pattern;
+}
+
+namespace __jni_impl::java::security
+{
+	class PKCS12Attribute : public __JniBaseClass
+	{
+	public:
+		// Fields
+		
+		// Constructors
+		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(jbyteArray arg0);
+		
+		// Methods
+		QAndroidJniObject getName();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject toString();
+		jint hashCode();
+		QAndroidJniObject getValue();
+		QAndroidJniObject getEncoded();
+	};
+} // namespace __jni_impl::java::security
+
+#include "../util/regex/Pattern.hpp"
+
+namespace __jni_impl::java::security
+{
+	// Fields
+	
+	// Constructors
+	void PKCS12Attribute::__constructor(jstring arg0, jstring arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.PKCS12Attribute",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1);
+	}
+	void PKCS12Attribute::__constructor(jbyteArray arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.PKCS12Attribute",
+			"([B)V",
+			arg0);
+	}
+	
+	// Methods
+	QAndroidJniObject PKCS12Attribute::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;");
+	}
+	jboolean PKCS12Attribute::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0);
+	}
+	QAndroidJniObject PKCS12Attribute::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;");
+	}
+	jint PKCS12Attribute::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I");
+	}
+	QAndroidJniObject PKCS12Attribute::getValue()
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject PKCS12Attribute::getEncoded()
+	{
+		return __thiz.callObjectMethod(
+			"getEncoded",
+			"()[B");
+	}
+} // namespace __jni_impl::java::security
+
+namespace java::security
+{
+	class PKCS12Attribute : public __jni_impl::java::security::PKCS12Attribute
+	{
+	public:
+		PKCS12Attribute(QAndroidJniObject obj) { __thiz = obj; }
+		PKCS12Attribute(jstring arg0, jstring arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+		PKCS12Attribute(jbyteArray arg0)
+		{
+			__constructor(
+				arg0);
+		}
+	};
+} // namespace java::security
+
+#endif // JAVA_SECURITY_PKCS12ATTRIBUTE
+

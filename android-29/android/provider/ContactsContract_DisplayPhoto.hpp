@@ -1,0 +1,90 @@
+#pragma once
+
+#ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_DISPLAYPHOTO
+#define ANDROID_PROVIDER_CONTACTSCONTRACT_DISPLAYPHOTO
+
+#include "../../__JniBaseClass.hpp"
+
+namespace __jni_impl::android::net
+{
+	class Uri;
+}
+
+namespace __jni_impl::android::provider
+{
+	class ContactsContract_DisplayPhoto : public __JniBaseClass
+	{
+	public:
+		// Fields
+		static QAndroidJniObject CONTENT_MAX_DIMENSIONS_URI();
+		static QAndroidJniObject CONTENT_URI();
+		static QAndroidJniObject DISPLAY_MAX_DIM();
+		static QAndroidJniObject THUMBNAIL_MAX_DIM();
+		
+		// Constructors
+		void __constructor();
+		
+		// Methods
+	};
+} // namespace __jni_impl::android::provider
+
+#include "../net/Uri.hpp"
+
+namespace __jni_impl::android::provider
+{
+	// Fields
+	QAndroidJniObject ContactsContract_DisplayPhoto::CONTENT_MAX_DIMENSIONS_URI()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.provider.ContactsContract$DisplayPhoto",
+			"CONTENT_MAX_DIMENSIONS_URI",
+			"Landroid/net/Uri;");
+	}
+	QAndroidJniObject ContactsContract_DisplayPhoto::CONTENT_URI()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.provider.ContactsContract$DisplayPhoto",
+			"CONTENT_URI",
+			"Landroid/net/Uri;");
+	}
+	QAndroidJniObject ContactsContract_DisplayPhoto::DISPLAY_MAX_DIM()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.provider.ContactsContract$DisplayPhoto",
+			"DISPLAY_MAX_DIM",
+			"Ljava/lang/String;");
+	}
+	QAndroidJniObject ContactsContract_DisplayPhoto::THUMBNAIL_MAX_DIM()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.provider.ContactsContract$DisplayPhoto",
+			"THUMBNAIL_MAX_DIM",
+			"Ljava/lang/String;");
+	}
+	
+	// Constructors
+	void ContactsContract_DisplayPhoto::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.provider.ContactsContract$DisplayPhoto",
+			"(V)V");
+	}
+	
+	// Methods
+} // namespace __jni_impl::android::provider
+
+namespace android::provider
+{
+	class ContactsContract_DisplayPhoto : public __jni_impl::android::provider::ContactsContract_DisplayPhoto
+	{
+	public:
+		ContactsContract_DisplayPhoto(QAndroidJniObject obj) { __thiz = obj; }
+		ContactsContract_DisplayPhoto()
+		{
+			__constructor();
+		}
+	};
+} // namespace android::provider
+
+#endif // ANDROID_PROVIDER_CONTACTSCONTRACT_DISPLAYPHOTO
+

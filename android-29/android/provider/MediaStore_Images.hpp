@@ -1,0 +1,53 @@
+#pragma once
+
+#ifndef ANDROID_PROVIDER_MEDIASTORE_IMAGES
+#define ANDROID_PROVIDER_MEDIASTORE_IMAGES
+
+#include "../../__JniBaseClass.hpp"
+
+
+namespace __jni_impl::android::provider
+{
+	class MediaStore_Images : public __JniBaseClass
+	{
+	public:
+		// Fields
+		
+		// Constructors
+		void __constructor();
+		
+		// Methods
+	};
+} // namespace __jni_impl::android::provider
+
+
+namespace __jni_impl::android::provider
+{
+	// Fields
+	
+	// Constructors
+	void MediaStore_Images::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.provider.MediaStore$Images",
+			"()V");
+	}
+	
+	// Methods
+} // namespace __jni_impl::android::provider
+
+namespace android::provider
+{
+	class MediaStore_Images : public __jni_impl::android::provider::MediaStore_Images
+	{
+	public:
+		MediaStore_Images(QAndroidJniObject obj) { __thiz = obj; }
+		MediaStore_Images()
+		{
+			__constructor();
+		}
+	};
+} // namespace android::provider
+
+#endif // ANDROID_PROVIDER_MEDIASTORE_IMAGES
+

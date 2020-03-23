@@ -1,0 +1,88 @@
+#pragma once
+
+#ifndef ANDROID_LOCATION_GNSSSTATUS_CALLBACK
+#define ANDROID_LOCATION_GNSSSTATUS_CALLBACK
+
+#include "../../__JniBaseClass.hpp"
+
+namespace __jni_impl::android::location
+{
+	class GnssStatus;
+}
+
+namespace __jni_impl::android::location
+{
+	class GnssStatus_Callback : public __JniBaseClass
+	{
+	public:
+		// Fields
+		
+		// Constructors
+		void __constructor();
+		
+		// Methods
+		void onStopped();
+		void onSatelliteStatusChanged(__jni_impl::android::location::GnssStatus arg0);
+		void onStarted();
+		void onFirstFix(jint arg0);
+	};
+} // namespace __jni_impl::android::location
+
+#include "GnssStatus.hpp"
+
+namespace __jni_impl::android::location
+{
+	// Fields
+	
+	// Constructors
+	void GnssStatus_Callback::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.location.GnssStatus$Callback",
+			"()V");
+	}
+	
+	// Methods
+	void GnssStatus_Callback::onStopped()
+	{
+		__thiz.callMethod<void>(
+			"onStopped",
+			"()V");
+	}
+	void GnssStatus_Callback::onSatelliteStatusChanged(__jni_impl::android::location::GnssStatus arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSatelliteStatusChanged",
+			"(Landroid/location/GnssStatus;)V",
+			arg0.__jniObject().object());
+	}
+	void GnssStatus_Callback::onStarted()
+	{
+		__thiz.callMethod<void>(
+			"onStarted",
+			"()V");
+	}
+	void GnssStatus_Callback::onFirstFix(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onFirstFix",
+			"(I)V",
+			arg0);
+	}
+} // namespace __jni_impl::android::location
+
+namespace android::location
+{
+	class GnssStatus_Callback : public __jni_impl::android::location::GnssStatus_Callback
+	{
+	public:
+		GnssStatus_Callback(QAndroidJniObject obj) { __thiz = obj; }
+		GnssStatus_Callback()
+		{
+			__constructor();
+		}
+	};
+} // namespace android::location
+
+#endif // ANDROID_LOCATION_GNSSSTATUS_CALLBACK
+

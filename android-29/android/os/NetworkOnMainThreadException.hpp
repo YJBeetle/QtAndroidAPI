@@ -1,0 +1,53 @@
+#pragma once
+
+#ifndef ANDROID_OS_NETWORKONMAINTHREADEXCEPTION
+#define ANDROID_OS_NETWORKONMAINTHREADEXCEPTION
+
+#include "../../java/lang/RuntimeException.hpp"
+
+
+namespace __jni_impl::android::os
+{
+	class NetworkOnMainThreadException : public __jni_impl::java::lang::RuntimeException
+	{
+	public:
+		// Fields
+		
+		// Constructors
+		void __constructor();
+		
+		// Methods
+	};
+} // namespace __jni_impl::android::os
+
+
+namespace __jni_impl::android::os
+{
+	// Fields
+	
+	// Constructors
+	void NetworkOnMainThreadException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.NetworkOnMainThreadException",
+			"()V");
+	}
+	
+	// Methods
+} // namespace __jni_impl::android::os
+
+namespace android::os
+{
+	class NetworkOnMainThreadException : public __jni_impl::android::os::NetworkOnMainThreadException
+	{
+	public:
+		NetworkOnMainThreadException(QAndroidJniObject obj) { __thiz = obj; }
+		NetworkOnMainThreadException()
+		{
+			__constructor();
+		}
+	};
+} // namespace android::os
+
+#endif // ANDROID_OS_NETWORKONMAINTHREADEXCEPTION
+

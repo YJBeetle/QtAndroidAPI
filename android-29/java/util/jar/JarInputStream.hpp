@@ -1,0 +1,121 @@
+#pragma once
+
+#ifndef JAVA_UTIL_JAR_JARINPUTSTREAM
+#define JAVA_UTIL_JAR_JARINPUTSTREAM
+
+#include "../zip/ZipInputStream.hpp"
+
+namespace __jni_impl::java::util::jar
+{
+	class Manifest;
+}
+namespace __jni_impl::java::util::jar
+{
+	class JarEntry;
+}
+namespace __jni_impl::java::io
+{
+	class InputStream;
+}
+namespace __jni_impl::java::util::zip
+{
+	class ZipEntry;
+}
+
+namespace __jni_impl::java::util::jar
+{
+	class JarInputStream : public __jni_impl::java::util::zip::ZipInputStream
+	{
+	public:
+		// Fields
+		
+		// Constructors
+		void __constructor(__jni_impl::java::io::InputStream arg0);
+		void __constructor(__jni_impl::java::io::InputStream arg0, jboolean arg1);
+		
+		// Methods
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		QAndroidJniObject getManifest();
+		QAndroidJniObject getNextJarEntry();
+		QAndroidJniObject getNextEntry();
+	};
+} // namespace __jni_impl::java::util::jar
+
+#include "Manifest.hpp"
+#include "JarEntry.hpp"
+#include "../../io/InputStream.hpp"
+#include "../zip/ZipEntry.hpp"
+
+namespace __jni_impl::java::util::jar
+{
+	// Fields
+	
+	// Constructors
+	void JarInputStream::__constructor(__jni_impl::java::io::InputStream arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.jar.JarInputStream",
+			"(Ljava/io/InputStream;)V",
+			arg0.__jniObject().object());
+	}
+	void JarInputStream::__constructor(__jni_impl::java::io::InputStream arg0, jboolean arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.jar.JarInputStream",
+			"(Ljava/io/InputStream;Z)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	
+	// Methods
+	jint JarInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2);
+	}
+	QAndroidJniObject JarInputStream::getManifest()
+	{
+		return __thiz.callObjectMethod(
+			"getManifest",
+			"()Ljava/util/jar/Manifest;");
+	}
+	QAndroidJniObject JarInputStream::getNextJarEntry()
+	{
+		return __thiz.callObjectMethod(
+			"getNextJarEntry",
+			"()Ljava/util/jar/JarEntry;");
+	}
+	QAndroidJniObject JarInputStream::getNextEntry()
+	{
+		return __thiz.callObjectMethod(
+			"getNextEntry",
+			"()Ljava/util/zip/ZipEntry;");
+	}
+} // namespace __jni_impl::java::util::jar
+
+namespace java::util::jar
+{
+	class JarInputStream : public __jni_impl::java::util::jar::JarInputStream
+	{
+	public:
+		JarInputStream(QAndroidJniObject obj) { __thiz = obj; }
+		JarInputStream(__jni_impl::java::io::InputStream arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		JarInputStream(__jni_impl::java::io::InputStream arg0, jboolean arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+	};
+} // namespace java::util::jar
+
+#endif // JAVA_UTIL_JAR_JARINPUTSTREAM
+

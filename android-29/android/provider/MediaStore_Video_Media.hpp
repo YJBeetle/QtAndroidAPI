@@ -1,0 +1,99 @@
+#pragma once
+
+#ifndef ANDROID_PROVIDER_MEDIASTORE_VIDEO_MEDIA
+#define ANDROID_PROVIDER_MEDIASTORE_VIDEO_MEDIA
+
+#include "../../__JniBaseClass.hpp"
+
+namespace __jni_impl::android::net
+{
+	class Uri;
+}
+
+namespace __jni_impl::android::provider
+{
+	class MediaStore_Video_Media : public __JniBaseClass
+	{
+	public:
+		// Fields
+		static QAndroidJniObject CONTENT_TYPE();
+		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static QAndroidJniObject EXTERNAL_CONTENT_URI();
+		static QAndroidJniObject INTERNAL_CONTENT_URI();
+		
+		// Constructors
+		void __constructor();
+		
+		// Methods
+		static QAndroidJniObject getContentUri(jstring arg0);
+	};
+} // namespace __jni_impl::android::provider
+
+#include "../net/Uri.hpp"
+
+namespace __jni_impl::android::provider
+{
+	// Fields
+	QAndroidJniObject MediaStore_Video_Media::CONTENT_TYPE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.provider.MediaStore$Video$Media",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;");
+	}
+	QAndroidJniObject MediaStore_Video_Media::DEFAULT_SORT_ORDER()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.provider.MediaStore$Video$Media",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;");
+	}
+	QAndroidJniObject MediaStore_Video_Media::EXTERNAL_CONTENT_URI()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.provider.MediaStore$Video$Media",
+			"EXTERNAL_CONTENT_URI",
+			"Landroid/net/Uri;");
+	}
+	QAndroidJniObject MediaStore_Video_Media::INTERNAL_CONTENT_URI()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.provider.MediaStore$Video$Media",
+			"INTERNAL_CONTENT_URI",
+			"Landroid/net/Uri;");
+	}
+	
+	// Constructors
+	void MediaStore_Video_Media::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.provider.MediaStore$Video$Media",
+			"()V");
+	}
+	
+	// Methods
+	QAndroidJniObject MediaStore_Video_Media::getContentUri(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.MediaStore$Video$Media",
+			"getContentUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0);
+	}
+} // namespace __jni_impl::android::provider
+
+namespace android::provider
+{
+	class MediaStore_Video_Media : public __jni_impl::android::provider::MediaStore_Video_Media
+	{
+	public:
+		MediaStore_Video_Media(QAndroidJniObject obj) { __thiz = obj; }
+		MediaStore_Video_Media()
+		{
+			__constructor();
+		}
+	};
+} // namespace android::provider
+
+#endif // ANDROID_PROVIDER_MEDIASTORE_VIDEO_MEDIA
+

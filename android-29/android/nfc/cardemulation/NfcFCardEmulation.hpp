@@ -1,0 +1,136 @@
+#pragma once
+
+#ifndef ANDROID_NFC_CARDEMULATION_NFCFCARDEMULATION
+#define ANDROID_NFC_CARDEMULATION_NFCFCARDEMULATION
+
+#include "../../../__JniBaseClass.hpp"
+
+namespace __jni_impl::android::nfc
+{
+	class NfcAdapter;
+}
+namespace __jni_impl::android::content
+{
+	class ComponentName;
+}
+namespace __jni_impl::android::app
+{
+	class Activity;
+}
+
+namespace __jni_impl::android::nfc::cardemulation
+{
+	class NfcFCardEmulation : public __JniBaseClass
+	{
+	public:
+		// Fields
+		
+		// Constructors
+		void __constructor();
+		
+		// Methods
+		static QAndroidJniObject getInstance(__jni_impl::android::nfc::NfcAdapter arg0);
+		QAndroidJniObject getSystemCodeForService(__jni_impl::android::content::ComponentName arg0);
+		jboolean registerSystemCodeForService(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		jboolean unregisterSystemCodeForService(__jni_impl::android::content::ComponentName arg0);
+		QAndroidJniObject getNfcid2ForService(__jni_impl::android::content::ComponentName arg0);
+		jboolean setNfcid2ForService(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		jboolean enableService(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::ComponentName arg1);
+		jboolean disableService(__jni_impl::android::app::Activity arg0);
+	};
+} // namespace __jni_impl::android::nfc::cardemulation
+
+#include "../NfcAdapter.hpp"
+#include "../../content/ComponentName.hpp"
+#include "../../app/Activity.hpp"
+
+namespace __jni_impl::android::nfc::cardemulation
+{
+	// Fields
+	
+	// Constructors
+	void NfcFCardEmulation::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.nfc.cardemulation.NfcFCardEmulation",
+			"(V)V");
+	}
+	
+	// Methods
+	QAndroidJniObject NfcFCardEmulation::getInstance(__jni_impl::android::nfc::NfcAdapter arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.nfc.cardemulation.NfcFCardEmulation",
+			"getInstance",
+			"(Landroid/nfc/NfcAdapter;)Landroid/nfc/cardemulation/NfcFCardEmulation;",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject NfcFCardEmulation::getSystemCodeForService(__jni_impl::android::content::ComponentName arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSystemCodeForService",
+			"(Landroid/content/ComponentName;)Ljava/lang/String;",
+			arg0.__jniObject().object());
+	}
+	jboolean NfcFCardEmulation::registerSystemCodeForService(__jni_impl::android::content::ComponentName arg0, jstring arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"registerSystemCodeForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jboolean NfcFCardEmulation::unregisterSystemCodeForService(__jni_impl::android::content::ComponentName arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"unregisterSystemCodeForService",
+			"(Landroid/content/ComponentName;)Z",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject NfcFCardEmulation::getNfcid2ForService(__jni_impl::android::content::ComponentName arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getNfcid2ForService",
+			"(Landroid/content/ComponentName;)Ljava/lang/String;",
+			arg0.__jniObject().object());
+	}
+	jboolean NfcFCardEmulation::setNfcid2ForService(__jni_impl::android::content::ComponentName arg0, jstring arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setNfcid2ForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jboolean NfcFCardEmulation::enableService(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::ComponentName arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"enableService",
+			"(Landroid/app/Activity;Landroid/content/ComponentName;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	jboolean NfcFCardEmulation::disableService(__jni_impl::android::app::Activity arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"disableService",
+			"(Landroid/app/Activity;)Z",
+			arg0.__jniObject().object());
+	}
+} // namespace __jni_impl::android::nfc::cardemulation
+
+namespace android::nfc::cardemulation
+{
+	class NfcFCardEmulation : public __jni_impl::android::nfc::cardemulation::NfcFCardEmulation
+	{
+	public:
+		NfcFCardEmulation(QAndroidJniObject obj) { __thiz = obj; }
+		NfcFCardEmulation()
+		{
+			__constructor();
+		}
+	};
+} // namespace android::nfc::cardemulation
+
+#endif // ANDROID_NFC_CARDEMULATION_NFCFCARDEMULATION
+

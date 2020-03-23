@@ -1,0 +1,81 @@
+#pragma once
+
+#ifndef ANDROID_SECURITY_KEYSTORE_USERPRESENCEUNAVAILABLEEXCEPTION
+#define ANDROID_SECURITY_KEYSTORE_USERPRESENCEUNAVAILABLEEXCEPTION
+
+#include "../../../java/security/InvalidKeyException.hpp"
+
+
+namespace __jni_impl::android::security::keystore
+{
+	class UserPresenceUnavailableException : public __jni_impl::java::security::InvalidKeyException
+	{
+	public:
+		// Fields
+		
+		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(jstring arg0, jthrowable arg1);
+		
+		// Methods
+	};
+} // namespace __jni_impl::android::security::keystore
+
+
+namespace __jni_impl::android::security::keystore
+{
+	// Fields
+	
+	// Constructors
+	void UserPresenceUnavailableException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.keystore.UserPresenceUnavailableException",
+			"()V");
+	}
+	void UserPresenceUnavailableException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.keystore.UserPresenceUnavailableException",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	void UserPresenceUnavailableException::__constructor(jstring arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.keystore.UserPresenceUnavailableException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0,
+			arg1);
+	}
+	
+	// Methods
+} // namespace __jni_impl::android::security::keystore
+
+namespace android::security::keystore
+{
+	class UserPresenceUnavailableException : public __jni_impl::android::security::keystore::UserPresenceUnavailableException
+	{
+	public:
+		UserPresenceUnavailableException(QAndroidJniObject obj) { __thiz = obj; }
+		UserPresenceUnavailableException()
+		{
+			__constructor();
+		}
+		UserPresenceUnavailableException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		UserPresenceUnavailableException(jstring arg0, jthrowable arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+	};
+} // namespace android::security::keystore
+
+#endif // ANDROID_SECURITY_KEYSTORE_USERPRESENCEUNAVAILABLEEXCEPTION
+

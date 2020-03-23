@@ -1,0 +1,468 @@
+#pragma once
+
+#ifndef JAVA_TEXT_DECIMALFORMAT
+#define JAVA_TEXT_DECIMALFORMAT
+
+#include "NumberFormat.hpp"
+
+namespace __jni_impl::java::math
+{
+	class BigInteger;
+}
+namespace __jni_impl::java::math
+{
+	class BigDecimal;
+}
+namespace __jni_impl::java::text
+{
+	class DecimalFormatSymbols;
+}
+namespace __jni_impl::java::math
+{
+	class RoundingMode;
+}
+namespace __jni_impl::java::lang
+{
+	class StringBuffer;
+}
+namespace __jni_impl::java::text
+{
+	class Format_Field;
+}
+namespace __jni_impl::java::text
+{
+	class FieldPosition;
+}
+namespace __jni_impl::java::io
+{
+	class ObjectInputStream;
+}
+namespace __jni_impl::java::lang
+{
+	class Number;
+}
+namespace __jni_impl::java::text
+{
+	class ParsePosition;
+}
+namespace __jni_impl::java::util
+{
+	class Currency;
+}
+
+namespace __jni_impl::java::text
+{
+	class DecimalFormat : public __jni_impl::java::text::NumberFormat
+	{
+	public:
+		// Fields
+		
+		// Constructors
+		void __constructor(jstring arg0, __jni_impl::java::text::DecimalFormatSymbols arg1);
+		void __constructor(jstring arg0);
+		void __constructor();
+		
+		// Methods
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		QAndroidJniObject clone();
+		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
+		QAndroidJniObject format(jdouble arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
+		QAndroidJniObject format(jlong arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
+		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jboolean isParseBigDecimal();
+		void setDecimalFormatSymbols(__jni_impl::java::text::DecimalFormatSymbols arg0);
+		QAndroidJniObject getPositivePrefix();
+		void setPositivePrefix(jstring arg0);
+		QAndroidJniObject getNegativePrefix();
+		void setNegativePrefix(jstring arg0);
+		QAndroidJniObject getPositiveSuffix();
+		void setPositiveSuffix(jstring arg0);
+		QAndroidJniObject getNegativeSuffix();
+		void setNegativeSuffix(jstring arg0);
+		jint getMultiplier();
+		void setMultiplier(jint arg0);
+		jint getGroupingSize();
+		void setGroupingSize(jint arg0);
+		jboolean isDecimalSeparatorAlwaysShown();
+		void setParseBigDecimal(jboolean arg0);
+		void applyPattern(jstring arg0);
+		void setGroupingUsed(jboolean arg0);
+		QAndroidJniObject getDecimalFormatSymbols();
+		void setMinimumIntegerDigits(jint arg0);
+		void setMaximumIntegerDigits(jint arg0);
+		QAndroidJniObject toPattern();
+		QAndroidJniObject toLocalizedPattern();
+		void applyLocalizedPattern(jstring arg0);
+		jint getMaximumIntegerDigits();
+		jint getMinimumIntegerDigits();
+		jint getMaximumFractionDigits();
+		void setMaximumFractionDigits(jint arg0);
+		jint getMinimumFractionDigits();
+		void setMinimumFractionDigits(jint arg0);
+		QAndroidJniObject getCurrency();
+		void setCurrency(__jni_impl::java::util::Currency arg0);
+		void setRoundingMode(__jni_impl::java::math::RoundingMode arg0);
+		void setDecimalSeparatorAlwaysShown(jboolean arg0);
+		QAndroidJniObject getRoundingMode();
+		QAndroidJniObject formatToCharacterIterator(jobject arg0);
+	};
+} // namespace __jni_impl::java::text
+
+#include "../math/BigInteger.hpp"
+#include "../math/BigDecimal.hpp"
+#include "DecimalFormatSymbols.hpp"
+#include "../math/RoundingMode.hpp"
+#include "../lang/StringBuffer.hpp"
+#include "Format_Field.hpp"
+#include "FieldPosition.hpp"
+#include "../io/ObjectInputStream.hpp"
+#include "../lang/Number.hpp"
+#include "ParsePosition.hpp"
+#include "../util/Currency.hpp"
+
+namespace __jni_impl::java::text
+{
+	// Fields
+	
+	// Constructors
+	void DecimalFormat::__constructor(jstring arg0, __jni_impl::java::text::DecimalFormatSymbols arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.DecimalFormat",
+			"(Ljava/lang/String;Ljava/text/DecimalFormatSymbols;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void DecimalFormat::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.DecimalFormat",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	void DecimalFormat::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.DecimalFormat",
+			"()V");
+	}
+	
+	// Methods
+	jboolean DecimalFormat::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0);
+	}
+	jint DecimalFormat::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I");
+	}
+	QAndroidJniObject DecimalFormat::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;");
+	}
+	QAndroidJniObject DecimalFormat::format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
+	{
+		return __thiz.callObjectMethod(
+			"format",
+			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject DecimalFormat::format(jdouble arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
+	{
+		return __thiz.callObjectMethod(
+			"format",
+			"(DLjava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject DecimalFormat::format(jlong arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
+	{
+		return __thiz.callObjectMethod(
+			"format",
+			"(JLjava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject DecimalFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean DecimalFormat::isParseBigDecimal()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isParseBigDecimal",
+			"()Z");
+	}
+	void DecimalFormat::setDecimalFormatSymbols(__jni_impl::java::text::DecimalFormatSymbols arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDecimalFormatSymbols",
+			"(Ljava/text/DecimalFormatSymbols;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject DecimalFormat::getPositivePrefix()
+	{
+		return __thiz.callObjectMethod(
+			"getPositivePrefix",
+			"()Ljava/lang/String;");
+	}
+	void DecimalFormat::setPositivePrefix(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPositivePrefix",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	QAndroidJniObject DecimalFormat::getNegativePrefix()
+	{
+		return __thiz.callObjectMethod(
+			"getNegativePrefix",
+			"()Ljava/lang/String;");
+	}
+	void DecimalFormat::setNegativePrefix(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNegativePrefix",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	QAndroidJniObject DecimalFormat::getPositiveSuffix()
+	{
+		return __thiz.callObjectMethod(
+			"getPositiveSuffix",
+			"()Ljava/lang/String;");
+	}
+	void DecimalFormat::setPositiveSuffix(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPositiveSuffix",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	QAndroidJniObject DecimalFormat::getNegativeSuffix()
+	{
+		return __thiz.callObjectMethod(
+			"getNegativeSuffix",
+			"()Ljava/lang/String;");
+	}
+	void DecimalFormat::setNegativeSuffix(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNegativeSuffix",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	jint DecimalFormat::getMultiplier()
+	{
+		return __thiz.callMethod<jint>(
+			"getMultiplier",
+			"()I");
+	}
+	void DecimalFormat::setMultiplier(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMultiplier",
+			"(I)V",
+			arg0);
+	}
+	jint DecimalFormat::getGroupingSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getGroupingSize",
+			"()I");
+	}
+	void DecimalFormat::setGroupingSize(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGroupingSize",
+			"(I)V",
+			arg0);
+	}
+	jboolean DecimalFormat::isDecimalSeparatorAlwaysShown()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDecimalSeparatorAlwaysShown",
+			"()Z");
+	}
+	void DecimalFormat::setParseBigDecimal(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setParseBigDecimal",
+			"(Z)V",
+			arg0);
+	}
+	void DecimalFormat::applyPattern(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyPattern",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	void DecimalFormat::setGroupingUsed(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGroupingUsed",
+			"(Z)V",
+			arg0);
+	}
+	QAndroidJniObject DecimalFormat::getDecimalFormatSymbols()
+	{
+		return __thiz.callObjectMethod(
+			"getDecimalFormatSymbols",
+			"()Ljava/text/DecimalFormatSymbols;");
+	}
+	void DecimalFormat::setMinimumIntegerDigits(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinimumIntegerDigits",
+			"(I)V",
+			arg0);
+	}
+	void DecimalFormat::setMaximumIntegerDigits(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMaximumIntegerDigits",
+			"(I)V",
+			arg0);
+	}
+	QAndroidJniObject DecimalFormat::toPattern()
+	{
+		return __thiz.callObjectMethod(
+			"toPattern",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject DecimalFormat::toLocalizedPattern()
+	{
+		return __thiz.callObjectMethod(
+			"toLocalizedPattern",
+			"()Ljava/lang/String;");
+	}
+	void DecimalFormat::applyLocalizedPattern(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyLocalizedPattern",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	jint DecimalFormat::getMaximumIntegerDigits()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaximumIntegerDigits",
+			"()I");
+	}
+	jint DecimalFormat::getMinimumIntegerDigits()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinimumIntegerDigits",
+			"()I");
+	}
+	jint DecimalFormat::getMaximumFractionDigits()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaximumFractionDigits",
+			"()I");
+	}
+	void DecimalFormat::setMaximumFractionDigits(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMaximumFractionDigits",
+			"(I)V",
+			arg0);
+	}
+	jint DecimalFormat::getMinimumFractionDigits()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinimumFractionDigits",
+			"()I");
+	}
+	void DecimalFormat::setMinimumFractionDigits(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinimumFractionDigits",
+			"(I)V",
+			arg0);
+	}
+	QAndroidJniObject DecimalFormat::getCurrency()
+	{
+		return __thiz.callObjectMethod(
+			"getCurrency",
+			"()Ljava/util/Currency;");
+	}
+	void DecimalFormat::setCurrency(__jni_impl::java::util::Currency arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCurrency",
+			"(Ljava/util/Currency;)V",
+			arg0.__jniObject().object());
+	}
+	void DecimalFormat::setRoundingMode(__jni_impl::java::math::RoundingMode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRoundingMode",
+			"(Ljava/math/RoundingMode;)V",
+			arg0.__jniObject().object());
+	}
+	void DecimalFormat::setDecimalSeparatorAlwaysShown(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDecimalSeparatorAlwaysShown",
+			"(Z)V",
+			arg0);
+	}
+	QAndroidJniObject DecimalFormat::getRoundingMode()
+	{
+		return __thiz.callObjectMethod(
+			"getRoundingMode",
+			"()Ljava/math/RoundingMode;");
+	}
+	QAndroidJniObject DecimalFormat::formatToCharacterIterator(jobject arg0)
+	{
+		return __thiz.callObjectMethod(
+			"formatToCharacterIterator",
+			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
+			arg0);
+	}
+} // namespace __jni_impl::java::text
+
+namespace java::text
+{
+	class DecimalFormat : public __jni_impl::java::text::DecimalFormat
+	{
+	public:
+		DecimalFormat(QAndroidJniObject obj) { __thiz = obj; }
+		DecimalFormat(jstring arg0, __jni_impl::java::text::DecimalFormatSymbols arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+		DecimalFormat(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		DecimalFormat()
+		{
+			__constructor();
+		}
+	};
+} // namespace java::text
+
+#endif // JAVA_TEXT_DECIMALFORMAT
+
