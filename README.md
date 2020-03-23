@@ -1,0 +1,2 @@
+# QtAndroidAPI
+QtAndroidApi
