@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>341</width>
+    <height>606</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow{
+  background-color: rgb(48, 48, 48);
+}
+QLabel{
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+}
+QTextBrowser,
+QTextEdit,
+QLineEdit{
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(88, 88, 88);
+  border: none;
+  height: 48px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 4px;
+}
+QPushButton{
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(66, 66, 66);
+  border: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 48px;
+  border-radius: 4px;
+}
+QPushButton:pressed{
+  background-color: rgb(44, 44, 44);
+}
+QPushButton:disabled{
+  color: rgb(192, 192, 192);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0" colspan="2">
+     <widget class="QPushButton" name="showToast">
+      <property name="text">
+       <string>Show toast</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0" colspan="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPushButton" name="showProgressDialogHorizontal">
+      <property name="text">
+       <string>Horizontal</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Toast</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="showProgressDialogSpinner">
+      <property name="text">
+       <string>Spinner</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QLineEdit" name="toastText">
+      <property name="text">
+       <string>Moew~</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QLineEdit" name="progressDialogTitle">
+      <property name="text">
+       <string>Waiting...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QLineEdit" name="progressDialogText">
+      <property name="text">
+       <string>Meow~</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Progress Dialog</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

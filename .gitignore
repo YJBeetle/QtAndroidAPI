@@ -33,3 +33,4 @@
 
 # QtCreator
 /example/build*
+*.pro.user
