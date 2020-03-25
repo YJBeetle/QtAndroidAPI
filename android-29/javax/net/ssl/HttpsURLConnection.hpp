@@ -3,6 +3,8 @@
 #ifndef JAVAX_NET_SSL_HTTPSURLCONNECTION
 #define JAVAX_NET_SSL_HTTPSURLCONNECTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/net/URLConnection.hpp"
 #include "../../../java/net/HttpURLConnection.hpp"
 
 namespace __jni_impl::javax::net::ssl
@@ -29,10 +31,6 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getCipherSuite();
-		QAndroidJniObject getPeerPrincipal();
-		QAndroidJniObject getLocalPrincipal();
-		QAndroidJniObject getSSLSession();
 		QAndroidJniObject getLocalCertificates();
 		static QAndroidJniObject getDefaultSSLSocketFactory();
 		QAndroidJniObject getServerCertificates();
@@ -43,6 +41,10 @@ namespace __jni_impl::javax::net::ssl
 		static void setDefaultSSLSocketFactory(__jni_impl::javax::net::ssl::SSLSocketFactory arg0);
 		void setSSLSocketFactory(__jni_impl::javax::net::ssl::SSLSocketFactory arg0);
 		QAndroidJniObject getSSLSocketFactory();
+		QAndroidJniObject getCipherSuite();
+		QAndroidJniObject getPeerPrincipal();
+		QAndroidJniObject getLocalPrincipal();
+		QAndroidJniObject getSSLSession();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -63,30 +65,6 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	QAndroidJniObject HttpsURLConnection::getCipherSuite()
-	{
-		return __thiz.callObjectMethod(
-			"getCipherSuite",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject HttpsURLConnection::getPeerPrincipal()
-	{
-		return __thiz.callObjectMethod(
-			"getPeerPrincipal",
-			"()Ljava/security/Principal;");
-	}
-	QAndroidJniObject HttpsURLConnection::getLocalPrincipal()
-	{
-		return __thiz.callObjectMethod(
-			"getLocalPrincipal",
-			"()Ljava/security/Principal;");
-	}
-	QAndroidJniObject HttpsURLConnection::getSSLSession()
-	{
-		return __thiz.callObjectMethod(
-			"getSSLSession",
-			"()Ljava/util/Optional;");
-	}
 	QAndroidJniObject HttpsURLConnection::getLocalCertificates()
 	{
 		return __thiz.callObjectMethod(
@@ -154,6 +132,30 @@ namespace __jni_impl::javax::net::ssl
 		return __thiz.callObjectMethod(
 			"getSSLSocketFactory",
 			"()Ljavax/net/ssl/SSLSocketFactory;");
+	}
+	QAndroidJniObject HttpsURLConnection::getCipherSuite()
+	{
+		return __thiz.callObjectMethod(
+			"getCipherSuite",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject HttpsURLConnection::getPeerPrincipal()
+	{
+		return __thiz.callObjectMethod(
+			"getPeerPrincipal",
+			"()Ljava/security/Principal;");
+	}
+	QAndroidJniObject HttpsURLConnection::getLocalPrincipal()
+	{
+		return __thiz.callObjectMethod(
+			"getLocalPrincipal",
+			"()Ljava/security/Principal;");
+	}
+	QAndroidJniObject HttpsURLConnection::getSSLSession()
+	{
+		return __thiz.callObjectMethod(
+			"getSSLSession",
+			"()Ljava/util/Optional;");
 	}
 } // namespace __jni_impl::javax::net::ssl
 

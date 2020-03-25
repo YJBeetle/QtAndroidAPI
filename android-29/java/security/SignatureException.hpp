@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_SIGNATUREEXCEPTION
 #define JAVA_SECURITY_SIGNATUREEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "GeneralSecurityException.hpp"
 
 

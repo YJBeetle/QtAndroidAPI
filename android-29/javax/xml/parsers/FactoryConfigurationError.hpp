@@ -3,6 +3,7 @@
 #ifndef JAVAX_XML_PARSERS_FACTORYCONFIGURATIONERROR
 #define JAVAX_XML_PARSERS_FACTORYCONFIGURATIONERROR
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Error.hpp"
 
 namespace __jni_impl::java::lang

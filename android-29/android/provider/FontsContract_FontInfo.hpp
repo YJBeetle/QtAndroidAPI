@@ -21,11 +21,11 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		jint getTtcIndex();
-		QAndroidJniObject getAxes();
-		QAndroidJniObject getUri();
 		jint getWeight();
 		jboolean isItalic();
+		QAndroidJniObject getUri();
+		jint getTtcIndex();
+		QAndroidJniObject getAxes();
 		jint getResultCode();
 	};
 } // namespace __jni_impl::android::provider
@@ -45,24 +45,6 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	jint FontsContract_FontInfo::getTtcIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getTtcIndex",
-			"()I");
-	}
-	QAndroidJniObject FontsContract_FontInfo::getAxes()
-	{
-		return __thiz.callObjectMethod(
-			"getAxes",
-			"()[Landroid/graphics/fonts/FontVariationAxis;");
-	}
-	QAndroidJniObject FontsContract_FontInfo::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;");
-	}
 	jint FontsContract_FontInfo::getWeight()
 	{
 		return __thiz.callMethod<jint>(
@@ -74,6 +56,24 @@ namespace __jni_impl::android::provider
 		return __thiz.callMethod<jboolean>(
 			"isItalic",
 			"()Z");
+	}
+	QAndroidJniObject FontsContract_FontInfo::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;");
+	}
+	jint FontsContract_FontInfo::getTtcIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getTtcIndex",
+			"()I");
+	}
+	QAndroidJniObject FontsContract_FontInfo::getAxes()
+	{
+		return __thiz.callObjectMethod(
+			"getAxes",
+			"()[Landroid/graphics/fonts/FontVariationAxis;");
 	}
 	jint FontsContract_FontInfo::getResultCode()
 	{

@@ -3,31 +3,20 @@
 #ifndef ANDROID_PREFERENCE_PREFERENCEFRAGMENT
 #define ANDROID_PREFERENCE_PREFERENCEFRAGMENT
 
+#include "../../__JniBaseClass.hpp"
 #include "../app/Fragment.hpp"
 
-namespace __jni_impl::android::preference
+namespace __jni_impl::android::os
 {
-	class PreferenceManager;
-}
-namespace __jni_impl::android::preference
-{
-	class PreferenceScreen;
+	class Bundle;
 }
 namespace __jni_impl::android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::preference
-{
-	class Preference;
-}
 namespace __jni_impl::android::view
 {
 	class View;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 namespace __jni_impl::android::view
 {
@@ -36,6 +25,18 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class ViewGroup;
+}
+namespace __jni_impl::android::preference
+{
+	class PreferenceManager;
+}
+namespace __jni_impl::android::preference
+{
+	class PreferenceScreen;
+}
+namespace __jni_impl::android::preference
+{
+	class Preference;
 }
 
 namespace __jni_impl::android::preference
@@ -50,6 +51,15 @@ namespace __jni_impl::android::preference
 		
 		// Methods
 		void onStart();
+		void onCreate(__jni_impl::android::os::Bundle arg0);
+		void onSaveInstanceState(__jni_impl::android::os::Bundle arg0);
+		void onStop();
+		void onDestroy();
+		void onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2);
+		QAndroidJniObject onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2);
+		void onDestroyView();
+		void onViewCreated(__jni_impl::android::view::View arg0, __jni_impl::android::os::Bundle arg1);
+		void onActivityCreated(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject getPreferenceManager();
 		void setPreferenceScreen(__jni_impl::android::preference::PreferenceScreen arg0);
 		QAndroidJniObject getPreferenceScreen();
@@ -57,26 +67,17 @@ namespace __jni_impl::android::preference
 		void addPreferencesFromResource(jint arg0);
 		jboolean onPreferenceTreeClick(__jni_impl::android::preference::PreferenceScreen arg0, __jni_impl::android::preference::Preference arg1);
 		QAndroidJniObject findPreference(jstring arg0);
-		void onDestroyView();
-		void onViewCreated(__jni_impl::android::view::View arg0, __jni_impl::android::os::Bundle arg1);
-		void onActivityCreated(__jni_impl::android::os::Bundle arg0);
-		void onCreate(__jni_impl::android::os::Bundle arg0);
-		void onSaveInstanceState(__jni_impl::android::os::Bundle arg0);
-		void onStop();
-		void onDestroy();
-		void onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2);
-		QAndroidJniObject onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2);
 	};
 } // namespace __jni_impl::android::preference
 
-#include "PreferenceManager.hpp"
-#include "PreferenceScreen.hpp"
-#include "../content/Intent.hpp"
-#include "Preference.hpp"
-#include "../view/View.hpp"
 #include "../os/Bundle.hpp"
+#include "../content/Intent.hpp"
+#include "../view/View.hpp"
 #include "../view/LayoutInflater.hpp"
 #include "../view/ViewGroup.hpp"
+#include "PreferenceManager.hpp"
+#include "PreferenceScreen.hpp"
+#include "Preference.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -96,6 +97,71 @@ namespace __jni_impl::android::preference
 		__thiz.callMethod<void>(
 			"onStart",
 			"()V");
+	}
+	void PreferenceFragment::onCreate(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	void PreferenceFragment::onSaveInstanceState(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSaveInstanceState",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	void PreferenceFragment::onStop()
+	{
+		__thiz.callMethod<void>(
+			"onStop",
+			"()V");
+	}
+	void PreferenceFragment::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V");
+	}
+	void PreferenceFragment::onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2)
+	{
+		__thiz.callMethod<void>(
+			"onActivityResult",
+			"(IILandroid/content/Intent;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject PreferenceFragment::onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		return __thiz.callObjectMethod(
+			"onCreateView",
+			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	void PreferenceFragment::onDestroyView()
+	{
+		__thiz.callMethod<void>(
+			"onDestroyView",
+			"()V");
+	}
+	void PreferenceFragment::onViewCreated(__jni_impl::android::view::View arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onViewCreated",
+			"(Landroid/view/View;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void PreferenceFragment::onActivityCreated(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onActivityCreated",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject PreferenceFragment::getPreferenceManager()
 	{
@@ -144,71 +210,6 @@ namespace __jni_impl::android::preference
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
 			arg0);
-	}
-	void PreferenceFragment::onDestroyView()
-	{
-		__thiz.callMethod<void>(
-			"onDestroyView",
-			"()V");
-	}
-	void PreferenceFragment::onViewCreated(__jni_impl::android::view::View arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onViewCreated",
-			"(Landroid/view/View;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void PreferenceFragment::onActivityCreated(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onActivityCreated",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	void PreferenceFragment::onCreate(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	void PreferenceFragment::onSaveInstanceState(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSaveInstanceState",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	void PreferenceFragment::onStop()
-	{
-		__thiz.callMethod<void>(
-			"onStop",
-			"()V");
-	}
-	void PreferenceFragment::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V");
-	}
-	void PreferenceFragment::onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2)
-	{
-		__thiz.callMethod<void>(
-			"onActivityResult",
-			"(IILandroid/content/Intent;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject PreferenceFragment::onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateView",
-			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
 	}
 } // namespace __jni_impl::android::preference
 

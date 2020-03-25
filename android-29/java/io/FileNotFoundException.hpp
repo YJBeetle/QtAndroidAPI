@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_FILENOTFOUNDEXCEPTION
 #define JAVA_IO_FILENOTFOUNDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "IOException.hpp"
 
 

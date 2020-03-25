@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_SIGNER
 #define JAVA_SECURITY_SIGNER
 
+#include "../../__JniBaseClass.hpp"
 #include "Identity.hpp"
 
 namespace __jni_impl::java::security

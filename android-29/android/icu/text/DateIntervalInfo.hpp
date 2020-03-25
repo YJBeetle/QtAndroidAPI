@@ -35,12 +35,12 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject clone();
 		jboolean isFrozen();
 		QAndroidJniObject freeze();
+		QAndroidJniObject cloneAsThawed();
 		void setIntervalPattern(jstring arg0, jint arg1, jstring arg2);
 		QAndroidJniObject getIntervalPattern(jstring arg0, jint arg1);
 		QAndroidJniObject getFallbackIntervalPattern();
 		void setFallbackIntervalPattern(jstring arg0);
 		jboolean getDefaultOrder();
-		QAndroidJniObject cloneAsThawed();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -100,6 +100,12 @@ namespace __jni_impl::android::icu::text
 			"freeze",
 			"()Landroid/icu/text/DateIntervalInfo;");
 	}
+	QAndroidJniObject DateIntervalInfo::cloneAsThawed()
+	{
+		return __thiz.callObjectMethod(
+			"cloneAsThawed",
+			"()Landroid/icu/text/DateIntervalInfo;");
+	}
 	void DateIntervalInfo::setIntervalPattern(jstring arg0, jint arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -135,12 +141,6 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"getDefaultOrder",
 			"()Z");
-	}
-	QAndroidJniObject DateIntervalInfo::cloneAsThawed()
-	{
-		return __thiz.callObjectMethod(
-			"cloneAsThawed",
-			"()Landroid/icu/text/DateIntervalInfo;");
 	}
 } // namespace __jni_impl::android::icu::text
 

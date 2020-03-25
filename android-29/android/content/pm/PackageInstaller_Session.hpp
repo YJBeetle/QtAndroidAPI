@@ -32,7 +32,6 @@ namespace __jni_impl::android::content::pm
 		void close();
 		void transfer(jstring arg0);
 		void commit(__jni_impl::android::content::IntentSender arg0);
-		void fsync(__jni_impl::java::io::OutputStream arg0);
 		void setStagingProgress(jfloat arg0);
 		QAndroidJniObject openWrite(jstring arg0, jlong arg1, jlong arg2);
 		QAndroidJniObject getNames();
@@ -44,6 +43,7 @@ namespace __jni_impl::android::content::pm
 		QAndroidJniObject getChildSessionIds();
 		void addChildSessionId(jint arg0);
 		void removeChildSessionId(jint arg0);
+		void fsync(__jni_impl::java::io::OutputStream arg0);
 		void abandon();
 	};
 } // namespace __jni_impl::android::content::pm
@@ -83,13 +83,6 @@ namespace __jni_impl::android::content::pm
 		__thiz.callMethod<void>(
 			"commit",
 			"(Landroid/content/IntentSender;)V",
-			arg0.__jniObject().object());
-	}
-	void PackageInstaller_Session::fsync(__jni_impl::java::io::OutputStream arg0)
-	{
-		__thiz.callMethod<void>(
-			"fsync",
-			"(Ljava/io/OutputStream;)V",
 			arg0.__jniObject().object());
 	}
 	void PackageInstaller_Session::setStagingProgress(jfloat arg0)
@@ -165,6 +158,13 @@ namespace __jni_impl::android::content::pm
 			"removeChildSessionId",
 			"(I)V",
 			arg0);
+	}
+	void PackageInstaller_Session::fsync(__jni_impl::java::io::OutputStream arg0)
+	{
+		__thiz.callMethod<void>(
+			"fsync",
+			"(Ljava/io/OutputStream;)V",
+			arg0.__jniObject().object());
 	}
 	void PackageInstaller_Session::abandon()
 	{

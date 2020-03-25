@@ -13,13 +13,13 @@ namespace __jni_impl::android::app
 {
 	class Notification_Builder;
 }
-namespace __jni_impl::android::app
-{
-	class Notification_Action;
-}
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
+}
+namespace __jni_impl::android::app
+{
+	class Notification_Action;
 }
 namespace __jni_impl::android::app
 {
@@ -52,9 +52,9 @@ namespace __jni_impl::android::app
 		QAndroidJniObject setGravity(jint arg0);
 		jint getGravity();
 		QAndroidJniObject extend(__jni_impl::android::app::Notification_Builder arg0);
-		QAndroidJniObject addAction(__jni_impl::android::app::Notification_Action arg0);
 		QAndroidJniObject setBackground(__jni_impl::android::graphics::Bitmap arg0);
 		QAndroidJniObject getBackground();
+		QAndroidJniObject addAction(__jni_impl::android::app::Notification_Action arg0);
 		QAndroidJniObject addActions(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject clearActions();
 		QAndroidJniObject setDisplayIntent(__jni_impl::android::app::PendingIntent arg0);
@@ -98,8 +98,8 @@ namespace __jni_impl::android::app
 
 #include "Notification.hpp"
 #include "Notification_Builder.hpp"
-#include "Notification_Action.hpp"
 #include "../graphics/Bitmap.hpp"
+#include "Notification_Action.hpp"
 #include "PendingIntent.hpp"
 
 namespace __jni_impl::android::app
@@ -208,13 +208,6 @@ namespace __jni_impl::android::app
 			"(Landroid/app/Notification$Builder;)Landroid/app/Notification$Builder;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject Notification_WearableExtender::addAction(__jni_impl::android::app::Notification_Action arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addAction",
-			"(Landroid/app/Notification$Action;)Landroid/app/Notification$WearableExtender;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject Notification_WearableExtender::setBackground(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -227,6 +220,13 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/Bitmap;");
+	}
+	QAndroidJniObject Notification_WearableExtender::addAction(__jni_impl::android::app::Notification_Action arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addAction",
+			"(Landroid/app/Notification$Action;)Landroid/app/Notification$WearableExtender;",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject Notification_WearableExtender::addActions(__jni_impl::__JniBaseClass arg0)
 	{

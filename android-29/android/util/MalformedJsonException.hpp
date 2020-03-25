@@ -3,6 +3,8 @@
 #ifndef ANDROID_UTIL_MALFORMEDJSONEXCEPTION
 #define ANDROID_UTIL_MALFORMEDJSONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
 
 

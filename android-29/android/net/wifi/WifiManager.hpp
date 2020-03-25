@@ -103,6 +103,9 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
+		jboolean disconnect();
+		jboolean startScan();
+		jboolean reconnect();
 		QAndroidJniObject getConfiguredNetworks();
 		jint addNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
 		jint updateNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
@@ -138,16 +141,13 @@ namespace __jni_impl::android::net::wifi
 		void setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1);
 		void startWps(__jni_impl::android::net::wifi::WpsInfo arg0, __jni_impl::android::net::wifi::WifiManager_WpsCallback arg1);
 		void cancelWps(__jni_impl::android::net::wifi::WifiManager_WpsCallback arg0);
-		QAndroidJniObject createWifiLock(jint arg0, jstring arg1);
 		QAndroidJniObject createWifiLock(jstring arg0);
+		QAndroidJniObject createWifiLock(jint arg0, jstring arg1);
 		QAndroidJniObject createMulticastLock(jstring arg0);
 		jboolean isWpa3SaeSupported();
 		jboolean isWpa3SuiteBSupported();
 		jboolean isEnhancedOpenSupported();
 		jboolean isEasyConnectSupported();
-		jboolean reconnect();
-		jboolean disconnect();
-		jboolean startScan();
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -449,6 +449,24 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
+	jboolean WifiManager::disconnect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"disconnect",
+			"()Z");
+	}
+	jboolean WifiManager::startScan()
+	{
+		return __thiz.callMethod<jboolean>(
+			"startScan",
+			"()Z");
+	}
+	jboolean WifiManager::reconnect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"reconnect",
+			"()Z");
+	}
 	QAndroidJniObject WifiManager::getConfiguredNetworks()
 	{
 		return __thiz.callObjectMethod(
@@ -685,6 +703,13 @@ namespace __jni_impl::android::net::wifi
 			"(Landroid/net/wifi/WifiManager$WpsCallback;)V",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject WifiManager::createWifiLock(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createWifiLock",
+			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
+			arg0);
+	}
 	QAndroidJniObject WifiManager::createWifiLock(jint arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -692,13 +717,6 @@ namespace __jni_impl::android::net::wifi
 			"(ILjava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
 			arg0,
 			arg1);
-	}
-	QAndroidJniObject WifiManager::createWifiLock(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createWifiLock",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
-			arg0);
 	}
 	QAndroidJniObject WifiManager::createMulticastLock(jstring arg0)
 	{
@@ -729,24 +747,6 @@ namespace __jni_impl::android::net::wifi
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEasyConnectSupported",
-			"()Z");
-	}
-	jboolean WifiManager::reconnect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"reconnect",
-			"()Z");
-	}
-	jboolean WifiManager::disconnect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"disconnect",
-			"()Z");
-	}
-	jboolean WifiManager::startScan()
-	{
-		return __thiz.callMethod<jboolean>(
-			"startScan",
 			"()Z");
 	}
 } // namespace __jni_impl::android::net::wifi

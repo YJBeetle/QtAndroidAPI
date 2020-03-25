@@ -3,6 +3,9 @@
 #ifndef ANDROID_SERVICE_MEDIA_CAMERAPREWARMSERVICE
 #define ANDROID_SERVICE_MEDIA_CAMERAPREWARMSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace __jni_impl::android::content
@@ -23,8 +26,8 @@ namespace __jni_impl::android::service::media
 		// Methods
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
-		void onPrewarm();
 		void onCooldown(jboolean arg0);
+		void onPrewarm();
 	};
 } // namespace __jni_impl::android::service::media
 
@@ -57,18 +60,18 @@ namespace __jni_impl::android::service::media
 			"(Landroid/content/Intent;)Z",
 			arg0.__jniObject().object());
 	}
-	void CameraPrewarmService::onPrewarm()
-	{
-		__thiz.callMethod<void>(
-			"onPrewarm",
-			"()V");
-	}
 	void CameraPrewarmService::onCooldown(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onCooldown",
 			"(Z)V",
 			arg0);
+	}
+	void CameraPrewarmService::onPrewarm()
+	{
+		__thiz.callMethod<void>(
+			"onPrewarm",
+			"()V");
 	}
 } // namespace __jni_impl::android::service::media
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_VOICEINTERACTOR_CONFIRMATIONREQUEST
 #define ANDROID_APP_VOICEINTERACTOR_CONFIRMATIONREQUEST
 
+#include "../../__JniBaseClass.hpp"
 #include "VoiceInteractor_Request.hpp"
 
 namespace __jni_impl::android::app

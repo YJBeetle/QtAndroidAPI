@@ -3,6 +3,9 @@
 #ifndef ANDROID_APP_FRAGMENT_INSTANTIATIONEXCEPTION
 #define ANDROID_APP_FRAGMENT_INSTANTIATIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 #include "../util/AndroidRuntimeException.hpp"
 
 namespace __jni_impl::java::lang

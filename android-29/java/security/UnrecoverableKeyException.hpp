@@ -3,6 +3,9 @@
 #ifndef JAVA_SECURITY_UNRECOVERABLEKEYEXCEPTION
 #define JAVA_SECURITY_UNRECOVERABLEKEYEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "GeneralSecurityException.hpp"
 #include "UnrecoverableEntryException.hpp"
 
 

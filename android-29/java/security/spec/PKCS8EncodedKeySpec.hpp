@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_SPEC_PKCS8ENCODEDKEYSPEC
 #define JAVA_SECURITY_SPEC_PKCS8ENCODEDKEYSPEC
 
+#include "../../../__JniBaseClass.hpp"
 #include "EncodedKeySpec.hpp"
 
 

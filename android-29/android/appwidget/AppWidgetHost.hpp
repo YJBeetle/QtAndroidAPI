@@ -39,13 +39,13 @@ namespace __jni_impl::android::appwidget
 		// Methods
 		void startListening();
 		void stopListening();
-		QAndroidJniObject createView(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::appwidget::AppWidgetProviderInfo arg2);
 		QAndroidJniObject getAppWidgetIds();
 		jint allocateAppWidgetId();
 		void startAppWidgetConfigureActivityForResult(__jni_impl::android::app::Activity arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::os::Bundle arg4);
 		void deleteAppWidgetId(jint arg0);
 		void deleteHost();
 		static void deleteAllHosts();
+		QAndroidJniObject createView(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::appwidget::AppWidgetProviderInfo arg2);
 	};
 } // namespace __jni_impl::android::appwidget
 
@@ -81,15 +81,6 @@ namespace __jni_impl::android::appwidget
 		__thiz.callMethod<void>(
 			"stopListening",
 			"()V");
-	}
-	QAndroidJniObject AppWidgetHost::createView(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::appwidget::AppWidgetProviderInfo arg2)
-	{
-		return __thiz.callObjectMethod(
-			"createView",
-			"(Landroid/content/Context;ILandroid/appwidget/AppWidgetProviderInfo;)Landroid/appwidget/AppWidgetHostView;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object());
 	}
 	QAndroidJniObject AppWidgetHost::getAppWidgetIds()
 	{
@@ -133,6 +124,15 @@ namespace __jni_impl::android::appwidget
 			"android.appwidget.AppWidgetHost",
 			"deleteAllHosts",
 			"()V");
+	}
+	QAndroidJniObject AppWidgetHost::createView(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::appwidget::AppWidgetProviderInfo arg2)
+	{
+		return __thiz.callObjectMethod(
+			"createView",
+			"(Landroid/content/Context;ILandroid/appwidget/AppWidgetProviderInfo;)Landroid/appwidget/AppWidgetHostView;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object());
 	}
 } // namespace __jni_impl::android::appwidget
 

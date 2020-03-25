@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_NOSUCHALGORITHMEXCEPTION
 #define JAVA_SECURITY_NOSUCHALGORITHMEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "GeneralSecurityException.hpp"
 
 

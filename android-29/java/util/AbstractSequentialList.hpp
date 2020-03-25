@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_ABSTRACTSEQUENTIALLIST
 #define JAVA_UTIL_ABSTRACTSEQUENTIALLIST
 
+#include "../../__JniBaseClass.hpp"
+#include "AbstractCollection.hpp"
 #include "AbstractList.hpp"
 
 

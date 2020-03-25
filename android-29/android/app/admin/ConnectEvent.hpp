@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_ADMIN_CONNECTEVENT
 #define ANDROID_APP_ADMIN_CONNECTEVENT
 
+#include "../../../__JniBaseClass.hpp"
 #include "NetworkEvent.hpp"
 
 namespace __jni_impl::android::os
@@ -28,9 +29,9 @@ namespace __jni_impl::android::app::admin
 		// Methods
 		QAndroidJniObject toString();
 		jint getPort();
-		QAndroidJniObject getInetAddress();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getInetAddress();
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -69,12 +70,6 @@ namespace __jni_impl::android::app::admin
 			"getPort",
 			"()I");
 	}
-	QAndroidJniObject ConnectEvent::getInetAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getInetAddress",
-			"()Ljava/net/InetAddress;");
-	}
 	jint ConnectEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -88,6 +83,12 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject ConnectEvent::getInetAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getInetAddress",
+			"()Ljava/net/InetAddress;");
 	}
 } // namespace __jni_impl::android::app::admin
 

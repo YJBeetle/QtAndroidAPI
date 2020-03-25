@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_TIMEUNIT
 #define JAVA_UTIL_CONCURRENT_TIMEUNIT
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 namespace __jni_impl::java::time::temporal

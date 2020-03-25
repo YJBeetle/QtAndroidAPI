@@ -33,12 +33,12 @@ namespace __jni_impl::android::os
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
+		static QAndroidJniObject readMessengerOrNullFromParcel(__jni_impl::android::os::Parcel arg0);
+		static void writeMessengerOrNullToParcel(__jni_impl::android::os::Messenger arg0, __jni_impl::android::os::Parcel arg1);
+		void send(__jni_impl::android::os::Message arg0);
 		QAndroidJniObject getBinder();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void send(__jni_impl::android::os::Message arg0);
-		static void writeMessengerOrNullToParcel(__jni_impl::android::os::Messenger arg0, __jni_impl::android::os::Parcel arg1);
-		static QAndroidJniObject readMessengerOrNullFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -87,6 +87,30 @@ namespace __jni_impl::android::os
 			"hashCode",
 			"()I");
 	}
+	QAndroidJniObject Messenger::readMessengerOrNullFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Messenger",
+			"readMessengerOrNullFromParcel",
+			"(Landroid/os/Parcel;)Landroid/os/Messenger;",
+			arg0.__jniObject().object());
+	}
+	void Messenger::writeMessengerOrNullToParcel(__jni_impl::android::os::Messenger arg0, __jni_impl::android::os::Parcel arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Messenger",
+			"writeMessengerOrNullToParcel",
+			"(Landroid/os/Messenger;Landroid/os/Parcel;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void Messenger::send(__jni_impl::android::os::Message arg0)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(Landroid/os/Message;)V",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject Messenger::getBinder()
 	{
 		return __thiz.callObjectMethod(
@@ -106,30 +130,6 @@ namespace __jni_impl::android::os
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	void Messenger::send(__jni_impl::android::os::Message arg0)
-	{
-		__thiz.callMethod<void>(
-			"send",
-			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
-	}
-	void Messenger::writeMessengerOrNullToParcel(__jni_impl::android::os::Messenger arg0, __jni_impl::android::os::Parcel arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Messenger",
-			"writeMessengerOrNullToParcel",
-			"(Landroid/os/Messenger;Landroid/os/Parcel;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject Messenger::readMessengerOrNullFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.Messenger",
-			"readMessengerOrNullFromParcel",
-			"(Landroid/os/Parcel;)Landroid/os/Messenger;",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::os
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_NET_LOCALSOCKETADDRESS_NAMESPACE
 #define ANDROID_NET_LOCALSOCKETADDRESS_NAMESPACE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

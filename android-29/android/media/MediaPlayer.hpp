@@ -9,17 +9,17 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::media
+{
+	class AudioAttributes;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
 namespace __jni_impl::android::media
 {
-	class AudioAttributes;
-}
-namespace __jni_impl::android::view
-{
-	class Surface;
+	class MediaDataSource;
 }
 namespace __jni_impl::java::io
 {
@@ -28,10 +28,6 @@ namespace __jni_impl::java::io
 namespace __jni_impl::android::content::res
 {
 	class AssetFileDescriptor;
-}
-namespace __jni_impl::android::media
-{
-	class MediaDataSource;
 }
 namespace __jni_impl::android::media
 {
@@ -53,21 +49,13 @@ namespace __jni_impl::android::media
 {
 	class MediaDrm_KeyRequest;
 }
-namespace __jni_impl::android::media
-{
-	class PlaybackParams;
-}
-namespace __jni_impl::android::media
-{
-	class AudioDeviceInfo;
-}
 namespace __jni_impl::android::os
 {
 	class PersistableBundle;
 }
-namespace __jni_impl::android::media
+namespace __jni_impl::android::view
 {
-	class MediaTimestamp;
+	class Surface;
 }
 namespace __jni_impl::android::media
 {
@@ -76,6 +64,18 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	class VolumeShaper_Configuration;
+}
+namespace __jni_impl::android::media
+{
+	class MediaTimestamp;
+}
+namespace __jni_impl::android::media
+{
+	class PlaybackParams;
+}
+namespace __jni_impl::android::media
+{
+	class AudioDeviceInfo;
 }
 
 namespace __jni_impl::android::media
@@ -124,24 +124,21 @@ namespace __jni_impl::android::media
 		void stop();
 		void prepare();
 		void reset();
-		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
+		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, jint arg1);
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::media::AudioAttributes arg2, jint arg3);
+		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::media::AudioAttributes arg3, jint arg4);
-		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, jint arg1);
 		void release();
 		jint getDuration();
-		void setSurface(__jni_impl::android::view::Surface arg0);
-		jint getVideoWidth();
-		jint getVideoHeight();
-		void setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
+		void setDataSource(__jni_impl::android::media::MediaDataSource arg0);
 		void setDataSource(__jni_impl::java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
+		void setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
+		void setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
+		void setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2);
+		void setDataSource(__jni_impl::java::io::FileDescriptor arg0);
 		void setDataSource(jstring arg0);
 		void setDataSource(__jni_impl::android::content::res::AssetFileDescriptor arg0);
-		void setDataSource(__jni_impl::java::io::FileDescriptor arg0);
-		void setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2);
-		void setDataSource(__jni_impl::android::media::MediaDataSource arg0);
-		void setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
 		void setDisplay(__jni_impl::__JniBaseClass arg0);
 		void setVideoScalingMode(jint arg0);
 		void prepareAsync();
@@ -153,10 +150,10 @@ namespace __jni_impl::android::media
 		void setNextMediaPlayer(__jni_impl::android::media::MediaPlayer arg0);
 		void setAudioStreamType(jint arg0);
 		QAndroidJniObject getTrackInfo();
+		void addTimedTextSource(__jni_impl::java::io::FileDescriptor arg0, jstring arg1);
+		void addTimedTextSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jstring arg2);
 		void addTimedTextSource(__jni_impl::java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jstring arg3);
 		void addTimedTextSource(jstring arg0, jstring arg1);
-		void addTimedTextSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jstring arg2);
-		void addTimedTextSource(__jni_impl::java::io::FileDescriptor arg0, jstring arg1);
 		void deselectTrack(jint arg0);
 		void setOnPreparedListener(__jni_impl::__JniBaseClass arg0);
 		void setOnCompletionListener(__jni_impl::__JniBaseClass arg0);
@@ -174,8 +171,8 @@ namespace __jni_impl::android::media
 		void setOnDrmConfigHelper(__jni_impl::__JniBaseClass arg0);
 		void setOnDrmInfoListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void setOnDrmInfoListener(__jni_impl::__JniBaseClass arg0);
-		void setOnDrmPreparedListener(__jni_impl::__JniBaseClass arg0);
 		void setOnDrmPreparedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void setOnDrmPreparedListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getDrmInfo();
 		void prepareDrm(__jni_impl::java::util::UUID arg0);
 		void releaseDrm();
@@ -184,7 +181,20 @@ namespace __jni_impl::android::media
 		void restoreKeys(jbyteArray arg0);
 		QAndroidJniObject getDrmPropertyString(jstring arg0);
 		void setDrmPropertyString(jstring arg0, jstring arg1);
+		QAndroidJniObject getMetrics();
+		jint getVideoWidth();
+		jint getVideoHeight();
+		void setSurface(__jni_impl::android::view::Surface arg0);
+		void pause();
+		void selectTrack(jint arg0);
+		jint getSelectedTrack(jint arg0);
+		QAndroidJniObject createVolumeShaper(__jni_impl::android::media::VolumeShaper_Configuration arg0);
+		void seekTo(jlong arg0, jint arg1);
+		void seekTo(jint arg0);
 		void setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0);
+		void setAudioSessionId(jint arg0);
+		jint getAudioSessionId();
+		QAndroidJniObject getTimestamp();
 		QAndroidJniObject getPlaybackParams();
 		void setPlaybackParams(__jni_impl::android::media::PlaybackParams arg0);
 		void attachAuxEffect(jint arg0);
@@ -194,43 +204,33 @@ namespace __jni_impl::android::media
 		QAndroidJniObject getRoutedDevice();
 		void addOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void removeOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0);
-		void setAudioSessionId(jint arg0);
-		jint getAudioSessionId();
-		QAndroidJniObject getMetrics();
-		QAndroidJniObject getTimestamp();
-		void pause();
-		QAndroidJniObject createVolumeShaper(__jni_impl::android::media::VolumeShaper_Configuration arg0);
+		void setOnInfoListener(__jni_impl::__JniBaseClass arg0);
+		void setOnErrorListener(__jni_impl::__JniBaseClass arg0);
 		void setLooping(jboolean arg0);
 		jboolean isLooping();
 		void setVolume(jfloat arg0, jfloat arg1);
 		jboolean isPlaying();
-		void seekTo(jlong arg0, jint arg1);
-		void seekTo(jint arg0);
-		void setOnInfoListener(__jni_impl::__JniBaseClass arg0);
-		void setOnErrorListener(__jni_impl::__JniBaseClass arg0);
-		void selectTrack(jint arg0);
-		jint getSelectedTrack(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
-#include "../net/Uri.hpp"
 #include "AudioAttributes.hpp"
-#include "../view/Surface.hpp"
+#include "../net/Uri.hpp"
+#include "MediaDataSource.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../content/res/AssetFileDescriptor.hpp"
-#include "MediaDataSource.hpp"
 #include "SyncParams.hpp"
 #include "../os/Handler.hpp"
 #include "MediaPlayer_DrmInfo.hpp"
 #include "../../java/util/UUID.hpp"
 #include "MediaDrm_KeyRequest.hpp"
-#include "PlaybackParams.hpp"
-#include "AudioDeviceInfo.hpp"
 #include "../os/PersistableBundle.hpp"
-#include "MediaTimestamp.hpp"
+#include "../view/Surface.hpp"
 #include "VolumeShaper.hpp"
 #include "VolumeShaper_Configuration.hpp"
+#include "MediaTimestamp.hpp"
+#include "PlaybackParams.hpp"
+#include "AudioDeviceInfo.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -456,14 +456,14 @@ namespace __jni_impl::android::media
 			"reset",
 			"()V");
 	}
-	QAndroidJniObject MediaPlayer::create(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
+	QAndroidJniObject MediaPlayer::create(__jni_impl::android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaPlayer",
 			"create",
-			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/MediaPlayer;",
+			"(Landroid/content/Context;I)Landroid/media/MediaPlayer;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1);
 	}
 	QAndroidJniObject MediaPlayer::create(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::media::AudioAttributes arg2, jint arg3)
 	{
@@ -475,6 +475,15 @@ namespace __jni_impl::android::media
 			arg1,
 			arg2.__jniObject().object(),
 			arg3);
+	}
+	QAndroidJniObject MediaPlayer::create(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.MediaPlayer",
+			"create",
+			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/MediaPlayer;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 	QAndroidJniObject MediaPlayer::create(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -498,15 +507,6 @@ namespace __jni_impl::android::media
 			arg3.__jniObject().object(),
 			arg4);
 	}
-	QAndroidJniObject MediaPlayer::create(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.MediaPlayer",
-			"create",
-			"(Landroid/content/Context;I)Landroid/media/MediaPlayer;",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	void MediaPlayer::release()
 	{
 		__thiz.callMethod<void>(
@@ -519,32 +519,12 @@ namespace __jni_impl::android::media
 			"getDuration",
 			"()I");
 	}
-	void MediaPlayer::setSurface(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSurface",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
-	}
-	jint MediaPlayer::getVideoWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getVideoWidth",
-			"()I");
-	}
-	jint MediaPlayer::getVideoHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getVideoHeight",
-			"()I");
-	}
-	void MediaPlayer::setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
+	void MediaPlayer::setDataSource(__jni_impl::android::media::MediaDataSource arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDataSource",
-			"(Landroid/content/Context;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			"(Landroid/media/MediaDataSource;)V",
+			arg0.__jniObject().object());
 	}
 	void MediaPlayer::setDataSource(__jni_impl::java::io::FileDescriptor arg0, jlong arg1, jlong arg2)
 	{
@@ -554,6 +534,40 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object(),
 			arg1,
 			arg2);
+	}
+	void MediaPlayer::setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
+	{
+		__thiz.callMethod<void>(
+			"setDataSource",
+			"(Landroid/content/Context;Landroid/net/Uri;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void MediaPlayer::setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3)
+	{
+		__thiz.callMethod<void>(
+			"setDataSource",
+			"(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Map;Ljava/util/List;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object());
+	}
+	void MediaPlayer::setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"setDataSource",
+			"(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Map;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	void MediaPlayer::setDataSource(__jni_impl::java::io::FileDescriptor arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDataSource",
+			"(Ljava/io/FileDescriptor;)V",
+			arg0.__jniObject().object());
 	}
 	void MediaPlayer::setDataSource(jstring arg0)
 	{
@@ -568,39 +582,6 @@ namespace __jni_impl::android::media
 			"setDataSource",
 			"(Landroid/content/res/AssetFileDescriptor;)V",
 			arg0.__jniObject().object());
-	}
-	void MediaPlayer::setDataSource(__jni_impl::java::io::FileDescriptor arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDataSource",
-			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
-	}
-	void MediaPlayer::setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"setDataSource",
-			"(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Map;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	void MediaPlayer::setDataSource(__jni_impl::android::media::MediaDataSource arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDataSource",
-			"(Landroid/media/MediaDataSource;)V",
-			arg0.__jniObject().object());
-	}
-	void MediaPlayer::setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"setDataSource",
-			"(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Map;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
 	}
 	void MediaPlayer::setDisplay(__jni_impl::__JniBaseClass arg0)
 	{
@@ -676,6 +657,23 @@ namespace __jni_impl::android::media
 			"getTrackInfo",
 			"()[Landroid/media/MediaPlayer$TrackInfo;");
 	}
+	void MediaPlayer::addTimedTextSource(__jni_impl::java::io::FileDescriptor arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"addTimedTextSource",
+			"(Ljava/io/FileDescriptor;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	void MediaPlayer::addTimedTextSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jstring arg2)
+	{
+		__thiz.callMethod<void>(
+			"addTimedTextSource",
+			"(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2);
+	}
 	void MediaPlayer::addTimedTextSource(__jni_impl::java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jstring arg3)
 	{
 		__thiz.callMethod<void>(
@@ -692,23 +690,6 @@ namespace __jni_impl::android::media
 			"addTimedTextSource",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
-	}
-	void MediaPlayer::addTimedTextSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jstring arg2)
-	{
-		__thiz.callMethod<void>(
-			"addTimedTextSource",
-			"(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2);
-	}
-	void MediaPlayer::addTimedTextSource(__jni_impl::java::io::FileDescriptor arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"addTimedTextSource",
-			"(Ljava/io/FileDescriptor;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
 			arg1);
 	}
 	void MediaPlayer::deselectTrack(jint arg0)
@@ -831,13 +812,6 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaPlayer$OnDrmInfoListener;)V",
 			arg0.__jniObject().object());
 	}
-	void MediaPlayer::setOnDrmPreparedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnDrmPreparedListener",
-			"(Landroid/media/MediaPlayer$OnDrmPreparedListener;)V",
-			arg0.__jniObject().object());
-	}
 	void MediaPlayer::setOnDrmPreparedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
 		__thiz.callMethod<void>(
@@ -845,6 +819,13 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaPlayer$OnDrmPreparedListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
+	}
+	void MediaPlayer::setOnDrmPreparedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnDrmPreparedListener",
+			"(Landroid/media/MediaPlayer$OnDrmPreparedListener;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject MediaPlayer::getDrmInfo()
 	{
@@ -906,12 +887,98 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1);
 	}
+	QAndroidJniObject MediaPlayer::getMetrics()
+	{
+		return __thiz.callObjectMethod(
+			"getMetrics",
+			"()Landroid/os/PersistableBundle;");
+	}
+	jint MediaPlayer::getVideoWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getVideoWidth",
+			"()I");
+	}
+	jint MediaPlayer::getVideoHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getVideoHeight",
+			"()I");
+	}
+	void MediaPlayer::setSurface(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSurface",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object());
+	}
+	void MediaPlayer::pause()
+	{
+		__thiz.callMethod<void>(
+			"pause",
+			"()V");
+	}
+	void MediaPlayer::selectTrack(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"selectTrack",
+			"(I)V",
+			arg0);
+	}
+	jint MediaPlayer::getSelectedTrack(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getSelectedTrack",
+			"(I)I",
+			arg0);
+	}
+	QAndroidJniObject MediaPlayer::createVolumeShaper(__jni_impl::android::media::VolumeShaper_Configuration arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createVolumeShaper",
+			"(Landroid/media/VolumeShaper$Configuration;)Landroid/media/VolumeShaper;",
+			arg0.__jniObject().object());
+	}
+	void MediaPlayer::seekTo(jlong arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"seekTo",
+			"(JI)V",
+			arg0,
+			arg1);
+	}
+	void MediaPlayer::seekTo(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"seekTo",
+			"(I)V",
+			arg0);
+	}
 	void MediaPlayer::setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAudioAttributes",
 			"(Landroid/media/AudioAttributes;)V",
 			arg0.__jniObject().object());
+	}
+	void MediaPlayer::setAudioSessionId(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAudioSessionId",
+			"(I)V",
+			arg0);
+	}
+	jint MediaPlayer::getAudioSessionId()
+	{
+		return __thiz.callMethod<jint>(
+			"getAudioSessionId",
+			"()I");
+	}
+	QAndroidJniObject MediaPlayer::getTimestamp()
+	{
+		return __thiz.callObjectMethod(
+			"getTimestamp",
+			"()Landroid/media/MediaTimestamp;");
 	}
 	QAndroidJniObject MediaPlayer::getPlaybackParams()
 	{
@@ -974,42 +1041,18 @@ namespace __jni_impl::android::media
 			"(Landroid/media/AudioRouting$OnRoutingChangedListener;)V",
 			arg0.__jniObject().object());
 	}
-	void MediaPlayer::setAudioSessionId(jint arg0)
+	void MediaPlayer::setOnInfoListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAudioSessionId",
-			"(I)V",
-			arg0);
+			"setOnInfoListener",
+			"(Landroid/media/MediaPlayer$OnInfoListener;)V",
+			arg0.__jniObject().object());
 	}
-	jint MediaPlayer::getAudioSessionId()
-	{
-		return __thiz.callMethod<jint>(
-			"getAudioSessionId",
-			"()I");
-	}
-	QAndroidJniObject MediaPlayer::getMetrics()
-	{
-		return __thiz.callObjectMethod(
-			"getMetrics",
-			"()Landroid/os/PersistableBundle;");
-	}
-	QAndroidJniObject MediaPlayer::getTimestamp()
-	{
-		return __thiz.callObjectMethod(
-			"getTimestamp",
-			"()Landroid/media/MediaTimestamp;");
-	}
-	void MediaPlayer::pause()
+	void MediaPlayer::setOnErrorListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"pause",
-			"()V");
-	}
-	QAndroidJniObject MediaPlayer::createVolumeShaper(__jni_impl::android::media::VolumeShaper_Configuration arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createVolumeShaper",
-			"(Landroid/media/VolumeShaper$Configuration;)Landroid/media/VolumeShaper;",
+			"setOnErrorListener",
+			"(Landroid/media/MediaPlayer$OnErrorListener;)V",
 			arg0.__jniObject().object());
 	}
 	void MediaPlayer::setLooping(jboolean arg0)
@@ -1038,49 +1081,6 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"isPlaying",
 			"()Z");
-	}
-	void MediaPlayer::seekTo(jlong arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"seekTo",
-			"(JI)V",
-			arg0,
-			arg1);
-	}
-	void MediaPlayer::seekTo(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"seekTo",
-			"(I)V",
-			arg0);
-	}
-	void MediaPlayer::setOnInfoListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnInfoListener",
-			"(Landroid/media/MediaPlayer$OnInfoListener;)V",
-			arg0.__jniObject().object());
-	}
-	void MediaPlayer::setOnErrorListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnErrorListener",
-			"(Landroid/media/MediaPlayer$OnErrorListener;)V",
-			arg0.__jniObject().object());
-	}
-	void MediaPlayer::selectTrack(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"selectTrack",
-			"(I)V",
-			arg0);
-	}
-	jint MediaPlayer::getSelectedTrack(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getSelectedTrack",
-			"(I)I",
-			arg0);
 	}
 } // namespace __jni_impl::android::media
 

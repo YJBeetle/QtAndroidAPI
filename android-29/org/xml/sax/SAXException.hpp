@@ -3,6 +3,7 @@
 #ifndef ORG_XML_SAX_SAXEXCEPTION
 #define ORG_XML_SAX_SAXEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
 namespace __jni_impl::java::lang

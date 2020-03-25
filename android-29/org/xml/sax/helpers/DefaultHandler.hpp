@@ -27,21 +27,21 @@ namespace __jni_impl::org::xml::sax::helpers
 		// Methods
 		void error(__jni_impl::org::xml::sax::SAXParseException arg0);
 		void warning(__jni_impl::org::xml::sax::SAXParseException arg0);
-		void fatalError(__jni_impl::org::xml::sax::SAXParseException arg0);
-		void notationDecl(jstring arg0, jstring arg1, jstring arg2);
-		void unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
-		QAndroidJniObject resolveEntity(jstring arg0, jstring arg1);
 		void characters(jcharArray arg0, jint arg1, jint arg2);
+		void startDocument();
+		void endDocument();
+		void processingInstruction(jstring arg0, jstring arg1);
+		void ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2);
 		void setDocumentLocator(__jni_impl::__JniBaseClass arg0);
 		void startPrefixMapping(jstring arg0, jstring arg1);
 		void endPrefixMapping(jstring arg0);
 		void startElement(jstring arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3);
 		void endElement(jstring arg0, jstring arg1, jstring arg2);
 		void skippedEntity(jstring arg0);
-		void startDocument();
-		void endDocument();
-		void processingInstruction(jstring arg0, jstring arg1);
-		void ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2);
+		void fatalError(__jni_impl::org::xml::sax::SAXParseException arg0);
+		void notationDecl(jstring arg0, jstring arg1, jstring arg2);
+		void unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		QAndroidJniObject resolveEntity(jstring arg0, jstring arg1);
 	};
 } // namespace __jni_impl::org::xml::sax::helpers
 
@@ -75,44 +75,39 @@ namespace __jni_impl::org::xml::sax::helpers
 			"(Lorg/xml/sax/SAXParseException;)V",
 			arg0.__jniObject().object());
 	}
-	void DefaultHandler::fatalError(__jni_impl::org::xml::sax::SAXParseException arg0)
-	{
-		__thiz.callMethod<void>(
-			"fatalError",
-			"(Lorg/xml/sax/SAXParseException;)V",
-			arg0.__jniObject().object());
-	}
-	void DefaultHandler::notationDecl(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz.callMethod<void>(
-			"notationDecl",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2);
-	}
-	void DefaultHandler::unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
-	{
-		__thiz.callMethod<void>(
-			"unparsedEntityDecl",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	QAndroidJniObject DefaultHandler::resolveEntity(jstring arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"resolveEntity",
-			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
-			arg0,
-			arg1);
-	}
 	void DefaultHandler::characters(jcharArray arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
 			"characters",
+			"([CII)V",
+			arg0,
+			arg1,
+			arg2);
+	}
+	void DefaultHandler::startDocument()
+	{
+		__thiz.callMethod<void>(
+			"startDocument",
+			"()V");
+	}
+	void DefaultHandler::endDocument()
+	{
+		__thiz.callMethod<void>(
+			"endDocument",
+			"()V");
+	}
+	void DefaultHandler::processingInstruction(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"processingInstruction",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1);
+	}
+	void DefaultHandler::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"ignorableWhitespace",
 			"([CII)V",
 			arg0,
 			arg1,
@@ -166,34 +161,39 @@ namespace __jni_impl::org::xml::sax::helpers
 			"(Ljava/lang/String;)V",
 			arg0);
 	}
-	void DefaultHandler::startDocument()
+	void DefaultHandler::fatalError(__jni_impl::org::xml::sax::SAXParseException arg0)
 	{
 		__thiz.callMethod<void>(
-			"startDocument",
-			"()V");
+			"fatalError",
+			"(Lorg/xml/sax/SAXParseException;)V",
+			arg0.__jniObject().object());
 	}
-	void DefaultHandler::endDocument()
+	void DefaultHandler::notationDecl(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
-			"endDocument",
-			"()V");
-	}
-	void DefaultHandler::processingInstruction(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"processingInstruction",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1);
-	}
-	void DefaultHandler::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"ignorableWhitespace",
-			"([CII)V",
+			"notationDecl",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
 			arg2);
+	}
+	void DefaultHandler::unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	{
+		__thiz.callMethod<void>(
+			"unparsedEntityDecl",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
+	QAndroidJniObject DefaultHandler::resolveEntity(jstring arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"resolveEntity",
+			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
+			arg0,
+			arg1);
 	}
 } // namespace __jni_impl::org::xml::sax::helpers
 

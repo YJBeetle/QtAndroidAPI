@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_TREESET
 #define JAVA_UTIL_TREESET
 
+#include "../../__JniBaseClass.hpp"
+#include "AbstractCollection.hpp"
 #include "AbstractSet.hpp"
 
 namespace __jni_impl::java::io

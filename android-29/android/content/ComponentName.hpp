@@ -39,15 +39,15 @@ namespace __jni_impl::android::content
 		QAndroidJniObject toShortString();
 		QAndroidJniObject getClassName();
 		static QAndroidJniObject readFromParcel(__jni_impl::android::os::Parcel arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static void writeToParcel(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Parcel arg1);
 		static QAndroidJniObject createRelative(__jni_impl::android::content::Context arg0, jstring arg1);
 		static QAndroidJniObject createRelative(jstring arg0, jstring arg1);
 		QAndroidJniObject getShortClassName();
 		QAndroidJniObject flattenToString();
 		QAndroidJniObject flattenToShortString();
 		static QAndroidJniObject unflattenFromString(jstring arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static void writeToParcel(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Parcel arg1);
 	};
 } // namespace __jni_impl::android::content
 
@@ -164,29 +164,6 @@ namespace __jni_impl::android::content
 			"(Landroid/os/Parcel;)Landroid/content/ComponentName;",
 			arg0.__jniObject().object());
 	}
-	jint ComponentName::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void ComponentName::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void ComponentName::writeToParcel(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Parcel arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ComponentName",
-			"writeToParcel",
-			"(Landroid/content/ComponentName;Landroid/os/Parcel;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	QAndroidJniObject ComponentName::createRelative(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -230,6 +207,29 @@ namespace __jni_impl::android::content
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/content/ComponentName;",
 			arg0);
+	}
+	jint ComponentName::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void ComponentName::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	void ComponentName::writeToParcel(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Parcel arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ComponentName",
+			"writeToParcel",
+			"(Landroid/content/ComponentName;Landroid/os/Parcel;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::content
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_CHRONO_JAPANESECHRONOLOGY
 #define JAVA_TIME_CHRONO_JAPANESECHRONOLOGY
 
+#include "../../../__JniBaseClass.hpp"
 #include "AbstractChronology.hpp"
 
 namespace __jni_impl::java::util

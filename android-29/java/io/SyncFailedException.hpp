@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_SYNCFAILEDEXCEPTION
 #define JAVA_IO_SYNCFAILEDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "IOException.hpp"
 
 

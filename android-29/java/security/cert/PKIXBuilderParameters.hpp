@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_CERT_PKIXBUILDERPARAMETERS
 #define JAVA_SECURITY_CERT_PKIXBUILDERPARAMETERS
 
+#include "../../../__JniBaseClass.hpp"
 #include "PKIXParameters.hpp"
 
 namespace __jni_impl::java::security

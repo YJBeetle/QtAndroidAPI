@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_UNICODESET_COMPARISONSTYLE
 #define ANDROID_ICU_TEXT_UNICODESET_COMPARISONSTYLE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

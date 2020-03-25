@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_SHAPES_PATHSHAPE
 #define ANDROID_GRAPHICS_DRAWABLE_SHAPES_PATHSHAPE
 
+#include "../../../../__JniBaseClass.hpp"
 #include "Shape.hpp"
 
 namespace __jni_impl::android::graphics

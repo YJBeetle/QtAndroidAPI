@@ -19,15 +19,15 @@ namespace __jni_impl::android::net
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
-}
-namespace __jni_impl::android::os
-{
 	class PatternMatcher;
 }
 namespace __jni_impl::android::content
 {
 	class IntentFilter_AuthorityEntry;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content
@@ -66,9 +66,6 @@ namespace __jni_impl::android::content
 		void setPriority(jint arg0);
 		jint getPriority();
 		static QAndroidJniObject create(jstring arg0, jstring arg1);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void addAction(jstring arg0);
 		jint countActions();
 		QAndroidJniObject getAction(jint arg0);
@@ -110,15 +107,18 @@ namespace __jni_impl::android::content
 		QAndroidJniObject matchCategories(__jni_impl::__JniBaseClass arg0);
 		void writeToXml(__jni_impl::__JniBaseClass arg0);
 		void readFromXml(__jni_impl::__JniBaseClass arg0);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
 #include "ContentResolver.hpp"
 #include "Intent.hpp"
 #include "../net/Uri.hpp"
-#include "../os/Parcel.hpp"
 #include "../os/PatternMatcher.hpp"
 #include "IntentFilter_AuthorityEntry.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -300,28 +300,6 @@ namespace __jni_impl::android::content
 			"create",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/IntentFilter;",
 			arg0,
-			arg1);
-	}
-	jint IntentFilter::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void IntentFilter::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void IntentFilter::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
 			arg1);
 	}
 	void IntentFilter::addAction(jstring arg0)
@@ -601,6 +579,28 @@ namespace __jni_impl::android::content
 			"readFromXml",
 			"(Lorg/xmlpull/v1/XmlPullParser;)V",
 			arg0.__jniObject().object());
+	}
+	void IntentFilter::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jint IntentFilter::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void IntentFilter::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::content
 

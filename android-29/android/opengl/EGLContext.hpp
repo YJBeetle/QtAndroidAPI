@@ -3,6 +3,7 @@
 #ifndef ANDROID_OPENGL_EGLCONTEXT
 #define ANDROID_OPENGL_EGLCONTEXT
 
+#include "../../__JniBaseClass.hpp"
 #include "EGLObjectHandle.hpp"
 
 

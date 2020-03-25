@@ -3,6 +3,7 @@
 #ifndef JAVAX_NET_SSL_SSLSERVERSOCKET
 #define JAVAX_NET_SSL_SSLSERVERSOCKET
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/net/ServerSocket.hpp"
 
 namespace __jni_impl::java::net

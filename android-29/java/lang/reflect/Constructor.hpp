@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_REFLECT_CONSTRUCTOR
 #define JAVA_LANG_REFLECT_CONSTRUCTOR
 
+#include "../../../__JniBaseClass.hpp"
+#include "AccessibleObject.hpp"
 #include "Executable.hpp"
 
 namespace __jni_impl::java::lang::reflect

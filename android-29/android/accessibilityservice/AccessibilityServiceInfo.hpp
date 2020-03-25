@@ -64,7 +64,6 @@ namespace __jni_impl::android::accessibilityservice
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getId();
-		QAndroidJniObject getDescription();
 		QAndroidJniObject getResolveInfo();
 		QAndroidJniObject getSettingsActivityName();
 		jboolean getCanRetrieveWindowContent();
@@ -77,6 +76,7 @@ namespace __jni_impl::android::accessibilityservice
 		static QAndroidJniObject flagToString(jint arg0);
 		static QAndroidJniObject capabilityToString(jint arg0);
 		jint getCapabilities();
+		QAndroidJniObject getDescription();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
@@ -308,12 +308,6 @@ namespace __jni_impl::android::accessibilityservice
 			"getId",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject AccessibilityServiceInfo::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
-	}
 	QAndroidJniObject AccessibilityServiceInfo::getResolveInfo()
 	{
 		return __thiz.callObjectMethod(
@@ -394,6 +388,12 @@ namespace __jni_impl::android::accessibilityservice
 		return __thiz.callMethod<jint>(
 			"getCapabilities",
 			"()I");
+	}
+	QAndroidJniObject AccessibilityServiceInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;");
 	}
 	jint AccessibilityServiceInfo::describeContents()
 	{

@@ -3,23 +3,32 @@
 #ifndef ANDROID_PREFERENCE_PREFERENCEACTIVITY
 #define ANDROID_PREFERENCE_PREFERENCEACTIVITY
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../view/ContextThemeWrapper.hpp"
+#include "../app/Activity.hpp"
 #include "../app/ListActivity.hpp"
 
-namespace __jni_impl::android::preference
+namespace __jni_impl::android::os
 {
-	class PreferenceActivity_Header;
-}
-namespace __jni_impl::android::view
-{
-	class View;
+	class Bundle;
 }
 namespace __jni_impl::android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::widget
 {
-	class Bundle;
+	class ListView;
+}
+namespace __jni_impl::android::view
+{
+	class View;
+}
+namespace __jni_impl::android::preference
+{
+	class PreferenceActivity_Header;
 }
 namespace __jni_impl::android::app
 {
@@ -41,10 +50,6 @@ namespace __jni_impl::android::preference
 {
 	class PreferenceScreen;
 }
-namespace __jni_impl::android::widget
-{
-	class ListView;
-}
 
 namespace __jni_impl::android::preference
 {
@@ -63,6 +68,10 @@ namespace __jni_impl::android::preference
 		void __constructor();
 		
 		// Methods
+		void onBackPressed();
+		void onContentChanged();
+		jboolean onOptionsItemSelected(__jni_impl::__JniBaseClass arg0);
+		void setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
 		jboolean hasHeaders();
 		jboolean isMultiPane();
 		jboolean onIsMultiPane();
@@ -78,8 +87,8 @@ namespace __jni_impl::android::preference
 		void startWithFragment(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::app::Fragment arg2, jint arg3);
 		void startWithFragment(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::app::Fragment arg2, jint arg3, jint arg4, jint arg5);
 		void showBreadCrumbs(jstring arg0, jstring arg1);
-		void switchToHeader(__jni_impl::android::preference::PreferenceActivity_Header arg0);
 		void switchToHeader(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void switchToHeader(__jni_impl::android::preference::PreferenceActivity_Header arg0);
 		void startPreferenceFragment(__jni_impl::android::app::Fragment arg0, jboolean arg1);
 		void startPreferencePanel(jstring arg0, __jni_impl::android::os::Bundle arg1, jint arg2, jstring arg3, __jni_impl::android::app::Fragment arg4, jint arg5);
 		void finishPreferencePanel(__jni_impl::android::app::Fragment arg0, jint arg1, __jni_impl::android::content::Intent arg2);
@@ -91,23 +100,19 @@ namespace __jni_impl::android::preference
 		void addPreferencesFromResource(jint arg0);
 		jboolean onPreferenceTreeClick(__jni_impl::android::preference::PreferenceScreen arg0, __jni_impl::android::preference::Preference arg1);
 		QAndroidJniObject findPreference(jstring arg0);
-		void setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
-		void onBackPressed();
-		void onContentChanged();
-		jboolean onOptionsItemSelected(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::preference
 
-#include "PreferenceActivity_Header.hpp"
-#include "../view/View.hpp"
-#include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
+#include "../content/Intent.hpp"
+#include "../widget/ListView.hpp"
+#include "../view/View.hpp"
+#include "PreferenceActivity_Header.hpp"
 #include "../app/Fragment.hpp"
 #include "PreferenceFragment.hpp"
 #include "Preference.hpp"
 #include "PreferenceManager.hpp"
 #include "PreferenceScreen.hpp"
-#include "../widget/ListView.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -163,6 +168,34 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
+	void PreferenceActivity::onBackPressed()
+	{
+		__thiz.callMethod<void>(
+			"onBackPressed",
+			"()V");
+	}
+	void PreferenceActivity::onContentChanged()
+	{
+		__thiz.callMethod<void>(
+			"onContentChanged",
+			"()V");
+	}
+	jboolean PreferenceActivity::onOptionsItemSelected(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onOptionsItemSelected",
+			"(Landroid/view/MenuItem;)Z",
+			arg0.__jniObject().object());
+	}
+	void PreferenceActivity::setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"setParentTitle",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object());
+	}
 	jboolean PreferenceActivity::hasHeaders()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -275,13 +308,6 @@ namespace __jni_impl::android::preference
 			arg0,
 			arg1);
 	}
-	void PreferenceActivity::switchToHeader(__jni_impl::android::preference::PreferenceActivity_Header arg0)
-	{
-		__thiz.callMethod<void>(
-			"switchToHeader",
-			"(Landroid/preference/PreferenceActivity$Header;)V",
-			arg0.__jniObject().object());
-	}
 	void PreferenceActivity::switchToHeader(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
@@ -289,6 +315,13 @@ namespace __jni_impl::android::preference
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
 			arg1.__jniObject().object());
+	}
+	void PreferenceActivity::switchToHeader(__jni_impl::android::preference::PreferenceActivity_Header arg0)
+	{
+		__thiz.callMethod<void>(
+			"switchToHeader",
+			"(Landroid/preference/PreferenceActivity$Header;)V",
+			arg0.__jniObject().object());
 	}
 	void PreferenceActivity::startPreferenceFragment(__jni_impl::android::app::Fragment arg0, jboolean arg1)
 	{
@@ -374,34 +407,6 @@ namespace __jni_impl::android::preference
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
 			arg0);
-	}
-	void PreferenceActivity::setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"setParentTitle",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	void PreferenceActivity::onBackPressed()
-	{
-		__thiz.callMethod<void>(
-			"onBackPressed",
-			"()V");
-	}
-	void PreferenceActivity::onContentChanged()
-	{
-		__thiz.callMethod<void>(
-			"onContentChanged",
-			"()V");
-	}
-	jboolean PreferenceActivity::onOptionsItemSelected(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onOptionsItemSelected",
-			"(Landroid/view/MenuItem;)Z",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::preference
 

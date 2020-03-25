@@ -3,6 +3,7 @@
 #ifndef ANDROID_TRANSITION_ARCMOTION
 #define ANDROID_TRANSITION_ARCMOTION
 
+#include "../../__JniBaseClass.hpp"
 #include "PathMotion.hpp"
 
 namespace __jni_impl::android::content

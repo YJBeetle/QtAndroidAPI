@@ -33,7 +33,6 @@ namespace __jni_impl::android::media::session
 		void __constructor();
 		
 		// Methods
-		void onExtrasChanged(__jni_impl::android::os::Bundle arg0);
 		void onSessionDestroyed();
 		void onSessionEvent(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		void onPlaybackStateChanged(__jni_impl::android::media::session::PlaybackState arg0);
@@ -41,6 +40,7 @@ namespace __jni_impl::android::media::session
 		void onQueueChanged(__jni_impl::__JniBaseClass arg0);
 		void onQueueTitleChanged(jstring arg0);
 		void onAudioInfoChanged(__jni_impl::android::media::session::MediaController_PlaybackInfo arg0);
+		void onExtrasChanged(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::media::session
 
@@ -62,13 +62,6 @@ namespace __jni_impl::android::media::session
 	}
 	
 	// Methods
-	void MediaController_Callback::onExtrasChanged(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onExtrasChanged",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
 	void MediaController_Callback::onSessionDestroyed()
 	{
 		__thiz.callMethod<void>(
@@ -116,6 +109,13 @@ namespace __jni_impl::android::media::session
 		__thiz.callMethod<void>(
 			"onAudioInfoChanged",
 			"(Landroid/media/session/MediaController$PlaybackInfo;)V",
+			arg0.__jniObject().object());
+	}
+	void MediaController_Callback::onExtrasChanged(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onExtrasChanged",
+			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media::session

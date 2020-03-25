@@ -3,6 +3,8 @@
 #ifndef JAVAX_CRYPTO_NOSUCHPADDINGEXCEPTION
 #define JAVAX_CRYPTO_NOSUCHPADDINGEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/security/GeneralSecurityException.hpp"
 
 

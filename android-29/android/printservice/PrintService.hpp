@@ -3,8 +3,15 @@
 #ifndef ANDROID_PRINTSERVICE_PRINTSERVICE
 #define ANDROID_PRINTSERVICE_PRINTSERVICE
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
 namespace __jni_impl::android::printservice
 {
 	class PrinterDiscoverySession;
@@ -16,10 +23,6 @@ namespace __jni_impl::android::printservice
 namespace __jni_impl::android::print
 {
 	class PrinterId;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 namespace __jni_impl::android::content
 {
@@ -44,16 +47,16 @@ namespace __jni_impl::android::printservice
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject getActivePrintJobs();
 		QAndroidJniObject generatePrinterId(jstring arg0);
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::printservice
 
+#include "../content/Intent.hpp"
 #include "PrinterDiscoverySession.hpp"
 #include "PrintJob.hpp"
 #include "../print/PrinterId.hpp"
-#include "../content/Intent.hpp"
 #include "../content/Context.hpp"
 
 namespace __jni_impl::android::printservice
@@ -118,6 +121,13 @@ namespace __jni_impl::android::printservice
 	}
 	
 	// Methods
+	QAndroidJniObject PrintService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject PrintService::getActivePrintJobs()
 	{
 		return __thiz.callObjectMethod(
@@ -130,13 +140,6 @@ namespace __jni_impl::android::printservice
 			"generatePrinterId",
 			"(Ljava/lang/String;)Landroid/print/PrinterId;",
 			arg0);
-	}
-	QAndroidJniObject PrintService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::printservice
 

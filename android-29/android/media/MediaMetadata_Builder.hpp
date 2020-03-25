@@ -32,10 +32,10 @@ namespace __jni_impl::android::media
 		// Methods
 		QAndroidJniObject putLong(jstring arg0, jlong arg1);
 		QAndroidJniObject build();
-		QAndroidJniObject putString(jstring arg0, jstring arg1);
 		QAndroidJniObject putText(jstring arg0, jstring arg1);
 		QAndroidJniObject putRating(jstring arg0, __jni_impl::android::media::Rating arg1);
 		QAndroidJniObject putBitmap(jstring arg0, __jni_impl::android::graphics::Bitmap arg1);
+		QAndroidJniObject putString(jstring arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -77,14 +77,6 @@ namespace __jni_impl::android::media
 			"build",
 			"()Landroid/media/MediaMetadata;");
 	}
-	QAndroidJniObject MediaMetadata_Builder::putString(jstring arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putString",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;",
-			arg0,
-			arg1);
-	}
 	QAndroidJniObject MediaMetadata_Builder::putText(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -108,6 +100,14 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/media/MediaMetadata$Builder;",
 			arg0,
 			arg1.__jniObject().object());
+	}
+	QAndroidJniObject MediaMetadata_Builder::putString(jstring arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putString",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;",
+			arg0,
+			arg1);
 	}
 } // namespace __jni_impl::android::media
 

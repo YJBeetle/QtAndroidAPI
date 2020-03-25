@@ -3,6 +3,8 @@
 #ifndef ANDROID_VIEW_SURFACEHOLDER_BADSURFACETYPEEXCEPTION
 #define ANDROID_VIEW_SURFACEHOLDER_BADSURFACETYPEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

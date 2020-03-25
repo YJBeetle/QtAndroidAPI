@@ -115,6 +115,7 @@ namespace __jni_impl::android::icu::lang
 		static jchar forDigit(jint arg0, jint arg1);
 		static jint getCombiningClass(jint arg0);
 		static jboolean isSupplementary(jint arg0);
+		static jint getMirror(jint arg0);
 		static jdouble getUnicodeNumericValue(jint arg0);
 		static jboolean isBMP(jint arg0);
 		static jboolean isPrintable(jint arg0);
@@ -132,9 +133,9 @@ namespace __jni_impl::android::icu::lang
 		static jint getPropertyEnum(jstring arg0);
 		static QAndroidJniObject getPropertyValueName(jint arg0, jint arg1, jint arg2);
 		static jint getPropertyValueEnum(jint arg0, jstring arg1);
-		static jint foldCase(jint arg0, jint arg1);
-		static QAndroidJniObject foldCase(jstring arg0, jboolean arg1);
 		static jint foldCase(jint arg0, jboolean arg1);
+		static QAndroidJniObject foldCase(jstring arg0, jboolean arg1);
+		static jint foldCase(jint arg0, jint arg1);
 		static QAndroidJniObject foldCase(jstring arg0, jint arg1);
 		static jint getHanNumericValue(jint arg0);
 		static QAndroidJniObject getTypeIterator();
@@ -149,7 +150,6 @@ namespace __jni_impl::android::icu::lang
 		static jint getIntPropertyValue(jint arg0, jint arg1);
 		static jint getIntPropertyMinValue(jint arg0);
 		static jint getIntPropertyMaxValue(jint arg0);
-		static jint getMirror(jint arg0);
 		static jint getDirection(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::lang
@@ -829,6 +829,14 @@ namespace __jni_impl::android::icu::lang
 			"(I)Z",
 			arg0);
 	}
+	jint UCharacter::getMirror(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"getMirror",
+			"(I)I",
+			arg0);
+	}
 	jdouble UCharacter::getUnicodeNumericValue(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jdouble>(
@@ -968,12 +976,12 @@ namespace __jni_impl::android::icu::lang
 			arg0,
 			arg1);
 	}
-	jint UCharacter::foldCase(jint arg0, jint arg1)
+	jint UCharacter::foldCase(jint arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"foldCase",
-			"(II)I",
+			"(IZ)I",
 			arg0,
 			arg1);
 	}
@@ -986,12 +994,12 @@ namespace __jni_impl::android::icu::lang
 			arg0,
 			arg1);
 	}
-	jint UCharacter::foldCase(jint arg0, jboolean arg1)
+	jint UCharacter::foldCase(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"foldCase",
-			"(IZ)I",
+			"(II)I",
 			arg0,
 			arg1);
 	}
@@ -1104,14 +1112,6 @@ namespace __jni_impl::android::icu::lang
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.icu.lang.UCharacter",
 			"getIntPropertyMaxValue",
-			"(I)I",
-			arg0);
-	}
-	jint UCharacter::getMirror(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.icu.lang.UCharacter",
-			"getMirror",
 			"(I)I",
 			arg0);
 	}

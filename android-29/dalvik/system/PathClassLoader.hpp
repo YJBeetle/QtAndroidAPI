@@ -3,6 +3,8 @@
 #ifndef DALVIK_SYSTEM_PATHCLASSLOADER
 #define DALVIK_SYSTEM_PATHCLASSLOADER
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/ClassLoader.hpp"
 #include "BaseDexClassLoader.hpp"
 
 namespace __jni_impl::java::lang

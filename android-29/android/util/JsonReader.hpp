@@ -35,14 +35,14 @@ namespace __jni_impl::android::util
 		jboolean nextBoolean();
 		void setLenient(jboolean arg0);
 		jboolean isLenient();
-		QAndroidJniObject nextName();
-		QAndroidJniObject nextString();
-		void nextNull();
-		void skipValue();
 		void beginArray();
 		void endArray();
 		void beginObject();
 		void endObject();
+		QAndroidJniObject nextName();
+		QAndroidJniObject nextString();
+		void nextNull();
+		void skipValue();
 	};
 } // namespace __jni_impl::android::util
 
@@ -124,30 +124,6 @@ namespace __jni_impl::android::util
 			"isLenient",
 			"()Z");
 	}
-	QAndroidJniObject JsonReader::nextName()
-	{
-		return __thiz.callObjectMethod(
-			"nextName",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject JsonReader::nextString()
-	{
-		return __thiz.callObjectMethod(
-			"nextString",
-			"()Ljava/lang/String;");
-	}
-	void JsonReader::nextNull()
-	{
-		__thiz.callMethod<void>(
-			"nextNull",
-			"()V");
-	}
-	void JsonReader::skipValue()
-	{
-		__thiz.callMethod<void>(
-			"skipValue",
-			"()V");
-	}
 	void JsonReader::beginArray()
 	{
 		__thiz.callMethod<void>(
@@ -170,6 +146,30 @@ namespace __jni_impl::android::util
 	{
 		__thiz.callMethod<void>(
 			"endObject",
+			"()V");
+	}
+	QAndroidJniObject JsonReader::nextName()
+	{
+		return __thiz.callObjectMethod(
+			"nextName",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject JsonReader::nextString()
+	{
+		return __thiz.callObjectMethod(
+			"nextString",
+			"()Ljava/lang/String;");
+	}
+	void JsonReader::nextNull()
+	{
+		__thiz.callMethod<void>(
+			"nextNull",
+			"()V");
+	}
+	void JsonReader::skipValue()
+	{
+		__thiz.callMethod<void>(
+			"skipValue",
 			"()V");
 	}
 } // namespace __jni_impl::android::util

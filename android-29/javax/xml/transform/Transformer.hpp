@@ -23,6 +23,9 @@ namespace __jni_impl::javax::xml::transform
 		// Methods
 		void transform(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		void reset();
+		void clearParameters();
+		void setParameter(jstring arg0, jobject arg1);
+		QAndroidJniObject getParameter(jstring arg0);
 		void setURIResolver(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getURIResolver();
 		void setErrorListener(__jni_impl::__JniBaseClass arg0);
@@ -31,9 +34,6 @@ namespace __jni_impl::javax::xml::transform
 		QAndroidJniObject getOutputProperties();
 		void setOutputProperty(jstring arg0, jstring arg1);
 		QAndroidJniObject getOutputProperty(jstring arg0);
-		void setParameter(jstring arg0, jobject arg1);
-		QAndroidJniObject getParameter(jstring arg0);
-		void clearParameters();
 	};
 } // namespace __jni_impl::javax::xml::transform
 
@@ -65,6 +65,27 @@ namespace __jni_impl::javax::xml::transform
 		__thiz.callMethod<void>(
 			"reset",
 			"()V");
+	}
+	void Transformer::clearParameters()
+	{
+		__thiz.callMethod<void>(
+			"clearParameters",
+			"()V");
+	}
+	void Transformer::setParameter(jstring arg0, jobject arg1)
+	{
+		__thiz.callMethod<void>(
+			"setParameter",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			arg0,
+			arg1);
+	}
+	QAndroidJniObject Transformer::getParameter(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getParameter",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			arg0);
 	}
 	void Transformer::setURIResolver(__jni_impl::__JniBaseClass arg0)
 	{
@@ -119,27 +140,6 @@ namespace __jni_impl::javax::xml::transform
 			"getOutputProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0);
-	}
-	void Transformer::setParameter(jstring arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setParameter",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject Transformer::getParameter(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getParameter",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
-	}
-	void Transformer::clearParameters()
-	{
-		__thiz.callMethod<void>(
-			"clearParameters",
-			"()V");
 	}
 } // namespace __jni_impl::javax::xml::transform
 

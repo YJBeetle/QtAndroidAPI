@@ -3,6 +3,8 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_CLIPDRAWABLE
 #define ANDROID_GRAPHICS_DRAWABLE_CLIPDRAWABLE
 
+#include "../../../__JniBaseClass.hpp"
+#include "Drawable.hpp"
 #include "DrawableWrapper.hpp"
 
 namespace __jni_impl::android::graphics::drawable

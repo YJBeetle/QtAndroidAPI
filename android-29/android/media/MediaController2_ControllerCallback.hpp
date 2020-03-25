@@ -38,9 +38,9 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject onSessionCommand(__jni_impl::android::media::MediaController2 arg0, __jni_impl::android::media::Session2Command arg1, __jni_impl::android::os::Bundle arg2);
-		void onPlaybackActiveChanged(__jni_impl::android::media::MediaController2 arg0, jboolean arg1);
 		void onDisconnected(__jni_impl::android::media::MediaController2 arg0);
 		void onConnected(__jni_impl::android::media::MediaController2 arg0, __jni_impl::android::media::Session2CommandGroup arg1);
+		void onPlaybackActiveChanged(__jni_impl::android::media::MediaController2 arg0, jboolean arg1);
 		void onCommandResult(__jni_impl::android::media::MediaController2 arg0, jobject arg1, __jni_impl::android::media::Session2Command arg2, __jni_impl::android::media::Session2Command_Result arg3);
 	};
 } // namespace __jni_impl::android::media
@@ -73,14 +73,6 @@ namespace __jni_impl::android::media
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
 	}
-	void MediaController2_ControllerCallback::onPlaybackActiveChanged(__jni_impl::android::media::MediaController2 arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPlaybackActiveChanged",
-			"(Landroid/media/MediaController2;Z)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	void MediaController2_ControllerCallback::onDisconnected(__jni_impl::android::media::MediaController2 arg0)
 	{
 		__thiz.callMethod<void>(
@@ -95,6 +87,14 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaController2;Landroid/media/Session2CommandGroup;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
+	}
+	void MediaController2_ControllerCallback::onPlaybackActiveChanged(__jni_impl::android::media::MediaController2 arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPlaybackActiveChanged",
+			"(Landroid/media/MediaController2;Z)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	void MediaController2_ControllerCallback::onCommandResult(__jni_impl::android::media::MediaController2 arg0, jobject arg1, __jni_impl::android::media::Session2Command arg2, __jni_impl::android::media::Session2Command_Result arg3)
 	{

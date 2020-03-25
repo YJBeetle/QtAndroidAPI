@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_PM_INSTRUMENTATIONINFO
 #define ANDROID_CONTENT_PM_INSTRUMENTATIONINFO
 
+#include "../../../__JniBaseClass.hpp"
 #include "PackageItemInfo.hpp"
 
 namespace __jni_impl::android::os

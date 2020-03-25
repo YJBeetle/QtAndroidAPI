@@ -3,6 +3,8 @@
 #ifndef ANDROID_MEDIA_MEDIACASEXCEPTION_DENIEDBYSERVEREXCEPTION
 #define ANDROID_MEDIA_MEDIACASEXCEPTION_DENIEDBYSERVEREXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "MediaCasException.hpp"
 
 

@@ -40,9 +40,6 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		QAndroidJniObject iterator();
-		jint getBucketCount();
-		jint getBucketIndex(jstring arg0);
-		QAndroidJniObject getCollator();
 		QAndroidJniObject setOverflowLabel(jstring arg0);
 		QAndroidJniObject addLabels(__jni_impl::android::icu::text::UnicodeSet arg0);
 		QAndroidJniObject addLabels(jarray arg0);
@@ -57,6 +54,9 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject getBucketLabels();
 		QAndroidJniObject addRecord(jstring arg0, jobject arg1);
 		QAndroidJniObject clearRecords();
+		jint getBucketCount();
+		jint getBucketIndex(jstring arg0);
+		QAndroidJniObject getCollator();
 		jint getRecordCount();
 	};
 } // namespace __jni_impl::android::icu::text
@@ -100,25 +100,6 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;");
-	}
-	jint AlphabeticIndex::getBucketCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getBucketCount",
-			"()I");
-	}
-	jint AlphabeticIndex::getBucketIndex(jstring arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getBucketIndex",
-			"(Ljava/lang/CharSequence;)I",
-			arg0);
-	}
-	QAndroidJniObject AlphabeticIndex::getCollator()
-	{
-		return __thiz.callObjectMethod(
-			"getCollator",
-			"()Landroid/icu/text/RuleBasedCollator;");
 	}
 	QAndroidJniObject AlphabeticIndex::setOverflowLabel(jstring arg0)
 	{
@@ -211,6 +192,25 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callObjectMethod(
 			"clearRecords",
 			"()Landroid/icu/text/AlphabeticIndex;");
+	}
+	jint AlphabeticIndex::getBucketCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getBucketCount",
+			"()I");
+	}
+	jint AlphabeticIndex::getBucketIndex(jstring arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getBucketIndex",
+			"(Ljava/lang/CharSequence;)I",
+			arg0);
+	}
+	QAndroidJniObject AlphabeticIndex::getCollator()
+	{
+		return __thiz.callObjectMethod(
+			"getCollator",
+			"()Landroid/icu/text/RuleBasedCollator;");
 	}
 	jint AlphabeticIndex::getRecordCount()
 	{

@@ -3,6 +3,8 @@
 #ifndef ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEINPUTSTREAM
 #define ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEINPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/io/InputStream.hpp"
 #include "../../java/io/FileInputStream.hpp"
 
 namespace __jni_impl::android::os

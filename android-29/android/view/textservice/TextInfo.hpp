@@ -26,9 +26,9 @@ namespace __jni_impl::android::view::textservice
 		
 		// Methods
 		QAndroidJniObject getText();
-		QAndroidJniObject getCharSequence();
 		jint getSequence();
 		jint getCookie();
+		QAndroidJniObject getCharSequence();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -90,12 +90,6 @@ namespace __jni_impl::android::view::textservice
 			"getText",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject TextInfo::getCharSequence()
-	{
-		return __thiz.callObjectMethod(
-			"getCharSequence",
-			"()Ljava/lang/CharSequence;");
-	}
 	jint TextInfo::getSequence()
 	{
 		return __thiz.callMethod<jint>(
@@ -107,6 +101,12 @@ namespace __jni_impl::android::view::textservice
 		return __thiz.callMethod<jint>(
 			"getCookie",
 			"()I");
+	}
+	QAndroidJniObject TextInfo::getCharSequence()
+	{
+		return __thiz.callObjectMethod(
+			"getCharSequence",
+			"()Ljava/lang/CharSequence;");
 	}
 	jint TextInfo::describeContents()
 	{

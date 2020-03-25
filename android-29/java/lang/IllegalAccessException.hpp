@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_ILLEGALACCESSEXCEPTION
 #define JAVA_LANG_ILLEGALACCESSEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "ReflectiveOperationException.hpp"
 
 

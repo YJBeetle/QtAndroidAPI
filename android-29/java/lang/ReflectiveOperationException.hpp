@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_REFLECTIVEOPERATIONEXCEPTION
 #define JAVA_LANG_REFLECTIVEOPERATIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 
 

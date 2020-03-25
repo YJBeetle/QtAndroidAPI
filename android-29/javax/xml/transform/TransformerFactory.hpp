@@ -29,6 +29,8 @@ namespace __jni_impl::javax::xml::transform
 		static QAndroidJniObject newInstance();
 		QAndroidJniObject getAttribute(jstring arg0);
 		void setAttribute(jstring arg0, jobject arg1);
+		void setFeature(jstring arg0, jboolean arg1);
+		jboolean getFeature(jstring arg0);
 		static QAndroidJniObject newDefaultInstance();
 		QAndroidJniObject newTransformer();
 		QAndroidJniObject newTransformer(__jni_impl::__JniBaseClass arg0);
@@ -38,8 +40,6 @@ namespace __jni_impl::javax::xml::transform
 		QAndroidJniObject getURIResolver();
 		void setErrorListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getErrorListener();
-		void setFeature(jstring arg0, jboolean arg1);
-		jboolean getFeature(jstring arg0);
 	};
 } // namespace __jni_impl::javax::xml::transform
 
@@ -89,6 +89,21 @@ namespace __jni_impl::javax::xml::transform
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
 			arg1);
+	}
+	void TransformerFactory::setFeature(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1);
+	}
+	jboolean TransformerFactory::getFeature(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			arg0);
 	}
 	QAndroidJniObject TransformerFactory::newDefaultInstance()
 	{
@@ -152,21 +167,6 @@ namespace __jni_impl::javax::xml::transform
 		return __thiz.callObjectMethod(
 			"getErrorListener",
 			"()Ljavax/xml/transform/ErrorListener;");
-	}
-	void TransformerFactory::setFeature(jstring arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1);
-	}
-	jboolean TransformerFactory::getFeature(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			arg0);
 	}
 } // namespace __jni_impl::javax::xml::transform
 

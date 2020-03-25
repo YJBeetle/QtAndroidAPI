@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_SQLITEOBJECTLEAKEDVIOLATION
 #define ANDROID_OS_STRICTMODE_SQLITEOBJECTLEAKEDVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

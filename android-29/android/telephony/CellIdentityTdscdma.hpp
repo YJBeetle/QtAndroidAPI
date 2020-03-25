@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_CELLIDENTITYTDSCDMA
 #define ANDROID_TELEPHONY_CELLIDENTITYTDSCDMA
 
+#include "../../__JniBaseClass.hpp"
 #include "CellIdentity.hpp"
 
 namespace __jni_impl::android::os
@@ -26,14 +27,14 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getMobileNetworkOperator();
+		jint getUarfcn();
+		jint getCpid();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getUarfcn();
-		jint getLac();
-		jint getCid();
 		QAndroidJniObject getMccString();
 		QAndroidJniObject getMncString();
-		jint getCpid();
+		jint getLac();
+		jint getCid();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -84,6 +85,18 @@ namespace __jni_impl::android::telephony
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;");
 	}
+	jint CellIdentityTdscdma::getUarfcn()
+	{
+		return __thiz.callMethod<jint>(
+			"getUarfcn",
+			"()I");
+	}
+	jint CellIdentityTdscdma::getCpid()
+	{
+		return __thiz.callMethod<jint>(
+			"getCpid",
+			"()I");
+	}
 	jint CellIdentityTdscdma::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -98,24 +111,6 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	jint CellIdentityTdscdma::getUarfcn()
-	{
-		return __thiz.callMethod<jint>(
-			"getUarfcn",
-			"()I");
-	}
-	jint CellIdentityTdscdma::getLac()
-	{
-		return __thiz.callMethod<jint>(
-			"getLac",
-			"()I");
-	}
-	jint CellIdentityTdscdma::getCid()
-	{
-		return __thiz.callMethod<jint>(
-			"getCid",
-			"()I");
-	}
 	QAndroidJniObject CellIdentityTdscdma::getMccString()
 	{
 		return __thiz.callObjectMethod(
@@ -128,10 +123,16 @@ namespace __jni_impl::android::telephony
 			"getMncString",
 			"()Ljava/lang/String;");
 	}
-	jint CellIdentityTdscdma::getCpid()
+	jint CellIdentityTdscdma::getLac()
 	{
 		return __thiz.callMethod<jint>(
-			"getCpid",
+			"getLac",
+			"()I");
+	}
+	jint CellIdentityTdscdma::getCid()
+	{
+		return __thiz.callMethod<jint>(
+			"getCid",
 			"()I");
 	}
 } // namespace __jni_impl::android::telephony

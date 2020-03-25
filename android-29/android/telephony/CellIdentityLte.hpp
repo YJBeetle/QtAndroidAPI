@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_CELLIDENTITYLTE
 #define ANDROID_TELEPHONY_CELLIDENTITYLTE
 
+#include "../../__JniBaseClass.hpp"
 #include "CellIdentity.hpp"
 
 namespace __jni_impl::android::os
@@ -26,12 +27,12 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getMobileNetworkOperator();
-		jint getMcc();
-		jint getMnc();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getBandwidth();
 		jint getCi();
 		jint getEarfcn();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getMcc();
+		jint getMnc();
 		QAndroidJniObject getMccString();
 		jint getPci();
 		jint getTac();
@@ -86,17 +87,13 @@ namespace __jni_impl::android::telephony
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;");
 	}
-	jint CellIdentityLte::getMcc()
+	void CellIdentityLte::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getMcc",
-			"()I");
-	}
-	jint CellIdentityLte::getMnc()
-	{
-		return __thiz.callMethod<jint>(
-			"getMnc",
-			"()I");
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jint CellIdentityLte::getBandwidth()
 	{
@@ -116,13 +113,17 @@ namespace __jni_impl::android::telephony
 			"getEarfcn",
 			"()I");
 	}
-	void CellIdentityLte::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jint CellIdentityLte::getMcc()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+		return __thiz.callMethod<jint>(
+			"getMcc",
+			"()I");
+	}
+	jint CellIdentityLte::getMnc()
+	{
+		return __thiz.callMethod<jint>(
+			"getMnc",
+			"()I");
 	}
 	QAndroidJniObject CellIdentityLte::getMccString()
 	{

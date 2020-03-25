@@ -3,6 +3,9 @@
 #ifndef ANDROID_APP_ADMIN_SYSTEMUPDATEPOLICY_VALIDATIONFAILEDEXCEPTION
 #define ANDROID_APP_ADMIN_SYSTEMUPDATEPOLICY_VALIDATIONFAILEDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
 #include "../../../java/lang/IllegalArgumentException.hpp"
 
 namespace __jni_impl::android::os

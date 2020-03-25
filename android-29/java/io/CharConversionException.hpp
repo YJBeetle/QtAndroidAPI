@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_CHARCONVERSIONEXCEPTION
 #define JAVA_IO_CHARCONVERSIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "IOException.hpp"
 
 

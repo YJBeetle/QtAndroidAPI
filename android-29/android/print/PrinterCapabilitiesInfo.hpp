@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::print
 {
 	class PrintAttributes_Margins;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::print
 namespace __jni_impl::android::print
 {
 	class PrintAttributes;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::print
@@ -33,20 +33,20 @@ namespace __jni_impl::android::print
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getMinMargins();
 		QAndroidJniObject getMediaSizes();
 		QAndroidJniObject getResolutions();
 		jint getColorModes();
 		jint getDuplexModes();
 		QAndroidJniObject getDefaults();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::print
 
-#include "../os/Parcel.hpp"
 #include "PrintAttributes_Margins.hpp"
 #include "PrintAttributes.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::print
 {
@@ -87,20 +87,6 @@ namespace __jni_impl::android::print
 			"hashCode",
 			"()I");
 	}
-	jint PrinterCapabilitiesInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void PrinterCapabilitiesInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	QAndroidJniObject PrinterCapabilitiesInfo::getMinMargins()
 	{
 		return __thiz.callObjectMethod(
@@ -136,6 +122,20 @@ namespace __jni_impl::android::print
 		return __thiz.callObjectMethod(
 			"getDefaults",
 			"()Landroid/print/PrintAttributes;");
+	}
+	jint PrinterCapabilitiesInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void PrinterCapabilitiesInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::print
 

@@ -40,11 +40,11 @@ namespace __jni_impl::android::view
 		void setFilter(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getFilter();
 		QAndroidJniObject onCreateView(__jni_impl::android::content::Context arg0, __jni_impl::android::view::View arg1, jstring arg2, __jni_impl::__JniBaseClass arg3);
-		QAndroidJniObject cloneInContext(__jni_impl::android::content::Context arg0);
 		QAndroidJniObject getFactory2();
 		void setFactory2(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject createView(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3);
 		QAndroidJniObject createView(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
+		QAndroidJniObject createView(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3);
+		QAndroidJniObject cloneInContext(__jni_impl::android::content::Context arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -149,13 +149,6 @@ namespace __jni_impl::android::view
 			arg2,
 			arg3.__jniObject().object());
 	}
-	QAndroidJniObject LayoutInflater::cloneInContext(__jni_impl::android::content::Context arg0)
-	{
-		return __thiz.callObjectMethod(
-			"cloneInContext",
-			"(Landroid/content/Context;)Landroid/view/LayoutInflater;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject LayoutInflater::getFactory2()
 	{
 		return __thiz.callObjectMethod(
@@ -169,6 +162,15 @@ namespace __jni_impl::android::view
 			"(Landroid/view/LayoutInflater$Factory2;)V",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject LayoutInflater::createView(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		return __thiz.callObjectMethod(
+			"createView",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object());
+	}
 	QAndroidJniObject LayoutInflater::createView(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -179,14 +181,12 @@ namespace __jni_impl::android::view
 			arg2,
 			arg3.__jniObject().object());
 	}
-	QAndroidJniObject LayoutInflater::createView(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
+	QAndroidJniObject LayoutInflater::cloneInContext(__jni_impl::android::content::Context arg0)
 	{
 		return __thiz.callObjectMethod(
-			"createView",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
+			"cloneInContext",
+			"(Landroid/content/Context;)Landroid/view/LayoutInflater;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::view
 

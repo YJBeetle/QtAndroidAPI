@@ -3,6 +3,9 @@
 #ifndef JAVA_LANG_INSTANTIATIONERROR
 #define JAVA_LANG_INSTANTIATIONERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
+#include "LinkageError.hpp"
 #include "IncompatibleClassChangeError.hpp"
 
 

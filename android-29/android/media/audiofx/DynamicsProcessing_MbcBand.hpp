@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_MBCBAND
 #define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_MBCBAND
 
+#include "../../../__JniBaseClass.hpp"
 #include "DynamicsProcessing_BandBase.hpp"
 
 

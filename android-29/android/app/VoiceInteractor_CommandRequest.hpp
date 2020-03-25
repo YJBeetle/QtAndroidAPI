@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_VOICEINTERACTOR_COMMANDREQUEST
 #define ANDROID_APP_VOICEINTERACTOR_COMMANDREQUEST
 
+#include "../../__JniBaseClass.hpp"
 #include "VoiceInteractor_Request.hpp"
 
 namespace __jni_impl::android::os

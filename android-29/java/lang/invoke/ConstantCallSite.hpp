@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_INVOKE_CONSTANTCALLSITE
 #define JAVA_LANG_INVOKE_CONSTANTCALLSITE
 
+#include "../../../__JniBaseClass.hpp"
 #include "CallSite.hpp"
 
 namespace __jni_impl::java::lang::invoke

@@ -19,14 +19,6 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor();
 		
 		// Methods
-		void setCipherSuites(jarray arg0);
-		void setProtocols(jarray arg0);
-		jboolean getNeedClientAuth();
-		void setNeedClientAuth(jboolean arg0);
-		jboolean getWantClientAuth();
-		void setWantClientAuth(jboolean arg0);
-		QAndroidJniObject getCipherSuites();
-		QAndroidJniObject getProtocols();
 		QAndroidJniObject getAlgorithmConstraints();
 		void setAlgorithmConstraints(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getEndpointIdentificationAlgorithm();
@@ -43,6 +35,14 @@ namespace __jni_impl::javax::net::ssl
 		jint getMaximumPacketSize();
 		QAndroidJniObject getApplicationProtocols();
 		void setApplicationProtocols(jarray arg0);
+		void setCipherSuites(jarray arg0);
+		void setProtocols(jarray arg0);
+		jboolean getNeedClientAuth();
+		void setNeedClientAuth(jboolean arg0);
+		jboolean getWantClientAuth();
+		void setWantClientAuth(jboolean arg0);
+		QAndroidJniObject getCipherSuites();
+		QAndroidJniObject getProtocols();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -75,58 +75,6 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	void SSLParameters::setCipherSuites(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCipherSuites",
-			"([Ljava/lang/String;)V",
-			arg0);
-	}
-	void SSLParameters::setProtocols(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setProtocols",
-			"([Ljava/lang/String;)V",
-			arg0);
-	}
-	jboolean SSLParameters::getNeedClientAuth()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getNeedClientAuth",
-			"()Z");
-	}
-	void SSLParameters::setNeedClientAuth(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNeedClientAuth",
-			"(Z)V",
-			arg0);
-	}
-	jboolean SSLParameters::getWantClientAuth()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getWantClientAuth",
-			"()Z");
-	}
-	void SSLParameters::setWantClientAuth(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setWantClientAuth",
-			"(Z)V",
-			arg0);
-	}
-	QAndroidJniObject SSLParameters::getCipherSuites()
-	{
-		return __thiz.callObjectMethod(
-			"getCipherSuites",
-			"()[Ljava/lang/String;");
-	}
-	QAndroidJniObject SSLParameters::getProtocols()
-	{
-		return __thiz.callObjectMethod(
-			"getProtocols",
-			"()[Ljava/lang/String;");
-	}
 	QAndroidJniObject SSLParameters::getAlgorithmConstraints()
 	{
 		return __thiz.callObjectMethod(
@@ -230,6 +178,58 @@ namespace __jni_impl::javax::net::ssl
 			"setApplicationProtocols",
 			"([Ljava/lang/String;)V",
 			arg0);
+	}
+	void SSLParameters::setCipherSuites(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCipherSuites",
+			"([Ljava/lang/String;)V",
+			arg0);
+	}
+	void SSLParameters::setProtocols(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setProtocols",
+			"([Ljava/lang/String;)V",
+			arg0);
+	}
+	jboolean SSLParameters::getNeedClientAuth()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getNeedClientAuth",
+			"()Z");
+	}
+	void SSLParameters::setNeedClientAuth(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNeedClientAuth",
+			"(Z)V",
+			arg0);
+	}
+	jboolean SSLParameters::getWantClientAuth()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getWantClientAuth",
+			"()Z");
+	}
+	void SSLParameters::setWantClientAuth(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWantClientAuth",
+			"(Z)V",
+			arg0);
+	}
+	QAndroidJniObject SSLParameters::getCipherSuites()
+	{
+		return __thiz.callObjectMethod(
+			"getCipherSuites",
+			"()[Ljava/lang/String;");
+	}
+	QAndroidJniObject SSLParameters::getProtocols()
+	{
+		return __thiz.callObjectMethod(
+			"getProtocols",
+			"()[Ljava/lang/String;");
 	}
 } // namespace __jni_impl::javax::net::ssl
 

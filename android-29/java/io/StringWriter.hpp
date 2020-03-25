@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_STRINGWRITER
 #define JAVA_IO_STRINGWRITER
 
+#include "../../__JniBaseClass.hpp"
 #include "Writer.hpp"
 
 namespace __jni_impl::java::lang

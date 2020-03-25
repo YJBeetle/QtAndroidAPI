@@ -25,10 +25,10 @@ namespace __jni_impl::android::text::util
 		QAndroidJniObject getAddress();
 		void setComment(jstring arg0);
 		QAndroidJniObject getComment();
-		void setAddress(jstring arg0);
 		static QAndroidJniObject quoteNameIfNecessary(jstring arg0);
 		static QAndroidJniObject quoteName(jstring arg0);
 		static QAndroidJniObject quoteComment(jstring arg0);
+		void setAddress(jstring arg0);
 	};
 } // namespace __jni_impl::android::text::util
 
@@ -100,13 +100,6 @@ namespace __jni_impl::android::text::util
 			"getComment",
 			"()Ljava/lang/String;");
 	}
-	void Rfc822Token::setAddress(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAddress",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
 	QAndroidJniObject Rfc822Token::quoteNameIfNecessary(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -129,6 +122,13 @@ namespace __jni_impl::android::text::util
 			"android.text.util.Rfc822Token",
 			"quoteComment",
 			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0);
+	}
+	void Rfc822Token::setAddress(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAddress",
+			"(Ljava/lang/String;)V",
 			arg0);
 	}
 } // namespace __jni_impl::android::text::util

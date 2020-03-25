@@ -3,6 +3,8 @@
 #ifndef JAVA_SQL_BATCHUPDATEEXCEPTION
 #define JAVA_SQL_BATCHUPDATEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "SQLException.hpp"
 
 namespace __jni_impl::java::io

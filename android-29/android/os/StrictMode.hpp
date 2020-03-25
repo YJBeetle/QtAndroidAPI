@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class StrictMode_VmPolicy;
+	class StrictMode_ThreadPolicy;
 }
 namespace __jni_impl::android::os
 {
-	class StrictMode_ThreadPolicy;
+	class StrictMode_VmPolicy;
 }
 
 namespace __jni_impl::android::os
@@ -25,19 +25,19 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getVmPolicy();
-		static void enableDefaults();
-		static void noteSlowCall(jstring arg0);
+		static void setThreadPolicy(__jni_impl::android::os::StrictMode_ThreadPolicy arg0);
 		static QAndroidJniObject getThreadPolicy();
 		static QAndroidJniObject allowThreadDiskWrites();
 		static QAndroidJniObject allowThreadDiskReads();
 		static void setVmPolicy(__jni_impl::android::os::StrictMode_VmPolicy arg0);
-		static void setThreadPolicy(__jni_impl::android::os::StrictMode_ThreadPolicy arg0);
+		static QAndroidJniObject getVmPolicy();
+		static void enableDefaults();
+		static void noteSlowCall(jstring arg0);
 	};
 } // namespace __jni_impl::android::os
 
-#include "StrictMode_VmPolicy.hpp"
 #include "StrictMode_ThreadPolicy.hpp"
+#include "StrictMode_VmPolicy.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -52,27 +52,13 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject StrictMode::getVmPolicy()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.StrictMode",
-			"getVmPolicy",
-			"()Landroid/os/StrictMode$VmPolicy;");
-	}
-	void StrictMode::enableDefaults()
+	void StrictMode::setThreadPolicy(__jni_impl::android::os::StrictMode_ThreadPolicy arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.StrictMode",
-			"enableDefaults",
-			"()V");
-	}
-	void StrictMode::noteSlowCall(jstring arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.StrictMode",
-			"noteSlowCall",
-			"(Ljava/lang/String;)V",
-			arg0);
+			"setThreadPolicy",
+			"(Landroid/os/StrictMode$ThreadPolicy;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject StrictMode::getThreadPolicy()
 	{
@@ -103,13 +89,27 @@ namespace __jni_impl::android::os
 			"(Landroid/os/StrictMode$VmPolicy;)V",
 			arg0.__jniObject().object());
 	}
-	void StrictMode::setThreadPolicy(__jni_impl::android::os::StrictMode_ThreadPolicy arg0)
+	QAndroidJniObject StrictMode::getVmPolicy()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.StrictMode",
+			"getVmPolicy",
+			"()Landroid/os/StrictMode$VmPolicy;");
+	}
+	void StrictMode::enableDefaults()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.StrictMode",
-			"setThreadPolicy",
-			"(Landroid/os/StrictMode$ThreadPolicy;)V",
-			arg0.__jniObject().object());
+			"enableDefaults",
+			"()V");
+	}
+	void StrictMode::noteSlowCall(jstring arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.StrictMode",
+			"noteSlowCall",
+			"(Ljava/lang/String;)V",
+			arg0);
 	}
 } // namespace __jni_impl::android::os
 

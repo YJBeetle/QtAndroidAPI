@@ -3,6 +3,9 @@
 #ifndef ANDROID_SERVICE_VOICE_VOICEINTERACTIONSERVICE
 #define ANDROID_SERVICE_VOICE_VOICEINTERACTIONSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace __jni_impl::android::content
@@ -55,17 +58,17 @@ namespace __jni_impl::android::service::voice
 		void __constructor();
 		
 		// Methods
-		void onReady();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void setDisabledShowContext(jint arg0);
 		jint getDisabledShowContext();
-		static jboolean isActiveService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
+		void onReady();
 		void onLaunchVoiceAssistFromKeyguard();
-		void showSession(__jni_impl::android::os::Bundle arg0, jint arg1);
-		QAndroidJniObject onGetSupportedVoiceActions(__jni_impl::__JniBaseClass arg0);
+		static jboolean isActiveService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
 		void onShutdown();
+		void showSession(__jni_impl::android::os::Bundle arg0, jint arg1);
 		QAndroidJniObject createAlwaysOnHotwordDetector(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::android::service::voice::AlwaysOnHotwordDetector_Callback arg2);
 		void setUiHints(__jni_impl::android::os::Bundle arg0);
+		QAndroidJniObject onGetSupportedVoiceActions(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::service::voice
 
@@ -106,12 +109,6 @@ namespace __jni_impl::android::service::voice
 	}
 	
 	// Methods
-	void VoiceInteractionService::onReady()
-	{
-		__thiz.callMethod<void>(
-			"onReady",
-			"()V");
-	}
 	QAndroidJniObject VoiceInteractionService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -132,6 +129,18 @@ namespace __jni_impl::android::service::voice
 			"getDisabledShowContext",
 			"()I");
 	}
+	void VoiceInteractionService::onReady()
+	{
+		__thiz.callMethod<void>(
+			"onReady",
+			"()V");
+	}
+	void VoiceInteractionService::onLaunchVoiceAssistFromKeyguard()
+	{
+		__thiz.callMethod<void>(
+			"onLaunchVoiceAssistFromKeyguard",
+			"()V");
+	}
 	jboolean VoiceInteractionService::isActiveService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -141,10 +150,10 @@ namespace __jni_impl::android::service::voice
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
-	void VoiceInteractionService::onLaunchVoiceAssistFromKeyguard()
+	void VoiceInteractionService::onShutdown()
 	{
 		__thiz.callMethod<void>(
-			"onLaunchVoiceAssistFromKeyguard",
+			"onShutdown",
 			"()V");
 	}
 	void VoiceInteractionService::showSession(__jni_impl::android::os::Bundle arg0, jint arg1)
@@ -154,19 +163,6 @@ namespace __jni_impl::android::service::voice
 			"(Landroid/os/Bundle;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject VoiceInteractionService::onGetSupportedVoiceActions(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onGetSupportedVoiceActions",
-			"(Ljava/util/Set;)Ljava/util/Set;",
-			arg0.__jniObject().object());
-	}
-	void VoiceInteractionService::onShutdown()
-	{
-		__thiz.callMethod<void>(
-			"onShutdown",
-			"()V");
 	}
 	QAndroidJniObject VoiceInteractionService::createAlwaysOnHotwordDetector(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::android::service::voice::AlwaysOnHotwordDetector_Callback arg2)
 	{
@@ -182,6 +178,13 @@ namespace __jni_impl::android::service::voice
 		__thiz.callMethod<void>(
 			"setUiHints",
 			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject VoiceInteractionService::onGetSupportedVoiceActions(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onGetSupportedVoiceActions",
+			"(Ljava/util/Set;)Ljava/util/Set;",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::service::voice

@@ -33,15 +33,15 @@ namespace __jni_impl::android::bluetooth
 		
 		// Methods
 		jint getType();
+		QAndroidJniObject getCharacteristic(__jni_impl::java::util::UUID arg0);
+		jint getInstanceId();
 		jboolean addService(__jni_impl::android::bluetooth::BluetoothGattService arg0);
 		jboolean addCharacteristic(__jni_impl::android::bluetooth::BluetoothGattCharacteristic arg0);
 		QAndroidJniObject getIncludedServices();
 		QAndroidJniObject getCharacteristics();
-		QAndroidJniObject getUuid();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getCharacteristic(__jni_impl::java::util::UUID arg0);
-		jint getInstanceId();
+		QAndroidJniObject getUuid();
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -89,6 +89,19 @@ namespace __jni_impl::android::bluetooth
 			"getType",
 			"()I");
 	}
+	QAndroidJniObject BluetoothGattService::getCharacteristic(__jni_impl::java::util::UUID arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCharacteristic",
+			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;",
+			arg0.__jniObject().object());
+	}
+	jint BluetoothGattService::getInstanceId()
+	{
+		return __thiz.callMethod<jint>(
+			"getInstanceId",
+			"()I");
+	}
 	jboolean BluetoothGattService::addService(__jni_impl::android::bluetooth::BluetoothGattService arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -115,12 +128,6 @@ namespace __jni_impl::android::bluetooth
 			"getCharacteristics",
 			"()Ljava/util/List;");
 	}
-	QAndroidJniObject BluetoothGattService::getUuid()
-	{
-		return __thiz.callObjectMethod(
-			"getUuid",
-			"()Ljava/util/UUID;");
-	}
 	jint BluetoothGattService::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -135,18 +142,11 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	QAndroidJniObject BluetoothGattService::getCharacteristic(__jni_impl::java::util::UUID arg0)
+	QAndroidJniObject BluetoothGattService::getUuid()
 	{
 		return __thiz.callObjectMethod(
-			"getCharacteristic",
-			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;",
-			arg0.__jniObject().object());
-	}
-	jint BluetoothGattService::getInstanceId()
-	{
-		return __thiz.callMethod<jint>(
-			"getInstanceId",
-			"()I");
+			"getUuid",
+			"()Ljava/util/UUID;");
 	}
 } // namespace __jni_impl::android::bluetooth
 

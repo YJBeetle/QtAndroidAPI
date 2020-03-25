@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_UNICODESETSPANNER_COUNTMETHOD
 #define ANDROID_ICU_TEXT_UNICODESETSPANNER_COUNTMETHOD
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

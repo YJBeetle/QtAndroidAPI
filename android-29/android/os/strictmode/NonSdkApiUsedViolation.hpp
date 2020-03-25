@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_NONSDKAPIUSEDVIOLATION
 #define ANDROID_OS_STRICTMODE_NONSDKAPIUSEDVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

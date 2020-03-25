@@ -39,8 +39,8 @@ namespace __jni_impl::android::database::sqlite
 		void setOpenParams(__jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg0);
 		QAndroidJniObject getWritableDatabase();
 		QAndroidJniObject getReadableDatabase();
-		QAndroidJniObject getDatabaseName();
 		void onConfigure(__jni_impl::android::database::sqlite::SQLiteDatabase arg0);
+		QAndroidJniObject getDatabaseName();
 		void onUpgrade(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2);
 		void onDowngrade(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2);
 		void onOpen(__jni_impl::android::database::sqlite::SQLiteDatabase arg0);
@@ -143,18 +143,18 @@ namespace __jni_impl::android::database::sqlite
 			"getReadableDatabase",
 			"()Landroid/database/sqlite/SQLiteDatabase;");
 	}
-	QAndroidJniObject SQLiteOpenHelper::getDatabaseName()
-	{
-		return __thiz.callObjectMethod(
-			"getDatabaseName",
-			"()Ljava/lang/String;");
-	}
 	void SQLiteOpenHelper::onConfigure(__jni_impl::android::database::sqlite::SQLiteDatabase arg0)
 	{
 		__thiz.callMethod<void>(
 			"onConfigure",
 			"(Landroid/database/sqlite/SQLiteDatabase;)V",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject SQLiteOpenHelper::getDatabaseName()
+	{
+		return __thiz.callObjectMethod(
+			"getDatabaseName",
+			"()Ljava/lang/String;");
 	}
 	void SQLiteOpenHelper::onUpgrade(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2)
 	{

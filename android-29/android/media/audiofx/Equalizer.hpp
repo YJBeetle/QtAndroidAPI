@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_EQUALIZER
 #define ANDROID_MEDIA_AUDIOFX_EQUALIZER
 
+#include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
 namespace __jni_impl::android::media::audiofx
@@ -33,6 +34,8 @@ namespace __jni_impl::android::media::audiofx
 		// Methods
 		QAndroidJniObject getProperties();
 		void setProperties(__jni_impl::android::media::audiofx::Equalizer_Settings arg0);
+		void setParameterListener(__jni_impl::__JniBaseClass arg0);
+		jshort getBand(jint arg0);
 		jshort getNumberOfBands();
 		QAndroidJniObject getBandLevelRange();
 		void setBandLevel(jshort arg0, jshort arg1);
@@ -43,8 +46,6 @@ namespace __jni_impl::android::media::audiofx
 		void usePreset(jshort arg0);
 		jshort getNumberOfPresets();
 		QAndroidJniObject getPresetName(jshort arg0);
-		jshort getBand(jint arg0);
-		void setParameterListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -138,6 +139,20 @@ namespace __jni_impl::android::media::audiofx
 			"(Landroid/media/audiofx/Equalizer$Settings;)V",
 			arg0.__jniObject().object());
 	}
+	void Equalizer::setParameterListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setParameterListener",
+			"(Landroid/media/audiofx/Equalizer$OnParameterChangeListener;)V",
+			arg0.__jniObject().object());
+	}
+	jshort Equalizer::getBand(jint arg0)
+	{
+		return __thiz.callMethod<jshort>(
+			"getBand",
+			"(I)S",
+			arg0);
+	}
 	jshort Equalizer::getNumberOfBands()
 	{
 		return __thiz.callMethod<jshort>(
@@ -204,20 +219,6 @@ namespace __jni_impl::android::media::audiofx
 			"getPresetName",
 			"(S)Ljava/lang/String;",
 			arg0);
-	}
-	jshort Equalizer::getBand(jint arg0)
-	{
-		return __thiz.callMethod<jshort>(
-			"getBand",
-			"(I)S",
-			arg0);
-	}
-	void Equalizer::setParameterListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setParameterListener",
-			"(Landroid/media/audiofx/Equalizer$OnParameterChangeListener;)V",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media::audiofx
 

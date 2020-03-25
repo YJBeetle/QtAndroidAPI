@@ -34,8 +34,8 @@ namespace __jni_impl::android::graphics::fonts
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		jint getSlant();
 		jint getWeight();
+		jint getSlant();
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
@@ -158,16 +158,16 @@ namespace __jni_impl::android::graphics::fonts
 			"hashCode",
 			"()I");
 	}
-	jint FontStyle::getSlant()
-	{
-		return __thiz.callMethod<jint>(
-			"getSlant",
-			"()I");
-	}
 	jint FontStyle::getWeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeight",
+			"()I");
+	}
+	jint FontStyle::getSlant()
+	{
+		return __thiz.callMethod<jint>(
+			"getSlant",
 			"()I");
 	}
 } // namespace __jni_impl::android::graphics::fonts

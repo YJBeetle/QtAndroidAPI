@@ -26,13 +26,13 @@ namespace __jni_impl::javax::xml::xpath
 		static QAndroidJniObject newInstance(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
 		static QAndroidJniObject newInstance(jstring arg0);
 		static QAndroidJniObject newInstance();
+		void setFeature(jstring arg0, jboolean arg1);
+		jboolean getFeature(jstring arg0);
 		static QAndroidJniObject newDefaultInstance();
 		void setXPathVariableResolver(__jni_impl::__JniBaseClass arg0);
 		void setXPathFunctionResolver(__jni_impl::__JniBaseClass arg0);
 		jboolean isObjectModelSupported(jstring arg0);
 		QAndroidJniObject newXPath();
-		void setFeature(jstring arg0, jboolean arg1);
-		jboolean getFeature(jstring arg0);
 	};
 } // namespace __jni_impl::javax::xml::xpath
 
@@ -90,6 +90,21 @@ namespace __jni_impl::javax::xml::xpath
 			"newInstance",
 			"()Ljavax/xml/xpath/XPathFactory;");
 	}
+	void XPathFactory::setFeature(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1);
+	}
+	jboolean XPathFactory::getFeature(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			arg0);
+	}
 	QAndroidJniObject XPathFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -123,21 +138,6 @@ namespace __jni_impl::javax::xml::xpath
 		return __thiz.callObjectMethod(
 			"newXPath",
 			"()Ljavax/xml/xpath/XPath;");
-	}
-	void XPathFactory::setFeature(jstring arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1);
-	}
-	jboolean XPathFactory::getFeature(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			arg0);
 	}
 } // namespace __jni_impl::javax::xml::xpath
 

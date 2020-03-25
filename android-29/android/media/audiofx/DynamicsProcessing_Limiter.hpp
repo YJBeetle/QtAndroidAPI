@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_LIMITER
 #define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_LIMITER
 
+#include "../../../__JniBaseClass.hpp"
 #include "DynamicsProcessing_Stage.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_NOISESUPPRESSOR
 #define ANDROID_MEDIA_AUDIOFX_NOISESUPPRESSOR
 
+#include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
 

@@ -15,11 +15,11 @@ namespace __jni_impl::java::nio
 }
 namespace __jni_impl::java::net
 {
-	class InetAddress;
+	class SocketAddress;
 }
 namespace __jni_impl::java::net
 {
-	class SocketAddress;
+	class InetAddress;
 }
 namespace __jni_impl::java::net
 {
@@ -59,13 +59,13 @@ namespace __jni_impl::android::system
 		// Methods
 		static void remove(jstring arg0);
 		static void shutdown(__jni_impl::java::io::FileDescriptor arg0, jint arg1);
-		static jint write(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		static jint write(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3);
+		static jint write(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		static QAndroidJniObject getenv(jstring arg0);
-		static jint read(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3);
 		static jint read(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1);
-		static void connect(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::net::InetAddress arg1, jint arg2);
+		static jint read(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3);
 		static void connect(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::net::SocketAddress arg1);
+		static void connect(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::net::InetAddress arg1, jint arg2);
 		static void listen(__jni_impl::java::io::FileDescriptor arg0, jint arg1);
 		static QAndroidJniObject accept(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::net::InetSocketAddress arg1);
 		static jboolean access(jstring arg0, jint arg1);
@@ -95,6 +95,7 @@ namespace __jni_impl::android::system
 		static void rename(jstring arg0, jstring arg1);
 		static void bind(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::net::InetAddress arg1, jint arg2);
 		static void bind(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::net::SocketAddress arg1);
+		static QAndroidJniObject socket(jint arg0, jint arg1, jint arg2);
 		static void kill(jint arg0, jint arg1);
 		static QAndroidJniObject dup2(__jni_impl::java::io::FileDescriptor arg0, jint arg1);
 		static QAndroidJniObject environ();
@@ -133,12 +134,12 @@ namespace __jni_impl::android::system
 		static jint pwrite(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1, jlong arg2);
 		static jint pwrite(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jlong arg4);
 		static jint readv(__jni_impl::java::io::FileDescriptor arg0, jobjectArray arg1, jintArray arg2, jintArray arg3);
-		static jint recvfrom(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::net::InetSocketAddress arg5);
 		static jint recvfrom(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1, jint arg2, __jni_impl::java::net::InetSocketAddress arg3);
+		static jint recvfrom(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::net::InetSocketAddress arg5);
 		static void removexattr(jstring arg0, jstring arg1);
 		static jlong sendfile(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::android::system::Int64Ref arg2, jlong arg3);
-		static jint sendto(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1, jint arg2, __jni_impl::java::net::InetAddress arg3, jint arg4);
 		static jint sendto(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::net::InetAddress arg5, jint arg6);
+		static jint sendto(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1, jint arg2, __jni_impl::java::net::InetAddress arg3, jint arg4);
 		static jint sendto(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::net::SocketAddress arg5);
 		static void setegid(jint arg0);
 		static void setenv(jstring arg0, jstring arg1, jboolean arg2);
@@ -157,14 +158,13 @@ namespace __jni_impl::android::system
 		static jint umask(jint arg0);
 		static void unsetenv(jstring arg0);
 		static jint writev(__jni_impl::java::io::FileDescriptor arg0, jobjectArray arg1, jintArray arg2, jintArray arg3);
-		static QAndroidJniObject socket(jint arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::system
 
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
-#include "../../java/net/InetAddress.hpp"
 #include "../../java/net/SocketAddress.hpp"
+#include "../../java/net/InetAddress.hpp"
 #include "../../java/net/InetSocketAddress.hpp"
 #include "StructUtsname.hpp"
 #include "StructStat.hpp"
@@ -202,15 +202,6 @@ namespace __jni_impl::android::system
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	jint Os::write(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.system.Os",
-			"write",
-			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	jint Os::write(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -222,6 +213,15 @@ namespace __jni_impl::android::system
 			arg2,
 			arg3);
 	}
+	jint Os::write(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.system.Os",
+			"write",
+			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
 	QAndroidJniObject Os::getenv(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -229,6 +229,15 @@ namespace __jni_impl::android::system
 			"getenv",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0);
+	}
+	jint Os::read(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.system.Os",
+			"read",
+			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 	jint Os::read(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
@@ -241,12 +250,12 @@ namespace __jni_impl::android::system
 			arg2,
 			arg3);
 	}
-	jint Os::read(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1)
+	void Os::connect(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::net::SocketAddress arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		QAndroidJniObject::callStaticMethod<void>(
 			"android.system.Os",
-			"read",
-			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;)I",
+			"connect",
+			"(Ljava/io/FileDescriptor;Ljava/net/SocketAddress;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
@@ -259,15 +268,6 @@ namespace __jni_impl::android::system
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2);
-	}
-	void Os::connect(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::net::SocketAddress arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.system.Os",
-			"connect",
-			"(Ljava/io/FileDescriptor;Ljava/net/SocketAddress;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
 	}
 	void Os::listen(__jni_impl::java::io::FileDescriptor arg0, jint arg1)
 	{
@@ -516,6 +516,16 @@ namespace __jni_impl::android::system
 			"(Ljava/io/FileDescriptor;Ljava/net/SocketAddress;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
+	}
+	QAndroidJniObject Os::socket(jint arg0, jint arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.system.Os",
+			"socket",
+			"(III)Ljava/io/FileDescriptor;",
+			arg0,
+			arg1,
+			arg2);
 	}
 	void Os::kill(jint arg0, jint arg1)
 	{
@@ -862,6 +872,17 @@ namespace __jni_impl::android::system
 			arg2,
 			arg3);
 	}
+	jint Os::recvfrom(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1, jint arg2, __jni_impl::java::net::InetSocketAddress arg3)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.system.Os",
+			"recvfrom",
+			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;ILjava/net/InetSocketAddress;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object());
+	}
 	jint Os::recvfrom(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::net::InetSocketAddress arg5)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -874,17 +895,6 @@ namespace __jni_impl::android::system
 			arg3,
 			arg4,
 			arg5.__jniObject().object());
-	}
-	jint Os::recvfrom(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1, jint arg2, __jni_impl::java::net::InetSocketAddress arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.system.Os",
-			"recvfrom",
-			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;ILjava/net/InetSocketAddress;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object());
 	}
 	void Os::removexattr(jstring arg0, jstring arg1)
 	{
@@ -906,18 +916,6 @@ namespace __jni_impl::android::system
 			arg2.__jniObject().object(),
 			arg3);
 	}
-	jint Os::sendto(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1, jint arg2, __jni_impl::java::net::InetAddress arg3, jint arg4)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.system.Os",
-			"sendto",
-			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;ILjava/net/InetAddress;I)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object(),
-			arg4);
-	}
 	jint Os::sendto(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::net::InetAddress arg5, jint arg6)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -931,6 +929,18 @@ namespace __jni_impl::android::system
 			arg4,
 			arg5.__jniObject().object(),
 			arg6);
+	}
+	jint Os::sendto(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::nio::ByteBuffer arg1, jint arg2, __jni_impl::java::net::InetAddress arg3, jint arg4)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.system.Os",
+			"sendto",
+			"(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;ILjava/net/InetAddress;I)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4);
 	}
 	jint Os::sendto(__jni_impl::java::io::FileDescriptor arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::net::SocketAddress arg5)
 	{
@@ -1098,16 +1108,6 @@ namespace __jni_impl::android::system
 			arg1,
 			arg2,
 			arg3);
-	}
-	QAndroidJniObject Os::socket(jint arg0, jint arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.system.Os",
-			"socket",
-			"(III)Ljava/io/FileDescriptor;",
-			arg0,
-			arg1,
-			arg2);
 	}
 } // namespace __jni_impl::android::system
 

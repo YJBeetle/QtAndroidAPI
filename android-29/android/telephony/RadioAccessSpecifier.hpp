@@ -24,11 +24,11 @@ namespace __jni_impl::android::telephony
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getChannels();
 		jint getRadioAccessNetwork();
 		QAndroidJniObject getBands();
+		QAndroidJniObject getChannels();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -70,6 +70,24 @@ namespace __jni_impl::android::telephony
 			"hashCode",
 			"()I");
 	}
+	jint RadioAccessSpecifier::getRadioAccessNetwork()
+	{
+		return __thiz.callMethod<jint>(
+			"getRadioAccessNetwork",
+			"()I");
+	}
+	QAndroidJniObject RadioAccessSpecifier::getBands()
+	{
+		return __thiz.callObjectMethod(
+			"getBands",
+			"()[I");
+	}
+	QAndroidJniObject RadioAccessSpecifier::getChannels()
+	{
+		return __thiz.callObjectMethod(
+			"getChannels",
+			"()[I");
+	}
 	jint RadioAccessSpecifier::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -83,24 +101,6 @@ namespace __jni_impl::android::telephony
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject RadioAccessSpecifier::getChannels()
-	{
-		return __thiz.callObjectMethod(
-			"getChannels",
-			"()[I");
-	}
-	jint RadioAccessSpecifier::getRadioAccessNetwork()
-	{
-		return __thiz.callMethod<jint>(
-			"getRadioAccessNetwork",
-			"()I");
-	}
-	QAndroidJniObject RadioAccessSpecifier::getBands()
-	{
-		return __thiz.callObjectMethod(
-			"getBands",
-			"()[I");
 	}
 } // namespace __jni_impl::android::telephony
 

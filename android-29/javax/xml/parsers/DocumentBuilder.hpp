@@ -39,14 +39,14 @@ namespace __jni_impl::javax::xml::parsers
 		QAndroidJniObject parse(__jni_impl::org::xml::sax::InputSource arg0);
 		QAndroidJniObject parse(__jni_impl::java::io::InputStream arg0, jstring arg1);
 		QAndroidJniObject parse(__jni_impl::java::io::InputStream arg0);
+		QAndroidJniObject getSchema();
+		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
 		void setEntityResolver(__jni_impl::__JniBaseClass arg0);
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		jboolean isXIncludeAware();
 		QAndroidJniObject newDocument();
 		QAndroidJniObject getDOMImplementation();
-		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getSchema();
 	};
 } // namespace __jni_impl::javax::xml::parsers
 
@@ -110,6 +110,19 @@ namespace __jni_impl::javax::xml::parsers
 			"(Ljava/io/InputStream;)Lorg/w3c/dom/Document;",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject DocumentBuilder::getSchema()
+	{
+		return __thiz.callObjectMethod(
+			"getSchema",
+			"()Ljavax/xml/validation/Schema;");
+	}
+	void DocumentBuilder::setErrorHandler(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setErrorHandler",
+			"(Lorg/xml/sax/ErrorHandler;)V",
+			arg0.__jniObject().object());
+	}
 	void DocumentBuilder::setEntityResolver(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -146,19 +159,6 @@ namespace __jni_impl::javax::xml::parsers
 		return __thiz.callObjectMethod(
 			"getDOMImplementation",
 			"()Lorg/w3c/dom/DOMImplementation;");
-	}
-	void DocumentBuilder::setErrorHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setErrorHandler",
-			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject DocumentBuilder::getSchema()
-	{
-		return __thiz.callObjectMethod(
-			"getSchema",
-			"()Ljavax/xml/validation/Schema;");
 	}
 } // namespace __jni_impl::javax::xml::parsers
 

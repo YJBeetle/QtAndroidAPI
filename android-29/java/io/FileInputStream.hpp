@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_FILEINPUTSTREAM
 #define JAVA_IO_FILEINPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
 #include "InputStream.hpp"
 
 namespace __jni_impl::java::io

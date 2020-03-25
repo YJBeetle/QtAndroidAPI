@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_SERVICECONFIGURATIONERROR
 #define JAVA_UTIL_SERVICECONFIGURATIONERROR
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Error.hpp"
 
 

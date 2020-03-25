@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::app
-{
-	class ActivityManager_RecentTaskInfo;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -20,6 +16,10 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::app
+{
+	class ActivityManager_RecentTaskInfo;
 }
 
 namespace __jni_impl::android::app
@@ -33,18 +33,18 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
+		void finishAndRemoveTask();
+		void startActivity(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2);
 		QAndroidJniObject getTaskInfo();
 		void moveToFront();
 		void setExcludeFromRecents(jboolean arg0);
-		void startActivity(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2);
-		void finishAndRemoveTask();
 	};
 } // namespace __jni_impl::android::app
 
-#include "ActivityManager_RecentTaskInfo.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
+#include "ActivityManager_RecentTaskInfo.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -59,6 +59,21 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	void ActivityManager_AppTask::finishAndRemoveTask()
+	{
+		__thiz.callMethod<void>(
+			"finishAndRemoveTask",
+			"()V");
+	}
+	void ActivityManager_AppTask::startActivity(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz.callMethod<void>(
+			"startActivity",
+			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
 	QAndroidJniObject ActivityManager_AppTask::getTaskInfo()
 	{
 		return __thiz.callObjectMethod(
@@ -77,21 +92,6 @@ namespace __jni_impl::android::app
 			"setExcludeFromRecents",
 			"(Z)V",
 			arg0);
-	}
-	void ActivityManager_AppTask::startActivity(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"startActivity",
-			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	void ActivityManager_AppTask::finishAndRemoveTask()
-	{
-		__thiz.callMethod<void>(
-			"finishAndRemoveTask",
-			"()V");
 	}
 } // namespace __jni_impl::android::app
 

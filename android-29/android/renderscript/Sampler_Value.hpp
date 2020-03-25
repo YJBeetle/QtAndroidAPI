@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_SAMPLER_VALUE
 #define ANDROID_RENDERSCRIPT_SAMPLER_VALUE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

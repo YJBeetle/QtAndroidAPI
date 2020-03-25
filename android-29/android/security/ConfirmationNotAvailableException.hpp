@@ -3,6 +3,7 @@
 #ifndef ANDROID_SECURITY_CONFIRMATIONNOTAVAILABLEEXCEPTION
 #define ANDROID_SECURITY_CONFIRMATIONNOTAVAILABLEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 

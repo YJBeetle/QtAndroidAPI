@@ -3,6 +3,7 @@
 #ifndef ANDROID_ANIMATION_VALUEANIMATOR
 #define ANDROID_ANIMATION_VALUEANIMATOR
 
+#include "../../__JniBaseClass.hpp"
 #include "Animator.hpp"
 
 namespace __jni_impl::android::animation
@@ -33,9 +34,6 @@ namespace __jni_impl::android::animation
 		jlong getDuration();
 		void cancel();
 		jint getRepeatCount();
-		void setRepeatMode(jint arg0);
-		jint getRepeatMode();
-		void setRepeatCount(jint arg0);
 		static QAndroidJniObject ofInt(jintArray arg0);
 		static QAndroidJniObject ofArgb(jintArray arg0);
 		static QAndroidJniObject ofFloat(jfloatArray arg0);
@@ -50,24 +48,27 @@ namespace __jni_impl::android::animation
 		jlong getCurrentPlayTime();
 		static jlong getFrameDelay();
 		static void setFrameDelay(jlong arg0);
-		QAndroidJniObject getAnimatedValue();
 		QAndroidJniObject getAnimatedValue(jstring arg0);
+		QAndroidJniObject getAnimatedValue();
 		void addUpdateListener(__jni_impl::__JniBaseClass arg0);
 		void removeAllUpdateListeners();
 		void removeUpdateListener(__jni_impl::__JniBaseClass arg0);
 		void setEvaluator(__jni_impl::__JniBaseClass arg0);
 		jfloat getAnimatedFraction();
-		QAndroidJniObject setDuration(jlong arg0);
-		void setStartDelay(jlong arg0);
-		jlong getStartDelay();
-		void setInterpolator(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getInterpolator();
+		void setRepeatCount(jint arg0);
+		void setRepeatMode(jint arg0);
+		jint getRepeatMode();
 		QAndroidJniObject getValues();
 		void setValues(jarray arg0);
 		void pause();
 		jlong getTotalDuration();
 		jboolean isRunning();
 		jboolean isStarted();
+		QAndroidJniObject setDuration(jlong arg0);
+		void setStartDelay(jlong arg0);
+		jlong getStartDelay();
+		void setInterpolator(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getInterpolator();
 	};
 } // namespace __jni_impl::android::animation
 
@@ -157,26 +158,6 @@ namespace __jni_impl::android::animation
 		return __thiz.callMethod<jint>(
 			"getRepeatCount",
 			"()I");
-	}
-	void ValueAnimator::setRepeatMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRepeatMode",
-			"(I)V",
-			arg0);
-	}
-	jint ValueAnimator::getRepeatMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getRepeatMode",
-			"()I");
-	}
-	void ValueAnimator::setRepeatCount(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRepeatCount",
-			"(I)V",
-			arg0);
 	}
 	QAndroidJniObject ValueAnimator::ofInt(jintArray arg0)
 	{
@@ -282,18 +263,18 @@ namespace __jni_impl::android::animation
 			"(J)V",
 			arg0);
 	}
-	QAndroidJniObject ValueAnimator::getAnimatedValue()
-	{
-		return __thiz.callObjectMethod(
-			"getAnimatedValue",
-			"()Ljava/lang/Object;");
-	}
 	QAndroidJniObject ValueAnimator::getAnimatedValue(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAnimatedValue",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0);
+	}
+	QAndroidJniObject ValueAnimator::getAnimatedValue()
+	{
+		return __thiz.callObjectMethod(
+			"getAnimatedValue",
+			"()Ljava/lang/Object;");
 	}
 	void ValueAnimator::addUpdateListener(__jni_impl::__JniBaseClass arg0)
 	{
@@ -328,38 +309,25 @@ namespace __jni_impl::android::animation
 			"getAnimatedFraction",
 			"()F");
 	}
-	QAndroidJniObject ValueAnimator::setDuration(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDuration",
-			"(J)Landroid/animation/ValueAnimator;",
-			arg0);
-	}
-	void ValueAnimator::setStartDelay(jlong arg0)
+	void ValueAnimator::setRepeatCount(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setStartDelay",
-			"(J)V",
+			"setRepeatCount",
+			"(I)V",
 			arg0);
 	}
-	jlong ValueAnimator::getStartDelay()
-	{
-		return __thiz.callMethod<jlong>(
-			"getStartDelay",
-			"()J");
-	}
-	void ValueAnimator::setInterpolator(__jni_impl::__JniBaseClass arg0)
+	void ValueAnimator::setRepeatMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setInterpolator",
-			"(Landroid/animation/TimeInterpolator;)V",
-			arg0.__jniObject().object());
+			"setRepeatMode",
+			"(I)V",
+			arg0);
 	}
-	QAndroidJniObject ValueAnimator::getInterpolator()
+	jint ValueAnimator::getRepeatMode()
 	{
-		return __thiz.callObjectMethod(
-			"getInterpolator",
-			"()Landroid/animation/TimeInterpolator;");
+		return __thiz.callMethod<jint>(
+			"getRepeatMode",
+			"()I");
 	}
 	QAndroidJniObject ValueAnimator::getValues()
 	{
@@ -397,6 +365,39 @@ namespace __jni_impl::android::animation
 		return __thiz.callMethod<jboolean>(
 			"isStarted",
 			"()Z");
+	}
+	QAndroidJniObject ValueAnimator::setDuration(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDuration",
+			"(J)Landroid/animation/ValueAnimator;",
+			arg0);
+	}
+	void ValueAnimator::setStartDelay(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStartDelay",
+			"(J)V",
+			arg0);
+	}
+	jlong ValueAnimator::getStartDelay()
+	{
+		return __thiz.callMethod<jlong>(
+			"getStartDelay",
+			"()J");
+	}
+	void ValueAnimator::setInterpolator(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInterpolator",
+			"(Landroid/animation/TimeInterpolator;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject ValueAnimator::getInterpolator()
+	{
+		return __thiz.callObjectMethod(
+			"getInterpolator",
+			"()Landroid/animation/TimeInterpolator;");
 	}
 } // namespace __jni_impl::android::animation
 

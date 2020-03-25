@@ -3,6 +3,8 @@
 #ifndef JAVA_NET_NETPERMISSION
 #define JAVA_NET_NETPERMISSION
 
+#include "../../__JniBaseClass.hpp"
+#include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
 
 

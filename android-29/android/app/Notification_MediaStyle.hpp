@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_NOTIFICATION_MEDIASTYLE
 #define ANDROID_APP_NOTIFICATION_MEDIASTYLE
 
+#include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 
 namespace __jni_impl::android::app
@@ -26,8 +27,8 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::app::Notification_Builder arg0);
 		
 		// Methods
-		QAndroidJniObject setMediaSession(__jni_impl::android::media::session::MediaSession_Token arg0);
 		QAndroidJniObject setShowActionsInCompactView(jintArray arg0);
+		QAndroidJniObject setMediaSession(__jni_impl::android::media::session::MediaSession_Token arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -54,19 +55,19 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject Notification_MediaStyle::setMediaSession(__jni_impl::android::media::session::MediaSession_Token arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setMediaSession",
-			"(Landroid/media/session/MediaSession$Token;)Landroid/app/Notification$MediaStyle;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject Notification_MediaStyle::setShowActionsInCompactView(jintArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setShowActionsInCompactView",
 			"([I)Landroid/app/Notification$MediaStyle;",
 			arg0);
+	}
+	QAndroidJniObject Notification_MediaStyle::setMediaSession(__jni_impl::android::media::session::MediaSession_Token arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMediaSession",
+			"(Landroid/media/session/MediaSession$Token;)Landroid/app/Notification$MediaStyle;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::app
 

@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_SEEKBAR
 #define ANDROID_WIDGET_SEEKBAR
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "ProgressBar.hpp"
 #include "AbsSeekBar.hpp"
 
 namespace __jni_impl::android::content
@@ -24,8 +27,8 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setOnSeekBarChangeListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getAccessibilityClassName();
+		void setOnSeekBarChangeListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -72,18 +75,18 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
+	QAndroidJniObject SeekBar::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
 	void SeekBar::setOnSeekBarChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnSeekBarChangeListener",
 			"(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SeekBar::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
 	}
 } // namespace __jni_impl::android::widget
 

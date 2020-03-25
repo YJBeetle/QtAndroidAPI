@@ -38,10 +38,9 @@ namespace __jni_impl::java::lang
 		void destroy();
 		QAndroidJniObject getInputStream();
 		QAndroidJniObject children();
-		QAndroidJniObject toHandle();
 		QAndroidJniObject getOutputStream();
-		jboolean waitFor(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
 		jint waitFor();
+		jboolean waitFor(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
 		QAndroidJniObject destroyForcibly();
 		jint exitValue();
 		QAndroidJniObject descendants();
@@ -49,6 +48,7 @@ namespace __jni_impl::java::lang
 		jboolean supportsNormalTermination();
 		QAndroidJniObject onExit();
 		jlong pid();
+		QAndroidJniObject toHandle();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -100,17 +100,17 @@ namespace __jni_impl::java::lang
 			"children",
 			"()Ljava/util/stream/Stream;");
 	}
-	QAndroidJniObject Process::toHandle()
-	{
-		return __thiz.callObjectMethod(
-			"toHandle",
-			"()Ljava/lang/ProcessHandle;");
-	}
 	QAndroidJniObject Process::getOutputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;");
+	}
+	jint Process::waitFor()
+	{
+		return __thiz.callMethod<jint>(
+			"waitFor",
+			"()I");
 	}
 	jboolean Process::waitFor(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -119,12 +119,6 @@ namespace __jni_impl::java::lang
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
 			arg1.__jniObject().object());
-	}
-	jint Process::waitFor()
-	{
-		return __thiz.callMethod<jint>(
-			"waitFor",
-			"()I");
 	}
 	QAndroidJniObject Process::destroyForcibly()
 	{
@@ -167,6 +161,12 @@ namespace __jni_impl::java::lang
 		return __thiz.callMethod<jlong>(
 			"pid",
 			"()J");
+	}
+	QAndroidJniObject Process::toHandle()
+	{
+		return __thiz.callObjectMethod(
+			"toHandle",
+			"()Ljava/lang/ProcessHandle;");
 	}
 } // namespace __jni_impl::java::lang
 

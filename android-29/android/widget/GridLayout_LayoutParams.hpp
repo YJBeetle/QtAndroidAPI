@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_GRIDLAYOUT_LAYOUTPARAMS
 #define ANDROID_WIDGET_GRIDLAYOUT_LAYOUTPARAMS
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 
 namespace __jni_impl::android::widget

@@ -3,6 +3,10 @@
 #ifndef JAVA_UTIL_UNKNOWNFORMATFLAGSEXCEPTION
 #define JAVA_UTIL_UNKNOWNFORMATFLAGSEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
+#include "../lang/IllegalArgumentException.hpp"
 #include "IllegalFormatException.hpp"
 
 

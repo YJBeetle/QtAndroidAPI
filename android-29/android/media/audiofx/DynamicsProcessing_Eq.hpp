@@ -3,6 +3,8 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_EQ
 #define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_EQ
 
+#include "../../../__JniBaseClass.hpp"
+#include "DynamicsProcessing_Stage.hpp"
 #include "DynamicsProcessing_BandStage.hpp"
 
 namespace __jni_impl::android::media::audiofx

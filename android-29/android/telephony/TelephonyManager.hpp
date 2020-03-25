@@ -9,6 +9,10 @@ namespace __jni_impl::android::telephony
 {
 	class PhoneStateListener;
 }
+namespace __jni_impl::android::telephony
+{
+	class SignalStrength;
+}
 namespace __jni_impl::android::telecom
 {
 	class PhoneAccountHandle;
@@ -64,10 +68,6 @@ namespace __jni_impl::android::telephony
 namespace __jni_impl::android::net
 {
 	class Uri;
-}
-namespace __jni_impl::android::telephony
-{
-	class SignalStrength;
 }
 
 namespace __jni_impl::android::telephony
@@ -188,19 +188,20 @@ namespace __jni_impl::android::telephony
 		void listen(__jni_impl::android::telephony::PhoneStateListener arg0, jint arg1);
 		QAndroidJniObject getDeviceId(jint arg0);
 		QAndroidJniObject getDeviceId();
+		QAndroidJniObject getSignalStrength();
 		jint getNetworkType();
 		jint getPhoneCount();
 		QAndroidJniObject createForSubscriptionId(jint arg0);
 		QAndroidJniObject createForPhoneAccountHandle(__jni_impl::android::telecom::PhoneAccountHandle arg0);
 		QAndroidJniObject getDeviceSoftwareVersion();
-		QAndroidJniObject getImei();
 		QAndroidJniObject getImei(jint arg0);
-		QAndroidJniObject getTypeAllocationCode(jint arg0);
+		QAndroidJniObject getImei();
 		QAndroidJniObject getTypeAllocationCode();
+		QAndroidJniObject getTypeAllocationCode(jint arg0);
 		QAndroidJniObject getMeid();
 		QAndroidJniObject getMeid(jint arg0);
-		QAndroidJniObject getManufacturerCode(jint arg0);
 		QAndroidJniObject getManufacturerCode();
+		QAndroidJniObject getManufacturerCode(jint arg0);
 		QAndroidJniObject getNai();
 		QAndroidJniObject getCellLocation();
 		jint getPhoneType();
@@ -282,14 +283,14 @@ namespace __jni_impl::android::telephony
 		jint isMultiSimSupported();
 		void switchMultiSimConfig(jint arg0);
 		jboolean doesSwitchMultiSimConfigTriggerReboot();
-		QAndroidJniObject getSignalStrength();
-		jboolean isEmergencyNumber(jstring arg0);
 		QAndroidJniObject getVoiceMailNumber();
 		QAndroidJniObject getLine1Number();
+		jboolean isEmergencyNumber(jstring arg0);
 	};
 } // namespace __jni_impl::android::telephony
 
 #include "PhoneStateListener.hpp"
+#include "SignalStrength.hpp"
 #include "../telecom/PhoneAccountHandle.hpp"
 #include "CellLocation.hpp"
 #include "../os/PersistableBundle.hpp"
@@ -304,7 +305,6 @@ namespace __jni_impl::android::telephony
 #include "../os/Handler.hpp"
 #include "ServiceState.hpp"
 #include "../net/Uri.hpp"
-#include "SignalStrength.hpp"
 
 namespace __jni_impl::android::telephony
 {
@@ -994,6 +994,12 @@ namespace __jni_impl::android::telephony
 			"getDeviceId",
 			"()Ljava/lang/String;");
 	}
+	QAndroidJniObject TelephonyManager::getSignalStrength()
+	{
+		return __thiz.callObjectMethod(
+			"getSignalStrength",
+			"()Landroid/telephony/SignalStrength;");
+	}
 	jint TelephonyManager::getNetworkType()
 	{
 		return __thiz.callMethod<jint>(
@@ -1026,12 +1032,6 @@ namespace __jni_impl::android::telephony
 			"getDeviceSoftwareVersion",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject TelephonyManager::getImei()
-	{
-		return __thiz.callObjectMethod(
-			"getImei",
-			"()Ljava/lang/String;");
-	}
 	QAndroidJniObject TelephonyManager::getImei(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -1039,18 +1039,24 @@ namespace __jni_impl::android::telephony
 			"(I)Ljava/lang/String;",
 			arg0);
 	}
-	QAndroidJniObject TelephonyManager::getTypeAllocationCode(jint arg0)
+	QAndroidJniObject TelephonyManager::getImei()
 	{
 		return __thiz.callObjectMethod(
-			"getTypeAllocationCode",
-			"(I)Ljava/lang/String;",
-			arg0);
+			"getImei",
+			"()Ljava/lang/String;");
 	}
 	QAndroidJniObject TelephonyManager::getTypeAllocationCode()
 	{
 		return __thiz.callObjectMethod(
 			"getTypeAllocationCode",
 			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject TelephonyManager::getTypeAllocationCode(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getTypeAllocationCode",
+			"(I)Ljava/lang/String;",
+			arg0);
 	}
 	QAndroidJniObject TelephonyManager::getMeid()
 	{
@@ -1065,18 +1071,18 @@ namespace __jni_impl::android::telephony
 			"(I)Ljava/lang/String;",
 			arg0);
 	}
+	QAndroidJniObject TelephonyManager::getManufacturerCode()
+	{
+		return __thiz.callObjectMethod(
+			"getManufacturerCode",
+			"()Ljava/lang/String;");
+	}
 	QAndroidJniObject TelephonyManager::getManufacturerCode(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getManufacturerCode",
 			"(I)Ljava/lang/String;",
 			arg0);
-	}
-	QAndroidJniObject TelephonyManager::getManufacturerCode()
-	{
-		return __thiz.callObjectMethod(
-			"getManufacturerCode",
-			"()Ljava/lang/String;");
 	}
 	QAndroidJniObject TelephonyManager::getNai()
 	{
@@ -1629,19 +1635,6 @@ namespace __jni_impl::android::telephony
 			"doesSwitchMultiSimConfigTriggerReboot",
 			"()Z");
 	}
-	QAndroidJniObject TelephonyManager::getSignalStrength()
-	{
-		return __thiz.callObjectMethod(
-			"getSignalStrength",
-			"()Landroid/telephony/SignalStrength;");
-	}
-	jboolean TelephonyManager::isEmergencyNumber(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEmergencyNumber",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
 	QAndroidJniObject TelephonyManager::getVoiceMailNumber()
 	{
 		return __thiz.callObjectMethod(
@@ -1653,6 +1646,13 @@ namespace __jni_impl::android::telephony
 		return __thiz.callObjectMethod(
 			"getLine1Number",
 			"()Ljava/lang/String;");
+	}
+	jboolean TelephonyManager::isEmergencyNumber(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmergencyNumber",
+			"(Ljava/lang/String;)Z",
+			arg0);
 	}
 } // namespace __jni_impl::android::telephony
 

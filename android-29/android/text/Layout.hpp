@@ -13,13 +13,9 @@ namespace __jni_impl::android::text
 {
 	class Layout_Alignment;
 }
-namespace __jni_impl::android::text
-{
-	class Layout_Directions;
-}
 namespace __jni_impl::android::graphics
 {
-	class Rect;
+	class Canvas;
 }
 namespace __jni_impl::android::graphics
 {
@@ -27,11 +23,15 @@ namespace __jni_impl::android::graphics
 }
 namespace __jni_impl::android::graphics
 {
-	class Canvas;
+	class Paint;
+}
+namespace __jni_impl::android::text
+{
+	class Layout_Directions;
 }
 namespace __jni_impl::android::graphics
 {
-	class Paint;
+	class Rect;
 }
 
 namespace __jni_impl::android::text
@@ -60,6 +60,8 @@ namespace __jni_impl::android::text
 		QAndroidJniObject getText();
 		jint getWidth();
 		jint getHeight();
+		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3);
+		void draw(__jni_impl::android::graphics::Canvas arg0);
 		jint getLineCount();
 		jint getLineTop(jint arg0);
 		jint getLineDescent(jint arg0);
@@ -102,18 +104,16 @@ namespace __jni_impl::android::text
 		QAndroidJniObject getParagraphAlignment(jint arg0);
 		jint getParagraphLeft(jint arg0);
 		jint getParagraphRight(jint arg0);
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::text
 
 #include "TextPaint.hpp"
 #include "Layout_Alignment.hpp"
+#include "../graphics/Canvas.hpp"
+#include "../graphics/Path.hpp"
+#include "../graphics/Paint.hpp"
 #include "Layout_Directions.hpp"
 #include "../graphics/Rect.hpp"
-#include "../graphics/Path.hpp"
-#include "../graphics/Canvas.hpp"
-#include "../graphics/Paint.hpp"
 
 namespace __jni_impl::android::text
 {
@@ -217,6 +217,23 @@ namespace __jni_impl::android::text
 		return __thiz.callMethod<jint>(
 			"getHeight",
 			"()I");
+	}
+	void Layout::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Path;Landroid/graphics/Paint;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3);
+	}
+	void Layout::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object());
 	}
 	jint Layout::getLineCount()
 	{
@@ -515,23 +532,6 @@ namespace __jni_impl::android::text
 			"getParagraphRight",
 			"(I)I",
 			arg0);
-	}
-	void Layout::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	void Layout::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;Landroid/graphics/Path;Landroid/graphics/Paint;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3);
 	}
 } // namespace __jni_impl::android::text
 

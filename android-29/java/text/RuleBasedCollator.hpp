@@ -3,6 +3,7 @@
 #ifndef JAVA_TEXT_RULEBASEDCOLLATOR
 #define JAVA_TEXT_RULEBASEDCOLLATOR
 
+#include "../../__JniBaseClass.hpp"
 #include "Collator.hpp"
 
 namespace __jni_impl::java::lang
@@ -34,9 +35,9 @@ namespace __jni_impl::java::text
 		QAndroidJniObject clone();
 		jint compare(jstring arg0, jstring arg1);
 		QAndroidJniObject getRules();
-		QAndroidJniObject getCollationKey(jstring arg0);
-		QAndroidJniObject getCollationElementIterator(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getCollationElementIterator(jstring arg0);
+		QAndroidJniObject getCollationElementIterator(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getCollationKey(jstring arg0);
 	};
 } // namespace __jni_impl::java::text
 
@@ -91,11 +92,11 @@ namespace __jni_impl::java::text
 			"getRules",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationKey(jstring arg0)
+	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Ljava/text/CollationKey;",
+			"getCollationElementIterator",
+			"(Ljava/lang/String;)Ljava/text/CollationElementIterator;",
 			arg0);
 	}
 	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(__jni_impl::__JniBaseClass arg0)
@@ -105,11 +106,11 @@ namespace __jni_impl::java::text
 			"(Ljava/text/CharacterIterator;)Ljava/text/CollationElementIterator;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(jstring arg0)
+	QAndroidJniObject RuleBasedCollator::getCollationKey(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getCollationElementIterator",
-			"(Ljava/lang/String;)Ljava/text/CollationElementIterator;",
+			"getCollationKey",
+			"(Ljava/lang/String;)Ljava/text/CollationKey;",
 			arg0);
 	}
 } // namespace __jni_impl::java::text

@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_ZIP_ZIPEXCEPTION
 #define JAVA_UTIL_ZIP_ZIPEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
 
 

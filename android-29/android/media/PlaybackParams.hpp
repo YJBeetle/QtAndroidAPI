@@ -25,13 +25,13 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
+		jfloat getSpeed();
+		QAndroidJniObject setSpeed(jfloat arg0);
 		QAndroidJniObject allowDefaults();
 		QAndroidJniObject setAudioFallbackMode(jint arg0);
 		jint getAudioFallbackMode();
 		jfloat getPitch();
 		QAndroidJniObject setPitch(jfloat arg0);
-		jfloat getSpeed();
-		QAndroidJniObject setSpeed(jfloat arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -77,6 +77,19 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jfloat PlaybackParams::getSpeed()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getSpeed",
+			"()F");
+	}
+	QAndroidJniObject PlaybackParams::setSpeed(jfloat arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSpeed",
+			"(F)Landroid/media/PlaybackParams;",
+			arg0);
+	}
 	QAndroidJniObject PlaybackParams::allowDefaults()
 	{
 		return __thiz.callObjectMethod(
@@ -106,19 +119,6 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"setPitch",
-			"(F)Landroid/media/PlaybackParams;",
-			arg0);
-	}
-	jfloat PlaybackParams::getSpeed()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getSpeed",
-			"()F");
-	}
-	QAndroidJniObject PlaybackParams::setSpeed(jfloat arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSpeed",
 			"(F)Landroid/media/PlaybackParams;",
 			arg0);
 	}

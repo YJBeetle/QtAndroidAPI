@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 namespace __jni_impl::android::database
 {
 	class CharArrayBuffer;
@@ -24,10 +28,6 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::net
 {
 	class Uri;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 
 namespace __jni_impl::android::database
@@ -52,6 +52,7 @@ namespace __jni_impl::android::database
 		jint getCount();
 		QAndroidJniObject getString(jint arg0);
 		jboolean move(jint arg0);
+		QAndroidJniObject getExtras();
 		jint getColumnIndex(jstring arg0);
 		QAndroidJniObject getColumnNames();
 		QAndroidJniObject getBlob(jint arg0);
@@ -81,19 +82,18 @@ namespace __jni_impl::android::database
 		QAndroidJniObject getNotificationUris();
 		jboolean getWantsAllOnMoveCalls();
 		QAndroidJniObject respond(__jni_impl::android::os::Bundle arg0);
+		jboolean isClosed();
 		void setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject getWrappedCursor();
-		QAndroidJniObject getExtras();
-		jboolean isClosed();
 	};
 } // namespace __jni_impl::android::database
 
+#include "../os/Bundle.hpp"
 #include "CharArrayBuffer.hpp"
 #include "ContentObserver.hpp"
 #include "DataSetObserver.hpp"
 #include "../content/ContentResolver.hpp"
 #include "../net/Uri.hpp"
-#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::database
 {
@@ -183,6 +183,12 @@ namespace __jni_impl::android::database
 			"move",
 			"(I)Z",
 			arg0);
+	}
+	QAndroidJniObject CursorWrapper::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
 	}
 	jint CursorWrapper::getColumnIndex(jstring arg0)
 	{
@@ -374,6 +380,12 @@ namespace __jni_impl::android::database
 			"(Landroid/os/Bundle;)Landroid/os/Bundle;",
 			arg0.__jniObject().object());
 	}
+	jboolean CursorWrapper::isClosed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClosed",
+			"()Z");
+	}
 	void CursorWrapper::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
@@ -386,18 +398,6 @@ namespace __jni_impl::android::database
 		return __thiz.callObjectMethod(
 			"getWrappedCursor",
 			"()Landroid/database/Cursor;");
-	}
-	QAndroidJniObject CursorWrapper::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	jboolean CursorWrapper::isClosed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isClosed",
-			"()Z");
 	}
 } // namespace __jni_impl::android::database
 

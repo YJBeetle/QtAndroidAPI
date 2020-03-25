@@ -9,13 +9,13 @@ namespace __jni_impl::android::hardware::usb
 {
 	class UsbConfiguration;
 }
-namespace __jni_impl::android::hardware::usb
-{
-	class UsbInterface;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::hardware::usb
+{
+	class UsbInterface;
 }
 
 namespace __jni_impl::android::hardware::usb
@@ -34,9 +34,14 @@ namespace __jni_impl::android::hardware::usb
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getVersion();
-		static jint getDeviceId(jstring arg0);
 		jint getDeviceId();
+		static jint getDeviceId(jstring arg0);
 		QAndroidJniObject getConfiguration(jint arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getDeviceName();
+		static QAndroidJniObject getDeviceName(jint arg0);
+		jint getDeviceClass();
 		QAndroidJniObject getManufacturerName();
 		QAndroidJniObject getProductName();
 		QAndroidJniObject getSerialNumber();
@@ -47,17 +52,12 @@ namespace __jni_impl::android::hardware::usb
 		jint getConfigurationCount();
 		jint getInterfaceCount();
 		QAndroidJniObject getInterface(jint arg0);
-		jint getDeviceClass();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject getDeviceName(jint arg0);
-		QAndroidJniObject getDeviceName();
 	};
 } // namespace __jni_impl::android::hardware::usb
 
 #include "UsbConfiguration.hpp"
-#include "UsbInterface.hpp"
 #include "../../os/Parcel.hpp"
+#include "UsbInterface.hpp"
 
 namespace __jni_impl::android::hardware::usb
 {
@@ -104,6 +104,12 @@ namespace __jni_impl::android::hardware::usb
 			"getVersion",
 			"()Ljava/lang/String;");
 	}
+	jint UsbDevice::getDeviceId()
+	{
+		return __thiz.callMethod<jint>(
+			"getDeviceId",
+			"()I");
+	}
 	jint UsbDevice::getDeviceId(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -112,18 +118,46 @@ namespace __jni_impl::android::hardware::usb
 			"(Ljava/lang/String;)I",
 			arg0);
 	}
-	jint UsbDevice::getDeviceId()
-	{
-		return __thiz.callMethod<jint>(
-			"getDeviceId",
-			"()I");
-	}
 	QAndroidJniObject UsbDevice::getConfiguration(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getConfiguration",
 			"(I)Landroid/hardware/usb/UsbConfiguration;",
 			arg0);
+	}
+	jint UsbDevice::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void UsbDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	QAndroidJniObject UsbDevice::getDeviceName()
+	{
+		return __thiz.callObjectMethod(
+			"getDeviceName",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject UsbDevice::getDeviceName(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.hardware.usb.UsbDevice",
+			"getDeviceName",
+			"(I)Ljava/lang/String;",
+			arg0);
+	}
+	jint UsbDevice::getDeviceClass()
+	{
+		return __thiz.callMethod<jint>(
+			"getDeviceClass",
+			"()I");
 	}
 	QAndroidJniObject UsbDevice::getManufacturerName()
 	{
@@ -185,40 +219,6 @@ namespace __jni_impl::android::hardware::usb
 			"getInterface",
 			"(I)Landroid/hardware/usb/UsbInterface;",
 			arg0);
-	}
-	jint UsbDevice::getDeviceClass()
-	{
-		return __thiz.callMethod<jint>(
-			"getDeviceClass",
-			"()I");
-	}
-	jint UsbDevice::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void UsbDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject UsbDevice::getDeviceName(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.hardware.usb.UsbDevice",
-			"getDeviceName",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject UsbDevice::getDeviceName()
-	{
-		return __thiz.callObjectMethod(
-			"getDeviceName",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::hardware::usb
 

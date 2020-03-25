@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_CHARSET_CODERMALFUNCTIONERROR
 #define JAVA_NIO_CHARSET_CODERMALFUNCTIONERROR
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Error.hpp"
 
 namespace __jni_impl::java::lang

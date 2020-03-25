@@ -9,13 +9,13 @@ namespace __jni_impl::java::io
 {
 	class InputStream;
 }
-namespace __jni_impl::android::bluetooth
-{
-	class BluetoothDevice;
-}
 namespace __jni_impl::java::io
 {
 	class OutputStream;
+}
+namespace __jni_impl::android::bluetooth
+{
+	class BluetoothDevice;
 }
 
 namespace __jni_impl::android::bluetooth
@@ -36,17 +36,17 @@ namespace __jni_impl::android::bluetooth
 		void close();
 		QAndroidJniObject getInputStream();
 		jboolean isConnected();
+		QAndroidJniObject getOutputStream();
 		QAndroidJniObject getRemoteDevice();
 		jint getMaxTransmitPacketSize();
 		jint getMaxReceivePacketSize();
 		jint getConnectionType();
-		QAndroidJniObject getOutputStream();
 	};
 } // namespace __jni_impl::android::bluetooth
 
 #include "../../java/io/InputStream.hpp"
-#include "BluetoothDevice.hpp"
 #include "../../java/io/OutputStream.hpp"
+#include "BluetoothDevice.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -103,6 +103,12 @@ namespace __jni_impl::android::bluetooth
 			"isConnected",
 			"()Z");
 	}
+	QAndroidJniObject BluetoothSocket::getOutputStream()
+	{
+		return __thiz.callObjectMethod(
+			"getOutputStream",
+			"()Ljava/io/OutputStream;");
+	}
 	QAndroidJniObject BluetoothSocket::getRemoteDevice()
 	{
 		return __thiz.callObjectMethod(
@@ -126,12 +132,6 @@ namespace __jni_impl::android::bluetooth
 		return __thiz.callMethod<jint>(
 			"getConnectionType",
 			"()I");
-	}
-	QAndroidJniObject BluetoothSocket::getOutputStream()
-	{
-		return __thiz.callObjectMethod(
-			"getOutputStream",
-			"()Ljava/io/OutputStream;");
 	}
 } // namespace __jni_impl::android::bluetooth
 

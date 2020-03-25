@@ -3,12 +3,11 @@
 #ifndef ANDROID_MEDIA_TV_TVINPUTSERVICE
 #define ANDROID_MEDIA_TV_TVINPUTSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::media::tv
 {
 	class TvInputService_Session;
@@ -16,6 +15,10 @@ namespace __jni_impl::android::media::tv
 namespace __jni_impl::android::media::tv
 {
 	class TvInputService_RecordingSession;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::media::tv
@@ -31,15 +34,15 @@ namespace __jni_impl::android::media::tv
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject onCreateSession(jstring arg0);
 		QAndroidJniObject onCreateRecordingSession(jstring arg0);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
-#include "../../content/Intent.hpp"
 #include "TvInputService_Session.hpp"
 #include "TvInputService_RecordingSession.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::media::tv
 {
@@ -68,13 +71,6 @@ namespace __jni_impl::android::media::tv
 	}
 	
 	// Methods
-	QAndroidJniObject TvInputService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject TvInputService::onCreateSession(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -88,6 +84,13 @@ namespace __jni_impl::android::media::tv
 			"onCreateRecordingSession",
 			"(Ljava/lang/String;)Landroid/media/tv/TvInputService$RecordingSession;",
 			arg0);
+	}
+	QAndroidJniObject TvInputService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media::tv
 

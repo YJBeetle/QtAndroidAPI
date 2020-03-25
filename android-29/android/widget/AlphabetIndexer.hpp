@@ -3,6 +3,7 @@
 #ifndef ANDROID_WIDGET_ALPHABETINDEXER
 #define ANDROID_WIDGET_ALPHABETINDEXER
 
+#include "../../__JniBaseClass.hpp"
 #include "../database/DataSetObserver.hpp"
 
 
@@ -19,8 +20,8 @@ namespace __jni_impl::android::widget
 		// Methods
 		void onChanged();
 		void onInvalidated();
-		QAndroidJniObject getSections();
 		jint getPositionForSection(jint arg0);
+		QAndroidJniObject getSections();
 		jint getSectionForPosition(jint arg0);
 		void setCursor(__jni_impl::__JniBaseClass arg0);
 	};
@@ -55,18 +56,18 @@ namespace __jni_impl::android::widget
 			"onInvalidated",
 			"()V");
 	}
-	QAndroidJniObject AlphabetIndexer::getSections()
-	{
-		return __thiz.callObjectMethod(
-			"getSections",
-			"()[Ljava/lang/Object;");
-	}
 	jint AlphabetIndexer::getPositionForSection(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getPositionForSection",
 			"(I)I",
 			arg0);
+	}
+	QAndroidJniObject AlphabetIndexer::getSections()
+	{
+		return __thiz.callObjectMethod(
+			"getSections",
+			"()[Ljava/lang/Object;");
 	}
 	jint AlphabetIndexer::getSectionForPosition(jint arg0)
 	{

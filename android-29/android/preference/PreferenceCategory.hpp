@@ -3,6 +3,8 @@
 #ifndef ANDROID_PREFERENCE_PREFERENCECATEGORY
 #define ANDROID_PREFERENCE_PREFERENCECATEGORY
 
+#include "../../__JniBaseClass.hpp"
+#include "Preference.hpp"
 #include "PreferenceGroup.hpp"
 
 namespace __jni_impl::android::content

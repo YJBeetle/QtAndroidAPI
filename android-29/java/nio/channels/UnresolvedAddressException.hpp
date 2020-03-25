@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_CHANNELS_UNRESOLVEDADDRESSEXCEPTION
 #define JAVA_NIO_CHANNELS_UNRESOLVEDADDRESSEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalArgumentException.hpp"
 
 

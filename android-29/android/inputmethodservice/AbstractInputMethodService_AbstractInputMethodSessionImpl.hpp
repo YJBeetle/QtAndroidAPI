@@ -30,10 +30,10 @@ namespace __jni_impl::android::inputmethodservice
 		
 		// Methods
 		jboolean isEnabled();
+		void setEnabled(jboolean arg0);
 		void dispatchKeyEvent(jint arg0, __jni_impl::android::view::KeyEvent arg1, __jni_impl::__JniBaseClass arg2);
 		void dispatchTrackballEvent(jint arg0, __jni_impl::android::view::MotionEvent arg1, __jni_impl::__JniBaseClass arg2);
 		void dispatchGenericMotionEvent(jint arg0, __jni_impl::android::view::MotionEvent arg1, __jni_impl::__JniBaseClass arg2);
-		void setEnabled(jboolean arg0);
 		jboolean isRevoked();
 		void revokeSelf();
 	};
@@ -63,6 +63,13 @@ namespace __jni_impl::android::inputmethodservice
 			"isEnabled",
 			"()Z");
 	}
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::setEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0);
+	}
 	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchKeyEvent(jint arg0, __jni_impl::android::view::KeyEvent arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		__thiz.callMethod<void>(
@@ -89,13 +96,6 @@ namespace __jni_impl::android::inputmethodservice
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
-	}
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::setEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnabled",
-			"(Z)V",
-			arg0);
 	}
 	jboolean AbstractInputMethodService_AbstractInputMethodSessionImpl::isRevoked()
 	{

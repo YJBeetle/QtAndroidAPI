@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_FRAGMENTHOSTCALLBACK
 #define ANDROID_APP_FRAGMENTHOSTCALLBACK
 
+#include "../../__JniBaseClass.hpp"
 #include "FragmentContainer.hpp"
 
 namespace __jni_impl::android::content
@@ -16,6 +17,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::app
 {
 	class Fragment;
+}
+namespace __jni_impl::android::view
+{
+	class LayoutInflater;
 }
 namespace __jni_impl::java::io
 {
@@ -39,10 +44,6 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::view
 {
-	class LayoutInflater;
-}
-namespace __jni_impl::android::view
-{
 	class View;
 }
 
@@ -57,6 +58,8 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::os::Handler arg1, jint arg2);
 		
 		// Methods
+		void onAttachFragment(__jni_impl::android::app::Fragment arg0);
+		QAndroidJniObject onGetLayoutInflater();
 		jboolean onShouldSaveFragmentState(__jni_impl::android::app::Fragment arg0);
 		void onDump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 		jboolean onUseFragmentManagerInflaterFactory();
@@ -67,8 +70,6 @@ namespace __jni_impl::android::app
 		void onRequestPermissionsFromFragment(__jni_impl::android::app::Fragment arg0, jarray arg1, jint arg2);
 		jboolean onHasWindowAnimations();
 		jint onGetWindowAnimations();
-		QAndroidJniObject onGetLayoutInflater();
-		void onAttachFragment(__jni_impl::android::app::Fragment arg0);
 		QAndroidJniObject onFindViewById(jint arg0);
 		jboolean onHasView();
 	};
@@ -77,12 +78,12 @@ namespace __jni_impl::android::app
 #include "../content/Context.hpp"
 #include "../os/Handler.hpp"
 #include "Fragment.hpp"
+#include "../view/LayoutInflater.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "../content/IntentSender.hpp"
-#include "../view/LayoutInflater.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::app
@@ -101,6 +102,19 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	void FragmentHostCallback::onAttachFragment(__jni_impl::android::app::Fragment arg0)
+	{
+		__thiz.callMethod<void>(
+			"onAttachFragment",
+			"(Landroid/app/Fragment;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject FragmentHostCallback::onGetLayoutInflater()
+	{
+		return __thiz.callObjectMethod(
+			"onGetLayoutInflater",
+			"()Landroid/view/LayoutInflater;");
+	}
 	jboolean FragmentHostCallback::onShouldSaveFragmentState(__jni_impl::android::app::Fragment arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -180,19 +194,6 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jint>(
 			"onGetWindowAnimations",
 			"()I");
-	}
-	QAndroidJniObject FragmentHostCallback::onGetLayoutInflater()
-	{
-		return __thiz.callObjectMethod(
-			"onGetLayoutInflater",
-			"()Landroid/view/LayoutInflater;");
-	}
-	void FragmentHostCallback::onAttachFragment(__jni_impl::android::app::Fragment arg0)
-	{
-		__thiz.callMethod<void>(
-			"onAttachFragment",
-			"(Landroid/app/Fragment;)V",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject FragmentHostCallback::onFindViewById(jint arg0)
 	{

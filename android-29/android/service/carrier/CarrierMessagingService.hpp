@@ -3,6 +3,9 @@
 #ifndef ANDROID_SERVICE_CARRIER_CARRIERMESSAGINGSERVICE
 #define ANDROID_SERVICE_CARRIER_CARRIERMESSAGINGSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace __jni_impl::android::content

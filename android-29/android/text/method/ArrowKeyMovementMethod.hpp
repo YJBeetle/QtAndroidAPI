@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_METHOD_ARROWKEYMOVEMENTMETHOD
 #define ANDROID_TEXT_METHOD_ARROWKEYMOVEMENTMETHOD
 
+#include "../../../__JniBaseClass.hpp"
 #include "BaseMovementMethod.hpp"
 
 namespace __jni_impl::android::widget

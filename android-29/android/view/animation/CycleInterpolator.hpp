@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_ANIMATION_CYCLEINTERPOLATOR
 #define ANDROID_VIEW_ANIMATION_CYCLEINTERPOLATOR
 
+#include "../../../__JniBaseClass.hpp"
 #include "BaseInterpolator.hpp"
 
 namespace __jni_impl::android::content

@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_UTIL_HEBREWCALENDAR
 #define ANDROID_ICU_UTIL_HEBREWCALENDAR
 
+#include "../../../__JniBaseClass.hpp"
 #include "Calendar.hpp"
 
 namespace __jni_impl::android::icu::util

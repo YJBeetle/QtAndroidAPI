@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_MEDIADRMEXCEPTION
 #define ANDROID_MEDIA_MEDIADRMEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_MESSAGEDIGEST
 #define JAVA_SECURITY_MESSAGEDIGEST
 
+#include "../../__JniBaseClass.hpp"
 #include "MessageDigestSpi.hpp"
 
 namespace __jni_impl::java::security

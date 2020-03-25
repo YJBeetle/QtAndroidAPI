@@ -3,6 +3,8 @@
 #ifndef ANDROID_OS_PARCELFILEDESCRIPTOR_FILEDESCRIPTORDETACHEDEXCEPTION
 #define ANDROID_OS_PARCELFILEDESCRIPTOR_FILEDESCRIPTORDETACHEDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
 
 

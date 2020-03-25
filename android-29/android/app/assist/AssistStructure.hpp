@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content
 {
 	class ComponentName;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 namespace __jni_impl::android::app::assist
 {
@@ -31,18 +31,18 @@ namespace __jni_impl::android::app::assist
 		
 		// Methods
 		jlong getAcquisitionStartTime();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jlong getAcquisitionEndTime();
 		QAndroidJniObject getActivityComponent();
 		jboolean isHomeActivity();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getWindowNodeCount();
 		QAndroidJniObject getWindowNodeAt(jint arg0);
 	};
 } // namespace __jni_impl::android::app::assist
 
-#include "../../os/Parcel.hpp"
 #include "../../content/ComponentName.hpp"
+#include "../../os/Parcel.hpp"
 #include "AssistStructure_WindowNode.hpp"
 
 namespace __jni_impl::android::app::assist
@@ -71,20 +71,6 @@ namespace __jni_impl::android::app::assist
 			"getAcquisitionStartTime",
 			"()J");
 	}
-	jint AssistStructure::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void AssistStructure::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	jlong AssistStructure::getAcquisitionEndTime()
 	{
 		return __thiz.callMethod<jlong>(
@@ -102,6 +88,20 @@ namespace __jni_impl::android::app::assist
 		return __thiz.callMethod<jboolean>(
 			"isHomeActivity",
 			"()Z");
+	}
+	jint AssistStructure::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void AssistStructure::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jint AssistStructure::getWindowNodeCount()
 	{

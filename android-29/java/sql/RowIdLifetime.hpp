@@ -3,6 +3,7 @@
 #ifndef JAVA_SQL_ROWIDLIFETIME
 #define JAVA_SQL_ROWIDLIFETIME
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
 

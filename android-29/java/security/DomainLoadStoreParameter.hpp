@@ -21,8 +21,8 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getConfiguration();
 		QAndroidJniObject getProtectionParams();
+		QAndroidJniObject getConfiguration();
 		QAndroidJniObject getProtectionParameter();
 	};
 } // namespace __jni_impl::java::security
@@ -44,17 +44,17 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject DomainLoadStoreParameter::getConfiguration()
-	{
-		return __thiz.callObjectMethod(
-			"getConfiguration",
-			"()Ljava/net/URI;");
-	}
 	QAndroidJniObject DomainLoadStoreParameter::getProtectionParams()
 	{
 		return __thiz.callObjectMethod(
 			"getProtectionParams",
 			"()Ljava/util/Map;");
+	}
+	QAndroidJniObject DomainLoadStoreParameter::getConfiguration()
+	{
+		return __thiz.callObjectMethod(
+			"getConfiguration",
+			"()Ljava/net/URI;");
 	}
 	QAndroidJniObject DomainLoadStoreParameter::getProtectionParameter()
 	{

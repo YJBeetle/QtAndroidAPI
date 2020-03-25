@@ -30,10 +30,10 @@ namespace __jni_impl::android::app::usage
 		jlong getLastTimeActive();
 		jlong getTotalTimeActive();
 		jint getActivationCount();
-		jlong getLastTimeStamp();
-		jlong getFirstTimeStamp();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getFirstTimeStamp();
+		jlong getLastTimeStamp();
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -85,18 +85,6 @@ namespace __jni_impl::android::app::usage
 			"getActivationCount",
 			"()I");
 	}
-	jlong ConfigurationStats::getLastTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLastTimeStamp",
-			"()J");
-	}
-	jlong ConfigurationStats::getFirstTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getFirstTimeStamp",
-			"()J");
-	}
 	jint ConfigurationStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -110,6 +98,18 @@ namespace __jni_impl::android::app::usage
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	jlong ConfigurationStats::getFirstTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getFirstTimeStamp",
+			"()J");
+	}
+	jlong ConfigurationStats::getLastTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLastTimeStamp",
+			"()J");
 	}
 } // namespace __jni_impl::android::app::usage
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_SHADER_TILEMODE
 #define ANDROID_GRAPHICS_SHADER_TILEMODE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

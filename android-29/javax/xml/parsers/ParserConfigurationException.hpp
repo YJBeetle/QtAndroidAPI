@@ -3,6 +3,7 @@
 #ifndef JAVAX_XML_PARSERS_PARSERCONFIGURATIONEXCEPTION
 #define JAVAX_XML_PARSERS_PARSERCONFIGURATIONEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
 

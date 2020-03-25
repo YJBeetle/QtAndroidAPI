@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_MATH_BIGDECIMAL
 #define ANDROID_ICU_MATH_BIGDECIMAL
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Number.hpp"
 
 namespace __jni_impl::java::math

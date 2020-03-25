@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_SHORT
 #define JAVA_LANG_SHORT
 
+#include "../../__JniBaseClass.hpp"
 #include "Number.hpp"
 
 

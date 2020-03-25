@@ -3,6 +3,8 @@
 #ifndef JAVA_NET_MALFORMEDURLEXCEPTION
 #define JAVA_NET_MALFORMEDURLEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
 
 

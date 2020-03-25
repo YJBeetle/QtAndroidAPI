@@ -3,6 +3,7 @@
 #ifndef JAVAX_SQL_STATEMENTEVENT
 #define JAVAX_SQL_STATEMENTEVENT
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/util/EventObject.hpp"
 
 namespace __jni_impl::java::sql
@@ -22,8 +23,8 @@ namespace __jni_impl::javax::sql
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::sql::SQLException arg2);
 		
 		// Methods
-		QAndroidJniObject getSQLException();
 		QAndroidJniObject getStatement();
+		QAndroidJniObject getSQLException();
 	};
 } // namespace __jni_impl::javax::sql
 
@@ -53,17 +54,17 @@ namespace __jni_impl::javax::sql
 	}
 	
 	// Methods
-	QAndroidJniObject StatementEvent::getSQLException()
-	{
-		return __thiz.callObjectMethod(
-			"getSQLException",
-			"()Ljava/sql/SQLException;");
-	}
 	QAndroidJniObject StatementEvent::getStatement()
 	{
 		return __thiz.callObjectMethod(
 			"getStatement",
 			"()Ljava/sql/PreparedStatement;");
+	}
+	QAndroidJniObject StatementEvent::getSQLException()
+	{
+		return __thiz.callObjectMethod(
+			"getSQLException",
+			"()Ljava/sql/SQLException;");
 	}
 } // namespace __jni_impl::javax::sql
 

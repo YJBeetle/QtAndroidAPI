@@ -3,6 +3,8 @@
 #ifndef ANDROID_PREFERENCE_SWITCHPREFERENCE
 #define ANDROID_PREFERENCE_SWITCHPREFERENCE
 
+#include "../../__JniBaseClass.hpp"
+#include "Preference.hpp"
 #include "TwoStatePreference.hpp"
 
 namespace __jni_impl::android::content
@@ -28,8 +30,8 @@ namespace __jni_impl::android::preference
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void setSwitchTextOn(jint arg0);
 		void setSwitchTextOn(jstring arg0);
+		void setSwitchTextOn(jint arg0);
 		void setSwitchTextOff(jint arg0);
 		void setSwitchTextOff(jstring arg0);
 		QAndroidJniObject getSwitchTextOn();
@@ -81,18 +83,18 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
-	void SwitchPreference::setSwitchTextOn(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSwitchTextOn",
-			"(I)V",
-			arg0);
-	}
 	void SwitchPreference::setSwitchTextOn(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSwitchTextOn",
 			"(Ljava/lang/CharSequence;)V",
+			arg0);
+	}
+	void SwitchPreference::setSwitchTextOn(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSwitchTextOn",
+			"(I)V",
 			arg0);
 	}
 	void SwitchPreference::setSwitchTextOff(jint arg0)

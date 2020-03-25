@@ -37,8 +37,6 @@ namespace __jni_impl::android::text
 		QAndroidJniObject setJustificationMode(jint arg0);
 		QAndroidJniObject setLineSpacing(jfloat arg0, jfloat arg1);
 		QAndroidJniObject setEllipsize(__jni_impl::android::text::TextUtils_TruncateAt arg0);
-		QAndroidJniObject setBreakStrategy(jint arg0);
-		QAndroidJniObject setHyphenationFrequency(jint arg0);
 		QAndroidJniObject setTextDirection(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setDisplayText(jstring arg0);
 		QAndroidJniObject setAlignment(__jni_impl::android::text::Layout_Alignment arg0);
@@ -46,6 +44,8 @@ namespace __jni_impl::android::text
 		QAndroidJniObject setUseLineSpacingFromFallbacks(jboolean arg0);
 		QAndroidJniObject setEllipsizedWidth(jint arg0);
 		static QAndroidJniObject obtain(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2);
+		QAndroidJniObject setBreakStrategy(jint arg0);
+		QAndroidJniObject setHyphenationFrequency(jint arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -94,20 +94,6 @@ namespace __jni_impl::android::text
 			"setEllipsize",
 			"(Landroid/text/TextUtils$TruncateAt;)Landroid/text/DynamicLayout$Builder;",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject DynamicLayout_Builder::setBreakStrategy(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBreakStrategy",
-			"(I)Landroid/text/DynamicLayout$Builder;",
-			arg0);
-	}
-	QAndroidJniObject DynamicLayout_Builder::setHyphenationFrequency(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setHyphenationFrequency",
-			"(I)Landroid/text/DynamicLayout$Builder;",
-			arg0);
 	}
 	QAndroidJniObject DynamicLayout_Builder::setTextDirection(__jni_impl::__JniBaseClass arg0)
 	{
@@ -160,6 +146,20 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1.__jniObject().object(),
 			arg2);
+	}
+	QAndroidJniObject DynamicLayout_Builder::setBreakStrategy(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBreakStrategy",
+			"(I)Landroid/text/DynamicLayout$Builder;",
+			arg0);
+	}
+	QAndroidJniObject DynamicLayout_Builder::setHyphenationFrequency(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setHyphenationFrequency",
+			"(I)Landroid/text/DynamicLayout$Builder;",
+			arg0);
 	}
 } // namespace __jni_impl::android::text
 

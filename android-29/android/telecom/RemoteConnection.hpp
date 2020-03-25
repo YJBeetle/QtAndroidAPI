@@ -13,18 +13,6 @@ namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::telecom
-{
-	class RemoteConnection_VideoProvider;
-}
-namespace __jni_impl::android::telecom
-{
-	class StatusHints;
-}
-namespace __jni_impl::android::telecom
-{
-	class RemoteConference;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -40,6 +28,18 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::telecom
 {
 	class CallAudioState;
+}
+namespace __jni_impl::android::telecom
+{
+	class RemoteConnection_VideoProvider;
+}
+namespace __jni_impl::android::telecom
+{
+	class StatusHints;
+}
+namespace __jni_impl::android::telecom
+{
+	class RemoteConference;
 }
 
 namespace __jni_impl::android::telecom
@@ -57,18 +57,6 @@ namespace __jni_impl::android::telecom
 		QAndroidJniObject getAddress();
 		void answer();
 		void abort();
-		jint getConnectionCapabilities();
-		jint getConnectionProperties();
-		QAndroidJniObject getVideoProvider();
-		jint getVideoState();
-		QAndroidJniObject getDisconnectCause();
-		QAndroidJniObject getConferenceableConnections();
-		QAndroidJniObject getStatusHints();
-		jint getAddressPresentation();
-		QAndroidJniObject getCallerDisplayName();
-		jint getCallerDisplayNamePresentation();
-		QAndroidJniObject getConference();
-		jboolean isRingbackRequested();
 		QAndroidJniObject getExtras();
 		void registerCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0);
 		void registerCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0, __jni_impl::android::os::Handler arg1);
@@ -83,18 +71,30 @@ namespace __jni_impl::android::telecom
 		void postDialContinue(jboolean arg0);
 		void pullExternalCall();
 		void setCallAudioState(__jni_impl::android::telecom::CallAudioState arg0);
+		jint getConnectionCapabilities();
+		jint getConnectionProperties();
+		QAndroidJniObject getVideoProvider();
+		jint getVideoState();
+		QAndroidJniObject getDisconnectCause();
+		QAndroidJniObject getConferenceableConnections();
+		QAndroidJniObject getStatusHints();
+		jint getAddressPresentation();
+		QAndroidJniObject getCallerDisplayName();
+		jint getCallerDisplayNamePresentation();
+		QAndroidJniObject getConference();
+		jboolean isRingbackRequested();
 	};
 } // namespace __jni_impl::android::telecom
 
 #include "DisconnectCause.hpp"
 #include "../net/Uri.hpp"
-#include "RemoteConnection_VideoProvider.hpp"
-#include "StatusHints.hpp"
-#include "RemoteConference.hpp"
 #include "../os/Bundle.hpp"
 #include "RemoteConnection_Callback.hpp"
 #include "../os/Handler.hpp"
 #include "CallAudioState.hpp"
+#include "RemoteConnection_VideoProvider.hpp"
+#include "StatusHints.hpp"
+#include "RemoteConference.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -132,78 +132,6 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"abort",
 			"()V");
-	}
-	jint RemoteConnection::getConnectionCapabilities()
-	{
-		return __thiz.callMethod<jint>(
-			"getConnectionCapabilities",
-			"()I");
-	}
-	jint RemoteConnection::getConnectionProperties()
-	{
-		return __thiz.callMethod<jint>(
-			"getConnectionProperties",
-			"()I");
-	}
-	QAndroidJniObject RemoteConnection::getVideoProvider()
-	{
-		return __thiz.callObjectMethod(
-			"getVideoProvider",
-			"()Landroid/telecom/RemoteConnection$VideoProvider;");
-	}
-	jint RemoteConnection::getVideoState()
-	{
-		return __thiz.callMethod<jint>(
-			"getVideoState",
-			"()I");
-	}
-	QAndroidJniObject RemoteConnection::getDisconnectCause()
-	{
-		return __thiz.callObjectMethod(
-			"getDisconnectCause",
-			"()Landroid/telecom/DisconnectCause;");
-	}
-	QAndroidJniObject RemoteConnection::getConferenceableConnections()
-	{
-		return __thiz.callObjectMethod(
-			"getConferenceableConnections",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject RemoteConnection::getStatusHints()
-	{
-		return __thiz.callObjectMethod(
-			"getStatusHints",
-			"()Landroid/telecom/StatusHints;");
-	}
-	jint RemoteConnection::getAddressPresentation()
-	{
-		return __thiz.callMethod<jint>(
-			"getAddressPresentation",
-			"()I");
-	}
-	QAndroidJniObject RemoteConnection::getCallerDisplayName()
-	{
-		return __thiz.callObjectMethod(
-			"getCallerDisplayName",
-			"()Ljava/lang/CharSequence;");
-	}
-	jint RemoteConnection::getCallerDisplayNamePresentation()
-	{
-		return __thiz.callMethod<jint>(
-			"getCallerDisplayNamePresentation",
-			"()I");
-	}
-	QAndroidJniObject RemoteConnection::getConference()
-	{
-		return __thiz.callObjectMethod(
-			"getConference",
-			"()Landroid/telecom/RemoteConference;");
-	}
-	jboolean RemoteConnection::isRingbackRequested()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRingbackRequested",
-			"()Z");
 	}
 	QAndroidJniObject RemoteConnection::getExtras()
 	{
@@ -295,6 +223,78 @@ namespace __jni_impl::android::telecom
 			"setCallAudioState",
 			"(Landroid/telecom/CallAudioState;)V",
 			arg0.__jniObject().object());
+	}
+	jint RemoteConnection::getConnectionCapabilities()
+	{
+		return __thiz.callMethod<jint>(
+			"getConnectionCapabilities",
+			"()I");
+	}
+	jint RemoteConnection::getConnectionProperties()
+	{
+		return __thiz.callMethod<jint>(
+			"getConnectionProperties",
+			"()I");
+	}
+	QAndroidJniObject RemoteConnection::getVideoProvider()
+	{
+		return __thiz.callObjectMethod(
+			"getVideoProvider",
+			"()Landroid/telecom/RemoteConnection$VideoProvider;");
+	}
+	jint RemoteConnection::getVideoState()
+	{
+		return __thiz.callMethod<jint>(
+			"getVideoState",
+			"()I");
+	}
+	QAndroidJniObject RemoteConnection::getDisconnectCause()
+	{
+		return __thiz.callObjectMethod(
+			"getDisconnectCause",
+			"()Landroid/telecom/DisconnectCause;");
+	}
+	QAndroidJniObject RemoteConnection::getConferenceableConnections()
+	{
+		return __thiz.callObjectMethod(
+			"getConferenceableConnections",
+			"()Ljava/util/List;");
+	}
+	QAndroidJniObject RemoteConnection::getStatusHints()
+	{
+		return __thiz.callObjectMethod(
+			"getStatusHints",
+			"()Landroid/telecom/StatusHints;");
+	}
+	jint RemoteConnection::getAddressPresentation()
+	{
+		return __thiz.callMethod<jint>(
+			"getAddressPresentation",
+			"()I");
+	}
+	QAndroidJniObject RemoteConnection::getCallerDisplayName()
+	{
+		return __thiz.callObjectMethod(
+			"getCallerDisplayName",
+			"()Ljava/lang/CharSequence;");
+	}
+	jint RemoteConnection::getCallerDisplayNamePresentation()
+	{
+		return __thiz.callMethod<jint>(
+			"getCallerDisplayNamePresentation",
+			"()I");
+	}
+	QAndroidJniObject RemoteConnection::getConference()
+	{
+		return __thiz.callObjectMethod(
+			"getConference",
+			"()Landroid/telecom/RemoteConference;");
+	}
+	jboolean RemoteConnection::isRingbackRequested()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRingbackRequested",
+			"()Z");
 	}
 } // namespace __jni_impl::android::telecom
 

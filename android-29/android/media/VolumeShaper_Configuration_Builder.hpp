@@ -24,8 +24,8 @@ namespace __jni_impl::android::media
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setDuration(jlong arg0);
-		QAndroidJniObject setCurve(jfloatArray arg0, jfloatArray arg1);
 		QAndroidJniObject setInterpolatorType(jint arg0);
+		QAndroidJniObject setCurve(jfloatArray arg0, jfloatArray arg1);
 		QAndroidJniObject reflectTimes();
 		QAndroidJniObject invertVolumes();
 		QAndroidJniObject scaleToEndVolume(jfloat arg0);
@@ -68,6 +68,13 @@ namespace __jni_impl::android::media
 			"(J)Landroid/media/VolumeShaper$Configuration$Builder;",
 			arg0);
 	}
+	QAndroidJniObject VolumeShaper_Configuration_Builder::setInterpolatorType(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setInterpolatorType",
+			"(I)Landroid/media/VolumeShaper$Configuration$Builder;",
+			arg0);
+	}
 	QAndroidJniObject VolumeShaper_Configuration_Builder::setCurve(jfloatArray arg0, jfloatArray arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -75,13 +82,6 @@ namespace __jni_impl::android::media
 			"([F[F)Landroid/media/VolumeShaper$Configuration$Builder;",
 			arg0,
 			arg1);
-	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::setInterpolatorType(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setInterpolatorType",
-			"(I)Landroid/media/VolumeShaper$Configuration$Builder;",
-			arg0);
 	}
 	QAndroidJniObject VolumeShaper_Configuration_Builder::reflectTimes()
 	{

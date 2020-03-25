@@ -13,29 +13,29 @@ namespace __jni_impl::android::content::pm
 {
 	class ShortcutInfo;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::graphics::drawable
 {
-	class PersistableBundle;
+	class Icon;
 }
 namespace __jni_impl::android::app
 {
 	class Person;
 }
-namespace __jni_impl::android::graphics::drawable
-{
-	class Icon;
-}
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
 }
+namespace __jni_impl::android::os
+{
+	class PersistableBundle;
+}
 namespace __jni_impl::android::content
 {
 	class LocusId;
+}
+namespace __jni_impl::android::content
+{
+	class ComponentName;
 }
 
 namespace __jni_impl::android::content::pm
@@ -50,7 +50,7 @@ namespace __jni_impl::android::content::pm
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setExtras(__jni_impl::android::os::PersistableBundle arg0);
+		QAndroidJniObject setIcon(__jni_impl::android::graphics::drawable::Icon arg0);
 		QAndroidJniObject setShortLabel(jstring arg0);
 		QAndroidJniObject setLongLabel(jstring arg0);
 		QAndroidJniObject setDisabledMessage(jstring arg0);
@@ -60,21 +60,21 @@ namespace __jni_impl::android::content::pm
 		QAndroidJniObject setPersons(jarray arg0);
 		QAndroidJniObject setLongLived(jboolean arg0);
 		QAndroidJniObject setRank(jint arg0);
-		QAndroidJniObject setIcon(__jni_impl::android::graphics::drawable::Icon arg0);
-		QAndroidJniObject setActivity(__jni_impl::android::content::ComponentName arg0);
 		QAndroidJniObject setIntent(__jni_impl::android::content::Intent arg0);
+		QAndroidJniObject setExtras(__jni_impl::android::os::PersistableBundle arg0);
 		QAndroidJniObject setLocusId(__jni_impl::android::content::LocusId arg0);
+		QAndroidJniObject setActivity(__jni_impl::android::content::ComponentName arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
 #include "../Context.hpp"
 #include "ShortcutInfo.hpp"
-#include "../../os/PersistableBundle.hpp"
-#include "../../app/Person.hpp"
 #include "../../graphics/drawable/Icon.hpp"
-#include "../ComponentName.hpp"
+#include "../../app/Person.hpp"
 #include "../Intent.hpp"
+#include "../../os/PersistableBundle.hpp"
 #include "../LocusId.hpp"
+#include "../ComponentName.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -97,11 +97,11 @@ namespace __jni_impl::android::content::pm
 			"build",
 			"()Landroid/content/pm/ShortcutInfo;");
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setExtras(__jni_impl::android::os::PersistableBundle arg0)
+	QAndroidJniObject ShortcutInfo_Builder::setIcon(__jni_impl::android::graphics::drawable::Icon arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/PersistableBundle;)Landroid/content/pm/ShortcutInfo$Builder;",
+			"setIcon",
+			"(Landroid/graphics/drawable/Icon;)Landroid/content/pm/ShortcutInfo$Builder;",
 			arg0.__jniObject().object());
 	}
 	QAndroidJniObject ShortcutInfo_Builder::setShortLabel(jstring arg0)
@@ -167,20 +167,6 @@ namespace __jni_impl::android::content::pm
 			"(I)Landroid/content/pm/ShortcutInfo$Builder;",
 			arg0);
 	}
-	QAndroidJniObject ShortcutInfo_Builder::setIcon(__jni_impl::android::graphics::drawable::Icon arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIcon",
-			"(Landroid/graphics/drawable/Icon;)Landroid/content/pm/ShortcutInfo$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ShortcutInfo_Builder::setActivity(__jni_impl::android::content::ComponentName arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setActivity",
-			"(Landroid/content/ComponentName;)Landroid/content/pm/ShortcutInfo$Builder;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject ShortcutInfo_Builder::setIntent(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -188,11 +174,25 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/content/Intent;)Landroid/content/pm/ShortcutInfo$Builder;",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject ShortcutInfo_Builder::setExtras(__jni_impl::android::os::PersistableBundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtras",
+			"(Landroid/os/PersistableBundle;)Landroid/content/pm/ShortcutInfo$Builder;",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject ShortcutInfo_Builder::setLocusId(__jni_impl::android::content::LocusId arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLocusId",
 			"(Landroid/content/LocusId;)Landroid/content/pm/ShortcutInfo$Builder;",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject ShortcutInfo_Builder::setActivity(__jni_impl::android::content::ComponentName arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setActivity",
+			"(Landroid/content/ComponentName;)Landroid/content/pm/ShortcutInfo$Builder;",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::content::pm

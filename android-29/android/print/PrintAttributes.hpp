@@ -7,7 +7,11 @@
 
 namespace __jni_impl::android::print
 {
-	class PrintAttributes_Resolution;
+	class PrintAttributes_MediaSize;
+}
+namespace __jni_impl::android::print
+{
+	class PrintAttributes_Margins;
 }
 namespace __jni_impl::android::os
 {
@@ -15,11 +19,7 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::print
 {
-	class PrintAttributes_MediaSize;
-}
-namespace __jni_impl::android::print
-{
-	class PrintAttributes_Margins;
+	class PrintAttributes_Resolution;
 }
 
 namespace __jni_impl::android::print
@@ -42,20 +42,20 @@ namespace __jni_impl::android::print
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		QAndroidJniObject getResolution();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getMediaSize();
 		QAndroidJniObject getMinMargins();
 		jint getDuplexMode();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getResolution();
 		jint getColorMode();
 	};
 } // namespace __jni_impl::android::print
 
-#include "PrintAttributes_Resolution.hpp"
-#include "../os/Parcel.hpp"
 #include "PrintAttributes_MediaSize.hpp"
 #include "PrintAttributes_Margins.hpp"
+#include "../os/Parcel.hpp"
+#include "PrintAttributes_Resolution.hpp"
 
 namespace __jni_impl::android::print
 {
@@ -126,26 +126,6 @@ namespace __jni_impl::android::print
 			"hashCode",
 			"()I");
 	}
-	QAndroidJniObject PrintAttributes::getResolution()
-	{
-		return __thiz.callObjectMethod(
-			"getResolution",
-			"()Landroid/print/PrintAttributes$Resolution;");
-	}
-	jint PrintAttributes::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void PrintAttributes::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	QAndroidJniObject PrintAttributes::getMediaSize()
 	{
 		return __thiz.callObjectMethod(
@@ -163,6 +143,26 @@ namespace __jni_impl::android::print
 		return __thiz.callMethod<jint>(
 			"getDuplexMode",
 			"()I");
+	}
+	jint PrintAttributes::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void PrintAttributes::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	QAndroidJniObject PrintAttributes::getResolution()
+	{
+		return __thiz.callObjectMethod(
+			"getResolution",
+			"()Landroid/print/PrintAttributes$Resolution;");
 	}
 	jint PrintAttributes::getColorMode()
 	{

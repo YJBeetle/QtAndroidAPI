@@ -9,22 +9,6 @@ namespace __jni_impl::android::service::wallpaper
 {
 	class WallpaperService;
 }
-namespace __jni_impl::java::io
-{
-	class FileDescriptor;
-}
-namespace __jni_impl::java::io
-{
-	class PrintWriter;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
-}
-namespace __jni_impl::android::view
-{
-	class WindowInsets;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -36,6 +20,22 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::view
+{
+	class WindowInsets;
+}
+namespace __jni_impl::java::io
+{
+	class FileDescriptor;
+}
+namespace __jni_impl::java::io
+{
+	class PrintWriter;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
 }
 
 namespace __jni_impl::android::service::wallpaper
@@ -49,12 +49,6 @@ namespace __jni_impl::android::service::wallpaper
 		void __constructor(__jni_impl::android::service::wallpaper::WallpaperService arg0);
 		
 		// Methods
-		void onCreate(__jni_impl::__JniBaseClass arg0);
-		void onDestroy();
-		void onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		void onApplyWindowInsets(__jni_impl::android::view::WindowInsets arg0);
-		void onVisibilityChanged(jboolean arg0);
-		jboolean isVisible();
 		QAndroidJniObject getSurfaceHolder();
 		jint getDesiredMinimumWidth();
 		jint getDesiredMinimumHeight();
@@ -71,17 +65,23 @@ namespace __jni_impl::android::service::wallpaper
 		void notifyColorsChanged();
 		QAndroidJniObject onComputeColors();
 		QAndroidJniObject getDisplayContext();
+		void onApplyWindowInsets(__jni_impl::android::view::WindowInsets arg0);
+		void onVisibilityChanged(jboolean arg0);
+		jboolean isVisible();
+		void onCreate(__jni_impl::__JniBaseClass arg0);
+		void onDestroy();
+		void onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::service::wallpaper
 
 #include "WallpaperService.hpp"
-#include "../../../java/io/FileDescriptor.hpp"
-#include "../../../java/io/PrintWriter.hpp"
-#include "../../view/MotionEvent.hpp"
-#include "../../view/WindowInsets.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../app/WallpaperColors.hpp"
 #include "../../content/Context.hpp"
+#include "../../view/WindowInsets.hpp"
+#include "../../../java/io/FileDescriptor.hpp"
+#include "../../../java/io/PrintWriter.hpp"
+#include "../../view/MotionEvent.hpp"
 
 namespace __jni_impl::android::service::wallpaper
 {
@@ -97,46 +97,6 @@ namespace __jni_impl::android::service::wallpaper
 	}
 	
 	// Methods
-	void WallpaperService_Engine::onCreate(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object());
-	}
-	void WallpaperService_Engine::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V");
-	}
-	void WallpaperService_Engine::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)V",
-			arg0.__jniObject().object());
-	}
-	void WallpaperService_Engine::onApplyWindowInsets(__jni_impl::android::view::WindowInsets arg0)
-	{
-		__thiz.callMethod<void>(
-			"onApplyWindowInsets",
-			"(Landroid/view/WindowInsets;)V",
-			arg0.__jniObject().object());
-	}
-	void WallpaperService_Engine::onVisibilityChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onVisibilityChanged",
-			"(Z)V",
-			arg0);
-	}
-	jboolean WallpaperService_Engine::isVisible()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVisible",
-			"()Z");
-	}
 	QAndroidJniObject WallpaperService_Engine::getSurfaceHolder()
 	{
 		return __thiz.callObjectMethod(
@@ -255,6 +215,46 @@ namespace __jni_impl::android::service::wallpaper
 		return __thiz.callObjectMethod(
 			"getDisplayContext",
 			"()Landroid/content/Context;");
+	}
+	void WallpaperService_Engine::onApplyWindowInsets(__jni_impl::android::view::WindowInsets arg0)
+	{
+		__thiz.callMethod<void>(
+			"onApplyWindowInsets",
+			"(Landroid/view/WindowInsets;)V",
+			arg0.__jniObject().object());
+	}
+	void WallpaperService_Engine::onVisibilityChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onVisibilityChanged",
+			"(Z)V",
+			arg0);
+	}
+	jboolean WallpaperService_Engine::isVisible()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVisible",
+			"()Z");
+	}
+	void WallpaperService_Engine::onCreate(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"(Landroid/view/SurfaceHolder;)V",
+			arg0.__jniObject().object());
+	}
+	void WallpaperService_Engine::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V");
+	}
+	void WallpaperService_Engine::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::service::wallpaper
 

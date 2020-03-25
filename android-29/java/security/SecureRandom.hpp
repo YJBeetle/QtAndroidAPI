@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_SECURERANDOM
 #define JAVA_SECURITY_SECURERANDOM
 
+#include "../../__JniBaseClass.hpp"
 #include "../util/Random.hpp"
 
 namespace __jni_impl::java::security

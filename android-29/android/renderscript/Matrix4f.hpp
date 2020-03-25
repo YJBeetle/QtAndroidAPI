@@ -32,8 +32,8 @@ namespace __jni_impl::android::renderscript
 		void loadIdentity();
 		void loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void loadScale(jfloat arg0, jfloat arg1, jfloat arg2);
-		void loadOrtho(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5);
 		void loadOrthoWindow(jint arg0, jint arg1);
+		void loadOrtho(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5);
 		void loadFrustum(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5);
 		void loadPerspective(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void loadProjectionNormalized(jint arg0, jint arg1);
@@ -176,6 +176,14 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2);
 	}
+	void Matrix4f::loadOrthoWindow(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"loadOrthoWindow",
+			"(II)V",
+			arg0,
+			arg1);
+	}
 	void Matrix4f::loadOrtho(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
 		__thiz.callMethod<void>(
@@ -187,14 +195,6 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4,
 			arg5);
-	}
-	void Matrix4f::loadOrthoWindow(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"loadOrthoWindow",
-			"(II)V",
-			arg0,
-			arg1);
 	}
 	void Matrix4f::loadFrustum(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{

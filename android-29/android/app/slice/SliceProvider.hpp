@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_SLICE_SLICEPROVIDER
 #define ANDROID_APP_SLICE_SLICEPROVIDER
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../content/ContentProvider.hpp"
 
 namespace __jni_impl::android::net

@@ -45,6 +45,7 @@ namespace __jni_impl::android::telephony
 		// Methods
 		static jboolean compare(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2);
 		static jboolean compare(jstring arg0, jstring arg1);
+		static jboolean isVoiceMailNumber(jstring arg0);
 		static jboolean isISODigit(jchar arg0);
 		static jboolean is12Key(jchar arg0);
 		static jboolean isDialable(jchar arg0);
@@ -59,20 +60,20 @@ namespace __jni_impl::android::telephony
 		static QAndroidJniObject getStrippedReversed(jstring arg0);
 		static QAndroidJniObject stringFromStringAndTOA(jstring arg0, jint arg1);
 		static jint toaFromString(jstring arg0);
-		static QAndroidJniObject calledPartyBCDToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 		static QAndroidJniObject calledPartyBCDToString(jbyteArray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject calledPartyBCDFragmentToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		static QAndroidJniObject calledPartyBCDToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 		static QAndroidJniObject calledPartyBCDFragmentToString(jbyteArray arg0, jint arg1, jint arg2);
+		static QAndroidJniObject calledPartyBCDFragmentToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 		static jboolean isWellFormedSmsAddress(jstring arg0);
 		static jboolean isGlobalPhoneNumber(jstring arg0);
 		static QAndroidJniObject networkPortionToCalledPartyBCD(jstring arg0);
 		static QAndroidJniObject networkPortionToCalledPartyBCDWithLength(jstring arg0);
 		static QAndroidJniObject numberToCalledPartyBCD(jstring arg0, jint arg1);
 		static QAndroidJniObject numberToCalledPartyBCD(jstring arg0);
-		static void formatNumber(__jni_impl::__JniBaseClass arg0, jint arg1);
-		static QAndroidJniObject formatNumber(jstring arg0, jstring arg1);
 		static QAndroidJniObject formatNumber(jstring arg0, jstring arg1, jstring arg2);
+		static QAndroidJniObject formatNumber(jstring arg0, jstring arg1);
 		static QAndroidJniObject formatNumber(jstring arg0);
+		static void formatNumber(__jni_impl::__JniBaseClass arg0, jint arg1);
 		static jint getFormatTypeForLocale(__jni_impl::java::util::Locale arg0);
 		static void formatNanpNumber(__jni_impl::__JniBaseClass arg0);
 		static void formatJapaneseNumber(__jni_impl::__JniBaseClass arg0);
@@ -86,7 +87,6 @@ namespace __jni_impl::android::telephony
 		static QAndroidJniObject createTtsSpannable(jstring arg0);
 		static void addTtsSpan(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		static QAndroidJniObject createTtsSpan(jstring arg0);
-		static jboolean isVoiceMailNumber(jstring arg0);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -186,6 +186,14 @@ namespace __jni_impl::android::telephony
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
 			arg1);
+	}
+	jboolean PhoneNumberUtils::isVoiceMailNumber(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.telephony.PhoneNumberUtils",
+			"isVoiceMailNumber",
+			"(Ljava/lang/String;)Z",
+			arg0);
 	}
 	jboolean PhoneNumberUtils::isISODigit(jchar arg0)
 	{
@@ -301,17 +309,6 @@ namespace __jni_impl::android::telephony
 			"(Ljava/lang/String;)I",
 			arg0);
 	}
-	QAndroidJniObject PhoneNumberUtils::calledPartyBCDToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"calledPartyBCDToString",
-			"([BIII)Ljava/lang/String;",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
 	QAndroidJniObject PhoneNumberUtils::calledPartyBCDToString(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -322,11 +319,11 @@ namespace __jni_impl::android::telephony
 			arg1,
 			arg2);
 	}
-	QAndroidJniObject PhoneNumberUtils::calledPartyBCDFragmentToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	QAndroidJniObject PhoneNumberUtils::calledPartyBCDToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.PhoneNumberUtils",
-			"calledPartyBCDFragmentToString",
+			"calledPartyBCDToString",
 			"([BIII)Ljava/lang/String;",
 			arg0,
 			arg1,
@@ -342,6 +339,17 @@ namespace __jni_impl::android::telephony
 			arg0,
 			arg1,
 			arg2);
+	}
+	QAndroidJniObject PhoneNumberUtils::calledPartyBCDFragmentToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.PhoneNumberUtils",
+			"calledPartyBCDFragmentToString",
+			"([BIII)Ljava/lang/String;",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
 	}
 	jboolean PhoneNumberUtils::isWellFormedSmsAddress(jstring arg0)
 	{
@@ -392,24 +400,6 @@ namespace __jni_impl::android::telephony
 			"(Ljava/lang/String;)[B",
 			arg0);
 	}
-	void PhoneNumberUtils::formatNumber(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.telephony.PhoneNumberUtils",
-			"formatNumber",
-			"(Landroid/text/Editable;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject PhoneNumberUtils::formatNumber(jstring arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.PhoneNumberUtils",
-			"formatNumber",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1);
-	}
 	QAndroidJniObject PhoneNumberUtils::formatNumber(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -420,6 +410,15 @@ namespace __jni_impl::android::telephony
 			arg1,
 			arg2);
 	}
+	QAndroidJniObject PhoneNumberUtils::formatNumber(jstring arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.PhoneNumberUtils",
+			"formatNumber",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			arg0,
+			arg1);
+	}
 	QAndroidJniObject PhoneNumberUtils::formatNumber(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -427,6 +426,15 @@ namespace __jni_impl::android::telephony
 			"formatNumber",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0);
+	}
+	void PhoneNumberUtils::formatNumber(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.telephony.PhoneNumberUtils",
+			"formatNumber",
+			"(Landroid/text/Editable;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jint PhoneNumberUtils::getFormatTypeForLocale(__jni_impl::java::util::Locale arg0)
 	{
@@ -535,14 +543,6 @@ namespace __jni_impl::android::telephony
 			"android.telephony.PhoneNumberUtils",
 			"createTtsSpan",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan;",
-			arg0);
-	}
-	jboolean PhoneNumberUtils::isVoiceMailNumber(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telephony.PhoneNumberUtils",
-			"isVoiceMailNumber",
-			"(Ljava/lang/String;)Z",
 			arg0);
 	}
 } // namespace __jni_impl::android::telephony

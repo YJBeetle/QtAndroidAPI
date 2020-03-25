@@ -3,6 +3,7 @@
 #ifndef JAVAX_SQL_CONNECTIONEVENT
 #define JAVAX_SQL_CONNECTIONEVENT
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/util/EventObject.hpp"
 
 namespace __jni_impl::java::sql

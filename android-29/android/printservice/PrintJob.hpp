@@ -41,6 +41,9 @@ namespace __jni_impl::android::printservice
 		QAndroidJniObject getTag();
 		jboolean complete();
 		jboolean isCompleted();
+		jboolean isBlocked();
+		jboolean setTag(jstring arg0);
+		jboolean isStarted();
 		QAndroidJniObject getDocument();
 		QAndroidJniObject getInfo();
 		jboolean isFailed();
@@ -50,9 +53,6 @@ namespace __jni_impl::android::printservice
 		jboolean hasAdvancedOption(jstring arg0);
 		jint getAdvancedIntOption(jstring arg0);
 		void setProgress(jfloat arg0);
-		jboolean setTag(jstring arg0);
-		jboolean isStarted();
-		jboolean isBlocked();
 	};
 } // namespace __jni_impl::android::printservice
 
@@ -148,6 +148,25 @@ namespace __jni_impl::android::printservice
 			"isCompleted",
 			"()Z");
 	}
+	jboolean PrintJob::isBlocked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBlocked",
+			"()Z");
+	}
+	jboolean PrintJob::setTag(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setTag",
+			"(Ljava/lang/String;)Z",
+			arg0);
+	}
+	jboolean PrintJob::isStarted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStarted",
+			"()Z");
+	}
 	QAndroidJniObject PrintJob::getDocument()
 	{
 		return __thiz.callObjectMethod(
@@ -207,25 +226,6 @@ namespace __jni_impl::android::printservice
 			"setProgress",
 			"(F)V",
 			arg0);
-	}
-	jboolean PrintJob::setTag(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setTag",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	jboolean PrintJob::isStarted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStarted",
-			"()Z");
-	}
-	jboolean PrintJob::isBlocked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBlocked",
-			"()Z");
 	}
 } // namespace __jni_impl::android::printservice
 

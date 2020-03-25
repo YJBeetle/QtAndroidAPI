@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_INTERNALERROR
 #define JAVA_LANG_INTERNALERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "VirtualMachineError.hpp"
 
 

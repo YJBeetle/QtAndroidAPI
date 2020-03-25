@@ -3,6 +3,9 @@
 #ifndef ANDROID_CONTENT_RECEIVERCALLNOTALLOWEDEXCEPTION
 #define ANDROID_CONTENT_RECEIVERCALLNOTALLOWEDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 #include "../util/AndroidRuntimeException.hpp"
 
 

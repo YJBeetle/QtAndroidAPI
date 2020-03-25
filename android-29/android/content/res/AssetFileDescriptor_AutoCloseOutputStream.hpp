@@ -3,6 +3,9 @@
 #ifndef ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
 #define ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/io/OutputStream.hpp"
+#include "../../../java/io/FileOutputStream.hpp"
 #include "../../os/ParcelFileDescriptor_AutoCloseOutputStream.hpp"
 
 namespace __jni_impl::android::content::res

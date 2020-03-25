@@ -30,8 +30,8 @@ namespace __jni_impl::android::view::inputmethod
 		QAndroidJniObject setSelectionRange(jint arg0, jint arg1);
 		QAndroidJniObject setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4);
 		QAndroidJniObject addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5);
-		QAndroidJniObject setMatrix(__jni_impl::android::graphics::Matrix arg0);
 		QAndroidJniObject setComposingText(jint arg0, jstring arg1);
+		QAndroidJniObject setMatrix(__jni_impl::android::graphics::Matrix arg0);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -94,13 +94,6 @@ namespace __jni_impl::android::view::inputmethod
 			arg4,
 			arg5);
 	}
-	QAndroidJniObject CursorAnchorInfo_Builder::setMatrix(__jni_impl::android::graphics::Matrix arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setMatrix",
-			"(Landroid/graphics/Matrix;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject CursorAnchorInfo_Builder::setComposingText(jint arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -108,6 +101,13 @@ namespace __jni_impl::android::view::inputmethod
 			"(ILjava/lang/CharSequence;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
 			arg0,
 			arg1);
+	}
+	QAndroidJniObject CursorAnchorInfo_Builder::setMatrix(__jni_impl::android::graphics::Matrix arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMatrix",
+			"(Landroid/graphics/Matrix;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

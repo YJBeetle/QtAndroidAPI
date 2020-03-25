@@ -9,14 +9,6 @@ namespace __jni_impl::android::graphics
 {
 	class Path;
 }
-namespace __jni_impl::android::gesture
-{
-	class GestureStroke;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::java::util
 {
 	class ArrayList;
@@ -28,6 +20,14 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
+}
+namespace __jni_impl::android::gesture
+{
+	class GestureStroke;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::gesture
@@ -49,23 +49,23 @@ namespace __jni_impl::android::gesture
 		QAndroidJniObject toPath(__jni_impl::android::graphics::Path arg0);
 		QAndroidJniObject toPath(jint arg0, jint arg1, jint arg2, jint arg3);
 		jlong getID();
-		void addStroke(__jni_impl::android::gesture::GestureStroke arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getStrokesCount();
 		QAndroidJniObject getStrokes();
 		QAndroidJniObject getBoundingBox();
-		QAndroidJniObject toBitmap(jint arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		QAndroidJniObject toBitmap(jint arg0, jint arg1, jint arg2, jint arg3);
+		void addStroke(__jni_impl::android::gesture::GestureStroke arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::gesture
 
 #include "../graphics/Path.hpp"
-#include "GestureStroke.hpp"
-#include "../os/Parcel.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "../graphics/RectF.hpp"
 #include "../graphics/Bitmap.hpp"
+#include "GestureStroke.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::gesture
 {
@@ -139,6 +139,45 @@ namespace __jni_impl::android::gesture
 			"getID",
 			"()J");
 	}
+	jint Gesture::getStrokesCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getStrokesCount",
+			"()I");
+	}
+	QAndroidJniObject Gesture::getStrokes()
+	{
+		return __thiz.callObjectMethod(
+			"getStrokes",
+			"()Ljava/util/ArrayList;");
+	}
+	QAndroidJniObject Gesture::getBoundingBox()
+	{
+		return __thiz.callObjectMethod(
+			"getBoundingBox",
+			"()Landroid/graphics/RectF;");
+	}
+	QAndroidJniObject Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		return __thiz.callObjectMethod(
+			"toBitmap",
+			"(IIIII)Landroid/graphics/Bitmap;",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4);
+	}
+	QAndroidJniObject Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"toBitmap",
+			"(IIII)Landroid/graphics/Bitmap;",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
 	void Gesture::addStroke(__jni_impl::android::gesture::GestureStroke arg0)
 	{
 		__thiz.callMethod<void>(
@@ -159,45 +198,6 @@ namespace __jni_impl::android::gesture
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint Gesture::getStrokesCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getStrokesCount",
-			"()I");
-	}
-	QAndroidJniObject Gesture::getStrokes()
-	{
-		return __thiz.callObjectMethod(
-			"getStrokes",
-			"()Ljava/util/ArrayList;");
-	}
-	QAndroidJniObject Gesture::getBoundingBox()
-	{
-		return __thiz.callObjectMethod(
-			"getBoundingBox",
-			"()Landroid/graphics/RectF;");
-	}
-	QAndroidJniObject Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"toBitmap",
-			"(IIII)Landroid/graphics/Bitmap;",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	QAndroidJniObject Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		return __thiz.callObjectMethod(
-			"toBitmap",
-			"(IIIII)Landroid/graphics/Bitmap;",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4);
 	}
 } // namespace __jni_impl::android::gesture
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_BLENDMODE
 #define ANDROID_GRAPHICS_BLENDMODE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

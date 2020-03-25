@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_GRIDLAYOUT
 #define ANDROID_WIDGET_GRIDLAYOUT
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::widget
@@ -59,16 +61,14 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		static QAndroidJniObject spec(jint arg0, jint arg1);
-		static QAndroidJniObject spec(jint arg0);
+		static QAndroidJniObject spec(jint arg0, jfloat arg1);
 		static QAndroidJniObject spec(jint arg0, jint arg1, jfloat arg2);
 		static QAndroidJniObject spec(jint arg0, __jni_impl::android::widget::GridLayout_Alignment arg1, jfloat arg2);
-		static QAndroidJniObject spec(jint arg0, jint arg1, __jni_impl::android::widget::GridLayout_Alignment arg2, jfloat arg3);
 		static QAndroidJniObject spec(jint arg0, jint arg1, __jni_impl::android::widget::GridLayout_Alignment arg2);
+		static QAndroidJniObject spec(jint arg0);
 		static QAndroidJniObject spec(jint arg0, __jni_impl::android::widget::GridLayout_Alignment arg1);
-		static QAndroidJniObject spec(jint arg0, jfloat arg1);
-		jint getColumnCount();
+		static QAndroidJniObject spec(jint arg0, jint arg1, __jni_impl::android::widget::GridLayout_Alignment arg2, jfloat arg3);
 		void setOrientation(jint arg0);
-		jint getRowCount();
 		void setRowCount(jint arg0);
 		void setColumnCount(jint arg0);
 		jboolean getUseDefaultMargins();
@@ -79,11 +79,13 @@ namespace __jni_impl::android::widget
 		void setRowOrderPreserved(jboolean arg0);
 		jboolean isColumnOrderPreserved();
 		void setColumnOrderPreserved(jboolean arg0);
+		jint getColumnCount();
 		QAndroidJniObject getAccessibilityClassName();
 		void onViewAdded(__jni_impl::android::view::View arg0);
 		void onViewRemoved(__jni_impl::android::view::View arg0);
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		void requestLayout();
+		jint getRowCount();
 		jint getOrientation();
 	};
 } // namespace __jni_impl::android::widget
@@ -238,13 +240,14 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1);
 	}
-	QAndroidJniObject GridLayout::spec(jint arg0)
+	QAndroidJniObject GridLayout::spec(jint arg0, jfloat arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.GridLayout",
 			"spec",
-			"(I)Landroid/widget/GridLayout$Spec;",
-			arg0);
+			"(IF)Landroid/widget/GridLayout$Spec;",
+			arg0,
+			arg1);
 	}
 	QAndroidJniObject GridLayout::spec(jint arg0, jint arg1, jfloat arg2)
 	{
@@ -266,6 +269,33 @@ namespace __jni_impl::android::widget
 			arg1.__jniObject().object(),
 			arg2);
 	}
+	QAndroidJniObject GridLayout::spec(jint arg0, jint arg1, __jni_impl::android::widget::GridLayout_Alignment arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.widget.GridLayout",
+			"spec",
+			"(IILandroid/widget/GridLayout$Alignment;)Landroid/widget/GridLayout$Spec;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject GridLayout::spec(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.widget.GridLayout",
+			"spec",
+			"(I)Landroid/widget/GridLayout$Spec;",
+			arg0);
+	}
+	QAndroidJniObject GridLayout::spec(jint arg0, __jni_impl::android::widget::GridLayout_Alignment arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.widget.GridLayout",
+			"spec",
+			"(ILandroid/widget/GridLayout$Alignment;)Landroid/widget/GridLayout$Spec;",
+			arg0,
+			arg1.__jniObject().object());
+	}
 	QAndroidJniObject GridLayout::spec(jint arg0, jint arg1, __jni_impl::android::widget::GridLayout_Alignment arg2, jfloat arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -277,52 +307,12 @@ namespace __jni_impl::android::widget
 			arg2.__jniObject().object(),
 			arg3);
 	}
-	QAndroidJniObject GridLayout::spec(jint arg0, jint arg1, __jni_impl::android::widget::GridLayout_Alignment arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.GridLayout",
-			"spec",
-			"(IILandroid/widget/GridLayout$Alignment;)Landroid/widget/GridLayout$Spec;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject GridLayout::spec(jint arg0, __jni_impl::android::widget::GridLayout_Alignment arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.GridLayout",
-			"spec",
-			"(ILandroid/widget/GridLayout$Alignment;)Landroid/widget/GridLayout$Spec;",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject GridLayout::spec(jint arg0, jfloat arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.GridLayout",
-			"spec",
-			"(IF)Landroid/widget/GridLayout$Spec;",
-			arg0,
-			arg1);
-	}
-	jint GridLayout::getColumnCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnCount",
-			"()I");
-	}
 	void GridLayout::setOrientation(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOrientation",
 			"(I)V",
 			arg0);
-	}
-	jint GridLayout::getRowCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getRowCount",
-			"()I");
 	}
 	void GridLayout::setRowCount(jint arg0)
 	{
@@ -390,6 +380,12 @@ namespace __jni_impl::android::widget
 			"(Z)V",
 			arg0);
 	}
+	jint GridLayout::getColumnCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnCount",
+			"()I");
+	}
 	QAndroidJniObject GridLayout::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
@@ -422,6 +418,12 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"requestLayout",
 			"()V");
+	}
+	jint GridLayout::getRowCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRowCount",
+			"()I");
 	}
 	jint GridLayout::getOrientation()
 	{

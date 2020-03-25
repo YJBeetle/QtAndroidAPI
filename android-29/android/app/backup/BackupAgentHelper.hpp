@@ -3,6 +3,9 @@
 #ifndef ANDROID_APP_BACKUP_BACKUPAGENTHELPER
 #define ANDROID_APP_BACKUP_BACKUPAGENTHELPER
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "BackupAgent.hpp"
 
 namespace __jni_impl::android::os

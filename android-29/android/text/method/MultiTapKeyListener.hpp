@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_METHOD_MULTITAPKEYLISTENER
 #define ANDROID_TEXT_METHOD_MULTITAPKEYLISTENER
 
+#include "../../../__JniBaseClass.hpp"
+#include "MetaKeyKeyListener.hpp"
 #include "BaseKeyListener.hpp"
 
 namespace __jni_impl::android::text::method
@@ -31,10 +33,10 @@ namespace __jni_impl::android::text::method
 		// Methods
 		static QAndroidJniObject getInstance(jboolean arg0, __jni_impl::android::text::method::TextKeyListener_Capitalize arg1);
 		jint getInputType();
+		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 		void onSpanChanged(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		void onSpanAdded(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3);
 		void onSpanRemoved(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3);
-		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 	};
 } // namespace __jni_impl::android::text::method
 
@@ -72,6 +74,16 @@ namespace __jni_impl::android::text::method
 			"getInputType",
 			"()I");
 	}
+	jboolean MultiTapKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object());
+	}
 	void MultiTapKeyListener::onSpanChanged(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz.callMethod<void>(
@@ -103,16 +115,6 @@ namespace __jni_impl::android::text::method
 			arg1,
 			arg2,
 			arg3);
-	}
-	jboolean MultiTapKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object());
 	}
 } // namespace __jni_impl::android::text::method
 

@@ -3,6 +3,10 @@
 #ifndef ANDROID_DATABASE_SQLITE_SQLITEBINDORCOLUMNINDEXOUTOFRANGEEXCEPTION
 #define ANDROID_DATABASE_SQLITE_SQLITEBINDORCOLUMNINDEXOUTOFRANGEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../SQLException.hpp"
 #include "SQLiteException.hpp"
 
 

@@ -31,8 +31,6 @@ namespace __jni_impl::android::widget
 		// Methods
 		jboolean isEmpty();
 		jboolean isEnabled(jint arg0);
-		void notifyDataSetChanged();
-		void notifyDataSetInvalidated();
 		void registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
 		void unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
 		jboolean hasStableIds();
@@ -42,6 +40,8 @@ namespace __jni_impl::android::widget
 		jint getItemViewType(jint arg0);
 		jint getViewTypeCount();
 		QAndroidJniObject getAutofillOptions();
+		void notifyDataSetChanged();
+		void notifyDataSetInvalidated();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -74,18 +74,6 @@ namespace __jni_impl::android::widget
 			"isEnabled",
 			"(I)Z",
 			arg0);
-	}
-	void BaseAdapter::notifyDataSetChanged()
-	{
-		__thiz.callMethod<void>(
-			"notifyDataSetChanged",
-			"()V");
-	}
-	void BaseAdapter::notifyDataSetInvalidated()
-	{
-		__thiz.callMethod<void>(
-			"notifyDataSetInvalidated",
-			"()V");
 	}
 	void BaseAdapter::registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
 	{
@@ -147,6 +135,18 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getAutofillOptions",
 			"()[Ljava/lang/CharSequence;");
+	}
+	void BaseAdapter::notifyDataSetChanged()
+	{
+		__thiz.callMethod<void>(
+			"notifyDataSetChanged",
+			"()V");
+	}
+	void BaseAdapter::notifyDataSetInvalidated()
+	{
+		__thiz.callMethod<void>(
+			"notifyDataSetInvalidated",
+			"()V");
 	}
 } // namespace __jni_impl::android::widget
 

@@ -60,8 +60,6 @@ namespace __jni_impl::android::icu::text
 		// Methods
 		jint getLength();
 		QAndroidJniObject getText();
-		jbyte getDirection();
-		void setContext(jstring arg0, jstring arg1);
 		void setInverse(jboolean arg0);
 		jboolean isInverse();
 		void setReorderingMode(jint arg0);
@@ -112,6 +110,8 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject writeReordered(jint arg0);
 		static QAndroidJniObject writeReverse(jstring arg0, jint arg1);
 		jboolean isRightToLeft();
+		void setContext(jstring arg0, jstring arg1);
+		jbyte getDirection();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -351,20 +351,6 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callObjectMethod(
 			"getText",
 			"()[C");
-	}
-	jbyte Bidi::getDirection()
-	{
-		return __thiz.callMethod<jbyte>(
-			"getDirection",
-			"()B");
-	}
-	void Bidi::setContext(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setContext",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1);
 	}
 	void Bidi::setInverse(jboolean arg0)
 	{
@@ -715,6 +701,20 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"isRightToLeft",
 			"()Z");
+	}
+	void Bidi::setContext(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setContext",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1);
+	}
+	jbyte Bidi::getDirection()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getDirection",
+			"()B");
 	}
 } // namespace __jni_impl::android::icu::text
 

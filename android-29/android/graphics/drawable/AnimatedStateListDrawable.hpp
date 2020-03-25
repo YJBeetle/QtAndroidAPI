@@ -3,6 +3,9 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_ANIMATEDSTATELISTDRAWABLE
 #define ANDROID_GRAPHICS_DRAWABLE_ANIMATEDSTATELISTDRAWABLE
 
+#include "../../../__JniBaseClass.hpp"
+#include "Drawable.hpp"
+#include "DrawableContainer.hpp"
 #include "StateListDrawable.hpp"
 
 namespace __jni_impl::android::content::res
@@ -34,13 +37,13 @@ namespace __jni_impl::android::graphics::drawable
 		
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
+		void addTransition(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2, jboolean arg3);
 		void addState(jintArray arg0, __jni_impl::android::graphics::drawable::Drawable arg1, jint arg2);
 		jboolean isStateful();
 		void jumpToCurrentState();
 		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		QAndroidJniObject mutate();
 		jboolean setVisible(jboolean arg0, jboolean arg1);
-		void addTransition(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2, jboolean arg3);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -71,6 +74,16 @@ namespace __jni_impl::android::graphics::drawable
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object());
+	}
+	void AnimatedStateListDrawable::addTransition(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2, jboolean arg3)
+	{
+		__thiz.callMethod<void>(
+			"addTransition",
+			"(IILandroid/graphics/drawable/Drawable;Z)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3);
 	}
 	void AnimatedStateListDrawable::addState(jintArray arg0, __jni_impl::android::graphics::drawable::Drawable arg1, jint arg2)
 	{
@@ -113,16 +126,6 @@ namespace __jni_impl::android::graphics::drawable
 			"(ZZ)Z",
 			arg0,
 			arg1);
-	}
-	void AnimatedStateListDrawable::addTransition(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2, jboolean arg3)
-	{
-		__thiz.callMethod<void>(
-			"addTransition",
-			"(IILandroid/graphics/drawable/Drawable;Z)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

@@ -3,6 +3,9 @@
 #ifndef JAVA_TIME_FORMAT_DATETIMEPARSEEXCEPTION
 #define JAVA_TIME_FORMAT_DATETIMEPARSEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 #include "../DateTimeException.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_SPEC_X509ENCODEDKEYSPEC
 #define JAVA_SECURITY_SPEC_X509ENCODEDKEYSPEC
 
+#include "../../../__JniBaseClass.hpp"
 #include "EncodedKeySpec.hpp"
 
 

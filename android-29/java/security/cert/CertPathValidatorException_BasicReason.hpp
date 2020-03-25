@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_CERT_CERTPATHVALIDATOREXCEPTION_BASICREASON
 #define JAVA_SECURITY_CERT_CERTPATHVALIDATOREXCEPTION_BASICREASON
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

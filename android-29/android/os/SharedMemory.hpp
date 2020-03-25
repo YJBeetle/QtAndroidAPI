@@ -34,12 +34,12 @@ namespace __jni_impl::android::os
 		void close();
 		jint getSize();
 		static QAndroidJniObject create(jstring arg0, jint arg1);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject mapReadWrite();
 		QAndroidJniObject mapReadOnly();
 		static void unmap(__jni_impl::java::nio::ByteBuffer arg0);
 		jboolean setProtect(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -97,6 +97,20 @@ namespace __jni_impl::android::os
 			arg0,
 			arg1);
 	}
+	jint SharedMemory::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void SharedMemory::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	QAndroidJniObject SharedMemory::mapReadWrite()
 	{
 		return __thiz.callObjectMethod(
@@ -123,20 +137,6 @@ namespace __jni_impl::android::os
 			"setProtect",
 			"(I)Z",
 			arg0);
-	}
-	jint SharedMemory::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void SharedMemory::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::os
 

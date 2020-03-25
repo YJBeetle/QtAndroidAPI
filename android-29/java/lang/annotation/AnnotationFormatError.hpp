@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_ANNOTATION_ANNOTATIONFORMATERROR
 #define JAVA_LANG_ANNOTATION_ANNOTATIONFORMATERROR
 
+#include "../../../__JniBaseClass.hpp"
 #include "../Error.hpp"
 
 

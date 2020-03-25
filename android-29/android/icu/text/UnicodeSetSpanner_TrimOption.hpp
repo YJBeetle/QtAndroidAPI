@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_UNICODESETSPANNER_TRIMOPTION
 #define ANDROID_ICU_TEXT_UNICODESETSPANNER_TRIMOPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

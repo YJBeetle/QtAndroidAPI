@@ -3,6 +3,7 @@
 #ifndef JAVAX_SECURITY_CERT_CERTIFICATEEXCEPTION
 #define JAVAX_SECURITY_CERT_CERTIFICATEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
 

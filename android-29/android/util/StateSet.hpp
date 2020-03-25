@@ -19,10 +19,10 @@ namespace __jni_impl::android::util
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject trimStateSet(jintArray arg0, jint arg1);
 		static jboolean isWildCard(jintArray arg0);
 		static jboolean stateSetMatches(jintArray arg0, jint arg1);
 		static jboolean stateSetMatches(jintArray arg0, jintArray arg1);
-		static QAndroidJniObject trimStateSet(jintArray arg0, jint arg1);
 		static QAndroidJniObject dump(jintArray arg0);
 	};
 } // namespace __jni_impl::android::util
@@ -55,6 +55,15 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
+	QAndroidJniObject StateSet::trimStateSet(jintArray arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.StateSet",
+			"trimStateSet",
+			"([II)[I",
+			arg0,
+			arg1);
+	}
 	jboolean StateSet::isWildCard(jintArray arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -78,15 +87,6 @@ namespace __jni_impl::android::util
 			"android.util.StateSet",
 			"stateSetMatches",
 			"([I[I)Z",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject StateSet::trimStateSet(jintArray arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.StateSet",
-			"trimStateSet",
-			"([II)[I",
 			arg0,
 			arg1);
 	}

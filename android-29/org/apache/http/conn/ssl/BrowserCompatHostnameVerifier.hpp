@@ -3,6 +3,7 @@
 #ifndef ORG_APACHE_HTTP_CONN_SSL_BROWSERCOMPATHOSTNAMEVERIFIER
 #define ORG_APACHE_HTTP_CONN_SSL_BROWSERCOMPATHOSTNAMEVERIFIER
 
+#include "../../../../../__JniBaseClass.hpp"
 #include "AbstractVerifier.hpp"
 
 

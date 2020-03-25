@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_CELLIDENTITYGSM
 #define ANDROID_TELEPHONY_CELLIDENTITYGSM
 
+#include "../../__JniBaseClass.hpp"
 #include "CellIdentity.hpp"
 
 namespace __jni_impl::android::os
@@ -28,14 +29,14 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject getMobileNetworkOperator();
 		jint getArfcn();
 		jint getBsic();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getMcc();
 		jint getMnc();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getMccString();
+		QAndroidJniObject getMncString();
 		jint getLac();
 		jint getCid();
 		jint getPsc();
-		QAndroidJniObject getMccString();
-		QAndroidJniObject getMncString();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -98,6 +99,14 @@ namespace __jni_impl::android::telephony
 			"getBsic",
 			"()I");
 	}
+	void CellIdentityGsm::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint CellIdentityGsm::getMcc()
 	{
 		return __thiz.callMethod<jint>(
@@ -110,13 +119,17 @@ namespace __jni_impl::android::telephony
 			"getMnc",
 			"()I");
 	}
-	void CellIdentityGsm::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	QAndroidJniObject CellIdentityGsm::getMccString()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+		return __thiz.callObjectMethod(
+			"getMccString",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject CellIdentityGsm::getMncString()
+	{
+		return __thiz.callObjectMethod(
+			"getMncString",
+			"()Ljava/lang/String;");
 	}
 	jint CellIdentityGsm::getLac()
 	{
@@ -135,18 +148,6 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jint>(
 			"getPsc",
 			"()I");
-	}
-	QAndroidJniObject CellIdentityGsm::getMccString()
-	{
-		return __thiz.callObjectMethod(
-			"getMccString",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject CellIdentityGsm::getMncString()
-	{
-		return __thiz.callObjectMethod(
-			"getMncString",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::telephony
 

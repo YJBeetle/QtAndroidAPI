@@ -83,6 +83,11 @@ namespace __jni_impl::android::app
 		void cancel(jstring arg0, jint arg1);
 		void cancel(jint arg0);
 		void cancelAll();
+		QAndroidJniObject getNotificationChannels();
+		QAndroidJniObject getNotificationChannelGroups();
+		QAndroidJniObject getActiveNotifications();
+		jint getCurrentInterruptionFilter();
+		jint getImportance();
 		void notifyAsPackage(jstring arg0, jstring arg1, jint arg2, __jni_impl::android::app::Notification arg3);
 		void setNotificationDelegate(jstring arg0);
 		QAndroidJniObject getNotificationDelegate();
@@ -110,11 +115,6 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getNotificationPolicy();
 		void setNotificationPolicy(__jni_impl::android::app::NotificationManager_Policy arg0);
 		void setInterruptionFilter(jint arg0);
-		QAndroidJniObject getNotificationChannels();
-		QAndroidJniObject getNotificationChannelGroups();
-		QAndroidJniObject getActiveNotifications();
-		jint getCurrentInterruptionFilter();
-		jint getImportance();
 	};
 } // namespace __jni_impl::android::app
 
@@ -342,6 +342,36 @@ namespace __jni_impl::android::app
 			"cancelAll",
 			"()V");
 	}
+	QAndroidJniObject NotificationManager::getNotificationChannels()
+	{
+		return __thiz.callObjectMethod(
+			"getNotificationChannels",
+			"()Ljava/util/List;");
+	}
+	QAndroidJniObject NotificationManager::getNotificationChannelGroups()
+	{
+		return __thiz.callObjectMethod(
+			"getNotificationChannelGroups",
+			"()Ljava/util/List;");
+	}
+	QAndroidJniObject NotificationManager::getActiveNotifications()
+	{
+		return __thiz.callObjectMethod(
+			"getActiveNotifications",
+			"()[Landroid/service/notification/StatusBarNotification;");
+	}
+	jint NotificationManager::getCurrentInterruptionFilter()
+	{
+		return __thiz.callMethod<jint>(
+			"getCurrentInterruptionFilter",
+			"()I");
+	}
+	jint NotificationManager::getImportance()
+	{
+		return __thiz.callMethod<jint>(
+			"getImportance",
+			"()I");
+	}
 	void NotificationManager::notifyAsPackage(jstring arg0, jstring arg1, jint arg2, __jni_impl::android::app::Notification arg3)
 	{
 		__thiz.callMethod<void>(
@@ -527,36 +557,6 @@ namespace __jni_impl::android::app
 			"setInterruptionFilter",
 			"(I)V",
 			arg0);
-	}
-	QAndroidJniObject NotificationManager::getNotificationChannels()
-	{
-		return __thiz.callObjectMethod(
-			"getNotificationChannels",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject NotificationManager::getNotificationChannelGroups()
-	{
-		return __thiz.callObjectMethod(
-			"getNotificationChannelGroups",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject NotificationManager::getActiveNotifications()
-	{
-		return __thiz.callObjectMethod(
-			"getActiveNotifications",
-			"()[Landroid/service/notification/StatusBarNotification;");
-	}
-	jint NotificationManager::getCurrentInterruptionFilter()
-	{
-		return __thiz.callMethod<jint>(
-			"getCurrentInterruptionFilter",
-			"()I");
-	}
-	jint NotificationManager::getImportance()
-	{
-		return __thiz.callMethod<jint>(
-			"getImportance",
-			"()I");
 	}
 } // namespace __jni_impl::android::app
 

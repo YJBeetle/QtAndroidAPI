@@ -3,6 +3,7 @@
 #ifndef ANDROID_PROVIDER_SETTINGS_GLOBAL
 #define ANDROID_PROVIDER_SETTINGS_GLOBAL
 
+#include "../../__JniBaseClass.hpp"
 #include "Settings_NameValueTable.hpp"
 
 namespace __jni_impl::android::net
@@ -79,8 +80,8 @@ namespace __jni_impl::android::provider
 		static jfloat getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
 		static jboolean putFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
 		static QAndroidJniObject getString(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
-		static jboolean putString(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2);
 		static QAndroidJniObject getUriFor(jstring arg0);
+		static jboolean putString(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -501,6 +502,14 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1);
 	}
+	QAndroidJniObject Settings_Global::getUriFor(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.Settings$Global",
+			"getUriFor",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0);
+	}
 	jboolean Settings_Global::putString(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -510,14 +519,6 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2);
-	}
-	QAndroidJniObject Settings_Global::getUriFor(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Settings$Global",
-			"getUriFor",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0);
 	}
 } // namespace __jni_impl::android::provider
 

@@ -9,14 +9,6 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::view
-{
-	class ViewStructure_HtmlInfo;
-}
-namespace __jni_impl::android::os
-{
-	class LocaleList;
-}
 namespace __jni_impl::android::view::autofill
 {
 	class AutofillId;
@@ -24,6 +16,14 @@ namespace __jni_impl::android::view::autofill
 namespace __jni_impl::android::view::autofill
 {
 	class AutofillValue;
+}
+namespace __jni_impl::android::view
+{
+	class ViewStructure_HtmlInfo;
+}
+namespace __jni_impl::android::os
+{
+	class LocaleList;
 }
 namespace __jni_impl::android::graphics
 {
@@ -55,27 +55,9 @@ namespace __jni_impl::android::app::assist
 		jint getInputType();
 		jint getWidth();
 		jint getHeight();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getIdPackage();
-		QAndroidJniObject getIdType();
-		QAndroidJniObject getIdEntry();
-		jboolean isAssistBlocked();
-		QAndroidJniObject getWebDomain();
-		QAndroidJniObject getWebScheme();
-		QAndroidJniObject getHtmlInfo();
-		QAndroidJniObject getLocaleList();
-		jint getTextBackgroundColor();
-		QAndroidJniObject getTextLineCharOffsets();
-		QAndroidJniObject getTextLineBaselines();
-		QAndroidJniObject getTextIdEntry();
-		jint getMinTextEms();
-		jint getMaxTextEms();
-		jint getMaxTextLength();
 		jint getTextColor();
 		jint getTextStyle();
-		jfloat getTextSize();
-		jint getTextSelectionStart();
-		jint getTextSelectionEnd();
+		QAndroidJniObject getExtras();
 		jint getChildCount();
 		QAndroidJniObject getChildAt(jint arg0);
 		QAndroidJniObject getAutofillId();
@@ -99,18 +81,36 @@ namespace __jni_impl::android::app::assist
 		jfloat getElevation();
 		jboolean isSelected();
 		jboolean isActivated();
-		jboolean isCheckable();
-		QAndroidJniObject getTransformation();
+		QAndroidJniObject getIdPackage();
+		QAndroidJniObject getIdType();
+		QAndroidJniObject getIdEntry();
+		jboolean isAssistBlocked();
+		QAndroidJniObject getWebDomain();
+		QAndroidJniObject getWebScheme();
+		QAndroidJniObject getHtmlInfo();
+		QAndroidJniObject getLocaleList();
+		jint getTextBackgroundColor();
+		QAndroidJniObject getTextLineCharOffsets();
+		QAndroidJniObject getTextLineBaselines();
+		QAndroidJniObject getTextIdEntry();
+		jint getMinTextEms();
+		jint getMaxTextEms();
+		jint getMaxTextLength();
 		jboolean isChecked();
+		jboolean isCheckable();
+		jint getTextSelectionStart();
+		jint getTextSelectionEnd();
+		jfloat getTextSize();
+		QAndroidJniObject getTransformation();
 		QAndroidJniObject getAutofillOptions();
 	};
 } // namespace __jni_impl::android::app::assist
 
 #include "../../os/Bundle.hpp"
-#include "../../view/ViewStructure_HtmlInfo.hpp"
-#include "../../os/LocaleList.hpp"
 #include "../../view/autofill/AutofillId.hpp"
 #include "../../view/autofill/AutofillValue.hpp"
+#include "../../view/ViewStructure_HtmlInfo.hpp"
+#include "../../os/LocaleList.hpp"
 #include "../../graphics/Matrix.hpp"
 
 namespace __jni_impl::android::app::assist
@@ -210,102 +210,6 @@ namespace __jni_impl::android::app::assist
 			"getHeight",
 			"()I");
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getIdPackage()
-	{
-		return __thiz.callObjectMethod(
-			"getIdPackage",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getIdType()
-	{
-		return __thiz.callObjectMethod(
-			"getIdType",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getIdEntry()
-	{
-		return __thiz.callObjectMethod(
-			"getIdEntry",
-			"()Ljava/lang/String;");
-	}
-	jboolean AssistStructure_ViewNode::isAssistBlocked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAssistBlocked",
-			"()Z");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getWebDomain()
-	{
-		return __thiz.callObjectMethod(
-			"getWebDomain",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getWebScheme()
-	{
-		return __thiz.callObjectMethod(
-			"getWebScheme",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getHtmlInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getHtmlInfo",
-			"()Landroid/view/ViewStructure$HtmlInfo;");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getLocaleList()
-	{
-		return __thiz.callObjectMethod(
-			"getLocaleList",
-			"()Landroid/os/LocaleList;");
-	}
-	jint AssistStructure_ViewNode::getTextBackgroundColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextBackgroundColor",
-			"()I");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getTextLineCharOffsets()
-	{
-		return __thiz.callObjectMethod(
-			"getTextLineCharOffsets",
-			"()[I");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getTextLineBaselines()
-	{
-		return __thiz.callObjectMethod(
-			"getTextLineBaselines",
-			"()[I");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getTextIdEntry()
-	{
-		return __thiz.callObjectMethod(
-			"getTextIdEntry",
-			"()Ljava/lang/String;");
-	}
-	jint AssistStructure_ViewNode::getMinTextEms()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinTextEms",
-			"()I");
-	}
-	jint AssistStructure_ViewNode::getMaxTextEms()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxTextEms",
-			"()I");
-	}
-	jint AssistStructure_ViewNode::getMaxTextLength()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxTextLength",
-			"()I");
-	}
 	jint AssistStructure_ViewNode::getTextColor()
 	{
 		return __thiz.callMethod<jint>(
@@ -318,23 +222,11 @@ namespace __jni_impl::android::app::assist
 			"getTextStyle",
 			"()I");
 	}
-	jfloat AssistStructure_ViewNode::getTextSize()
+	QAndroidJniObject AssistStructure_ViewNode::getExtras()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getTextSize",
-			"()F");
-	}
-	jint AssistStructure_ViewNode::getTextSelectionStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextSelectionStart",
-			"()I");
-	}
-	jint AssistStructure_ViewNode::getTextSelectionEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextSelectionEnd",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
 	}
 	jint AssistStructure_ViewNode::getChildCount()
 	{
@@ -475,23 +367,131 @@ namespace __jni_impl::android::app::assist
 			"isActivated",
 			"()Z");
 	}
-	jboolean AssistStructure_ViewNode::isCheckable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCheckable",
-			"()Z");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getTransformation()
+	QAndroidJniObject AssistStructure_ViewNode::getIdPackage()
 	{
 		return __thiz.callObjectMethod(
-			"getTransformation",
-			"()Landroid/graphics/Matrix;");
+			"getIdPackage",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getIdType()
+	{
+		return __thiz.callObjectMethod(
+			"getIdType",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getIdEntry()
+	{
+		return __thiz.callObjectMethod(
+			"getIdEntry",
+			"()Ljava/lang/String;");
+	}
+	jboolean AssistStructure_ViewNode::isAssistBlocked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAssistBlocked",
+			"()Z");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getWebDomain()
+	{
+		return __thiz.callObjectMethod(
+			"getWebDomain",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getWebScheme()
+	{
+		return __thiz.callObjectMethod(
+			"getWebScheme",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getHtmlInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getHtmlInfo",
+			"()Landroid/view/ViewStructure$HtmlInfo;");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getLocaleList()
+	{
+		return __thiz.callObjectMethod(
+			"getLocaleList",
+			"()Landroid/os/LocaleList;");
+	}
+	jint AssistStructure_ViewNode::getTextBackgroundColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextBackgroundColor",
+			"()I");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getTextLineCharOffsets()
+	{
+		return __thiz.callObjectMethod(
+			"getTextLineCharOffsets",
+			"()[I");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getTextLineBaselines()
+	{
+		return __thiz.callObjectMethod(
+			"getTextLineBaselines",
+			"()[I");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getTextIdEntry()
+	{
+		return __thiz.callObjectMethod(
+			"getTextIdEntry",
+			"()Ljava/lang/String;");
+	}
+	jint AssistStructure_ViewNode::getMinTextEms()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinTextEms",
+			"()I");
+	}
+	jint AssistStructure_ViewNode::getMaxTextEms()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxTextEms",
+			"()I");
+	}
+	jint AssistStructure_ViewNode::getMaxTextLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxTextLength",
+			"()I");
 	}
 	jboolean AssistStructure_ViewNode::isChecked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isChecked",
 			"()Z");
+	}
+	jboolean AssistStructure_ViewNode::isCheckable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCheckable",
+			"()Z");
+	}
+	jint AssistStructure_ViewNode::getTextSelectionStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextSelectionStart",
+			"()I");
+	}
+	jint AssistStructure_ViewNode::getTextSelectionEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextSelectionEnd",
+			"()I");
+	}
+	jfloat AssistStructure_ViewNode::getTextSize()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getTextSize",
+			"()F");
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getTransformation()
+	{
+		return __thiz.callObjectMethod(
+			"getTransformation",
+			"()Landroid/graphics/Matrix;");
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getAutofillOptions()
 	{

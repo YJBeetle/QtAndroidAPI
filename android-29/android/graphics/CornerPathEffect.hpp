@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_CORNERPATHEFFECT
 #define ANDROID_GRAPHICS_CORNERPATHEFFECT
 
+#include "../../__JniBaseClass.hpp"
 #include "PathEffect.hpp"
 
 

@@ -3,6 +3,8 @@
 #ifndef JAVA_SQL_SQLTRANSIENTEXCEPTION
 #define JAVA_SQL_SQLTRANSIENTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "SQLException.hpp"
 
 

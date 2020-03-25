@@ -38,10 +38,10 @@ namespace __jni_impl::android::view::textclassifier
 		// Methods
 		QAndroidJniObject getText();
 		QAndroidJniObject getExtras();
-		QAndroidJniObject getAuthor();
-		QAndroidJniObject getReferenceTime();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getAuthor();
+		QAndroidJniObject getReferenceTime();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -96,18 +96,6 @@ namespace __jni_impl::android::view::textclassifier
 			"getExtras",
 			"()Landroid/os/Bundle;");
 	}
-	QAndroidJniObject ConversationActions_Message::getAuthor()
-	{
-		return __thiz.callObjectMethod(
-			"getAuthor",
-			"()Landroid/app/Person;");
-	}
-	QAndroidJniObject ConversationActions_Message::getReferenceTime()
-	{
-		return __thiz.callObjectMethod(
-			"getReferenceTime",
-			"()Ljava/time/ZonedDateTime;");
-	}
 	jint ConversationActions_Message::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -121,6 +109,18 @@ namespace __jni_impl::android::view::textclassifier
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject ConversationActions_Message::getAuthor()
+	{
+		return __thiz.callObjectMethod(
+			"getAuthor",
+			"()Landroid/app/Person;");
+	}
+	QAndroidJniObject ConversationActions_Message::getReferenceTime()
+	{
+		return __thiz.callObjectMethod(
+			"getReferenceTime",
+			"()Ljava/time/ZonedDateTime;");
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

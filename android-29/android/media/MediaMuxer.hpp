@@ -9,6 +9,10 @@ namespace __jni_impl::java::io
 {
 	class FileDescriptor;
 }
+namespace __jni_impl::android::media
+{
+	class MediaFormat;
+}
 namespace __jni_impl::java::nio
 {
 	class ByteBuffer;
@@ -16,10 +20,6 @@ namespace __jni_impl::java::nio
 namespace __jni_impl::android::media
 {
 	class MediaCodec_BufferInfo;
-}
-namespace __jni_impl::android::media
-{
-	class MediaFormat;
 }
 
 namespace __jni_impl::android::media
@@ -38,16 +38,16 @@ namespace __jni_impl::android::media
 		void stop();
 		void release();
 		void setOrientationHint(jint arg0);
-		void writeSampleData(jint arg0, __jni_impl::java::nio::ByteBuffer arg1, __jni_impl::android::media::MediaCodec_BufferInfo arg2);
 		jint addTrack(__jni_impl::android::media::MediaFormat arg0);
+		void writeSampleData(jint arg0, __jni_impl::java::nio::ByteBuffer arg1, __jni_impl::android::media::MediaCodec_BufferInfo arg2);
 		void setLocation(jfloat arg0, jfloat arg1);
 	};
 } // namespace __jni_impl::android::media
 
 #include "../../java/io/FileDescriptor.hpp"
+#include "MediaFormat.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 #include "MediaCodec_BufferInfo.hpp"
-#include "MediaFormat.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -97,6 +97,13 @@ namespace __jni_impl::android::media
 			"(I)V",
 			arg0);
 	}
+	jint MediaMuxer::addTrack(__jni_impl::android::media::MediaFormat arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"addTrack",
+			"(Landroid/media/MediaFormat;)I",
+			arg0.__jniObject().object());
+	}
 	void MediaMuxer::writeSampleData(jint arg0, __jni_impl::java::nio::ByteBuffer arg1, __jni_impl::android::media::MediaCodec_BufferInfo arg2)
 	{
 		__thiz.callMethod<void>(
@@ -105,13 +112,6 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
-	}
-	jint MediaMuxer::addTrack(__jni_impl::android::media::MediaFormat arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"addTrack",
-			"(Landroid/media/MediaFormat;)I",
-			arg0.__jniObject().object());
 	}
 	void MediaMuxer::setLocation(jfloat arg0, jfloat arg1)
 	{

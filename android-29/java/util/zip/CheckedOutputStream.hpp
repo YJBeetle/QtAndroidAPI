@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_ZIP_CHECKEDOUTPUTSTREAM
 #define JAVA_UTIL_ZIP_CHECKEDOUTPUTSTREAM
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../io/OutputStream.hpp"
 #include "../../io/FilterOutputStream.hpp"
 
 namespace __jni_impl::java::io

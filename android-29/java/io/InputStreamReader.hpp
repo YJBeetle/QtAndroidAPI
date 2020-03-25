@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_INPUTSTREAMREADER
 #define JAVA_IO_INPUTSTREAMREADER
 
+#include "../../__JniBaseClass.hpp"
 #include "Reader.hpp"
 
 namespace __jni_impl::java::io

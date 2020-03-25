@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_ELEMENT_DATATYPE
 #define ANDROID_RENDERSCRIPT_ELEMENT_DATATYPE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

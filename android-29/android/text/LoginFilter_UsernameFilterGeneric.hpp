@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_LOGINFILTER_USERNAMEFILTERGENERIC
 #define ANDROID_TEXT_LOGINFILTER_USERNAMEFILTERGENERIC
 
+#include "../../__JniBaseClass.hpp"
 #include "LoginFilter.hpp"
 
 

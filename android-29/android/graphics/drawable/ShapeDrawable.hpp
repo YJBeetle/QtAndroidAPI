@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_SHAPEDRAWABLE
 #define ANDROID_GRAPHICS_DRAWABLE_SHAPEDRAWABLE
 
+#include "../../../__JniBaseClass.hpp"
 #include "Drawable.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes
@@ -16,14 +17,6 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::content::res
 {
 	class Resources_Theme;
-}
-namespace __jni_impl::android::content::res
-{
-	class ColorStateList;
-}
-namespace __jni_impl::android::graphics
-{
-	class BlendMode;
 }
 namespace __jni_impl::android::graphics
 {
@@ -41,9 +34,17 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable_ConstantState;
 }
+namespace __jni_impl::android::content::res
+{
+	class ColorStateList;
+}
 namespace __jni_impl::android::graphics
 {
-	class ColorFilter;
+	class BlendMode;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
 }
 namespace __jni_impl::android::graphics
 {
@@ -55,7 +56,7 @@ namespace __jni_impl::android::graphics::drawable
 }
 namespace __jni_impl::android::graphics
 {
-	class Canvas;
+	class ColorFilter;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -72,8 +73,6 @@ namespace __jni_impl::android::graphics::drawable
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
 		void setAlpha(jint arg0);
-		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
-		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
 		jboolean isStateful();
 		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		jint getOpacity();
@@ -83,9 +82,12 @@ namespace __jni_impl::android::graphics::drawable
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		QAndroidJniObject mutate();
 		QAndroidJniObject getConstantState();
-		void setDither(jboolean arg0);
-		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
-		QAndroidJniObject getPaint();
+		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
+		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
+		jint getAlpha();
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		void setPadding(__jni_impl::android::graphics::Rect arg0);
+		void setPadding(jint arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject getShape();
 		void setShape(__jni_impl::android::graphics::drawable::shapes::Shape arg0);
 		void setShaderFactory(__jni_impl::android::graphics::drawable::ShapeDrawable_ShaderFactory arg0);
@@ -93,26 +95,25 @@ namespace __jni_impl::android::graphics::drawable
 		void setIntrinsicWidth(jint arg0);
 		void setIntrinsicHeight(jint arg0);
 		jint getChangingConfigurations();
-		jint getAlpha();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void setPadding(__jni_impl::android::graphics::Rect arg0);
-		void setPadding(jint arg0, jint arg1, jint arg2, jint arg3);
+		void setDither(jboolean arg0);
+		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		QAndroidJniObject getPaint();
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
 #include "shapes/Shape.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
-#include "../../content/res/ColorStateList.hpp"
-#include "../BlendMode.hpp"
 #include "../Rect.hpp"
 #include "../Outline.hpp"
 #include "Drawable.hpp"
 #include "Drawable_ConstantState.hpp"
-#include "../ColorFilter.hpp"
+#include "../../content/res/ColorStateList.hpp"
+#include "../BlendMode.hpp"
+#include "../Canvas.hpp"
 #include "../Paint.hpp"
 #include "ShapeDrawable_ShaderFactory.hpp"
-#include "../Canvas.hpp"
+#include "../ColorFilter.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -150,20 +151,6 @@ namespace __jni_impl::android::graphics::drawable
 			"setAlpha",
 			"(I)V",
 			arg0);
-	}
-	void ShapeDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object());
-	}
-	void ShapeDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object());
 	}
 	jboolean ShapeDrawable::isStateful()
 	{
@@ -222,25 +209,49 @@ namespace __jni_impl::android::graphics::drawable
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;");
 	}
-	void ShapeDrawable::setDither(jboolean arg0)
+	void ShapeDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDither",
-			"(Z)V",
-			arg0);
-	}
-	void ShapeDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColorFilter",
-			"(Landroid/graphics/ColorFilter;)V",
+			"setTintList",
+			"(Landroid/content/res/ColorStateList;)V",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject ShapeDrawable::getPaint()
+	void ShapeDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getPaint",
-			"()Landroid/graphics/Paint;");
+		__thiz.callMethod<void>(
+			"setTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object());
+	}
+	jint ShapeDrawable::getAlpha()
+	{
+		return __thiz.callMethod<jint>(
+			"getAlpha",
+			"()I");
+	}
+	void ShapeDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object());
+	}
+	void ShapeDrawable::setPadding(__jni_impl::android::graphics::Rect arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPadding",
+			"(Landroid/graphics/Rect;)V",
+			arg0.__jniObject().object());
+	}
+	void ShapeDrawable::setPadding(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"setPadding",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
 	}
 	QAndroidJniObject ShapeDrawable::getShape()
 	{
@@ -288,35 +299,25 @@ namespace __jni_impl::android::graphics::drawable
 			"getChangingConfigurations",
 			"()I");
 	}
-	jint ShapeDrawable::getAlpha()
-	{
-		return __thiz.callMethod<jint>(
-			"getAlpha",
-			"()I");
-	}
-	void ShapeDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	void ShapeDrawable::setDither(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
+			"setDither",
+			"(Z)V",
+			arg0);
+	}
+	void ShapeDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorFilter",
+			"(Landroid/graphics/ColorFilter;)V",
 			arg0.__jniObject().object());
 	}
-	void ShapeDrawable::setPadding(__jni_impl::android::graphics::Rect arg0)
+	QAndroidJniObject ShapeDrawable::getPaint()
 	{
-		__thiz.callMethod<void>(
-			"setPadding",
-			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
-	}
-	void ShapeDrawable::setPadding(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"setPadding",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
+		return __thiz.callObjectMethod(
+			"getPaint",
+			"()Landroid/graphics/Paint;");
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

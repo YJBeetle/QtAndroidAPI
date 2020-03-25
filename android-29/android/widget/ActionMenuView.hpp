@@ -3,15 +3,14 @@
 #ifndef ANDROID_WIDGET_ACTIONMENUVIEW
 #define ANDROID_WIDGET_ACTIONMENUVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "LinearLayout.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
-}
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
 }
 namespace __jni_impl::android::view
 {
@@ -24,6 +23,10 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::widget
 {
 	class LinearLayout_LayoutParams;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
 }
 namespace __jni_impl::android::graphics::drawable
 {
@@ -42,9 +45,9 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
+		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
 		void onDetachedFromWindow();
-		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		void setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getMenu();
 		void setPopupTheme(jint arg0);
@@ -59,10 +62,10 @@ namespace __jni_impl::android::widget
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../content/res/Configuration.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "ActionMenuView_LayoutParams.hpp"
 #include "LinearLayout_LayoutParams.hpp"
+#include "../content/res/Configuration.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::widget
@@ -87,6 +90,13 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
+	QAndroidJniObject ActionMenuView::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"generateLayoutParams",
+			"(Landroid/util/AttributeSet;)Landroid/widget/ActionMenuView$LayoutParams;",
+			arg0.__jniObject().object());
+	}
 	void ActionMenuView::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
 	{
 		__thiz.callMethod<void>(
@@ -99,13 +109,6 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"onDetachedFromWindow",
 			"()V");
-	}
-	QAndroidJniObject ActionMenuView::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"generateLayoutParams",
-			"(Landroid/util/AttributeSet;)Landroid/widget/ActionMenuView$LayoutParams;",
-			arg0.__jniObject().object());
 	}
 	void ActionMenuView::setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0)
 	{

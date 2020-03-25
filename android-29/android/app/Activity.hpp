@@ -3,19 +3,14 @@
 #ifndef ANDROID_APP_ACTIVITY
 #define ANDROID_APP_ACTIVITY
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Intent;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
-namespace __jni_impl::android::content
-{
-	class IntentSender;
 }
 namespace __jni_impl::java::io
 {
@@ -44,6 +39,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
@@ -155,6 +154,10 @@ namespace __jni_impl::android::content::res
 }
 namespace __jni_impl::android::content
 {
+	class IntentSender;
+}
+namespace __jni_impl::android::content
+{
 	class ComponentName;
 }
 namespace __jni_impl::android::app
@@ -207,17 +210,9 @@ namespace __jni_impl::android::app
 		// Methods
 		QAndroidJniObject getParent();
 		jboolean isDestroyed();
-		void setResult(jint arg0, __jni_impl::android::content::Intent arg1);
 		void setResult(jint arg0);
+		void setResult(jint arg0, __jni_impl::android::content::Intent arg1);
 		void finish();
-		void setTheme(jint arg0);
-		void startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1);
-		void startActivity(__jni_impl::android::content::Intent arg0);
-		void startActivities(jarray arg0, __jni_impl::android::os::Bundle arg1);
-		void startActivities(jarray arg0);
-		void startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5);
-		void startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4);
-		QAndroidJniObject getSystemService(jstring arg0);
 		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 		QAndroidJniObject getIntent();
 		void setIntent(__jni_impl::android::content::Intent arg0);
@@ -254,14 +249,14 @@ namespace __jni_impl::android::app
 		void onProvideKeyboardShortcuts(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		jboolean showAssist(__jni_impl::android::os::Bundle arg0);
 		void reportFullyDrawn();
-		void onMultiWindowModeChanged(jboolean arg0);
 		void onMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
+		void onMultiWindowModeChanged(jboolean arg0);
 		jboolean isInMultiWindowMode();
-		void onPictureInPictureModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
 		void onPictureInPictureModeChanged(jboolean arg0);
+		void onPictureInPictureModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
 		jboolean isInPictureInPictureMode();
-		jboolean enterPictureInPictureMode(__jni_impl::android::app::PictureInPictureParams arg0);
 		void enterPictureInPictureMode();
+		jboolean enterPictureInPictureMode(__jni_impl::android::app::PictureInPictureParams arg0);
 		void setPictureInPictureParams(__jni_impl::android::app::PictureInPictureParams arg0);
 		jint getMaxNumPictureInPictureActions();
 		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
@@ -279,9 +274,9 @@ namespace __jni_impl::android::app
 		QAndroidJniObject requireViewById(jint arg0);
 		QAndroidJniObject getActionBar();
 		void setActionBar(__jni_impl::android::widget::Toolbar arg0);
+		void setContentView(jint arg0);
 		void setContentView(__jni_impl::android::view::View arg0);
 		void setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
-		void setContentView(jint arg0);
 		void addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		QAndroidJniObject getContentTransitionManager();
 		void setContentTransitionManager(__jni_impl::android::transition::TransitionManager arg0);
@@ -338,8 +333,8 @@ namespace __jni_impl::android::app
 		jboolean showDialog(jint arg0, __jni_impl::android::os::Bundle arg1);
 		void dismissDialog(jint arg0);
 		void removeDialog(jint arg0);
-		jboolean onSearchRequested();
 		jboolean onSearchRequested(__jni_impl::android::view::SearchEvent arg0);
+		jboolean onSearchRequested();
 		QAndroidJniObject getSearchEvent();
 		void startSearch(jstring arg0, jboolean arg1, __jni_impl::android::os::Bundle arg2, jboolean arg3);
 		void triggerSearch(jstring arg0, __jni_impl::android::os::Bundle arg1);
@@ -354,11 +349,11 @@ namespace __jni_impl::android::app
 		void requestPermissions(jarray arg0, jint arg1);
 		void onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2);
 		jboolean shouldShowRequestPermissionRationale(jstring arg0);
-		void startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
 		void startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1);
+		void startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
 		jboolean isActivityTransitionRunning();
-		void startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5);
 		void startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::os::Bundle arg6);
+		void startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5);
 		jboolean startActivityIfNeeded(__jni_impl::android::content::Intent arg0, jint arg1);
 		jboolean startActivityIfNeeded(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
 		jboolean startNextMatchingActivity(__jni_impl::android::content::Intent arg0);
@@ -367,8 +362,8 @@ namespace __jni_impl::android::app
 		void startActivityFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::os::Bundle arg3);
 		void startActivityFromFragment(__jni_impl::android::app::Fragment arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::os::Bundle arg3);
 		void startActivityFromFragment(__jni_impl::android::app::Fragment arg0, __jni_impl::android::content::Intent arg1, jint arg2);
-		void startIntentSenderFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::IntentSender arg1, jint arg2, __jni_impl::android::content::Intent arg3, jint arg4, jint arg5, jint arg6);
 		void startIntentSenderFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::IntentSender arg1, jint arg2, __jni_impl::android::content::Intent arg3, jint arg4, jint arg5, jint arg6, __jni_impl::android::os::Bundle arg7);
+		void startIntentSenderFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::IntentSender arg1, jint arg2, __jni_impl::android::content::Intent arg3, jint arg4, jint arg5, jint arg6);
 		void overridePendingTransition(jint arg0, jint arg1);
 		QAndroidJniObject getReferrer();
 		QAndroidJniObject onProvideReferrer();
@@ -395,8 +390,8 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getLocalClassName();
 		QAndroidJniObject getComponentName();
 		QAndroidJniObject getPreferences(jint arg0);
-		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
+		void setTitle(jint arg0);
 		void setTitleColor(jint arg0);
 		QAndroidJniObject getTitle();
 		jint getTitleColor();
@@ -419,10 +414,10 @@ namespace __jni_impl::android::app
 		void onEnterAnimationComplete();
 		void setImmersive(jboolean arg0);
 		void setVrModeEnabled(jboolean arg0, __jni_impl::android::content::ComponentName arg1);
-		QAndroidJniObject startActionMode(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject startActionMode(__jni_impl::__JniBaseClass arg0, jint arg1);
-		QAndroidJniObject onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1);
+		QAndroidJniObject startActionMode(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1);
 		void onActionModeStarted(__jni_impl::android::view::ActionMode arg0);
 		void onActionModeFinished(__jni_impl::android::view::ActionMode arg0);
 		jboolean shouldUpRecreateTask(__jni_impl::android::content::Intent arg0);
@@ -440,12 +435,18 @@ namespace __jni_impl::android::app
 		void setShowWhenLocked(jboolean arg0);
 		void setInheritShowWhenLocked(jboolean arg0);
 		void setTurnScreenOn(jboolean arg0);
+		void setTheme(jint arg0);
+		void startActivity(__jni_impl::android::content::Intent arg0);
+		void startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1);
+		void startActivities(jarray arg0, __jni_impl::android::os::Bundle arg1);
+		void startActivities(jarray arg0);
+		void startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5);
+		void startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4);
+		QAndroidJniObject getSystemService(jstring arg0);
 	};
 } // namespace __jni_impl::android::app
 
 #include "../content/Intent.hpp"
-#include "../os/Bundle.hpp"
-#include "../content/IntentSender.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
 #include "Application.hpp"
@@ -453,6 +454,7 @@ namespace __jni_impl::android::app
 #include "LoaderManager.hpp"
 #include "../view/View.hpp"
 #include "../content/Context.hpp"
+#include "../os/Bundle.hpp"
 #include "../os/PersistableBundle.hpp"
 #include "VoiceInteractor.hpp"
 #include "../graphics/Bitmap.hpp"
@@ -480,6 +482,7 @@ namespace __jni_impl::android::app
 #include "../view/LayoutInflater.hpp"
 #include "../view/MenuInflater.hpp"
 #include "../content/res/Resources_Theme.hpp"
+#include "../content/IntentSender.hpp"
 #include "../content/ComponentName.hpp"
 #include "PendingIntent.hpp"
 #include "ActivityManager_TaskDescription.hpp"
@@ -562,6 +565,13 @@ namespace __jni_impl::android::app
 			"isDestroyed",
 			"()Z");
 	}
+	void Activity::setResult(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setResult",
+			"(I)V",
+			arg0);
+	}
 	void Activity::setResult(jint arg0, __jni_impl::android::content::Intent arg1)
 	{
 		__thiz.callMethod<void>(
@@ -570,85 +580,11 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1.__jniObject().object());
 	}
-	void Activity::setResult(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setResult",
-			"(I)V",
-			arg0);
-	}
 	void Activity::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
 			"()V");
-	}
-	void Activity::setTheme(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTheme",
-			"(I)V",
-			arg0);
-	}
-	void Activity::startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"startActivity",
-			"(Landroid/content/Intent;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void Activity::startActivity(__jni_impl::android::content::Intent arg0)
-	{
-		__thiz.callMethod<void>(
-			"startActivity",
-			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
-	}
-	void Activity::startActivities(jarray arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"startActivities",
-			"([Landroid/content/Intent;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void Activity::startActivities(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"startActivities",
-			"([Landroid/content/Intent;)V",
-			arg0);
-	}
-	void Activity::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5)
-	{
-		__thiz.callMethod<void>(
-			"startIntentSender",
-			"(Landroid/content/IntentSender;Landroid/content/Intent;IIILandroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object());
-	}
-	void Activity::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4)
-	{
-		__thiz.callMethod<void>(
-			"startIntentSender",
-			"(Landroid/content/IntentSender;Landroid/content/Intent;III)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4);
-	}
-	QAndroidJniObject Activity::getSystemService(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSystemService",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
 	}
 	void Activity::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
 	{
@@ -897,13 +833,6 @@ namespace __jni_impl::android::app
 			"reportFullyDrawn",
 			"()V");
 	}
-	void Activity::onMultiWindowModeChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onMultiWindowModeChanged",
-			"(Z)V",
-			arg0);
-	}
 	void Activity::onMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1)
 	{
 		__thiz.callMethod<void>(
@@ -912,11 +841,25 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1.__jniObject().object());
 	}
+	void Activity::onMultiWindowModeChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onMultiWindowModeChanged",
+			"(Z)V",
+			arg0);
+	}
 	jboolean Activity::isInMultiWindowMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInMultiWindowMode",
 			"()Z");
+	}
+	void Activity::onPictureInPictureModeChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onPictureInPictureModeChanged",
+			"(Z)V",
+			arg0);
 	}
 	void Activity::onPictureInPictureModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1)
 	{
@@ -926,18 +869,17 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1.__jniObject().object());
 	}
-	void Activity::onPictureInPictureModeChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onPictureInPictureModeChanged",
-			"(Z)V",
-			arg0);
-	}
 	jboolean Activity::isInPictureInPictureMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInPictureInPictureMode",
 			"()Z");
+	}
+	void Activity::enterPictureInPictureMode()
+	{
+		__thiz.callMethod<void>(
+			"enterPictureInPictureMode",
+			"()V");
 	}
 	jboolean Activity::enterPictureInPictureMode(__jni_impl::android::app::PictureInPictureParams arg0)
 	{
@@ -945,12 +887,6 @@ namespace __jni_impl::android::app
 			"enterPictureInPictureMode",
 			"(Landroid/app/PictureInPictureParams;)Z",
 			arg0.__jniObject().object());
-	}
-	void Activity::enterPictureInPictureMode()
-	{
-		__thiz.callMethod<void>(
-			"enterPictureInPictureMode",
-			"()V");
 	}
 	void Activity::setPictureInPictureParams(__jni_impl::android::app::PictureInPictureParams arg0)
 	{
@@ -1068,6 +1004,13 @@ namespace __jni_impl::android::app
 			"(Landroid/widget/Toolbar;)V",
 			arg0.__jniObject().object());
 	}
+	void Activity::setContentView(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentView",
+			"(I)V",
+			arg0);
+	}
 	void Activity::setContentView(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1082,13 +1025,6 @@ namespace __jni_impl::android::app
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
-	}
-	void Activity::setContentView(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentView",
-			"(I)V",
-			arg0);
 	}
 	void Activity::addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
 	{
@@ -1485,18 +1421,18 @@ namespace __jni_impl::android::app
 			"(I)V",
 			arg0);
 	}
-	jboolean Activity::onSearchRequested()
-	{
-		return __thiz.callMethod<jboolean>(
-			"onSearchRequested",
-			"()Z");
-	}
 	jboolean Activity::onSearchRequested(__jni_impl::android::view::SearchEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onSearchRequested",
 			"(Landroid/view/SearchEvent;)Z",
 			arg0.__jniObject().object());
+	}
+	jboolean Activity::onSearchRequested()
+	{
+		return __thiz.callMethod<jboolean>(
+			"onSearchRequested",
+			"()Z");
 	}
 	QAndroidJniObject Activity::getSearchEvent()
 	{
@@ -1604,6 +1540,14 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;)Z",
 			arg0);
 	}
+	void Activity::startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"startActivityForResult",
+			"(Landroid/content/Intent;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	void Activity::startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -1613,31 +1557,11 @@ namespace __jni_impl::android::app
 			arg1,
 			arg2.__jniObject().object());
 	}
-	void Activity::startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"startActivityForResult",
-			"(Landroid/content/Intent;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	jboolean Activity::isActivityTransitionRunning()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isActivityTransitionRunning",
 			"()Z");
-	}
-	void Activity::startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz.callMethod<void>(
-			"startIntentSenderForResult",
-			"(Landroid/content/IntentSender;ILandroid/content/Intent;III)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3,
-			arg4,
-			arg5);
 	}
 	void Activity::startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::os::Bundle arg6)
 	{
@@ -1651,6 +1575,18 @@ namespace __jni_impl::android::app
 			arg4,
 			arg5,
 			arg6.__jniObject().object());
+	}
+	void Activity::startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5)
+	{
+		__thiz.callMethod<void>(
+			"startIntentSenderForResult",
+			"(Landroid/content/IntentSender;ILandroid/content/Intent;III)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3,
+			arg4,
+			arg5);
 	}
 	jboolean Activity::startActivityIfNeeded(__jni_impl::android::content::Intent arg0, jint arg1)
 	{
@@ -1722,19 +1658,6 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object(),
 			arg2);
 	}
-	void Activity::startIntentSenderFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::IntentSender arg1, jint arg2, __jni_impl::android::content::Intent arg3, jint arg4, jint arg5, jint arg6)
-	{
-		__thiz.callMethod<void>(
-			"startIntentSenderFromChild",
-			"(Landroid/app/Activity;Landroid/content/IntentSender;ILandroid/content/Intent;III)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5,
-			arg6);
-	}
 	void Activity::startIntentSenderFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::IntentSender arg1, jint arg2, __jni_impl::android::content::Intent arg3, jint arg4, jint arg5, jint arg6, __jni_impl::android::os::Bundle arg7)
 	{
 		__thiz.callMethod<void>(
@@ -1748,6 +1671,19 @@ namespace __jni_impl::android::app
 			arg5,
 			arg6,
 			arg7.__jniObject().object());
+	}
+	void Activity::startIntentSenderFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::IntentSender arg1, jint arg2, __jni_impl::android::content::Intent arg3, jint arg4, jint arg5, jint arg6)
+	{
+		__thiz.callMethod<void>(
+			"startIntentSenderFromChild",
+			"(Landroid/app/Activity;Landroid/content/IntentSender;ILandroid/content/Intent;III)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5,
+			arg6);
 	}
 	void Activity::overridePendingTransition(jint arg0, jint arg1)
 	{
@@ -1920,18 +1856,18 @@ namespace __jni_impl::android::app
 			"(I)Landroid/content/SharedPreferences;",
 			arg0);
 	}
-	void Activity::setTitle(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(I)V",
-			arg0);
-	}
 	void Activity::setTitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
+			arg0);
+	}
+	void Activity::setTitle(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(I)V",
 			arg0);
 	}
 	void Activity::setTitleColor(jint arg0)
@@ -2087,13 +2023,6 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1.__jniObject().object());
 	}
-	QAndroidJniObject Activity::startActionMode(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"startActionMode",
-			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject Activity::startActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -2102,13 +2031,12 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	QAndroidJniObject Activity::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
+	QAndroidJniObject Activity::startActionMode(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"onWindowStartingActionMode",
-			"(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;",
-			arg0.__jniObject().object(),
-			arg1);
+			"startActionMode",
+			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject Activity::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0)
 	{
@@ -2116,6 +2044,14 @@ namespace __jni_impl::android::app
 			"onWindowStartingActionMode",
 			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Activity::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"onWindowStartingActionMode",
+			"(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	void Activity::onActionModeStarted(__jni_impl::android::view::ActionMode arg0)
 	{
@@ -2229,6 +2165,73 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"setTurnScreenOn",
 			"(Z)V",
+			arg0);
+	}
+	void Activity::setTheme(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTheme",
+			"(I)V",
+			arg0);
+	}
+	void Activity::startActivity(__jni_impl::android::content::Intent arg0)
+	{
+		__thiz.callMethod<void>(
+			"startActivity",
+			"(Landroid/content/Intent;)V",
+			arg0.__jniObject().object());
+	}
+	void Activity::startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"startActivity",
+			"(Landroid/content/Intent;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void Activity::startActivities(jarray arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"startActivities",
+			"([Landroid/content/Intent;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void Activity::startActivities(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"startActivities",
+			"([Landroid/content/Intent;)V",
+			arg0);
+	}
+	void Activity::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5)
+	{
+		__thiz.callMethod<void>(
+			"startIntentSender",
+			"(Landroid/content/IntentSender;Landroid/content/Intent;IIILandroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object());
+	}
+	void Activity::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4)
+	{
+		__thiz.callMethod<void>(
+			"startIntentSender",
+			"(Landroid/content/IntentSender;Landroid/content/Intent;III)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4);
+	}
+	QAndroidJniObject Activity::getSystemService(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSystemService",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0);
 	}
 } // namespace __jni_impl::android::app

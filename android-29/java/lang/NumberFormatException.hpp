@@ -3,6 +3,9 @@
 #ifndef JAVA_LANG_NUMBERFORMATEXCEPTION
 #define JAVA_LANG_NUMBERFORMATEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
+#include "RuntimeException.hpp"
 #include "IllegalArgumentException.hpp"
 
 

@@ -27,10 +27,10 @@ namespace __jni_impl::android::app::admin
 		jlong getId();
 		jint getTag();
 		QAndroidJniObject getData();
-		jlong getTimeNanos();
-		jint getLogLevel();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getTimeNanos();
+		jint getLogLevel();
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -87,18 +87,6 @@ namespace __jni_impl::android::app::admin
 			"getData",
 			"()Ljava/lang/Object;");
 	}
-	jlong SecurityLog_SecurityEvent::getTimeNanos()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeNanos",
-			"()J");
-	}
-	jint SecurityLog_SecurityEvent::getLogLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getLogLevel",
-			"()I");
-	}
 	jint SecurityLog_SecurityEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -112,6 +100,18 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	jlong SecurityLog_SecurityEvent::getTimeNanos()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeNanos",
+			"()J");
+	}
+	jint SecurityLog_SecurityEvent::getLogLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getLogLevel",
+			"()I");
 	}
 } // namespace __jni_impl::android::app::admin
 

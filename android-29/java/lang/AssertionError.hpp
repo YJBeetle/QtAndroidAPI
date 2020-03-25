@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_ASSERTIONERROR
 #define JAVA_LANG_ASSERTIONERROR
 
+#include "../../__JniBaseClass.hpp"
 #include "Error.hpp"
 
 

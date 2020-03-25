@@ -3,6 +3,7 @@
 #ifndef ANDROID_SERVICE_RESTRICTIONS_RESTRICTIONSRECEIVER
 #define ANDROID_SERVICE_RESTRICTIONS_RESTRICTIONSRECEIVER
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
 namespace __jni_impl::android::content

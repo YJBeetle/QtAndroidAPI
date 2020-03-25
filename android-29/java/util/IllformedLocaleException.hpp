@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_ILLFORMEDLOCALEEXCEPTION
 #define JAVA_UTIL_ILLFORMEDLOCALEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
 

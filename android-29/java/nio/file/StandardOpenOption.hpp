@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_FILE_STANDARDOPENOPTION
 #define JAVA_NIO_FILE_STANDARDOPENOPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

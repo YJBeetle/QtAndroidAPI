@@ -21,10 +21,10 @@ namespace __jni_impl::android::graphics::pdf
 		void __constructor();
 		
 		// Methods
-		jint getPageNumber();
-		QAndroidJniObject getContentRect();
 		jint getPageWidth();
 		jint getPageHeight();
+		jint getPageNumber();
+		QAndroidJniObject getContentRect();
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
@@ -43,18 +43,6 @@ namespace __jni_impl::android::graphics::pdf
 	}
 	
 	// Methods
-	jint PdfDocument_PageInfo::getPageNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getPageNumber",
-			"()I");
-	}
-	QAndroidJniObject PdfDocument_PageInfo::getContentRect()
-	{
-		return __thiz.callObjectMethod(
-			"getContentRect",
-			"()Landroid/graphics/Rect;");
-	}
 	jint PdfDocument_PageInfo::getPageWidth()
 	{
 		return __thiz.callMethod<jint>(
@@ -66,6 +54,18 @@ namespace __jni_impl::android::graphics::pdf
 		return __thiz.callMethod<jint>(
 			"getPageHeight",
 			"()I");
+	}
+	jint PdfDocument_PageInfo::getPageNumber()
+	{
+		return __thiz.callMethod<jint>(
+			"getPageNumber",
+			"()I");
+	}
+	QAndroidJniObject PdfDocument_PageInfo::getContentRect()
+	{
+		return __thiz.callObjectMethod(
+			"getContentRect",
+			"()Landroid/graphics/Rect;");
 	}
 } // namespace __jni_impl::android::graphics::pdf
 

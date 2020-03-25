@@ -30,19 +30,19 @@ namespace __jni_impl::android::app
 		QAndroidJniObject setText(jint arg0);
 		QAndroidJniObject setText(jstring arg0);
 		QAndroidJniObject getText();
-		jint getPosition();
 		QAndroidJniObject setIcon(jint arg0);
 		QAndroidJniObject setIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
+		jint getPosition();
 		QAndroidJniObject getContentDescription();
 		QAndroidJniObject setContentDescription(jstring arg0);
 		QAndroidJniObject setContentDescription(jint arg0);
 		QAndroidJniObject setTag(jobject arg0);
+		QAndroidJniObject getIcon();
 		QAndroidJniObject setCustomView(jint arg0);
 		QAndroidJniObject setCustomView(__jni_impl::android::view::View arg0);
 		QAndroidJniObject getCustomView();
 		QAndroidJniObject setTabListener(__jni_impl::__JniBaseClass arg0);
 		void select();
-		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::app
 
@@ -94,12 +94,6 @@ namespace __jni_impl::android::app
 			"getText",
 			"()Ljava/lang/CharSequence;");
 	}
-	jint ActionBar_Tab::getPosition()
-	{
-		return __thiz.callMethod<jint>(
-			"getPosition",
-			"()I");
-	}
 	QAndroidJniObject ActionBar_Tab::setIcon(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -113,6 +107,12 @@ namespace __jni_impl::android::app
 			"setIcon",
 			"(Landroid/graphics/drawable/Drawable;)Landroid/app/ActionBar$Tab;",
 			arg0.__jniObject().object());
+	}
+	jint ActionBar_Tab::getPosition()
+	{
+		return __thiz.callMethod<jint>(
+			"getPosition",
+			"()I");
 	}
 	QAndroidJniObject ActionBar_Tab::getContentDescription()
 	{
@@ -140,6 +140,12 @@ namespace __jni_impl::android::app
 			"setTag",
 			"(Ljava/lang/Object;)Landroid/app/ActionBar$Tab;",
 			arg0);
+	}
+	QAndroidJniObject ActionBar_Tab::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Drawable;");
 	}
 	QAndroidJniObject ActionBar_Tab::setCustomView(jint arg0)
 	{
@@ -173,12 +179,6 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"select",
 			"()V");
-	}
-	QAndroidJniObject ActionBar_Tab::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Drawable;");
 	}
 } // namespace __jni_impl::android::app
 

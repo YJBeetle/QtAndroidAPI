@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_CHRONO_HIJRAHCHRONOLOGY
 #define JAVA_TIME_CHRONO_HIJRAHCHRONOLOGY
 
+#include "../../../__JniBaseClass.hpp"
 #include "AbstractChronology.hpp"
 
 namespace __jni_impl::java::io

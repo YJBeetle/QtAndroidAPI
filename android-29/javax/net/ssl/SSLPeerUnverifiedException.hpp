@@ -3,6 +3,9 @@
 #ifndef JAVAX_NET_SSL_SSLPEERUNVERIFIEDEXCEPTION
 #define JAVAX_NET_SSL_SSLPEERUNVERIFIEDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/io/IOException.hpp"
 #include "SSLException.hpp"
 
 

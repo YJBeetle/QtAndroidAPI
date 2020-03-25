@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_THREAD_STATE
 #define JAVA_LANG_THREAD_STATE
 
+#include "../../__JniBaseClass.hpp"
 #include "Enum.hpp"
 
 

@@ -3,19 +3,14 @@
 #ifndef ANDROID_WIDGET_SEARCHVIEW
 #define ANDROID_WIDGET_SEARCHVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "LinearLayout.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
-}
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
 }
 namespace __jni_impl::android::app
 {
@@ -24,6 +19,14 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::widget
 {
 	class CursorAdapter;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
 }
 
 namespace __jni_impl::android::widget
@@ -47,11 +50,6 @@ namespace __jni_impl::android::widget
 		jint getInputType();
 		void setImeOptions(jint arg0);
 		jint getImeOptions();
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		void onWindowFocusChanged(jboolean arg0);
-		void clearFocus();
-		jboolean requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1);
-		QAndroidJniObject getAccessibilityClassName();
 		void setOnQueryTextListener(__jni_impl::__JniBaseClass arg0);
 		void setOnCloseListener(__jni_impl::__JniBaseClass arg0);
 		void setSearchableInfo(__jni_impl::android::app::SearchableInfo arg0);
@@ -72,16 +70,21 @@ namespace __jni_impl::android::widget
 		jboolean isQueryRefinementEnabled();
 		void setSuggestionsAdapter(__jni_impl::android::widget::CursorAdapter arg0);
 		QAndroidJniObject getSuggestionsAdapter();
-		void onActionViewCollapsed();
+		void clearFocus();
+		jboolean requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1);
+		QAndroidJniObject getAccessibilityClassName();
 		void onActionViewExpanded();
+		void onActionViewCollapsed();
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		void onWindowFocusChanged(jboolean arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/KeyEvent.hpp"
-#include "../graphics/Rect.hpp"
 #include "../app/SearchableInfo.hpp"
 #include "CursorAdapter.hpp"
+#include "../graphics/Rect.hpp"
+#include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -168,41 +171,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getImeOptions",
 			"()I");
-	}
-	jboolean SearchView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void SearchView::onWindowFocusChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onWindowFocusChanged",
-			"(Z)V",
-			arg0);
-	}
-	void SearchView::clearFocus()
-	{
-		__thiz.callMethod<void>(
-			"clearFocus",
-			"()V");
-	}
-	jboolean SearchView::requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"requestFocus",
-			"(ILandroid/graphics/Rect;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject SearchView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
 	}
 	void SearchView::setOnQueryTextListener(__jni_impl::__JniBaseClass arg0)
 	{
@@ -338,17 +306,52 @@ namespace __jni_impl::android::widget
 			"getSuggestionsAdapter",
 			"()Landroid/widget/CursorAdapter;");
 	}
-	void SearchView::onActionViewCollapsed()
+	void SearchView::clearFocus()
 	{
 		__thiz.callMethod<void>(
-			"onActionViewCollapsed",
+			"clearFocus",
 			"()V");
+	}
+	jboolean SearchView::requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"requestFocus",
+			"(ILandroid/graphics/Rect;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	QAndroidJniObject SearchView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
 	}
 	void SearchView::onActionViewExpanded()
 	{
 		__thiz.callMethod<void>(
 			"onActionViewExpanded",
 			"()V");
+	}
+	void SearchView::onActionViewCollapsed()
+	{
+		__thiz.callMethod<void>(
+			"onActionViewCollapsed",
+			"()V");
+	}
+	jboolean SearchView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void SearchView::onWindowFocusChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onWindowFocusChanged",
+			"(Z)V",
+			arg0);
 	}
 } // namespace __jni_impl::android::widget
 

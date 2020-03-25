@@ -3,6 +3,7 @@
 #ifndef ANDROID_UTIL_JSONTOKEN
 #define ANDROID_UTIL_JSONTOKEN
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

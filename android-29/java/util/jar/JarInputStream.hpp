@@ -3,6 +3,10 @@
 #ifndef JAVA_UTIL_JAR_JARINPUTSTREAM
 #define JAVA_UTIL_JAR_JARINPUTSTREAM
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../io/InputStream.hpp"
+#include "../../io/FilterInputStream.hpp"
+#include "../zip/InflaterInputStream.hpp"
 #include "../zip/ZipInputStream.hpp"
 
 namespace __jni_impl::java::util::jar

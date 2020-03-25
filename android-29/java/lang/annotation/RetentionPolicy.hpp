@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_ANNOTATION_RETENTIONPOLICY
 #define JAVA_LANG_ANNOTATION_RETENTIONPOLICY
 
+#include "../../../__JniBaseClass.hpp"
 #include "../Enum.hpp"
 
 

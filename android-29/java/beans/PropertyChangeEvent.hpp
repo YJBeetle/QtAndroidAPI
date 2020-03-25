@@ -3,6 +3,7 @@
 #ifndef JAVA_BEANS_PROPERTYCHANGEEVENT
 #define JAVA_BEANS_PROPERTYCHANGEEVENT
 
+#include "../../__JniBaseClass.hpp"
 #include "../util/EventObject.hpp"
 
 namespace __jni_impl::java::lang

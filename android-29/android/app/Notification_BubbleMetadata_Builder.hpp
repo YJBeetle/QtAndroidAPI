@@ -30,12 +30,12 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setIcon(__jni_impl::android::graphics::drawable::Icon arg0);
-		QAndroidJniObject setIntent(__jni_impl::android::app::PendingIntent arg0);
 		QAndroidJniObject setDesiredHeight(jint arg0);
 		QAndroidJniObject setDesiredHeightResId(jint arg0);
 		QAndroidJniObject setAutoExpandBubble(jboolean arg0);
 		QAndroidJniObject setSuppressNotification(jboolean arg0);
+		QAndroidJniObject setIcon(__jni_impl::android::graphics::drawable::Icon arg0);
+		QAndroidJniObject setIntent(__jni_impl::android::app::PendingIntent arg0);
 		QAndroidJniObject setDeleteIntent(__jni_impl::android::app::PendingIntent arg0);
 	};
 } // namespace __jni_impl::android::app
@@ -62,20 +62,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/app/Notification$BubbleMetadata;");
-	}
-	QAndroidJniObject Notification_BubbleMetadata_Builder::setIcon(__jni_impl::android::graphics::drawable::Icon arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIcon",
-			"(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$BubbleMetadata$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Notification_BubbleMetadata_Builder::setIntent(__jni_impl::android::app::PendingIntent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIntent",
-			"(Landroid/app/PendingIntent;)Landroid/app/Notification$BubbleMetadata$Builder;",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject Notification_BubbleMetadata_Builder::setDesiredHeight(jint arg0)
 	{
@@ -104,6 +90,20 @@ namespace __jni_impl::android::app
 			"setSuppressNotification",
 			"(Z)Landroid/app/Notification$BubbleMetadata$Builder;",
 			arg0);
+	}
+	QAndroidJniObject Notification_BubbleMetadata_Builder::setIcon(__jni_impl::android::graphics::drawable::Icon arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setIcon",
+			"(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$BubbleMetadata$Builder;",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Notification_BubbleMetadata_Builder::setIntent(__jni_impl::android::app::PendingIntent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setIntent",
+			"(Landroid/app/PendingIntent;)Landroid/app/Notification$BubbleMetadata$Builder;",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject Notification_BubbleMetadata_Builder::setDeleteIntent(__jni_impl::android::app::PendingIntent arg0)
 	{

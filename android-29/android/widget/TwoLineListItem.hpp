@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_TWOLINELISTITEM
 #define ANDROID_WIDGET_TWOLINELISTITEM
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "RelativeLayout.hpp"
 
 namespace __jni_impl::android::content
@@ -28,9 +31,9 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		QAndroidJniObject getAccessibilityClassName();
 		QAndroidJniObject getText1();
 		QAndroidJniObject getText2();
-		QAndroidJniObject getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -78,6 +81,12 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
+	QAndroidJniObject TwoLineListItem::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
 	QAndroidJniObject TwoLineListItem::getText1()
 	{
 		return __thiz.callObjectMethod(
@@ -89,12 +98,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getText2",
 			"()Landroid/widget/TextView;");
-	}
-	QAndroidJniObject TwoLineListItem::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
 	}
 } // namespace __jni_impl::android::widget
 

@@ -3,6 +3,9 @@
 #ifndef JAVA_LANG_ILLEGALTHREADSTATEEXCEPTION
 #define JAVA_LANG_ILLEGALTHREADSTATEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
+#include "RuntimeException.hpp"
 #include "IllegalArgumentException.hpp"
 
 

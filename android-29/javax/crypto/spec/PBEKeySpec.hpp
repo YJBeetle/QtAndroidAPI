@@ -19,11 +19,11 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jcharArray arg0);
 		
 		// Methods
-		void clearPassword();
 		QAndroidJniObject getSalt();
 		jint getIterationCount();
 		jint getKeyLength();
 		QAndroidJniObject getPassword();
+		void clearPassword();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -61,12 +61,6 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
-	void PBEKeySpec::clearPassword()
-	{
-		__thiz.callMethod<void>(
-			"clearPassword",
-			"()V");
-	}
 	QAndroidJniObject PBEKeySpec::getSalt()
 	{
 		return __thiz.callObjectMethod(
@@ -90,6 +84,12 @@ namespace __jni_impl::javax::crypto::spec
 		return __thiz.callObjectMethod(
 			"getPassword",
 			"()[C");
+	}
+	void PBEKeySpec::clearPassword()
+	{
+		__thiz.callMethod<void>(
+			"clearPassword",
+			"()V");
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

@@ -3,6 +3,9 @@
 #ifndef JAVA_UTIL_JAR_JAREXCEPTION
 #define JAVA_UTIL_JAR_JAREXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
 #include "../zip/ZipException.hpp"
 
 

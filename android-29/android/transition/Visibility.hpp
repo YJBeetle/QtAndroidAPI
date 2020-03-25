@@ -3,11 +3,16 @@
 #ifndef ANDROID_TRANSITION_VISIBILITY
 #define ANDROID_TRANSITION_VISIBILITY
 
+#include "../../__JniBaseClass.hpp"
 #include "Transition.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::transition
+{
+	class TransitionValues;
 }
 namespace __jni_impl::android::animation
 {
@@ -16,10 +21,6 @@ namespace __jni_impl::android::animation
 namespace __jni_impl::android::view
 {
 	class ViewGroup;
-}
-namespace __jni_impl::android::transition
-{
-	class TransitionValues;
 }
 namespace __jni_impl::android::view
 {
@@ -40,25 +41,25 @@ namespace __jni_impl::android::transition
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getTransitionProperties();
-		QAndroidJniObject createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2);
-		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
-		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
-		jboolean isTransitionRequired(__jni_impl::android::transition::TransitionValues arg0, __jni_impl::android::transition::TransitionValues arg1);
 		jboolean isVisible(__jni_impl::android::transition::TransitionValues arg0);
 		QAndroidJniObject onAppear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, jint arg2, __jni_impl::android::transition::TransitionValues arg3, jint arg4);
 		QAndroidJniObject onAppear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
 		QAndroidJniObject onDisappear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
 		QAndroidJniObject onDisappear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, jint arg2, __jni_impl::android::transition::TransitionValues arg3, jint arg4);
 		void setMode(jint arg0);
+		QAndroidJniObject getTransitionProperties();
+		QAndroidJniObject createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2);
+		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
+		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
+		jboolean isTransitionRequired(__jni_impl::android::transition::TransitionValues arg0, __jni_impl::android::transition::TransitionValues arg1);
 		jint getMode();
 	};
 } // namespace __jni_impl::android::transition
 
 #include "../content/Context.hpp"
+#include "TransitionValues.hpp"
 #include "../animation/Animator.hpp"
 #include "../view/ViewGroup.hpp"
-#include "TransitionValues.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::transition
@@ -94,43 +95,6 @@ namespace __jni_impl::android::transition
 	}
 	
 	// Methods
-	QAndroidJniObject Visibility::getTransitionProperties()
-	{
-		return __thiz.callObjectMethod(
-			"getTransitionProperties",
-			"()[Ljava/lang/String;");
-	}
-	QAndroidJniObject Visibility::createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2)
-	{
-		return __thiz.callObjectMethod(
-			"createAnimator",
-			"(Landroid/view/ViewGroup;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	void Visibility::captureStartValues(__jni_impl::android::transition::TransitionValues arg0)
-	{
-		__thiz.callMethod<void>(
-			"captureStartValues",
-			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
-	}
-	void Visibility::captureEndValues(__jni_impl::android::transition::TransitionValues arg0)
-	{
-		__thiz.callMethod<void>(
-			"captureEndValues",
-			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean Visibility::isTransitionRequired(__jni_impl::android::transition::TransitionValues arg0, __jni_impl::android::transition::TransitionValues arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isTransitionRequired",
-			"(Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	jboolean Visibility::isVisible(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -186,6 +150,43 @@ namespace __jni_impl::android::transition
 			"setMode",
 			"(I)V",
 			arg0);
+	}
+	QAndroidJniObject Visibility::getTransitionProperties()
+	{
+		return __thiz.callObjectMethod(
+			"getTransitionProperties",
+			"()[Ljava/lang/String;");
+	}
+	QAndroidJniObject Visibility::createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2)
+	{
+		return __thiz.callObjectMethod(
+			"createAnimator",
+			"(Landroid/view/ViewGroup;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	void Visibility::captureStartValues(__jni_impl::android::transition::TransitionValues arg0)
+	{
+		__thiz.callMethod<void>(
+			"captureStartValues",
+			"(Landroid/transition/TransitionValues;)V",
+			arg0.__jniObject().object());
+	}
+	void Visibility::captureEndValues(__jni_impl::android::transition::TransitionValues arg0)
+	{
+		__thiz.callMethod<void>(
+			"captureEndValues",
+			"(Landroid/transition/TransitionValues;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean Visibility::isTransitionRequired(__jni_impl::android::transition::TransitionValues arg0, __jni_impl::android::transition::TransitionValues arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isTransitionRequired",
+			"(Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 	jint Visibility::getMode()
 	{

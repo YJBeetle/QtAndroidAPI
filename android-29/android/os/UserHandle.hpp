@@ -25,11 +25,11 @@ namespace __jni_impl::android::os
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
+		static QAndroidJniObject getUserHandleForUid(jint arg0);
 		static QAndroidJniObject readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		static void writeToParcel(__jni_impl::android::os::UserHandle arg0, __jni_impl::android::os::Parcel arg1);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject getUserHandleForUid(jint arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -75,6 +75,14 @@ namespace __jni_impl::android::os
 			"hashCode",
 			"()I");
 	}
+	QAndroidJniObject UserHandle::getUserHandleForUid(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.UserHandle",
+			"getUserHandleForUid",
+			"(I)Landroid/os/UserHandle;",
+			arg0);
+	}
 	QAndroidJniObject UserHandle::readFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -105,14 +113,6 @@ namespace __jni_impl::android::os
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject UserHandle::getUserHandleForUid(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.UserHandle",
-			"getUserHandleForUid",
-			"(I)Landroid/os/UserHandle;",
-			arg0);
 	}
 } // namespace __jni_impl::android::os
 

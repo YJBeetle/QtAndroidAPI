@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_RADIALGRADIENT
 #define ANDROID_GRAPHICS_RADIALGRADIENT
 
+#include "../../__JniBaseClass.hpp"
 #include "Shader.hpp"
 
 namespace __jni_impl::android::graphics

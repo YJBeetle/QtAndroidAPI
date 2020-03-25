@@ -3,6 +3,10 @@
 #ifndef ANDROID_WIDGET_ADAPTERVIEWFLIPPER
 #define ANDROID_WIDGET_ADAPTERVIEWFLIPPER
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "AdapterView.hpp"
 #include "AdapterViewAnimator.hpp"
 
 namespace __jni_impl::android::content
@@ -24,11 +28,11 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		void setAdapter(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getAccessibilityClassName();
 		void showNext();
 		void showPrevious();
 		void fyiWillBeAdvancedByHostKThx();
-		void setAdapter(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getAccessibilityClassName();
 		void setFlipInterval(jint arg0);
 		jint getFlipInterval();
 		void startFlipping();
@@ -82,6 +86,19 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
+	void AdapterViewFlipper::setAdapter(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAdapter",
+			"(Landroid/widget/Adapter;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject AdapterViewFlipper::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
 	void AdapterViewFlipper::showNext()
 	{
 		__thiz.callMethod<void>(
@@ -99,19 +116,6 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"fyiWillBeAdvancedByHostKThx",
 			"()V");
-	}
-	void AdapterViewFlipper::setAdapter(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAdapter",
-			"(Landroid/widget/Adapter;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AdapterViewFlipper::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
 	}
 	void AdapterViewFlipper::setFlipInterval(jint arg0)
 	{

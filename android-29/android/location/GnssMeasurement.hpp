@@ -51,6 +51,8 @@ namespace __jni_impl::android::location
 		// Methods
 		QAndroidJniObject toString();
 		jint getState();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getSvid();
 		jint getConstellationType();
 		jdouble getTimeOffsetNanos();
@@ -77,8 +79,6 @@ namespace __jni_impl::android::location
 		jdouble getAutomaticGainControlLevelDb();
 		jboolean hasCodeType();
 		QAndroidJniObject getCodeType();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::location
 
@@ -278,6 +278,20 @@ namespace __jni_impl::android::location
 			"getState",
 			"()I");
 	}
+	jint GnssMeasurement::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void GnssMeasurement::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint GnssMeasurement::getSvid()
 	{
 		return __thiz.callMethod<jint>(
@@ -433,20 +447,6 @@ namespace __jni_impl::android::location
 		return __thiz.callObjectMethod(
 			"getCodeType",
 			"()Ljava/lang/String;");
-	}
-	jint GnssMeasurement::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void GnssMeasurement::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::location
 

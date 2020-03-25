@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_CELLIDENTITYWCDMA
 #define ANDROID_TELEPHONY_CELLIDENTITYWCDMA
 
+#include "../../__JniBaseClass.hpp"
 #include "CellIdentity.hpp"
 
 namespace __jni_impl::android::os
@@ -26,15 +27,15 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getMobileNetworkOperator();
+		jint getUarfcn();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getMcc();
 		jint getMnc();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getUarfcn();
+		QAndroidJniObject getMccString();
+		QAndroidJniObject getMncString();
 		jint getLac();
 		jint getCid();
 		jint getPsc();
-		QAndroidJniObject getMccString();
-		QAndroidJniObject getMncString();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -85,6 +86,20 @@ namespace __jni_impl::android::telephony
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;");
 	}
+	jint CellIdentityWcdma::getUarfcn()
+	{
+		return __thiz.callMethod<jint>(
+			"getUarfcn",
+			"()I");
+	}
+	void CellIdentityWcdma::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint CellIdentityWcdma::getMcc()
 	{
 		return __thiz.callMethod<jint>(
@@ -97,19 +112,17 @@ namespace __jni_impl::android::telephony
 			"getMnc",
 			"()I");
 	}
-	void CellIdentityWcdma::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	QAndroidJniObject CellIdentityWcdma::getMccString()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+		return __thiz.callObjectMethod(
+			"getMccString",
+			"()Ljava/lang/String;");
 	}
-	jint CellIdentityWcdma::getUarfcn()
+	QAndroidJniObject CellIdentityWcdma::getMncString()
 	{
-		return __thiz.callMethod<jint>(
-			"getUarfcn",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getMncString",
+			"()Ljava/lang/String;");
 	}
 	jint CellIdentityWcdma::getLac()
 	{
@@ -128,18 +141,6 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jint>(
 			"getPsc",
 			"()I");
-	}
-	QAndroidJniObject CellIdentityWcdma::getMccString()
-	{
-		return __thiz.callObjectMethod(
-			"getMccString",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject CellIdentityWcdma::getMncString()
-	{
-		return __thiz.callObjectMethod(
-			"getMncString",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::telephony
 

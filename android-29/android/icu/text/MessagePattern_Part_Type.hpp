@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_MESSAGEPATTERN_PART_TYPE
 #define ANDROID_ICU_TEXT_MESSAGEPATTERN_PART_TYPE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

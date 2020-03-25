@@ -3,6 +3,7 @@
 #ifndef ANDROID_UTIL_HALF
 #define ANDROID_UTIL_HALF
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Number.hpp"
 
 
@@ -64,6 +65,7 @@ namespace __jni_impl::android::util
 		static jshort floor(jshort arg0);
 		static jshort round(jshort arg0);
 		static jboolean isNormalized(jshort arg0);
+		static jfloat toFloat(jshort arg0);
 		jshort halfValue();
 		static jshort halfToShortBits(jshort arg0);
 		static jint halfToIntBits(jshort arg0);
@@ -78,7 +80,6 @@ namespace __jni_impl::android::util
 		static jint getSignificand(jshort arg0);
 		static jshort toHalf(jfloat arg0);
 		static jshort parseHalf(jstring arg0);
-		static jfloat toFloat(jshort arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -428,6 +429,14 @@ namespace __jni_impl::android::util
 			"(S)Z",
 			arg0);
 	}
+	jfloat Half::toFloat(jshort arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.util.Half",
+			"toFloat",
+			"(S)F",
+			arg0);
+	}
 	jshort Half::halfValue()
 	{
 		return __thiz.callMethod<jshort>(
@@ -540,14 +549,6 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"parseHalf",
 			"(Ljava/lang/String;)S",
-			arg0);
-	}
-	jfloat Half::toFloat(jshort arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.util.Half",
-			"toFloat",
-			"(S)F",
 			arg0);
 	}
 } // namespace __jni_impl::android::util

@@ -23,8 +23,8 @@ namespace __jni_impl::android::content
 		// Methods
 		void setResult(jint arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
 		void finish();
-		void setResultCode(jint arg0);
 		jint getResultCode();
+		void setResultCode(jint arg0);
 		void setResultData(jstring arg0);
 		QAndroidJniObject getResultData();
 		void setResultExtras(__jni_impl::android::os::Bundle arg0);
@@ -65,18 +65,18 @@ namespace __jni_impl::android::content
 			"finish",
 			"()V");
 	}
+	jint BroadcastReceiver_PendingResult::getResultCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getResultCode",
+			"()I");
+	}
 	void BroadcastReceiver_PendingResult::setResultCode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResultCode",
 			"(I)V",
 			arg0);
-	}
-	jint BroadcastReceiver_PendingResult::getResultCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getResultCode",
-			"()I");
 	}
 	void BroadcastReceiver_PendingResult::setResultData(jstring arg0)
 	{

@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_OBJECTSTREAMEXCEPTION
 #define JAVA_IO_OBJECTSTREAMEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "IOException.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_ACTIVITYMANAGER_RECENTTASKINFO
 #define ANDROID_APP_ACTIVITYMANAGER_RECENTTASKINFO
 
+#include "../../__JniBaseClass.hpp"
 #include "TaskInfo.hpp"
 
 namespace __jni_impl::android::os

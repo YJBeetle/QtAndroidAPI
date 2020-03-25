@@ -54,12 +54,12 @@ namespace __jni_impl::android::service::notification
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject copy();
-		static QAndroidJniObject stateToString(jint arg0);
 		static QAndroidJniObject relevanceToString(jint arg0);
 		static QAndroidJniObject newId(__jni_impl::android::content::Context arg0);
 		static jboolean isValidId(__jni_impl::android::net::Uri arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static QAndroidJniObject stateToString(jint arg0);
 	};
 } // namespace __jni_impl::android::service::notification
 
@@ -218,14 +218,6 @@ namespace __jni_impl::android::service::notification
 			"copy",
 			"()Landroid/service/notification/Condition;");
 	}
-	QAndroidJniObject Condition::stateToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.service.notification.Condition",
-			"stateToString",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
 	QAndroidJniObject Condition::relevanceToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -264,6 +256,14 @@ namespace __jni_impl::android::service::notification
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject Condition::stateToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.service.notification.Condition",
+			"stateToString",
+			"(I)Ljava/lang/String;",
+			arg0);
 	}
 } // namespace __jni_impl::android::service::notification
 

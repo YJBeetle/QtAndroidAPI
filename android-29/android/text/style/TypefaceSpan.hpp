@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_STYLE_TYPEFACESPAN
 #define ANDROID_TEXT_STYLE_TYPEFACESPAN
 
+#include "../../../__JniBaseClass.hpp"
+#include "CharacterStyle.hpp"
 #include "MetricAffectingSpan.hpp"
 
 namespace __jni_impl::android::os
@@ -35,9 +37,9 @@ namespace __jni_impl::android::text::style
 		jint getSpanTypeId();
 		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
-		QAndroidJniObject getTypeface();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getTypeface();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -99,12 +101,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/text/TextPaint;)V",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject TypefaceSpan::getTypeface()
-	{
-		return __thiz.callObjectMethod(
-			"getTypeface",
-			"()Landroid/graphics/Typeface;");
-	}
 	jint TypefaceSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -118,6 +114,12 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject TypefaceSpan::getTypeface()
+	{
+		return __thiz.callObjectMethod(
+			"getTypeface",
+			"()Landroid/graphics/Typeface;");
 	}
 } // namespace __jni_impl::android::text::style
 

@@ -3,6 +3,8 @@
 #ifndef JAVA_NET_SOCKETEXCEPTION
 #define JAVA_NET_SOCKETEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
 
 

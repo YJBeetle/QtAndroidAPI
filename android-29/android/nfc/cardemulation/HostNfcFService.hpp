@@ -3,6 +3,9 @@
 #ifndef ANDROID_NFC_CARDEMULATION_HOSTNFCFSERVICE
 #define ANDROID_NFC_CARDEMULATION_HOSTNFCFSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace __jni_impl::android::content

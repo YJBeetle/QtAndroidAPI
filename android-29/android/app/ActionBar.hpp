@@ -47,23 +47,25 @@ namespace __jni_impl::android::app
 		// Methods
 		QAndroidJniObject newTab();
 		void show();
-		jint getHeight();
-		void setIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setIcon(jint arg0);
 		void setSubtitle(jint arg0);
 		void setSubtitle(jstring arg0);
 		QAndroidJniObject getSubtitle();
+		jint getHeight();
 		jboolean isShowing();
 		void hide();
-		void setTitle(jstring arg0);
-		void setTitle(jint arg0);
-		QAndroidJniObject getTitle();
+		void setIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setIcon(jint arg0);
 		jfloat getElevation();
 		void setElevation(jfloat arg0);
 		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setCustomView(__jni_impl::android::view::View arg0);
+		void setTitle(jstring arg0);
+		void setTitle(jint arg0);
+		QAndroidJniObject getTitle();
+		void setLogo(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setLogo(jint arg0);
 		void setCustomView(__jni_impl::android::view::View arg0, __jni_impl::android::app::ActionBar_LayoutParams arg1);
 		void setCustomView(jint arg0);
+		void setCustomView(__jni_impl::android::view::View arg0);
 		QAndroidJniObject getCustomView();
 		void setListNavigationCallbacks(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		void setSelectedNavigationItem(jint arg0);
@@ -83,8 +85,8 @@ namespace __jni_impl::android::app
 		jint getDisplayOptions();
 		void addTab(__jni_impl::android::app::ActionBar_Tab arg0, jboolean arg1);
 		void addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1);
-		void addTab(__jni_impl::android::app::ActionBar_Tab arg0);
 		void addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1, jboolean arg2);
+		void addTab(__jni_impl::android::app::ActionBar_Tab arg0);
 		void removeTab(__jni_impl::android::app::ActionBar_Tab arg0);
 		void removeTabAt(jint arg0);
 		void removeAllTabs();
@@ -98,14 +100,12 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getThemedContext();
 		void setHomeAsUpIndicator(jint arg0);
 		void setHomeAsUpIndicator(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setHomeActionContentDescription(jstring arg0);
 		void setHomeActionContentDescription(jint arg0);
+		void setHomeActionContentDescription(jstring arg0);
 		void setHideOnContentScrollEnabled(jboolean arg0);
 		jboolean isHideOnContentScrollEnabled();
 		jint getHideOffset();
 		void setHideOffset(jint arg0);
-		void setLogo(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setLogo(jint arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -188,26 +188,6 @@ namespace __jni_impl::android::app
 			"show",
 			"()V");
 	}
-	jint ActionBar::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
-	}
-	void ActionBar::setIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIcon",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
-	}
-	void ActionBar::setIcon(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIcon",
-			"(I)V",
-			arg0);
-	}
 	void ActionBar::setSubtitle(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -228,6 +208,12 @@ namespace __jni_impl::android::app
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;");
 	}
+	jint ActionBar::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I");
+	}
 	jboolean ActionBar::isShowing()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -240,25 +226,19 @@ namespace __jni_impl::android::app
 			"hide",
 			"()V");
 	}
-	void ActionBar::setTitle(jstring arg0)
+	void ActionBar::setIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			"setIcon",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object());
 	}
-	void ActionBar::setTitle(jint arg0)
+	void ActionBar::setIcon(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setTitle",
+			"setIcon",
 			"(I)V",
 			arg0);
-	}
-	QAndroidJniObject ActionBar::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
 	}
 	jfloat ActionBar::getElevation()
 	{
@@ -280,12 +260,39 @@ namespace __jni_impl::android::app
 			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object());
 	}
-	void ActionBar::setCustomView(__jni_impl::android::view::View arg0)
+	void ActionBar::setTitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setCustomView",
-			"(Landroid/view/View;)V",
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0);
+	}
+	void ActionBar::setTitle(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(I)V",
+			arg0);
+	}
+	QAndroidJniObject ActionBar::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;");
+	}
+	void ActionBar::setLogo(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLogo",
+			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object());
+	}
+	void ActionBar::setLogo(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLogo",
+			"(I)V",
+			arg0);
 	}
 	void ActionBar::setCustomView(__jni_impl::android::view::View arg0, __jni_impl::android::app::ActionBar_LayoutParams arg1)
 	{
@@ -301,6 +308,13 @@ namespace __jni_impl::android::app
 			"setCustomView",
 			"(I)V",
 			arg0);
+	}
+	void ActionBar::setCustomView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCustomView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject ActionBar::getCustomView()
 	{
@@ -434,13 +448,6 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	void ActionBar::addTab(__jni_impl::android::app::ActionBar_Tab arg0)
-	{
-		__thiz.callMethod<void>(
-			"addTab",
-			"(Landroid/app/ActionBar$Tab;)V",
-			arg0.__jniObject().object());
-	}
 	void ActionBar::addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1, jboolean arg2)
 	{
 		__thiz.callMethod<void>(
@@ -449,6 +456,13 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1,
 			arg2);
+	}
+	void ActionBar::addTab(__jni_impl::android::app::ActionBar_Tab arg0)
+	{
+		__thiz.callMethod<void>(
+			"addTab",
+			"(Landroid/app/ActionBar$Tab;)V",
+			arg0.__jniObject().object());
 	}
 	void ActionBar::removeTab(__jni_impl::android::app::ActionBar_Tab arg0)
 	{
@@ -537,18 +551,18 @@ namespace __jni_impl::android::app
 			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object());
 	}
-	void ActionBar::setHomeActionContentDescription(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHomeActionContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
 	void ActionBar::setHomeActionContentDescription(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHomeActionContentDescription",
 			"(I)V",
+			arg0);
+	}
+	void ActionBar::setHomeActionContentDescription(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHomeActionContentDescription",
+			"(Ljava/lang/CharSequence;)V",
 			arg0);
 	}
 	void ActionBar::setHideOnContentScrollEnabled(jboolean arg0)
@@ -574,20 +588,6 @@ namespace __jni_impl::android::app
 	{
 		__thiz.callMethod<void>(
 			"setHideOffset",
-			"(I)V",
-			arg0);
-	}
-	void ActionBar::setLogo(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLogo",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
-	}
-	void ActionBar::setLogo(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLogo",
 			"(I)V",
 			arg0);
 	}

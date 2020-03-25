@@ -22,9 +22,9 @@ namespace __jni_impl::android::telephony::euicc
 		void __constructor(jstring arg0);
 		
 		// Methods
+		QAndroidJniObject getOsVersion();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getOsVersion();
 	};
 } // namespace __jni_impl::android::telephony::euicc
 
@@ -51,6 +51,12 @@ namespace __jni_impl::android::telephony::euicc
 	}
 	
 	// Methods
+	QAndroidJniObject EuiccInfo::getOsVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getOsVersion",
+			"()Ljava/lang/String;");
+	}
 	jint EuiccInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -64,12 +70,6 @@ namespace __jni_impl::android::telephony::euicc
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject EuiccInfo::getOsVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getOsVersion",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::telephony::euicc
 

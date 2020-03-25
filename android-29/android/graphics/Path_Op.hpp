@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_PATH_OP
 #define ANDROID_GRAPHICS_PATH_OP
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

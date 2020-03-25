@@ -3,6 +3,9 @@
 #ifndef DALVIK_SYSTEM_DELEGATELASTCLASSLOADER
 #define DALVIK_SYSTEM_DELEGATELASTCLASSLOADER
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/ClassLoader.hpp"
+#include "BaseDexClassLoader.hpp"
 #include "PathClassLoader.hpp"
 
 namespace __jni_impl::java::lang

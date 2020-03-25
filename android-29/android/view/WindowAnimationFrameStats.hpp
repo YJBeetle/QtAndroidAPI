@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_WINDOWANIMATIONFRAMESTATS
 #define ANDROID_VIEW_WINDOWANIMATIONFRAMESTATS
 
+#include "../../__JniBaseClass.hpp"
 #include "FrameStats.hpp"
 
 namespace __jni_impl::android::os

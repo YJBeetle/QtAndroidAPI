@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_LANG_UCHARACTER_UNICODEBLOCK
 #define ANDROID_ICU_LANG_UCHARACTER_UNICODEBLOCK
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Character_Subset.hpp"
 
 

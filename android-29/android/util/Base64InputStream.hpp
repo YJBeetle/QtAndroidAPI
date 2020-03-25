@@ -3,6 +3,8 @@
 #ifndef ANDROID_UTIL_BASE64INPUTSTREAM
 #define ANDROID_UTIL_BASE64INPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/io/InputStream.hpp"
 #include "../../java/io/FilterInputStream.hpp"
 
 namespace __jni_impl::java::io

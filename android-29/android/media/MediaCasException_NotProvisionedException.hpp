@@ -3,6 +3,8 @@
 #ifndef ANDROID_MEDIA_MEDIACASEXCEPTION_NOTPROVISIONEDEXCEPTION
 #define ANDROID_MEDIA_MEDIACASEXCEPTION_NOTPROVISIONEDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "MediaCasException.hpp"
 
 

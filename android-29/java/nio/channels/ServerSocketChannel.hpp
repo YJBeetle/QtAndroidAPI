@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_CHANNELS_SERVERSOCKETCHANNEL
 #define JAVA_NIO_CHANNELS_SERVERSOCKETCHANNEL
 
+#include "../../../__JniBaseClass.hpp"
+#include "spi/AbstractInterruptibleChannel.hpp"
+#include "SelectableChannel.hpp"
 #include "spi/AbstractSelectableChannel.hpp"
 
 namespace __jni_impl::java::nio::channels::spi

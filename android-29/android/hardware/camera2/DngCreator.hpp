@@ -55,13 +55,13 @@ namespace __jni_impl::android::hardware::camera2
 		
 		// Methods
 		void close();
+		QAndroidJniObject setDescription(jstring arg0);
 		QAndroidJniObject setOrientation(jint arg0);
 		QAndroidJniObject setThumbnail(__jni_impl::android::graphics::Bitmap arg0);
 		QAndroidJniObject setThumbnail(__jni_impl::android::media::Image arg0);
 		void writeInputStream(__jni_impl::java::io::OutputStream arg0, __jni_impl::android::util::Size arg1, __jni_impl::java::io::InputStream arg2, jlong arg3);
 		void writeByteBuffer(__jni_impl::java::io::OutputStream arg0, __jni_impl::android::util::Size arg1, __jni_impl::java::nio::ByteBuffer arg2, jlong arg3);
 		void writeImage(__jni_impl::java::io::OutputStream arg0, __jni_impl::android::media::Image arg1);
-		QAndroidJniObject setDescription(jstring arg0);
 		QAndroidJniObject setLocation(__jni_impl::android::location::Location arg0);
 	};
 } // namespace __jni_impl::android::hardware::camera2
@@ -102,6 +102,13 @@ namespace __jni_impl::android::hardware::camera2
 		__thiz.callMethod<void>(
 			"close",
 			"()V");
+	}
+	QAndroidJniObject DngCreator::setDescription(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDescription",
+			"(Ljava/lang/String;)Landroid/hardware/camera2/DngCreator;",
+			arg0);
 	}
 	QAndroidJniObject DngCreator::setOrientation(jint arg0)
 	{
@@ -151,13 +158,6 @@ namespace __jni_impl::android::hardware::camera2
 			"(Ljava/io/OutputStream;Landroid/media/Image;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
-	}
-	QAndroidJniObject DngCreator::setDescription(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDescription",
-			"(Ljava/lang/String;)Landroid/hardware/camera2/DngCreator;",
-			arg0);
 	}
 	QAndroidJniObject DngCreator::setLocation(__jni_impl::android::location::Location arg0)
 	{

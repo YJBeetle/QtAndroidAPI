@@ -3,6 +3,8 @@
 #ifndef ANDROID_OS_NETWORKONMAINTHREADEXCEPTION
 #define ANDROID_OS_NETWORKONMAINTHREADEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

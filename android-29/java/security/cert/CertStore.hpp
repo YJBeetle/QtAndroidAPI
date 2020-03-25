@@ -35,9 +35,9 @@ namespace __jni_impl::java::security::cert
 		QAndroidJniObject getCertificates(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getType();
 		QAndroidJniObject getProvider();
+		static QAndroidJniObject getDefaultType();
 		QAndroidJniObject getCRLs(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getCertStoreParameters();
-		static QAndroidJniObject getDefaultType();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -106,6 +106,13 @@ namespace __jni_impl::java::security::cert
 			"getProvider",
 			"()Ljava/security/Provider;");
 	}
+	QAndroidJniObject CertStore::getDefaultType()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getDefaultType",
+			"()Ljava/lang/String;");
+	}
 	QAndroidJniObject CertStore::getCRLs(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -118,13 +125,6 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callObjectMethod(
 			"getCertStoreParameters",
 			"()Ljava/security/cert/CertStoreParameters;");
-	}
-	QAndroidJniObject CertStore::getDefaultType()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertStore",
-			"getDefaultType",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::java::security::cert
 

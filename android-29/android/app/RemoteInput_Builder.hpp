@@ -26,13 +26,13 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setLabel(jstring arg0);
+		QAndroidJniObject getExtras();
+		QAndroidJniObject addExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setAllowDataType(jstring arg0, jboolean arg1);
 		QAndroidJniObject setChoices(jarray arg0);
 		QAndroidJniObject setAllowFreeFormInput(jboolean arg0);
 		QAndroidJniObject setEditChoicesBeforeSending(jint arg0);
-		QAndroidJniObject getExtras();
-		QAndroidJniObject setLabel(jstring arg0);
-		QAndroidJniObject addExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -58,6 +58,26 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/app/RemoteInput;");
+	}
+	QAndroidJniObject RemoteInput_Builder::setLabel(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setLabel",
+			"(Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;",
+			arg0);
+	}
+	QAndroidJniObject RemoteInput_Builder::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
+	}
+	QAndroidJniObject RemoteInput_Builder::addExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addExtras",
+			"(Landroid/os/Bundle;)Landroid/app/RemoteInput$Builder;",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject RemoteInput_Builder::setAllowDataType(jstring arg0, jboolean arg1)
 	{
@@ -87,26 +107,6 @@ namespace __jni_impl::android::app
 			"setEditChoicesBeforeSending",
 			"(I)Landroid/app/RemoteInput$Builder;",
 			arg0);
-	}
-	QAndroidJniObject RemoteInput_Builder::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject RemoteInput_Builder::setLabel(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setLabel",
-			"(Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;",
-			arg0);
-	}
-	QAndroidJniObject RemoteInput_Builder::addExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addExtras",
-			"(Landroid/os/Bundle;)Landroid/app/RemoteInput$Builder;",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::app
 

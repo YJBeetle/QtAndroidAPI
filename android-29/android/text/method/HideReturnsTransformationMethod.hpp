@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_METHOD_HIDERETURNSTRANSFORMATIONMETHOD
 #define ANDROID_TEXT_METHOD_HIDERETURNSTRANSFORMATIONMETHOD
 
+#include "../../../__JniBaseClass.hpp"
 #include "ReplacementTransformationMethod.hpp"
 
 

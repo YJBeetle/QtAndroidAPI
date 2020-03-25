@@ -35,13 +35,13 @@ namespace __jni_impl::java::net
 		QAndroidJniObject getAddress();
 		jint getPort();
 		jint getOffset();
-		void setAddress(__jni_impl::java::net::InetAddress arg0);
-		QAndroidJniObject getData();
-		void setData(jbyteArray arg0);
-		void setData(jbyteArray arg0, jint arg1, jint arg2);
-		void setPort(jint arg0);
 		void setSocketAddress(__jni_impl::java::net::SocketAddress arg0);
 		QAndroidJniObject getSocketAddress();
+		QAndroidJniObject getData();
+		void setData(jbyteArray arg0, jint arg1, jint arg2);
+		void setData(jbyteArray arg0);
+		void setPort(jint arg0);
+		void setAddress(__jni_impl::java::net::InetAddress arg0);
 	};
 } // namespace __jni_impl::java::net
 
@@ -143,42 +143,6 @@ namespace __jni_impl::java::net
 			"getOffset",
 			"()I");
 	}
-	void DatagramPacket::setAddress(__jni_impl::java::net::InetAddress arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAddress",
-			"(Ljava/net/InetAddress;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject DatagramPacket::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B");
-	}
-	void DatagramPacket::setData(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setData",
-			"([B)V",
-			arg0);
-	}
-	void DatagramPacket::setData(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"setData",
-			"([BII)V",
-			arg0,
-			arg1,
-			arg2);
-	}
-	void DatagramPacket::setPort(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPort",
-			"(I)V",
-			arg0);
-	}
 	void DatagramPacket::setSocketAddress(__jni_impl::java::net::SocketAddress arg0)
 	{
 		__thiz.callMethod<void>(
@@ -191,6 +155,42 @@ namespace __jni_impl::java::net
 		return __thiz.callObjectMethod(
 			"getSocketAddress",
 			"()Ljava/net/SocketAddress;");
+	}
+	QAndroidJniObject DatagramPacket::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B");
+	}
+	void DatagramPacket::setData(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"setData",
+			"([BII)V",
+			arg0,
+			arg1,
+			arg2);
+	}
+	void DatagramPacket::setData(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setData",
+			"([B)V",
+			arg0);
+	}
+	void DatagramPacket::setPort(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPort",
+			"(I)V",
+			arg0);
+	}
+	void DatagramPacket::setAddress(__jni_impl::java::net::InetAddress arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAddress",
+			"(Ljava/net/InetAddress;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::java::net
 

@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_METHOD_NUMBERKEYLISTENER
 #define ANDROID_TEXT_METHOD_NUMBERKEYLISTENER
 
+#include "../../../__JniBaseClass.hpp"
+#include "MetaKeyKeyListener.hpp"
 #include "BaseKeyListener.hpp"
 
 namespace __jni_impl::android::view

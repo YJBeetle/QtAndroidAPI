@@ -3,6 +3,8 @@
 #ifndef ANDROID_OS_PARCELFORMATEXCEPTION
 #define ANDROID_OS_PARCELFORMATEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

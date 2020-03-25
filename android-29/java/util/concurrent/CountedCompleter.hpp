@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_COUNTEDCOMPLETER
 #define JAVA_UTIL_CONCURRENT_COUNTEDCOMPLETER
 
+#include "../../../__JniBaseClass.hpp"
 #include "ForkJoinTask.hpp"
 
 

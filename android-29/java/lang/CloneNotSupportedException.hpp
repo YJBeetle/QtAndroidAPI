@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_CLONENOTSUPPORTEDEXCEPTION
 #define JAVA_LANG_CLONENOTSUPPORTEDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 
 

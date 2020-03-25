@@ -3,6 +3,7 @@
 #ifndef ORG_XML_SAX_EXT_LOCATOR2IMPL
 #define ORG_XML_SAX_EXT_LOCATOR2IMPL
 
+#include "../../../../__JniBaseClass.hpp"
 #include "../helpers/LocatorImpl.hpp"
 
 

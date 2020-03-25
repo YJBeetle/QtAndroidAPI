@@ -3,15 +3,14 @@
 #ifndef ANDROID_WIDGET_SIMPLECURSORADAPTER
 #define ANDROID_WIDGET_SIMPLECURSORADAPTER
 
+#include "../../__JniBaseClass.hpp"
+#include "BaseAdapter.hpp"
+#include "CursorAdapter.hpp"
 #include "ResourceCursorAdapter.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
-}
-namespace __jni_impl::android::view
-{
-	class View;
 }
 namespace __jni_impl::android::widget
 {
@@ -20,6 +19,10 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::widget
 {
 	class TextView;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 
 namespace __jni_impl::android::widget
@@ -34,25 +37,25 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jarray arg3, jintArray arg4, jint arg5);
 		
 		// Methods
-		QAndroidJniObject convertToString(__jni_impl::__JniBaseClass arg0);
-		void bindView(__jni_impl::android::view::View arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject swapCursor(__jni_impl::__JniBaseClass arg0);
 		jint getStringConversionColumn();
 		void setStringConversionColumn(jint arg0);
 		QAndroidJniObject getCursorToStringConverter();
 		void setCursorToStringConverter(__jni_impl::__JniBaseClass arg0);
 		void changeCursorAndColumns(__jni_impl::__JniBaseClass arg0, jarray arg1, jintArray arg2);
+		QAndroidJniObject convertToString(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getViewBinder();
 		void setViewBinder(__jni_impl::__JniBaseClass arg0);
 		void setViewImage(__jni_impl::android::widget::ImageView arg0, jstring arg1);
 		void setViewText(__jni_impl::android::widget::TextView arg0, jstring arg1);
+		void bindView(__jni_impl::android::view::View arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2);
+		QAndroidJniObject swapCursor(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/View.hpp"
 #include "ImageView.hpp"
 #include "TextView.hpp"
+#include "../view/View.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -84,29 +87,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject SimpleCursorAdapter::convertToString(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"convertToString",
-			"(Landroid/database/Cursor;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
-	}
-	void SimpleCursorAdapter::bindView(__jni_impl::android::view::View arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"bindView",
-			"(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject SimpleCursorAdapter::swapCursor(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"swapCursor",
-			"(Landroid/database/Cursor;)Landroid/database/Cursor;",
-			arg0.__jniObject().object());
-	}
 	jint SimpleCursorAdapter::getStringConversionColumn()
 	{
 		return __thiz.callMethod<jint>(
@@ -142,6 +122,13 @@ namespace __jni_impl::android::widget
 			arg1,
 			arg2);
 	}
+	QAndroidJniObject SimpleCursorAdapter::convertToString(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"convertToString",
+			"(Landroid/database/Cursor;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject SimpleCursorAdapter::getViewBinder()
 	{
 		return __thiz.callObjectMethod(
@@ -170,6 +157,22 @@ namespace __jni_impl::android::widget
 			"(Landroid/widget/TextView;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	void SimpleCursorAdapter::bindView(__jni_impl::android::view::View arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"bindView",
+			"(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject SimpleCursorAdapter::swapCursor(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"swapCursor",
+			"(Landroid/database/Cursor;)Landroid/database/Cursor;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::widget
 

@@ -21,8 +21,8 @@ namespace __jni_impl::android::webkit
 		static QAndroidJniObject getInstance();
 		void allow(jstring arg0);
 		void getOrigins(__jni_impl::__JniBaseClass arg0);
-		void clearAll();
 		void getAllowed(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void clearAll();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -68,12 +68,6 @@ namespace __jni_impl::android::webkit
 			"(Landroid/webkit/ValueCallback;)V",
 			arg0.__jniObject().object());
 	}
-	void GeolocationPermissions::clearAll()
-	{
-		__thiz.callMethod<void>(
-			"clearAll",
-			"()V");
-	}
 	void GeolocationPermissions::getAllowed(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -81,6 +75,12 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
 			arg0,
 			arg1.__jniObject().object());
+	}
+	void GeolocationPermissions::clearAll()
+	{
+		__thiz.callMethod<void>(
+			"clearAll",
+			"()V");
 	}
 } // namespace __jni_impl::android::webkit
 

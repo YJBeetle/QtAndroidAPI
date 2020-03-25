@@ -3,6 +3,8 @@
 #ifndef ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
 #define ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/io/OutputStream.hpp"
 #include "../../java/io/FileOutputStream.hpp"
 
 namespace __jni_impl::android::os

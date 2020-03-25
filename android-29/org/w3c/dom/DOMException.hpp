@@ -3,6 +3,8 @@
 #ifndef ORG_W3C_DOM_DOMEXCEPTION
 #define ORG_W3C_DOM_DOMEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
 

@@ -26,8 +26,8 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		QAndroidJniObject getCertType();
 		void setCertType(jstring arg0);
+		QAndroidJniObject getCertType();
 		void setCertSha256Fingerprint(jbyteArray arg0);
 		QAndroidJniObject getCertSha256Fingerprint();
 		jint describeContents();
@@ -83,18 +83,18 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			"hashCode",
 			"()I");
 	}
-	QAndroidJniObject Credential_CertificateCredential::getCertType()
-	{
-		return __thiz.callObjectMethod(
-			"getCertType",
-			"()Ljava/lang/String;");
-	}
 	void Credential_CertificateCredential::setCertType(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCertType",
 			"(Ljava/lang/String;)V",
 			arg0);
+	}
+	QAndroidJniObject Credential_CertificateCredential::getCertType()
+	{
+		return __thiz.callObjectMethod(
+			"getCertType",
+			"()Ljava/lang/String;");
 	}
 	void Credential_CertificateCredential::setCertSha256Fingerprint(jbyteArray arg0)
 	{

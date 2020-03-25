@@ -3,31 +3,20 @@
 #ifndef ANDROID_APP_DIALOGFRAGMENT
 #define ANDROID_APP_DIALOGFRAGMENT
 
+#include "../../__JniBaseClass.hpp"
 #include "Fragment.hpp"
 
-namespace __jni_impl::android::app
-{
-	class FragmentManager;
-}
 namespace __jni_impl::android::app
 {
 	class FragmentTransaction;
 }
 namespace __jni_impl::android::app
 {
+	class FragmentManager;
+}
+namespace __jni_impl::android::app
+{
 	class Dialog;
-}
-namespace __jni_impl::android::view
-{
-	class LayoutInflater;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
-namespace __jni_impl::android::content
-{
-	class Context;
 }
 namespace __jni_impl::java::io
 {
@@ -36,6 +25,18 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class PrintWriter;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
+namespace __jni_impl::android::view
+{
+	class LayoutInflater;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 
 namespace __jni_impl::android::app
@@ -54,40 +55,40 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		void onStart();
-		void show(__jni_impl::android::app::FragmentManager arg0, jstring arg1);
 		jint show(__jni_impl::android::app::FragmentTransaction arg0, jstring arg1);
-		void onCancel(__jni_impl::__JniBaseClass arg0);
+		void show(__jni_impl::android::app::FragmentManager arg0, jstring arg1);
+		void dismiss();
+		void setCancelable(jboolean arg0);
 		void dismissAllowingStateLoss();
 		QAndroidJniObject getDialog();
 		jboolean isCancelable();
 		void setShowsDialog(jboolean arg0);
 		jboolean getShowsDialog();
-		void dismiss();
-		void setCancelable(jboolean arg0);
-		void setStyle(jint arg0, jint arg1);
-		void onDestroyView();
-		QAndroidJniObject onGetLayoutInflater(__jni_impl::android::os::Bundle arg0);
-		void onAttach(__jni_impl::android::content::Context arg0);
-		void onActivityCreated(__jni_impl::android::os::Bundle arg0);
-		void onDetach();
-		jint getTheme();
 		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 		void onCreate(__jni_impl::android::os::Bundle arg0);
 		void onSaveInstanceState(__jni_impl::android::os::Bundle arg0);
 		void onStop();
 		QAndroidJniObject onCreateDialog(__jni_impl::android::os::Bundle arg0);
+		jint getTheme();
 		void onDismiss(__jni_impl::__JniBaseClass arg0);
+		void onDestroyView();
+		QAndroidJniObject onGetLayoutInflater(__jni_impl::android::os::Bundle arg0);
+		void onAttach(__jni_impl::android::content::Context arg0);
+		void onActivityCreated(__jni_impl::android::os::Bundle arg0);
+		void onDetach();
+		void onCancel(__jni_impl::__JniBaseClass arg0);
+		void setStyle(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
-#include "FragmentManager.hpp"
 #include "FragmentTransaction.hpp"
+#include "FragmentManager.hpp"
 #include "Dialog.hpp"
-#include "../view/LayoutInflater.hpp"
-#include "../os/Bundle.hpp"
-#include "../content/Context.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "../os/Bundle.hpp"
+#include "../view/LayoutInflater.hpp"
+#include "../content/Context.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -132,14 +133,6 @@ namespace __jni_impl::android::app
 			"onStart",
 			"()V");
 	}
-	void DialogFragment::show(__jni_impl::android::app::FragmentManager arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"(Landroid/app/FragmentManager;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	jint DialogFragment::show(__jni_impl::android::app::FragmentTransaction arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -148,12 +141,26 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	void DialogFragment::onCancel(__jni_impl::__JniBaseClass arg0)
+	void DialogFragment::show(__jni_impl::android::app::FragmentManager arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
-			"onCancel",
-			"(Landroid/content/DialogInterface;)V",
-			arg0.__jniObject().object());
+			"show",
+			"(Landroid/app/FragmentManager;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	void DialogFragment::dismiss()
+	{
+		__thiz.callMethod<void>(
+			"dismiss",
+			"()V");
+	}
+	void DialogFragment::setCancelable(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCancelable",
+			"(Z)V",
+			arg0);
 	}
 	void DialogFragment::dismissAllowingStateLoss()
 	{
@@ -185,66 +192,6 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jboolean>(
 			"getShowsDialog",
 			"()Z");
-	}
-	void DialogFragment::dismiss()
-	{
-		__thiz.callMethod<void>(
-			"dismiss",
-			"()V");
-	}
-	void DialogFragment::setCancelable(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCancelable",
-			"(Z)V",
-			arg0);
-	}
-	void DialogFragment::setStyle(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setStyle",
-			"(II)V",
-			arg0,
-			arg1);
-	}
-	void DialogFragment::onDestroyView()
-	{
-		__thiz.callMethod<void>(
-			"onDestroyView",
-			"()V");
-	}
-	QAndroidJniObject DialogFragment::onGetLayoutInflater(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onGetLayoutInflater",
-			"(Landroid/os/Bundle;)Landroid/view/LayoutInflater;",
-			arg0.__jniObject().object());
-	}
-	void DialogFragment::onAttach(__jni_impl::android::content::Context arg0)
-	{
-		__thiz.callMethod<void>(
-			"onAttach",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
-	}
-	void DialogFragment::onActivityCreated(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onActivityCreated",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	void DialogFragment::onDetach()
-	{
-		__thiz.callMethod<void>(
-			"onDetach",
-			"()V");
-	}
-	jint DialogFragment::getTheme()
-	{
-		return __thiz.callMethod<jint>(
-			"getTheme",
-			"()I");
 	}
 	void DialogFragment::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
 	{
@@ -283,12 +230,66 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Bundle;)Landroid/app/Dialog;",
 			arg0.__jniObject().object());
 	}
+	jint DialogFragment::getTheme()
+	{
+		return __thiz.callMethod<jint>(
+			"getTheme",
+			"()I");
+	}
 	void DialogFragment::onDismiss(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDismiss",
 			"(Landroid/content/DialogInterface;)V",
 			arg0.__jniObject().object());
+	}
+	void DialogFragment::onDestroyView()
+	{
+		__thiz.callMethod<void>(
+			"onDestroyView",
+			"()V");
+	}
+	QAndroidJniObject DialogFragment::onGetLayoutInflater(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onGetLayoutInflater",
+			"(Landroid/os/Bundle;)Landroid/view/LayoutInflater;",
+			arg0.__jniObject().object());
+	}
+	void DialogFragment::onAttach(__jni_impl::android::content::Context arg0)
+	{
+		__thiz.callMethod<void>(
+			"onAttach",
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object());
+	}
+	void DialogFragment::onActivityCreated(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onActivityCreated",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	void DialogFragment::onDetach()
+	{
+		__thiz.callMethod<void>(
+			"onDetach",
+			"()V");
+	}
+	void DialogFragment::onCancel(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCancel",
+			"(Landroid/content/DialogInterface;)V",
+			arg0.__jniObject().object());
+	}
+	void DialogFragment::setStyle(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setStyle",
+			"(II)V",
+			arg0,
+			arg1);
 	}
 } // namespace __jni_impl::android::app
 

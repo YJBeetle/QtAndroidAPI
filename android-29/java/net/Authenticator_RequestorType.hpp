@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_AUTHENTICATOR_REQUESTORTYPE
 #define JAVA_NET_AUTHENTICATOR_REQUESTORTYPE
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
 

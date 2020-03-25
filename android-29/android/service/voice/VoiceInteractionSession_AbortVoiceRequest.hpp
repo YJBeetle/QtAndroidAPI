@@ -3,15 +3,16 @@
 #ifndef ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_ABORTVOICEREQUEST
 #define ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_ABORTVOICEREQUEST
 
+#include "../../../__JniBaseClass.hpp"
 #include "VoiceInteractionSession_Request.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::app
 {
 	class VoiceInteractor_Prompt;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::service::voice
@@ -26,13 +27,13 @@ namespace __jni_impl::android::service::voice
 		
 		// Methods
 		QAndroidJniObject getMessage();
-		void sendAbortResult(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject getVoicePrompt();
+		void sendAbortResult(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::service::voice
 
-#include "../../os/Bundle.hpp"
 #include "../../app/VoiceInteractor_Prompt.hpp"
+#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::service::voice
 {
@@ -53,18 +54,18 @@ namespace __jni_impl::android::service::voice
 			"getMessage",
 			"()Ljava/lang/CharSequence;");
 	}
+	QAndroidJniObject VoiceInteractionSession_AbortVoiceRequest::getVoicePrompt()
+	{
+		return __thiz.callObjectMethod(
+			"getVoicePrompt",
+			"()Landroid/app/VoiceInteractor$Prompt;");
+	}
 	void VoiceInteractionSession_AbortVoiceRequest::sendAbortResult(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"sendAbortResult",
 			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject VoiceInteractionSession_AbortVoiceRequest::getVoicePrompt()
-	{
-		return __thiz.callObjectMethod(
-			"getVoicePrompt",
-			"()Landroid/app/VoiceInteractor$Prompt;");
 	}
 } // namespace __jni_impl::android::service::voice
 

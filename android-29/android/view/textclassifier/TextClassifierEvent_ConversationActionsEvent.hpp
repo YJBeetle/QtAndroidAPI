@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_TEXTCLASSIFIER_TEXTCLASSIFIEREVENT_CONVERSATIONACTIONSEVENT
 #define ANDROID_VIEW_TEXTCLASSIFIER_TEXTCLASSIFIEREVENT_CONVERSATIONACTIONSEVENT
 
+#include "../../../__JniBaseClass.hpp"
 #include "TextClassifierEvent.hpp"
 
 namespace __jni_impl::android::os

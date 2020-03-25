@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_SPEC_RSAPRIVATECRTKEYSPEC
 #define JAVA_SECURITY_SPEC_RSAPRIVATECRTKEYSPEC
 
+#include "../../../__JniBaseClass.hpp"
 #include "RSAPrivateKeySpec.hpp"
 
 namespace __jni_impl::java::math

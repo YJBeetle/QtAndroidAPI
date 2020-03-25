@@ -3,6 +3,10 @@
 #ifndef ANDROID_OS_DEADSYSTEMEXCEPTION
 #define ANDROID_OS_DEADSYSTEMEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
+#include "RemoteException.hpp"
 #include "DeadObjectException.hpp"
 
 

@@ -3,15 +3,13 @@
 #ifndef ANDROID_PREFERENCE_EDITTEXTPREFERENCE
 #define ANDROID_PREFERENCE_EDITTEXTPREFERENCE
 
+#include "../../__JniBaseClass.hpp"
+#include "Preference.hpp"
 #include "DialogPreference.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
-}
-namespace __jni_impl::android::content::res
-{
-	class TypedArray;
 }
 namespace __jni_impl::android::view
 {
@@ -20,6 +18,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::widget
 {
 	class EditText;
+}
+namespace __jni_impl::android::content::res
+{
+	class TypedArray;
 }
 
 namespace __jni_impl::android::preference
@@ -38,15 +40,15 @@ namespace __jni_impl::android::preference
 		// Methods
 		void setText(jstring arg0);
 		QAndroidJniObject getText();
-		jboolean shouldDisableDependents();
 		QAndroidJniObject getEditText();
+		jboolean shouldDisableDependents();
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
-#include "../content/res/TypedArray.hpp"
 #include "../view/View.hpp"
 #include "../widget/EditText.hpp"
+#include "../content/res/TypedArray.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -102,17 +104,17 @@ namespace __jni_impl::android::preference
 			"getText",
 			"()Ljava/lang/String;");
 	}
-	jboolean EditTextPreference::shouldDisableDependents()
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldDisableDependents",
-			"()Z");
-	}
 	QAndroidJniObject EditTextPreference::getEditText()
 	{
 		return __thiz.callObjectMethod(
 			"getEditText",
 			"()Landroid/widget/EditText;");
+	}
+	jboolean EditTextPreference::shouldDisableDependents()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldDisableDependents",
+			"()Z");
 	}
 } // namespace __jni_impl::android::preference
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_RECURSIVEACTION
 #define JAVA_UTIL_CONCURRENT_RECURSIVEACTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "ForkJoinTask.hpp"
 
 namespace __jni_impl::java::lang

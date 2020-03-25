@@ -22,8 +22,8 @@ namespace __jni_impl::java::util
 		void accept(jdouble arg0);
 		void combine(__jni_impl::java::util::DoubleSummaryStatistics arg0);
 		jlong getCount();
-		jdouble getMax();
 		jdouble getMin();
+		jdouble getMax();
 		jdouble getSum();
 		jdouble getAverage();
 	};
@@ -79,16 +79,16 @@ namespace __jni_impl::java::util
 			"getCount",
 			"()J");
 	}
-	jdouble DoubleSummaryStatistics::getMax()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getMax",
-			"()D");
-	}
 	jdouble DoubleSummaryStatistics::getMin()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getMin",
+			"()D");
+	}
+	jdouble DoubleSummaryStatistics::getMax()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getMax",
 			"()D");
 	}
 	jdouble DoubleSummaryStatistics::getSum()

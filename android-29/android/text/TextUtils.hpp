@@ -21,13 +21,13 @@ namespace __jni_impl::java::util
 {
 	class Locale;
 }
-namespace __jni_impl::android::text
-{
-	class TextUtils_TruncateAt;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::text
+{
+	class TextUtils_TruncateAt;
 }
 
 namespace __jni_impl::android::text
@@ -85,9 +85,9 @@ namespace __jni_impl::android::text
 		static jint getCapsMode(jstring arg0, jint arg1, jint arg2);
 		static jint getLayoutDirectionFromLocale(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject makeSafeForPresentation(jstring arg0, jint arg1, jfloat arg2, jint arg3);
-		static QAndroidJniObject ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3);
-		static QAndroidJniObject ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
 		static void writeToParcel(jstring arg0, __jni_impl::android::os::Parcel arg1, jint arg2);
+		static QAndroidJniObject ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
+		static QAndroidJniObject ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3);
 	};
 } // namespace __jni_impl::android::text
 
@@ -95,8 +95,8 @@ namespace __jni_impl::android::text
 #include "../content/Context.hpp"
 #include "TextPaint.hpp"
 #include "../../java/util/Locale.hpp"
-#include "TextUtils_TruncateAt.hpp"
 #include "../os/Parcel.hpp"
+#include "TextUtils_TruncateAt.hpp"
 
 namespace __jni_impl::android::text
 {
@@ -511,16 +511,15 @@ namespace __jni_impl::android::text
 			arg2,
 			arg3);
 	}
-	QAndroidJniObject TextUtils::ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3)
+	void TextUtils::writeToParcel(jstring arg0, __jni_impl::android::os::Parcel arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		QAndroidJniObject::callStaticMethod<void>(
 			"android.text.TextUtils",
-			"ellipsize",
-			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;",
+			"writeToParcel",
+			"(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object());
+			arg2);
 	}
 	QAndroidJniObject TextUtils::ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5)
 	{
@@ -535,15 +534,16 @@ namespace __jni_impl::android::text
 			arg4,
 			arg5.__jniObject().object());
 	}
-	void TextUtils::writeToParcel(jstring arg0, __jni_impl::android::os::Parcel arg1, jint arg2)
+	QAndroidJniObject TextUtils::ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
-			"writeToParcel",
-			"(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V",
+			"ellipsize",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2,
+			arg3.__jniObject().object());
 	}
 } // namespace __jni_impl::android::text
 

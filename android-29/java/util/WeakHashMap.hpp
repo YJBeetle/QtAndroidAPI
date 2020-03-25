@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_WEAKHASHMAP
 #define JAVA_UTIL_WEAKHASHMAP
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractMap.hpp"
 
 namespace __jni_impl::java::lang::ref

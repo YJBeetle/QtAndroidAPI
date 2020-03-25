@@ -43,12 +43,12 @@ namespace __jni_impl::org::apache::http::conn::ssl
 		
 		// Methods
 		jboolean isSecure(__jni_impl::java::net::Socket arg0);
-		static QAndroidJniObject getSocketFactory();
-		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
-		QAndroidJniObject createSocket();
 		QAndroidJniObject connectSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, __jni_impl::java::net::InetAddress arg3, jint arg4, __jni_impl::__JniBaseClass arg5);
 		void setHostnameVerifier(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getHostnameVerifier();
+		QAndroidJniObject createSocket();
+		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
+		static QAndroidJniObject getSocketFactory();
 	};
 } // namespace __jni_impl::org::apache::http::conn::ssl
 
@@ -149,29 +149,6 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			"(Ljava/net/Socket;)Z",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject SSLSocketFactory::getSocketFactory()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"org.apache.http.conn.ssl.SSLSocketFactory",
-			"getSocketFactory",
-			"()Lorg/apache/http/conn/ssl/SSLSocketFactory;");
-	}
-	QAndroidJniObject SSLSocketFactory::createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3);
-	}
-	QAndroidJniObject SSLSocketFactory::createSocket()
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"()Ljava/net/Socket;");
-	}
 	QAndroidJniObject SSLSocketFactory::connectSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, __jni_impl::java::net::InetAddress arg3, jint arg4, __jni_impl::__JniBaseClass arg5)
 	{
 		return __thiz.callObjectMethod(
@@ -196,6 +173,29 @@ namespace __jni_impl::org::apache::http::conn::ssl
 		return __thiz.callObjectMethod(
 			"getHostnameVerifier",
 			"()Lorg/apache/http/conn/ssl/X509HostnameVerifier;");
+	}
+	QAndroidJniObject SSLSocketFactory::createSocket()
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"()Ljava/net/Socket;");
+	}
+	QAndroidJniObject SSLSocketFactory::createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3);
+	}
+	QAndroidJniObject SSLSocketFactory::getSocketFactory()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"getSocketFactory",
+			"()Lorg/apache/http/conn/ssl/SSLSocketFactory;");
 	}
 } // namespace __jni_impl::org::apache::http::conn::ssl
 

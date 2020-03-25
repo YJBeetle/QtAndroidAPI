@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_INSTANCECOUNTVIOLATION
 #define ANDROID_OS_STRICTMODE_INSTANCECOUNTVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

@@ -3,6 +3,8 @@
 #ifndef ANDROID_PREFERENCE_CHECKBOXPREFERENCE
 #define ANDROID_PREFERENCE_CHECKBOXPREFERENCE
 
+#include "../../__JniBaseClass.hpp"
+#include "Preference.hpp"
 #include "TwoStatePreference.hpp"
 
 namespace __jni_impl::android::content

@@ -11,6 +11,14 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::view
 {
+	class KeyEvent;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
+}
+namespace __jni_impl::android::view
+{
 	class Surface;
 }
 namespace __jni_impl::android::net
@@ -33,14 +41,6 @@ namespace __jni_impl::android::media
 {
 	class PlaybackParams;
 }
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
-}
 
 namespace __jni_impl::android::media::tv
 {
@@ -53,6 +53,15 @@ namespace __jni_impl::android::media::tv
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		void onSurfaceChanged(jint arg0, jint arg1, jint arg2);
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
+		void onRelease();
 		jboolean onSetSurface(__jni_impl::android::view::Surface arg0);
 		void setOverlayViewEnabled(jboolean arg0);
 		void notifyChannelRetuned(__jni_impl::android::net::Uri arg0);
@@ -80,27 +89,18 @@ namespace __jni_impl::android::media::tv
 		void onTimeShiftSetPlaybackParams(__jni_impl::android::media::PlaybackParams arg0);
 		jlong onTimeShiftGetStartPosition();
 		jlong onTimeShiftGetCurrentPosition();
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		void onRelease();
-		void onSurfaceChanged(jint arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::media::tv
 
 #include "../../content/Context.hpp"
+#include "../../view/KeyEvent.hpp"
+#include "../../view/MotionEvent.hpp"
 #include "../../view/Surface.hpp"
 #include "../../net/Uri.hpp"
 #include "TvContentRating.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../view/View.hpp"
 #include "../PlaybackParams.hpp"
-#include "../../view/KeyEvent.hpp"
-#include "../../view/MotionEvent.hpp"
 
 namespace __jni_impl::android::media::tv
 {
@@ -116,6 +116,75 @@ namespace __jni_impl::android::media::tv
 	}
 	
 	// Methods
+	void TvInputService_Session::onSurfaceChanged(jint arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"onSurfaceChanged",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2);
+	}
+	jboolean TvInputService_Session::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean TvInputService_Session::onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyLongPress",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean TvInputService_Session::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean TvInputService_Session::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyMultiple",
+			"(IILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object());
+	}
+	jboolean TvInputService_Session::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean TvInputService_Session::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean TvInputService_Session::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onGenericMotionEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	void TvInputService_Session::onRelease()
+	{
+		__thiz.callMethod<void>(
+			"onRelease",
+			"()V");
+	}
 	jboolean TvInputService_Session::onSetSurface(__jni_impl::android::view::Surface arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -305,75 +374,6 @@ namespace __jni_impl::android::media::tv
 		return __thiz.callMethod<jlong>(
 			"onTimeShiftGetCurrentPosition",
 			"()J");
-	}
-	jboolean TvInputService_Session::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean TvInputService_Session::onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyLongPress",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean TvInputService_Session::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean TvInputService_Session::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyMultiple",
-			"(IILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	jboolean TvInputService_Session::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean TvInputService_Session::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean TvInputService_Session::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onGenericMotionEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	void TvInputService_Session::onRelease()
-	{
-		__thiz.callMethod<void>(
-			"onRelease",
-			"()V");
-	}
-	void TvInputService_Session::onSurfaceChanged(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onSurfaceChanged",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2);
 	}
 } // namespace __jni_impl::android::media::tv
 

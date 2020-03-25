@@ -35,12 +35,12 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject getText();
-		QAndroidJniObject getExtras();
 		QAndroidJniObject getCallingPackageName();
 		QAndroidJniObject getDefaultLocales();
+		QAndroidJniObject getExtras();
+		QAndroidJniObject getEntityConfig();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getEntityConfig();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -75,12 +75,6 @@ namespace __jni_impl::android::view::textclassifier
 			"getText",
 			"()Ljava/lang/CharSequence;");
 	}
-	QAndroidJniObject TextLinks_Request::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
 	QAndroidJniObject TextLinks_Request::getCallingPackageName()
 	{
 		return __thiz.callObjectMethod(
@@ -92,6 +86,18 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"getDefaultLocales",
 			"()Landroid/os/LocaleList;");
+	}
+	QAndroidJniObject TextLinks_Request::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
+	}
+	QAndroidJniObject TextLinks_Request::getEntityConfig()
+	{
+		return __thiz.callObjectMethod(
+			"getEntityConfig",
+			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;");
 	}
 	jint TextLinks_Request::describeContents()
 	{
@@ -106,12 +112,6 @@ namespace __jni_impl::android::view::textclassifier
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject TextLinks_Request::getEntityConfig()
-	{
-		return __thiz.callObjectMethod(
-			"getEntityConfig",
-			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;");
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

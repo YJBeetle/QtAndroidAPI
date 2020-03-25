@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_PRINTSTREAM
 #define JAVA_IO_PRINTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "OutputStream.hpp"
 #include "FilterOutputStream.hpp"
 
 namespace __jni_impl::java::util

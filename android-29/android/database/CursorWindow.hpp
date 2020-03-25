@@ -3,6 +3,7 @@
 #ifndef ANDROID_DATABASE_CURSORWINDOW
 #define ANDROID_DATABASE_CURSORWINDOW
 
+#include "../../__JniBaseClass.hpp"
 #include "sqlite/SQLiteClosable.hpp"
 
 namespace __jni_impl::android::database

@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_ACL_ACLNOTFOUNDEXCEPTION
 #define JAVA_SECURITY_ACL_ACLNOTFOUNDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
 

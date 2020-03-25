@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_CLASSFORMATERROR
 #define JAVA_LANG_CLASSFORMATERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "LinkageError.hpp"
 
 

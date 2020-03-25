@@ -23,15 +23,15 @@ namespace __jni_impl::javax::xml::validation
 		// Methods
 		QAndroidJniObject getProperty(jstring arg0);
 		void setProperty(jstring arg0, jobject arg1);
+		void setFeature(jstring arg0, jboolean arg1);
+		jboolean getFeature(jstring arg0);
+		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getErrorHandler();
+		QAndroidJniObject getContentHandler();
 		void setContentHandler(__jni_impl::__JniBaseClass arg0);
 		void setResourceResolver(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getResourceResolver();
 		QAndroidJniObject getTypeInfoProvider();
-		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getErrorHandler();
-		QAndroidJniObject getContentHandler();
-		void setFeature(jstring arg0, jboolean arg1);
-		jboolean getFeature(jstring arg0);
 	};
 } // namespace __jni_impl::javax::xml::validation
 
@@ -65,6 +65,40 @@ namespace __jni_impl::javax::xml::validation
 			arg0,
 			arg1);
 	}
+	void ValidatorHandler::setFeature(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1);
+	}
+	jboolean ValidatorHandler::getFeature(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			arg0);
+	}
+	void ValidatorHandler::setErrorHandler(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setErrorHandler",
+			"(Lorg/xml/sax/ErrorHandler;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject ValidatorHandler::getErrorHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getErrorHandler",
+			"()Lorg/xml/sax/ErrorHandler;");
+	}
+	QAndroidJniObject ValidatorHandler::getContentHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getContentHandler",
+			"()Lorg/xml/sax/ContentHandler;");
+	}
 	void ValidatorHandler::setContentHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -90,40 +124,6 @@ namespace __jni_impl::javax::xml::validation
 		return __thiz.callObjectMethod(
 			"getTypeInfoProvider",
 			"()Ljavax/xml/validation/TypeInfoProvider;");
-	}
-	void ValidatorHandler::setErrorHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setErrorHandler",
-			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ValidatorHandler::getErrorHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorHandler",
-			"()Lorg/xml/sax/ErrorHandler;");
-	}
-	QAndroidJniObject ValidatorHandler::getContentHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getContentHandler",
-			"()Lorg/xml/sax/ContentHandler;");
-	}
-	void ValidatorHandler::setFeature(jstring arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1);
-	}
-	jboolean ValidatorHandler::getFeature(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			arg0);
 	}
 } // namespace __jni_impl::javax::xml::validation
 

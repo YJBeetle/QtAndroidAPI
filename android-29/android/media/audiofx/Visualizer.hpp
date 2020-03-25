@@ -37,6 +37,8 @@ namespace __jni_impl::android::media::audiofx
 		
 		// Methods
 		void release();
+		jboolean getEnabled();
+		jint setEnabled(jboolean arg0);
 		static QAndroidJniObject getCaptureSizeRange();
 		static jint getMaxCaptureRate();
 		jint setCaptureSize(jint arg0);
@@ -50,8 +52,6 @@ namespace __jni_impl::android::media::audiofx
 		jint getFft(jbyteArray arg0);
 		jint getMeasurementPeakRms(__jni_impl::android::media::audiofx::Visualizer_MeasurementPeakRms arg0);
 		jint setDataCaptureListener(__jni_impl::__JniBaseClass arg0, jint arg1, jboolean arg2, jboolean arg3);
-		jboolean getEnabled();
-		jint setEnabled(jboolean arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -167,6 +167,19 @@ namespace __jni_impl::android::media::audiofx
 			"release",
 			"()V");
 	}
+	jboolean Visualizer::getEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getEnabled",
+			"()Z");
+	}
+	jint Visualizer::setEnabled(jboolean arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"setEnabled",
+			"(Z)I",
+			arg0);
+	}
 	QAndroidJniObject Visualizer::getCaptureSizeRange()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -256,19 +269,6 @@ namespace __jni_impl::android::media::audiofx
 			arg1,
 			arg2,
 			arg3);
-	}
-	jboolean Visualizer::getEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getEnabled",
-			"()Z");
-	}
-	jint Visualizer::setEnabled(jboolean arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"setEnabled",
-			"(Z)I",
-			arg0);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

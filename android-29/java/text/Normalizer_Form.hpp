@@ -3,6 +3,7 @@
 #ifndef JAVA_TEXT_NORMALIZER_FORM
 #define JAVA_TEXT_NORMALIZER_FORM
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
 

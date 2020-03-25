@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_MEDIAROUTEACTIONPROVIDER
 #define ANDROID_APP_MEDIAROUTEACTIONPROVIDER
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/ActionProvider.hpp"
 
 namespace __jni_impl::android::content
@@ -25,13 +26,13 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		jboolean isVisible();
 		void setRouteTypes(jint arg0);
 		void setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject onCreateActionView(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject onCreateActionView();
 		jboolean onPerformDefaultAction();
 		jboolean overridesItemVisibility();
-		jboolean isVisible();
 	};
 } // namespace __jni_impl::android::app
 
@@ -52,6 +53,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	jboolean MediaRouteActionProvider::isVisible()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVisible",
+			"()Z");
+	}
 	void MediaRouteActionProvider::setRouteTypes(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -89,12 +96,6 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callMethod<jboolean>(
 			"overridesItemVisibility",
-			"()Z");
-	}
-	jboolean MediaRouteActionProvider::isVisible()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVisible",
 			"()Z");
 	}
 } // namespace __jni_impl::android::app

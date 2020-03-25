@@ -3,6 +3,8 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_LEVELLISTDRAWABLE
 #define ANDROID_GRAPHICS_DRAWABLE_LEVELLISTDRAWABLE
 
+#include "../../../__JniBaseClass.hpp"
+#include "Drawable.hpp"
 #include "DrawableContainer.hpp"
 
 namespace __jni_impl::android::content::res

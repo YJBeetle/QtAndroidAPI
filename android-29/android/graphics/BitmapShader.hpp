@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_BITMAPSHADER
 #define ANDROID_GRAPHICS_BITMAPSHADER
 
+#include "../../__JniBaseClass.hpp"
 #include "Shader.hpp"
 
 namespace __jni_impl::android::graphics

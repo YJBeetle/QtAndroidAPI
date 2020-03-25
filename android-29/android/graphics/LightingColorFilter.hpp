@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_LIGHTINGCOLORFILTER
 #define ANDROID_GRAPHICS_LIGHTINGCOLORFILTER
 
+#include "../../__JniBaseClass.hpp"
 #include "ColorFilter.hpp"
 
 

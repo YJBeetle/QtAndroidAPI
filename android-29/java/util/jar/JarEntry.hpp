@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_JAR_JARENTRY
 #define JAVA_UTIL_JAR_JARENTRY
 
+#include "../../../__JniBaseClass.hpp"
 #include "../zip/ZipEntry.hpp"
 
 namespace __jni_impl::java::util::jar

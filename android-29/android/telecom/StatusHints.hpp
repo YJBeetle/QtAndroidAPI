@@ -32,11 +32,11 @@ namespace __jni_impl::android::telecom
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getLabel();
 		QAndroidJniObject getExtras();
+		QAndroidJniObject getLabel();
+		QAndroidJniObject getIcon();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -80,17 +80,23 @@ namespace __jni_impl::android::telecom
 			"hashCode",
 			"()I");
 	}
+	QAndroidJniObject StatusHints::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
+	}
 	QAndroidJniObject StatusHints::getLabel()
 	{
 		return __thiz.callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;");
 	}
-	QAndroidJniObject StatusHints::getExtras()
+	QAndroidJniObject StatusHints::getIcon()
 	{
 		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;");
 	}
 	jint StatusHints::describeContents()
 	{
@@ -105,12 +111,6 @@ namespace __jni_impl::android::telecom
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject StatusHints::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
 	}
 } // namespace __jni_impl::android::telecom
 

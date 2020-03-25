@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_ZIP_DATAFORMATEXCEPTION
 #define JAVA_UTIL_ZIP_DATAFORMATEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
 

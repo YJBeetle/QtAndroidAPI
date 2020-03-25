@@ -3,6 +3,9 @@
 #ifndef ANDROID_APPWIDGET_APPWIDGETHOSTVIEW
 #define ANDROID_APPWIDGET_APPWIDGETHOSTVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "../widget/FrameLayout.hpp"
 
 namespace __jni_impl::android::content

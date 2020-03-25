@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_LOADER_FORCELOADCONTENTOBSERVER
 #define ANDROID_CONTENT_LOADER_FORCELOADCONTENTOBSERVER
 
+#include "../../__JniBaseClass.hpp"
 #include "../database/ContentObserver.hpp"
 
 namespace __jni_impl::android::content

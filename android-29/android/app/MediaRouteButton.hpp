@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_MEDIAROUTEBUTTON
 #define ANDROID_APP_MEDIAROUTEBUTTON
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::content
@@ -32,16 +33,16 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setRouteTypes(jint arg0);
-		void setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0);
-		jint getRouteTypes();
-		void onAttachedToWindow();
-		void onDetachedFromWindow();
-		void showDialog();
 		void jumpDrawablesToCurrentState();
 		jboolean performClick();
 		void setContentDescription(jstring arg0);
 		void setVisibility(jint arg0);
+		void setRouteTypes(jint arg0);
+		void setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0);
+		void onAttachedToWindow();
+		void onDetachedFromWindow();
+		void showDialog();
+		jint getRouteTypes();
 	};
 } // namespace __jni_impl::android::app
 
@@ -90,44 +91,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void MediaRouteButton::setRouteTypes(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRouteTypes",
-			"(I)V",
-			arg0);
-	}
-	void MediaRouteButton::setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtendedSettingsClickListener",
-			"(Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object());
-	}
-	jint MediaRouteButton::getRouteTypes()
-	{
-		return __thiz.callMethod<jint>(
-			"getRouteTypes",
-			"()I");
-	}
-	void MediaRouteButton::onAttachedToWindow()
-	{
-		__thiz.callMethod<void>(
-			"onAttachedToWindow",
-			"()V");
-	}
-	void MediaRouteButton::onDetachedFromWindow()
-	{
-		__thiz.callMethod<void>(
-			"onDetachedFromWindow",
-			"()V");
-	}
-	void MediaRouteButton::showDialog()
-	{
-		__thiz.callMethod<void>(
-			"showDialog",
-			"()V");
-	}
 	void MediaRouteButton::jumpDrawablesToCurrentState()
 	{
 		__thiz.callMethod<void>(
@@ -153,6 +116,44 @@ namespace __jni_impl::android::app
 			"setVisibility",
 			"(I)V",
 			arg0);
+	}
+	void MediaRouteButton::setRouteTypes(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRouteTypes",
+			"(I)V",
+			arg0);
+	}
+	void MediaRouteButton::setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtendedSettingsClickListener",
+			"(Landroid/view/View$OnClickListener;)V",
+			arg0.__jniObject().object());
+	}
+	void MediaRouteButton::onAttachedToWindow()
+	{
+		__thiz.callMethod<void>(
+			"onAttachedToWindow",
+			"()V");
+	}
+	void MediaRouteButton::onDetachedFromWindow()
+	{
+		__thiz.callMethod<void>(
+			"onDetachedFromWindow",
+			"()V");
+	}
+	void MediaRouteButton::showDialog()
+	{
+		__thiz.callMethod<void>(
+			"showDialog",
+			"()V");
+	}
+	jint MediaRouteButton::getRouteTypes()
+	{
+		return __thiz.callMethod<jint>(
+			"getRouteTypes",
+			"()I");
 	}
 } // namespace __jni_impl::android::app
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_NET_WIFI_AWARE_WIFIAWARENETWORKSPECIFIER
 #define ANDROID_NET_WIFI_AWARE_WIFIAWARENETWORKSPECIFIER
 
+#include "../../../../__JniBaseClass.hpp"
 #include "../../NetworkSpecifier.hpp"
 
 namespace __jni_impl::android::os

@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_LINKAGEERROR
 #define JAVA_LANG_LINKAGEERROR
 
+#include "../../__JniBaseClass.hpp"
 #include "Error.hpp"
 
 

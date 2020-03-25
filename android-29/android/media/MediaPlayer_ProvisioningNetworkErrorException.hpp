@@ -3,6 +3,8 @@
 #ifndef ANDROID_MEDIA_MEDIAPLAYER_PROVISIONINGNETWORKERROREXCEPTION
 #define ANDROID_MEDIA_MEDIAPLAYER_PROVISIONINGNETWORKERROREXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "MediaDrmException.hpp"
 
 

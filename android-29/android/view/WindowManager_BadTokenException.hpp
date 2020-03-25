@@ -3,6 +3,8 @@
 #ifndef ANDROID_VIEW_WINDOWMANAGER_BADTOKENEXCEPTION
 #define ANDROID_VIEW_WINDOWMANAGER_BADTOKENEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

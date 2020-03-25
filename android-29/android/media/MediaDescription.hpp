@@ -13,13 +13,13 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::graphics
-{
-	class Bitmap;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::graphics
+{
+	class Bitmap;
 }
 
 namespace __jni_impl::android::media
@@ -44,23 +44,23 @@ namespace __jni_impl::android::media
 		// Methods
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
-		QAndroidJniObject getDescription();
-		QAndroidJniObject getExtras();
 		QAndroidJniObject getSubtitle();
+		QAndroidJniObject getExtras();
+		QAndroidJniObject getMediaUri();
+		QAndroidJniObject getTitle();
+		QAndroidJniObject getDescription();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getTitle();
 		QAndroidJniObject getMediaId();
 		QAndroidJniObject getIconBitmap();
 		QAndroidJniObject getIconUri();
-		QAndroidJniObject getMediaUri();
 	};
 } // namespace __jni_impl::android::media
 
 #include "../os/Parcel.hpp"
 #include "../os/Bundle.hpp"
-#include "../graphics/Bitmap.hpp"
 #include "../net/Uri.hpp"
+#include "../graphics/Bitmap.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -144,10 +144,10 @@ namespace __jni_impl::android::media
 			"toString",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject MediaDescription::getDescription()
+	QAndroidJniObject MediaDescription::getSubtitle()
 	{
 		return __thiz.callObjectMethod(
-			"getDescription",
+			"getSubtitle",
 			"()Ljava/lang/CharSequence;");
 	}
 	QAndroidJniObject MediaDescription::getExtras()
@@ -156,10 +156,22 @@ namespace __jni_impl::android::media
 			"getExtras",
 			"()Landroid/os/Bundle;");
 	}
-	QAndroidJniObject MediaDescription::getSubtitle()
+	QAndroidJniObject MediaDescription::getMediaUri()
 	{
 		return __thiz.callObjectMethod(
-			"getSubtitle",
+			"getMediaUri",
+			"()Landroid/net/Uri;");
+	}
+	QAndroidJniObject MediaDescription::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;");
+	}
+	QAndroidJniObject MediaDescription::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
 			"()Ljava/lang/CharSequence;");
 	}
 	jint MediaDescription::describeContents()
@@ -175,12 +187,6 @@ namespace __jni_impl::android::media
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject MediaDescription::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
 	}
 	QAndroidJniObject MediaDescription::getMediaId()
 	{
@@ -198,12 +204,6 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"getIconUri",
-			"()Landroid/net/Uri;");
-	}
-	QAndroidJniObject MediaDescription::getMediaUri()
-	{
-		return __thiz.callObjectMethod(
-			"getMediaUri",
 			"()Landroid/net/Uri;");
 	}
 } // namespace __jni_impl::android::media

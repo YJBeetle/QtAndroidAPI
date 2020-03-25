@@ -3,6 +3,9 @@
 #ifndef JAVA_TIME_TEMPORAL_UNSUPPORTEDTEMPORALTYPEEXCEPTION
 #define JAVA_TIME_TEMPORAL_UNSUPPORTEDTEMPORALTYPEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 #include "../DateTimeException.hpp"
 
 

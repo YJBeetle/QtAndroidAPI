@@ -3,6 +3,8 @@
 #ifndef JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTABLECHANNEL
 #define JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTABLECHANNEL
 
+#include "../../../../__JniBaseClass.hpp"
+#include "AbstractInterruptibleChannel.hpp"
 #include "../SelectableChannel.hpp"
 
 namespace __jni_impl::java::nio::channels::spi
@@ -36,9 +38,9 @@ namespace __jni_impl::java::nio::channels::spi
 		jboolean isRegistered();
 		QAndroidJniObject _register(__jni_impl::java::nio::channels::Selector arg0, jint arg1, jobject arg2);
 		QAndroidJniObject provider();
+		QAndroidJniObject keyFor(__jni_impl::java::nio::channels::Selector arg0);
 		QAndroidJniObject blockingLock();
 		QAndroidJniObject configureBlocking(jboolean arg0);
-		QAndroidJniObject keyFor(__jni_impl::java::nio::channels::Selector arg0);
 		jboolean isBlocking();
 	};
 } // namespace __jni_impl::java::nio::channels::spi
@@ -82,6 +84,13 @@ namespace __jni_impl::java::nio::channels::spi
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;");
 	}
+	QAndroidJniObject AbstractSelectableChannel::keyFor(__jni_impl::java::nio::channels::Selector arg0)
+	{
+		return __thiz.callObjectMethod(
+			"keyFor",
+			"(Ljava/nio/channels/Selector;)Ljava/nio/channels/SelectionKey;",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject AbstractSelectableChannel::blockingLock()
 	{
 		return __thiz.callObjectMethod(
@@ -94,13 +103,6 @@ namespace __jni_impl::java::nio::channels::spi
 			"configureBlocking",
 			"(Z)Ljava/nio/channels/SelectableChannel;",
 			arg0);
-	}
-	QAndroidJniObject AbstractSelectableChannel::keyFor(__jni_impl::java::nio::channels::Selector arg0)
-	{
-		return __thiz.callObjectMethod(
-			"keyFor",
-			"(Ljava/nio/channels/Selector;)Ljava/nio/channels/SelectionKey;",
-			arg0.__jniObject().object());
 	}
 	jboolean AbstractSelectableChannel::isBlocking()
 	{

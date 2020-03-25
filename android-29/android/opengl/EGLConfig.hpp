@@ -3,6 +3,7 @@
 #ifndef ANDROID_OPENGL_EGLCONFIG
 #define ANDROID_OPENGL_EGLCONFIG
 
+#include "../../__JniBaseClass.hpp"
 #include "EGLObjectHandle.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_OPENGL_EGLIMAGE
 #define ANDROID_OPENGL_EGLIMAGE
 
+#include "../../__JniBaseClass.hpp"
 #include "EGLObjectHandle.hpp"
 
 

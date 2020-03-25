@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_PREFS_BACKINGSTOREEXCEPTION
 #define JAVA_UTIL_PREFS_BACKINGSTOREEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
 

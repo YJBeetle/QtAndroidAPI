@@ -3,6 +3,7 @@
 #ifndef JAVA_AWT_FONT_NUMERICSHAPER_RANGE
 #define JAVA_AWT_FONT_NUMERICSHAPER_RANGE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

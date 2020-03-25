@@ -23,11 +23,11 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		jint describeContents();
 		static QAndroidJniObject createOneShot(jlong arg0, jint arg1);
 		static QAndroidJniObject createWaveform(jlongArray arg0, jintArray arg1, jint arg2);
 		static QAndroidJniObject createWaveform(jlongArray arg0, jint arg1);
 		static QAndroidJniObject createPredefined(jint arg0);
+		jint describeContents();
 	};
 } // namespace __jni_impl::android::os
 
@@ -82,12 +82,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jint VibrationEffect::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
 	QAndroidJniObject VibrationEffect::createOneShot(jlong arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -123,6 +117,12 @@ namespace __jni_impl::android::os
 			"createPredefined",
 			"(I)Landroid/os/VibrationEffect;",
 			arg0);
+	}
+	jint VibrationEffect::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
 	}
 } // namespace __jni_impl::android::os
 

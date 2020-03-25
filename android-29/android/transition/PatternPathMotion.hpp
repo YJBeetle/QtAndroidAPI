@@ -3,6 +3,7 @@
 #ifndef ANDROID_TRANSITION_PATTERNPATHMOTION
 #define ANDROID_TRANSITION_PATTERNPATHMOTION
 
+#include "../../__JniBaseClass.hpp"
 #include "PathMotion.hpp"
 
 namespace __jni_impl::android::graphics

@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_EXECUTIONEXCEPTION
 #define JAVA_UTIL_CONCURRENT_EXECUTIONEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
 

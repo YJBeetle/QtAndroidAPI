@@ -9,13 +9,13 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::view::autofill
-{
-	class AutofillId;
-}
 namespace __jni_impl::android::app::assist
 {
 	class AssistStructure;
+}
+namespace __jni_impl::android::view::autofill
+{
+	class AutofillId;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -31,8 +31,8 @@ namespace __jni_impl::android::service::autofill
 		
 		// Methods
 		QAndroidJniObject toString();
-		QAndroidJniObject getFocusedId();
 		QAndroidJniObject getStructure();
+		QAndroidJniObject getFocusedId();
 		jint getRequestId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -40,8 +40,8 @@ namespace __jni_impl::android::service::autofill
 } // namespace __jni_impl::android::service::autofill
 
 #include "../../os/Parcel.hpp"
-#include "../../view/autofill/AutofillId.hpp"
 #include "../../app/assist/AssistStructure.hpp"
+#include "../../view/autofill/AutofillId.hpp"
 
 namespace __jni_impl::android::service::autofill
 {
@@ -69,17 +69,17 @@ namespace __jni_impl::android::service::autofill
 			"toString",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject FillContext::getFocusedId()
-	{
-		return __thiz.callObjectMethod(
-			"getFocusedId",
-			"()Landroid/view/autofill/AutofillId;");
-	}
 	QAndroidJniObject FillContext::getStructure()
 	{
 		return __thiz.callObjectMethod(
 			"getStructure",
 			"()Landroid/app/assist/AssistStructure;");
+	}
+	QAndroidJniObject FillContext::getFocusedId()
+	{
+		return __thiz.callObjectMethod(
+			"getFocusedId",
+			"()Landroid/view/autofill/AutofillId;");
 	}
 	jint FillContext::getRequestId()
 	{

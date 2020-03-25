@@ -29,10 +29,10 @@ namespace __jni_impl::android::telephony
 		// Methods
 		QAndroidJniObject toString();
 		jint getChannel();
+		QAndroidJniObject getSelectResponse();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getStatus();
-		QAndroidJniObject getSelectResponse();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -100,6 +100,12 @@ namespace __jni_impl::android::telephony
 			"getChannel",
 			"()I");
 	}
+	QAndroidJniObject IccOpenLogicalChannelResponse::getSelectResponse()
+	{
+		return __thiz.callObjectMethod(
+			"getSelectResponse",
+			"()[B");
+	}
 	jint IccOpenLogicalChannelResponse::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -119,12 +125,6 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jint>(
 			"getStatus",
 			"()I");
-	}
-	QAndroidJniObject IccOpenLogicalChannelResponse::getSelectResponse()
-	{
-		return __thiz.callObjectMethod(
-			"getSelectResponse",
-			"()[B");
 	}
 } // namespace __jni_impl::android::telephony
 

@@ -13,10 +13,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::graphics
-{
-	class Rect;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -24,6 +20,10 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::android::transition
 {
 	class Transition;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
 }
 
 namespace __jni_impl::android::widget
@@ -60,22 +60,18 @@ namespace __jni_impl::android::widget
 		void setHeight(jint arg0);
 		jint getWidth();
 		jint getHeight();
-		jint getSoftInputMode();
-		void setAnimationStyle(jint arg0);
-		jint getAnimationStyle();
-		void setEpicenterBounds(__jni_impl::android::graphics::Rect arg0);
-		QAndroidJniObject getEpicenterBounds();
-		void setWindowLayoutType(jint arg0);
 		jboolean isShowing();
 		void dismiss();
 		void setOnDismissListener(__jni_impl::__JniBaseClass arg0);
-		void setContentView(__jni_impl::android::view::View arg0);
 		void setFocusable(jboolean arg0);
 		jboolean isFocusable();
 		jfloat getElevation();
 		void setElevation(jfloat arg0);
 		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject getBackground();
+		jint getInputMethodMode();
+		void setInputMethodMode(jint arg0);
+		void setContentView(__jni_impl::android::view::View arg0);
 		void setIgnoreCheekPress();
 		QAndroidJniObject getContentView();
 		void setTouchInterceptor(__jni_impl::__JniBaseClass arg0);
@@ -98,28 +94,32 @@ namespace __jni_impl::android::widget
 		void setOverlapAnchor(jboolean arg0);
 		jboolean getOverlapAnchor();
 		void showAtLocation(__jni_impl::android::view::View arg0, jint arg1, jint arg2, jint arg3);
-		void showAsDropDown(__jni_impl::android::view::View arg0, jint arg1, jint arg2, jint arg3);
-		void showAsDropDown(__jni_impl::android::view::View arg0);
 		void showAsDropDown(__jni_impl::android::view::View arg0, jint arg1, jint arg2);
+		void showAsDropDown(__jni_impl::android::view::View arg0);
+		void showAsDropDown(__jni_impl::android::view::View arg0, jint arg1, jint arg2, jint arg3);
 		jboolean isAboveAnchor();
-		jint getMaxAvailableHeight(__jni_impl::android::view::View arg0, jint arg1, jboolean arg2);
 		jint getMaxAvailableHeight(__jni_impl::android::view::View arg0, jint arg1);
+		jint getMaxAvailableHeight(__jni_impl::android::view::View arg0, jint arg1, jboolean arg2);
 		jint getMaxAvailableHeight(__jni_impl::android::view::View arg0);
 		void setSoftInputMode(jint arg0);
 		void setEnterTransition(__jni_impl::android::transition::Transition arg0);
 		void setExitTransition(__jni_impl::android::transition::Transition arg0);
 		QAndroidJniObject getEnterTransition();
 		QAndroidJniObject getExitTransition();
-		jint getInputMethodMode();
-		void setInputMethodMode(jint arg0);
+		jint getSoftInputMode();
+		void setAnimationStyle(jint arg0);
+		jint getAnimationStyle();
+		void setEpicenterBounds(__jni_impl::android::graphics::Rect arg0);
+		QAndroidJniObject getEpicenterBounds();
+		void setWindowLayoutType(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../view/View.hpp"
 #include "../content/Context.hpp"
-#include "../graphics/Rect.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../transition/Transition.hpp"
+#include "../graphics/Rect.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -314,45 +314,6 @@ namespace __jni_impl::android::widget
 			"getHeight",
 			"()I");
 	}
-	jint PopupWindow::getSoftInputMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getSoftInputMode",
-			"()I");
-	}
-	void PopupWindow::setAnimationStyle(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAnimationStyle",
-			"(I)V",
-			arg0);
-	}
-	jint PopupWindow::getAnimationStyle()
-	{
-		return __thiz.callMethod<jint>(
-			"getAnimationStyle",
-			"()I");
-	}
-	void PopupWindow::setEpicenterBounds(__jni_impl::android::graphics::Rect arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEpicenterBounds",
-			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject PopupWindow::getEpicenterBounds()
-	{
-		return __thiz.callObjectMethod(
-			"getEpicenterBounds",
-			"()Landroid/graphics/Rect;");
-	}
-	void PopupWindow::setWindowLayoutType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setWindowLayoutType",
-			"(I)V",
-			arg0);
-	}
 	jboolean PopupWindow::isShowing()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -370,13 +331,6 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"setOnDismissListener",
 			"(Landroid/widget/PopupWindow$OnDismissListener;)V",
-			arg0.__jniObject().object());
-	}
-	void PopupWindow::setContentView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentView",
-			"(Landroid/view/View;)V",
 			arg0.__jniObject().object());
 	}
 	void PopupWindow::setFocusable(jboolean arg0)
@@ -417,6 +371,26 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/drawable/Drawable;");
+	}
+	jint PopupWindow::getInputMethodMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getInputMethodMode",
+			"()I");
+	}
+	void PopupWindow::setInputMethodMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInputMethodMode",
+			"(I)V",
+			arg0);
+	}
+	void PopupWindow::setContentView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
 	}
 	void PopupWindow::setIgnoreCheekPress()
 	{
@@ -565,6 +539,22 @@ namespace __jni_impl::android::widget
 			arg2,
 			arg3);
 	}
+	void PopupWindow::showAsDropDown(__jni_impl::android::view::View arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"showAsDropDown",
+			"(Landroid/view/View;II)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2);
+	}
+	void PopupWindow::showAsDropDown(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"showAsDropDown",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
 	void PopupWindow::showAsDropDown(__jni_impl::android::view::View arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -575,27 +565,19 @@ namespace __jni_impl::android::widget
 			arg2,
 			arg3);
 	}
-	void PopupWindow::showAsDropDown(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"showAsDropDown",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
-	}
-	void PopupWindow::showAsDropDown(__jni_impl::android::view::View arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"showAsDropDown",
-			"(Landroid/view/View;II)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2);
-	}
 	jboolean PopupWindow::isAboveAnchor()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAboveAnchor",
 			"()Z");
+	}
+	jint PopupWindow::getMaxAvailableHeight(__jni_impl::android::view::View arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxAvailableHeight",
+			"(Landroid/view/View;I)I",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jint PopupWindow::getMaxAvailableHeight(__jni_impl::android::view::View arg0, jint arg1, jboolean arg2)
 	{
@@ -605,14 +587,6 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2);
-	}
-	jint PopupWindow::getMaxAvailableHeight(__jni_impl::android::view::View arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxAvailableHeight",
-			"(Landroid/view/View;I)I",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 	jint PopupWindow::getMaxAvailableHeight(__jni_impl::android::view::View arg0)
 	{
@@ -654,16 +628,42 @@ namespace __jni_impl::android::widget
 			"getExitTransition",
 			"()Landroid/transition/Transition;");
 	}
-	jint PopupWindow::getInputMethodMode()
+	jint PopupWindow::getSoftInputMode()
 	{
 		return __thiz.callMethod<jint>(
-			"getInputMethodMode",
+			"getSoftInputMode",
 			"()I");
 	}
-	void PopupWindow::setInputMethodMode(jint arg0)
+	void PopupWindow::setAnimationStyle(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setInputMethodMode",
+			"setAnimationStyle",
+			"(I)V",
+			arg0);
+	}
+	jint PopupWindow::getAnimationStyle()
+	{
+		return __thiz.callMethod<jint>(
+			"getAnimationStyle",
+			"()I");
+	}
+	void PopupWindow::setEpicenterBounds(__jni_impl::android::graphics::Rect arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEpicenterBounds",
+			"(Landroid/graphics/Rect;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject PopupWindow::getEpicenterBounds()
+	{
+		return __thiz.callObjectMethod(
+			"getEpicenterBounds",
+			"()Landroid/graphics/Rect;");
+	}
+	void PopupWindow::setWindowLayoutType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWindowLayoutType",
 			"(I)V",
 			arg0);
 	}

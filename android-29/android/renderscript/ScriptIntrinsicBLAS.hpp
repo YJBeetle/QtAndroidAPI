@@ -3,6 +3,9 @@
 #ifndef ANDROID_RENDERSCRIPT_SCRIPTINTRINSICBLAS
 #define ANDROID_RENDERSCRIPT_SCRIPTINTRINSICBLAS
 
+#include "../../__JniBaseClass.hpp"
+#include "BaseObj.hpp"
+#include "Script.hpp"
 #include "ScriptIntrinsic.hpp"
 
 namespace __jni_impl::android::renderscript

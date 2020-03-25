@@ -3,6 +3,9 @@
 #ifndef JAVA_IO_INVALIDOBJECTEXCEPTION
 #define JAVA_IO_INVALIDOBJECTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "IOException.hpp"
 #include "ObjectStreamException.hpp"
 
 

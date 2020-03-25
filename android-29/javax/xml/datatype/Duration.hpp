@@ -62,11 +62,11 @@ namespace __jni_impl::javax::xml::datatype
 		jint getHours();
 		jint getMinutes();
 		QAndroidJniObject negate();
+		jint getSign();
 		QAndroidJniObject getXMLSchemaType();
 		QAndroidJniObject normalizeWith(__jni_impl::java::util::Calendar arg0);
 		jboolean isLongerThan(__jni_impl::javax::xml::datatype::Duration arg0);
 		jboolean isShorterThan(__jni_impl::javax::xml::datatype::Duration arg0);
-		jint getSign();
 	};
 } // namespace __jni_impl::javax::xml::datatype
 
@@ -228,6 +228,12 @@ namespace __jni_impl::javax::xml::datatype
 			"negate",
 			"()Ljavax/xml/datatype/Duration;");
 	}
+	jint Duration::getSign()
+	{
+		return __thiz.callMethod<jint>(
+			"getSign",
+			"()I");
+	}
 	QAndroidJniObject Duration::getXMLSchemaType()
 	{
 		return __thiz.callObjectMethod(
@@ -254,12 +260,6 @@ namespace __jni_impl::javax::xml::datatype
 			"isShorterThan",
 			"(Ljavax/xml/datatype/Duration;)Z",
 			arg0.__jniObject().object());
-	}
-	jint Duration::getSign()
-	{
-		return __thiz.callMethod<jint>(
-			"getSign",
-			"()I");
 	}
 } // namespace __jni_impl::javax::xml::datatype
 

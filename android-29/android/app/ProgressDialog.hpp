@@ -3,6 +3,8 @@
 #ifndef ANDROID_APP_PROGRESSDIALOG
 #define ANDROID_APP_PROGRESSDIALOG
 
+#include "../../__JniBaseClass.hpp"
+#include "Dialog.hpp"
 #include "AlertDialog.hpp"
 
 namespace __jni_impl::android::content
@@ -43,6 +45,7 @@ namespace __jni_impl::android::app
 		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3);
 		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4);
 		jint getMax();
+		jint getProgress();
 		jint getSecondaryProgress();
 		void setMax(jint arg0);
 		void incrementProgressBy(jint arg0);
@@ -54,7 +57,6 @@ namespace __jni_impl::android::app
 		void setProgressStyle(jint arg0);
 		void setProgressNumberFormat(jstring arg0);
 		void setProgressPercentFormat(__jni_impl::java::text::NumberFormat arg0);
-		jint getProgress();
 		void setProgress(jint arg0);
 		void setSecondaryProgress(jint arg0);
 	};
@@ -164,6 +166,12 @@ namespace __jni_impl::android::app
 			"getMax",
 			"()I");
 	}
+	jint ProgressDialog::getProgress()
+	{
+		return __thiz.callMethod<jint>(
+			"getProgress",
+			"()I");
+	}
 	jint ProgressDialog::getSecondaryProgress()
 	{
 		return __thiz.callMethod<jint>(
@@ -238,12 +246,6 @@ namespace __jni_impl::android::app
 			"setProgressPercentFormat",
 			"(Ljava/text/NumberFormat;)V",
 			arg0.__jniObject().object());
-	}
-	jint ProgressDialog::getProgress()
-	{
-		return __thiz.callMethod<jint>(
-			"getProgress",
-			"()I");
 	}
 	void ProgressDialog::setProgress(jint arg0)
 	{

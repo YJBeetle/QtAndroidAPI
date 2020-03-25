@@ -51,12 +51,12 @@ namespace __jni_impl::java::util::zip
 		jint getTotalOut();
 		void setLevel(jint arg0);
 		void finish();
-		jint deflate(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		jint deflate(__jni_impl::java::nio::ByteBuffer arg0, jint arg1);
-		jint deflate(jbyteArray arg0, jint arg1, jint arg2);
-		jint deflate(jbyteArray arg0);
-		jint deflate(__jni_impl::java::nio::ByteBuffer arg0);
 		void setStrategy(jint arg0);
+		jint deflate(__jni_impl::java::nio::ByteBuffer arg0);
+		jint deflate(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		jint deflate(jbyteArray arg0);
+		jint deflate(jbyteArray arg0, jint arg1, jint arg2);
+		jint deflate(__jni_impl::java::nio::ByteBuffer arg0, jint arg1);
 	};
 } // namespace __jni_impl::java::util::zip
 
@@ -269,6 +269,20 @@ namespace __jni_impl::java::util::zip
 			"finish",
 			"()V");
 	}
+	void Deflater::setStrategy(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStrategy",
+			"(I)V",
+			arg0);
+	}
+	jint Deflater::deflate(__jni_impl::java::nio::ByteBuffer arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"deflate",
+			"(Ljava/nio/ByteBuffer;)I",
+			arg0.__jniObject().object());
+	}
 	jint Deflater::deflate(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return __thiz.callMethod<jint>(
@@ -279,13 +293,12 @@ namespace __jni_impl::java::util::zip
 			arg2,
 			arg3);
 	}
-	jint Deflater::deflate(__jni_impl::java::nio::ByteBuffer arg0, jint arg1)
+	jint Deflater::deflate(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"deflate",
-			"(Ljava/nio/ByteBuffer;I)I",
-			arg0.__jniObject().object(),
-			arg1);
+			"([B)I",
+			arg0);
 	}
 	jint Deflater::deflate(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -296,26 +309,13 @@ namespace __jni_impl::java::util::zip
 			arg1,
 			arg2);
 	}
-	jint Deflater::deflate(jbyteArray arg0)
+	jint Deflater::deflate(__jni_impl::java::nio::ByteBuffer arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
 			"deflate",
-			"([B)I",
-			arg0);
-	}
-	jint Deflater::deflate(__jni_impl::java::nio::ByteBuffer arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"deflate",
-			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object());
-	}
-	void Deflater::setStrategy(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStrategy",
-			"(I)V",
-			arg0);
+			"(Ljava/nio/ByteBuffer;I)I",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::java::util::zip
 

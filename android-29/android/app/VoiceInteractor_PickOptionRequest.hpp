@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_VOICEINTERACTOR_PICKOPTIONREQUEST
 #define ANDROID_APP_VOICEINTERACTOR_PICKOPTIONREQUEST
 
+#include "../../__JniBaseClass.hpp"
 #include "VoiceInteractor_Request.hpp"
 
 namespace __jni_impl::android::app

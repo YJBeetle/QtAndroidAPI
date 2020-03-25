@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_INVOKE_MUTABLECALLSITE
 #define JAVA_LANG_INVOKE_MUTABLECALLSITE
 
+#include "../../../__JniBaseClass.hpp"
 #include "CallSite.hpp"
 
 namespace __jni_impl::java::util::concurrent::atomic

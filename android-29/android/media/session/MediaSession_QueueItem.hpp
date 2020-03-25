@@ -29,8 +29,8 @@ namespace __jni_impl::android::media::session
 		// Methods
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
-		QAndroidJniObject getDescription();
 		jlong getQueueId();
+		QAndroidJniObject getDescription();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -80,17 +80,17 @@ namespace __jni_impl::android::media::session
 			"toString",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject MediaSession_QueueItem::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Landroid/media/MediaDescription;");
-	}
 	jlong MediaSession_QueueItem::getQueueId()
 	{
 		return __thiz.callMethod<jlong>(
 			"getQueueId",
 			"()J");
+	}
+	QAndroidJniObject MediaSession_QueueItem::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Landroid/media/MediaDescription;");
 	}
 	jint MediaSession_QueueItem::describeContents()
 	{

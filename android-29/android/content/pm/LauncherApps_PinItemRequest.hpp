@@ -44,11 +44,11 @@ namespace __jni_impl::android::content::pm
 		jboolean accept();
 		jboolean isValid();
 		QAndroidJniObject getExtras();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getRequestType();
 		QAndroidJniObject getShortcutInfo();
 		QAndroidJniObject getAppWidgetProviderInfo(__jni_impl::android::content::Context arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -115,20 +115,6 @@ namespace __jni_impl::android::content::pm
 			"getExtras",
 			"()Landroid/os/Bundle;");
 	}
-	jint LauncherApps_PinItemRequest::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void LauncherApps_PinItemRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	jint LauncherApps_PinItemRequest::getRequestType()
 	{
 		return __thiz.callMethod<jint>(
@@ -147,6 +133,20 @@ namespace __jni_impl::android::content::pm
 			"getAppWidgetProviderInfo",
 			"(Landroid/content/Context;)Landroid/appwidget/AppWidgetProviderInfo;",
 			arg0.__jniObject().object());
+	}
+	jint LauncherApps_PinItemRequest::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void LauncherApps_PinItemRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::content::pm
 

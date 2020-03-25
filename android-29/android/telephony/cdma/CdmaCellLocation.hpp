@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_CDMA_CDMACELLLOCATION
 #define ANDROID_TELEPHONY_CDMA_CDMACELLLOCATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../CellLocation.hpp"
 
 namespace __jni_impl::android::os
@@ -26,13 +27,13 @@ namespace __jni_impl::android::telephony::cdma
 		QAndroidJniObject toString();
 		jint hashCode();
 		jint getSystemId();
-		jint getNetworkId();
 		jint getBaseStationId();
 		jint getBaseStationLatitude();
 		jint getBaseStationLongitude();
-		void setCellLocationData(jint arg0, jint arg1, jint arg2);
 		void setCellLocationData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		void setCellLocationData(jint arg0, jint arg1, jint arg2);
 		static jdouble convertQuartSecToDecDegrees(jint arg0);
+		jint getNetworkId();
 		void setStateInvalid();
 		void fillInNotifierBundle(__jni_impl::android::os::Bundle arg0);
 	};
@@ -85,12 +86,6 @@ namespace __jni_impl::android::telephony::cdma
 			"getSystemId",
 			"()I");
 	}
-	jint CdmaCellLocation::getNetworkId()
-	{
-		return __thiz.callMethod<jint>(
-			"getNetworkId",
-			"()I");
-	}
 	jint CdmaCellLocation::getBaseStationId()
 	{
 		return __thiz.callMethod<jint>(
@@ -109,15 +104,6 @@ namespace __jni_impl::android::telephony::cdma
 			"getBaseStationLongitude",
 			"()I");
 	}
-	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"setCellLocationData",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2);
-	}
 	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz.callMethod<void>(
@@ -129,6 +115,15 @@ namespace __jni_impl::android::telephony::cdma
 			arg3,
 			arg4);
 	}
+	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"setCellLocationData",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2);
+	}
 	jdouble CdmaCellLocation::convertQuartSecToDecDegrees(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jdouble>(
@@ -136,6 +131,12 @@ namespace __jni_impl::android::telephony::cdma
 			"convertQuartSecToDecDegrees",
 			"(I)D",
 			arg0);
+	}
+	jint CdmaCellLocation::getNetworkId()
+	{
+		return __thiz.callMethod<jint>(
+			"getNetworkId",
+			"()I");
 	}
 	void CdmaCellLocation::setStateInvalid()
 	{

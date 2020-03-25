@@ -3,6 +3,11 @@
 #ifndef ANDROID_APP_LAUNCHERACTIVITY
 #define ANDROID_APP_LAUNCHERACTIVITY
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../view/ContextThemeWrapper.hpp"
+#include "Activity.hpp"
 #include "ListActivity.hpp"
 
 namespace __jni_impl::android::os

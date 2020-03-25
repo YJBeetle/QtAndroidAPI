@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_PRESETREVERB
 #define ANDROID_MEDIA_AUDIOFX_PRESETREVERB
 
+#include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
 namespace __jni_impl::android::media::audiofx

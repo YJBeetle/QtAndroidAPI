@@ -17,13 +17,13 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::telecom
 {
 	class Connection_RttTextStream;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::telecom
@@ -41,21 +41,21 @@ namespace __jni_impl::android::telecom
 		// Methods
 		QAndroidJniObject toString();
 		QAndroidJniObject getAddress();
-		jint getVideoState();
 		QAndroidJniObject getExtras();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getAccountHandle();
 		QAndroidJniObject getRttTextStream();
 		jboolean isRequestingRtt();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getVideoState();
 	};
 } // namespace __jni_impl::android::telecom
 
 #include "PhoneAccountHandle.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
-#include "../os/Parcel.hpp"
 #include "Connection_RttTextStream.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -102,31 +102,11 @@ namespace __jni_impl::android::telecom
 			"getAddress",
 			"()Landroid/net/Uri;");
 	}
-	jint ConnectionRequest::getVideoState()
-	{
-		return __thiz.callMethod<jint>(
-			"getVideoState",
-			"()I");
-	}
 	QAndroidJniObject ConnectionRequest::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;");
-	}
-	jint ConnectionRequest::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void ConnectionRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 	QAndroidJniObject ConnectionRequest::getAccountHandle()
 	{
@@ -145,6 +125,26 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jboolean>(
 			"isRequestingRtt",
 			"()Z");
+	}
+	jint ConnectionRequest::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void ConnectionRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jint ConnectionRequest::getVideoState()
+	{
+		return __thiz.callMethod<jint>(
+			"getVideoState",
+			"()I");
 	}
 } // namespace __jni_impl::android::telecom
 

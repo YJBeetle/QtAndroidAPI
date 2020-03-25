@@ -9,6 +9,10 @@ namespace __jni_impl::android::hardware::camera2
 {
 	class CameraCaptureSession_StateCallback;
 }
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 namespace __jni_impl::android::hardware::camera2::params
 {
 	class InputConfiguration;
@@ -16,10 +20,6 @@ namespace __jni_impl::android::hardware::camera2::params
 namespace __jni_impl::android::hardware::camera2
 {
 	class CaptureRequest;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::hardware::camera2::params
@@ -39,6 +39,8 @@ namespace __jni_impl::android::hardware::camera2::params
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		QAndroidJniObject getExecutor();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getSessionType();
 		QAndroidJniObject getOutputConfigurations();
 		QAndroidJniObject getStateCallback();
@@ -46,15 +48,13 @@ namespace __jni_impl::android::hardware::camera2::params
 		QAndroidJniObject getInputConfiguration();
 		void setSessionParameters(__jni_impl::android::hardware::camera2::CaptureRequest arg0);
 		QAndroidJniObject getSessionParameters();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
 #include "../CameraCaptureSession_StateCallback.hpp"
+#include "../../../os/Parcel.hpp"
 #include "InputConfiguration.hpp"
 #include "../CaptureRequest.hpp"
-#include "../../../os/Parcel.hpp"
 
 namespace __jni_impl::android::hardware::camera2::params
 {
@@ -111,6 +111,20 @@ namespace __jni_impl::android::hardware::camera2::params
 			"getExecutor",
 			"()Ljava/util/concurrent/Executor;");
 	}
+	jint SessionConfiguration::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void SessionConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint SessionConfiguration::getSessionType()
 	{
 		return __thiz.callMethod<jint>(
@@ -154,20 +168,6 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callObjectMethod(
 			"getSessionParameters",
 			"()Landroid/hardware/camera2/CaptureRequest;");
-	}
-	jint SessionConfiguration::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void SessionConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

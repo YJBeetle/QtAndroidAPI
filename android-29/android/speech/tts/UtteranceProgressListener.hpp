@@ -20,11 +20,11 @@ namespace __jni_impl::android::speech::tts
 		void onStart(jstring arg0);
 		void onError(jstring arg0);
 		void onError(jstring arg0, jint arg1);
+		void onStop(jstring arg0, jboolean arg1);
+		void onDone(jstring arg0);
 		void onBeginSynthesis(jstring arg0, jint arg1, jint arg2, jint arg3);
 		void onAudioAvailable(jstring arg0, jbyteArray arg1);
 		void onRangeStart(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void onDone(jstring arg0);
-		void onStop(jstring arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::speech::tts
 
@@ -64,6 +64,21 @@ namespace __jni_impl::android::speech::tts
 			arg0,
 			arg1);
 	}
+	void UtteranceProgressListener::onStop(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"onStop",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1);
+	}
+	void UtteranceProgressListener::onDone(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"onDone",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
 	void UtteranceProgressListener::onBeginSynthesis(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -91,21 +106,6 @@ namespace __jni_impl::android::speech::tts
 			arg1,
 			arg2,
 			arg3);
-	}
-	void UtteranceProgressListener::onDone(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"onDone",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
-	void UtteranceProgressListener::onStop(jstring arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"onStop",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1);
 	}
 } // namespace __jni_impl::android::speech::tts
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_TIMEZONENAMES_NAMETYPE
 #define ANDROID_ICU_TEXT_TIMEZONENAMES_NAMETYPE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

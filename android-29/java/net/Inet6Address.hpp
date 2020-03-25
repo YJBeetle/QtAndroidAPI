@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_INET6ADDRESS
 #define JAVA_NET_INET6ADDRESS
 
+#include "../../__JniBaseClass.hpp"
 #include "InetAddress.hpp"
 
 namespace __jni_impl::java::net

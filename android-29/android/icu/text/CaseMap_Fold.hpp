@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_CASEMAP_FOLD
 #define ANDROID_ICU_TEXT_CASEMAP_FOLD
 
+#include "../../../__JniBaseClass.hpp"
 #include "CaseMap.hpp"
 
 namespace __jni_impl::android::icu::text
@@ -27,8 +28,8 @@ namespace __jni_impl::android::icu::text
 		// Methods
 		QAndroidJniObject apply(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::Edits arg2);
 		QAndroidJniObject apply(jstring arg0);
-		QAndroidJniObject turkic();
 		QAndroidJniObject omitUnchangedText();
+		QAndroidJniObject turkic();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -64,16 +65,16 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
 			arg0);
 	}
-	QAndroidJniObject CaseMap_Fold::turkic()
-	{
-		return __thiz.callObjectMethod(
-			"turkic",
-			"()Landroid/icu/text/CaseMap$Fold;");
-	}
 	QAndroidJniObject CaseMap_Fold::omitUnchangedText()
 	{
 		return __thiz.callObjectMethod(
 			"omitUnchangedText",
+			"()Landroid/icu/text/CaseMap$Fold;");
+	}
+	QAndroidJniObject CaseMap_Fold::turkic()
+	{
+		return __thiz.callObjectMethod(
+			"turkic",
 			"()Landroid/icu/text/CaseMap$Fold;");
 	}
 } // namespace __jni_impl::android::icu::text

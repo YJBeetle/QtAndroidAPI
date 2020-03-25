@@ -3,6 +3,7 @@
 #ifndef ANDROID_WIDGET_IMAGEVIEW
 #define ANDROID_WIDGET_IMAGEVIEW
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::content
@@ -11,19 +12,11 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::graphics
 {
-	class ColorFilter;
-}
-namespace __jni_impl::android::graphics
-{
-	class PorterDuff_Mode;
+	class Canvas;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
 }
 namespace __jni_impl::android::net
 {
@@ -36,6 +29,10 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::android::content::res
 {
 	class ColorStateList;
+}
+namespace __jni_impl::android::graphics
+{
+	class PorterDuff_Mode;
 }
 namespace __jni_impl::android::graphics
 {
@@ -53,6 +50,10 @@ namespace __jni_impl::android::graphics
 {
 	class Matrix;
 }
+namespace __jni_impl::android::graphics
+{
+	class ColorFilter;
+}
 
 namespace __jni_impl::android::widget
 {
@@ -69,17 +70,12 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		jboolean isOpaque();
-		void setAlpha(jint arg0);
 		void setMaxHeight(jint arg0);
 		jint getMaxHeight();
 		void setMaxWidth(jint arg0);
 		jint getMaxWidth();
+		void setAlpha(jint arg0);
 		void clearColorFilter();
-		QAndroidJniObject getColorFilter();
-		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
-		void setColorFilter(jint arg0, __jni_impl::android::graphics::PorterDuff_Mode arg1);
-		void setColorFilter(jint arg0);
-		QAndroidJniObject getDrawable();
 		QAndroidJniObject getAccessibilityClassName();
 		void jumpDrawablesToCurrentState();
 		QAndroidJniObject onCreateDrawableState(jint arg0);
@@ -118,21 +114,26 @@ namespace __jni_impl::android::widget
 		jboolean getBaselineAlignBottom();
 		jint getImageAlpha();
 		void setImageAlpha(jint arg0);
+		QAndroidJniObject getDrawable();
+		QAndroidJniObject getColorFilter();
+		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		void setColorFilter(jint arg0);
+		void setColorFilter(jint arg0, __jni_impl::android::graphics::PorterDuff_Mode arg1);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../graphics/ColorFilter.hpp"
-#include "../graphics/PorterDuff_Mode.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 #include "../graphics/Canvas.hpp"
+#include "../graphics/drawable/Drawable.hpp"
 #include "../net/Uri.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../content/res/ColorStateList.hpp"
+#include "../graphics/PorterDuff_Mode.hpp"
 #include "../graphics/BlendMode.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "ImageView_ScaleType.hpp"
 #include "../graphics/Matrix.hpp"
+#include "../graphics/ColorFilter.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -181,13 +182,6 @@ namespace __jni_impl::android::widget
 			"isOpaque",
 			"()Z");
 	}
-	void ImageView::setAlpha(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlpha",
-			"(I)V",
-			arg0);
-	}
 	void ImageView::setMaxHeight(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -214,45 +208,18 @@ namespace __jni_impl::android::widget
 			"getMaxWidth",
 			"()I");
 	}
+	void ImageView::setAlpha(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(I)V",
+			arg0);
+	}
 	void ImageView::clearColorFilter()
 	{
 		__thiz.callMethod<void>(
 			"clearColorFilter",
 			"()V");
-	}
-	QAndroidJniObject ImageView::getColorFilter()
-	{
-		return __thiz.callObjectMethod(
-			"getColorFilter",
-			"()Landroid/graphics/ColorFilter;");
-	}
-	void ImageView::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColorFilter",
-			"(Landroid/graphics/ColorFilter;)V",
-			arg0.__jniObject().object());
-	}
-	void ImageView::setColorFilter(jint arg0, __jni_impl::android::graphics::PorterDuff_Mode arg1)
-	{
-		__thiz.callMethod<void>(
-			"setColorFilter",
-			"(ILandroid/graphics/PorterDuff$Mode;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void ImageView::setColorFilter(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColorFilter",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject ImageView::getDrawable()
-	{
-		return __thiz.callObjectMethod(
-			"getDrawable",
-			"()Landroid/graphics/drawable/Drawable;");
 	}
 	QAndroidJniObject ImageView::getAccessibilityClassName()
 	{
@@ -508,6 +475,40 @@ namespace __jni_impl::android::widget
 			"setImageAlpha",
 			"(I)V",
 			arg0);
+	}
+	QAndroidJniObject ImageView::getDrawable()
+	{
+		return __thiz.callObjectMethod(
+			"getDrawable",
+			"()Landroid/graphics/drawable/Drawable;");
+	}
+	QAndroidJniObject ImageView::getColorFilter()
+	{
+		return __thiz.callObjectMethod(
+			"getColorFilter",
+			"()Landroid/graphics/ColorFilter;");
+	}
+	void ImageView::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorFilter",
+			"(Landroid/graphics/ColorFilter;)V",
+			arg0.__jniObject().object());
+	}
+	void ImageView::setColorFilter(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorFilter",
+			"(I)V",
+			arg0);
+	}
+	void ImageView::setColorFilter(jint arg0, __jni_impl::android::graphics::PorterDuff_Mode arg1)
+	{
+		__thiz.callMethod<void>(
+			"setColorFilter",
+			"(ILandroid/graphics/PorterDuff$Mode;)V",
+			arg0,
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::widget
 

@@ -7,19 +7,19 @@
 
 namespace __jni_impl::android::media::midi
 {
-	class MidiDeviceInfo;
+	class MidiManager_DeviceCallback;
 }
 namespace __jni_impl::android::os
 {
 	class Handler;
 }
-namespace __jni_impl::android::media::midi
-{
-	class MidiManager_DeviceCallback;
-}
 namespace __jni_impl::android::bluetooth
 {
 	class BluetoothDevice;
+}
+namespace __jni_impl::android::media::midi
+{
+	class MidiDeviceInfo;
 }
 
 namespace __jni_impl::android::media::midi
@@ -33,18 +33,18 @@ namespace __jni_impl::android::media::midi
 		void __constructor();
 		
 		// Methods
-		void openDevice(__jni_impl::android::media::midi::MidiDeviceInfo arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2);
-		QAndroidJniObject getDevices();
 		void registerDeviceCallback(__jni_impl::android::media::midi::MidiManager_DeviceCallback arg0, __jni_impl::android::os::Handler arg1);
 		void unregisterDeviceCallback(__jni_impl::android::media::midi::MidiManager_DeviceCallback arg0);
 		void openBluetoothDevice(__jni_impl::android::bluetooth::BluetoothDevice arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2);
+		QAndroidJniObject getDevices();
+		void openDevice(__jni_impl::android::media::midi::MidiDeviceInfo arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2);
 	};
 } // namespace __jni_impl::android::media::midi
 
-#include "MidiDeviceInfo.hpp"
-#include "../../os/Handler.hpp"
 #include "MidiManager_DeviceCallback.hpp"
+#include "../../os/Handler.hpp"
 #include "../../bluetooth/BluetoothDevice.hpp"
+#include "MidiDeviceInfo.hpp"
 
 namespace __jni_impl::android::media::midi
 {
@@ -59,21 +59,6 @@ namespace __jni_impl::android::media::midi
 	}
 	
 	// Methods
-	void MidiManager::openDevice(__jni_impl::android::media::midi::MidiDeviceInfo arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2)
-	{
-		__thiz.callMethod<void>(
-			"openDevice",
-			"(Landroid/media/midi/MidiDeviceInfo;Landroid/media/midi/MidiManager$OnDeviceOpenedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject MidiManager::getDevices()
-	{
-		return __thiz.callObjectMethod(
-			"getDevices",
-			"()[Landroid/media/midi/MidiDeviceInfo;");
-	}
 	void MidiManager::registerDeviceCallback(__jni_impl::android::media::midi::MidiManager_DeviceCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
 		__thiz.callMethod<void>(
@@ -94,6 +79,21 @@ namespace __jni_impl::android::media::midi
 		__thiz.callMethod<void>(
 			"openBluetoothDevice",
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/media/midi/MidiManager$OnDeviceOpenedListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject MidiManager::getDevices()
+	{
+		return __thiz.callObjectMethod(
+			"getDevices",
+			"()[Landroid/media/midi/MidiDeviceInfo;");
+	}
+	void MidiManager::openDevice(__jni_impl::android::media::midi::MidiDeviceInfo arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2)
+	{
+		__thiz.callMethod<void>(
+			"openDevice",
+			"(Landroid/media/midi/MidiDeviceInfo;Landroid/media/midi/MidiManager$OnDeviceOpenedListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());

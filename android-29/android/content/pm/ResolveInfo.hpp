@@ -63,9 +63,9 @@ namespace __jni_impl::android::content::pm
 		// Methods
 		QAndroidJniObject toString();
 		jint getIconResource();
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		QAndroidJniObject loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
 	};
@@ -194,6 +194,14 @@ namespace __jni_impl::android::content::pm
 			"getIconResource",
 			"()I");
 	}
+	void ResolveInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint ResolveInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -205,14 +213,6 @@ namespace __jni_impl::android::content::pm
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void ResolveInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1);
 	}

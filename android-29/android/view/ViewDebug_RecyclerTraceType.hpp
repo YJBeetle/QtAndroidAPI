@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_VIEWDEBUG_RECYCLERTRACETYPE
 #define ANDROID_VIEW_VIEWDEBUG_RECYCLERTRACETYPE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

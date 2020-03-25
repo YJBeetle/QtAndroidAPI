@@ -3,6 +3,9 @@
 #ifndef ANDROID_APP_INTENTSERVICE
 #define ANDROID_APP_INTENTSERVICE
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
 #include "Service.hpp"
 
 namespace __jni_impl::android::content

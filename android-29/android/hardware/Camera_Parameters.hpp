@@ -87,6 +87,9 @@ namespace __jni_impl::android::hardware
 		void set(jstring arg0, jint arg1);
 		QAndroidJniObject flatten();
 		void setZoom(jint arg0);
+		void setRotation(jint arg0);
+		jboolean isZoomSupported();
+		jint getMaxZoom();
 		void unflatten(jstring arg0);
 		void setPreviewSize(jint arg0, jint arg1);
 		QAndroidJniObject getPreviewSize();
@@ -169,9 +172,6 @@ namespace __jni_impl::android::hardware
 		void setVideoStabilization(jboolean arg0);
 		jboolean getVideoStabilization();
 		jboolean isVideoStabilizationSupported();
-		void setRotation(jint arg0);
-		jboolean isZoomSupported();
-		jint getMaxZoom();
 	};
 } // namespace __jni_impl::android::hardware
 
@@ -620,6 +620,25 @@ namespace __jni_impl::android::hardware
 			"setZoom",
 			"(I)V",
 			arg0);
+	}
+	void Camera_Parameters::setRotation(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRotation",
+			"(I)V",
+			arg0);
+	}
+	jboolean Camera_Parameters::isZoomSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isZoomSupported",
+			"()Z");
+	}
+	jint Camera_Parameters::getMaxZoom()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxZoom",
+			"()I");
 	}
 	void Camera_Parameters::unflatten(jstring arg0)
 	{
@@ -1146,25 +1165,6 @@ namespace __jni_impl::android::hardware
 		return __thiz.callMethod<jboolean>(
 			"isVideoStabilizationSupported",
 			"()Z");
-	}
-	void Camera_Parameters::setRotation(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRotation",
-			"(I)V",
-			arg0);
-	}
-	jboolean Camera_Parameters::isZoomSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isZoomSupported",
-			"()Z");
-	}
-	jint Camera_Parameters::getMaxZoom()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxZoom",
-			"()I");
 	}
 } // namespace __jni_impl::android::hardware
 

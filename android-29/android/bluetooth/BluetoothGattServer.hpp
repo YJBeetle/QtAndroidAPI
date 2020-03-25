@@ -11,15 +11,15 @@ namespace __jni_impl::android::bluetooth
 }
 namespace __jni_impl::android::bluetooth
 {
-	class BluetoothGattCharacteristic;
-}
-namespace __jni_impl::android::bluetooth
-{
 	class BluetoothGattService;
 }
 namespace __jni_impl::java::util
 {
 	class UUID;
+}
+namespace __jni_impl::android::bluetooth
+{
+	class BluetoothGattCharacteristic;
 }
 
 namespace __jni_impl::android::bluetooth
@@ -35,6 +35,7 @@ namespace __jni_impl::android::bluetooth
 		// Methods
 		jboolean connect(__jni_impl::android::bluetooth::BluetoothDevice arg0, jboolean arg1);
 		void close();
+		QAndroidJniObject getService(__jni_impl::java::util::UUID arg0);
 		void setPreferredPhy(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3);
 		void readPhy(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		QAndroidJniObject getServices();
@@ -47,14 +48,13 @@ namespace __jni_impl::android::bluetooth
 		jboolean addService(__jni_impl::android::bluetooth::BluetoothGattService arg0);
 		jboolean removeService(__jni_impl::android::bluetooth::BluetoothGattService arg0);
 		void clearServices();
-		QAndroidJniObject getService(__jni_impl::java::util::UUID arg0);
 	};
 } // namespace __jni_impl::android::bluetooth
 
 #include "BluetoothDevice.hpp"
-#include "BluetoothGattCharacteristic.hpp"
 #include "BluetoothGattService.hpp"
 #include "../../java/util/UUID.hpp"
+#include "BluetoothGattCharacteristic.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -82,6 +82,13 @@ namespace __jni_impl::android::bluetooth
 		__thiz.callMethod<void>(
 			"close",
 			"()V");
+	}
+	QAndroidJniObject BluetoothGattServer::getService(__jni_impl::java::util::UUID arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getService",
+			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattService;",
+			arg0.__jniObject().object());
 	}
 	void BluetoothGattServer::setPreferredPhy(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -172,13 +179,6 @@ namespace __jni_impl::android::bluetooth
 		__thiz.callMethod<void>(
 			"clearServices",
 			"()V");
-	}
-	QAndroidJniObject BluetoothGattServer::getService(__jni_impl::java::util::UUID arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getService",
-			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattService;",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::bluetooth
 

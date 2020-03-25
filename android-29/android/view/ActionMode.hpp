@@ -31,18 +31,18 @@ namespace __jni_impl::android::view
 		jint getType();
 		QAndroidJniObject getTag();
 		void finish();
-		void setType(jint arg0);
 		void setSubtitle(jstring arg0);
 		void setSubtitle(jint arg0);
 		QAndroidJniObject getSubtitle();
+		void setType(jint arg0);
 		void hide(jlong arg0);
+		void invalidate();
+		void setTag(jobject arg0);
 		void onWindowFocusChanged(jboolean arg0);
 		QAndroidJniObject getMenuInflater();
 		void setTitle(jstring arg0);
 		void setTitle(jint arg0);
 		QAndroidJniObject getTitle();
-		void invalidate();
-		void setTag(jobject arg0);
 		jboolean getTitleOptionalHint();
 		jboolean isTitleOptional();
 		void setCustomView(__jni_impl::android::view::View arg0);
@@ -105,13 +105,6 @@ namespace __jni_impl::android::view
 			"finish",
 			"()V");
 	}
-	void ActionMode::setType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setType",
-			"(I)V",
-			arg0);
-	}
 	void ActionMode::setSubtitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -132,11 +125,31 @@ namespace __jni_impl::android::view
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;");
 	}
+	void ActionMode::setType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setType",
+			"(I)V",
+			arg0);
+	}
 	void ActionMode::hide(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"hide",
 			"(J)V",
+			arg0);
+	}
+	void ActionMode::invalidate()
+	{
+		__thiz.callMethod<void>(
+			"invalidate",
+			"()V");
+	}
+	void ActionMode::setTag(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTag",
+			"(Ljava/lang/Object;)V",
 			arg0);
 	}
 	void ActionMode::onWindowFocusChanged(jboolean arg0)
@@ -171,19 +184,6 @@ namespace __jni_impl::android::view
 		return __thiz.callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;");
-	}
-	void ActionMode::invalidate()
-	{
-		__thiz.callMethod<void>(
-			"invalidate",
-			"()V");
-	}
-	void ActionMode::setTag(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTag",
-			"(Ljava/lang/Object;)V",
-			arg0);
 	}
 	jboolean ActionMode::getTitleOptionalHint()
 	{

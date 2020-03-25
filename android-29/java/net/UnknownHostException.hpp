@@ -3,6 +3,8 @@
 #ifndef JAVA_NET_UNKNOWNHOSTEXCEPTION
 #define JAVA_NET_UNKNOWNHOSTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
 
 

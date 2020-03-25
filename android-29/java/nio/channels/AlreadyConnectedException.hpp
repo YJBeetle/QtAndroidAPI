@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_CHANNELS_ALREADYCONNECTEDEXCEPTION
 #define JAVA_NIO_CHANNELS_ALREADYCONNECTEDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalStateException.hpp"
 
 

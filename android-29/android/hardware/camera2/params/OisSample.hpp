@@ -20,8 +20,8 @@ namespace __jni_impl::android::hardware::camera2::params
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		jfloat getYshift();
 		jfloat getXshift();
+		jfloat getYshift();
 		jlong getTimestamp();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
@@ -62,16 +62,16 @@ namespace __jni_impl::android::hardware::camera2::params
 			"hashCode",
 			"()I");
 	}
-	jfloat OisSample::getYshift()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getYshift",
-			"()F");
-	}
 	jfloat OisSample::getXshift()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getXshift",
+			"()F");
+	}
+	jfloat OisSample::getYshift()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getYshift",
 			"()F");
 	}
 	jlong OisSample::getTimestamp()

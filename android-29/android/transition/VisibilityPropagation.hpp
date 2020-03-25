@@ -3,6 +3,7 @@
 #ifndef ANDROID_TRANSITION_VISIBILITYPROPAGATION
 #define ANDROID_TRANSITION_VISIBILITYPROPAGATION
 
+#include "../../__JniBaseClass.hpp"
 #include "TransitionPropagation.hpp"
 
 namespace __jni_impl::android::transition

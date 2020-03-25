@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_IDNA_ERROR
 #define ANDROID_ICU_TEXT_IDNA_ERROR
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

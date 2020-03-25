@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_ARITHMETICEXCEPTION
 #define JAVA_LANG_ARITHMETICEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "RuntimeException.hpp"
 
 

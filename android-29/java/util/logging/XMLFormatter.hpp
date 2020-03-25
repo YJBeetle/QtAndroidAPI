@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_LOGGING_XMLFORMATTER
 #define JAVA_UTIL_LOGGING_XMLFORMATTER
 
+#include "../../../__JniBaseClass.hpp"
 #include "Formatter.hpp"
 
 namespace __jni_impl::java::util::logging

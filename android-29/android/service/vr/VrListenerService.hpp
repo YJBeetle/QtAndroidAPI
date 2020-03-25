@@ -3,12 +3,11 @@
 #ifndef ANDROID_SERVICE_VR_VRLISTENERSERVICE
 #define ANDROID_SERVICE_VR_VRLISTENERSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::content
 {
 	class ComponentName;
@@ -16,6 +15,10 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::service::vr
@@ -30,15 +33,15 @@ namespace __jni_impl::android::service::vr
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onCurrentVrActivityChanged(__jni_impl::android::content::ComponentName arg0);
 		static jboolean isVrModePackageEnabled(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::service::vr
 
-#include "../../content/Intent.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::vr
 {
@@ -60,13 +63,6 @@ namespace __jni_impl::android::service::vr
 	}
 	
 	// Methods
-	QAndroidJniObject VrListenerService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
-	}
 	void VrListenerService::onCurrentVrActivityChanged(__jni_impl::android::content::ComponentName arg0)
 	{
 		__thiz.callMethod<void>(
@@ -82,6 +78,13 @@ namespace __jni_impl::android::service::vr
 			"(Landroid/content/Context;Landroid/content/ComponentName;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
+	}
+	QAndroidJniObject VrListenerService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::service::vr
 

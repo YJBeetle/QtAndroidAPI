@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_LAYOUT_ALIGNMENT
 #define ANDROID_TEXT_LAYOUT_ALIGNMENT
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

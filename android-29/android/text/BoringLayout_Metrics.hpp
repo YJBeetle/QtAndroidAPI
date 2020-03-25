@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_BORINGLAYOUT_METRICS
 #define ANDROID_TEXT_BORINGLAYOUT_METRICS
 
+#include "../../__JniBaseClass.hpp"
 #include "../graphics/Paint_FontMetricsInt.hpp"
 
 

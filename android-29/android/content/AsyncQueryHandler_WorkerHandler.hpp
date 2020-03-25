@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_ASYNCQUERYHANDLER_WORKERHANDLER
 #define ANDROID_CONTENT_ASYNCQUERYHANDLER_WORKERHANDLER
 
+#include "../../__JniBaseClass.hpp"
 #include "../os/Handler.hpp"
 
 namespace __jni_impl::android::content

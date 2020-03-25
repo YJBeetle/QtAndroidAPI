@@ -18,8 +18,8 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		QAndroidJniObject getContext();
-		void setContext(jobject arg0);
 		jint classify(jint arg0);
+		void setContext(jobject arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -44,18 +44,18 @@ namespace __jni_impl::android::icu::text
 			"getContext",
 			"()Ljava/lang/Object;");
 	}
-	void BidiClassifier::setContext(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContext",
-			"(Ljava/lang/Object;)V",
-			arg0);
-	}
 	jint BidiClassifier::classify(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"classify",
 			"(I)I",
+			arg0);
+	}
+	void BidiClassifier::setContext(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContext",
+			"(Ljava/lang/Object;)V",
 			arg0);
 	}
 } // namespace __jni_impl::android::icu::text

@@ -3,6 +3,9 @@
 #ifndef JAVAX_NET_SSL_SSLPROTOCOLEXCEPTION
 #define JAVAX_NET_SSL_SSLPROTOCOLEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/io/IOException.hpp"
 #include "SSLException.hpp"
 
 

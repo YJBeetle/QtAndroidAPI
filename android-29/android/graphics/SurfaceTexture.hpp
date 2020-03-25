@@ -24,9 +24,8 @@ namespace __jni_impl::android::graphics
 		
 		// Methods
 		void release();
-		jlong getTimestamp();
-		void setOnFrameAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void setOnFrameAvailableListener(__jni_impl::__JniBaseClass arg0);
+		void setOnFrameAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void setDefaultBufferSize(jint arg0, jint arg1);
 		void updateTexImage();
 		void releaseTexImage();
@@ -34,6 +33,7 @@ namespace __jni_impl::android::graphics
 		void attachToGLContext(jint arg0);
 		void getTransformMatrix(jfloatArray arg0);
 		jboolean isReleased();
+		jlong getTimestamp();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -74,11 +74,12 @@ namespace __jni_impl::android::graphics
 			"release",
 			"()V");
 	}
-	jlong SurfaceTexture::getTimestamp()
+	void SurfaceTexture::setOnFrameAvailableListener(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"getTimestamp",
-			"()J");
+		__thiz.callMethod<void>(
+			"setOnFrameAvailableListener",
+			"(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V",
+			arg0.__jniObject().object());
 	}
 	void SurfaceTexture::setOnFrameAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -87,13 +88,6 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
-	}
-	void SurfaceTexture::setOnFrameAvailableListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnFrameAvailableListener",
-			"(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V",
-			arg0.__jniObject().object());
 	}
 	void SurfaceTexture::setDefaultBufferSize(jint arg0, jint arg1)
 	{
@@ -140,6 +134,12 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"isReleased",
 			"()Z");
+	}
+	jlong SurfaceTexture::getTimestamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimestamp",
+			"()J");
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -3,6 +3,9 @@
 #ifndef JAVA_NET_SOCKETTIMEOUTEXCEPTION
 #define JAVA_NET_SOCKETTIMEOUTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
 #include "../io/InterruptedIOException.hpp"
 
 

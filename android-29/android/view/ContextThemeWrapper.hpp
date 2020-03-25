@@ -3,6 +3,8 @@
 #ifndef ANDROID_VIEW_CONTEXTTHEMEWRAPPER
 #define ANDROID_VIEW_CONTEXTTHEMEWRAPPER
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
 namespace __jni_impl::android::content
@@ -41,8 +43,8 @@ namespace __jni_impl::android::view
 		// Methods
 		QAndroidJniObject getResources();
 		QAndroidJniObject getAssets();
-		void setTheme(jint arg0);
 		void setTheme(__jni_impl::android::content::res::Resources_Theme arg0);
+		void setTheme(jint arg0);
 		QAndroidJniObject getTheme();
 		QAndroidJniObject getSystemService(jstring arg0);
 		void applyOverrideConfiguration(__jni_impl::android::content::res::Configuration arg0);
@@ -96,19 +98,19 @@ namespace __jni_impl::android::view
 			"getAssets",
 			"()Landroid/content/res/AssetManager;");
 	}
-	void ContextThemeWrapper::setTheme(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTheme",
-			"(I)V",
-			arg0);
-	}
 	void ContextThemeWrapper::setTheme(__jni_impl::android::content::res::Resources_Theme arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
 			arg0.__jniObject().object());
+	}
+	void ContextThemeWrapper::setTheme(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTheme",
+			"(I)V",
+			arg0);
 	}
 	QAndroidJniObject ContextThemeWrapper::getTheme()
 	{

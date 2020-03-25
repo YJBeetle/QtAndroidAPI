@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_BYTEARRAYINPUTSTREAM
 #define JAVA_IO_BYTEARRAYINPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
 #include "InputStream.hpp"
 
 namespace __jni_impl::java::io

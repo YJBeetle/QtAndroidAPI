@@ -3,6 +3,9 @@
 #ifndef JAVA_LANG_REFLECT_GENERICSIGNATUREFORMATERROR
 #define JAVA_LANG_REFLECT_GENERICSIGNATUREFORMATERROR
 
+#include "../../../__JniBaseClass.hpp"
+#include "../Error.hpp"
+#include "../LinkageError.hpp"
 #include "../ClassFormatError.hpp"
 
 

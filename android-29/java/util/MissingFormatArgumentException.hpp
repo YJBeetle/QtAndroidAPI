@@ -3,6 +3,10 @@
 #ifndef JAVA_UTIL_MISSINGFORMATARGUMENTEXCEPTION
 #define JAVA_UTIL_MISSINGFORMATARGUMENTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
+#include "../lang/IllegalArgumentException.hpp"
 #include "IllegalFormatException.hpp"
 
 

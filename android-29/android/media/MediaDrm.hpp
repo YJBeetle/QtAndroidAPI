@@ -80,17 +80,23 @@ namespace __jni_impl::android::media
 		QAndroidJniObject getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, __jni_impl::java::util::HashMap arg4);
 		QAndroidJniObject provideKeyResponse(jbyteArray arg0, jbyteArray arg1);
 		void restoreKeys(jbyteArray arg0, jbyteArray arg1);
-		QAndroidJniObject openSession();
-		QAndroidJniObject openSession(jint arg0);
 		QAndroidJniObject getMetrics();
-		void setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1);
+		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0);
+		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1, jint arg2);
+		QAndroidJniObject openSession(jint arg0);
+		QAndroidJniObject openSession();
+		void setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void setOnEventListener(__jni_impl::__JniBaseClass arg0);
 		void setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void clearOnExpirationUpdateListener();
 		void setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		void setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void clearOnKeyStatusChangeListener();
-		void setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void clearOnSessionLostStateListener();
 		void clearOnEventListener();
 		void closeSession(jbyteArray arg0);
@@ -119,12 +125,6 @@ namespace __jni_impl::android::media
 		QAndroidJniObject getPropertyByteArray(jstring arg0);
 		void setPropertyByteArray(jstring arg0, jbyteArray arg1);
 		QAndroidJniObject getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2);
-		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1);
-		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0);
-		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1, jint arg2);
-		void setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void setOnEventListener(__jni_impl::__JniBaseClass arg0);
-		void setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -374,11 +374,38 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1);
 	}
-	QAndroidJniObject MediaDrm::openSession()
+	QAndroidJniObject MediaDrm::getMetrics()
 	{
 		return __thiz.callObjectMethod(
-			"openSession",
-			"()[B");
+			"getMetrics",
+			"()Landroid/os/PersistableBundle;");
+	}
+	jboolean MediaDrm::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.media.MediaDrm",
+			"isCryptoSchemeSupported",
+			"(Ljava/util/UUID;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jboolean MediaDrm::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.media.MediaDrm",
+			"isCryptoSchemeSupported",
+			"(Ljava/util/UUID;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean MediaDrm::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.media.MediaDrm",
+			"isCryptoSchemeSupported",
+			"(Ljava/util/UUID;Ljava/lang/String;I)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2);
 	}
 	QAndroidJniObject MediaDrm::openSession(jint arg0)
 	{
@@ -387,25 +414,48 @@ namespace __jni_impl::android::media
 			"(I)[B",
 			arg0);
 	}
-	QAndroidJniObject MediaDrm::getMetrics()
+	QAndroidJniObject MediaDrm::openSession()
 	{
 		return __thiz.callObjectMethod(
-			"getMetrics",
-			"()Landroid/os/PersistableBundle;");
+			"openSession",
+			"()[B");
 	}
-	void MediaDrm::setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
-			"setOnExpirationUpdateListener",
-			"(Landroid/media/MediaDrm$OnExpirationUpdateListener;Landroid/os/Handler;)V",
+			"setOnEventListener",
+			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnEventListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
+	}
+	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnEventListener",
+			"(Landroid/media/MediaDrm$OnEventListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnEventListener",
+			"(Landroid/media/MediaDrm$OnEventListener;)V",
+			arg0.__jniObject().object());
 	}
 	void MediaDrm::setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
 			"setOnExpirationUpdateListener",
 			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnExpirationUpdateListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void MediaDrm::setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnExpirationUpdateListener",
+			"(Landroid/media/MediaDrm$OnExpirationUpdateListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
@@ -437,19 +487,19 @@ namespace __jni_impl::android::media
 			"clearOnKeyStatusChangeListener",
 			"()V");
 	}
-	void MediaDrm::setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnSessionLostStateListener",
-			"(Landroid/media/MediaDrm$OnSessionLostStateListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	void MediaDrm::setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
 			"setOnSessionLostStateListener",
 			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnSessionLostStateListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void MediaDrm::setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnSessionLostStateListener",
+			"(Landroid/media/MediaDrm$OnSessionLostStateListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
@@ -640,56 +690,6 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1,
 			arg2);
-	}
-	jboolean MediaDrm::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.media.MediaDrm",
-			"isCryptoSchemeSupported",
-			"(Ljava/util/UUID;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	jboolean MediaDrm::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.media.MediaDrm",
-			"isCryptoSchemeSupported",
-			"(Ljava/util/UUID;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean MediaDrm::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.media.MediaDrm",
-			"isCryptoSchemeSupported",
-			"(Ljava/util/UUID;Ljava/lang/String;I)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2);
-	}
-	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnEventListener",
-			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnEventListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnEventListener",
-			"(Landroid/media/MediaDrm$OnEventListener;)V",
-			arg0.__jniObject().object());
-	}
-	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnEventListener",
-			"(Landroid/media/MediaDrm$OnEventListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media
 

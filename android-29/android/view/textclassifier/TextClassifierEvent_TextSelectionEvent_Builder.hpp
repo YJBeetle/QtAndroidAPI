@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_TEXTCLASSIFIER_TEXTCLASSIFIEREVENT_TEXTSELECTIONEVENT_BUILDER
 #define ANDROID_VIEW_TEXTCLASSIFIER_TEXTCLASSIFIEREVENT_TEXTSELECTIONEVENT_BUILDER
 
+#include "../../../__JniBaseClass.hpp"
 #include "TextClassifierEvent_Builder.hpp"
 
 namespace __jni_impl::android::view::textclassifier

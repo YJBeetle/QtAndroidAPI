@@ -3,6 +3,7 @@
 #ifndef ANDROID_OPENGL_EGLDISPLAY
 #define ANDROID_OPENGL_EGLDISPLAY
 
+#include "../../__JniBaseClass.hpp"
 #include "EGLObjectHandle.hpp"
 
 

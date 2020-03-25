@@ -3,6 +3,7 @@
 #ifndef ANDROID_DATABASE_MERGECURSOR
 #define ANDROID_DATABASE_MERGECURSOR
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractCursor.hpp"
 
 namespace __jni_impl::android::database

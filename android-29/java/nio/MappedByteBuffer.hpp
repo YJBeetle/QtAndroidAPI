@@ -3,6 +3,8 @@
 #ifndef JAVA_NIO_MAPPEDBYTEBUFFER
 #define JAVA_NIO_MAPPEDBYTEBUFFER
 
+#include "../../__JniBaseClass.hpp"
+#include "Buffer.hpp"
 #include "ByteBuffer.hpp"
 
 namespace __jni_impl::java::io

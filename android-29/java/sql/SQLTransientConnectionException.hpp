@@ -3,6 +3,9 @@
 #ifndef JAVA_SQL_SQLTRANSIENTCONNECTIONEXCEPTION
 #define JAVA_SQL_SQLTRANSIENTCONNECTIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "SQLException.hpp"
 #include "SQLTransientException.hpp"
 
 

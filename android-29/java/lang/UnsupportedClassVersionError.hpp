@@ -3,6 +3,9 @@
 #ifndef JAVA_LANG_UNSUPPORTEDCLASSVERSIONERROR
 #define JAVA_LANG_UNSUPPORTEDCLASSVERSIONERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
+#include "LinkageError.hpp"
 #include "ClassFormatError.hpp"
 
 

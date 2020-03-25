@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_UTIL_CURRENCYAMOUNT
 #define ANDROID_ICU_UTIL_CURRENCYAMOUNT
 
+#include "../../../__JniBaseClass.hpp"
 #include "Measure.hpp"
 
 namespace __jni_impl::java::util

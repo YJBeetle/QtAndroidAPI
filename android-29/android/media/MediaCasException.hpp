@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_MEDIACASEXCEPTION
 #define ANDROID_MEDIA_MEDIACASEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 

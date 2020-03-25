@@ -3,23 +3,24 @@
 #ifndef ANDROID_INPUTMETHODSERVICE_INPUTMETHODSERVICE_INPUTMETHODIMPL
 #define ANDROID_INPUTMETHODSERVICE_INPUTMETHODSERVICE_INPUTMETHODIMPL
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractInputMethodService_AbstractInputMethodImpl.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {
 	class InputMethodService;
 }
-namespace __jni_impl::android::view::inputmethod
+namespace __jni_impl::android::os
 {
-	class InputBinding;
+	class ResultReceiver;
 }
 namespace __jni_impl::android::view::inputmethod
 {
 	class EditorInfo;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::view::inputmethod
 {
-	class ResultReceiver;
+	class InputBinding;
 }
 namespace __jni_impl::android::view::inputmethod
 {
@@ -37,21 +38,21 @@ namespace __jni_impl::android::inputmethodservice
 		void __constructor(__jni_impl::android::inputmethodservice::InputMethodService arg0);
 		
 		// Methods
+		void showSoftInput(jint arg0, __jni_impl::android::os::ResultReceiver arg1);
+		void restartInput(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::EditorInfo arg1);
 		void attachToken(__jni_impl::__JniBaseClass arg0);
 		void bindInput(__jni_impl::android::view::inputmethod::InputBinding arg0);
 		void unbindInput();
 		void startInput(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::EditorInfo arg1);
 		void hideSoftInput(jint arg0, __jni_impl::android::os::ResultReceiver arg1);
 		void changeInputMethodSubtype(__jni_impl::android::view::inputmethod::InputMethodSubtype arg0);
-		void showSoftInput(jint arg0, __jni_impl::android::os::ResultReceiver arg1);
-		void restartInput(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::EditorInfo arg1);
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
 #include "InputMethodService.hpp"
-#include "../view/inputmethod/InputBinding.hpp"
-#include "../view/inputmethod/EditorInfo.hpp"
 #include "../os/ResultReceiver.hpp"
+#include "../view/inputmethod/EditorInfo.hpp"
+#include "../view/inputmethod/InputBinding.hpp"
 #include "../view/inputmethod/InputMethodSubtype.hpp"
 
 namespace __jni_impl::android::inputmethodservice
@@ -68,6 +69,22 @@ namespace __jni_impl::android::inputmethodservice
 	}
 	
 	// Methods
+	void InputMethodService_InputMethodImpl::showSoftInput(jint arg0, __jni_impl::android::os::ResultReceiver arg1)
+	{
+		__thiz.callMethod<void>(
+			"showSoftInput",
+			"(ILandroid/os/ResultReceiver;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void InputMethodService_InputMethodImpl::restartInput(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::EditorInfo arg1)
+	{
+		__thiz.callMethod<void>(
+			"restartInput",
+			"(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
 	void InputMethodService_InputMethodImpl::attachToken(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -110,22 +127,6 @@ namespace __jni_impl::android::inputmethodservice
 			"changeInputMethodSubtype",
 			"(Landroid/view/inputmethod/InputMethodSubtype;)V",
 			arg0.__jniObject().object());
-	}
-	void InputMethodService_InputMethodImpl::showSoftInput(jint arg0, __jni_impl::android::os::ResultReceiver arg1)
-	{
-		__thiz.callMethod<void>(
-			"showSoftInput",
-			"(ILandroid/os/ResultReceiver;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void InputMethodService_InputMethodImpl::restartInput(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::EditorInfo arg1)
-	{
-		__thiz.callMethod<void>(
-			"restartInput",
-			"(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::inputmethodservice
 

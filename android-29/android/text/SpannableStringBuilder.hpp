@@ -28,31 +28,31 @@ namespace __jni_impl::android::text
 		QAndroidJniObject toString();
 		QAndroidJniObject append(jchar arg0);
 		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
-		QAndroidJniObject append(jstring arg0);
 		QAndroidJniObject append(jstring arg0, jobject arg1, jint arg2);
+		QAndroidJniObject append(jstring arg0);
 		jint hashCode();
 		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);
 		static QAndroidJniObject valueOf(jstring arg0);
 		void clear();
 		jchar charAt(jint arg0);
-		QAndroidJniObject replace(jint arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
 		QAndroidJniObject replace(jint arg0, jint arg1, jstring arg2);
+		QAndroidJniObject replace(jint arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
 		QAndroidJniObject subSequence(jint arg0, jint arg1);
 		QAndroidJniObject _delete(jint arg0, jint arg1);
 		QAndroidJniObject insert(jint arg0, jstring arg1, jint arg2, jint arg3);
 		QAndroidJniObject insert(jint arg0, jstring arg1);
+		void setSpan(jobject arg0, jint arg1, jint arg2, jint arg3);
+		void removeSpan(jobject arg0);
 		void setFilters(jarray arg0);
 		QAndroidJniObject getFilters();
+		jint getTextWatcherDepth();
 		jint getTextRunCursor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint arg5);
 		QAndroidJniObject getSpans(jint arg0, jint arg1, jclass arg2);
 		jint getSpanStart(jobject arg0);
 		jint getSpanEnd(jobject arg0);
 		jint getSpanFlags(jobject arg0);
 		jint nextSpanTransition(jint arg0, jint arg1, jclass arg2);
-		void setSpan(jobject arg0, jint arg1, jint arg2, jint arg3);
-		void removeSpan(jobject arg0);
 		void clearSpans();
-		jint getTextWatcherDepth();
 	};
 } // namespace __jni_impl::android::text
 
@@ -122,13 +122,6 @@ namespace __jni_impl::android::text
 			arg1,
 			arg2);
 	}
-	QAndroidJniObject SpannableStringBuilder::append(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
-			arg0);
-	}
 	QAndroidJniObject SpannableStringBuilder::append(jstring arg0, jobject arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -137,6 +130,13 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2);
+	}
+	QAndroidJniObject SpannableStringBuilder::append(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
+			arg0);
 	}
 	jint SpannableStringBuilder::hashCode()
 	{
@@ -175,6 +175,15 @@ namespace __jni_impl::android::text
 			"(I)C",
 			arg0);
 	}
+	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2)
+	{
+		return __thiz.callObjectMethod(
+			"replace",
+			"(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
+			arg0,
+			arg1,
+			arg2);
+	}
 	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 	{
 		return __thiz.callObjectMethod(
@@ -185,15 +194,6 @@ namespace __jni_impl::android::text
 			arg2,
 			arg3,
 			arg4);
-	}
-	QAndroidJniObject SpannableStringBuilder::replace(jint arg0, jint arg1, jstring arg2)
-	{
-		return __thiz.callObjectMethod(
-			"replace",
-			"(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;",
-			arg0,
-			arg1,
-			arg2);
 	}
 	QAndroidJniObject SpannableStringBuilder::subSequence(jint arg0, jint arg1)
 	{
@@ -229,6 +229,23 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1);
 	}
+	void SpannableStringBuilder::setSpan(jobject arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"setSpan",
+			"(Ljava/lang/Object;III)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
+	void SpannableStringBuilder::removeSpan(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeSpan",
+			"(Ljava/lang/Object;)V",
+			arg0);
+	}
 	void SpannableStringBuilder::setFilters(jarray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -241,6 +258,12 @@ namespace __jni_impl::android::text
 		return __thiz.callObjectMethod(
 			"getFilters",
 			"()[Landroid/text/InputFilter;");
+	}
+	jint SpannableStringBuilder::getTextWatcherDepth()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextWatcherDepth",
+			"()I");
 	}
 	jint SpannableStringBuilder::getTextRunCursor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint arg5)
 	{
@@ -293,34 +316,11 @@ namespace __jni_impl::android::text
 			arg1,
 			arg2);
 	}
-	void SpannableStringBuilder::setSpan(jobject arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"setSpan",
-			"(Ljava/lang/Object;III)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	void SpannableStringBuilder::removeSpan(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeSpan",
-			"(Ljava/lang/Object;)V",
-			arg0);
-	}
 	void SpannableStringBuilder::clearSpans()
 	{
 		__thiz.callMethod<void>(
 			"clearSpans",
 			"()V");
-	}
-	jint SpannableStringBuilder::getTextWatcherDepth()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextWatcherDepth",
-			"()I");
 	}
 } // namespace __jni_impl::android::text
 

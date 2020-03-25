@@ -3,6 +3,8 @@
 #ifndef ANDROID_ICU_TEXT_NUMBERFORMAT
 #define ANDROID_ICU_TEXT_NUMBERFORMAT
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/text/Format.hpp"
 #include "UFormat.hpp"
 
 namespace __jni_impl::java::lang
@@ -115,9 +117,9 @@ namespace __jni_impl::android::icu::text
 		void setMaximumIntegerDigits(jint arg0);
 		jboolean isParseIntegerOnly();
 		void setParseIntegerOnly(jboolean arg0);
-		static QAndroidJniObject getScientificInstance();
 		static QAndroidJniObject getScientificInstance(__jni_impl::android::icu::util::ULocale arg0);
 		static QAndroidJniObject getScientificInstance(__jni_impl::java::util::Locale arg0);
+		static QAndroidJniObject getScientificInstance();
 		jboolean isGroupingUsed();
 		jint getMaximumIntegerDigits();
 		jint getMinimumIntegerDigits();
@@ -130,19 +132,19 @@ namespace __jni_impl::android::icu::text
 		void setRoundingMode(jint arg0);
 		jint getRoundingMode();
 		QAndroidJniObject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
-		static QAndroidJniObject getCurrencyInstance();
 		static QAndroidJniObject getCurrencyInstance(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getCurrencyInstance(__jni_impl::android::icu::util::ULocale arg0);
-		static QAndroidJniObject getNumberInstance();
+		static QAndroidJniObject getCurrencyInstance();
 		static QAndroidJniObject getNumberInstance(__jni_impl::android::icu::util::ULocale arg0);
 		static QAndroidJniObject getNumberInstance(__jni_impl::java::util::Locale arg0);
+		static QAndroidJniObject getNumberInstance();
 		static QAndroidJniObject getPercentInstance();
-		static QAndroidJniObject getPercentInstance(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getPercentInstance(__jni_impl::android::icu::util::ULocale arg0);
-		void setContext(__jni_impl::android::icu::text::DisplayContext arg0);
+		static QAndroidJniObject getPercentInstance(__jni_impl::java::util::Locale arg0);
 		QAndroidJniObject parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 		void setParseStrict(jboolean arg0);
 		jboolean isParseStrict();
+		void setContext(__jni_impl::android::icu::text::DisplayContext arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -504,13 +506,6 @@ namespace __jni_impl::android::icu::text
 			"(Z)V",
 			arg0);
 	}
-	QAndroidJniObject NumberFormat::getScientificInstance()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.NumberFormat",
-			"getScientificInstance",
-			"()Landroid/icu/text/NumberFormat;");
-	}
 	QAndroidJniObject NumberFormat::getScientificInstance(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -526,6 +521,13 @@ namespace __jni_impl::android::icu::text
 			"getScientificInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject NumberFormat::getScientificInstance()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.NumberFormat",
+			"getScientificInstance",
+			"()Landroid/icu/text/NumberFormat;");
 	}
 	jboolean NumberFormat::isGroupingUsed()
 	{
@@ -605,13 +607,6 @@ namespace __jni_impl::android::icu::text
 			arg0,
 			arg1.__jniObject().object());
 	}
-	QAndroidJniObject NumberFormat::getCurrencyInstance()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.NumberFormat",
-			"getCurrencyInstance",
-			"()Landroid/icu/text/NumberFormat;");
-	}
 	QAndroidJniObject NumberFormat::getCurrencyInstance(__jni_impl::java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -628,11 +623,11 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberFormat;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject NumberFormat::getNumberInstance()
+	QAndroidJniObject NumberFormat::getCurrencyInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
-			"getNumberInstance",
+			"getCurrencyInstance",
 			"()Landroid/icu/text/NumberFormat;");
 	}
 	QAndroidJniObject NumberFormat::getNumberInstance(__jni_impl::android::icu::util::ULocale arg0)
@@ -651,20 +646,19 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject NumberFormat::getNumberInstance()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.NumberFormat",
+			"getNumberInstance",
+			"()Landroid/icu/text/NumberFormat;");
+	}
 	QAndroidJniObject NumberFormat::getPercentInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.NumberFormat",
 			"getPercentInstance",
 			"()Landroid/icu/text/NumberFormat;");
-	}
-	QAndroidJniObject NumberFormat::getPercentInstance(__jni_impl::java::util::Locale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.NumberFormat",
-			"getPercentInstance",
-			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject NumberFormat::getPercentInstance(__jni_impl::android::icu::util::ULocale arg0)
 	{
@@ -674,11 +668,12 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/NumberFormat;",
 			arg0.__jniObject().object());
 	}
-	void NumberFormat::setContext(__jni_impl::android::icu::text::DisplayContext arg0)
+	QAndroidJniObject NumberFormat::getPercentInstance(__jni_impl::java::util::Locale arg0)
 	{
-		__thiz.callMethod<void>(
-			"setContext",
-			"(Landroid/icu/text/DisplayContext;)V",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.NumberFormat",
+			"getPercentInstance",
+			"(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;",
 			arg0.__jniObject().object());
 	}
 	QAndroidJniObject NumberFormat::parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
@@ -701,6 +696,13 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"isParseStrict",
 			"()Z");
+	}
+	void NumberFormat::setContext(__jni_impl::android::icu::text::DisplayContext arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContext",
+			"(Landroid/icu/text/DisplayContext;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::icu::text
 

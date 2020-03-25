@@ -3,11 +3,21 @@
 #ifndef ANDROID_WIDGET_ABSSEEKBAR
 #define ANDROID_WIDGET_ABSSEEKBAR
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "ProgressBar.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
 }
 namespace __jni_impl::android::content::res
 {
@@ -29,14 +39,6 @@ namespace __jni_impl::android::view
 {
 	class MotionEvent;
 }
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
-}
 
 namespace __jni_impl::android::widget
 {
@@ -52,25 +54,13 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setMax(jint arg0);
-		void setThumbTintList(__jni_impl::android::content::res::ColorStateList arg0);
-		QAndroidJniObject getThumbTintList();
-		void setThumbTintMode(__jni_impl::android::graphics::PorterDuff_Mode arg0);
-		void setThumbTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
-		QAndroidJniObject getThumbTintMode();
-		QAndroidJniObject getThumbTintBlendMode();
-		void setSplitTrack(jboolean arg0);
-		jboolean getSplitTrack();
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		QAndroidJniObject getAccessibilityClassName();
 		void jumpDrawablesToCurrentState();
 		void setSystemGestureExclusionRects(__jni_impl::__JniBaseClass arg0);
 		void onRtlPropertiesChanged(jint arg0);
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		void setMin(jint arg0);
-		jint getThumbOffset();
 		void setThumb(__jni_impl::android::graphics::drawable::Drawable arg0);
+		jint getThumbOffset();
 		QAndroidJniObject getThumb();
 		void setThumbOffset(jint arg0);
 		void setTickMark(__jni_impl::android::graphics::drawable::Drawable arg0);
@@ -83,17 +73,29 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getTickMarkTintBlendMode();
 		void setKeyProgressIncrement(jint arg0);
 		jint getKeyProgressIncrement();
+		void setMax(jint arg0);
+		void setThumbTintList(__jni_impl::android::content::res::ColorStateList arg0);
+		QAndroidJniObject getThumbTintList();
+		void setThumbTintMode(__jni_impl::android::graphics::PorterDuff_Mode arg0);
+		void setThumbTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
+		QAndroidJniObject getThumbTintMode();
+		QAndroidJniObject getThumbTintBlendMode();
+		void setSplitTrack(jboolean arg0);
+		jboolean getSplitTrack();
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		void setMin(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
+#include "../graphics/Canvas.hpp"
+#include "../graphics/drawable/Drawable.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../graphics/PorterDuff_Mode.hpp"
 #include "../graphics/BlendMode.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/MotionEvent.hpp"
-#include "../graphics/Canvas.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -136,80 +138,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void AbsSeekBar::setMax(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMax",
-			"(I)V",
-			arg0);
-	}
-	void AbsSeekBar::setThumbTintList(__jni_impl::android::content::res::ColorStateList arg0)
-	{
-		__thiz.callMethod<void>(
-			"setThumbTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AbsSeekBar::getThumbTintList()
-	{
-		return __thiz.callObjectMethod(
-			"getThumbTintList",
-			"()Landroid/content/res/ColorStateList;");
-	}
-	void AbsSeekBar::setThumbTintMode(__jni_impl::android::graphics::PorterDuff_Mode arg0)
-	{
-		__thiz.callMethod<void>(
-			"setThumbTintMode",
-			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object());
-	}
-	void AbsSeekBar::setThumbTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
-	{
-		__thiz.callMethod<void>(
-			"setThumbTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AbsSeekBar::getThumbTintMode()
-	{
-		return __thiz.callObjectMethod(
-			"getThumbTintMode",
-			"()Landroid/graphics/PorterDuff$Mode;");
-	}
-	QAndroidJniObject AbsSeekBar::getThumbTintBlendMode()
-	{
-		return __thiz.callObjectMethod(
-			"getThumbTintBlendMode",
-			"()Landroid/graphics/BlendMode;");
-	}
-	void AbsSeekBar::setSplitTrack(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSplitTrack",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AbsSeekBar::getSplitTrack()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getSplitTrack",
-			"()Z");
-	}
-	jboolean AbsSeekBar::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean AbsSeekBar::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject AbsSeekBar::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
@@ -244,25 +172,18 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1);
 	}
-	void AbsSeekBar::setMin(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMin",
-			"(I)V",
-			arg0);
-	}
-	jint AbsSeekBar::getThumbOffset()
-	{
-		return __thiz.callMethod<jint>(
-			"getThumbOffset",
-			"()I");
-	}
 	void AbsSeekBar::setThumb(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
 			"setThumb",
 			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object());
+	}
+	jint AbsSeekBar::getThumbOffset()
+	{
+		return __thiz.callMethod<jint>(
+			"getThumbOffset",
+			"()I");
 	}
 	QAndroidJniObject AbsSeekBar::getThumb()
 	{
@@ -341,6 +262,87 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getKeyProgressIncrement",
 			"()I");
+	}
+	void AbsSeekBar::setMax(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMax",
+			"(I)V",
+			arg0);
+	}
+	void AbsSeekBar::setThumbTintList(__jni_impl::android::content::res::ColorStateList arg0)
+	{
+		__thiz.callMethod<void>(
+			"setThumbTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject AbsSeekBar::getThumbTintList()
+	{
+		return __thiz.callObjectMethod(
+			"getThumbTintList",
+			"()Landroid/content/res/ColorStateList;");
+	}
+	void AbsSeekBar::setThumbTintMode(__jni_impl::android::graphics::PorterDuff_Mode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setThumbTintMode",
+			"(Landroid/graphics/PorterDuff$Mode;)V",
+			arg0.__jniObject().object());
+	}
+	void AbsSeekBar::setThumbTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setThumbTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject AbsSeekBar::getThumbTintMode()
+	{
+		return __thiz.callObjectMethod(
+			"getThumbTintMode",
+			"()Landroid/graphics/PorterDuff$Mode;");
+	}
+	QAndroidJniObject AbsSeekBar::getThumbTintBlendMode()
+	{
+		return __thiz.callObjectMethod(
+			"getThumbTintBlendMode",
+			"()Landroid/graphics/BlendMode;");
+	}
+	void AbsSeekBar::setSplitTrack(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSplitTrack",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AbsSeekBar::getSplitTrack()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getSplitTrack",
+			"()Z");
+	}
+	jboolean AbsSeekBar::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean AbsSeekBar::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	void AbsSeekBar::setMin(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMin",
+			"(I)V",
+			arg0);
 	}
 } // namespace __jni_impl::android::widget
 

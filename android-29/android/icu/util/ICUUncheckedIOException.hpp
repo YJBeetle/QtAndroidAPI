@@ -3,6 +3,8 @@
 #ifndef ANDROID_ICU_UTIL_ICUUNCHECKEDIOEXCEPTION
 #define ANDROID_ICU_UTIL_ICUUNCHECKEDIOEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
 

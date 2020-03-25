@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_INVALIDALGORITHMPARAMETEREXCEPTION
 #define JAVA_SECURITY_INVALIDALGORITHMPARAMETEREXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "GeneralSecurityException.hpp"
 
 

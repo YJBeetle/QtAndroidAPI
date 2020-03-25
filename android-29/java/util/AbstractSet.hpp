@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_ABSTRACTSET
 #define JAVA_UTIL_ABSTRACTSET
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 
 

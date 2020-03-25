@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_CERT_X509CERTIFICATE
 #define JAVA_SECURITY_CERT_X509CERTIFICATE
 
+#include "../../../__JniBaseClass.hpp"
 #include "Certificate.hpp"
 
 namespace __jni_impl::javax::security::auth::x500
@@ -13,13 +14,13 @@ namespace __jni_impl::java::security
 {
 	class Provider;
 }
-namespace __jni_impl::java::math
-{
-	class BigInteger;
-}
 namespace __jni_impl::java::util
 {
 	class Date;
+}
+namespace __jni_impl::java::math
+{
+	class BigInteger;
 }
 
 namespace __jni_impl::java::security::cert
@@ -39,7 +40,6 @@ namespace __jni_impl::java::security::cert
 		QAndroidJniObject getIssuerDN();
 		QAndroidJniObject getSubjectDN();
 		jint getVersion();
-		QAndroidJniObject getSerialNumber();
 		QAndroidJniObject getKeyUsage();
 		QAndroidJniObject getIssuerX500Principal();
 		QAndroidJniObject getSubjectX500Principal();
@@ -49,20 +49,21 @@ namespace __jni_impl::java::security::cert
 		QAndroidJniObject getSigAlgName();
 		QAndroidJniObject getSigAlgParams();
 		QAndroidJniObject getTBSCertificate();
-		void checkValidity(__jni_impl::java::util::Date arg0);
 		void checkValidity();
+		void checkValidity(__jni_impl::java::util::Date arg0);
 		QAndroidJniObject getNotBefore();
 		QAndroidJniObject getNotAfter();
 		QAndroidJniObject getSigAlgOID();
 		QAndroidJniObject getIssuerUniqueID();
 		QAndroidJniObject getSubjectUniqueID();
+		QAndroidJniObject getSerialNumber();
 	};
 } // namespace __jni_impl::java::security::cert
 
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
 #include "../Provider.hpp"
-#include "../../math/BigInteger.hpp"
 #include "../../util/Date.hpp"
+#include "../../math/BigInteger.hpp"
 
 namespace __jni_impl::java::security::cert
 {
@@ -114,12 +115,6 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callMethod<jint>(
 			"getVersion",
 			"()I");
-	}
-	QAndroidJniObject X509Certificate::getSerialNumber()
-	{
-		return __thiz.callObjectMethod(
-			"getSerialNumber",
-			"()Ljava/math/BigInteger;");
 	}
 	QAndroidJniObject X509Certificate::getKeyUsage()
 	{
@@ -175,18 +170,18 @@ namespace __jni_impl::java::security::cert
 			"getTBSCertificate",
 			"()[B");
 	}
+	void X509Certificate::checkValidity()
+	{
+		__thiz.callMethod<void>(
+			"checkValidity",
+			"()V");
+	}
 	void X509Certificate::checkValidity(__jni_impl::java::util::Date arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkValidity",
 			"(Ljava/util/Date;)V",
 			arg0.__jniObject().object());
-	}
-	void X509Certificate::checkValidity()
-	{
-		__thiz.callMethod<void>(
-			"checkValidity",
-			"()V");
 	}
 	QAndroidJniObject X509Certificate::getNotBefore()
 	{
@@ -217,6 +212,12 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callObjectMethod(
 			"getSubjectUniqueID",
 			"()[Z");
+	}
+	QAndroidJniObject X509Certificate::getSerialNumber()
+	{
+		return __thiz.callObjectMethod(
+			"getSerialNumber",
+			"()Ljava/math/BigInteger;");
 	}
 } // namespace __jni_impl::java::security::cert
 

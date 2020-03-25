@@ -3,6 +3,8 @@
 #ifndef ANDROID_VIEW_INSPECTOR_PROPERTYREADER_PROPERTYTYPEMISMATCHEXCEPTION
 #define ANDROID_VIEW_INSPECTOR_PROPERTYREADER_PROPERTYTYPEMISMATCHEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
 

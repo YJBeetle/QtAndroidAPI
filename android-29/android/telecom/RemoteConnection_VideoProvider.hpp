@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::telecom
+{
+	class RemoteConnection_VideoProvider_Callback;
+}
 namespace __jni_impl::android::view
 {
 	class Surface;
@@ -16,10 +20,6 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::net
 {
 	class Uri;
-}
-namespace __jni_impl::android::telecom
-{
-	class RemoteConnection_VideoProvider_Callback;
 }
 
 namespace __jni_impl::android::telecom
@@ -33,6 +33,8 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
+		void registerCallback(__jni_impl::android::telecom::RemoteConnection_VideoProvider_Callback arg0);
+		void unregisterCallback(__jni_impl::android::telecom::RemoteConnection_VideoProvider_Callback arg0);
 		void setPreviewSurface(__jni_impl::android::view::Surface arg0);
 		void setCamera(jstring arg0);
 		void setDisplaySurface(__jni_impl::android::view::Surface arg0);
@@ -43,15 +45,13 @@ namespace __jni_impl::android::telecom
 		void requestCameraCapabilities();
 		void requestCallDataUsage();
 		void setPauseImage(__jni_impl::android::net::Uri arg0);
-		void registerCallback(__jni_impl::android::telecom::RemoteConnection_VideoProvider_Callback arg0);
-		void unregisterCallback(__jni_impl::android::telecom::RemoteConnection_VideoProvider_Callback arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
+#include "RemoteConnection_VideoProvider_Callback.hpp"
 #include "../view/Surface.hpp"
 #include "VideoProfile.hpp"
 #include "../net/Uri.hpp"
-#include "RemoteConnection_VideoProvider_Callback.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -66,6 +66,20 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
+	void RemoteConnection_VideoProvider::registerCallback(__jni_impl::android::telecom::RemoteConnection_VideoProvider_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerCallback",
+			"(Landroid/telecom/RemoteConnection$VideoProvider$Callback;)V",
+			arg0.__jniObject().object());
+	}
+	void RemoteConnection_VideoProvider::unregisterCallback(__jni_impl::android::telecom::RemoteConnection_VideoProvider_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterCallback",
+			"(Landroid/telecom/RemoteConnection$VideoProvider$Callback;)V",
+			arg0.__jniObject().object());
+	}
 	void RemoteConnection_VideoProvider::setPreviewSurface(__jni_impl::android::view::Surface arg0)
 	{
 		__thiz.callMethod<void>(
@@ -133,20 +147,6 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"setPauseImage",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
-	}
-	void RemoteConnection_VideoProvider::registerCallback(__jni_impl::android::telecom::RemoteConnection_VideoProvider_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerCallback",
-			"(Landroid/telecom/RemoteConnection$VideoProvider$Callback;)V",
-			arg0.__jniObject().object());
-	}
-	void RemoteConnection_VideoProvider::unregisterCallback(__jni_impl::android::telecom::RemoteConnection_VideoProvider_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterCallback",
-			"(Landroid/telecom/RemoteConnection$VideoProvider$Callback;)V",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::telecom

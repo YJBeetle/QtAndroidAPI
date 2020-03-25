@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_TEXTVIEW_SAVEDSTATE
 #define ANDROID_WIDGET_TEXTVIEW_SAVEDSTATE
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/AbsSavedState.hpp"
 #include "../view/View_BaseSavedState.hpp"
 
 namespace __jni_impl::android::os

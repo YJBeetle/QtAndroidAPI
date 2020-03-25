@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING
 #define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING
 
+#include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
 namespace __jni_impl::android::media::audiofx
@@ -48,8 +49,7 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jint arg0, jint arg1, __jni_impl::android::media::audiofx::DynamicsProcessing_Config arg2);
 		
 		// Methods
-		void setInputGainbyChannel(jint arg0, jfloat arg1);
-		QAndroidJniObject getConfig();
+		jint getChannelCount();
 		QAndroidJniObject getChannelByChannelIndex(jint arg0);
 		void setChannelTo(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_Channel arg1);
 		void setAllChannelsTo(__jni_impl::android::media::audiofx::DynamicsProcessing_Channel arg0);
@@ -76,7 +76,8 @@ namespace __jni_impl::android::media::audiofx
 		QAndroidJniObject getLimiterByChannelIndex(jint arg0);
 		void setLimiterByChannelIndex(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_Limiter arg1);
 		void setLimiterAllChannelsTo(__jni_impl::android::media::audiofx::DynamicsProcessing_Limiter arg0);
-		jint getChannelCount();
+		QAndroidJniObject getConfig();
+		void setInputGainbyChannel(jint arg0, jfloat arg1);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -123,19 +124,11 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	void DynamicsProcessing::setInputGainbyChannel(jint arg0, jfloat arg1)
+	jint DynamicsProcessing::getChannelCount()
 	{
-		__thiz.callMethod<void>(
-			"setInputGainbyChannel",
-			"(IF)V",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject DynamicsProcessing::getConfig()
-	{
-		return __thiz.callObjectMethod(
-			"getConfig",
-			"()Landroid/media/audiofx/DynamicsProcessing$Config;");
+		return __thiz.callMethod<jint>(
+			"getChannelCount",
+			"()I");
 	}
 	QAndroidJniObject DynamicsProcessing::getChannelByChannelIndex(jint arg0)
 	{
@@ -336,11 +329,19 @@ namespace __jni_impl::android::media::audiofx
 			"(Landroid/media/audiofx/DynamicsProcessing$Limiter;)V",
 			arg0.__jniObject().object());
 	}
-	jint DynamicsProcessing::getChannelCount()
+	QAndroidJniObject DynamicsProcessing::getConfig()
 	{
-		return __thiz.callMethod<jint>(
-			"getChannelCount",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getConfig",
+			"()Landroid/media/audiofx/DynamicsProcessing$Config;");
+	}
+	void DynamicsProcessing::setInputGainbyChannel(jint arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"setInputGainbyChannel",
+			"(IF)V",
+			arg0,
+			arg1);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

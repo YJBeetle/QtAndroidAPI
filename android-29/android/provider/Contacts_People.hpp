@@ -13,10 +13,6 @@ namespace __jni_impl::android::content
 {
 	class ContentResolver;
 }
-namespace __jni_impl::java::io
-{
-	class InputStream;
-}
 namespace __jni_impl::android::content
 {
 	class ContentValues;
@@ -32,6 +28,10 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::graphics
 {
 	class BitmapFactory_Options;
+}
+namespace __jni_impl::java::io
+{
+	class InputStream;
 }
 
 namespace __jni_impl::android::provider
@@ -54,25 +54,25 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static void markAsContacted(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
-		static QAndroidJniObject openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
+		static QAndroidJniObject addToMyContactsGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
 		static QAndroidJniObject addToGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2);
 		static QAndroidJniObject addToGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jstring arg2);
 		static QAndroidJniObject createPersonInMyContactsGroup(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::ContentValues arg1);
-		static QAndroidJniObject addToMyContactsGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
 		static QAndroidJniObject queryGroups(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
 		static void setPhotoData(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jbyteArray arg2);
 		static QAndroidJniObject loadContactPhoto(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jint arg2, __jni_impl::android::graphics::BitmapFactory_Options arg3);
+		static void markAsContacted(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
+		static QAndroidJniObject openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 	};
 } // namespace __jni_impl::android::provider
 
 #include "../net/Uri.hpp"
 #include "../content/ContentResolver.hpp"
-#include "../../java/io/InputStream.hpp"
 #include "../content/ContentValues.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/BitmapFactory_Options.hpp"
+#include "../../java/io/InputStream.hpp"
 
 namespace __jni_impl::android::provider
 {
@@ -150,23 +150,14 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	void Contacts_People::markAsContacted(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.Contacts$People",
-			"markAsContacted",
-			"(Landroid/content/ContentResolver;J)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject Contacts_People::openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
+	QAndroidJniObject Contacts_People::addToMyContactsGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$People",
-			"openContactPhotoInputStream",
-			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Ljava/io/InputStream;",
+			"addToMyContactsGroup",
+			"(Landroid/content/ContentResolver;J)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1);
 	}
 	QAndroidJniObject Contacts_People::addToGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2)
 	{
@@ -197,15 +188,6 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
-	QAndroidJniObject Contacts_People::addToMyContactsGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$People",
-			"addToMyContactsGroup",
-			"(Landroid/content/ContentResolver;J)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	QAndroidJniObject Contacts_People::queryGroups(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -235,6 +217,24 @@ namespace __jni_impl::android::provider
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object());
+	}
+	void Contacts_People::markAsContacted(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.provider.Contacts$People",
+			"markAsContacted",
+			"(Landroid/content/ContentResolver;J)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	QAndroidJniObject Contacts_People::openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.Contacts$People",
+			"openContactPhotoInputStream",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Ljava/io/InputStream;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::provider
 

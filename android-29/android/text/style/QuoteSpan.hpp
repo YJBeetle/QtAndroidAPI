@@ -43,10 +43,10 @@ namespace __jni_impl::android::text::style
 		jint getLeadingMargin(jboolean arg0);
 		void drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11);
 		jint getGapWidth();
+		jint getStripeWidth();
 		jint getColor();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getStripeWidth();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -146,6 +146,12 @@ namespace __jni_impl::android::text::style
 			"getGapWidth",
 			"()I");
 	}
+	jint QuoteSpan::getStripeWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getStripeWidth",
+			"()I");
+	}
 	jint QuoteSpan::getColor()
 	{
 		return __thiz.callMethod<jint>(
@@ -165,12 +171,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint QuoteSpan::getStripeWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getStripeWidth",
-			"()I");
 	}
 } // namespace __jni_impl::android::text::style
 

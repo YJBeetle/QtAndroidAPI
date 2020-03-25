@@ -3,6 +3,8 @@
 #ifndef ANDROID_RENDERSCRIPT_ALLOCATIONADAPTER
 #define ANDROID_RENDERSCRIPT_ALLOCATIONADAPTER
 
+#include "../../__JniBaseClass.hpp"
+#include "BaseObj.hpp"
 #include "Allocation.hpp"
 
 namespace __jni_impl::android::renderscript

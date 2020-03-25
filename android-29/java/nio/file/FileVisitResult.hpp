@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_FILE_FILEVISITRESULT
 #define JAVA_NIO_FILE_FILEVISITRESULT
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

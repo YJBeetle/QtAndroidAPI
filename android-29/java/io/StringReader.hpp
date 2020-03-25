@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_STRINGREADER
 #define JAVA_IO_STRINGREADER
 
+#include "../../__JniBaseClass.hpp"
 #include "Reader.hpp"
 
 

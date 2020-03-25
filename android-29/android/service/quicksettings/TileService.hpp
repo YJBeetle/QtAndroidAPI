@@ -3,6 +3,9 @@
 #ifndef ANDROID_SERVICE_QUICKSETTINGS_TILESERVICE
 #define ANDROID_SERVICE_QUICKSETTINGS_TILESERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace __jni_impl::android::content
@@ -41,9 +44,6 @@ namespace __jni_impl::android::service::quicksettings
 		
 		// Methods
 		jboolean isLocked();
-		void onStartListening();
-		void onStopListening();
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onTileAdded();
 		void onTileRemoved();
 		void unlockAndRun(__jni_impl::__JniBaseClass arg0);
@@ -51,9 +51,12 @@ namespace __jni_impl::android::service::quicksettings
 		void startActivityAndCollapse(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject getQsTile();
 		static void requestListeningState(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onClick();
 		void onDestroy();
 		void showDialog(__jni_impl::android::app::Dialog arg0);
-		void onClick();
+		void onStartListening();
+		void onStopListening();
 	};
 } // namespace __jni_impl::android::service::quicksettings
 
@@ -103,25 +106,6 @@ namespace __jni_impl::android::service::quicksettings
 			"isLocked",
 			"()Z");
 	}
-	void TileService::onStartListening()
-	{
-		__thiz.callMethod<void>(
-			"onStartListening",
-			"()V");
-	}
-	void TileService::onStopListening()
-	{
-		__thiz.callMethod<void>(
-			"onStopListening",
-			"()V");
-	}
-	QAndroidJniObject TileService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
-	}
 	void TileService::onTileAdded()
 	{
 		__thiz.callMethod<void>(
@@ -169,6 +153,19 @@ namespace __jni_impl::android::service::quicksettings
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
+	QAndroidJniObject TileService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object());
+	}
+	void TileService::onClick()
+	{
+		__thiz.callMethod<void>(
+			"onClick",
+			"()V");
+	}
 	void TileService::onDestroy()
 	{
 		__thiz.callMethod<void>(
@@ -182,10 +179,16 @@ namespace __jni_impl::android::service::quicksettings
 			"(Landroid/app/Dialog;)V",
 			arg0.__jniObject().object());
 	}
-	void TileService::onClick()
+	void TileService::onStartListening()
 	{
 		__thiz.callMethod<void>(
-			"onClick",
+			"onStartListening",
+			"()V");
+	}
+	void TileService::onStopListening()
+	{
+		__thiz.callMethod<void>(
+			"onStopListening",
 			"()V");
 	}
 } // namespace __jni_impl::android::service::quicksettings

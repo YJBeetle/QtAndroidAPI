@@ -13,6 +13,14 @@ namespace __jni_impl::android::view
 {
 	class WindowManager_LayoutParams;
 }
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
+}
 namespace __jni_impl::android::view
 {
 	class View;
@@ -33,10 +41,6 @@ namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
-}
 namespace __jni_impl::android::view
 {
 	class LayoutInflater;
@@ -44,10 +48,6 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::media::session
 {
 	class MediaController;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 namespace __jni_impl::android::content::res
 {
@@ -123,13 +123,20 @@ namespace __jni_impl::android::view
 		void setFormat(jint arg0);
 		jboolean isFloating();
 		void setGravity(jint arg0);
+		jboolean isWideColorGamut();
 		void setType(jint arg0);
 		void setFlags(jint arg0, jint arg1);
 		void addFlags(jint arg0);
-		void setIcon(jint arg0);
-		jboolean isWideColorGamut();
 		void setCallback(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getCallback();
+		void setIcon(jint arg0);
+		void setSystemGestureExclusionRects(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getSystemGestureExclusionRects();
+		void setElevation(jfloat arg0);
+		void setClipToOutline(jboolean arg0);
+		QAndroidJniObject saveHierarchyState();
+		void restoreHierarchyState(__jni_impl::android::os::Bundle arg0);
+		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject getWindowManager();
 		QAndroidJniObject getCurrentFocus();
 		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
@@ -152,13 +159,6 @@ namespace __jni_impl::android::view
 		jint getVolumeControlStream();
 		void setMediaController(__jni_impl::android::media::session::MediaController arg0);
 		QAndroidJniObject getMediaController();
-		void setSystemGestureExclusionRects(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getSystemGestureExclusionRects();
-		void setElevation(jfloat arg0);
-		void setClipToOutline(jboolean arg0);
-		QAndroidJniObject saveHierarchyState();
-		void restoreHierarchyState(__jni_impl::android::os::Bundle arg0);
-		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject getWindowStyle();
 		void setContainer(__jni_impl::android::view::Window arg0);
 		QAndroidJniObject getContainer();
@@ -251,15 +251,15 @@ namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
 #include "WindowManager_LayoutParams.hpp"
+#include "../os/Bundle.hpp"
+#include "../graphics/drawable/Drawable.hpp"
 #include "View.hpp"
 #include "../content/res/Configuration.hpp"
 #include "ViewGroup_LayoutParams.hpp"
 #include "../transition/Scene.hpp"
 #include "../net/Uri.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 #include "LayoutInflater.hpp"
 #include "../media/session/MediaController.hpp"
-#include "../os/Bundle.hpp"
 #include "../content/res/TypedArray.hpp"
 #include "../os/Handler.hpp"
 #include "KeyEvent.hpp"
@@ -490,6 +490,12 @@ namespace __jni_impl::android::view
 			"(I)V",
 			arg0);
 	}
+	jboolean Window::isWideColorGamut()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWideColorGamut",
+			"()Z");
+	}
 	void Window::setType(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -512,19 +518,6 @@ namespace __jni_impl::android::view
 			"(I)V",
 			arg0);
 	}
-	void Window::setIcon(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIcon",
-			"(I)V",
-			arg0);
-	}
-	jboolean Window::isWideColorGamut()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWideColorGamut",
-			"()Z");
-	}
 	void Window::setCallback(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -537,6 +530,60 @@ namespace __jni_impl::android::view
 		return __thiz.callObjectMethod(
 			"getCallback",
 			"()Landroid/view/Window$Callback;");
+	}
+	void Window::setIcon(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIcon",
+			"(I)V",
+			arg0);
+	}
+	void Window::setSystemGestureExclusionRects(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemGestureExclusionRects",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Window::getSystemGestureExclusionRects()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemGestureExclusionRects",
+			"()Ljava/util/List;");
+	}
+	void Window::setElevation(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setElevation",
+			"(F)V",
+			arg0);
+	}
+	void Window::setClipToOutline(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setClipToOutline",
+			"(Z)V",
+			arg0);
+	}
+	QAndroidJniObject Window::saveHierarchyState()
+	{
+		return __thiz.callObjectMethod(
+			"saveHierarchyState",
+			"()Landroid/os/Bundle;");
+	}
+	void Window::restoreHierarchyState(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"restoreHierarchyState",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	void Window::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBackgroundDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject Window::getWindowManager()
 	{
@@ -691,53 +738,6 @@ namespace __jni_impl::android::view
 		return __thiz.callObjectMethod(
 			"getMediaController",
 			"()Landroid/media/session/MediaController;");
-	}
-	void Window::setSystemGestureExclusionRects(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemGestureExclusionRects",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Window::getSystemGestureExclusionRects()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemGestureExclusionRects",
-			"()Ljava/util/List;");
-	}
-	void Window::setElevation(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setElevation",
-			"(F)V",
-			arg0);
-	}
-	void Window::setClipToOutline(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setClipToOutline",
-			"(Z)V",
-			arg0);
-	}
-	QAndroidJniObject Window::saveHierarchyState()
-	{
-		return __thiz.callObjectMethod(
-			"saveHierarchyState",
-			"()Landroid/os/Bundle;");
-	}
-	void Window::restoreHierarchyState(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"restoreHierarchyState",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	void Window::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBackgroundDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject Window::getWindowStyle()
 	{

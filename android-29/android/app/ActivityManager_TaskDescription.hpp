@@ -33,12 +33,12 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject toString();
+		jint getPrimaryColor();
 		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		QAndroidJniObject getLabel();
+		QAndroidJniObject getIcon();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getPrimaryColor();
-		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::app
 
@@ -119,6 +119,12 @@ namespace __jni_impl::android::app
 			"toString",
 			"()Ljava/lang/String;");
 	}
+	jint ActivityManager_TaskDescription::getPrimaryColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getPrimaryColor",
+			"()I");
+	}
 	void ActivityManager_TaskDescription::readFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz.callMethod<void>(
@@ -131,6 +137,12 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject ActivityManager_TaskDescription::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/Bitmap;");
 	}
 	jint ActivityManager_TaskDescription::describeContents()
 	{
@@ -145,18 +157,6 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint ActivityManager_TaskDescription::getPrimaryColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getPrimaryColor",
-			"()I");
-	}
-	QAndroidJniObject ActivityManager_TaskDescription::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/Bitmap;");
 	}
 } // namespace __jni_impl::android::app
 

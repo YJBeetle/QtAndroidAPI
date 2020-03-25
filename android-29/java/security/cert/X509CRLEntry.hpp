@@ -5,6 +5,10 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::java::math
+{
+	class BigInteger;
+}
 namespace __jni_impl::java::security::cert
 {
 	class CRLReason;
@@ -16,10 +20,6 @@ namespace __jni_impl::javax::security::auth::x500
 namespace __jni_impl::java::util
 {
 	class Date;
-}
-namespace __jni_impl::java::math
-{
-	class BigInteger;
 }
 
 namespace __jni_impl::java::security::cert
@@ -38,17 +38,17 @@ namespace __jni_impl::java::security::cert
 		jint hashCode();
 		QAndroidJniObject getEncoded();
 		jboolean hasExtensions();
+		QAndroidJniObject getSerialNumber();
 		QAndroidJniObject getRevocationReason();
 		QAndroidJniObject getCertificateIssuer();
 		QAndroidJniObject getRevocationDate();
-		QAndroidJniObject getSerialNumber();
 	};
 } // namespace __jni_impl::java::security::cert
 
+#include "../../math/BigInteger.hpp"
 #include "CRLReason.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
 #include "../../util/Date.hpp"
-#include "../../math/BigInteger.hpp"
 
 namespace __jni_impl::java::security::cert
 {
@@ -94,6 +94,12 @@ namespace __jni_impl::java::security::cert
 			"hasExtensions",
 			"()Z");
 	}
+	QAndroidJniObject X509CRLEntry::getSerialNumber()
+	{
+		return __thiz.callObjectMethod(
+			"getSerialNumber",
+			"()Ljava/math/BigInteger;");
+	}
 	QAndroidJniObject X509CRLEntry::getRevocationReason()
 	{
 		return __thiz.callObjectMethod(
@@ -111,12 +117,6 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callObjectMethod(
 			"getRevocationDate",
 			"()Ljava/util/Date;");
-	}
-	QAndroidJniObject X509CRLEntry::getSerialNumber()
-	{
-		return __thiz.callObjectMethod(
-			"getSerialNumber",
-			"()Ljava/math/BigInteger;");
 	}
 } // namespace __jni_impl::java::security::cert
 

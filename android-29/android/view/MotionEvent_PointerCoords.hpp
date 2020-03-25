@@ -29,8 +29,8 @@ namespace __jni_impl::android::view
 		// Methods
 		void clear();
 		void copyFrom(__jni_impl::android::view::MotionEvent_PointerCoords arg0);
-		jfloat getAxisValue(jint arg0);
 		void setAxisValue(jint arg0, jfloat arg1);
+		jfloat getAxisValue(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -113,13 +113,6 @@ namespace __jni_impl::android::view
 			"(Landroid/view/MotionEvent$PointerCoords;)V",
 			arg0.__jniObject().object());
 	}
-	jfloat MotionEvent_PointerCoords::getAxisValue(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getAxisValue",
-			"(I)F",
-			arg0);
-	}
 	void MotionEvent_PointerCoords::setAxisValue(jint arg0, jfloat arg1)
 	{
 		__thiz.callMethod<void>(
@@ -127,6 +120,13 @@ namespace __jni_impl::android::view
 			"(IF)V",
 			arg0,
 			arg1);
+	}
+	jfloat MotionEvent_PointerCoords::getAxisValue(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getAxisValue",
+			"(I)F",
+			arg0);
 	}
 } // namespace __jni_impl::android::view
 

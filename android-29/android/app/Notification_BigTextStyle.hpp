@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_NOTIFICATION_BIGTEXTSTYLE
 #define ANDROID_APP_NOTIFICATION_BIGTEXTSTYLE
 
+#include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 
 namespace __jni_impl::android::app
@@ -23,8 +24,8 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject bigText(jstring arg0);
-		QAndroidJniObject setBigContentTitle(jstring arg0);
 		QAndroidJniObject setSummaryText(jstring arg0);
+		QAndroidJniObject setBigContentTitle(jstring arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -57,17 +58,17 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
 			arg0);
 	}
-	QAndroidJniObject Notification_BigTextStyle::setBigContentTitle(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBigContentTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			arg0);
-	}
 	QAndroidJniObject Notification_BigTextStyle::setSummaryText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSummaryText",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
+			arg0);
+	}
+	QAndroidJniObject Notification_BigTextStyle::setBigContentTitle(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBigContentTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
 			arg0);
 	}

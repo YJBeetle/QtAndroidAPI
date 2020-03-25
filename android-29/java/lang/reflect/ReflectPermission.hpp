@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_REFLECT_REFLECTPERMISSION
 #define JAVA_LANG_REFLECT_REFLECTPERMISSION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../security/Permission.hpp"
 #include "../../security/BasicPermission.hpp"
 
 

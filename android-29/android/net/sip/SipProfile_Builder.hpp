@@ -24,14 +24,14 @@ namespace __jni_impl::android::net::sip
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setProtocol(jstring arg0);
+		QAndroidJniObject setPassword(jstring arg0);
+		QAndroidJniObject setPort(jint arg0);
 		QAndroidJniObject setAuthUserName(jstring arg0);
 		QAndroidJniObject setOutboundProxy(jstring arg0);
 		QAndroidJniObject setDisplayName(jstring arg0);
 		QAndroidJniObject setSendKeepAlive(jboolean arg0);
 		QAndroidJniObject setAutoRegistration(jboolean arg0);
-		QAndroidJniObject setProtocol(jstring arg0);
-		QAndroidJniObject setPassword(jstring arg0);
-		QAndroidJniObject setPort(jint arg0);
 		QAndroidJniObject setProfileName(jstring arg0);
 	};
 } // namespace __jni_impl::android::net::sip
@@ -73,6 +73,27 @@ namespace __jni_impl::android::net::sip
 			"build",
 			"()Landroid/net/sip/SipProfile;");
 	}
+	QAndroidJniObject SipProfile_Builder::setProtocol(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setProtocol",
+			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
+			arg0);
+	}
+	QAndroidJniObject SipProfile_Builder::setPassword(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPassword",
+			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
+			arg0);
+	}
+	QAndroidJniObject SipProfile_Builder::setPort(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPort",
+			"(I)Landroid/net/sip/SipProfile$Builder;",
+			arg0);
+	}
 	QAndroidJniObject SipProfile_Builder::setAuthUserName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -106,27 +127,6 @@ namespace __jni_impl::android::net::sip
 		return __thiz.callObjectMethod(
 			"setAutoRegistration",
 			"(Z)Landroid/net/sip/SipProfile$Builder;",
-			arg0);
-	}
-	QAndroidJniObject SipProfile_Builder::setProtocol(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setProtocol",
-			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
-			arg0);
-	}
-	QAndroidJniObject SipProfile_Builder::setPassword(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPassword",
-			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
-			arg0);
-	}
-	QAndroidJniObject SipProfile_Builder::setPort(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPort",
-			"(I)Landroid/net/sip/SipProfile$Builder;",
 			arg0);
 	}
 	QAndroidJniObject SipProfile_Builder::setProfileName(jstring arg0)

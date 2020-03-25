@@ -3,6 +3,8 @@
 #ifndef ANDROID_ICU_TEXT_STRINGPREPPARSEEXCEPTION
 #define ANDROID_ICU_TEXT_STRINGPREPPARSEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "../../../java/text/ParseException.hpp"
 
 

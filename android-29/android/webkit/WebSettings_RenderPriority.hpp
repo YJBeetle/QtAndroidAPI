@@ -3,6 +3,7 @@
 #ifndef ANDROID_WEBKIT_WEBSETTINGS_RENDERPRIORITY
 #define ANDROID_WEBKIT_WEBSETTINGS_RENDERPRIORITY
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

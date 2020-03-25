@@ -32,10 +32,10 @@ namespace __jni_impl::android::nfc
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject toByteArray();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getRecords();
 		jint getByteArrayLength();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::nfc
 
@@ -103,6 +103,18 @@ namespace __jni_impl::android::nfc
 			"toByteArray",
 			"()[B");
 	}
+	QAndroidJniObject NdefMessage::getRecords()
+	{
+		return __thiz.callObjectMethod(
+			"getRecords",
+			"()[Landroid/nfc/NdefRecord;");
+	}
+	jint NdefMessage::getByteArrayLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getByteArrayLength",
+			"()I");
+	}
 	jint NdefMessage::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -116,18 +128,6 @@ namespace __jni_impl::android::nfc
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject NdefMessage::getRecords()
-	{
-		return __thiz.callObjectMethod(
-			"getRecords",
-			"()[Landroid/nfc/NdefRecord;");
-	}
-	jint NdefMessage::getByteArrayLength()
-	{
-		return __thiz.callMethod<jint>(
-			"getByteArrayLength",
-			"()I");
 	}
 } // namespace __jni_impl::android::nfc
 

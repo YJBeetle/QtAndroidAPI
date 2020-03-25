@@ -3,6 +3,7 @@
 #ifndef JAVA_MATH_BIGDECIMAL
 #define JAVA_MATH_BIGDECIMAL
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Number.hpp"
 
 namespace __jni_impl::java::math

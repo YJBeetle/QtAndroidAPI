@@ -26,9 +26,9 @@ namespace __jni_impl::android::provider
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getPath();
+		QAndroidJniObject getRootId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getRootId();
 	};
 } // namespace __jni_impl::android::provider
 
@@ -81,6 +81,12 @@ namespace __jni_impl::android::provider
 			"getPath",
 			"()Ljava/util/List;");
 	}
+	QAndroidJniObject DocumentsContract_Path::getRootId()
+	{
+		return __thiz.callObjectMethod(
+			"getRootId",
+			"()Ljava/lang/String;");
+	}
 	jint DocumentsContract_Path::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -94,12 +100,6 @@ namespace __jni_impl::android::provider
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject DocumentsContract_Path::getRootId()
-	{
-		return __thiz.callObjectMethod(
-			"getRootId",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::provider
 

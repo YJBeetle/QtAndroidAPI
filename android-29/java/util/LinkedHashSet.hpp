@@ -3,6 +3,9 @@
 #ifndef JAVA_UTIL_LINKEDHASHSET
 #define JAVA_UTIL_LINKEDHASHSET
 
+#include "../../__JniBaseClass.hpp"
+#include "AbstractCollection.hpp"
+#include "AbstractSet.hpp"
 #include "HashSet.hpp"
 
 

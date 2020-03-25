@@ -27,13 +27,13 @@ namespace __jni_impl::android::media
 		// Methods
 		void close();
 		jint getFormat();
-		jint getWidth();
-		jint getHeight();
 		QAndroidJniObject getHardwareBuffer();
 		void setTimestamp(jlong arg0);
 		QAndroidJniObject getCropRect();
 		void setCropRect(__jni_impl::android::graphics::Rect arg0);
 		QAndroidJniObject getPlanes();
+		jint getWidth();
+		jint getHeight();
 		jlong getTimestamp();
 	};
 } // namespace __jni_impl::android::media
@@ -64,18 +64,6 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jint>(
 			"getFormat",
-			"()I");
-	}
-	jint Image::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I");
-	}
-	jint Image::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
 			"()I");
 	}
 	QAndroidJniObject Image::getHardwareBuffer()
@@ -109,6 +97,18 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getPlanes",
 			"()[Landroid/media/Image$Plane;");
+	}
+	jint Image::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I");
+	}
+	jint Image::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I");
 	}
 	jlong Image::getTimestamp()
 	{

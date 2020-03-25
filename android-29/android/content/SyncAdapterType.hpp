@@ -29,13 +29,13 @@ namespace __jni_impl::android::content
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		static QAndroidJniObject newKey(jstring arg0, jstring arg1);
 		jboolean isUserVisible();
 		jboolean allowParallelSyncs();
 		jboolean isAlwaysSyncable();
 		jboolean supportsUploading();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static QAndroidJniObject newKey(jstring arg0, jstring arg1);
 		QAndroidJniObject getSettingsActivity();
 	};
 } // namespace __jni_impl::android::content
@@ -109,15 +109,6 @@ namespace __jni_impl::android::content
 			"hashCode",
 			"()I");
 	}
-	QAndroidJniObject SyncAdapterType::newKey(jstring arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.SyncAdapterType",
-			"newKey",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SyncAdapterType;",
-			arg0,
-			arg1);
-	}
 	jboolean SyncAdapterType::isUserVisible()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -154,6 +145,15 @@ namespace __jni_impl::android::content
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
+			arg1);
+	}
+	QAndroidJniObject SyncAdapterType::newKey(jstring arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.SyncAdapterType",
+			"newKey",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SyncAdapterType;",
+			arg0,
 			arg1);
 	}
 	QAndroidJniObject SyncAdapterType::getSettingsActivity()

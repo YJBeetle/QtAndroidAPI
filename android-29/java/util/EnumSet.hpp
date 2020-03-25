@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_ENUMSET
 #define JAVA_UTIL_ENUMSET
 
+#include "../../__JniBaseClass.hpp"
+#include "AbstractCollection.hpp"
 #include "AbstractSet.hpp"
 
 namespace __jni_impl::java::lang

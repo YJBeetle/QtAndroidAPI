@@ -26,11 +26,11 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		QAndroidJniObject encode(__jni_impl::java::nio::ByteBuffer arg0);
-		jint encode(jbyteArray arg0, jbyteArray arg1);
 		QAndroidJniObject encode(jbyteArray arg0);
+		jint encode(jbyteArray arg0, jbyteArray arg1);
 		QAndroidJniObject wrap(__jni_impl::java::io::OutputStream arg0);
-		QAndroidJniObject encodeToString(jbyteArray arg0);
 		QAndroidJniObject withoutPadding();
+		QAndroidJniObject encodeToString(jbyteArray arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -57,6 +57,13 @@ namespace __jni_impl::java::util
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject Base64_Encoder::encode(jbyteArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"encode",
+			"([B)[B",
+			arg0);
+	}
 	jint Base64_Encoder::encode(jbyteArray arg0, jbyteArray arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -65,13 +72,6 @@ namespace __jni_impl::java::util
 			arg0,
 			arg1);
 	}
-	QAndroidJniObject Base64_Encoder::encode(jbyteArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"encode",
-			"([B)[B",
-			arg0);
-	}
 	QAndroidJniObject Base64_Encoder::wrap(__jni_impl::java::io::OutputStream arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -79,18 +79,18 @@ namespace __jni_impl::java::util
 			"(Ljava/io/OutputStream;)Ljava/io/OutputStream;",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject Base64_Encoder::withoutPadding()
+	{
+		return __thiz.callObjectMethod(
+			"withoutPadding",
+			"()Ljava/util/Base64$Encoder;");
+	}
 	QAndroidJniObject Base64_Encoder::encodeToString(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"encodeToString",
 			"([B)Ljava/lang/String;",
 			arg0);
-	}
-	QAndroidJniObject Base64_Encoder::withoutPadding()
-	{
-		return __thiz.callObjectMethod(
-			"withoutPadding",
-			"()Ljava/util/Base64$Encoder;");
 	}
 } // namespace __jni_impl::java::util
 

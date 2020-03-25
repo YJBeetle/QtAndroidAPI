@@ -57,6 +57,11 @@ namespace __jni_impl::android::view::inputmethod
 		jboolean beginBatchEdit();
 		jboolean endBatchEdit();
 		jboolean setSelection(jint arg0, jint arg1);
+		static void removeComposingSpans(__jni_impl::__JniBaseClass arg0);
+		static void setComposingSpans(__jni_impl::__JniBaseClass arg0);
+		static jint getComposingSpanStart(__jni_impl::__JniBaseClass arg0);
+		static jint getComposingSpanEnd(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getEditable();
 		QAndroidJniObject getTextBeforeCursor(jint arg0, jint arg1);
 		QAndroidJniObject getTextAfterCursor(jint arg0, jint arg1);
 		QAndroidJniObject getSelectedText(jint arg0);
@@ -79,11 +84,6 @@ namespace __jni_impl::android::view::inputmethod
 		jboolean requestCursorUpdates(jint arg0);
 		void closeConnection();
 		jboolean commitContent(__jni_impl::android::view::inputmethod::InputContentInfo arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
-		static void removeComposingSpans(__jni_impl::__JniBaseClass arg0);
-		static void setComposingSpans(__jni_impl::__JniBaseClass arg0);
-		static jint getComposingSpanStart(__jni_impl::__JniBaseClass arg0);
-		static jint getComposingSpanEnd(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getEditable();
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -137,6 +137,44 @@ namespace __jni_impl::android::view::inputmethod
 			"(II)Z",
 			arg0,
 			arg1);
+	}
+	void BaseInputConnection::removeComposingSpans(__jni_impl::__JniBaseClass arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.view.inputmethod.BaseInputConnection",
+			"removeComposingSpans",
+			"(Landroid/text/Spannable;)V",
+			arg0.__jniObject().object());
+	}
+	void BaseInputConnection::setComposingSpans(__jni_impl::__JniBaseClass arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.view.inputmethod.BaseInputConnection",
+			"setComposingSpans",
+			"(Landroid/text/Spannable;)V",
+			arg0.__jniObject().object());
+	}
+	jint BaseInputConnection::getComposingSpanStart(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.inputmethod.BaseInputConnection",
+			"getComposingSpanStart",
+			"(Landroid/text/Spannable;)I",
+			arg0.__jniObject().object());
+	}
+	jint BaseInputConnection::getComposingSpanEnd(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.inputmethod.BaseInputConnection",
+			"getComposingSpanEnd",
+			"(Landroid/text/Spannable;)I",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject BaseInputConnection::getEditable()
+	{
+		return __thiz.callObjectMethod(
+			"getEditable",
+			"()Landroid/text/Editable;");
 	}
 	QAndroidJniObject BaseInputConnection::getTextBeforeCursor(jint arg0, jint arg1)
 	{
@@ -300,44 +338,6 @@ namespace __jni_impl::android::view::inputmethod
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object());
-	}
-	void BaseInputConnection::removeComposingSpans(__jni_impl::__JniBaseClass arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.view.inputmethod.BaseInputConnection",
-			"removeComposingSpans",
-			"(Landroid/text/Spannable;)V",
-			arg0.__jniObject().object());
-	}
-	void BaseInputConnection::setComposingSpans(__jni_impl::__JniBaseClass arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.view.inputmethod.BaseInputConnection",
-			"setComposingSpans",
-			"(Landroid/text/Spannable;)V",
-			arg0.__jniObject().object());
-	}
-	jint BaseInputConnection::getComposingSpanStart(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.inputmethod.BaseInputConnection",
-			"getComposingSpanStart",
-			"(Landroid/text/Spannable;)I",
-			arg0.__jniObject().object());
-	}
-	jint BaseInputConnection::getComposingSpanEnd(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.inputmethod.BaseInputConnection",
-			"getComposingSpanEnd",
-			"(Landroid/text/Spannable;)I",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject BaseInputConnection::getEditable()
-	{
-		return __thiz.callObjectMethod(
-			"getEditable",
-			"()Landroid/text/Editable;");
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

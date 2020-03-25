@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_CONTENTQUERYMAP
 #define ANDROID_CONTENT_CONTENTQUERYMAP
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/util/Observable.hpp"
 
 namespace __jni_impl::android::os
@@ -26,8 +27,8 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		void close();
-		void requery();
 		QAndroidJniObject getValues(jstring arg0);
+		void requery();
 		void setKeepUpdated(jboolean arg0);
 		QAndroidJniObject getRows();
 	};
@@ -59,18 +60,18 @@ namespace __jni_impl::android::content
 			"close",
 			"()V");
 	}
-	void ContentQueryMap::requery()
-	{
-		__thiz.callMethod<void>(
-			"requery",
-			"()V");
-	}
 	QAndroidJniObject ContentQueryMap::getValues(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getValues",
 			"(Ljava/lang/String;)Landroid/content/ContentValues;",
 			arg0);
+	}
+	void ContentQueryMap::requery()
+	{
+		__thiz.callMethod<void>(
+			"requery",
+			"()V");
 	}
 	void ContentQueryMap::setKeepUpdated(jboolean arg0)
 	{

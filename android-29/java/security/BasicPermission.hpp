@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_BASICPERMISSION
 #define JAVA_SECURITY_BASICPERMISSION
 
+#include "../../__JniBaseClass.hpp"
 #include "Permission.hpp"
 
 namespace __jni_impl::java::io

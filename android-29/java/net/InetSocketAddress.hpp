@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_INETSOCKETADDRESS
 #define JAVA_NET_INETSOCKETADDRESS
 
+#include "../../__JniBaseClass.hpp"
 #include "SocketAddress.hpp"
 
 namespace __jni_impl::java::net

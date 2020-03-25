@@ -31,13 +31,13 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ClipDescription arg1, __jni_impl::android::net::Uri arg2);
 		
 		// Methods
-		QAndroidJniObject getDescription();
 		QAndroidJniObject getContentUri();
+		QAndroidJniObject getDescription();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void requestPermission();
 		void releasePermission();
 		QAndroidJniObject getLinkUri();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -76,17 +76,31 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
+	QAndroidJniObject InputContentInfo::getContentUri()
+	{
+		return __thiz.callObjectMethod(
+			"getContentUri",
+			"()Landroid/net/Uri;");
+	}
 	QAndroidJniObject InputContentInfo::getDescription()
 	{
 		return __thiz.callObjectMethod(
 			"getDescription",
 			"()Landroid/content/ClipDescription;");
 	}
-	QAndroidJniObject InputContentInfo::getContentUri()
+	jint InputContentInfo::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getContentUri",
-			"()Landroid/net/Uri;");
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void InputContentInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	void InputContentInfo::requestPermission()
 	{
@@ -105,20 +119,6 @@ namespace __jni_impl::android::view::inputmethod
 		return __thiz.callObjectMethod(
 			"getLinkUri",
 			"()Landroid/net/Uri;");
-	}
-	jint InputContentInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void InputContentInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

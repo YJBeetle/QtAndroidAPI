@@ -47,8 +47,8 @@ namespace __jni_impl::android::content::res
 		QAndroidJniObject toString();
 		jlong getLength();
 		void close();
-		QAndroidJniObject getExtras();
 		QAndroidJniObject getFileDescriptor();
+		QAndroidJniObject getExtras();
 		QAndroidJniObject getParcelFileDescriptor();
 		jlong getStartOffset();
 		jlong getDeclaredLength();
@@ -123,17 +123,17 @@ namespace __jni_impl::android::content::res
 			"close",
 			"()V");
 	}
-	QAndroidJniObject AssetFileDescriptor::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
 	QAndroidJniObject AssetFileDescriptor::getFileDescriptor()
 	{
 		return __thiz.callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;");
+	}
+	QAndroidJniObject AssetFileDescriptor::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
 	}
 	QAndroidJniObject AssetFileDescriptor::getParcelFileDescriptor()
 	{

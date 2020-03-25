@@ -31,12 +31,12 @@ namespace __jni_impl::android::media
 		QAndroidJniObject getObject(jint arg0, jobject arg1);
 		QAndroidJniObject putObject(jint arg0, jobject arg1);
 		QAndroidJniObject getString(jint arg0, jstring arg1);
-		QAndroidJniObject putString(jint arg0, jstring arg1);
 		QAndroidJniObject putBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1);
+		QAndroidJniObject putString(jint arg0, jstring arg1);
+		QAndroidJniObject getBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1);
 		void addEditableKey(jint arg0);
 		void removeEditableKeys();
 		QAndroidJniObject getEditableKeys();
-		QAndroidJniObject getBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -125,6 +125,14 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1);
 	}
+	QAndroidJniObject MediaMetadataEditor::putBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putBitmap",
+			"(ILandroid/graphics/Bitmap;)Landroid/media/MediaMetadataEditor;",
+			arg0,
+			arg1.__jniObject().object());
+	}
 	QAndroidJniObject MediaMetadataEditor::putString(jint arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -133,11 +141,11 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1);
 	}
-	QAndroidJniObject MediaMetadataEditor::putBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1)
+	QAndroidJniObject MediaMetadataEditor::getBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1)
 	{
 		return __thiz.callObjectMethod(
-			"putBitmap",
-			"(ILandroid/graphics/Bitmap;)Landroid/media/MediaMetadataEditor;",
+			"getBitmap",
+			"(ILandroid/graphics/Bitmap;)Landroid/graphics/Bitmap;",
 			arg0,
 			arg1.__jniObject().object());
 	}
@@ -159,14 +167,6 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getEditableKeys",
 			"()[I");
-	}
-	QAndroidJniObject MediaMetadataEditor::getBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getBitmap",
-			"(ILandroid/graphics/Bitmap;)Landroid/graphics/Bitmap;",
-			arg0,
-			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media
 

@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class KeyboardShortcutInfo;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::view
+{
+	class KeyboardShortcutInfo;
 }
 
 namespace __jni_impl::android::view
@@ -27,16 +27,16 @@ namespace __jni_impl::android::view
 		void __constructor(jstring arg0);
 		
 		// Methods
+		QAndroidJniObject getItems();
 		QAndroidJniObject getLabel();
-		void addItem(__jni_impl::android::view::KeyboardShortcutInfo arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getItems();
+		void addItem(__jni_impl::android::view::KeyboardShortcutInfo arg0);
 	};
 } // namespace __jni_impl::android::view
 
-#include "KeyboardShortcutInfo.hpp"
 #include "../os/Parcel.hpp"
+#include "KeyboardShortcutInfo.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -67,18 +67,17 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
+	QAndroidJniObject KeyboardShortcutGroup::getItems()
+	{
+		return __thiz.callObjectMethod(
+			"getItems",
+			"()Ljava/util/List;");
+	}
 	QAndroidJniObject KeyboardShortcutGroup::getLabel()
 	{
 		return __thiz.callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;");
-	}
-	void KeyboardShortcutGroup::addItem(__jni_impl::android::view::KeyboardShortcutInfo arg0)
-	{
-		__thiz.callMethod<void>(
-			"addItem",
-			"(Landroid/view/KeyboardShortcutInfo;)V",
-			arg0.__jniObject().object());
 	}
 	jint KeyboardShortcutGroup::describeContents()
 	{
@@ -94,11 +93,12 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	QAndroidJniObject KeyboardShortcutGroup::getItems()
+	void KeyboardShortcutGroup::addItem(__jni_impl::android::view::KeyboardShortcutInfo arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getItems",
-			"()Ljava/util/List;");
+		__thiz.callMethod<void>(
+			"addItem",
+			"(Landroid/view/KeyboardShortcutInfo;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::view
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_WEBKIT_WEBSETTINGS_LAYOUTALGORITHM
 #define ANDROID_WEBKIT_WEBSETTINGS_LAYOUTALGORITHM
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_PAINT_CAP
 #define ANDROID_GRAPHICS_PAINT_CAP
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

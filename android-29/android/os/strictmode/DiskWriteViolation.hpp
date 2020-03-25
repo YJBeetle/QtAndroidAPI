@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_DISKWRITEVIOLATION
 #define ANDROID_OS_STRICTMODE_DISKWRITEVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

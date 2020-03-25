@@ -5,14 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
-namespace __jni_impl::android::os
-{
-	class UserHandle;
-}
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
@@ -24,6 +16,14 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class UserHandle;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content::pm
@@ -46,16 +46,6 @@ namespace __jni_impl::android::content::pm
 		jlong getSize();
 		jboolean isSealed();
 		jboolean isActive();
-		jboolean isMultiPackage();
-		jboolean isStaged();
-		jint getParentSessionId();
-		QAndroidJniObject getChildSessionIds();
-		QAndroidJniObject getInstallerPackageName();
-		jfloat getProgress();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getUser();
-		jint getMode();
 		jint getSessionId();
 		jint getInstallReason();
 		QAndroidJniObject getAppPackageName();
@@ -73,14 +63,24 @@ namespace __jni_impl::android::content::pm
 		QAndroidJniObject getStagedSessionErrorMessage();
 		jboolean isCommitted();
 		jlong getUpdatedMillis();
+		QAndroidJniObject getUser();
+		QAndroidJniObject getInstallerPackageName();
+		jboolean isMultiPackage();
+		jboolean isStaged();
+		jint getParentSessionId();
+		QAndroidJniObject getChildSessionIds();
+		jfloat getProgress();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getMode();
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "../../os/Parcel.hpp"
-#include "../../os/UserHandle.hpp"
 #include "../../graphics/Bitmap.hpp"
 #include "../Intent.hpp"
 #include "../../net/Uri.hpp"
+#include "../../os/UserHandle.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -149,68 +149,6 @@ namespace __jni_impl::android::content::pm
 		return __thiz.callMethod<jboolean>(
 			"isActive",
 			"()Z");
-	}
-	jboolean PackageInstaller_SessionInfo::isMultiPackage()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMultiPackage",
-			"()Z");
-	}
-	jboolean PackageInstaller_SessionInfo::isStaged()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStaged",
-			"()Z");
-	}
-	jint PackageInstaller_SessionInfo::getParentSessionId()
-	{
-		return __thiz.callMethod<jint>(
-			"getParentSessionId",
-			"()I");
-	}
-	QAndroidJniObject PackageInstaller_SessionInfo::getChildSessionIds()
-	{
-		return __thiz.callObjectMethod(
-			"getChildSessionIds",
-			"()[I");
-	}
-	QAndroidJniObject PackageInstaller_SessionInfo::getInstallerPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getInstallerPackageName",
-			"()Ljava/lang/String;");
-	}
-	jfloat PackageInstaller_SessionInfo::getProgress()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getProgress",
-			"()F");
-	}
-	jint PackageInstaller_SessionInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void PackageInstaller_SessionInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject PackageInstaller_SessionInfo::getUser()
-	{
-		return __thiz.callObjectMethod(
-			"getUser",
-			"()Landroid/os/UserHandle;");
-	}
-	jint PackageInstaller_SessionInfo::getMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getMode",
-			"()I");
 	}
 	jint PackageInstaller_SessionInfo::getSessionId()
 	{
@@ -313,6 +251,68 @@ namespace __jni_impl::android::content::pm
 		return __thiz.callMethod<jlong>(
 			"getUpdatedMillis",
 			"()J");
+	}
+	QAndroidJniObject PackageInstaller_SessionInfo::getUser()
+	{
+		return __thiz.callObjectMethod(
+			"getUser",
+			"()Landroid/os/UserHandle;");
+	}
+	QAndroidJniObject PackageInstaller_SessionInfo::getInstallerPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getInstallerPackageName",
+			"()Ljava/lang/String;");
+	}
+	jboolean PackageInstaller_SessionInfo::isMultiPackage()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMultiPackage",
+			"()Z");
+	}
+	jboolean PackageInstaller_SessionInfo::isStaged()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStaged",
+			"()Z");
+	}
+	jint PackageInstaller_SessionInfo::getParentSessionId()
+	{
+		return __thiz.callMethod<jint>(
+			"getParentSessionId",
+			"()I");
+	}
+	QAndroidJniObject PackageInstaller_SessionInfo::getChildSessionIds()
+	{
+		return __thiz.callObjectMethod(
+			"getChildSessionIds",
+			"()[I");
+	}
+	jfloat PackageInstaller_SessionInfo::getProgress()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getProgress",
+			"()F");
+	}
+	jint PackageInstaller_SessionInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void PackageInstaller_SessionInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jint PackageInstaller_SessionInfo::getMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getMode",
+			"()I");
 	}
 } // namespace __jni_impl::android::content::pm
 

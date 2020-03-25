@@ -3,6 +3,8 @@
 #ifndef ANDROID_ICU_TEXT_PLURALFORMAT
 #define ANDROID_ICU_TEXT_PLURALFORMAT
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/text/Format.hpp"
 #include "UFormat.hpp"
 
 namespace __jni_impl::android::icu::util

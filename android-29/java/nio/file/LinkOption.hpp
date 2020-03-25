@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_FILE_LINKOPTION
 #define JAVA_NIO_FILE_LINKOPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_NET_WIFI_AWARE_SUBSCRIBEDISCOVERYSESSION
 #define ANDROID_NET_WIFI_AWARE_SUBSCRIBEDISCOVERYSESSION
 
+#include "../../../../__JniBaseClass.hpp"
 #include "DiscoverySession.hpp"
 
 namespace __jni_impl::android::net::wifi::aware

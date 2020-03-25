@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_RULEBASEDCOLLATOR
 #define ANDROID_ICU_TEXT_RULEBASEDCOLLATOR
 
+#include "../../../__JniBaseClass.hpp"
 #include "Collator.hpp"
 
 namespace __jni_impl::android::icu::text
@@ -15,10 +16,6 @@ namespace __jni_impl::android::icu::util
 }
 namespace __jni_impl::android::icu::text
 {
-	class CollationKey;
-}
-namespace __jni_impl::android::icu::text
-{
 	class CollationElementIterator;
 }
 namespace __jni_impl::android::icu::text
@@ -28,6 +25,10 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	class UnicodeSet;
+}
+namespace __jni_impl::android::icu::text
+{
+	class CollationKey;
 }
 
 namespace __jni_impl::android::icu::text
@@ -50,7 +51,6 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject getRules();
 		QAndroidJniObject getRules(jboolean arg0);
 		QAndroidJniObject getVersion();
-		QAndroidJniObject getCollationKey(jstring arg0);
 		void setStrength(jint arg0);
 		QAndroidJniObject cloneAsThawed();
 		QAndroidJniObject getCollationElementIterator(jstring arg0);
@@ -86,15 +86,16 @@ namespace __jni_impl::android::icu::text
 		jboolean getNumericCollation();
 		QAndroidJniObject getReorderCodes();
 		QAndroidJniObject getUCAVersion();
+		QAndroidJniObject getCollationKey(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
 #include "Collator.hpp"
 #include "../util/VersionInfo.hpp"
-#include "CollationKey.hpp"
 #include "CollationElementIterator.hpp"
 #include "UCharacterIterator.hpp"
 #include "UnicodeSet.hpp"
+#include "CollationKey.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -167,13 +168,6 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callObjectMethod(
 			"getVersion",
 			"()Landroid/icu/util/VersionInfo;");
-	}
-	QAndroidJniObject RuleBasedCollator::getCollationKey(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
-			arg0);
 	}
 	void RuleBasedCollator::setStrength(jint arg0)
 	{
@@ -400,6 +394,13 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callObjectMethod(
 			"getUCAVersion",
 			"()Landroid/icu/util/VersionInfo;");
+	}
+	QAndroidJniObject RuleBasedCollator::getCollationKey(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCollationKey",
+			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
+			arg0);
 	}
 } // namespace __jni_impl::android::icu::text
 

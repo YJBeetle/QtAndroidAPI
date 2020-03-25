@@ -56,8 +56,6 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getTextSize();
-		void setTextSize(__jni_impl::android::webkit::WebSettings_TextSize arg0);
 		void setCacheMode(jint arg0);
 		void setBlockNetworkLoads(jboolean arg0);
 		jboolean getBlockNetworkLoads();
@@ -66,6 +64,9 @@ namespace __jni_impl::android::webkit
 		jboolean getAllowContentAccess();
 		void setAllowFileAccess(jboolean arg0);
 		jboolean getAllowFileAccess();
+		QAndroidJniObject getDatabasePath();
+		QAndroidJniObject getTextSize();
+		void setTextSize(__jni_impl::android::webkit::WebSettings_TextSize arg0);
 		void setSupportZoom(jboolean arg0);
 		jboolean supportZoom();
 		void setMediaPlaybackRequiresUserGesture(jboolean arg0);
@@ -155,7 +156,6 @@ namespace __jni_impl::android::webkit
 		jint getForceDark();
 		void setDisabledActionModeMenuItems(jint arg0);
 		jint getDisabledActionModeMenuItems();
-		QAndroidJniObject getDatabasePath();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -269,19 +269,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	QAndroidJniObject WebSettings::getTextSize()
-	{
-		return __thiz.callObjectMethod(
-			"getTextSize",
-			"()Landroid/webkit/WebSettings$TextSize;");
-	}
-	void WebSettings::setTextSize(__jni_impl::android::webkit::WebSettings_TextSize arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextSize",
-			"(Landroid/webkit/WebSettings$TextSize;)V",
-			arg0.__jniObject().object());
-	}
 	void WebSettings::setCacheMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -333,6 +320,25 @@ namespace __jni_impl::android::webkit
 		return __thiz.callMethod<jboolean>(
 			"getAllowFileAccess",
 			"()Z");
+	}
+	QAndroidJniObject WebSettings::getDatabasePath()
+	{
+		return __thiz.callObjectMethod(
+			"getDatabasePath",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject WebSettings::getTextSize()
+	{
+		return __thiz.callObjectMethod(
+			"getTextSize",
+			"()Landroid/webkit/WebSettings$TextSize;");
+	}
+	void WebSettings::setTextSize(__jni_impl::android::webkit::WebSettings_TextSize arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextSize",
+			"(Landroid/webkit/WebSettings$TextSize;)V",
+			arg0.__jniObject().object());
 	}
 	void WebSettings::setSupportZoom(jboolean arg0)
 	{
@@ -917,12 +923,6 @@ namespace __jni_impl::android::webkit
 		return __thiz.callMethod<jint>(
 			"getDisabledActionModeMenuItems",
 			"()I");
-	}
-	QAndroidJniObject WebSettings::getDatabasePath()
-	{
-		return __thiz.callObjectMethod(
-			"getDatabasePath",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::webkit
 

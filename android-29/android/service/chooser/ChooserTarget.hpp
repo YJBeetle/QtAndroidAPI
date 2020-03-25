@@ -36,12 +36,12 @@ namespace __jni_impl::android::service::chooser
 		// Methods
 		QAndroidJniObject toString();
 		jfloat getScore();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getComponentName();
 		QAndroidJniObject getTitle();
-		QAndroidJniObject getIntentExtras();
 		QAndroidJniObject getIcon();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getIntentExtras();
 	};
 } // namespace __jni_impl::android::service::chooser
 
@@ -87,6 +87,24 @@ namespace __jni_impl::android::service::chooser
 			"getScore",
 			"()F");
 	}
+	QAndroidJniObject ChooserTarget::getComponentName()
+	{
+		return __thiz.callObjectMethod(
+			"getComponentName",
+			"()Landroid/content/ComponentName;");
+	}
+	QAndroidJniObject ChooserTarget::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;");
+	}
+	QAndroidJniObject ChooserTarget::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;");
+	}
 	jint ChooserTarget::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -101,29 +119,11 @@ namespace __jni_impl::android::service::chooser
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	QAndroidJniObject ChooserTarget::getComponentName()
-	{
-		return __thiz.callObjectMethod(
-			"getComponentName",
-			"()Landroid/content/ComponentName;");
-	}
-	QAndroidJniObject ChooserTarget::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
-	}
 	QAndroidJniObject ChooserTarget::getIntentExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getIntentExtras",
 			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject ChooserTarget::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
 	}
 } // namespace __jni_impl::android::service::chooser
 

@@ -3,8 +3,15 @@
 #ifndef ANDROID_SERVICE_WALLPAPER_WALLPAPERSERVICE
 #define ANDROID_SERVICE_WALLPAPER_WALLPAPERSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+namespace __jni_impl::android::service::wallpaper
+{
+	class WallpaperService_Engine;
+}
 namespace __jni_impl::android::content
 {
 	class Intent;
@@ -16,10 +23,6 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class PrintWriter;
-}
-namespace __jni_impl::android::service::wallpaper
-{
-	class WallpaperService_Engine;
 }
 
 namespace __jni_impl::android::service::wallpaper
@@ -35,17 +38,17 @@ namespace __jni_impl::android::service::wallpaper
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject onCreateEngine();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
-		QAndroidJniObject onCreateEngine();
 	};
 } // namespace __jni_impl::android::service::wallpaper
 
+#include "WallpaperService_Engine.hpp"
 #include "../../content/Intent.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
-#include "WallpaperService_Engine.hpp"
 
 namespace __jni_impl::android::service::wallpaper
 {
@@ -74,6 +77,12 @@ namespace __jni_impl::android::service::wallpaper
 	}
 	
 	// Methods
+	QAndroidJniObject WallpaperService::onCreateEngine()
+	{
+		return __thiz.callObjectMethod(
+			"onCreateEngine",
+			"()Landroid/service/wallpaper/WallpaperService$Engine;");
+	}
 	QAndroidJniObject WallpaperService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -92,12 +101,6 @@ namespace __jni_impl::android::service::wallpaper
 		__thiz.callMethod<void>(
 			"onDestroy",
 			"()V");
-	}
-	QAndroidJniObject WallpaperService::onCreateEngine()
-	{
-		return __thiz.callObjectMethod(
-			"onCreateEngine",
-			"()Landroid/service/wallpaper/WallpaperService$Engine;");
 	}
 } // namespace __jni_impl::android::service::wallpaper
 

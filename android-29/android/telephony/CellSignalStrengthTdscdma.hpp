@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_CELLSIGNALSTRENGTHTDSCDMA
 #define ANDROID_TELEPHONY_CELLSIGNALSTRENGTHTDSCDMA
 
+#include "../../__JniBaseClass.hpp"
 #include "CellSignalStrength.hpp"
 
 namespace __jni_impl::android::os
@@ -28,9 +29,9 @@ namespace __jni_impl::android::telephony
 		jint getLevel();
 		jint getAsuLevel();
 		jint getDbm();
+		jint getRscp();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getRscp();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -93,6 +94,12 @@ namespace __jni_impl::android::telephony
 			"getDbm",
 			"()I");
 	}
+	jint CellSignalStrengthTdscdma::getRscp()
+	{
+		return __thiz.callMethod<jint>(
+			"getRscp",
+			"()I");
+	}
 	jint CellSignalStrengthTdscdma::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -106,12 +113,6 @@ namespace __jni_impl::android::telephony
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint CellSignalStrengthTdscdma::getRscp()
-	{
-		return __thiz.callMethod<jint>(
-			"getRscp",
-			"()I");
 	}
 } // namespace __jni_impl::android::telephony
 

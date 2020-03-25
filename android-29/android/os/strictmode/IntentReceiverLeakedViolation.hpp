@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_INTENTRECEIVERLEAKEDVIOLATION
 #define ANDROID_OS_STRICTMODE_INTENTRECEIVERLEAKEDVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

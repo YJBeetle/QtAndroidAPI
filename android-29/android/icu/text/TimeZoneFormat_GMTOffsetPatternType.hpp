@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_TIMEZONEFORMAT_GMTOFFSETPATTERNTYPE
 #define ANDROID_ICU_TEXT_TIMEZONEFORMAT_GMTOFFSETPATTERNTYPE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

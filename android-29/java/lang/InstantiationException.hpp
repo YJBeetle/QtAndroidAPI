@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_INSTANTIATIONEXCEPTION
 #define JAVA_LANG_INSTANTIATIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "ReflectiveOperationException.hpp"
 
 

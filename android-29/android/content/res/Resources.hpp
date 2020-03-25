@@ -115,8 +115,8 @@ namespace __jni_impl::android::content::res
 		void parseBundleExtra(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2);
 		void flushLayoutCache();
 		void finishPreloading();
-		QAndroidJniObject getIntArray(jint arg0);
 		jint getIdentifier(jstring arg0, jstring arg1, jstring arg2);
+		QAndroidJniObject getIntArray(jint arg0);
 		QAndroidJniObject getAssets();
 		jint getColor(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1);
 		jint getColor(jint arg0);
@@ -498,13 +498,6 @@ namespace __jni_impl::android::content::res
 			"finishPreloading",
 			"()V");
 	}
-	QAndroidJniObject Resources::getIntArray(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getIntArray",
-			"(I)[I",
-			arg0);
-	}
 	jint Resources::getIdentifier(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -513,6 +506,13 @@ namespace __jni_impl::android::content::res
 			arg0,
 			arg1,
 			arg2);
+	}
+	QAndroidJniObject Resources::getIntArray(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getIntArray",
+			"(I)[I",
+			arg0);
 	}
 	QAndroidJniObject Resources::getAssets()
 	{

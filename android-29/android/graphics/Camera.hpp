@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::graphics
 {
-	class Canvas;
+	class Matrix;
 }
 namespace __jni_impl::android::graphics
 {
-	class Matrix;
+	class Canvas;
 }
 
 namespace __jni_impl::android::graphics
@@ -27,7 +27,10 @@ namespace __jni_impl::android::graphics
 		// Methods
 		void save();
 		void rotate(jfloat arg0, jfloat arg1, jfloat arg2);
+		void restore();
 		void translate(jfloat arg0, jfloat arg1, jfloat arg2);
+		void getMatrix(__jni_impl::android::graphics::Matrix arg0);
+		void setLocation(jfloat arg0, jfloat arg1, jfloat arg2);
 		void rotateX(jfloat arg0);
 		void rotateY(jfloat arg0);
 		void rotateZ(jfloat arg0);
@@ -36,14 +39,11 @@ namespace __jni_impl::android::graphics
 		jfloat getLocationZ();
 		void applyToCanvas(__jni_impl::android::graphics::Canvas arg0);
 		jfloat dotWithNormal(jfloat arg0, jfloat arg1, jfloat arg2);
-		void restore();
-		void getMatrix(__jni_impl::android::graphics::Matrix arg0);
-		void setLocation(jfloat arg0, jfloat arg1, jfloat arg2);
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Canvas.hpp"
 #include "Matrix.hpp"
+#include "Canvas.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -73,10 +73,32 @@ namespace __jni_impl::android::graphics
 			arg1,
 			arg2);
 	}
+	void Camera::restore()
+	{
+		__thiz.callMethod<void>(
+			"restore",
+			"()V");
+	}
 	void Camera::translate(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
 		__thiz.callMethod<void>(
 			"translate",
+			"(FFF)V",
+			arg0,
+			arg1,
+			arg2);
+	}
+	void Camera::getMatrix(__jni_impl::android::graphics::Matrix arg0)
+	{
+		__thiz.callMethod<void>(
+			"getMatrix",
+			"(Landroid/graphics/Matrix;)V",
+			arg0.__jniObject().object());
+	}
+	void Camera::setLocation(jfloat arg0, jfloat arg1, jfloat arg2)
+	{
+		__thiz.callMethod<void>(
+			"setLocation",
 			"(FFF)V",
 			arg0,
 			arg1,
@@ -133,28 +155,6 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jfloat>(
 			"dotWithNormal",
 			"(FFF)F",
-			arg0,
-			arg1,
-			arg2);
-	}
-	void Camera::restore()
-	{
-		__thiz.callMethod<void>(
-			"restore",
-			"()V");
-	}
-	void Camera::getMatrix(__jni_impl::android::graphics::Matrix arg0)
-	{
-		__thiz.callMethod<void>(
-			"getMatrix",
-			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object());
-	}
-	void Camera::setLocation(jfloat arg0, jfloat arg1, jfloat arg2)
-	{
-		__thiz.callMethod<void>(
-			"setLocation",
-			"(FFF)V",
 			arg0,
 			arg1,
 			arg2);

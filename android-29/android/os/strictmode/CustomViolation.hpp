@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_CUSTOMVIOLATION
 #define ANDROID_OS_STRICTMODE_CUSTOMVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

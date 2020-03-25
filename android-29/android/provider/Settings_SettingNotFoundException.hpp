@@ -3,6 +3,8 @@
 #ifndef ANDROID_PROVIDER_SETTINGS_SETTINGNOTFOUNDEXCEPTION
 #define ANDROID_PROVIDER_SETTINGS_SETTINGNOTFOUNDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
 

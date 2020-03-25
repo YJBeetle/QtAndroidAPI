@@ -3,6 +3,7 @@
 #ifndef ANDROID_WEBKIT_WEBSETTINGS_PLUGINSTATE
 #define ANDROID_WEBKIT_WEBSETTINGS_PLUGINSTATE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

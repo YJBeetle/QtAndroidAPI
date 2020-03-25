@@ -3,6 +3,7 @@
 #ifndef ANDROID_DATABASE_SQLITE_SQLITEPROGRAM
 #define ANDROID_DATABASE_SQLITE_SQLITEPROGRAM
 
+#include "../../../__JniBaseClass.hpp"
 #include "SQLiteClosable.hpp"
 
 namespace __jni_impl::android::database::sqlite

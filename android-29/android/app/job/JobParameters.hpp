@@ -17,13 +17,13 @@ namespace __jni_impl::android::os
 {
 	class PersistableBundle;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::net
 {
 	class Network;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 namespace __jni_impl::android::app::job
 {
@@ -44,11 +44,11 @@ namespace __jni_impl::android::app::job
 		// Methods
 		QAndroidJniObject getClipData();
 		QAndroidJniObject getExtras();
+		QAndroidJniObject getNetwork();
 		QAndroidJniObject getTransientExtras();
 		jint getClipGrantFlags();
 		QAndroidJniObject getTriggeredContentUris();
 		QAndroidJniObject getTriggeredContentAuthorities();
-		QAndroidJniObject getNetwork();
 		QAndroidJniObject dequeueWork();
 		void completeWork(__jni_impl::android::app::job::JobWorkItem arg0);
 		jint getJobId();
@@ -61,8 +61,8 @@ namespace __jni_impl::android::app::job
 #include "../../os/Parcel.hpp"
 #include "../../content/ClipData.hpp"
 #include "../../os/PersistableBundle.hpp"
-#include "../../os/Bundle.hpp"
 #include "../../net/Network.hpp"
+#include "../../os/Bundle.hpp"
 #include "JobWorkItem.hpp"
 
 namespace __jni_impl::android::app::job
@@ -97,6 +97,12 @@ namespace __jni_impl::android::app::job
 			"getExtras",
 			"()Landroid/os/PersistableBundle;");
 	}
+	QAndroidJniObject JobParameters::getNetwork()
+	{
+		return __thiz.callObjectMethod(
+			"getNetwork",
+			"()Landroid/net/Network;");
+	}
 	QAndroidJniObject JobParameters::getTransientExtras()
 	{
 		return __thiz.callObjectMethod(
@@ -120,12 +126,6 @@ namespace __jni_impl::android::app::job
 		return __thiz.callObjectMethod(
 			"getTriggeredContentAuthorities",
 			"()[Ljava/lang/String;");
-	}
-	QAndroidJniObject JobParameters::getNetwork()
-	{
-		return __thiz.callObjectMethod(
-			"getNetwork",
-			"()Landroid/net/Network;");
 	}
 	QAndroidJniObject JobParameters::dequeueWork()
 	{

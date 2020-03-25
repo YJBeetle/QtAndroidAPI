@@ -26,24 +26,24 @@ namespace __jni_impl::org::xml::sax::helpers
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		void parse(__jni_impl::org::xml::sax::InputSource arg0);
 		void parse(jstring arg0);
+		void parse(__jni_impl::org::xml::sax::InputSource arg0);
 		void setLocale(__jni_impl::java::util::Locale arg0);
-		void setEntityResolver(__jni_impl::__JniBaseClass arg0);
-		void setDTDHandler(__jni_impl::__JniBaseClass arg0);
-		void setDocumentHandler(__jni_impl::__JniBaseClass arg0);
-		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
 		void characters(jcharArray arg0, jint arg1, jint arg2);
+		void startDocument();
+		void endDocument();
+		void processingInstruction(jstring arg0, jstring arg1);
+		void ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2);
+		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
 		void setDocumentLocator(__jni_impl::__JniBaseClass arg0);
 		void startPrefixMapping(jstring arg0, jstring arg1);
 		void endPrefixMapping(jstring arg0);
 		void startElement(jstring arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3);
 		void endElement(jstring arg0, jstring arg1, jstring arg2);
 		void skippedEntity(jstring arg0);
-		void startDocument();
-		void endDocument();
-		void processingInstruction(jstring arg0, jstring arg1);
-		void ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2);
+		void setEntityResolver(__jni_impl::__JniBaseClass arg0);
+		void setDTDHandler(__jni_impl::__JniBaseClass arg0);
+		void setDocumentHandler(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::org::xml::sax::helpers
 
@@ -70,13 +70,6 @@ namespace __jni_impl::org::xml::sax::helpers
 	}
 	
 	// Methods
-	void XMLReaderAdapter::parse(__jni_impl::org::xml::sax::InputSource arg0)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Lorg/xml/sax/InputSource;)V",
-			arg0.__jniObject().object());
-	}
 	void XMLReaderAdapter::parse(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -84,39 +77,18 @@ namespace __jni_impl::org::xml::sax::helpers
 			"(Ljava/lang/String;)V",
 			arg0);
 	}
+	void XMLReaderAdapter::parse(__jni_impl::org::xml::sax::InputSource arg0)
+	{
+		__thiz.callMethod<void>(
+			"parse",
+			"(Lorg/xml/sax/InputSource;)V",
+			arg0.__jniObject().object());
+	}
 	void XMLReaderAdapter::setLocale(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLocale",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
-	}
-	void XMLReaderAdapter::setEntityResolver(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEntityResolver",
-			"(Lorg/xml/sax/EntityResolver;)V",
-			arg0.__jniObject().object());
-	}
-	void XMLReaderAdapter::setDTDHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDTDHandler",
-			"(Lorg/xml/sax/DTDHandler;)V",
-			arg0.__jniObject().object());
-	}
-	void XMLReaderAdapter::setDocumentHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDocumentHandler",
-			"(Lorg/xml/sax/DocumentHandler;)V",
-			arg0.__jniObject().object());
-	}
-	void XMLReaderAdapter::setErrorHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setErrorHandler",
-			"(Lorg/xml/sax/ErrorHandler;)V",
 			arg0.__jniObject().object());
 	}
 	void XMLReaderAdapter::characters(jcharArray arg0, jint arg1, jint arg2)
@@ -127,6 +99,42 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg0,
 			arg1,
 			arg2);
+	}
+	void XMLReaderAdapter::startDocument()
+	{
+		__thiz.callMethod<void>(
+			"startDocument",
+			"()V");
+	}
+	void XMLReaderAdapter::endDocument()
+	{
+		__thiz.callMethod<void>(
+			"endDocument",
+			"()V");
+	}
+	void XMLReaderAdapter::processingInstruction(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"processingInstruction",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1);
+	}
+	void XMLReaderAdapter::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"ignorableWhitespace",
+			"([CII)V",
+			arg0,
+			arg1,
+			arg2);
+	}
+	void XMLReaderAdapter::setErrorHandler(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setErrorHandler",
+			"(Lorg/xml/sax/ErrorHandler;)V",
+			arg0.__jniObject().object());
 	}
 	void XMLReaderAdapter::setDocumentLocator(__jni_impl::__JniBaseClass arg0)
 	{
@@ -176,34 +184,26 @@ namespace __jni_impl::org::xml::sax::helpers
 			"(Ljava/lang/String;)V",
 			arg0);
 	}
-	void XMLReaderAdapter::startDocument()
+	void XMLReaderAdapter::setEntityResolver(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"startDocument",
-			"()V");
+			"setEntityResolver",
+			"(Lorg/xml/sax/EntityResolver;)V",
+			arg0.__jniObject().object());
 	}
-	void XMLReaderAdapter::endDocument()
+	void XMLReaderAdapter::setDTDHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"endDocument",
-			"()V");
+			"setDTDHandler",
+			"(Lorg/xml/sax/DTDHandler;)V",
+			arg0.__jniObject().object());
 	}
-	void XMLReaderAdapter::processingInstruction(jstring arg0, jstring arg1)
+	void XMLReaderAdapter::setDocumentHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"processingInstruction",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1);
-	}
-	void XMLReaderAdapter::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"ignorableWhitespace",
-			"([CII)V",
-			arg0,
-			arg1,
-			arg2);
+			"setDocumentHandler",
+			"(Lorg/xml/sax/DocumentHandler;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::org::xml::sax::helpers
 

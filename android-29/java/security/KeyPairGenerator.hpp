@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_KEYPAIRGENERATOR
 #define JAVA_SECURITY_KEYPAIRGENERATOR
 
+#include "../../__JniBaseClass.hpp"
 #include "KeyPairGeneratorSpi.hpp"
 
 namespace __jni_impl::java::security
@@ -38,8 +39,8 @@ namespace __jni_impl::java::security
 		void initialize(jint arg0);
 		QAndroidJniObject getProvider();
 		QAndroidJniObject genKeyPair();
-		QAndroidJniObject generateKeyPair();
 		QAndroidJniObject getAlgorithm();
+		QAndroidJniObject generateKeyPair();
 	};
 } // namespace __jni_impl::java::security
 
@@ -128,17 +129,17 @@ namespace __jni_impl::java::security
 			"genKeyPair",
 			"()Ljava/security/KeyPair;");
 	}
-	QAndroidJniObject KeyPairGenerator::generateKeyPair()
-	{
-		return __thiz.callObjectMethod(
-			"generateKeyPair",
-			"()Ljava/security/KeyPair;");
-	}
 	QAndroidJniObject KeyPairGenerator::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject KeyPairGenerator::generateKeyPair()
+	{
+		return __thiz.callObjectMethod(
+			"generateKeyPair",
+			"()Ljava/security/KeyPair;");
 	}
 } // namespace __jni_impl::java::security
 

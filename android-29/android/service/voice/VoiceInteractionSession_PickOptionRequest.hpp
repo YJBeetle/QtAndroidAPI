@@ -3,6 +3,7 @@
 #ifndef ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_PICKOPTIONREQUEST
 #define ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_PICKOPTIONREQUEST
 
+#include "../../../__JniBaseClass.hpp"
 #include "VoiceInteractionSession_Request.hpp"
 
 namespace __jni_impl::android::app
@@ -27,9 +28,9 @@ namespace __jni_impl::android::service::voice
 		// Methods
 		QAndroidJniObject getVoicePrompt();
 		QAndroidJniObject getPrompt();
-		QAndroidJniObject getOptions();
-		void sendPickOptionResult(jarray arg0, __jni_impl::android::os::Bundle arg1);
 		void sendIntermediatePickOptionResult(jarray arg0, __jni_impl::android::os::Bundle arg1);
+		void sendPickOptionResult(jarray arg0, __jni_impl::android::os::Bundle arg1);
+		QAndroidJniObject getOptions();
 	};
 } // namespace __jni_impl::android::service::voice
 
@@ -61,11 +62,13 @@ namespace __jni_impl::android::service::voice
 			"getPrompt",
 			"()Ljava/lang/CharSequence;");
 	}
-	QAndroidJniObject VoiceInteractionSession_PickOptionRequest::getOptions()
+	void VoiceInteractionSession_PickOptionRequest::sendIntermediatePickOptionResult(jarray arg0, __jni_impl::android::os::Bundle arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getOptions",
-			"()[Landroid/app/VoiceInteractor$PickOptionRequest$Option;");
+		__thiz.callMethod<void>(
+			"sendIntermediatePickOptionResult",
+			"([Landroid/app/VoiceInteractor$PickOptionRequest$Option;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object());
 	}
 	void VoiceInteractionSession_PickOptionRequest::sendPickOptionResult(jarray arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -75,13 +78,11 @@ namespace __jni_impl::android::service::voice
 			arg0,
 			arg1.__jniObject().object());
 	}
-	void VoiceInteractionSession_PickOptionRequest::sendIntermediatePickOptionResult(jarray arg0, __jni_impl::android::os::Bundle arg1)
+	QAndroidJniObject VoiceInteractionSession_PickOptionRequest::getOptions()
 	{
-		__thiz.callMethod<void>(
-			"sendIntermediatePickOptionResult",
-			"([Landroid/app/VoiceInteractor$PickOptionRequest$Option;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object());
+		return __thiz.callObjectMethod(
+			"getOptions",
+			"()[Landroid/app/VoiceInteractor$PickOptionRequest$Option;");
 	}
 } // namespace __jni_impl::android::service::voice
 

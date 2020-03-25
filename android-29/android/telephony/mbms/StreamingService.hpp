@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::telephony::mbms
 {
 	class StreamingServiceInfo;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::telephony::mbms
@@ -38,13 +38,13 @@ namespace __jni_impl::android::telephony::mbms
 		
 		// Methods
 		void close();
-		QAndroidJniObject getPlaybackUri();
 		QAndroidJniObject getInfo();
+		QAndroidJniObject getPlaybackUri();
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
-#include "../../net/Uri.hpp"
 #include "StreamingServiceInfo.hpp"
+#include "../../net/Uri.hpp"
 
 namespace __jni_impl::android::telephony::mbms
 {
@@ -137,17 +137,17 @@ namespace __jni_impl::android::telephony::mbms
 			"close",
 			"()V");
 	}
-	QAndroidJniObject StreamingService::getPlaybackUri()
-	{
-		return __thiz.callObjectMethod(
-			"getPlaybackUri",
-			"()Landroid/net/Uri;");
-	}
 	QAndroidJniObject StreamingService::getInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getInfo",
 			"()Landroid/telephony/mbms/StreamingServiceInfo;");
+	}
+	QAndroidJniObject StreamingService::getPlaybackUri()
+	{
+		return __thiz.callObjectMethod(
+			"getPlaybackUri",
+			"()Landroid/net/Uri;");
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

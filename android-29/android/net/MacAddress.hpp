@@ -30,13 +30,13 @@ namespace __jni_impl::android::net
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject toByteArray();
-		static QAndroidJniObject fromString(jstring arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getAddressType();
 		jboolean isLocallyAssigned();
 		QAndroidJniObject toOuiString();
 		static QAndroidJniObject fromBytes(jbyteArray arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static QAndroidJniObject fromString(jstring arg0);
 	};
 } // namespace __jni_impl::android::net
 
@@ -112,13 +112,19 @@ namespace __jni_impl::android::net
 			"toByteArray",
 			"()[B");
 	}
-	QAndroidJniObject MacAddress::fromString(jstring arg0)
+	jint MacAddress::describeContents()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.MacAddress",
-			"fromString",
-			"(Ljava/lang/String;)Landroid/net/MacAddress;",
-			arg0);
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void MacAddress::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jint MacAddress::getAddressType()
 	{
@@ -146,19 +152,13 @@ namespace __jni_impl::android::net
 			"([B)Landroid/net/MacAddress;",
 			arg0);
 	}
-	jint MacAddress::describeContents()
+	QAndroidJniObject MacAddress::fromString(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void MacAddress::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.MacAddress",
+			"fromString",
+			"(Ljava/lang/String;)Landroid/net/MacAddress;",
+			arg0);
 	}
 } // namespace __jni_impl::android::net
 

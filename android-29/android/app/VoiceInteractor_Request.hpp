@@ -29,8 +29,8 @@ namespace __jni_impl::android::app
 		QAndroidJniObject toString();
 		QAndroidJniObject getContext();
 		void cancel();
-		void onCancel();
 		QAndroidJniObject getActivity();
+		void onCancel();
 		void onAttached(__jni_impl::android::app::Activity arg0);
 		void onDetached();
 	};
@@ -76,17 +76,17 @@ namespace __jni_impl::android::app
 			"cancel",
 			"()V");
 	}
-	void VoiceInteractor_Request::onCancel()
-	{
-		__thiz.callMethod<void>(
-			"onCancel",
-			"()V");
-	}
 	QAndroidJniObject VoiceInteractor_Request::getActivity()
 	{
 		return __thiz.callObjectMethod(
 			"getActivity",
 			"()Landroid/app/Activity;");
+	}
+	void VoiceInteractor_Request::onCancel()
+	{
+		__thiz.callMethod<void>(
+			"onCancel",
+			"()V");
 	}
 	void VoiceInteractor_Request::onAttached(__jni_impl::android::app::Activity arg0)
 	{

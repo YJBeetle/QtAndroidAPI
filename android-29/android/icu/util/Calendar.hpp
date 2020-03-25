@@ -137,6 +137,7 @@ namespace __jni_impl::android::icu::util
 		jint getActualMaximum(jint arg0);
 		jint getMinimum(jint arg0);
 		jint getMaximum(jint arg0);
+		static QAndroidJniObject getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
 		QAndroidJniObject getDateTimeFormat(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2);
 		QAndroidJniObject getDateTimeFormat(jint arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2);
 		jboolean isEquivalentTo(__jni_impl::android::icu::util::Calendar arg0);
@@ -145,13 +146,12 @@ namespace __jni_impl::android::icu::util
 		jint getRepeatedWallTimeOption();
 		void setSkippedWallTimeOption(jint arg0);
 		jint getSkippedWallTimeOption();
-		jboolean isWeekend(__jni_impl::java::util::Date arg0);
 		jboolean isWeekend();
+		jboolean isWeekend(__jni_impl::java::util::Date arg0);
 		static QAndroidJniObject getWeekDataForRegion(jstring arg0);
 		QAndroidJniObject getWeekData();
 		QAndroidJniObject setWeekData(__jni_impl::android::icu::util::Calendar_WeekData arg0);
 		jint getFieldCount();
-		static QAndroidJniObject getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -809,6 +809,16 @@ namespace __jni_impl::android::icu::util
 			"(I)I",
 			arg0);
 	}
+	QAndroidJniObject Calendar::getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Calendar",
+			"getKeywordValuesForLocale",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2);
+	}
 	QAndroidJniObject Calendar::getDateTimeFormat(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -868,18 +878,18 @@ namespace __jni_impl::android::icu::util
 			"getSkippedWallTimeOption",
 			"()I");
 	}
+	jboolean Calendar::isWeekend()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWeekend",
+			"()Z");
+	}
 	jboolean Calendar::isWeekend(__jni_impl::java::util::Date arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWeekend",
 			"(Ljava/util/Date;)Z",
 			arg0.__jniObject().object());
-	}
-	jboolean Calendar::isWeekend()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWeekend",
-			"()Z");
 	}
 	QAndroidJniObject Calendar::getWeekDataForRegion(jstring arg0)
 	{
@@ -907,16 +917,6 @@ namespace __jni_impl::android::icu::util
 		return __thiz.callMethod<jint>(
 			"getFieldCount",
 			"()I");
-	}
-	QAndroidJniObject Calendar::getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Calendar",
-			"getKeywordValuesForLocale",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2);
 	}
 } // namespace __jni_impl::android::icu::util
 

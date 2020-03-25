@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_URISYNTAXEXCEPTION
 #define JAVA_NET_URISYNTAXEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 
 

@@ -3,6 +3,9 @@
 #ifndef JAVA_SQL_SQLDATAEXCEPTION
 #define JAVA_SQL_SQLDATAEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "SQLException.hpp"
 #include "SQLNonTransientException.hpp"
 
 

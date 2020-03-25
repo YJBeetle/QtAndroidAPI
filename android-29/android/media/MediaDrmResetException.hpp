@@ -3,6 +3,9 @@
 #ifndef ANDROID_MEDIA_MEDIADRMRESETEXCEPTION
 #define ANDROID_MEDIA_MEDIADRMRESETEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/IllegalStateException.hpp"
 
 

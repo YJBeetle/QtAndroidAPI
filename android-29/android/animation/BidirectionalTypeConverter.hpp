@@ -3,6 +3,7 @@
 #ifndef ANDROID_ANIMATION_BIDIRECTIONALTYPECONVERTER
 #define ANDROID_ANIMATION_BIDIRECTIONALTYPECONVERTER
 
+#include "../../__JniBaseClass.hpp"
 #include "TypeConverter.hpp"
 
 

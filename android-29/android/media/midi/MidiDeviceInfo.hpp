@@ -43,11 +43,11 @@ namespace __jni_impl::android::media::midi
 		jint getId();
 		jint getType();
 		jboolean isPrivate();
+		jint getInputPortCount();
+		jint getOutputPortCount();
 		QAndroidJniObject getPorts();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getInputPortCount();
-		jint getOutputPortCount();
 	};
 } // namespace __jni_impl::android::media::midi
 
@@ -184,6 +184,18 @@ namespace __jni_impl::android::media::midi
 			"isPrivate",
 			"()Z");
 	}
+	jint MidiDeviceInfo::getInputPortCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getInputPortCount",
+			"()I");
+	}
+	jint MidiDeviceInfo::getOutputPortCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getOutputPortCount",
+			"()I");
+	}
 	QAndroidJniObject MidiDeviceInfo::getPorts()
 	{
 		return __thiz.callObjectMethod(
@@ -203,18 +215,6 @@ namespace __jni_impl::android::media::midi
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint MidiDeviceInfo::getInputPortCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getInputPortCount",
-			"()I");
-	}
-	jint MidiDeviceInfo::getOutputPortCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getOutputPortCount",
-			"()I");
 	}
 } // namespace __jni_impl::android::media::midi
 

@@ -35,8 +35,6 @@ namespace __jni_impl::android::icu::text
 		jint getIndex();
 		void setIndex(jint arg0);
 		jint previous();
-		jint following(jint arg0);
-		jint preceding(jint arg0);
 		void setOverlapping(jboolean arg0);
 		void setBreakIterator(__jni_impl::android::icu::text::BreakIterator arg0);
 		jint getMatchStart();
@@ -46,6 +44,8 @@ namespace __jni_impl::android::icu::text
 		jboolean isOverlapping();
 		void setElementComparisonType(__jni_impl::android::icu::text::SearchIterator_ElementComparisonType arg0);
 		QAndroidJniObject getElementComparisonType();
+		jint following(jint arg0);
+		jint preceding(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -127,20 +127,6 @@ namespace __jni_impl::android::icu::text
 			"previous",
 			"()I");
 	}
-	jint SearchIterator::following(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"following",
-			"(I)I",
-			arg0);
-	}
-	jint SearchIterator::preceding(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"preceding",
-			"(I)I",
-			arg0);
-	}
 	void SearchIterator::setOverlapping(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -197,6 +183,20 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callObjectMethod(
 			"getElementComparisonType",
 			"()Landroid/icu/text/SearchIterator$ElementComparisonType;");
+	}
+	jint SearchIterator::following(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"following",
+			"(I)I",
+			arg0);
+	}
+	jint SearchIterator::preceding(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"preceding",
+			"(I)I",
+			arg0);
 	}
 } // namespace __jni_impl::android::icu::text
 

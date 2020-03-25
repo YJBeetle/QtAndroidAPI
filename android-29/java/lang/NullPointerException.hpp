@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_NULLPOINTEREXCEPTION
 #define JAVA_LANG_NULLPOINTEREXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "RuntimeException.hpp"
 
 

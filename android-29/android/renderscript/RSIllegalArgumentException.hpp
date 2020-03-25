@@ -3,6 +3,9 @@
 #ifndef ANDROID_RENDERSCRIPT_RSILLEGALARGUMENTEXCEPTION
 #define ANDROID_RENDERSCRIPT_RSILLEGALARGUMENTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 #include "RSRuntimeException.hpp"
 
 

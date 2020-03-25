@@ -34,15 +34,15 @@ namespace __jni_impl::android::widget
 		void setColor(jint arg0);
 		void finish();
 		jint getMaxHeight();
+		jboolean draw(__jni_impl::android::graphics::Canvas arg0);
 		jboolean isFinished();
-		void onPull(jfloat arg0);
 		void onPull(jfloat arg0, jfloat arg1);
+		void onPull(jfloat arg0);
 		void onAbsorb(jint arg0);
+		jint getColor();
+		void onRelease();
 		QAndroidJniObject getBlendMode();
 		void setBlendMode(__jni_impl::android::graphics::BlendMode arg0);
-		jint getColor();
-		jboolean draw(__jni_impl::android::graphics::Canvas arg0);
-		void onRelease();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -98,18 +98,18 @@ namespace __jni_impl::android::widget
 			"getMaxHeight",
 			"()I");
 	}
+	jboolean EdgeEffect::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"draw",
+			"(Landroid/graphics/Canvas;)Z",
+			arg0.__jniObject().object());
+	}
 	jboolean EdgeEffect::isFinished()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFinished",
 			"()Z");
-	}
-	void EdgeEffect::onPull(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"onPull",
-			"(F)V",
-			arg0);
 	}
 	void EdgeEffect::onPull(jfloat arg0, jfloat arg1)
 	{
@@ -119,12 +119,31 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1);
 	}
+	void EdgeEffect::onPull(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"onPull",
+			"(F)V",
+			arg0);
+	}
 	void EdgeEffect::onAbsorb(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAbsorb",
 			"(I)V",
 			arg0);
+	}
+	jint EdgeEffect::getColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getColor",
+			"()I");
+	}
+	void EdgeEffect::onRelease()
+	{
+		__thiz.callMethod<void>(
+			"onRelease",
+			"()V");
 	}
 	QAndroidJniObject EdgeEffect::getBlendMode()
 	{
@@ -138,25 +157,6 @@ namespace __jni_impl::android::widget
 			"setBlendMode",
 			"(Landroid/graphics/BlendMode;)V",
 			arg0.__jniObject().object());
-	}
-	jint EdgeEffect::getColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getColor",
-			"()I");
-	}
-	jboolean EdgeEffect::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"draw",
-			"(Landroid/graphics/Canvas;)Z",
-			arg0.__jniObject().object());
-	}
-	void EdgeEffect::onRelease()
-	{
-		__thiz.callMethod<void>(
-			"onRelease",
-			"()V");
 	}
 } // namespace __jni_impl::android::widget
 

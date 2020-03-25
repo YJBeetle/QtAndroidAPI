@@ -11,11 +11,11 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::preference
 {
-	class Preference;
+	class PreferenceScreen;
 }
 namespace __jni_impl::android::preference
 {
-	class PreferenceScreen;
+	class Preference;
 }
 
 namespace __jni_impl::android::preference
@@ -31,7 +31,6 @@ namespace __jni_impl::android::preference
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject findPreference(jstring arg0);
 		void setPreferenceDataStore(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getPreferenceDataStore();
 		QAndroidJniObject createPreferenceScreen(__jni_impl::android::content::Context arg0);
@@ -45,15 +44,16 @@ namespace __jni_impl::android::preference
 		jboolean isStorageDeviceProtected();
 		static QAndroidJniObject getDefaultSharedPreferences(__jni_impl::android::content::Context arg0);
 		static QAndroidJniObject getDefaultSharedPreferencesName(__jni_impl::android::content::Context arg0);
-		static void setDefaultValues(__jni_impl::android::content::Context arg0, jint arg1, jboolean arg2);
 		static void setDefaultValues(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2, jint arg3, jboolean arg4);
+		static void setDefaultValues(__jni_impl::android::content::Context arg0, jint arg1, jboolean arg2);
 		QAndroidJniObject getSharedPreferences();
+		QAndroidJniObject findPreference(jstring arg0);
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
-#include "Preference.hpp"
 #include "PreferenceScreen.hpp"
+#include "Preference.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -82,13 +82,6 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
-	QAndroidJniObject PreferenceManager::findPreference(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findPreference",
-			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			arg0);
-	}
 	void PreferenceManager::setPreferenceDataStore(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -175,16 +168,6 @@ namespace __jni_impl::android::preference
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.__jniObject().object());
 	}
-	void PreferenceManager::setDefaultValues(__jni_impl::android::content::Context arg0, jint arg1, jboolean arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.preference.PreferenceManager",
-			"setDefaultValues",
-			"(Landroid/content/Context;IZ)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2);
-	}
 	void PreferenceManager::setDefaultValues(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2, jint arg3, jboolean arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -197,11 +180,28 @@ namespace __jni_impl::android::preference
 			arg3,
 			arg4);
 	}
+	void PreferenceManager::setDefaultValues(__jni_impl::android::content::Context arg0, jint arg1, jboolean arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.preference.PreferenceManager",
+			"setDefaultValues",
+			"(Landroid/content/Context;IZ)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2);
+	}
 	QAndroidJniObject PreferenceManager::getSharedPreferences()
 	{
 		return __thiz.callObjectMethod(
 			"getSharedPreferences",
 			"()Landroid/content/SharedPreferences;");
+	}
+	QAndroidJniObject PreferenceManager::findPreference(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findPreference",
+			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
+			arg0);
 	}
 } // namespace __jni_impl::android::preference
 

@@ -40,6 +40,8 @@ namespace __jni_impl::android::media::session
 		void stop();
 		void prepare();
 		void rewind();
+		void pause();
+		void seekTo(jlong arg0);
 		void prepareFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		void prepareFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		void prepareFromUri(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
@@ -54,9 +56,7 @@ namespace __jni_impl::android::media::session
 		void setPlaybackSpeed(jfloat arg0);
 		void sendCustomAction(__jni_impl::android::media::session::PlaybackState_CustomAction arg0, __jni_impl::android::os::Bundle arg1);
 		void sendCustomAction(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		void pause();
 		void play();
-		void seekTo(jlong arg0);
 	};
 } // namespace __jni_impl::android::media::session
 
@@ -96,6 +96,19 @@ namespace __jni_impl::android::media::session
 		__thiz.callMethod<void>(
 			"rewind",
 			"()V");
+	}
+	void MediaController_TransportControls::pause()
+	{
+		__thiz.callMethod<void>(
+			"pause",
+			"()V");
+	}
+	void MediaController_TransportControls::seekTo(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"seekTo",
+			"(J)V",
+			arg0);
 	}
 	void MediaController_TransportControls::prepareFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -200,24 +213,11 @@ namespace __jni_impl::android::media::session
 			arg0,
 			arg1.__jniObject().object());
 	}
-	void MediaController_TransportControls::pause()
-	{
-		__thiz.callMethod<void>(
-			"pause",
-			"()V");
-	}
 	void MediaController_TransportControls::play()
 	{
 		__thiz.callMethod<void>(
 			"play",
 			"()V");
-	}
-	void MediaController_TransportControls::seekTo(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"seekTo",
-			"(J)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::media::session
 

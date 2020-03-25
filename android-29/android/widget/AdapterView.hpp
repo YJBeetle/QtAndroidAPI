@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_ADAPTERVIEW
 #define ANDROID_WIDGET_ADAPTERVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::content
@@ -67,10 +69,10 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getItemAtPosition(jint arg0);
 		jlong getItemIdAtPosition(jint arg0);
 		QAndroidJniObject getAccessibilityClassName();
-		void addView(__jni_impl::android::view::View arg0, jint arg1);
-		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
 		void addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		void addView(__jni_impl::android::view::View arg0);
+		void addView(__jni_impl::android::view::View arg0, jint arg1);
+		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
 		void removeView(__jni_impl::android::view::View arg0);
 		void removeViewAt(jint arg0);
 		void removeAllViews();
@@ -302,6 +304,21 @@ namespace __jni_impl::android::widget
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;");
 	}
+	void AdapterView::addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void AdapterView::addView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
 	void AdapterView::addView(__jni_impl::android::view::View arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -318,21 +335,6 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object());
-	}
-	void AdapterView::addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void AdapterView::addView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
 	}
 	void AdapterView::removeView(__jni_impl::android::view::View arg0)
 	{

@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_ABSOLUTELAYOUT
 #define ANDROID_WIDGET_ABSOLUTELAYOUT
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::content

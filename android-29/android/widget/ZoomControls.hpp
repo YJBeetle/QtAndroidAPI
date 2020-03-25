@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_ZOOMCONTROLS
 #define ANDROID_WIDGET_ZOOMCONTROLS
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "LinearLayout.hpp"
 
 namespace __jni_impl::android::content
@@ -33,9 +36,9 @@ namespace __jni_impl::android::widget
 		void setIsZoomOutEnabled(jboolean arg0);
 		void setZoomSpeed(jlong arg0);
 		void hide();
+		QAndroidJniObject getAccessibilityClassName();
 		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean hasFocus();
-		QAndroidJniObject getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -111,6 +114,12 @@ namespace __jni_impl::android::widget
 			"hide",
 			"()V");
 	}
+	QAndroidJniObject ZoomControls::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
 	jboolean ZoomControls::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -123,12 +132,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jboolean>(
 			"hasFocus",
 			"()Z");
-	}
-	QAndroidJniObject ZoomControls::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
 	}
 } // namespace __jni_impl::android::widget
 

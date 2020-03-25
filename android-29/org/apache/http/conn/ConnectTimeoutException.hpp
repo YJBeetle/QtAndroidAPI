@@ -3,6 +3,9 @@
 #ifndef ORG_APACHE_HTTP_CONN_CONNECTTIMEOUTEXCEPTION
 #define ORG_APACHE_HTTP_CONN_CONNECTTIMEOUTEXCEPTION
 
+#include "../../../../__JniBaseClass.hpp"
+#include "../../../../java/lang/Exception.hpp"
+#include "../../../../java/io/IOException.hpp"
 #include "../../../../java/io/InterruptedIOException.hpp"
 
 

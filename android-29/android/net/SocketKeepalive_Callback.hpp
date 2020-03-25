@@ -17,10 +17,10 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		void onError(jint arg0);
-		void onStopped();
-		void onStarted();
 		void onDataReceived();
+		void onStopped();
+		void onError(jint arg0);
+		void onStarted();
 	};
 } // namespace __jni_impl::android::net
 
@@ -38,12 +38,11 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	void SocketKeepalive_Callback::onError(jint arg0)
+	void SocketKeepalive_Callback::onDataReceived()
 	{
 		__thiz.callMethod<void>(
-			"onError",
-			"(I)V",
-			arg0);
+			"onDataReceived",
+			"()V");
 	}
 	void SocketKeepalive_Callback::onStopped()
 	{
@@ -51,16 +50,17 @@ namespace __jni_impl::android::net
 			"onStopped",
 			"()V");
 	}
+	void SocketKeepalive_Callback::onError(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(I)V",
+			arg0);
+	}
 	void SocketKeepalive_Callback::onStarted()
 	{
 		__thiz.callMethod<void>(
 			"onStarted",
-			"()V");
-	}
-	void SocketKeepalive_Callback::onDataReceived()
-	{
-		__thiz.callMethod<void>(
-			"onDataReceived",
 			"()V");
 	}
 } // namespace __jni_impl::android::net

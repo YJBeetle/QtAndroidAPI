@@ -19,6 +19,14 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::media::session
 {
+	class MediaController_Callback;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
+}
+namespace __jni_impl::android::media::session
+{
 	class MediaController_TransportControls;
 }
 namespace __jni_impl::android::view
@@ -45,14 +53,6 @@ namespace __jni_impl::android::os
 {
 	class ResultReceiver;
 }
-namespace __jni_impl::android::media::session
-{
-	class MediaController_Callback;
-}
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
 
 namespace __jni_impl::android::media::session
 {
@@ -68,7 +68,11 @@ namespace __jni_impl::android::media::session
 		QAndroidJniObject getPackageName();
 		QAndroidJniObject getQueue();
 		jlong getFlags();
+		QAndroidJniObject getSessionToken();
 		QAndroidJniObject getExtras();
+		void registerCallback(__jni_impl::android::media::session::MediaController_Callback arg0);
+		void registerCallback(__jni_impl::android::media::session::MediaController_Callback arg0, __jni_impl::android::os::Handler arg1);
+		void unregisterCallback(__jni_impl::android::media::session::MediaController_Callback arg0);
 		QAndroidJniObject getTransportControls();
 		jboolean dispatchMediaButtonEvent(__jni_impl::android::view::KeyEvent arg0);
 		QAndroidJniObject getPlaybackState();
@@ -81,16 +85,14 @@ namespace __jni_impl::android::media::session
 		void adjustVolume(jint arg0, jint arg1);
 		void sendCommand(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2);
 		QAndroidJniObject getSessionInfo();
-		void registerCallback(__jni_impl::android::media::session::MediaController_Callback arg0, __jni_impl::android::os::Handler arg1);
-		void registerCallback(__jni_impl::android::media::session::MediaController_Callback arg0);
-		void unregisterCallback(__jni_impl::android::media::session::MediaController_Callback arg0);
-		QAndroidJniObject getSessionToken();
 	};
 } // namespace __jni_impl::android::media::session
 
 #include "../../content/Context.hpp"
 #include "MediaSession_Token.hpp"
 #include "../../os/Bundle.hpp"
+#include "MediaController_Callback.hpp"
+#include "../../os/Handler.hpp"
 #include "MediaController_TransportControls.hpp"
 #include "../../view/KeyEvent.hpp"
 #include "PlaybackState.hpp"
@@ -98,8 +100,6 @@ namespace __jni_impl::android::media::session
 #include "MediaController_PlaybackInfo.hpp"
 #include "../../app/PendingIntent.hpp"
 #include "../../os/ResultReceiver.hpp"
-#include "MediaController_Callback.hpp"
-#include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::media::session
 {
@@ -134,11 +134,39 @@ namespace __jni_impl::android::media::session
 			"getFlags",
 			"()J");
 	}
+	QAndroidJniObject MediaController::getSessionToken()
+	{
+		return __thiz.callObjectMethod(
+			"getSessionToken",
+			"()Landroid/media/session/MediaSession$Token;");
+	}
 	QAndroidJniObject MediaController::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;");
+	}
+	void MediaController::registerCallback(__jni_impl::android::media::session::MediaController_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerCallback",
+			"(Landroid/media/session/MediaController$Callback;)V",
+			arg0.__jniObject().object());
+	}
+	void MediaController::registerCallback(__jni_impl::android::media::session::MediaController_Callback arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"registerCallback",
+			"(Landroid/media/session/MediaController$Callback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void MediaController::unregisterCallback(__jni_impl::android::media::session::MediaController_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterCallback",
+			"(Landroid/media/session/MediaController$Callback;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject MediaController::getTransportControls()
 	{
@@ -219,34 +247,6 @@ namespace __jni_impl::android::media::session
 		return __thiz.callObjectMethod(
 			"getSessionInfo",
 			"()Landroid/os/Bundle;");
-	}
-	void MediaController::registerCallback(__jni_impl::android::media::session::MediaController_Callback arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"registerCallback",
-			"(Landroid/media/session/MediaController$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void MediaController::registerCallback(__jni_impl::android::media::session::MediaController_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerCallback",
-			"(Landroid/media/session/MediaController$Callback;)V",
-			arg0.__jniObject().object());
-	}
-	void MediaController::unregisterCallback(__jni_impl::android::media::session::MediaController_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterCallback",
-			"(Landroid/media/session/MediaController$Callback;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject MediaController::getSessionToken()
-	{
-		return __thiz.callObjectMethod(
-			"getSessionToken",
-			"()Landroid/media/session/MediaSession$Token;");
 	}
 } // namespace __jni_impl::android::media::session
 

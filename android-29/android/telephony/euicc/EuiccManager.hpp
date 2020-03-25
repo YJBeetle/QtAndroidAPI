@@ -9,13 +9,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::app
-{
-	class PendingIntent;
-}
 namespace __jni_impl::android::telephony::euicc
 {
 	class DownloadableSubscription;
+}
+namespace __jni_impl::android::app
+{
+	class PendingIntent;
 }
 namespace __jni_impl::android::app
 {
@@ -51,19 +51,19 @@ namespace __jni_impl::android::telephony::euicc
 		// Methods
 		jboolean isEnabled();
 		QAndroidJniObject getEid();
-		void switchToSubscription(jint arg0, __jni_impl::android::app::PendingIntent arg1);
 		QAndroidJniObject createForCardId(jint arg0);
 		void downloadSubscription(__jni_impl::android::telephony::euicc::DownloadableSubscription arg0, jboolean arg1, __jni_impl::android::app::PendingIntent arg2);
 		void startResolutionActivity(__jni_impl::android::app::Activity arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::android::app::PendingIntent arg3);
 		QAndroidJniObject getEuiccInfo();
 		void deleteSubscription(jint arg0, __jni_impl::android::app::PendingIntent arg1);
 		void updateSubscriptionNickname(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2);
+		void switchToSubscription(jint arg0, __jni_impl::android::app::PendingIntent arg1);
 	};
 } // namespace __jni_impl::android::telephony::euicc
 
 #include "../../content/Context.hpp"
-#include "../../app/PendingIntent.hpp"
 #include "DownloadableSubscription.hpp"
+#include "../../app/PendingIntent.hpp"
 #include "../../app/Activity.hpp"
 #include "../../content/Intent.hpp"
 #include "EuiccInfo.hpp"
@@ -146,14 +146,6 @@ namespace __jni_impl::android::telephony::euicc
 			"getEid",
 			"()Ljava/lang/String;");
 	}
-	void EuiccManager::switchToSubscription(jint arg0, __jni_impl::android::app::PendingIntent arg1)
-	{
-		__thiz.callMethod<void>(
-			"switchToSubscription",
-			"(ILandroid/app/PendingIntent;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
 	QAndroidJniObject EuiccManager::createForCardId(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -202,6 +194,14 @@ namespace __jni_impl::android::telephony::euicc
 			arg0,
 			arg1,
 			arg2.__jniObject().object());
+	}
+	void EuiccManager::switchToSubscription(jint arg0, __jni_impl::android::app::PendingIntent arg1)
+	{
+		__thiz.callMethod<void>(
+			"switchToSubscription",
+			"(ILandroid/app/PendingIntent;)V",
+			arg0,
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::telephony::euicc
 

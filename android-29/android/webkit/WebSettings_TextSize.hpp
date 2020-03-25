@@ -3,6 +3,7 @@
 #ifndef ANDROID_WEBKIT_WEBSETTINGS_TEXTSIZE
 #define ANDROID_WEBKIT_WEBSETTINGS_TEXTSIZE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

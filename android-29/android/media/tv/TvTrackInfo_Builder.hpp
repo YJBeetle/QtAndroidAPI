@@ -28,14 +28,14 @@ namespace __jni_impl::android::media::tv
 		QAndroidJniObject build();
 		QAndroidJniObject setExtra(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setLanguage(jstring arg0);
+		QAndroidJniObject setDescription(jstring arg0);
+		QAndroidJniObject setVideoFrameRate(jfloat arg0);
 		QAndroidJniObject setAudioSampleRate(jint arg0);
 		QAndroidJniObject setVideoWidth(jint arg0);
 		QAndroidJniObject setVideoHeight(jint arg0);
 		QAndroidJniObject setVideoPixelAspectRatio(jfloat arg0);
 		QAndroidJniObject setAudioChannelCount(jint arg0);
 		QAndroidJniObject setVideoActiveFormatDescription(jbyte arg0);
-		QAndroidJniObject setVideoFrameRate(jfloat arg0);
-		QAndroidJniObject setDescription(jstring arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -75,6 +75,20 @@ namespace __jni_impl::android::media::tv
 		return __thiz.callObjectMethod(
 			"setLanguage",
 			"(Ljava/lang/String;)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0);
+	}
+	QAndroidJniObject TvTrackInfo_Builder::setDescription(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDescription",
+			"(Ljava/lang/CharSequence;)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0);
+	}
+	QAndroidJniObject TvTrackInfo_Builder::setVideoFrameRate(jfloat arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setVideoFrameRate",
+			"(F)Landroid/media/tv/TvTrackInfo$Builder;",
 			arg0);
 	}
 	QAndroidJniObject TvTrackInfo_Builder::setAudioSampleRate(jint arg0)
@@ -117,20 +131,6 @@ namespace __jni_impl::android::media::tv
 		return __thiz.callObjectMethod(
 			"setVideoActiveFormatDescription",
 			"(B)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
-	}
-	QAndroidJniObject TvTrackInfo_Builder::setVideoFrameRate(jfloat arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setVideoFrameRate",
-			"(F)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
-	}
-	QAndroidJniObject TvTrackInfo_Builder::setDescription(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDescription",
-			"(Ljava/lang/CharSequence;)Landroid/media/tv/TvTrackInfo$Builder;",
 			arg0);
 	}
 } // namespace __jni_impl::android::media::tv

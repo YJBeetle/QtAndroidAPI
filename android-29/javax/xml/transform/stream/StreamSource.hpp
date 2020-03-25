@@ -38,14 +38,14 @@ namespace __jni_impl::javax::xml::transform::stream
 		// Methods
 		jboolean isEmpty();
 		QAndroidJniObject getInputStream();
+		QAndroidJniObject getSystemId();
+		QAndroidJniObject getReader();
 		void setSystemId(__jni_impl::java::io::File arg0);
 		void setSystemId(jstring arg0);
 		void setInputStream(__jni_impl::java::io::InputStream arg0);
 		void setReader(__jni_impl::java::io::Reader arg0);
 		void setPublicId(jstring arg0);
 		QAndroidJniObject getPublicId();
-		QAndroidJniObject getSystemId();
-		QAndroidJniObject getReader();
 	};
 } // namespace __jni_impl::javax::xml::transform::stream
 
@@ -129,6 +129,18 @@ namespace __jni_impl::javax::xml::transform::stream
 			"getInputStream",
 			"()Ljava/io/InputStream;");
 	}
+	QAndroidJniObject StreamSource::getSystemId()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject StreamSource::getReader()
+	{
+		return __thiz.callObjectMethod(
+			"getReader",
+			"()Ljava/io/Reader;");
+	}
 	void StreamSource::setSystemId(__jni_impl::java::io::File arg0)
 	{
 		__thiz.callMethod<void>(
@@ -169,18 +181,6 @@ namespace __jni_impl::javax::xml::transform::stream
 		return __thiz.callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject StreamSource::getSystemId()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemId",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject StreamSource::getReader()
-	{
-		return __thiz.callObjectMethod(
-			"getReader",
-			"()Ljava/io/Reader;");
 	}
 } // namespace __jni_impl::javax::xml::transform::stream
 

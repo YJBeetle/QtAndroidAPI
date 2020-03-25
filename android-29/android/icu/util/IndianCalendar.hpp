@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_UTIL_INDIANCALENDAR
 #define ANDROID_ICU_UTIL_INDIANCALENDAR
 
+#include "../../../__JniBaseClass.hpp"
 #include "Calendar.hpp"
 
 namespace __jni_impl::android::icu::util

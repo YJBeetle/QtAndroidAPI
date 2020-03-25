@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_TEXTUTILS_TRUNCATEAT
 #define ANDROID_TEXT_TEXTUTILS_TRUNCATEAT
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

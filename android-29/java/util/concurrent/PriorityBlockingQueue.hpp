@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_CONCURRENT_PRIORITYBLOCKINGQUEUE
 #define JAVA_UTIL_CONCURRENT_PRIORITYBLOCKINGQUEUE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
 namespace __jni_impl::java::util::concurrent::locks

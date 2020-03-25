@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_STYLE_ABSOLUTESIZESPAN
 #define ANDROID_TEXT_STYLE_ABSOLUTESIZESPAN
 
+#include "../../../__JniBaseClass.hpp"
+#include "CharacterStyle.hpp"
 #include "MetricAffectingSpan.hpp"
 
 namespace __jni_impl::android::os

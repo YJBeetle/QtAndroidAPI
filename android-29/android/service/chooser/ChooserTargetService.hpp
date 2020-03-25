@@ -3,6 +3,9 @@
 #ifndef ANDROID_SERVICE_CHOOSER_CHOOSERTARGETSERVICE
 #define ANDROID_SERVICE_CHOOSER_CHOOSERTARGETSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace __jni_impl::android::content

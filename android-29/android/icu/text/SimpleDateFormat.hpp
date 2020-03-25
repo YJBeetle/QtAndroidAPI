@@ -3,6 +3,9 @@
 #ifndef ANDROID_ICU_TEXT_SIMPLEDATEFORMAT
 #define ANDROID_ICU_TEXT_SIMPLEDATEFORMAT
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/text/Format.hpp"
+#include "UFormat.hpp"
 #include "DateFormat.hpp"
 
 namespace __jni_impl::android::icu::text
@@ -43,15 +46,15 @@ namespace __jni_impl::android::icu::text
 }
 namespace __jni_impl::android::icu::text
 {
-	class DisplayContext;
-}
-namespace __jni_impl::android::icu::text
-{
 	class DateFormat_Field;
 }
 namespace __jni_impl::android::icu::text
 {
 	class TimeZoneFormat;
+}
+namespace __jni_impl::android::icu::text
+{
+	class DisplayContext;
 }
 
 namespace __jni_impl::android::icu::text
@@ -87,9 +90,9 @@ namespace __jni_impl::android::icu::text
 		void setNumberFormat(jstring arg0, __jni_impl::android::icu::text::NumberFormat arg1);
 		QAndroidJniObject getNumberFormat(jchar arg0);
 		QAndroidJniObject formatToCharacterIterator(jobject arg0);
-		void setContext(__jni_impl::android::icu::text::DisplayContext arg0);
 		QAndroidJniObject getTimeZoneFormat();
 		void setTimeZoneFormat(__jni_impl::android::icu::text::TimeZoneFormat arg0);
+		void setContext(__jni_impl::android::icu::text::DisplayContext arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -102,9 +105,9 @@ namespace __jni_impl::android::icu::text
 #include "../../../java/text/ParsePosition.hpp"
 #include "../../../java/util/Date.hpp"
 #include "NumberFormat.hpp"
-#include "DisplayContext.hpp"
 #include "DateFormat_Field.hpp"
 #include "TimeZoneFormat.hpp"
+#include "DisplayContext.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -277,13 +280,6 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
 			arg0);
 	}
-	void SimpleDateFormat::setContext(__jni_impl::android::icu::text::DisplayContext arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContext",
-			"(Landroid/icu/text/DisplayContext;)V",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject SimpleDateFormat::getTimeZoneFormat()
 	{
 		return __thiz.callObjectMethod(
@@ -295,6 +291,13 @@ namespace __jni_impl::android::icu::text
 		__thiz.callMethod<void>(
 			"setTimeZoneFormat",
 			"(Landroid/icu/text/TimeZoneFormat;)V",
+			arg0.__jniObject().object());
+	}
+	void SimpleDateFormat::setContext(__jni_impl::android::icu::text::DisplayContext arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContext",
+			"(Landroid/icu/text/DisplayContext;)V",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::icu::text

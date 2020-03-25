@@ -3,6 +3,7 @@
 #ifndef ANDROID_NET_NETWORKINFO_STATE
 #define ANDROID_NET_NETWORKINFO_STATE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

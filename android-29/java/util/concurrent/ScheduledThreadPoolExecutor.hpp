@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_CONCURRENT_SCHEDULEDTHREADPOOLEXECUTOR
 #define JAVA_UTIL_CONCURRENT_SCHEDULEDTHREADPOOLEXECUTOR
 
+#include "../../../__JniBaseClass.hpp"
+#include "AbstractExecutorService.hpp"
 #include "ThreadPoolExecutor.hpp"
 
 namespace __jni_impl::java::util::concurrent::atomic
@@ -22,8 +24,8 @@ namespace __jni_impl::java::util::concurrent
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(jint arg0);
+		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		
 		// Methods
@@ -33,7 +35,6 @@ namespace __jni_impl::java::util::concurrent
 		QAndroidJniObject shutdownNow();
 		QAndroidJniObject submit(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject submit(__jni_impl::__JniBaseClass arg0, jobject arg1);
-		QAndroidJniObject schedule(__jni_impl::__JniBaseClass arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
 		QAndroidJniObject scheduleAtFixedRate(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3);
 		QAndroidJniObject scheduleWithFixedDelay(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3);
 		void setRemoveOnCancelPolicy(jboolean arg0);
@@ -42,6 +43,7 @@ namespace __jni_impl::java::util::concurrent
 		void setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0);
 		void setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0);
 		jboolean getRemoveOnCancelPolicy();
+		QAndroidJniObject schedule(__jni_impl::__JniBaseClass arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
 	};
 } // namespace __jni_impl::java::util::concurrent
 
@@ -53,20 +55,20 @@ namespace __jni_impl::java::util::concurrent
 	// Fields
 	
 	// Constructors
-	void ScheduledThreadPoolExecutor::__constructor(jint arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.ScheduledThreadPoolExecutor",
-			"(ILjava/util/concurrent/ThreadFactory;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
 	void ScheduledThreadPoolExecutor::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ScheduledThreadPoolExecutor",
 			"(I)V",
 			arg0);
+	}
+	void ScheduledThreadPoolExecutor::__constructor(jint arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.concurrent.ScheduledThreadPoolExecutor",
+			"(ILjava/util/concurrent/RejectedExecutionHandler;)V",
+			arg0,
+			arg1.__jniObject().object());
 	}
 	void ScheduledThreadPoolExecutor::__constructor(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -118,15 +120,6 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::schedule(__jni_impl::__JniBaseClass arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
-	{
-		return __thiz.callObjectMethod(
-			"schedule",
-			"(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object());
 	}
 	QAndroidJniObject ScheduledThreadPoolExecutor::scheduleAtFixedRate(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3)
 	{
@@ -187,6 +180,15 @@ namespace __jni_impl::java::util::concurrent
 			"getRemoveOnCancelPolicy",
 			"()Z");
 	}
+	QAndroidJniObject ScheduledThreadPoolExecutor::schedule(__jni_impl::__JniBaseClass arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
+	{
+		return __thiz.callObjectMethod(
+			"schedule",
+			"(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object());
+	}
 } // namespace __jni_impl::java::util::concurrent
 
 namespace java::util::concurrent
@@ -195,16 +197,16 @@ namespace java::util::concurrent
 	{
 	public:
 		ScheduledThreadPoolExecutor(QAndroidJniObject obj) { __thiz = obj; }
+		ScheduledThreadPoolExecutor(jint arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		ScheduledThreadPoolExecutor(jint arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		ScheduledThreadPoolExecutor(jint arg0)
-		{
-			__constructor(
-				arg0);
 		}
 		ScheduledThreadPoolExecutor(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 		{

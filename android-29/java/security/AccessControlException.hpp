@@ -3,6 +3,9 @@
 #ifndef JAVA_SECURITY_ACCESSCONTROLEXCEPTION
 #define JAVA_SECURITY_ACCESSCONTROLEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
 #include "../lang/SecurityException.hpp"
 
 namespace __jni_impl::java::security

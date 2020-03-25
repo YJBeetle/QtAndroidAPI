@@ -13,6 +13,10 @@ namespace __jni_impl::android::content::pm
 {
 	class ResolveInfo;
 }
+namespace __jni_impl::android::content
+{
+	class ComponentName;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -20,10 +24,6 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::android::content::pm
 {
 	class PackageManager;
-}
-namespace __jni_impl::android::content
-{
-	class ComponentName;
 }
 namespace __jni_impl::android::os
 {
@@ -52,11 +52,11 @@ namespace __jni_impl::android::app
 		// Methods
 		QAndroidJniObject toString();
 		QAndroidJniObject getPackageName();
-		QAndroidJniObject loadThumbnail(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject getComponent();
+		QAndroidJniObject loadThumbnail(__jni_impl::android::content::pm::PackageManager arg0);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		QAndroidJniObject getServiceInfo();
 		QAndroidJniObject getServiceName();
 		QAndroidJniObject loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
@@ -74,9 +74,9 @@ namespace __jni_impl::android::app
 
 #include "../content/Context.hpp"
 #include "../content/pm/ResolveInfo.hpp"
+#include "../content/ComponentName.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../content/pm/PackageManager.hpp"
-#include "../content/ComponentName.hpp"
 #include "../os/Parcel.hpp"
 #include "../content/pm/ServiceInfo.hpp"
 #include "../net/Uri.hpp"
@@ -115,6 +115,12 @@ namespace __jni_impl::android::app
 			"getPackageName",
 			"()Ljava/lang/String;");
 	}
+	QAndroidJniObject WallpaperInfo::getComponent()
+	{
+		return __thiz.callObjectMethod(
+			"getComponent",
+			"()Landroid/content/ComponentName;");
+	}
 	QAndroidJniObject WallpaperInfo::loadThumbnail(__jni_impl::android::content::pm::PackageManager arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -122,11 +128,13 @@ namespace __jni_impl::android::app
 			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject WallpaperInfo::getComponent()
+	void WallpaperInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getComponent",
-			"()Landroid/content/ComponentName;");
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jint WallpaperInfo::describeContents()
 	{
@@ -139,14 +147,6 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void WallpaperInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1);
 	}

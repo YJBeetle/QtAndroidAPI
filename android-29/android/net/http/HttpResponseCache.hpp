@@ -3,6 +3,7 @@
 #ifndef ANDROID_NET_HTTP_HTTPRESPONSECACHE
 #define ANDROID_NET_HTTP_HTTPRESPONSECACHE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/net/ResponseCache.hpp"
 
 namespace __jni_impl::java::net

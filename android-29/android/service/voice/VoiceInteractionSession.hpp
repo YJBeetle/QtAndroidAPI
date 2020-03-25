@@ -61,10 +61,6 @@ namespace __jni_impl::android::app
 {
 	class DirectAction;
 }
-namespace __jni_impl::android::service::voice
-{
-	class VoiceInteractionSession_AssistState;
-}
 namespace __jni_impl::android::app::assist
 {
 	class AssistStructure;
@@ -72,6 +68,10 @@ namespace __jni_impl::android::app::assist
 namespace __jni_impl::android::app::assist
 {
 	class AssistContent;
+}
+namespace __jni_impl::android::service::voice
+{
+	class VoiceInteractionSession_AssistState;
 }
 namespace __jni_impl::android::graphics
 {
@@ -130,7 +130,6 @@ namespace __jni_impl::android::service::voice
 		void finish();
 		void show(__jni_impl::android::os::Bundle arg0, jint arg1);
 		void hide();
-		void setTheme(jint arg0);
 		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 		QAndroidJniObject getWindow();
 		void onCreate();
@@ -161,8 +160,8 @@ namespace __jni_impl::android::service::voice
 		void onHide();
 		QAndroidJniObject onCreateContentView();
 		void onAssistStructureFailure(jthrowable arg0);
-		void onHandleAssist(__jni_impl::android::service::voice::VoiceInteractionSession_AssistState arg0);
 		void onHandleAssist(__jni_impl::android::os::Bundle arg0, __jni_impl::android::app::assist::AssistStructure arg1, __jni_impl::android::app::assist::AssistContent arg2);
+		void onHandleAssist(__jni_impl::android::service::voice::VoiceInteractionSession_AssistState arg0);
 		void onHandleAssistSecondary(__jni_impl::android::os::Bundle arg0, __jni_impl::android::app::assist::AssistStructure arg1, __jni_impl::android::app::assist::AssistContent arg2, jint arg3, jint arg4);
 		void onHandleScreenshot(__jni_impl::android::graphics::Bitmap arg0);
 		void onCloseSystemDialogs();
@@ -177,6 +176,7 @@ namespace __jni_impl::android::service::voice
 		void onRequestAbortVoice(__jni_impl::android::service::voice::VoiceInteractionSession_AbortVoiceRequest arg0);
 		void onRequestCommand(__jni_impl::android::service::voice::VoiceInteractionSession_CommandRequest arg0);
 		void onCancelRequest(__jni_impl::android::service::voice::VoiceInteractionSession_Request arg0);
+		void setTheme(jint arg0);
 	};
 } // namespace __jni_impl::android::service::voice
 
@@ -194,9 +194,9 @@ namespace __jni_impl::android::service::voice
 #include "VoiceInteractionSession_ActivityId.hpp"
 #include "../../os/CancellationSignal.hpp"
 #include "../../app/DirectAction.hpp"
-#include "VoiceInteractionSession_AssistState.hpp"
 #include "../../app/assist/AssistStructure.hpp"
 #include "../../app/assist/AssistContent.hpp"
+#include "VoiceInteractionSession_AssistState.hpp"
 #include "../../graphics/Bitmap.hpp"
 #include "VoiceInteractionSession_Insets.hpp"
 #include "VoiceInteractionSession_ConfirmationRequest.hpp"
@@ -301,13 +301,6 @@ namespace __jni_impl::android::service::voice
 		__thiz.callMethod<void>(
 			"hide",
 			"()V");
-	}
-	void VoiceInteractionSession::setTheme(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTheme",
-			"(I)V",
-			arg0);
 	}
 	void VoiceInteractionSession::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
 	{
@@ -525,13 +518,6 @@ namespace __jni_impl::android::service::voice
 			"(Ljava/lang/Throwable;)V",
 			arg0);
 	}
-	void VoiceInteractionSession::onHandleAssist(__jni_impl::android::service::voice::VoiceInteractionSession_AssistState arg0)
-	{
-		__thiz.callMethod<void>(
-			"onHandleAssist",
-			"(Landroid/service/voice/VoiceInteractionSession$AssistState;)V",
-			arg0.__jniObject().object());
-	}
 	void VoiceInteractionSession::onHandleAssist(__jni_impl::android::os::Bundle arg0, __jni_impl::android::app::assist::AssistStructure arg1, __jni_impl::android::app::assist::AssistContent arg2)
 	{
 		__thiz.callMethod<void>(
@@ -540,6 +526,13 @@ namespace __jni_impl::android::service::voice
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
+	}
+	void VoiceInteractionSession::onHandleAssist(__jni_impl::android::service::voice::VoiceInteractionSession_AssistState arg0)
+	{
+		__thiz.callMethod<void>(
+			"onHandleAssist",
+			"(Landroid/service/voice/VoiceInteractionSession$AssistState;)V",
+			arg0.__jniObject().object());
 	}
 	void VoiceInteractionSession::onHandleAssistSecondary(__jni_impl::android::os::Bundle arg0, __jni_impl::android::app::assist::AssistStructure arg1, __jni_impl::android::app::assist::AssistContent arg2, jint arg3, jint arg4)
 	{
@@ -642,6 +635,13 @@ namespace __jni_impl::android::service::voice
 			"onCancelRequest",
 			"(Landroid/service/voice/VoiceInteractionSession$Request;)V",
 			arg0.__jniObject().object());
+	}
+	void VoiceInteractionSession::setTheme(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTheme",
+			"(I)V",
+			arg0);
 	}
 } // namespace __jni_impl::android::service::voice
 

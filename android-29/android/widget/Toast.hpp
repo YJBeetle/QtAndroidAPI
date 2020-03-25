@@ -35,15 +35,15 @@ namespace __jni_impl::android::widget
 		void setGravity(jint arg0, jint arg1, jint arg2);
 		jint getGravity();
 		void setDuration(jint arg0);
+		void setView(__jni_impl::android::view::View arg0);
+		QAndroidJniObject getView();
 		void setMargin(jfloat arg0, jfloat arg1);
 		jfloat getHorizontalMargin();
 		jfloat getVerticalMargin();
 		jint getXOffset();
 		jint getYOffset();
-		static QAndroidJniObject makeText(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2);
 		static QAndroidJniObject makeText(__jni_impl::android::content::Context arg0, jint arg1, jint arg2);
-		QAndroidJniObject getView();
-		void setView(__jni_impl::android::view::View arg0);
+		static QAndroidJniObject makeText(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -130,6 +130,19 @@ namespace __jni_impl::android::widget
 			"(I)V",
 			arg0);
 	}
+	void Toast::setView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Toast::getView()
+	{
+		return __thiz.callObjectMethod(
+			"getView",
+			"()Landroid/view/View;");
+	}
 	void Toast::setMargin(jfloat arg0, jfloat arg1)
 	{
 		__thiz.callMethod<void>(
@@ -162,16 +175,6 @@ namespace __jni_impl::android::widget
 			"getYOffset",
 			"()I");
 	}
-	QAndroidJniObject Toast::makeText(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.Toast",
-			"makeText",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2);
-	}
 	QAndroidJniObject Toast::makeText(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -182,18 +185,15 @@ namespace __jni_impl::android::widget
 			arg1,
 			arg2);
 	}
-	QAndroidJniObject Toast::getView()
+	QAndroidJniObject Toast::makeText(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
-			"getView",
-			"()Landroid/view/View;");
-	}
-	void Toast::setView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.widget.Toast",
+			"makeText",
+			"(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2);
 	}
 } // namespace __jni_impl::android::widget
 

@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_CHANNELS_PIPE_SOURCECHANNEL
 #define JAVA_NIO_CHANNELS_PIPE_SOURCECHANNEL
 
+#include "../../../__JniBaseClass.hpp"
+#include "spi/AbstractInterruptibleChannel.hpp"
+#include "SelectableChannel.hpp"
 #include "spi/AbstractSelectableChannel.hpp"
 
 namespace __jni_impl::java::nio::channels::spi

@@ -3,6 +3,8 @@
 #ifndef ANDROID_UTIL_ANDROIDRUNTIMEEXCEPTION
 #define ANDROID_UTIL_ANDROIDRUNTIMEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 namespace __jni_impl::java::lang

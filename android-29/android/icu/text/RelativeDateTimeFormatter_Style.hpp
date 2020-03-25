@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_RELATIVEDATETIMEFORMATTER_STYLE
 #define ANDROID_ICU_TEXT_RELATIVEDATETIMEFORMATTER_STYLE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

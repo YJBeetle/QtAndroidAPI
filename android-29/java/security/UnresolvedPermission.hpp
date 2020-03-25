@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_UNRESOLVEDPERMISSION
 #define JAVA_SECURITY_UNRESOLVEDPERMISSION
 
+#include "../../__JniBaseClass.hpp"
 #include "Permission.hpp"
 
 namespace __jni_impl::java::security

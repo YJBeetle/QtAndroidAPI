@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_STYLE_SCALEXSPAN
 #define ANDROID_TEXT_STYLE_SCALEXSPAN
 
+#include "../../../__JniBaseClass.hpp"
+#include "CharacterStyle.hpp"
 #include "MetricAffectingSpan.hpp"
 
 namespace __jni_impl::android::os
@@ -29,9 +31,9 @@ namespace __jni_impl::android::text::style
 		jint getSpanTypeId();
 		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
+		jfloat getScaleX();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jfloat getScaleX();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -79,6 +81,12 @@ namespace __jni_impl::android::text::style
 			"(Landroid/text/TextPaint;)V",
 			arg0.__jniObject().object());
 	}
+	jfloat ScaleXSpan::getScaleX()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getScaleX",
+			"()F");
+	}
 	jint ScaleXSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -92,12 +100,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jfloat ScaleXSpan::getScaleX()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getScaleX",
-			"()F");
 	}
 } // namespace __jni_impl::android::text::style
 

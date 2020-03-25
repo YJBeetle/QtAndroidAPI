@@ -38,8 +38,8 @@ namespace __jni_impl::android::media::tv
 		
 		// Methods
 		void release();
-		void startRecording(__jni_impl::android::net::Uri arg0);
 		void stopRecording();
+		void startRecording(__jni_impl::android::net::Uri arg0);
 		void tune(jstring arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2);
 		void tune(jstring arg0, __jni_impl::android::net::Uri arg1);
 		void sendAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
@@ -75,18 +75,18 @@ namespace __jni_impl::android::media::tv
 			"release",
 			"()V");
 	}
+	void TvRecordingClient::stopRecording()
+	{
+		__thiz.callMethod<void>(
+			"stopRecording",
+			"()V");
+	}
 	void TvRecordingClient::startRecording(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"startRecording",
 			"(Landroid/net/Uri;)V",
 			arg0.__jniObject().object());
-	}
-	void TvRecordingClient::stopRecording()
-	{
-		__thiz.callMethod<void>(
-			"stopRecording",
-			"()V");
 	}
 	void TvRecordingClient::tune(jstring arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2)
 	{

@@ -3,6 +3,7 @@
 #ifndef ANDROID_WIDGET_GALLERY_LAYOUTPARAMS
 #define ANDROID_WIDGET_GALLERY_LAYOUTPARAMS
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 
 namespace __jni_impl::android::content

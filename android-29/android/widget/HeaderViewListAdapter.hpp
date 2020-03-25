@@ -42,17 +42,17 @@ namespace __jni_impl::android::widget
 		jboolean isEnabled(jint arg0);
 		QAndroidJniObject getFilter();
 		QAndroidJniObject getItem(jint arg0);
+		QAndroidJniObject getWrappedAdapter();
 		void registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
 		void unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
 		jboolean hasStableIds();
 		jboolean areAllItemsEnabled();
-		QAndroidJniObject getWrappedAdapter();
-		QAndroidJniObject getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
-		jlong getItemId(jint arg0);
 		jint getHeadersCount();
 		jint getFootersCount();
 		jboolean removeHeader(__jni_impl::android::view::View arg0);
 		jboolean removeFooter(__jni_impl::android::view::View arg0);
+		jlong getItemId(jint arg0);
+		QAndroidJniObject getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
 		jint getItemViewType(jint arg0);
 		jint getViewTypeCount();
 	};
@@ -112,6 +112,12 @@ namespace __jni_impl::android::widget
 			"(I)Ljava/lang/Object;",
 			arg0);
 	}
+	QAndroidJniObject HeaderViewListAdapter::getWrappedAdapter()
+	{
+		return __thiz.callObjectMethod(
+			"getWrappedAdapter",
+			"()Landroid/widget/ListAdapter;");
+	}
 	void HeaderViewListAdapter::registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
 	{
 		__thiz.callMethod<void>(
@@ -138,28 +144,6 @@ namespace __jni_impl::android::widget
 			"areAllItemsEnabled",
 			"()Z");
 	}
-	QAndroidJniObject HeaderViewListAdapter::getWrappedAdapter()
-	{
-		return __thiz.callObjectMethod(
-			"getWrappedAdapter",
-			"()Landroid/widget/ListAdapter;");
-	}
-	QAndroidJniObject HeaderViewListAdapter::getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getView",
-			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	jlong HeaderViewListAdapter::getItemId(jint arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getItemId",
-			"(I)J",
-			arg0);
-	}
 	jint HeaderViewListAdapter::getHeadersCount()
 	{
 		return __thiz.callMethod<jint>(
@@ -185,6 +169,22 @@ namespace __jni_impl::android::widget
 			"removeFooter",
 			"(Landroid/view/View;)Z",
 			arg0.__jniObject().object());
+	}
+	jlong HeaderViewListAdapter::getItemId(jint arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getItemId",
+			"(I)J",
+			arg0);
+	}
+	QAndroidJniObject HeaderViewListAdapter::getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2)
+	{
+		return __thiz.callObjectMethod(
+			"getView",
+			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
 	}
 	jint HeaderViewListAdapter::getItemViewType(jint arg0)
 	{

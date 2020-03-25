@@ -3,6 +3,10 @@
 #ifndef ANDROID_WIDGET_RADIOBUTTON
 #define ANDROID_WIDGET_RADIOBUTTON
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "TextView.hpp"
+#include "Button.hpp"
 #include "CompoundButton.hpp"
 
 namespace __jni_impl::android::content
@@ -24,8 +28,8 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void toggle();
 		QAndroidJniObject getAccessibilityClassName();
+		void toggle();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -72,17 +76,17 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void RadioButton::toggle()
-	{
-		__thiz.callMethod<void>(
-			"toggle",
-			"()V");
-	}
 	QAndroidJniObject RadioButton::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;");
+	}
+	void RadioButton::toggle()
+	{
+		__thiz.callMethod<void>(
+			"toggle",
+			"()V");
 	}
 } // namespace __jni_impl::android::widget
 

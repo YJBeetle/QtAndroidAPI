@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_UNTAGGEDSOCKETVIOLATION
 #define ANDROID_OS_STRICTMODE_UNTAGGEDSOCKETVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_FORMAT_FORMATSTYLE
 #define JAVA_TIME_FORMAT_FORMATSTYLE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

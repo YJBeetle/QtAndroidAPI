@@ -5,6 +5,18 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
+namespace __jni_impl::android::telecom
+{
+	class Call_Callback;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -12,10 +24,6 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::telecom
 {
 	class PhoneAccountHandle;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 namespace __jni_impl::android::telecom
 {
@@ -28,14 +36,6 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::telecom
 {
 	class Call_RttCall;
-}
-namespace __jni_impl::android::telecom
-{
-	class Call_Callback;
-}
-namespace __jni_impl::android::os
-{
-	class Handler;
 }
 
 namespace __jni_impl::android::telecom
@@ -68,6 +68,19 @@ namespace __jni_impl::android::telecom
 		jint getState();
 		void answer(jint arg0);
 		QAndroidJniObject getChildren();
+		void putExtras(__jni_impl::android::os::Bundle arg0);
+		void conference(__jni_impl::android::telecom::Call arg0);
+		void registerCallback(__jni_impl::android::telecom::Call_Callback arg0, __jni_impl::android::os::Handler arg1);
+		void registerCallback(__jni_impl::android::telecom::Call_Callback arg0);
+		void unregisterCallback(__jni_impl::android::telecom::Call_Callback arg0);
+		void reject(jboolean arg0, jstring arg1);
+		void hold();
+		void unhold();
+		void disconnect();
+		void playDtmfTone(jchar arg0);
+		void stopDtmfTone();
+		void postDialContinue(jboolean arg0);
+		void pullExternalCall();
 		void removeExtras(__jni_impl::__JniBaseClass arg0);
 		void removeExtras(jarray arg0);
 		QAndroidJniObject getRemainingPostDialSequence();
@@ -87,30 +100,17 @@ namespace __jni_impl::android::telecom
 		QAndroidJniObject getDetails();
 		QAndroidJniObject getRttCall();
 		jboolean isRttActive();
-		void putExtras(__jni_impl::android::os::Bundle arg0);
-		void conference(__jni_impl::android::telecom::Call arg0);
-		void registerCallback(__jni_impl::android::telecom::Call_Callback arg0, __jni_impl::android::os::Handler arg1);
-		void registerCallback(__jni_impl::android::telecom::Call_Callback arg0);
-		void unregisterCallback(__jni_impl::android::telecom::Call_Callback arg0);
-		void reject(jboolean arg0, jstring arg1);
-		void hold();
-		void unhold();
-		void disconnect();
-		void playDtmfTone(jchar arg0);
-		void stopDtmfTone();
-		void postDialContinue(jboolean arg0);
-		void pullExternalCall();
 	};
 } // namespace __jni_impl::android::telecom
 
+#include "../os/Bundle.hpp"
+#include "Call_Callback.hpp"
+#include "../os/Handler.hpp"
 #include "../net/Uri.hpp"
 #include "PhoneAccountHandle.hpp"
-#include "../os/Bundle.hpp"
 #include "InCallService_VideoCall.hpp"
 #include "Call_Details.hpp"
 #include "Call_RttCall.hpp"
-#include "Call_Callback.hpp"
-#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -244,6 +244,94 @@ namespace __jni_impl::android::telecom
 			"getChildren",
 			"()Ljava/util/List;");
 	}
+	void Call::putExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"putExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	void Call::conference(__jni_impl::android::telecom::Call arg0)
+	{
+		__thiz.callMethod<void>(
+			"conference",
+			"(Landroid/telecom/Call;)V",
+			arg0.__jniObject().object());
+	}
+	void Call::registerCallback(__jni_impl::android::telecom::Call_Callback arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"registerCallback",
+			"(Landroid/telecom/Call$Callback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void Call::registerCallback(__jni_impl::android::telecom::Call_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerCallback",
+			"(Landroid/telecom/Call$Callback;)V",
+			arg0.__jniObject().object());
+	}
+	void Call::unregisterCallback(__jni_impl::android::telecom::Call_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterCallback",
+			"(Landroid/telecom/Call$Callback;)V",
+			arg0.__jniObject().object());
+	}
+	void Call::reject(jboolean arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"reject",
+			"(ZLjava/lang/String;)V",
+			arg0,
+			arg1);
+	}
+	void Call::hold()
+	{
+		__thiz.callMethod<void>(
+			"hold",
+			"()V");
+	}
+	void Call::unhold()
+	{
+		__thiz.callMethod<void>(
+			"unhold",
+			"()V");
+	}
+	void Call::disconnect()
+	{
+		__thiz.callMethod<void>(
+			"disconnect",
+			"()V");
+	}
+	void Call::playDtmfTone(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"playDtmfTone",
+			"(C)V",
+			arg0);
+	}
+	void Call::stopDtmfTone()
+	{
+		__thiz.callMethod<void>(
+			"stopDtmfTone",
+			"()V");
+	}
+	void Call::postDialContinue(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"postDialContinue",
+			"(Z)V",
+			arg0);
+	}
+	void Call::pullExternalCall()
+	{
+		__thiz.callMethod<void>(
+			"pullExternalCall",
+			"()V");
+	}
 	void Call::removeExtras(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -369,94 +457,6 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jboolean>(
 			"isRttActive",
 			"()Z");
-	}
-	void Call::putExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"putExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	void Call::conference(__jni_impl::android::telecom::Call arg0)
-	{
-		__thiz.callMethod<void>(
-			"conference",
-			"(Landroid/telecom/Call;)V",
-			arg0.__jniObject().object());
-	}
-	void Call::registerCallback(__jni_impl::android::telecom::Call_Callback arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"registerCallback",
-			"(Landroid/telecom/Call$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void Call::registerCallback(__jni_impl::android::telecom::Call_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerCallback",
-			"(Landroid/telecom/Call$Callback;)V",
-			arg0.__jniObject().object());
-	}
-	void Call::unregisterCallback(__jni_impl::android::telecom::Call_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterCallback",
-			"(Landroid/telecom/Call$Callback;)V",
-			arg0.__jniObject().object());
-	}
-	void Call::reject(jboolean arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"reject",
-			"(ZLjava/lang/String;)V",
-			arg0,
-			arg1);
-	}
-	void Call::hold()
-	{
-		__thiz.callMethod<void>(
-			"hold",
-			"()V");
-	}
-	void Call::unhold()
-	{
-		__thiz.callMethod<void>(
-			"unhold",
-			"()V");
-	}
-	void Call::disconnect()
-	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"()V");
-	}
-	void Call::playDtmfTone(jchar arg0)
-	{
-		__thiz.callMethod<void>(
-			"playDtmfTone",
-			"(C)V",
-			arg0);
-	}
-	void Call::stopDtmfTone()
-	{
-		__thiz.callMethod<void>(
-			"stopDtmfTone",
-			"()V");
-	}
-	void Call::postDialContinue(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"postDialContinue",
-			"(Z)V",
-			arg0);
-	}
-	void Call::pullExternalCall()
-	{
-		__thiz.callMethod<void>(
-			"pullExternalCall",
-			"()V");
 	}
 } // namespace __jni_impl::android::telecom
 

@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_KEYSTOREEXCEPTION
 #define JAVA_SECURITY_KEYSTOREEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "GeneralSecurityException.hpp"
 
 

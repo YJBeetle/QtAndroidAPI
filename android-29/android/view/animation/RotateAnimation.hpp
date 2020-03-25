@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_ANIMATION_ROTATEANIMATION
 #define ANDROID_VIEW_ANIMATION_ROTATEANIMATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Animation.hpp"
 
 namespace __jni_impl::android::content

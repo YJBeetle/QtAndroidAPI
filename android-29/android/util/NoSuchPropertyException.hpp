@@ -3,6 +3,8 @@
 #ifndef ANDROID_UTIL_NOSUCHPROPERTYEXCEPTION
 #define ANDROID_UTIL_NOSUCHPROPERTYEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

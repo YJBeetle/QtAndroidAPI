@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_ANIMATION_ALPHAANIMATION
 #define ANDROID_VIEW_ANIMATION_ALPHAANIMATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Animation.hpp"
 
 namespace __jni_impl::android::content

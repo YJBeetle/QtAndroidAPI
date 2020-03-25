@@ -44,6 +44,7 @@ namespace __jni_impl::android::media
 		jint getType();
 		QAndroidJniObject getAddress();
 		jint getDirectionality();
+		jint getGroup();
 		QAndroidJniObject getPosition();
 		QAndroidJniObject getDescription();
 		jint getIndexInTheGroup();
@@ -52,7 +53,6 @@ namespace __jni_impl::android::media
 		jfloat getSensitivity();
 		jfloat getMaxSpl();
 		jfloat getMinSpl();
-		jint getGroup();
 		QAndroidJniObject getOrientation();
 	};
 } // namespace __jni_impl::android::media
@@ -212,6 +212,12 @@ namespace __jni_impl::android::media
 			"getDirectionality",
 			"()I");
 	}
+	jint MicrophoneInfo::getGroup()
+	{
+		return __thiz.callMethod<jint>(
+			"getGroup",
+			"()I");
+	}
 	QAndroidJniObject MicrophoneInfo::getPosition()
 	{
 		return __thiz.callObjectMethod(
@@ -259,12 +265,6 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jfloat>(
 			"getMinSpl",
 			"()F");
-	}
-	jint MicrophoneInfo::getGroup()
-	{
-		return __thiz.callMethod<jint>(
-			"getGroup",
-			"()I");
 	}
 	QAndroidJniObject MicrophoneInfo::getOrientation()
 	{

@@ -13,10 +13,6 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
@@ -24,6 +20,10 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::app::assist
@@ -41,8 +41,6 @@ namespace __jni_impl::android::app::assist
 		QAndroidJniObject getClipData();
 		QAndroidJniObject getExtras();
 		void setClipData(__jni_impl::android::content::ClipData arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getIntent();
 		void setIntent(__jni_impl::android::content::Intent arg0);
 		jboolean isAppProvidedIntent();
@@ -51,14 +49,16 @@ namespace __jni_impl::android::app::assist
 		void setWebUri(__jni_impl::android::net::Uri arg0);
 		QAndroidJniObject getWebUri();
 		jboolean isAppProvidedWebUri();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::assist
 
 #include "../../content/ClipData.hpp"
 #include "../../os/Bundle.hpp"
-#include "../../os/Parcel.hpp"
 #include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::app::assist
 {
@@ -98,20 +98,6 @@ namespace __jni_impl::android::app::assist
 			"setClipData",
 			"(Landroid/content/ClipData;)V",
 			arg0.__jniObject().object());
-	}
-	jint AssistContent::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void AssistContent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 	QAndroidJniObject AssistContent::getIntent()
 	{
@@ -163,6 +149,20 @@ namespace __jni_impl::android::app::assist
 		return __thiz.callMethod<jboolean>(
 			"isAppProvidedWebUri",
 			"()Z");
+	}
+	jint AssistContent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void AssistContent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::app::assist
 

@@ -31,8 +31,8 @@ namespace __jni_impl::android::provider
 		void __constructor(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2);
 		
 		// Methods
-		void saveRecentQuery(jstring arg0, jstring arg1);
 		void clearHistory();
+		void saveRecentQuery(jstring arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -93,6 +93,12 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
+	void SearchRecentSuggestions::clearHistory()
+	{
+		__thiz.callMethod<void>(
+			"clearHistory",
+			"()V");
+	}
 	void SearchRecentSuggestions::saveRecentQuery(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -100,12 +106,6 @@ namespace __jni_impl::android::provider
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1);
-	}
-	void SearchRecentSuggestions::clearHistory()
-	{
-		__thiz.callMethod<void>(
-			"clearHistory",
-			"()V");
 	}
 } // namespace __jni_impl::android::provider
 

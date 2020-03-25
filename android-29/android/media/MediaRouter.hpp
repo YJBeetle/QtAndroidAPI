@@ -15,15 +15,15 @@ namespace __jni_impl::android::media
 }
 namespace __jni_impl::android::media
 {
-	class MediaRouter_Callback;
-}
-namespace __jni_impl::android::media
-{
 	class MediaRouter_UserRouteInfo;
 }
 namespace __jni_impl::android::media
 {
 	class MediaRouter_RouteCategory;
+}
+namespace __jni_impl::android::media
+{
+	class MediaRouter_Callback;
 }
 
 namespace __jni_impl::android::media
@@ -44,9 +44,6 @@ namespace __jni_impl::android::media
 		// Methods
 		jint getRouteCount();
 		QAndroidJniObject getRouteAt(jint arg0);
-		void addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1, jint arg2);
-		void addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1);
-		void removeCallback(__jni_impl::android::media::MediaRouter_Callback arg0);
 		QAndroidJniObject getDefaultRoute();
 		QAndroidJniObject getSelectedRoute(jint arg0);
 		void selectRoute(jint arg0, __jni_impl::android::media::MediaRouter_RouteInfo arg1);
@@ -56,16 +53,19 @@ namespace __jni_impl::android::media
 		jint getCategoryCount();
 		QAndroidJniObject getCategoryAt(jint arg0);
 		QAndroidJniObject createUserRoute(__jni_impl::android::media::MediaRouter_RouteCategory arg0);
-		QAndroidJniObject createRouteCategory(jint arg0, jboolean arg1);
 		QAndroidJniObject createRouteCategory(jstring arg0, jboolean arg1);
+		QAndroidJniObject createRouteCategory(jint arg0, jboolean arg1);
+		void addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1);
+		void addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1, jint arg2);
+		void removeCallback(__jni_impl::android::media::MediaRouter_Callback arg0);
 	};
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
 #include "MediaRouter_RouteInfo.hpp"
-#include "MediaRouter_Callback.hpp"
 #include "MediaRouter_UserRouteInfo.hpp"
 #include "MediaRouter_RouteCategory.hpp"
+#include "MediaRouter_Callback.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -122,30 +122,6 @@ namespace __jni_impl::android::media
 			"getRouteAt",
 			"(I)Landroid/media/MediaRouter$RouteInfo;",
 			arg0);
-	}
-	void MediaRouter::addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"addCallback",
-			"(ILandroid/media/MediaRouter$Callback;I)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2);
-	}
-	void MediaRouter::addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1)
-	{
-		__thiz.callMethod<void>(
-			"addCallback",
-			"(ILandroid/media/MediaRouter$Callback;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void MediaRouter::removeCallback(__jni_impl::android::media::MediaRouter_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeCallback",
-			"(Landroid/media/MediaRouter$Callback;)V",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject MediaRouter::getDefaultRoute()
 	{
@@ -208,6 +184,14 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaRouter$RouteCategory;)Landroid/media/MediaRouter$UserRouteInfo;",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject MediaRouter::createRouteCategory(jstring arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"createRouteCategory",
+			"(Ljava/lang/CharSequence;Z)Landroid/media/MediaRouter$RouteCategory;",
+			arg0,
+			arg1);
+	}
 	QAndroidJniObject MediaRouter::createRouteCategory(jint arg0, jboolean arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -216,13 +200,29 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1);
 	}
-	QAndroidJniObject MediaRouter::createRouteCategory(jstring arg0, jboolean arg1)
+	void MediaRouter::addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1)
 	{
-		return __thiz.callObjectMethod(
-			"createRouteCategory",
-			"(Ljava/lang/CharSequence;Z)Landroid/media/MediaRouter$RouteCategory;",
+		__thiz.callMethod<void>(
+			"addCallback",
+			"(ILandroid/media/MediaRouter$Callback;)V",
 			arg0,
-			arg1);
+			arg1.__jniObject().object());
+	}
+	void MediaRouter::addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"addCallback",
+			"(ILandroid/media/MediaRouter$Callback;I)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2);
+	}
+	void MediaRouter::removeCallback(__jni_impl::android::media::MediaRouter_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeCallback",
+			"(Landroid/media/MediaRouter$Callback;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media
 

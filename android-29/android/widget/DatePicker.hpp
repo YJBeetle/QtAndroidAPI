@@ -3,19 +3,14 @@
 #ifndef ANDROID_WIDGET_DATEPICKER
 #define ANDROID_WIDGET_DATEPICKER
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "FrameLayout.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
-}
-namespace __jni_impl::android::widget
-{
-	class CalendarView;
-}
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
 }
 namespace __jni_impl::android::view
 {
@@ -28,6 +23,14 @@ namespace __jni_impl::android::util
 namespace __jni_impl::android::view::autofill
 {
 	class AutofillValue;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
+}
+namespace __jni_impl::android::widget
+{
+	class CalendarView;
 }
 
 namespace __jni_impl::android::widget
@@ -51,6 +54,12 @@ namespace __jni_impl::android::widget
 		jint getMonth();
 		jint getFirstDayOfWeek();
 		void setFirstDayOfWeek(jint arg0);
+		void dispatchProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
+		QAndroidJniObject getAccessibilityClassName();
+		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
+		jint getAutofillType();
+		QAndroidJniObject getAutofillValue();
+		void setEnabled(jboolean arg0);
 		void updateDate(jint arg0, jint arg1, jint arg2);
 		jlong getMinDate();
 		void setMinDate(jlong arg0);
@@ -62,21 +71,15 @@ namespace __jni_impl::android::widget
 		void setCalendarViewShown(jboolean arg0);
 		jboolean getSpinnersShown();
 		void setSpinnersShown(jboolean arg0);
-		void dispatchProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
-		QAndroidJniObject getAccessibilityClassName();
-		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
-		jint getAutofillType();
-		QAndroidJniObject getAutofillValue();
-		void setEnabled(jboolean arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "CalendarView.hpp"
-#include "../content/res/Configuration.hpp"
 #include "../view/ViewStructure.hpp"
 #include "../util/SparseArray.hpp"
 #include "../view/autofill/AutofillValue.hpp"
+#include "../content/res/Configuration.hpp"
+#include "CalendarView.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -166,6 +169,46 @@ namespace __jni_impl::android::widget
 			"(I)V",
 			arg0);
 	}
+	void DatePicker::dispatchProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"dispatchProvideAutofillStructure",
+			"(Landroid/view/ViewStructure;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	QAndroidJniObject DatePicker::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
+	void DatePicker::autofill(__jni_impl::android::view::autofill::AutofillValue arg0)
+	{
+		__thiz.callMethod<void>(
+			"autofill",
+			"(Landroid/view/autofill/AutofillValue;)V",
+			arg0.__jniObject().object());
+	}
+	jint DatePicker::getAutofillType()
+	{
+		return __thiz.callMethod<jint>(
+			"getAutofillType",
+			"()I");
+	}
+	QAndroidJniObject DatePicker::getAutofillValue()
+	{
+		return __thiz.callObjectMethod(
+			"getAutofillValue",
+			"()Landroid/view/autofill/AutofillValue;");
+	}
+	void DatePicker::setEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0);
+	}
 	void DatePicker::updateDate(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -237,46 +280,6 @@ namespace __jni_impl::android::widget
 	{
 		__thiz.callMethod<void>(
 			"setSpinnersShown",
-			"(Z)V",
-			arg0);
-	}
-	void DatePicker::dispatchProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"dispatchProvideAutofillStructure",
-			"(Landroid/view/ViewStructure;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject DatePicker::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	void DatePicker::autofill(__jni_impl::android::view::autofill::AutofillValue arg0)
-	{
-		__thiz.callMethod<void>(
-			"autofill",
-			"(Landroid/view/autofill/AutofillValue;)V",
-			arg0.__jniObject().object());
-	}
-	jint DatePicker::getAutofillType()
-	{
-		return __thiz.callMethod<jint>(
-			"getAutofillType",
-			"()I");
-	}
-	QAndroidJniObject DatePicker::getAutofillValue()
-	{
-		return __thiz.callObjectMethod(
-			"getAutofillValue",
-			"()Landroid/view/autofill/AutofillValue;");
-	}
-	void DatePicker::setEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnabled",
 			"(Z)V",
 			arg0);
 	}

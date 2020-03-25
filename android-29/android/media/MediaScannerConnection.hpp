@@ -29,9 +29,9 @@ namespace __jni_impl::android::media
 		jboolean isConnected();
 		void scanFile(jstring arg0, jstring arg1);
 		static void scanFile(__jni_impl::android::content::Context arg0, jarray arg1, jarray arg2, __jni_impl::__JniBaseClass arg3);
+		void disconnect();
 		void onServiceConnected(__jni_impl::android::content::ComponentName arg0, __jni_impl::__JniBaseClass arg1);
 		void onServiceDisconnected(__jni_impl::android::content::ComponentName arg0);
-		void disconnect();
 	};
 } // namespace __jni_impl::android::media
 
@@ -84,6 +84,12 @@ namespace __jni_impl::android::media
 			arg2,
 			arg3.__jniObject().object());
 	}
+	void MediaScannerConnection::disconnect()
+	{
+		__thiz.callMethod<void>(
+			"disconnect",
+			"()V");
+	}
 	void MediaScannerConnection::onServiceConnected(__jni_impl::android::content::ComponentName arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -98,12 +104,6 @@ namespace __jni_impl::android::media
 			"onServiceDisconnected",
 			"(Landroid/content/ComponentName;)V",
 			arg0.__jniObject().object());
-	}
-	void MediaScannerConnection::disconnect()
-	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"()V");
 	}
 } // namespace __jni_impl::android::media
 

@@ -3,6 +3,9 @@
 #ifndef ANDROID_OS_TRANSACTIONTOOLARGEEXCEPTION
 #define ANDROID_OS_TRANSACTIONTOOLARGEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
 #include "RemoteException.hpp"
 
 

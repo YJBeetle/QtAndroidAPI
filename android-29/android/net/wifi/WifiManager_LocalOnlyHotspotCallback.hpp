@@ -25,9 +25,9 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		void onFailed(jint arg0);
 		void onStopped();
 		void onStarted(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0);
+		void onFailed(jint arg0);
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -70,13 +70,6 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onFailed",
-			"(I)V",
-			arg0);
-	}
 	void WifiManager_LocalOnlyHotspotCallback::onStopped()
 	{
 		__thiz.callMethod<void>(
@@ -89,6 +82,13 @@ namespace __jni_impl::android::net::wifi
 			"onStarted",
 			"(Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;)V",
 			arg0.__jniObject().object());
+	}
+	void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onFailed",
+			"(I)V",
+			arg0);
 	}
 } // namespace __jni_impl::android::net::wifi
 

@@ -3,6 +3,9 @@
 #ifndef JAVA_UTIL_INPUTMISMATCHEXCEPTION
 #define JAVA_UTIL_INPUTMISMATCHEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
 #include "NoSuchElementException.hpp"
 
 

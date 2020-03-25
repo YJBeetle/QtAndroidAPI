@@ -27,8 +27,8 @@ namespace __jni_impl::android::view::textclassifier
 		// Methods
 		void setTextClassifier(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getTextClassifier();
-		QAndroidJniObject createTextClassificationSession(__jni_impl::android::view::textclassifier::TextClassificationContext arg0);
 		void setTextClassificationSessionFactory(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject createTextClassificationSession(__jni_impl::android::view::textclassifier::TextClassificationContext arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -61,18 +61,18 @@ namespace __jni_impl::android::view::textclassifier
 			"getTextClassifier",
 			"()Landroid/view/textclassifier/TextClassifier;");
 	}
-	QAndroidJniObject TextClassificationManager::createTextClassificationSession(__jni_impl::android::view::textclassifier::TextClassificationContext arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createTextClassificationSession",
-			"(Landroid/view/textclassifier/TextClassificationContext;)Landroid/view/textclassifier/TextClassifier;",
-			arg0.__jniObject().object());
-	}
 	void TextClassificationManager::setTextClassificationSessionFactory(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTextClassificationSessionFactory",
 			"(Landroid/view/textclassifier/TextClassificationSessionFactory;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject TextClassificationManager::createTextClassificationSession(__jni_impl::android::view::textclassifier::TextClassificationContext arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createTextClassificationSession",
+			"(Landroid/view/textclassifier/TextClassificationContext;)Landroid/view/textclassifier/TextClassifier;",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::view::textclassifier

@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_CONCURRENT_COPYONWRITEARRAYSET
 #define JAVA_UTIL_CONCURRENT_COPYONWRITEARRAYSET
 
+#include "../../../__JniBaseClass.hpp"
+#include "../AbstractCollection.hpp"
 #include "../AbstractSet.hpp"
 
 namespace __jni_impl::java::util::concurrent

@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_FILE_DIRECTORYITERATOREXCEPTION
 #define JAVA_NIO_FILE_DIRECTORYITERATOREXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 #include "../../util/ConcurrentModificationException.hpp"
 
 namespace __jni_impl::java::io

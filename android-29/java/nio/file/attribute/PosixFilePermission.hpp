@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_FILE_ATTRIBUTE_POSIXFILEPERMISSION
 #define JAVA_NIO_FILE_ATTRIBUTE_POSIXFILEPERMISSION
 
+#include "../../../../__JniBaseClass.hpp"
 #include "../../../lang/Enum.hpp"
 
 

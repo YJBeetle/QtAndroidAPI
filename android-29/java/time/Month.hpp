@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_MONTH
 #define JAVA_TIME_MONTH
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
 namespace __jni_impl::java::time::temporal

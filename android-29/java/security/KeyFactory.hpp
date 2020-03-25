@@ -25,15 +25,15 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getInstance(jstring arg0);
-		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(jstring arg0);
 		QAndroidJniObject getProvider();
+		QAndroidJniObject getAlgorithm();
 		QAndroidJniObject generatePublic(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject generatePrivate(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getKeySpec(__jni_impl::__JniBaseClass arg0, jclass arg1);
 		QAndroidJniObject translateKey(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getAlgorithm();
 	};
 } // namespace __jni_impl::java::security
 
@@ -53,13 +53,14 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject KeyFactory::getInstance(jstring arg0)
+	QAndroidJniObject KeyFactory::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyFactory",
 			"getInstance",
-			"(Ljava/lang/String;)Ljava/security/KeyFactory;",
-			arg0);
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyFactory;",
+			arg0,
+			arg1);
 	}
 	QAndroidJniObject KeyFactory::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
@@ -70,20 +71,25 @@ namespace __jni_impl::java::security
 			arg0,
 			arg1.__jniObject().object());
 	}
-	QAndroidJniObject KeyFactory::getInstance(jstring arg0, jstring arg1)
+	QAndroidJniObject KeyFactory::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyFactory",
 			"getInstance",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyFactory;",
-			arg0,
-			arg1);
+			"(Ljava/lang/String;)Ljava/security/KeyFactory;",
+			arg0);
 	}
 	QAndroidJniObject KeyFactory::getProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;");
+	}
+	QAndroidJniObject KeyFactory::getAlgorithm()
+	{
+		return __thiz.callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;");
 	}
 	QAndroidJniObject KeyFactory::generatePublic(__jni_impl::__JniBaseClass arg0)
 	{
@@ -113,12 +119,6 @@ namespace __jni_impl::java::security
 			"translateKey",
 			"(Ljava/security/Key;)Ljava/security/Key;",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject KeyFactory::getAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::java::security
 

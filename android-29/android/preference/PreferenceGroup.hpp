@@ -3,19 +3,20 @@
 #ifndef ANDROID_PREFERENCE_PREFERENCEGROUP
 #define ANDROID_PREFERENCE_PREFERENCEGROUP
 
+#include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::preference
-{
-	class Preference;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::preference
+{
+	class Preference;
 }
 
 namespace __jni_impl::android::preference
@@ -32,7 +33,6 @@ namespace __jni_impl::android::preference
 		
 		// Methods
 		void removeAll();
-		QAndroidJniObject findPreference(jstring arg0);
 		void notifyDependencyChange(jboolean arg0);
 		void setOrderingAsAdded(jboolean arg0);
 		jboolean isOrderingAsAdded();
@@ -41,12 +41,13 @@ namespace __jni_impl::android::preference
 		QAndroidJniObject getPreference(jint arg0);
 		jboolean addPreference(__jni_impl::android::preference::Preference arg0);
 		jboolean removePreference(__jni_impl::android::preference::Preference arg0);
+		QAndroidJniObject findPreference(jstring arg0);
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
-#include "Preference.hpp"
 #include "../os/Bundle.hpp"
+#include "Preference.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -87,13 +88,6 @@ namespace __jni_impl::android::preference
 		__thiz.callMethod<void>(
 			"removeAll",
 			"()V");
-	}
-	QAndroidJniObject PreferenceGroup::findPreference(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findPreference",
-			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			arg0);
 	}
 	void PreferenceGroup::notifyDependencyChange(jboolean arg0)
 	{
@@ -148,6 +142,13 @@ namespace __jni_impl::android::preference
 			"removePreference",
 			"(Landroid/preference/Preference;)Z",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject PreferenceGroup::findPreference(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findPreference",
+			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
+			arg0);
 	}
 } // namespace __jni_impl::android::preference
 

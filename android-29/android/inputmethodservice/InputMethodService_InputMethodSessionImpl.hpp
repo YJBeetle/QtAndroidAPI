@@ -3,15 +3,12 @@
 #ifndef ANDROID_INPUTMETHODSERVICE_INPUTMETHODSERVICE_INPUTMETHODSESSIONIMPL
 #define ANDROID_INPUTMETHODSERVICE_INPUTMETHODSERVICE_INPUTMETHODSESSIONIMPL
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {
 	class InputMethodService;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 namespace __jni_impl::android::view::inputmethod
 {
@@ -25,6 +22,10 @@ namespace __jni_impl::android::view::inputmethod
 {
 	class CursorAnchorInfo;
 }
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 
 namespace __jni_impl::android::inputmethodservice
 {
@@ -37,8 +38,6 @@ namespace __jni_impl::android::inputmethodservice
 		void __constructor(__jni_impl::android::inputmethodservice::InputMethodService arg0);
 		
 		// Methods
-		void finishInput();
-		void appPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		void displayCompletions(jarray arg0);
 		void updateExtractedText(jint arg0, __jni_impl::android::view::inputmethod::ExtractedText arg1);
 		void toggleSoftInput(jint arg0, jint arg1);
@@ -46,14 +45,16 @@ namespace __jni_impl::android::inputmethodservice
 		void viewClicked(jboolean arg0);
 		void updateCursor(__jni_impl::android::graphics::Rect arg0);
 		void updateCursorAnchorInfo(__jni_impl::android::view::inputmethod::CursorAnchorInfo arg0);
+		void finishInput();
+		void appPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
 #include "InputMethodService.hpp"
-#include "../os/Bundle.hpp"
 #include "../view/inputmethod/ExtractedText.hpp"
 #include "../graphics/Rect.hpp"
 #include "../view/inputmethod/CursorAnchorInfo.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {
@@ -69,20 +70,6 @@ namespace __jni_impl::android::inputmethodservice
 	}
 	
 	// Methods
-	void InputMethodService_InputMethodSessionImpl::finishInput()
-	{
-		__thiz.callMethod<void>(
-			"finishInput",
-			"()V");
-	}
-	void InputMethodService_InputMethodSessionImpl::appPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"appPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
 	void InputMethodService_InputMethodSessionImpl::displayCompletions(jarray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -138,6 +125,20 @@ namespace __jni_impl::android::inputmethodservice
 			"updateCursorAnchorInfo",
 			"(Landroid/view/inputmethod/CursorAnchorInfo;)V",
 			arg0.__jniObject().object());
+	}
+	void InputMethodService_InputMethodSessionImpl::finishInput()
+	{
+		__thiz.callMethod<void>(
+			"finishInput",
+			"()V");
+	}
+	void InputMethodService_InputMethodSessionImpl::appPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"appPrivateCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::inputmethodservice
 

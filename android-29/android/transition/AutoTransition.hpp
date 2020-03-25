@@ -3,6 +3,8 @@
 #ifndef ANDROID_TRANSITION_AUTOTRANSITION
 #define ANDROID_TRANSITION_AUTOTRANSITION
 
+#include "../../__JniBaseClass.hpp"
+#include "Transition.hpp"
 #include "TransitionSet.hpp"
 
 namespace __jni_impl::android::content

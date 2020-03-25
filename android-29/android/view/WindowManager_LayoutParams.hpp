@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_WINDOWMANAGER_LAYOUTPARAMS
 #define ANDROID_VIEW_WINDOWMANAGER_LAYOUTPARAMS
 
+#include "../../__JniBaseClass.hpp"
 #include "ViewGroup_LayoutParams.hpp"
 
 namespace __jni_impl::android::os
@@ -158,10 +159,10 @@ namespace __jni_impl::android::view
 		QAndroidJniObject toString();
 		QAndroidJniObject debug(jstring arg0);
 		jint copyFrom(__jni_impl::android::view::WindowManager_LayoutParams arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void setTitle(jstring arg0);
 		QAndroidJniObject getTitle();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void setColorMode(jint arg0);
 		jint getColorMode();
 		static jboolean mayUseInputMethod(jint arg0);
@@ -1004,6 +1005,19 @@ namespace __jni_impl::android::view
 			"(Landroid/view/WindowManager$LayoutParams;)I",
 			arg0.__jniObject().object());
 	}
+	void WindowManager_LayoutParams::setTitle(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0);
+	}
+	QAndroidJniObject WindowManager_LayoutParams::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;");
+	}
 	jint WindowManager_LayoutParams::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -1017,19 +1031,6 @@ namespace __jni_impl::android::view
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	void WindowManager_LayoutParams::setTitle(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	QAndroidJniObject WindowManager_LayoutParams::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
 	}
 	void WindowManager_LayoutParams::setColorMode(jint arg0)
 	{

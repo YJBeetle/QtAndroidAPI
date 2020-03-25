@@ -17,11 +17,11 @@ namespace __jni_impl::javax::security::auth::callback
 		void __constructor(jstring arg0, jboolean arg1);
 		
 		// Methods
-		void clearPassword();
 		void setPassword(jcharArray arg0);
-		QAndroidJniObject getPassword();
-		QAndroidJniObject getPrompt();
 		jboolean isEchoOn();
+		QAndroidJniObject getPrompt();
+		QAndroidJniObject getPassword();
+		void clearPassword();
 	};
 } // namespace __jni_impl::javax::security::auth::callback
 
@@ -41,12 +41,6 @@ namespace __jni_impl::javax::security::auth::callback
 	}
 	
 	// Methods
-	void PasswordCallback::clearPassword()
-	{
-		__thiz.callMethod<void>(
-			"clearPassword",
-			"()V");
-	}
 	void PasswordCallback::setPassword(jcharArray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -54,11 +48,11 @@ namespace __jni_impl::javax::security::auth::callback
 			"([C)V",
 			arg0);
 	}
-	QAndroidJniObject PasswordCallback::getPassword()
+	jboolean PasswordCallback::isEchoOn()
 	{
-		return __thiz.callObjectMethod(
-			"getPassword",
-			"()[C");
+		return __thiz.callMethod<jboolean>(
+			"isEchoOn",
+			"()Z");
 	}
 	QAndroidJniObject PasswordCallback::getPrompt()
 	{
@@ -66,11 +60,17 @@ namespace __jni_impl::javax::security::auth::callback
 			"getPrompt",
 			"()Ljava/lang/String;");
 	}
-	jboolean PasswordCallback::isEchoOn()
+	QAndroidJniObject PasswordCallback::getPassword()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isEchoOn",
-			"()Z");
+		return __thiz.callObjectMethod(
+			"getPassword",
+			"()[C");
+	}
+	void PasswordCallback::clearPassword()
+	{
+		__thiz.callMethod<void>(
+			"clearPassword",
+			"()V");
 	}
 } // namespace __jni_impl::javax::security::auth::callback
 

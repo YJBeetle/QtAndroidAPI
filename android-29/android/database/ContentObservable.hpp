@@ -3,6 +3,7 @@
 #ifndef ANDROID_DATABASE_CONTENTOBSERVABLE
 #define ANDROID_DATABASE_CONTENTOBSERVABLE
 
+#include "../../__JniBaseClass.hpp"
 #include "Observable.hpp"
 
 namespace __jni_impl::android::database

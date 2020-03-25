@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_PROPERTYPERMISSION
 #define JAVA_UTIL_PROPERTYPERMISSION
 
+#include "../../__JniBaseClass.hpp"
+#include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
 
 namespace __jni_impl::java::io

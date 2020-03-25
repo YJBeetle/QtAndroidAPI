@@ -17,8 +17,8 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getDescription();
 		jint getErrorCode();
+		QAndroidJniObject getDescription();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -36,17 +36,17 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	QAndroidJniObject WebResourceError::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/CharSequence;");
-	}
 	jint WebResourceError::getErrorCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getErrorCode",
 			"()I");
+	}
+	QAndroidJniObject WebResourceError::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/CharSequence;");
 	}
 } // namespace __jni_impl::android::webkit
 

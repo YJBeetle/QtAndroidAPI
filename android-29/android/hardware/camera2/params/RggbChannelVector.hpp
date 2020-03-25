@@ -25,12 +25,12 @@ namespace __jni_impl::android::hardware::camera2::params
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
+		jfloat getComponent(jint arg0);
 		void copyTo(jfloatArray arg0, jint arg1);
 		jfloat getGreenEven();
 		jfloat getRed();
 		jfloat getGreenOdd();
 		jfloat getBlue();
-		jfloat getComponent(jint arg0);
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -101,6 +101,13 @@ namespace __jni_impl::android::hardware::camera2::params
 			"hashCode",
 			"()I");
 	}
+	jfloat RggbChannelVector::getComponent(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getComponent",
+			"(I)F",
+			arg0);
+	}
 	void RggbChannelVector::copyTo(jfloatArray arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -132,13 +139,6 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jfloat>(
 			"getBlue",
 			"()F");
-	}
-	jfloat RggbChannelVector::getComponent(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getComponent",
-			"(I)F",
-			arg0);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

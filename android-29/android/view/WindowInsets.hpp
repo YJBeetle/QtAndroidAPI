@@ -32,7 +32,6 @@ namespace __jni_impl::android::view
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		QAndroidJniObject inset(jint arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject getSystemWindowInsets();
 		jint getSystemWindowInsetLeft();
 		jint getSystemWindowInsetTop();
@@ -45,8 +44,8 @@ namespace __jni_impl::android::view
 		jboolean isConsumed();
 		jboolean isRound();
 		QAndroidJniObject consumeSystemWindowInsets();
-		QAndroidJniObject replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject replaceSystemWindowInsets(__jni_impl::android::graphics::Rect arg0);
+		QAndroidJniObject replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject getStableInsets();
 		jint getStableInsetTop();
 		jint getStableInsetLeft();
@@ -57,6 +56,7 @@ namespace __jni_impl::android::view
 		QAndroidJniObject getMandatorySystemGestureInsets();
 		QAndroidJniObject getTappableElementInsets();
 		QAndroidJniObject consumeStableInsets();
+		QAndroidJniObject inset(jint arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::view
 
@@ -96,16 +96,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I");
-	}
-	QAndroidJniObject WindowInsets::inset(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"inset",
-			"(IIII)Landroid/view/WindowInsets;",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
 	}
 	QAndroidJniObject WindowInsets::getSystemWindowInsets()
 	{
@@ -179,6 +169,13 @@ namespace __jni_impl::android::view
 			"consumeSystemWindowInsets",
 			"()Landroid/view/WindowInsets;");
 	}
+	QAndroidJniObject WindowInsets::replaceSystemWindowInsets(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callObjectMethod(
+			"replaceSystemWindowInsets",
+			"(Landroid/graphics/Rect;)Landroid/view/WindowInsets;",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject WindowInsets::replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -188,13 +185,6 @@ namespace __jni_impl::android::view
 			arg1,
 			arg2,
 			arg3);
-	}
-	QAndroidJniObject WindowInsets::replaceSystemWindowInsets(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callObjectMethod(
-			"replaceSystemWindowInsets",
-			"(Landroid/graphics/Rect;)Landroid/view/WindowInsets;",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject WindowInsets::getStableInsets()
 	{
@@ -255,6 +245,16 @@ namespace __jni_impl::android::view
 		return __thiz.callObjectMethod(
 			"consumeStableInsets",
 			"()Landroid/view/WindowInsets;");
+	}
+	QAndroidJniObject WindowInsets::inset(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"inset",
+			"(IIII)Landroid/view/WindowInsets;",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
 	}
 } // namespace __jni_impl::android::view
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_SECURECLASSLOADER
 #define JAVA_SECURITY_SECURECLASSLOADER
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/ClassLoader.hpp"
 
 namespace __jni_impl::java::lang

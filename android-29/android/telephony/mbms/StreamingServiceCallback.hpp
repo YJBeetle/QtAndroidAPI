@@ -18,10 +18,10 @@ namespace __jni_impl::android::telephony::mbms
 		void __constructor();
 		
 		// Methods
+		void onError(jint arg0, jstring arg1);
 		void onMediaDescriptionUpdated();
 		void onStreamStateUpdated(jint arg0, jint arg1);
 		void onStreamMethodUpdated(jint arg0);
-		void onError(jint arg0, jstring arg1);
 		void onBroadcastSignalStrengthUpdated(jint arg0);
 	};
 } // namespace __jni_impl::android::telephony::mbms
@@ -46,6 +46,14 @@ namespace __jni_impl::android::telephony::mbms
 	}
 	
 	// Methods
+	void StreamingServiceCallback::onError(jint arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1);
+	}
 	void StreamingServiceCallback::onMediaDescriptionUpdated()
 	{
 		__thiz.callMethod<void>(
@@ -66,14 +74,6 @@ namespace __jni_impl::android::telephony::mbms
 			"onStreamMethodUpdated",
 			"(I)V",
 			arg0);
-	}
-	void StreamingServiceCallback::onError(jint arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1);
 	}
 	void StreamingServiceCallback::onBroadcastSignalStrengthUpdated(jint arg0)
 	{

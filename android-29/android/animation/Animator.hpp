@@ -29,13 +29,6 @@ namespace __jni_impl::android::animation
 		void setTarget(jobject arg0);
 		jlong getDuration();
 		void cancel();
-		QAndroidJniObject setDuration(jlong arg0);
-		void setStartDelay(jlong arg0);
-		jlong getStartDelay();
-		void setInterpolator(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getInterpolator();
-		void addListener(__jni_impl::__JniBaseClass arg0);
-		void removeListener(__jni_impl::__JniBaseClass arg0);
 		void pause();
 		jlong getTotalDuration();
 		jboolean isRunning();
@@ -46,6 +39,13 @@ namespace __jni_impl::android::animation
 		void removeAllListeners();
 		void setupStartValues();
 		void setupEndValues();
+		QAndroidJniObject setDuration(jlong arg0);
+		void setStartDelay(jlong arg0);
+		jlong getStartDelay();
+		void setInterpolator(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getInterpolator();
+		void addListener(__jni_impl::__JniBaseClass arg0);
+		void removeListener(__jni_impl::__JniBaseClass arg0);
 		jboolean isPaused();
 	};
 } // namespace __jni_impl::android::animation
@@ -114,53 +114,6 @@ namespace __jni_impl::android::animation
 			"cancel",
 			"()V");
 	}
-	QAndroidJniObject Animator::setDuration(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDuration",
-			"(J)Landroid/animation/Animator;",
-			arg0);
-	}
-	void Animator::setStartDelay(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStartDelay",
-			"(J)V",
-			arg0);
-	}
-	jlong Animator::getStartDelay()
-	{
-		return __thiz.callMethod<jlong>(
-			"getStartDelay",
-			"()J");
-	}
-	void Animator::setInterpolator(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInterpolator",
-			"(Landroid/animation/TimeInterpolator;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Animator::getInterpolator()
-	{
-		return __thiz.callObjectMethod(
-			"getInterpolator",
-			"()Landroid/animation/TimeInterpolator;");
-	}
-	void Animator::addListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"addListener",
-			"(Landroid/animation/Animator$AnimatorListener;)V",
-			arg0.__jniObject().object());
-	}
-	void Animator::removeListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeListener",
-			"(Landroid/animation/Animator$AnimatorListener;)V",
-			arg0.__jniObject().object());
-	}
 	void Animator::pause()
 	{
 		__thiz.callMethod<void>(
@@ -222,6 +175,53 @@ namespace __jni_impl::android::animation
 		__thiz.callMethod<void>(
 			"setupEndValues",
 			"()V");
+	}
+	QAndroidJniObject Animator::setDuration(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDuration",
+			"(J)Landroid/animation/Animator;",
+			arg0);
+	}
+	void Animator::setStartDelay(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStartDelay",
+			"(J)V",
+			arg0);
+	}
+	jlong Animator::getStartDelay()
+	{
+		return __thiz.callMethod<jlong>(
+			"getStartDelay",
+			"()J");
+	}
+	void Animator::setInterpolator(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInterpolator",
+			"(Landroid/animation/TimeInterpolator;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Animator::getInterpolator()
+	{
+		return __thiz.callObjectMethod(
+			"getInterpolator",
+			"()Landroid/animation/TimeInterpolator;");
+	}
+	void Animator::addListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"addListener",
+			"(Landroid/animation/Animator$AnimatorListener;)V",
+			arg0.__jniObject().object());
+	}
+	void Animator::removeListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeListener",
+			"(Landroid/animation/Animator$AnimatorListener;)V",
+			arg0.__jniObject().object());
 	}
 	jboolean Animator::isPaused()
 	{

@@ -23,8 +23,8 @@ namespace __jni_impl::android::app::backup
 		// Methods
 		QAndroidJniObject getKey();
 		jint getDataSize();
-		jboolean readNextHeader();
 		jint readEntityData(jbyteArray arg0, jint arg1, jint arg2);
+		jboolean readNextHeader();
 		void skipEntityData();
 	};
 } // namespace __jni_impl::android::app::backup
@@ -56,12 +56,6 @@ namespace __jni_impl::android::app::backup
 			"getDataSize",
 			"()I");
 	}
-	jboolean BackupDataInput::readNextHeader()
-	{
-		return __thiz.callMethod<jboolean>(
-			"readNextHeader",
-			"()Z");
-	}
 	jint BackupDataInput::readEntityData(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -70,6 +64,12 @@ namespace __jni_impl::android::app::backup
 			arg0,
 			arg1,
 			arg2);
+	}
+	jboolean BackupDataInput::readNextHeader()
+	{
+		return __thiz.callMethod<jboolean>(
+			"readNextHeader",
+			"()Z");
 	}
 	void BackupDataInput::skipEntityData()
 	{

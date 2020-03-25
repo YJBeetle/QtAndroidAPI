@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_DIGITALCLOCK
 #define ANDROID_WIDGET_DIGITALCLOCK
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "TextView.hpp"
 
 namespace __jni_impl::android::content

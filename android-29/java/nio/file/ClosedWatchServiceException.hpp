@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_FILE_CLOSEDWATCHSERVICEEXCEPTION
 #define JAVA_NIO_FILE_CLOSEDWATCHSERVICEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalStateException.hpp"
 
 

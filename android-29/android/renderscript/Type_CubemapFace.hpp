@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_TYPE_CUBEMAPFACE
 #define ANDROID_RENDERSCRIPT_TYPE_CUBEMAPFACE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

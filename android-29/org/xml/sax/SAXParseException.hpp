@@ -3,6 +3,8 @@
 #ifndef ORG_XML_SAX_SAXPARSEEXCEPTION
 #define ORG_XML_SAX_SAXPARSEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "SAXException.hpp"
 
 namespace __jni_impl::java::lang
@@ -26,9 +28,9 @@ namespace __jni_impl::org::xml::sax
 		// Methods
 		QAndroidJniObject toString();
 		jint getLineNumber();
-		QAndroidJniObject getPublicId();
 		QAndroidJniObject getSystemId();
 		jint getColumnNumber();
+		QAndroidJniObject getPublicId();
 	};
 } // namespace __jni_impl::org::xml::sax
 
@@ -93,12 +95,6 @@ namespace __jni_impl::org::xml::sax
 			"getLineNumber",
 			"()I");
 	}
-	QAndroidJniObject SAXParseException::getPublicId()
-	{
-		return __thiz.callObjectMethod(
-			"getPublicId",
-			"()Ljava/lang/String;");
-	}
 	QAndroidJniObject SAXParseException::getSystemId()
 	{
 		return __thiz.callObjectMethod(
@@ -110,6 +106,12 @@ namespace __jni_impl::org::xml::sax
 		return __thiz.callMethod<jint>(
 			"getColumnNumber",
 			"()I");
+	}
+	QAndroidJniObject SAXParseException::getPublicId()
+	{
+		return __thiz.callObjectMethod(
+			"getPublicId",
+			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::org::xml::sax
 

@@ -29,7 +29,6 @@ namespace __jni_impl::android::net::wifi
 		// Methods
 		QAndroidJniObject toString();
 		void setPassword(jstring arg0);
-		QAndroidJniObject getPassword();
 		void setEapMethod(jint arg0);
 		jint getEapMethod();
 		void setPhase2Method(jint arg0);
@@ -58,6 +57,7 @@ namespace __jni_impl::android::net::wifi
 		QAndroidJniObject getPlmn();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getPassword();
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -103,12 +103,6 @@ namespace __jni_impl::android::net::wifi
 			"setPassword",
 			"(Ljava/lang/String;)V",
 			arg0);
-	}
-	QAndroidJniObject WifiEnterpriseConfig::getPassword()
-	{
-		return __thiz.callObjectMethod(
-			"getPassword",
-			"()Ljava/lang/String;");
 	}
 	void WifiEnterpriseConfig::setEapMethod(jint arg0)
 	{
@@ -294,6 +288,12 @@ namespace __jni_impl::android::net::wifi
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject WifiEnterpriseConfig::getPassword()
+	{
+		return __thiz.callObjectMethod(
+			"getPassword",
+			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::net::wifi
 

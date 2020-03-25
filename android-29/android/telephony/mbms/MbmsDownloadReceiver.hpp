@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_MBMS_MBMSDOWNLOADRECEIVER
 #define ANDROID_TELEPHONY_MBMS_MBMSDOWNLOADRECEIVER
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
 namespace __jni_impl::android::content

@@ -3,6 +3,9 @@
 #ifndef JAVA_UTIL_REGEX_PATTERNSYNTAXEXCEPTION
 #define JAVA_UTIL_REGEX_PATTERNSYNTAXEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalArgumentException.hpp"
 
 
@@ -19,8 +22,8 @@ namespace __jni_impl::java::util::regex
 		// Methods
 		QAndroidJniObject getMessage();
 		jint getIndex();
-		QAndroidJniObject getDescription();
 		QAndroidJniObject getPattern();
+		QAndroidJniObject getDescription();
 	};
 } // namespace __jni_impl::java::util::regex
 
@@ -53,16 +56,16 @@ namespace __jni_impl::java::util::regex
 			"getIndex",
 			"()I");
 	}
-	QAndroidJniObject PatternSyntaxException::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
-	}
 	QAndroidJniObject PatternSyntaxException::getPattern()
 	{
 		return __thiz.callObjectMethod(
 			"getPattern",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject PatternSyntaxException::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
 			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::java::util::regex

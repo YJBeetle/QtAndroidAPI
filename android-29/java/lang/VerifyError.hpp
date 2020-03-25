@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_VERIFYERROR
 #define JAVA_LANG_VERIFYERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "LinkageError.hpp"
 
 

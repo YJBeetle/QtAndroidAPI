@@ -3,6 +3,8 @@
 #ifndef JAVAX_CRYPTO_ILLEGALBLOCKSIZEEXCEPTION
 #define JAVAX_CRYPTO_ILLEGALBLOCKSIZEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/security/GeneralSecurityException.hpp"
 
 

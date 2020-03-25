@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_LOUDNESSENHANCER
 #define ANDROID_MEDIA_AUDIOFX_LOUDNESSENHANCER
 
+#include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
 

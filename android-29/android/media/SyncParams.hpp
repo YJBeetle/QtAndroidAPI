@@ -24,7 +24,6 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject allowDefaults();
 		QAndroidJniObject setAudioAdjustMode(jint arg0);
 		jint getAudioAdjustMode();
 		QAndroidJniObject setSyncSource(jint arg0);
@@ -33,6 +32,7 @@ namespace __jni_impl::android::media
 		jfloat getTolerance();
 		QAndroidJniObject setFrameRate(jfloat arg0);
 		jfloat getFrameRate();
+		QAndroidJniObject allowDefaults();
 	};
 } // namespace __jni_impl::android::media
 
@@ -92,12 +92,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject SyncParams::allowDefaults()
-	{
-		return __thiz.callObjectMethod(
-			"allowDefaults",
-			"()Landroid/media/SyncParams;");
-	}
 	QAndroidJniObject SyncParams::setAudioAdjustMode(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -149,6 +143,12 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jfloat>(
 			"getFrameRate",
 			"()F");
+	}
+	QAndroidJniObject SyncParams::allowDefaults()
+	{
+		return __thiz.callObjectMethod(
+			"allowDefaults",
+			"()Landroid/media/SyncParams;");
 	}
 } // namespace __jni_impl::android::media
 

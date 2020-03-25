@@ -3,6 +3,8 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_TRANSITIONDRAWABLE
 #define ANDROID_GRAPHICS_DRAWABLE_TRANSITIONDRAWABLE
 
+#include "../../../__JniBaseClass.hpp"
+#include "Drawable.hpp"
 #include "LayerDrawable.hpp"
 
 namespace __jni_impl::android::graphics

@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_SHAPES_RECTSHAPE
 #define ANDROID_GRAPHICS_DRAWABLE_SHAPES_RECTSHAPE
 
+#include "../../../../__JniBaseClass.hpp"
 #include "Shape.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes

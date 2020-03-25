@@ -30,8 +30,8 @@ namespace __jni_impl::android::print
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		jint getPageCount();
 		jlong getDataSize();
+		jint getPageCount();
 		jint getContentType();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -109,17 +109,17 @@ namespace __jni_impl::android::print
 			"hashCode",
 			"()I");
 	}
-	jint PrintDocumentInfo::getPageCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getPageCount",
-			"()I");
-	}
 	jlong PrintDocumentInfo::getDataSize()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDataSize",
 			"()J");
+	}
+	jint PrintDocumentInfo::getPageCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getPageCount",
+			"()I");
 	}
 	jint PrintDocumentInfo::getContentType()
 	{

@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_SUMPATHEFFECT
 #define ANDROID_GRAPHICS_SUMPATHEFFECT
 
+#include "../../__JniBaseClass.hpp"
 #include "PathEffect.hpp"
 
 namespace __jni_impl::android::graphics

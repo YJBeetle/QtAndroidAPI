@@ -28,10 +28,10 @@ namespace __jni_impl::android::app::admin
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		jlong getReceivedTime();
-		jint getSecurityPatchState();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getReceivedTime();
+		jint getSecurityPatchState();
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -94,18 +94,6 @@ namespace __jni_impl::android::app::admin
 			"hashCode",
 			"()I");
 	}
-	jlong SystemUpdateInfo::getReceivedTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getReceivedTime",
-			"()J");
-	}
-	jint SystemUpdateInfo::getSecurityPatchState()
-	{
-		return __thiz.callMethod<jint>(
-			"getSecurityPatchState",
-			"()I");
-	}
 	jint SystemUpdateInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -119,6 +107,18 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	jlong SystemUpdateInfo::getReceivedTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getReceivedTime",
+			"()J");
+	}
+	jint SystemUpdateInfo::getSecurityPatchState()
+	{
+		return __thiz.callMethod<jint>(
+			"getSecurityPatchState",
+			"()I");
 	}
 } // namespace __jni_impl::android::app::admin
 

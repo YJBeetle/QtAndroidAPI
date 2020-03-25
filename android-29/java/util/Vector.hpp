@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_VECTOR
 #define JAVA_UTIL_VECTOR
 
+#include "../../__JniBaseClass.hpp"
+#include "AbstractCollection.hpp"
 #include "AbstractList.hpp"
 
 namespace __jni_impl::java::io

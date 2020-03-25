@@ -3,6 +3,9 @@
 #ifndef JAVA_LANG_ILLEGALACCESSERROR
 #define JAVA_LANG_ILLEGALACCESSERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
+#include "LinkageError.hpp"
 #include "IncompatibleClassChangeError.hpp"
 
 

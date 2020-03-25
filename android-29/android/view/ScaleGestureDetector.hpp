@@ -32,6 +32,7 @@ namespace __jni_impl::android::view
 		// Methods
 		jlong getEventTime();
 		jfloat getScaleFactor();
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean isQuickScaleEnabled();
 		void setStylusScaleEnabled(jboolean arg0);
 		jboolean isStylusScaleEnabled();
@@ -46,7 +47,6 @@ namespace __jni_impl::android::view
 		jfloat getPreviousSpanX();
 		jfloat getPreviousSpanY();
 		jlong getTimeDelta();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -89,6 +89,13 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jfloat>(
 			"getScaleFactor",
 			"()F");
+	}
+	jboolean ScaleGestureDetector::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
 	}
 	jboolean ScaleGestureDetector::isQuickScaleEnabled()
 	{
@@ -175,13 +182,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jlong>(
 			"getTimeDelta",
 			"()J");
-	}
-	jboolean ScaleGestureDetector::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::view
 

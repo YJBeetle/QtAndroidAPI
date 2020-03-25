@@ -13,17 +13,17 @@ namespace __jni_impl::android::os
 {
 	class ParcelFileDescriptor;
 }
-namespace __jni_impl::android::app
+namespace __jni_impl::android::net
 {
-	class PendingIntent;
+	class ProxyInfo;
 }
 namespace __jni_impl::java::net
 {
 	class InetAddress;
 }
-namespace __jni_impl::android::net
+namespace __jni_impl::android::app
 {
-	class ProxyInfo;
+	class PendingIntent;
 }
 
 namespace __jni_impl::android::net
@@ -38,6 +38,10 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		QAndroidJniObject establish();
+		QAndroidJniObject setMtu(jint arg0);
+		QAndroidJniObject setHttpProxy(__jni_impl::android::net::ProxyInfo arg0);
+		QAndroidJniObject addRoute(jstring arg0, jint arg1);
+		QAndroidJniObject addRoute(__jni_impl::java::net::InetAddress arg0, jint arg1);
 		QAndroidJniObject setSession(jstring arg0);
 		QAndroidJniObject setConfigureIntent(__jni_impl::android::app::PendingIntent arg0);
 		QAndroidJniObject addAddress(jstring arg0, jint arg1);
@@ -52,18 +56,14 @@ namespace __jni_impl::android::net
 		QAndroidJniObject setBlocking(jboolean arg0);
 		QAndroidJniObject setUnderlyingNetworks(jarray arg0);
 		QAndroidJniObject setMetered(jboolean arg0);
-		QAndroidJniObject addRoute(jstring arg0, jint arg1);
-		QAndroidJniObject addRoute(__jni_impl::java::net::InetAddress arg0, jint arg1);
-		QAndroidJniObject setMtu(jint arg0);
-		QAndroidJniObject setHttpProxy(__jni_impl::android::net::ProxyInfo arg0);
 	};
 } // namespace __jni_impl::android::net
 
 #include "VpnService.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
-#include "../app/PendingIntent.hpp"
-#include "../../java/net/InetAddress.hpp"
 #include "ProxyInfo.hpp"
+#include "../../java/net/InetAddress.hpp"
+#include "../app/PendingIntent.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -84,6 +84,36 @@ namespace __jni_impl::android::net
 		return __thiz.callObjectMethod(
 			"establish",
 			"()Landroid/os/ParcelFileDescriptor;");
+	}
+	QAndroidJniObject VpnService_Builder::setMtu(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMtu",
+			"(I)Landroid/net/VpnService$Builder;",
+			arg0);
+	}
+	QAndroidJniObject VpnService_Builder::setHttpProxy(__jni_impl::android::net::ProxyInfo arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setHttpProxy",
+			"(Landroid/net/ProxyInfo;)Landroid/net/VpnService$Builder;",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject VpnService_Builder::addRoute(jstring arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"addRoute",
+			"(Ljava/lang/String;I)Landroid/net/VpnService$Builder;",
+			arg0,
+			arg1);
+	}
+	QAndroidJniObject VpnService_Builder::addRoute(__jni_impl::java::net::InetAddress arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"addRoute",
+			"(Ljava/net/InetAddress;I)Landroid/net/VpnService$Builder;",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	QAndroidJniObject VpnService_Builder::setSession(jstring arg0)
 	{
@@ -183,36 +213,6 @@ namespace __jni_impl::android::net
 			"setMetered",
 			"(Z)Landroid/net/VpnService$Builder;",
 			arg0);
-	}
-	QAndroidJniObject VpnService_Builder::addRoute(jstring arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"addRoute",
-			"(Ljava/lang/String;I)Landroid/net/VpnService$Builder;",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject VpnService_Builder::addRoute(__jni_impl::java::net::InetAddress arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"addRoute",
-			"(Ljava/net/InetAddress;I)Landroid/net/VpnService$Builder;",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject VpnService_Builder::setMtu(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setMtu",
-			"(I)Landroid/net/VpnService$Builder;",
-			arg0);
-	}
-	QAndroidJniObject VpnService_Builder::setHttpProxy(__jni_impl::android::net::ProxyInfo arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setHttpProxy",
-			"(Landroid/net/ProxyInfo;)Landroid/net/VpnService$Builder;",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::net
 

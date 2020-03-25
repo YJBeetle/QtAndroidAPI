@@ -3,6 +3,9 @@
 #ifndef ANDROID_MEDIA_MEDIACODEC_CODECEXCEPTION
 #define ANDROID_MEDIA_MEDIACODEC_CODECEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/IllegalStateException.hpp"
 
 
@@ -21,8 +24,8 @@ namespace __jni_impl::android::media
 		// Methods
 		jboolean isTransient();
 		QAndroidJniObject getDiagnosticInfo();
-		jboolean isRecoverable();
 		jint getErrorCode();
+		jboolean isRecoverable();
 	};
 } // namespace __jni_impl::android::media
 
@@ -64,17 +67,17 @@ namespace __jni_impl::android::media
 			"getDiagnosticInfo",
 			"()Ljava/lang/String;");
 	}
-	jboolean MediaCodec_CodecException::isRecoverable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRecoverable",
-			"()Z");
-	}
 	jint MediaCodec_CodecException::getErrorCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getErrorCode",
 			"()I");
+	}
+	jboolean MediaCodec_CodecException::isRecoverable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRecoverable",
+			"()Z");
 	}
 } // namespace __jni_impl::android::media
 

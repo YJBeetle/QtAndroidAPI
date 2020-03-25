@@ -29,8 +29,10 @@ namespace __jni_impl::android::graphics
 		jboolean isEmpty();
 		void offset(jint arg0, jint arg1);
 		void set(__jni_impl::android::graphics::Outline arg0);
-		jboolean getRect(__jni_impl::android::graphics::Rect arg0);
 		void setAlpha(jfloat arg0);
+		void setEmpty();
+		jfloat getAlpha();
+		jboolean getRect(__jni_impl::android::graphics::Rect arg0);
 		jboolean canClip();
 		void setRoundRect(__jni_impl::android::graphics::Rect arg0, jfloat arg1);
 		void setRoundRect(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4);
@@ -40,8 +42,6 @@ namespace __jni_impl::android::graphics
 		void setOval(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setOval(__jni_impl::android::graphics::Rect arg0);
 		void setConvexPath(__jni_impl::android::graphics::Path arg0);
-		void setEmpty();
-		jfloat getAlpha();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -89,19 +89,31 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Outline;)V",
 			arg0.__jniObject().object());
 	}
-	jboolean Outline::getRect(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getRect",
-			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object());
-	}
 	void Outline::setAlpha(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAlpha",
 			"(F)V",
 			arg0);
+	}
+	void Outline::setEmpty()
+	{
+		__thiz.callMethod<void>(
+			"setEmpty",
+			"()V");
+	}
+	jfloat Outline::getAlpha()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getAlpha",
+			"()F");
+	}
+	jboolean Outline::getRect(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getRect",
+			"(Landroid/graphics/Rect;)Z",
+			arg0.__jniObject().object());
 	}
 	jboolean Outline::canClip()
 	{
@@ -174,18 +186,6 @@ namespace __jni_impl::android::graphics
 			"setConvexPath",
 			"(Landroid/graphics/Path;)V",
 			arg0.__jniObject().object());
-	}
-	void Outline::setEmpty()
-	{
-		__thiz.callMethod<void>(
-			"setEmpty",
-			"()V");
-	}
-	jfloat Outline::getAlpha()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getAlpha",
-			"()F");
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_WEBKIT_JSPROMPTRESULT
 #define ANDROID_WEBKIT_JSPROMPTRESULT
 
+#include "../../__JniBaseClass.hpp"
 #include "JsResult.hpp"
 
 

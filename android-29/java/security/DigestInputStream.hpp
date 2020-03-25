@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_DIGESTINPUTSTREAM
 #define JAVA_SECURITY_DIGESTINPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "../io/InputStream.hpp"
 #include "../io/FilterInputStream.hpp"
 
 namespace __jni_impl::java::security

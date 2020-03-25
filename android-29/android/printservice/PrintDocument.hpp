@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::print
-{
-	class PrintDocumentInfo;
-}
 namespace __jni_impl::android::os
 {
 	class ParcelFileDescriptor;
+}
+namespace __jni_impl::android::print
+{
+	class PrintDocumentInfo;
 }
 
 namespace __jni_impl::android::printservice
@@ -25,13 +25,13 @@ namespace __jni_impl::android::printservice
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getInfo();
 		QAndroidJniObject getData();
+		QAndroidJniObject getInfo();
 	};
 } // namespace __jni_impl::android::printservice
 
-#include "../print/PrintDocumentInfo.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
+#include "../print/PrintDocumentInfo.hpp"
 
 namespace __jni_impl::android::printservice
 {
@@ -46,17 +46,17 @@ namespace __jni_impl::android::printservice
 	}
 	
 	// Methods
-	QAndroidJniObject PrintDocument::getInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getInfo",
-			"()Landroid/print/PrintDocumentInfo;");
-	}
 	QAndroidJniObject PrintDocument::getData()
 	{
 		return __thiz.callObjectMethod(
 			"getData",
 			"()Landroid/os/ParcelFileDescriptor;");
+	}
+	QAndroidJniObject PrintDocument::getInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getInfo",
+			"()Landroid/print/PrintDocumentInfo;");
 	}
 } // namespace __jni_impl::android::printservice
 

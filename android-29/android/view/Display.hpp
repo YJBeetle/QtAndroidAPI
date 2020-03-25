@@ -65,8 +65,6 @@ namespace __jni_impl::android::view
 		void getSize(__jni_impl::android::graphics::Point arg0);
 		jint getFlags();
 		jboolean isValid();
-		jint getWidth();
-		jint getHeight();
 		jint getDisplayId();
 		void getRectSize(__jni_impl::android::graphics::Rect arg0);
 		void getCurrentSizeRange(__jni_impl::android::graphics::Point arg0, __jni_impl::android::graphics::Point arg1);
@@ -84,6 +82,8 @@ namespace __jni_impl::android::view
 		void getMetrics(__jni_impl::android::util::DisplayMetrics arg0);
 		void getRealSize(__jni_impl::android::graphics::Point arg0);
 		void getRealMetrics(__jni_impl::android::util::DisplayMetrics arg0);
+		jint getWidth();
+		jint getHeight();
 		jint getRotation();
 		jint getOrientation();
 		QAndroidJniObject getMode();
@@ -232,18 +232,6 @@ namespace __jni_impl::android::view
 			"isValid",
 			"()Z");
 	}
-	jint Display::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I");
-	}
-	jint Display::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
-	}
 	jint Display::getDisplayId()
 	{
 		return __thiz.callMethod<jint>(
@@ -351,6 +339,18 @@ namespace __jni_impl::android::view
 			"getRealMetrics",
 			"(Landroid/util/DisplayMetrics;)V",
 			arg0.__jniObject().object());
+	}
+	jint Display::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I");
+	}
+	jint Display::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I");
 	}
 	jint Display::getRotation()
 	{

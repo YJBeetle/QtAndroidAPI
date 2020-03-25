@@ -3,6 +3,9 @@
 #ifndef JAVA_SQL_SQLTIMEOUTEXCEPTION
 #define JAVA_SQL_SQLTIMEOUTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "SQLException.hpp"
 #include "SQLTransientException.hpp"
 
 

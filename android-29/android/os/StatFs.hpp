@@ -20,7 +20,6 @@ namespace __jni_impl::android::os
 		jint getBlockCount();
 		jlong getTotalBytes();
 		jlong getFreeBytes();
-		jint getBlockSize();
 		void restat(jstring arg0);
 		jlong getBlockSizeLong();
 		jlong getBlockCountLong();
@@ -29,6 +28,7 @@ namespace __jni_impl::android::os
 		jint getAvailableBlocks();
 		jlong getAvailableBlocksLong();
 		jlong getAvailableBytes();
+		jint getBlockSize();
 	};
 } // namespace __jni_impl::android::os
 
@@ -64,12 +64,6 @@ namespace __jni_impl::android::os
 		return __thiz.callMethod<jlong>(
 			"getFreeBytes",
 			"()J");
-	}
-	jint StatFs::getBlockSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getBlockSize",
-			"()I");
 	}
 	void StatFs::restat(jstring arg0)
 	{
@@ -119,6 +113,12 @@ namespace __jni_impl::android::os
 		return __thiz.callMethod<jlong>(
 			"getAvailableBytes",
 			"()J");
+	}
+	jint StatFs::getBlockSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getBlockSize",
+			"()I");
 	}
 } // namespace __jni_impl::android::os
 

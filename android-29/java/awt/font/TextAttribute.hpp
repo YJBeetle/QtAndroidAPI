@@ -3,6 +3,7 @@
 #ifndef JAVA_AWT_FONT_TEXTATTRIBUTE
 #define JAVA_AWT_FONT_TEXTATTRIBUTE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../text/AttributedCharacterIterator_Attribute.hpp"
 
 namespace __jni_impl::java::lang

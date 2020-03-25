@@ -3,6 +3,7 @@
 #ifndef ORG_APACHE_HTTP_CONN_SSL_STRICTHOSTNAMEVERIFIER
 #define ORG_APACHE_HTTP_CONN_SSL_STRICTHOSTNAMEVERIFIER
 
+#include "../../../../../__JniBaseClass.hpp"
 #include "AbstractVerifier.hpp"
 
 

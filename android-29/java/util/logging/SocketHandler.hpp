@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_LOGGING_SOCKETHANDLER
 #define JAVA_UTIL_LOGGING_SOCKETHANDLER
 
+#include "../../../__JniBaseClass.hpp"
+#include "Handler.hpp"
 #include "StreamHandler.hpp"
 
 namespace __jni_impl::java::net

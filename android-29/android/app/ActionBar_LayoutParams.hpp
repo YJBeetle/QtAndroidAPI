@@ -3,6 +3,8 @@
 #ifndef ANDROID_APP_ACTIONBAR_LAYOUTPARAMS
 #define ANDROID_APP_ACTIONBAR_LAYOUTPARAMS
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 
 namespace __jni_impl::android::view

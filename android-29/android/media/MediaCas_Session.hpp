@@ -28,9 +28,9 @@ namespace __jni_impl::android::media
 		jboolean equals(jobject arg0);
 		void close();
 		void setPrivateData(jbyteArray arg0);
-		void sendSessionEvent(jint arg0, jint arg1, jbyteArray arg2);
-		void processEcm(jbyteArray arg0);
 		void processEcm(jbyteArray arg0, jint arg1, jint arg2);
+		void processEcm(jbyteArray arg0);
+		void sendSessionEvent(jint arg0, jint arg1, jbyteArray arg2);
 	};
 } // namespace __jni_impl::android::media
 
@@ -70,11 +70,11 @@ namespace __jni_impl::android::media
 			"([B)V",
 			arg0);
 	}
-	void MediaCas_Session::sendSessionEvent(jint arg0, jint arg1, jbyteArray arg2)
+	void MediaCas_Session::processEcm(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"sendSessionEvent",
-			"(II[B)V",
+			"processEcm",
+			"([BII)V",
 			arg0,
 			arg1,
 			arg2);
@@ -86,11 +86,11 @@ namespace __jni_impl::android::media
 			"([B)V",
 			arg0);
 	}
-	void MediaCas_Session::processEcm(jbyteArray arg0, jint arg1, jint arg2)
+	void MediaCas_Session::sendSessionEvent(jint arg0, jint arg1, jbyteArray arg2)
 	{
 		__thiz.callMethod<void>(
-			"processEcm",
-			"([BII)V",
+			"sendSessionEvent",
+			"(II[B)V",
 			arg0,
 			arg1,
 			arg2);

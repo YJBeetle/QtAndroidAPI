@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_INHERITABLETHREADLOCAL
 #define JAVA_LANG_INHERITABLETHREADLOCAL
 
+#include "../../__JniBaseClass.hpp"
 #include "ThreadLocal.hpp"
 
 namespace __jni_impl::java::lang

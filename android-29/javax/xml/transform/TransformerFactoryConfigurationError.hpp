@@ -3,6 +3,7 @@
 #ifndef JAVAX_XML_TRANSFORM_TRANSFORMERFACTORYCONFIGURATIONERROR
 #define JAVAX_XML_TRANSFORM_TRANSFORMERFACTORYCONFIGURATIONERROR
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Error.hpp"
 
 namespace __jni_impl::java::lang

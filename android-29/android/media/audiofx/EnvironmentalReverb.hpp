@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_ENVIRONMENTALREVERB
 #define ANDROID_MEDIA_AUDIOFX_ENVIRONMENTALREVERB
 
+#include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
 namespace __jni_impl::android::media::audiofx
@@ -33,6 +34,9 @@ namespace __jni_impl::android::media::audiofx
 		// Methods
 		QAndroidJniObject getProperties();
 		void setProperties(__jni_impl::android::media::audiofx::EnvironmentalReverb_Settings arg0);
+		void setParameterListener(__jni_impl::__JniBaseClass arg0);
+		jshort getDensity();
+		void setDensity(jshort arg0);
 		void setRoomLevel(jshort arg0);
 		jshort getRoomLevel();
 		void setRoomHFLevel(jshort arg0);
@@ -51,9 +55,6 @@ namespace __jni_impl::android::media::audiofx
 		jint getReverbDelay();
 		void setDiffusion(jshort arg0);
 		jshort getDiffusion();
-		jshort getDensity();
-		void setDensity(jshort arg0);
-		void setParameterListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -146,6 +147,26 @@ namespace __jni_impl::android::media::audiofx
 			"setProperties",
 			"(Landroid/media/audiofx/EnvironmentalReverb$Settings;)V",
 			arg0.__jniObject().object());
+	}
+	void EnvironmentalReverb::setParameterListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setParameterListener",
+			"(Landroid/media/audiofx/EnvironmentalReverb$OnParameterChangeListener;)V",
+			arg0.__jniObject().object());
+	}
+	jshort EnvironmentalReverb::getDensity()
+	{
+		return __thiz.callMethod<jshort>(
+			"getDensity",
+			"()S");
+	}
+	void EnvironmentalReverb::setDensity(jshort arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDensity",
+			"(S)V",
+			arg0);
 	}
 	void EnvironmentalReverb::setRoomLevel(jshort arg0)
 	{
@@ -263,26 +284,6 @@ namespace __jni_impl::android::media::audiofx
 		return __thiz.callMethod<jshort>(
 			"getDiffusion",
 			"()S");
-	}
-	jshort EnvironmentalReverb::getDensity()
-	{
-		return __thiz.callMethod<jshort>(
-			"getDensity",
-			"()S");
-	}
-	void EnvironmentalReverb::setDensity(jshort arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDensity",
-			"(S)V",
-			arg0);
-	}
-	void EnvironmentalReverb::setParameterListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setParameterListener",
-			"(Landroid/media/audiofx/EnvironmentalReverb$OnParameterChangeListener;)V",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media::audiofx
 

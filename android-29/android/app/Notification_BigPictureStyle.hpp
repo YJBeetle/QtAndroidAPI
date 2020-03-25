@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_NOTIFICATION_BIGPICTURESTYLE
 #define ANDROID_APP_NOTIFICATION_BIGPICTURESTYLE
 
+#include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 
 namespace __jni_impl::android::app
@@ -30,11 +31,11 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::app::Notification_Builder arg0);
 		
 		// Methods
-		QAndroidJniObject setBigContentTitle(jstring arg0);
 		QAndroidJniObject setSummaryText(jstring arg0);
 		QAndroidJniObject bigPicture(__jni_impl::android::graphics::Bitmap arg0);
-		QAndroidJniObject bigLargeIcon(__jni_impl::android::graphics::Bitmap arg0);
 		QAndroidJniObject bigLargeIcon(__jni_impl::android::graphics::drawable::Icon arg0);
+		QAndroidJniObject bigLargeIcon(__jni_impl::android::graphics::Bitmap arg0);
+		QAndroidJniObject setBigContentTitle(jstring arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -62,13 +63,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject Notification_BigPictureStyle::setBigContentTitle(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBigContentTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
-			arg0);
-	}
 	QAndroidJniObject Notification_BigPictureStyle::setSummaryText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -83,6 +77,13 @@ namespace __jni_impl::android::app
 			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject Notification_BigPictureStyle::bigLargeIcon(__jni_impl::android::graphics::drawable::Icon arg0)
+	{
+		return __thiz.callObjectMethod(
+			"bigLargeIcon",
+			"(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$BigPictureStyle;",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject Notification_BigPictureStyle::bigLargeIcon(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -90,12 +91,12 @@ namespace __jni_impl::android::app
 			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject Notification_BigPictureStyle::bigLargeIcon(__jni_impl::android::graphics::drawable::Icon arg0)
+	QAndroidJniObject Notification_BigPictureStyle::setBigContentTitle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"bigLargeIcon",
-			"(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$BigPictureStyle;",
-			arg0.__jniObject().object());
+			"setBigContentTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
+			arg0);
 	}
 } // namespace __jni_impl::android::app
 

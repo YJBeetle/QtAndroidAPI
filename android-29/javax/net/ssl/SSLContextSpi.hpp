@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::security
-{
-	class SecureRandom;
-}
 namespace __jni_impl::javax::net::ssl
 {
 	class SSLSocketFactory;
@@ -29,6 +25,10 @@ namespace __jni_impl::javax::net::ssl
 {
 	class SSLParameters;
 }
+namespace __jni_impl::java::security
+{
+	class SecureRandom;
+}
 
 namespace __jni_impl::javax::net::ssl
 {
@@ -44,12 +44,12 @@ namespace __jni_impl::javax::net::ssl
 	};
 } // namespace __jni_impl::javax::net::ssl
 
-#include "../../../java/security/SecureRandom.hpp"
 #include "SSLSocketFactory.hpp"
 #include "SSLSocket.hpp"
 #include "SSLServerSocketFactory.hpp"
 #include "SSLEngine.hpp"
 #include "SSLParameters.hpp"
+#include "../../../java/security/SecureRandom.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

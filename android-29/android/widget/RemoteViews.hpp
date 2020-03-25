@@ -21,6 +21,10 @@ namespace __jni_impl::android::view
 {
 	class ViewGroup;
 }
+namespace __jni_impl::android::graphics::drawable
+{
+	class Icon;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -28,10 +32,6 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Icon;
 }
 namespace __jni_impl::android::app
 {
@@ -78,7 +78,15 @@ namespace __jni_impl::android::widget
 		void setFloat(jint arg0, jstring arg1, jfloat arg2);
 		void setDouble(jint arg0, jstring arg1, jdouble arg2);
 		void setTextColor(jint arg0, jint arg1);
+		void setEmptyView(jint arg0, jint arg1);
 		void setString(jint arg0, jstring arg1, jstring arg2);
+		void setIcon(jint arg0, jstring arg1, __jni_impl::android::graphics::drawable::Icon arg2);
+		void addView(jint arg0, __jni_impl::android::widget::RemoteViews arg1);
+		void removeAllViews(jint arg0);
+		void setContentDescription(jint arg0, jstring arg1);
+		void setAccessibilityTraversalBefore(jint arg0, jint arg1);
+		void setAccessibilityTraversalAfter(jint arg0, jint arg1);
+		void setLabelFor(jint arg0, jint arg1);
 		jint getLayoutId();
 		void showNext(jint arg0);
 		void showPrevious(jint arg0);
@@ -99,8 +107,8 @@ namespace __jni_impl::android::widget
 		void setOnClickResponse(jint arg0, __jni_impl::android::widget::RemoteViews_RemoteResponse arg1);
 		void setPendingIntentTemplate(jint arg0, __jni_impl::android::app::PendingIntent arg1);
 		void setOnClickFillInIntent(jint arg0, __jni_impl::android::content::Intent arg1);
-		void setRemoteAdapter(jint arg0, __jni_impl::android::content::Intent arg1);
 		void setRemoteAdapter(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2);
+		void setRemoteAdapter(jint arg0, __jni_impl::android::content::Intent arg1);
 		void setScrollPosition(jint arg0, jint arg1);
 		void setRelativeScrollPosition(jint arg0, jint arg1);
 		void setViewPadding(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
@@ -110,18 +118,10 @@ namespace __jni_impl::android::widget
 		void setLightBackgroundLayoutId(jint arg0);
 		void reapply(__jni_impl::android::content::Context arg0, __jni_impl::android::view::View arg1);
 		jboolean onLoadClass(jclass arg0);
-		void setIcon(jint arg0, jstring arg1, __jni_impl::android::graphics::drawable::Icon arg2);
-		void setEmptyView(jint arg0, jint arg1);
-		void setBitmap(jint arg0, jstring arg1, __jni_impl::android::graphics::Bitmap arg2);
+		void setIntent(jint arg0, jstring arg1, __jni_impl::android::content::Intent arg2);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void setIntent(jint arg0, jstring arg1, __jni_impl::android::content::Intent arg2);
-		void addView(jint arg0, __jni_impl::android::widget::RemoteViews arg1);
-		void removeAllViews(jint arg0);
-		void setContentDescription(jint arg0, jstring arg1);
-		void setAccessibilityTraversalBefore(jint arg0, jint arg1);
-		void setAccessibilityTraversalAfter(jint arg0, jint arg1);
-		void setLabelFor(jint arg0, jint arg1);
+		void setBitmap(jint arg0, jstring arg1, __jni_impl::android::graphics::Bitmap arg2);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -129,9 +129,9 @@ namespace __jni_impl::android::widget
 #include "../view/View.hpp"
 #include "../content/Context.hpp"
 #include "../view/ViewGroup.hpp"
+#include "../graphics/drawable/Icon.hpp"
 #include "../net/Uri.hpp"
 #include "../graphics/Bitmap.hpp"
-#include "../graphics/drawable/Icon.hpp"
 #include "../app/PendingIntent.hpp"
 #include "RemoteViews_RemoteResponse.hpp"
 #include "../content/Intent.hpp"
@@ -288,6 +288,14 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1);
 	}
+	void RemoteViews::setEmptyView(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setEmptyView",
+			"(II)V",
+			arg0,
+			arg1);
+	}
 	void RemoteViews::setString(jint arg0, jstring arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -296,6 +304,62 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1,
 			arg2);
+	}
+	void RemoteViews::setIcon(jint arg0, jstring arg1, __jni_impl::android::graphics::drawable::Icon arg2)
+	{
+		__thiz.callMethod<void>(
+			"setIcon",
+			"(ILjava/lang/String;Landroid/graphics/drawable/Icon;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object());
+	}
+	void RemoteViews::addView(jint arg0, __jni_impl::android::widget::RemoteViews arg1)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(ILandroid/widget/RemoteViews;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void RemoteViews::removeAllViews(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeAllViews",
+			"(I)V",
+			arg0);
+	}
+	void RemoteViews::setContentDescription(jint arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setContentDescription",
+			"(ILjava/lang/CharSequence;)V",
+			arg0,
+			arg1);
+	}
+	void RemoteViews::setAccessibilityTraversalBefore(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setAccessibilityTraversalBefore",
+			"(II)V",
+			arg0,
+			arg1);
+	}
+	void RemoteViews::setAccessibilityTraversalAfter(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setAccessibilityTraversalAfter",
+			"(II)V",
+			arg0,
+			arg1);
+	}
+	void RemoteViews::setLabelFor(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setLabelFor",
+			"(II)V",
+			arg0,
+			arg1);
 	}
 	jint RemoteViews::getLayoutId()
 	{
@@ -464,14 +528,6 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1.__jniObject().object());
 	}
-	void RemoteViews::setRemoteAdapter(jint arg0, __jni_impl::android::content::Intent arg1)
-	{
-		__thiz.callMethod<void>(
-			"setRemoteAdapter",
-			"(ILandroid/content/Intent;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
 	void RemoteViews::setRemoteAdapter(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2)
 	{
 		__thiz.callMethod<void>(
@@ -480,6 +536,14 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1,
 			arg2.__jniObject().object());
+	}
+	void RemoteViews::setRemoteAdapter(jint arg0, __jni_impl::android::content::Intent arg1)
+	{
+		__thiz.callMethod<void>(
+			"setRemoteAdapter",
+			"(ILandroid/content/Intent;)V",
+			arg0,
+			arg1.__jniObject().object());
 	}
 	void RemoteViews::setScrollPosition(jint arg0, jint arg1)
 	{
@@ -557,28 +621,11 @@ namespace __jni_impl::android::widget
 			"(Ljava/lang/Class;)Z",
 			arg0);
 	}
-	void RemoteViews::setIcon(jint arg0, jstring arg1, __jni_impl::android::graphics::drawable::Icon arg2)
+	void RemoteViews::setIntent(jint arg0, jstring arg1, __jni_impl::android::content::Intent arg2)
 	{
 		__thiz.callMethod<void>(
-			"setIcon",
-			"(ILjava/lang/String;Landroid/graphics/drawable/Icon;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	void RemoteViews::setEmptyView(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setEmptyView",
-			"(II)V",
-			arg0,
-			arg1);
-	}
-	void RemoteViews::setBitmap(jint arg0, jstring arg1, __jni_impl::android::graphics::Bitmap arg2)
-	{
-		__thiz.callMethod<void>(
-			"setBitmap",
-			"(ILjava/lang/String;Landroid/graphics/Bitmap;)V",
+			"setIntent",
+			"(ILjava/lang/String;Landroid/content/Intent;)V",
 			arg0,
 			arg1,
 			arg2.__jniObject().object());
@@ -597,61 +644,14 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	void RemoteViews::setIntent(jint arg0, jstring arg1, __jni_impl::android::content::Intent arg2)
+	void RemoteViews::setBitmap(jint arg0, jstring arg1, __jni_impl::android::graphics::Bitmap arg2)
 	{
 		__thiz.callMethod<void>(
-			"setIntent",
-			"(ILjava/lang/String;Landroid/content/Intent;)V",
+			"setBitmap",
+			"(ILjava/lang/String;Landroid/graphics/Bitmap;)V",
 			arg0,
 			arg1,
 			arg2.__jniObject().object());
-	}
-	void RemoteViews::addView(jint arg0, __jni_impl::android::widget::RemoteViews arg1)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(ILandroid/widget/RemoteViews;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void RemoteViews::removeAllViews(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeAllViews",
-			"(I)V",
-			arg0);
-	}
-	void RemoteViews::setContentDescription(jint arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(ILjava/lang/CharSequence;)V",
-			arg0,
-			arg1);
-	}
-	void RemoteViews::setAccessibilityTraversalBefore(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setAccessibilityTraversalBefore",
-			"(II)V",
-			arg0,
-			arg1);
-	}
-	void RemoteViews::setAccessibilityTraversalAfter(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setAccessibilityTraversalAfter",
-			"(II)V",
-			arg0,
-			arg1);
-	}
-	void RemoteViews::setLabelFor(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setLabelFor",
-			"(II)V",
-			arg0,
-			arg1);
 	}
 } // namespace __jni_impl::android::widget
 

@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_CHANNELS_NONWRITABLECHANNELEXCEPTION
 #define JAVA_NIO_CHANNELS_NONWRITABLECHANNELEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalStateException.hpp"
 
 

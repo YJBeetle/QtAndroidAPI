@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_PIPEDOUTPUTSTREAM
 #define JAVA_IO_PIPEDOUTPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
 #include "OutputStream.hpp"
 
 namespace __jni_impl::java::io

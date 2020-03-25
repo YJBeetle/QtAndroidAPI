@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_BUNDLE
 #define ANDROID_OS_BUNDLE
 
+#include "../../__JniBaseClass.hpp"
 #include "BaseBundle.hpp"
 
 namespace __jni_impl::android::os

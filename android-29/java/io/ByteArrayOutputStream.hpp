@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_BYTEARRAYOUTPUTSTREAM
 #define JAVA_IO_BYTEARRAYOUTPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
 #include "OutputStream.hpp"
 
 namespace __jni_impl::java::nio::charset

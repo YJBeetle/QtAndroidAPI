@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_STYLE_URLSPAN
 #define ANDROID_TEXT_STYLE_URLSPAN
 
+#include "../../../__JniBaseClass.hpp"
+#include "CharacterStyle.hpp"
 #include "ClickableSpan.hpp"
 
 namespace __jni_impl::android::os
@@ -28,9 +30,9 @@ namespace __jni_impl::android::text::style
 		// Methods
 		QAndroidJniObject getURL();
 		jint getSpanTypeId();
+		void onClick(__jni_impl::android::view::View arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void onClick(__jni_impl::android::view::View arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -70,6 +72,13 @@ namespace __jni_impl::android::text::style
 			"getSpanTypeId",
 			"()I");
 	}
+	void URLSpan::onClick(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"onClick",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
 	jint URLSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -83,13 +92,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	void URLSpan::onClick(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"onClick",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::text::style
 

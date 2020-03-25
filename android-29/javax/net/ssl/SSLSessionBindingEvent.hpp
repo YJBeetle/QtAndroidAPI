@@ -3,6 +3,7 @@
 #ifndef JAVAX_NET_SSL_SSLSESSIONBINDINGEVENT
 #define JAVAX_NET_SSL_SSLSESSIONBINDINGEVENT
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/util/EventObject.hpp"
 
 

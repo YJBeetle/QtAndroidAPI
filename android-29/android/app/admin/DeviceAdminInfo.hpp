@@ -62,11 +62,11 @@ namespace __jni_impl::android::app::admin
 		QAndroidJniObject getReceiverName();
 		QAndroidJniObject getTagForPolicy(jint arg0);
 		jboolean supportsTransferOwnership();
-		jboolean usesPolicy(jint arg0);
+		jboolean isVisible();
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
-		jboolean isVisible();
+		jboolean usesPolicy(jint arg0);
 		QAndroidJniObject loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
@@ -200,12 +200,19 @@ namespace __jni_impl::android::app::admin
 			"supportsTransferOwnership",
 			"()Z");
 	}
-	jboolean DeviceAdminInfo::usesPolicy(jint arg0)
+	jboolean DeviceAdminInfo::isVisible()
 	{
 		return __thiz.callMethod<jboolean>(
-			"usesPolicy",
-			"(I)Z",
-			arg0);
+			"isVisible",
+			"()Z");
+	}
+	void DeviceAdminInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jint DeviceAdminInfo::describeContents()
 	{
@@ -221,19 +228,12 @@ namespace __jni_impl::android::app::admin
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	void DeviceAdminInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	jboolean DeviceAdminInfo::isVisible()
+	jboolean DeviceAdminInfo::usesPolicy(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isVisible",
-			"()Z");
+			"usesPolicy",
+			"(I)Z",
+			arg0);
 	}
 	QAndroidJniObject DeviceAdminInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
 	{

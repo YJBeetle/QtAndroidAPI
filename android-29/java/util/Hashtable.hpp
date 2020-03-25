@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_HASHTABLE
 #define JAVA_UTIL_HASHTABLE
 
+#include "../../__JniBaseClass.hpp"
 #include "Dictionary.hpp"
 
 namespace __jni_impl::java::lang

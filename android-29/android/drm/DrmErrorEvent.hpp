@@ -3,6 +3,7 @@
 #ifndef ANDROID_DRM_DRMERROREVENT
 #define ANDROID_DRM_DRMERROREVENT
 
+#include "../../__JniBaseClass.hpp"
 #include "DrmEvent.hpp"
 
 namespace __jni_impl::java::util

@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_ANNOTATION_ANNOTATIONTYPEMISMATCHEXCEPTION
 #define JAVA_LANG_ANNOTATION_ANNOTATIONTYPEMISMATCHEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../Exception.hpp"
 #include "../RuntimeException.hpp"
 
 namespace __jni_impl::java::lang::reflect

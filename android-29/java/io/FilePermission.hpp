@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_FILEPERMISSION
 #define JAVA_IO_FILEPERMISSION
 
+#include "../../__JniBaseClass.hpp"
 #include "../security/Permission.hpp"
 
 namespace __jni_impl::java::nio::file

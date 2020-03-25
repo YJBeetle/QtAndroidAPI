@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_NOTIFICATION_DECORATEDCUSTOMVIEWSTYLE
 #define ANDROID_APP_NOTIFICATION_DECORATEDCUSTOMVIEWSTYLE
 
+#include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 
 

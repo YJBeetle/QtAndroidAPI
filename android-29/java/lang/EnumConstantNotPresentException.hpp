@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_ENUMCONSTANTNOTPRESENTEXCEPTION
 #define JAVA_LANG_ENUMCONSTANTNOTPRESENTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "RuntimeException.hpp"
 
 

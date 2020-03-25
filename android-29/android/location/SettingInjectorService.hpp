@@ -3,6 +3,9 @@
 #ifndef ANDROID_LOCATION_SETTINGINJECTORSERVICE
 #define ANDROID_LOCATION_SETTINGINJECTORSERVICE
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace __jni_impl::android::content

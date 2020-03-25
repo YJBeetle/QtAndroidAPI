@@ -3,6 +3,9 @@
 #ifndef ANDROID_APP_ADMIN_DEVICEADMINSERVICE
 #define ANDROID_APP_ADMIN_DEVICEADMINSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../Service.hpp"
 
 namespace __jni_impl::android::content

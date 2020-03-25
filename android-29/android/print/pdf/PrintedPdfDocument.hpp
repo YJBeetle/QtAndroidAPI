@@ -3,6 +3,7 @@
 #ifndef ANDROID_PRINT_PDF_PRINTEDPDFDOCUMENT
 #define ANDROID_PRINT_PDF_PRINTEDPDFDOCUMENT
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../graphics/pdf/PdfDocument.hpp"
 
 namespace __jni_impl::android::content

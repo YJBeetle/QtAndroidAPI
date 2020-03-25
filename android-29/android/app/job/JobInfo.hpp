@@ -84,9 +84,9 @@ namespace __jni_impl::android::app::job
 		jint getBackoffPolicy();
 		jboolean isImportantWhileForeground();
 		jboolean isPrefetch();
+		QAndroidJniObject getService();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getService();
 	};
 } // namespace __jni_impl::android::app::job
 
@@ -372,6 +372,12 @@ namespace __jni_impl::android::app::job
 			"isPrefetch",
 			"()Z");
 	}
+	QAndroidJniObject JobInfo::getService()
+	{
+		return __thiz.callObjectMethod(
+			"getService",
+			"()Landroid/content/ComponentName;");
+	}
 	jint JobInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -385,12 +391,6 @@ namespace __jni_impl::android::app::job
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject JobInfo::getService()
-	{
-		return __thiz.callObjectMethod(
-			"getService",
-			"()Landroid/content/ComponentName;");
 	}
 } // namespace __jni_impl::android::app::job
 

@@ -35,9 +35,9 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		void close();
-		jboolean requiresSecureDecoderComponent(jstring arg0);
 		void setMediaCasSession(__jni_impl::android::media::MediaCas_Session arg0);
 		jint descramble(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1, __jni_impl::android::media::MediaCodec_CryptoInfo arg2);
+		jboolean requiresSecureDecoderComponent(jstring arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -95,13 +95,6 @@ namespace __jni_impl::android::media
 			"close",
 			"()V");
 	}
-	jboolean MediaDescrambler::requiresSecureDecoderComponent(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"requiresSecureDecoderComponent",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
 	void MediaDescrambler::setMediaCasSession(__jni_impl::android::media::MediaCas_Session arg0)
 	{
 		__thiz.callMethod<void>(
@@ -117,6 +110,13 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
+	}
+	jboolean MediaDescrambler::requiresSecureDecoderComponent(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"requiresSecureDecoderComponent",
+			"(Ljava/lang/String;)Z",
+			arg0);
 	}
 } // namespace __jni_impl::android::media
 

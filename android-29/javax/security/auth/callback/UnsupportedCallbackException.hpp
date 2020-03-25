@@ -3,6 +3,7 @@
 #ifndef JAVAX_SECURITY_AUTH_CALLBACK_UNSUPPORTEDCALLBACKEXCEPTION
 #define JAVAX_SECURITY_AUTH_CALLBACK_UNSUPPORTEDCALLBACKEXCEPTION
 
+#include "../../../../__JniBaseClass.hpp"
 #include "../../../../java/lang/Exception.hpp"
 
 

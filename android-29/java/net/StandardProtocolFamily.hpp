@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_STANDARDPROTOCOLFAMILY
 #define JAVA_NET_STANDARDPROTOCOLFAMILY
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
 

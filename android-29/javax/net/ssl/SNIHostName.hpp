@@ -3,6 +3,7 @@
 #ifndef JAVAX_NET_SSL_SNIHOSTNAME
 #define JAVAX_NET_SSL_SNIHOSTNAME
 
+#include "../../../__JniBaseClass.hpp"
 #include "SNIServerName.hpp"
 
 namespace __jni_impl::javax::net::ssl

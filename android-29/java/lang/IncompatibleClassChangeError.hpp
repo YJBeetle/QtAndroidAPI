@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_INCOMPATIBLECLASSCHANGEERROR
 #define JAVA_LANG_INCOMPATIBLECLASSCHANGEERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "LinkageError.hpp"
 
 

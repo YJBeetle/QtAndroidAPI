@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_UTFDATAFORMATEXCEPTION
 #define JAVA_IO_UTFDATAFORMATEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "IOException.hpp"
 
 

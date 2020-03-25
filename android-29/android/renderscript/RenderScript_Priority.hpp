@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_RENDERSCRIPT_PRIORITY
 #define ANDROID_RENDERSCRIPT_RENDERSCRIPT_PRIORITY
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

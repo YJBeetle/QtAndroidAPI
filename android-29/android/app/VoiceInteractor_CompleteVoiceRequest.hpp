@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_VOICEINTERACTOR_COMPLETEVOICEREQUEST
 #define ANDROID_APP_VOICEINTERACTOR_COMPLETEVOICEREQUEST
 
+#include "../../__JniBaseClass.hpp"
 #include "VoiceInteractor_Request.hpp"
 
 namespace __jni_impl::android::app

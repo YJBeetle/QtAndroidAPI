@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_LOGGING_CONSOLEHANDLER
 #define JAVA_UTIL_LOGGING_CONSOLEHANDLER
 
+#include "../../../__JniBaseClass.hpp"
+#include "Handler.hpp"
 #include "StreamHandler.hpp"
 
 namespace __jni_impl::java::util::logging

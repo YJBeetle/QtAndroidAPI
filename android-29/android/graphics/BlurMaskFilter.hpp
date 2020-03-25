@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_BLURMASKFILTER
 #define ANDROID_GRAPHICS_BLURMASKFILTER
 
+#include "../../__JniBaseClass.hpp"
 #include "MaskFilter.hpp"
 
 namespace __jni_impl::android::graphics

@@ -20,17 +20,17 @@ namespace __jni_impl::org::xml::sax::helpers
 		
 		// Methods
 		void reset();
-		QAndroidJniObject getPrefixes();
-		QAndroidJniObject getPrefixes(jstring arg0);
-		QAndroidJniObject processName(jstring arg0, jarray arg1, jboolean arg2);
 		QAndroidJniObject getURI(jstring arg0);
 		QAndroidJniObject getPrefix(jstring arg0);
+		QAndroidJniObject processName(jstring arg0, jarray arg1, jboolean arg2);
 		jboolean declarePrefix(jstring arg0, jstring arg1);
 		QAndroidJniObject getDeclaredPrefixes();
 		void pushContext();
 		void popContext();
 		void setNamespaceDeclUris(jboolean arg0);
 		jboolean isNamespaceDeclUris();
+		QAndroidJniObject getPrefixes();
+		QAndroidJniObject getPrefixes(jstring arg0);
 	};
 } // namespace __jni_impl::org::xml::sax::helpers
 
@@ -68,28 +68,6 @@ namespace __jni_impl::org::xml::sax::helpers
 			"reset",
 			"()V");
 	}
-	QAndroidJniObject NamespaceSupport::getPrefixes()
-	{
-		return __thiz.callObjectMethod(
-			"getPrefixes",
-			"()Ljava/util/Enumeration;");
-	}
-	QAndroidJniObject NamespaceSupport::getPrefixes(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPrefixes",
-			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0);
-	}
-	QAndroidJniObject NamespaceSupport::processName(jstring arg0, jarray arg1, jboolean arg2)
-	{
-		return __thiz.callObjectMethod(
-			"processName",
-			"(Ljava/lang/String;[Ljava/lang/String;Z)[Ljava/lang/String;",
-			arg0,
-			arg1,
-			arg2);
-	}
 	QAndroidJniObject NamespaceSupport::getURI(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -103,6 +81,15 @@ namespace __jni_impl::org::xml::sax::helpers
 			"getPrefix",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0);
+	}
+	QAndroidJniObject NamespaceSupport::processName(jstring arg0, jarray arg1, jboolean arg2)
+	{
+		return __thiz.callObjectMethod(
+			"processName",
+			"(Ljava/lang/String;[Ljava/lang/String;Z)[Ljava/lang/String;",
+			arg0,
+			arg1,
+			arg2);
 	}
 	jboolean NamespaceSupport::declarePrefix(jstring arg0, jstring arg1)
 	{
@@ -142,6 +129,19 @@ namespace __jni_impl::org::xml::sax::helpers
 		return __thiz.callMethod<jboolean>(
 			"isNamespaceDeclUris",
 			"()Z");
+	}
+	QAndroidJniObject NamespaceSupport::getPrefixes()
+	{
+		return __thiz.callObjectMethod(
+			"getPrefixes",
+			"()Ljava/util/Enumeration;");
+	}
+	QAndroidJniObject NamespaceSupport::getPrefixes(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPrefixes",
+			"(Ljava/lang/String;)Ljava/util/Enumeration;",
+			arg0);
 	}
 } // namespace __jni_impl::org::xml::sax::helpers
 

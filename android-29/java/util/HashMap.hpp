@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_HASHMAP
 #define JAVA_UTIL_HASHMAP
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractMap.hpp"
 
 namespace __jni_impl::java::io

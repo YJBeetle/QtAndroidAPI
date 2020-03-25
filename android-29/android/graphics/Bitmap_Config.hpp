@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_BITMAP_CONFIG
 #define ANDROID_GRAPHICS_BITMAP_CONFIG
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

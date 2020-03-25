@@ -20,12 +20,12 @@ namespace __jni_impl::android::net
 		// Methods
 		QAndroidJniObject toString();
 		static QAndroidJniObject parse(jstring arg0);
+		QAndroidJniObject getHeaders();
 		static jboolean isMailTo(jstring arg0);
 		QAndroidJniObject getTo();
 		QAndroidJniObject getCc();
 		QAndroidJniObject getSubject();
 		QAndroidJniObject getBody();
-		QAndroidJniObject getHeaders();
 	};
 } // namespace __jni_impl::android::net
 
@@ -64,6 +64,12 @@ namespace __jni_impl::android::net
 			"(Ljava/lang/String;)Landroid/net/MailTo;",
 			arg0);
 	}
+	QAndroidJniObject MailTo::getHeaders()
+	{
+		return __thiz.callObjectMethod(
+			"getHeaders",
+			"()Ljava/util/Map;");
+	}
 	jboolean MailTo::isMailTo(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -95,12 +101,6 @@ namespace __jni_impl::android::net
 		return __thiz.callObjectMethod(
 			"getBody",
 			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject MailTo::getHeaders()
-	{
-		return __thiz.callObjectMethod(
-			"getHeaders",
-			"()Ljava/util/Map;");
 	}
 } // namespace __jni_impl::android::net
 

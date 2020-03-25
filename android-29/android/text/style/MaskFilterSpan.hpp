@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_STYLE_MASKFILTERSPAN
 #define ANDROID_TEXT_STYLE_MASKFILTERSPAN
 
+#include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
 namespace __jni_impl::android::graphics

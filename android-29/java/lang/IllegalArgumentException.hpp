@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_ILLEGALARGUMENTEXCEPTION
 #define JAVA_LANG_ILLEGALARGUMENTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "RuntimeException.hpp"
 
 

@@ -48,13 +48,13 @@ namespace __jni_impl::android::view
 		jchar getMatch(jint arg0, jcharArray arg1, jint arg2);
 		jchar getMatch(jint arg0, jcharArray arg1);
 		jboolean isPrintingKey(jint arg0);
-		QAndroidJniObject getEvents(jcharArray arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getModifierBehavior();
 		static jboolean deviceHasKey(jint arg0);
 		static QAndroidJniObject deviceHasKeys(jintArray arg0);
 		jint getKeyboardType();
+		QAndroidJniObject getEvents(jcharArray arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
@@ -230,27 +230,6 @@ namespace __jni_impl::android::view
 			"(I)Z",
 			arg0);
 	}
-	QAndroidJniObject KeyCharacterMap::getEvents(jcharArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getEvents",
-			"([C)[Landroid/view/KeyEvent;",
-			arg0);
-	}
-	jint KeyCharacterMap::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void KeyCharacterMap::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	jint KeyCharacterMap::getModifierBehavior()
 	{
 		return __thiz.callMethod<jint>(
@@ -278,6 +257,27 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jint>(
 			"getKeyboardType",
 			"()I");
+	}
+	QAndroidJniObject KeyCharacterMap::getEvents(jcharArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEvents",
+			"([C)[Landroid/view/KeyEvent;",
+			arg0);
+	}
+	jint KeyCharacterMap::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void KeyCharacterMap::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::view
 

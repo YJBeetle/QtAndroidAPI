@@ -19,8 +19,8 @@ namespace __jni_impl::android::os
 		// Methods
 		QAndroidJniObject start();
 		void cancel();
-		void onFinish();
 		void onTick(jlong arg0);
+		void onFinish();
 	};
 } // namespace __jni_impl::android::os
 
@@ -52,18 +52,18 @@ namespace __jni_impl::android::os
 			"cancel",
 			"()V");
 	}
-	void CountDownTimer::onFinish()
-	{
-		__thiz.callMethod<void>(
-			"onFinish",
-			"()V");
-	}
 	void CountDownTimer::onTick(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"onTick",
 			"(J)V",
 			arg0);
+	}
+	void CountDownTimer::onFinish()
+	{
+		__thiz.callMethod<void>(
+			"onFinish",
+			"()V");
 	}
 } // namespace __jni_impl::android::os
 

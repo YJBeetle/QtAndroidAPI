@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::media
 {
 	class AudioAttributes;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::app
@@ -37,10 +37,7 @@ namespace __jni_impl::android::app
 		jint hashCode();
 		void setName(jstring arg0);
 		QAndroidJniObject getId();
-		QAndroidJniObject getDescription();
 		void setDescription(jstring arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void setGroup(jstring arg0);
 		void setShowBadge(jboolean arg0);
 		void setSound(__jni_impl::android::net::Uri arg0, __jni_impl::android::media::AudioAttributes arg1);
@@ -65,12 +62,15 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getGroup();
 		jboolean canBubble();
 		jboolean hasUserSetImportance();
+		QAndroidJniObject getDescription();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../os/Parcel.hpp"
 #include "../net/Uri.hpp"
 #include "../media/AudioAttributes.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -140,32 +140,12 @@ namespace __jni_impl::android::app
 			"getId",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject NotificationChannel::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
-	}
 	void NotificationChannel::setDescription(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDescription",
 			"(Ljava/lang/String;)V",
 			arg0);
-	}
-	jint NotificationChannel::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void NotificationChannel::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 	void NotificationChannel::setGroup(jstring arg0)
 	{
@@ -322,6 +302,26 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jboolean>(
 			"hasUserSetImportance",
 			"()Z");
+	}
+	QAndroidJniObject NotificationChannel::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;");
+	}
+	jint NotificationChannel::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void NotificationChannel::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::app
 

@@ -3,6 +3,10 @@
 #ifndef JAVA_UTIL_JAR_JAROUTPUTSTREAM
 #define JAVA_UTIL_JAR_JAROUTPUTSTREAM
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../io/OutputStream.hpp"
+#include "../../io/FilterOutputStream.hpp"
+#include "../zip/DeflaterOutputStream.hpp"
 #include "../zip/ZipOutputStream.hpp"
 
 namespace __jni_impl::java::io

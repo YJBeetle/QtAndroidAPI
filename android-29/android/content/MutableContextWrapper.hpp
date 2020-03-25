@@ -3,6 +3,8 @@
 #ifndef ANDROID_CONTENT_MUTABLECONTEXTWRAPPER
 #define ANDROID_CONTENT_MUTABLECONTEXTWRAPPER
 
+#include "../../__JniBaseClass.hpp"
+#include "Context.hpp"
 #include "ContextWrapper.hpp"
 
 namespace __jni_impl::android::content

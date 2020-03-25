@@ -3,6 +3,9 @@
 #ifndef ANDROID_WEBKIT_WEBVIEW
 #define ANDROID_WEBKIT_WEBVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "../widget/AbsoluteLayout.hpp"
 
 namespace __jni_impl::android::content
@@ -12,6 +15,50 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::os
 {
 	class Handler;
+}
+namespace __jni_impl::android::view
+{
+	class View;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
+}
+namespace __jni_impl::android::view
+{
+	class ViewStructure;
+}
+namespace __jni_impl::android::util
+{
+	class SparseArray;
+}
+namespace __jni_impl::android::view::accessibility
+{
+	class AccessibilityNodeProvider;
+}
+namespace __jni_impl::android::view::inputmethod
+{
+	class EditorInfo;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup_LayoutParams;
+}
+namespace __jni_impl::android::graphics
+{
+	class Paint;
+}
+namespace __jni_impl::android::view
+{
+	class DragEvent;
 }
 namespace __jni_impl::android::net::http
 {
@@ -77,10 +124,6 @@ namespace __jni_impl::android::webkit
 {
 	class WebSettings;
 }
-namespace __jni_impl::android::view
-{
-	class View;
-}
 namespace __jni_impl::java::lang
 {
 	class ClassLoader;
@@ -100,46 +143,6 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::view
 {
 	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
-namespace __jni_impl::android::view
-{
-	class ViewStructure;
-}
-namespace __jni_impl::android::util
-{
-	class SparseArray;
-}
-namespace __jni_impl::android::view::accessibility
-{
-	class AccessibilityNodeProvider;
-}
-namespace __jni_impl::android::view::inputmethod
-{
-	class EditorInfo;
-}
-namespace __jni_impl::android::view
-{
-	class ViewGroup_LayoutParams;
-}
-namespace __jni_impl::android::graphics
-{
-	class Paint;
-}
-namespace __jni_impl::android::view
-{
-	class DragEvent;
 }
 
 namespace __jni_impl::android::webkit
@@ -173,6 +176,29 @@ namespace __jni_impl::android::webkit
 		jboolean pageDown(jboolean arg0);
 		void setTextClassifier(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getTextClassifier();
+		jboolean requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2);
+		QAndroidJniObject findFocus();
+		jboolean requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1);
+		QAndroidJniObject getAccessibilityClassName();
+		jboolean shouldDelayChildPressedState();
+		jboolean performLongClick();
+		void onProvideVirtualStructure(__jni_impl::android::view::ViewStructure arg0);
+		void onProvideAutofillVirtualStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
+		void autofill(__jni_impl::android::util::SparseArray arg0);
+		jboolean isVisibleToUserForAutofill(jint arg0);
+		QAndroidJniObject getAccessibilityNodeProvider();
+		void onStartTemporaryDetach();
+		void onFinishTemporaryDetach();
+		jboolean onCheckIsTextEditor();
+		QAndroidJniObject onCreateInputConnection(__jni_impl::android::view::inputmethod::EditorInfo arg0);
+		jboolean onHoverEvent(__jni_impl::android::view::MotionEvent arg0);
+		void setLayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0);
+		void computeScroll();
+		void setScrollBarStyle(jint arg0);
+		void setLayerType(jint arg0, __jni_impl::android::graphics::Paint arg1);
+		void setBackgroundColor(jint arg0);
+		jboolean onDragEvent(__jni_impl::android::view::DragEvent arg0);
+		void setOverScrollMode(jint arg0);
 		void setHorizontalScrollbarOverlay(jboolean arg0);
 		void setVerticalScrollbarOverlay(jboolean arg0);
 		jboolean overlayHorizontalScrollbar();
@@ -185,8 +211,8 @@ namespace __jni_impl::android::webkit
 		void setNetworkAvailable(jboolean arg0);
 		QAndroidJniObject saveState(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject restoreState(__jni_impl::android::os::Bundle arg0);
-		void loadUrl(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		void loadUrl(jstring arg0);
+		void loadUrl(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		void postUrl(jstring arg0, jbyteArray arg1);
 		void loadData(jstring arg0, jstring arg1, jstring arg2);
 		void loadDataWithBaseURL(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
@@ -238,8 +264,8 @@ namespace __jni_impl::android::webkit
 		void setWebViewClient(__jni_impl::android::webkit::WebViewClient arg0);
 		QAndroidJniObject getWebViewClient();
 		QAndroidJniObject getWebViewRenderProcess();
-		void setWebViewRenderProcessClient(__jni_impl::android::webkit::WebViewRenderProcessClient arg0);
 		void setWebViewRenderProcessClient(__jni_impl::__JniBaseClass arg0, __jni_impl::android::webkit::WebViewRenderProcessClient arg1);
+		void setWebViewRenderProcessClient(__jni_impl::android::webkit::WebViewRenderProcessClient arg0);
 		QAndroidJniObject getWebViewRenderProcessClient();
 		void setDownloadListener(__jni_impl::__JniBaseClass arg0);
 		void setWebChromeClient(__jni_impl::android::webkit::WebChromeClient arg0);
@@ -280,34 +306,22 @@ namespace __jni_impl::android::webkit
 		void onWindowFocusChanged(jboolean arg0);
 		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		QAndroidJniObject getTitle();
-		jboolean requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2);
-		QAndroidJniObject findFocus();
-		jboolean requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1);
-		QAndroidJniObject getAccessibilityClassName();
-		jboolean shouldDelayChildPressedState();
-		jboolean performLongClick();
-		void onProvideVirtualStructure(__jni_impl::android::view::ViewStructure arg0);
-		void onProvideAutofillVirtualStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
-		void autofill(__jni_impl::android::util::SparseArray arg0);
-		jboolean isVisibleToUserForAutofill(jint arg0);
-		QAndroidJniObject getAccessibilityNodeProvider();
-		void onStartTemporaryDetach();
-		void onFinishTemporaryDetach();
-		jboolean onCheckIsTextEditor();
-		QAndroidJniObject onCreateInputConnection(__jni_impl::android::view::inputmethod::EditorInfo arg0);
-		jboolean onHoverEvent(__jni_impl::android::view::MotionEvent arg0);
-		void setLayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0);
-		void computeScroll();
-		void setScrollBarStyle(jint arg0);
-		void setLayerType(jint arg0, __jni_impl::android::graphics::Paint arg1);
-		void setBackgroundColor(jint arg0);
-		jboolean onDragEvent(__jni_impl::android::view::DragEvent arg0);
-		void setOverScrollMode(jint arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
 #include "../content/Context.hpp"
 #include "../os/Handler.hpp"
+#include "../view/View.hpp"
+#include "../graphics/Rect.hpp"
+#include "../graphics/Canvas.hpp"
+#include "../view/ViewStructure.hpp"
+#include "../util/SparseArray.hpp"
+#include "../view/accessibility/AccessibilityNodeProvider.hpp"
+#include "../view/inputmethod/EditorInfo.hpp"
+#include "../view/MotionEvent.hpp"
+#include "../view/ViewGroup_LayoutParams.hpp"
+#include "../graphics/Paint.hpp"
+#include "../view/DragEvent.hpp"
 #include "../net/http/SslCertificate.hpp"
 #include "WebBackForwardList.hpp"
 #include "../os/Bundle.hpp"
@@ -324,22 +338,11 @@ namespace __jni_impl::android::webkit
 #include "WebChromeClient.hpp"
 #include "WebMessage.hpp"
 #include "WebSettings.hpp"
-#include "../view/View.hpp"
 #include "../../java/lang/ClassLoader.hpp"
 #include "../os/Looper.hpp"
 #include "../content/pm/PackageInfo.hpp"
 #include "../content/res/Configuration.hpp"
 #include "../view/KeyEvent.hpp"
-#include "../view/MotionEvent.hpp"
-#include "../graphics/Rect.hpp"
-#include "../graphics/Canvas.hpp"
-#include "../view/ViewStructure.hpp"
-#include "../util/SparseArray.hpp"
-#include "../view/accessibility/AccessibilityNodeProvider.hpp"
-#include "../view/inputmethod/EditorInfo.hpp"
-#include "../view/ViewGroup_LayoutParams.hpp"
-#include "../graphics/Paint.hpp"
-#include "../view/DragEvent.hpp"
 
 namespace __jni_impl::android::webkit
 {
@@ -496,6 +499,163 @@ namespace __jni_impl::android::webkit
 			"getTextClassifier",
 			"()Landroid/view/textclassifier/TextClassifier;");
 	}
+	jboolean WebView::requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"requestChildRectangleOnScreen",
+			"(Landroid/view/View;Landroid/graphics/Rect;Z)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2);
+	}
+	QAndroidJniObject WebView::findFocus()
+	{
+		return __thiz.callObjectMethod(
+			"findFocus",
+			"()Landroid/view/View;");
+	}
+	jboolean WebView::requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"requestFocus",
+			"(ILandroid/graphics/Rect;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	QAndroidJniObject WebView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
+	jboolean WebView::shouldDelayChildPressedState()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldDelayChildPressedState",
+			"()Z");
+	}
+	jboolean WebView::performLongClick()
+	{
+		return __thiz.callMethod<jboolean>(
+			"performLongClick",
+			"()Z");
+	}
+	void WebView::onProvideVirtualStructure(__jni_impl::android::view::ViewStructure arg0)
+	{
+		__thiz.callMethod<void>(
+			"onProvideVirtualStructure",
+			"(Landroid/view/ViewStructure;)V",
+			arg0.__jniObject().object());
+	}
+	void WebView::onProvideAutofillVirtualStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"onProvideAutofillVirtualStructure",
+			"(Landroid/view/ViewStructure;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	void WebView::autofill(__jni_impl::android::util::SparseArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"autofill",
+			"(Landroid/util/SparseArray;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean WebView::isVisibleToUserForAutofill(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVisibleToUserForAutofill",
+			"(I)Z",
+			arg0);
+	}
+	QAndroidJniObject WebView::getAccessibilityNodeProvider()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityNodeProvider",
+			"()Landroid/view/accessibility/AccessibilityNodeProvider;");
+	}
+	void WebView::onStartTemporaryDetach()
+	{
+		__thiz.callMethod<void>(
+			"onStartTemporaryDetach",
+			"()V");
+	}
+	void WebView::onFinishTemporaryDetach()
+	{
+		__thiz.callMethod<void>(
+			"onFinishTemporaryDetach",
+			"()V");
+	}
+	jboolean WebView::onCheckIsTextEditor()
+	{
+		return __thiz.callMethod<jboolean>(
+			"onCheckIsTextEditor",
+			"()Z");
+	}
+	QAndroidJniObject WebView::onCreateInputConnection(__jni_impl::android::view::inputmethod::EditorInfo arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onCreateInputConnection",
+			"(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;",
+			arg0.__jniObject().object());
+	}
+	jboolean WebView::onHoverEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onHoverEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	void WebView::setLayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLayoutParams",
+			"(Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object());
+	}
+	void WebView::computeScroll()
+	{
+		__thiz.callMethod<void>(
+			"computeScroll",
+			"()V");
+	}
+	void WebView::setScrollBarStyle(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setScrollBarStyle",
+			"(I)V",
+			arg0);
+	}
+	void WebView::setLayerType(jint arg0, __jni_impl::android::graphics::Paint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setLayerType",
+			"(ILandroid/graphics/Paint;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void WebView::setBackgroundColor(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBackgroundColor",
+			"(I)V",
+			arg0);
+	}
+	jboolean WebView::onDragEvent(__jni_impl::android::view::DragEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onDragEvent",
+			"(Landroid/view/DragEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	void WebView::setOverScrollMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOverScrollMode",
+			"(I)V",
+			arg0);
+	}
 	void WebView::setHorizontalScrollbarOverlay(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -583,6 +743,13 @@ namespace __jni_impl::android::webkit
 			"(Landroid/os/Bundle;)Landroid/webkit/WebBackForwardList;",
 			arg0.__jniObject().object());
 	}
+	void WebView::loadUrl(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"loadUrl",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
 	void WebView::loadUrl(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -590,13 +757,6 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
 			arg1.__jniObject().object());
-	}
-	void WebView::loadUrl(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"loadUrl",
-			"(Ljava/lang/String;)V",
-			arg0);
 	}
 	void WebView::postUrl(jstring arg0, jbyteArray arg1)
 	{
@@ -947,13 +1107,6 @@ namespace __jni_impl::android::webkit
 			"getWebViewRenderProcess",
 			"()Landroid/webkit/WebViewRenderProcess;");
 	}
-	void WebView::setWebViewRenderProcessClient(__jni_impl::android::webkit::WebViewRenderProcessClient arg0)
-	{
-		__thiz.callMethod<void>(
-			"setWebViewRenderProcessClient",
-			"(Landroid/webkit/WebViewRenderProcessClient;)V",
-			arg0.__jniObject().object());
-	}
 	void WebView::setWebViewRenderProcessClient(__jni_impl::__JniBaseClass arg0, __jni_impl::android::webkit::WebViewRenderProcessClient arg1)
 	{
 		__thiz.callMethod<void>(
@@ -961,6 +1114,13 @@ namespace __jni_impl::android::webkit
 			"(Ljava/util/concurrent/Executor;Landroid/webkit/WebViewRenderProcessClient;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
+	}
+	void WebView::setWebViewRenderProcessClient(__jni_impl::android::webkit::WebViewRenderProcessClient arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWebViewRenderProcessClient",
+			"(Landroid/webkit/WebViewRenderProcessClient;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject WebView::getWebViewRenderProcessClient()
 	{
@@ -1240,163 +1400,6 @@ namespace __jni_impl::android::webkit
 		return __thiz.callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/String;");
-	}
-	jboolean WebView::requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"requestChildRectangleOnScreen",
-			"(Landroid/view/View;Landroid/graphics/Rect;Z)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2);
-	}
-	QAndroidJniObject WebView::findFocus()
-	{
-		return __thiz.callObjectMethod(
-			"findFocus",
-			"()Landroid/view/View;");
-	}
-	jboolean WebView::requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"requestFocus",
-			"(ILandroid/graphics/Rect;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject WebView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	jboolean WebView::shouldDelayChildPressedState()
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldDelayChildPressedState",
-			"()Z");
-	}
-	jboolean WebView::performLongClick()
-	{
-		return __thiz.callMethod<jboolean>(
-			"performLongClick",
-			"()Z");
-	}
-	void WebView::onProvideVirtualStructure(__jni_impl::android::view::ViewStructure arg0)
-	{
-		__thiz.callMethod<void>(
-			"onProvideVirtualStructure",
-			"(Landroid/view/ViewStructure;)V",
-			arg0.__jniObject().object());
-	}
-	void WebView::onProvideAutofillVirtualStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onProvideAutofillVirtualStructure",
-			"(Landroid/view/ViewStructure;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void WebView::autofill(__jni_impl::android::util::SparseArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"autofill",
-			"(Landroid/util/SparseArray;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean WebView::isVisibleToUserForAutofill(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVisibleToUserForAutofill",
-			"(I)Z",
-			arg0);
-	}
-	QAndroidJniObject WebView::getAccessibilityNodeProvider()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityNodeProvider",
-			"()Landroid/view/accessibility/AccessibilityNodeProvider;");
-	}
-	void WebView::onStartTemporaryDetach()
-	{
-		__thiz.callMethod<void>(
-			"onStartTemporaryDetach",
-			"()V");
-	}
-	void WebView::onFinishTemporaryDetach()
-	{
-		__thiz.callMethod<void>(
-			"onFinishTemporaryDetach",
-			"()V");
-	}
-	jboolean WebView::onCheckIsTextEditor()
-	{
-		return __thiz.callMethod<jboolean>(
-			"onCheckIsTextEditor",
-			"()Z");
-	}
-	QAndroidJniObject WebView::onCreateInputConnection(__jni_impl::android::view::inputmethod::EditorInfo arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateInputConnection",
-			"(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;",
-			arg0.__jniObject().object());
-	}
-	jboolean WebView::onHoverEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onHoverEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	void WebView::setLayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLayoutParams",
-			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object());
-	}
-	void WebView::computeScroll()
-	{
-		__thiz.callMethod<void>(
-			"computeScroll",
-			"()V");
-	}
-	void WebView::setScrollBarStyle(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setScrollBarStyle",
-			"(I)V",
-			arg0);
-	}
-	void WebView::setLayerType(jint arg0, __jni_impl::android::graphics::Paint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setLayerType",
-			"(ILandroid/graphics/Paint;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void WebView::setBackgroundColor(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBackgroundColor",
-			"(I)V",
-			arg0);
-	}
-	jboolean WebView::onDragEvent(__jni_impl::android::view::DragEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onDragEvent",
-			"(Landroid/view/DragEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	void WebView::setOverScrollMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOverScrollMode",
-			"(I)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::webkit
 

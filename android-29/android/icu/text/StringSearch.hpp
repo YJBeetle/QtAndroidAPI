@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_STRINGSEARCH
 #define ANDROID_ICU_TEXT_STRINGSEARCH
 
+#include "../../../__JniBaseClass.hpp"
 #include "SearchIterator.hpp"
 
 namespace __jni_impl::android::icu::util
@@ -41,8 +42,8 @@ namespace __jni_impl::android::icu::text
 		void reset();
 		jint getIndex();
 		void setIndex(jint arg0);
-		jboolean isCanonical();
 		void setPattern(jstring arg0);
+		jboolean isCanonical();
 		QAndroidJniObject getPattern();
 		QAndroidJniObject getCollator();
 		void setCollator(__jni_impl::android::icu::text::RuleBasedCollator arg0);
@@ -133,18 +134,18 @@ namespace __jni_impl::android::icu::text
 			"(I)V",
 			arg0);
 	}
-	jboolean StringSearch::isCanonical()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCanonical",
-			"()Z");
-	}
 	void StringSearch::setPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPattern",
 			"(Ljava/lang/String;)V",
 			arg0);
+	}
+	jboolean StringSearch::isCanonical()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCanonical",
+			"()Z");
 	}
 	QAndroidJniObject StringSearch::getPattern()
 	{

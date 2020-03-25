@@ -22,9 +22,9 @@ namespace __jni_impl::android::net::rtp
 		
 		// Methods
 		void clear();
-		void sendDtmf(jint arg0);
 		QAndroidJniObject getStreams();
 		void setMode(jint arg0);
+		void sendDtmf(jint arg0);
 		jint getMode();
 	};
 } // namespace __jni_impl::android::net::rtp
@@ -73,13 +73,6 @@ namespace __jni_impl::android::net::rtp
 			"clear",
 			"()V");
 	}
-	void AudioGroup::sendDtmf(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"sendDtmf",
-			"(I)V",
-			arg0);
-	}
 	QAndroidJniObject AudioGroup::getStreams()
 	{
 		return __thiz.callObjectMethod(
@@ -90,6 +83,13 @@ namespace __jni_impl::android::net::rtp
 	{
 		__thiz.callMethod<void>(
 			"setMode",
+			"(I)V",
+			arg0);
+	}
+	void AudioGroup::sendDtmf(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"sendDtmf",
 			"(I)V",
 			arg0);
 	}

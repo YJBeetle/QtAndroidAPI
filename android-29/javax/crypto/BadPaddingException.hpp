@@ -3,6 +3,8 @@
 #ifndef JAVAX_CRYPTO_BADPADDINGEXCEPTION
 #define JAVAX_CRYPTO_BADPADDINGEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/security/GeneralSecurityException.hpp"
 
 

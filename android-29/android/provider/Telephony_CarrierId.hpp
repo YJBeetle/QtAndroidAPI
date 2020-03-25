@@ -26,8 +26,8 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getUriForSubscriptionId(jint arg0);
 		static QAndroidJniObject getSpecificCarrierIdUriForSubscriptionId(jint arg0);
+		static QAndroidJniObject getUriForSubscriptionId(jint arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -81,19 +81,19 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject Telephony_CarrierId::getUriForSubscriptionId(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Telephony$CarrierId",
-			"getUriForSubscriptionId",
-			"(I)Landroid/net/Uri;",
-			arg0);
-	}
 	QAndroidJniObject Telephony_CarrierId::getSpecificCarrierIdUriForSubscriptionId(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Telephony$CarrierId",
 			"getSpecificCarrierIdUriForSubscriptionId",
+			"(I)Landroid/net/Uri;",
+			arg0);
+	}
+	QAndroidJniObject Telephony_CarrierId::getUriForSubscriptionId(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.Telephony$CarrierId",
+			"getUriForSubscriptionId",
 			"(I)Landroid/net/Uri;",
 			arg0);
 	}

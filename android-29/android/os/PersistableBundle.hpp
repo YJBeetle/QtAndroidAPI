@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_PERSISTABLEBUNDLE
 #define ANDROID_OS_PERSISTABLEBUNDLE
 
+#include "../../__JniBaseClass.hpp"
 #include "BaseBundle.hpp"
 
 namespace __jni_impl::android::os
@@ -28,10 +29,10 @@ namespace __jni_impl::android::os
 		QAndroidJniObject toString();
 		QAndroidJniObject clone();
 		QAndroidJniObject deepCopy();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void putPersistableBundle(jstring arg0, __jni_impl::android::os::PersistableBundle arg1);
 		QAndroidJniObject getPersistableBundle(jstring arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -96,20 +97,6 @@ namespace __jni_impl::android::os
 			"deepCopy",
 			"()Landroid/os/PersistableBundle;");
 	}
-	jint PersistableBundle::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void PersistableBundle::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	void PersistableBundle::putPersistableBundle(jstring arg0, __jni_impl::android::os::PersistableBundle arg1)
 	{
 		__thiz.callMethod<void>(
@@ -124,6 +111,20 @@ namespace __jni_impl::android::os
 			"getPersistableBundle",
 			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
 			arg0);
+	}
+	jint PersistableBundle::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void PersistableBundle::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::os
 

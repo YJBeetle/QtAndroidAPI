@@ -3,6 +3,7 @@
 #ifndef ANDROID_DATABASE_ABSTRACTWINDOWEDCURSOR
 #define ANDROID_DATABASE_ABSTRACTWINDOWEDCURSOR
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractCursor.hpp"
 
 namespace __jni_impl::android::database
@@ -39,9 +40,9 @@ namespace __jni_impl::android::database
 		jboolean isBlob(jint arg0);
 		jboolean isLong(jint arg0);
 		jboolean isString(jint arg0);
-		QAndroidJniObject getWindow();
 		void setWindow(__jni_impl::android::database::CursorWindow arg0);
 		jboolean hasWindow();
+		QAndroidJniObject getWindow();
 	};
 } // namespace __jni_impl::android::database
 
@@ -160,12 +161,6 @@ namespace __jni_impl::android::database
 			"(I)Z",
 			arg0);
 	}
-	QAndroidJniObject AbstractWindowedCursor::getWindow()
-	{
-		return __thiz.callObjectMethod(
-			"getWindow",
-			"()Landroid/database/CursorWindow;");
-	}
 	void AbstractWindowedCursor::setWindow(__jni_impl::android::database::CursorWindow arg0)
 	{
 		__thiz.callMethod<void>(
@@ -178,6 +173,12 @@ namespace __jni_impl::android::database
 		return __thiz.callMethod<jboolean>(
 			"hasWindow",
 			"()Z");
+	}
+	QAndroidJniObject AbstractWindowedCursor::getWindow()
+	{
+		return __thiz.callObjectMethod(
+			"getWindow",
+			"()Landroid/database/CursorWindow;");
 	}
 } // namespace __jni_impl::android::database
 

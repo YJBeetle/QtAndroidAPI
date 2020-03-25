@@ -27,14 +27,14 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject toString();
+		jint getEntityCount();
+		QAndroidJniObject getEntity(jint arg0);
 		QAndroidJniObject getExtras();
 		jint getStart();
 		jint getEnd();
-		jfloat getConfidenceScore(jstring arg0);
-		jint getEntityCount();
-		QAndroidJniObject getEntity(jint arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jfloat getConfidenceScore(jstring arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -67,6 +67,19 @@ namespace __jni_impl::android::view::textclassifier
 			"toString",
 			"()Ljava/lang/String;");
 	}
+	jint TextLinks_TextLink::getEntityCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getEntityCount",
+			"()I");
+	}
+	QAndroidJniObject TextLinks_TextLink::getEntity(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEntity",
+			"(I)Ljava/lang/String;",
+			arg0);
+	}
 	QAndroidJniObject TextLinks_TextLink::getExtras()
 	{
 		return __thiz.callObjectMethod(
@@ -85,26 +98,6 @@ namespace __jni_impl::android::view::textclassifier
 			"getEnd",
 			"()I");
 	}
-	jfloat TextLinks_TextLink::getConfidenceScore(jstring arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getConfidenceScore",
-			"(Ljava/lang/String;)F",
-			arg0);
-	}
-	jint TextLinks_TextLink::getEntityCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getEntityCount",
-			"()I");
-	}
-	QAndroidJniObject TextLinks_TextLink::getEntity(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getEntity",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
 	jint TextLinks_TextLink::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -118,6 +111,13 @@ namespace __jni_impl::android::view::textclassifier
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	jfloat TextLinks_TextLink::getConfidenceScore(jstring arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"(Ljava/lang/String;)F",
+			arg0);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

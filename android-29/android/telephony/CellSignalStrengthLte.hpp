@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_CELLSIGNALSTRENGTHLTE
 #define ANDROID_TELEPHONY_CELLSIGNALSTRENGTHLTE
 
+#include "../../__JniBaseClass.hpp"
 #include "CellSignalStrength.hpp"
 
 namespace __jni_impl::android::os
@@ -26,9 +27,9 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject toString();
 		jint hashCode();
 		jint getLevel();
+		jint getAsuLevel();
 		jint getRsrq();
 		jint getRssnr();
-		jint getAsuLevel();
 		jint getRsrp();
 		jint getCqi();
 		jint getDbm();
@@ -86,6 +87,12 @@ namespace __jni_impl::android::telephony
 			"getLevel",
 			"()I");
 	}
+	jint CellSignalStrengthLte::getAsuLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getAsuLevel",
+			"()I");
+	}
 	jint CellSignalStrengthLte::getRsrq()
 	{
 		return __thiz.callMethod<jint>(
@@ -96,12 +103,6 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callMethod<jint>(
 			"getRssnr",
-			"()I");
-	}
-	jint CellSignalStrengthLte::getAsuLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getAsuLevel",
 			"()I");
 	}
 	jint CellSignalStrengthLte::getRsrp()

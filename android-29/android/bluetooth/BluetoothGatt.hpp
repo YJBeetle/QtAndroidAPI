@@ -7,6 +7,14 @@
 
 namespace __jni_impl::android::bluetooth
 {
+	class BluetoothGattService;
+}
+namespace __jni_impl::java::util
+{
+	class UUID;
+}
+namespace __jni_impl::android::bluetooth
+{
 	class BluetoothGattCharacteristic;
 }
 namespace __jni_impl::android::bluetooth
@@ -16,14 +24,6 @@ namespace __jni_impl::android::bluetooth
 namespace __jni_impl::android::bluetooth
 {
 	class BluetoothDevice;
-}
-namespace __jni_impl::android::bluetooth
-{
-	class BluetoothGattService;
-}
-namespace __jni_impl::java::util
-{
-	class UUID;
 }
 
 namespace __jni_impl::android::bluetooth
@@ -52,6 +52,8 @@ namespace __jni_impl::android::bluetooth
 		// Methods
 		jboolean connect();
 		void close();
+		QAndroidJniObject getService(__jni_impl::java::util::UUID arg0);
+		void disconnect();
 		void setPreferredPhy(jint arg0, jint arg1, jint arg2);
 		void readPhy();
 		jboolean discoverServices();
@@ -71,17 +73,15 @@ namespace __jni_impl::android::bluetooth
 		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		QAndroidJniObject getConnectedDevices();
 		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
-		QAndroidJniObject getService(__jni_impl::java::util::UUID arg0);
-		void disconnect();
 		QAndroidJniObject getDevice();
 	};
 } // namespace __jni_impl::android::bluetooth
 
+#include "BluetoothGattService.hpp"
+#include "../../java/util/UUID.hpp"
 #include "BluetoothGattCharacteristic.hpp"
 #include "BluetoothGattDescriptor.hpp"
 #include "BluetoothDevice.hpp"
-#include "BluetoothGattService.hpp"
-#include "../../java/util/UUID.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -184,6 +184,19 @@ namespace __jni_impl::android::bluetooth
 	{
 		__thiz.callMethod<void>(
 			"close",
+			"()V");
+	}
+	QAndroidJniObject BluetoothGatt::getService(__jni_impl::java::util::UUID arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getService",
+			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattService;",
+			arg0.__jniObject().object());
+	}
+	void BluetoothGatt::disconnect()
+	{
+		__thiz.callMethod<void>(
+			"disconnect",
 			"()V");
 	}
 	void BluetoothGatt::setPreferredPhy(jint arg0, jint arg1, jint arg2)
@@ -313,19 +326,6 @@ namespace __jni_impl::android::bluetooth
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
 			arg0);
-	}
-	QAndroidJniObject BluetoothGatt::getService(__jni_impl::java::util::UUID arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getService",
-			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattService;",
-			arg0.__jniObject().object());
-	}
-	void BluetoothGatt::disconnect()
-	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"()V");
 	}
 	QAndroidJniObject BluetoothGatt::getDevice()
 	{

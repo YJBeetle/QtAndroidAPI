@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_LOCALEDISPLAYNAMES_DIALECTHANDLING
 #define ANDROID_ICU_TEXT_LOCALEDISPLAYNAMES_DIALECTHANDLING
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

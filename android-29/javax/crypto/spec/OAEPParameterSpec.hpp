@@ -22,10 +22,10 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::javax::crypto::spec::PSource arg3);
 		
 		// Methods
+		QAndroidJniObject getPSource();
 		QAndroidJniObject getDigestAlgorithm();
 		QAndroidJniObject getMGFAlgorithm();
 		QAndroidJniObject getMGFParameters();
-		QAndroidJniObject getPSource();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -55,6 +55,12 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
+	QAndroidJniObject OAEPParameterSpec::getPSource()
+	{
+		return __thiz.callObjectMethod(
+			"getPSource",
+			"()Ljavax/crypto/spec/PSource;");
+	}
 	QAndroidJniObject OAEPParameterSpec::getDigestAlgorithm()
 	{
 		return __thiz.callObjectMethod(
@@ -72,12 +78,6 @@ namespace __jni_impl::javax::crypto::spec
 		return __thiz.callObjectMethod(
 			"getMGFParameters",
 			"()Ljava/security/spec/AlgorithmParameterSpec;");
-	}
-	QAndroidJniObject OAEPParameterSpec::getPSource()
-	{
-		return __thiz.callObjectMethod(
-			"getPSource",
-			"()Ljavax/crypto/spec/PSource;");
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

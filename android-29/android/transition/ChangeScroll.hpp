@@ -3,6 +3,7 @@
 #ifndef ANDROID_TRANSITION_CHANGESCROLL
 #define ANDROID_TRANSITION_CHANGESCROLL
 
+#include "../../__JniBaseClass.hpp"
 #include "Transition.hpp"
 
 namespace __jni_impl::android::content

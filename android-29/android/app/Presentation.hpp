@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_PRESENTATION
 #define ANDROID_APP_PRESENTATION
 
+#include "../../__JniBaseClass.hpp"
 #include "Dialog.hpp"
 
 namespace __jni_impl::android::content

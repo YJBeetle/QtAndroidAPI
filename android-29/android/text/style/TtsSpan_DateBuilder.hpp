@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_STYLE_TTSSPAN_DATEBUILDER
 #define ANDROID_TEXT_STYLE_TTSSPAN_DATEBUILDER
 
+#include "../../../__JniBaseClass.hpp"
+#include "TtsSpan_Builder.hpp"
 #include "TtsSpan_SemioticClassBuilder.hpp"
 
 namespace __jni_impl::java::lang

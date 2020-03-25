@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_INET4ADDRESS
 #define JAVA_NET_INET4ADDRESS
 
+#include "../../__JniBaseClass.hpp"
 #include "InetAddress.hpp"
 
 

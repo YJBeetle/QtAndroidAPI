@@ -27,10 +27,10 @@ namespace __jni_impl::android::location
 		
 		// Methods
 		QAndroidJniObject toString();
-		QAndroidJniObject getMeasurements();
-		QAndroidJniObject getClock();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getClock();
+		QAndroidJniObject getMeasurements();
 	};
 } // namespace __jni_impl::android::location
 
@@ -63,18 +63,6 @@ namespace __jni_impl::android::location
 			"toString",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject GnssMeasurementsEvent::getMeasurements()
-	{
-		return __thiz.callObjectMethod(
-			"getMeasurements",
-			"()Ljava/util/Collection;");
-	}
-	QAndroidJniObject GnssMeasurementsEvent::getClock()
-	{
-		return __thiz.callObjectMethod(
-			"getClock",
-			"()Landroid/location/GnssClock;");
-	}
 	jint GnssMeasurementsEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -88,6 +76,18 @@ namespace __jni_impl::android::location
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject GnssMeasurementsEvent::getClock()
+	{
+		return __thiz.callObjectMethod(
+			"getClock",
+			"()Landroid/location/GnssClock;");
+	}
+	QAndroidJniObject GnssMeasurementsEvent::getMeasurements()
+	{
+		return __thiz.callObjectMethod(
+			"getMeasurements",
+			"()Ljava/util/Collection;");
 	}
 } // namespace __jni_impl::android::location
 

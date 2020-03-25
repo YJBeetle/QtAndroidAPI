@@ -3,6 +3,8 @@
 #ifndef ANDROID_CONTENT_PM_PACKAGEMANAGER_NAMENOTFOUNDEXCEPTION
 #define ANDROID_CONTENT_PM_PACKAGEMANAGER_NAMENOTFOUNDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "../../util/AndroidException.hpp"
 
 

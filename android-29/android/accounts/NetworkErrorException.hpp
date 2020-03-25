@@ -3,6 +3,8 @@
 #ifndef ANDROID_ACCOUNTS_NETWORKERROREXCEPTION
 #define ANDROID_ACCOUNTS_NETWORKERROREXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "AccountsException.hpp"
 
 

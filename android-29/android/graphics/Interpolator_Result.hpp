@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_INTERPOLATOR_RESULT
 #define ANDROID_GRAPHICS_INTERPOLATOR_RESULT
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

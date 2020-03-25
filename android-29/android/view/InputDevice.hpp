@@ -76,11 +76,6 @@ namespace __jni_impl::android::view
 		jboolean isEnabled();
 		jboolean isVirtual();
 		QAndroidJniObject getKeyCharacterMap();
-		jint getVendorId();
-		jint getProductId();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject getDevice(jint arg0);
 		static QAndroidJniObject getDeviceIds();
 		jint getControllerNumber();
 		jboolean isExternal();
@@ -93,6 +88,11 @@ namespace __jni_impl::android::view
 		QAndroidJniObject getMotionRanges();
 		QAndroidJniObject getVibrator();
 		jboolean hasMicrophone();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getVendorId();
+		jint getProductId();
+		static QAndroidJniObject getDevice(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -373,40 +373,6 @@ namespace __jni_impl::android::view
 			"getKeyCharacterMap",
 			"()Landroid/view/KeyCharacterMap;");
 	}
-	jint InputDevice::getVendorId()
-	{
-		return __thiz.callMethod<jint>(
-			"getVendorId",
-			"()I");
-	}
-	jint InputDevice::getProductId()
-	{
-		return __thiz.callMethod<jint>(
-			"getProductId",
-			"()I");
-	}
-	jint InputDevice::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void InputDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject InputDevice::getDevice(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.InputDevice",
-			"getDevice",
-			"(I)Landroid/view/InputDevice;",
-			arg0);
-	}
 	QAndroidJniObject InputDevice::getDeviceIds()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -484,6 +450,40 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"hasMicrophone",
 			"()Z");
+	}
+	jint InputDevice::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void InputDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jint InputDevice::getVendorId()
+	{
+		return __thiz.callMethod<jint>(
+			"getVendorId",
+			"()I");
+	}
+	jint InputDevice::getProductId()
+	{
+		return __thiz.callMethod<jint>(
+			"getProductId",
+			"()I");
+	}
+	QAndroidJniObject InputDevice::getDevice(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.InputDevice",
+			"getDevice",
+			"(I)Landroid/view/InputDevice;",
+			arg0);
 	}
 } // namespace __jni_impl::android::view
 

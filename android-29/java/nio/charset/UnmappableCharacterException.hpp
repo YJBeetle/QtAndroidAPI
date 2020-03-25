@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_CHARSET_UNMAPPABLECHARACTEREXCEPTION
 #define JAVA_NIO_CHARSET_UNMAPPABLECHARACTEREXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
 #include "CharacterCodingException.hpp"
 
 

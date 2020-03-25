@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_PRIVILEGEDACTIONEXCEPTION
 #define JAVA_SECURITY_PRIVILEGEDACTIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 
 namespace __jni_impl::java::lang

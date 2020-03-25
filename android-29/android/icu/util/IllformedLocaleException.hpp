@@ -3,6 +3,8 @@
 #ifndef ANDROID_ICU_UTIL_ILLFORMEDLOCALEEXCEPTION
 #define ANDROID_ICU_UTIL_ILLFORMEDLOCALEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
 

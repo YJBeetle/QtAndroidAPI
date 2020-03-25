@@ -3,6 +3,8 @@
 #ifndef ANDROID_CONTENT_RES_RESOURCES_NOTFOUNDEXCEPTION
 #define ANDROID_CONTENT_RES_RESOURCES_NOTFOUNDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
 namespace __jni_impl::java::lang

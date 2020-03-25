@@ -36,11 +36,11 @@ namespace __jni_impl::android::print
 		void cancel();
 		jboolean isCancelled();
 		jboolean isCompleted();
+		void restart();
+		jboolean isBlocked();
+		jboolean isStarted();
 		QAndroidJniObject getInfo();
 		jboolean isFailed();
-		void restart();
-		jboolean isStarted();
-		jboolean isBlocked();
 	};
 } // namespace __jni_impl::android::print
 
@@ -104,6 +104,24 @@ namespace __jni_impl::android::print
 			"isCompleted",
 			"()Z");
 	}
+	void PrintJob::restart()
+	{
+		__thiz.callMethod<void>(
+			"restart",
+			"()V");
+	}
+	jboolean PrintJob::isBlocked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBlocked",
+			"()Z");
+	}
+	jboolean PrintJob::isStarted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStarted",
+			"()Z");
+	}
 	QAndroidJniObject PrintJob::getInfo()
 	{
 		return __thiz.callObjectMethod(
@@ -114,24 +132,6 @@ namespace __jni_impl::android::print
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFailed",
-			"()Z");
-	}
-	void PrintJob::restart()
-	{
-		__thiz.callMethod<void>(
-			"restart",
-			"()V");
-	}
-	jboolean PrintJob::isStarted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStarted",
-			"()Z");
-	}
-	jboolean PrintJob::isBlocked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBlocked",
 			"()Z");
 	}
 } // namespace __jni_impl::android::print

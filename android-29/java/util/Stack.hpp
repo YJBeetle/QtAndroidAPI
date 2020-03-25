@@ -3,6 +3,9 @@
 #ifndef JAVA_UTIL_STACK
 #define JAVA_UTIL_STACK
 
+#include "../../__JniBaseClass.hpp"
+#include "AbstractCollection.hpp"
+#include "AbstractList.hpp"
 #include "Vector.hpp"
 
 

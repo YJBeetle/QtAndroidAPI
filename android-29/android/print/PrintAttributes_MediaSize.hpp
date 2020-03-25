@@ -108,12 +108,12 @@ namespace __jni_impl::android::print
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getId();
-		QAndroidJniObject getLabel(__jni_impl::android::content::pm::PackageManager arg0);
 		jint getWidthMils();
 		jint getHeightMils();
 		jboolean isPortrait();
 		QAndroidJniObject asPortrait();
 		QAndroidJniObject asLandscape();
+		QAndroidJniObject getLabel(__jni_impl::android::content::pm::PackageManager arg0);
 	};
 } // namespace __jni_impl::android::print
 
@@ -742,13 +742,6 @@ namespace __jni_impl::android::print
 			"getId",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::getLabel(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
-			arg0.__jniObject().object());
-	}
 	jint PrintAttributes_MediaSize::getWidthMils()
 	{
 		return __thiz.callMethod<jint>(
@@ -778,6 +771,13 @@ namespace __jni_impl::android::print
 		return __thiz.callObjectMethod(
 			"asLandscape",
 			"()Landroid/print/PrintAttributes$MediaSize;");
+	}
+	QAndroidJniObject PrintAttributes_MediaSize::getLabel(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::print
 

@@ -3,6 +3,8 @@
 #ifndef ANDROID_RENDERSCRIPT_RSRUNTIMEEXCEPTION
 #define ANDROID_RENDERSCRIPT_RSRUNTIMEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

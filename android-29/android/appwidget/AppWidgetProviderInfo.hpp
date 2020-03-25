@@ -70,10 +70,10 @@ namespace __jni_impl::android::appwidget
 		// Methods
 		QAndroidJniObject toString();
 		QAndroidJniObject clone();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1);
 		QAndroidJniObject getProfile();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadIcon(__jni_impl::android::content::Context arg0, jint arg1);
 	};
@@ -262,20 +262,6 @@ namespace __jni_impl::android::appwidget
 			"clone",
 			"()Landroid/appwidget/AppWidgetProviderInfo;");
 	}
-	jint AppWidgetProviderInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void AppWidgetProviderInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	QAndroidJniObject AppWidgetProviderInfo::loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -289,6 +275,20 @@ namespace __jni_impl::android::appwidget
 		return __thiz.callObjectMethod(
 			"getProfile",
 			"()Landroid/os/UserHandle;");
+	}
+	jint AppWidgetProviderInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void AppWidgetProviderInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	QAndroidJniObject AppWidgetProviderInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
 	{

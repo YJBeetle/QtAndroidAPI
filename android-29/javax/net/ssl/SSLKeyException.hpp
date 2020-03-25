@@ -3,6 +3,9 @@
 #ifndef JAVAX_NET_SSL_SSLKEYEXCEPTION
 #define JAVAX_NET_SSL_SSLKEYEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/io/IOException.hpp"
 #include "SSLException.hpp"
 
 

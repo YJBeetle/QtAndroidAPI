@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_IMAGEBUTTON
 #define ANDROID_WIDGET_IMAGEBUTTON
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "ImageView.hpp"
 
 namespace __jni_impl::android::content

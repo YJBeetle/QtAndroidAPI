@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_GSM_GSMCELLLOCATION
 #define ANDROID_TELEPHONY_GSM_GSMCELLLOCATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../CellLocation.hpp"
 
 namespace __jni_impl::android::os

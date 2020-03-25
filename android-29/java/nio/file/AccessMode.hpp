@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_FILE_ACCESSMODE
 #define JAVA_NIO_FILE_ACCESSMODE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

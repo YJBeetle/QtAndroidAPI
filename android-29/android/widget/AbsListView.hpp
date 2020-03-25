@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_ABSLISTVIEW
 #define ANDROID_WIDGET_ABSLISTVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "AdapterView.hpp"
 
 namespace __jni_impl::android::content
@@ -13,13 +16,13 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::view
 {
 	class View;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 namespace __jni_impl::android::view::accessibility
 {
@@ -29,14 +32,6 @@ namespace __jni_impl::android::util
 {
 	class SparseBooleanArray;
 }
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
-}
 namespace __jni_impl::java::util
 {
 	class ArrayList;
@@ -44,6 +39,10 @@ namespace __jni_impl::java::util
 namespace __jni_impl::android::view
 {
 	class PointerIcon;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
 }
 namespace __jni_impl::android::graphics
 {
@@ -68,6 +67,10 @@ namespace __jni_impl::android::view::accessibility
 namespace __jni_impl::android::view::inputmethod
 {
 	class EditorInfo;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
 }
 
 namespace __jni_impl::android::widget
@@ -95,6 +98,9 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getSelector();
 		void setSelector(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setSelector(jint arg0);
+		jboolean performItemClick(__jni_impl::android::view::View arg0, jint arg1, jlong arg2);
+		void setAdapter(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getSelectedView();
 		void setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0);
 		void smoothScrollToPosition(jint arg0);
 		void smoothScrollToPosition(jint arg0, jint arg1);
@@ -162,18 +168,8 @@ namespace __jni_impl::android::widget
 		jint getBottomEdgeEffectColor();
 		void setRecyclerListener(__jni_impl::__JniBaseClass arg0);
 		void setSelectionFromTop(jint arg0, jint arg1);
-		jboolean performItemClick(__jni_impl::android::view::View arg0, jint arg1, jlong arg2);
-		void setAdapter(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getSelectedView();
-		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		void onWindowFocusChanged(jboolean arg0);
-		jboolean showContextMenuForChild(__jni_impl::android::view::View arg0);
 		jboolean showContextMenuForChild(__jni_impl::android::view::View arg0, jfloat arg1, jfloat arg2);
+		jboolean showContextMenuForChild(__jni_impl::android::view::View arg0);
 		void addTouchables(__jni_impl::java::util::ArrayList arg0);
 		QAndroidJniObject onResolvePointerIcon(__jni_impl::android::view::MotionEvent arg0, jint arg1);
 		jboolean onInterceptHoverEvent(__jni_impl::android::view::MotionEvent arg0);
@@ -203,6 +199,13 @@ namespace __jni_impl::android::widget
 		void draw(__jni_impl::android::graphics::Canvas arg0);
 		jint getSolidColor();
 		jboolean verifyDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onSaveInstanceState();
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
+		void onWindowFocusChanged(jboolean arg0);
 		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
 		void afterTextChanged(__jni_impl::__JniBaseClass arg0);
 	};
@@ -210,20 +213,20 @@ namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "../content/Intent.hpp"
 #include "../view/View.hpp"
+#include "../content/Intent.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
 #include "../util/SparseBooleanArray.hpp"
-#include "../view/KeyEvent.hpp"
-#include "../view/MotionEvent.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "../view/PointerIcon.hpp"
+#include "../view/MotionEvent.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "AbsListView_LayoutParams.hpp"
 #include "../graphics/Rect.hpp"
 #include "../view/accessibility/AccessibilityEvent.hpp"
 #include "../view/inputmethod/EditorInfo.hpp"
+#include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -337,6 +340,28 @@ namespace __jni_impl::android::widget
 			"setSelector",
 			"(I)V",
 			arg0);
+	}
+	jboolean AbsListView::performItemClick(__jni_impl::android::view::View arg0, jint arg1, jlong arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"performItemClick",
+			"(Landroid/view/View;IJ)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2);
+	}
+	void AbsListView::setAdapter(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAdapter",
+			"(Landroid/widget/Adapter;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject AbsListView::getSelectedView()
+	{
+		return __thiz.callObjectMethod(
+			"getSelectedView",
+			"()Landroid/view/View;");
 	}
 	void AbsListView::setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0)
 	{
@@ -789,85 +814,6 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1);
 	}
-	jboolean AbsListView::performItemClick(__jni_impl::android::view::View arg0, jint arg1, jlong arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"performItemClick",
-			"(Landroid/view/View;IJ)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2);
-	}
-	void AbsListView::setAdapter(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAdapter",
-			"(Landroid/widget/ListAdapter;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AbsListView::getSelectedView()
-	{
-		return __thiz.callObjectMethod(
-			"getSelectedView",
-			"()Landroid/view/View;");
-	}
-	void AbsListView::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onRestoreInstanceState",
-			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AbsListView::onSaveInstanceState()
-	{
-		return __thiz.callObjectMethod(
-			"onSaveInstanceState",
-			"()Landroid/os/Parcelable;");
-	}
-	jboolean AbsListView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean AbsListView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean AbsListView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean AbsListView::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onGenericMotionEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	void AbsListView::onWindowFocusChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onWindowFocusChanged",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AbsListView::showContextMenuForChild(__jni_impl::android::view::View arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"showContextMenuForChild",
-			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object());
-	}
 	jboolean AbsListView::showContextMenuForChild(__jni_impl::android::view::View arg0, jfloat arg1, jfloat arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -876,6 +822,13 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2);
+	}
+	jboolean AbsListView::showContextMenuForChild(__jni_impl::android::view::View arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"showContextMenuForChild",
+			"(Landroid/view/View;)Z",
+			arg0.__jniObject().object());
 	}
 	void AbsListView::addTouchables(__jni_impl::java::util::ArrayList arg0)
 	{
@@ -1087,6 +1040,56 @@ namespace __jni_impl::android::widget
 			"verifyDrawable",
 			"(Landroid/graphics/drawable/Drawable;)Z",
 			arg0.__jniObject().object());
+	}
+	void AbsListView::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onRestoreInstanceState",
+			"(Landroid/os/Parcelable;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject AbsListView::onSaveInstanceState()
+	{
+		return __thiz.callObjectMethod(
+			"onSaveInstanceState",
+			"()Landroid/os/Parcelable;");
+	}
+	jboolean AbsListView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean AbsListView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean AbsListView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean AbsListView::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onGenericMotionEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	void AbsListView::onWindowFocusChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onWindowFocusChanged",
+			"(Z)V",
+			arg0);
 	}
 	void AbsListView::beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{

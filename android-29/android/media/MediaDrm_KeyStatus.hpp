@@ -23,8 +23,8 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getKeyId();
 		jint getStatusCode();
+		QAndroidJniObject getKeyId();
 	};
 } // namespace __jni_impl::android::media
 
@@ -78,17 +78,17 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaDrm_KeyStatus::getKeyId()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyId",
-			"()[B");
-	}
 	jint MediaDrm_KeyStatus::getStatusCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getStatusCode",
 			"()I");
+	}
+	QAndroidJniObject MediaDrm_KeyStatus::getKeyId()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyId",
+			"()[B");
 	}
 } // namespace __jni_impl::android::media
 

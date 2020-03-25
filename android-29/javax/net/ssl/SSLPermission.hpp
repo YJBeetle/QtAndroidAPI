@@ -3,6 +3,8 @@
 #ifndef JAVAX_NET_SSL_SSLPERMISSION
 #define JAVAX_NET_SSL_SSLPERMISSION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/security/Permission.hpp"
 #include "../../../java/security/BasicPermission.hpp"
 
 

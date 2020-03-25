@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_REF_SOFTREFERENCE
 #define JAVA_LANG_REF_SOFTREFERENCE
 
+#include "../../../__JniBaseClass.hpp"
 #include "Reference.hpp"
 
 namespace __jni_impl::java::lang::ref

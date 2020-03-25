@@ -57,6 +57,7 @@ namespace __jni_impl::android::mtp
 		jint getDeviceId();
 		QAndroidJniObject getDeviceInfo();
 		jlong getStorageId(jint arg0);
+		QAndroidJniObject getThumbnail(jint arg0);
 		QAndroidJniObject getStorageIds();
 		QAndroidJniObject getObjectHandles(jint arg0, jint arg1, jint arg2);
 		jlong getPartialObject(jint arg0, jlong arg1, jlong arg2, jbyteArray arg3);
@@ -64,12 +65,11 @@ namespace __jni_impl::android::mtp
 		QAndroidJniObject getStorageInfo(jint arg0);
 		QAndroidJniObject getObjectInfo(jint arg0);
 		jboolean deleteObject(jint arg0);
-		jboolean importFile(jint arg0, __jni_impl::android::os::ParcelFileDescriptor arg1);
 		jboolean importFile(jint arg0, jstring arg1);
+		jboolean importFile(jint arg0, __jni_impl::android::os::ParcelFileDescriptor arg1);
 		jboolean sendObject(jint arg0, jlong arg1, __jni_impl::android::os::ParcelFileDescriptor arg2);
 		QAndroidJniObject sendObjectInfo(__jni_impl::android::mtp::MtpObjectInfo arg0);
 		QAndroidJniObject readEvent(__jni_impl::android::os::CancellationSignal arg0);
-		QAndroidJniObject getThumbnail(jint arg0);
 		QAndroidJniObject getDeviceName();
 	};
 } // namespace __jni_impl::android::mtp
@@ -150,6 +150,13 @@ namespace __jni_impl::android::mtp
 			"(I)J",
 			arg0);
 	}
+	QAndroidJniObject MtpDevice::getThumbnail(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getThumbnail",
+			"(I)[B",
+			arg0);
+	}
 	QAndroidJniObject MtpDevice::getStorageIds()
 	{
 		return __thiz.callObjectMethod(
@@ -206,14 +213,6 @@ namespace __jni_impl::android::mtp
 			"(I)Z",
 			arg0);
 	}
-	jboolean MtpDevice::importFile(jint arg0, __jni_impl::android::os::ParcelFileDescriptor arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"importFile",
-			"(ILandroid/os/ParcelFileDescriptor;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
 	jboolean MtpDevice::importFile(jint arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -221,6 +220,14 @@ namespace __jni_impl::android::mtp
 			"(ILjava/lang/String;)Z",
 			arg0,
 			arg1);
+	}
+	jboolean MtpDevice::importFile(jint arg0, __jni_impl::android::os::ParcelFileDescriptor arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"importFile",
+			"(ILandroid/os/ParcelFileDescriptor;)Z",
+			arg0,
+			arg1.__jniObject().object());
 	}
 	jboolean MtpDevice::sendObject(jint arg0, jlong arg1, __jni_impl::android::os::ParcelFileDescriptor arg2)
 	{
@@ -244,13 +251,6 @@ namespace __jni_impl::android::mtp
 			"readEvent",
 			"(Landroid/os/CancellationSignal;)Landroid/mtp/MtpEvent;",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject MtpDevice::getThumbnail(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getThumbnail",
-			"(I)[B",
-			arg0);
 	}
 	QAndroidJniObject MtpDevice::getDeviceName()
 	{

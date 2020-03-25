@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_DIGESTOUTPUTSTREAM
 #define JAVA_SECURITY_DIGESTOUTPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "../io/OutputStream.hpp"
 #include "../io/FilterOutputStream.hpp"
 
 namespace __jni_impl::java::security

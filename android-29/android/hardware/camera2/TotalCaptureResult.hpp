@@ -3,6 +3,8 @@
 #ifndef ANDROID_HARDWARE_CAMERA2_TOTALCAPTURERESULT
 #define ANDROID_HARDWARE_CAMERA2_TOTALCAPTURERESULT
 
+#include "../../../__JniBaseClass.hpp"
+#include "CameraMetadata.hpp"
 #include "CaptureResult.hpp"
 
 

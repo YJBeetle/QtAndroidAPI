@@ -9,13 +9,13 @@ namespace __jni_impl::java::net
 {
 	class InetAddress;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net
 {
 	class IpPrefix;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::net
@@ -34,19 +34,19 @@ namespace __jni_impl::android::net
 		QAndroidJniObject toString();
 		jint hashCode();
 		jboolean matches(__jni_impl::java::net::InetAddress arg0);
-		QAndroidJniObject getInterface();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getDestination();
 		QAndroidJniObject getGateway();
 		jboolean isDefaultRoute();
 		jboolean hasGateway();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getInterface();
 	};
 } // namespace __jni_impl::android::net
 
 #include "../../java/net/InetAddress.hpp"
-#include "../os/Parcel.hpp"
 #include "IpPrefix.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -94,26 +94,6 @@ namespace __jni_impl::android::net
 			"(Ljava/net/InetAddress;)Z",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject RouteInfo::getInterface()
-	{
-		return __thiz.callObjectMethod(
-			"getInterface",
-			"()Ljava/lang/String;");
-	}
-	jint RouteInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void RouteInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	QAndroidJniObject RouteInfo::getDestination()
 	{
 		return __thiz.callObjectMethod(
@@ -137,6 +117,26 @@ namespace __jni_impl::android::net
 		return __thiz.callMethod<jboolean>(
 			"hasGateway",
 			"()Z");
+	}
+	jint RouteInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void RouteInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	QAndroidJniObject RouteInfo::getInterface()
+	{
+		return __thiz.callObjectMethod(
+			"getInterface",
+			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::net
 

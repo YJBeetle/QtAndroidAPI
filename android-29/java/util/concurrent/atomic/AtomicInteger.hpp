@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICINTEGER
 #define JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICINTEGER
 
+#include "../../../../__JniBaseClass.hpp"
 #include "../../../lang/Number.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_PREFERENCE_DIALOGPREFERENCE
 #define ANDROID_PREFERENCE_DIALOGPREFERENCE
 
+#include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 
 namespace __jni_impl::android::content
@@ -62,8 +63,8 @@ namespace __jni_impl::android::preference
 		void setDialogLayoutResource(jint arg0);
 		jint getDialogLayoutResource();
 		void onActivityDestroy();
-		QAndroidJniObject getDialog();
 		void onClick(__jni_impl::__JniBaseClass arg0, jint arg1);
+		QAndroidJniObject getDialog();
 		void onDismiss(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::preference
@@ -235,12 +236,6 @@ namespace __jni_impl::android::preference
 			"onActivityDestroy",
 			"()V");
 	}
-	QAndroidJniObject DialogPreference::getDialog()
-	{
-		return __thiz.callObjectMethod(
-			"getDialog",
-			"()Landroid/app/Dialog;");
-	}
 	void DialogPreference::onClick(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -248,6 +243,12 @@ namespace __jni_impl::android::preference
 			"(Landroid/content/DialogInterface;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject DialogPreference::getDialog()
+	{
+		return __thiz.callObjectMethod(
+			"getDialog",
+			"()Landroid/app/Dialog;");
 	}
 	void DialogPreference::onDismiss(__jni_impl::__JniBaseClass arg0)
 	{

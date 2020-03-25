@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_LINKEDHASHMAP
 #define JAVA_UTIL_LINKEDHASHMAP
 
+#include "../../__JniBaseClass.hpp"
+#include "AbstractMap.hpp"
 #include "HashMap.hpp"
 
 namespace __jni_impl::java::io

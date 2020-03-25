@@ -31,15 +31,15 @@ namespace __jni_impl::org::xml::sax::helpers
 		jint getIndex(jstring arg0, jstring arg1);
 		void setAttribute(jint arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5);
 		void addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
-		QAndroidJniObject getLocalName(jint arg0);
 		void removeAttribute(jint arg0);
-		void setType(jint arg0, jstring arg1);
-		void setAttributes(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getURI(jint arg0);
 		QAndroidJniObject getQName(jint arg0);
+		void setType(jint arg0, jstring arg1);
 		void setURI(jint arg0, jstring arg1);
 		void setLocalName(jint arg0, jstring arg1);
 		void setQName(jint arg0, jstring arg1);
+		QAndroidJniObject getLocalName(jint arg0);
+		void setAttributes(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::org::xml::sax::helpers
 
@@ -166,34 +166,12 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg3,
 			arg4);
 	}
-	QAndroidJniObject AttributesImpl::getLocalName(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getLocalName",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
 	void AttributesImpl::removeAttribute(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeAttribute",
 			"(I)V",
 			arg0);
-	}
-	void AttributesImpl::setType(jint arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setType",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1);
-	}
-	void AttributesImpl::setAttributes(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAttributes",
-			"(Lorg/xml/sax/Attributes;)V",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject AttributesImpl::getURI(jint arg0)
 	{
@@ -208,6 +186,14 @@ namespace __jni_impl::org::xml::sax::helpers
 			"getQName",
 			"(I)Ljava/lang/String;",
 			arg0);
+	}
+	void AttributesImpl::setType(jint arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setType",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1);
 	}
 	void AttributesImpl::setURI(jint arg0, jstring arg1)
 	{
@@ -232,6 +218,20 @@ namespace __jni_impl::org::xml::sax::helpers
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1);
+	}
+	QAndroidJniObject AttributesImpl::getLocalName(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getLocalName",
+			"(I)Ljava/lang/String;",
+			arg0);
+	}
+	void AttributesImpl::setAttributes(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAttributes",
+			"(Lorg/xml/sax/Attributes;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::org::xml::sax::helpers
 

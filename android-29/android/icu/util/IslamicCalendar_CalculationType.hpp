@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_UTIL_ISLAMICCALENDAR_CALCULATIONTYPE
 #define ANDROID_ICU_UTIL_ISLAMICCALENDAR_CALCULATIONTYPE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

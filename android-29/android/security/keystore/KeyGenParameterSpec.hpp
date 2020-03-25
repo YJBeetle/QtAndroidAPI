@@ -29,6 +29,7 @@ namespace __jni_impl::android::security::keystore
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject getAlgorithmParameterSpec();
 		QAndroidJniObject getCertificateSubject();
 		jint getKeySize();
 		jboolean isStrongBoxBacked();
@@ -54,7 +55,6 @@ namespace __jni_impl::android::security::keystore
 		jboolean isUserAuthenticationValidWhileOnBody();
 		jboolean isInvalidatedByBiometricEnrollment();
 		jboolean isUnlockedDeviceRequired();
-		QAndroidJniObject getAlgorithmParameterSpec();
 	};
 } // namespace __jni_impl::android::security::keystore
 
@@ -75,6 +75,12 @@ namespace __jni_impl::android::security::keystore
 	}
 	
 	// Methods
+	QAndroidJniObject KeyGenParameterSpec::getAlgorithmParameterSpec()
+	{
+		return __thiz.callObjectMethod(
+			"getAlgorithmParameterSpec",
+			"()Ljava/security/spec/AlgorithmParameterSpec;");
+	}
 	QAndroidJniObject KeyGenParameterSpec::getCertificateSubject()
 	{
 		return __thiz.callObjectMethod(
@@ -224,12 +230,6 @@ namespace __jni_impl::android::security::keystore
 		return __thiz.callMethod<jboolean>(
 			"isUnlockedDeviceRequired",
 			"()Z");
-	}
-	QAndroidJniObject KeyGenParameterSpec::getAlgorithmParameterSpec()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithmParameterSpec",
-			"()Ljava/security/spec/AlgorithmParameterSpec;");
 	}
 } // namespace __jni_impl::android::security::keystore
 

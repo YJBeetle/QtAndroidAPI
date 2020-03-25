@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 namespace __jni_impl::android::bluetooth
 {
 	class BluetoothClass;
@@ -32,10 +36,6 @@ namespace __jni_impl::android::bluetooth
 namespace __jni_impl::android::os
 {
 	class Handler;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::bluetooth
@@ -96,6 +96,8 @@ namespace __jni_impl::android::bluetooth
 		jint hashCode();
 		jint getType();
 		QAndroidJniObject getAddress();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean createBond();
 		jint getBondState();
 		QAndroidJniObject getBluetoothClass();
@@ -105,17 +107,16 @@ namespace __jni_impl::android::bluetooth
 		jboolean setPairingConfirmation(jboolean arg0);
 		QAndroidJniObject createRfcommSocketToServiceRecord(__jni_impl::java::util::UUID arg0);
 		QAndroidJniObject createInsecureRfcommSocketToServiceRecord(__jni_impl::java::util::UUID arg0);
-		QAndroidJniObject connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3);
-		QAndroidJniObject connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4);
 		QAndroidJniObject connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, __jni_impl::android::os::Handler arg5);
+		QAndroidJniObject connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3);
 		QAndroidJniObject connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2);
+		QAndroidJniObject connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4);
 		QAndroidJniObject createL2capChannel(jint arg0);
 		QAndroidJniObject createInsecureL2capChannel(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth
 
+#include "../os/Parcel.hpp"
 #include "BluetoothClass.hpp"
 #include "BluetoothSocket.hpp"
 #include "../../java/util/UUID.hpp"
@@ -123,7 +124,6 @@ namespace __jni_impl::android::bluetooth
 #include "../content/Context.hpp"
 #include "BluetoothGattCallback.hpp"
 #include "../os/Handler.hpp"
-#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -440,6 +440,20 @@ namespace __jni_impl::android::bluetooth
 			"getAddress",
 			"()Ljava/lang/String;");
 	}
+	jint BluetoothDevice::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void BluetoothDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jboolean BluetoothDevice::createBond()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -498,27 +512,6 @@ namespace __jni_impl::android::bluetooth
 			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothSocket;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject BluetoothDevice::connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"connectGatt",
-			"(Landroid/content/Context;ZLandroid/bluetooth/BluetoothGattCallback;I)Landroid/bluetooth/BluetoothGatt;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3);
-	}
-	QAndroidJniObject BluetoothDevice::connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4)
-	{
-		return __thiz.callObjectMethod(
-			"connectGatt",
-			"(Landroid/content/Context;ZLandroid/bluetooth/BluetoothGattCallback;II)Landroid/bluetooth/BluetoothGatt;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3,
-			arg4);
-	}
 	QAndroidJniObject BluetoothDevice::connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4, __jni_impl::android::os::Handler arg5)
 	{
 		return __thiz.callObjectMethod(
@@ -531,6 +524,16 @@ namespace __jni_impl::android::bluetooth
 			arg4,
 			arg5.__jniObject().object());
 	}
+	QAndroidJniObject BluetoothDevice::connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"connectGatt",
+			"(Landroid/content/Context;ZLandroid/bluetooth/BluetoothGattCallback;I)Landroid/bluetooth/BluetoothGatt;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3);
+	}
 	QAndroidJniObject BluetoothDevice::connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -539,6 +542,17 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object());
+	}
+	QAndroidJniObject BluetoothDevice::connectGatt(__jni_impl::android::content::Context arg0, jboolean arg1, __jni_impl::android::bluetooth::BluetoothGattCallback arg2, jint arg3, jint arg4)
+	{
+		return __thiz.callObjectMethod(
+			"connectGatt",
+			"(Landroid/content/Context;ZLandroid/bluetooth/BluetoothGattCallback;II)Landroid/bluetooth/BluetoothGatt;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3,
+			arg4);
 	}
 	QAndroidJniObject BluetoothDevice::createL2capChannel(jint arg0)
 	{
@@ -553,20 +567,6 @@ namespace __jni_impl::android::bluetooth
 			"createInsecureL2capChannel",
 			"(I)Landroid/bluetooth/BluetoothSocket;",
 			arg0);
-	}
-	jint BluetoothDevice::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void BluetoothDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::bluetooth
 

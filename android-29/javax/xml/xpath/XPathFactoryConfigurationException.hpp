@@ -3,6 +3,8 @@
 #ifndef JAVAX_XML_XPATH_XPATHFACTORYCONFIGURATIONEXCEPTION
 #define JAVAX_XML_XPATH_XPATHFACTORYCONFIGURATIONEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "XPathException.hpp"
 
 

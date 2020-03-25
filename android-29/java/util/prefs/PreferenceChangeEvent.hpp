@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_PREFS_PREFERENCECHANGEEVENT
 #define JAVA_UTIL_PREFS_PREFERENCECHANGEEVENT
 
+#include "../../../__JniBaseClass.hpp"
 #include "../EventObject.hpp"
 
 namespace __jni_impl::java::util::prefs

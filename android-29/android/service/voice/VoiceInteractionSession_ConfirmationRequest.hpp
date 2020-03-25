@@ -3,6 +3,7 @@
 #ifndef ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_CONFIRMATIONREQUEST
 #define ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_CONFIRMATIONREQUEST
 
+#include "../../../__JniBaseClass.hpp"
 #include "VoiceInteractionSession_Request.hpp"
 
 namespace __jni_impl::android::app

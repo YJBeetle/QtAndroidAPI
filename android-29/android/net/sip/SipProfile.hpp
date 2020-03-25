@@ -31,11 +31,11 @@ namespace __jni_impl::android::net::sip
 		QAndroidJniObject getProfileName();
 		jboolean getSendKeepAlive();
 		jboolean getAutoRegistration();
-		QAndroidJniObject getProxyAddress();
-		QAndroidJniObject getPassword();
+		QAndroidJniObject getUserName();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getUserName();
+		QAndroidJniObject getProxyAddress();
+		QAndroidJniObject getPassword();
 	};
 } // namespace __jni_impl::android::net::sip
 
@@ -115,16 +115,10 @@ namespace __jni_impl::android::net::sip
 			"getAutoRegistration",
 			"()Z");
 	}
-	QAndroidJniObject SipProfile::getProxyAddress()
+	QAndroidJniObject SipProfile::getUserName()
 	{
 		return __thiz.callObjectMethod(
-			"getProxyAddress",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject SipProfile::getPassword()
-	{
-		return __thiz.callObjectMethod(
-			"getPassword",
+			"getUserName",
 			"()Ljava/lang/String;");
 	}
 	jint SipProfile::describeContents()
@@ -141,10 +135,16 @@ namespace __jni_impl::android::net::sip
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	QAndroidJniObject SipProfile::getUserName()
+	QAndroidJniObject SipProfile::getProxyAddress()
 	{
 		return __thiz.callObjectMethod(
-			"getUserName",
+			"getProxyAddress",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject SipProfile::getPassword()
+	{
+		return __thiz.callObjectMethod(
+			"getPassword",
 			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::net::sip

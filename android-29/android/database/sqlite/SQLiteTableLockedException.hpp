@@ -3,6 +3,10 @@
 #ifndef ANDROID_DATABASE_SQLITE_SQLITETABLELOCKEDEXCEPTION
 #define ANDROID_DATABASE_SQLITE_SQLITETABLELOCKEDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../SQLException.hpp"
 #include "SQLiteException.hpp"
 
 

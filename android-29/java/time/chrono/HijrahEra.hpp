@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_CHRONO_HIJRAHERA
 #define JAVA_TIME_CHRONO_HIJRAHERA
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 namespace __jni_impl::java::time::temporal

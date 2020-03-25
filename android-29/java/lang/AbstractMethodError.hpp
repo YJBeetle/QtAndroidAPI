@@ -3,6 +3,9 @@
 #ifndef JAVA_LANG_ABSTRACTMETHODERROR
 #define JAVA_LANG_ABSTRACTMETHODERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
+#include "LinkageError.hpp"
 #include "IncompatibleClassChangeError.hpp"
 
 

@@ -13,10 +13,6 @@ namespace __jni_impl::android::app::job
 {
 	class JobInfo;
 }
-namespace __jni_impl::android::os
-{
-	class PersistableBundle;
-}
 namespace __jni_impl::android::content
 {
 	class ClipData;
@@ -33,6 +29,10 @@ namespace __jni_impl::android::app::job
 {
 	class JobInfo_TriggerContentUri;
 }
+namespace __jni_impl::android::os
+{
+	class PersistableBundle;
+}
 
 namespace __jni_impl::android::app::job
 {
@@ -46,7 +46,6 @@ namespace __jni_impl::android::app::job
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setExtras(__jni_impl::android::os::PersistableBundle arg0);
 		QAndroidJniObject setClipData(__jni_impl::android::content::ClipData arg0, jint arg1);
 		QAndroidJniObject setTransientExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setRequiredNetworkType(jint arg0);
@@ -57,8 +56,8 @@ namespace __jni_impl::android::app::job
 		QAndroidJniObject addTriggerContentUri(__jni_impl::android::app::job::JobInfo_TriggerContentUri arg0);
 		QAndroidJniObject setTriggerContentUpdateDelay(jlong arg0);
 		QAndroidJniObject setTriggerContentMaxDelay(jlong arg0);
-		QAndroidJniObject setPeriodic(jlong arg0, jlong arg1);
 		QAndroidJniObject setPeriodic(jlong arg0);
+		QAndroidJniObject setPeriodic(jlong arg0, jlong arg1);
 		QAndroidJniObject setMinimumLatency(jlong arg0);
 		QAndroidJniObject setOverrideDeadline(jlong arg0);
 		QAndroidJniObject setBackoffCriteria(jlong arg0, jint arg1);
@@ -67,16 +66,17 @@ namespace __jni_impl::android::app::job
 		QAndroidJniObject setPersisted(jboolean arg0);
 		QAndroidJniObject setRequiresCharging(jboolean arg0);
 		QAndroidJniObject setRequiresDeviceIdle(jboolean arg0);
+		QAndroidJniObject setExtras(__jni_impl::android::os::PersistableBundle arg0);
 	};
 } // namespace __jni_impl::android::app::job
 
 #include "../../content/ComponentName.hpp"
 #include "JobInfo.hpp"
-#include "../../os/PersistableBundle.hpp"
 #include "../../content/ClipData.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../net/NetworkRequest.hpp"
 #include "JobInfo_TriggerContentUri.hpp"
+#include "../../os/PersistableBundle.hpp"
 
 namespace __jni_impl::android::app::job
 {
@@ -98,13 +98,6 @@ namespace __jni_impl::android::app::job
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/app/job/JobInfo;");
-	}
-	QAndroidJniObject JobInfo_Builder::setExtras(__jni_impl::android::os::PersistableBundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/PersistableBundle;)Landroid/app/job/JobInfo$Builder;",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject JobInfo_Builder::setClipData(__jni_impl::android::content::ClipData arg0, jint arg1)
 	{
@@ -178,6 +171,13 @@ namespace __jni_impl::android::app::job
 			"(J)Landroid/app/job/JobInfo$Builder;",
 			arg0);
 	}
+	QAndroidJniObject JobInfo_Builder::setPeriodic(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPeriodic",
+			"(J)Landroid/app/job/JobInfo$Builder;",
+			arg0);
+	}
 	QAndroidJniObject JobInfo_Builder::setPeriodic(jlong arg0, jlong arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -185,13 +185,6 @@ namespace __jni_impl::android::app::job
 			"(JJ)Landroid/app/job/JobInfo$Builder;",
 			arg0,
 			arg1);
-	}
-	QAndroidJniObject JobInfo_Builder::setPeriodic(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPeriodic",
-			"(J)Landroid/app/job/JobInfo$Builder;",
-			arg0);
 	}
 	QAndroidJniObject JobInfo_Builder::setMinimumLatency(jlong arg0)
 	{
@@ -249,6 +242,13 @@ namespace __jni_impl::android::app::job
 			"setRequiresDeviceIdle",
 			"(Z)Landroid/app/job/JobInfo$Builder;",
 			arg0);
+	}
+	QAndroidJniObject JobInfo_Builder::setExtras(__jni_impl::android::os::PersistableBundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtras",
+			"(Landroid/os/PersistableBundle;)Landroid/app/job/JobInfo$Builder;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::app::job
 

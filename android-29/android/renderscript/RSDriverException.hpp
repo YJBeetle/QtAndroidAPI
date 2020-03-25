@@ -3,6 +3,9 @@
 #ifndef ANDROID_RENDERSCRIPT_RSDRIVEREXCEPTION
 #define ANDROID_RENDERSCRIPT_RSDRIVEREXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 #include "RSRuntimeException.hpp"
 
 

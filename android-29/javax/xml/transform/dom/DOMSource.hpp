@@ -23,8 +23,8 @@ namespace __jni_impl::javax::xml::transform::dom
 		jboolean isEmpty();
 		QAndroidJniObject getNode();
 		void setNode(__jni_impl::__JniBaseClass arg0);
-		void setSystemId(jstring arg0);
 		QAndroidJniObject getSystemId();
+		void setSystemId(jstring arg0);
 	};
 } // namespace __jni_impl::javax::xml::transform::dom
 
@@ -83,18 +83,18 @@ namespace __jni_impl::javax::xml::transform::dom
 			"(Lorg/w3c/dom/Node;)V",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject DOMSource::getSystemId()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;");
+	}
 	void DOMSource::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0);
-	}
-	QAndroidJniObject DOMSource::getSystemId()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemId",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::javax::xml::transform::dom
 

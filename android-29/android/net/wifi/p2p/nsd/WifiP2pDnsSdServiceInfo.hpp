@@ -3,6 +3,7 @@
 #ifndef ANDROID_NET_WIFI_P2P_NSD_WIFIP2PDNSSDSERVICEINFO
 #define ANDROID_NET_WIFI_P2P_NSD_WIFIP2PDNSSDSERVICEINFO
 
+#include "../../../../../__JniBaseClass.hpp"
 #include "WifiP2pServiceInfo.hpp"
 
 

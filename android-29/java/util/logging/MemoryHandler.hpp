@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_LOGGING_MEMORYHANDLER
 #define JAVA_UTIL_LOGGING_MEMORYHANDLER
 
+#include "../../../__JniBaseClass.hpp"
 #include "Handler.hpp"
 
 namespace __jni_impl::java::util::logging

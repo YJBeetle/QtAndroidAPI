@@ -3,6 +3,10 @@
 #ifndef ANDROID_WIDGET_MULTIAUTOCOMPLETETEXTVIEW
 #define ANDROID_WIDGET_MULTIAUTOCOMPLETETEXTVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "TextView.hpp"
+#include "EditText.hpp"
 #include "AutoCompleteTextView.hpp"
 
 namespace __jni_impl::android::content
@@ -25,9 +29,9 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		QAndroidJniObject getAccessibilityClassName();
-		void setTokenizer(__jni_impl::__JniBaseClass arg0);
 		jboolean enoughToFilter();
 		void performValidation();
+		void setTokenizer(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -80,13 +84,6 @@ namespace __jni_impl::android::widget
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;");
 	}
-	void MultiAutoCompleteTextView::setTokenizer(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTokenizer",
-			"(Landroid/widget/MultiAutoCompleteTextView$Tokenizer;)V",
-			arg0.__jniObject().object());
-	}
 	jboolean MultiAutoCompleteTextView::enoughToFilter()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -98,6 +95,13 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"performValidation",
 			"()V");
+	}
+	void MultiAutoCompleteTextView::setTokenizer(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTokenizer",
+			"(Landroid/widget/MultiAutoCompleteTextView$Tokenizer;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::widget
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_BANDSTAGE
 #define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_BANDSTAGE
 
+#include "../../../__JniBaseClass.hpp"
 #include "DynamicsProcessing_Stage.hpp"
 
 

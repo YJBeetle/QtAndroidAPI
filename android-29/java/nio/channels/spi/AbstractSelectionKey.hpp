@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTIONKEY
 #define JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTIONKEY
 
+#include "../../../../__JniBaseClass.hpp"
 #include "../SelectionKey.hpp"
 
 

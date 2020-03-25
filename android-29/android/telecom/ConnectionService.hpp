@@ -3,6 +3,9 @@
 #ifndef ANDROID_TELECOM_CONNECTIONSERVICE
 #define ANDROID_TELECOM_CONNECTIONSERVICE
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace __jni_impl::android::content

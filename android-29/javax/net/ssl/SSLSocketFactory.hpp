@@ -3,6 +3,7 @@
 #ifndef JAVAX_NET_SSL_SSLSOCKETFACTORY
 #define JAVAX_NET_SSL_SSLSOCKETFACTORY
 
+#include "../../../__JniBaseClass.hpp"
 #include "../SocketFactory.hpp"
 
 namespace __jni_impl::javax::net
@@ -30,10 +31,10 @@ namespace __jni_impl::javax::net::ssl
 		
 		// Methods
 		static QAndroidJniObject getDefault();
-		QAndroidJniObject getDefaultCipherSuites();
 		QAndroidJniObject getSupportedCipherSuites();
 		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, __jni_impl::java::io::InputStream arg1, jboolean arg2);
 		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
+		QAndroidJniObject getDefaultCipherSuites();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -61,12 +62,6 @@ namespace __jni_impl::javax::net::ssl
 			"getDefault",
 			"()Ljavax/net/SocketFactory;");
 	}
-	QAndroidJniObject SSLSocketFactory::getDefaultCipherSuites()
-	{
-		return __thiz.callObjectMethod(
-			"getDefaultCipherSuites",
-			"()[Ljava/lang/String;");
-	}
 	QAndroidJniObject SSLSocketFactory::getSupportedCipherSuites()
 	{
 		return __thiz.callObjectMethod(
@@ -91,6 +86,12 @@ namespace __jni_impl::javax::net::ssl
 			arg1,
 			arg2,
 			arg3);
+	}
+	QAndroidJniObject SSLSocketFactory::getDefaultCipherSuites()
+	{
+		return __thiz.callObjectMethod(
+			"getDefaultCipherSuites",
+			"()[Ljava/lang/String;");
 	}
 } // namespace __jni_impl::javax::net::ssl
 

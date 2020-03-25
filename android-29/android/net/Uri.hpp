@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net
 {
 	class Uri_Builder;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::net
 namespace __jni_impl::java::io
 {
 	class File;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::net
@@ -52,7 +52,6 @@ namespace __jni_impl::android::net
 		static QAndroidJniObject parse(jstring arg0);
 		QAndroidJniObject getSchemeSpecificPart();
 		QAndroidJniObject getFragment();
-		static void writeToParcel(__jni_impl::android::os::Parcel arg0, __jni_impl::android::net::Uri arg1);
 		jboolean isHierarchical();
 		QAndroidJniObject getEncodedSchemeSpecificPart();
 		QAndroidJniObject getEncodedAuthority();
@@ -71,12 +70,13 @@ namespace __jni_impl::android::net
 		jboolean getBooleanQueryParameter(jstring arg0, jboolean arg1);
 		QAndroidJniObject normalizeScheme();
 		static QAndroidJniObject withAppendedPath(__jni_impl::android::net::Uri arg0, jstring arg1);
+		static void writeToParcel(__jni_impl::android::os::Parcel arg0, __jni_impl::android::net::Uri arg1);
 	};
 } // namespace __jni_impl::android::net
 
-#include "../os/Parcel.hpp"
 #include "Uri_Builder.hpp"
 #include "../../java/io/File.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -243,15 +243,6 @@ namespace __jni_impl::android::net
 			"getFragment",
 			"()Ljava/lang/String;");
 	}
-	void Uri::writeToParcel(__jni_impl::android::os::Parcel arg0, __jni_impl::android::net::Uri arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.net.Uri",
-			"writeToParcel",
-			"(Landroid/os/Parcel;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	jboolean Uri::isHierarchical()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -372,6 +363,15 @@ namespace __jni_impl::android::net
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	void Uri::writeToParcel(__jni_impl::android::os::Parcel arg0, __jni_impl::android::net::Uri arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.net.Uri",
+			"writeToParcel",
+			"(Landroid/os/Parcel;Landroid/net/Uri;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::net
 

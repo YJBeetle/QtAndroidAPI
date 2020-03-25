@@ -3,6 +3,9 @@
 #ifndef JAVA_IO_NOTACTIVEEXCEPTION
 #define JAVA_IO_NOTACTIVEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "IOException.hpp"
 #include "ObjectStreamException.hpp"
 
 

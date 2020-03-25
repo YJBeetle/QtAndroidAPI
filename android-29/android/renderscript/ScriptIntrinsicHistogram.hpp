@@ -3,6 +3,9 @@
 #ifndef ANDROID_RENDERSCRIPT_SCRIPTINTRINSICHISTOGRAM
 #define ANDROID_RENDERSCRIPT_SCRIPTINTRINSICHISTOGRAM
 
+#include "../../__JniBaseClass.hpp"
+#include "BaseObj.hpp"
+#include "Script.hpp"
 #include "ScriptIntrinsic.hpp"
 
 namespace __jni_impl::android::renderscript
@@ -44,8 +47,8 @@ namespace __jni_impl::android::renderscript
 		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1);
 		void forEach(__jni_impl::android::renderscript::Allocation arg0);
 		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1);
-		QAndroidJniObject getFieldID_Input();
 		void setOutput(__jni_impl::android::renderscript::Allocation arg0);
+		QAndroidJniObject getFieldID_Input();
 		void setDotCoefficients(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void forEach_Dot(__jni_impl::android::renderscript::Allocation arg0);
 		void forEach_Dot(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1);
@@ -97,18 +100,18 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
-	QAndroidJniObject ScriptIntrinsicHistogram::getFieldID_Input()
-	{
-		return __thiz.callObjectMethod(
-			"getFieldID_Input",
-			"()Landroid/renderscript/Script$FieldID;");
-	}
 	void ScriptIntrinsicHistogram::setOutput(__jni_impl::android::renderscript::Allocation arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOutput",
 			"(Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject ScriptIntrinsicHistogram::getFieldID_Input()
+	{
+		return __thiz.callObjectMethod(
+			"getFieldID_Input",
+			"()Landroid/renderscript/Script$FieldID;");
 	}
 	void ScriptIntrinsicHistogram::setDotCoefficients(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{

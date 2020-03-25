@@ -32,14 +32,16 @@ namespace __jni_impl::android::location
 		// Methods
 		QAndroidJniObject toString();
 		QAndroidJniObject getLocale();
-		void setExtras(__jni_impl::android::os::Bundle arg0);
 		jdouble getLatitude();
 		void setLatitude(jdouble arg0);
 		jdouble getLongitude();
 		void setLongitude(jdouble arg0);
 		QAndroidJniObject getExtras();
-		void setCountryCode(jstring arg0);
 		QAndroidJniObject getUrl();
+		void setCountryCode(jstring arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void setExtras(__jni_impl::android::os::Bundle arg0);
 		jint getMaxAddressLineIndex();
 		QAndroidJniObject getAddressLine(jint arg0);
 		void setAddressLine(jint arg0, jstring arg1);
@@ -71,8 +73,6 @@ namespace __jni_impl::android::location
 		QAndroidJniObject getPhone();
 		void setPhone(jstring arg0);
 		void setUrl(jstring arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::location
 
@@ -113,13 +113,6 @@ namespace __jni_impl::android::location
 			"getLocale",
 			"()Ljava/util/Locale;");
 	}
-	void Address::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
 	jdouble Address::getLatitude()
 	{
 		return __thiz.callMethod<jdouble>(
@@ -152,6 +145,12 @@ namespace __jni_impl::android::location
 			"getExtras",
 			"()Landroid/os/Bundle;");
 	}
+	QAndroidJniObject Address::getUrl()
+	{
+		return __thiz.callObjectMethod(
+			"getUrl",
+			"()Ljava/lang/String;");
+	}
 	void Address::setCountryCode(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -159,11 +158,26 @@ namespace __jni_impl::android::location
 			"(Ljava/lang/String;)V",
 			arg0);
 	}
-	QAndroidJniObject Address::getUrl()
+	jint Address::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getUrl",
-			"()Ljava/lang/String;");
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void Address::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	void Address::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
 	}
 	jint Address::getMaxAddressLineIndex()
 	{
@@ -365,20 +379,6 @@ namespace __jni_impl::android::location
 			"setUrl",
 			"(Ljava/lang/String;)V",
 			arg0);
-	}
-	jint Address::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Address::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::location
 

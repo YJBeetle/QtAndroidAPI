@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_UTIL_TIMEUNIT
 #define ANDROID_ICU_UTIL_TIMEUNIT
 
+#include "../../../__JniBaseClass.hpp"
 #include "MeasureUnit.hpp"
 
 

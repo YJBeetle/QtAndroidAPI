@@ -34,11 +34,11 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		void setResult(jint arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
-		void onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
-		QAndroidJniObject goAsync();
-		QAndroidJniObject peekService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
-		void setResultCode(jint arg0);
 		jint getResultCode();
+		void setResultCode(jint arg0);
+		QAndroidJniObject peekService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
+		QAndroidJniObject goAsync();
+		void onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		void setResultData(jstring arg0);
 		QAndroidJniObject getResultData();
 		void setResultExtras(__jni_impl::android::os::Bundle arg0);
@@ -81,19 +81,18 @@ namespace __jni_impl::android::content
 			arg1,
 			arg2.__jniObject().object());
 	}
-	void BroadcastReceiver::onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
+	jint BroadcastReceiver::getResultCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getResultCode",
+			"()I");
+	}
+	void BroadcastReceiver::setResultCode(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"onReceive",
-			"(Landroid/content/Context;Landroid/content/Intent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject BroadcastReceiver::goAsync()
-	{
-		return __thiz.callObjectMethod(
-			"goAsync",
-			"()Landroid/content/BroadcastReceiver$PendingResult;");
+			"setResultCode",
+			"(I)V",
+			arg0);
 	}
 	QAndroidJniObject BroadcastReceiver::peekService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -103,18 +102,19 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
-	void BroadcastReceiver::setResultCode(jint arg0)
+	QAndroidJniObject BroadcastReceiver::goAsync()
+	{
+		return __thiz.callObjectMethod(
+			"goAsync",
+			"()Landroid/content/BroadcastReceiver$PendingResult;");
+	}
+	void BroadcastReceiver::onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
 		__thiz.callMethod<void>(
-			"setResultCode",
-			"(I)V",
-			arg0);
-	}
-	jint BroadcastReceiver::getResultCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getResultCode",
-			"()I");
+			"onReceive",
+			"(Landroid/content/Context;Landroid/content/Intent;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 	void BroadcastReceiver::setResultData(jstring arg0)
 	{

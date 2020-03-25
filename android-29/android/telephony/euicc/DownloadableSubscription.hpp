@@ -22,11 +22,11 @@ namespace __jni_impl::android::telephony::euicc
 		void __constructor();
 		
 		// Methods
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getEncodedActivationCode();
 		static QAndroidJniObject forActivationCode(jstring arg0);
 		QAndroidJniObject getConfirmationCode();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony::euicc
 
@@ -52,20 +52,6 @@ namespace __jni_impl::android::telephony::euicc
 	}
 	
 	// Methods
-	jint DownloadableSubscription::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void DownloadableSubscription::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	QAndroidJniObject DownloadableSubscription::getEncodedActivationCode()
 	{
 		return __thiz.callObjectMethod(
@@ -85,6 +71,20 @@ namespace __jni_impl::android::telephony::euicc
 		return __thiz.callObjectMethod(
 			"getConfirmationCode",
 			"()Ljava/lang/String;");
+	}
+	jint DownloadableSubscription::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void DownloadableSubscription::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::telephony::euicc
 

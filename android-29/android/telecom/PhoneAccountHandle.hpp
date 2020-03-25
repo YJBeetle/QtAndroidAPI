@@ -35,10 +35,10 @@ namespace __jni_impl::android::telecom
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getId();
-		QAndroidJniObject getUserHandle();
+		QAndroidJniObject getComponentName();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getComponentName();
+		QAndroidJniObject getUserHandle();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -102,11 +102,11 @@ namespace __jni_impl::android::telecom
 			"getId",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject PhoneAccountHandle::getUserHandle()
+	QAndroidJniObject PhoneAccountHandle::getComponentName()
 	{
 		return __thiz.callObjectMethod(
-			"getUserHandle",
-			"()Landroid/os/UserHandle;");
+			"getComponentName",
+			"()Landroid/content/ComponentName;");
 	}
 	jint PhoneAccountHandle::describeContents()
 	{
@@ -122,11 +122,11 @@ namespace __jni_impl::android::telecom
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	QAndroidJniObject PhoneAccountHandle::getComponentName()
+	QAndroidJniObject PhoneAccountHandle::getUserHandle()
 	{
 		return __thiz.callObjectMethod(
-			"getComponentName",
-			"()Landroid/content/ComponentName;");
+			"getUserHandle",
+			"()Landroid/os/UserHandle;");
 	}
 } // namespace __jni_impl::android::telecom
 

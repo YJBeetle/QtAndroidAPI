@@ -3,6 +3,8 @@
 #ifndef JAVA_TEXT_CHOICEFORMAT
 #define JAVA_TEXT_CHOICEFORMAT
 
+#include "../../__JniBaseClass.hpp"
+#include "Format.hpp"
 #include "NumberFormat.hpp"
 
 namespace __jni_impl::java::lang
@@ -49,9 +51,9 @@ namespace __jni_impl::java::text
 		QAndroidJniObject getFormats();
 		void applyPattern(jstring arg0);
 		QAndroidJniObject toPattern();
-		void setChoices(jdoubleArray arg0, jarray arg1);
 		static jdouble previousDouble(jdouble arg0);
 		QAndroidJniObject getLimits();
+		void setChoices(jdoubleArray arg0, jarray arg1);
 	};
 } // namespace __jni_impl::java::text
 
@@ -164,14 +166,6 @@ namespace __jni_impl::java::text
 			"toPattern",
 			"()Ljava/lang/String;");
 	}
-	void ChoiceFormat::setChoices(jdoubleArray arg0, jarray arg1)
-	{
-		__thiz.callMethod<void>(
-			"setChoices",
-			"([D[Ljava/lang/String;)V",
-			arg0,
-			arg1);
-	}
 	jdouble ChoiceFormat::previousDouble(jdouble arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jdouble>(
@@ -185,6 +179,14 @@ namespace __jni_impl::java::text
 		return __thiz.callObjectMethod(
 			"getLimits",
 			"()[D");
+	}
+	void ChoiceFormat::setChoices(jdoubleArray arg0, jarray arg1)
+	{
+		__thiz.callMethod<void>(
+			"setChoices",
+			"([D[Ljava/lang/String;)V",
+			arg0,
+			arg1);
 	}
 } // namespace __jni_impl::java::text
 

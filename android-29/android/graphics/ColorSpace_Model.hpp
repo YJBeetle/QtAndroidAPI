@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_COLORSPACE_MODEL
 #define ANDROID_GRAPHICS_COLORSPACE_MODEL
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

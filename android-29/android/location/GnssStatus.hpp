@@ -25,17 +25,17 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
+		jint getSvid(jint arg0);
+		jint getConstellationType(jint arg0);
+		jfloat getCn0DbHz(jint arg0);
+		jboolean hasCarrierFrequencyHz(jint arg0);
+		jfloat getCarrierFrequencyHz(jint arg0);
 		jboolean usedInFix(jint arg0);
 		jint getSatelliteCount();
 		jfloat getElevationDegrees(jint arg0);
 		jfloat getAzimuthDegrees(jint arg0);
 		jboolean hasEphemerisData(jint arg0);
 		jboolean hasAlmanacData(jint arg0);
-		jint getSvid(jint arg0);
-		jint getConstellationType(jint arg0);
-		jfloat getCn0DbHz(jint arg0);
-		jboolean hasCarrierFrequencyHz(jint arg0);
-		jfloat getCarrierFrequencyHz(jint arg0);
 	};
 } // namespace __jni_impl::android::location
 
@@ -101,6 +101,41 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
+	jint GnssStatus::getSvid(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getSvid",
+			"(I)I",
+			arg0);
+	}
+	jint GnssStatus::getConstellationType(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getConstellationType",
+			"(I)I",
+			arg0);
+	}
+	jfloat GnssStatus::getCn0DbHz(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getCn0DbHz",
+			"(I)F",
+			arg0);
+	}
+	jboolean GnssStatus::hasCarrierFrequencyHz(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasCarrierFrequencyHz",
+			"(I)Z",
+			arg0);
+	}
+	jfloat GnssStatus::getCarrierFrequencyHz(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getCarrierFrequencyHz",
+			"(I)F",
+			arg0);
+	}
 	jboolean GnssStatus::usedInFix(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -140,41 +175,6 @@ namespace __jni_impl::android::location
 		return __thiz.callMethod<jboolean>(
 			"hasAlmanacData",
 			"(I)Z",
-			arg0);
-	}
-	jint GnssStatus::getSvid(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getSvid",
-			"(I)I",
-			arg0);
-	}
-	jint GnssStatus::getConstellationType(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getConstellationType",
-			"(I)I",
-			arg0);
-	}
-	jfloat GnssStatus::getCn0DbHz(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getCn0DbHz",
-			"(I)F",
-			arg0);
-	}
-	jboolean GnssStatus::hasCarrierFrequencyHz(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasCarrierFrequencyHz",
-			"(I)Z",
-			arg0);
-	}
-	jfloat GnssStatus::getCarrierFrequencyHz(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getCarrierFrequencyHz",
-			"(I)F",
 			arg0);
 	}
 } // namespace __jni_impl::android::location

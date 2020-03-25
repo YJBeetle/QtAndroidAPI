@@ -3,6 +3,9 @@
 #ifndef JAVA_SECURITY_PROVIDER
 #define JAVA_SECURITY_PROVIDER
 
+#include "../../__JniBaseClass.hpp"
+#include "../util/Dictionary.hpp"
+#include "../util/Hashtable.hpp"
 #include "../util/Properties.hpp"
 
 namespace __jni_impl::java::io
@@ -38,8 +41,8 @@ namespace __jni_impl::java::security
 		QAndroidJniObject toString();
 		QAndroidJniObject values();
 		void clear();
-		QAndroidJniObject replace(jobject arg0, jobject arg1);
 		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
+		QAndroidJniObject replace(jobject arg0, jobject arg1);
 		void replaceAll(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject elements();
 		QAndroidJniObject merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
@@ -55,12 +58,12 @@ namespace __jni_impl::java::security
 		QAndroidJniObject getOrDefault(jobject arg0, jobject arg1);
 		QAndroidJniObject computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		jdouble getVersion();
+		QAndroidJniObject configure(jstring arg0);
+		QAndroidJniObject getService(jstring arg0, jstring arg1);
 		QAndroidJniObject getInfo();
+		QAndroidJniObject getServices();
 		jboolean isConfigured();
 		QAndroidJniObject getVersionStr();
-		QAndroidJniObject configure(jstring arg0);
-		QAndroidJniObject getServices();
-		QAndroidJniObject getService(jstring arg0, jstring arg1);
 	};
 } // namespace __jni_impl::java::security
 
@@ -142,14 +145,6 @@ namespace __jni_impl::java::security
 			"clear",
 			"()V");
 	}
-	QAndroidJniObject Provider::replace(jobject arg0, jobject arg1)
-	{
-		return __thiz.callObjectMethod(
-			"replace",
-			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1);
-	}
 	jboolean Provider::replace(jobject arg0, jobject arg1, jobject arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -158,6 +153,14 @@ namespace __jni_impl::java::security
 			arg0,
 			arg1,
 			arg2);
+	}
+	QAndroidJniObject Provider::replace(jobject arg0, jobject arg1)
+	{
+		return __thiz.callObjectMethod(
+			"replace",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1);
 	}
 	void Provider::replaceAll(__jni_impl::__JniBaseClass arg0)
 	{
@@ -266,11 +269,32 @@ namespace __jni_impl::java::security
 			"getVersion",
 			"()D");
 	}
+	QAndroidJniObject Provider::configure(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"configure",
+			"(Ljava/lang/String;)Ljava/security/Provider;",
+			arg0);
+	}
+	QAndroidJniObject Provider::getService(jstring arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getService",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Provider$Service;",
+			arg0,
+			arg1);
+	}
 	QAndroidJniObject Provider::getInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getInfo",
 			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject Provider::getServices()
+	{
+		return __thiz.callObjectMethod(
+			"getServices",
+			"()Ljava/util/Set;");
 	}
 	jboolean Provider::isConfigured()
 	{
@@ -283,27 +307,6 @@ namespace __jni_impl::java::security
 		return __thiz.callObjectMethod(
 			"getVersionStr",
 			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject Provider::configure(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"configure",
-			"(Ljava/lang/String;)Ljava/security/Provider;",
-			arg0);
-	}
-	QAndroidJniObject Provider::getServices()
-	{
-		return __thiz.callObjectMethod(
-			"getServices",
-			"()Ljava/util/Set;");
-	}
-	QAndroidJniObject Provider::getService(jstring arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getService",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Provider$Service;",
-			arg0,
-			arg1);
 	}
 } // namespace __jni_impl::java::security
 

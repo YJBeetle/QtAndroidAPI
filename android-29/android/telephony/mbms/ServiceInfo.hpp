@@ -31,13 +31,13 @@ namespace __jni_impl::android::telephony::mbms
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
+		QAndroidJniObject getLocales();
 		QAndroidJniObject getNameForLocale(__jni_impl::java::util::Locale arg0);
 		QAndroidJniObject getNamedContentLocales();
 		QAndroidJniObject getServiceClassName();
 		QAndroidJniObject getServiceId();
 		QAndroidJniObject getSessionStartTime();
 		QAndroidJniObject getSessionEndTime();
-		QAndroidJniObject getLocales();
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
@@ -70,6 +70,12 @@ namespace __jni_impl::android::telephony::mbms
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I");
+	}
+	QAndroidJniObject ServiceInfo::getLocales()
+	{
+		return __thiz.callObjectMethod(
+			"getLocales",
+			"()Ljava/util/List;");
 	}
 	QAndroidJniObject ServiceInfo::getNameForLocale(__jni_impl::java::util::Locale arg0)
 	{
@@ -107,12 +113,6 @@ namespace __jni_impl::android::telephony::mbms
 		return __thiz.callObjectMethod(
 			"getSessionEndTime",
 			"()Ljava/util/Date;");
-	}
-	QAndroidJniObject ServiceInfo::getLocales()
-	{
-		return __thiz.callObjectMethod(
-			"getLocales",
-			"()Ljava/util/List;");
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

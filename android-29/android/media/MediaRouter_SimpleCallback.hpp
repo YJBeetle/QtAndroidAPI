@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_MEDIAROUTER_SIMPLECALLBACK
 #define ANDROID_MEDIA_MEDIAROUTER_SIMPLECALLBACK
 
+#include "../../__JniBaseClass.hpp"
 #include "MediaRouter_Callback.hpp"
 
 namespace __jni_impl::android::media

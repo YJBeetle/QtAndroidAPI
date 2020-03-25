@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_CONCURRENTSKIPLISTMAP
 #define JAVA_UTIL_CONCURRENT_CONCURRENTSKIPLISTMAP
 
+#include "../../../__JniBaseClass.hpp"
 #include "../AbstractMap.hpp"
 
 namespace __jni_impl::java::util::concurrent::atomic

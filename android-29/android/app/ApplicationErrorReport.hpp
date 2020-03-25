@@ -62,10 +62,10 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		static QAndroidJniObject getErrorReportReceiver(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		static QAndroidJniObject getErrorReportReceiver(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::app
 
@@ -191,15 +191,13 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Parcel;)V",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject ApplicationErrorReport::getErrorReportReceiver(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2)
+	void ApplicationErrorReport::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ApplicationErrorReport",
-			"getErrorReportReceiver",
-			"(Landroid/content/Context;Ljava/lang/String;I)Landroid/content/ComponentName;",
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1,
-			arg2);
+			arg1);
 	}
 	jint ApplicationErrorReport::describeContents()
 	{
@@ -215,13 +213,15 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	void ApplicationErrorReport::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	QAndroidJniObject ApplicationErrorReport::getErrorReportReceiver(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ApplicationErrorReport",
+			"getErrorReportReceiver",
+			"(Landroid/content/Context;Ljava/lang/String;I)Landroid/content/ComponentName;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1,
+			arg2);
 	}
 } // namespace __jni_impl::android::app
 

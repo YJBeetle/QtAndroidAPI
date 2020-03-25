@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_ALLOCATION_MIPMAPCONTROL
 #define ANDROID_RENDERSCRIPT_ALLOCATION_MIPMAPCONTROL
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

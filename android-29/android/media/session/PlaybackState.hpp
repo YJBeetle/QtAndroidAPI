@@ -61,8 +61,8 @@ namespace __jni_impl::android::media::session
 		jlong getActions();
 		jint getState();
 		QAndroidJniObject getErrorMessage();
-		jlong getPosition();
 		QAndroidJniObject getExtras();
+		jlong getPosition();
 		jlong getBufferedPosition();
 		jfloat getPlaybackSpeed();
 		QAndroidJniObject getCustomActions();
@@ -306,17 +306,17 @@ namespace __jni_impl::android::media::session
 			"getErrorMessage",
 			"()Ljava/lang/CharSequence;");
 	}
-	jlong PlaybackState::getPosition()
-	{
-		return __thiz.callMethod<jlong>(
-			"getPosition",
-			"()J");
-	}
 	QAndroidJniObject PlaybackState::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;");
+	}
+	jlong PlaybackState::getPosition()
+	{
+		return __thiz.callMethod<jlong>(
+			"getPosition",
+			"()J");
 	}
 	jlong PlaybackState::getBufferedPosition()
 	{

@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_TREEMAP
 #define JAVA_UTIL_TREEMAP
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractMap.hpp"
 
 namespace __jni_impl::java::io

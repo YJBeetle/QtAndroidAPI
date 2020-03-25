@@ -3,6 +3,7 @@
 #ifndef ANDROID_WIDGET_SHAREACTIONPROVIDER
 #define ANDROID_WIDGET_SHAREACTIONPROVIDER
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/ActionProvider.hpp"
 
 namespace __jni_impl::android::content
@@ -32,10 +33,10 @@ namespace __jni_impl::android::widget
 		// Methods
 		QAndroidJniObject onCreateActionView();
 		void onPrepareSubMenu(__jni_impl::__JniBaseClass arg0);
-		jboolean hasSubMenu();
 		void setShareHistoryFileName(jstring arg0);
 		void setOnShareTargetSelectedListener(__jni_impl::__JniBaseClass arg0);
 		void setShareIntent(__jni_impl::android::content::Intent arg0);
+		jboolean hasSubMenu();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -77,12 +78,6 @@ namespace __jni_impl::android::widget
 			"(Landroid/view/SubMenu;)V",
 			arg0.__jniObject().object());
 	}
-	jboolean ShareActionProvider::hasSubMenu()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasSubMenu",
-			"()Z");
-	}
 	void ShareActionProvider::setShareHistoryFileName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -103,6 +98,12 @@ namespace __jni_impl::android::widget
 			"setShareIntent",
 			"(Landroid/content/Intent;)V",
 			arg0.__jniObject().object());
+	}
+	jboolean ShareActionProvider::hasSubMenu()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasSubMenu",
+			"()Z");
 	}
 } // namespace __jni_impl::android::widget
 

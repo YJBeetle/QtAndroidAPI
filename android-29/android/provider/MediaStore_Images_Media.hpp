@@ -37,9 +37,9 @@ namespace __jni_impl::android::provider
 		static QAndroidJniObject query(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5);
 		static QAndroidJniObject query(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jarray arg2, jstring arg3, jstring arg4);
 		static QAndroidJniObject getContentUri(jstring arg0);
+		static QAndroidJniObject getBitmap(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject insertImage(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::graphics::Bitmap arg1, jstring arg2, jstring arg3);
 		static QAndroidJniObject insertImage(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3);
-		static QAndroidJniObject getBitmap(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -131,6 +131,15 @@ namespace __jni_impl::android::provider
 			"(Ljava/lang/String;)Landroid/net/Uri;",
 			arg0);
 	}
+	QAndroidJniObject MediaStore_Images_Media::getBitmap(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.MediaStore$Images$Media",
+			"getBitmap",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/graphics/Bitmap;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
 	QAndroidJniObject MediaStore_Images_Media::insertImage(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::graphics::Bitmap arg1, jstring arg2, jstring arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -152,15 +161,6 @@ namespace __jni_impl::android::provider
 			arg1,
 			arg2,
 			arg3);
-	}
-	QAndroidJniObject MediaStore_Images_Media::getBitmap(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Images$Media",
-			"getBitmap",
-			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::provider
 

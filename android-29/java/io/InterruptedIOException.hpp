@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_INTERRUPTEDIOEXCEPTION
 #define JAVA_IO_INTERRUPTEDIOEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "IOException.hpp"
 
 

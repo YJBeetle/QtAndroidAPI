@@ -45,6 +45,8 @@ namespace __jni_impl::android::app
 		void cancel(__jni_impl::android::app::PendingIntent arg0);
 		void cancel(__jni_impl::__JniBaseClass arg0);
 		void setTimeZone(jstring arg0);
+		void setWindow(jint arg0, jlong arg1, jlong arg2, __jni_impl::android::app::PendingIntent arg3);
+		void setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5);
 		void setRepeating(jint arg0, jlong arg1, jlong arg2, __jni_impl::android::app::PendingIntent arg3);
 		void setExact(jint arg0, jlong arg1, __jni_impl::android::app::PendingIntent arg2);
 		void setExact(jint arg0, jlong arg1, jstring arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4);
@@ -53,8 +55,6 @@ namespace __jni_impl::android::app
 		void setAndAllowWhileIdle(jint arg0, jlong arg1, __jni_impl::android::app::PendingIntent arg2);
 		void setExactAndAllowWhileIdle(jint arg0, jlong arg1, __jni_impl::android::app::PendingIntent arg2);
 		QAndroidJniObject getNextAlarmClock();
-		void setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5);
-		void setWindow(jint arg0, jlong arg1, jlong arg2, __jni_impl::android::app::PendingIntent arg3);
 	};
 } // namespace __jni_impl::android::app
 
@@ -184,6 +184,28 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;)V",
 			arg0);
 	}
+	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, __jni_impl::android::app::PendingIntent arg3)
+	{
+		__thiz.callMethod<void>(
+			"setWindow",
+			"(IJJLandroid/app/PendingIntent;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object());
+	}
+	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5)
+	{
+		__thiz.callMethod<void>(
+			"setWindow",
+			"(IJJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.__jniObject().object(),
+			arg5.__jniObject().object());
+	}
 	void AlarmManager::setRepeating(jint arg0, jlong arg1, jlong arg2, __jni_impl::android::app::PendingIntent arg3)
 	{
 		__thiz.callMethod<void>(
@@ -255,28 +277,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getNextAlarmClock",
 			"()Landroid/app/AlarmManager$AlarmClockInfo;");
-	}
-	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5)
-	{
-		__thiz.callMethod<void>(
-			"setWindow",
-			"(IJJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
-	}
-	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, __jni_impl::android::app::PendingIntent arg3)
-	{
-		__thiz.callMethod<void>(
-			"setWindow",
-			"(IJJLandroid/app/PendingIntent;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object());
 	}
 } // namespace __jni_impl::android::app
 

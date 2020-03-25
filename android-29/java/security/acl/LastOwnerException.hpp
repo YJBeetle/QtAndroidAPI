@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_ACL_LASTOWNEREXCEPTION
 #define JAVA_SECURITY_ACL_LASTOWNEREXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
 

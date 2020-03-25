@@ -3,6 +3,8 @@
 #ifndef JAVA_SQL_SQLPERMISSION
 #define JAVA_SQL_SQLPERMISSION
 
+#include "../../__JniBaseClass.hpp"
+#include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
 
 

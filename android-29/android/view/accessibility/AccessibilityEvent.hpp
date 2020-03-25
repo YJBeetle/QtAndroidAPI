@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYEVENT
 #define ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYEVENT
 
+#include "../../../__JniBaseClass.hpp"
 #include "AccessibilityRecord.hpp"
 
 namespace __jni_impl::android::os
@@ -76,13 +77,9 @@ namespace __jni_impl::android::view::accessibility
 		QAndroidJniObject getPackageName();
 		jlong getEventTime();
 		void setAction(jint arg0);
+		jint getAction();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getAction();
-		static QAndroidJniObject obtain();
-		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
-		static QAndroidJniObject obtain(jint arg0);
-		void recycle();
 		jint getRecordCount();
 		void appendRecord(__jni_impl::android::view::accessibility::AccessibilityRecord arg0);
 		QAndroidJniObject getRecord(jint arg0);
@@ -97,6 +94,10 @@ namespace __jni_impl::android::view::accessibility
 		jint getMovementGranularity();
 		void initFromParcel(__jni_impl::android::os::Parcel arg0);
 		static QAndroidJniObject eventTypeToString(jint arg0);
+		static QAndroidJniObject obtain();
+		static QAndroidJniObject obtain(jint arg0);
+		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
+		void recycle();
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -424,6 +425,12 @@ namespace __jni_impl::android::view::accessibility
 			"(I)V",
 			arg0);
 	}
+	jint AccessibilityEvent::getAction()
+	{
+		return __thiz.callMethod<jint>(
+			"getAction",
+			"()I");
+	}
 	jint AccessibilityEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -437,41 +444,6 @@ namespace __jni_impl::android::view::accessibility
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint AccessibilityEvent::getAction()
-	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I");
-	}
-	QAndroidJniObject AccessibilityEvent::obtain()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityEvent",
-			"obtain",
-			"()Landroid/view/accessibility/AccessibilityEvent;");
-	}
-	QAndroidJniObject AccessibilityEvent::obtain(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityEvent",
-			"obtain",
-			"(Landroid/view/accessibility/AccessibilityEvent;)Landroid/view/accessibility/AccessibilityEvent;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AccessibilityEvent::obtain(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityEvent",
-			"obtain",
-			"(I)Landroid/view/accessibility/AccessibilityEvent;",
-			arg0);
-	}
-	void AccessibilityEvent::recycle()
-	{
-		__thiz.callMethod<void>(
-			"recycle",
-			"()V");
 	}
 	jint AccessibilityEvent::getRecordCount()
 	{
@@ -566,6 +538,35 @@ namespace __jni_impl::android::view::accessibility
 			"eventTypeToString",
 			"(I)Ljava/lang/String;",
 			arg0);
+	}
+	QAndroidJniObject AccessibilityEvent::obtain()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityEvent",
+			"obtain",
+			"()Landroid/view/accessibility/AccessibilityEvent;");
+	}
+	QAndroidJniObject AccessibilityEvent::obtain(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityEvent",
+			"obtain",
+			"(I)Landroid/view/accessibility/AccessibilityEvent;",
+			arg0);
+	}
+	QAndroidJniObject AccessibilityEvent::obtain(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityEvent",
+			"obtain",
+			"(Landroid/view/accessibility/AccessibilityEvent;)Landroid/view/accessibility/AccessibilityEvent;",
+			arg0.__jniObject().object());
+	}
+	void AccessibilityEvent::recycle()
+	{
+		__thiz.callMethod<void>(
+			"recycle",
+			"()V");
 	}
 } // namespace __jni_impl::android::view::accessibility
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_UTIL_ANDROIDEXCEPTION
 #define ANDROID_UTIL_ANDROIDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 namespace __jni_impl::java::lang

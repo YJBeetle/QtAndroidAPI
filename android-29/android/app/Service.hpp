@@ -3,6 +3,8 @@
 #ifndef ANDROID_APP_SERVICE
 #define ANDROID_APP_SERVICE
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
 namespace __jni_impl::android::content

@@ -3,6 +3,9 @@
 #ifndef JAVA_SQL_SQLINTEGRITYCONSTRAINTVIOLATIONEXCEPTION
 #define JAVA_SQL_SQLINTEGRITYCONSTRAINTVIOLATIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "SQLException.hpp"
 #include "SQLNonTransientException.hpp"
 
 

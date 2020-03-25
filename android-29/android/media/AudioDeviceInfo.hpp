@@ -46,7 +46,6 @@ namespace __jni_impl::android::media
 		jint getId();
 		jint getType();
 		QAndroidJniObject getAddress();
-		QAndroidJniObject getProductName();
 		jboolean isSource();
 		jboolean isSink();
 		QAndroidJniObject getSampleRates();
@@ -54,6 +53,7 @@ namespace __jni_impl::android::media
 		QAndroidJniObject getChannelIndexMasks();
 		QAndroidJniObject getChannelCounts();
 		QAndroidJniObject getEncodings();
+		QAndroidJniObject getProductName();
 	};
 } // namespace __jni_impl::android::media
 
@@ -246,12 +246,6 @@ namespace __jni_impl::android::media
 			"getAddress",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject AudioDeviceInfo::getProductName()
-	{
-		return __thiz.callObjectMethod(
-			"getProductName",
-			"()Ljava/lang/CharSequence;");
-	}
 	jboolean AudioDeviceInfo::isSource()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -293,6 +287,12 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getEncodings",
 			"()[I");
+	}
+	QAndroidJniObject AudioDeviceInfo::getProductName()
+	{
+		return __thiz.callObjectMethod(
+			"getProductName",
+			"()Ljava/lang/CharSequence;");
 	}
 } // namespace __jni_impl::android::media
 

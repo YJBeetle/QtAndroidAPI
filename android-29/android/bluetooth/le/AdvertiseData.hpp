@@ -29,13 +29,13 @@ namespace __jni_impl::android::bluetooth::le
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getServiceData();
 		QAndroidJniObject getServiceUuids();
 		QAndroidJniObject getManufacturerSpecificData();
 		jboolean getIncludeTxPowerLevel();
 		jboolean getIncludeDeviceName();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getServiceData();
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -81,26 +81,6 @@ namespace __jni_impl::android::bluetooth::le
 			"hashCode",
 			"()I");
 	}
-	jint AdvertiseData::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void AdvertiseData::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject AdvertiseData::getServiceData()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceData",
-			"()Ljava/util/Map;");
-	}
 	QAndroidJniObject AdvertiseData::getServiceUuids()
 	{
 		return __thiz.callObjectMethod(
@@ -124,6 +104,26 @@ namespace __jni_impl::android::bluetooth::le
 		return __thiz.callMethod<jboolean>(
 			"getIncludeDeviceName",
 			"()Z");
+	}
+	jint AdvertiseData::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void AdvertiseData::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	QAndroidJniObject AdvertiseData::getServiceData()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceData",
+			"()Ljava/util/Map;");
 	}
 } // namespace __jni_impl::android::bluetooth::le
 

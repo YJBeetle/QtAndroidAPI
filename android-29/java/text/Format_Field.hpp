@@ -3,6 +3,7 @@
 #ifndef JAVA_TEXT_FORMAT_FIELD
 #define JAVA_TEXT_FORMAT_FIELD
 
+#include "../../__JniBaseClass.hpp"
 #include "AttributedCharacterIterator_Attribute.hpp"
 
 

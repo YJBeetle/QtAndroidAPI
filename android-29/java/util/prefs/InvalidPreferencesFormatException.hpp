@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_PREFS_INVALIDPREFERENCESFORMATEXCEPTION
 #define JAVA_UTIL_PREFS_INVALIDPREFERENCESFORMATEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_SEARCHITERATOR_ELEMENTCOMPARISONTYPE
 #define ANDROID_ICU_TEXT_SEARCHITERATOR_ELEMENTCOMPARISONTYPE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

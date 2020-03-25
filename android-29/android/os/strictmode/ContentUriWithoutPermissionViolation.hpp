@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_CONTENTURIWITHOUTPERMISSIONVIOLATION
 #define ANDROID_OS_STRICTMODE_CONTENTURIWITHOUTPERMISSIONVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 namespace __jni_impl::android::net

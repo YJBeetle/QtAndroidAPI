@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_UNBUFFEREDIOVIOLATION
 #define ANDROID_OS_STRICTMODE_UNBUFFEREDIOVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_EQBAND
 #define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_EQBAND
 
+#include "../../../__JniBaseClass.hpp"
 #include "DynamicsProcessing_BandBase.hpp"
 
 

@@ -27,9 +27,9 @@ namespace __jni_impl::android::view::textclassifier
 		static QAndroidJniObject createWithExplicitEntityList(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject resolveEntityListModifications(__jni_impl::__JniBaseClass arg0);
 		jboolean shouldIncludeTypesFromTextClassifier();
+		QAndroidJniObject getHints();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getHints();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -94,6 +94,12 @@ namespace __jni_impl::android::view::textclassifier
 			"shouldIncludeTypesFromTextClassifier",
 			"()Z");
 	}
+	QAndroidJniObject TextClassifier_EntityConfig::getHints()
+	{
+		return __thiz.callObjectMethod(
+			"getHints",
+			"()Ljava/util/Collection;");
+	}
 	jint TextClassifier_EntityConfig::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -107,12 +113,6 @@ namespace __jni_impl::android::view::textclassifier
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject TextClassifier_EntityConfig::getHints()
-	{
-		return __thiz.callObjectMethod(
-			"getHints",
-			"()Ljava/util/Collection;");
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

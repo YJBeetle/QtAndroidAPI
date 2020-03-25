@@ -33,8 +33,8 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::app::Activity arg0, jboolean arg1);
 		
 		// Methods
-		QAndroidJniObject startActivity(jstring arg0, __jni_impl::android::content::Intent arg1);
 		QAndroidJniObject getActivity(jstring arg0);
+		QAndroidJniObject startActivity(jstring arg0, __jni_impl::android::content::Intent arg1);
 		QAndroidJniObject getCurrentActivity();
 		QAndroidJniObject destroyActivity(jstring arg0, jboolean arg1);
 		QAndroidJniObject getCurrentId();
@@ -68,6 +68,13 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	QAndroidJniObject LocalActivityManager::getActivity(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getActivity",
+			"(Ljava/lang/String;)Landroid/app/Activity;",
+			arg0);
+	}
 	QAndroidJniObject LocalActivityManager::startActivity(jstring arg0, __jni_impl::android::content::Intent arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -75,13 +82,6 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Landroid/content/Intent;)Landroid/view/Window;",
 			arg0,
 			arg1.__jniObject().object());
-	}
-	QAndroidJniObject LocalActivityManager::getActivity(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getActivity",
-			"(Ljava/lang/String;)Landroid/app/Activity;",
-			arg0);
 	}
 	QAndroidJniObject LocalActivityManager::getCurrentActivity()
 	{

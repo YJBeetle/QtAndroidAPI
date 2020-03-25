@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_PATHDASHPATHEFFECT
 #define ANDROID_GRAPHICS_PATHDASHPATHEFFECT
 
+#include "../../__JniBaseClass.hpp"
 #include "PathEffect.hpp"
 
 namespace __jni_impl::android::graphics

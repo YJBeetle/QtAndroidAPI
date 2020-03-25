@@ -19,13 +19,13 @@ namespace __jni_impl::android::drm
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getDescription();
 		void setDescription(jstring arg0);
 		void addMimeType(jstring arg0);
 		void addFileSuffix(jstring arg0);
 		QAndroidJniObject getMimeTypeIterator();
 		QAndroidJniObject getFileSuffixIterator();
 		QAndroidJniObject getDescriprition();
+		QAndroidJniObject getDescription();
 	};
 } // namespace __jni_impl::android::drm
 
@@ -55,12 +55,6 @@ namespace __jni_impl::android::drm
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I");
-	}
-	QAndroidJniObject DrmSupportInfo::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
 	}
 	void DrmSupportInfo::setDescription(jstring arg0)
 	{
@@ -99,6 +93,12 @@ namespace __jni_impl::android::drm
 	{
 		return __thiz.callObjectMethod(
 			"getDescriprition",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject DrmSupportInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
 			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::drm

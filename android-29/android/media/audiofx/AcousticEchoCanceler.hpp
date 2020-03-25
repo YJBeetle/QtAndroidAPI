@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_ACOUSTICECHOCANCELER
 #define ANDROID_MEDIA_AUDIOFX_ACOUSTICECHOCANCELER
 
+#include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
 

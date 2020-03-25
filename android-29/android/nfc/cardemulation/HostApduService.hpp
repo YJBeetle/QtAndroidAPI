@@ -3,6 +3,9 @@
 #ifndef ANDROID_NFC_CARDEMULATION_HOSTAPDUSERVICE
 #define ANDROID_NFC_CARDEMULATION_HOSTAPDUSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace __jni_impl::android::content
@@ -30,10 +33,10 @@ namespace __jni_impl::android::nfc::cardemulation
 		
 		// Methods
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onDeactivated(jint arg0);
 		void sendResponseApdu(jbyteArray arg0);
 		void notifyUnhandled();
 		QAndroidJniObject processCommandApdu(jbyteArray arg0, __jni_impl::android::os::Bundle arg1);
-		void onDeactivated(jint arg0);
 	};
 } // namespace __jni_impl::android::nfc::cardemulation
 
@@ -86,6 +89,13 @@ namespace __jni_impl::android::nfc::cardemulation
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object());
 	}
+	void HostApduService::onDeactivated(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onDeactivated",
+			"(I)V",
+			arg0);
+	}
 	void HostApduService::sendResponseApdu(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -106,13 +116,6 @@ namespace __jni_impl::android::nfc::cardemulation
 			"([BLandroid/os/Bundle;)[B",
 			arg0,
 			arg1.__jniObject().object());
-	}
-	void HostApduService::onDeactivated(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onDeactivated",
-			"(I)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::nfc::cardemulation
 

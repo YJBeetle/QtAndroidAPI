@@ -13,37 +13,9 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
-namespace __jni_impl::android::app
-{
-	class Fragment_SavedState;
-}
-namespace __jni_impl::android::app
-{
-	class FragmentManager;
-}
-namespace __jni_impl::android::view
-{
-	class LayoutInflater;
-}
 namespace __jni_impl::android::app
 {
 	class Activity;
-}
-namespace __jni_impl::android::animation
-{
-	class Animator;
-}
-namespace __jni_impl::android::view
-{
-	class View;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 namespace __jni_impl::java::io
 {
@@ -57,13 +29,33 @@ namespace __jni_impl::android::app
 {
 	class LoaderManager;
 }
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 namespace __jni_impl::android::content::res
 {
 	class Configuration;
 }
+namespace __jni_impl::android::app
+{
+	class FragmentManager;
+}
 namespace __jni_impl::android::view
 {
 	class MenuInflater;
+}
+namespace __jni_impl::android::view
+{
+	class View;
+}
+namespace __jni_impl::android::view
+{
+	class LayoutInflater;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 namespace __jni_impl::android::content
 {
@@ -80,6 +72,14 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::transition
 {
 	class Transition;
+}
+namespace __jni_impl::android::app
+{
+	class Fragment_SavedState;
+}
+namespace __jni_impl::android::animation
+{
+	class Animator;
 }
 
 namespace __jni_impl::android::app
@@ -106,6 +106,65 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getTag();
 		jboolean isHidden();
 		QAndroidJniObject getText(jint arg0);
+		QAndroidJniObject getActivity();
+		jboolean isVisible();
+		jboolean isInLayout();
+		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		QAndroidJniObject getLoaderManager();
+		void onCreate(__jni_impl::android::os::Bundle arg0);
+		void onResume();
+		void onSaveInstanceState(__jni_impl::android::os::Bundle arg0);
+		void onPause();
+		void onStop();
+		void onDestroy();
+		void onMultiWindowModeChanged(jboolean arg0);
+		void onMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
+		void onPictureInPictureModeChanged(jboolean arg0);
+		void onPictureInPictureModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
+		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
+		void onLowMemory();
+		void onTrimMemory(jint arg0);
+		QAndroidJniObject getFragmentManager();
+		void onAttachFragment(__jni_impl::android::app::Fragment arg0);
+		void onCreateOptionsMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::MenuInflater arg1);
+		void onPrepareOptionsMenu(__jni_impl::__JniBaseClass arg0);
+		jboolean onOptionsItemSelected(__jni_impl::__JniBaseClass arg0);
+		void onOptionsMenuClosed(__jni_impl::__JniBaseClass arg0);
+		void onCreateContextMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2);
+		void registerForContextMenu(__jni_impl::android::view::View arg0);
+		void unregisterForContextMenu(__jni_impl::android::view::View arg0);
+		jboolean onContextItemSelected(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getLayoutInflater();
+		void requestPermissions(jarray arg0, jint arg1);
+		void onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2);
+		jboolean shouldShowRequestPermissionRationale(jstring arg0);
+		void startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1);
+		void startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
+		void startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::os::Bundle arg6);
+		void onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2);
+		QAndroidJniObject onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2);
+		void setEnterSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0);
+		void setExitSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0);
+		void postponeEnterTransition();
+		void startPostponedEnterTransition();
+		void startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1);
+		void startActivity(__jni_impl::android::content::Intent arg0);
+		void setEnterTransition(__jni_impl::android::transition::Transition arg0);
+		void setReturnTransition(__jni_impl::android::transition::Transition arg0);
+		void setExitTransition(__jni_impl::android::transition::Transition arg0);
+		void setReenterTransition(__jni_impl::android::transition::Transition arg0);
+		QAndroidJniObject getEnterTransition();
+		QAndroidJniObject getReturnTransition();
+		QAndroidJniObject getExitTransition();
+		QAndroidJniObject getReenterTransition();
+		void setSharedElementEnterTransition(__jni_impl::android::transition::Transition arg0);
+		void setSharedElementReturnTransition(__jni_impl::android::transition::Transition arg0);
+		QAndroidJniObject getSharedElementEnterTransition();
+		QAndroidJniObject getSharedElementReturnTransition();
+		void setAllowEnterTransitionOverlap(jboolean arg0);
+		jboolean getAllowEnterTransitionOverlap();
+		void setAllowReturnTransitionOverlap(jboolean arg0);
+		jboolean getAllowReturnTransitionOverlap();
 		static QAndroidJniObject instantiate(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
 		static QAndroidJniObject instantiate(__jni_impl::android::content::Context arg0, jstring arg1);
 		void setArguments(__jni_impl::android::os::Bundle arg0);
@@ -130,9 +189,9 @@ namespace __jni_impl::android::app
 		void setUserVisibleHint(jboolean arg0);
 		jboolean getUserVisibleHint();
 		QAndroidJniObject onGetLayoutInflater(__jni_impl::android::os::Bundle arg0);
-		void onInflate(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2);
-		void onInflate(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2);
 		void onInflate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Bundle arg1);
+		void onInflate(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2);
+		void onInflate(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2);
 		void onAttach(__jni_impl::android::app::Activity arg0);
 		void onAttach(__jni_impl::android::content::Context arg0);
 		QAndroidJniObject onCreateAnimator(jint arg0, jboolean arg1, jint arg2);
@@ -142,87 +201,28 @@ namespace __jni_impl::android::app
 		void onViewStateRestored(__jni_impl::android::os::Bundle arg0);
 		void onDetach();
 		void onDestroyOptionsMenu();
-		void startActivity(__jni_impl::android::content::Intent arg0);
-		void startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1);
-		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
-		QAndroidJniObject getLoaderManager();
-		void onCreate(__jni_impl::android::os::Bundle arg0);
-		void onResume();
-		void onSaveInstanceState(__jni_impl::android::os::Bundle arg0);
-		void onPause();
-		void onStop();
-		void onDestroy();
-		void onMultiWindowModeChanged(jboolean arg0);
-		void onMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
-		void onPictureInPictureModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
-		void onPictureInPictureModeChanged(jboolean arg0);
-		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
-		void onLowMemory();
-		void onTrimMemory(jint arg0);
-		QAndroidJniObject getFragmentManager();
-		void onAttachFragment(__jni_impl::android::app::Fragment arg0);
-		void onCreateOptionsMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::MenuInflater arg1);
-		void onPrepareOptionsMenu(__jni_impl::__JniBaseClass arg0);
-		jboolean onOptionsItemSelected(__jni_impl::__JniBaseClass arg0);
-		void onOptionsMenuClosed(__jni_impl::__JniBaseClass arg0);
-		void onCreateContextMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2);
-		void registerForContextMenu(__jni_impl::android::view::View arg0);
-		void unregisterForContextMenu(__jni_impl::android::view::View arg0);
-		jboolean onContextItemSelected(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getLayoutInflater();
-		void requestPermissions(jarray arg0, jint arg1);
-		void onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2);
-		jboolean shouldShowRequestPermissionRationale(jstring arg0);
-		void startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
-		void startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1);
-		void startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::os::Bundle arg6);
-		void onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2);
-		QAndroidJniObject onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2);
-		void setEnterSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0);
-		void setExitSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0);
-		void postponeEnterTransition();
-		void startPostponedEnterTransition();
-		QAndroidJniObject getActivity();
-		jboolean isVisible();
-		jboolean isInLayout();
-		void setEnterTransition(__jni_impl::android::transition::Transition arg0);
-		void setReturnTransition(__jni_impl::android::transition::Transition arg0);
-		void setExitTransition(__jni_impl::android::transition::Transition arg0);
-		void setReenterTransition(__jni_impl::android::transition::Transition arg0);
-		QAndroidJniObject getEnterTransition();
-		QAndroidJniObject getReturnTransition();
-		QAndroidJniObject getExitTransition();
-		QAndroidJniObject getReenterTransition();
-		void setSharedElementEnterTransition(__jni_impl::android::transition::Transition arg0);
-		void setSharedElementReturnTransition(__jni_impl::android::transition::Transition arg0);
-		QAndroidJniObject getSharedElementEnterTransition();
-		QAndroidJniObject getSharedElementReturnTransition();
-		void setAllowEnterTransitionOverlap(jboolean arg0);
-		jboolean getAllowEnterTransitionOverlap();
-		void setAllowReturnTransitionOverlap(jboolean arg0);
-		jboolean getAllowReturnTransitionOverlap();
 	};
 } // namespace __jni_impl::android::app
 
 #include "../content/res/Resources.hpp"
 #include "../content/Context.hpp"
-#include "../os/Bundle.hpp"
-#include "Fragment_SavedState.hpp"
-#include "FragmentManager.hpp"
-#include "../view/LayoutInflater.hpp"
 #include "Activity.hpp"
-#include "../animation/Animator.hpp"
-#include "../view/View.hpp"
-#include "../content/Intent.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
 #include "LoaderManager.hpp"
+#include "../os/Bundle.hpp"
 #include "../content/res/Configuration.hpp"
+#include "FragmentManager.hpp"
 #include "../view/MenuInflater.hpp"
+#include "../view/View.hpp"
+#include "../view/LayoutInflater.hpp"
+#include "../content/Intent.hpp"
 #include "../content/IntentSender.hpp"
 #include "../view/ViewGroup.hpp"
 #include "SharedElementCallback.hpp"
 #include "../transition/Transition.hpp"
+#include "Fragment_SavedState.hpp"
+#include "../animation/Animator.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -319,6 +319,423 @@ namespace __jni_impl::android::app
 			"getText",
 			"(I)Ljava/lang/CharSequence;",
 			arg0);
+	}
+	QAndroidJniObject Fragment::getActivity()
+	{
+		return __thiz.callObjectMethod(
+			"getActivity",
+			"()Landroid/app/Activity;");
+	}
+	jboolean Fragment::isVisible()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVisible",
+			"()Z");
+	}
+	jboolean Fragment::isInLayout()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInLayout",
+			"()Z");
+	}
+	void Fragment::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3);
+	}
+	QAndroidJniObject Fragment::getLoaderManager()
+	{
+		return __thiz.callObjectMethod(
+			"getLoaderManager",
+			"()Landroid/app/LoaderManager;");
+	}
+	void Fragment::onCreate(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::onResume()
+	{
+		__thiz.callMethod<void>(
+			"onResume",
+			"()V");
+	}
+	void Fragment::onSaveInstanceState(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSaveInstanceState",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::onPause()
+	{
+		__thiz.callMethod<void>(
+			"onPause",
+			"()V");
+	}
+	void Fragment::onStop()
+	{
+		__thiz.callMethod<void>(
+			"onStop",
+			"()V");
+	}
+	void Fragment::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V");
+	}
+	void Fragment::onMultiWindowModeChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onMultiWindowModeChanged",
+			"(Z)V",
+			arg0);
+	}
+	void Fragment::onMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1)
+	{
+		__thiz.callMethod<void>(
+			"onMultiWindowModeChanged",
+			"(ZLandroid/content/res/Configuration;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void Fragment::onPictureInPictureModeChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onPictureInPictureModeChanged",
+			"(Z)V",
+			arg0);
+	}
+	void Fragment::onPictureInPictureModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPictureInPictureModeChanged",
+			"(ZLandroid/content/res/Configuration;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void Fragment::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
+	{
+		__thiz.callMethod<void>(
+			"onConfigurationChanged",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::onLowMemory()
+	{
+		__thiz.callMethod<void>(
+			"onLowMemory",
+			"()V");
+	}
+	void Fragment::onTrimMemory(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTrimMemory",
+			"(I)V",
+			arg0);
+	}
+	QAndroidJniObject Fragment::getFragmentManager()
+	{
+		return __thiz.callObjectMethod(
+			"getFragmentManager",
+			"()Landroid/app/FragmentManager;");
+	}
+	void Fragment::onAttachFragment(__jni_impl::android::app::Fragment arg0)
+	{
+		__thiz.callMethod<void>(
+			"onAttachFragment",
+			"(Landroid/app/Fragment;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::onCreateOptionsMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::MenuInflater arg1)
+	{
+		__thiz.callMethod<void>(
+			"onCreateOptionsMenu",
+			"(Landroid/view/Menu;Landroid/view/MenuInflater;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void Fragment::onPrepareOptionsMenu(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onPrepareOptionsMenu",
+			"(Landroid/view/Menu;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean Fragment::onOptionsItemSelected(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onOptionsItemSelected",
+			"(Landroid/view/MenuItem;)Z",
+			arg0.__jniObject().object());
+	}
+	void Fragment::onOptionsMenuClosed(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onOptionsMenuClosed",
+			"(Landroid/view/Menu;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::onCreateContextMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"onCreateContextMenu",
+			"(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	void Fragment::registerForContextMenu(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerForContextMenu",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::unregisterForContextMenu(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterForContextMenu",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean Fragment::onContextItemSelected(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onContextItemSelected",
+			"(Landroid/view/MenuItem;)Z",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Fragment::getLayoutInflater()
+	{
+		return __thiz.callObjectMethod(
+			"getLayoutInflater",
+			"()Landroid/view/LayoutInflater;");
+	}
+	void Fragment::requestPermissions(jarray arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"requestPermissions",
+			"([Ljava/lang/String;I)V",
+			arg0,
+			arg1);
+	}
+	void Fragment::onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2)
+	{
+		__thiz.callMethod<void>(
+			"onRequestPermissionsResult",
+			"(I[Ljava/lang/String;[I)V",
+			arg0,
+			arg1,
+			arg2);
+	}
+	jboolean Fragment::shouldShowRequestPermissionRationale(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldShowRequestPermissionRationale",
+			"(Ljava/lang/String;)Z",
+			arg0);
+	}
+	void Fragment::startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"startActivityForResult",
+			"(Landroid/content/Intent;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	void Fragment::startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz.callMethod<void>(
+			"startActivityForResult",
+			"(Landroid/content/Intent;ILandroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object());
+	}
+	void Fragment::startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::os::Bundle arg6)
+	{
+		__thiz.callMethod<void>(
+			"startIntentSenderForResult",
+			"(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3,
+			arg4,
+			arg5,
+			arg6.__jniObject().object());
+	}
+	void Fragment::onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2)
+	{
+		__thiz.callMethod<void>(
+			"onActivityResult",
+			"(IILandroid/content/Intent;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject Fragment::onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		return __thiz.callObjectMethod(
+			"onCreateView",
+			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	void Fragment::setEnterSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnterSharedElementCallback",
+			"(Landroid/app/SharedElementCallback;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::setExitSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExitSharedElementCallback",
+			"(Landroid/app/SharedElementCallback;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::postponeEnterTransition()
+	{
+		__thiz.callMethod<void>(
+			"postponeEnterTransition",
+			"()V");
+	}
+	void Fragment::startPostponedEnterTransition()
+	{
+		__thiz.callMethod<void>(
+			"startPostponedEnterTransition",
+			"()V");
+	}
+	void Fragment::startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"startActivity",
+			"(Landroid/content/Intent;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void Fragment::startActivity(__jni_impl::android::content::Intent arg0)
+	{
+		__thiz.callMethod<void>(
+			"startActivity",
+			"(Landroid/content/Intent;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::setEnterTransition(__jni_impl::android::transition::Transition arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnterTransition",
+			"(Landroid/transition/Transition;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::setReturnTransition(__jni_impl::android::transition::Transition arg0)
+	{
+		__thiz.callMethod<void>(
+			"setReturnTransition",
+			"(Landroid/transition/Transition;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::setExitTransition(__jni_impl::android::transition::Transition arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExitTransition",
+			"(Landroid/transition/Transition;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::setReenterTransition(__jni_impl::android::transition::Transition arg0)
+	{
+		__thiz.callMethod<void>(
+			"setReenterTransition",
+			"(Landroid/transition/Transition;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Fragment::getEnterTransition()
+	{
+		return __thiz.callObjectMethod(
+			"getEnterTransition",
+			"()Landroid/transition/Transition;");
+	}
+	QAndroidJniObject Fragment::getReturnTransition()
+	{
+		return __thiz.callObjectMethod(
+			"getReturnTransition",
+			"()Landroid/transition/Transition;");
+	}
+	QAndroidJniObject Fragment::getExitTransition()
+	{
+		return __thiz.callObjectMethod(
+			"getExitTransition",
+			"()Landroid/transition/Transition;");
+	}
+	QAndroidJniObject Fragment::getReenterTransition()
+	{
+		return __thiz.callObjectMethod(
+			"getReenterTransition",
+			"()Landroid/transition/Transition;");
+	}
+	void Fragment::setSharedElementEnterTransition(__jni_impl::android::transition::Transition arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSharedElementEnterTransition",
+			"(Landroid/transition/Transition;)V",
+			arg0.__jniObject().object());
+	}
+	void Fragment::setSharedElementReturnTransition(__jni_impl::android::transition::Transition arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSharedElementReturnTransition",
+			"(Landroid/transition/Transition;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Fragment::getSharedElementEnterTransition()
+	{
+		return __thiz.callObjectMethod(
+			"getSharedElementEnterTransition",
+			"()Landroid/transition/Transition;");
+	}
+	QAndroidJniObject Fragment::getSharedElementReturnTransition()
+	{
+		return __thiz.callObjectMethod(
+			"getSharedElementReturnTransition",
+			"()Landroid/transition/Transition;");
+	}
+	void Fragment::setAllowEnterTransitionOverlap(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAllowEnterTransitionOverlap",
+			"(Z)V",
+			arg0);
+	}
+	jboolean Fragment::getAllowEnterTransitionOverlap()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getAllowEnterTransitionOverlap",
+			"()Z");
+	}
+	void Fragment::setAllowReturnTransitionOverlap(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAllowReturnTransitionOverlap",
+			"(Z)V",
+			arg0);
+	}
+	jboolean Fragment::getAllowReturnTransitionOverlap()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getAllowReturnTransitionOverlap",
+			"()Z");
 	}
 	QAndroidJniObject Fragment::instantiate(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -481,14 +898,13 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Bundle;)Landroid/view/LayoutInflater;",
 			arg0.__jniObject().object());
 	}
-	void Fragment::onInflate(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2)
+	void Fragment::onInflate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"onInflate",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
+			"(Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg1.__jniObject().object());
 	}
 	void Fragment::onInflate(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -499,13 +915,14 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
 	}
-	void Fragment::onInflate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Bundle arg1)
+	void Fragment::onInflate(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2)
 	{
 		__thiz.callMethod<void>(
 			"onInflate",
-			"(Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
 	}
 	void Fragment::onAttach(__jni_impl::android::app::Activity arg0)
 	{
@@ -569,423 +986,6 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"onDestroyOptionsMenu",
 			"()V");
-	}
-	void Fragment::startActivity(__jni_impl::android::content::Intent arg0)
-	{
-		__thiz.callMethod<void>(
-			"startActivity",
-			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"startActivity",
-			"(Landroid/content/Intent;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void Fragment::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3);
-	}
-	QAndroidJniObject Fragment::getLoaderManager()
-	{
-		return __thiz.callObjectMethod(
-			"getLoaderManager",
-			"()Landroid/app/LoaderManager;");
-	}
-	void Fragment::onCreate(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::onResume()
-	{
-		__thiz.callMethod<void>(
-			"onResume",
-			"()V");
-	}
-	void Fragment::onSaveInstanceState(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSaveInstanceState",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::onPause()
-	{
-		__thiz.callMethod<void>(
-			"onPause",
-			"()V");
-	}
-	void Fragment::onStop()
-	{
-		__thiz.callMethod<void>(
-			"onStop",
-			"()V");
-	}
-	void Fragment::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V");
-	}
-	void Fragment::onMultiWindowModeChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onMultiWindowModeChanged",
-			"(Z)V",
-			arg0);
-	}
-	void Fragment::onMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1)
-	{
-		__thiz.callMethod<void>(
-			"onMultiWindowModeChanged",
-			"(ZLandroid/content/res/Configuration;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void Fragment::onPictureInPictureModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPictureInPictureModeChanged",
-			"(ZLandroid/content/res/Configuration;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void Fragment::onPictureInPictureModeChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onPictureInPictureModeChanged",
-			"(Z)V",
-			arg0);
-	}
-	void Fragment::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConfigurationChanged",
-			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::onLowMemory()
-	{
-		__thiz.callMethod<void>(
-			"onLowMemory",
-			"()V");
-	}
-	void Fragment::onTrimMemory(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTrimMemory",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject Fragment::getFragmentManager()
-	{
-		return __thiz.callObjectMethod(
-			"getFragmentManager",
-			"()Landroid/app/FragmentManager;");
-	}
-	void Fragment::onAttachFragment(__jni_impl::android::app::Fragment arg0)
-	{
-		__thiz.callMethod<void>(
-			"onAttachFragment",
-			"(Landroid/app/Fragment;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::onCreateOptionsMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::MenuInflater arg1)
-	{
-		__thiz.callMethod<void>(
-			"onCreateOptionsMenu",
-			"(Landroid/view/Menu;Landroid/view/MenuInflater;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void Fragment::onPrepareOptionsMenu(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onPrepareOptionsMenu",
-			"(Landroid/view/Menu;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean Fragment::onOptionsItemSelected(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onOptionsItemSelected",
-			"(Landroid/view/MenuItem;)Z",
-			arg0.__jniObject().object());
-	}
-	void Fragment::onOptionsMenuClosed(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onOptionsMenuClosed",
-			"(Landroid/view/Menu;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::onCreateContextMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"onCreateContextMenu",
-			"(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	void Fragment::registerForContextMenu(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerForContextMenu",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::unregisterForContextMenu(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterForContextMenu",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean Fragment::onContextItemSelected(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onContextItemSelected",
-			"(Landroid/view/MenuItem;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Fragment::getLayoutInflater()
-	{
-		return __thiz.callObjectMethod(
-			"getLayoutInflater",
-			"()Landroid/view/LayoutInflater;");
-	}
-	void Fragment::requestPermissions(jarray arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"requestPermissions",
-			"([Ljava/lang/String;I)V",
-			arg0,
-			arg1);
-	}
-	void Fragment::onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2)
-	{
-		__thiz.callMethod<void>(
-			"onRequestPermissionsResult",
-			"(I[Ljava/lang/String;[I)V",
-			arg0,
-			arg1,
-			arg2);
-	}
-	jboolean Fragment::shouldShowRequestPermissionRationale(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldShowRequestPermissionRationale",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	void Fragment::startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"startActivityForResult",
-			"(Landroid/content/Intent;ILandroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object());
-	}
-	void Fragment::startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"startActivityForResult",
-			"(Landroid/content/Intent;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void Fragment::startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::os::Bundle arg6)
-	{
-		__thiz.callMethod<void>(
-			"startIntentSenderForResult",
-			"(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3,
-			arg4,
-			arg5,
-			arg6.__jniObject().object());
-	}
-	void Fragment::onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2)
-	{
-		__thiz.callMethod<void>(
-			"onActivityResult",
-			"(IILandroid/content/Intent;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject Fragment::onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateView",
-			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	void Fragment::setEnterSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnterSharedElementCallback",
-			"(Landroid/app/SharedElementCallback;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::setExitSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExitSharedElementCallback",
-			"(Landroid/app/SharedElementCallback;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::postponeEnterTransition()
-	{
-		__thiz.callMethod<void>(
-			"postponeEnterTransition",
-			"()V");
-	}
-	void Fragment::startPostponedEnterTransition()
-	{
-		__thiz.callMethod<void>(
-			"startPostponedEnterTransition",
-			"()V");
-	}
-	QAndroidJniObject Fragment::getActivity()
-	{
-		return __thiz.callObjectMethod(
-			"getActivity",
-			"()Landroid/app/Activity;");
-	}
-	jboolean Fragment::isVisible()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVisible",
-			"()Z");
-	}
-	jboolean Fragment::isInLayout()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInLayout",
-			"()Z");
-	}
-	void Fragment::setEnterTransition(__jni_impl::android::transition::Transition arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnterTransition",
-			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::setReturnTransition(__jni_impl::android::transition::Transition arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReturnTransition",
-			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::setExitTransition(__jni_impl::android::transition::Transition arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExitTransition",
-			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::setReenterTransition(__jni_impl::android::transition::Transition arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReenterTransition",
-			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Fragment::getEnterTransition()
-	{
-		return __thiz.callObjectMethod(
-			"getEnterTransition",
-			"()Landroid/transition/Transition;");
-	}
-	QAndroidJniObject Fragment::getReturnTransition()
-	{
-		return __thiz.callObjectMethod(
-			"getReturnTransition",
-			"()Landroid/transition/Transition;");
-	}
-	QAndroidJniObject Fragment::getExitTransition()
-	{
-		return __thiz.callObjectMethod(
-			"getExitTransition",
-			"()Landroid/transition/Transition;");
-	}
-	QAndroidJniObject Fragment::getReenterTransition()
-	{
-		return __thiz.callObjectMethod(
-			"getReenterTransition",
-			"()Landroid/transition/Transition;");
-	}
-	void Fragment::setSharedElementEnterTransition(__jni_impl::android::transition::Transition arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSharedElementEnterTransition",
-			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object());
-	}
-	void Fragment::setSharedElementReturnTransition(__jni_impl::android::transition::Transition arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSharedElementReturnTransition",
-			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Fragment::getSharedElementEnterTransition()
-	{
-		return __thiz.callObjectMethod(
-			"getSharedElementEnterTransition",
-			"()Landroid/transition/Transition;");
-	}
-	QAndroidJniObject Fragment::getSharedElementReturnTransition()
-	{
-		return __thiz.callObjectMethod(
-			"getSharedElementReturnTransition",
-			"()Landroid/transition/Transition;");
-	}
-	void Fragment::setAllowEnterTransitionOverlap(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAllowEnterTransitionOverlap",
-			"(Z)V",
-			arg0);
-	}
-	jboolean Fragment::getAllowEnterTransitionOverlap()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowEnterTransitionOverlap",
-			"()Z");
-	}
-	void Fragment::setAllowReturnTransitionOverlap(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAllowReturnTransitionOverlap",
-			"(Z)V",
-			arg0);
-	}
-	jboolean Fragment::getAllowReturnTransitionOverlap()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowReturnTransitionOverlap",
-			"()Z");
 	}
 } // namespace __jni_impl::android::app
 

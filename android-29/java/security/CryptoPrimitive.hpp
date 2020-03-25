@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_CRYPTOPRIMITIVE
 #define JAVA_SECURITY_CRYPTOPRIMITIVE
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
 

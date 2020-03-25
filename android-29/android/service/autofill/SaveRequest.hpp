@@ -27,10 +27,10 @@ namespace __jni_impl::android::service::autofill
 		
 		// Methods
 		QAndroidJniObject getClientState();
-		QAndroidJniObject getFillContexts();
-		QAndroidJniObject getDatasetIds();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getFillContexts();
+		QAndroidJniObject getDatasetIds();
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -63,18 +63,6 @@ namespace __jni_impl::android::service::autofill
 			"getClientState",
 			"()Landroid/os/Bundle;");
 	}
-	QAndroidJniObject SaveRequest::getFillContexts()
-	{
-		return __thiz.callObjectMethod(
-			"getFillContexts",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject SaveRequest::getDatasetIds()
-	{
-		return __thiz.callObjectMethod(
-			"getDatasetIds",
-			"()Ljava/util/List;");
-	}
 	jint SaveRequest::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -88,6 +76,18 @@ namespace __jni_impl::android::service::autofill
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject SaveRequest::getFillContexts()
+	{
+		return __thiz.callObjectMethod(
+			"getFillContexts",
+			"()Ljava/util/List;");
+	}
+	QAndroidJniObject SaveRequest::getDatasetIds()
+	{
+		return __thiz.callObjectMethod(
+			"getDatasetIds",
+			"()Ljava/util/List;");
 	}
 } // namespace __jni_impl::android::service::autofill
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_PM_LABELEDINTENT
 #define ANDROID_CONTENT_PM_LABELEDINTENT
 
+#include "../../../__JniBaseClass.hpp"
 #include "../Intent.hpp"
 
 namespace __jni_impl::android::content
@@ -38,11 +39,11 @@ namespace __jni_impl::android::content::pm
 		
 		// Methods
 		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		jint getIconResource();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getSourcePackage();
 		jint getLabelResource();
 		QAndroidJniObject getNonLocalizedLabel();
-		jint getIconResource();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
 	};
@@ -112,6 +113,20 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/os/Parcel;)V",
 			arg0.__jniObject().object());
 	}
+	jint LabeledIntent::getIconResource()
+	{
+		return __thiz.callMethod<jint>(
+			"getIconResource",
+			"()I");
+	}
+	void LabeledIntent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	QAndroidJniObject LabeledIntent::getSourcePackage()
 	{
 		return __thiz.callObjectMethod(
@@ -129,20 +144,6 @@ namespace __jni_impl::android::content::pm
 		return __thiz.callObjectMethod(
 			"getNonLocalizedLabel",
 			"()Ljava/lang/CharSequence;");
-	}
-	jint LabeledIntent::getIconResource()
-	{
-		return __thiz.callMethod<jint>(
-			"getIconResource",
-			"()I");
-	}
-	void LabeledIntent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 	QAndroidJniObject LabeledIntent::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
 	{

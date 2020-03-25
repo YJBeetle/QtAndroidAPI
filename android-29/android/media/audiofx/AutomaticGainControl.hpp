@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_AUDIOFX_AUTOMATICGAINCONTROL
 #define ANDROID_MEDIA_AUDIOFX_AUTOMATICGAINCONTROL
 
+#include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
 

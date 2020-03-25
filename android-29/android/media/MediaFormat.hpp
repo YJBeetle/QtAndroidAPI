@@ -142,22 +142,20 @@ namespace __jni_impl::android::media
 		QAndroidJniObject toString();
 		jlong getLong(jstring arg0);
 		jlong getLong(jstring arg0, jlong arg1);
-		jfloat getFloat(jstring arg0, jfloat arg1);
 		jfloat getFloat(jstring arg0);
+		jfloat getFloat(jstring arg0, jfloat arg1);
 		jboolean containsKey(jstring arg0);
 		void setLong(jstring arg0, jlong arg1);
 		void setFloat(jstring arg0, jfloat arg1);
-		QAndroidJniObject getByteBuffer(jstring arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		QAndroidJniObject getByteBuffer(jstring arg0);
+		QAndroidJniObject getByteBuffer(jstring arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		jint getInteger(jstring arg0, jint arg1);
 		jint getInteger(jstring arg0);
-		QAndroidJniObject getString(jstring arg0);
 		QAndroidJniObject getString(jstring arg0, jstring arg1);
+		QAndroidJniObject getString(jstring arg0);
 		QAndroidJniObject getKeys();
 		QAndroidJniObject getNumber(jstring arg0);
 		QAndroidJniObject getNumber(jstring arg0, __jni_impl::java::lang::Number arg1);
-		QAndroidJniObject getFeatures();
-		void setString(jstring arg0, jstring arg1);
 		jboolean containsFeature(jstring arg0);
 		jint getValueTypeForKey(jstring arg0);
 		jboolean getFeatureEnabled(jstring arg0);
@@ -169,6 +167,8 @@ namespace __jni_impl::android::media
 		static QAndroidJniObject createAudioFormat(jstring arg0, jint arg1, jint arg2);
 		static QAndroidJniObject createSubtitleFormat(jstring arg0, jstring arg1);
 		static QAndroidJniObject createVideoFormat(jstring arg0, jint arg1, jint arg2);
+		void setString(jstring arg0, jstring arg1);
+		QAndroidJniObject getFeatures();
 	};
 } // namespace __jni_impl::android::media
 
@@ -991,6 +991,13 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1);
 	}
+	jfloat MediaFormat::getFloat(jstring arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFloat",
+			"(Ljava/lang/String;)F",
+			arg0);
+	}
 	jfloat MediaFormat::getFloat(jstring arg0, jfloat arg1)
 	{
 		return __thiz.callMethod<jfloat>(
@@ -998,13 +1005,6 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;F)F",
 			arg0,
 			arg1);
-	}
-	jfloat MediaFormat::getFloat(jstring arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFloat",
-			"(Ljava/lang/String;)F",
-			arg0);
 	}
 	jboolean MediaFormat::containsKey(jstring arg0)
 	{
@@ -1029,6 +1029,13 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1);
 	}
+	QAndroidJniObject MediaFormat::getByteBuffer(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getByteBuffer",
+			"(Ljava/lang/String;)Ljava/nio/ByteBuffer;",
+			arg0);
+	}
 	QAndroidJniObject MediaFormat::getByteBuffer(jstring arg0, __jni_impl::java::nio::ByteBuffer arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -1036,13 +1043,6 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
 			arg0,
 			arg1.__jniObject().object());
-	}
-	QAndroidJniObject MediaFormat::getByteBuffer(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getByteBuffer",
-			"(Ljava/lang/String;)Ljava/nio/ByteBuffer;",
-			arg0);
 	}
 	jint MediaFormat::getInteger(jstring arg0, jint arg1)
 	{
@@ -1059,13 +1059,6 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;)I",
 			arg0);
 	}
-	QAndroidJniObject MediaFormat::getString(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getString",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
-	}
 	QAndroidJniObject MediaFormat::getString(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -1073,6 +1066,13 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1);
+	}
+	QAndroidJniObject MediaFormat::getString(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getString",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0);
 	}
 	QAndroidJniObject MediaFormat::getKeys()
 	{
@@ -1094,20 +1094,6 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;Ljava/lang/Number;)Ljava/lang/Number;",
 			arg0,
 			arg1.__jniObject().object());
-	}
-	QAndroidJniObject MediaFormat::getFeatures()
-	{
-		return __thiz.callObjectMethod(
-			"getFeatures",
-			"()Ljava/util/Set;");
-	}
-	void MediaFormat::setString(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setString",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1);
 	}
 	jboolean MediaFormat::containsFeature(jstring arg0)
 	{
@@ -1196,6 +1182,20 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1,
 			arg2);
+	}
+	void MediaFormat::setString(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setString",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1);
+	}
+	QAndroidJniObject MediaFormat::getFeatures()
+	{
+		return __thiz.callObjectMethod(
+			"getFeatures",
+			"()Ljava/util/Set;");
 	}
 } // namespace __jni_impl::android::media
 

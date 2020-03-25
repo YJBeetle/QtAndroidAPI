@@ -9,13 +9,13 @@ namespace __jni_impl::android::content
 {
 	class SyncRequest;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::accounts
 {
 	class Account;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::content
@@ -30,9 +30,9 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
-		QAndroidJniObject syncPeriodic(jlong arg0, jlong arg1);
+		QAndroidJniObject setRequiresCharging(jboolean arg0);
 		QAndroidJniObject syncOnce();
+		QAndroidJniObject syncPeriodic(jlong arg0, jlong arg1);
 		QAndroidJniObject setDisallowMetered(jboolean arg0);
 		QAndroidJniObject setSyncAdapter(__jni_impl::android::accounts::Account arg0, jstring arg1);
 		QAndroidJniObject setNoRetry(jboolean arg0);
@@ -40,13 +40,13 @@ namespace __jni_impl::android::content
 		QAndroidJniObject setIgnoreBackoff(jboolean arg0);
 		QAndroidJniObject setManual(jboolean arg0);
 		QAndroidJniObject setExpedited(jboolean arg0);
-		QAndroidJniObject setRequiresCharging(jboolean arg0);
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::content
 
 #include "SyncRequest.hpp"
-#include "../os/Bundle.hpp"
 #include "../accounts/Account.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -67,12 +67,18 @@ namespace __jni_impl::android::content
 			"build",
 			"()Landroid/content/SyncRequest;");
 	}
-	QAndroidJniObject SyncRequest_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	QAndroidJniObject SyncRequest_Builder::setRequiresCharging(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/content/SyncRequest$Builder;",
-			arg0.__jniObject().object());
+			"setRequiresCharging",
+			"(Z)Landroid/content/SyncRequest$Builder;",
+			arg0);
+	}
+	QAndroidJniObject SyncRequest_Builder::syncOnce()
+	{
+		return __thiz.callObjectMethod(
+			"syncOnce",
+			"()Landroid/content/SyncRequest$Builder;");
 	}
 	QAndroidJniObject SyncRequest_Builder::syncPeriodic(jlong arg0, jlong arg1)
 	{
@@ -81,12 +87,6 @@ namespace __jni_impl::android::content
 			"(JJ)Landroid/content/SyncRequest$Builder;",
 			arg0,
 			arg1);
-	}
-	QAndroidJniObject SyncRequest_Builder::syncOnce()
-	{
-		return __thiz.callObjectMethod(
-			"syncOnce",
-			"()Landroid/content/SyncRequest$Builder;");
 	}
 	QAndroidJniObject SyncRequest_Builder::setDisallowMetered(jboolean arg0)
 	{
@@ -138,12 +138,12 @@ namespace __jni_impl::android::content
 			"(Z)Landroid/content/SyncRequest$Builder;",
 			arg0);
 	}
-	QAndroidJniObject SyncRequest_Builder::setRequiresCharging(jboolean arg0)
+	QAndroidJniObject SyncRequest_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setRequiresCharging",
-			"(Z)Landroid/content/SyncRequest$Builder;",
-			arg0);
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/content/SyncRequest$Builder;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::content
 

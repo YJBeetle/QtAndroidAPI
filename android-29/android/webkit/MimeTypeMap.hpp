@@ -17,12 +17,12 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		jboolean hasExtension(jstring arg0);
-		QAndroidJniObject getExtensionFromMimeType(jstring arg0);
-		static QAndroidJniObject getSingleton();
 		static QAndroidJniObject getFileExtensionFromUrl(jstring arg0);
 		jboolean hasMimeType(jstring arg0);
 		QAndroidJniObject getMimeTypeFromExtension(jstring arg0);
+		jboolean hasExtension(jstring arg0);
+		QAndroidJniObject getExtensionFromMimeType(jstring arg0);
+		static QAndroidJniObject getSingleton();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -40,27 +40,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jboolean MimeTypeMap::hasExtension(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasExtension",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	QAndroidJniObject MimeTypeMap::getExtensionFromMimeType(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getExtensionFromMimeType",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject MimeTypeMap::getSingleton()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.MimeTypeMap",
-			"getSingleton",
-			"()Landroid/webkit/MimeTypeMap;");
-	}
 	QAndroidJniObject MimeTypeMap::getFileExtensionFromUrl(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -82,6 +61,27 @@ namespace __jni_impl::android::webkit
 			"getMimeTypeFromExtension",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0);
+	}
+	jboolean MimeTypeMap::hasExtension(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasExtension",
+			"(Ljava/lang/String;)Z",
+			arg0);
+	}
+	QAndroidJniObject MimeTypeMap::getExtensionFromMimeType(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getExtensionFromMimeType",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0);
+	}
+	QAndroidJniObject MimeTypeMap::getSingleton()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.MimeTypeMap",
+			"getSingleton",
+			"()Landroid/webkit/MimeTypeMap;");
 	}
 } // namespace __jni_impl::android::webkit
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_VIRTUALMACHINEERROR
 #define JAVA_LANG_VIRTUALMACHINEERROR
 
+#include "../../__JniBaseClass.hpp"
 #include "Error.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_DATEFORMAT_BOOLEANATTRIBUTE
 #define ANDROID_ICU_TEXT_DATEFORMAT_BOOLEANATTRIBUTE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

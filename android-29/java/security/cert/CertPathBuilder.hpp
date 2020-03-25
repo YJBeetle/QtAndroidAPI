@@ -30,9 +30,9 @@ namespace __jni_impl::java::security::cert
 		static QAndroidJniObject getInstance(jstring arg0);
 		QAndroidJniObject build(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getProvider();
-		QAndroidJniObject getRevocationChecker();
 		static QAndroidJniObject getDefaultType();
 		QAndroidJniObject getAlgorithm();
+		QAndroidJniObject getRevocationChecker();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -91,12 +91,6 @@ namespace __jni_impl::java::security::cert
 			"getProvider",
 			"()Ljava/security/Provider;");
 	}
-	QAndroidJniObject CertPathBuilder::getRevocationChecker()
-	{
-		return __thiz.callObjectMethod(
-			"getRevocationChecker",
-			"()Ljava/security/cert/CertPathChecker;");
-	}
 	QAndroidJniObject CertPathBuilder::getDefaultType()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -109,6 +103,12 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject CertPathBuilder::getRevocationChecker()
+	{
+		return __thiz.callObjectMethod(
+			"getRevocationChecker",
+			"()Ljava/security/cert/CertPathChecker;");
 	}
 } // namespace __jni_impl::java::security::cert
 

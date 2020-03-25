@@ -3,6 +3,9 @@
 #ifndef JAVA_IO_NOTSERIALIZABLEEXCEPTION
 #define JAVA_IO_NOTSERIALIZABLEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "IOException.hpp"
 #include "ObjectStreamException.hpp"
 
 

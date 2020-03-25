@@ -3,6 +3,8 @@
 #ifndef ANDROID_GRAPHICS_IMAGEDECODER_DECODEEXCEPTION
 #define ANDROID_GRAPHICS_IMAGEDECODER_DECODEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
 
 namespace __jni_impl::android::graphics

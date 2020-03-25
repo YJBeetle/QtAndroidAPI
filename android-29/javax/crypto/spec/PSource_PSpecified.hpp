@@ -3,6 +3,7 @@
 #ifndef JAVAX_CRYPTO_SPEC_PSOURCE_PSPECIFIED
 #define JAVAX_CRYPTO_SPEC_PSOURCE_PSPECIFIED
 
+#include "../../../__JniBaseClass.hpp"
 #include "PSource.hpp"
 
 

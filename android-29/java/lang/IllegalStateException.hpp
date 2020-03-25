@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_ILLEGALSTATEEXCEPTION
 #define JAVA_LANG_ILLEGALSTATEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "RuntimeException.hpp"
 
 

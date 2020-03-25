@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_ADAPTIVEICONDRAWABLE
 #define ANDROID_GRAPHICS_DRAWABLE_ADAPTIVEICONDRAWABLE
 
+#include "../../../__JniBaseClass.hpp"
 #include "Drawable.hpp"
 
 namespace __jni_impl::android::graphics::drawable
@@ -16,14 +17,6 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::content::res
 {
 	class Resources_Theme;
-}
-namespace __jni_impl::android::content::res
-{
-	class ColorStateList;
-}
-namespace __jni_impl::android::graphics
-{
-	class BlendMode;
 }
 namespace __jni_impl::android::graphics
 {
@@ -41,9 +34,13 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable_ConstantState;
 }
+namespace __jni_impl::android::content::res
+{
+	class ColorStateList;
+}
 namespace __jni_impl::android::graphics
 {
-	class ColorFilter;
+	class BlendMode;
 }
 namespace __jni_impl::android::graphics
 {
@@ -52,6 +49,10 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class Path;
+}
+namespace __jni_impl::android::graphics
+{
+	class ColorFilter;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -67,8 +68,6 @@ namespace __jni_impl::android::graphics::drawable
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
 		void setAlpha(jint arg0);
-		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
-		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
 		void invalidateSelf();
 		void setHotspot(jfloat arg0, jfloat arg1);
 		void setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3);
@@ -87,10 +86,9 @@ namespace __jni_impl::android::graphics::drawable
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		QAndroidJniObject mutate();
 		QAndroidJniObject getConstantState();
-		void setDither(jboolean arg0);
-		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
-		jint getChangingConfigurations();
-		jboolean setVisible(jboolean arg0, jboolean arg1);
+		void setOpacity(jint arg0);
+		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
+		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
 		jint getAlpha();
 		void draw(__jni_impl::android::graphics::Canvas arg0);
 		void invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
@@ -98,24 +96,27 @@ namespace __jni_impl::android::graphics::drawable
 		void unscheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject getBackground();
 		QAndroidJniObject getForeground();
-		void setOpacity(jint arg0);
+		jint getChangingConfigurations();
+		jboolean setVisible(jboolean arg0, jboolean arg1);
 		static jfloat getExtraInsetFraction();
 		QAndroidJniObject getIconMask();
+		void setDither(jboolean arg0);
+		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
 #include "Drawable.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
-#include "../../content/res/ColorStateList.hpp"
-#include "../BlendMode.hpp"
 #include "../Rect.hpp"
 #include "../Region.hpp"
 #include "../Outline.hpp"
 #include "Drawable_ConstantState.hpp"
-#include "../ColorFilter.hpp"
+#include "../../content/res/ColorStateList.hpp"
+#include "../BlendMode.hpp"
 #include "../Canvas.hpp"
 #include "../Path.hpp"
+#include "../ColorFilter.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -148,20 +149,6 @@ namespace __jni_impl::android::graphics::drawable
 			"setAlpha",
 			"(I)V",
 			arg0);
-	}
-	void AdaptiveIconDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object());
-	}
-	void AdaptiveIconDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object());
 	}
 	void AdaptiveIconDrawable::invalidateSelf()
 	{
@@ -281,33 +268,26 @@ namespace __jni_impl::android::graphics::drawable
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;");
 	}
-	void AdaptiveIconDrawable::setDither(jboolean arg0)
+	void AdaptiveIconDrawable::setOpacity(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDither",
-			"(Z)V",
+			"setOpacity",
+			"(I)V",
 			arg0);
 	}
-	void AdaptiveIconDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
+	void AdaptiveIconDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
 	{
 		__thiz.callMethod<void>(
-			"setColorFilter",
-			"(Landroid/graphics/ColorFilter;)V",
+			"setTintList",
+			"(Landroid/content/res/ColorStateList;)V",
 			arg0.__jniObject().object());
 	}
-	jint AdaptiveIconDrawable::getChangingConfigurations()
+	void AdaptiveIconDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getChangingConfigurations",
-			"()I");
-	}
-	jboolean AdaptiveIconDrawable::setVisible(jboolean arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setVisible",
-			"(ZZ)Z",
-			arg0,
-			arg1);
+		__thiz.callMethod<void>(
+			"setTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object());
 	}
 	jint AdaptiveIconDrawable::getAlpha()
 	{
@@ -358,12 +338,19 @@ namespace __jni_impl::android::graphics::drawable
 			"getForeground",
 			"()Landroid/graphics/drawable/Drawable;");
 	}
-	void AdaptiveIconDrawable::setOpacity(jint arg0)
+	jint AdaptiveIconDrawable::getChangingConfigurations()
 	{
-		__thiz.callMethod<void>(
-			"setOpacity",
-			"(I)V",
-			arg0);
+		return __thiz.callMethod<jint>(
+			"getChangingConfigurations",
+			"()I");
+	}
+	jboolean AdaptiveIconDrawable::setVisible(jboolean arg0, jboolean arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setVisible",
+			"(ZZ)Z",
+			arg0,
+			arg1);
 	}
 	jfloat AdaptiveIconDrawable::getExtraInsetFraction()
 	{
@@ -377,6 +364,20 @@ namespace __jni_impl::android::graphics::drawable
 		return __thiz.callObjectMethod(
 			"getIconMask",
 			"()Landroid/graphics/Path;");
+	}
+	void AdaptiveIconDrawable::setDither(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDither",
+			"(Z)V",
+			arg0);
+	}
+	void AdaptiveIconDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorFilter",
+			"(Landroid/graphics/ColorFilter;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

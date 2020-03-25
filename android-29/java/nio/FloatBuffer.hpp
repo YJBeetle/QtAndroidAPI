@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_FLOATBUFFER
 #define JAVA_NIO_FLOATBUFFER
 
+#include "../../__JniBaseClass.hpp"
 #include "Buffer.hpp"
 
 namespace __jni_impl::java::nio

@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_METHOD_SCROLLINGMOVEMENTMETHOD
 #define ANDROID_TEXT_METHOD_SCROLLINGMOVEMENTMETHOD
 
+#include "../../../__JniBaseClass.hpp"
 #include "BaseMovementMethod.hpp"
 
 namespace __jni_impl::android::widget

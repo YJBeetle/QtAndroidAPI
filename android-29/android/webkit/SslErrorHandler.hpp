@@ -3,6 +3,7 @@
 #ifndef ANDROID_WEBKIT_SSLERRORHANDLER
 #define ANDROID_WEBKIT_SSLERRORHANDLER
 
+#include "../../__JniBaseClass.hpp"
 #include "../os/Handler.hpp"
 
 

@@ -29,9 +29,9 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		void setEapType(jint arg0);
 		jint getEapType();
 		void setImsi(jstring arg0);
-		QAndroidJniObject getImsi();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getImsi();
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
 
@@ -103,12 +103,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			"(Ljava/lang/String;)V",
 			arg0);
 	}
-	QAndroidJniObject Credential_SimCredential::getImsi()
-	{
-		return __thiz.callObjectMethod(
-			"getImsi",
-			"()Ljava/lang/String;");
-	}
 	jint Credential_SimCredential::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -122,6 +116,12 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject Credential_SimCredential::getImsi()
+	{
+		return __thiz.callObjectMethod(
+			"getImsi",
+			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
 

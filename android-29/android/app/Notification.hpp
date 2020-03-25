@@ -178,6 +178,7 @@ namespace __jni_impl::android::app
 		// Methods
 		QAndroidJniObject toString();
 		QAndroidJniObject clone();
+		QAndroidJniObject getGroup();
 		QAndroidJniObject getSortKey();
 		QAndroidJniObject getChannelId();
 		jlong getTimeoutAfter();
@@ -192,7 +193,6 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getLargeIcon();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getGroup();
 	};
 } // namespace __jni_impl::android::app
 
@@ -994,6 +994,12 @@ namespace __jni_impl::android::app
 			"clone",
 			"()Landroid/app/Notification;");
 	}
+	QAndroidJniObject Notification::getGroup()
+	{
+		return __thiz.callObjectMethod(
+			"getGroup",
+			"()Ljava/lang/String;");
+	}
 	QAndroidJniObject Notification::getSortKey()
 	{
 		return __thiz.callObjectMethod(
@@ -1079,12 +1085,6 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject Notification::getGroup()
-	{
-		return __thiz.callObjectMethod(
-			"getGroup",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::app
 

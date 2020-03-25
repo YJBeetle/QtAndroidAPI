@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_THREADPOOLEXECUTOR
 #define JAVA_UTIL_CONCURRENT_THREADPOOLEXECUTOR
 
+#include "../../../__JniBaseClass.hpp"
 #include "AbstractExecutorService.hpp"
 
 namespace __jni_impl::java::util::concurrent::atomic

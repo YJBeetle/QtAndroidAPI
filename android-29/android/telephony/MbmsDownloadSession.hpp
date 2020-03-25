@@ -13,13 +13,13 @@ namespace __jni_impl::android::telephony::mbms
 {
 	class MbmsDownloadSessionCallback;
 }
-namespace __jni_impl::java::io
-{
-	class File;
-}
 namespace __jni_impl::android::telephony::mbms
 {
 	class DownloadRequest;
+}
+namespace __jni_impl::java::io
+{
+	class File;
 }
 namespace __jni_impl::android::telephony::mbms
 {
@@ -64,8 +64,9 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		void close();
-		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::telephony::mbms::MbmsDownloadSessionCallback arg2);
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::telephony::mbms::MbmsDownloadSessionCallback arg3);
+		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::telephony::mbms::MbmsDownloadSessionCallback arg2);
+		void download(__jni_impl::android::telephony::mbms::DownloadRequest arg0);
 		void requestUpdateFileServices(__jni_impl::__JniBaseClass arg0);
 		void setTempFileRootDirectory(__jni_impl::java::io::File arg0);
 		QAndroidJniObject getTempFileRootDirectory();
@@ -77,14 +78,13 @@ namespace __jni_impl::android::telephony
 		void cancelDownload(__jni_impl::android::telephony::mbms::DownloadRequest arg0);
 		void requestDownloadState(__jni_impl::android::telephony::mbms::DownloadRequest arg0, __jni_impl::android::telephony::mbms::FileInfo arg1);
 		void resetDownloadKnowledge(__jni_impl::android::telephony::mbms::DownloadRequest arg0);
-		void download(__jni_impl::android::telephony::mbms::DownloadRequest arg0);
 	};
 } // namespace __jni_impl::android::telephony
 
 #include "../content/Context.hpp"
 #include "mbms/MbmsDownloadSessionCallback.hpp"
-#include "../../java/io/File.hpp"
 #include "mbms/DownloadRequest.hpp"
+#include "../../java/io/File.hpp"
 #include "mbms/DownloadStatusListener.hpp"
 #include "mbms/DownloadProgressListener.hpp"
 #include "mbms/FileInfo.hpp"
@@ -221,16 +221,6 @@ namespace __jni_impl::android::telephony
 			"close",
 			"()V");
 	}
-	QAndroidJniObject MbmsDownloadSession::create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::telephony::mbms::MbmsDownloadSessionCallback arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.MbmsDownloadSession",
-			"create",
-			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsDownloadSessionCallback;)Landroid/telephony/MbmsDownloadSession;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
 	QAndroidJniObject MbmsDownloadSession::create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::telephony::mbms::MbmsDownloadSessionCallback arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -241,6 +231,23 @@ namespace __jni_impl::android::telephony
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object());
+	}
+	QAndroidJniObject MbmsDownloadSession::create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::telephony::mbms::MbmsDownloadSessionCallback arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.MbmsDownloadSession",
+			"create",
+			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsDownloadSessionCallback;)Landroid/telephony/MbmsDownloadSession;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	void MbmsDownloadSession::download(__jni_impl::android::telephony::mbms::DownloadRequest arg0)
+	{
+		__thiz.callMethod<void>(
+			"download",
+			"(Landroid/telephony/mbms/DownloadRequest;)V",
+			arg0.__jniObject().object());
 	}
 	void MbmsDownloadSession::requestUpdateFileServices(__jni_impl::__JniBaseClass arg0)
 	{
@@ -321,13 +328,6 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz.callMethod<void>(
 			"resetDownloadKnowledge",
-			"(Landroid/telephony/mbms/DownloadRequest;)V",
-			arg0.__jniObject().object());
-	}
-	void MbmsDownloadSession::download(__jni_impl::android::telephony::mbms::DownloadRequest arg0)
-	{
-		__thiz.callMethod<void>(
-			"download",
 			"(Landroid/telephony/mbms/DownloadRequest;)V",
 			arg0.__jniObject().object());
 	}

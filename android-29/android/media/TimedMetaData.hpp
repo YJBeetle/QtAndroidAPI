@@ -17,8 +17,8 @@ namespace __jni_impl::android::media
 		void __constructor(jlong arg0, jbyteArray arg1);
 		
 		// Methods
-		jlong getTimestamp();
 		QAndroidJniObject getMetaData();
+		jlong getTimestamp();
 	};
 } // namespace __jni_impl::android::media
 
@@ -38,17 +38,17 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jlong TimedMetaData::getTimestamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimestamp",
-			"()J");
-	}
 	QAndroidJniObject TimedMetaData::getMetaData()
 	{
 		return __thiz.callObjectMethod(
 			"getMetaData",
 			"()[B");
+	}
+	jlong TimedMetaData::getTimestamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimestamp",
+			"()J");
 	}
 } // namespace __jni_impl::android::media
 

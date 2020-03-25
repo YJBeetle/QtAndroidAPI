@@ -3,6 +3,7 @@
 #ifndef ANDROID_WIDGET_SPACE
 #define ANDROID_WIDGET_SPACE
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::content

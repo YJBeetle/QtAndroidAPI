@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_PAINT_ALIGN
 #define ANDROID_GRAPHICS_PAINT_ALIGN
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

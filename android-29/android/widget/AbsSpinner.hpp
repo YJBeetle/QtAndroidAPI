@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_ABSSPINNER
 #define ANDROID_WIDGET_ABSSPINNER
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "AdapterView.hpp"
 
 namespace __jni_impl::android::content
@@ -42,18 +45,18 @@ namespace __jni_impl::android::widget
 		// Methods
 		jint getCount();
 		QAndroidJniObject getAdapter();
-		jint pointToPosition(jint arg0, jint arg1);
 		void setAdapter(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getSelectedView();
 		void setSelection(jint arg0, jboolean arg1);
 		void setSelection(jint arg0);
-		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
+		jint pointToPosition(jint arg0, jint arg1);
 		QAndroidJniObject getAccessibilityClassName();
 		void requestLayout();
 		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
 		jint getAutofillType();
 		QAndroidJniObject getAutofillValue();
+		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onSaveInstanceState();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -116,14 +119,6 @@ namespace __jni_impl::android::widget
 			"getAdapter",
 			"()Landroid/widget/SpinnerAdapter;");
 	}
-	jint AbsSpinner::pointToPosition(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"pointToPosition",
-			"(II)I",
-			arg0,
-			arg1);
-	}
 	void AbsSpinner::setAdapter(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -152,18 +147,13 @@ namespace __jni_impl::android::widget
 			"(I)V",
 			arg0);
 	}
-	void AbsSpinner::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
+	jint AbsSpinner::pointToPosition(jint arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
-			"onRestoreInstanceState",
-			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AbsSpinner::onSaveInstanceState()
-	{
-		return __thiz.callObjectMethod(
-			"onSaveInstanceState",
-			"()Landroid/os/Parcelable;");
+		return __thiz.callMethod<jint>(
+			"pointToPosition",
+			"(II)I",
+			arg0,
+			arg1);
 	}
 	QAndroidJniObject AbsSpinner::getAccessibilityClassName()
 	{
@@ -195,6 +185,19 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;");
+	}
+	void AbsSpinner::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onRestoreInstanceState",
+			"(Landroid/os/Parcelable;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject AbsSpinner::onSaveInstanceState()
+	{
+		return __thiz.callObjectMethod(
+			"onSaveInstanceState",
+			"()Landroid/os/Parcelable;");
 	}
 } // namespace __jni_impl::android::widget
 

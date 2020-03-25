@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_PM_PATHPERMISSION
 #define ANDROID_CONTENT_PM_PATHPERMISSION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../os/PatternMatcher.hpp"
 
 namespace __jni_impl::android::os

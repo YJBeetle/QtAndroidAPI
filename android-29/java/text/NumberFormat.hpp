@@ -3,6 +3,7 @@
 #ifndef JAVA_TEXT_NUMBERFORMAT
 #define JAVA_TEXT_NUMBERFORMAT
 
+#include "../../__JniBaseClass.hpp"
 #include "Format.hpp"
 
 namespace __jni_impl::java::lang

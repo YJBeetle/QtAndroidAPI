@@ -27,8 +27,8 @@ namespace __jni_impl::android::app
 		// Methods
 		QAndroidJniObject setName(jstring arg0);
 		QAndroidJniObject build();
-		QAndroidJniObject setUri(jstring arg0);
 		QAndroidJniObject setIcon(__jni_impl::android::graphics::drawable::Icon arg0);
+		QAndroidJniObject setUri(jstring arg0);
 		QAndroidJniObject setImportant(jboolean arg0);
 		QAndroidJniObject setKey(jstring arg0);
 		QAndroidJniObject setBot(jboolean arg0);
@@ -64,19 +64,19 @@ namespace __jni_impl::android::app
 			"build",
 			"()Landroid/app/Person;");
 	}
-	QAndroidJniObject Person_Builder::setUri(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setUri",
-			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
-			arg0);
-	}
 	QAndroidJniObject Person_Builder::setIcon(__jni_impl::android::graphics::drawable::Icon arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIcon",
 			"(Landroid/graphics/drawable/Icon;)Landroid/app/Person$Builder;",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Person_Builder::setUri(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setUri",
+			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
+			arg0);
 	}
 	QAndroidJniObject Person_Builder::setImportant(jboolean arg0)
 	{

@@ -26,9 +26,9 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		void stop();
-		void setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0);
-		QAndroidJniObject getTitle(__jni_impl::android::content::Context arg0);
 		QAndroidJniObject getAudioAttributes();
+		QAndroidJniObject getTitle(__jni_impl::android::content::Context arg0);
+		void setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0);
 		void setLooping(jboolean arg0);
 		jboolean isLooping();
 		void setVolume(jfloat arg0);
@@ -62,12 +62,11 @@ namespace __jni_impl::android::media
 			"stop",
 			"()V");
 	}
-	void Ringtone::setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0)
+	QAndroidJniObject Ringtone::getAudioAttributes()
 	{
-		__thiz.callMethod<void>(
-			"setAudioAttributes",
-			"(Landroid/media/AudioAttributes;)V",
-			arg0.__jniObject().object());
+		return __thiz.callObjectMethod(
+			"getAudioAttributes",
+			"()Landroid/media/AudioAttributes;");
 	}
 	QAndroidJniObject Ringtone::getTitle(__jni_impl::android::content::Context arg0)
 	{
@@ -76,11 +75,12 @@ namespace __jni_impl::android::media
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject Ringtone::getAudioAttributes()
+	void Ringtone::setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getAudioAttributes",
-			"()Landroid/media/AudioAttributes;");
+		__thiz.callMethod<void>(
+			"setAudioAttributes",
+			"(Landroid/media/AudioAttributes;)V",
+			arg0.__jniObject().object());
 	}
 	void Ringtone::setLooping(jboolean arg0)
 	{

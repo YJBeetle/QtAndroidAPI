@@ -3,6 +3,8 @@
 #ifndef JAVA_NET_PROTOCOLEXCEPTION
 #define JAVA_NET_PROTOCOLEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_SECURITY_KEYCHAINEXCEPTION
 #define ANDROID_SECURITY_KEYCHAINEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 

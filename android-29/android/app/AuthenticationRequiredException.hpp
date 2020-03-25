@@ -3,6 +3,9 @@
 #ifndef ANDROID_APP_AUTHENTICATIONREQUIREDEXCEPTION
 #define ANDROID_APP_AUTHENTICATIONREQUIREDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/SecurityException.hpp"
 
 namespace __jni_impl::android::app

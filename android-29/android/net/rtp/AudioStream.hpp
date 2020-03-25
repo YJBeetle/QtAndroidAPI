@@ -3,6 +3,7 @@
 #ifndef ANDROID_NET_RTP_AUDIOSTREAM
 #define ANDROID_NET_RTP_AUDIOSTREAM
 
+#include "../../../__JniBaseClass.hpp"
 #include "RtpStream.hpp"
 
 namespace __jni_impl::java::net

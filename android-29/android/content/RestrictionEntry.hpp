@@ -44,13 +44,8 @@ namespace __jni_impl::android::content
 		jint hashCode();
 		QAndroidJniObject getKey();
 		jint getType();
-		QAndroidJniObject getDescription();
-		void setType(jint arg0);
 		void setDescription(jstring arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void setTitle(jstring arg0);
-		QAndroidJniObject getTitle();
+		jint getIntValue();
 		static QAndroidJniObject createBundleEntry(jstring arg0, jarray arg1);
 		static QAndroidJniObject createBundleArrayEntry(jstring arg0, jarray arg1);
 		QAndroidJniObject getSelectedString();
@@ -60,15 +55,20 @@ namespace __jni_impl::android::content
 		void setSelectedString(jstring arg0);
 		void setSelectedState(jboolean arg0);
 		void setAllSelectedStrings(jarray arg0);
-		void setChoiceValues(__jni_impl::android::content::Context arg0, jint arg1);
 		void setChoiceValues(jarray arg0);
+		void setChoiceValues(__jni_impl::android::content::Context arg0, jint arg1);
 		QAndroidJniObject getRestrictions();
 		void setRestrictions(jarray arg0);
 		QAndroidJniObject getChoiceValues();
 		void setChoiceEntries(jarray arg0);
 		void setChoiceEntries(__jni_impl::android::content::Context arg0, jint arg1);
 		QAndroidJniObject getChoiceEntries();
-		jint getIntValue();
+		void setType(jint arg0);
+		void setTitle(jstring arg0);
+		QAndroidJniObject getTitle();
+		QAndroidJniObject getDescription();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
@@ -215,19 +215,6 @@ namespace __jni_impl::android::content
 			"getType",
 			"()I");
 	}
-	QAndroidJniObject RestrictionEntry::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
-	}
-	void RestrictionEntry::setType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setType",
-			"(I)V",
-			arg0);
-	}
 	void RestrictionEntry::setDescription(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -235,32 +222,11 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;)V",
 			arg0);
 	}
-	jint RestrictionEntry::describeContents()
+	jint RestrictionEntry::getIntValue()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getIntValue",
 			"()I");
-	}
-	void RestrictionEntry::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void RestrictionEntry::setTitle(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
-	QAndroidJniObject RestrictionEntry::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/String;");
 	}
 	QAndroidJniObject RestrictionEntry::createBundleEntry(jstring arg0, jarray arg1)
 	{
@@ -326,6 +292,13 @@ namespace __jni_impl::android::content
 			"([Ljava/lang/String;)V",
 			arg0);
 	}
+	void RestrictionEntry::setChoiceValues(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setChoiceValues",
+			"([Ljava/lang/String;)V",
+			arg0);
+	}
 	void RestrictionEntry::setChoiceValues(__jni_impl::android::content::Context arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -333,13 +306,6 @@ namespace __jni_impl::android::content
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	void RestrictionEntry::setChoiceValues(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setChoiceValues",
-			"([Ljava/lang/String;)V",
-			arg0);
 	}
 	QAndroidJniObject RestrictionEntry::getRestrictions()
 	{
@@ -381,11 +347,45 @@ namespace __jni_impl::android::content
 			"getChoiceEntries",
 			"()[Ljava/lang/String;");
 	}
-	jint RestrictionEntry::getIntValue()
+	void RestrictionEntry::setType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setType",
+			"(I)V",
+			arg0);
+	}
+	void RestrictionEntry::setTitle(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	QAndroidJniObject RestrictionEntry::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject RestrictionEntry::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;");
+	}
+	jint RestrictionEntry::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getIntValue",
+			"describeContents",
 			"()I");
+	}
+	void RestrictionEntry::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::content
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_STYLE_FOREGROUNDCOLORSPAN
 #define ANDROID_TEXT_STYLE_FOREGROUNDCOLORSPAN
 
+#include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
 namespace __jni_impl::android::os

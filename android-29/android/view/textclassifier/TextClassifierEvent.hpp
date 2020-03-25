@@ -17,13 +17,13 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::view::textclassifier
-{
-	class TextClassificationContext;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextClassificationContext;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -65,6 +65,9 @@ namespace __jni_impl::android::view::textclassifier
 		QAndroidJniObject toString();
 		QAndroidJniObject getLocale();
 		QAndroidJniObject getExtras();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getEventType();
 		jint getEventCategory();
 		QAndroidJniObject getEntityTypes();
 		QAndroidJniObject getEventContext();
@@ -73,17 +76,14 @@ namespace __jni_impl::android::view::textclassifier
 		QAndroidJniObject getScores();
 		QAndroidJniObject getModelName();
 		QAndroidJniObject getActionIndices();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getEventType();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "TextClassifierEvent_Builder.hpp"
 #include "../../icu/util/ULocale.hpp"
 #include "../../os/Bundle.hpp"
-#include "TextClassificationContext.hpp"
 #include "../../os/Parcel.hpp"
+#include "TextClassificationContext.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -267,6 +267,26 @@ namespace __jni_impl::android::view::textclassifier
 			"getExtras",
 			"()Landroid/os/Bundle;");
 	}
+	jint TextClassifierEvent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void TextClassifierEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jint TextClassifierEvent::getEventType()
+	{
+		return __thiz.callMethod<jint>(
+			"getEventType",
+			"()I");
+	}
 	jint TextClassifierEvent::getEventCategory()
 	{
 		return __thiz.callMethod<jint>(
@@ -314,26 +334,6 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"getActionIndices",
 			"()[I");
-	}
-	jint TextClassifierEvent::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void TextClassifierEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	jint TextClassifierEvent::getEventType()
-	{
-		return __thiz.callMethod<jint>(
-			"getEventType",
-			"()I");
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

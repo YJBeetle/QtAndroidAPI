@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_STYLE_UNDERLINESPAN
 #define ANDROID_TEXT_STYLE_UNDERLINESPAN
 
+#include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
 namespace __jni_impl::android::os

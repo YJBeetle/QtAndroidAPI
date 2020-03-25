@@ -3,6 +3,8 @@
 #ifndef ANDROID_VIEW_INFLATEEXCEPTION
 #define ANDROID_VIEW_INFLATEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

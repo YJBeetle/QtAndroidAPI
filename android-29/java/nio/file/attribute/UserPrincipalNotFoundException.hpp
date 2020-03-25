@@ -3,6 +3,8 @@
 #ifndef JAVA_NIO_FILE_ATTRIBUTE_USERPRINCIPALNOTFOUNDEXCEPTION
 #define JAVA_NIO_FILE_ATTRIBUTE_USERPRINCIPALNOTFOUNDEXCEPTION
 
+#include "../../../../__JniBaseClass.hpp"
+#include "../../../lang/Exception.hpp"
 #include "../../../io/IOException.hpp"
 
 

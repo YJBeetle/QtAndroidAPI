@@ -31,13 +31,13 @@ namespace __jni_impl::android::net
 		jint hashCode();
 		QAndroidJniObject getHost();
 		jint getPort();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1);
 		static QAndroidJniObject buildPacProxy(__jni_impl::android::net::Uri arg0);
 		QAndroidJniObject getPacFileUrl();
 		QAndroidJniObject getExclusionList();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net
 
@@ -95,6 +95,20 @@ namespace __jni_impl::android::net
 			"getPort",
 			"()I");
 	}
+	jint ProxyInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void ProxyInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	QAndroidJniObject ProxyInfo::buildDirectProxy(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -133,20 +147,6 @@ namespace __jni_impl::android::net
 		return __thiz.callObjectMethod(
 			"getExclusionList",
 			"()[Ljava/lang/String;");
-	}
-	jint ProxyInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void ProxyInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::net
 

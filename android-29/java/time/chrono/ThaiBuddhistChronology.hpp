@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_CHRONO_THAIBUDDHISTCHRONOLOGY
 #define JAVA_TIME_CHRONO_THAIBUDDHISTCHRONOLOGY
 
+#include "../../../__JniBaseClass.hpp"
 #include "AbstractChronology.hpp"
 
 namespace __jni_impl::java::util

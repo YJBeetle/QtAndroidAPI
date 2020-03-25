@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_CONCURRENT_LINKEDBLOCKINGQUEUE
 #define JAVA_UTIL_CONCURRENT_LINKEDBLOCKINGQUEUE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
 namespace __jni_impl::java::util::concurrent::atomic

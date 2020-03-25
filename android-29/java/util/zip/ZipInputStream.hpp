@@ -3,6 +3,9 @@
 #ifndef JAVA_UTIL_ZIP_ZIPINPUTSTREAM
 #define JAVA_UTIL_ZIP_ZIPINPUTSTREAM
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../io/InputStream.hpp"
+#include "../../io/FilterInputStream.hpp"
 #include "InflaterInputStream.hpp"
 
 namespace __jni_impl::java::util::zip

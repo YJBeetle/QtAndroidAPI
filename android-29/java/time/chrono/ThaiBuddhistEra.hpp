@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_CHRONO_THAIBUDDHISTERA
 #define JAVA_TIME_CHRONO_THAIBUDDHISTERA
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 namespace __jni_impl::java::time::format

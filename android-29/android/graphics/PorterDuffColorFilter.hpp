@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_PORTERDUFFCOLORFILTER
 #define ANDROID_GRAPHICS_PORTERDUFFCOLORFILTER
 
+#include "../../__JniBaseClass.hpp"
 #include "ColorFilter.hpp"
 
 namespace __jni_impl::android::graphics

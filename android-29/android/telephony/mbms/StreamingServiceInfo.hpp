@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_MBMS_STREAMINGSERVICEINFO
 #define ANDROID_TELEPHONY_MBMS_STREAMINGSERVICEINFO
 
+#include "../../../__JniBaseClass.hpp"
 #include "ServiceInfo.hpp"
 
 namespace __jni_impl::android::os

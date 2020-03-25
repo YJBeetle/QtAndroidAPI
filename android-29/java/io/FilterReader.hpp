@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_FILTERREADER
 #define JAVA_IO_FILTERREADER
 
+#include "../../__JniBaseClass.hpp"
 #include "Reader.hpp"
 
 namespace __jni_impl::java::io

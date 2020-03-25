@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_TABLELAYOUT
 #define ANDROID_WIDGET_TABLELAYOUT
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "LinearLayout.hpp"
 
 namespace __jni_impl::android::content

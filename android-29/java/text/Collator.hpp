@@ -41,11 +41,11 @@ namespace __jni_impl::java::text
 		static QAndroidJniObject getInstance();
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getAvailableLocales();
-		QAndroidJniObject getCollationKey(jstring arg0);
 		void setStrength(jint arg0);
 		void setDecomposition(jint arg0);
 		jint getStrength();
 		jint getDecomposition();
+		QAndroidJniObject getCollationKey(jstring arg0);
 	};
 } // namespace __jni_impl::java::text
 
@@ -172,13 +172,6 @@ namespace __jni_impl::java::text
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;");
 	}
-	QAndroidJniObject Collator::getCollationKey(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Ljava/text/CollationKey;",
-			arg0);
-	}
 	void Collator::setStrength(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -204,6 +197,13 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jint>(
 			"getDecomposition",
 			"()I");
+	}
+	QAndroidJniObject Collator::getCollationKey(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCollationKey",
+			"(Ljava/lang/String;)Ljava/text/CollationKey;",
+			arg0);
 	}
 } // namespace __jni_impl::java::text
 

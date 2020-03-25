@@ -3,6 +3,9 @@
 #ifndef ANDROID_SECURITY_KEYSTORE_STRONGBOXUNAVAILABLEEXCEPTION
 #define ANDROID_SECURITY_KEYSTORE_STRONGBOXUNAVAILABLEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
 #include "../../../java/security/ProviderException.hpp"
 
 

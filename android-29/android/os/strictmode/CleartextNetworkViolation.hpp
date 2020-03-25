@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_CLEARTEXTNETWORKVIOLATION
 #define ANDROID_OS_STRICTMODE_CLEARTEXTNETWORKVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

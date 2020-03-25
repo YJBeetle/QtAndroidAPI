@@ -3,6 +3,10 @@
 #ifndef ANDROID_SECURITY_KEYSTORE_USERPRESENCEUNAVAILABLEEXCEPTION
 #define ANDROID_SECURITY_KEYSTORE_USERPRESENCEUNAVAILABLEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/security/GeneralSecurityException.hpp"
+#include "../../../java/security/KeyException.hpp"
 #include "../../../java/security/InvalidKeyException.hpp"
 
 

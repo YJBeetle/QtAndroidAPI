@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_INVALIDMARKEXCEPTION
 #define JAVA_NIO_INVALIDMARKEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
 #include "../lang/IllegalStateException.hpp"
 
 

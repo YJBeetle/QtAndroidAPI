@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_INVALIDPROPERTIESFORMATEXCEPTION
 #define JAVA_UTIL_INVALIDPROPERTIESFORMATEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
 
 namespace __jni_impl::java::io

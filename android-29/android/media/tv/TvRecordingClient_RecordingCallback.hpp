@@ -21,11 +21,11 @@ namespace __jni_impl::android::media::tv
 		void __constructor();
 		
 		// Methods
-		void onError(jint arg0);
-		void onDisconnected(jstring arg0);
-		void onConnectionFailed(jstring arg0);
 		void onRecordingStopped(__jni_impl::android::net::Uri arg0);
 		void onTuned(__jni_impl::android::net::Uri arg0);
+		void onDisconnected(jstring arg0);
+		void onError(jint arg0);
+		void onConnectionFailed(jstring arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -44,27 +44,6 @@ namespace __jni_impl::android::media::tv
 	}
 	
 	// Methods
-	void TvRecordingClient_RecordingCallback::onError(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(I)V",
-			arg0);
-	}
-	void TvRecordingClient_RecordingCallback::onDisconnected(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"onDisconnected",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
-	void TvRecordingClient_RecordingCallback::onConnectionFailed(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConnectionFailed",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
 	void TvRecordingClient_RecordingCallback::onRecordingStopped(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
@@ -78,6 +57,27 @@ namespace __jni_impl::android::media::tv
 			"onTuned",
 			"(Landroid/net/Uri;)V",
 			arg0.__jniObject().object());
+	}
+	void TvRecordingClient_RecordingCallback::onDisconnected(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"onDisconnected",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	void TvRecordingClient_RecordingCallback::onError(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(I)V",
+			arg0);
+	}
+	void TvRecordingClient_RecordingCallback::onConnectionFailed(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"onConnectionFailed",
+			"(Ljava/lang/String;)V",
+			arg0);
 	}
 } // namespace __jni_impl::android::media::tv
 

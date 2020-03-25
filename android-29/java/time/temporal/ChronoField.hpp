@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_TEMPORAL_CHRONOFIELD
 #define JAVA_TIME_TEMPORAL_CHRONOFIELD
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 namespace __jni_impl::java::time::temporal

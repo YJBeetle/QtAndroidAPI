@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_IOEXCEPTION
 #define JAVA_IO_IOEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 
 

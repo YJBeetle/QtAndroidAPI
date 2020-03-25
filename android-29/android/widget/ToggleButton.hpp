@@ -3,6 +3,10 @@
 #ifndef ANDROID_WIDGET_TOGGLEBUTTON
 #define ANDROID_WIDGET_TOGGLEBUTTON
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "TextView.hpp"
+#include "Button.hpp"
 #include "CompoundButton.hpp"
 
 namespace __jni_impl::android::content
@@ -28,14 +32,14 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jfloat getDisabledAlpha();
+		QAndroidJniObject getAccessibilityClassName();
+		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject getTextOn();
 		void setTextOn(jstring arg0);
 		QAndroidJniObject getTextOff();
 		void setTextOff(jstring arg0);
-		QAndroidJniObject getAccessibilityClassName();
-		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setChecked(jboolean arg0);
+		jfloat getDisabledAlpha();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -83,11 +87,18 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	jfloat ToggleButton::getDisabledAlpha()
+	QAndroidJniObject ToggleButton::getAccessibilityClassName()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getDisabledAlpha",
-			"()F");
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
+	void ToggleButton::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBackgroundDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject ToggleButton::getTextOn()
 	{
@@ -115,25 +126,18 @@ namespace __jni_impl::android::widget
 			"(Ljava/lang/CharSequence;)V",
 			arg0);
 	}
-	QAndroidJniObject ToggleButton::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	void ToggleButton::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBackgroundDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
-	}
 	void ToggleButton::setChecked(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setChecked",
 			"(Z)V",
 			arg0);
+	}
+	jfloat ToggleButton::getDisabledAlpha()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getDisabledAlpha",
+			"()F");
 	}
 } // namespace __jni_impl::android::widget
 

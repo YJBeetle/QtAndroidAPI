@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_SERIALIZABLEPERMISSION
 #define JAVA_IO_SERIALIZABLEPERMISSION
 
+#include "../../__JniBaseClass.hpp"
+#include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
 
 

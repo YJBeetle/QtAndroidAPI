@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_NOCLASSDEFFOUNDERROR
 #define JAVA_LANG_NOCLASSDEFFOUNDERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "LinkageError.hpp"
 
 

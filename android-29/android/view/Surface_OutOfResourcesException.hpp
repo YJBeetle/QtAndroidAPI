@@ -3,6 +3,8 @@
 #ifndef ANDROID_VIEW_SURFACE_OUTOFRESOURCESEXCEPTION
 #define ANDROID_VIEW_SURFACE_OUTOFRESOURCESEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_CLASSCASTEXCEPTION
 #define JAVA_LANG_CLASSCASTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "RuntimeException.hpp"
 
 

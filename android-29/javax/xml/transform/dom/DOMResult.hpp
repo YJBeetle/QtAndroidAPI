@@ -24,10 +24,10 @@ namespace __jni_impl::javax::xml::transform::dom
 		// Methods
 		QAndroidJniObject getNode();
 		void setNode(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getSystemId();
 		void setSystemId(jstring arg0);
 		QAndroidJniObject getNextSibling();
 		void setNextSibling(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getSystemId();
 	};
 } // namespace __jni_impl::javax::xml::transform::dom
 
@@ -97,6 +97,12 @@ namespace __jni_impl::javax::xml::transform::dom
 			"(Lorg/w3c/dom/Node;)V",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject DOMResult::getSystemId()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;");
+	}
 	void DOMResult::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -116,12 +122,6 @@ namespace __jni_impl::javax::xml::transform::dom
 			"setNextSibling",
 			"(Lorg/w3c/dom/Node;)V",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject DOMResult::getSystemId()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemId",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::javax::xml::transform::dom
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_COMPOSEPATHEFFECT
 #define ANDROID_GRAPHICS_COMPOSEPATHEFFECT
 
+#include "../../__JniBaseClass.hpp"
 #include "PathEffect.hpp"
 
 namespace __jni_impl::android::graphics

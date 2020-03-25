@@ -22,16 +22,16 @@ namespace __jni_impl::android::animation
 		void setValue(jobject arg0);
 		QAndroidJniObject getType();
 		jboolean hasValue();
-		jfloat getFraction();
-		static QAndroidJniObject ofInt(jfloat arg0);
+		void setFraction(jfloat arg0);
 		static QAndroidJniObject ofInt(jfloat arg0, jint arg1);
+		static QAndroidJniObject ofInt(jfloat arg0);
 		static QAndroidJniObject ofFloat(jfloat arg0, jfloat arg1);
 		static QAndroidJniObject ofFloat(jfloat arg0);
 		static QAndroidJniObject ofObject(jfloat arg0, jobject arg1);
 		static QAndroidJniObject ofObject(jfloat arg0);
+		jfloat getFraction();
 		void setInterpolator(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getInterpolator();
-		void setFraction(jfloat arg0);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -80,18 +80,11 @@ namespace __jni_impl::android::animation
 			"hasValue",
 			"()Z");
 	}
-	jfloat Keyframe::getFraction()
+	void Keyframe::setFraction(jfloat arg0)
 	{
-		return __thiz.callMethod<jfloat>(
-			"getFraction",
-			"()F");
-	}
-	QAndroidJniObject Keyframe::ofInt(jfloat arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.Keyframe",
-			"ofInt",
-			"(F)Landroid/animation/Keyframe;",
+		__thiz.callMethod<void>(
+			"setFraction",
+			"(F)V",
 			arg0);
 	}
 	QAndroidJniObject Keyframe::ofInt(jfloat arg0, jint arg1)
@@ -102,6 +95,14 @@ namespace __jni_impl::android::animation
 			"(FI)Landroid/animation/Keyframe;",
 			arg0,
 			arg1);
+	}
+	QAndroidJniObject Keyframe::ofInt(jfloat arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.animation.Keyframe",
+			"ofInt",
+			"(F)Landroid/animation/Keyframe;",
+			arg0);
 	}
 	QAndroidJniObject Keyframe::ofFloat(jfloat arg0, jfloat arg1)
 	{
@@ -137,6 +138,12 @@ namespace __jni_impl::android::animation
 			"(F)Landroid/animation/Keyframe;",
 			arg0);
 	}
+	jfloat Keyframe::getFraction()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFraction",
+			"()F");
+	}
 	void Keyframe::setInterpolator(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -149,13 +156,6 @@ namespace __jni_impl::android::animation
 		return __thiz.callObjectMethod(
 			"getInterpolator",
 			"()Landroid/animation/TimeInterpolator;");
-	}
-	void Keyframe::setFraction(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFraction",
-			"(F)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::animation
 

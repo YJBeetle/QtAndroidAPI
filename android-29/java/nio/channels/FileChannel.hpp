@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_CHANNELS_FILECHANNEL
 #define JAVA_NIO_CHANNELS_FILECHANNEL
 
+#include "../../../__JniBaseClass.hpp"
 #include "spi/AbstractInterruptibleChannel.hpp"
 
 namespace __jni_impl::java::nio::channels

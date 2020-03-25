@@ -31,9 +31,9 @@ namespace __jni_impl::android::app::job
 		jlong getEstimatedNetworkDownloadBytes();
 		jlong getEstimatedNetworkUploadBytes();
 		jint getDeliveryCount();
+		QAndroidJniObject getIntent();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getIntent();
 	};
 } // namespace __jni_impl::android::app::job
 
@@ -94,6 +94,12 @@ namespace __jni_impl::android::app::job
 			"getDeliveryCount",
 			"()I");
 	}
+	QAndroidJniObject JobWorkItem::getIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;");
+	}
 	jint JobWorkItem::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -107,12 +113,6 @@ namespace __jni_impl::android::app::job
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject JobWorkItem::getIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getIntent",
-			"()Landroid/content/Intent;");
 	}
 } // namespace __jni_impl::android::app::job
 

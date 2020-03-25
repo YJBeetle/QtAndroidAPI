@@ -3,6 +3,9 @@
 #ifndef JAVA_SECURITY_CERT_CERTIFICATEPARSINGEXCEPTION
 #define JAVA_SECURITY_CERT_CERTIFICATEPARSINGEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../GeneralSecurityException.hpp"
 #include "CertificateException.hpp"
 
 

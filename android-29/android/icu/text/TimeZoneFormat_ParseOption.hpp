@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_TIMEZONEFORMAT_PARSEOPTION
 #define ANDROID_ICU_TEXT_TIMEZONEFORMAT_PARSEOPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

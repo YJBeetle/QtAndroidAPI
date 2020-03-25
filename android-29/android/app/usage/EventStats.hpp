@@ -24,13 +24,13 @@ namespace __jni_impl::android::app::usage
 		// Methods
 		void add(__jni_impl::android::app::usage::EventStats arg0);
 		jint getCount();
-		jlong getLastEventTime();
-		jlong getTotalTime();
-		jlong getLastTimeStamp();
-		jlong getFirstTimeStamp();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getFirstTimeStamp();
+		jlong getLastTimeStamp();
 		jint getEventType();
+		jlong getLastEventTime();
+		jlong getTotalTime();
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -70,30 +70,6 @@ namespace __jni_impl::android::app::usage
 			"getCount",
 			"()I");
 	}
-	jlong EventStats::getLastEventTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLastEventTime",
-			"()J");
-	}
-	jlong EventStats::getTotalTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTotalTime",
-			"()J");
-	}
-	jlong EventStats::getLastTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLastTimeStamp",
-			"()J");
-	}
-	jlong EventStats::getFirstTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getFirstTimeStamp",
-			"()J");
-	}
 	jint EventStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -108,11 +84,35 @@ namespace __jni_impl::android::app::usage
 			arg0.__jniObject().object(),
 			arg1);
 	}
+	jlong EventStats::getFirstTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getFirstTimeStamp",
+			"()J");
+	}
+	jlong EventStats::getLastTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLastTimeStamp",
+			"()J");
+	}
 	jint EventStats::getEventType()
 	{
 		return __thiz.callMethod<jint>(
 			"getEventType",
 			"()I");
+	}
+	jlong EventStats::getLastEventTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLastEventTime",
+			"()J");
+	}
+	jlong EventStats::getTotalTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTotalTime",
+			"()J");
 	}
 } // namespace __jni_impl::android::app::usage
 

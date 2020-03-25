@@ -35,14 +35,14 @@ namespace __jni_impl::android::security
 		// Methods
 		QAndroidJniObject getContext();
 		QAndroidJniObject getSubjectDN();
-		QAndroidJniObject getSerialNumber();
-		jint getKeySize();
-		QAndroidJniObject getKeystoreAlias();
-		jboolean isEncryptionRequired();
+		QAndroidJniObject getEndDate();
 		QAndroidJniObject getStartDate();
 		QAndroidJniObject getKeyType();
-		QAndroidJniObject getEndDate();
 		QAndroidJniObject getAlgorithmParameterSpec();
+		jint getKeySize();
+		QAndroidJniObject getKeystoreAlias();
+		QAndroidJniObject getSerialNumber();
+		jboolean isEncryptionRequired();
 	};
 } // namespace __jni_impl::android::security
 
@@ -76,29 +76,11 @@ namespace __jni_impl::android::security
 			"getSubjectDN",
 			"()Ljavax/security/auth/x500/X500Principal;");
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getSerialNumber()
+	QAndroidJniObject KeyPairGeneratorSpec::getEndDate()
 	{
 		return __thiz.callObjectMethod(
-			"getSerialNumber",
-			"()Ljava/math/BigInteger;");
-	}
-	jint KeyPairGeneratorSpec::getKeySize()
-	{
-		return __thiz.callMethod<jint>(
-			"getKeySize",
-			"()I");
-	}
-	QAndroidJniObject KeyPairGeneratorSpec::getKeystoreAlias()
-	{
-		return __thiz.callObjectMethod(
-			"getKeystoreAlias",
-			"()Ljava/lang/String;");
-	}
-	jboolean KeyPairGeneratorSpec::isEncryptionRequired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEncryptionRequired",
-			"()Z");
+			"getEndDate",
+			"()Ljava/util/Date;");
 	}
 	QAndroidJniObject KeyPairGeneratorSpec::getStartDate()
 	{
@@ -112,17 +94,35 @@ namespace __jni_impl::android::security
 			"getKeyType",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getEndDate()
-	{
-		return __thiz.callObjectMethod(
-			"getEndDate",
-			"()Ljava/util/Date;");
-	}
 	QAndroidJniObject KeyPairGeneratorSpec::getAlgorithmParameterSpec()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithmParameterSpec",
 			"()Ljava/security/spec/AlgorithmParameterSpec;");
+	}
+	jint KeyPairGeneratorSpec::getKeySize()
+	{
+		return __thiz.callMethod<jint>(
+			"getKeySize",
+			"()I");
+	}
+	QAndroidJniObject KeyPairGeneratorSpec::getKeystoreAlias()
+	{
+		return __thiz.callObjectMethod(
+			"getKeystoreAlias",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject KeyPairGeneratorSpec::getSerialNumber()
+	{
+		return __thiz.callObjectMethod(
+			"getSerialNumber",
+			"()Ljava/math/BigInteger;");
+	}
+	jboolean KeyPairGeneratorSpec::isEncryptionRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEncryptionRequired",
+			"()Z");
 	}
 } // namespace __jni_impl::android::security
 

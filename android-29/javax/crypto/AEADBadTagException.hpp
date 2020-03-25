@@ -3,6 +3,9 @@
 #ifndef JAVAX_CRYPTO_AEADBADTAGEXCEPTION
 #define JAVAX_CRYPTO_AEADBADTAGEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/security/GeneralSecurityException.hpp"
 #include "BadPaddingException.hpp"
 
 

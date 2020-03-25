@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_LOGGING_FILEHANDLER
 #define JAVA_UTIL_LOGGING_FILEHANDLER
 
+#include "../../../__JniBaseClass.hpp"
+#include "Handler.hpp"
 #include "StreamHandler.hpp"
 
 namespace __jni_impl::java::nio::channels

@@ -3,6 +3,8 @@
 #ifndef ANDROID_APP_APPLICATION
 #define ANDROID_APP_APPLICATION
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
 namespace __jni_impl::android::content::res
@@ -21,18 +23,18 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void registerComponentCallbacks(__jni_impl::__JniBaseClass arg0);
-		void unregisterComponentCallbacks(__jni_impl::__JniBaseClass arg0);
 		void registerActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0);
 		void unregisterActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0);
 		void onCreate();
 		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
 		void onLowMemory();
 		void onTrimMemory(jint arg0);
+		void registerComponentCallbacks(__jni_impl::__JniBaseClass arg0);
+		void unregisterComponentCallbacks(__jni_impl::__JniBaseClass arg0);
+		void onTerminate();
 		void registerOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0);
 		void unregisterOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject getProcessName();
-		void onTerminate();
 	};
 } // namespace __jni_impl::android::app
 
@@ -51,20 +53,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void Application::registerComponentCallbacks(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerComponentCallbacks",
-			"(Landroid/content/ComponentCallbacks;)V",
-			arg0.__jniObject().object());
-	}
-	void Application::unregisterComponentCallbacks(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterComponentCallbacks",
-			"(Landroid/content/ComponentCallbacks;)V",
-			arg0.__jniObject().object());
-	}
 	void Application::registerActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -105,6 +93,26 @@ namespace __jni_impl::android::app
 			"(I)V",
 			arg0);
 	}
+	void Application::registerComponentCallbacks(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerComponentCallbacks",
+			"(Landroid/content/ComponentCallbacks;)V",
+			arg0.__jniObject().object());
+	}
+	void Application::unregisterComponentCallbacks(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterComponentCallbacks",
+			"(Landroid/content/ComponentCallbacks;)V",
+			arg0.__jniObject().object());
+	}
+	void Application::onTerminate()
+	{
+		__thiz.callMethod<void>(
+			"onTerminate",
+			"()V");
+	}
 	void Application::registerOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -125,12 +133,6 @@ namespace __jni_impl::android::app
 			"android.app.Application",
 			"getProcessName",
 			"()Ljava/lang/String;");
-	}
-	void Application::onTerminate()
-	{
-		__thiz.callMethod<void>(
-			"onTerminate",
-			"()V");
 	}
 } // namespace __jni_impl::android::app
 

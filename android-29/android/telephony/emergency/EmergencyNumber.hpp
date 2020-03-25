@@ -44,9 +44,9 @@ namespace __jni_impl::android::telephony::emergency
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::android::telephony::emergency::EmergencyNumber arg0);
 		QAndroidJniObject getNumber();
-		QAndroidJniObject getMnc();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getMnc();
 		QAndroidJniObject getCountryIso();
 		QAndroidJniObject getEmergencyServiceCategories();
 		QAndroidJniObject getEmergencyUrns();
@@ -214,12 +214,6 @@ namespace __jni_impl::android::telephony::emergency
 			"getNumber",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject EmergencyNumber::getMnc()
-	{
-		return __thiz.callObjectMethod(
-			"getMnc",
-			"()Ljava/lang/String;");
-	}
 	jint EmergencyNumber::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -233,6 +227,12 @@ namespace __jni_impl::android::telephony::emergency
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject EmergencyNumber::getMnc()
+	{
+		return __thiz.callObjectMethod(
+			"getMnc",
+			"()Ljava/lang/String;");
 	}
 	QAndroidJniObject EmergencyNumber::getCountryIso()
 	{

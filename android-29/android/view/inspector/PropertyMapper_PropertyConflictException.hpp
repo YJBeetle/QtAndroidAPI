@@ -3,6 +3,8 @@
 #ifndef ANDROID_VIEW_INSPECTOR_PROPERTYMAPPER_PROPERTYCONFLICTEXCEPTION
 #define ANDROID_VIEW_INSPECTOR_PROPERTYMAPPER_PROPERTYCONFLICTEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
 

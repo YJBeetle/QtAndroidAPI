@@ -30,6 +30,8 @@ namespace __jni_impl::android::telephony::data
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setProtocol(jint arg0);
+		QAndroidJniObject setPassword(jstring arg0);
 		QAndroidJniObject setEntryName(jstring arg0);
 		QAndroidJniObject setApnName(jstring arg0);
 		QAndroidJniObject setProxyAddress(__jni_impl::java::net::InetAddress arg0);
@@ -48,8 +50,6 @@ namespace __jni_impl::android::telephony::data
 		QAndroidJniObject setNetworkTypeBitmask(jint arg0);
 		QAndroidJniObject setMvnoType(jint arg0);
 		QAndroidJniObject setCarrierId(jint arg0);
-		QAndroidJniObject setProtocol(jint arg0);
-		QAndroidJniObject setPassword(jstring arg0);
 	};
 } // namespace __jni_impl::android::telephony::data
 
@@ -75,6 +75,20 @@ namespace __jni_impl::android::telephony::data
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/telephony/data/ApnSetting;");
+	}
+	QAndroidJniObject ApnSetting_Builder::setProtocol(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setProtocol",
+			"(I)Landroid/telephony/data/ApnSetting$Builder;",
+			arg0);
+	}
+	QAndroidJniObject ApnSetting_Builder::setPassword(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPassword",
+			"(Ljava/lang/String;)Landroid/telephony/data/ApnSetting$Builder;",
+			arg0);
 	}
 	QAndroidJniObject ApnSetting_Builder::setEntryName(jstring arg0)
 	{
@@ -200,20 +214,6 @@ namespace __jni_impl::android::telephony::data
 		return __thiz.callObjectMethod(
 			"setCarrierId",
 			"(I)Landroid/telephony/data/ApnSetting$Builder;",
-			arg0);
-	}
-	QAndroidJniObject ApnSetting_Builder::setProtocol(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setProtocol",
-			"(I)Landroid/telephony/data/ApnSetting$Builder;",
-			arg0);
-	}
-	QAndroidJniObject ApnSetting_Builder::setPassword(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPassword",
-			"(Ljava/lang/String;)Landroid/telephony/data/ApnSetting$Builder;",
 			arg0);
 	}
 } // namespace __jni_impl::android::telephony::data

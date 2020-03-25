@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_LOCALE_CATEGORY
 #define JAVA_UTIL_LOCALE_CATEGORY
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
 

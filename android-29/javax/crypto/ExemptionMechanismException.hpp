@@ -3,6 +3,8 @@
 #ifndef JAVAX_CRYPTO_EXEMPTIONMECHANISMEXCEPTION
 #define JAVAX_CRYPTO_EXEMPTIONMECHANISMEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/security/GeneralSecurityException.hpp"
 
 

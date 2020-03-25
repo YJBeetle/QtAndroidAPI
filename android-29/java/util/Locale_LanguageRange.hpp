@@ -26,8 +26,8 @@ namespace __jni_impl::java::util
 		static QAndroidJniObject parse(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject parse(jstring arg0);
 		jdouble getWeight();
-		static QAndroidJniObject mapEquivalents(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject getRange();
+		static QAndroidJniObject mapEquivalents(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::java::util
 
@@ -108,6 +108,12 @@ namespace __jni_impl::java::util
 			"getWeight",
 			"()D");
 	}
+	QAndroidJniObject Locale_LanguageRange::getRange()
+	{
+		return __thiz.callObjectMethod(
+			"getRange",
+			"()Ljava/lang/String;");
+	}
 	QAndroidJniObject Locale_LanguageRange::mapEquivalents(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -116,12 +122,6 @@ namespace __jni_impl::java::util
 			"(Ljava/util/List;Ljava/util/Map;)Ljava/util/List;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
-	}
-	QAndroidJniObject Locale_LanguageRange::getRange()
-	{
-		return __thiz.callObjectMethod(
-			"getRange",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::java::util
 

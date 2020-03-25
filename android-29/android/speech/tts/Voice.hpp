@@ -43,10 +43,10 @@ namespace __jni_impl::android::speech::tts
 		QAndroidJniObject getLocale();
 		QAndroidJniObject getFeatures();
 		jboolean isNetworkConnectionRequired();
-		jint getLatency();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getQuality();
+		jint getLatency();
 	};
 } // namespace __jni_impl::android::speech::tts
 
@@ -182,12 +182,6 @@ namespace __jni_impl::android::speech::tts
 			"isNetworkConnectionRequired",
 			"()Z");
 	}
-	jint Voice::getLatency()
-	{
-		return __thiz.callMethod<jint>(
-			"getLatency",
-			"()I");
-	}
 	jint Voice::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -206,6 +200,12 @@ namespace __jni_impl::android::speech::tts
 	{
 		return __thiz.callMethod<jint>(
 			"getQuality",
+			"()I");
+	}
+	jint Voice::getLatency()
+	{
+		return __thiz.callMethod<jint>(
+			"getLatency",
 			"()I");
 	}
 } // namespace __jni_impl::android::speech::tts

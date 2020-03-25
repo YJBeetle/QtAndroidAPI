@@ -3,6 +3,7 @@
 #ifndef JAVAX_XML_TRANSFORM_TRANSFORMEREXCEPTION
 #define JAVAX_XML_TRANSFORM_TRANSFORMEREXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
 namespace __jni_impl::java::io

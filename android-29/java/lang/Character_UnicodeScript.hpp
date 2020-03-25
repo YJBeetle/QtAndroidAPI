@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_CHARACTER_UNICODESCRIPT
 #define JAVA_LANG_CHARACTER_UNICODESCRIPT
 
+#include "../../__JniBaseClass.hpp"
 #include "Enum.hpp"
 
 namespace __jni_impl::java::util

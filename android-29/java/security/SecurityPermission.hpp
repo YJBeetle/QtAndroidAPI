@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_SECURITYPERMISSION
 #define JAVA_SECURITY_SECURITYPERMISSION
 
+#include "../../__JniBaseClass.hpp"
+#include "Permission.hpp"
 #include "BasicPermission.hpp"
 
 

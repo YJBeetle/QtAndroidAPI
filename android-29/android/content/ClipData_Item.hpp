@@ -37,11 +37,11 @@ namespace __jni_impl::android::content
 		QAndroidJniObject toString();
 		QAndroidJniObject getText();
 		QAndroidJniObject getUri();
-		QAndroidJniObject getIntent();
 		QAndroidJniObject getHtmlText();
 		QAndroidJniObject coerceToText(__jni_impl::android::content::Context arg0);
 		QAndroidJniObject coerceToStyledText(__jni_impl::android::content::Context arg0);
 		QAndroidJniObject coerceToHtmlText(__jni_impl::android::content::Context arg0);
+		QAndroidJniObject getIntent();
 	};
 } // namespace __jni_impl::android::content
 
@@ -122,12 +122,6 @@ namespace __jni_impl::android::content
 			"getUri",
 			"()Landroid/net/Uri;");
 	}
-	QAndroidJniObject ClipData_Item::getIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getIntent",
-			"()Landroid/content/Intent;");
-	}
 	QAndroidJniObject ClipData_Item::getHtmlText()
 	{
 		return __thiz.callObjectMethod(
@@ -154,6 +148,12 @@ namespace __jni_impl::android::content
 			"coerceToHtmlText",
 			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject ClipData_Item::getIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;");
 	}
 } // namespace __jni_impl::android::content
 

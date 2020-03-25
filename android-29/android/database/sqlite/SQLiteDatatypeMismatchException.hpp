@@ -3,6 +3,10 @@
 #ifndef ANDROID_DATABASE_SQLITE_SQLITEDATATYPEMISMATCHEXCEPTION
 #define ANDROID_DATABASE_SQLITE_SQLITEDATATYPEMISMATCHEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../SQLException.hpp"
 #include "SQLiteException.hpp"
 
 

@@ -30,10 +30,10 @@ namespace __jni_impl::android::net::wifi::aware
 		QAndroidJniObject toString();
 		jint hashCode();
 		jint getPort();
-		QAndroidJniObject getPeerIpv6Addr();
-		jint getTransportProtocol();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getPeerIpv6Addr();
+		jint getTransportProtocol();
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
@@ -85,18 +85,6 @@ namespace __jni_impl::android::net::wifi::aware
 			"getPort",
 			"()I");
 	}
-	QAndroidJniObject WifiAwareNetworkInfo::getPeerIpv6Addr()
-	{
-		return __thiz.callObjectMethod(
-			"getPeerIpv6Addr",
-			"()Ljava/net/Inet6Address;");
-	}
-	jint WifiAwareNetworkInfo::getTransportProtocol()
-	{
-		return __thiz.callMethod<jint>(
-			"getTransportProtocol",
-			"()I");
-	}
 	jint WifiAwareNetworkInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -110,6 +98,18 @@ namespace __jni_impl::android::net::wifi::aware
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject WifiAwareNetworkInfo::getPeerIpv6Addr()
+	{
+		return __thiz.callObjectMethod(
+			"getPeerIpv6Addr",
+			"()Ljava/net/Inet6Address;");
+	}
+	jint WifiAwareNetworkInfo::getTransportProtocol()
+	{
+		return __thiz.callMethod<jint>(
+			"getTransportProtocol",
+			"()I");
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

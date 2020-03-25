@@ -68,6 +68,9 @@ namespace __jni_impl::javax::xml::datatype
 		void setYear(__jni_impl::java::math::BigInteger arg0);
 		void setYear(jint arg0);
 		jboolean isValid();
+		void setDay(jint arg0);
+		void setHour(jint arg0);
+		void setMinute(jint arg0);
 		QAndroidJniObject getXMLSchemaType();
 		void setSecond(jint arg0);
 		void setFractionalSecond(__jni_impl::java::math::BigDecimal arg0);
@@ -81,9 +84,6 @@ namespace __jni_impl::javax::xml::datatype
 		jint getMillisecond();
 		QAndroidJniObject toGregorianCalendar(__jni_impl::java::util::TimeZone arg0, __jni_impl::java::util::Locale arg1, __jni_impl::javax::xml::datatype::XMLGregorianCalendar arg2);
 		QAndroidJniObject toGregorianCalendar();
-		void setDay(jint arg0);
-		void setHour(jint arg0);
-		void setMinute(jint arg0);
 	};
 } // namespace __jni_impl::javax::xml::datatype
 
@@ -264,6 +264,27 @@ namespace __jni_impl::javax::xml::datatype
 			"isValid",
 			"()Z");
 	}
+	void XMLGregorianCalendar::setDay(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDay",
+			"(I)V",
+			arg0);
+	}
+	void XMLGregorianCalendar::setHour(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHour",
+			"(I)V",
+			arg0);
+	}
+	void XMLGregorianCalendar::setMinute(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinute",
+			"(I)V",
+			arg0);
+	}
 	QAndroidJniObject XMLGregorianCalendar::getXMLSchemaType()
 	{
 		return __thiz.callObjectMethod(
@@ -348,27 +369,6 @@ namespace __jni_impl::javax::xml::datatype
 		return __thiz.callObjectMethod(
 			"toGregorianCalendar",
 			"()Ljava/util/GregorianCalendar;");
-	}
-	void XMLGregorianCalendar::setDay(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDay",
-			"(I)V",
-			arg0);
-	}
-	void XMLGregorianCalendar::setHour(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHour",
-			"(I)V",
-			arg0);
-	}
-	void XMLGregorianCalendar::setMinute(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinute",
-			"(I)V",
-			arg0);
 	}
 } // namespace __jni_impl::javax::xml::datatype
 

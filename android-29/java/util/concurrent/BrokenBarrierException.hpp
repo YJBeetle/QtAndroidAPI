@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_BROKENBARRIEREXCEPTION
 #define JAVA_UTIL_CONCURRENT_BROKENBARRIEREXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
 

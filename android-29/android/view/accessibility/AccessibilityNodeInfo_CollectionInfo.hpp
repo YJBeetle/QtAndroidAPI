@@ -21,8 +21,8 @@ namespace __jni_impl::android::view::accessibility
 		
 		// Methods
 		jint getColumnCount();
-		jint getRowCount();
 		jint getSelectionMode();
+		jint getRowCount();
 		jboolean isHierarchical();
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2);
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2, jint arg3);
@@ -67,16 +67,16 @@ namespace __jni_impl::android::view::accessibility
 			"getColumnCount",
 			"()I");
 	}
-	jint AccessibilityNodeInfo_CollectionInfo::getRowCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getRowCount",
-			"()I");
-	}
 	jint AccessibilityNodeInfo_CollectionInfo::getSelectionMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getSelectionMode",
+			"()I");
+	}
+	jint AccessibilityNodeInfo_CollectionInfo::getRowCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRowCount",
 			"()I");
 	}
 	jboolean AccessibilityNodeInfo_CollectionInfo::isHierarchical()

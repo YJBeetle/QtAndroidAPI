@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::bluetooth
-{
-	class BluetoothDevice;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::bluetooth
+{
+	class BluetoothDevice;
 }
 
 namespace __jni_impl::android::telecom
@@ -33,19 +33,19 @@ namespace __jni_impl::android::telecom
 		// Methods
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isMuted();
 		jint getRoute();
 		jint getSupportedRouteMask();
 		QAndroidJniObject getActiveBluetoothDevice();
 		QAndroidJniObject getSupportedBluetoothDevices();
 		static QAndroidJniObject audioRouteToString(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
-#include "../bluetooth/BluetoothDevice.hpp"
 #include "../os/Parcel.hpp"
+#include "../bluetooth/BluetoothDevice.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -113,6 +113,20 @@ namespace __jni_impl::android::telecom
 			"toString",
 			"()Ljava/lang/String;");
 	}
+	jint CallAudioState::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void CallAudioState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jboolean CallAudioState::isMuted()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -150,20 +164,6 @@ namespace __jni_impl::android::telecom
 			"audioRouteToString",
 			"(I)Ljava/lang/String;",
 			arg0);
-	}
-	jint CallAudioState::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void CallAudioState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::telecom
 

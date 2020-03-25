@@ -3,6 +3,8 @@
 #ifndef ANDROID_HARDWARE_CAMERA2_CAMERAACCESSEXCEPTION
 #define ANDROID_HARDWARE_CAMERA2_CAMERAACCESSEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "../../util/AndroidException.hpp"
 
 

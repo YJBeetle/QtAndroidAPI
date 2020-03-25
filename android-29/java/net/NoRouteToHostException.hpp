@@ -3,6 +3,9 @@
 #ifndef JAVA_NET_NOROUTETOHOSTEXCEPTION
 #define JAVA_NET_NOROUTETOHOSTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
 #include "SocketException.hpp"
 
 

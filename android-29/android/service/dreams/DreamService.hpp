@@ -3,6 +3,9 @@
 #ifndef ANDROID_SERVICE_DREAMS_DREAMSERVICE
 #define ANDROID_SERVICE_DREAMS_DREAMSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace __jni_impl::android::content
@@ -68,8 +71,8 @@ namespace __jni_impl::android::service::dreams
 		
 		// Methods
 		void finish();
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void wakeUp();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject getWindowManager();
 		QAndroidJniObject getWindow();
 		void onCreate();
@@ -161,18 +164,18 @@ namespace __jni_impl::android::service::dreams
 			"finish",
 			"()V");
 	}
+	void DreamService::wakeUp()
+	{
+		__thiz.callMethod<void>(
+			"wakeUp",
+			"()V");
+	}
 	QAndroidJniObject DreamService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object());
-	}
-	void DreamService::wakeUp()
-	{
-		__thiz.callMethod<void>(
-			"wakeUp",
-			"()V");
 	}
 	QAndroidJniObject DreamService::getWindowManager()
 	{

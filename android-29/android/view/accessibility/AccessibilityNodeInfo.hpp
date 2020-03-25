@@ -37,13 +37,13 @@ namespace __jni_impl::android::view::accessibility
 {
 	class AccessibilityNodeInfo_TouchDelegateInfo;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::view::accessibility
 {
 	class AccessibilityWindowInfo;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::view::accessibility
@@ -119,24 +119,56 @@ namespace __jni_impl::android::view::accessibility
 		QAndroidJniObject getError();
 		void setSource(__jni_impl::android::view::View arg0, jint arg1);
 		void setSource(__jni_impl::android::view::View arg0);
-		jboolean refresh();
 		QAndroidJniObject getExtras();
 		void setClassName(jstring arg0);
 		void setPassword(jboolean arg0);
-		void addChild(__jni_impl::android::view::View arg0, jint arg1);
+		jboolean refresh();
+		QAndroidJniObject getChild(jint arg0);
+		QAndroidJniObject focusSearch(jint arg0);
+		QAndroidJniObject findFocus(jint arg0);
+		jint getChildCount();
+		QAndroidJniObject getContentDescription();
+		void setContentDescription(jstring arg0);
+		QAndroidJniObject getLabelFor();
+		void setLabelFor(__jni_impl::android::view::View arg0);
+		void setLabelFor(__jni_impl::android::view::View arg0, jint arg1);
+		jboolean isFocused();
+		void setEnabled(jboolean arg0);
+		void setFocusable(jboolean arg0);
+		jboolean isClickable();
+		void setClickable(jboolean arg0);
+		jboolean isLongClickable();
+		void setLongClickable(jboolean arg0);
+		jboolean isContextClickable();
+		void setContextClickable(jboolean arg0);
+		jboolean isFocusable();
+		jboolean isScreenReaderFocusable();
+		void setScreenReaderFocusable(jboolean arg0);
+		jboolean isHeading();
+		jboolean isAccessibilityFocused();
+		void setImportantForAccessibility(jboolean arg0);
+		jboolean isImportantForAccessibility();
+		jint getWindowId();
+		void setSelected(jboolean arg0);
+		jboolean isSelected();
+		void setTooltipText(jstring arg0);
+		QAndroidJniObject getTooltipText();
+		void addAction(__jni_impl::android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0);
+		void addAction(jint arg0);
 		void addChild(__jni_impl::android::view::View arg0);
+		void addChild(__jni_impl::android::view::View arg0, jint arg1);
 		jboolean refreshWithExtraData(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		jboolean removeChild(__jni_impl::android::view::View arg0);
 		jboolean removeChild(__jni_impl::android::view::View arg0, jint arg1);
+		jboolean removeChild(__jni_impl::android::view::View arg0);
 		QAndroidJniObject getActionList();
-		jboolean removeAction(__jni_impl::android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0);
 		void removeAction(jint arg0);
+		jboolean removeAction(__jni_impl::android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0);
 		QAndroidJniObject getTraversalBefore();
-		void setTraversalBefore(__jni_impl::android::view::View arg0);
 		void setTraversalBefore(__jni_impl::android::view::View arg0, jint arg1);
+		void setTraversalBefore(__jni_impl::android::view::View arg0);
 		QAndroidJniObject getTraversalAfter();
-		void setTraversalAfter(__jni_impl::android::view::View arg0);
 		void setTraversalAfter(__jni_impl::android::view::View arg0, jint arg1);
+		void setTraversalAfter(__jni_impl::android::view::View arg0);
 		QAndroidJniObject getAvailableExtraData();
 		void setAvailableExtraData(__jni_impl::__JniBaseClass arg0);
 		void setMovementGranularities(jint arg0);
@@ -184,64 +216,32 @@ namespace __jni_impl::android::view::accessibility
 		void setTextSelection(jint arg0, jint arg1);
 		QAndroidJniObject getTouchDelegateInfo();
 		void setTouchDelegateInfo(__jni_impl::android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo arg0);
-		QAndroidJniObject getChild(jint arg0);
-		jint getMaxTextLength();
-		jboolean isVisibleToUser();
-		void setFocused(jboolean arg0);
-		void setAccessibilityFocused(jboolean arg0);
-		jint getTextSelectionStart();
-		jint getTextSelectionEnd();
-		void setMaxTextLength(jint arg0);
-		jboolean performAction(jint arg0, __jni_impl::android::os::Bundle arg1);
-		jboolean performAction(jint arg0);
-		QAndroidJniObject findAccessibilityNodeInfosByText(jstring arg0);
+		QAndroidJniObject getWindow();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getWindow();
-		void addAction(jint arg0);
-		void addAction(__jni_impl::android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0);
-		QAndroidJniObject focusSearch(jint arg0);
-		QAndroidJniObject findFocus(jint arg0);
-		jint getChildCount();
-		QAndroidJniObject getContentDescription();
-		void setContentDescription(jstring arg0);
-		QAndroidJniObject getLabelFor();
-		void setLabelFor(__jni_impl::android::view::View arg0);
-		void setLabelFor(__jni_impl::android::view::View arg0, jint arg1);
-		jboolean isFocused();
-		void setEnabled(jboolean arg0);
-		void setFocusable(jboolean arg0);
-		jboolean isClickable();
-		void setClickable(jboolean arg0);
-		jboolean isLongClickable();
-		void setLongClickable(jboolean arg0);
-		jboolean isContextClickable();
-		void setContextClickable(jboolean arg0);
-		jboolean isFocusable();
-		jboolean isScreenReaderFocusable();
-		void setScreenReaderFocusable(jboolean arg0);
-		jboolean isHeading();
-		jboolean isAccessibilityFocused();
-		void setImportantForAccessibility(jboolean arg0);
-		jboolean isImportantForAccessibility();
-		jint getWindowId();
-		void setSelected(jboolean arg0);
-		jboolean isSelected();
-		void setTooltipText(jstring arg0);
-		QAndroidJniObject getTooltipText();
-		void setCheckable(jboolean arg0);
-		jboolean isCheckable();
-		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityNodeInfo arg0);
-		static QAndroidJniObject obtain();
-		static QAndroidJniObject obtain(__jni_impl::android::view::View arg0, jint arg1);
-		static QAndroidJniObject obtain(__jni_impl::android::view::View arg0);
-		void recycle();
+		jint getMaxTextLength();
 		void setPackageName(jstring arg0);
 		jboolean isChecked();
 		void setChecked(jboolean arg0);
 		jboolean isPassword();
 		jboolean isScrollable();
 		void setScrollable(jboolean arg0);
+		void setCheckable(jboolean arg0);
+		jboolean isCheckable();
+		jboolean isVisibleToUser();
+		void setFocused(jboolean arg0);
+		void setAccessibilityFocused(jboolean arg0);
+		jint getTextSelectionStart();
+		jint getTextSelectionEnd();
+		void setMaxTextLength(jint arg0);
+		jboolean performAction(jint arg0);
+		jboolean performAction(jint arg0, __jni_impl::android::os::Bundle arg1);
+		QAndroidJniObject findAccessibilityNodeInfosByText(jstring arg0);
+		static QAndroidJniObject obtain();
+		static QAndroidJniObject obtain(__jni_impl::android::view::View arg0);
+		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityNodeInfo arg0);
+		static QAndroidJniObject obtain(__jni_impl::android::view::View arg0, jint arg1);
+		void recycle();
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -253,8 +253,8 @@ namespace __jni_impl::android::view::accessibility
 #include "AccessibilityNodeInfo_CollectionItemInfo.hpp"
 #include "AccessibilityNodeInfo_RangeInfo.hpp"
 #include "AccessibilityNodeInfo_TouchDelegateInfo.hpp"
-#include "../../os/Parcel.hpp"
 #include "AccessibilityWindowInfo.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {
@@ -666,12 +666,6 @@ namespace __jni_impl::android::view::accessibility
 			"(Landroid/view/View;)V",
 			arg0.__jniObject().object());
 	}
-	jboolean AccessibilityNodeInfo::refresh()
-	{
-		return __thiz.callMethod<jboolean>(
-			"refresh",
-			"()Z");
-	}
 	QAndroidJniObject AccessibilityNodeInfo::getExtras()
 	{
 		return __thiz.callObjectMethod(
@@ -692,13 +686,221 @@ namespace __jni_impl::android::view::accessibility
 			"(Z)V",
 			arg0);
 	}
-	void AccessibilityNodeInfo::addChild(__jni_impl::android::view::View arg0, jint arg1)
+	jboolean AccessibilityNodeInfo::refresh()
+	{
+		return __thiz.callMethod<jboolean>(
+			"refresh",
+			"()Z");
+	}
+	QAndroidJniObject AccessibilityNodeInfo::getChild(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getChild",
+			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
+			arg0);
+	}
+	QAndroidJniObject AccessibilityNodeInfo::focusSearch(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"focusSearch",
+			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
+			arg0);
+	}
+	QAndroidJniObject AccessibilityNodeInfo::findFocus(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findFocus",
+			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
+			arg0);
+	}
+	jint AccessibilityNodeInfo::getChildCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getChildCount",
+			"()I");
+	}
+	QAndroidJniObject AccessibilityNodeInfo::getContentDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getContentDescription",
+			"()Ljava/lang/CharSequence;");
+	}
+	void AccessibilityNodeInfo::setContentDescription(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"addChild",
+			"setContentDescription",
+			"(Ljava/lang/CharSequence;)V",
+			arg0);
+	}
+	QAndroidJniObject AccessibilityNodeInfo::getLabelFor()
+	{
+		return __thiz.callObjectMethod(
+			"getLabelFor",
+			"()Landroid/view/accessibility/AccessibilityNodeInfo;");
+	}
+	void AccessibilityNodeInfo::setLabelFor(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLabelFor",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
+	void AccessibilityNodeInfo::setLabelFor(__jni_impl::android::view::View arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setLabelFor",
 			"(Landroid/view/View;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	jboolean AccessibilityNodeInfo::isFocused()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFocused",
+			"()Z");
+	}
+	void AccessibilityNodeInfo::setEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0);
+	}
+	void AccessibilityNodeInfo::setFocusable(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFocusable",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isClickable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClickable",
+			"()Z");
+	}
+	void AccessibilityNodeInfo::setClickable(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setClickable",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isLongClickable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLongClickable",
+			"()Z");
+	}
+	void AccessibilityNodeInfo::setLongClickable(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLongClickable",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isContextClickable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isContextClickable",
+			"()Z");
+	}
+	void AccessibilityNodeInfo::setContextClickable(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContextClickable",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isFocusable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFocusable",
+			"()Z");
+	}
+	jboolean AccessibilityNodeInfo::isScreenReaderFocusable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isScreenReaderFocusable",
+			"()Z");
+	}
+	void AccessibilityNodeInfo::setScreenReaderFocusable(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setScreenReaderFocusable",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isHeading()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHeading",
+			"()Z");
+	}
+	jboolean AccessibilityNodeInfo::isAccessibilityFocused()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAccessibilityFocused",
+			"()Z");
+	}
+	void AccessibilityNodeInfo::setImportantForAccessibility(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setImportantForAccessibility",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isImportantForAccessibility()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isImportantForAccessibility",
+			"()Z");
+	}
+	jint AccessibilityNodeInfo::getWindowId()
+	{
+		return __thiz.callMethod<jint>(
+			"getWindowId",
+			"()I");
+	}
+	void AccessibilityNodeInfo::setSelected(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSelected",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isSelected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSelected",
+			"()Z");
+	}
+	void AccessibilityNodeInfo::setTooltipText(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTooltipText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0);
+	}
+	QAndroidJniObject AccessibilityNodeInfo::getTooltipText()
+	{
+		return __thiz.callObjectMethod(
+			"getTooltipText",
+			"()Ljava/lang/CharSequence;");
+	}
+	void AccessibilityNodeInfo::addAction(__jni_impl::android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0)
+	{
+		__thiz.callMethod<void>(
+			"addAction",
+			"(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V",
+			arg0.__jniObject().object());
+	}
+	void AccessibilityNodeInfo::addAction(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"addAction",
+			"(I)V",
+			arg0);
 	}
 	void AccessibilityNodeInfo::addChild(__jni_impl::android::view::View arg0)
 	{
@@ -706,6 +908,14 @@ namespace __jni_impl::android::view::accessibility
 			"addChild",
 			"(Landroid/view/View;)V",
 			arg0.__jniObject().object());
+	}
+	void AccessibilityNodeInfo::addChild(__jni_impl::android::view::View arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"addChild",
+			"(Landroid/view/View;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jboolean AccessibilityNodeInfo::refreshWithExtraData(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -715,13 +925,6 @@ namespace __jni_impl::android::view::accessibility
 			arg0,
 			arg1.__jniObject().object());
 	}
-	jboolean AccessibilityNodeInfo::removeChild(__jni_impl::android::view::View arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeChild",
-			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object());
-	}
 	jboolean AccessibilityNodeInfo::removeChild(__jni_impl::android::view::View arg0, jint arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -730,18 +933,18 @@ namespace __jni_impl::android::view::accessibility
 			arg0.__jniObject().object(),
 			arg1);
 	}
+	jboolean AccessibilityNodeInfo::removeChild(__jni_impl::android::view::View arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeChild",
+			"(Landroid/view/View;)Z",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject AccessibilityNodeInfo::getActionList()
 	{
 		return __thiz.callObjectMethod(
 			"getActionList",
 			"()Ljava/util/List;");
-	}
-	jboolean AccessibilityNodeInfo::removeAction(__jni_impl::android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeAction",
-			"(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)Z",
-			arg0.__jniObject().object());
 	}
 	void AccessibilityNodeInfo::removeAction(jint arg0)
 	{
@@ -750,18 +953,18 @@ namespace __jni_impl::android::view::accessibility
 			"(I)V",
 			arg0);
 	}
+	jboolean AccessibilityNodeInfo::removeAction(__jni_impl::android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeAction",
+			"(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)Z",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject AccessibilityNodeInfo::getTraversalBefore()
 	{
 		return __thiz.callObjectMethod(
 			"getTraversalBefore",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;");
-	}
-	void AccessibilityNodeInfo::setTraversalBefore(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTraversalBefore",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
 	}
 	void AccessibilityNodeInfo::setTraversalBefore(__jni_impl::android::view::View arg0, jint arg1)
 	{
@@ -771,18 +974,18 @@ namespace __jni_impl::android::view::accessibility
 			arg0.__jniObject().object(),
 			arg1);
 	}
+	void AccessibilityNodeInfo::setTraversalBefore(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTraversalBefore",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject AccessibilityNodeInfo::getTraversalAfter()
 	{
 		return __thiz.callObjectMethod(
 			"getTraversalAfter",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;");
-	}
-	void AccessibilityNodeInfo::setTraversalAfter(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTraversalAfter",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
 	}
 	void AccessibilityNodeInfo::setTraversalAfter(__jni_impl::android::view::View arg0, jint arg1)
 	{
@@ -791,6 +994,13 @@ namespace __jni_impl::android::view::accessibility
 			"(Landroid/view/View;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	void AccessibilityNodeInfo::setTraversalAfter(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTraversalAfter",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject AccessibilityNodeInfo::getAvailableExtraData()
 	{
@@ -1104,18 +1314,83 @@ namespace __jni_impl::android::view::accessibility
 			"(Landroid/view/accessibility/AccessibilityNodeInfo$TouchDelegateInfo;)V",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject AccessibilityNodeInfo::getChild(jint arg0)
+	QAndroidJniObject AccessibilityNodeInfo::getWindow()
 	{
 		return __thiz.callObjectMethod(
-			"getChild",
-			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0);
+			"getWindow",
+			"()Landroid/view/accessibility/AccessibilityWindowInfo;");
+	}
+	jint AccessibilityNodeInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void AccessibilityNodeInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jint AccessibilityNodeInfo::getMaxTextLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxTextLength",
 			"()I");
+	}
+	void AccessibilityNodeInfo::setPackageName(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPackageName",
+			"(Ljava/lang/CharSequence;)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isChecked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isChecked",
+			"()Z");
+	}
+	void AccessibilityNodeInfo::setChecked(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setChecked",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isPassword()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPassword",
+			"()Z");
+	}
+	jboolean AccessibilityNodeInfo::isScrollable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isScrollable",
+			"()Z");
+	}
+	void AccessibilityNodeInfo::setScrollable(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setScrollable",
+			"(Z)V",
+			arg0);
+	}
+	void AccessibilityNodeInfo::setCheckable(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCheckable",
+			"(Z)V",
+			arg0);
+	}
+	jboolean AccessibilityNodeInfo::isCheckable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCheckable",
+			"()Z");
 	}
 	jboolean AccessibilityNodeInfo::isVisibleToUser()
 	{
@@ -1156,6 +1431,13 @@ namespace __jni_impl::android::view::accessibility
 			"(I)V",
 			arg0);
 	}
+	jboolean AccessibilityNodeInfo::performAction(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"performAction",
+			"(I)Z",
+			arg0);
+	}
 	jboolean AccessibilityNodeInfo::performAction(jint arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1164,13 +1446,6 @@ namespace __jni_impl::android::view::accessibility
 			arg0,
 			arg1.__jniObject().object());
 	}
-	jboolean AccessibilityNodeInfo::performAction(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"performAction",
-			"(I)Z",
-			arg0);
-	}
 	QAndroidJniObject AccessibilityNodeInfo::findAccessibilityNodeInfosByText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -1178,241 +1453,20 @@ namespace __jni_impl::android::view::accessibility
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0);
 	}
-	jint AccessibilityNodeInfo::describeContents()
+	QAndroidJniObject AccessibilityNodeInfo::obtain()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void AccessibilityNodeInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject AccessibilityNodeInfo::getWindow()
-	{
-		return __thiz.callObjectMethod(
-			"getWindow",
-			"()Landroid/view/accessibility/AccessibilityWindowInfo;");
-	}
-	void AccessibilityNodeInfo::addAction(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"addAction",
-			"(I)V",
-			arg0);
-	}
-	void AccessibilityNodeInfo::addAction(__jni_impl::android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0)
-	{
-		__thiz.callMethod<void>(
-			"addAction",
-			"(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AccessibilityNodeInfo::focusSearch(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"focusSearch",
-			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0);
-	}
-	QAndroidJniObject AccessibilityNodeInfo::findFocus(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findFocus",
-			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0);
-	}
-	jint AccessibilityNodeInfo::getChildCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getChildCount",
-			"()I");
-	}
-	QAndroidJniObject AccessibilityNodeInfo::getContentDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getContentDescription",
-			"()Ljava/lang/CharSequence;");
-	}
-	void AccessibilityNodeInfo::setContentDescription(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	QAndroidJniObject AccessibilityNodeInfo::getLabelFor()
-	{
-		return __thiz.callObjectMethod(
-			"getLabelFor",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityNodeInfo",
+			"obtain",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;");
 	}
-	void AccessibilityNodeInfo::setLabelFor(__jni_impl::android::view::View arg0)
+	QAndroidJniObject AccessibilityNodeInfo::obtain(__jni_impl::android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
-			"setLabelFor",
-			"(Landroid/view/View;)V",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityNodeInfo",
+			"obtain",
+			"(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0.__jniObject().object());
-	}
-	void AccessibilityNodeInfo::setLabelFor(__jni_impl::android::view::View arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setLabelFor",
-			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	jboolean AccessibilityNodeInfo::isFocused()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFocused",
-			"()Z");
-	}
-	void AccessibilityNodeInfo::setEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnabled",
-			"(Z)V",
-			arg0);
-	}
-	void AccessibilityNodeInfo::setFocusable(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFocusable",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isClickable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isClickable",
-			"()Z");
-	}
-	void AccessibilityNodeInfo::setClickable(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setClickable",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isLongClickable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLongClickable",
-			"()Z");
-	}
-	void AccessibilityNodeInfo::setLongClickable(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLongClickable",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isContextClickable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isContextClickable",
-			"()Z");
-	}
-	void AccessibilityNodeInfo::setContextClickable(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContextClickable",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isFocusable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFocusable",
-			"()Z");
-	}
-	jboolean AccessibilityNodeInfo::isScreenReaderFocusable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScreenReaderFocusable",
-			"()Z");
-	}
-	void AccessibilityNodeInfo::setScreenReaderFocusable(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setScreenReaderFocusable",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isHeading()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isHeading",
-			"()Z");
-	}
-	jboolean AccessibilityNodeInfo::isAccessibilityFocused()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAccessibilityFocused",
-			"()Z");
-	}
-	void AccessibilityNodeInfo::setImportantForAccessibility(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setImportantForAccessibility",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isImportantForAccessibility()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isImportantForAccessibility",
-			"()Z");
-	}
-	jint AccessibilityNodeInfo::getWindowId()
-	{
-		return __thiz.callMethod<jint>(
-			"getWindowId",
-			"()I");
-	}
-	void AccessibilityNodeInfo::setSelected(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSelected",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isSelected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSelected",
-			"()Z");
-	}
-	void AccessibilityNodeInfo::setTooltipText(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTooltipText",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	QAndroidJniObject AccessibilityNodeInfo::getTooltipText()
-	{
-		return __thiz.callObjectMethod(
-			"getTooltipText",
-			"()Ljava/lang/CharSequence;");
-	}
-	void AccessibilityNodeInfo::setCheckable(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCheckable",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isCheckable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCheckable",
-			"()Z");
 	}
 	QAndroidJniObject AccessibilityNodeInfo::obtain(__jni_impl::android::view::accessibility::AccessibilityNodeInfo arg0)
 	{
@@ -1421,13 +1475,6 @@ namespace __jni_impl::android::view::accessibility
 			"obtain",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo;)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AccessibilityNodeInfo::obtain()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityNodeInfo",
-			"obtain",
-			"()Landroid/view/accessibility/AccessibilityNodeInfo;");
 	}
 	QAndroidJniObject AccessibilityNodeInfo::obtain(__jni_impl::android::view::View arg0, jint arg1)
 	{
@@ -1438,58 +1485,11 @@ namespace __jni_impl::android::view::accessibility
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	QAndroidJniObject AccessibilityNodeInfo::obtain(__jni_impl::android::view::View arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityNodeInfo",
-			"obtain",
-			"(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0.__jniObject().object());
-	}
 	void AccessibilityNodeInfo::recycle()
 	{
 		__thiz.callMethod<void>(
 			"recycle",
 			"()V");
-	}
-	void AccessibilityNodeInfo::setPackageName(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPackageName",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isChecked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isChecked",
-			"()Z");
-	}
-	void AccessibilityNodeInfo::setChecked(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setChecked",
-			"(Z)V",
-			arg0);
-	}
-	jboolean AccessibilityNodeInfo::isPassword()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPassword",
-			"()Z");
-	}
-	jboolean AccessibilityNodeInfo::isScrollable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScrollable",
-			"()Z");
-	}
-	void AccessibilityNodeInfo::setScrollable(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setScrollable",
-			"(Z)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::view::accessibility
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_DYNAMICLAYOUT
 #define ANDROID_TEXT_DYNAMICLAYOUT
 
+#include "../../__JniBaseClass.hpp"
 #include "Layout.hpp"
 
 namespace __jni_impl::android::text

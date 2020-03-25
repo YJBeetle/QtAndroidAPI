@@ -44,15 +44,15 @@ namespace __jni_impl::java::util
 		QAndroidJniObject toString();
 		static QAndroidJniObject getInstance(jstring arg0);
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
-		QAndroidJniObject getDisplayName(__jni_impl::java::util::Locale arg0);
 		QAndroidJniObject getDisplayName();
+		QAndroidJniObject getDisplayName(__jni_impl::java::util::Locale arg0);
 		jint getDefaultFractionDigits();
 		QAndroidJniObject getCurrencyCode();
 		QAndroidJniObject getSymbol();
 		QAndroidJniObject getSymbol(__jni_impl::java::util::Locale arg0);
+		QAndroidJniObject getNumericCodeAsString();
 		static QAndroidJniObject getAvailableCurrencies();
 		jint getNumericCode();
-		QAndroidJniObject getNumericCodeAsString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -98,18 +98,18 @@ namespace __jni_impl::java::util
 			"(Ljava/util/Locale;)Ljava/util/Currency;",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject Currency::getDisplayName()
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"()Ljava/lang/String;");
+	}
 	QAndroidJniObject Currency::getDisplayName(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Currency::getDisplayName()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"()Ljava/lang/String;");
 	}
 	jint Currency::getDefaultFractionDigits()
 	{
@@ -136,6 +136,12 @@ namespace __jni_impl::java::util
 			"(Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject Currency::getNumericCodeAsString()
+	{
+		return __thiz.callObjectMethod(
+			"getNumericCodeAsString",
+			"()Ljava/lang/String;");
+	}
 	QAndroidJniObject Currency::getAvailableCurrencies()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -148,12 +154,6 @@ namespace __jni_impl::java::util
 		return __thiz.callMethod<jint>(
 			"getNumericCode",
 			"()I");
-	}
-	QAndroidJniObject Currency::getNumericCodeAsString()
-	{
-		return __thiz.callObjectMethod(
-			"getNumericCodeAsString",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::java::util
 

@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::icu::util
-{
-	class ULocale;
-}
 namespace __jni_impl::java::util
 {
 	class Locale;
@@ -16,6 +12,10 @@ namespace __jni_impl::java::util
 namespace __jni_impl::android::icu::text
 {
 	class PluralRules_PluralType;
+}
+namespace __jni_impl::android::icu::util
+{
+	class ULocale;
 }
 
 namespace __jni_impl::android::icu::text
@@ -37,8 +37,8 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
 		jboolean equals(__jni_impl::android::icu::text::PluralRules arg0);
+		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
 		static QAndroidJniObject parseDescription(jstring arg0);
@@ -46,18 +46,18 @@ namespace __jni_impl::android::icu::text
 		jdouble getUniqueKeywordValue(jstring arg0);
 		QAndroidJniObject getAllKeywordValues(jstring arg0);
 		QAndroidJniObject getSamples(jstring arg0);
-		QAndroidJniObject select(jdouble arg0);
+		static QAndroidJniObject forLocale(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1);
 		static QAndroidJniObject forLocale(__jni_impl::android::icu::util::ULocale arg0);
 		static QAndroidJniObject forLocale(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject forLocale(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1);
-		static QAndroidJniObject forLocale(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1);
 		QAndroidJniObject getKeywords();
+		QAndroidJniObject select(jdouble arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "../util/ULocale.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "PluralRules_PluralType.hpp"
+#include "../util/ULocale.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -127,19 +127,19 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jboolean PluralRules::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0);
-	}
 	jboolean PluralRules::equals(__jni_impl::android::icu::text::PluralRules arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Landroid/icu/text/PluralRules;)Z",
 			arg0.__jniObject().object());
+	}
+	jboolean PluralRules::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0);
 	}
 	QAndroidJniObject PluralRules::toString()
 	{
@@ -190,12 +190,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Ljava/util/Collection;",
 			arg0);
 	}
-	QAndroidJniObject PluralRules::select(jdouble arg0)
+	QAndroidJniObject PluralRules::forLocale(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1)
 	{
-		return __thiz.callObjectMethod(
-			"select",
-			"(D)Ljava/lang/String;",
-			arg0);
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.PluralRules",
+			"forLocale",
+			"(Ljava/util/Locale;Landroid/icu/text/PluralRules$PluralType;)Landroid/icu/text/PluralRules;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 	QAndroidJniObject PluralRules::forLocale(__jni_impl::android::icu::util::ULocale arg0)
 	{
@@ -222,20 +224,18 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
-	QAndroidJniObject PluralRules::forLocale(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.PluralRules",
-			"forLocale",
-			"(Ljava/util/Locale;Landroid/icu/text/PluralRules$PluralType;)Landroid/icu/text/PluralRules;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	QAndroidJniObject PluralRules::getKeywords()
 	{
 		return __thiz.callObjectMethod(
 			"getKeywords",
 			"()Ljava/util/Set;");
+	}
+	QAndroidJniObject PluralRules::select(jdouble arg0)
+	{
+		return __thiz.callObjectMethod(
+			"select",
+			"(D)Ljava/lang/String;",
+			arg0);
 	}
 } // namespace __jni_impl::android::icu::text
 

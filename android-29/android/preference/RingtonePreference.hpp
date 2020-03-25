@@ -3,19 +3,12 @@
 #ifndef ANDROID_PREFERENCE_RINGTONEPREFERENCE
 #define ANDROID_PREFERENCE_RINGTONEPREFERENCE
 
+#include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
-}
-namespace __jni_impl::android::content::res
-{
-	class TypedArray;
-}
-namespace __jni_impl::android::preference
-{
-	class PreferenceManager;
 }
 namespace __jni_impl::android::content
 {
@@ -24,6 +17,14 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::content::res
+{
+	class TypedArray;
+}
+namespace __jni_impl::android::preference
+{
+	class PreferenceManager;
 }
 
 namespace __jni_impl::android::preference
@@ -40,21 +41,21 @@ namespace __jni_impl::android::preference
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void setShowDefault(jboolean arg0);
-		jboolean getShowSilent();
-		void setShowSilent(jboolean arg0);
 		jint getRingtoneType();
 		void setRingtoneType(jint arg0);
 		jboolean getShowDefault();
+		void setShowDefault(jboolean arg0);
+		jboolean getShowSilent();
+		void setShowSilent(jboolean arg0);
 		jboolean onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2);
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
-#include "../content/res/TypedArray.hpp"
-#include "PreferenceManager.hpp"
 #include "../content/Intent.hpp"
 #include "../net/Uri.hpp"
+#include "../content/res/TypedArray.hpp"
+#include "PreferenceManager.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -97,6 +98,25 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
+	jint RingtonePreference::getRingtoneType()
+	{
+		return __thiz.callMethod<jint>(
+			"getRingtoneType",
+			"()I");
+	}
+	void RingtonePreference::setRingtoneType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRingtoneType",
+			"(I)V",
+			arg0);
+	}
+	jboolean RingtonePreference::getShowDefault()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getShowDefault",
+			"()Z");
+	}
 	void RingtonePreference::setShowDefault(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -116,25 +136,6 @@ namespace __jni_impl::android::preference
 			"setShowSilent",
 			"(Z)V",
 			arg0);
-	}
-	jint RingtonePreference::getRingtoneType()
-	{
-		return __thiz.callMethod<jint>(
-			"getRingtoneType",
-			"()I");
-	}
-	void RingtonePreference::setRingtoneType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRingtoneType",
-			"(I)V",
-			arg0);
-	}
-	jboolean RingtonePreference::getShowDefault()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getShowDefault",
-			"()Z");
 	}
 	jboolean RingtonePreference::onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2)
 	{

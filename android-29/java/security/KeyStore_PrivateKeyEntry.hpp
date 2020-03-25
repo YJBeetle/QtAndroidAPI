@@ -24,9 +24,9 @@ namespace __jni_impl::java::security
 		// Methods
 		QAndroidJniObject toString();
 		QAndroidJniObject getAttributes();
-		QAndroidJniObject getCertificate();
 		QAndroidJniObject getPrivateKey();
 		QAndroidJniObject getCertificateChain();
+		QAndroidJniObject getCertificate();
 	};
 } // namespace __jni_impl::java::security
 
@@ -68,12 +68,6 @@ namespace __jni_impl::java::security
 			"getAttributes",
 			"()Ljava/util/Set;");
 	}
-	QAndroidJniObject KeyStore_PrivateKeyEntry::getCertificate()
-	{
-		return __thiz.callObjectMethod(
-			"getCertificate",
-			"()Ljava/security/cert/Certificate;");
-	}
 	QAndroidJniObject KeyStore_PrivateKeyEntry::getPrivateKey()
 	{
 		return __thiz.callObjectMethod(
@@ -85,6 +79,12 @@ namespace __jni_impl::java::security
 		return __thiz.callObjectMethod(
 			"getCertificateChain",
 			"()[Ljava/security/cert/Certificate;");
+	}
+	QAndroidJniObject KeyStore_PrivateKeyEntry::getCertificate()
+	{
+		return __thiz.callObjectMethod(
+			"getCertificate",
+			"()Ljava/security/cert/Certificate;");
 	}
 } // namespace __jni_impl::java::security
 

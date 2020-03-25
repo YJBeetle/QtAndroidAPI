@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_QUICKCONTACTBADGE
 #define ANDROID_WIDGET_QUICKCONTACTBADGE
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "ImageView.hpp"
 
 namespace __jni_impl::android::content
@@ -13,13 +15,13 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
 namespace __jni_impl::android::view
 {
 	class View;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
 }
 namespace __jni_impl::android::net
 {
@@ -45,10 +47,10 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void setOverlay(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void onClick(__jni_impl::android::view::View arg0);
 		QAndroidJniObject getAccessibilityClassName();
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
 		void setMode(jint arg0);
-		void onClick(__jni_impl::android::view::View arg0);
 		void setPrioritizedMimeType(jstring arg0);
 		void setImageToDefault();
 		void assignContactUri(__jni_impl::android::net::Uri arg0);
@@ -62,8 +64,8 @@ namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "../graphics/Canvas.hpp"
 #include "../view/View.hpp"
+#include "../graphics/Canvas.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 
@@ -115,6 +117,13 @@ namespace __jni_impl::android::widget
 			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object());
 	}
+	void QuickContactBadge::onClick(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"onClick",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject QuickContactBadge::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
@@ -135,13 +144,6 @@ namespace __jni_impl::android::widget
 			"setMode",
 			"(I)V",
 			arg0);
-	}
-	void QuickContactBadge::onClick(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"onClick",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
 	}
 	void QuickContactBadge::setPrioritizedMimeType(jstring arg0)
 	{

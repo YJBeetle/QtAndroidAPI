@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_VIEW_BASESAVEDSTATE
 #define ANDROID_VIEW_VIEW_BASESAVEDSTATE
 
+#include "../../__JniBaseClass.hpp"
 #include "AbsSavedState.hpp"
 
 namespace __jni_impl::android::os

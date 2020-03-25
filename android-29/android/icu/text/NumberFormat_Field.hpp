@@ -3,6 +3,8 @@
 #ifndef ANDROID_ICU_TEXT_NUMBERFORMAT_FIELD
 #define ANDROID_ICU_TEXT_NUMBERFORMAT_FIELD
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/text/AttributedCharacterIterator_Attribute.hpp"
 #include "../../../java/text/Format_Field.hpp"
 
 

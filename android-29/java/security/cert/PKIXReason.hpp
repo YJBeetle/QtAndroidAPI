@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_CERT_PKIXREASON
 #define JAVA_SECURITY_CERT_PKIXREASON
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

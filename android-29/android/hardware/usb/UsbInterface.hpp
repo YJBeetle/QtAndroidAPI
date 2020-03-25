@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::hardware::usb
-{
-	class UsbEndpoint;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::hardware::usb
+{
+	class UsbEndpoint;
 }
 
 namespace __jni_impl::android::hardware::usb
@@ -29,19 +29,19 @@ namespace __jni_impl::android::hardware::usb
 		QAndroidJniObject getName();
 		QAndroidJniObject toString();
 		jint getId();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getAlternateSetting();
 		jint getInterfaceClass();
 		jint getInterfaceSubclass();
 		jint getInterfaceProtocol();
 		jint getEndpointCount();
 		QAndroidJniObject getEndpoint(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::usb
 
-#include "UsbEndpoint.hpp"
 #include "../../os/Parcel.hpp"
+#include "UsbEndpoint.hpp"
 
 namespace __jni_impl::android::hardware::usb
 {
@@ -81,6 +81,20 @@ namespace __jni_impl::android::hardware::usb
 			"getId",
 			"()I");
 	}
+	jint UsbInterface::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void UsbInterface::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint UsbInterface::getAlternateSetting()
 	{
 		return __thiz.callMethod<jint>(
@@ -117,20 +131,6 @@ namespace __jni_impl::android::hardware::usb
 			"getEndpoint",
 			"(I)Landroid/hardware/usb/UsbEndpoint;",
 			arg0);
-	}
-	jint UsbInterface::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void UsbInterface::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::hardware::usb
 

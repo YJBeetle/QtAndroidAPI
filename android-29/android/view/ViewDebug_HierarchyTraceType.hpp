@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_VIEWDEBUG_HIERARCHYTRACETYPE
 #define ANDROID_VIEW_VIEWDEBUG_HIERARCHYTRACETYPE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

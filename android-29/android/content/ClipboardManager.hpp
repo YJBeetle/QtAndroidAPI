@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_CLIPBOARDMANAGER
 #define ANDROID_CONTENT_CLIPBOARDMANAGER
 
+#include "../../__JniBaseClass.hpp"
 #include "../text/ClipboardManager.hpp"
 
 namespace __jni_impl::android::content

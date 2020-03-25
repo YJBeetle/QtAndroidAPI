@@ -17,11 +17,11 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		jint onWrite(jlong arg0, jint arg1, jbyteArray arg2);
 		jlong onGetSize();
 		jint onRead(jlong arg0, jint arg1, jbyteArray arg2);
 		void onFsync();
 		void onRelease();
+		jint onWrite(jlong arg0, jint arg1, jbyteArray arg2);
 	};
 } // namespace __jni_impl::android::os
 
@@ -39,15 +39,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jint ProxyFileDescriptorCallback::onWrite(jlong arg0, jint arg1, jbyteArray arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"onWrite",
-			"(JI[B)I",
-			arg0,
-			arg1,
-			arg2);
-	}
 	jlong ProxyFileDescriptorCallback::onGetSize()
 	{
 		return __thiz.callMethod<jlong>(
@@ -74,6 +65,15 @@ namespace __jni_impl::android::os
 		__thiz.callMethod<void>(
 			"onRelease",
 			"()V");
+	}
+	jint ProxyFileDescriptorCallback::onWrite(jlong arg0, jint arg1, jbyteArray arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"onWrite",
+			"(JI[B)I",
+			arg0,
+			arg1,
+			arg2);
 	}
 } // namespace __jni_impl::android::os
 

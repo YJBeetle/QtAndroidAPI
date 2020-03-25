@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_FILEWRITER
 #define JAVA_IO_FILEWRITER
 
+#include "../../__JniBaseClass.hpp"
+#include "Writer.hpp"
 #include "OutputStreamWriter.hpp"
 
 namespace __jni_impl::java::io

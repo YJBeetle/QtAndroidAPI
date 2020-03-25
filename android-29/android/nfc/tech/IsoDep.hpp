@@ -25,14 +25,14 @@ namespace __jni_impl::android::nfc::tech
 		void connect();
 		void close();
 		QAndroidJniObject getTag();
-		QAndroidJniObject getHistoricalBytes();
-		QAndroidJniObject getHiLayerResponse();
-		jboolean isExtendedLengthApduSupported();
 		QAndroidJniObject transceive(jbyteArray arg0);
 		jint getMaxTransceiveLength();
 		void setTimeout(jint arg0);
 		jint getTimeout();
 		jboolean isConnected();
+		QAndroidJniObject getHistoricalBytes();
+		QAndroidJniObject getHiLayerResponse();
+		jboolean isExtendedLengthApduSupported();
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -77,24 +77,6 @@ namespace __jni_impl::android::nfc::tech
 			"getTag",
 			"()Landroid/nfc/Tag;");
 	}
-	QAndroidJniObject IsoDep::getHistoricalBytes()
-	{
-		return __thiz.callObjectMethod(
-			"getHistoricalBytes",
-			"()[B");
-	}
-	QAndroidJniObject IsoDep::getHiLayerResponse()
-	{
-		return __thiz.callObjectMethod(
-			"getHiLayerResponse",
-			"()[B");
-	}
-	jboolean IsoDep::isExtendedLengthApduSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isExtendedLengthApduSupported",
-			"()Z");
-	}
 	QAndroidJniObject IsoDep::transceive(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -125,6 +107,24 @@ namespace __jni_impl::android::nfc::tech
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
+			"()Z");
+	}
+	QAndroidJniObject IsoDep::getHistoricalBytes()
+	{
+		return __thiz.callObjectMethod(
+			"getHistoricalBytes",
+			"()[B");
+	}
+	QAndroidJniObject IsoDep::getHiLayerResponse()
+	{
+		return __thiz.callObjectMethod(
+			"getHiLayerResponse",
+			"()[B");
+	}
+	jboolean IsoDep::isExtendedLengthApduSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isExtendedLengthApduSupported",
 			"()Z");
 	}
 } // namespace __jni_impl::android::nfc::tech

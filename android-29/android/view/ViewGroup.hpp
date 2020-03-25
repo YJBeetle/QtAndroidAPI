@@ -3,19 +3,12 @@
 #ifndef ANDROID_VIEW_VIEWGROUP
 #define ANDROID_VIEW_VIEWGROUP
 
+#include "../../__JniBaseClass.hpp"
 #include "View.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
-}
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
 }
 namespace __jni_impl::android::view
 {
@@ -44,6 +37,14 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::view
 {
 	class DragEvent;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
 }
 namespace __jni_impl::android::view
 {
@@ -125,11 +126,6 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		jboolean hasFocus();
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
-		jboolean dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0);
-		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
 		jint getDescendantFocusability();
 		void setDescendantFocusability(jint arg0);
 		void requestChildFocus(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1);
@@ -194,11 +190,11 @@ namespace __jni_impl::android::view
 		void dispatchSetSelected(jboolean arg0);
 		void dispatchSetActivated(jboolean arg0);
 		void dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1);
-		void addView(__jni_impl::android::view::View arg0, jint arg1, jint arg2);
-		void addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
-		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
 		void addView(__jni_impl::android::view::View arg0);
+		void addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		void addView(__jni_impl::android::view::View arg0, jint arg1);
+		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
+		void addView(__jni_impl::android::view::View arg0, jint arg1, jint arg2);
 		void updateViewLayout(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		void setOnHierarchyChangeListener(__jni_impl::__JniBaseClass arg0);
 		void onViewAdded(__jni_impl::android::view::View arg0);
@@ -259,12 +255,15 @@ namespace __jni_impl::android::view
 		jboolean onNestedFling(__jni_impl::android::view::View arg0, jfloat arg1, jfloat arg2, jboolean arg3);
 		jboolean onNestedPreFling(__jni_impl::android::view::View arg0, jfloat arg1, jfloat arg2);
 		jint getNestedScrollAxes();
+		jboolean hasFocus();
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
+		jboolean dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0);
+		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
-#include "KeyEvent.hpp"
-#include "MotionEvent.hpp"
 #include "View.hpp"
 #include "ActionMode.hpp"
 #include "../graphics/Rect.hpp"
@@ -272,6 +271,8 @@ namespace __jni_impl::android::view
 #include "../../java/util/ArrayList.hpp"
 #include "../content/res/Configuration.hpp"
 #include "DragEvent.hpp"
+#include "KeyEvent.hpp"
+#include "MotionEvent.hpp"
 #include "PointerIcon.hpp"
 #include "ViewStructure.hpp"
 #include "../os/Bundle.hpp"
@@ -382,40 +383,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean ViewGroup::hasFocus()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasFocus",
-			"()Z");
-	}
-	jboolean ViewGroup::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean ViewGroup::dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyShortcutEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean ViewGroup::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean ViewGroup::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
 	jint ViewGroup::getDescendantFocusability()
 	{
 		return __thiz.callMethod<jint>(
@@ -875,14 +842,12 @@ namespace __jni_impl::android::view
 			arg0,
 			arg1);
 	}
-	void ViewGroup::addView(__jni_impl::android::view::View arg0, jint arg1, jint arg2)
+	void ViewGroup::addView(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"addView",
-			"(Landroid/view/View;II)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2);
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
 	}
 	void ViewGroup::addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
 	{
@@ -891,6 +856,14 @@ namespace __jni_impl::android::view
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
+	}
+	void ViewGroup::addView(__jni_impl::android::view::View arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(Landroid/view/View;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	void ViewGroup::addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2)
 	{
@@ -901,20 +874,14 @@ namespace __jni_impl::android::view
 			arg1,
 			arg2.__jniObject().object());
 	}
-	void ViewGroup::addView(__jni_impl::android::view::View arg0)
+	void ViewGroup::addView(__jni_impl::android::view::View arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
 			"addView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
-	}
-	void ViewGroup::addView(__jni_impl::android::view::View arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(Landroid/view/View;I)V",
+			"(Landroid/view/View;II)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1,
+			arg2);
 	}
 	void ViewGroup::updateViewLayout(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
 	{
@@ -1349,6 +1316,40 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jint>(
 			"getNestedScrollAxes",
 			"()I");
+	}
+	jboolean ViewGroup::hasFocus()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasFocus",
+			"()Z");
+	}
+	jboolean ViewGroup::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean ViewGroup::dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyShortcutEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean ViewGroup::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean ViewGroup::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::view
 

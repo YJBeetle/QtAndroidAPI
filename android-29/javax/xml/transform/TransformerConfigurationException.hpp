@@ -3,6 +3,8 @@
 #ifndef JAVAX_XML_TRANSFORM_TRANSFORMERCONFIGURATIONEXCEPTION
 #define JAVAX_XML_TRANSFORM_TRANSFORMERCONFIGURATIONEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
 #include "TransformerException.hpp"
 
 

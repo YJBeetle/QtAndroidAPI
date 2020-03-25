@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_PAINTFLAGSDRAWFILTER
 #define ANDROID_GRAPHICS_PAINTFLAGSDRAWFILTER
 
+#include "../../__JniBaseClass.hpp"
 #include "DrawFilter.hpp"
 
 

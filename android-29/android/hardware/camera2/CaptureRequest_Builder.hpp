@@ -32,11 +32,11 @@ namespace __jni_impl::android::hardware::camera2
 		QAndroidJniObject get(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0);
 		void set(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1);
 		QAndroidJniObject build();
-		QAndroidJniObject setPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2);
-		QAndroidJniObject getPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jstring arg1);
+		void setTag(jobject arg0);
 		void addTarget(__jni_impl::android::view::Surface arg0);
 		void removeTarget(__jni_impl::android::view::Surface arg0);
-		void setTag(jobject arg0);
+		QAndroidJniObject setPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2);
+		QAndroidJniObject getPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
@@ -78,6 +78,27 @@ namespace __jni_impl::android::hardware::camera2
 			"build",
 			"()Landroid/hardware/camera2/CaptureRequest;");
 	}
+	void CaptureRequest_Builder::setTag(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTag",
+			"(Ljava/lang/Object;)V",
+			arg0);
+	}
+	void CaptureRequest_Builder::addTarget(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"addTarget",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object());
+	}
+	void CaptureRequest_Builder::removeTarget(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeTarget",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject CaptureRequest_Builder::setPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -94,27 +115,6 @@ namespace __jni_impl::android::hardware::camera2
 			"(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/String;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	void CaptureRequest_Builder::addTarget(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"addTarget",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
-	}
-	void CaptureRequest_Builder::removeTarget(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeTarget",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
-	}
-	void CaptureRequest_Builder::setTag(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTag",
-			"(Ljava/lang/Object;)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

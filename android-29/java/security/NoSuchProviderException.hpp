@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_NOSUCHPROVIDEREXCEPTION
 #define JAVA_SECURITY_NOSUCHPROVIDEREXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "GeneralSecurityException.hpp"
 
 

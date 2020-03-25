@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_TEMPORAL_CHRONOUNIT
 #define JAVA_TIME_TEMPORAL_CHRONOUNIT
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 namespace __jni_impl::java::time

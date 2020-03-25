@@ -3,6 +3,7 @@
 #ifndef ORG_XML_SAX_EXT_ATTRIBUTES2IMPL
 #define ORG_XML_SAX_EXT_ATTRIBUTES2IMPL
 
+#include "../../../../__JniBaseClass.hpp"
 #include "../helpers/AttributesImpl.hpp"
 
 
@@ -19,16 +20,16 @@ namespace __jni_impl::org::xml::sax::ext
 		
 		// Methods
 		void addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
+		void removeAttribute(jint arg0);
+		jboolean isDeclared(jstring arg0);
+		jboolean isDeclared(jint arg0);
+		jboolean isDeclared(jstring arg0, jstring arg1);
+		void setDeclared(jint arg0, jboolean arg1);
+		void setSpecified(jint arg0, jboolean arg1);
 		jboolean isSpecified(jint arg0);
 		jboolean isSpecified(jstring arg0, jstring arg1);
 		jboolean isSpecified(jstring arg0);
-		void removeAttribute(jint arg0);
 		void setAttributes(__jni_impl::__JniBaseClass arg0);
-		jboolean isDeclared(jint arg0);
-		jboolean isDeclared(jstring arg0, jstring arg1);
-		jboolean isDeclared(jstring arg0);
-		void setDeclared(jint arg0, jboolean arg1);
-		void setSpecified(jint arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::org::xml::sax::ext
 
@@ -64,6 +65,51 @@ namespace __jni_impl::org::xml::sax::ext
 			arg3,
 			arg4);
 	}
+	void Attributes2Impl::removeAttribute(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeAttribute",
+			"(I)V",
+			arg0);
+	}
+	jboolean Attributes2Impl::isDeclared(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDeclared",
+			"(Ljava/lang/String;)Z",
+			arg0);
+	}
+	jboolean Attributes2Impl::isDeclared(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDeclared",
+			"(I)Z",
+			arg0);
+	}
+	jboolean Attributes2Impl::isDeclared(jstring arg0, jstring arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDeclared",
+			"(Ljava/lang/String;Ljava/lang/String;)Z",
+			arg0,
+			arg1);
+	}
+	void Attributes2Impl::setDeclared(jint arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setDeclared",
+			"(IZ)V",
+			arg0,
+			arg1);
+	}
+	void Attributes2Impl::setSpecified(jint arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setSpecified",
+			"(IZ)V",
+			arg0,
+			arg1);
+	}
 	jboolean Attributes2Impl::isSpecified(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -86,57 +132,12 @@ namespace __jni_impl::org::xml::sax::ext
 			"(Ljava/lang/String;)Z",
 			arg0);
 	}
-	void Attributes2Impl::removeAttribute(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeAttribute",
-			"(I)V",
-			arg0);
-	}
 	void Attributes2Impl::setAttributes(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAttributes",
 			"(Lorg/xml/sax/Attributes;)V",
 			arg0.__jniObject().object());
-	}
-	jboolean Attributes2Impl::isDeclared(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDeclared",
-			"(I)Z",
-			arg0);
-	}
-	jboolean Attributes2Impl::isDeclared(jstring arg0, jstring arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDeclared",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1);
-	}
-	jboolean Attributes2Impl::isDeclared(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDeclared",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	void Attributes2Impl::setDeclared(jint arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setDeclared",
-			"(IZ)V",
-			arg0,
-			arg1);
-	}
-	void Attributes2Impl::setSpecified(jint arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setSpecified",
-			"(IZ)V",
-			arg0,
-			arg1);
 	}
 } // namespace __jni_impl::org::xml::sax::ext
 

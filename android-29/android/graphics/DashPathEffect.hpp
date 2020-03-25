@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_DASHPATHEFFECT
 #define ANDROID_GRAPHICS_DASHPATHEFFECT
 
+#include "../../__JniBaseClass.hpp"
 #include "PathEffect.hpp"
 
 

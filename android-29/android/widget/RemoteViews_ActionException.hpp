@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_REMOTEVIEWS_ACTIONEXCEPTION
 #define ANDROID_WIDGET_REMOTEVIEWS_ACTIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 namespace __jni_impl::java::lang

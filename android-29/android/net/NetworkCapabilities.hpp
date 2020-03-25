@@ -56,14 +56,14 @@ namespace __jni_impl::android::net
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		jboolean hasCapability(jint arg0);
-		jboolean hasTransport(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getLinkUpstreamBandwidthKbps();
 		jint getLinkDownstreamBandwidthKbps();
 		QAndroidJniObject getTransportInfo();
 		jint getSignalStrength();
+		jboolean hasCapability(jint arg0);
+		jboolean hasTransport(jint arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net
 
@@ -295,6 +295,30 @@ namespace __jni_impl::android::net
 			"hashCode",
 			"()I");
 	}
+	jint NetworkCapabilities::getLinkUpstreamBandwidthKbps()
+	{
+		return __thiz.callMethod<jint>(
+			"getLinkUpstreamBandwidthKbps",
+			"()I");
+	}
+	jint NetworkCapabilities::getLinkDownstreamBandwidthKbps()
+	{
+		return __thiz.callMethod<jint>(
+			"getLinkDownstreamBandwidthKbps",
+			"()I");
+	}
+	QAndroidJniObject NetworkCapabilities::getTransportInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getTransportInfo",
+			"()Landroid/net/TransportInfo;");
+	}
+	jint NetworkCapabilities::getSignalStrength()
+	{
+		return __thiz.callMethod<jint>(
+			"getSignalStrength",
+			"()I");
+	}
 	jboolean NetworkCapabilities::hasCapability(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -322,30 +346,6 @@ namespace __jni_impl::android::net
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint NetworkCapabilities::getLinkUpstreamBandwidthKbps()
-	{
-		return __thiz.callMethod<jint>(
-			"getLinkUpstreamBandwidthKbps",
-			"()I");
-	}
-	jint NetworkCapabilities::getLinkDownstreamBandwidthKbps()
-	{
-		return __thiz.callMethod<jint>(
-			"getLinkDownstreamBandwidthKbps",
-			"()I");
-	}
-	QAndroidJniObject NetworkCapabilities::getTransportInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getTransportInfo",
-			"()Landroid/net/TransportInfo;");
-	}
-	jint NetworkCapabilities::getSignalStrength()
-	{
-		return __thiz.callMethod<jint>(
-			"getSignalStrength",
-			"()I");
 	}
 } // namespace __jni_impl::android::net
 

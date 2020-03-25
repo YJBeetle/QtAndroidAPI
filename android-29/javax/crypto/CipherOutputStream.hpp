@@ -3,6 +3,8 @@
 #ifndef JAVAX_CRYPTO_CIPHEROUTPUTSTREAM
 #define JAVAX_CRYPTO_CIPHEROUTPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/io/OutputStream.hpp"
 #include "../../java/io/FilterOutputStream.hpp"
 
 namespace __jni_impl::javax::crypto

@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_STYLE_TTSSPAN_FRACTIONBUILDER
 #define ANDROID_TEXT_STYLE_TTSSPAN_FRACTIONBUILDER
 
+#include "../../../__JniBaseClass.hpp"
+#include "TtsSpan_Builder.hpp"
 #include "TtsSpan_SemioticClassBuilder.hpp"
 
 

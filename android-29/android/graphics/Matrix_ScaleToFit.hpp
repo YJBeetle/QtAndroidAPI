@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_MATRIX_SCALETOFIT
 #define ANDROID_GRAPHICS_MATRIX_SCALETOFIT
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

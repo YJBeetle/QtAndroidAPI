@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_PROPERTIES
 #define JAVA_UTIL_PROPERTIES
 
+#include "../../__JniBaseClass.hpp"
+#include "Dictionary.hpp"
 #include "Hashtable.hpp"
 
 namespace __jni_impl::java::util::concurrent

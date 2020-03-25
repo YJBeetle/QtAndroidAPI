@@ -3,6 +3,7 @@
 #ifndef ANDROID_HARDWARE_CAMERA2_CAPTURERESULT
 #define ANDROID_HARDWARE_CAMERA2_CAPTURERESULT
 
+#include "../../../__JniBaseClass.hpp"
 #include "CameraMetadata.hpp"
 
 namespace __jni_impl::android::hardware::camera2

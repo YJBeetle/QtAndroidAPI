@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_CHARACTER_UNICODEBLOCK
 #define JAVA_LANG_CHARACTER_UNICODEBLOCK
 
+#include "../../__JniBaseClass.hpp"
 #include "Character_Subset.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_CONCURRENTLINKEDDEQUE
 #define JAVA_UTIL_CONCURRENT_CONCURRENTLINKEDDEQUE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../AbstractCollection.hpp"
 
 namespace __jni_impl::java::io

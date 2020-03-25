@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_COLORSPACE_RGB
 #define ANDROID_GRAPHICS_COLORSPACE_RGB
 
+#include "../../__JniBaseClass.hpp"
 #include "ColorSpace.hpp"
 
 namespace __jni_impl::android::graphics
@@ -28,6 +29,10 @@ namespace __jni_impl::android::graphics
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
+		jfloat getMinValue(jint arg0);
+		jfloat getMaxValue(jint arg0);
+		QAndroidJniObject toXyz(jfloatArray arg0);
+		QAndroidJniObject fromXyz(jfloatArray arg0);
 		QAndroidJniObject getWhitePoint();
 		QAndroidJniObject getWhitePoint(jfloatArray arg0);
 		QAndroidJniObject getPrimaries(jfloatArray arg0);
@@ -37,18 +42,14 @@ namespace __jni_impl::android::graphics
 		QAndroidJniObject getOetf();
 		QAndroidJniObject getEotf();
 		QAndroidJniObject getTransferParameters();
-		QAndroidJniObject toLinear(jfloat arg0, jfloat arg1, jfloat arg2);
 		QAndroidJniObject toLinear(jfloatArray arg0);
-		QAndroidJniObject fromLinear(jfloatArray arg0);
+		QAndroidJniObject toLinear(jfloat arg0, jfloat arg1, jfloat arg2);
 		QAndroidJniObject fromLinear(jfloat arg0, jfloat arg1, jfloat arg2);
-		jboolean isWideGamut();
-		jboolean isSrgb();
-		jfloat getMinValue(jint arg0);
-		jfloat getMaxValue(jint arg0);
-		QAndroidJniObject toXyz(jfloatArray arg0);
-		QAndroidJniObject fromXyz(jfloatArray arg0);
+		QAndroidJniObject fromLinear(jfloatArray arg0);
 		QAndroidJniObject getTransform(jfloatArray arg0);
 		QAndroidJniObject getTransform();
+		jboolean isWideGamut();
+		jboolean isSrgb();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -135,6 +136,34 @@ namespace __jni_impl::android::graphics
 			"hashCode",
 			"()I");
 	}
+	jfloat ColorSpace_Rgb::getMinValue(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMinValue",
+			"(I)F",
+			arg0);
+	}
+	jfloat ColorSpace_Rgb::getMaxValue(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMaxValue",
+			"(I)F",
+			arg0);
+	}
+	QAndroidJniObject ColorSpace_Rgb::toXyz(jfloatArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"toXyz",
+			"([F)[F",
+			arg0);
+	}
+	QAndroidJniObject ColorSpace_Rgb::fromXyz(jfloatArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"fromXyz",
+			"([F)[F",
+			arg0);
+	}
 	QAndroidJniObject ColorSpace_Rgb::getWhitePoint()
 	{
 		return __thiz.callObjectMethod(
@@ -192,6 +221,13 @@ namespace __jni_impl::android::graphics
 			"getTransferParameters",
 			"()Landroid/graphics/ColorSpace$Rgb$TransferParameters;");
 	}
+	QAndroidJniObject ColorSpace_Rgb::toLinear(jfloatArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"toLinear",
+			"([F)[F",
+			arg0);
+	}
 	QAndroidJniObject ColorSpace_Rgb::toLinear(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -200,20 +236,6 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2);
-	}
-	QAndroidJniObject ColorSpace_Rgb::toLinear(jfloatArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"toLinear",
-			"([F)[F",
-			arg0);
-	}
-	QAndroidJniObject ColorSpace_Rgb::fromLinear(jfloatArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"fromLinear",
-			"([F)[F",
-			arg0);
 	}
 	QAndroidJniObject ColorSpace_Rgb::fromLinear(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
@@ -224,43 +246,10 @@ namespace __jni_impl::android::graphics
 			arg1,
 			arg2);
 	}
-	jboolean ColorSpace_Rgb::isWideGamut()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWideGamut",
-			"()Z");
-	}
-	jboolean ColorSpace_Rgb::isSrgb()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSrgb",
-			"()Z");
-	}
-	jfloat ColorSpace_Rgb::getMinValue(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMinValue",
-			"(I)F",
-			arg0);
-	}
-	jfloat ColorSpace_Rgb::getMaxValue(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMaxValue",
-			"(I)F",
-			arg0);
-	}
-	QAndroidJniObject ColorSpace_Rgb::toXyz(jfloatArray arg0)
+	QAndroidJniObject ColorSpace_Rgb::fromLinear(jfloatArray arg0)
 	{
 		return __thiz.callObjectMethod(
-			"toXyz",
-			"([F)[F",
-			arg0);
-	}
-	QAndroidJniObject ColorSpace_Rgb::fromXyz(jfloatArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"fromXyz",
+			"fromLinear",
 			"([F)[F",
 			arg0);
 	}
@@ -276,6 +265,18 @@ namespace __jni_impl::android::graphics
 		return __thiz.callObjectMethod(
 			"getTransform",
 			"()[F");
+	}
+	jboolean ColorSpace_Rgb::isWideGamut()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWideGamut",
+			"()Z");
+	}
+	jboolean ColorSpace_Rgb::isSrgb()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSrgb",
+			"()Z");
 	}
 } // namespace __jni_impl::android::graphics
 

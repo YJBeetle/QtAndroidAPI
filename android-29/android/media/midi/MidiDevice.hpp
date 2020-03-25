@@ -7,10 +7,6 @@
 
 namespace __jni_impl::android::media::midi
 {
-	class MidiDeviceInfo;
-}
-namespace __jni_impl::android::media::midi
-{
 	class MidiInputPort;
 }
 namespace __jni_impl::android::media::midi
@@ -20,6 +16,10 @@ namespace __jni_impl::android::media::midi
 namespace __jni_impl::android::media::midi
 {
 	class MidiDevice_MidiConnection;
+}
+namespace __jni_impl::android::media::midi
+{
+	class MidiDeviceInfo;
 }
 
 namespace __jni_impl::android::media::midi
@@ -35,17 +35,17 @@ namespace __jni_impl::android::media::midi
 		// Methods
 		QAndroidJniObject toString();
 		void close();
-		QAndroidJniObject getInfo();
 		QAndroidJniObject openInputPort(jint arg0);
 		QAndroidJniObject openOutputPort(jint arg0);
 		QAndroidJniObject connectPorts(__jni_impl::android::media::midi::MidiInputPort arg0, jint arg1);
+		QAndroidJniObject getInfo();
 	};
 } // namespace __jni_impl::android::media::midi
 
-#include "MidiDeviceInfo.hpp"
 #include "MidiInputPort.hpp"
 #include "MidiOutputPort.hpp"
 #include "MidiDevice_MidiConnection.hpp"
+#include "MidiDeviceInfo.hpp"
 
 namespace __jni_impl::android::media::midi
 {
@@ -72,12 +72,6 @@ namespace __jni_impl::android::media::midi
 			"close",
 			"()V");
 	}
-	QAndroidJniObject MidiDevice::getInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getInfo",
-			"()Landroid/media/midi/MidiDeviceInfo;");
-	}
 	QAndroidJniObject MidiDevice::openInputPort(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -99,6 +93,12 @@ namespace __jni_impl::android::media::midi
 			"(Landroid/media/midi/MidiInputPort;I)Landroid/media/midi/MidiDevice$MidiConnection;",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject MidiDevice::getInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getInfo",
+			"()Landroid/media/midi/MidiDeviceInfo;");
 	}
 } // namespace __jni_impl::android::media::midi
 

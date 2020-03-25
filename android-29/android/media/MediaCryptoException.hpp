@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_MEDIACRYPTOEXCEPTION
 #define ANDROID_MEDIA_MEDIACRYPTOEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 

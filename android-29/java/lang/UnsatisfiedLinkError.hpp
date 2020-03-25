@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_UNSATISFIEDLINKERROR
 #define JAVA_LANG_UNSATISFIEDLINKERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "LinkageError.hpp"
 
 

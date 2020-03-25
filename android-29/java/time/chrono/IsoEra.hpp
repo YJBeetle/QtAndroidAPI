@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_CHRONO_ISOERA
 #define JAVA_TIME_CHRONO_ISOERA
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_THREADDEATH
 #define JAVA_LANG_THREADDEATH
 
+#include "../../__JniBaseClass.hpp"
 #include "Error.hpp"
 
 

@@ -19,12 +19,12 @@ namespace __jni_impl::android::graphics::text
 		// Methods
 		void setWidth(jfloat arg0);
 		jfloat getWidth();
+		void setIndent(jfloat arg0, jint arg1);
 		void setTabStops(jfloatArray arg0, jfloat arg1);
 		jfloat getFirstWidth();
 		jint getFirstWidthLineCount();
 		QAndroidJniObject getTabStops();
 		jfloat getDefaultTabStop();
-		void setIndent(jfloat arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::graphics::text
 
@@ -54,6 +54,14 @@ namespace __jni_impl::android::graphics::text
 		return __thiz.callMethod<jfloat>(
 			"getWidth",
 			"()F");
+	}
+	void LineBreaker_ParagraphConstraints::setIndent(jfloat arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setIndent",
+			"(FI)V",
+			arg0,
+			arg1);
 	}
 	void LineBreaker_ParagraphConstraints::setTabStops(jfloatArray arg0, jfloat arg1)
 	{
@@ -86,14 +94,6 @@ namespace __jni_impl::android::graphics::text
 		return __thiz.callMethod<jfloat>(
 			"getDefaultTabStop",
 			"()F");
-	}
-	void LineBreaker_ParagraphConstraints::setIndent(jfloat arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setIndent",
-			"(FI)V",
-			arg0,
-			arg1);
 	}
 } // namespace __jni_impl::android::graphics::text
 

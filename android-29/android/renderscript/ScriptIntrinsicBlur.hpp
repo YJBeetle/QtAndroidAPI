@@ -3,6 +3,9 @@
 #ifndef ANDROID_RENDERSCRIPT_SCRIPTINTRINSICBLUR
 #define ANDROID_RENDERSCRIPT_SCRIPTINTRINSICBLUR
 
+#include "../../__JniBaseClass.hpp"
+#include "BaseObj.hpp"
+#include "Script.hpp"
 #include "ScriptIntrinsic.hpp"
 
 namespace __jni_impl::android::renderscript
@@ -45,9 +48,9 @@ namespace __jni_impl::android::renderscript
 		void forEach(__jni_impl::android::renderscript::Allocation arg0);
 		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1);
 		void setInput(__jni_impl::android::renderscript::Allocation arg0);
+		void setRadius(jfloat arg0);
 		QAndroidJniObject getKernelID();
 		QAndroidJniObject getFieldID_Input();
-		void setRadius(jfloat arg0);
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -102,6 +105,13 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object());
 	}
+	void ScriptIntrinsicBlur::setRadius(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRadius",
+			"(F)V",
+			arg0);
+	}
 	QAndroidJniObject ScriptIntrinsicBlur::getKernelID()
 	{
 		return __thiz.callObjectMethod(
@@ -113,13 +123,6 @@ namespace __jni_impl::android::renderscript
 		return __thiz.callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;");
-	}
-	void ScriptIntrinsicBlur::setRadius(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRadius",
-			"(F)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::renderscript
 

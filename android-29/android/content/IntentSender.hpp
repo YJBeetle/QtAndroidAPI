@@ -41,16 +41,16 @@ namespace __jni_impl::android::content
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		void sendIntent(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4);
 		void sendIntent(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, jstring arg5);
+		void sendIntent(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4);
 		static void writeIntentSenderOrNullToParcel(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::os::Parcel arg1);
 		static QAndroidJniObject readIntentSenderOrNullFromParcel(__jni_impl::android::os::Parcel arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getTargetPackage();
 		QAndroidJniObject getCreatorPackage();
 		jint getCreatorUid();
 		QAndroidJniObject getCreatorUserHandle();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
@@ -99,17 +99,6 @@ namespace __jni_impl::android::content
 			"hashCode",
 			"()I");
 	}
-	void IntentSender::sendIntent(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4)
-	{
-		__thiz.callMethod<void>(
-			"sendIntent",
-			"(Landroid/content/Context;ILandroid/content/Intent;Landroid/content/IntentSender$OnFinished;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
-	}
 	void IntentSender::sendIntent(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, jstring arg5)
 	{
 		__thiz.callMethod<void>(
@@ -121,6 +110,17 @@ namespace __jni_impl::android::content
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5);
+	}
+	void IntentSender::sendIntent(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4)
+	{
+		__thiz.callMethod<void>(
+			"sendIntent",
+			"(Landroid/content/Context;ILandroid/content/Intent;Landroid/content/IntentSender$OnFinished;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object());
 	}
 	void IntentSender::writeIntentSenderOrNullToParcel(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::os::Parcel arg1)
 	{
@@ -138,20 +138,6 @@ namespace __jni_impl::android::content
 			"readIntentSenderOrNullFromParcel",
 			"(Landroid/os/Parcel;)Landroid/content/IntentSender;",
 			arg0.__jniObject().object());
-	}
-	jint IntentSender::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void IntentSender::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 	QAndroidJniObject IntentSender::getTargetPackage()
 	{
@@ -176,6 +162,20 @@ namespace __jni_impl::android::content
 		return __thiz.callObjectMethod(
 			"getCreatorUserHandle",
 			"()Landroid/os/UserHandle;");
+	}
+	jint IntentSender::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void IntentSender::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::content
 

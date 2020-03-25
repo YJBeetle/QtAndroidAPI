@@ -33,10 +33,10 @@ namespace __jni_impl::android::net::wifi::p2p
 		QAndroidJniObject getNetworkName();
 		QAndroidJniObject getClientList();
 		QAndroidJniObject getPassphrase();
-		jint getFrequency();
-		QAndroidJniObject getInterface();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getInterface();
+		jint getFrequency();
 	};
 } // namespace __jni_impl::android::net::wifi::p2p
 
@@ -106,18 +106,6 @@ namespace __jni_impl::android::net::wifi::p2p
 			"getPassphrase",
 			"()Ljava/lang/String;");
 	}
-	jint WifiP2pGroup::getFrequency()
-	{
-		return __thiz.callMethod<jint>(
-			"getFrequency",
-			"()I");
-	}
-	QAndroidJniObject WifiP2pGroup::getInterface()
-	{
-		return __thiz.callObjectMethod(
-			"getInterface",
-			"()Ljava/lang/String;");
-	}
 	jint WifiP2pGroup::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -131,6 +119,18 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject WifiP2pGroup::getInterface()
+	{
+		return __thiz.callObjectMethod(
+			"getInterface",
+			"()Ljava/lang/String;");
+	}
+	jint WifiP2pGroup::getFrequency()
+	{
+		return __thiz.callMethod<jint>(
+			"getFrequency",
+			"()I");
 	}
 } // namespace __jni_impl::android::net::wifi::p2p
 

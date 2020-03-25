@@ -29,11 +29,11 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject toString();
 		jint hashCode();
 		jint getPriority();
+		QAndroidJniObject getBands();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getSubId();
 		QAndroidJniObject getMccMncs();
-		QAndroidJniObject getBands();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -106,6 +106,12 @@ namespace __jni_impl::android::telephony
 			"getPriority",
 			"()I");
 	}
+	QAndroidJniObject AvailableNetworkInfo::getBands()
+	{
+		return __thiz.callObjectMethod(
+			"getBands",
+			"()Ljava/util/List;");
+	}
 	jint AvailableNetworkInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -130,12 +136,6 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callObjectMethod(
 			"getMccMncs",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject AvailableNetworkInfo::getBands()
-	{
-		return __thiz.callObjectMethod(
-			"getBands",
 			"()Ljava/util/List;");
 	}
 } // namespace __jni_impl::android::telephony

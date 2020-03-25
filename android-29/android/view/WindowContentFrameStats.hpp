@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_WINDOWCONTENTFRAMESTATS
 #define ANDROID_VIEW_WINDOWCONTENTFRAMESTATS
 
+#include "../../__JniBaseClass.hpp"
 #include "FrameStats.hpp"
 
 namespace __jni_impl::android::os

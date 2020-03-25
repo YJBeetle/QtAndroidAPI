@@ -3,6 +3,8 @@
 #ifndef JAVA_SQL_SQLRECOVERABLEEXCEPTION
 #define JAVA_SQL_SQLRECOVERABLEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "SQLException.hpp"
 
 

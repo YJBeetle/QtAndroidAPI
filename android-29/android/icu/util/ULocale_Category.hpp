@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_UTIL_ULOCALE_CATEGORY
 #define ANDROID_ICU_UTIL_ULOCALE_CATEGORY
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

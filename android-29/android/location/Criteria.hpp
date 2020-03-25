@@ -35,6 +35,8 @@ namespace __jni_impl::android::location
 		QAndroidJniObject toString();
 		jint getAccuracy();
 		void setAccuracy(jint arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getPowerRequirement();
 		void setHorizontalAccuracy(jint arg0);
 		jint getHorizontalAccuracy();
@@ -53,8 +55,6 @@ namespace __jni_impl::android::location
 		jboolean isSpeedRequired();
 		void setBearingRequired(jboolean arg0);
 		jboolean isBearingRequired();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::location
 
@@ -159,6 +159,20 @@ namespace __jni_impl::android::location
 			"setAccuracy",
 			"(I)V",
 			arg0);
+	}
+	jint Criteria::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void Criteria::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jint Criteria::getPowerRequirement()
 	{
@@ -276,20 +290,6 @@ namespace __jni_impl::android::location
 		return __thiz.callMethod<jboolean>(
 			"isBearingRequired",
 			"()Z");
-	}
-	jint Criteria::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Criteria::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::location
 

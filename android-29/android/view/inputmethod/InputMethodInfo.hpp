@@ -57,9 +57,9 @@ namespace __jni_impl::android::view::inputmethod
 		QAndroidJniObject getPackageName();
 		QAndroidJniObject getId();
 		QAndroidJniObject getComponent();
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		jint getIsDefaultResourceId();
 		QAndroidJniObject getServiceInfo();
 		QAndroidJniObject getServiceName();
@@ -149,6 +149,14 @@ namespace __jni_impl::android::view::inputmethod
 			"getComponent",
 			"()Landroid/content/ComponentName;");
 	}
+	void InputMethodInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint InputMethodInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -160,14 +168,6 @@ namespace __jni_impl::android::view::inputmethod
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void InputMethodInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1);
 	}

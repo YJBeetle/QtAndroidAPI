@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTOR
 #define JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTOR
 
+#include "../../../../__JniBaseClass.hpp"
 #include "../Selector.hpp"
 
 namespace __jni_impl::java::util::concurrent::atomic

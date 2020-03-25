@@ -3,11 +3,20 @@
 #ifndef ANDROID_TELECOM_CONFERENCE
 #define ANDROID_TELECOM_CONFERENCE
 
+#include "../../__JniBaseClass.hpp"
 #include "Conferenceable.hpp"
 
 namespace __jni_impl::android::telecom
 {
 	class PhoneAccountHandle;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
+namespace __jni_impl::android::telecom
+{
+	class Connection;
 }
 namespace __jni_impl::android::telecom
 {
@@ -19,19 +28,11 @@ namespace __jni_impl::android::telecom
 }
 namespace __jni_impl::android::telecom
 {
-	class Connection;
-}
-namespace __jni_impl::android::telecom
-{
 	class DisconnectCause;
 }
 namespace __jni_impl::android::telecom
 {
 	class StatusHints;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 
 namespace __jni_impl::android::telecom
@@ -49,6 +50,9 @@ namespace __jni_impl::android::telecom
 		QAndroidJniObject toString();
 		jint getState();
 		void destroy();
+		QAndroidJniObject getExtras();
+		void putExtras(__jni_impl::android::os::Bundle arg0);
+		jboolean addConnection(__jni_impl::android::telecom::Connection arg0);
 		QAndroidJniObject getPhoneAccountHandle();
 		QAndroidJniObject getConnections();
 		jint getConnectionCapabilities();
@@ -88,19 +92,16 @@ namespace __jni_impl::android::telecom
 		void removeExtras(jarray arg0);
 		void removeExtras(__jni_impl::__JniBaseClass arg0);
 		void onExtrasChanged(__jni_impl::android::os::Bundle arg0);
-		QAndroidJniObject getExtras();
-		void putExtras(__jni_impl::android::os::Bundle arg0);
-		jboolean addConnection(__jni_impl::android::telecom::Connection arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
 #include "PhoneAccountHandle.hpp"
+#include "../os/Bundle.hpp"
+#include "Connection.hpp"
 #include "CallAudioState.hpp"
 #include "Connection_VideoProvider.hpp"
-#include "Connection.hpp"
 #include "DisconnectCause.hpp"
 #include "StatusHints.hpp"
-#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -139,6 +140,26 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"destroy",
 			"()V");
+	}
+	QAndroidJniObject Conference::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
+	}
+	void Conference::putExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"putExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean Conference::addConnection(__jni_impl::android::telecom::Connection arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"addConnection",
+			"(Landroid/telecom/Connection;)Z",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject Conference::getPhoneAccountHandle()
 	{
@@ -393,26 +414,6 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"onExtrasChanged",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Conference::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	void Conference::putExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"putExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean Conference::addConnection(__jni_impl::android::telecom::Connection arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addConnection",
-			"(Landroid/telecom/Connection;)Z",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::telecom

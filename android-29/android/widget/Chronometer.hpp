@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_CHRONOMETER
 #define ANDROID_WIDGET_CHRONOMETER
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "TextView.hpp"
 
 namespace __jni_impl::android::content
@@ -33,7 +35,6 @@ namespace __jni_impl::android::widget
 		void setFormat(jstring arg0);
 		QAndroidJniObject getFormat();
 		jlong getBase();
-		jboolean isCountDown();
 		void setCountDown(jboolean arg0);
 		jboolean isTheFinalCountDown();
 		void setBase(jlong arg0);
@@ -41,6 +42,7 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getOnChronometerTickListener();
 		QAndroidJniObject getAccessibilityClassName();
 		QAndroidJniObject getContentDescription();
+		jboolean isCountDown();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -119,12 +121,6 @@ namespace __jni_impl::android::widget
 			"getBase",
 			"()J");
 	}
-	jboolean Chronometer::isCountDown()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCountDown",
-			"()Z");
-	}
 	void Chronometer::setCountDown(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -169,6 +165,12 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;");
+	}
+	jboolean Chronometer::isCountDown()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCountDown",
+			"()Z");
 	}
 } // namespace __jni_impl::android::widget
 

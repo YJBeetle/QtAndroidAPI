@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::app
-{
-	class PendingIntent;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
+}
+namespace __jni_impl::android::app
+{
+	class PendingIntent;
 }
 
 namespace __jni_impl::android::widget
@@ -25,14 +25,14 @@ namespace __jni_impl::android::widget
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject fromPendingIntent(__jni_impl::android::app::PendingIntent arg0);
-		static QAndroidJniObject fromFillInIntent(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject addSharedElement(jint arg0, jstring arg1);
+		static QAndroidJniObject fromFillInIntent(__jni_impl::android::content::Intent arg0);
+		static QAndroidJniObject fromPendingIntent(__jni_impl::android::app::PendingIntent arg0);
 	};
 } // namespace __jni_impl::android::widget
 
-#include "../app/PendingIntent.hpp"
 #include "../content/Intent.hpp"
+#include "../app/PendingIntent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -47,13 +47,13 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject RemoteViews_RemoteResponse::fromPendingIntent(__jni_impl::android::app::PendingIntent arg0)
+	QAndroidJniObject RemoteViews_RemoteResponse::addSharedElement(jint arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.RemoteViews$RemoteResponse",
-			"fromPendingIntent",
-			"(Landroid/app/PendingIntent;)Landroid/widget/RemoteViews$RemoteResponse;",
-			arg0.__jniObject().object());
+		return __thiz.callObjectMethod(
+			"addSharedElement",
+			"(ILjava/lang/String;)Landroid/widget/RemoteViews$RemoteResponse;",
+			arg0,
+			arg1);
 	}
 	QAndroidJniObject RemoteViews_RemoteResponse::fromFillInIntent(__jni_impl::android::content::Intent arg0)
 	{
@@ -63,13 +63,13 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Intent;)Landroid/widget/RemoteViews$RemoteResponse;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject RemoteViews_RemoteResponse::addSharedElement(jint arg0, jstring arg1)
+	QAndroidJniObject RemoteViews_RemoteResponse::fromPendingIntent(__jni_impl::android::app::PendingIntent arg0)
 	{
-		return __thiz.callObjectMethod(
-			"addSharedElement",
-			"(ILjava/lang/String;)Landroid/widget/RemoteViews$RemoteResponse;",
-			arg0,
-			arg1);
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.widget.RemoteViews$RemoteResponse",
+			"fromPendingIntent",
+			"(Landroid/app/PendingIntent;)Landroid/widget/RemoteViews$RemoteResponse;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::widget
 

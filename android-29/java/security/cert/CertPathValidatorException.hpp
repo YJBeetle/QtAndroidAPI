@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_CERT_CERTPATHVALIDATOREXCEPTION
 #define JAVA_SECURITY_CERT_CERTPATHVALIDATOREXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 
 namespace __jni_impl::java::security::cert
@@ -31,8 +33,8 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		jint getIndex();
-		QAndroidJniObject getCertPath();
 		QAndroidJniObject getReason();
+		QAndroidJniObject getCertPath();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -101,17 +103,17 @@ namespace __jni_impl::java::security::cert
 			"getIndex",
 			"()I");
 	}
-	QAndroidJniObject CertPathValidatorException::getCertPath()
-	{
-		return __thiz.callObjectMethod(
-			"getCertPath",
-			"()Ljava/security/cert/CertPath;");
-	}
 	QAndroidJniObject CertPathValidatorException::getReason()
 	{
 		return __thiz.callObjectMethod(
 			"getReason",
 			"()Ljava/security/cert/CertPathValidatorException$Reason;");
+	}
+	QAndroidJniObject CertPathValidatorException::getCertPath()
+	{
+		return __thiz.callObjectMethod(
+			"getCertPath",
+			"()Ljava/security/cert/CertPath;");
 	}
 } // namespace __jni_impl::java::security::cert
 

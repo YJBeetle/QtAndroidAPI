@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_DISCRETEPATHEFFECT
 #define ANDROID_GRAPHICS_DISCRETEPATHEFFECT
 
+#include "../../__JniBaseClass.hpp"
 #include "PathEffect.hpp"
 
 

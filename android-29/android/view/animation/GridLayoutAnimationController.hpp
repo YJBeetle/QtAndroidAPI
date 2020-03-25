@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_ANIMATION_GRIDLAYOUTANIMATIONCONTROLLER
 #define ANDROID_VIEW_ANIMATION_GRIDLAYOUTANIMATIONCONTROLLER
 
+#include "../../../__JniBaseClass.hpp"
 #include "LayoutAnimationController.hpp"
 
 namespace __jni_impl::android::view::animation
@@ -40,8 +41,6 @@ namespace __jni_impl::android::view::animation
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		jint getDirection();
-		jboolean willOverlap();
 		jfloat getColumnDelay();
 		void setColumnDelay(jfloat arg0);
 		jfloat getRowDelay();
@@ -49,6 +48,8 @@ namespace __jni_impl::android::view::animation
 		void setDirection(jint arg0);
 		jint getDirectionPriority();
 		void setDirectionPriority(jint arg0);
+		jboolean willOverlap();
+		jint getDirection();
 	};
 } // namespace __jni_impl::android::view::animation
 
@@ -141,18 +142,6 @@ namespace __jni_impl::android::view::animation
 	}
 	
 	// Methods
-	jint GridLayoutAnimationController::getDirection()
-	{
-		return __thiz.callMethod<jint>(
-			"getDirection",
-			"()I");
-	}
-	jboolean GridLayoutAnimationController::willOverlap()
-	{
-		return __thiz.callMethod<jboolean>(
-			"willOverlap",
-			"()Z");
-	}
 	jfloat GridLayoutAnimationController::getColumnDelay()
 	{
 		return __thiz.callMethod<jfloat>(
@@ -198,6 +187,18 @@ namespace __jni_impl::android::view::animation
 			"setDirectionPriority",
 			"(I)V",
 			arg0);
+	}
+	jboolean GridLayoutAnimationController::willOverlap()
+	{
+		return __thiz.callMethod<jboolean>(
+			"willOverlap",
+			"()Z");
+	}
+	jint GridLayoutAnimationController::getDirection()
+	{
+		return __thiz.callMethod<jint>(
+			"getDirection",
+			"()I");
 	}
 } // namespace __jni_impl::android::view::animation
 

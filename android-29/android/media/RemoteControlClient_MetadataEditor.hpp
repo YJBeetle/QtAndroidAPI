@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_REMOTECONTROLCLIENT_METADATAEDITOR
 #define ANDROID_MEDIA_REMOTECONTROLCLIENT_METADATAEDITOR
 
+#include "../../__JniBaseClass.hpp"
 #include "MediaMetadataEditor.hpp"
 
 namespace __jni_impl::android::media
@@ -35,8 +36,8 @@ namespace __jni_impl::android::media
 		void clear();
 		void apply();
 		QAndroidJniObject putObject(jint arg0, jobject arg1);
-		QAndroidJniObject putString(jint arg0, jstring arg1);
 		QAndroidJniObject putBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1);
+		QAndroidJniObject putString(jint arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -97,14 +98,6 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1);
 	}
-	QAndroidJniObject RemoteControlClient_MetadataEditor::putString(jint arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putString",
-			"(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;",
-			arg0,
-			arg1);
-	}
 	QAndroidJniObject RemoteControlClient_MetadataEditor::putBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -112,6 +105,14 @@ namespace __jni_impl::android::media
 			"(ILandroid/graphics/Bitmap;)Landroid/media/RemoteControlClient$MetadataEditor;",
 			arg0,
 			arg1.__jniObject().object());
+	}
+	QAndroidJniObject RemoteControlClient_MetadataEditor::putString(jint arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putString",
+			"(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;",
+			arg0,
+			arg1);
 	}
 } // namespace __jni_impl::android::media
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_STREAM_COLLECTOR_CHARACTERISTICS
 #define JAVA_UTIL_STREAM_COLLECTOR_CHARACTERISTICS
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

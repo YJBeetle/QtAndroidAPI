@@ -9,17 +9,17 @@ namespace __jni_impl::android::icu::lang
 {
 	class UScript_ScriptUsage;
 }
-namespace __jni_impl::android::icu::util
+namespace __jni_impl::java::util
 {
-	class ULocale;
+	class BitSet;
 }
 namespace __jni_impl::java::util
 {
 	class Locale;
 }
-namespace __jni_impl::java::util
+namespace __jni_impl::android::icu::util
 {
-	class BitSet;
+	class ULocale;
 }
 
 namespace __jni_impl::android::icu::lang
@@ -227,9 +227,6 @@ namespace __jni_impl::android::icu::lang
 		static QAndroidJniObject getName(jint arg0);
 		static jint getScript(jint arg0);
 		static QAndroidJniObject getUsage(jint arg0);
-		static QAndroidJniObject getCode(__jni_impl::android::icu::util::ULocale arg0);
-		static QAndroidJniObject getCode(jstring arg0);
-		static QAndroidJniObject getCode(__jni_impl::java::util::Locale arg0);
 		static jint getCodeFromName(jstring arg0);
 		static jboolean hasScript(jint arg0, jint arg1);
 		static jint getScriptExtensions(jint arg0, __jni_impl::java::util::BitSet arg1);
@@ -238,13 +235,16 @@ namespace __jni_impl::android::icu::lang
 		static jboolean breaksBetweenLetters(jint arg0);
 		static jboolean isCased(jint arg0);
 		static jboolean isRightToLeft(jint arg0);
+		static QAndroidJniObject getCode(jstring arg0);
+		static QAndroidJniObject getCode(__jni_impl::java::util::Locale arg0);
+		static QAndroidJniObject getCode(__jni_impl::android::icu::util::ULocale arg0);
 	};
 } // namespace __jni_impl::android::icu::lang
 
 #include "UScript_ScriptUsage.hpp"
-#include "../util/ULocale.hpp"
-#include "../../../java/util/Locale.hpp"
 #include "../../../java/util/BitSet.hpp"
+#include "../../../java/util/Locale.hpp"
+#include "../util/ULocale.hpp"
 
 namespace __jni_impl::android::icu::lang
 {
@@ -1429,30 +1429,6 @@ namespace __jni_impl::android::icu::lang
 			"(I)Landroid/icu/lang/UScript$ScriptUsage;",
 			arg0);
 	}
-	QAndroidJniObject UScript::getCode(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UScript",
-			"getCode",
-			"(Landroid/icu/util/ULocale;)[I",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject UScript::getCode(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UScript",
-			"getCode",
-			"(Ljava/lang/String;)[I",
-			arg0);
-	}
-	QAndroidJniObject UScript::getCode(__jni_impl::java::util::Locale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UScript",
-			"getCode",
-			"(Ljava/util/Locale;)[I",
-			arg0.__jniObject().object());
-	}
 	jint UScript::getCodeFromName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -1518,6 +1494,30 @@ namespace __jni_impl::android::icu::lang
 			"isRightToLeft",
 			"(I)Z",
 			arg0);
+	}
+	QAndroidJniObject UScript::getCode(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UScript",
+			"getCode",
+			"(Ljava/lang/String;)[I",
+			arg0);
+	}
+	QAndroidJniObject UScript::getCode(__jni_impl::java::util::Locale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UScript",
+			"getCode",
+			"(Ljava/util/Locale;)[I",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject UScript::getCode(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UScript",
+			"getCode",
+			"(Landroid/icu/util/ULocale;)[I",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::icu::lang
 

@@ -34,8 +34,8 @@ namespace __jni_impl::android::util
 		QAndroidJniObject openRead();
 		void finishWrite(__jni_impl::java::io::FileOutputStream arg0);
 		void failWrite(__jni_impl::java::io::FileOutputStream arg0);
-		QAndroidJniObject getBaseFile();
 		QAndroidJniObject startWrite();
+		QAndroidJniObject getBaseFile();
 	};
 } // namespace __jni_impl::android::util
 
@@ -89,17 +89,17 @@ namespace __jni_impl::android::util
 			"(Ljava/io/FileOutputStream;)V",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject AtomicFile::getBaseFile()
-	{
-		return __thiz.callObjectMethod(
-			"getBaseFile",
-			"()Ljava/io/File;");
-	}
 	QAndroidJniObject AtomicFile::startWrite()
 	{
 		return __thiz.callObjectMethod(
 			"startWrite",
 			"()Ljava/io/FileOutputStream;");
+	}
+	QAndroidJniObject AtomicFile::getBaseFile()
+	{
+		return __thiz.callObjectMethod(
+			"getBaseFile",
+			"()Ljava/io/File;");
 	}
 } // namespace __jni_impl::android::util
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_MEASUREFORMAT_FORMATWIDTH
 #define ANDROID_ICU_TEXT_MEASUREFORMAT_FORMATWIDTH
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

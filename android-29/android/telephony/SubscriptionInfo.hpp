@@ -50,15 +50,15 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject getGroupUuid();
 		jint getSubscriptionType();
 		jint getCardId();
-		jint getMcc();
-		jint getCarrierId();
-		jint getMnc();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getCountryIso();
+		jint getMcc();
+		jint getMnc();
+		jint getCarrierId();
+		jint getSubscriptionId();
 		QAndroidJniObject getMccString();
 		QAndroidJniObject getMncString();
-		jint getSubscriptionId();
+		QAndroidJniObject getCountryIso();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -185,24 +185,6 @@ namespace __jni_impl::android::telephony
 			"getCardId",
 			"()I");
 	}
-	jint SubscriptionInfo::getMcc()
-	{
-		return __thiz.callMethod<jint>(
-			"getMcc",
-			"()I");
-	}
-	jint SubscriptionInfo::getCarrierId()
-	{
-		return __thiz.callMethod<jint>(
-			"getCarrierId",
-			"()I");
-	}
-	jint SubscriptionInfo::getMnc()
-	{
-		return __thiz.callMethod<jint>(
-			"getMnc",
-			"()I");
-	}
 	jint SubscriptionInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -217,11 +199,29 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	QAndroidJniObject SubscriptionInfo::getCountryIso()
+	jint SubscriptionInfo::getMcc()
 	{
-		return __thiz.callObjectMethod(
-			"getCountryIso",
-			"()Ljava/lang/String;");
+		return __thiz.callMethod<jint>(
+			"getMcc",
+			"()I");
+	}
+	jint SubscriptionInfo::getMnc()
+	{
+		return __thiz.callMethod<jint>(
+			"getMnc",
+			"()I");
+	}
+	jint SubscriptionInfo::getCarrierId()
+	{
+		return __thiz.callMethod<jint>(
+			"getCarrierId",
+			"()I");
+	}
+	jint SubscriptionInfo::getSubscriptionId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSubscriptionId",
+			"()I");
 	}
 	QAndroidJniObject SubscriptionInfo::getMccString()
 	{
@@ -235,11 +235,11 @@ namespace __jni_impl::android::telephony
 			"getMncString",
 			"()Ljava/lang/String;");
 	}
-	jint SubscriptionInfo::getSubscriptionId()
+	QAndroidJniObject SubscriptionInfo::getCountryIso()
 	{
-		return __thiz.callMethod<jint>(
-			"getSubscriptionId",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getCountryIso",
+			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::telephony
 

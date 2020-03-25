@@ -17,8 +17,8 @@ namespace __jni_impl::javax::microedition::khronos::egl
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getGL();
 		static QAndroidJniObject getEGL();
+		QAndroidJniObject getGL();
 	};
 } // namespace __jni_impl::javax::microedition::khronos::egl
 
@@ -36,18 +36,18 @@ namespace __jni_impl::javax::microedition::khronos::egl
 	}
 	
 	// Methods
-	QAndroidJniObject EGLContext::getGL()
-	{
-		return __thiz.callObjectMethod(
-			"getGL",
-			"()Ljavax/microedition/khronos/opengles/GL;");
-	}
 	QAndroidJniObject EGLContext::getEGL()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.microedition.khronos.egl.EGLContext",
 			"getEGL",
 			"()Ljavax/microedition/khronos/egl/EGL;");
+	}
+	QAndroidJniObject EGLContext::getGL()
+	{
+		return __thiz.callObjectMethod(
+			"getGL",
+			"()Ljavax/microedition/khronos/opengles/GL;");
 	}
 } // namespace __jni_impl::javax::microedition::khronos::egl
 

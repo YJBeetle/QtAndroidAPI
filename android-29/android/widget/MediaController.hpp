@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_MEDIACONTROLLER
 #define ANDROID_WIDGET_MEDIACONTROLLER
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "FrameLayout.hpp"
 
 namespace __jni_impl::android::content
@@ -35,19 +38,19 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void show();
 		void show(jint arg0);
-		void setMediaPlayer(__jni_impl::__JniBaseClass arg0);
-		void setAnchorView(__jni_impl::android::view::View arg0);
-		void setPrevNextListeners(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void show();
 		jboolean isShowing();
 		void hide();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		QAndroidJniObject getAccessibilityClassName();
 		void setEnabled(jboolean arg0);
 		void onFinishInflate();
+		void setMediaPlayer(__jni_impl::__JniBaseClass arg0);
+		void setAnchorView(__jni_impl::android::view::View arg0);
+		void setPrevNextListeners(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -86,18 +89,49 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void MediaController::show()
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"()V");
-	}
 	void MediaController::show(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"show",
 			"(I)V",
 			arg0);
+	}
+	void MediaController::show()
+	{
+		__thiz.callMethod<void>(
+			"show",
+			"()V");
+	}
+	jboolean MediaController::isShowing()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isShowing",
+			"()Z");
+	}
+	void MediaController::hide()
+	{
+		__thiz.callMethod<void>(
+			"hide",
+			"()V");
+	}
+	QAndroidJniObject MediaController::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
+	void MediaController::setEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0);
+	}
+	void MediaController::onFinishInflate()
+	{
+		__thiz.callMethod<void>(
+			"onFinishInflate",
+			"()V");
 	}
 	void MediaController::setMediaPlayer(__jni_impl::__JniBaseClass arg0)
 	{
@@ -121,18 +155,6 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
-	jboolean MediaController::isShowing()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isShowing",
-			"()Z");
-	}
-	void MediaController::hide()
-	{
-		__thiz.callMethod<void>(
-			"hide",
-			"()V");
-	}
 	jboolean MediaController::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -153,25 +175,6 @@ namespace __jni_impl::android::widget
 			"dispatchKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject MediaController::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	void MediaController::setEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnabled",
-			"(Z)V",
-			arg0);
-	}
-	void MediaController::onFinishInflate()
-	{
-		__thiz.callMethod<void>(
-			"onFinishInflate",
-			"()V");
 	}
 } // namespace __jni_impl::android::widget
 

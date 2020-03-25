@@ -35,8 +35,8 @@ namespace __jni_impl::android::service::autofill
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setFlags(jint arg0);
 		QAndroidJniObject setDescription(jstring arg0);
+		QAndroidJniObject setFlags(jint arg0);
 		QAndroidJniObject setOptionalIds(jarray arg0);
 		QAndroidJniObject setCustomDescription(__jni_impl::android::service::autofill::CustomDescription arg0);
 		QAndroidJniObject setNegativeAction(jint arg0, __jni_impl::android::content::IntentSender arg1);
@@ -79,18 +79,18 @@ namespace __jni_impl::android::service::autofill
 			"build",
 			"()Landroid/service/autofill/SaveInfo;");
 	}
-	QAndroidJniObject SaveInfo_Builder::setFlags(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFlags",
-			"(I)Landroid/service/autofill/SaveInfo$Builder;",
-			arg0);
-	}
 	QAndroidJniObject SaveInfo_Builder::setDescription(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/service/autofill/SaveInfo$Builder;",
+			arg0);
+	}
+	QAndroidJniObject SaveInfo_Builder::setFlags(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFlags",
+			"(I)Landroid/service/autofill/SaveInfo$Builder;",
 			arg0);
 	}
 	QAndroidJniObject SaveInfo_Builder::setOptionalIds(jarray arg0)

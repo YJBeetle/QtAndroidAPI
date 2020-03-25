@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_JARURLCONNECTION
 #define JAVA_NET_JARURLCONNECTION
 
+#include "../../__JniBaseClass.hpp"
 #include "URLConnection.hpp"
 
 namespace __jni_impl::java::net

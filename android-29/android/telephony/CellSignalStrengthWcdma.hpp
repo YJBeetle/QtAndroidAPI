@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_CELLSIGNALSTRENGTHWCDMA
 #define ANDROID_TELEPHONY_CELLSIGNALSTRENGTHWCDMA
 
+#include "../../__JniBaseClass.hpp"
 #include "CellSignalStrength.hpp"
 
 namespace __jni_impl::android::os

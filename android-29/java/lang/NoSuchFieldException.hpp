@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_NOSUCHFIELDEXCEPTION
 #define JAVA_LANG_NOSUCHFIELDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "ReflectiveOperationException.hpp"
 
 

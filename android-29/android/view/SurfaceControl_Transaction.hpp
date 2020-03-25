@@ -30,9 +30,9 @@ namespace __jni_impl::android::view
 		void close();
 		QAndroidJniObject setAlpha(__jni_impl::android::view::SurfaceControl arg0, jfloat arg1);
 		QAndroidJniObject reparent(__jni_impl::android::view::SurfaceControl arg0, __jni_impl::android::view::SurfaceControl arg1);
+		QAndroidJniObject setVisibility(__jni_impl::android::view::SurfaceControl arg0, jboolean arg1);
 		QAndroidJniObject setLayer(__jni_impl::android::view::SurfaceControl arg0, jint arg1);
 		QAndroidJniObject setGeometry(__jni_impl::android::view::SurfaceControl arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, jint arg3);
-		QAndroidJniObject setVisibility(__jni_impl::android::view::SurfaceControl arg0, jboolean arg1);
 		QAndroidJniObject setBufferSize(__jni_impl::android::view::SurfaceControl arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::view
@@ -88,6 +88,14 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
+	QAndroidJniObject SurfaceControl_Transaction::setVisibility(__jni_impl::android::view::SurfaceControl arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setVisibility",
+			"(Landroid/view/SurfaceControl;Z)Landroid/view/SurfaceControl$Transaction;",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	QAndroidJniObject SurfaceControl_Transaction::setLayer(__jni_impl::android::view::SurfaceControl arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -105,14 +113,6 @@ namespace __jni_impl::android::view
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3);
-	}
-	QAndroidJniObject SurfaceControl_Transaction::setVisibility(__jni_impl::android::view::SurfaceControl arg0, jboolean arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setVisibility",
-			"(Landroid/view/SurfaceControl;Z)Landroid/view/SurfaceControl$Transaction;",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 	QAndroidJniObject SurfaceControl_Transaction::setBufferSize(__jni_impl::android::view::SurfaceControl arg0, jint arg1, jint arg2)
 	{

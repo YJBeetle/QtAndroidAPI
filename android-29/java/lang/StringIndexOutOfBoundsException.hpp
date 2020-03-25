@@ -3,6 +3,9 @@
 #ifndef JAVA_LANG_STRINGINDEXOUTOFBOUNDSEXCEPTION
 #define JAVA_LANG_STRINGINDEXOUTOFBOUNDSEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
+#include "RuntimeException.hpp"
 #include "IndexOutOfBoundsException.hpp"
 
 

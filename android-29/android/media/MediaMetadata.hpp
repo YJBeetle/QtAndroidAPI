@@ -11,15 +11,15 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::media
 {
-	class MediaDescription;
-}
-namespace __jni_impl::android::media
-{
 	class Rating;
 }
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
+}
+namespace __jni_impl::android::media
+{
+	class MediaDescription;
 }
 namespace __jni_impl::android::os
 {
@@ -75,18 +75,18 @@ namespace __jni_impl::android::media
 		QAndroidJniObject keySet();
 		QAndroidJniObject getString(jstring arg0);
 		QAndroidJniObject getText(jstring arg0);
-		QAndroidJniObject getDescription();
 		QAndroidJniObject getRating(jstring arg0);
 		QAndroidJniObject getBitmap(jstring arg0);
+		QAndroidJniObject getDescription();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
 #include "../os/Bundle.hpp"
-#include "MediaDescription.hpp"
 #include "Rating.hpp"
 #include "../graphics/Bitmap.hpp"
+#include "MediaDescription.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::media
@@ -365,12 +365,6 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;)Ljava/lang/CharSequence;",
 			arg0);
 	}
-	QAndroidJniObject MediaMetadata::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Landroid/media/MediaDescription;");
-	}
 	QAndroidJniObject MediaMetadata::getRating(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -384,6 +378,12 @@ namespace __jni_impl::android::media
 			"getBitmap",
 			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
 			arg0);
+	}
+	QAndroidJniObject MediaMetadata::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Landroid/media/MediaDescription;");
 	}
 	jint MediaMetadata::describeContents()
 	{

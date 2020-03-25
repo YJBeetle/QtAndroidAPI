@@ -25,8 +25,8 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		void onRenderProcessResponsive(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::webkit::WebViewRenderProcess arg1);
 		void onRenderProcessUnresponsive(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::webkit::WebViewRenderProcess arg1);
+		void onRenderProcessResponsive(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::webkit::WebViewRenderProcess arg1);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -46,18 +46,18 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	void WebViewRenderProcessClient::onRenderProcessResponsive(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::webkit::WebViewRenderProcess arg1)
-	{
-		__thiz.callMethod<void>(
-			"onRenderProcessResponsive",
-			"(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	void WebViewRenderProcessClient::onRenderProcessUnresponsive(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::webkit::WebViewRenderProcess arg1)
 	{
 		__thiz.callMethod<void>(
 			"onRenderProcessUnresponsive",
+			"(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void WebViewRenderProcessClient::onRenderProcessResponsive(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::webkit::WebViewRenderProcess arg1)
+	{
+		__thiz.callMethod<void>(
+			"onRenderProcessResponsive",
 			"(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());

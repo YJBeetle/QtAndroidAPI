@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_COMPACTDECIMALFORMAT_COMPACTSTYLE
 #define ANDROID_ICU_TEXT_COMPACTDECIMALFORMAT_COMPACTSTYLE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

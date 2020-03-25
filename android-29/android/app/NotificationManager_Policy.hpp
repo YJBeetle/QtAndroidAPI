@@ -50,11 +50,11 @@ namespace __jni_impl::android::app
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject suppressedEffectsToString(jint arg0);
 		static QAndroidJniObject priorityCategoriesToString(jint arg0);
 		static QAndroidJniObject prioritySendersToString(jint arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -252,20 +252,6 @@ namespace __jni_impl::android::app
 			"hashCode",
 			"()I");
 	}
-	jint NotificationManager_Policy::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void NotificationManager_Policy::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	QAndroidJniObject NotificationManager_Policy::suppressedEffectsToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -289,6 +275,20 @@ namespace __jni_impl::android::app
 			"prioritySendersToString",
 			"(I)Ljava/lang/String;",
 			arg0);
+	}
+	jint NotificationManager_Policy::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void NotificationManager_Policy::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::app
 

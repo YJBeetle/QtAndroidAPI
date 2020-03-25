@@ -22,8 +22,8 @@ namespace __jni_impl::android::util
 		jint getThreadId();
 		jint getTag();
 		QAndroidJniObject getData();
-		jint getProcessId();
 		jlong getTimeNanos();
+		jint getProcessId();
 	};
 } // namespace __jni_impl::android::util
 
@@ -72,17 +72,17 @@ namespace __jni_impl::android::util
 			"getData",
 			"()Ljava/lang/Object;");
 	}
-	jint EventLog_Event::getProcessId()
-	{
-		return __thiz.callMethod<jint>(
-			"getProcessId",
-			"()I");
-	}
 	jlong EventLog_Event::getTimeNanos()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTimeNanos",
 			"()J");
+	}
+	jint EventLog_Event::getProcessId()
+	{
+		return __thiz.callMethod<jint>(
+			"getProcessId",
+			"()I");
 	}
 } // namespace __jni_impl::android::util
 

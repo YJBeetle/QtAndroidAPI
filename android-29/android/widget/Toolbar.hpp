@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_TOOLBAR
 #define ANDROID_WIDGET_TOOLBAR
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::content
@@ -11,15 +13,15 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::view
 {
-	class MotionEvent;
-}
-namespace __jni_impl::android::view
-{
 	class ViewGroup_LayoutParams;
 }
 namespace __jni_impl::android::widget
 {
 	class Toolbar_LayoutParams;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
 }
 namespace __jni_impl::android::graphics::drawable
 {
@@ -40,15 +42,17 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setSubtitle(jint arg0);
 		void setSubtitle(jstring arg0);
+		void setSubtitle(jint arg0);
 		QAndroidJniObject getSubtitle();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		void setTitle(jstring arg0);
-		void setTitle(jint arg0);
-		QAndroidJniObject getTitle();
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		void onRtlPropertiesChanged(jint arg0);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		void setTitle(jint arg0);
+		void setTitle(jstring arg0);
+		QAndroidJniObject getTitle();
+		void setLogo(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setLogo(jint arg0);
 		void setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0);
 		void collapseActionView();
 		QAndroidJniObject getMenu();
@@ -68,8 +72,8 @@ namespace __jni_impl::android::widget
 		jboolean hideOverflowMenu();
 		void dismissPopupMenus();
 		QAndroidJniObject getLogo();
-		void setLogoDescription(jstring arg0);
 		void setLogoDescription(jint arg0);
+		void setLogoDescription(jstring arg0);
 		QAndroidJniObject getLogoDescription();
 		jboolean hasExpandedActionView();
 		void setTitleTextAppearance(__jni_impl::android::content::Context arg0, jint arg1);
@@ -77,8 +81,8 @@ namespace __jni_impl::android::widget
 		void setTitleTextColor(jint arg0);
 		void setSubtitleTextColor(jint arg0);
 		QAndroidJniObject getNavigationContentDescription();
-		void setNavigationContentDescription(jstring arg0);
 		void setNavigationContentDescription(jint arg0);
+		void setNavigationContentDescription(jstring arg0);
 		void setNavigationIcon(jint arg0);
 		void setNavigationIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject getNavigationIcon();
@@ -87,8 +91,8 @@ namespace __jni_impl::android::widget
 		void setCollapseContentDescription(jint arg0);
 		void setCollapseContentDescription(jstring arg0);
 		QAndroidJniObject getCollapseIcon();
-		void setCollapseIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setCollapseIcon(jint arg0);
+		void setCollapseIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setOverflowIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject getOverflowIcon();
 		void inflateMenu(jint arg0);
@@ -106,15 +110,13 @@ namespace __jni_impl::android::widget
 		jint getCurrentContentInsetEnd();
 		jint getCurrentContentInsetLeft();
 		jint getCurrentContentInsetRight();
-		void setLogo(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setLogo(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/MotionEvent.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "Toolbar_LayoutParams.hpp"
+#include "../view/MotionEvent.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::widget
@@ -158,13 +160,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void Toolbar::setSubtitle(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(I)V",
-			arg0);
-	}
 	void Toolbar::setSubtitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -172,37 +167,17 @@ namespace __jni_impl::android::widget
 			"(Ljava/lang/CharSequence;)V",
 			arg0);
 	}
+	void Toolbar::setSubtitle(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubtitle",
+			"(I)V",
+			arg0);
+	}
 	QAndroidJniObject Toolbar::getSubtitle()
 	{
 		return __thiz.callObjectMethod(
 			"getSubtitle",
-			"()Ljava/lang/CharSequence;");
-	}
-	jboolean Toolbar::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	void Toolbar::setTitle(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	void Toolbar::setTitle(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject Toolbar::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
 			"()Ljava/lang/CharSequence;");
 	}
 	QAndroidJniObject Toolbar::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
@@ -216,6 +191,47 @@ namespace __jni_impl::android::widget
 	{
 		__thiz.callMethod<void>(
 			"onRtlPropertiesChanged",
+			"(I)V",
+			arg0);
+	}
+	jboolean Toolbar::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	void Toolbar::setTitle(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(I)V",
+			arg0);
+	}
+	void Toolbar::setTitle(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0);
+	}
+	QAndroidJniObject Toolbar::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;");
+	}
+	void Toolbar::setLogo(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLogo",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object());
+	}
+	void Toolbar::setLogo(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLogo",
 			"(I)V",
 			arg0);
 	}
@@ -343,18 +359,18 @@ namespace __jni_impl::android::widget
 			"getLogo",
 			"()Landroid/graphics/drawable/Drawable;");
 	}
-	void Toolbar::setLogoDescription(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLogoDescription",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
 	void Toolbar::setLogoDescription(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLogoDescription",
 			"(I)V",
+			arg0);
+	}
+	void Toolbar::setLogoDescription(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLogoDescription",
+			"(Ljava/lang/CharSequence;)V",
 			arg0);
 	}
 	QAndroidJniObject Toolbar::getLogoDescription()
@@ -405,18 +421,18 @@ namespace __jni_impl::android::widget
 			"getNavigationContentDescription",
 			"()Ljava/lang/CharSequence;");
 	}
-	void Toolbar::setNavigationContentDescription(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNavigationContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
 	void Toolbar::setNavigationContentDescription(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNavigationContentDescription",
 			"(I)V",
+			arg0);
+	}
+	void Toolbar::setNavigationContentDescription(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNavigationContentDescription",
+			"(Ljava/lang/CharSequence;)V",
 			arg0);
 	}
 	void Toolbar::setNavigationIcon(jint arg0)
@@ -472,19 +488,19 @@ namespace __jni_impl::android::widget
 			"getCollapseIcon",
 			"()Landroid/graphics/drawable/Drawable;");
 	}
-	void Toolbar::setCollapseIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCollapseIcon",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
-	}
 	void Toolbar::setCollapseIcon(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCollapseIcon",
 			"(I)V",
 			arg0);
+	}
+	void Toolbar::setCollapseIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCollapseIcon",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object());
 	}
 	void Toolbar::setOverflowIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
@@ -595,20 +611,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getCurrentContentInsetRight",
 			"()I");
-	}
-	void Toolbar::setLogo(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLogo",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
-	}
-	void Toolbar::setLogo(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLogo",
-			"(I)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::widget
 

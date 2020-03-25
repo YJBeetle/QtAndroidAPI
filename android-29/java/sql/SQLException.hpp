@@ -3,6 +3,7 @@
 #ifndef JAVA_SQL_SQLEXCEPTION
 #define JAVA_SQL_SQLEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 
 namespace __jni_impl::java::util::concurrent::atomic
@@ -29,10 +30,10 @@ namespace __jni_impl::java::sql
 		
 		// Methods
 		QAndroidJniObject iterator();
-		jint getErrorCode();
 		QAndroidJniObject getSQLState();
 		QAndroidJniObject getNextException();
 		void setNextException(__jni_impl::java::sql::SQLException arg0);
+		jint getErrorCode();
 	};
 } // namespace __jni_impl::java::sql
 
@@ -115,12 +116,6 @@ namespace __jni_impl::java::sql
 			"iterator",
 			"()Ljava/util/Iterator;");
 	}
-	jint SQLException::getErrorCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getErrorCode",
-			"()I");
-	}
 	QAndroidJniObject SQLException::getSQLState()
 	{
 		return __thiz.callObjectMethod(
@@ -139,6 +134,12 @@ namespace __jni_impl::java::sql
 			"setNextException",
 			"(Ljava/sql/SQLException;)V",
 			arg0.__jniObject().object());
+	}
+	jint SQLException::getErrorCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getErrorCode",
+			"()I");
 	}
 } // namespace __jni_impl::java::sql
 

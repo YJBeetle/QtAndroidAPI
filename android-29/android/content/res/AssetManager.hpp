@@ -33,12 +33,12 @@ namespace __jni_impl::android::content::res
 		void close();
 		QAndroidJniObject open(jstring arg0, jint arg1);
 		QAndroidJniObject open(jstring arg0);
-		QAndroidJniObject getLocales();
-		QAndroidJniObject openNonAssetFd(jstring arg0);
-		QAndroidJniObject openNonAssetFd(jint arg0, jstring arg1);
 		QAndroidJniObject openXmlResourceParser(jint arg0, jstring arg1);
 		QAndroidJniObject openXmlResourceParser(jstring arg0);
 		QAndroidJniObject openFd(jstring arg0);
+		QAndroidJniObject openNonAssetFd(jint arg0, jstring arg1);
+		QAndroidJniObject openNonAssetFd(jstring arg0);
+		QAndroidJniObject getLocales();
 	};
 } // namespace __jni_impl::android::content::res
 
@@ -110,27 +110,6 @@ namespace __jni_impl::android::content::res
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
 			arg0);
 	}
-	QAndroidJniObject AssetManager::getLocales()
-	{
-		return __thiz.callObjectMethod(
-			"getLocales",
-			"()[Ljava/lang/String;");
-	}
-	QAndroidJniObject AssetManager::openNonAssetFd(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openNonAssetFd",
-			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
-			arg0);
-	}
-	QAndroidJniObject AssetManager::openNonAssetFd(jint arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"openNonAssetFd",
-			"(ILjava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
-			arg0,
-			arg1);
-	}
 	QAndroidJniObject AssetManager::openXmlResourceParser(jint arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -152,6 +131,27 @@ namespace __jni_impl::android::content::res
 			"openFd",
 			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0);
+	}
+	QAndroidJniObject AssetManager::openNonAssetFd(jint arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"openNonAssetFd",
+			"(ILjava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
+			arg0,
+			arg1);
+	}
+	QAndroidJniObject AssetManager::openNonAssetFd(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openNonAssetFd",
+			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
+			arg0);
+	}
+	QAndroidJniObject AssetManager::getLocales()
+	{
+		return __thiz.callObjectMethod(
+			"getLocales",
+			"()[Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::content::res
 

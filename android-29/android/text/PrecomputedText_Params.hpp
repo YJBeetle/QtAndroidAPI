@@ -24,10 +24,10 @@ namespace __jni_impl::android::text
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
+		QAndroidJniObject getTextDirection();
 		QAndroidJniObject getTextPaint();
 		jint getBreakStrategy();
 		jint getHyphenationFrequency();
-		QAndroidJniObject getTextDirection();
 	};
 } // namespace __jni_impl::android::text
 
@@ -65,6 +65,12 @@ namespace __jni_impl::android::text
 			"hashCode",
 			"()I");
 	}
+	QAndroidJniObject PrecomputedText_Params::getTextDirection()
+	{
+		return __thiz.callObjectMethod(
+			"getTextDirection",
+			"()Landroid/text/TextDirectionHeuristic;");
+	}
 	QAndroidJniObject PrecomputedText_Params::getTextPaint()
 	{
 		return __thiz.callObjectMethod(
@@ -82,12 +88,6 @@ namespace __jni_impl::android::text
 		return __thiz.callMethod<jint>(
 			"getHyphenationFrequency",
 			"()I");
-	}
-	QAndroidJniObject PrecomputedText_Params::getTextDirection()
-	{
-		return __thiz.callObjectMethod(
-			"getTextDirection",
-			"()Landroid/text/TextDirectionHeuristic;");
 	}
 } // namespace __jni_impl::android::text
 

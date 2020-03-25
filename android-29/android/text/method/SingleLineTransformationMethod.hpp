@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_METHOD_SINGLELINETRANSFORMATIONMETHOD
 #define ANDROID_TEXT_METHOD_SINGLELINETRANSFORMATIONMETHOD
 
+#include "../../../__JniBaseClass.hpp"
 #include "ReplacementTransformationMethod.hpp"
 
 

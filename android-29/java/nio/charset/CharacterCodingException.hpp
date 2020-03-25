@@ -3,6 +3,8 @@
 #ifndef JAVA_NIO_CHARSET_CHARACTERCODINGEXCEPTION
 #define JAVA_NIO_CHARSET_CHARACTERCODINGEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
 
 

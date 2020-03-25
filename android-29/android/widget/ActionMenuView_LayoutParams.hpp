@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_ACTIONMENUVIEW_LAYOUTPARAMS
 #define ANDROID_WIDGET_ACTIONMENUVIEW_LAYOUTPARAMS
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/ViewGroup_LayoutParams.hpp"
+#include "../view/ViewGroup_MarginLayoutParams.hpp"
 #include "LinearLayout_LayoutParams.hpp"
 
 namespace __jni_impl::android::view

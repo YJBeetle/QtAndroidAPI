@@ -33,11 +33,11 @@ namespace __jni_impl::android::telecom
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getPhoneAccountHandle();
 		jint getReason();
 		jboolean shouldAutoSelect();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getPhoneAccountHandle();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -110,12 +110,6 @@ namespace __jni_impl::android::telecom
 			"hashCode",
 			"()I");
 	}
-	QAndroidJniObject PhoneAccountSuggestion::getPhoneAccountHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getPhoneAccountHandle",
-			"()Landroid/telecom/PhoneAccountHandle;");
-	}
 	jint PhoneAccountSuggestion::getReason()
 	{
 		return __thiz.callMethod<jint>(
@@ -141,6 +135,12 @@ namespace __jni_impl::android::telecom
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject PhoneAccountSuggestion::getPhoneAccountHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getPhoneAccountHandle",
+			"()Landroid/telecom/PhoneAccountHandle;");
 	}
 } // namespace __jni_impl::android::telecom
 

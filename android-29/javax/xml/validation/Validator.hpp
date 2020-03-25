@@ -22,12 +22,12 @@ namespace __jni_impl::javax::xml::validation
 		void validate(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		void setProperty(jstring arg0, jobject arg1);
 		void reset();
-		void setResourceResolver(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getResourceResolver();
-		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getErrorHandler();
 		void setFeature(jstring arg0, jboolean arg1);
 		jboolean getFeature(jstring arg0);
+		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getErrorHandler();
+		void setResourceResolver(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getResourceResolver();
 	};
 } // namespace __jni_impl::javax::xml::validation
 
@@ -81,32 +81,6 @@ namespace __jni_impl::javax::xml::validation
 			"reset",
 			"()V");
 	}
-	void Validator::setResourceResolver(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setResourceResolver",
-			"(Lorg/w3c/dom/ls/LSResourceResolver;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Validator::getResourceResolver()
-	{
-		return __thiz.callObjectMethod(
-			"getResourceResolver",
-			"()Lorg/w3c/dom/ls/LSResourceResolver;");
-	}
-	void Validator::setErrorHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setErrorHandler",
-			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Validator::getErrorHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorHandler",
-			"()Lorg/xml/sax/ErrorHandler;");
-	}
 	void Validator::setFeature(jstring arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
@@ -121,6 +95,32 @@ namespace __jni_impl::javax::xml::validation
 			"getFeature",
 			"(Ljava/lang/String;)Z",
 			arg0);
+	}
+	void Validator::setErrorHandler(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setErrorHandler",
+			"(Lorg/xml/sax/ErrorHandler;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Validator::getErrorHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getErrorHandler",
+			"()Lorg/xml/sax/ErrorHandler;");
+	}
+	void Validator::setResourceResolver(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setResourceResolver",
+			"(Lorg/w3c/dom/ls/LSResourceResolver;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Validator::getResourceResolver()
+	{
+		return __thiz.callObjectMethod(
+			"getResourceResolver",
+			"()Lorg/w3c/dom/ls/LSResourceResolver;");
 	}
 } // namespace __jni_impl::javax::xml::validation
 

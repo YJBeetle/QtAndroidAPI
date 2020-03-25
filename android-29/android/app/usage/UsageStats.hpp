@@ -24,16 +24,16 @@ namespace __jni_impl::android::app::usage
 		// Methods
 		void add(__jni_impl::android::app::usage::UsageStats arg0);
 		QAndroidJniObject getPackageName();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getFirstTimeStamp();
+		jlong getLastTimeStamp();
 		jlong getLastTimeUsed();
 		jlong getLastTimeVisible();
-		jlong getLastTimeStamp();
-		jlong getFirstTimeStamp();
 		jlong getTotalTimeInForeground();
 		jlong getTotalTimeVisible();
 		jlong getLastTimeForegroundServiceUsed();
 		jlong getTotalTimeForegroundServiceUsed();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -73,6 +73,32 @@ namespace __jni_impl::android::app::usage
 			"getPackageName",
 			"()Ljava/lang/String;");
 	}
+	jint UsageStats::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void UsageStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	jlong UsageStats::getFirstTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getFirstTimeStamp",
+			"()J");
+	}
+	jlong UsageStats::getLastTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLastTimeStamp",
+			"()J");
+	}
 	jlong UsageStats::getLastTimeUsed()
 	{
 		return __thiz.callMethod<jlong>(
@@ -83,18 +109,6 @@ namespace __jni_impl::android::app::usage
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastTimeVisible",
-			"()J");
-	}
-	jlong UsageStats::getLastTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLastTimeStamp",
-			"()J");
-	}
-	jlong UsageStats::getFirstTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getFirstTimeStamp",
 			"()J");
 	}
 	jlong UsageStats::getTotalTimeInForeground()
@@ -120,20 +134,6 @@ namespace __jni_impl::android::app::usage
 		return __thiz.callMethod<jlong>(
 			"getTotalTimeForegroundServiceUsed",
 			"()J");
-	}
-	jint UsageStats::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void UsageStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::app::usage
 

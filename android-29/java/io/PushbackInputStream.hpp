@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_PUSHBACKINPUTSTREAM
 #define JAVA_IO_PUSHBACKINPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "InputStream.hpp"
 #include "FilterInputStream.hpp"
 
 namespace __jni_impl::java::io

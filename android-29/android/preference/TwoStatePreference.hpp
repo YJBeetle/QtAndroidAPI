@@ -3,6 +3,7 @@
 #ifndef ANDROID_PREFERENCE_TWOSTATEPREFERENCE
 #define ANDROID_PREFERENCE_TWOSTATEPREFERENCE
 
+#include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 
 namespace __jni_impl::android::content
@@ -28,15 +29,15 @@ namespace __jni_impl::android::preference
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean shouldDisableDependents();
-		void setSummaryOn(jstring arg0);
 		void setSummaryOn(jint arg0);
+		void setSummaryOn(jstring arg0);
 		QAndroidJniObject getSummaryOn();
 		void setSummaryOff(jint arg0);
 		void setSummaryOff(jstring arg0);
 		QAndroidJniObject getSummaryOff();
 		jboolean getDisableDependentsState();
 		void setDisableDependentsState(jboolean arg0);
+		jboolean shouldDisableDependents();
 		jboolean isChecked();
 		void setChecked(jboolean arg0);
 	};
@@ -86,24 +87,18 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
-	jboolean TwoStatePreference::shouldDisableDependents()
+	void TwoStatePreference::setSummaryOn(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"shouldDisableDependents",
-			"()Z");
+		__thiz.callMethod<void>(
+			"setSummaryOn",
+			"(I)V",
+			arg0);
 	}
 	void TwoStatePreference::setSummaryOn(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSummaryOn",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	void TwoStatePreference::setSummaryOn(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSummaryOn",
-			"(I)V",
 			arg0);
 	}
 	QAndroidJniObject TwoStatePreference::getSummaryOn()
@@ -144,6 +139,12 @@ namespace __jni_impl::android::preference
 			"setDisableDependentsState",
 			"(Z)V",
 			arg0);
+	}
+	jboolean TwoStatePreference::shouldDisableDependents()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldDisableDependents",
+			"()Z");
 	}
 	jboolean TwoStatePreference::isChecked()
 	{

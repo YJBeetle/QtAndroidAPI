@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_ADMIN_DNSEVENT
 #define ANDROID_APP_ADMIN_DNSEVENT
 
+#include "../../../__JniBaseClass.hpp"
 #include "NetworkEvent.hpp"
 
 namespace __jni_impl::android::os

@@ -3,23 +3,21 @@
 #ifndef ANDROID_MEDIA_TV_TVVIEW
 #define ANDROID_MEDIA_TV_TVVIEW
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../view/View.hpp"
 #include "../../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::view
+{
+	class InputEvent;
+}
 namespace __jni_impl::android::media::tv
 {
 	class TvView_TvInputCallback;
-}
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
 }
 namespace __jni_impl::android::graphics
 {
@@ -32,10 +30,6 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::view
 {
 	class View;
-}
-namespace __jni_impl::android::view
-{
-	class InputEvent;
 }
 namespace __jni_impl::android::net
 {
@@ -53,6 +47,14 @@ namespace __jni_impl::android::media::tv
 {
 	class TvView_TimeShiftPositionCallback;
 }
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
+}
 
 namespace __jni_impl::android::media::tv
 {
@@ -68,16 +70,11 @@ namespace __jni_impl::android::media::tv
 		
 		// Methods
 		void reset();
+		jboolean onUnhandledInputEvent(__jni_impl::android::view::InputEvent arg0);
 		void setCallback(__jni_impl::android::media::tv::TvView_TvInputCallback arg0);
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
-		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
 		void dispatchWindowFocusChanged(jboolean arg0);
 		jboolean gatherTransparentRegion(__jni_impl::android::graphics::Region arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void setStreamVolume(jfloat arg0);
-		jboolean onUnhandledInputEvent(__jni_impl::android::view::InputEvent arg0);
 		void setZOrderMediaOverlay(jboolean arg0);
 		void setZOrderOnTop(jboolean arg0);
 		void tune(jstring arg0, __jni_impl::android::net::Uri arg1);
@@ -95,21 +92,26 @@ namespace __jni_impl::android::media::tv
 		void sendAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		jboolean dispatchUnhandledInputEvent(__jni_impl::android::view::InputEvent arg0);
 		void setOnUnhandledInputEventListener(__jni_impl::__JniBaseClass arg0);
+		void setStreamVolume(jfloat arg0);
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
+		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
 #include "../../content/Context.hpp"
+#include "../../view/InputEvent.hpp"
 #include "TvView_TvInputCallback.hpp"
-#include "../../view/KeyEvent.hpp"
-#include "../../view/MotionEvent.hpp"
 #include "../../graphics/Canvas.hpp"
 #include "../../graphics/Region.hpp"
 #include "../../view/View.hpp"
-#include "../../view/InputEvent.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
 #include "../PlaybackParams.hpp"
 #include "TvView_TimeShiftPositionCallback.hpp"
+#include "../../view/KeyEvent.hpp"
+#include "../../view/MotionEvent.hpp"
 
 namespace __jni_impl::android::media::tv
 {
@@ -148,39 +150,18 @@ namespace __jni_impl::android::media::tv
 			"reset",
 			"()V");
 	}
+	jboolean TvView::onUnhandledInputEvent(__jni_impl::android::view::InputEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onUnhandledInputEvent",
+			"(Landroid/view/InputEvent;)Z",
+			arg0.__jniObject().object());
+	}
 	void TvView::setCallback(__jni_impl::android::media::tv::TvView_TvInputCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCallback",
 			"(Landroid/media/tv/TvView$TvInputCallback;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean TvView::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean TvView::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean TvView::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean TvView::dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchGenericMotionEvent",
-			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object());
 	}
 	void TvView::dispatchWindowFocusChanged(jboolean arg0)
@@ -202,20 +183,6 @@ namespace __jni_impl::android::media::tv
 		__thiz.callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	void TvView::setStreamVolume(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStreamVolume",
-			"(F)V",
-			arg0);
-	}
-	jboolean TvView::onUnhandledInputEvent(__jni_impl::android::view::InputEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onUnhandledInputEvent",
-			"(Landroid/view/InputEvent;)Z",
 			arg0.__jniObject().object());
 	}
 	void TvView::setZOrderMediaOverlay(jboolean arg0)
@@ -339,6 +306,41 @@ namespace __jni_impl::android::media::tv
 		__thiz.callMethod<void>(
 			"setOnUnhandledInputEventListener",
 			"(Landroid/media/tv/TvView$OnUnhandledInputEventListener;)V",
+			arg0.__jniObject().object());
+	}
+	void TvView::setStreamVolume(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStreamVolume",
+			"(F)V",
+			arg0);
+	}
+	jboolean TvView::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean TvView::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean TvView::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean TvView::dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchGenericMotionEvent",
+			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media::tv

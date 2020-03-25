@@ -13,13 +13,13 @@ namespace __jni_impl::android::net::wifi::rtt
 {
 	class ResponderLocation;
 }
-namespace __jni_impl::android::net::wifi::aware
-{
-	class PeerHandle;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::net::wifi::aware
+{
+	class PeerHandle;
 }
 
 namespace __jni_impl::android::net::wifi::rtt
@@ -40,7 +40,8 @@ namespace __jni_impl::android::net::wifi::rtt
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		QAndroidJniObject getMacAddress();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getPeerHandle();
 		jint getDistanceMm();
 		jint getDistanceStdDevMm();
@@ -48,17 +49,16 @@ namespace __jni_impl::android::net::wifi::rtt
 		jint getNumSuccessfulMeasurements();
 		QAndroidJniObject getUnverifiedResponderLocation();
 		jlong getRangingTimestampMillis();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getStatus();
+		QAndroidJniObject getMacAddress();
 		jint getRssi();
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
 #include "../../MacAddress.hpp"
 #include "ResponderLocation.hpp"
-#include "../aware/PeerHandle.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../aware/PeerHandle.hpp"
 
 namespace __jni_impl::android::net::wifi::rtt
 {
@@ -117,11 +117,19 @@ namespace __jni_impl::android::net::wifi::rtt
 			"hashCode",
 			"()I");
 	}
-	QAndroidJniObject RangingResult::getMacAddress()
+	jint RangingResult::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getMacAddress",
-			"()Landroid/net/MacAddress;");
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void RangingResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	QAndroidJniObject RangingResult::getPeerHandle()
 	{
@@ -165,25 +173,17 @@ namespace __jni_impl::android::net::wifi::rtt
 			"getRangingTimestampMillis",
 			"()J");
 	}
-	jint RangingResult::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void RangingResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	jint RangingResult::getStatus()
 	{
 		return __thiz.callMethod<jint>(
 			"getStatus",
 			"()I");
+	}
+	QAndroidJniObject RangingResult::getMacAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getMacAddress",
+			"()Landroid/net/MacAddress;");
 	}
 	jint RangingResult::getRssi()
 	{

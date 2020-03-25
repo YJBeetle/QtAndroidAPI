@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_SCRIPTGROUP_CLOSURE
 #define ANDROID_RENDERSCRIPT_SCRIPTGROUP_CLOSURE
 
+#include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 
 namespace __jni_impl::android::renderscript

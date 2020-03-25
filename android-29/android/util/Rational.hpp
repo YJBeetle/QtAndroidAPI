@@ -3,6 +3,7 @@
 #ifndef ANDROID_UTIL_RATIONAL
 #define ANDROID_UTIL_RATIONAL
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Number.hpp"
 
 

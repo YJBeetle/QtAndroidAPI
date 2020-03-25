@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_ANIMATION_SCALEANIMATION
 #define ANDROID_VIEW_ANIMATION_SCALEANIMATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Animation.hpp"
 
 namespace __jni_impl::android::content

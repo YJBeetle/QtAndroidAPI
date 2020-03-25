@@ -21,13 +21,13 @@ namespace __jni_impl::android::app::assist
 		void __constructor();
 		
 		// Methods
+		jint getDisplayId();
 		jint getWidth();
 		jint getHeight();
-		jint getDisplayId();
-		QAndroidJniObject getRootViewNode();
-		QAndroidJniObject getTitle();
 		jint getTop();
 		jint getLeft();
+		QAndroidJniObject getTitle();
+		QAndroidJniObject getRootViewNode();
 	};
 } // namespace __jni_impl::android::app::assist
 
@@ -46,6 +46,12 @@ namespace __jni_impl::android::app::assist
 	}
 	
 	// Methods
+	jint AssistStructure_WindowNode::getDisplayId()
+	{
+		return __thiz.callMethod<jint>(
+			"getDisplayId",
+			"()I");
+	}
 	jint AssistStructure_WindowNode::getWidth()
 	{
 		return __thiz.callMethod<jint>(
@@ -58,24 +64,6 @@ namespace __jni_impl::android::app::assist
 			"getHeight",
 			"()I");
 	}
-	jint AssistStructure_WindowNode::getDisplayId()
-	{
-		return __thiz.callMethod<jint>(
-			"getDisplayId",
-			"()I");
-	}
-	QAndroidJniObject AssistStructure_WindowNode::getRootViewNode()
-	{
-		return __thiz.callObjectMethod(
-			"getRootViewNode",
-			"()Landroid/app/assist/AssistStructure$ViewNode;");
-	}
-	QAndroidJniObject AssistStructure_WindowNode::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
-	}
 	jint AssistStructure_WindowNode::getTop()
 	{
 		return __thiz.callMethod<jint>(
@@ -87,6 +75,18 @@ namespace __jni_impl::android::app::assist
 		return __thiz.callMethod<jint>(
 			"getLeft",
 			"()I");
+	}
+	QAndroidJniObject AssistStructure_WindowNode::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;");
+	}
+	QAndroidJniObject AssistStructure_WindowNode::getRootViewNode()
+	{
+		return __thiz.callObjectMethod(
+			"getRootViewNode",
+			"()Landroid/app/assist/AssistStructure$ViewNode;");
 	}
 } // namespace __jni_impl::android::app::assist
 

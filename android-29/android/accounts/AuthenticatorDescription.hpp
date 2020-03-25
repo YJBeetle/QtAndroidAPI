@@ -33,9 +33,9 @@ namespace __jni_impl::android::accounts
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		static QAndroidJniObject newKey(jstring arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static QAndroidJniObject newKey(jstring arg0);
 	};
 } // namespace __jni_impl::android::accounts
 
@@ -136,14 +136,6 @@ namespace __jni_impl::android::accounts
 			"hashCode",
 			"()I");
 	}
-	QAndroidJniObject AuthenticatorDescription::newKey(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.accounts.AuthenticatorDescription",
-			"newKey",
-			"(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;",
-			arg0);
-	}
 	jint AuthenticatorDescription::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -157,6 +149,14 @@ namespace __jni_impl::android::accounts
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject AuthenticatorDescription::newKey(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.accounts.AuthenticatorDescription",
+			"newKey",
+			"(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;",
+			arg0);
 	}
 } // namespace __jni_impl::android::accounts
 

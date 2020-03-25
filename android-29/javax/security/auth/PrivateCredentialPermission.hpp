@@ -3,6 +3,7 @@
 #ifndef JAVAX_SECURITY_AUTH_PRIVATECREDENTIALPERMISSION
 #define JAVAX_SECURITY_AUTH_PRIVATECREDENTIALPERMISSION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/security/Permission.hpp"
 
 namespace __jni_impl::java::io

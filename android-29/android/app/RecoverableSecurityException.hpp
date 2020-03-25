@@ -3,6 +3,9 @@
 #ifndef ANDROID_APP_RECOVERABLESECURITYEXCEPTION
 #define ANDROID_APP_RECOVERABLESECURITYEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/SecurityException.hpp"
 
 namespace __jni_impl::android::app
@@ -26,8 +29,8 @@ namespace __jni_impl::android::app
 		void __constructor(jthrowable arg0, jstring arg1, __jni_impl::android::app::RemoteAction arg2);
 		
 		// Methods
-		QAndroidJniObject getUserMessage();
 		QAndroidJniObject getUserAction();
+		QAndroidJniObject getUserMessage();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -59,17 +62,17 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject RecoverableSecurityException::getUserMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getUserMessage",
-			"()Ljava/lang/CharSequence;");
-	}
 	QAndroidJniObject RecoverableSecurityException::getUserAction()
 	{
 		return __thiz.callObjectMethod(
 			"getUserAction",
 			"()Landroid/app/RemoteAction;");
+	}
+	QAndroidJniObject RecoverableSecurityException::getUserMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getUserMessage",
+			"()Ljava/lang/CharSequence;");
 	}
 	jint RecoverableSecurityException::describeContents()
 	{

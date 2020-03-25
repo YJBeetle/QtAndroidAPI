@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_PERMISSIONS
 #define JAVA_SECURITY_PERMISSIONS
 
+#include "../../__JniBaseClass.hpp"
 #include "PermissionCollection.hpp"
 
 namespace __jni_impl::java::util::concurrent

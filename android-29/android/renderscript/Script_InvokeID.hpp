@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_SCRIPT_INVOKEID
 #define ANDROID_RENDERSCRIPT_SCRIPT_INVOKEID
 
+#include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 
 namespace __jni_impl::android::renderscript

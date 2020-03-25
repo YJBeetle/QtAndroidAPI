@@ -3,6 +3,8 @@
 #ifndef ANDROID_OS_REMOTEEXCEPTION
 #define ANDROID_OS_REMOTEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
 

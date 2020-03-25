@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_VIEWGROUP_MARGINLAYOUTPARAMS
 #define ANDROID_VIEW_VIEWGROUP_MARGINLAYOUTPARAMS
 
+#include "../../__JniBaseClass.hpp"
 #include "ViewGroup_LayoutParams.hpp"
 
 namespace __jni_impl::android::view

@@ -43,9 +43,9 @@ namespace __jni_impl::android::os
 		QAndroidJniObject getTag();
 		jint getFlags();
 		QAndroidJniObject getText(jint arg0);
+		jlong getTimeMillis();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jlong getTimeMillis();
 	};
 } // namespace __jni_impl::android::os
 
@@ -146,6 +146,12 @@ namespace __jni_impl::android::os
 			"(I)Ljava/lang/String;",
 			arg0);
 	}
+	jlong DropBoxManager_Entry::getTimeMillis()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeMillis",
+			"()J");
+	}
 	jint DropBoxManager_Entry::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -159,12 +165,6 @@ namespace __jni_impl::android::os
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jlong DropBoxManager_Entry::getTimeMillis()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeMillis",
-			"()J");
 	}
 } // namespace __jni_impl::android::os
 

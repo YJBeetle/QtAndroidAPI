@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_SIGNATURE
 #define JAVA_SECURITY_SIGNATURE
 
+#include "../../__JniBaseClass.hpp"
 #include "SignatureSpi.hpp"
 
 namespace __jni_impl::java::security

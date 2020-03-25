@@ -3,6 +3,7 @@
 #ifndef ANDROID_WIDGET_TEXTVIEW
 #define ANDROID_WIDGET_TEXTVIEW
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::content
@@ -77,34 +78,6 @@ namespace __jni_impl::android::text
 {
 	class Layout;
 }
-namespace __jni_impl::android::graphics
-{
-	class Typeface;
-}
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
-namespace __jni_impl::android::text
-{
-	class TextPaint;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
-}
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
-}
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
-}
 namespace __jni_impl::java::util
 {
 	class ArrayList;
@@ -112,6 +85,14 @@ namespace __jni_impl::java::util
 namespace __jni_impl::android::view
 {
 	class PointerIcon;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
 }
 namespace __jni_impl::android::view::accessibility
 {
@@ -129,6 +110,10 @@ namespace __jni_impl::android::view
 {
 	class View;
 }
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
+}
 namespace __jni_impl::android::view::inputmethod
 {
 	class EditorInfo;
@@ -140,6 +125,22 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::view
 {
 	class DragEvent;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
+}
+namespace __jni_impl::android::graphics
+{
+	class Typeface;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
+}
+namespace __jni_impl::android::text
+{
+	class TextPaint;
 }
 
 namespace __jni_impl::android::widget
@@ -296,8 +297,8 @@ namespace __jni_impl::android::widget
 		void setSpannableFactory(__jni_impl::android::text::Spannable_Factory arg0);
 		void setTextKeepState(jstring arg0, __jni_impl::android::widget::TextView_BufferType arg1);
 		void setTextKeepState(jstring arg0);
-		void setHint(jstring arg0);
 		void setHint(jint arg0);
+		void setHint(jstring arg0);
 		QAndroidJniObject getHint();
 		jboolean isSingleLine();
 		void setInputType(jint arg0);
@@ -370,44 +371,6 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getLayout();
 		void setHighlightColor(jint arg0);
 		jint getHighlightColor();
-		void setBreakStrategy(jint arg0);
-		void setHyphenationFrequency(jint arg0);
-		QAndroidJniObject getTypeface();
-		void setTypeface(__jni_impl::android::graphics::Typeface arg0, jint arg1);
-		void setTypeface(__jni_impl::android::graphics::Typeface arg0);
-		void setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3);
-		QAndroidJniObject getTextLocale();
-		QAndroidJniObject getTextLocales();
-		void setTextLocale(__jni_impl::java::util::Locale arg0);
-		void setTextLocales(__jni_impl::android::os::LocaleList arg0);
-		jboolean isElegantTextHeight();
-		void setElegantTextHeight(jboolean arg0);
-		jfloat getTextSize();
-		void setTextSize(jint arg0, jfloat arg1);
-		void setTextSize(jfloat arg0);
-		jfloat getTextScaleX();
-		void setTextScaleX(jfloat arg0);
-		jfloat getLetterSpacing();
-		void setLetterSpacing(jfloat arg0);
-		QAndroidJniObject getFontFeatureSettings();
-		void setFontFeatureSettings(jstring arg0);
-		QAndroidJniObject getFontVariationSettings();
-		jboolean setFontVariationSettings(jstring arg0);
-		jint getBreakStrategy();
-		jint getHyphenationFrequency();
-		jint getLineCount();
-		QAndroidJniObject getPaint();
-		jint getLineBounds(jint arg0, __jni_impl::android::graphics::Rect arg1);
-		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		jboolean onKeyShortcut(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		void onWindowFocusChanged(jboolean arg0);
 		void findViewsWithText(__jni_impl::java::util::ArrayList arg0, jstring arg1, jint arg2);
 		QAndroidJniObject onResolvePointerIcon(__jni_impl::android::view::MotionEvent arg0, jint arg1);
 		QAndroidJniObject getAccessibilityClassName();
@@ -437,6 +400,44 @@ namespace __jni_impl::android::widget
 		void setSelected(jboolean arg0);
 		jint getBaseline();
 		jboolean onDragEvent(__jni_impl::android::view::DragEvent arg0);
+		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onSaveInstanceState();
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		jboolean onKeyShortcut(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
+		void onWindowFocusChanged(jboolean arg0);
+		void setBreakStrategy(jint arg0);
+		void setHyphenationFrequency(jint arg0);
+		QAndroidJniObject getTypeface();
+		void setTypeface(__jni_impl::android::graphics::Typeface arg0);
+		void setTypeface(__jni_impl::android::graphics::Typeface arg0, jint arg1);
+		void setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3);
+		QAndroidJniObject getTextLocale();
+		QAndroidJniObject getTextLocales();
+		void setTextLocale(__jni_impl::java::util::Locale arg0);
+		void setTextLocales(__jni_impl::android::os::LocaleList arg0);
+		jboolean isElegantTextHeight();
+		void setElegantTextHeight(jboolean arg0);
+		jfloat getTextSize();
+		void setTextSize(jfloat arg0);
+		void setTextSize(jint arg0, jfloat arg1);
+		jfloat getTextScaleX();
+		void setTextScaleX(jfloat arg0);
+		jfloat getLetterSpacing();
+		void setLetterSpacing(jfloat arg0);
+		QAndroidJniObject getFontFeatureSettings();
+		void setFontFeatureSettings(jstring arg0);
+		QAndroidJniObject getFontVariationSettings();
+		jboolean setFontVariationSettings(jstring arg0);
+		jint getBreakStrategy();
+		jint getHyphenationFrequency();
+		jint getLineCount();
+		QAndroidJniObject getPaint();
+		jint getLineBounds(jint arg0, __jni_impl::android::graphics::Rect arg1);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -458,22 +459,22 @@ namespace __jni_impl::android::widget
 #include "../text/TextUtils_TruncateAt.hpp"
 #include "Scroller.hpp"
 #include "../text/Layout.hpp"
-#include "../graphics/Typeface.hpp"
-#include "../../java/util/Locale.hpp"
-#include "../text/TextPaint.hpp"
-#include "../graphics/Rect.hpp"
-#include "../content/res/Configuration.hpp"
-#include "../view/KeyEvent.hpp"
-#include "../view/MotionEvent.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "../view/PointerIcon.hpp"
+#include "../view/MotionEvent.hpp"
+#include "../graphics/Rect.hpp"
 #include "../view/accessibility/AccessibilityEvent.hpp"
 #include "../view/autofill/AutofillValue.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
 #include "../view/View.hpp"
+#include "../view/KeyEvent.hpp"
 #include "../view/inputmethod/EditorInfo.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../view/DragEvent.hpp"
+#include "../content/res/Configuration.hpp"
+#include "../graphics/Typeface.hpp"
+#include "../../java/util/Locale.hpp"
+#include "../text/TextPaint.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -1458,18 +1459,18 @@ namespace __jni_impl::android::widget
 			"(Ljava/lang/CharSequence;)V",
 			arg0);
 	}
-	void TextView::setHint(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHint",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
 	void TextView::setHint(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHint",
 			"(I)V",
+			arg0);
+	}
+	void TextView::setHint(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHint",
+			"(Ljava/lang/CharSequence;)V",
 			arg0);
 	}
 	QAndroidJniObject TextView::getHint()
@@ -1944,269 +1945,6 @@ namespace __jni_impl::android::widget
 			"getHighlightColor",
 			"()I");
 	}
-	void TextView::setBreakStrategy(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBreakStrategy",
-			"(I)V",
-			arg0);
-	}
-	void TextView::setHyphenationFrequency(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHyphenationFrequency",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject TextView::getTypeface()
-	{
-		return __thiz.callObjectMethod(
-			"getTypeface",
-			"()Landroid/graphics/Typeface;");
-	}
-	void TextView::setTypeface(__jni_impl::android::graphics::Typeface arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTypeface",
-			"(Landroid/graphics/Typeface;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void TextView::setTypeface(__jni_impl::android::graphics::Typeface arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTypeface",
-			"(Landroid/graphics/Typeface;)V",
-			arg0.__jniObject().object());
-	}
-	void TextView::setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"setShadowLayer",
-			"(FFFI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	QAndroidJniObject TextView::getTextLocale()
-	{
-		return __thiz.callObjectMethod(
-			"getTextLocale",
-			"()Ljava/util/Locale;");
-	}
-	QAndroidJniObject TextView::getTextLocales()
-	{
-		return __thiz.callObjectMethod(
-			"getTextLocales",
-			"()Landroid/os/LocaleList;");
-	}
-	void TextView::setTextLocale(__jni_impl::java::util::Locale arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextLocale",
-			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
-	}
-	void TextView::setTextLocales(__jni_impl::android::os::LocaleList arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextLocales",
-			"(Landroid/os/LocaleList;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean TextView::isElegantTextHeight()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isElegantTextHeight",
-			"()Z");
-	}
-	void TextView::setElegantTextHeight(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setElegantTextHeight",
-			"(Z)V",
-			arg0);
-	}
-	jfloat TextView::getTextSize()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getTextSize",
-			"()F");
-	}
-	void TextView::setTextSize(jint arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTextSize",
-			"(IF)V",
-			arg0,
-			arg1);
-	}
-	void TextView::setTextSize(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextSize",
-			"(F)V",
-			arg0);
-	}
-	jfloat TextView::getTextScaleX()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getTextScaleX",
-			"()F");
-	}
-	void TextView::setTextScaleX(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextScaleX",
-			"(F)V",
-			arg0);
-	}
-	jfloat TextView::getLetterSpacing()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getLetterSpacing",
-			"()F");
-	}
-	void TextView::setLetterSpacing(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLetterSpacing",
-			"(F)V",
-			arg0);
-	}
-	QAndroidJniObject TextView::getFontFeatureSettings()
-	{
-		return __thiz.callObjectMethod(
-			"getFontFeatureSettings",
-			"()Ljava/lang/String;");
-	}
-	void TextView::setFontFeatureSettings(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFontFeatureSettings",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
-	QAndroidJniObject TextView::getFontVariationSettings()
-	{
-		return __thiz.callObjectMethod(
-			"getFontVariationSettings",
-			"()Ljava/lang/String;");
-	}
-	jboolean TextView::setFontVariationSettings(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setFontVariationSettings",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	jint TextView::getBreakStrategy()
-	{
-		return __thiz.callMethod<jint>(
-			"getBreakStrategy",
-			"()I");
-	}
-	jint TextView::getHyphenationFrequency()
-	{
-		return __thiz.callMethod<jint>(
-			"getHyphenationFrequency",
-			"()I");
-	}
-	jint TextView::getLineCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getLineCount",
-			"()I");
-	}
-	QAndroidJniObject TextView::getPaint()
-	{
-		return __thiz.callObjectMethod(
-			"getPaint",
-			"()Landroid/text/TextPaint;");
-	}
-	jint TextView::getLineBounds(jint arg0, __jni_impl::android::graphics::Rect arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getLineBounds",
-			"(ILandroid/graphics/Rect;)I",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void TextView::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onRestoreInstanceState",
-			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject TextView::onSaveInstanceState()
-	{
-		return __thiz.callObjectMethod(
-			"onSaveInstanceState",
-			"()Landroid/os/Parcelable;");
-	}
-	jboolean TextView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean TextView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean TextView::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyMultiple",
-			"(IILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	jboolean TextView::onKeyShortcut(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyShortcut",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean TextView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean TextView::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean TextView::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onGenericMotionEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	void TextView::onWindowFocusChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onWindowFocusChanged",
-			"(Z)V",
-			arg0);
-	}
 	void TextView::findViewsWithText(__jni_impl::java::util::ArrayList arg0, jstring arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -2412,6 +2150,269 @@ namespace __jni_impl::android::widget
 			"onDragEvent",
 			"(Landroid/view/DragEvent;)Z",
 			arg0.__jniObject().object());
+	}
+	void TextView::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onRestoreInstanceState",
+			"(Landroid/os/Parcelable;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject TextView::onSaveInstanceState()
+	{
+		return __thiz.callObjectMethod(
+			"onSaveInstanceState",
+			"()Landroid/os/Parcelable;");
+	}
+	jboolean TextView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean TextView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean TextView::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyMultiple",
+			"(IILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object());
+	}
+	jboolean TextView::onKeyShortcut(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyShortcut",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean TextView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean TextView::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean TextView::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onGenericMotionEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	void TextView::onWindowFocusChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onWindowFocusChanged",
+			"(Z)V",
+			arg0);
+	}
+	void TextView::setBreakStrategy(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBreakStrategy",
+			"(I)V",
+			arg0);
+	}
+	void TextView::setHyphenationFrequency(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHyphenationFrequency",
+			"(I)V",
+			arg0);
+	}
+	QAndroidJniObject TextView::getTypeface()
+	{
+		return __thiz.callObjectMethod(
+			"getTypeface",
+			"()Landroid/graphics/Typeface;");
+	}
+	void TextView::setTypeface(__jni_impl::android::graphics::Typeface arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTypeface",
+			"(Landroid/graphics/Typeface;)V",
+			arg0.__jniObject().object());
+	}
+	void TextView::setTypeface(__jni_impl::android::graphics::Typeface arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setTypeface",
+			"(Landroid/graphics/Typeface;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	void TextView::setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"setShadowLayer",
+			"(FFFI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
+	QAndroidJniObject TextView::getTextLocale()
+	{
+		return __thiz.callObjectMethod(
+			"getTextLocale",
+			"()Ljava/util/Locale;");
+	}
+	QAndroidJniObject TextView::getTextLocales()
+	{
+		return __thiz.callObjectMethod(
+			"getTextLocales",
+			"()Landroid/os/LocaleList;");
+	}
+	void TextView::setTextLocale(__jni_impl::java::util::Locale arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextLocale",
+			"(Ljava/util/Locale;)V",
+			arg0.__jniObject().object());
+	}
+	void TextView::setTextLocales(__jni_impl::android::os::LocaleList arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextLocales",
+			"(Landroid/os/LocaleList;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean TextView::isElegantTextHeight()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isElegantTextHeight",
+			"()Z");
+	}
+	void TextView::setElegantTextHeight(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setElegantTextHeight",
+			"(Z)V",
+			arg0);
+	}
+	jfloat TextView::getTextSize()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getTextSize",
+			"()F");
+	}
+	void TextView::setTextSize(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextSize",
+			"(F)V",
+			arg0);
+	}
+	void TextView::setTextSize(jint arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"setTextSize",
+			"(IF)V",
+			arg0,
+			arg1);
+	}
+	jfloat TextView::getTextScaleX()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getTextScaleX",
+			"()F");
+	}
+	void TextView::setTextScaleX(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextScaleX",
+			"(F)V",
+			arg0);
+	}
+	jfloat TextView::getLetterSpacing()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getLetterSpacing",
+			"()F");
+	}
+	void TextView::setLetterSpacing(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLetterSpacing",
+			"(F)V",
+			arg0);
+	}
+	QAndroidJniObject TextView::getFontFeatureSettings()
+	{
+		return __thiz.callObjectMethod(
+			"getFontFeatureSettings",
+			"()Ljava/lang/String;");
+	}
+	void TextView::setFontFeatureSettings(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFontFeatureSettings",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	QAndroidJniObject TextView::getFontVariationSettings()
+	{
+		return __thiz.callObjectMethod(
+			"getFontVariationSettings",
+			"()Ljava/lang/String;");
+	}
+	jboolean TextView::setFontVariationSettings(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setFontVariationSettings",
+			"(Ljava/lang/String;)Z",
+			arg0);
+	}
+	jint TextView::getBreakStrategy()
+	{
+		return __thiz.callMethod<jint>(
+			"getBreakStrategy",
+			"()I");
+	}
+	jint TextView::getHyphenationFrequency()
+	{
+		return __thiz.callMethod<jint>(
+			"getHyphenationFrequency",
+			"()I");
+	}
+	jint TextView::getLineCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getLineCount",
+			"()I");
+	}
+	QAndroidJniObject TextView::getPaint()
+	{
+		return __thiz.callObjectMethod(
+			"getPaint",
+			"()Landroid/text/TextPaint;");
+	}
+	jint TextView::getLineBounds(jint arg0, __jni_impl::android::graphics::Rect arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getLineBounds",
+			"(ILandroid/graphics/Rect;)I",
+			arg0,
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::widget
 

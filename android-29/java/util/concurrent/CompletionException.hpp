@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_CONCURRENT_COMPLETIONEXCEPTION
 #define JAVA_UTIL_CONCURRENT_COMPLETIONEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
 #include "../../lang/RuntimeException.hpp"
 
 

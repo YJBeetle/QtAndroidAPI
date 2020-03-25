@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_ADMIN_DELEGATEDADMINRECEIVER
 #define ANDROID_APP_ADMIN_DELEGATEDADMINRECEIVER
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
 namespace __jni_impl::android::content

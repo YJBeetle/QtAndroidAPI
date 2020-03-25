@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_TYPE
 #define ANDROID_RENDERSCRIPT_TYPE
 
+#include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 
 namespace __jni_impl::android::renderscript
@@ -26,7 +27,6 @@ namespace __jni_impl::android::renderscript
 		
 		// Methods
 		jint getCount();
-		QAndroidJniObject getElement();
 		jint getX();
 		jint getY();
 		jint getZ();
@@ -36,6 +36,7 @@ namespace __jni_impl::android::renderscript
 		static QAndroidJniObject createX(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2);
 		static QAndroidJniObject createXY(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3);
 		static QAndroidJniObject createXYZ(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3, jint arg4);
+		QAndroidJniObject getElement();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -60,12 +61,6 @@ namespace __jni_impl::android::renderscript
 		return __thiz.callMethod<jint>(
 			"getCount",
 			"()I");
-	}
-	QAndroidJniObject Type::getElement()
-	{
-		return __thiz.callObjectMethod(
-			"getElement",
-			"()Landroid/renderscript/Element;");
 	}
 	jint Type::getX()
 	{
@@ -135,6 +130,12 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3,
 			arg4);
+	}
+	QAndroidJniObject Type::getElement()
+	{
+		return __thiz.callObjectMethod(
+			"getElement",
+			"()Landroid/renderscript/Element;");
 	}
 } // namespace __jni_impl::android::renderscript
 

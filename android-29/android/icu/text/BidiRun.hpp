@@ -19,12 +19,12 @@ namespace __jni_impl::android::icu::text
 		// Methods
 		QAndroidJniObject toString();
 		jint getLength();
-		jint getStart();
-		jbyte getDirection();
-		jint getLimit();
 		jbyte getEmbeddingLevel();
 		jboolean isOddRun();
 		jboolean isEvenRun();
+		jint getStart();
+		jint getLimit();
+		jbyte getDirection();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -54,24 +54,6 @@ namespace __jni_impl::android::icu::text
 			"getLength",
 			"()I");
 	}
-	jint BidiRun::getStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getStart",
-			"()I");
-	}
-	jbyte BidiRun::getDirection()
-	{
-		return __thiz.callMethod<jbyte>(
-			"getDirection",
-			"()B");
-	}
-	jint BidiRun::getLimit()
-	{
-		return __thiz.callMethod<jint>(
-			"getLimit",
-			"()I");
-	}
 	jbyte BidiRun::getEmbeddingLevel()
 	{
 		return __thiz.callMethod<jbyte>(
@@ -89,6 +71,24 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"isEvenRun",
 			"()Z");
+	}
+	jint BidiRun::getStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getStart",
+			"()I");
+	}
+	jint BidiRun::getLimit()
+	{
+		return __thiz.callMethod<jint>(
+			"getLimit",
+			"()I");
+	}
+	jbyte BidiRun::getDirection()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getDirection",
+			"()B");
 	}
 } // namespace __jni_impl::android::icu::text
 

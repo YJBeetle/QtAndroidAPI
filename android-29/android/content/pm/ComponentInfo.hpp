@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_PM_COMPONENTINFO
 #define ANDROID_CONTENT_PM_COMPONENTINFO
 
+#include "../../../__JniBaseClass.hpp"
 #include "PackageItemInfo.hpp"
 
 namespace __jni_impl::android::content::pm
@@ -34,9 +35,9 @@ namespace __jni_impl::android::content::pm
 		
 		// Methods
 		jboolean isEnabled();
-		jint getIconResource();
 		jint getLogoResource();
 		jint getBannerResource();
+		jint getIconResource();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
@@ -108,12 +109,6 @@ namespace __jni_impl::android::content::pm
 			"isEnabled",
 			"()Z");
 	}
-	jint ComponentInfo::getIconResource()
-	{
-		return __thiz.callMethod<jint>(
-			"getIconResource",
-			"()I");
-	}
 	jint ComponentInfo::getLogoResource()
 	{
 		return __thiz.callMethod<jint>(
@@ -124,6 +119,12 @@ namespace __jni_impl::android::content::pm
 	{
 		return __thiz.callMethod<jint>(
 			"getBannerResource",
+			"()I");
+	}
+	jint ComponentInfo::getIconResource()
+	{
+		return __thiz.callMethod<jint>(
+			"getIconResource",
 			"()I");
 	}
 	void ComponentInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

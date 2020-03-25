@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_OPERATIONAPPLICATIONEXCEPTION
 #define ANDROID_CONTENT_OPERATIONAPPLICATIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_NET_SIP_SIPEXCEPTION
 #define ANDROID_NET_SIP_SIPEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
 

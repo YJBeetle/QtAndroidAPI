@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_CLASSCIRCULARITYERROR
 #define JAVA_LANG_CLASSCIRCULARITYERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "LinkageError.hpp"
 
 

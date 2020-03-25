@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_ANIMATION_DECELERATEINTERPOLATOR
 #define ANDROID_VIEW_ANIMATION_DECELERATEINTERPOLATOR
 
+#include "../../../__JniBaseClass.hpp"
 #include "BaseInterpolator.hpp"
 
 namespace __jni_impl::android::content

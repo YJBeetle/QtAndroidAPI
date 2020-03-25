@@ -25,13 +25,13 @@ namespace __jni_impl::android::hardware::camera2
 		void __constructor();
 		
 		// Methods
+		void onClosed(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0);
 		void onConfigured(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0);
 		void onConfigureFailed(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0);
 		void onReady(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0);
 		void onActive(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0);
 		void onCaptureQueueEmpty(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0);
 		void onSurfacePrepared(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0, __jni_impl::android::view::Surface arg1);
-		void onClosed(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0);
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
@@ -51,6 +51,13 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Methods
+	void CameraCaptureSession_StateCallback::onClosed(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0)
+	{
+		__thiz.callMethod<void>(
+			"onClosed",
+			"(Landroid/hardware/camera2/CameraCaptureSession;)V",
+			arg0.__jniObject().object());
+	}
 	void CameraCaptureSession_StateCallback::onConfigured(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0)
 	{
 		__thiz.callMethod<void>(
@@ -93,13 +100,6 @@ namespace __jni_impl::android::hardware::camera2
 			"(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
-	}
-	void CameraCaptureSession_StateCallback::onClosed(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0)
-	{
-		__thiz.callMethod<void>(
-			"onClosed",
-			"(Landroid/hardware/camera2/CameraCaptureSession;)V",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

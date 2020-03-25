@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_ENUMMAP
 #define JAVA_UTIL_ENUMMAP
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractMap.hpp"
 
 namespace __jni_impl::java::lang

@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_PORTERDUFFXFERMODE
 #define ANDROID_GRAPHICS_PORTERDUFFXFERMODE
 
+#include "../../__JniBaseClass.hpp"
 #include "Xfermode.hpp"
 
 namespace __jni_impl::android::graphics

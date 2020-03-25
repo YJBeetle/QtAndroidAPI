@@ -25,10 +25,10 @@ namespace __jni_impl::android::content::pm
 		// Methods
 		QAndroidJniObject toString();
 		QAndroidJniObject getPackageName();
-		jlong getLongVersionCode();
+		jint getVersionCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getVersionCode();
+		jlong getLongVersionCode();
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -76,11 +76,11 @@ namespace __jni_impl::android::content::pm
 			"getPackageName",
 			"()Ljava/lang/String;");
 	}
-	jlong VersionedPackage::getLongVersionCode()
+	jint VersionedPackage::getVersionCode()
 	{
-		return __thiz.callMethod<jlong>(
-			"getLongVersionCode",
-			"()J");
+		return __thiz.callMethod<jint>(
+			"getVersionCode",
+			"()I");
 	}
 	jint VersionedPackage::describeContents()
 	{
@@ -96,11 +96,11 @@ namespace __jni_impl::android::content::pm
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	jint VersionedPackage::getVersionCode()
+	jlong VersionedPackage::getLongVersionCode()
 	{
-		return __thiz.callMethod<jint>(
-			"getVersionCode",
-			"()I");
+		return __thiz.callMethod<jlong>(
+			"getLongVersionCode",
+			"()J");
 	}
 } // namespace __jni_impl::android::content::pm
 

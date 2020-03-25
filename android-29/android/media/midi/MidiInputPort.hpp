@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_MIDI_MIDIINPUTPORT
 #define ANDROID_MEDIA_MIDI_MIDIINPUTPORT
 
+#include "../../../__JniBaseClass.hpp"
 #include "MidiReceiver.hpp"
 
 namespace __jni_impl::java::io
@@ -22,9 +23,9 @@ namespace __jni_impl::android::media::midi
 		
 		// Methods
 		void close();
-		jint getPortNumber();
 		void onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3);
 		void onFlush();
+		jint getPortNumber();
 	};
 } // namespace __jni_impl::android::media::midi
 
@@ -49,12 +50,6 @@ namespace __jni_impl::android::media::midi
 			"close",
 			"()V");
 	}
-	jint MidiInputPort::getPortNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getPortNumber",
-			"()I");
-	}
 	void MidiInputPort::onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3)
 	{
 		__thiz.callMethod<void>(
@@ -70,6 +65,12 @@ namespace __jni_impl::android::media::midi
 		__thiz.callMethod<void>(
 			"onFlush",
 			"()V");
+	}
+	jint MidiInputPort::getPortNumber()
+	{
+		return __thiz.callMethod<jint>(
+			"getPortNumber",
+			"()I");
 	}
 } // namespace __jni_impl::android::media::midi
 

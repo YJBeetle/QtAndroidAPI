@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_RELATIVELAYOUT
 #define ANDROID_WIDGET_RELATIVELAYOUT
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::content
@@ -57,13 +59,13 @@ namespace __jni_impl::android::widget
 		// Methods
 		void setGravity(jint arg0);
 		jint getGravity();
-		void setIgnoreGravity(jint arg0);
-		jint getIgnoreGravity();
 		QAndroidJniObject getAccessibilityClassName();
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		jboolean shouldDelayChildPressedState();
 		void requestLayout();
 		jint getBaseline();
+		void setIgnoreGravity(jint arg0);
+		jint getIgnoreGravity();
 		void setHorizontalGravity(jint arg0);
 		void setVerticalGravity(jint arg0);
 	};
@@ -265,19 +267,6 @@ namespace __jni_impl::android::widget
 			"getGravity",
 			"()I");
 	}
-	void RelativeLayout::setIgnoreGravity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIgnoreGravity",
-			"(I)V",
-			arg0);
-	}
-	jint RelativeLayout::getIgnoreGravity()
-	{
-		return __thiz.callMethod<jint>(
-			"getIgnoreGravity",
-			"()I");
-	}
 	QAndroidJniObject RelativeLayout::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
@@ -307,6 +296,19 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callMethod<jint>(
 			"getBaseline",
+			"()I");
+	}
+	void RelativeLayout::setIgnoreGravity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIgnoreGravity",
+			"(I)V",
+			arg0);
+	}
+	jint RelativeLayout::getIgnoreGravity()
+	{
+		return __thiz.callMethod<jint>(
+			"getIgnoreGravity",
 			"()I");
 	}
 	void RelativeLayout::setHorizontalGravity(jint arg0)

@@ -3,6 +3,10 @@
 #ifndef ANDROID_WIDGET_GRIDVIEW
 #define ANDROID_WIDGET_GRIDVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "AdapterView.hpp"
 #include "AbsListView.hpp"
 
 namespace __jni_impl::android::content
@@ -23,15 +27,15 @@ namespace __jni_impl::android::view::accessibility
 }
 namespace __jni_impl::android::view
 {
-	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
 	class ViewGroup_LayoutParams;
 }
 namespace __jni_impl::android::graphics
 {
 	class Rect;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
 }
 
 namespace __jni_impl::android::widget
@@ -56,17 +60,6 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getAdapter();
 		void setGravity(jint arg0);
 		jint getGravity();
-		void setNumColumns(jint arg0);
-		void setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0);
-		void smoothScrollToPosition(jint arg0);
-		void smoothScrollByOffset(jint arg0);
-		void onInitializeAccessibilityNodeInfoForItem(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::accessibility::AccessibilityNodeInfo arg2);
-		void setAdapter(__jni_impl::__JniBaseClass arg0);
-		void setSelection(jint arg0);
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		QAndroidJniObject getAccessibilityClassName();
 		void setHorizontalSpacing(jint arg0);
 		jint getHorizontalSpacing();
 		jint getRequestedHorizontalSpacing();
@@ -78,6 +71,17 @@ namespace __jni_impl::android::widget
 		jint getColumnWidth();
 		jint getRequestedColumnWidth();
 		jint getNumColumns();
+		void setAdapter(__jni_impl::__JniBaseClass arg0);
+		void setSelection(jint arg0);
+		void setNumColumns(jint arg0);
+		void setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0);
+		void smoothScrollToPosition(jint arg0);
+		void smoothScrollByOffset(jint arg0);
+		void onInitializeAccessibilityNodeInfoForItem(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::accessibility::AccessibilityNodeInfo arg2);
+		QAndroidJniObject getAccessibilityClassName();
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -85,9 +89,9 @@ namespace __jni_impl::android::widget
 #include "../content/Intent.hpp"
 #include "../view/View.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
-#include "../view/KeyEvent.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../graphics/Rect.hpp"
+#include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -179,88 +183,6 @@ namespace __jni_impl::android::widget
 			"getGravity",
 			"()I");
 	}
-	void GridView::setNumColumns(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNumColumns",
-			"(I)V",
-			arg0);
-	}
-	void GridView::setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRemoteViewsAdapter",
-			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
-	}
-	void GridView::smoothScrollToPosition(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"smoothScrollToPosition",
-			"(I)V",
-			arg0);
-	}
-	void GridView::smoothScrollByOffset(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"smoothScrollByOffset",
-			"(I)V",
-			arg0);
-	}
-	void GridView::onInitializeAccessibilityNodeInfoForItem(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::accessibility::AccessibilityNodeInfo arg2)
-	{
-		__thiz.callMethod<void>(
-			"onInitializeAccessibilityNodeInfoForItem",
-			"(Landroid/view/View;ILandroid/view/accessibility/AccessibilityNodeInfo;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object());
-	}
-	void GridView::setAdapter(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAdapter",
-			"(Landroid/widget/ListAdapter;)V",
-			arg0.__jniObject().object());
-	}
-	void GridView::setSelection(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSelection",
-			"(I)V",
-			arg0);
-	}
-	jboolean GridView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean GridView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean GridView::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyMultiple",
-			"(IILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject GridView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
 	void GridView::setHorizontalSpacing(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -330,6 +252,88 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getNumColumns",
 			"()I");
+	}
+	void GridView::setAdapter(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAdapter",
+			"(Landroid/widget/Adapter;)V",
+			arg0.__jniObject().object());
+	}
+	void GridView::setSelection(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSelection",
+			"(I)V",
+			arg0);
+	}
+	void GridView::setNumColumns(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNumColumns",
+			"(I)V",
+			arg0);
+	}
+	void GridView::setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRemoteViewsAdapter",
+			"(Landroid/content/Intent;)V",
+			arg0.__jniObject().object());
+	}
+	void GridView::smoothScrollToPosition(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"smoothScrollToPosition",
+			"(I)V",
+			arg0);
+	}
+	void GridView::smoothScrollByOffset(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"smoothScrollByOffset",
+			"(I)V",
+			arg0);
+	}
+	void GridView::onInitializeAccessibilityNodeInfoForItem(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::accessibility::AccessibilityNodeInfo arg2)
+	{
+		__thiz.callMethod<void>(
+			"onInitializeAccessibilityNodeInfoForItem",
+			"(Landroid/view/View;ILandroid/view/accessibility/AccessibilityNodeInfo;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject GridView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
+	jboolean GridView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean GridView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean GridView::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyMultiple",
+			"(IILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object());
 	}
 } // namespace __jni_impl::android::widget
 

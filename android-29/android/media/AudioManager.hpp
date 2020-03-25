@@ -21,13 +21,13 @@ namespace __jni_impl::android::media
 {
 	class AudioFocusRequest;
 }
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
 namespace __jni_impl::android::app
 {
 	class PendingIntent;
+}
+namespace __jni_impl::android::content
+{
+	class ComponentName;
 }
 namespace __jni_impl::android::media
 {
@@ -163,11 +163,10 @@ namespace __jni_impl::android::media
 		QAndroidJniObject getProperty(jstring arg0);
 		QAndroidJniObject getParameters(jstring arg0);
 		void setParameters(jstring arg0);
-		jint getAllowedCapturePolicy();
+		jboolean shouldVibrate(jint arg0);
 		void playSoundEffect(jint arg0, jfloat arg1);
 		void playSoundEffect(jint arg0);
 		void setMode(jint arg0);
-		void adjustVolume(jint arg0, jint arg1);
 		void dispatchMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		jboolean isVolumeFixed();
 		void adjustStreamVolume(jint arg0, jint arg1, jint arg2);
@@ -209,10 +208,10 @@ namespace __jni_impl::android::media
 		jint requestAudioFocus(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		jint abandonAudioFocusRequest(__jni_impl::android::media::AudioFocusRequest arg0);
 		jint abandonAudioFocus(__jni_impl::__JniBaseClass arg0);
-		void registerMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0);
 		void registerMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0);
-		void unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0);
+		void registerMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0);
 		void unregisterMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0);
+		void unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0);
 		void registerRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0);
 		void unregisterRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0);
 		jboolean registerRemoteController(__jni_impl::android::media::RemoteController arg0);
@@ -228,7 +227,8 @@ namespace __jni_impl::android::media
 		void unregisterAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0);
 		QAndroidJniObject getMicrophones();
 		static jboolean isHapticPlaybackSupported();
-		jboolean shouldVibrate(jint arg0);
+		jint getAllowedCapturePolicy();
+		void adjustVolume(jint arg0, jint arg1);
 		jint getMode();
 	};
 } // namespace __jni_impl::android::media
@@ -237,8 +237,8 @@ namespace __jni_impl::android::media
 #include "AudioFormat.hpp"
 #include "AudioAttributes.hpp"
 #include "AudioFocusRequest.hpp"
-#include "../content/ComponentName.hpp"
 #include "../app/PendingIntent.hpp"
+#include "../content/ComponentName.hpp"
 #include "RemoteControlClient.hpp"
 #include "RemoteController.hpp"
 #include "AudioManager_AudioPlaybackCallback.hpp"
@@ -872,11 +872,12 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;)V",
 			arg0);
 	}
-	jint AudioManager::getAllowedCapturePolicy()
+	jboolean AudioManager::shouldVibrate(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getAllowedCapturePolicy",
-			"()I");
+		return __thiz.callMethod<jboolean>(
+			"shouldVibrate",
+			"(I)Z",
+			arg0);
 	}
 	void AudioManager::playSoundEffect(jint arg0, jfloat arg1)
 	{
@@ -899,14 +900,6 @@ namespace __jni_impl::android::media
 			"setMode",
 			"(I)V",
 			arg0);
-	}
-	void AudioManager::adjustVolume(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"adjustVolume",
-			"(II)V",
-			arg0,
-			arg1);
 	}
 	void AudioManager::dispatchMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0)
 	{
@@ -1198,13 +1191,6 @@ namespace __jni_impl::android::media
 			"(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I",
 			arg0.__jniObject().object());
 	}
-	void AudioManager::registerMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerMediaButtonEventReceiver",
-			"(Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object());
-	}
 	void AudioManager::registerMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0)
 	{
 		__thiz.callMethod<void>(
@@ -1212,11 +1198,11 @@ namespace __jni_impl::android::media
 			"(Landroid/app/PendingIntent;)V",
 			arg0.__jniObject().object());
 	}
-	void AudioManager::unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0)
+	void AudioManager::registerMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0)
 	{
 		__thiz.callMethod<void>(
-			"unregisterMediaButtonEventReceiver",
-			"(Landroid/app/PendingIntent;)V",
+			"registerMediaButtonEventReceiver",
+			"(Landroid/content/ComponentName;)V",
 			arg0.__jniObject().object());
 	}
 	void AudioManager::unregisterMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0)
@@ -1224,6 +1210,13 @@ namespace __jni_impl::android::media
 		__thiz.callMethod<void>(
 			"unregisterMediaButtonEventReceiver",
 			"(Landroid/content/ComponentName;)V",
+			arg0.__jniObject().object());
+	}
+	void AudioManager::unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterMediaButtonEventReceiver",
+			"(Landroid/app/PendingIntent;)V",
 			arg0.__jniObject().object());
 	}
 	void AudioManager::registerRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0)
@@ -1331,12 +1324,19 @@ namespace __jni_impl::android::media
 			"isHapticPlaybackSupported",
 			"()Z");
 	}
-	jboolean AudioManager::shouldVibrate(jint arg0)
+	jint AudioManager::getAllowedCapturePolicy()
 	{
-		return __thiz.callMethod<jboolean>(
-			"shouldVibrate",
-			"(I)Z",
-			arg0);
+		return __thiz.callMethod<jint>(
+			"getAllowedCapturePolicy",
+			"()I");
+	}
+	void AudioManager::adjustVolume(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"adjustVolume",
+			"(II)V",
+			arg0,
+			arg1);
 	}
 	jint AudioManager::getMode()
 	{

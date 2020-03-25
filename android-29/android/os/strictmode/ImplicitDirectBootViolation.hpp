@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_IMPLICITDIRECTBOOTVIOLATION
 #define ANDROID_OS_STRICTMODE_IMPLICITDIRECTBOOTVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

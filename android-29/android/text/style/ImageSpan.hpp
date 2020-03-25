@@ -3,6 +3,10 @@
 #ifndef ANDROID_TEXT_STYLE_IMAGESPAN
 #define ANDROID_TEXT_STYLE_IMAGESPAN
 
+#include "../../../__JniBaseClass.hpp"
+#include "CharacterStyle.hpp"
+#include "MetricAffectingSpan.hpp"
+#include "ReplacementSpan.hpp"
 #include "DynamicDrawableSpan.hpp"
 
 namespace __jni_impl::android::graphics::drawable

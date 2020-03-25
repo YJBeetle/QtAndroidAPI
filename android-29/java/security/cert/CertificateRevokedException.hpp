@@ -3,6 +3,9 @@
 #ifndef JAVA_SECURITY_CERT_CERTIFICATEREVOKEDEXCEPTION
 #define JAVA_SECURITY_CERT_CERTIFICATEREVOKEDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../GeneralSecurityException.hpp"
 #include "CertificateException.hpp"
 
 namespace __jni_impl::java::util
@@ -39,10 +42,10 @@ namespace __jni_impl::java::security::cert
 		// Methods
 		QAndroidJniObject getMessage();
 		QAndroidJniObject getExtensions();
-		QAndroidJniObject getRevocationReason();
-		QAndroidJniObject getRevocationDate();
 		QAndroidJniObject getAuthorityName();
 		QAndroidJniObject getInvalidityDate();
+		QAndroidJniObject getRevocationReason();
+		QAndroidJniObject getRevocationDate();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -81,18 +84,6 @@ namespace __jni_impl::java::security::cert
 			"getExtensions",
 			"()Ljava/util/Map;");
 	}
-	QAndroidJniObject CertificateRevokedException::getRevocationReason()
-	{
-		return __thiz.callObjectMethod(
-			"getRevocationReason",
-			"()Ljava/security/cert/CRLReason;");
-	}
-	QAndroidJniObject CertificateRevokedException::getRevocationDate()
-	{
-		return __thiz.callObjectMethod(
-			"getRevocationDate",
-			"()Ljava/util/Date;");
-	}
 	QAndroidJniObject CertificateRevokedException::getAuthorityName()
 	{
 		return __thiz.callObjectMethod(
@@ -103,6 +94,18 @@ namespace __jni_impl::java::security::cert
 	{
 		return __thiz.callObjectMethod(
 			"getInvalidityDate",
+			"()Ljava/util/Date;");
+	}
+	QAndroidJniObject CertificateRevokedException::getRevocationReason()
+	{
+		return __thiz.callObjectMethod(
+			"getRevocationReason",
+			"()Ljava/security/cert/CRLReason;");
+	}
+	QAndroidJniObject CertificateRevokedException::getRevocationDate()
+	{
+		return __thiz.callObjectMethod(
+			"getRevocationDate",
 			"()Ljava/util/Date;");
 	}
 } // namespace __jni_impl::java::security::cert

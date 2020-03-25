@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_PREFS_ABSTRACTPREFERENCES
 #define JAVA_UTIL_PREFS_ABSTRACTPREFERENCES
 
+#include "../../../__JniBaseClass.hpp"
 #include "Preferences.hpp"
 
 namespace __jni_impl::java::lang

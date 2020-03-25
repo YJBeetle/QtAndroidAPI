@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_BOOTSTRAPMETHODERROR
 #define JAVA_LANG_BOOTSTRAPMETHODERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "LinkageError.hpp"
 
 

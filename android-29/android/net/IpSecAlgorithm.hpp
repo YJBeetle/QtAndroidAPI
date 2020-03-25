@@ -33,9 +33,9 @@ namespace __jni_impl::android::net
 		QAndroidJniObject getName();
 		QAndroidJniObject toString();
 		QAndroidJniObject getKey();
+		jint getTruncationLengthBits();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getTruncationLengthBits();
 	};
 } // namespace __jni_impl::android::net
 
@@ -139,6 +139,12 @@ namespace __jni_impl::android::net
 			"getKey",
 			"()[B");
 	}
+	jint IpSecAlgorithm::getTruncationLengthBits()
+	{
+		return __thiz.callMethod<jint>(
+			"getTruncationLengthBits",
+			"()I");
+	}
 	jint IpSecAlgorithm::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -152,12 +158,6 @@ namespace __jni_impl::android::net
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint IpSecAlgorithm::getTruncationLengthBits()
-	{
-		return __thiz.callMethod<jint>(
-			"getTruncationLengthBits",
-			"()I");
 	}
 } // namespace __jni_impl::android::net
 

@@ -3,6 +3,8 @@
 #ifndef JAVA_SQL_SQLWARNING
 #define JAVA_SQL_SQLWARNING
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "SQLException.hpp"
 
 

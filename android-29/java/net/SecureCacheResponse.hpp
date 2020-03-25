@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_SECURECACHERESPONSE
 #define JAVA_NET_SECURECACHERESPONSE
 
+#include "../../__JniBaseClass.hpp"
 #include "CacheResponse.hpp"
 
 namespace __jni_impl::java::util

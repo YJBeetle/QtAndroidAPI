@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_FILE_STANDARDCOPYOPTION
 #define JAVA_NIO_FILE_STANDARDCOPYOPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

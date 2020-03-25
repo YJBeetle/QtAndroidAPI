@@ -23,9 +23,9 @@ namespace __jni_impl::javax::xml::namespace
 		QAndroidJniObject toString();
 		jint hashCode();
 		static QAndroidJniObject valueOf(jstring arg0);
+		QAndroidJniObject getPrefix();
 		QAndroidJniObject getNamespaceURI();
 		QAndroidJniObject getLocalPart();
-		QAndroidJniObject getPrefix();
 	};
 } // namespace __jni_impl::javax::xml::namespace
 
@@ -88,6 +88,12 @@ namespace __jni_impl::javax::xml::namespace
 			"(Ljava/lang/String;)Ljavax/xml/namespace/QName;",
 			arg0);
 	}
+	QAndroidJniObject QName::getPrefix()
+	{
+		return __thiz.callObjectMethod(
+			"getPrefix",
+			"()Ljava/lang/String;");
+	}
 	QAndroidJniObject QName::getNamespaceURI()
 	{
 		return __thiz.callObjectMethod(
@@ -98,12 +104,6 @@ namespace __jni_impl::javax::xml::namespace
 	{
 		return __thiz.callObjectMethod(
 			"getLocalPart",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject QName::getPrefix()
-	{
-		return __thiz.callObjectMethod(
-			"getPrefix",
 			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::javax::xml::namespace

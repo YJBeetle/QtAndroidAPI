@@ -3,6 +3,7 @@
 #ifndef ANDROID_DATABASE_CROSSPROCESSCURSORWRAPPER
 #define ANDROID_DATABASE_CROSSPROCESSCURSORWRAPPER
 
+#include "../../__JniBaseClass.hpp"
 #include "CursorWrapper.hpp"
 
 namespace __jni_impl::android::database

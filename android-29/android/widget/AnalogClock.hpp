@@ -3,6 +3,7 @@
 #ifndef ANDROID_WIDGET_ANALOGCLOCK
 #define ANDROID_WIDGET_ANALOGCLOCK
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::content

@@ -3,6 +3,8 @@
 #ifndef ANDROID_NET_IPSECMANAGER_SPIUNAVAILABLEEXCEPTION
 #define ANDROID_NET_IPSECMANAGER_SPIUNAVAILABLEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
 

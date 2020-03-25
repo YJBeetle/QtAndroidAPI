@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_REFLECT_FIELD
 #define JAVA_LANG_REFLECT_FIELD
 
+#include "../../../__JniBaseClass.hpp"
 #include "AccessibleObject.hpp"
 
 namespace __jni_impl::java::lang::reflect

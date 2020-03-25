@@ -3,6 +3,9 @@
 #ifndef ANDROID_INPUTMETHODSERVICE_EXTRACTEDITTEXT
 #define ANDROID_INPUTMETHODSERVICE_EXTRACTEDITTEXT
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../widget/TextView.hpp"
 #include "../widget/EditText.hpp"
 
 namespace __jni_impl::android::content
@@ -31,13 +34,13 @@ namespace __jni_impl::android::inputmethodservice
 		void setExtractedText(__jni_impl::android::view::inputmethod::ExtractedText arg0);
 		jboolean isInputMethodTarget();
 		jboolean onTextContextMenuItem(jint arg0);
+		jboolean performClick();
+		jboolean isFocused();
+		jboolean hasFocus();
+		jboolean hasWindowFocus();
 		void startInternalChanges();
 		void finishInternalChanges();
 		jboolean hasVerticalScrollBar();
-		jboolean hasFocus();
-		jboolean hasWindowFocus();
-		jboolean performClick();
-		jboolean isFocused();
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
@@ -105,6 +108,30 @@ namespace __jni_impl::android::inputmethodservice
 			"(I)Z",
 			arg0);
 	}
+	jboolean ExtractEditText::performClick()
+	{
+		return __thiz.callMethod<jboolean>(
+			"performClick",
+			"()Z");
+	}
+	jboolean ExtractEditText::isFocused()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFocused",
+			"()Z");
+	}
+	jboolean ExtractEditText::hasFocus()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasFocus",
+			"()Z");
+	}
+	jboolean ExtractEditText::hasWindowFocus()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasWindowFocus",
+			"()Z");
+	}
 	void ExtractEditText::startInternalChanges()
 	{
 		__thiz.callMethod<void>(
@@ -121,30 +148,6 @@ namespace __jni_impl::android::inputmethodservice
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasVerticalScrollBar",
-			"()Z");
-	}
-	jboolean ExtractEditText::hasFocus()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasFocus",
-			"()Z");
-	}
-	jboolean ExtractEditText::hasWindowFocus()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasWindowFocus",
-			"()Z");
-	}
-	jboolean ExtractEditText::performClick()
-	{
-		return __thiz.callMethod<jboolean>(
-			"performClick",
-			"()Z");
-	}
-	jboolean ExtractEditText::isFocused()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFocused",
 			"()Z");
 	}
 } // namespace __jni_impl::android::inputmethodservice

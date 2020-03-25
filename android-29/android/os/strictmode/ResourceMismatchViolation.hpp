@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_RESOURCEMISMATCHVIOLATION
 #define ANDROID_OS_STRICTMODE_RESOURCEMISMATCHVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

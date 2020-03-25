@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_CALENDARVIEW
 #define ANDROID_WIDGET_CALENDARVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "FrameLayout.hpp"
 
 namespace __jni_impl::android::content
@@ -35,12 +38,8 @@ namespace __jni_impl::android::widget
 		jlong getDate();
 		jint getFirstDayOfWeek();
 		void setFirstDayOfWeek(jint arg0);
-		void setDate(jlong arg0, jboolean arg1, jboolean arg2);
 		void setDate(jlong arg0);
-		jlong getMinDate();
-		void setMinDate(jlong arg0);
-		jlong getMaxDate();
-		void setMaxDate(jlong arg0);
+		void setDate(jlong arg0, jboolean arg1, jboolean arg2);
 		QAndroidJniObject getAccessibilityClassName();
 		void setShownWeekCount(jint arg0);
 		jint getShownWeekCount();
@@ -64,6 +63,10 @@ namespace __jni_impl::android::widget
 		void setShowWeekNumber(jboolean arg0);
 		jboolean getShowWeekNumber();
 		void setOnDateChangeListener(__jni_impl::__JniBaseClass arg0);
+		jlong getMinDate();
+		void setMinDate(jlong arg0);
+		jlong getMaxDate();
+		void setMaxDate(jlong arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -131,6 +134,13 @@ namespace __jni_impl::android::widget
 			"(I)V",
 			arg0);
 	}
+	void CalendarView::setDate(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDate",
+			"(J)V",
+			arg0);
+	}
 	void CalendarView::setDate(jlong arg0, jboolean arg1, jboolean arg2)
 	{
 		__thiz.callMethod<void>(
@@ -139,39 +149,6 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1,
 			arg2);
-	}
-	void CalendarView::setDate(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDate",
-			"(J)V",
-			arg0);
-	}
-	jlong CalendarView::getMinDate()
-	{
-		return __thiz.callMethod<jlong>(
-			"getMinDate",
-			"()J");
-	}
-	void CalendarView::setMinDate(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinDate",
-			"(J)V",
-			arg0);
-	}
-	jlong CalendarView::getMaxDate()
-	{
-		return __thiz.callMethod<jlong>(
-			"getMaxDate",
-			"()J");
-	}
-	void CalendarView::setMaxDate(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMaxDate",
-			"(J)V",
-			arg0);
 	}
 	QAndroidJniObject CalendarView::getAccessibilityClassName()
 	{
@@ -322,6 +299,32 @@ namespace __jni_impl::android::widget
 			"setOnDateChangeListener",
 			"(Landroid/widget/CalendarView$OnDateChangeListener;)V",
 			arg0.__jniObject().object());
+	}
+	jlong CalendarView::getMinDate()
+	{
+		return __thiz.callMethod<jlong>(
+			"getMinDate",
+			"()J");
+	}
+	void CalendarView::setMinDate(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinDate",
+			"(J)V",
+			arg0);
+	}
+	jlong CalendarView::getMaxDate()
+	{
+		return __thiz.callMethod<jlong>(
+			"getMaxDate",
+			"()J");
+	}
+	void CalendarView::setMaxDate(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMaxDate",
+			"(J)V",
+			arg0);
 	}
 } // namespace __jni_impl::android::widget
 

@@ -3,6 +3,8 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_SHAPES_OVALSHAPE
 #define ANDROID_GRAPHICS_DRAWABLE_SHAPES_OVALSHAPE
 
+#include "../../../../__JniBaseClass.hpp"
+#include "Shape.hpp"
 #include "RectShape.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes

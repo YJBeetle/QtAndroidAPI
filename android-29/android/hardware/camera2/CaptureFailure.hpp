@@ -23,12 +23,12 @@ namespace __jni_impl::android::hardware::camera2
 		void __constructor();
 		
 		// Methods
-		jint getReason();
+		jboolean wasImageCaptured();
+		QAndroidJniObject getPhysicalCameraId();
 		QAndroidJniObject getRequest();
 		jlong getFrameNumber();
 		jint getSequenceId();
-		jboolean wasImageCaptured();
-		QAndroidJniObject getPhysicalCameraId();
+		jint getReason();
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
@@ -59,11 +59,17 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Methods
-	jint CaptureFailure::getReason()
+	jboolean CaptureFailure::wasImageCaptured()
 	{
-		return __thiz.callMethod<jint>(
-			"getReason",
-			"()I");
+		return __thiz.callMethod<jboolean>(
+			"wasImageCaptured",
+			"()Z");
+	}
+	QAndroidJniObject CaptureFailure::getPhysicalCameraId()
+	{
+		return __thiz.callObjectMethod(
+			"getPhysicalCameraId",
+			"()Ljava/lang/String;");
 	}
 	QAndroidJniObject CaptureFailure::getRequest()
 	{
@@ -83,17 +89,11 @@ namespace __jni_impl::android::hardware::camera2
 			"getSequenceId",
 			"()I");
 	}
-	jboolean CaptureFailure::wasImageCaptured()
+	jint CaptureFailure::getReason()
 	{
-		return __thiz.callMethod<jboolean>(
-			"wasImageCaptured",
-			"()Z");
-	}
-	QAndroidJniObject CaptureFailure::getPhysicalCameraId()
-	{
-		return __thiz.callObjectMethod(
-			"getPhysicalCameraId",
-			"()Ljava/lang/String;");
+		return __thiz.callMethod<jint>(
+			"getReason",
+			"()I");
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

@@ -17,7 +17,6 @@ namespace __jni_impl::android::database::sqlite
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getErrorHandler();
 		QAndroidJniObject getCursorFactory();
 		QAndroidJniObject getSynchronousMode();
 		jint getLookasideSlotSize();
@@ -25,6 +24,7 @@ namespace __jni_impl::android::database::sqlite
 		jint getOpenFlags();
 		jlong getIdleConnectionTimeout();
 		QAndroidJniObject getJournalMode();
+		QAndroidJniObject getErrorHandler();
 	};
 } // namespace __jni_impl::android::database::sqlite
 
@@ -42,12 +42,6 @@ namespace __jni_impl::android::database::sqlite
 	}
 	
 	// Methods
-	QAndroidJniObject SQLiteDatabase_OpenParams::getErrorHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorHandler",
-			"()Landroid/database/DatabaseErrorHandler;");
-	}
 	QAndroidJniObject SQLiteDatabase_OpenParams::getCursorFactory()
 	{
 		return __thiz.callObjectMethod(
@@ -89,6 +83,12 @@ namespace __jni_impl::android::database::sqlite
 		return __thiz.callObjectMethod(
 			"getJournalMode",
 			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject SQLiteDatabase_OpenParams::getErrorHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getErrorHandler",
+			"()Landroid/database/DatabaseErrorHandler;");
 	}
 } // namespace __jni_impl::android::database::sqlite
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_BUFFEREDWRITER
 #define JAVA_IO_BUFFEREDWRITER
 
+#include "../../__JniBaseClass.hpp"
 #include "Writer.hpp"
 
 namespace __jni_impl::java::io

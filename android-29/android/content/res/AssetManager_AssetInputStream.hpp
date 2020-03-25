@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_RES_ASSETMANAGER_ASSETINPUTSTREAM
 #define ANDROID_CONTENT_RES_ASSETMANAGER_ASSETINPUTSTREAM
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/io/InputStream.hpp"
 
 namespace __jni_impl::android::content::res

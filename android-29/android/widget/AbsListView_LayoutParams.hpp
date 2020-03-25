@@ -3,6 +3,7 @@
 #ifndef ANDROID_WIDGET_ABSLISTVIEW_LAYOUTPARAMS
 #define ANDROID_WIDGET_ABSLISTVIEW_LAYOUTPARAMS
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 
 namespace __jni_impl::android::view

@@ -50,37 +50,42 @@ namespace __jni_impl::android::graphics
 		static QAndroidJniObject valueOf(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		static QAndroidJniObject valueOf(jfloat arg0, jfloat arg1, jfloat arg2);
 		static QAndroidJniObject valueOf(jfloatArray arg0, __jni_impl::android::graphics::ColorSpace arg1);
-		jfloat red();
 		static jint red(jint arg0);
 		static jfloat red(jlong arg0);
-		static jlong convert(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace arg4, __jni_impl::android::graphics::ColorSpace arg5);
-		static jlong convert(jlong arg0, __jni_impl::android::graphics::ColorSpace arg1);
-		static jlong convert(jint arg0, __jni_impl::android::graphics::ColorSpace arg1);
+		jfloat red();
 		QAndroidJniObject convert(__jni_impl::android::graphics::ColorSpace arg0);
-		static jlong convert(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace_Connector arg4);
+		static jlong convert(jint arg0, __jni_impl::android::graphics::ColorSpace arg1);
 		static jlong convert(jlong arg0, __jni_impl::android::graphics::ColorSpace_Connector arg1);
-		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace arg4);
+		static jlong convert(jlong arg0, __jni_impl::android::graphics::ColorSpace arg1);
+		static jlong convert(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace arg4, __jni_impl::android::graphics::ColorSpace arg5);
+		static jlong convert(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace_Connector arg4);
 		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2);
 		static jlong pack(jint arg0);
 		jlong pack();
+		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace arg4);
+		static jlong pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		static QAndroidJniObject colorSpace(jlong arg0);
+		QAndroidJniObject getColorSpace();
+		jfloat getComponent(jint arg0);
+		static jint argb(jint arg0, jint arg1, jint arg2, jint arg3);
+		static jint argb(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		static jint green(jint arg0);
 		jfloat green();
 		static jfloat green(jlong arg0);
-		static QAndroidJniObject colorSpace(jlong arg0);
-		QAndroidJniObject getColorSpace();
-		jfloat blue();
+		jfloat alpha();
+		static jint alpha(jint arg0);
+		static jfloat alpha(jlong arg0);
 		static jfloat blue(jlong arg0);
 		static jint blue(jint arg0);
-		jfloat getComponent(jint arg0);
+		jfloat blue();
 		QAndroidJniObject getModel();
-		static jboolean isWideGamut(jlong arg0);
 		jboolean isWideGamut();
+		static jboolean isWideGamut(jlong arg0);
 		jboolean isSrgb();
 		static jboolean isSrgb(jlong arg0);
 		jint getComponentCount();
-		jint toArgb();
 		static jint toArgb(jlong arg0);
+		jint toArgb();
 		QAndroidJniObject getComponents();
 		QAndroidJniObject getComponents(jfloatArray arg0);
 		static jfloat luminance(jint arg0);
@@ -94,11 +99,6 @@ namespace __jni_impl::android::graphics
 		static void colorToHSV(jint arg0, jfloatArray arg1);
 		static jint HSVToColor(jfloatArray arg0);
 		static jint HSVToColor(jint arg0, jfloatArray arg1);
-		jfloat alpha();
-		static jfloat alpha(jlong arg0);
-		static jint alpha(jint arg0);
-		static jint argb(jint arg0, jint arg1, jint arg2, jint arg3);
-		static jint argb(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -268,12 +268,6 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1.__jniObject().object());
 	}
-	jfloat Color::red()
-	{
-		return __thiz.callMethod<jfloat>(
-			"red",
-			"()F");
-	}
 	jint Color::red(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -290,6 +284,46 @@ namespace __jni_impl::android::graphics
 			"(J)F",
 			arg0);
 	}
+	jfloat Color::red()
+	{
+		return __thiz.callMethod<jfloat>(
+			"red",
+			"()F");
+	}
+	QAndroidJniObject Color::convert(__jni_impl::android::graphics::ColorSpace arg0)
+	{
+		return __thiz.callObjectMethod(
+			"convert",
+			"(Landroid/graphics/ColorSpace;)Landroid/graphics/Color;",
+			arg0.__jniObject().object());
+	}
+	jlong Color::convert(jint arg0, __jni_impl::android::graphics::ColorSpace arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.graphics.Color",
+			"convert",
+			"(ILandroid/graphics/ColorSpace;)J",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jlong Color::convert(jlong arg0, __jni_impl::android::graphics::ColorSpace_Connector arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.graphics.Color",
+			"convert",
+			"(JLandroid/graphics/ColorSpace$Connector;)J",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jlong Color::convert(jlong arg0, __jni_impl::android::graphics::ColorSpace arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.graphics.Color",
+			"convert",
+			"(JLandroid/graphics/ColorSpace;)J",
+			arg0,
+			arg1.__jniObject().object());
+	}
 	jlong Color::convert(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace arg4, __jni_impl::android::graphics::ColorSpace arg5)
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
@@ -303,69 +337,12 @@ namespace __jni_impl::android::graphics
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object());
 	}
-	jlong Color::convert(jlong arg0, __jni_impl::android::graphics::ColorSpace arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.graphics.Color",
-			"convert",
-			"(JLandroid/graphics/ColorSpace;)J",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jlong Color::convert(jint arg0, __jni_impl::android::graphics::ColorSpace arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.graphics.Color",
-			"convert",
-			"(ILandroid/graphics/ColorSpace;)J",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject Color::convert(__jni_impl::android::graphics::ColorSpace arg0)
-	{
-		return __thiz.callObjectMethod(
-			"convert",
-			"(Landroid/graphics/ColorSpace;)Landroid/graphics/Color;",
-			arg0.__jniObject().object());
-	}
 	jlong Color::convert(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace_Connector arg4)
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.graphics.Color",
 			"convert",
 			"(FFFFLandroid/graphics/ColorSpace$Connector;)J",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object());
-	}
-	jlong Color::convert(jlong arg0, __jni_impl::android::graphics::ColorSpace_Connector arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.graphics.Color",
-			"convert",
-			"(JLandroid/graphics/ColorSpace$Connector;)J",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jlong Color::pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.graphics.Color",
-			"pack",
-			"(FFFF)J",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	jlong Color::pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace arg4)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.graphics.Color",
-			"pack",
-			"(FFFFLandroid/graphics/ColorSpace;)J",
 			arg0,
 			arg1,
 			arg2,
@@ -396,6 +373,72 @@ namespace __jni_impl::android::graphics
 			"pack",
 			"()J");
 	}
+	jlong Color::pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::ColorSpace arg4)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.graphics.Color",
+			"pack",
+			"(FFFFLandroid/graphics/ColorSpace;)J",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.__jniObject().object());
+	}
+	jlong Color::pack(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.graphics.Color",
+			"pack",
+			"(FFFF)J",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
+	QAndroidJniObject Color::colorSpace(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Color",
+			"colorSpace",
+			"(J)Landroid/graphics/ColorSpace;",
+			arg0);
+	}
+	QAndroidJniObject Color::getColorSpace()
+	{
+		return __thiz.callObjectMethod(
+			"getColorSpace",
+			"()Landroid/graphics/ColorSpace;");
+	}
+	jfloat Color::getComponent(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getComponent",
+			"(I)F",
+			arg0);
+	}
+	jint Color::argb(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.graphics.Color",
+			"argb",
+			"(IIII)I",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
+	jint Color::argb(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.graphics.Color",
+			"argb",
+			"(FFFF)I",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
 	jint Color::green(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -418,25 +461,27 @@ namespace __jni_impl::android::graphics
 			"(J)F",
 			arg0);
 	}
-	QAndroidJniObject Color::colorSpace(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Color",
-			"colorSpace",
-			"(J)Landroid/graphics/ColorSpace;",
-			arg0);
-	}
-	QAndroidJniObject Color::getColorSpace()
-	{
-		return __thiz.callObjectMethod(
-			"getColorSpace",
-			"()Landroid/graphics/ColorSpace;");
-	}
-	jfloat Color::blue()
+	jfloat Color::alpha()
 	{
 		return __thiz.callMethod<jfloat>(
-			"blue",
+			"alpha",
 			"()F");
+	}
+	jint Color::alpha(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.graphics.Color",
+			"alpha",
+			"(I)I",
+			arg0);
+	}
+	jfloat Color::alpha(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.graphics.Color",
+			"alpha",
+			"(J)F",
+			arg0);
 	}
 	jfloat Color::blue(jlong arg0)
 	{
@@ -454,18 +499,23 @@ namespace __jni_impl::android::graphics
 			"(I)I",
 			arg0);
 	}
-	jfloat Color::getComponent(jint arg0)
+	jfloat Color::blue()
 	{
 		return __thiz.callMethod<jfloat>(
-			"getComponent",
-			"(I)F",
-			arg0);
+			"blue",
+			"()F");
 	}
 	QAndroidJniObject Color::getModel()
 	{
 		return __thiz.callObjectMethod(
 			"getModel",
 			"()Landroid/graphics/ColorSpace$Model;");
+	}
+	jboolean Color::isWideGamut()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWideGamut",
+			"()Z");
 	}
 	jboolean Color::isWideGamut(jlong arg0)
 	{
@@ -474,12 +524,6 @@ namespace __jni_impl::android::graphics
 			"isWideGamut",
 			"(J)Z",
 			arg0);
-	}
-	jboolean Color::isWideGamut()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWideGamut",
-			"()Z");
 	}
 	jboolean Color::isSrgb()
 	{
@@ -501,12 +545,6 @@ namespace __jni_impl::android::graphics
 			"getComponentCount",
 			"()I");
 	}
-	jint Color::toArgb()
-	{
-		return __thiz.callMethod<jint>(
-			"toArgb",
-			"()I");
-	}
 	jint Color::toArgb(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -514,6 +552,12 @@ namespace __jni_impl::android::graphics
 			"toArgb",
 			"(J)I",
 			arg0);
+	}
+	jint Color::toArgb()
+	{
+		return __thiz.callMethod<jint>(
+			"toArgb",
+			"()I");
 	}
 	QAndroidJniObject Color::getComponents()
 	{
@@ -623,50 +667,6 @@ namespace __jni_impl::android::graphics
 			"(I[F)I",
 			arg0,
 			arg1);
-	}
-	jfloat Color::alpha()
-	{
-		return __thiz.callMethod<jfloat>(
-			"alpha",
-			"()F");
-	}
-	jfloat Color::alpha(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.graphics.Color",
-			"alpha",
-			"(J)F",
-			arg0);
-	}
-	jint Color::alpha(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.graphics.Color",
-			"alpha",
-			"(I)I",
-			arg0);
-	}
-	jint Color::argb(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.graphics.Color",
-			"argb",
-			"(IIII)I",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	jint Color::argb(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.graphics.Color",
-			"argb",
-			"(FFFF)I",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
 	}
 } // namespace __jni_impl::android::graphics
 

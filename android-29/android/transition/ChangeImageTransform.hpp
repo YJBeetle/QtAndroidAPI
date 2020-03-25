@@ -3,6 +3,7 @@
 #ifndef ANDROID_TRANSITION_CHANGEIMAGETRANSFORM
 #define ANDROID_TRANSITION_CHANGEIMAGETRANSFORM
 
+#include "../../__JniBaseClass.hpp"
 #include "Transition.hpp"
 
 namespace __jni_impl::android::content

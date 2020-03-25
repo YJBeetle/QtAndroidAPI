@@ -33,8 +33,6 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		jboolean setDynamicShortcuts(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getDynamicShortcuts();
 		QAndroidJniObject getManifestShortcuts();
 		jboolean addDynamicShortcuts(__jni_impl::__JniBaseClass arg0);
 		void removeDynamicShortcuts(__jni_impl::__JniBaseClass arg0);
@@ -48,6 +46,8 @@ namespace __jni_impl::android::content::pm
 		jboolean isRateLimitingActive();
 		jint getIconMaxWidth();
 		jint getIconMaxHeight();
+		QAndroidJniObject getDynamicShortcuts();
+		jboolean setDynamicShortcuts(__jni_impl::__JniBaseClass arg0);
 		void reportShortcutUsed(jstring arg0);
 		jboolean isRequestPinShortcutSupported();
 		jboolean requestPinShortcut(__jni_impl::android::content::pm::ShortcutInfo arg0, __jni_impl::android::content::IntentSender arg1);
@@ -73,19 +73,6 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jboolean ShortcutManager::setDynamicShortcuts(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setDynamicShortcuts",
-			"(Ljava/util/List;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ShortcutManager::getDynamicShortcuts()
-	{
-		return __thiz.callObjectMethod(
-			"getDynamicShortcuts",
-			"()Ljava/util/List;");
-	}
 	QAndroidJniObject ShortcutManager::getManifestShortcuts()
 	{
 		return __thiz.callObjectMethod(
@@ -170,6 +157,19 @@ namespace __jni_impl::android::content::pm
 		return __thiz.callMethod<jint>(
 			"getIconMaxHeight",
 			"()I");
+	}
+	QAndroidJniObject ShortcutManager::getDynamicShortcuts()
+	{
+		return __thiz.callObjectMethod(
+			"getDynamicShortcuts",
+			"()Ljava/util/List;");
+	}
+	jboolean ShortcutManager::setDynamicShortcuts(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setDynamicShortcuts",
+			"(Ljava/util/List;)Z",
+			arg0.__jniObject().object());
 	}
 	void ShortcutManager::reportShortcutUsed(jstring arg0)
 	{

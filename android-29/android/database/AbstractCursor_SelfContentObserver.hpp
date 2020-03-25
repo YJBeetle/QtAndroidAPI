@@ -3,6 +3,7 @@
 #ifndef ANDROID_DATABASE_ABSTRACTCURSOR_SELFCONTENTOBSERVER
 #define ANDROID_DATABASE_ABSTRACTCURSOR_SELFCONTENTOBSERVER
 
+#include "../../__JniBaseClass.hpp"
 #include "ContentObserver.hpp"
 
 namespace __jni_impl::android::database

@@ -13,6 +13,10 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
+namespace __jni_impl::android::content
+{
+	class ComponentName;
+}
 namespace __jni_impl::android::app
 {
 	class Activity;
@@ -25,13 +29,13 @@ namespace __jni_impl::android::app
 {
 	class Instrumentation_ActivityMonitor;
 }
-namespace __jni_impl::android::app
-{
-	class Instrumentation_ActivityResult;
-}
 namespace __jni_impl::android::content
 {
 	class IntentFilter;
+}
+namespace __jni_impl::android::app
+{
+	class Instrumentation_ActivityResult;
 }
 namespace __jni_impl::android::view
 {
@@ -69,10 +73,6 @@ namespace __jni_impl::android::os
 {
 	class Looper;
 }
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
 
 namespace __jni_impl::android::app
 {
@@ -92,6 +92,11 @@ namespace __jni_impl::android::app
 		void onStart();
 		void finish(jint arg0, __jni_impl::android::os::Bundle arg1);
 		void waitForIdle(__jni_impl::__JniBaseClass arg0);
+		void onCreate(__jni_impl::android::os::Bundle arg0);
+		void onDestroy();
+		QAndroidJniObject getComponentName();
+		void sendStatus(jint arg0, __jni_impl::android::os::Bundle arg1);
+		QAndroidJniObject getProcessName();
 		jboolean onException(jobject arg0, jthrowable arg1);
 		void addResults(__jni_impl::android::os::Bundle arg0);
 		void setAutomaticPerformanceSnapshots();
@@ -104,11 +109,11 @@ namespace __jni_impl::android::app
 		void setInTouchMode(jboolean arg0);
 		void waitForIdleSync();
 		void runOnMainSync(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject startActivitySync(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1);
 		QAndroidJniObject startActivitySync(__jni_impl::android::content::Intent arg0);
+		QAndroidJniObject startActivitySync(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1);
+		QAndroidJniObject addMonitor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		QAndroidJniObject addMonitor(jstring arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		void addMonitor(__jni_impl::android::app::Instrumentation_ActivityMonitor arg0);
-		QAndroidJniObject addMonitor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		jboolean checkMonitorHit(__jni_impl::android::app::Instrumentation_ActivityMonitor arg0, jint arg1);
 		QAndroidJniObject waitForMonitor(__jni_impl::android::app::Instrumentation_ActivityMonitor arg0);
 		QAndroidJniObject waitForMonitorWithTimeout(__jni_impl::android::app::Instrumentation_ActivityMonitor arg0, jlong arg1);
@@ -124,13 +129,13 @@ namespace __jni_impl::android::app
 		QAndroidJniObject newApplication(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Context arg2);
 		static QAndroidJniObject newApplication(jclass arg0, __jni_impl::android::content::Context arg1);
 		void callApplicationOnCreate(__jni_impl::android::app::Application arg0);
-		QAndroidJniObject newActivity(jclass arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::app::Application arg3, __jni_impl::android::content::Intent arg4, __jni_impl::android::content::pm::ActivityInfo arg5, jstring arg6, __jni_impl::android::app::Activity arg7, jstring arg8, jobject arg9);
 		QAndroidJniObject newActivity(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2);
+		QAndroidJniObject newActivity(jclass arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::app::Application arg3, __jni_impl::android::content::Intent arg4, __jni_impl::android::content::pm::ActivityInfo arg5, jstring arg6, __jni_impl::android::app::Activity arg7, jstring arg8, jobject arg9);
 		void callActivityOnCreate(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::PersistableBundle arg2);
 		void callActivityOnCreate(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1);
 		void callActivityOnDestroy(__jni_impl::android::app::Activity arg0);
-		void callActivityOnRestoreInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::PersistableBundle arg2);
 		void callActivityOnRestoreInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1);
+		void callActivityOnRestoreInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::PersistableBundle arg2);
 		void callActivityOnPostCreate(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::PersistableBundle arg2);
 		void callActivityOnPostCreate(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1);
 		void callActivityOnNewIntent(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::Intent arg1);
@@ -138,32 +143,28 @@ namespace __jni_impl::android::app
 		void callActivityOnRestart(__jni_impl::android::app::Activity arg0);
 		void callActivityOnResume(__jni_impl::android::app::Activity arg0);
 		void callActivityOnStop(__jni_impl::android::app::Activity arg0);
-		void callActivityOnSaveInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1);
 		void callActivityOnSaveInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::PersistableBundle arg2);
+		void callActivityOnSaveInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1);
 		void callActivityOnPause(__jni_impl::android::app::Activity arg0);
 		void callActivityOnUserLeaving(__jni_impl::android::app::Activity arg0);
 		void startAllocCounting();
 		void stopAllocCounting();
 		QAndroidJniObject getAllocCounts();
 		QAndroidJniObject getBinderCounts();
-		QAndroidJniObject getUiAutomation(jint arg0);
 		QAndroidJniObject getUiAutomation();
+		QAndroidJniObject getUiAutomation(jint arg0);
 		QAndroidJniObject acquireLooperManager(__jni_impl::android::os::Looper arg0);
-		void sendStatus(jint arg0, __jni_impl::android::os::Bundle arg1);
-		void onCreate(__jni_impl::android::os::Bundle arg0);
-		void onDestroy();
-		QAndroidJniObject getComponentName();
-		QAndroidJniObject getProcessName();
 	};
 } // namespace __jni_impl::android::app
 
 #include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
+#include "../content/ComponentName.hpp"
 #include "Activity.hpp"
 #include "../content/Intent.hpp"
 #include "Instrumentation_ActivityMonitor.hpp"
-#include "Instrumentation_ActivityResult.hpp"
 #include "../content/IntentFilter.hpp"
+#include "Instrumentation_ActivityResult.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/MotionEvent.hpp"
 #include "Application.hpp"
@@ -173,7 +174,6 @@ namespace __jni_impl::android::app
 #include "UiAutomation.hpp"
 #include "../os/TestLooperManager.hpp"
 #include "../os/Looper.hpp"
-#include "../content/ComponentName.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -234,6 +234,39 @@ namespace __jni_impl::android::app
 			"waitForIdle",
 			"(Ljava/lang/Runnable;)V",
 			arg0.__jniObject().object());
+	}
+	void Instrumentation::onCreate(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
+	void Instrumentation::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V");
+	}
+	QAndroidJniObject Instrumentation::getComponentName()
+	{
+		return __thiz.callObjectMethod(
+			"getComponentName",
+			"()Landroid/content/ComponentName;");
+	}
+	void Instrumentation::sendStatus(jint arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"sendStatus",
+			"(ILandroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	QAndroidJniObject Instrumentation::getProcessName()
+	{
+		return __thiz.callObjectMethod(
+			"getProcessName",
+			"()Ljava/lang/String;");
 	}
 	jboolean Instrumentation::onException(jobject arg0, jthrowable arg1)
 	{
@@ -312,6 +345,13 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/Runnable;)V",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject Instrumentation::startActivitySync(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"startActivitySync",
+			"(Landroid/content/Intent;)Landroid/app/Activity;",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject Instrumentation::startActivitySync(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -320,12 +360,14 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
-	QAndroidJniObject Instrumentation::startActivitySync(__jni_impl::android::content::Intent arg0)
+	QAndroidJniObject Instrumentation::addMonitor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 	{
 		return __thiz.callObjectMethod(
-			"startActivitySync",
-			"(Landroid/content/Intent;)Landroid/app/Activity;",
-			arg0.__jniObject().object());
+			"addMonitor",
+			"(Landroid/content/IntentFilter;Landroid/app/Instrumentation$ActivityResult;Z)Landroid/app/Instrumentation$ActivityMonitor;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2);
 	}
 	QAndroidJniObject Instrumentation::addMonitor(jstring arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 	{
@@ -342,15 +384,6 @@ namespace __jni_impl::android::app
 			"addMonitor",
 			"(Landroid/app/Instrumentation$ActivityMonitor;)V",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Instrumentation::addMonitor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addMonitor",
-			"(Landroid/content/IntentFilter;Landroid/app/Instrumentation$ActivityResult;Z)Landroid/app/Instrumentation$ActivityMonitor;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2);
 	}
 	jboolean Instrumentation::checkMonitorHit(__jni_impl::android::app::Instrumentation_ActivityMonitor arg0, jint arg1)
 	{
@@ -467,6 +500,15 @@ namespace __jni_impl::android::app
 			"(Landroid/app/Application;)V",
 			arg0.__jniObject().object());
 	}
+	QAndroidJniObject Instrumentation::newActivity(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2)
+	{
+		return __thiz.callObjectMethod(
+			"newActivity",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object());
+	}
 	QAndroidJniObject Instrumentation::newActivity(jclass arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::app::Application arg3, __jni_impl::android::content::Intent arg4, __jni_impl::android::content::pm::ActivityInfo arg5, jstring arg6, __jni_impl::android::app::Activity arg7, jstring arg8, jobject arg9)
 	{
 		return __thiz.callObjectMethod(
@@ -482,15 +524,6 @@ namespace __jni_impl::android::app
 			arg7.__jniObject().object(),
 			arg8,
 			arg9);
-	}
-	QAndroidJniObject Instrumentation::newActivity(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2)
-	{
-		return __thiz.callObjectMethod(
-			"newActivity",
-			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object());
 	}
 	void Instrumentation::callActivityOnCreate(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::PersistableBundle arg2)
 	{
@@ -516,6 +549,14 @@ namespace __jni_impl::android::app
 			"(Landroid/app/Activity;)V",
 			arg0.__jniObject().object());
 	}
+	void Instrumentation::callActivityOnRestoreInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"callActivityOnRestoreInstanceState",
+			"(Landroid/app/Activity;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
 	void Instrumentation::callActivityOnRestoreInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::PersistableBundle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -524,14 +565,6 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
-	}
-	void Instrumentation::callActivityOnRestoreInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"callActivityOnRestoreInstanceState",
-			"(Landroid/app/Activity;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
 	}
 	void Instrumentation::callActivityOnPostCreate(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::PersistableBundle arg2)
 	{
@@ -586,14 +619,6 @@ namespace __jni_impl::android::app
 			"(Landroid/app/Activity;)V",
 			arg0.__jniObject().object());
 	}
-	void Instrumentation::callActivityOnSaveInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"callActivityOnSaveInstanceState",
-			"(Landroid/app/Activity;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	void Instrumentation::callActivityOnSaveInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::PersistableBundle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -602,6 +627,14 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
+	}
+	void Instrumentation::callActivityOnSaveInstanceState(__jni_impl::android::app::Activity arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"callActivityOnSaveInstanceState",
+			"(Landroid/app/Activity;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 	void Instrumentation::callActivityOnPause(__jni_impl::android::app::Activity arg0)
 	{
@@ -641,6 +674,12 @@ namespace __jni_impl::android::app
 			"getBinderCounts",
 			"()Landroid/os/Bundle;");
 	}
+	QAndroidJniObject Instrumentation::getUiAutomation()
+	{
+		return __thiz.callObjectMethod(
+			"getUiAutomation",
+			"()Landroid/app/UiAutomation;");
+	}
 	QAndroidJniObject Instrumentation::getUiAutomation(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -648,51 +687,12 @@ namespace __jni_impl::android::app
 			"(I)Landroid/app/UiAutomation;",
 			arg0);
 	}
-	QAndroidJniObject Instrumentation::getUiAutomation()
-	{
-		return __thiz.callObjectMethod(
-			"getUiAutomation",
-			"()Landroid/app/UiAutomation;");
-	}
 	QAndroidJniObject Instrumentation::acquireLooperManager(__jni_impl::android::os::Looper arg0)
 	{
 		return __thiz.callObjectMethod(
 			"acquireLooperManager",
 			"(Landroid/os/Looper;)Landroid/os/TestLooperManager;",
 			arg0.__jniObject().object());
-	}
-	void Instrumentation::sendStatus(jint arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendStatus",
-			"(ILandroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void Instrumentation::onCreate(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	void Instrumentation::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V");
-	}
-	QAndroidJniObject Instrumentation::getComponentName()
-	{
-		return __thiz.callObjectMethod(
-			"getComponentName",
-			"()Landroid/content/ComponentName;");
-	}
-	QAndroidJniObject Instrumentation::getProcessName()
-	{
-		return __thiz.callObjectMethod(
-			"getProcessName",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::app
 

@@ -3,6 +3,7 @@
 #ifndef JAVAX_CRYPTO_NULLCIPHER
 #define JAVAX_CRYPTO_NULLCIPHER
 
+#include "../../__JniBaseClass.hpp"
 #include "Cipher.hpp"
 
 

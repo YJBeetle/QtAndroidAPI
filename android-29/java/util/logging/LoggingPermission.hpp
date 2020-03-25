@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_LOGGING_LOGGINGPERMISSION
 #define JAVA_UTIL_LOGGING_LOGGINGPERMISSION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../security/Permission.hpp"
 #include "../../security/BasicPermission.hpp"
 
 

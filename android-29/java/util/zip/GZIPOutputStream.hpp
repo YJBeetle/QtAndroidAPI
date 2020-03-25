@@ -3,6 +3,9 @@
 #ifndef JAVA_UTIL_ZIP_GZIPOUTPUTSTREAM
 #define JAVA_UTIL_ZIP_GZIPOUTPUTSTREAM
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../io/OutputStream.hpp"
+#include "../../io/FilterOutputStream.hpp"
 #include "DeflaterOutputStream.hpp"
 
 namespace __jni_impl::java::util::zip

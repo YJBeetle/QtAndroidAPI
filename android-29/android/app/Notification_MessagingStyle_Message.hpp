@@ -9,13 +9,13 @@ namespace __jni_impl::android::app
 {
 	class Person;
 }
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::app
@@ -31,19 +31,19 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject getText();
+		QAndroidJniObject getExtras();
+		QAndroidJniObject setData(jstring arg0, __jni_impl::android::net::Uri arg1);
 		QAndroidJniObject getSender();
 		QAndroidJniObject getSenderPerson();
 		QAndroidJniObject getDataMimeType();
 		QAndroidJniObject getDataUri();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject setData(jstring arg0, __jni_impl::android::net::Uri arg1);
 		jlong getTimestamp();
 	};
 } // namespace __jni_impl::android::app
 
 #include "Person.hpp"
-#include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -76,6 +76,20 @@ namespace __jni_impl::android::app
 			"getText",
 			"()Ljava/lang/CharSequence;");
 	}
+	QAndroidJniObject Notification_MessagingStyle_Message::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
+	}
+	QAndroidJniObject Notification_MessagingStyle_Message::setData(jstring arg0, __jni_impl::android::net::Uri arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setData",
+			"(Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;",
+			arg0,
+			arg1.__jniObject().object());
+	}
 	QAndroidJniObject Notification_MessagingStyle_Message::getSender()
 	{
 		return __thiz.callObjectMethod(
@@ -99,20 +113,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getDataUri",
 			"()Landroid/net/Uri;");
-	}
-	QAndroidJniObject Notification_MessagingStyle_Message::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject Notification_MessagingStyle_Message::setData(jstring arg0, __jni_impl::android::net::Uri arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setData",
-			"(Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;",
-			arg0,
-			arg1.__jniObject().object());
 	}
 	jlong Notification_MessagingStyle_Message::getTimestamp()
 	{

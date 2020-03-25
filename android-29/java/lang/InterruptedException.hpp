@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_INTERRUPTEDEXCEPTION
 #define JAVA_LANG_INTERRUPTEDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 
 

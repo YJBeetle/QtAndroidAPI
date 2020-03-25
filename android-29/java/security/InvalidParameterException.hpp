@@ -3,6 +3,9 @@
 #ifndef JAVA_SECURITY_INVALIDPARAMETEREXCEPTION
 #define JAVA_SECURITY_INVALIDPARAMETEREXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
 #include "../lang/IllegalArgumentException.hpp"
 
 

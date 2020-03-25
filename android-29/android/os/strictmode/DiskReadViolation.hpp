@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_DISKREADVIOLATION
 #define ANDROID_OS_STRICTMODE_DISKREADVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

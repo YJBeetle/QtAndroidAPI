@@ -36,8 +36,8 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject setDefaultSourceToMagnifierOffset(jint arg0, jint arg1);
 		QAndroidJniObject setClippingEnabled(jboolean arg0);
 		QAndroidJniObject setSourceBounds(jint arg0, jint arg1, jint arg2, jint arg3);
-		QAndroidJniObject setCornerRadius(jfloat arg0);
 		QAndroidJniObject setElevation(jfloat arg0);
+		QAndroidJniObject setCornerRadius(jfloat arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -112,17 +112,17 @@ namespace __jni_impl::android::widget
 			arg2,
 			arg3);
 	}
-	QAndroidJniObject Magnifier_Builder::setCornerRadius(jfloat arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCornerRadius",
-			"(F)Landroid/widget/Magnifier$Builder;",
-			arg0);
-	}
 	QAndroidJniObject Magnifier_Builder::setElevation(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setElevation",
+			"(F)Landroid/widget/Magnifier$Builder;",
+			arg0);
+	}
+	QAndroidJniObject Magnifier_Builder::setCornerRadius(jfloat arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCornerRadius",
 			"(F)Landroid/widget/Magnifier$Builder;",
 			arg0);
 	}

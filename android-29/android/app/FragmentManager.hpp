@@ -49,9 +49,9 @@ namespace __jni_impl::android::app
 		jboolean isDestroyed();
 		QAndroidJniObject getFragment(__jni_impl::android::os::Bundle arg0, jstring arg1);
 		QAndroidJniObject beginTransaction();
-		jboolean isStateSaved();
 		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 		void invalidateOptionsMenu();
+		jboolean isStateSaved();
 		static void enableDebugLogging(jboolean arg0);
 		jboolean executePendingTransactions();
 		QAndroidJniObject findFragmentById(jint arg0);
@@ -60,8 +60,8 @@ namespace __jni_impl::android::app
 		void popBackStack(jstring arg0, jint arg1);
 		void popBackStack(jint arg0, jint arg1);
 		jboolean popBackStackImmediate(jstring arg0, jint arg1);
-		jboolean popBackStackImmediate(jint arg0, jint arg1);
 		jboolean popBackStackImmediate();
+		jboolean popBackStackImmediate(jint arg0, jint arg1);
 		jint getBackStackEntryCount();
 		QAndroidJniObject getBackStackEntryAt(jint arg0);
 		void addOnBackStackChangedListener(__jni_impl::__JniBaseClass arg0);
@@ -122,12 +122,6 @@ namespace __jni_impl::android::app
 			"beginTransaction",
 			"()Landroid/app/FragmentTransaction;");
 	}
-	jboolean FragmentManager::isStateSaved()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStateSaved",
-			"()Z");
-	}
 	void FragmentManager::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
 	{
 		__thiz.callMethod<void>(
@@ -143,6 +137,12 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"invalidateOptionsMenu",
 			"()V");
+	}
+	jboolean FragmentManager::isStateSaved()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStateSaved",
+			"()Z");
 	}
 	void FragmentManager::enableDebugLogging(jboolean arg0)
 	{
@@ -202,6 +202,12 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1);
 	}
+	jboolean FragmentManager::popBackStackImmediate()
+	{
+		return __thiz.callMethod<jboolean>(
+			"popBackStackImmediate",
+			"()Z");
+	}
 	jboolean FragmentManager::popBackStackImmediate(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -209,12 +215,6 @@ namespace __jni_impl::android::app
 			"(II)Z",
 			arg0,
 			arg1);
-	}
-	jboolean FragmentManager::popBackStackImmediate()
-	{
-		return __thiz.callMethod<jboolean>(
-			"popBackStackImmediate",
-			"()Z");
 	}
 	jint FragmentManager::getBackStackEntryCount()
 	{

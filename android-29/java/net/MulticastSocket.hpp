@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_MULTICASTSOCKET
 #define JAVA_NET_MULTICASTSOCKET
 
+#include "../../__JniBaseClass.hpp"
 #include "DatagramSocket.hpp"
 
 namespace __jni_impl::java::net
@@ -36,21 +37,21 @@ namespace __jni_impl::java::net
 		
 		// Methods
 		jint getTimeToLive();
+		void setTTL(jbyte arg0);
+		jbyte getTTL();
+		void setTimeToLive(jint arg0);
+		void joinGroup(__jni_impl::java::net::SocketAddress arg0, __jni_impl::java::net::NetworkInterface arg1);
+		void joinGroup(__jni_impl::java::net::InetAddress arg0);
+		void leaveGroup(__jni_impl::java::net::SocketAddress arg0, __jni_impl::java::net::NetworkInterface arg1);
+		void leaveGroup(__jni_impl::java::net::InetAddress arg0);
+		void send(__jni_impl::java::net::DatagramPacket arg0, jbyte arg1);
+		QAndroidJniObject supportedOptions();
+		QAndroidJniObject getInterface();
+		void setInterface(__jni_impl::java::net::InetAddress arg0);
 		void setNetworkInterface(__jni_impl::java::net::NetworkInterface arg0);
 		QAndroidJniObject getNetworkInterface();
 		void setLoopbackMode(jboolean arg0);
 		jboolean getLoopbackMode();
-		QAndroidJniObject getInterface();
-		void setInterface(__jni_impl::java::net::InetAddress arg0);
-		QAndroidJniObject supportedOptions();
-		void send(__jni_impl::java::net::DatagramPacket arg0, jbyte arg1);
-		void setTTL(jbyte arg0);
-		jbyte getTTL();
-		void setTimeToLive(jint arg0);
-		void joinGroup(__jni_impl::java::net::InetAddress arg0);
-		void joinGroup(__jni_impl::java::net::SocketAddress arg0, __jni_impl::java::net::NetworkInterface arg1);
-		void leaveGroup(__jni_impl::java::net::SocketAddress arg0, __jni_impl::java::net::NetworkInterface arg1);
-		void leaveGroup(__jni_impl::java::net::InetAddress arg0);
 	};
 } // namespace __jni_impl::java::net
 
@@ -92,6 +93,83 @@ namespace __jni_impl::java::net
 			"getTimeToLive",
 			"()I");
 	}
+	void MulticastSocket::setTTL(jbyte arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTTL",
+			"(B)V",
+			arg0);
+	}
+	jbyte MulticastSocket::getTTL()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getTTL",
+			"()B");
+	}
+	void MulticastSocket::setTimeToLive(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTimeToLive",
+			"(I)V",
+			arg0);
+	}
+	void MulticastSocket::joinGroup(__jni_impl::java::net::SocketAddress arg0, __jni_impl::java::net::NetworkInterface arg1)
+	{
+		__thiz.callMethod<void>(
+			"joinGroup",
+			"(Ljava/net/SocketAddress;Ljava/net/NetworkInterface;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void MulticastSocket::joinGroup(__jni_impl::java::net::InetAddress arg0)
+	{
+		__thiz.callMethod<void>(
+			"joinGroup",
+			"(Ljava/net/InetAddress;)V",
+			arg0.__jniObject().object());
+	}
+	void MulticastSocket::leaveGroup(__jni_impl::java::net::SocketAddress arg0, __jni_impl::java::net::NetworkInterface arg1)
+	{
+		__thiz.callMethod<void>(
+			"leaveGroup",
+			"(Ljava/net/SocketAddress;Ljava/net/NetworkInterface;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void MulticastSocket::leaveGroup(__jni_impl::java::net::InetAddress arg0)
+	{
+		__thiz.callMethod<void>(
+			"leaveGroup",
+			"(Ljava/net/InetAddress;)V",
+			arg0.__jniObject().object());
+	}
+	void MulticastSocket::send(__jni_impl::java::net::DatagramPacket arg0, jbyte arg1)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(Ljava/net/DatagramPacket;B)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	QAndroidJniObject MulticastSocket::supportedOptions()
+	{
+		return __thiz.callObjectMethod(
+			"supportedOptions",
+			"()Ljava/util/Set;");
+	}
+	QAndroidJniObject MulticastSocket::getInterface()
+	{
+		return __thiz.callObjectMethod(
+			"getInterface",
+			"()Ljava/net/InetAddress;");
+	}
+	void MulticastSocket::setInterface(__jni_impl::java::net::InetAddress arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInterface",
+			"(Ljava/net/InetAddress;)V",
+			arg0.__jniObject().object());
+	}
 	void MulticastSocket::setNetworkInterface(__jni_impl::java::net::NetworkInterface arg0)
 	{
 		__thiz.callMethod<void>(
@@ -117,83 +195,6 @@ namespace __jni_impl::java::net
 		return __thiz.callMethod<jboolean>(
 			"getLoopbackMode",
 			"()Z");
-	}
-	QAndroidJniObject MulticastSocket::getInterface()
-	{
-		return __thiz.callObjectMethod(
-			"getInterface",
-			"()Ljava/net/InetAddress;");
-	}
-	void MulticastSocket::setInterface(__jni_impl::java::net::InetAddress arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInterface",
-			"(Ljava/net/InetAddress;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject MulticastSocket::supportedOptions()
-	{
-		return __thiz.callObjectMethod(
-			"supportedOptions",
-			"()Ljava/util/Set;");
-	}
-	void MulticastSocket::send(__jni_impl::java::net::DatagramPacket arg0, jbyte arg1)
-	{
-		__thiz.callMethod<void>(
-			"send",
-			"(Ljava/net/DatagramPacket;B)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void MulticastSocket::setTTL(jbyte arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTTL",
-			"(B)V",
-			arg0);
-	}
-	jbyte MulticastSocket::getTTL()
-	{
-		return __thiz.callMethod<jbyte>(
-			"getTTL",
-			"()B");
-	}
-	void MulticastSocket::setTimeToLive(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTimeToLive",
-			"(I)V",
-			arg0);
-	}
-	void MulticastSocket::joinGroup(__jni_impl::java::net::InetAddress arg0)
-	{
-		__thiz.callMethod<void>(
-			"joinGroup",
-			"(Ljava/net/InetAddress;)V",
-			arg0.__jniObject().object());
-	}
-	void MulticastSocket::joinGroup(__jni_impl::java::net::SocketAddress arg0, __jni_impl::java::net::NetworkInterface arg1)
-	{
-		__thiz.callMethod<void>(
-			"joinGroup",
-			"(Ljava/net/SocketAddress;Ljava/net/NetworkInterface;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void MulticastSocket::leaveGroup(__jni_impl::java::net::SocketAddress arg0, __jni_impl::java::net::NetworkInterface arg1)
-	{
-		__thiz.callMethod<void>(
-			"leaveGroup",
-			"(Ljava/net/SocketAddress;Ljava/net/NetworkInterface;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void MulticastSocket::leaveGroup(__jni_impl::java::net::InetAddress arg0)
-	{
-		__thiz.callMethod<void>(
-			"leaveGroup",
-			"(Ljava/net/InetAddress;)V",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::java::net
 

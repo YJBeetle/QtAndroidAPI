@@ -3,6 +3,7 @@
 #ifndef JAVA_SQL_DATE
 #define JAVA_SQL_DATE
 
+#include "../../__JniBaseClass.hpp"
 #include "../util/Date.hpp"
 
 namespace __jni_impl::java::time

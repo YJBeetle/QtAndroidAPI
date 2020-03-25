@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_SCROLLVIEW
 #define ANDROID_WIDGET_SCROLLVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "FrameLayout.hpp"
 
 namespace __jni_impl::android::content
@@ -11,15 +14,11 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::view
 {
-	class KeyEvent;
+	class View;
 }
 namespace __jni_impl::android::graphics
 {
 	class Rect;
-}
-namespace __jni_impl::android::view
-{
-	class View;
 }
 namespace __jni_impl::android::view
 {
@@ -32,6 +31,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
 }
 
 namespace __jni_impl::android::widget
@@ -48,15 +51,6 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		jboolean isFillViewport();
-		void setFillViewport(jboolean arg0);
-		jboolean isSmoothScrollingEnabled();
-		void setSmoothScrollingEnabled(jboolean arg0);
-		jboolean executeKeyEvent(__jni_impl::android::view::KeyEvent arg0);
-		jboolean pageScroll(jint arg0);
-		jboolean fullScroll(jint arg0);
-		jboolean arrowScroll(jint arg0);
-		void smoothScrollTo(jint arg0, jint arg1);
 		void scrollToDescendant(__jni_impl::android::view::View arg0);
 		jint getMaxScrollAmount();
 		void fling(jint arg0);
@@ -66,9 +60,6 @@ namespace __jni_impl::android::widget
 		void setTopEdgeEffectColor(jint arg0);
 		jint getTopEdgeEffectColor();
 		jint getBottomEdgeEffectColor();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		void requestChildFocus(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1);
 		jboolean requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2);
 		void requestDisallowInterceptTouchEvent(jboolean arg0);
@@ -88,16 +79,28 @@ namespace __jni_impl::android::widget
 		void scrollTo(jint arg0, jint arg1);
 		void computeScroll();
 		void draw(__jni_impl::android::graphics::Canvas arg0);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
+		jboolean isFillViewport();
+		void setFillViewport(jboolean arg0);
+		jboolean isSmoothScrollingEnabled();
+		void setSmoothScrollingEnabled(jboolean arg0);
+		jboolean executeKeyEvent(__jni_impl::android::view::KeyEvent arg0);
+		jboolean pageScroll(jint arg0);
+		jboolean fullScroll(jint arg0);
+		jboolean arrowScroll(jint arg0);
+		void smoothScrollTo(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/KeyEvent.hpp"
-#include "../graphics/Rect.hpp"
 #include "../view/View.hpp"
+#include "../graphics/Rect.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../graphics/Canvas.hpp"
+#include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -140,68 +143,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	jboolean ScrollView::isFillViewport()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFillViewport",
-			"()Z");
-	}
-	void ScrollView::setFillViewport(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFillViewport",
-			"(Z)V",
-			arg0);
-	}
-	jboolean ScrollView::isSmoothScrollingEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSmoothScrollingEnabled",
-			"()Z");
-	}
-	void ScrollView::setSmoothScrollingEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSmoothScrollingEnabled",
-			"(Z)V",
-			arg0);
-	}
-	jboolean ScrollView::executeKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"executeKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean ScrollView::pageScroll(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"pageScroll",
-			"(I)Z",
-			arg0);
-	}
-	jboolean ScrollView::fullScroll(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"fullScroll",
-			"(I)Z",
-			arg0);
-	}
-	jboolean ScrollView::arrowScroll(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"arrowScroll",
-			"(I)Z",
-			arg0);
-	}
-	void ScrollView::smoothScrollTo(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"smoothScrollTo",
-			"(II)V",
-			arg0,
-			arg1);
-	}
 	void ScrollView::scrollToDescendant(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
@@ -262,27 +203,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getBottomEdgeEffectColor",
 			"()I");
-	}
-	jboolean ScrollView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean ScrollView::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onGenericMotionEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean ScrollView::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
 	}
 	void ScrollView::requestChildFocus(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1)
 	{
@@ -431,6 +351,89 @@ namespace __jni_impl::android::widget
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
 			arg0.__jniObject().object());
+	}
+	jboolean ScrollView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean ScrollView::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onGenericMotionEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean ScrollView::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean ScrollView::isFillViewport()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFillViewport",
+			"()Z");
+	}
+	void ScrollView::setFillViewport(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFillViewport",
+			"(Z)V",
+			arg0);
+	}
+	jboolean ScrollView::isSmoothScrollingEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSmoothScrollingEnabled",
+			"()Z");
+	}
+	void ScrollView::setSmoothScrollingEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSmoothScrollingEnabled",
+			"(Z)V",
+			arg0);
+	}
+	jboolean ScrollView::executeKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"executeKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	jboolean ScrollView::pageScroll(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"pageScroll",
+			"(I)Z",
+			arg0);
+	}
+	jboolean ScrollView::fullScroll(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"fullScroll",
+			"(I)Z",
+			arg0);
+	}
+	jboolean ScrollView::arrowScroll(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"arrowScroll",
+			"(I)Z",
+			arg0);
+	}
+	void ScrollView::smoothScrollTo(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"smoothScrollTo",
+			"(II)V",
+			arg0,
+			arg1);
 	}
 } // namespace __jni_impl::android::widget
 

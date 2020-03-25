@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_ACL_NOTOWNEREXCEPTION
 #define JAVA_SECURITY_ACL_NOTOWNEREXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
 

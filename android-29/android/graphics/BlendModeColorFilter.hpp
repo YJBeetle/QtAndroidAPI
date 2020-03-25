@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_BLENDMODECOLORFILTER
 #define ANDROID_GRAPHICS_BLENDMODECOLORFILTER
 
+#include "../../__JniBaseClass.hpp"
 #include "ColorFilter.hpp"
 
 namespace __jni_impl::android::graphics

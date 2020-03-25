@@ -3,6 +3,10 @@
 #ifndef JAVA_UTIL_ILLEGALFORMATCONVERSIONEXCEPTION
 #define JAVA_UTIL_ILLEGALFORMATCONVERSIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
+#include "../lang/IllegalArgumentException.hpp"
 #include "IllegalFormatException.hpp"
 
 
@@ -18,8 +22,8 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		QAndroidJniObject getMessage();
-		jchar getConversion();
 		QAndroidJniObject getArgumentClass();
+		jchar getConversion();
 	};
 } // namespace __jni_impl::java::util
 
@@ -45,17 +49,17 @@ namespace __jni_impl::java::util
 			"getMessage",
 			"()Ljava/lang/String;");
 	}
-	jchar IllegalFormatConversionException::getConversion()
-	{
-		return __thiz.callMethod<jchar>(
-			"getConversion",
-			"()C");
-	}
 	QAndroidJniObject IllegalFormatConversionException::getArgumentClass()
 	{
 		return __thiz.callObjectMethod(
 			"getArgumentClass",
 			"()Ljava/lang/Class;");
+	}
+	jchar IllegalFormatConversionException::getConversion()
+	{
+		return __thiz.callMethod<jchar>(
+			"getConversion",
+			"()C");
 	}
 } // namespace __jni_impl::java::util
 

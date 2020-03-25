@@ -38,8 +38,8 @@ namespace __jni_impl::android::print
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getId();
-		QAndroidJniObject getDescription();
 		QAndroidJniObject getCapabilities();
+		QAndroidJniObject getDescription();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getStatus();
@@ -119,17 +119,17 @@ namespace __jni_impl::android::print
 			"getId",
 			"()Landroid/print/PrinterId;");
 	}
-	QAndroidJniObject PrinterInfo::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
-	}
 	QAndroidJniObject PrinterInfo::getCapabilities()
 	{
 		return __thiz.callObjectMethod(
 			"getCapabilities",
 			"()Landroid/print/PrinterCapabilitiesInfo;");
+	}
+	QAndroidJniObject PrinterInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;");
 	}
 	jint PrinterInfo::describeContents()
 	{

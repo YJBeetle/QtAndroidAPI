@@ -3,6 +3,10 @@
 #ifndef ANDROID_APP_ALIASACTIVITY
 #define ANDROID_APP_ALIASACTIVITY
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../view/ContextThemeWrapper.hpp"
 #include "Activity.hpp"
 
 namespace __jni_impl::android::os

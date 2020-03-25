@@ -3,6 +3,7 @@
 #ifndef ANDROID_UTIL_FLOATPROPERTY
 #define ANDROID_UTIL_FLOATPROPERTY
 
+#include "../../__JniBaseClass.hpp"
 #include "Property.hpp"
 
 namespace __jni_impl::java::lang

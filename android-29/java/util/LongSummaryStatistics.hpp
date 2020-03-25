@@ -23,8 +23,8 @@ namespace __jni_impl::java::util
 		void accept(jlong arg0);
 		void combine(__jni_impl::java::util::LongSummaryStatistics arg0);
 		jlong getCount();
-		jlong getMax();
 		jlong getMin();
+		jlong getMax();
 		jlong getSum();
 		jdouble getAverage();
 	};
@@ -87,16 +87,16 @@ namespace __jni_impl::java::util
 			"getCount",
 			"()J");
 	}
-	jlong LongSummaryStatistics::getMax()
-	{
-		return __thiz.callMethod<jlong>(
-			"getMax",
-			"()J");
-	}
 	jlong LongSummaryStatistics::getMin()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMin",
+			"()J");
+	}
+	jlong LongSummaryStatistics::getMax()
+	{
+		return __thiz.callMethod<jlong>(
+			"getMax",
 			"()J");
 	}
 	jlong LongSummaryStatistics::getSum()

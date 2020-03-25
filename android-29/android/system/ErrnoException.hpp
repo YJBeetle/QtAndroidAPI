@@ -3,6 +3,7 @@
 #ifndef ANDROID_SYSTEM_ERRNOEXCEPTION
 #define ANDROID_SYSTEM_ERRNOEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 

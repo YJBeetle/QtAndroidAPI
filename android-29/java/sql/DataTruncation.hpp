@@ -3,6 +3,9 @@
 #ifndef JAVA_SQL_DATATRUNCATION
 #define JAVA_SQL_DATATRUNCATION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "SQLException.hpp"
 #include "SQLWarning.hpp"
 
 
@@ -19,9 +22,9 @@ namespace __jni_impl::java::sql
 		
 		// Methods
 		jint getIndex();
-		jint getDataSize();
 		jboolean getRead();
 		jint getTransferSize();
+		jint getDataSize();
 		jboolean getParameter();
 	};
 } // namespace __jni_impl::java::sql
@@ -63,12 +66,6 @@ namespace __jni_impl::java::sql
 			"getIndex",
 			"()I");
 	}
-	jint DataTruncation::getDataSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getDataSize",
-			"()I");
-	}
 	jboolean DataTruncation::getRead()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -79,6 +76,12 @@ namespace __jni_impl::java::sql
 	{
 		return __thiz.callMethod<jint>(
 			"getTransferSize",
+			"()I");
+	}
+	jint DataTruncation::getDataSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getDataSize",
 			"()I");
 	}
 	jboolean DataTruncation::getParameter()

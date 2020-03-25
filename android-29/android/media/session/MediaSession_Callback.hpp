@@ -5,13 +5,17 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::os
+{
+	class ResultReceiver;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 namespace __jni_impl::android::net
 {
@@ -20,10 +24,6 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::media
 {
 	class Rating;
-}
-namespace __jni_impl::android::os
-{
-	class ResultReceiver;
 }
 
 namespace __jni_impl::android::media::session
@@ -37,6 +37,7 @@ namespace __jni_impl::android::media::session
 		void __constructor();
 		
 		// Methods
+		void onCommand(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2);
 		jboolean onMediaButtonEvent(__jni_impl::android::content::Intent arg0);
 		void onPrepare();
 		void onPrepareFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1);
@@ -57,15 +58,14 @@ namespace __jni_impl::android::media::session
 		void onCustomAction(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		void onPause();
 		void onStop();
-		void onCommand(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2);
 	};
 } // namespace __jni_impl::android::media::session
 
-#include "../../content/Intent.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../os/ResultReceiver.hpp"
+#include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
 #include "../Rating.hpp"
-#include "../../os/ResultReceiver.hpp"
 
 namespace __jni_impl::android::media::session
 {
@@ -80,6 +80,15 @@ namespace __jni_impl::android::media::session
 	}
 	
 	// Methods
+	void MediaSession_Callback::onCommand(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2)
+	{
+		__thiz.callMethod<void>(
+			"onCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
 	jboolean MediaSession_Callback::onMediaButtonEvent(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -218,15 +227,6 @@ namespace __jni_impl::android::media::session
 		__thiz.callMethod<void>(
 			"onStop",
 			"()V");
-	}
-	void MediaSession_Callback::onCommand(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2)
-	{
-		__thiz.callMethod<void>(
-			"onCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media::session
 

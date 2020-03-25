@@ -68,8 +68,8 @@ namespace __jni_impl::android::telecom
 		static QAndroidJniObject builder(__jni_impl::android::telecom::PhoneAccountHandle arg0, jstring arg1);
 		QAndroidJniObject getAddress();
 		jboolean isEnabled();
-		QAndroidJniObject getLabel();
 		QAndroidJniObject getExtras();
+		QAndroidJniObject getAccountHandle();
 		QAndroidJniObject toBuilder();
 		QAndroidJniObject getSubscriptionAddress();
 		jint getCapabilities();
@@ -78,10 +78,10 @@ namespace __jni_impl::android::telecom
 		QAndroidJniObject getSupportedUriSchemes();
 		jboolean supportsUriScheme(jstring arg0);
 		jint getHighlightColor();
+		QAndroidJniObject getLabel();
+		QAndroidJniObject getIcon();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getAccountHandle();
-		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -280,17 +280,17 @@ namespace __jni_impl::android::telecom
 			"isEnabled",
 			"()Z");
 	}
-	QAndroidJniObject PhoneAccount::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;");
-	}
 	QAndroidJniObject PhoneAccount::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;");
+	}
+	QAndroidJniObject PhoneAccount::getAccountHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getAccountHandle",
+			"()Landroid/telecom/PhoneAccountHandle;");
 	}
 	QAndroidJniObject PhoneAccount::toBuilder()
 	{
@@ -342,6 +342,18 @@ namespace __jni_impl::android::telecom
 			"getHighlightColor",
 			"()I");
 	}
+	QAndroidJniObject PhoneAccount::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;");
+	}
+	QAndroidJniObject PhoneAccount::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;");
+	}
 	jint PhoneAccount::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -355,18 +367,6 @@ namespace __jni_impl::android::telecom
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject PhoneAccount::getAccountHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getAccountHandle",
-			"()Landroid/telecom/PhoneAccountHandle;");
-	}
-	QAndroidJniObject PhoneAccount::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
 	}
 } // namespace __jni_impl::android::telecom
 

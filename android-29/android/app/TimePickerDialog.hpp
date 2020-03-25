@@ -3,6 +3,8 @@
 #ifndef ANDROID_APP_TIMEPICKERDIALOG
 #define ANDROID_APP_TIMEPICKERDIALOG
 
+#include "../../__JniBaseClass.hpp"
+#include "Dialog.hpp"
 #include "AlertDialog.hpp"
 
 namespace __jni_impl::android::content
@@ -32,9 +34,9 @@ namespace __jni_impl::android::app
 		// Methods
 		void updateTime(jint arg0, jint arg1);
 		void show();
+		void onClick(__jni_impl::__JniBaseClass arg0, jint arg1);
 		void onRestoreInstanceState(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject onSaveInstanceState();
-		void onClick(__jni_impl::__JniBaseClass arg0, jint arg1);
 		void onTimeChanged(__jni_impl::android::widget::TimePicker arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::app
@@ -87,6 +89,14 @@ namespace __jni_impl::android::app
 			"show",
 			"()V");
 	}
+	void TimePickerDialog::onClick(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"onClick",
+			"(Landroid/content/DialogInterface;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	void TimePickerDialog::onRestoreInstanceState(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
@@ -99,14 +109,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Bundle;");
-	}
-	void TimePickerDialog::onClick(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onClick",
-			"(Landroid/content/DialogInterface;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 	void TimePickerDialog::onTimeChanged(__jni_impl::android::widget::TimePicker arg0, jint arg1, jint arg2)
 	{

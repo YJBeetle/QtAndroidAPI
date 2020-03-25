@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_PROPERTYRESOURCEBUNDLE
 #define JAVA_UTIL_PROPERTYRESOURCEBUNDLE
 
+#include "../../__JniBaseClass.hpp"
 #include "ResourceBundle.hpp"
 
 namespace __jni_impl::java::io

@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_KEYEVENT
 #define ANDROID_VIEW_KEYEVENT
 
+#include "../../__JniBaseClass.hpp"
 #include "InputEvent.hpp"
 
 namespace __jni_impl::android::view
@@ -421,8 +422,8 @@ namespace __jni_impl::android::view
 		static QAndroidJniObject keyCodeToString(jint arg0);
 		static jint keyCodeFromString(jstring arg0);
 		jboolean isCanceled();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getAction();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
@@ -2867,6 +2868,12 @@ namespace __jni_impl::android::view
 			"isCanceled",
 			"()Z");
 	}
+	jint KeyEvent::getAction()
+	{
+		return __thiz.callMethod<jint>(
+			"getAction",
+			"()I");
+	}
 	void KeyEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -2874,12 +2881,6 @@ namespace __jni_impl::android::view
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint KeyEvent::getAction()
-	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I");
 	}
 } // namespace __jni_impl::android::view
 

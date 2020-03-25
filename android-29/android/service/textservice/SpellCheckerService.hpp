@@ -3,15 +3,18 @@
 #ifndef ANDROID_SERVICE_TEXTSERVICE_SPELLCHECKERSERVICE
 #define ANDROID_SERVICE_TEXTSERVICE_SPELLCHECKERSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::service::textservice
 {
 	class SpellCheckerService_Session;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::service::textservice
@@ -26,13 +29,13 @@ namespace __jni_impl::android::service::textservice
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject createSession();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::service::textservice
 
-#include "../../content/Intent.hpp"
 #include "SpellCheckerService_Session.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::textservice
 {
@@ -54,18 +57,18 @@ namespace __jni_impl::android::service::textservice
 	}
 	
 	// Methods
+	QAndroidJniObject SpellCheckerService::createSession()
+	{
+		return __thiz.callObjectMethod(
+			"createSession",
+			"()Landroid/service/textservice/SpellCheckerService$Session;");
+	}
 	QAndroidJniObject SpellCheckerService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SpellCheckerService::createSession()
-	{
-		return __thiz.callObjectMethod(
-			"createSession",
-			"()Landroid/service/textservice/SpellCheckerService$Session;");
 	}
 } // namespace __jni_impl::android::service::textservice
 

@@ -32,29 +32,29 @@ namespace __jni_impl::android::animation
 		QAndroidJniObject toString();
 		QAndroidJniObject clone();
 		void setProperty(__jni_impl::android::util::Property arg0);
-		QAndroidJniObject getPropertyName();
-		void setPropertyName(jstring arg0);
 		static QAndroidJniObject ofInt(jstring arg0, jintArray arg1);
 		static QAndroidJniObject ofInt(__jni_impl::android::util::Property arg0, jintArray arg1);
+		void setPropertyName(jstring arg0);
 		static QAndroidJniObject ofMultiInt(jstring arg0, jarray arg1);
 		static QAndroidJniObject ofMultiInt(jstring arg0, __jni_impl::android::graphics::Path arg1);
 		static QAndroidJniObject ofMultiInt(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jarray arg3);
 		static QAndroidJniObject ofMultiInt(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jobjectArray arg3);
-		static QAndroidJniObject ofFloat(jstring arg0, jfloatArray arg1);
 		static QAndroidJniObject ofFloat(__jni_impl::android::util::Property arg0, jfloatArray arg1);
-		static QAndroidJniObject ofMultiFloat(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jobjectArray arg3);
-		static QAndroidJniObject ofMultiFloat(jstring arg0, __jni_impl::android::graphics::Path arg1);
+		static QAndroidJniObject ofFloat(jstring arg0, jfloatArray arg1);
 		static QAndroidJniObject ofMultiFloat(jstring arg0, jarray arg1);
+		static QAndroidJniObject ofMultiFloat(jstring arg0, __jni_impl::android::graphics::Path arg1);
+		static QAndroidJniObject ofMultiFloat(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jobjectArray arg3);
 		static QAndroidJniObject ofMultiFloat(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jarray arg3);
-		static QAndroidJniObject ofObject(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::android::graphics::Path arg2);
-		static QAndroidJniObject ofObject(jstring arg0, __jni_impl::__JniBaseClass arg1, jobjectArray arg2);
-		static QAndroidJniObject ofObject(__jni_impl::android::util::Property arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::android::graphics::Path arg2);
-		static QAndroidJniObject ofObject(__jni_impl::android::util::Property arg0, __jni_impl::__JniBaseClass arg1, jobjectArray arg2);
 		static QAndroidJniObject ofObject(__jni_impl::android::util::Property arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jobjectArray arg3);
+		static QAndroidJniObject ofObject(__jni_impl::android::util::Property arg0, __jni_impl::__JniBaseClass arg1, jobjectArray arg2);
+		static QAndroidJniObject ofObject(jstring arg0, __jni_impl::__JniBaseClass arg1, jobjectArray arg2);
+		static QAndroidJniObject ofObject(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::android::graphics::Path arg2);
+		static QAndroidJniObject ofObject(__jni_impl::android::util::Property arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::android::graphics::Path arg2);
 		void setIntValues(jintArray arg0);
 		void setFloatValues(jfloatArray arg0);
 		void setObjectValues(jobjectArray arg0);
 		void setEvaluator(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getPropertyName();
 		void setKeyframes(jarray arg0);
 		static QAndroidJniObject ofKeyframe(jstring arg0, jarray arg1);
 		static QAndroidJniObject ofKeyframe(__jni_impl::android::util::Property arg0, jarray arg1);
@@ -98,19 +98,6 @@ namespace __jni_impl::android::animation
 			"(Landroid/util/Property;)V",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject PropertyValuesHolder::getPropertyName()
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyName",
-			"()Ljava/lang/String;");
-	}
-	void PropertyValuesHolder::setPropertyName(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPropertyName",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
 	QAndroidJniObject PropertyValuesHolder::ofInt(jstring arg0, jintArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -128,6 +115,13 @@ namespace __jni_impl::android::animation
 			"(Landroid/util/Property;[I)Landroid/animation/PropertyValuesHolder;",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	void PropertyValuesHolder::setPropertyName(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPropertyName",
+			"(Ljava/lang/String;)V",
+			arg0);
 	}
 	QAndroidJniObject PropertyValuesHolder::ofMultiInt(jstring arg0, jarray arg1)
 	{
@@ -169,6 +163,15 @@ namespace __jni_impl::android::animation
 			arg2.__jniObject().object(),
 			arg3);
 	}
+	QAndroidJniObject PropertyValuesHolder::ofFloat(__jni_impl::android::util::Property arg0, jfloatArray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.animation.PropertyValuesHolder",
+			"ofFloat",
+			"(Landroid/util/Property;[F)Landroid/animation/PropertyValuesHolder;",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	QAndroidJniObject PropertyValuesHolder::ofFloat(jstring arg0, jfloatArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -178,14 +181,23 @@ namespace __jni_impl::android::animation
 			arg0,
 			arg1);
 	}
-	QAndroidJniObject PropertyValuesHolder::ofFloat(__jni_impl::android::util::Property arg0, jfloatArray arg1)
+	QAndroidJniObject PropertyValuesHolder::ofMultiFloat(jstring arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
-			"ofFloat",
-			"(Landroid/util/Property;[F)Landroid/animation/PropertyValuesHolder;",
-			arg0.__jniObject().object(),
+			"ofMultiFloat",
+			"(Ljava/lang/String;[[F)Landroid/animation/PropertyValuesHolder;",
+			arg0,
 			arg1);
+	}
+	QAndroidJniObject PropertyValuesHolder::ofMultiFloat(jstring arg0, __jni_impl::android::graphics::Path arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.animation.PropertyValuesHolder",
+			"ofMultiFloat",
+			"(Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
+			arg0,
+			arg1.__jniObject().object());
 	}
 	QAndroidJniObject PropertyValuesHolder::ofMultiFloat(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jobjectArray arg3)
 	{
@@ -198,24 +210,6 @@ namespace __jni_impl::android::animation
 			arg2.__jniObject().object(),
 			arg3);
 	}
-	QAndroidJniObject PropertyValuesHolder::ofMultiFloat(jstring arg0, __jni_impl::android::graphics::Path arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.PropertyValuesHolder",
-			"ofMultiFloat",
-			"(Ljava/lang/String;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject PropertyValuesHolder::ofMultiFloat(jstring arg0, jarray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.PropertyValuesHolder",
-			"ofMultiFloat",
-			"(Ljava/lang/String;[[F)Landroid/animation/PropertyValuesHolder;",
-			arg0,
-			arg1);
-	}
 	QAndroidJniObject PropertyValuesHolder::ofMultiFloat(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jarray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -227,35 +221,16 @@ namespace __jni_impl::android::animation
 			arg2.__jniObject().object(),
 			arg3);
 	}
-	QAndroidJniObject PropertyValuesHolder::ofObject(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::android::graphics::Path arg2)
+	QAndroidJniObject PropertyValuesHolder::ofObject(__jni_impl::android::util::Property arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jobjectArray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
-			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject PropertyValuesHolder::ofObject(jstring arg0, __jni_impl::__JniBaseClass arg1, jobjectArray arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.PropertyValuesHolder",
-			"ofObject",
-			"(Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2);
-	}
-	QAndroidJniObject PropertyValuesHolder::ofObject(__jni_impl::android::util::Property arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::android::graphics::Path arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.PropertyValuesHolder",
-			"ofObject",
-			"(Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
+			"(Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object(),
+			arg3);
 	}
 	QAndroidJniObject PropertyValuesHolder::ofObject(__jni_impl::android::util::Property arg0, __jni_impl::__JniBaseClass arg1, jobjectArray arg2)
 	{
@@ -267,16 +242,35 @@ namespace __jni_impl::android::animation
 			arg1.__jniObject().object(),
 			arg2);
 	}
-	QAndroidJniObject PropertyValuesHolder::ofObject(__jni_impl::android::util::Property arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::__JniBaseClass arg2, jobjectArray arg3)
+	QAndroidJniObject PropertyValuesHolder::ofObject(jstring arg0, __jni_impl::__JniBaseClass arg1, jobjectArray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
 			"ofObject",
-			"(Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
+			"(Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/PropertyValuesHolder;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2);
+	}
+	QAndroidJniObject PropertyValuesHolder::ofObject(jstring arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::android::graphics::Path arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.animation.PropertyValuesHolder",
+			"ofObject",
+			"(Ljava/lang/String;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
+	QAndroidJniObject PropertyValuesHolder::ofObject(__jni_impl::android::util::Property arg0, __jni_impl::android::animation::TypeConverter arg1, __jni_impl::android::graphics::Path arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.animation.PropertyValuesHolder",
+			"ofObject",
+			"(Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/PropertyValuesHolder;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3);
+			arg2.__jniObject().object());
 	}
 	void PropertyValuesHolder::setIntValues(jintArray arg0)
 	{
@@ -305,6 +299,12 @@ namespace __jni_impl::android::animation
 			"setEvaluator",
 			"(Landroid/animation/TypeEvaluator;)V",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject PropertyValuesHolder::getPropertyName()
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyName",
+			"()Ljava/lang/String;");
 	}
 	void PropertyValuesHolder::setKeyframes(jarray arg0)
 	{

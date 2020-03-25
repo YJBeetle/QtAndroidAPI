@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_MBMS_FILESERVICEINFO
 #define ANDROID_TELEPHONY_MBMS_FILESERVICEINFO
 
+#include "../../../__JniBaseClass.hpp"
 #include "ServiceInfo.hpp"
 
 namespace __jni_impl::android::os
@@ -22,9 +23,9 @@ namespace __jni_impl::android::telephony::mbms
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject getFiles();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getFiles();
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
@@ -50,6 +51,12 @@ namespace __jni_impl::android::telephony::mbms
 	}
 	
 	// Methods
+	QAndroidJniObject FileServiceInfo::getFiles()
+	{
+		return __thiz.callObjectMethod(
+			"getFiles",
+			"()Ljava/util/List;");
+	}
 	jint FileServiceInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -63,12 +70,6 @@ namespace __jni_impl::android::telephony::mbms
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject FileServiceInfo::getFiles()
-	{
-		return __thiz.callObjectMethod(
-			"getFiles",
-			"()Ljava/util/List;");
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

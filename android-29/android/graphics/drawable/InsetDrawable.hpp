@@ -3,6 +3,8 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_INSETDRAWABLE
 #define ANDROID_GRAPHICS_DRAWABLE_INSETDRAWABLE
 
+#include "../../../__JniBaseClass.hpp"
+#include "Drawable.hpp"
 #include "DrawableWrapper.hpp"
 
 namespace __jni_impl::android::graphics::drawable

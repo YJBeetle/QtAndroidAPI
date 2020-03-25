@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_FILE_NOSUCHFILEEXCEPTION
 #define JAVA_NIO_FILE_NOSUCHFILEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
 #include "FileSystemException.hpp"
 
 

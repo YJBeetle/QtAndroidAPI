@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_UTIL_CHINESECALENDAR
 #define ANDROID_ICU_UTIL_CHINESECALENDAR
 
+#include "../../../__JniBaseClass.hpp"
 #include "Calendar.hpp"
 
 namespace __jni_impl::java::util

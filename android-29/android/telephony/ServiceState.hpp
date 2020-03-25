@@ -37,6 +37,7 @@ namespace __jni_impl::android::telephony
 		jint hashCode();
 		jint getState();
 		void setState(jint arg0);
+		jboolean getRoaming();
 		jint getChannelNumber();
 		QAndroidJniObject getCellBandwidths();
 		jboolean getIsManualSelection();
@@ -47,11 +48,10 @@ namespace __jni_impl::android::telephony
 		void setIsManualSelection(jboolean arg0);
 		jint getCdmaNetworkId();
 		jint getCdmaSystemId();
-		jboolean getRoaming();
-		QAndroidJniObject getOperatorNumeric();
+		jint getDuplexMode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getDuplexMode();
+		QAndroidJniObject getOperatorNumeric();
 		QAndroidJniObject getOperatorAlphaLong();
 		QAndroidJniObject getOperatorAlphaShort();
 	};
@@ -173,6 +173,12 @@ namespace __jni_impl::android::telephony
 			"(I)V",
 			arg0);
 	}
+	jboolean ServiceState::getRoaming()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getRoaming",
+			"()Z");
+	}
 	jint ServiceState::getChannelNumber()
 	{
 		return __thiz.callMethod<jint>(
@@ -238,17 +244,11 @@ namespace __jni_impl::android::telephony
 			"getCdmaSystemId",
 			"()I");
 	}
-	jboolean ServiceState::getRoaming()
+	jint ServiceState::getDuplexMode()
 	{
-		return __thiz.callMethod<jboolean>(
-			"getRoaming",
-			"()Z");
-	}
-	QAndroidJniObject ServiceState::getOperatorNumeric()
-	{
-		return __thiz.callObjectMethod(
-			"getOperatorNumeric",
-			"()Ljava/lang/String;");
+		return __thiz.callMethod<jint>(
+			"getDuplexMode",
+			"()I");
 	}
 	jint ServiceState::describeContents()
 	{
@@ -264,11 +264,11 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	jint ServiceState::getDuplexMode()
+	QAndroidJniObject ServiceState::getOperatorNumeric()
 	{
-		return __thiz.callMethod<jint>(
-			"getDuplexMode",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getOperatorNumeric",
+			"()Ljava/lang/String;");
 	}
 	QAndroidJniObject ServiceState::getOperatorAlphaLong()
 	{

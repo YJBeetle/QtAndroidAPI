@@ -19,11 +19,11 @@ namespace __jni_impl::android::icu::util
 }
 namespace __jni_impl::android::icu::text
 {
-	class CollationKey;
+	class UnicodeSet;
 }
 namespace __jni_impl::android::icu::text
 {
-	class UnicodeSet;
+	class CollationKey;
 }
 
 namespace __jni_impl::android::icu::text
@@ -58,11 +58,10 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject freeze();
 		static QAndroidJniObject getAvailableLocales();
 		QAndroidJniObject getVersion();
+		static QAndroidJniObject getDisplayName(__jni_impl::android::icu::util::ULocale arg0);
+		static QAndroidJniObject getDisplayName(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getDisplayName(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::util::ULocale arg1);
 		static QAndroidJniObject getDisplayName(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Locale arg1);
-		static QAndroidJniObject getDisplayName(__jni_impl::java::util::Locale arg0);
-		static QAndroidJniObject getDisplayName(__jni_impl::android::icu::util::ULocale arg0);
-		QAndroidJniObject getCollationKey(jstring arg0);
 		void setStrength(jint arg0);
 		QAndroidJniObject cloneAsThawed();
 		void setDecomposition(jint arg0);
@@ -82,14 +81,15 @@ namespace __jni_impl::android::icu::text
 		static QAndroidJniObject getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2);
 		static QAndroidJniObject getEquivalentReorderCodes(jint arg0);
 		static QAndroidJniObject getKeywords();
+		QAndroidJniObject getCollationKey(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
 #include "../../../java/util/Locale.hpp"
 #include "../util/ULocale.hpp"
 #include "../util/VersionInfo.hpp"
-#include "CollationKey.hpp"
 #include "UnicodeSet.hpp"
+#include "CollationKey.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -243,6 +243,22 @@ namespace __jni_impl::android::icu::text
 			"getVersion",
 			"()Landroid/icu/util/VersionInfo;");
 	}
+	QAndroidJniObject Collator::getDisplayName(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getDisplayName",
+			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Collator::getDisplayName(__jni_impl::java::util::Locale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getDisplayName",
+			"(Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.__jniObject().object());
+	}
 	QAndroidJniObject Collator::getDisplayName(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -260,29 +276,6 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/util/Locale;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
-	}
-	QAndroidJniObject Collator::getDisplayName(__jni_impl::java::util::Locale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getDisplayName",
-			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Collator::getDisplayName(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getDisplayName",
-			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Collator::getCollationKey(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
-			arg0);
 	}
 	void Collator::setStrength(jint arg0)
 	{
@@ -418,6 +411,13 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.Collator",
 			"getKeywords",
 			"()[Ljava/lang/String;");
+	}
+	QAndroidJniObject Collator::getCollationKey(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCollationKey",
+			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
+			arg0);
 	}
 } // namespace __jni_impl::android::icu::text
 

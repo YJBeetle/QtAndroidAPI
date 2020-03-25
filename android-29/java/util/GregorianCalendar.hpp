@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_GREGORIANCALENDAR
 #define JAVA_UTIL_GREGORIANCALENDAR
 
+#include "../../__JniBaseClass.hpp"
 #include "Calendar.hpp"
 
 namespace __jni_impl::java::util

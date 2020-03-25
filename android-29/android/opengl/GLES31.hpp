@@ -3,6 +3,8 @@
 #ifndef ANDROID_OPENGL_GLES31
 #define ANDROID_OPENGL_GLES31
 
+#include "../../__JniBaseClass.hpp"
+#include "GLES20.hpp"
 #include "GLES30.hpp"
 
 namespace __jni_impl::java::nio

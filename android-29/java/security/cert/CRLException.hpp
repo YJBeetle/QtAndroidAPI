@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_CERT_CRLEXCEPTION
 #define JAVA_SECURITY_CERT_CRLEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 
 

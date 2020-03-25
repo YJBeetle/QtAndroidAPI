@@ -3,6 +3,7 @@
 #ifndef ANDROID_SAX_ROOTELEMENT
 #define ANDROID_SAX_ROOTELEMENT
 
+#include "../../__JniBaseClass.hpp"
 #include "Element.hpp"
 
 

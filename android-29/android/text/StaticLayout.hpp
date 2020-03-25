@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_STATICLAYOUT
 #define ANDROID_TEXT_STATICLAYOUT
 
+#include "../../__JniBaseClass.hpp"
 #include "Layout.hpp"
 
 namespace __jni_impl::android::text

@@ -3,6 +3,9 @@
 #ifndef ANDROID_MEDIA_MEDIACASSTATEEXCEPTION
 #define ANDROID_MEDIA_MEDIACASSTATEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/IllegalStateException.hpp"
 
 

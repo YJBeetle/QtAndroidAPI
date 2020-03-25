@@ -5,17 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::os
+{
+	class PersistableBundle;
+}
 namespace __jni_impl::android::view
 {
 	class Surface;
-}
-namespace __jni_impl::android::media
-{
-	class AudioDeviceInfo;
-}
-namespace __jni_impl::android::os
-{
-	class Handler;
 }
 namespace __jni_impl::android::media
 {
@@ -23,11 +19,11 @@ namespace __jni_impl::android::media
 }
 namespace __jni_impl::java::io
 {
-	class FileDescriptor;
+	class File;
 }
 namespace __jni_impl::java::io
 {
-	class File;
+	class FileDescriptor;
 }
 namespace __jni_impl::android::media
 {
@@ -37,13 +33,17 @@ namespace __jni_impl::android::hardware
 {
 	class Camera;
 }
-namespace __jni_impl::android::os
-{
-	class PersistableBundle;
-}
 namespace __jni_impl::android::media
 {
 	class AudioManager_AudioRecordingCallback;
+}
+namespace __jni_impl::android::media
+{
+	class AudioDeviceInfo;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 
 namespace __jni_impl::android::media
@@ -70,12 +70,7 @@ namespace __jni_impl::android::media
 		void prepare();
 		void reset();
 		void release();
-		QAndroidJniObject getSurface();
-		jboolean setPreferredDevice(__jni_impl::android::media::AudioDeviceInfo arg0);
-		QAndroidJniObject getPreferredDevice();
-		QAndroidJniObject getRoutedDevice();
-		void addOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
-		void removeOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getMetrics();
 		void setInputSurface(__jni_impl::android::view::Surface arg0);
 		void setAudioSource(jint arg0);
 		static jint getAudioSourceMax();
@@ -96,37 +91,42 @@ namespace __jni_impl::android::media
 		void setVideoEncodingBitRate(jint arg0);
 		void setVideoEncodingProfileLevel(jint arg0, jint arg1);
 		void setOutputFile(jstring arg0);
-		void setOutputFile(__jni_impl::java::io::FileDescriptor arg0);
 		void setOutputFile(__jni_impl::java::io::File arg0);
-		void setNextOutputFile(__jni_impl::java::io::FileDescriptor arg0);
+		void setOutputFile(__jni_impl::java::io::FileDescriptor arg0);
 		void setNextOutputFile(__jni_impl::java::io::File arg0);
+		void setNextOutputFile(__jni_impl::java::io::FileDescriptor arg0);
 		jint getMaxAmplitude();
 		QAndroidJniObject getActiveMicrophones();
 		jboolean setPreferredMicrophoneDirection(jint arg0);
 		jboolean setPreferredMicrophoneFieldDimension(jfloat arg0);
 		QAndroidJniObject getActiveRecordingConfiguration();
+		QAndroidJniObject getSurface();
 		void setCamera(__jni_impl::android::hardware::Camera arg0);
-		void setPreviewDisplay(__jni_impl::android::view::Surface arg0);
-		QAndroidJniObject getMetrics();
 		void pause();
 		void registerAudioRecordingCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::media::AudioManager_AudioRecordingCallback arg1);
 		void unregisterAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0);
+		void setPreviewDisplay(__jni_impl::android::view::Surface arg0);
+		jboolean setPreferredDevice(__jni_impl::android::media::AudioDeviceInfo arg0);
+		QAndroidJniObject getPreferredDevice();
+		QAndroidJniObject getRoutedDevice();
+		void addOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void removeOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0);
 		void setLocation(jfloat arg0, jfloat arg1);
 		void setOnInfoListener(__jni_impl::__JniBaseClass arg0);
 		void setOnErrorListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::media
 
+#include "../os/PersistableBundle.hpp"
 #include "../view/Surface.hpp"
-#include "AudioDeviceInfo.hpp"
-#include "../os/Handler.hpp"
 #include "CamcorderProfile.hpp"
-#include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/File.hpp"
+#include "../../java/io/FileDescriptor.hpp"
 #include "AudioRecordingConfiguration.hpp"
 #include "../hardware/Camera.hpp"
-#include "../os/PersistableBundle.hpp"
 #include "AudioManager_AudioRecordingCallback.hpp"
+#include "AudioDeviceInfo.hpp"
+#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -219,45 +219,11 @@ namespace __jni_impl::android::media
 			"release",
 			"()V");
 	}
-	QAndroidJniObject MediaRecorder::getSurface()
+	QAndroidJniObject MediaRecorder::getMetrics()
 	{
 		return __thiz.callObjectMethod(
-			"getSurface",
-			"()Landroid/view/Surface;");
-	}
-	jboolean MediaRecorder::setPreferredDevice(__jni_impl::android::media::AudioDeviceInfo arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setPreferredDevice",
-			"(Landroid/media/AudioDeviceInfo;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject MediaRecorder::getPreferredDevice()
-	{
-		return __thiz.callObjectMethod(
-			"getPreferredDevice",
-			"()Landroid/media/AudioDeviceInfo;");
-	}
-	QAndroidJniObject MediaRecorder::getRoutedDevice()
-	{
-		return __thiz.callObjectMethod(
-			"getRoutedDevice",
-			"()Landroid/media/AudioDeviceInfo;");
-	}
-	void MediaRecorder::addOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"addOnRoutingChangedListener",
-			"(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void MediaRecorder::removeOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnRoutingChangedListener",
-			"(Landroid/media/AudioRouting$OnRoutingChangedListener;)V",
-			arg0.__jniObject().object());
+			"getMetrics",
+			"()Landroid/os/PersistableBundle;");
 	}
 	void MediaRecorder::setInputSurface(__jni_impl::android::view::Surface arg0)
 	{
@@ -401,13 +367,6 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;)V",
 			arg0);
 	}
-	void MediaRecorder::setOutputFile(__jni_impl::java::io::FileDescriptor arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOutputFile",
-			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
-	}
 	void MediaRecorder::setOutputFile(__jni_impl::java::io::File arg0)
 	{
 		__thiz.callMethod<void>(
@@ -415,10 +374,10 @@ namespace __jni_impl::android::media
 			"(Ljava/io/File;)V",
 			arg0.__jniObject().object());
 	}
-	void MediaRecorder::setNextOutputFile(__jni_impl::java::io::FileDescriptor arg0)
+	void MediaRecorder::setOutputFile(__jni_impl::java::io::FileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
-			"setNextOutputFile",
+			"setOutputFile",
 			"(Ljava/io/FileDescriptor;)V",
 			arg0.__jniObject().object());
 	}
@@ -427,6 +386,13 @@ namespace __jni_impl::android::media
 		__thiz.callMethod<void>(
 			"setNextOutputFile",
 			"(Ljava/io/File;)V",
+			arg0.__jniObject().object());
+	}
+	void MediaRecorder::setNextOutputFile(__jni_impl::java::io::FileDescriptor arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNextOutputFile",
+			"(Ljava/io/FileDescriptor;)V",
 			arg0.__jniObject().object());
 	}
 	jint MediaRecorder::getMaxAmplitude()
@@ -461,25 +427,18 @@ namespace __jni_impl::android::media
 			"getActiveRecordingConfiguration",
 			"()Landroid/media/AudioRecordingConfiguration;");
 	}
+	QAndroidJniObject MediaRecorder::getSurface()
+	{
+		return __thiz.callObjectMethod(
+			"getSurface",
+			"()Landroid/view/Surface;");
+	}
 	void MediaRecorder::setCamera(__jni_impl::android::hardware::Camera arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCamera",
 			"(Landroid/hardware/Camera;)V",
 			arg0.__jniObject().object());
-	}
-	void MediaRecorder::setPreviewDisplay(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPreviewDisplay",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject MediaRecorder::getMetrics()
-	{
-		return __thiz.callObjectMethod(
-			"getMetrics",
-			"()Landroid/os/PersistableBundle;");
 	}
 	void MediaRecorder::pause()
 	{
@@ -500,6 +459,47 @@ namespace __jni_impl::android::media
 		__thiz.callMethod<void>(
 			"unregisterAudioRecordingCallback",
 			"(Landroid/media/AudioManager$AudioRecordingCallback;)V",
+			arg0.__jniObject().object());
+	}
+	void MediaRecorder::setPreviewDisplay(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPreviewDisplay",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean MediaRecorder::setPreferredDevice(__jni_impl::android::media::AudioDeviceInfo arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setPreferredDevice",
+			"(Landroid/media/AudioDeviceInfo;)Z",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject MediaRecorder::getPreferredDevice()
+	{
+		return __thiz.callObjectMethod(
+			"getPreferredDevice",
+			"()Landroid/media/AudioDeviceInfo;");
+	}
+	QAndroidJniObject MediaRecorder::getRoutedDevice()
+	{
+		return __thiz.callObjectMethod(
+			"getRoutedDevice",
+			"()Landroid/media/AudioDeviceInfo;");
+	}
+	void MediaRecorder::addOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"addOnRoutingChangedListener",
+			"(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void MediaRecorder::removeOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnRoutingChangedListener",
+			"(Landroid/media/AudioRouting$OnRoutingChangedListener;)V",
 			arg0.__jniObject().object());
 	}
 	void MediaRecorder::setLocation(jfloat arg0, jfloat arg1)

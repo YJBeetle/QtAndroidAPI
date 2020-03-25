@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_ZOOMBUTTON
 #define ANDROID_WIDGET_ZOOMBUTTON
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "ImageView.hpp"
 #include "ImageButton.hpp"
 
 namespace __jni_impl::android::content
@@ -36,13 +39,13 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		jboolean onLongClick(__jni_impl::android::view::View arg0);
 		void setZoomSpeed(jlong arg0);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onLongClick(__jni_impl::android::view::View arg0);
 		jboolean dispatchUnhandledMove(__jni_impl::android::view::View arg0, jint arg1);
 		QAndroidJniObject getAccessibilityClassName();
 		void setEnabled(jboolean arg0);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -92,13 +95,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	jboolean ZoomButton::onLongClick(__jni_impl::android::view::View arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onLongClick",
-			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object());
-	}
 	void ZoomButton::setZoomSpeed(jlong arg0)
 	{
 		__thiz.callMethod<void>(
@@ -106,19 +102,11 @@ namespace __jni_impl::android::widget
 			"(J)V",
 			arg0);
 	}
-	jboolean ZoomButton::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	jboolean ZoomButton::onLongClick(__jni_impl::android::view::View arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean ZoomButton::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
+			"onLongClick",
+			"(Landroid/view/View;)Z",
 			arg0.__jniObject().object());
 	}
 	jboolean ZoomButton::dispatchUnhandledMove(__jni_impl::android::view::View arg0, jint arg1)
@@ -141,6 +129,21 @@ namespace __jni_impl::android::widget
 			"setEnabled",
 			"(Z)V",
 			arg0);
+	}
+	jboolean ZoomButton::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean ZoomButton::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::widget
 

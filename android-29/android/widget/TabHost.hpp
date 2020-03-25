@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_TABHOST
 #define ANDROID_WIDGET_TABHOST
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "FrameLayout.hpp"
 
 namespace __jni_impl::android::content
@@ -51,9 +54,9 @@ namespace __jni_impl::android::widget
 		void setup();
 		void setup(__jni_impl::android::app::LocalActivityManager arg0);
 		void onTouchModeChanged(jboolean arg0);
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		void dispatchWindowFocusChanged(jboolean arg0);
 		QAndroidJniObject getAccessibilityClassName();
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		void addTab(__jni_impl::android::widget::TabHost_TabSpec arg0);
 		QAndroidJniObject getTabWidget();
 		void setCurrentTab(jint arg0);
@@ -138,13 +141,6 @@ namespace __jni_impl::android::widget
 			"(Z)V",
 			arg0);
 	}
-	jboolean TabHost::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
-	}
 	void TabHost::dispatchWindowFocusChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -157,6 +153,13 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;");
+	}
+	jboolean TabHost::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object());
 	}
 	void TabHost::addTab(__jni_impl::android::widget::TabHost_TabSpec arg0)
 	{

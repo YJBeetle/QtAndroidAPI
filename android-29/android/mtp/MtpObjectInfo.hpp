@@ -22,6 +22,7 @@ namespace __jni_impl::android::mtp
 		jint getCompressedSize();
 		jint getFormat();
 		jint getSequenceNumber();
+		QAndroidJniObject getKeywords();
 		jint getObjectHandle();
 		jint getStorageId();
 		jint getProtectionStatus();
@@ -44,7 +45,6 @@ namespace __jni_impl::android::mtp
 		jlong getSequenceNumberLong();
 		jlong getDateCreated();
 		jlong getDateModified();
-		QAndroidJniObject getKeywords();
 	};
 } // namespace __jni_impl::android::mtp
 
@@ -91,6 +91,12 @@ namespace __jni_impl::android::mtp
 		return __thiz.callMethod<jint>(
 			"getSequenceNumber",
 			"()I");
+	}
+	QAndroidJniObject MtpObjectInfo::getKeywords()
+	{
+		return __thiz.callObjectMethod(
+			"getKeywords",
+			"()Ljava/lang/String;");
 	}
 	jint MtpObjectInfo::getObjectHandle()
 	{
@@ -223,12 +229,6 @@ namespace __jni_impl::android::mtp
 		return __thiz.callMethod<jlong>(
 			"getDateModified",
 			"()J");
-	}
-	QAndroidJniObject MtpObjectInfo::getKeywords()
-	{
-		return __thiz.callObjectMethod(
-			"getKeywords",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::mtp
 

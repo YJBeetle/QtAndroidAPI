@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_BUFFEREDINPUTSTREAM
 #define JAVA_IO_BUFFEREDINPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "InputStream.hpp"
 #include "FilterInputStream.hpp"
 
 namespace __jni_impl::java::io

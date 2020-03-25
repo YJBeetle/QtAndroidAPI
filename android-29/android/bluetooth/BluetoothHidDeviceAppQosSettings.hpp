@@ -26,14 +26,14 @@ namespace __jni_impl::android::bluetooth
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getServiceType();
 		jint getTokenRate();
 		jint getTokenBucketSize();
 		jint getPeakBandwidth();
 		jint getLatency();
 		jint getDelayVariation();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -89,6 +89,20 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
+	jint BluetoothHidDeviceAppQosSettings::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void BluetoothHidDeviceAppQosSettings::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint BluetoothHidDeviceAppQosSettings::getServiceType()
 	{
 		return __thiz.callMethod<jint>(
@@ -124,20 +138,6 @@ namespace __jni_impl::android::bluetooth
 		return __thiz.callMethod<jint>(
 			"getDelayVariation",
 			"()I");
-	}
-	jint BluetoothHidDeviceAppQosSettings::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void BluetoothHidDeviceAppQosSettings::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::bluetooth
 

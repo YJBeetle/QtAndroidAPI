@@ -3,6 +3,7 @@
 #ifndef JAVA_TIME_ZONEOFFSET
 #define JAVA_TIME_ZONEOFFSET
 
+#include "../../__JniBaseClass.hpp"
 #include "ZoneId.hpp"
 
 namespace __jni_impl::java::io

@@ -35,12 +35,12 @@ namespace __jni_impl::javax::xml::transform::stream
 		
 		// Methods
 		void setOutputStream(__jni_impl::java::io::OutputStream arg0);
-		void setSystemId(jstring arg0);
-		void setSystemId(__jni_impl::java::io::File arg0);
-		void setWriter(__jni_impl::java::io::Writer arg0);
-		QAndroidJniObject getWriter();
 		QAndroidJniObject getSystemId();
 		QAndroidJniObject getOutputStream();
+		void setSystemId(__jni_impl::java::io::File arg0);
+		void setSystemId(jstring arg0);
+		void setWriter(__jni_impl::java::io::Writer arg0);
+		QAndroidJniObject getWriter();
 	};
 } // namespace __jni_impl::javax::xml::transform::stream
 
@@ -103,12 +103,17 @@ namespace __jni_impl::javax::xml::transform::stream
 			"(Ljava/io/OutputStream;)V",
 			arg0.__jniObject().object());
 	}
-	void StreamResult::setSystemId(jstring arg0)
+	QAndroidJniObject StreamResult::getSystemId()
 	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			arg0);
+		return __thiz.callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject StreamResult::getOutputStream()
+	{
+		return __thiz.callObjectMethod(
+			"getOutputStream",
+			"()Ljava/io/OutputStream;");
 	}
 	void StreamResult::setSystemId(__jni_impl::java::io::File arg0)
 	{
@@ -116,6 +121,13 @@ namespace __jni_impl::javax::xml::transform::stream
 			"setSystemId",
 			"(Ljava/io/File;)V",
 			arg0.__jniObject().object());
+	}
+	void StreamResult::setSystemId(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			arg0);
 	}
 	void StreamResult::setWriter(__jni_impl::java::io::Writer arg0)
 	{
@@ -129,18 +141,6 @@ namespace __jni_impl::javax::xml::transform::stream
 		return __thiz.callObjectMethod(
 			"getWriter",
 			"()Ljava/io/Writer;");
-	}
-	QAndroidJniObject StreamResult::getSystemId()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemId",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject StreamResult::getOutputStream()
-	{
-		return __thiz.callObjectMethod(
-			"getOutputStream",
-			"()Ljava/io/OutputStream;");
 	}
 } // namespace __jni_impl::javax::xml::transform::stream
 

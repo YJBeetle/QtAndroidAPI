@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_SCRIPT_FIELDID
 #define ANDROID_RENDERSCRIPT_SCRIPT_FIELDID
 
+#include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 
 namespace __jni_impl::android::renderscript

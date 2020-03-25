@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_REMOTECONTROLLER_METADATAEDITOR
 #define ANDROID_MEDIA_REMOTECONTROLLER_METADATAEDITOR
 
+#include "../../__JniBaseClass.hpp"
 #include "MediaMetadataEditor.hpp"
 
 namespace __jni_impl::android::media

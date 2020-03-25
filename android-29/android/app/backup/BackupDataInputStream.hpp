@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_BACKUP_BACKUPDATAINPUTSTREAM
 #define ANDROID_APP_BACKUP_BACKUPDATAINPUTSTREAM
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/io/InputStream.hpp"
 
 namespace __jni_impl::android::app::backup

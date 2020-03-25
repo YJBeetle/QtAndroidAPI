@@ -41,9 +41,9 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getSerial();
 		static QAndroidJniObject getFingerprintedPartitions();
 		static QAndroidJniObject getRadioVersion();
+		static QAndroidJniObject getSerial();
 	};
 } // namespace __jni_impl::android::os
 
@@ -228,13 +228,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject Build::getSerial()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.Build",
-			"getSerial",
-			"()Ljava/lang/String;");
-	}
 	QAndroidJniObject Build::getFingerprintedPartitions()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -247,6 +240,13 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Build",
 			"getRadioVersion",
+			"()Ljava/lang/String;");
+	}
+	QAndroidJniObject Build::getSerial()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Build",
+			"getSerial",
 			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::os

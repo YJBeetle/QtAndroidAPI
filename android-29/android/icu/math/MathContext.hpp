@@ -34,9 +34,9 @@ namespace __jni_impl::android::icu::math
 		// Methods
 		QAndroidJniObject toString();
 		jint getRoundingMode();
-		jint getDigits();
 		jint getForm();
 		jboolean getLostDigits();
+		jint getDigits();
 	};
 } // namespace __jni_impl::android::icu::math
 
@@ -167,12 +167,6 @@ namespace __jni_impl::android::icu::math
 			"getRoundingMode",
 			"()I");
 	}
-	jint MathContext::getDigits()
-	{
-		return __thiz.callMethod<jint>(
-			"getDigits",
-			"()I");
-	}
 	jint MathContext::getForm()
 	{
 		return __thiz.callMethod<jint>(
@@ -184,6 +178,12 @@ namespace __jni_impl::android::icu::math
 		return __thiz.callMethod<jboolean>(
 			"getLostDigits",
 			"()Z");
+	}
+	jint MathContext::getDigits()
+	{
+		return __thiz.callMethod<jint>(
+			"getDigits",
+			"()I");
 	}
 } // namespace __jni_impl::android::icu::math
 

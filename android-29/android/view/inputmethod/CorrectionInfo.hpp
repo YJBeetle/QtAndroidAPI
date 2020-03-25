@@ -24,10 +24,10 @@ namespace __jni_impl::android::view::inputmethod
 		// Methods
 		QAndroidJniObject toString();
 		jint getOffset();
-		QAndroidJniObject getOldText();
-		QAndroidJniObject getNewText();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getOldText();
+		QAndroidJniObject getNewText();
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -68,18 +68,6 @@ namespace __jni_impl::android::view::inputmethod
 			"getOffset",
 			"()I");
 	}
-	QAndroidJniObject CorrectionInfo::getOldText()
-	{
-		return __thiz.callObjectMethod(
-			"getOldText",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject CorrectionInfo::getNewText()
-	{
-		return __thiz.callObjectMethod(
-			"getNewText",
-			"()Ljava/lang/CharSequence;");
-	}
 	jint CorrectionInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -93,6 +81,18 @@ namespace __jni_impl::android::view::inputmethod
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject CorrectionInfo::getOldText()
+	{
+		return __thiz.callObjectMethod(
+			"getOldText",
+			"()Ljava/lang/CharSequence;");
+	}
+	QAndroidJniObject CorrectionInfo::getNewText()
+	{
+		return __thiz.callObjectMethod(
+			"getNewText",
+			"()Ljava/lang/CharSequence;");
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

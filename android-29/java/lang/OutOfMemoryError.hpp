@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_OUTOFMEMORYERROR
 #define JAVA_LANG_OUTOFMEMORYERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "VirtualMachineError.hpp"
 
 

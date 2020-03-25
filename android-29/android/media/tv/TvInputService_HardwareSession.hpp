@@ -3,6 +3,7 @@
 #ifndef ANDROID_MEDIA_TV_TVINPUTSERVICE_HARDWARESESSION
 #define ANDROID_MEDIA_TV_TVINPUTSERVICE_HARDWARESESSION
 
+#include "../../../__JniBaseClass.hpp"
 #include "TvInputService_Session.hpp"
 
 namespace __jni_impl::android::content

@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_HASHSET
 #define JAVA_UTIL_HASHSET
 
+#include "../../__JniBaseClass.hpp"
+#include "AbstractCollection.hpp"
 #include "AbstractSet.hpp"
 
 namespace __jni_impl::java::util

@@ -9,10 +9,6 @@ namespace __jni_impl::android::view::textclassifier
 {
 	class TextClassification_Request;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::java::time
 {
 	class ZonedDateTime;
@@ -20,6 +16,10 @@ namespace __jni_impl::java::time
 namespace __jni_impl::android::os
 {
 	class LocaleList;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -34,16 +34,16 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setReferenceTime(__jni_impl::java::time::ZonedDateTime arg0);
 		QAndroidJniObject setDefaultLocales(__jni_impl::android::os::LocaleList arg0);
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "TextClassification_Request.hpp"
-#include "../../os/Bundle.hpp"
 #include "../../../java/time/ZonedDateTime.hpp"
 #include "../../os/LocaleList.hpp"
+#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -67,13 +67,6 @@ namespace __jni_impl::android::view::textclassifier
 			"build",
 			"()Landroid/view/textclassifier/TextClassification$Request;");
 	}
-	QAndroidJniObject TextClassification_Request_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextClassification$Request$Builder;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject TextClassification_Request_Builder::setReferenceTime(__jni_impl::java::time::ZonedDateTime arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -86,6 +79,13 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"setDefaultLocales",
 			"(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextClassification$Request$Builder;",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject TextClassification_Request_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextClassification$Request$Builder;",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::view::textclassifier

@@ -3,6 +3,8 @@
 #ifndef JAVA_TEXT_DECIMALFORMAT
 #define JAVA_TEXT_DECIMALFORMAT
 
+#include "../../__JniBaseClass.hpp"
+#include "Format.hpp"
 #include "NumberFormat.hpp"
 
 namespace __jni_impl::java::math

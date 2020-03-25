@@ -9,13 +9,13 @@ namespace __jni_impl::android::content
 {
 	class ClipData;
 }
-namespace __jni_impl::android::content
-{
-	class ClipDescription;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::content
+{
+	class ClipDescription;
 }
 
 namespace __jni_impl::android::view
@@ -41,17 +41,17 @@ namespace __jni_impl::android::view
 		jfloat getX();
 		jfloat getY();
 		QAndroidJniObject getClipData();
-		QAndroidJniObject getClipDescription();
-		QAndroidJniObject getLocalState();
+		jint getAction();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getAction();
+		QAndroidJniObject getClipDescription();
+		QAndroidJniObject getLocalState();
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/ClipData.hpp"
-#include "../content/ClipDescription.hpp"
 #include "../os/Parcel.hpp"
+#include "../content/ClipDescription.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -139,17 +139,11 @@ namespace __jni_impl::android::view
 			"getClipData",
 			"()Landroid/content/ClipData;");
 	}
-	QAndroidJniObject DragEvent::getClipDescription()
+	jint DragEvent::getAction()
 	{
-		return __thiz.callObjectMethod(
-			"getClipDescription",
-			"()Landroid/content/ClipDescription;");
-	}
-	QAndroidJniObject DragEvent::getLocalState()
-	{
-		return __thiz.callObjectMethod(
-			"getLocalState",
-			"()Ljava/lang/Object;");
+		return __thiz.callMethod<jint>(
+			"getAction",
+			"()I");
 	}
 	jint DragEvent::describeContents()
 	{
@@ -165,11 +159,17 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	jint DragEvent::getAction()
+	QAndroidJniObject DragEvent::getClipDescription()
 	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getClipDescription",
+			"()Landroid/content/ClipDescription;");
+	}
+	QAndroidJniObject DragEvent::getLocalState()
+	{
+		return __thiz.callObjectMethod(
+			"getLocalState",
+			"()Ljava/lang/Object;");
 	}
 } // namespace __jni_impl::android::view
 

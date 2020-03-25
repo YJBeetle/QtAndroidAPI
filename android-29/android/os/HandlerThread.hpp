@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_HANDLERTHREAD
 #define ANDROID_OS_HANDLERTHREAD
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Thread.hpp"
 
 namespace __jni_impl::android::os
@@ -24,9 +25,9 @@ namespace __jni_impl::android::os
 		// Methods
 		void run();
 		jint getThreadId();
+		QAndroidJniObject getLooper();
 		jboolean quit();
 		jboolean quitSafely();
-		QAndroidJniObject getLooper();
 	};
 } // namespace __jni_impl::android::os
 
@@ -66,6 +67,12 @@ namespace __jni_impl::android::os
 			"getThreadId",
 			"()I");
 	}
+	QAndroidJniObject HandlerThread::getLooper()
+	{
+		return __thiz.callObjectMethod(
+			"getLooper",
+			"()Landroid/os/Looper;");
+	}
 	jboolean HandlerThread::quit()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -77,12 +84,6 @@ namespace __jni_impl::android::os
 		return __thiz.callMethod<jboolean>(
 			"quitSafely",
 			"()Z");
-	}
-	QAndroidJniObject HandlerThread::getLooper()
-	{
-		return __thiz.callObjectMethod(
-			"getLooper",
-			"()Landroid/os/Looper;");
 	}
 } // namespace __jni_impl::android::os
 

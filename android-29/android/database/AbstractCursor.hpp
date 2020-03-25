@@ -9,6 +9,10 @@ namespace __jni_impl::android::content
 {
 	class ContentResolver;
 }
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 namespace __jni_impl::android::database
 {
 	class CharArrayBuffer;
@@ -28,10 +32,6 @@ namespace __jni_impl::android::database
 namespace __jni_impl::android::net
 {
 	class Uri;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 
 namespace __jni_impl::android::database
@@ -56,6 +56,7 @@ namespace __jni_impl::android::database
 		jint getCount();
 		QAndroidJniObject getString(jint arg0);
 		jboolean move(jint arg0);
+		QAndroidJniObject getExtras();
 		jint getColumnIndex(jstring arg0);
 		QAndroidJniObject getColumnNames();
 		QAndroidJniObject getBlob(jint arg0);
@@ -87,20 +88,19 @@ namespace __jni_impl::android::database
 		QAndroidJniObject getNotificationUris();
 		jboolean getWantsAllOnMoveCalls();
 		QAndroidJniObject respond(__jni_impl::android::os::Bundle arg0);
-		void setExtras(__jni_impl::android::os::Bundle arg0);
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getWindow();
 		jboolean isClosed();
+		QAndroidJniObject getWindow();
+		void setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::database
 
 #include "../content/ContentResolver.hpp"
+#include "../os/Bundle.hpp"
 #include "CharArrayBuffer.hpp"
 #include "CursorWindow.hpp"
 #include "ContentObserver.hpp"
 #include "DataSetObserver.hpp"
 #include "../net/Uri.hpp"
-#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::database
 {
@@ -189,6 +189,12 @@ namespace __jni_impl::android::database
 			"move",
 			"(I)Z",
 			arg0);
+	}
+	QAndroidJniObject AbstractCursor::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
 	}
 	jint AbstractCursor::getColumnIndex(jstring arg0)
 	{
@@ -396,18 +402,11 @@ namespace __jni_impl::android::database
 			"(Landroid/os/Bundle;)Landroid/os/Bundle;",
 			arg0.__jniObject().object());
 	}
-	void AbstractCursor::setExtras(__jni_impl::android::os::Bundle arg0)
+	jboolean AbstractCursor::isClosed()
 	{
-		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AbstractCursor::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
+		return __thiz.callMethod<jboolean>(
+			"isClosed",
+			"()Z");
 	}
 	QAndroidJniObject AbstractCursor::getWindow()
 	{
@@ -415,11 +414,12 @@ namespace __jni_impl::android::database
 			"getWindow",
 			"()Landroid/database/CursorWindow;");
 	}
-	jboolean AbstractCursor::isClosed()
+	void AbstractCursor::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isClosed",
-			"()Z");
+		__thiz.callMethod<void>(
+			"setExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::database
 

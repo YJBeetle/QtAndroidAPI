@@ -3,6 +3,8 @@
 #ifndef ANDROID_CONTENT_INTENTSENDER_SENDINTENTEXCEPTION
 #define ANDROID_CONTENT_INTENTSENDER_SENDINTENTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
 namespace __jni_impl::java::lang

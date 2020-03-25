@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
 namespace __jni_impl::android::content::res
 {
 	class AssetFileDescriptor;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 
 namespace __jni_impl::android::media
@@ -27,14 +27,10 @@ namespace __jni_impl::android::media
 		// Methods
 		QAndroidJniObject clone();
 		void release();
-		void setEventListener(__jni_impl::__JniBaseClass arg0);
-		void setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
-		jboolean pause();
-		jboolean play();
 		static QAndroidJniObject getJetPlayer();
 		static jint getMaxTracks();
-		jboolean loadJetFile(jstring arg0);
 		jboolean loadJetFile(__jni_impl::android::content::res::AssetFileDescriptor arg0);
+		jboolean loadJetFile(jstring arg0);
 		jboolean closeJetFile();
 		jboolean queueJetSegment(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jbyte arg5);
 		jboolean queueJetSegmentMuteArray(jint arg0, jint arg1, jint arg2, jint arg3, jbooleanArray arg4, jbyte arg5);
@@ -43,11 +39,15 @@ namespace __jni_impl::android::media
 		jboolean setMuteFlag(jint arg0, jboolean arg1, jboolean arg2);
 		jboolean triggerClip(jint arg0);
 		jboolean clearQueue();
+		void setEventListener(__jni_impl::__JniBaseClass arg0);
+		void setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		jboolean pause();
+		jboolean play();
 	};
 } // namespace __jni_impl::android::media
 
-#include "../os/Handler.hpp"
 #include "../content/res/AssetFileDescriptor.hpp"
+#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -74,33 +74,6 @@ namespace __jni_impl::android::media
 			"release",
 			"()V");
 	}
-	void JetPlayer::setEventListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEventListener",
-			"(Landroid/media/JetPlayer$OnJetEventListener;)V",
-			arg0.__jniObject().object());
-	}
-	void JetPlayer::setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setEventListener",
-			"(Landroid/media/JetPlayer$OnJetEventListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	jboolean JetPlayer::pause()
-	{
-		return __thiz.callMethod<jboolean>(
-			"pause",
-			"()Z");
-	}
-	jboolean JetPlayer::play()
-	{
-		return __thiz.callMethod<jboolean>(
-			"play",
-			"()Z");
-	}
 	QAndroidJniObject JetPlayer::getJetPlayer()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -115,19 +88,19 @@ namespace __jni_impl::android::media
 			"getMaxTracks",
 			"()I");
 	}
-	jboolean JetPlayer::loadJetFile(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"loadJetFile",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
 	jboolean JetPlayer::loadJetFile(__jni_impl::android::content::res::AssetFileDescriptor arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"loadJetFile",
 			"(Landroid/content/res/AssetFileDescriptor;)Z",
 			arg0.__jniObject().object());
+	}
+	jboolean JetPlayer::loadJetFile(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"loadJetFile",
+			"(Ljava/lang/String;)Z",
+			arg0);
 	}
 	jboolean JetPlayer::closeJetFile()
 	{
@@ -195,6 +168,33 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jboolean>(
 			"clearQueue",
+			"()Z");
+	}
+	void JetPlayer::setEventListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEventListener",
+			"(Landroid/media/JetPlayer$OnJetEventListener;)V",
+			arg0.__jniObject().object());
+	}
+	void JetPlayer::setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setEventListener",
+			"(Landroid/media/JetPlayer$OnJetEventListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	jboolean JetPlayer::pause()
+	{
+		return __thiz.callMethod<jboolean>(
+			"pause",
+			"()Z");
+	}
+	jboolean JetPlayer::play()
+	{
+		return __thiz.callMethod<jboolean>(
+			"play",
 			"()Z");
 	}
 } // namespace __jni_impl::android::media

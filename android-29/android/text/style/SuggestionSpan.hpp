@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_STYLE_SUGGESTIONSPAN
 #define ANDROID_TEXT_STYLE_SUGGESTIONSPAN
 
+#include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
 namespace __jni_impl::android::os
@@ -50,11 +51,11 @@ namespace __jni_impl::android::text::style
 		QAndroidJniObject getLocale();
 		jint getFlags();
 		jint getSpanTypeId();
-		void setFlags(jint arg0);
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		QAndroidJniObject getSuggestions();
 		QAndroidJniObject getLocaleObject();
 		jint getUnderlineColor();
+		void setFlags(jint arg0);
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -198,20 +199,6 @@ namespace __jni_impl::android::text::style
 			"getSpanTypeId",
 			"()I");
 	}
-	void SuggestionSpan::setFlags(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFlags",
-			"(I)V",
-			arg0);
-	}
-	void SuggestionSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject SuggestionSpan::getSuggestions()
 	{
 		return __thiz.callObjectMethod(
@@ -229,6 +216,20 @@ namespace __jni_impl::android::text::style
 		return __thiz.callMethod<jint>(
 			"getUnderlineColor",
 			"()I");
+	}
+	void SuggestionSpan::setFlags(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFlags",
+			"(I)V",
+			arg0);
+	}
+	void SuggestionSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
+	{
+		__thiz.callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object());
 	}
 	jint SuggestionSpan::describeContents()
 	{

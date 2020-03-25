@@ -3,6 +3,9 @@
 #ifndef ANDROID_SPEECH_RECOGNITIONSERVICE
 #define ANDROID_SPEECH_RECOGNITIONSERVICE
 
+#include "../../__JniBaseClass.hpp"
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
 namespace __jni_impl::android::content

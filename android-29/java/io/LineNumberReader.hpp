@@ -3,6 +3,8 @@
 #ifndef JAVA_IO_LINENUMBERREADER
 #define JAVA_IO_LINENUMBERREADER
 
+#include "../../__JniBaseClass.hpp"
+#include "Reader.hpp"
 #include "BufferedReader.hpp"
 
 namespace __jni_impl::java::io

@@ -31,17 +31,17 @@ namespace __jni_impl::android::service::quicksettings
 		// Methods
 		jint getState();
 		void setState(jint arg0);
-		QAndroidJniObject getLabel();
-		void setIcon(__jni_impl::android::graphics::drawable::Icon arg0);
 		void setSubtitle(jstring arg0);
 		void setLabel(jstring arg0);
 		QAndroidJniObject getSubtitle();
 		void updateTile();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void setIcon(__jni_impl::android::graphics::drawable::Icon arg0);
 		QAndroidJniObject getContentDescription();
 		void setContentDescription(jstring arg0);
+		QAndroidJniObject getLabel();
 		QAndroidJniObject getIcon();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::quicksettings
 
@@ -99,19 +99,6 @@ namespace __jni_impl::android::service::quicksettings
 			"(I)V",
 			arg0);
 	}
-	QAndroidJniObject Tile::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;");
-	}
-	void Tile::setIcon(__jni_impl::android::graphics::drawable::Icon arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIcon",
-			"(Landroid/graphics/drawable/Icon;)V",
-			arg0.__jniObject().object());
-	}
 	void Tile::setSubtitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -138,19 +125,12 @@ namespace __jni_impl::android::service::quicksettings
 			"updateTile",
 			"()V");
 	}
-	jint Tile::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Tile::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	void Tile::setIcon(__jni_impl::android::graphics::drawable::Icon arg0)
 	{
 		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			"setIcon",
+			"(Landroid/graphics/drawable/Icon;)V",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject Tile::getContentDescription()
 	{
@@ -165,11 +145,31 @@ namespace __jni_impl::android::service::quicksettings
 			"(Ljava/lang/CharSequence;)V",
 			arg0);
 	}
+	QAndroidJniObject Tile::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;");
+	}
 	QAndroidJniObject Tile::getIcon()
 	{
 		return __thiz.callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;");
+	}
+	jint Tile::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void Tile::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::service::quicksettings
 

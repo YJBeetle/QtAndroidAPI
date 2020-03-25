@@ -21,8 +21,8 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		void onFinished(__jni_impl::android::content::SyncResult arg0);
 		QAndroidJniObject getSyncContextBinder();
+		void onFinished(__jni_impl::android::content::SyncResult arg0);
 	};
 } // namespace __jni_impl::android::content
 
@@ -41,18 +41,18 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
+	QAndroidJniObject SyncContext::getSyncContextBinder()
+	{
+		return __thiz.callObjectMethod(
+			"getSyncContextBinder",
+			"()Landroid/os/IBinder;");
+	}
 	void SyncContext::onFinished(__jni_impl::android::content::SyncResult arg0)
 	{
 		__thiz.callMethod<void>(
 			"onFinished",
 			"(Landroid/content/SyncResult;)V",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SyncContext::getSyncContextBinder()
-	{
-		return __thiz.callObjectMethod(
-			"getSyncContextBinder",
-			"()Landroid/os/IBinder;");
 	}
 } // namespace __jni_impl::android::content
 

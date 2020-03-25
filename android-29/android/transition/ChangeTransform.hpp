@@ -3,6 +3,7 @@
 #ifndef ANDROID_TRANSITION_CHANGETRANSFORM
 #define ANDROID_TRANSITION_CHANGETRANSFORM
 
+#include "../../__JniBaseClass.hpp"
 #include "Transition.hpp"
 
 namespace __jni_impl::android::content
@@ -35,13 +36,13 @@ namespace __jni_impl::android::transition
 		
 		// Methods
 		void setReparent(jboolean arg0);
-		jboolean getReparentWithOverlay();
-		void setReparentWithOverlay(jboolean arg0);
-		jboolean getReparent();
 		QAndroidJniObject getTransitionProperties();
 		QAndroidJniObject createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2);
 		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
 		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
+		jboolean getReparentWithOverlay();
+		void setReparentWithOverlay(jboolean arg0);
+		jboolean getReparent();
 	};
 } // namespace __jni_impl::android::transition
 
@@ -78,25 +79,6 @@ namespace __jni_impl::android::transition
 			"(Z)V",
 			arg0);
 	}
-	jboolean ChangeTransform::getReparentWithOverlay()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getReparentWithOverlay",
-			"()Z");
-	}
-	void ChangeTransform::setReparentWithOverlay(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReparentWithOverlay",
-			"(Z)V",
-			arg0);
-	}
-	jboolean ChangeTransform::getReparent()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getReparent",
-			"()Z");
-	}
 	QAndroidJniObject ChangeTransform::getTransitionProperties()
 	{
 		return __thiz.callObjectMethod(
@@ -125,6 +107,25 @@ namespace __jni_impl::android::transition
 			"captureEndValues",
 			"(Landroid/transition/TransitionValues;)V",
 			arg0.__jniObject().object());
+	}
+	jboolean ChangeTransform::getReparentWithOverlay()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getReparentWithOverlay",
+			"()Z");
+	}
+	void ChangeTransform::setReparentWithOverlay(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setReparentWithOverlay",
+			"(Z)V",
+			arg0);
+	}
+	jboolean ChangeTransform::getReparent()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getReparent",
+			"()Z");
 	}
 } // namespace __jni_impl::android::transition
 

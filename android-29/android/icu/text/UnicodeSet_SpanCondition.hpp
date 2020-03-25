@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_UNICODESET_SPANCONDITION
 #define ANDROID_ICU_TEXT_UNICODESET_SPANCONDITION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
 

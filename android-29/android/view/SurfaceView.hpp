@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_SURFACEVIEW
 #define ANDROID_VIEW_SURFACEVIEW
 
+#include "../../__JniBaseClass.hpp"
 #include "View.hpp"
 
 namespace __jni_impl::android::content

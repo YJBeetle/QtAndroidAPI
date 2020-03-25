@@ -9,10 +9,6 @@ namespace __jni_impl::android::webkit
 {
 	class WebView;
 }
-namespace __jni_impl::android::graphics
-{
-	class Bitmap;
-}
 namespace __jni_impl::android::view
 {
 	class View;
@@ -37,6 +33,10 @@ namespace __jni_impl::android::webkit
 {
 	class ConsoleMessage;
 }
+namespace __jni_impl::android::graphics
+{
+	class Bitmap;
+}
 namespace __jni_impl::android::webkit
 {
 	class WebChromeClient_FileChooserParams;
@@ -53,7 +53,6 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		void onReceivedIcon(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::graphics::Bitmap arg1);
 		void onProgressChanged(__jni_impl::android::webkit::WebView arg0, jint arg1);
 		void onReceivedTitle(__jni_impl::android::webkit::WebView arg0, jstring arg1);
 		void onReceivedTouchIconUrl(__jni_impl::android::webkit::WebView arg0, jstring arg1, jboolean arg2);
@@ -74,23 +73,24 @@ namespace __jni_impl::android::webkit
 		void onPermissionRequest(__jni_impl::android::webkit::PermissionRequest arg0);
 		void onPermissionRequestCanceled(__jni_impl::android::webkit::PermissionRequest arg0);
 		jboolean onJsTimeout();
-		void onConsoleMessage(jstring arg0, jint arg1, jstring arg2);
 		jboolean onConsoleMessage(__jni_impl::android::webkit::ConsoleMessage arg0);
+		void onConsoleMessage(jstring arg0, jint arg1, jstring arg2);
 		QAndroidJniObject getDefaultVideoPoster();
 		QAndroidJniObject getVideoLoadingProgressView();
 		void getVisitedHistory(__jni_impl::__JniBaseClass arg0);
 		jboolean onShowFileChooser(__jni_impl::android::webkit::WebView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::webkit::WebChromeClient_FileChooserParams arg2);
+		void onReceivedIcon(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::graphics::Bitmap arg1);
 	};
 } // namespace __jni_impl::android::webkit
 
 #include "WebView.hpp"
-#include "../graphics/Bitmap.hpp"
 #include "../view/View.hpp"
 #include "../os/Message.hpp"
 #include "JsResult.hpp"
 #include "JsPromptResult.hpp"
 #include "PermissionRequest.hpp"
 #include "ConsoleMessage.hpp"
+#include "../graphics/Bitmap.hpp"
 #include "WebChromeClient_FileChooserParams.hpp"
 
 namespace __jni_impl::android::webkit
@@ -106,14 +106,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	void WebChromeClient::onReceivedIcon(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::graphics::Bitmap arg1)
-	{
-		__thiz.callMethod<void>(
-			"onReceivedIcon",
-			"(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	void WebChromeClient::onProgressChanged(__jni_impl::android::webkit::WebView arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -282,6 +274,13 @@ namespace __jni_impl::android::webkit
 			"onJsTimeout",
 			"()Z");
 	}
+	jboolean WebChromeClient::onConsoleMessage(__jni_impl::android::webkit::ConsoleMessage arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onConsoleMessage",
+			"(Landroid/webkit/ConsoleMessage;)Z",
+			arg0.__jniObject().object());
+	}
 	void WebChromeClient::onConsoleMessage(jstring arg0, jint arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -290,13 +289,6 @@ namespace __jni_impl::android::webkit
 			arg0,
 			arg1,
 			arg2);
-	}
-	jboolean WebChromeClient::onConsoleMessage(__jni_impl::android::webkit::ConsoleMessage arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onConsoleMessage",
-			"(Landroid/webkit/ConsoleMessage;)Z",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject WebChromeClient::getDefaultVideoPoster()
 	{
@@ -325,6 +317,14 @@ namespace __jni_impl::android::webkit
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
+	}
+	void WebChromeClient::onReceivedIcon(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::graphics::Bitmap arg1)
+	{
+		__thiz.callMethod<void>(
+			"onReceivedIcon",
+			"(Landroid/webkit/WebView;Landroid/graphics/Bitmap;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::webkit
 

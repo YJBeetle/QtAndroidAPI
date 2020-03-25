@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::view
 {
+	class ViewGroup;
+}
+namespace __jni_impl::android::view
+{
 	class View;
 }
 namespace __jni_impl::android::view::accessibility
 {
 	class AccessibilityEvent;
-}
-namespace __jni_impl::android::view
-{
-	class ViewGroup;
 }
 namespace __jni_impl::android::view::accessibility
 {
@@ -41,7 +41,6 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jboolean dispatchPopulateAccessibilityEvent(__jni_impl::android::view::View arg0, __jni_impl::android::view::accessibility::AccessibilityEvent arg1);
 		jboolean onRequestSendAccessibilityEvent(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::accessibility::AccessibilityEvent arg2);
 		void sendAccessibilityEvent(__jni_impl::android::view::View arg0, jint arg1);
 		void sendAccessibilityEventUnchecked(__jni_impl::android::view::View arg0, __jni_impl::android::view::accessibility::AccessibilityEvent arg1);
@@ -51,12 +50,13 @@ namespace __jni_impl::android::view
 		void addExtraDataToAccessibilityNodeInfo(__jni_impl::android::view::View arg0, __jni_impl::android::view::accessibility::AccessibilityNodeInfo arg1, jstring arg2, __jni_impl::android::os::Bundle arg3);
 		QAndroidJniObject getAccessibilityNodeProvider(__jni_impl::android::view::View arg0);
 		jboolean performAccessibilityAction(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
+		jboolean dispatchPopulateAccessibilityEvent(__jni_impl::android::view::View arg0, __jni_impl::android::view::accessibility::AccessibilityEvent arg1);
 	};
 } // namespace __jni_impl::android::view
 
+#include "ViewGroup.hpp"
 #include "View.hpp"
 #include "accessibility/AccessibilityEvent.hpp"
-#include "ViewGroup.hpp"
 #include "accessibility/AccessibilityNodeInfo.hpp"
 #include "../os/Bundle.hpp"
 #include "accessibility/AccessibilityNodeProvider.hpp"
@@ -74,14 +74,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean View_AccessibilityDelegate::dispatchPopulateAccessibilityEvent(__jni_impl::android::view::View arg0, __jni_impl::android::view::accessibility::AccessibilityEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchPopulateAccessibilityEvent",
-			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	jboolean View_AccessibilityDelegate::onRequestSendAccessibilityEvent(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::accessibility::AccessibilityEvent arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -156,6 +148,14 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object());
+	}
+	jboolean View_AccessibilityDelegate::dispatchPopulateAccessibilityEvent(__jni_impl::android::view::View arg0, __jni_impl::android::view::accessibility::AccessibilityEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchPopulateAccessibilityEvent",
+			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::view
 

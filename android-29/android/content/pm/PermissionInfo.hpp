@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_PM_PERMISSIONINFO
 #define ANDROID_CONTENT_PM_PERMISSIONINFO
 
+#include "../../../__JniBaseClass.hpp"
 #include "PackageItemInfo.hpp"
 
 namespace __jni_impl::android::os

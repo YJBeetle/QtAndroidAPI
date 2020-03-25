@@ -32,9 +32,9 @@ namespace __jni_impl::android::net
 		jboolean contains(__jni_impl::java::net::InetAddress arg0);
 		QAndroidJniObject getAddress();
 		jint getPrefixLength();
+		QAndroidJniObject getRawAddress();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getRawAddress();
 	};
 } // namespace __jni_impl::android::net
 
@@ -99,6 +99,12 @@ namespace __jni_impl::android::net
 			"getPrefixLength",
 			"()I");
 	}
+	QAndroidJniObject IpPrefix::getRawAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getRawAddress",
+			"()[B");
+	}
 	jint IpPrefix::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -112,12 +118,6 @@ namespace __jni_impl::android::net
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject IpPrefix::getRawAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getRawAddress",
-			"()[B");
 	}
 } // namespace __jni_impl::android::net
 

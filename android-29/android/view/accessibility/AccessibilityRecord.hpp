@@ -43,9 +43,6 @@ namespace __jni_impl::android::view::accessibility
 		jint getScrollX();
 		jint getScrollY();
 		jint getWindowId();
-		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityRecord arg0);
-		static QAndroidJniObject obtain();
-		void recycle();
 		jboolean isChecked();
 		void setChecked(jboolean arg0);
 		jboolean isPassword();
@@ -76,6 +73,9 @@ namespace __jni_impl::android::view::accessibility
 		void setBeforeText(jstring arg0);
 		QAndroidJniObject getParcelableData();
 		void setParcelableData(__jni_impl::__JniBaseClass arg0);
+		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityRecord arg0);
+		static QAndroidJniObject obtain();
+		void recycle();
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -211,27 +211,6 @@ namespace __jni_impl::android::view::accessibility
 		return __thiz.callMethod<jint>(
 			"getWindowId",
 			"()I");
-	}
-	QAndroidJniObject AccessibilityRecord::obtain(__jni_impl::android::view::accessibility::AccessibilityRecord arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityRecord",
-			"obtain",
-			"(Landroid/view/accessibility/AccessibilityRecord;)Landroid/view/accessibility/AccessibilityRecord;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AccessibilityRecord::obtain()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityRecord",
-			"obtain",
-			"()Landroid/view/accessibility/AccessibilityRecord;");
-	}
-	void AccessibilityRecord::recycle()
-	{
-		__thiz.callMethod<void>(
-			"recycle",
-			"()V");
 	}
 	jboolean AccessibilityRecord::isChecked()
 	{
@@ -427,6 +406,27 @@ namespace __jni_impl::android::view::accessibility
 			"setParcelableData",
 			"(Landroid/os/Parcelable;)V",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject AccessibilityRecord::obtain(__jni_impl::android::view::accessibility::AccessibilityRecord arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityRecord",
+			"obtain",
+			"(Landroid/view/accessibility/AccessibilityRecord;)Landroid/view/accessibility/AccessibilityRecord;",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject AccessibilityRecord::obtain()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityRecord",
+			"obtain",
+			"()Landroid/view/accessibility/AccessibilityRecord;");
+	}
+	void AccessibilityRecord::recycle()
+	{
+		__thiz.callMethod<void>(
+			"recycle",
+			"()V");
 	}
 } // namespace __jni_impl::android::view::accessibility
 

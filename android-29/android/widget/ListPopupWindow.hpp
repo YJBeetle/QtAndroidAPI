@@ -13,21 +13,21 @@ namespace __jni_impl::android::view
 {
 	class View;
 }
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
-}
 namespace __jni_impl::android::view
 {
 	class KeyEvent;
 }
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
+}
 namespace __jni_impl::android::widget
 {
 	class ListView;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
 }
 
 namespace __jni_impl::android::widget
@@ -52,11 +52,33 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void show();
-		void setAnchorView(__jni_impl::android::view::View arg0);
 		void setWidth(jint arg0);
 		void setHeight(jint arg0);
 		jint getWidth();
 		jint getHeight();
+		jboolean isShowing();
+		void dismiss();
+		void setOnDismissListener(__jni_impl::__JniBaseClass arg0);
+		void setOnItemClickListener(__jni_impl::__JniBaseClass arg0);
+		jboolean performItemClick(jint arg0);
+		void setOnItemSelectedListener(__jni_impl::__JniBaseClass arg0);
+		void setAdapter(__jni_impl::__JniBaseClass arg0);
+		jint getSelectedItemPosition();
+		jlong getSelectedItemId();
+		QAndroidJniObject getSelectedView();
+		QAndroidJniObject getSelectedItem();
+		void setSelection(jint arg0);
+		jboolean onKeyPreIme(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		QAndroidJniObject getBackground();
+		void setAnchorView(__jni_impl::android::view::View arg0);
+		void clearListSelection();
+		jint getInputMethodMode();
+		void setInputMethodMode(jint arg0);
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		QAndroidJniObject getListView();
+		void setSoftInputMode(jint arg0);
 		void setPromptPosition(jint arg0);
 		jint getPromptPosition();
 		void setModal(jboolean arg0);
@@ -79,37 +101,15 @@ namespace __jni_impl::android::widget
 		void postShow();
 		jboolean isInputMethodNotNeeded();
 		QAndroidJniObject createDragToOpenListener(__jni_impl::android::view::View arg0);
-		jboolean isShowing();
-		void dismiss();
-		void setOnDismissListener(__jni_impl::__JniBaseClass arg0);
-		void setOnItemClickListener(__jni_impl::__JniBaseClass arg0);
-		jboolean performItemClick(jint arg0);
-		void setOnItemSelectedListener(__jni_impl::__JniBaseClass arg0);
-		void setAdapter(__jni_impl::__JniBaseClass arg0);
-		jint getSelectedItemPosition();
-		jlong getSelectedItemId();
-		QAndroidJniObject getSelectedView();
-		QAndroidJniObject getSelectedItem();
-		void setSelection(jint arg0);
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyPreIme(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		QAndroidJniObject getBackground();
-		void setSoftInputMode(jint arg0);
-		QAndroidJniObject getListView();
-		void clearListSelection();
-		jint getInputMethodMode();
-		void setInputMethodMode(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
-#include "../graphics/drawable/Drawable.hpp"
-#include "../graphics/Rect.hpp"
 #include "../view/KeyEvent.hpp"
+#include "../graphics/drawable/Drawable.hpp"
 #include "ListView.hpp"
+#include "../graphics/Rect.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -200,13 +200,6 @@ namespace __jni_impl::android::widget
 			"show",
 			"()V");
 	}
-	void ListPopupWindow::setAnchorView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAnchorView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
-	}
 	void ListPopupWindow::setWidth(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -232,6 +225,160 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getHeight",
 			"()I");
+	}
+	jboolean ListPopupWindow::isShowing()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isShowing",
+			"()Z");
+	}
+	void ListPopupWindow::dismiss()
+	{
+		__thiz.callMethod<void>(
+			"dismiss",
+			"()V");
+	}
+	void ListPopupWindow::setOnDismissListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnDismissListener",
+			"(Landroid/widget/PopupWindow$OnDismissListener;)V",
+			arg0.__jniObject().object());
+	}
+	void ListPopupWindow::setOnItemClickListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnItemClickListener",
+			"(Landroid/widget/AdapterView$OnItemClickListener;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean ListPopupWindow::performItemClick(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"performItemClick",
+			"(I)Z",
+			arg0);
+	}
+	void ListPopupWindow::setOnItemSelectedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnItemSelectedListener",
+			"(Landroid/widget/AdapterView$OnItemSelectedListener;)V",
+			arg0.__jniObject().object());
+	}
+	void ListPopupWindow::setAdapter(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAdapter",
+			"(Landroid/widget/ListAdapter;)V",
+			arg0.__jniObject().object());
+	}
+	jint ListPopupWindow::getSelectedItemPosition()
+	{
+		return __thiz.callMethod<jint>(
+			"getSelectedItemPosition",
+			"()I");
+	}
+	jlong ListPopupWindow::getSelectedItemId()
+	{
+		return __thiz.callMethod<jlong>(
+			"getSelectedItemId",
+			"()J");
+	}
+	QAndroidJniObject ListPopupWindow::getSelectedView()
+	{
+		return __thiz.callObjectMethod(
+			"getSelectedView",
+			"()Landroid/view/View;");
+	}
+	QAndroidJniObject ListPopupWindow::getSelectedItem()
+	{
+		return __thiz.callObjectMethod(
+			"getSelectedItem",
+			"()Ljava/lang/Object;");
+	}
+	void ListPopupWindow::setSelection(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSelection",
+			"(I)V",
+			arg0);
+	}
+	jboolean ListPopupWindow::onKeyPreIme(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyPreIme",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void ListPopupWindow::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBackgroundDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject ListPopupWindow::getBackground()
+	{
+		return __thiz.callObjectMethod(
+			"getBackground",
+			"()Landroid/graphics/drawable/Drawable;");
+	}
+	void ListPopupWindow::setAnchorView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAnchorView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object());
+	}
+	void ListPopupWindow::clearListSelection()
+	{
+		__thiz.callMethod<void>(
+			"clearListSelection",
+			"()V");
+	}
+	jint ListPopupWindow::getInputMethodMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getInputMethodMode",
+			"()I");
+	}
+	void ListPopupWindow::setInputMethodMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInputMethodMode",
+			"(I)V",
+			arg0);
+	}
+	jboolean ListPopupWindow::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	jboolean ListPopupWindow::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	QAndroidJniObject ListPopupWindow::getListView()
+	{
+		return __thiz.callObjectMethod(
+			"getListView",
+			"()Landroid/widget/ListView;");
+	}
+	void ListPopupWindow::setSoftInputMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSoftInputMode",
+			"(I)V",
+			arg0);
 	}
 	void ListPopupWindow::setPromptPosition(jint arg0)
 	{
@@ -376,153 +523,6 @@ namespace __jni_impl::android::widget
 			"createDragToOpenListener",
 			"(Landroid/view/View;)Landroid/view/View$OnTouchListener;",
 			arg0.__jniObject().object());
-	}
-	jboolean ListPopupWindow::isShowing()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isShowing",
-			"()Z");
-	}
-	void ListPopupWindow::dismiss()
-	{
-		__thiz.callMethod<void>(
-			"dismiss",
-			"()V");
-	}
-	void ListPopupWindow::setOnDismissListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnDismissListener",
-			"(Landroid/widget/PopupWindow$OnDismissListener;)V",
-			arg0.__jniObject().object());
-	}
-	void ListPopupWindow::setOnItemClickListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnItemClickListener",
-			"(Landroid/widget/AdapterView$OnItemClickListener;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean ListPopupWindow::performItemClick(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"performItemClick",
-			"(I)Z",
-			arg0);
-	}
-	void ListPopupWindow::setOnItemSelectedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnItemSelectedListener",
-			"(Landroid/widget/AdapterView$OnItemSelectedListener;)V",
-			arg0.__jniObject().object());
-	}
-	void ListPopupWindow::setAdapter(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAdapter",
-			"(Landroid/widget/ListAdapter;)V",
-			arg0.__jniObject().object());
-	}
-	jint ListPopupWindow::getSelectedItemPosition()
-	{
-		return __thiz.callMethod<jint>(
-			"getSelectedItemPosition",
-			"()I");
-	}
-	jlong ListPopupWindow::getSelectedItemId()
-	{
-		return __thiz.callMethod<jlong>(
-			"getSelectedItemId",
-			"()J");
-	}
-	QAndroidJniObject ListPopupWindow::getSelectedView()
-	{
-		return __thiz.callObjectMethod(
-			"getSelectedView",
-			"()Landroid/view/View;");
-	}
-	QAndroidJniObject ListPopupWindow::getSelectedItem()
-	{
-		return __thiz.callObjectMethod(
-			"getSelectedItem",
-			"()Ljava/lang/Object;");
-	}
-	void ListPopupWindow::setSelection(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSelection",
-			"(I)V",
-			arg0);
-	}
-	jboolean ListPopupWindow::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean ListPopupWindow::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean ListPopupWindow::onKeyPreIme(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyPreIme",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void ListPopupWindow::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBackgroundDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ListPopupWindow::getBackground()
-	{
-		return __thiz.callObjectMethod(
-			"getBackground",
-			"()Landroid/graphics/drawable/Drawable;");
-	}
-	void ListPopupWindow::setSoftInputMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSoftInputMode",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject ListPopupWindow::getListView()
-	{
-		return __thiz.callObjectMethod(
-			"getListView",
-			"()Landroid/widget/ListView;");
-	}
-	void ListPopupWindow::clearListSelection()
-	{
-		__thiz.callMethod<void>(
-			"clearListSelection",
-			"()V");
-	}
-	jint ListPopupWindow::getInputMethodMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getInputMethodMode",
-			"()I");
-	}
-	void ListPopupWindow::setInputMethodMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInputMethodMode",
-			"(I)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::widget
 

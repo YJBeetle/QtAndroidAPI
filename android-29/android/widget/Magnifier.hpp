@@ -32,23 +32,23 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void update();
+		void show(jfloat arg0, jfloat arg1);
+		void show(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		jint getSourceWidth();
 		jint getSourceHeight();
 		jint getDefaultHorizontalSourceToMagnifierOffset();
 		jint getDefaultVerticalSourceToMagnifierOffset();
 		jboolean isClippingEnabled();
 		QAndroidJniObject getSourcePosition();
-		void show(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void show(jfloat arg0, jfloat arg1);
 		jint getWidth();
 		jint getHeight();
-		QAndroidJniObject getPosition();
-		void setZoom(jfloat arg0);
-		jfloat getZoom();
 		void dismiss();
+		void setZoom(jfloat arg0);
+		QAndroidJniObject getPosition();
 		QAndroidJniObject getOverlay();
 		jfloat getElevation();
 		jfloat getCornerRadius();
+		jfloat getZoom();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -88,6 +88,24 @@ namespace __jni_impl::android::widget
 			"update",
 			"()V");
 	}
+	void Magnifier::show(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"show",
+			"(FF)V",
+			arg0,
+			arg1);
+	}
+	void Magnifier::show(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	{
+		__thiz.callMethod<void>(
+			"show",
+			"(FFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
 	jint Magnifier::getSourceWidth()
 	{
 		return __thiz.callMethod<jint>(
@@ -124,24 +142,6 @@ namespace __jni_impl::android::widget
 			"getSourcePosition",
 			"()Landroid/graphics/Point;");
 	}
-	void Magnifier::show(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"(FFFF)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	void Magnifier::show(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"(FF)V",
-			arg0,
-			arg1);
-	}
 	jint Magnifier::getWidth()
 	{
 		return __thiz.callMethod<jint>(
@@ -154,11 +154,11 @@ namespace __jni_impl::android::widget
 			"getHeight",
 			"()I");
 	}
-	QAndroidJniObject Magnifier::getPosition()
+	void Magnifier::dismiss()
 	{
-		return __thiz.callObjectMethod(
-			"getPosition",
-			"()Landroid/graphics/Point;");
+		__thiz.callMethod<void>(
+			"dismiss",
+			"()V");
 	}
 	void Magnifier::setZoom(jfloat arg0)
 	{
@@ -167,17 +167,11 @@ namespace __jni_impl::android::widget
 			"(F)V",
 			arg0);
 	}
-	jfloat Magnifier::getZoom()
+	QAndroidJniObject Magnifier::getPosition()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getZoom",
-			"()F");
-	}
-	void Magnifier::dismiss()
-	{
-		__thiz.callMethod<void>(
-			"dismiss",
-			"()V");
+		return __thiz.callObjectMethod(
+			"getPosition",
+			"()Landroid/graphics/Point;");
 	}
 	QAndroidJniObject Magnifier::getOverlay()
 	{
@@ -195,6 +189,12 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callMethod<jfloat>(
 			"getCornerRadius",
+			"()F");
+	}
+	jfloat Magnifier::getZoom()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getZoom",
 			"()F");
 	}
 } // namespace __jni_impl::android::widget

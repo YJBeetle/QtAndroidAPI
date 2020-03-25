@@ -41,11 +41,11 @@ namespace __jni_impl::android::net
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject setAuthentication(__jni_impl::android::net::IpSecAlgorithm arg0);
 		QAndroidJniObject setEncryption(__jni_impl::android::net::IpSecAlgorithm arg0);
 		QAndroidJniObject setAuthenticatedEncryption(__jni_impl::android::net::IpSecAlgorithm arg0);
 		QAndroidJniObject setIpv4Encapsulation(__jni_impl::android::net::IpSecManager_UdpEncapsulationSocket arg0, jint arg1);
 		QAndroidJniObject buildTransportModeTransform(__jni_impl::java::net::InetAddress arg0, __jni_impl::android::net::IpSecManager_SecurityParameterIndex arg1);
+		QAndroidJniObject setAuthentication(__jni_impl::android::net::IpSecAlgorithm arg0);
 	};
 } // namespace __jni_impl::android::net
 
@@ -70,13 +70,6 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject IpSecTransform_Builder::setAuthentication(__jni_impl::android::net::IpSecAlgorithm arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAuthentication",
-			"(Landroid/net/IpSecAlgorithm;)Landroid/net/IpSecTransform$Builder;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject IpSecTransform_Builder::setEncryption(__jni_impl::android::net::IpSecAlgorithm arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -106,6 +99,13 @@ namespace __jni_impl::android::net
 			"(Ljava/net/InetAddress;Landroid/net/IpSecManager$SecurityParameterIndex;)Landroid/net/IpSecTransform;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
+	}
+	QAndroidJniObject IpSecTransform_Builder::setAuthentication(__jni_impl::android::net::IpSecAlgorithm arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAuthentication",
+			"(Landroid/net/IpSecAlgorithm;)Landroid/net/IpSecTransform$Builder;",
+			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::net
 

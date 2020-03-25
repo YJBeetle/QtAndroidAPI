@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_TIMEOUTEXCEPTION
 #define JAVA_UTIL_CONCURRENT_TIMEOUTEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
 

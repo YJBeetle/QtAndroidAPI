@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_CASEMAP_UPPER
 #define ANDROID_ICU_TEXT_CASEMAP_UPPER
 
+#include "../../../__JniBaseClass.hpp"
 #include "CaseMap.hpp"
 
 namespace __jni_impl::java::util

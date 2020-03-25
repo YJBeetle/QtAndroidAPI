@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_STYLE_METRICAFFECTINGSPAN
 #define ANDROID_TEXT_STYLE_METRICAFFECTINGSPAN
 
+#include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
 namespace __jni_impl::android::text::style

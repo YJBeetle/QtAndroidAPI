@@ -3,6 +3,7 @@
 #ifndef ANDROID_WEBKIT_HTTPAUTHHANDLER
 #define ANDROID_WEBKIT_HTTPAUTHHANDLER
 
+#include "../../__JniBaseClass.hpp"
 #include "../os/Handler.hpp"
 
 
@@ -18,8 +19,8 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		void cancel();
-		void proceed(jstring arg0, jstring arg1);
 		jboolean useHttpAuthUsernamePassword();
+		void proceed(jstring arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -43,6 +44,12 @@ namespace __jni_impl::android::webkit
 			"cancel",
 			"()V");
 	}
+	jboolean HttpAuthHandler::useHttpAuthUsernamePassword()
+	{
+		return __thiz.callMethod<jboolean>(
+			"useHttpAuthUsernamePassword",
+			"()Z");
+	}
 	void HttpAuthHandler::proceed(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -50,12 +57,6 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1);
-	}
-	jboolean HttpAuthHandler::useHttpAuthUsernamePassword()
-	{
-		return __thiz.callMethod<jboolean>(
-			"useHttpAuthUsernamePassword",
-			"()Z");
 	}
 } // namespace __jni_impl::android::webkit
 

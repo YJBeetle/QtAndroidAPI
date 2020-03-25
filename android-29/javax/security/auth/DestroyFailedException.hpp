@@ -3,6 +3,7 @@
 #ifndef JAVAX_SECURITY_AUTH_DESTROYFAILEDEXCEPTION
 #define JAVAX_SECURITY_AUTH_DESTROYFAILEDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
 

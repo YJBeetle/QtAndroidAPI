@@ -3,6 +3,8 @@
 #ifndef JAVA_SECURITY_DIGESTEXCEPTION
 #define JAVA_SECURITY_DIGESTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "GeneralSecurityException.hpp"
 
 

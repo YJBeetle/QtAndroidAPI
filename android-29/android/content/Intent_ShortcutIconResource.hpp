@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content
@@ -29,14 +29,14 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		QAndroidJniObject toString();
+		static QAndroidJniObject fromContext(__jni_impl::android::content::Context arg0, jint arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject fromContext(__jni_impl::android::content::Context arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
-#include "../os/Parcel.hpp"
 #include "Context.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -76,6 +76,15 @@ namespace __jni_impl::android::content
 			"toString",
 			"()Ljava/lang/String;");
 	}
+	QAndroidJniObject Intent_ShortcutIconResource::fromContext(__jni_impl::android::content::Context arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.Intent$ShortcutIconResource",
+			"fromContext",
+			"(Landroid/content/Context;I)Landroid/content/Intent$ShortcutIconResource;",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint Intent_ShortcutIconResource::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -87,15 +96,6 @@ namespace __jni_impl::android::content
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject Intent_ShortcutIconResource::fromContext(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.Intent$ShortcutIconResource",
-			"fromContext",
-			"(Landroid/content/Context;I)Landroid/content/Intent$ShortcutIconResource;",
 			arg0.__jniObject().object(),
 			arg1);
 	}

@@ -3,6 +3,7 @@
 #ifndef JAVAX_XML_TRANSFORM_SAX_SAXTRANSFORMERFACTORY
 #define JAVAX_XML_TRANSFORM_SAX_SAXTRANSFORMERFACTORY
 
+#include "../../../../__JniBaseClass.hpp"
 #include "../TransformerFactory.hpp"
 
 

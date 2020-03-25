@@ -3,6 +3,7 @@
 #ifndef ANDROID_NET_WIFI_AWARE_PARCELABLEPEERHANDLE
 #define ANDROID_NET_WIFI_AWARE_PARCELABLEPEERHANDLE
 
+#include "../../../../__JniBaseClass.hpp"
 #include "PeerHandle.hpp"
 
 namespace __jni_impl::android::net::wifi::aware

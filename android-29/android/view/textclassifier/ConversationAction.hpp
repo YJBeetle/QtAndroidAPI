@@ -42,11 +42,11 @@ namespace __jni_impl::android::view::textclassifier
 		// Methods
 		QAndroidJniObject getType();
 		QAndroidJniObject getExtras();
-		jfloat getConfidenceScore();
-		QAndroidJniObject getTextReply();
+		QAndroidJniObject getAction();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getAction();
+		jfloat getConfidenceScore();
+		QAndroidJniObject getTextReply();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -156,17 +156,11 @@ namespace __jni_impl::android::view::textclassifier
 			"getExtras",
 			"()Landroid/os/Bundle;");
 	}
-	jfloat ConversationAction::getConfidenceScore()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getConfidenceScore",
-			"()F");
-	}
-	QAndroidJniObject ConversationAction::getTextReply()
+	QAndroidJniObject ConversationAction::getAction()
 	{
 		return __thiz.callObjectMethod(
-			"getTextReply",
-			"()Ljava/lang/CharSequence;");
+			"getAction",
+			"()Landroid/app/RemoteAction;");
 	}
 	jint ConversationAction::describeContents()
 	{
@@ -182,11 +176,17 @@ namespace __jni_impl::android::view::textclassifier
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	QAndroidJniObject ConversationAction::getAction()
+	jfloat ConversationAction::getConfidenceScore()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"()F");
+	}
+	QAndroidJniObject ConversationAction::getTextReply()
 	{
 		return __thiz.callObjectMethod(
-			"getAction",
-			"()Landroid/app/RemoteAction;");
+			"getTextReply",
+			"()Ljava/lang/CharSequence;");
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

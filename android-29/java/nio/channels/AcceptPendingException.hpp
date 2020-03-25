@@ -3,6 +3,9 @@
 #ifndef JAVA_NIO_CHANNELS_ACCEPTPENDINGEXCEPTION
 #define JAVA_NIO_CHANNELS_ACCEPTPENDINGEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalStateException.hpp"
 
 

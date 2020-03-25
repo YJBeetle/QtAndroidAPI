@@ -34,6 +34,11 @@ namespace __jni_impl::android::accounts
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		QAndroidJniObject getIBinder();
+		QAndroidJniObject getAuthTokenLabel(jstring arg0);
+		QAndroidJniObject getAccountRemovalAllowed(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1);
+		QAndroidJniObject getAccountCredentialsForCloning(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1);
+		QAndroidJniObject addAccountFromCredentials(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1, __jni_impl::android::os::Bundle arg2);
 		QAndroidJniObject hasFeatures(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1, jarray arg2);
 		QAndroidJniObject getAuthToken(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1, jstring arg2, __jni_impl::android::os::Bundle arg3);
 		QAndroidJniObject addAccount(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, jstring arg2, jarray arg3, __jni_impl::android::os::Bundle arg4);
@@ -44,11 +49,6 @@ namespace __jni_impl::android::accounts
 		QAndroidJniObject startUpdateCredentialsSession(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1, jstring arg2, __jni_impl::android::os::Bundle arg3);
 		QAndroidJniObject finishSession(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
 		QAndroidJniObject isCredentialsUpdateSuggested(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1, jstring arg2);
-		QAndroidJniObject getIBinder();
-		QAndroidJniObject getAuthTokenLabel(jstring arg0);
-		QAndroidJniObject getAccountRemovalAllowed(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1);
-		QAndroidJniObject getAccountCredentialsForCloning(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1);
-		QAndroidJniObject addAccountFromCredentials(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1, __jni_impl::android::os::Bundle arg2);
 	};
 } // namespace __jni_impl::android::accounts
 
@@ -78,6 +78,44 @@ namespace __jni_impl::android::accounts
 	}
 	
 	// Methods
+	QAndroidJniObject AbstractAccountAuthenticator::getIBinder()
+	{
+		return __thiz.callObjectMethod(
+			"getIBinder",
+			"()Landroid/os/IBinder;");
+	}
+	QAndroidJniObject AbstractAccountAuthenticator::getAuthTokenLabel(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAuthTokenLabel",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0);
+	}
+	QAndroidJniObject AbstractAccountAuthenticator::getAccountRemovalAllowed(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getAccountRemovalAllowed",
+			"(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;)Landroid/os/Bundle;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	QAndroidJniObject AbstractAccountAuthenticator::getAccountCredentialsForCloning(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getAccountCredentialsForCloning",
+			"(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;)Landroid/os/Bundle;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	QAndroidJniObject AbstractAccountAuthenticator::addAccountFromCredentials(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		return __thiz.callObjectMethod(
+			"addAccountFromCredentials",
+			"(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Landroid/os/Bundle;)Landroid/os/Bundle;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object());
+	}
 	QAndroidJniObject AbstractAccountAuthenticator::hasFeatures(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1, jarray arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -173,44 +211,6 @@ namespace __jni_impl::android::accounts
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2);
-	}
-	QAndroidJniObject AbstractAccountAuthenticator::getIBinder()
-	{
-		return __thiz.callObjectMethod(
-			"getIBinder",
-			"()Landroid/os/IBinder;");
-	}
-	QAndroidJniObject AbstractAccountAuthenticator::getAuthTokenLabel(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAuthTokenLabel",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject AbstractAccountAuthenticator::getAccountRemovalAllowed(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getAccountRemovalAllowed",
-			"(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;)Landroid/os/Bundle;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject AbstractAccountAuthenticator::getAccountCredentialsForCloning(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getAccountCredentialsForCloning",
-			"(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;)Landroid/os/Bundle;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject AbstractAccountAuthenticator::addAccountFromCredentials(__jni_impl::android::accounts::AccountAuthenticatorResponse arg0, __jni_impl::android::accounts::Account arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addAccountFromCredentials",
-			"(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Landroid/os/Bundle;)Landroid/os/Bundle;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
 	}
 } // namespace __jni_impl::android::accounts
 

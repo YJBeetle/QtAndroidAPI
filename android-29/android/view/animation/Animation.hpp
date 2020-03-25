@@ -42,6 +42,7 @@ namespace __jni_impl::android::view::animation
 		jlong getDuration();
 		void cancel();
 		jint getRepeatCount();
+		void setRepeatCount(jint arg0);
 		jboolean isInitialized();
 		void setStartOffset(jlong arg0);
 		void restrictDuration(jlong arg0);
@@ -65,18 +66,17 @@ namespace __jni_impl::android::view::animation
 		void setAnimationListener(__jni_impl::__JniBaseClass arg0);
 		jlong computeDurationHint();
 		jboolean hasEnded();
-		jlong getStartTime();
-		void setRepeatCount(jint arg0);
-		jboolean hasStarted();
+		jlong getStartOffset();
+		void setBackgroundColor(jint arg0);
 		void setDuration(jlong arg0);
 		void setInterpolator(__jni_impl::__JniBaseClass arg0);
 		void setInterpolator(__jni_impl::android::content::Context arg0, jint arg1);
 		QAndroidJniObject getInterpolator();
 		jint getBackgroundColor();
-		jlong getStartOffset();
-		void setBackgroundColor(jint arg0);
-		jboolean getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1);
+		jlong getStartTime();
+		jboolean hasStarted();
 		jboolean getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1, jfloat arg2);
+		jboolean getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1);
 	};
 } // namespace __jni_impl::android::view::animation
 
@@ -203,6 +203,13 @@ namespace __jni_impl::android::view::animation
 		return __thiz.callMethod<jint>(
 			"getRepeatCount",
 			"()I");
+	}
+	void Animation::setRepeatCount(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRepeatCount",
+			"(I)V",
+			arg0);
 	}
 	jboolean Animation::isInitialized()
 	{
@@ -353,24 +360,18 @@ namespace __jni_impl::android::view::animation
 			"hasEnded",
 			"()Z");
 	}
-	jlong Animation::getStartTime()
+	jlong Animation::getStartOffset()
 	{
 		return __thiz.callMethod<jlong>(
-			"getStartTime",
+			"getStartOffset",
 			"()J");
 	}
-	void Animation::setRepeatCount(jint arg0)
+	void Animation::setBackgroundColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setRepeatCount",
+			"setBackgroundColor",
 			"(I)V",
 			arg0);
-	}
-	jboolean Animation::hasStarted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasStarted",
-			"()Z");
 	}
 	void Animation::setDuration(jlong arg0)
 	{
@@ -406,26 +407,17 @@ namespace __jni_impl::android::view::animation
 			"getBackgroundColor",
 			"()I");
 	}
-	jlong Animation::getStartOffset()
+	jlong Animation::getStartTime()
 	{
 		return __thiz.callMethod<jlong>(
-			"getStartOffset",
+			"getStartTime",
 			"()J");
 	}
-	void Animation::setBackgroundColor(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBackgroundColor",
-			"(I)V",
-			arg0);
-	}
-	jboolean Animation::getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1)
+	jboolean Animation::hasStarted()
 	{
 		return __thiz.callMethod<jboolean>(
-			"getTransformation",
-			"(JLandroid/view/animation/Transformation;)Z",
-			arg0,
-			arg1.__jniObject().object());
+			"hasStarted",
+			"()Z");
 	}
 	jboolean Animation::getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1, jfloat arg2)
 	{
@@ -435,6 +427,14 @@ namespace __jni_impl::android::view::animation
 			arg0,
 			arg1.__jniObject().object(),
 			arg2);
+	}
+	jboolean Animation::getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getTransformation",
+			"(JLandroid/view/animation/Transformation;)Z",
+			arg0,
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::view::animation
 

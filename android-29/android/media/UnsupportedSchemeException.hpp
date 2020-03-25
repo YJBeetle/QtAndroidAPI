@@ -3,6 +3,8 @@
 #ifndef ANDROID_MEDIA_UNSUPPORTEDSCHEMEEXCEPTION
 #define ANDROID_MEDIA_UNSUPPORTEDSCHEMEEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "MediaDrmException.hpp"
 
 

@@ -3,6 +3,8 @@
 #ifndef JAVAX_SECURITY_AUTH_AUTHPERMISSION
 #define JAVAX_SECURITY_AUTH_AUTHPERMISSION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/security/Permission.hpp"
 #include "../../../java/security/BasicPermission.hpp"
 
 

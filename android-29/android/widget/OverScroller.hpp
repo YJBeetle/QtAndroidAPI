@@ -24,6 +24,9 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
+		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
+		void setFriction(jfloat arg0);
 		jboolean isFinished();
 		void forceFinished(jboolean arg0);
 		jint getCurrX();
@@ -41,9 +44,6 @@ namespace __jni_impl::android::widget
 		void notifyVerticalEdgeReached(jint arg0, jint arg1, jint arg2);
 		jboolean isOverScrolled();
 		void abortAnimation();
-		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
-		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
-		void setFriction(jfloat arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -92,6 +92,43 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
+	void OverScroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+	{
+		__thiz.callMethod<void>(
+			"fling",
+			"(IIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7);
+	}
+	void OverScroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	{
+		__thiz.callMethod<void>(
+			"fling",
+			"(IIIIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9);
+	}
+	void OverScroller::setFriction(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFriction",
+			"(F)V",
+			arg0);
+	}
 	jboolean OverScroller::isFinished()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -215,43 +252,6 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"abortAnimation",
 			"()V");
-	}
-	void OverScroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
-	{
-		__thiz.callMethod<void>(
-			"fling",
-			"(IIIIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9);
-	}
-	void OverScroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
-	{
-		__thiz.callMethod<void>(
-			"fling",
-			"(IIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7);
-	}
-	void OverScroller::setFriction(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFriction",
-			"(F)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::widget
 

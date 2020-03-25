@@ -40,8 +40,8 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getExtras();
+		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setAllowGeneratedReplies(jboolean arg0);
 		QAndroidJniObject setSemanticAction(jint arg0);
 		QAndroidJniObject addRemoteInput(__jni_impl::android::app::RemoteInput arg0);
@@ -94,18 +94,18 @@ namespace __jni_impl::android::app
 			"build",
 			"()Landroid/app/Notification$Action;");
 	}
+	QAndroidJniObject Notification_Action_Builder::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
+	}
 	QAndroidJniObject Notification_Action_Builder::extend(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"extend",
 			"(Landroid/app/Notification$Action$Extender;)Landroid/app/Notification$Action$Builder;",
 			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Notification_Action_Builder::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
 	}
 	QAndroidJniObject Notification_Action_Builder::setAllowGeneratedReplies(jboolean arg0)
 	{

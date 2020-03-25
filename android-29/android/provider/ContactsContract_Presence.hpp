@@ -3,6 +3,7 @@
 #ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_PRESENCE
 #define ANDROID_PROVIDER_CONTACTSCONTRACT_PRESENCE
 
+#include "../../__JniBaseClass.hpp"
 #include "ContactsContract_StatusUpdates.hpp"
 
 

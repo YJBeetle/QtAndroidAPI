@@ -3,6 +3,8 @@
 #ifndef JAVA_UTIL_CONCURRENT_LINKEDTRANSFERQUEUE
 #define JAVA_UTIL_CONCURRENT_LINKEDTRANSFERQUEUE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
 namespace __jni_impl::java::io

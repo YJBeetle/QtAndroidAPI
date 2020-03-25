@@ -11,15 +11,15 @@ namespace __jni_impl::android::telecom
 }
 namespace __jni_impl::android::telecom
 {
+	class DisconnectCause;
+}
+namespace __jni_impl::android::telecom
+{
 	class RemoteConnection;
 }
 namespace __jni_impl::android::os
 {
 	class Bundle;
-}
-namespace __jni_impl::android::telecom
-{
-	class DisconnectCause;
 }
 
 namespace __jni_impl::android::telecom
@@ -33,22 +33,22 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		void onConnectionAdded(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::telecom::RemoteConnection arg1);
-		void onExtrasChanged(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::os::Bundle arg1);
-		void onStateChanged(__jni_impl::android::telecom::RemoteConference arg0, jint arg1, jint arg2);
 		void onDisconnected(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::telecom::DisconnectCause arg1);
 		void onConnectionCapabilitiesChanged(__jni_impl::android::telecom::RemoteConference arg0, jint arg1);
 		void onConnectionPropertiesChanged(__jni_impl::android::telecom::RemoteConference arg0, jint arg1);
 		void onDestroyed(__jni_impl::android::telecom::RemoteConference arg0);
 		void onConferenceableConnectionsChanged(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::__JniBaseClass arg1);
+		void onConnectionAdded(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::telecom::RemoteConnection arg1);
+		void onExtrasChanged(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::os::Bundle arg1);
+		void onStateChanged(__jni_impl::android::telecom::RemoteConference arg0, jint arg1, jint arg2);
 		void onConnectionRemoved(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::telecom::RemoteConnection arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
 #include "RemoteConference.hpp"
+#include "DisconnectCause.hpp"
 #include "RemoteConnection.hpp"
 #include "../os/Bundle.hpp"
-#include "DisconnectCause.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -63,31 +63,6 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	void RemoteConference_Callback::onConnectionAdded(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::telecom::RemoteConnection arg1)
-	{
-		__thiz.callMethod<void>(
-			"onConnectionAdded",
-			"(Landroid/telecom/RemoteConference;Landroid/telecom/RemoteConnection;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void RemoteConference_Callback::onExtrasChanged(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onExtrasChanged",
-			"(Landroid/telecom/RemoteConference;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void RemoteConference_Callback::onStateChanged(__jni_impl::android::telecom::RemoteConference arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onStateChanged",
-			"(Landroid/telecom/RemoteConference;II)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2);
-	}
 	void RemoteConference_Callback::onDisconnected(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::telecom::DisconnectCause arg1)
 	{
 		__thiz.callMethod<void>(
@@ -126,6 +101,31 @@ namespace __jni_impl::android::telecom
 			"(Landroid/telecom/RemoteConference;Ljava/util/List;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
+	}
+	void RemoteConference_Callback::onConnectionAdded(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::telecom::RemoteConnection arg1)
+	{
+		__thiz.callMethod<void>(
+			"onConnectionAdded",
+			"(Landroid/telecom/RemoteConference;Landroid/telecom/RemoteConnection;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void RemoteConference_Callback::onExtrasChanged(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onExtrasChanged",
+			"(Landroid/telecom/RemoteConference;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void RemoteConference_Callback::onStateChanged(__jni_impl::android::telecom::RemoteConference arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"onStateChanged",
+			"(Landroid/telecom/RemoteConference;II)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2);
 	}
 	void RemoteConference_Callback::onConnectionRemoved(__jni_impl::android::telecom::RemoteConference arg0, __jni_impl::android::telecom::RemoteConnection arg1)
 	{

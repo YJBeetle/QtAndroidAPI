@@ -3,6 +3,10 @@
 #ifndef ANDROID_SECURITY_KEYSTORE_KEYNOTYETVALIDEXCEPTION
 #define ANDROID_SECURITY_KEYSTORE_KEYNOTYETVALIDEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/security/GeneralSecurityException.hpp"
+#include "../../../java/security/KeyException.hpp"
 #include "../../../java/security/InvalidKeyException.hpp"
 
 

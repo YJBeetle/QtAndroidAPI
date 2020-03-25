@@ -46,12 +46,12 @@ namespace __jni_impl::android::print
 		jint getState();
 		QAndroidJniObject getAttributes();
 		jlong getCreationTime();
-		QAndroidJniObject getLabel();
+		QAndroidJniObject getPrinterId();
+		jint getCopies();
 		QAndroidJniObject getAdvancedStringOption(jstring arg0);
 		jboolean hasAdvancedOption(jstring arg0);
 		jint getAdvancedIntOption(jstring arg0);
-		QAndroidJniObject getPrinterId();
-		jint getCopies();
+		QAndroidJniObject getLabel();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getPages();
@@ -155,11 +155,17 @@ namespace __jni_impl::android::print
 			"getCreationTime",
 			"()J");
 	}
-	QAndroidJniObject PrintJobInfo::getLabel()
+	QAndroidJniObject PrintJobInfo::getPrinterId()
 	{
 		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/String;");
+			"getPrinterId",
+			"()Landroid/print/PrinterId;");
+	}
+	jint PrintJobInfo::getCopies()
+	{
+		return __thiz.callMethod<jint>(
+			"getCopies",
+			"()I");
 	}
 	QAndroidJniObject PrintJobInfo::getAdvancedStringOption(jstring arg0)
 	{
@@ -182,17 +188,11 @@ namespace __jni_impl::android::print
 			"(Ljava/lang/String;)I",
 			arg0);
 	}
-	QAndroidJniObject PrintJobInfo::getPrinterId()
+	QAndroidJniObject PrintJobInfo::getLabel()
 	{
 		return __thiz.callObjectMethod(
-			"getPrinterId",
-			"()Landroid/print/PrinterId;");
-	}
-	jint PrintJobInfo::getCopies()
-	{
-		return __thiz.callMethod<jint>(
-			"getCopies",
-			"()I");
+			"getLabel",
+			"()Ljava/lang/String;");
 	}
 	jint PrintJobInfo::describeContents()
 	{

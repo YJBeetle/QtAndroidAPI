@@ -3,19 +3,14 @@
 #ifndef ANDROID_GESTURE_GESTUREOVERLAYVIEW
 #define ANDROID_GESTURE_GESTUREOVERLAYVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "../widget/FrameLayout.hpp"
 
 namespace __jni_impl::android::content
 {
 	class Context;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
 }
 namespace __jni_impl::java::util
 {
@@ -28,6 +23,14 @@ namespace __jni_impl::android::gesture
 namespace __jni_impl::android::graphics
 {
 	class Path;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
 }
 
 namespace __jni_impl::android::gesture
@@ -50,8 +53,6 @@ namespace __jni_impl::android::gesture
 		// Methods
 		void clear(jboolean arg0);
 		void setOrientation(jint arg0);
-		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		void draw(__jni_impl::android::graphics::Canvas arg0);
 		QAndroidJniObject getCurrentStroke();
 		void setGestureColor(jint arg0);
 		void setUncertainGestureColor(jint arg0);
@@ -91,16 +92,18 @@ namespace __jni_impl::android::gesture
 		jboolean isGesturing();
 		void cancelClearAnimation();
 		void cancelGesture();
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		jint getOrientation();
 	};
 } // namespace __jni_impl::android::gesture
 
 #include "../content/Context.hpp"
-#include "../view/MotionEvent.hpp"
-#include "../graphics/Canvas.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "Gesture.hpp"
 #include "../graphics/Path.hpp"
+#include "../graphics/Canvas.hpp"
+#include "../view/MotionEvent.hpp"
 
 namespace __jni_impl::android::gesture
 {
@@ -180,20 +183,6 @@ namespace __jni_impl::android::gesture
 			"setOrientation",
 			"(I)V",
 			arg0);
-	}
-	jboolean GestureOverlayView::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	void GestureOverlayView::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
 	}
 	QAndroidJniObject GestureOverlayView::getCurrentStroke()
 	{
@@ -447,6 +436,20 @@ namespace __jni_impl::android::gesture
 		__thiz.callMethod<void>(
 			"cancelGesture",
 			"()V");
+	}
+	void GestureOverlayView::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean GestureOverlayView::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
 	}
 	jint GestureOverlayView::getOrientation()
 	{

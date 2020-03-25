@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_REFLECT_MALFORMEDPARAMETERIZEDTYPEEXCEPTION
 #define JAVA_LANG_REFLECT_MALFORMEDPARAMETERIZEDTYPEEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../Exception.hpp"
 #include "../RuntimeException.hpp"
 
 

@@ -36,11 +36,10 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject append(__jni_impl::java::lang::StringBuilder arg0, jstring arg1);
 		static QAndroidJniObject getInstance(__jni_impl::java::io::InputStream arg0, jstring arg1, __jni_impl::android::icu::text::Normalizer2_Mode arg2);
 		QAndroidJniObject normalize(jstring arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject normalize(jstring arg0, __jni_impl::java::lang::StringBuilder arg1);
 		QAndroidJniObject normalize(jstring arg0);
+		QAndroidJniObject normalize(jstring arg0, __jni_impl::java::lang::StringBuilder arg1);
 		jint getCombiningClass(jint arg0);
 		jboolean isNormalized(jstring arg0);
-		QAndroidJniObject getDecomposition(jint arg0);
 		static QAndroidJniObject getNFCInstance();
 		static QAndroidJniObject getNFDInstance();
 		static QAndroidJniObject getNFKCInstance();
@@ -54,6 +53,7 @@ namespace __jni_impl::android::icu::text
 		jboolean hasBoundaryBefore(jint arg0);
 		jboolean hasBoundaryAfter(jint arg0);
 		jboolean isInert(jint arg0);
+		QAndroidJniObject getDecomposition(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -101,6 +101,13 @@ namespace __jni_impl::android::icu::text
 			arg0,
 			arg1.__jniObject().object());
 	}
+	QAndroidJniObject Normalizer2::normalize(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"normalize",
+			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
+			arg0);
+	}
 	QAndroidJniObject Normalizer2::normalize(jstring arg0, __jni_impl::java::lang::StringBuilder arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -108,13 +115,6 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;",
 			arg0,
 			arg1.__jniObject().object());
-	}
-	QAndroidJniObject Normalizer2::normalize(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"normalize",
-			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
-			arg0);
 	}
 	jint Normalizer2::getCombiningClass(jint arg0)
 	{
@@ -128,13 +128,6 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"isNormalized",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0);
-	}
-	QAndroidJniObject Normalizer2::getDecomposition(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDecomposition",
-			"(I)Ljava/lang/String;",
 			arg0);
 	}
 	QAndroidJniObject Normalizer2::getNFCInstance()
@@ -228,6 +221,13 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"isInert",
 			"(I)Z",
+			arg0);
+	}
+	QAndroidJniObject Normalizer2::getDecomposition(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDecomposition",
+			"(I)Ljava/lang/String;",
 			arg0);
 	}
 } // namespace __jni_impl::android::icu::text

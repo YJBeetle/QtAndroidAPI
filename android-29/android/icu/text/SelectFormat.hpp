@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_TEXT_SELECTFORMAT
 #define ANDROID_ICU_TEXT_SELECTFORMAT
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
 
 namespace __jni_impl::java::lang

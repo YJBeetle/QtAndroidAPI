@@ -29,15 +29,15 @@ namespace __jni_impl::android::media::tv
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void onTune(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
-		void onTune(__jni_impl::android::net::Uri arg0);
-		void onAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		void onRelease();
 		void notifyTuned(__jni_impl::android::net::Uri arg0);
 		void notifyRecordingStopped(__jni_impl::android::net::Uri arg0);
 		void notifyError(jint arg0);
 		void onStartRecording(__jni_impl::android::net::Uri arg0);
 		void onStopRecording();
+		void onRelease();
+		void onTune(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
+		void onTune(__jni_impl::android::net::Uri arg0);
+		void onAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -59,35 +59,6 @@ namespace __jni_impl::android::media::tv
 	}
 	
 	// Methods
-	void TvInputService_RecordingSession::onTune(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onTune",
-			"(Landroid/net/Uri;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void TvInputService_RecordingSession::onTune(__jni_impl::android::net::Uri arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTune",
-			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
-	}
-	void TvInputService_RecordingSession::onAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onAppPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void TvInputService_RecordingSession::onRelease()
-	{
-		__thiz.callMethod<void>(
-			"onRelease",
-			"()V");
-	}
 	void TvInputService_RecordingSession::notifyTuned(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
@@ -121,6 +92,35 @@ namespace __jni_impl::android::media::tv
 		__thiz.callMethod<void>(
 			"onStopRecording",
 			"()V");
+	}
+	void TvInputService_RecordingSession::onRelease()
+	{
+		__thiz.callMethod<void>(
+			"onRelease",
+			"()V");
+	}
+	void TvInputService_RecordingSession::onTune(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onTune",
+			"(Landroid/net/Uri;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	void TvInputService_RecordingSession::onTune(__jni_impl::android::net::Uri arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTune",
+			"(Landroid/net/Uri;)V",
+			arg0.__jniObject().object());
+	}
+	void TvInputService_RecordingSession::onAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onAppPrivateCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::media::tv
 

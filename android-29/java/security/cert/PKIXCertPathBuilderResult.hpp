@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_CERT_PKIXCERTPATHBUILDERRESULT
 #define JAVA_SECURITY_CERT_PKIXCERTPATHBUILDERRESULT
 
+#include "../../../__JniBaseClass.hpp"
 #include "PKIXCertPathValidatorResult.hpp"
 
 namespace __jni_impl::java::security::cert

@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_UNKNOWNERROR
 #define JAVA_LANG_UNKNOWNERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "VirtualMachineError.hpp"
 
 

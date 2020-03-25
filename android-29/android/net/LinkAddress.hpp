@@ -36,9 +36,9 @@ namespace __jni_impl::android::net
 		QAndroidJniObject getAddress();
 		jint getPrefixLength();
 		jint getFlags();
-		jint getScope();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getScope();
 	};
 } // namespace __jni_impl::android::net
 
@@ -103,12 +103,6 @@ namespace __jni_impl::android::net
 			"getFlags",
 			"()I");
 	}
-	jint LinkAddress::getScope()
-	{
-		return __thiz.callMethod<jint>(
-			"getScope",
-			"()I");
-	}
 	jint LinkAddress::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -122,6 +116,12 @@ namespace __jni_impl::android::net
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	jint LinkAddress::getScope()
+	{
+		return __thiz.callMethod<jint>(
+			"getScope",
+			"()I");
 	}
 } // namespace __jni_impl::android::net
 

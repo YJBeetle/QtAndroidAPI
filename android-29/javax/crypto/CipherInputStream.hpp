@@ -3,6 +3,8 @@
 #ifndef JAVAX_CRYPTO_CIPHERINPUTSTREAM
 #define JAVAX_CRYPTO_CIPHERINPUTSTREAM
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/io/InputStream.hpp"
 #include "../../java/io/FilterInputStream.hpp"
 
 namespace __jni_impl::javax::crypto

@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_STACKOVERFLOWERROR
 #define JAVA_LANG_STACKOVERFLOWERROR
 
+#include "../../__JniBaseClass.hpp"
+#include "Error.hpp"
 #include "VirtualMachineError.hpp"
 
 

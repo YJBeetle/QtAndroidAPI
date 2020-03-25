@@ -3,6 +3,8 @@
 #ifndef JAVA_NET_URLCLASSLOADER
 #define JAVA_NET_URLCLASSLOADER
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/ClassLoader.hpp"
 #include "../security/SecureClassLoader.hpp"
 
 namespace __jni_impl::java::security

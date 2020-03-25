@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_UTIL_COPTICCALENDAR
 #define ANDROID_ICU_UTIL_COPTICCALENDAR
 
+#include "../../../__JniBaseClass.hpp"
 #include "Calendar.hpp"
 
 namespace __jni_impl::android::icu::util

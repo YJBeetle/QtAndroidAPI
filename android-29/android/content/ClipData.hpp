@@ -15,11 +15,7 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::content
 {
-	class ContentResolver;
-}
-namespace __jni_impl::android::net
-{
-	class Uri;
+	class Intent;
 }
 namespace __jni_impl::android::os
 {
@@ -27,7 +23,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::content
 {
-	class Intent;
+	class ContentResolver;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::content
@@ -46,26 +46,26 @@ namespace __jni_impl::android::content
 		// Methods
 		QAndroidJniObject toString();
 		jint getItemCount();
+		static QAndroidJniObject newIntent(jstring arg0, __jni_impl::android::content::Intent arg1);
 		QAndroidJniObject getDescription();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject newPlainText(jstring arg0, jstring arg1);
 		static QAndroidJniObject newHtmlText(jstring arg0, jstring arg1, jstring arg2);
 		static QAndroidJniObject newUri(__jni_impl::android::content::ContentResolver arg0, jstring arg1, __jni_impl::android::net::Uri arg2);
 		static QAndroidJniObject newRawUri(jstring arg0, __jni_impl::android::net::Uri arg1);
-		void addItem(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::ClipData_Item arg1);
 		void addItem(__jni_impl::android::content::ClipData_Item arg0);
+		void addItem(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::ClipData_Item arg1);
 		QAndroidJniObject getItemAt(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject newIntent(jstring arg0, __jni_impl::android::content::Intent arg1);
 	};
 } // namespace __jni_impl::android::content
 
 #include "ClipDescription.hpp"
 #include "ClipData_Item.hpp"
+#include "Intent.hpp"
+#include "../os/Parcel.hpp"
 #include "ContentResolver.hpp"
 #include "../net/Uri.hpp"
-#include "../os/Parcel.hpp"
-#include "Intent.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -117,11 +117,34 @@ namespace __jni_impl::android::content
 			"getItemCount",
 			"()I");
 	}
+	QAndroidJniObject ClipData::newIntent(jstring arg0, __jni_impl::android::content::Intent arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ClipData",
+			"newIntent",
+			"(Ljava/lang/CharSequence;Landroid/content/Intent;)Landroid/content/ClipData;",
+			arg0,
+			arg1.__jniObject().object());
+	}
 	QAndroidJniObject ClipData::getDescription()
 	{
 		return __thiz.callObjectMethod(
 			"getDescription",
 			"()Landroid/content/ClipDescription;");
+	}
+	jint ClipData::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void ClipData::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	QAndroidJniObject ClipData::newPlainText(jstring arg0, jstring arg1)
 	{
@@ -161,6 +184,13 @@ namespace __jni_impl::android::content
 			arg0,
 			arg1.__jniObject().object());
 	}
+	void ClipData::addItem(__jni_impl::android::content::ClipData_Item arg0)
+	{
+		__thiz.callMethod<void>(
+			"addItem",
+			"(Landroid/content/ClipData$Item;)V",
+			arg0.__jniObject().object());
+	}
 	void ClipData::addItem(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::ClipData_Item arg1)
 	{
 		__thiz.callMethod<void>(
@@ -169,42 +199,12 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
-	void ClipData::addItem(__jni_impl::android::content::ClipData_Item arg0)
-	{
-		__thiz.callMethod<void>(
-			"addItem",
-			"(Landroid/content/ClipData$Item;)V",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject ClipData::getItemAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getItemAt",
 			"(I)Landroid/content/ClipData$Item;",
 			arg0);
-	}
-	jint ClipData::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void ClipData::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject ClipData::newIntent(jstring arg0, __jni_impl::android::content::Intent arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ClipData",
-			"newIntent",
-			"(Ljava/lang/CharSequence;Landroid/content/Intent;)Landroid/content/ClipData;",
-			arg0,
-			arg1.__jniObject().object());
 	}
 } // namespace __jni_impl::android::content
 

@@ -37,8 +37,8 @@ namespace __jni_impl::java::security
 		void addCertificate(__jni_impl::__JniBaseClass arg0);
 		void removeCertificate(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getInfo();
-		QAndroidJniObject getScope();
 		QAndroidJniObject certificates();
+		QAndroidJniObject getScope();
 	};
 } // namespace __jni_impl::java::security
 
@@ -139,17 +139,17 @@ namespace __jni_impl::java::security
 			"getInfo",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject Identity::getScope()
-	{
-		return __thiz.callObjectMethod(
-			"getScope",
-			"()Ljava/security/IdentityScope;");
-	}
 	QAndroidJniObject Identity::certificates()
 	{
 		return __thiz.callObjectMethod(
 			"certificates",
 			"()[Ljava/security/Certificate;");
+	}
+	QAndroidJniObject Identity::getScope()
+	{
+		return __thiz.callObjectMethod(
+			"getScope",
+			"()Ljava/security/IdentityScope;");
 	}
 } // namespace __jni_impl::java::security
 

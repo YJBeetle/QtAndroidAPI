@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_SIMPLETIMEZONE
 #define JAVA_UTIL_SIMPLETIMEZONE
 
+#include "../../__JniBaseClass.hpp"
 #include "TimeZone.hpp"
 
 namespace __jni_impl::java::io

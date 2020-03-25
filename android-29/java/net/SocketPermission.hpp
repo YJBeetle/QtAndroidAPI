@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_SOCKETPERMISSION
 #define JAVA_NET_SOCKETPERMISSION
 
+#include "../../__JniBaseClass.hpp"
 #include "../security/Permission.hpp"
 
 namespace __jni_impl::java::io

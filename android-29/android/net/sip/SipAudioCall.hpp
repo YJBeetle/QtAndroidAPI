@@ -54,9 +54,9 @@ namespace __jni_impl::android::net::sip
 		void sendDtmf(jint arg0, __jni_impl::android::os::Message arg1);
 		void sendDtmf(jint arg0);
 		void startAudio();
-		jboolean isMuted();
 		jboolean isInCall();
 		void endCall();
+		jboolean isMuted();
 	};
 } // namespace __jni_impl::android::net::sip
 
@@ -198,12 +198,6 @@ namespace __jni_impl::android::net::sip
 			"startAudio",
 			"()V");
 	}
-	jboolean SipAudioCall::isMuted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMuted",
-			"()Z");
-	}
 	jboolean SipAudioCall::isInCall()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -215,6 +209,12 @@ namespace __jni_impl::android::net::sip
 		__thiz.callMethod<void>(
 			"endCall",
 			"()V");
+	}
+	jboolean SipAudioCall::isMuted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMuted",
+			"()Z");
 	}
 } // namespace __jni_impl::android::net::sip
 

@@ -3,6 +3,7 @@
 #ifndef ORG_JSON_JSONEXCEPTION
 #define ORG_JSON_JSONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 

@@ -26,9 +26,9 @@ namespace __jni_impl::android::graphics::pdf
 		
 		// Methods
 		void close();
+		jint getPageCount();
 		jboolean shouldScaleForPrinting();
 		QAndroidJniObject openPage(jint arg0);
-		jint getPageCount();
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
@@ -55,6 +55,12 @@ namespace __jni_impl::android::graphics::pdf
 			"close",
 			"()V");
 	}
+	jint PdfRenderer::getPageCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getPageCount",
+			"()I");
+	}
 	jboolean PdfRenderer::shouldScaleForPrinting()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -67,12 +73,6 @@ namespace __jni_impl::android::graphics::pdf
 			"openPage",
 			"(I)Landroid/graphics/pdf/PdfRenderer$Page;",
 			arg0);
-	}
-	jint PdfRenderer::getPageCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getPageCount",
-			"()I");
 	}
 } // namespace __jni_impl::android::graphics::pdf
 

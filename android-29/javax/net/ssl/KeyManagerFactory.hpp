@@ -35,9 +35,9 @@ namespace __jni_impl::javax::net::ssl
 		void init(__jni_impl::java::security::KeyStore arg0, jcharArray arg1);
 		void init(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getProvider();
-		QAndroidJniObject getAlgorithm();
 		static QAndroidJniObject getDefaultAlgorithm();
 		QAndroidJniObject getKeyManagers();
+		QAndroidJniObject getAlgorithm();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -105,12 +105,6 @@ namespace __jni_impl::javax::net::ssl
 			"getProvider",
 			"()Ljava/security/Provider;");
 	}
-	QAndroidJniObject KeyManagerFactory::getAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;");
-	}
 	QAndroidJniObject KeyManagerFactory::getDefaultAlgorithm()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -123,6 +117,12 @@ namespace __jni_impl::javax::net::ssl
 		return __thiz.callObjectMethod(
 			"getKeyManagers",
 			"()[Ljavax/net/ssl/KeyManager;");
+	}
+	QAndroidJniObject KeyManagerFactory::getAlgorithm()
+	{
+		return __thiz.callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::javax::net::ssl
 

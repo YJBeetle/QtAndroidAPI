@@ -3,12 +3,9 @@
 #ifndef ANDROID_TELEPHONY_CELLINFOTDSCDMA
 #define ANDROID_TELEPHONY_CELLINFOTDSCDMA
 
+#include "../../__JniBaseClass.hpp"
 #include "CellInfo.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::telephony
 {
 	class CellIdentityTdscdma;
@@ -16,6 +13,10 @@ namespace __jni_impl::android::telephony
 namespace __jni_impl::android::telephony
 {
 	class CellSignalStrengthTdscdma;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::telephony
@@ -33,16 +34,16 @@ namespace __jni_impl::android::telephony
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getCellIdentity();
 		QAndroidJniObject getCellSignalStrength();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
-#include "../os/Parcel.hpp"
 #include "CellIdentityTdscdma.hpp"
 #include "CellSignalStrengthTdscdma.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::telephony
 {
@@ -83,6 +84,18 @@ namespace __jni_impl::android::telephony
 			"hashCode",
 			"()I");
 	}
+	QAndroidJniObject CellInfoTdscdma::getCellIdentity()
+	{
+		return __thiz.callObjectMethod(
+			"getCellIdentity",
+			"()Landroid/telephony/CellIdentityTdscdma;");
+	}
+	QAndroidJniObject CellInfoTdscdma::getCellSignalStrength()
+	{
+		return __thiz.callObjectMethod(
+			"getCellSignalStrength",
+			"()Landroid/telephony/CellSignalStrengthTdscdma;");
+	}
 	jint CellInfoTdscdma::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -96,18 +109,6 @@ namespace __jni_impl::android::telephony
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject CellInfoTdscdma::getCellIdentity()
-	{
-		return __thiz.callObjectMethod(
-			"getCellIdentity",
-			"()Landroid/telephony/CellIdentityTdscdma;");
-	}
-	QAndroidJniObject CellInfoTdscdma::getCellSignalStrength()
-	{
-		return __thiz.callObjectMethod(
-			"getCellSignalStrength",
-			"()Landroid/telephony/CellSignalStrengthTdscdma;");
 	}
 } // namespace __jni_impl::android::telephony
 

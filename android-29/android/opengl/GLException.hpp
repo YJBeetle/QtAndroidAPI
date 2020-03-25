@@ -3,6 +3,8 @@
 #ifndef ANDROID_OPENGL_GLEXCEPTION
 #define ANDROID_OPENGL_GLEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

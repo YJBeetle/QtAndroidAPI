@@ -3,6 +3,9 @@
 #ifndef JAVA_UTIL_LINKEDLIST
 #define JAVA_UTIL_LINKEDLIST
 
+#include "../../__JniBaseClass.hpp"
+#include "AbstractCollection.hpp"
+#include "AbstractList.hpp"
 #include "AbstractSequentialList.hpp"
 
 namespace __jni_impl::java::io

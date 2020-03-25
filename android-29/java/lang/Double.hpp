@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_DOUBLE
 #define JAVA_LANG_DOUBLE
 
+#include "../../__JniBaseClass.hpp"
 #include "Number.hpp"
 
 namespace __jni_impl::java::lang::invoke

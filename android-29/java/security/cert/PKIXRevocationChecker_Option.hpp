@@ -3,6 +3,7 @@
 #ifndef JAVA_SECURITY_CERT_PKIXREVOCATIONCHECKER_OPTION
 #define JAVA_SECURITY_CERT_PKIXREVOCATIONCHECKER_OPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
 

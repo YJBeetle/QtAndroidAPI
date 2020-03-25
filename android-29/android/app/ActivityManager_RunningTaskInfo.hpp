@@ -3,6 +3,7 @@
 #ifndef ANDROID_APP_ACTIVITYMANAGER_RUNNINGTASKINFO
 #define ANDROID_APP_ACTIVITYMANAGER_RUNNINGTASKINFO
 
+#include "../../__JniBaseClass.hpp"
 #include "TaskInfo.hpp"
 
 namespace __jni_impl::android::graphics

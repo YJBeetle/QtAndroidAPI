@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_HTTPURLCONNECTION
 #define JAVA_NET_HTTPURLCONNECTION
 
+#include "../../__JniBaseClass.hpp"
 #include "URLConnection.hpp"
 
 namespace __jni_impl::java::net
@@ -13,13 +14,13 @@ namespace __jni_impl::java::security
 {
 	class Permission;
 }
-namespace __jni_impl::java::net
-{
-	class Authenticator;
-}
 namespace __jni_impl::java::io
 {
 	class InputStream;
+}
+namespace __jni_impl::java::net
+{
+	class Authenticator;
 }
 
 namespace __jni_impl::java::net
@@ -72,9 +73,14 @@ namespace __jni_impl::java::net
 		void setRequestMethod(jstring arg0);
 		jint getResponseCode();
 		QAndroidJniObject getPermission();
+		void disconnect();
+		QAndroidJniObject getHeaderField(jint arg0);
+		QAndroidJniObject getHeaderFieldKey(jint arg0);
+		jlong getHeaderFieldDate(jstring arg0, jlong arg1);
+		QAndroidJniObject getErrorStream();
 		void setAuthenticator(__jni_impl::java::net::Authenticator arg0);
-		void setFixedLengthStreamingMode(jint arg0);
 		void setFixedLengthStreamingMode(jlong arg0);
+		void setFixedLengthStreamingMode(jint arg0);
 		void setChunkedStreamingMode(jint arg0);
 		static void setFollowRedirects(jboolean arg0);
 		static jboolean getFollowRedirects();
@@ -83,18 +89,13 @@ namespace __jni_impl::java::net
 		QAndroidJniObject getRequestMethod();
 		QAndroidJniObject getResponseMessage();
 		jboolean usingProxy();
-		QAndroidJniObject getHeaderField(jint arg0);
-		QAndroidJniObject getHeaderFieldKey(jint arg0);
-		jlong getHeaderFieldDate(jstring arg0, jlong arg1);
-		QAndroidJniObject getErrorStream();
-		void disconnect();
 	};
 } // namespace __jni_impl::java::net
 
 #include "URL.hpp"
 #include "../security/Permission.hpp"
-#include "Authenticator.hpp"
 #include "../io/InputStream.hpp"
+#include "Authenticator.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -344,6 +345,40 @@ namespace __jni_impl::java::net
 			"getPermission",
 			"()Ljava/security/Permission;");
 	}
+	void HttpURLConnection::disconnect()
+	{
+		__thiz.callMethod<void>(
+			"disconnect",
+			"()V");
+	}
+	QAndroidJniObject HttpURLConnection::getHeaderField(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getHeaderField",
+			"(I)Ljava/lang/String;",
+			arg0);
+	}
+	QAndroidJniObject HttpURLConnection::getHeaderFieldKey(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getHeaderFieldKey",
+			"(I)Ljava/lang/String;",
+			arg0);
+	}
+	jlong HttpURLConnection::getHeaderFieldDate(jstring arg0, jlong arg1)
+	{
+		return __thiz.callMethod<jlong>(
+			"getHeaderFieldDate",
+			"(Ljava/lang/String;J)J",
+			arg0,
+			arg1);
+	}
+	QAndroidJniObject HttpURLConnection::getErrorStream()
+	{
+		return __thiz.callObjectMethod(
+			"getErrorStream",
+			"()Ljava/io/InputStream;");
+	}
 	void HttpURLConnection::setAuthenticator(__jni_impl::java::net::Authenticator arg0)
 	{
 		__thiz.callMethod<void>(
@@ -351,18 +386,18 @@ namespace __jni_impl::java::net
 			"(Ljava/net/Authenticator;)V",
 			arg0.__jniObject().object());
 	}
-	void HttpURLConnection::setFixedLengthStreamingMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFixedLengthStreamingMode",
-			"(I)V",
-			arg0);
-	}
 	void HttpURLConnection::setFixedLengthStreamingMode(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFixedLengthStreamingMode",
 			"(J)V",
+			arg0);
+	}
+	void HttpURLConnection::setFixedLengthStreamingMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFixedLengthStreamingMode",
+			"(I)V",
 			arg0);
 	}
 	void HttpURLConnection::setChunkedStreamingMode(jint arg0)
@@ -417,40 +452,6 @@ namespace __jni_impl::java::net
 		return __thiz.callMethod<jboolean>(
 			"usingProxy",
 			"()Z");
-	}
-	QAndroidJniObject HttpURLConnection::getHeaderField(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getHeaderField",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject HttpURLConnection::getHeaderFieldKey(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getHeaderFieldKey",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	jlong HttpURLConnection::getHeaderFieldDate(jstring arg0, jlong arg1)
-	{
-		return __thiz.callMethod<jlong>(
-			"getHeaderFieldDate",
-			"(Ljava/lang/String;J)J",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject HttpURLConnection::getErrorStream()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorStream",
-			"()Ljava/io/InputStream;");
-	}
-	void HttpURLConnection::disconnect()
-	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"()V");
 	}
 } // namespace __jni_impl::java::net
 

@@ -3,6 +3,9 @@
 #ifndef ANDROID_ICU_TEXT_DECIMALFORMAT
 #define ANDROID_ICU_TEXT_DECIMALFORMAT
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/text/Format.hpp"
+#include "UFormat.hpp"
 #include "NumberFormat.hpp"
 
 namespace __jni_impl::android::icu::text
@@ -130,13 +133,9 @@ namespace __jni_impl::android::icu::text
 		void setDecimalSeparatorAlwaysShown(jboolean arg0);
 		jint getRoundingMode();
 		QAndroidJniObject formatToCharacterIterator(jobject arg0);
-		QAndroidJniObject parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
-		void setParseStrict(jboolean arg0);
-		jboolean isParseStrict();
-		QAndroidJniObject getRoundingIncrement();
-		void setRoundingIncrement(__jni_impl::android::icu::math::BigDecimal arg0);
-		void setRoundingIncrement(jdouble arg0);
 		void setRoundingIncrement(__jni_impl::java::math::BigDecimal arg0);
+		void setRoundingIncrement(jdouble arg0);
+		void setRoundingIncrement(__jni_impl::android::icu::math::BigDecimal arg0);
 		QAndroidJniObject getMathContext();
 		void setMathContext(__jni_impl::java::math::MathContext arg0);
 		QAndroidJniObject getMathContextICU();
@@ -169,6 +168,10 @@ namespace __jni_impl::android::icu::text
 		void setParseMaxDigits(jint arg0);
 		jboolean isDecimalPatternMatchRequired();
 		void setDecimalPatternMatchRequired(jboolean arg0);
+		QAndroidJniObject parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		void setParseStrict(jboolean arg0);
+		jboolean isParseStrict();
+		QAndroidJniObject getRoundingIncrement();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -590,38 +593,11 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
 			arg0);
 	}
-	QAndroidJniObject DecimalFormat::parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseCurrency",
-			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void DecimalFormat::setParseStrict(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setParseStrict",
-			"(Z)V",
-			arg0);
-	}
-	jboolean DecimalFormat::isParseStrict()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isParseStrict",
-			"()Z");
-	}
-	QAndroidJniObject DecimalFormat::getRoundingIncrement()
-	{
-		return __thiz.callObjectMethod(
-			"getRoundingIncrement",
-			"()Ljava/math/BigDecimal;");
-	}
-	void DecimalFormat::setRoundingIncrement(__jni_impl::android::icu::math::BigDecimal arg0)
+	void DecimalFormat::setRoundingIncrement(__jni_impl::java::math::BigDecimal arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRoundingIncrement",
-			"(Landroid/icu/math/BigDecimal;)V",
+			"(Ljava/math/BigDecimal;)V",
 			arg0.__jniObject().object());
 	}
 	void DecimalFormat::setRoundingIncrement(jdouble arg0)
@@ -631,11 +607,11 @@ namespace __jni_impl::android::icu::text
 			"(D)V",
 			arg0);
 	}
-	void DecimalFormat::setRoundingIncrement(__jni_impl::java::math::BigDecimal arg0)
+	void DecimalFormat::setRoundingIncrement(__jni_impl::android::icu::math::BigDecimal arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRoundingIncrement",
-			"(Ljava/math/BigDecimal;)V",
+			"(Landroid/icu/math/BigDecimal;)V",
 			arg0.__jniObject().object());
 	}
 	QAndroidJniObject DecimalFormat::getMathContext()
@@ -845,6 +821,33 @@ namespace __jni_impl::android::icu::text
 			"setDecimalPatternMatchRequired",
 			"(Z)V",
 			arg0);
+	}
+	QAndroidJniObject DecimalFormat::parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parseCurrency",
+			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void DecimalFormat::setParseStrict(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setParseStrict",
+			"(Z)V",
+			arg0);
+	}
+	jboolean DecimalFormat::isParseStrict()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isParseStrict",
+			"()Z");
+	}
+	QAndroidJniObject DecimalFormat::getRoundingIncrement()
+	{
+		return __thiz.callObjectMethod(
+			"getRoundingIncrement",
+			"()Ljava/math/BigDecimal;");
 	}
 } // namespace __jni_impl::android::icu::text
 

@@ -3,6 +3,8 @@
 #ifndef ANDROID_ICU_UTIL_JAPANESECALENDAR
 #define ANDROID_ICU_UTIL_JAPANESECALENDAR
 
+#include "../../../__JniBaseClass.hpp"
+#include "Calendar.hpp"
 #include "GregorianCalendar.hpp"
 
 namespace __jni_impl::android::icu::util

@@ -24,8 +24,8 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject toString();
 		jint size();
 		QAndroidJniObject iterator();
-		QAndroidJniObject getLabel();
 		QAndroidJniObject getLabelType();
+		QAndroidJniObject getLabel();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -62,17 +62,17 @@ namespace __jni_impl::android::icu::text
 			"iterator",
 			"()Ljava/util/Iterator;");
 	}
-	QAndroidJniObject AlphabeticIndex_Bucket::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/String;");
-	}
 	QAndroidJniObject AlphabeticIndex_Bucket::getLabelType()
 	{
 		return __thiz.callObjectMethod(
 			"getLabelType",
 			"()Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;");
+	}
+	QAndroidJniObject AlphabeticIndex_Bucket::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::icu::text
 

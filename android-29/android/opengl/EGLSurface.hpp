@@ -3,6 +3,7 @@
 #ifndef ANDROID_OPENGL_EGLSURFACE
 #define ANDROID_OPENGL_EGLSURFACE
 
+#include "../../__JniBaseClass.hpp"
 #include "EGLObjectHandle.hpp"
 
 

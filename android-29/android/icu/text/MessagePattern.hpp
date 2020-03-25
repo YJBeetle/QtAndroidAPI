@@ -43,6 +43,7 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject freeze();
 		jdouble getNumericValue(__jni_impl::android::icu::text::MessagePattern_Part arg0);
 		QAndroidJniObject parse(jstring arg0);
+		QAndroidJniObject cloneAsThawed();
 		QAndroidJniObject parseChoiceStyle(jstring arg0);
 		QAndroidJniObject parsePluralStyle(jstring arg0);
 		QAndroidJniObject parseSelectStyle(jstring arg0);
@@ -61,7 +62,6 @@ namespace __jni_impl::android::icu::text
 		jboolean partSubstringMatches(__jni_impl::android::icu::text::MessagePattern_Part arg0, jstring arg1);
 		jdouble getPluralOffset(jint arg0);
 		jint getLimitPartIndex(jint arg0);
-		QAndroidJniObject cloneAsThawed();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -170,6 +170,12 @@ namespace __jni_impl::android::icu::text
 			"parse",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
 			arg0);
+	}
+	QAndroidJniObject MessagePattern::cloneAsThawed()
+	{
+		return __thiz.callObjectMethod(
+			"cloneAsThawed",
+			"()Landroid/icu/text/MessagePattern;");
 	}
 	QAndroidJniObject MessagePattern::parseChoiceStyle(jstring arg0)
 	{
@@ -292,12 +298,6 @@ namespace __jni_impl::android::icu::text
 			"getLimitPartIndex",
 			"(I)I",
 			arg0);
-	}
-	QAndroidJniObject MessagePattern::cloneAsThawed()
-	{
-		return __thiz.callObjectMethod(
-			"cloneAsThawed",
-			"()Landroid/icu/text/MessagePattern;");
 	}
 } // namespace __jni_impl::android::icu::text
 

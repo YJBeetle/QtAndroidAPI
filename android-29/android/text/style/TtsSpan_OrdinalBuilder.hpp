@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_STYLE_TTSSPAN_ORDINALBUILDER
 #define ANDROID_TEXT_STYLE_TTSSPAN_ORDINALBUILDER
 
+#include "../../../__JniBaseClass.hpp"
+#include "TtsSpan_Builder.hpp"
 #include "TtsSpan_SemioticClassBuilder.hpp"
 
 

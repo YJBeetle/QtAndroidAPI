@@ -3,6 +3,10 @@
 #ifndef ANDROID_WIDGET_STACKVIEW
 #define ANDROID_WIDGET_STACKVIEW
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "AdapterView.hpp"
 #include "AdapterViewAnimator.hpp"
 
 namespace __jni_impl::android::content
@@ -33,12 +37,12 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void advance();
+		jboolean onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		QAndroidJniObject getAccessibilityClassName();
 		void showNext();
 		void showPrevious();
 		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		QAndroidJniObject getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -93,6 +97,19 @@ namespace __jni_impl::android::widget
 			"advance",
 			"()V");
 	}
+	jboolean StackView::onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onInterceptTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject StackView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;");
+	}
 	void StackView::showNext()
 	{
 		__thiz.callMethod<void>(
@@ -118,19 +135,6 @@ namespace __jni_impl::android::widget
 			"onGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object());
-	}
-	jboolean StackView::onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onInterceptTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject StackView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
 	}
 } // namespace __jni_impl::android::widget
 

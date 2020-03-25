@@ -3,6 +3,8 @@
 #ifndef JAVA_LANG_CLASSNOTFOUNDEXCEPTION
 #define JAVA_LANG_CLASSNOTFOUNDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "Exception.hpp"
 #include "ReflectiveOperationException.hpp"
 
 namespace __jni_impl::java::io

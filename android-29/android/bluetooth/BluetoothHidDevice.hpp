@@ -62,6 +62,7 @@ namespace __jni_impl::android::bluetooth
 		// Methods
 		jboolean connect(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		jboolean reportError(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1);
+		jboolean disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		QAndroidJniObject getConnectedDevices();
 		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
@@ -69,7 +70,6 @@ namespace __jni_impl::android::bluetooth
 		jboolean unregisterApp();
 		jboolean sendReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jbyteArray arg2);
 		jboolean replyReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3);
-		jboolean disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -246,6 +246,13 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1);
 	}
+	jboolean BluetoothHidDevice::disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"disconnect",
+			"(Landroid/bluetooth/BluetoothDevice;)Z",
+			arg0.__jniObject().object());
+	}
 	jint BluetoothHidDevice::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -301,13 +308,6 @@ namespace __jni_impl::android::bluetooth
 			arg1,
 			arg2,
 			arg3);
-	}
-	jboolean BluetoothHidDevice::disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"disconnect",
-			"(Landroid/bluetooth/BluetoothDevice;)Z",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::bluetooth
 

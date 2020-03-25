@@ -3,6 +3,7 @@
 #ifndef ANDROID_CONTENT_PM_APPLICATIONINFO
 #define ANDROID_CONTENT_PM_APPLICATIONINFO
 
+#include "../../../__JniBaseClass.hpp"
 #include "PackageItemInfo.hpp"
 
 namespace __jni_impl::java::util
@@ -110,9 +111,9 @@ namespace __jni_impl::android::content::pm
 		jboolean isVirtualPreload();
 		jboolean isProfileableByShell();
 		jboolean isResourceOverlay();
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		QAndroidJniObject loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
 	};
 } // namespace __jni_impl::android::content::pm
@@ -590,6 +591,14 @@ namespace __jni_impl::android::content::pm
 			"isResourceOverlay",
 			"()Z");
 	}
+	void ApplicationInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	jint ApplicationInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -601,14 +610,6 @@ namespace __jni_impl::android::content::pm
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void ApplicationInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1);
 	}

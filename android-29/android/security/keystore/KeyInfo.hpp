@@ -21,6 +21,7 @@ namespace __jni_impl::android::security::keystore
 		void __constructor();
 		
 		// Methods
+		jint getOrigin();
 		jint getKeySize();
 		QAndroidJniObject getKeystoreAlias();
 		QAndroidJniObject getKeyValidityStart();
@@ -39,7 +40,6 @@ namespace __jni_impl::android::security::keystore
 		jboolean isInsideSecureHardware();
 		jboolean isUserAuthenticationRequirementEnforcedBySecureHardware();
 		jboolean isTrustedUserPresenceRequired();
-		jint getOrigin();
 	};
 } // namespace __jni_impl::android::security::keystore
 
@@ -58,6 +58,12 @@ namespace __jni_impl::android::security::keystore
 	}
 	
 	// Methods
+	jint KeyInfo::getOrigin()
+	{
+		return __thiz.callMethod<jint>(
+			"getOrigin",
+			"()I");
+	}
 	jint KeyInfo::getKeySize()
 	{
 		return __thiz.callMethod<jint>(
@@ -165,12 +171,6 @@ namespace __jni_impl::android::security::keystore
 		return __thiz.callMethod<jboolean>(
 			"isTrustedUserPresenceRequired",
 			"()Z");
-	}
-	jint KeyInfo::getOrigin()
-	{
-		return __thiz.callMethod<jint>(
-			"getOrigin",
-			"()I");
 	}
 } // namespace __jni_impl::android::security::keystore
 

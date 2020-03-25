@@ -3,6 +3,10 @@
 #ifndef ANDROID_WIDGET_VIEWFLIPPER
 #define ANDROID_WIDGET_VIEWFLIPPER
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "FrameLayout.hpp"
 #include "ViewAnimator.hpp"
 
 namespace __jni_impl::android::content

@@ -3,6 +3,7 @@
 #ifndef JAVA_TEXT_MESSAGEFORMAT
 #define JAVA_TEXT_MESSAGEFORMAT
 
+#include "../../__JniBaseClass.hpp"
 #include "Format.hpp"
 
 namespace __jni_impl::java::util

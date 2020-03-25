@@ -3,6 +3,9 @@
 #ifndef ANDROID_SERVICE_AUTOFILL_AUTOFILLSERVICE
 #define ANDROID_SERVICE_AUTOFILL_AUTOFILLSERVICE
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
 namespace __jni_impl::android::content
@@ -50,10 +53,10 @@ namespace __jni_impl::android::service::autofill
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onDisconnected();
 		void onConnected();
+		void onCreate();
 		void onSaveRequest(__jni_impl::android::service::autofill::SaveRequest arg0, __jni_impl::android::service::autofill::SaveCallback arg1);
 		void onFillRequest(__jni_impl::android::service::autofill::FillRequest arg0, __jni_impl::android::os::CancellationSignal arg1, __jni_impl::android::service::autofill::FillCallback arg2);
 		QAndroidJniObject getFillEventHistory();
-		void onCreate();
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -111,6 +114,12 @@ namespace __jni_impl::android::service::autofill
 			"onConnected",
 			"()V");
 	}
+	void AutofillService::onCreate()
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"()V");
+	}
 	void AutofillService::onSaveRequest(__jni_impl::android::service::autofill::SaveRequest arg0, __jni_impl::android::service::autofill::SaveCallback arg1)
 	{
 		__thiz.callMethod<void>(
@@ -133,12 +142,6 @@ namespace __jni_impl::android::service::autofill
 		return __thiz.callObjectMethod(
 			"getFillEventHistory",
 			"()Landroid/service/autofill/FillEventHistory;");
-	}
-	void AutofillService::onCreate()
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V");
 	}
 } // namespace __jni_impl::android::service::autofill
 

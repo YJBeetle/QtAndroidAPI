@@ -21,9 +21,9 @@ namespace __jni_impl::android::print
 		QAndroidJniObject toString();
 		jint hashCode();
 		QAndroidJniObject getId();
-		QAndroidJniObject getLabel();
 		jint getHorizontalDpi();
 		jint getVerticalDpi();
+		QAndroidJniObject getLabel();
 	};
 } // namespace __jni_impl::android::print
 
@@ -70,12 +70,6 @@ namespace __jni_impl::android::print
 			"getId",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject PrintAttributes_Resolution::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/String;");
-	}
 	jint PrintAttributes_Resolution::getHorizontalDpi()
 	{
 		return __thiz.callMethod<jint>(
@@ -87,6 +81,12 @@ namespace __jni_impl::android::print
 		return __thiz.callMethod<jint>(
 			"getVerticalDpi",
 			"()I");
+	}
+	QAndroidJniObject PrintAttributes_Resolution::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::print
 

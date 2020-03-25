@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_LISTRESOURCEBUNDLE
 #define JAVA_UTIL_LISTRESOURCEBUNDLE
 
+#include "../../__JniBaseClass.hpp"
 #include "ResourceBundle.hpp"
 
 

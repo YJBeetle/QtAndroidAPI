@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_PAINT_STYLE
 #define ANDROID_GRAPHICS_PAINT_STYLE
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDSYNCHRONIZER
 #define JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDSYNCHRONIZER
 
+#include "../../../../__JniBaseClass.hpp"
 #include "AbstractOwnableSynchronizer.hpp"
 
 namespace __jni_impl::java::lang

@@ -24,9 +24,9 @@ namespace __jni_impl::android::service::voice
 		QAndroidJniObject toString();
 		jboolean isActive();
 		void cancel();
-		jint getCallingUid();
 		QAndroidJniObject getExtras();
 		QAndroidJniObject getCallingPackage();
+		jint getCallingUid();
 	};
 } // namespace __jni_impl::android::service::voice
 
@@ -63,12 +63,6 @@ namespace __jni_impl::android::service::voice
 			"cancel",
 			"()V");
 	}
-	jint VoiceInteractionSession_Request::getCallingUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getCallingUid",
-			"()I");
-	}
 	QAndroidJniObject VoiceInteractionSession_Request::getExtras()
 	{
 		return __thiz.callObjectMethod(
@@ -80,6 +74,12 @@ namespace __jni_impl::android::service::voice
 		return __thiz.callObjectMethod(
 			"getCallingPackage",
 			"()Ljava/lang/String;");
+	}
+	jint VoiceInteractionSession_Request::getCallingUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getCallingUid",
+			"()I");
 	}
 } // namespace __jni_impl::android::service::voice
 

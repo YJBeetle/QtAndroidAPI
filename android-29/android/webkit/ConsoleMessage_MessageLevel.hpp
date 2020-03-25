@@ -3,6 +3,7 @@
 #ifndef ANDROID_WEBKIT_CONSOLEMESSAGE_MESSAGELEVEL
 #define ANDROID_WEBKIT_CONSOLEMESSAGE_MESSAGELEVEL
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
 

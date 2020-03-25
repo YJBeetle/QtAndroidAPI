@@ -3,6 +3,8 @@
 #ifndef ANDROID_ACCOUNTS_AUTHENTICATOREXCEPTION
 #define ANDROID_ACCOUNTS_AUTHENTICATOREXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "AccountsException.hpp"
 
 

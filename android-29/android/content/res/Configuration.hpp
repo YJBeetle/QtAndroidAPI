@@ -131,12 +131,10 @@ namespace __jni_impl::android::content::res
 		jint compareTo(jobject arg0);
 		void setLocale(__jni_impl::java::util::Locale arg0);
 		jint diff(__jni_impl::android::content::res::Configuration arg0);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		QAndroidJniObject getLocales();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getLayoutDirection();
 		void setLayoutDirection(__jni_impl::java::util::Locale arg0);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		QAndroidJniObject getLocales();
 		jboolean isLayoutSizeAtLeast(jint arg0);
 		void setTo(__jni_impl::android::content::res::Configuration arg0);
 		void setToDefaults();
@@ -146,6 +144,8 @@ namespace __jni_impl::android::content::res
 		jboolean isScreenRound();
 		jboolean isScreenWideColorGamut();
 		jboolean isScreenHdr();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::res
 
@@ -769,33 +769,6 @@ namespace __jni_impl::android::content::res
 			"(Landroid/content/res/Configuration;)I",
 			arg0.__jniObject().object());
 	}
-	void Configuration::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Configuration::getLocales()
-	{
-		return __thiz.callObjectMethod(
-			"getLocales",
-			"()Landroid/os/LocaleList;");
-	}
-	jint Configuration::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	jint Configuration::getLayoutDirection()
 	{
 		return __thiz.callMethod<jint>(
@@ -808,6 +781,19 @@ namespace __jni_impl::android::content::res
 			"setLayoutDirection",
 			"(Ljava/util/Locale;)V",
 			arg0.__jniObject().object());
+	}
+	void Configuration::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Configuration::getLocales()
+	{
+		return __thiz.callObjectMethod(
+			"getLocales",
+			"()Landroid/os/LocaleList;");
 	}
 	jboolean Configuration::isLayoutSizeAtLeast(jint arg0)
 	{
@@ -869,6 +855,20 @@ namespace __jni_impl::android::content::res
 		return __thiz.callMethod<jboolean>(
 			"isScreenHdr",
 			"()Z");
+	}
+	jint Configuration::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::content::res
 

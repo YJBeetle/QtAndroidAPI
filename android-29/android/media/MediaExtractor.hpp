@@ -97,8 +97,8 @@ namespace __jni_impl::android::media
 		jlong getCachedDuration();
 		jboolean hasCacheReachedEndOfStream();
 		QAndroidJniObject getMetrics();
-		void seekTo(jlong arg0, jint arg1);
 		void selectTrack(jint arg0);
+		void seekTo(jlong arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -340,6 +340,13 @@ namespace __jni_impl::android::media
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;");
 	}
+	void MediaExtractor::selectTrack(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"selectTrack",
+			"(I)V",
+			arg0);
+	}
 	void MediaExtractor::seekTo(jlong arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -347,13 +354,6 @@ namespace __jni_impl::android::media
 			"(JI)V",
 			arg0,
 			arg1);
-	}
-	void MediaExtractor::selectTrack(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"selectTrack",
-			"(I)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::media
 

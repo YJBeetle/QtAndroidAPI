@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class UserHandle;
 }
 namespace __jni_impl::android::os
 {
-	class UserHandle;
+	class Bundle;
 }
 namespace __jni_impl::android::content
 {
@@ -98,9 +98,6 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getApplicationRestrictions(jstring arg0);
-		QAndroidJniObject getUserRestrictions(__jni_impl::android::os::UserHandle arg0);
-		QAndroidJniObject getUserRestrictions();
 		static jboolean supportsMultipleUsers();
 		QAndroidJniObject getUserName();
 		jboolean isUserAGoat();
@@ -123,11 +120,14 @@ namespace __jni_impl::android::os
 		jboolean isQuietModeEnabled(__jni_impl::android::os::UserHandle arg0);
 		jboolean setRestrictionsChallenge(jstring arg0);
 		jlong getUserCreationTime(__jni_impl::android::os::UserHandle arg0);
+		QAndroidJniObject getApplicationRestrictions(jstring arg0);
+		QAndroidJniObject getUserRestrictions(__jni_impl::android::os::UserHandle arg0);
+		QAndroidJniObject getUserRestrictions();
 	};
 } // namespace __jni_impl::android::os
 
-#include "Bundle.hpp"
 #include "UserHandle.hpp"
+#include "Bundle.hpp"
 #include "../content/Intent.hpp"
 #include "PersistableBundle.hpp"
 
@@ -590,26 +590,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject UserManager::getApplicationRestrictions(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationRestrictions",
-			"(Ljava/lang/String;)Landroid/os/Bundle;",
-			arg0);
-	}
-	QAndroidJniObject UserManager::getUserRestrictions(__jni_impl::android::os::UserHandle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getUserRestrictions",
-			"(Landroid/os/UserHandle;)Landroid/os/Bundle;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject UserManager::getUserRestrictions()
-	{
-		return __thiz.callObjectMethod(
-			"getUserRestrictions",
-			"()Landroid/os/Bundle;");
-	}
 	jboolean UserManager::supportsMultipleUsers()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -763,6 +743,26 @@ namespace __jni_impl::android::os
 			"getUserCreationTime",
 			"(Landroid/os/UserHandle;)J",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject UserManager::getApplicationRestrictions(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getApplicationRestrictions",
+			"(Ljava/lang/String;)Landroid/os/Bundle;",
+			arg0);
+	}
+	QAndroidJniObject UserManager::getUserRestrictions(__jni_impl::android::os::UserHandle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getUserRestrictions",
+			"(Landroid/os/UserHandle;)Landroid/os/Bundle;",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject UserManager::getUserRestrictions()
+	{
+		return __thiz.callObjectMethod(
+			"getUserRestrictions",
+			"()Landroid/os/Bundle;");
 	}
 } // namespace __jni_impl::android::os
 

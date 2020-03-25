@@ -3,6 +3,8 @@
 #ifndef JAVA_NIO_CHANNELS_FILELOCKINTERRUPTIONEXCEPTION
 #define JAVA_NIO_CHANNELS_FILELOCKINTERRUPTIONEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
 
 

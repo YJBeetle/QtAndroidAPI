@@ -3,11 +3,16 @@
 #ifndef ANDROID_TELECOM_CONNECTION
 #define ANDROID_TELECOM_CONNECTION
 
+#include "../../__JniBaseClass.hpp"
 #include "Conferenceable.hpp"
 
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 namespace __jni_impl::android::telecom
 {
@@ -24,10 +29,6 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::telecom
 {
 	class StatusHints;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 namespace __jni_impl::android::telecom
 {
@@ -99,6 +100,8 @@ namespace __jni_impl::android::telecom
 		jint getState();
 		void destroy();
 		QAndroidJniObject getAddress();
+		QAndroidJniObject getExtras();
+		void putExtras(__jni_impl::android::os::Bundle arg0);
 		jint getConnectionCapabilities();
 		jint getConnectionProperties();
 		QAndroidJniObject getCallAudioState();
@@ -123,8 +126,8 @@ namespace __jni_impl::android::telecom
 		void setStatusHints(__jni_impl::android::telecom::StatusHints arg0);
 		QAndroidJniObject getStatusHints();
 		void setExtras(__jni_impl::android::os::Bundle arg0);
-		void removeExtras(__jni_impl::__JniBaseClass arg0);
 		void removeExtras(jarray arg0);
+		void removeExtras(__jni_impl::__JniBaseClass arg0);
 		void onExtrasChanged(__jni_impl::android::os::Bundle arg0);
 		static QAndroidJniObject capabilitiesToString(jint arg0);
 		static QAndroidJniObject propertiesToString(jint arg0);
@@ -155,8 +158,8 @@ namespace __jni_impl::android::telecom
 		void sendRemoteRttRequest();
 		void onStateChanged(jint arg0);
 		void onAbort();
-		void onAnswer();
 		void onAnswer(jint arg0);
+		void onAnswer();
 		void onDeflect(__jni_impl::android::net::Uri arg0);
 		void onReject();
 		void onReject(jstring arg0);
@@ -172,17 +175,15 @@ namespace __jni_impl::android::telecom
 		static QAndroidJniObject createFailedConnection(__jni_impl::android::telecom::DisconnectCause arg0);
 		static QAndroidJniObject createCanceledConnection();
 		void sendConnectionEvent(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		QAndroidJniObject getExtras();
-		void putExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
 #include "../net/Uri.hpp"
+#include "../os/Bundle.hpp"
 #include "CallAudioState.hpp"
 #include "Connection_VideoProvider.hpp"
 #include "DisconnectCause.hpp"
 #include "StatusHints.hpp"
-#include "../os/Bundle.hpp"
 #include "Conference.hpp"
 #include "../bluetooth/BluetoothDevice.hpp"
 #include "Connection_RttTextStream.hpp"
@@ -486,6 +487,19 @@ namespace __jni_impl::android::telecom
 			"getAddress",
 			"()Landroid/net/Uri;");
 	}
+	QAndroidJniObject Connection::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;");
+	}
+	void Connection::putExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"putExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object());
+	}
 	jint Connection::getConnectionCapabilities()
 	{
 		return __thiz.callMethod<jint>(
@@ -640,19 +654,19 @@ namespace __jni_impl::android::telecom
 			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object());
 	}
-	void Connection::removeExtras(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeExtras",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
-	}
 	void Connection::removeExtras(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeExtras",
 			"([Ljava/lang/String;)V",
 			arg0);
+	}
+	void Connection::removeExtras(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeExtras",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object());
 	}
 	void Connection::onExtrasChanged(__jni_impl::android::os::Bundle arg0)
 	{
@@ -854,18 +868,18 @@ namespace __jni_impl::android::telecom
 			"onAbort",
 			"()V");
 	}
-	void Connection::onAnswer()
-	{
-		__thiz.callMethod<void>(
-			"onAnswer",
-			"()V");
-	}
 	void Connection::onAnswer(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAnswer",
 			"(I)V",
 			arg0);
+	}
+	void Connection::onAnswer()
+	{
+		__thiz.callMethod<void>(
+			"onAnswer",
+			"()V");
 	}
 	void Connection::onDeflect(__jni_impl::android::net::Uri arg0)
 	{
@@ -968,19 +982,6 @@ namespace __jni_impl::android::telecom
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
 			arg1.__jniObject().object());
-	}
-	QAndroidJniObject Connection::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	void Connection::putExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"putExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::telecom
 

@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_ANNOTATION_ELEMENTTYPE
 #define JAVA_LANG_ANNOTATION_ELEMENTTYPE
 
+#include "../../../__JniBaseClass.hpp"
 #include "../Enum.hpp"
 
 

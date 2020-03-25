@@ -55,18 +55,18 @@ namespace __jni_impl::android::graphics
 		jboolean isComplex();
 		void translate(jint arg0, jint arg1, __jni_impl::android::graphics::Region arg2);
 		void translate(jint arg0, jint arg1);
-		jboolean isRect();
-		void setEmpty();
 		jboolean setPath(__jni_impl::android::graphics::Path arg0, __jni_impl::android::graphics::Region arg1);
-		jboolean quickReject(__jni_impl::android::graphics::Rect arg0);
-		jboolean quickReject(jint arg0, jint arg1, jint arg2, jint arg3);
-		jboolean quickReject(__jni_impl::android::graphics::Region arg0);
+		void setEmpty();
+		jboolean isRect();
+		jboolean quickContains(__jni_impl::android::graphics::Rect arg0);
+		jboolean quickContains(jint arg0, jint arg1, jint arg2, jint arg3);
+		jboolean getBoundaryPath(__jni_impl::android::graphics::Path arg0);
+		QAndroidJniObject getBoundaryPath();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jboolean quickContains(jint arg0, jint arg1, jint arg2, jint arg3);
-		jboolean quickContains(__jni_impl::android::graphics::Rect arg0);
-		QAndroidJniObject getBoundaryPath();
-		jboolean getBoundaryPath(__jni_impl::android::graphics::Path arg0);
+		jboolean quickReject(jint arg0, jint arg1, jint arg2, jint arg3);
+		jboolean quickReject(__jni_impl::android::graphics::Region arg0);
+		jboolean quickReject(__jni_impl::android::graphics::Rect arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -258,18 +258,6 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1);
 	}
-	jboolean Region::isRect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRect",
-			"()Z");
-	}
-	void Region::setEmpty()
-	{
-		__thiz.callMethod<void>(
-			"setEmpty",
-			"()V");
-	}
 	jboolean Region::setPath(__jni_impl::android::graphics::Path arg0, __jni_impl::android::graphics::Region arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -278,12 +266,61 @@ namespace __jni_impl::android::graphics
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
-	jboolean Region::quickReject(__jni_impl::android::graphics::Rect arg0)
+	void Region::setEmpty()
+	{
+		__thiz.callMethod<void>(
+			"setEmpty",
+			"()V");
+	}
+	jboolean Region::isRect()
 	{
 		return __thiz.callMethod<jboolean>(
-			"quickReject",
+			"isRect",
+			"()Z");
+	}
+	jboolean Region::quickContains(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"quickContains",
 			"(Landroid/graphics/Rect;)Z",
 			arg0.__jniObject().object());
+	}
+	jboolean Region::quickContains(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"quickContains",
+			"(IIII)Z",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
+	jboolean Region::getBoundaryPath(__jni_impl::android::graphics::Path arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getBoundaryPath",
+			"(Landroid/graphics/Path;)Z",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Region::getBoundaryPath()
+	{
+		return __thiz.callObjectMethod(
+			"getBoundaryPath",
+			"()Landroid/graphics/Path;");
+	}
+	jint Region::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void Region::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	jboolean Region::quickReject(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -302,48 +339,11 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Region;)Z",
 			arg0.__jniObject().object());
 	}
-	jint Region::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Region::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	jboolean Region::quickContains(jint arg0, jint arg1, jint arg2, jint arg3)
+	jboolean Region::quickReject(__jni_impl::android::graphics::Rect arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"quickContains",
-			"(IIII)Z",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	jboolean Region::quickContains(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"quickContains",
+			"quickReject",
 			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Region::getBoundaryPath()
-	{
-		return __thiz.callObjectMethod(
-			"getBoundaryPath",
-			"()Landroid/graphics/Path;");
-	}
-	jboolean Region::getBoundaryPath(__jni_impl::android::graphics::Path arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getBoundaryPath",
-			"(Landroid/graphics/Path;)Z",
 			arg0.__jniObject().object());
 	}
 } // namespace __jni_impl::android::graphics

@@ -3,6 +3,8 @@
 #ifndef ANDROID_NET_SSLCERTIFICATESOCKETFACTORY
 #define ANDROID_NET_SSLCERTIFICATESOCKETFACTORY
 
+#include "../../__JniBaseClass.hpp"
+#include "../../javax/net/SocketFactory.hpp"
 #include "../../javax/net/ssl/SSLSocketFactory.hpp"
 
 namespace __jni_impl::javax::net::ssl
@@ -39,6 +41,14 @@ namespace __jni_impl::android::net
 		// Methods
 		static QAndroidJniObject getDefault(jint arg0, __jni_impl::android::net::SSLSessionCache arg1);
 		static QAndroidJniObject getDefault(jint arg0);
+		QAndroidJniObject getSupportedCipherSuites();
+		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
+		QAndroidJniObject createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
+		QAndroidJniObject createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1);
+		QAndroidJniObject createSocket(jstring arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
+		QAndroidJniObject createSocket(jstring arg0, jint arg1);
+		QAndroidJniObject createSocket();
+		void setUseSessionTickets(__jni_impl::java::net::Socket arg0, jboolean arg1);
 		static QAndroidJniObject getInsecure(jint arg0, __jni_impl::android::net::SSLSessionCache arg1);
 		void setTrustManagers(jarray arg0);
 		void setNpnProtocols(jarray arg0);
@@ -46,14 +56,6 @@ namespace __jni_impl::android::net
 		void setKeyManagers(jarray arg0);
 		void setHostname(__jni_impl::java::net::Socket arg0, jstring arg1);
 		QAndroidJniObject getDefaultCipherSuites();
-		QAndroidJniObject getSupportedCipherSuites();
-		QAndroidJniObject createSocket(jstring arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
-		QAndroidJniObject createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1);
-		QAndroidJniObject createSocket(jstring arg0, jint arg1);
-		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
-		QAndroidJniObject createSocket();
-		QAndroidJniObject createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
-		void setUseSessionTickets(__jni_impl::java::net::Socket arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::net
 
@@ -93,6 +95,72 @@ namespace __jni_impl::android::net
 			"getDefault",
 			"(I)Ljavax/net/SocketFactory;",
 			arg0);
+	}
+	QAndroidJniObject SSLCertificateSocketFactory::getSupportedCipherSuites()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedCipherSuites",
+			"()[Ljava/lang/String;");
+	}
+	QAndroidJniObject SSLCertificateSocketFactory::createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3);
+	}
+	QAndroidJniObject SSLCertificateSocketFactory::createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3);
+	}
+	QAndroidJniObject SSLCertificateSocketFactory::createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"(Ljava/net/InetAddress;I)Ljava/net/Socket;",
+			arg0.__jniObject().object(),
+			arg1);
+	}
+	QAndroidJniObject SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3);
+	}
+	QAndroidJniObject SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"(Ljava/lang/String;I)Ljava/net/Socket;",
+			arg0,
+			arg1);
+	}
+	QAndroidJniObject SSLCertificateSocketFactory::createSocket()
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"()Ljava/net/Socket;");
+	}
+	void SSLCertificateSocketFactory::setUseSessionTickets(__jni_impl::java::net::Socket arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setUseSessionTickets",
+			"(Ljava/net/Socket;Z)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	QAndroidJniObject SSLCertificateSocketFactory::getInsecure(jint arg0, __jni_impl::android::net::SSLSessionCache arg1)
 	{
@@ -144,72 +212,6 @@ namespace __jni_impl::android::net
 		return __thiz.callObjectMethod(
 			"getDefaultCipherSuites",
 			"()[Ljava/lang/String;");
-	}
-	QAndroidJniObject SSLCertificateSocketFactory::getSupportedCipherSuites()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedCipherSuites",
-			"()[Ljava/lang/String;");
-	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3);
-	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/net/InetAddress;I)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(jstring arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/lang/String;I)Ljava/net/Socket;",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3);
-	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket()
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"()Ljava/net/Socket;");
-	}
-	QAndroidJniObject SSLCertificateSocketFactory::createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3);
-	}
-	void SSLCertificateSocketFactory::setUseSessionTickets(__jni_impl::java::net::Socket arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setUseSessionTickets",
-			"(Ljava/net/Socket;Z)V",
-			arg0.__jniObject().object(),
-			arg1);
 	}
 } // namespace __jni_impl::android::net
 

@@ -62,12 +62,12 @@ namespace __jni_impl::android::app::slice
 		// Methods
 		QAndroidJniObject toString();
 		QAndroidJniObject getUri();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getSpec();
 		QAndroidJniObject getItems();
 		QAndroidJniObject getHints();
 		jboolean isCallerNeeded();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::slice
 
@@ -317,20 +317,6 @@ namespace __jni_impl::android::app::slice
 			"getUri",
 			"()Landroid/net/Uri;");
 	}
-	jint Slice::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Slice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	QAndroidJniObject Slice::getSpec()
 	{
 		return __thiz.callObjectMethod(
@@ -354,6 +340,20 @@ namespace __jni_impl::android::app::slice
 		return __thiz.callMethod<jboolean>(
 			"isCallerNeeded",
 			"()Z");
+	}
+	jint Slice::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void Slice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::app::slice
 

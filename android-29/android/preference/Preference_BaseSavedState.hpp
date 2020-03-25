@@ -3,6 +3,7 @@
 #ifndef ANDROID_PREFERENCE_PREFERENCE_BASESAVEDSTATE
 #define ANDROID_PREFERENCE_PREFERENCE_BASESAVEDSTATE
 
+#include "../../__JniBaseClass.hpp"
 #include "../view/AbsSavedState.hpp"
 
 namespace __jni_impl::android::os

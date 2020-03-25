@@ -3,6 +3,7 @@
 #ifndef ANDROID_VIEW_VIEWGROUPOVERLAY
 #define ANDROID_VIEW_VIEWGROUPOVERLAY
 
+#include "../../__JniBaseClass.hpp"
 #include "ViewOverlay.hpp"
 
 namespace __jni_impl::android::content

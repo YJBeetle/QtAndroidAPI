@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_EMBOSSMASKFILTER
 #define ANDROID_GRAPHICS_EMBOSSMASKFILTER
 
+#include "../../__JniBaseClass.hpp"
 #include "MaskFilter.hpp"
 
 

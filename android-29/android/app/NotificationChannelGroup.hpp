@@ -28,12 +28,12 @@ namespace __jni_impl::android::app
 		jint hashCode();
 		QAndroidJniObject clone();
 		QAndroidJniObject getId();
-		QAndroidJniObject getDescription();
 		void setDescription(jstring arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getChannels();
 		jboolean isBlocked();
+		QAndroidJniObject getDescription();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -98,18 +98,30 @@ namespace __jni_impl::android::app
 			"getId",
 			"()Ljava/lang/String;");
 	}
-	QAndroidJniObject NotificationChannelGroup::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
-	}
 	void NotificationChannelGroup::setDescription(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDescription",
 			"(Ljava/lang/String;)V",
 			arg0);
+	}
+	QAndroidJniObject NotificationChannelGroup::getChannels()
+	{
+		return __thiz.callObjectMethod(
+			"getChannels",
+			"()Ljava/util/List;");
+	}
+	jboolean NotificationChannelGroup::isBlocked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBlocked",
+			"()Z");
+	}
+	QAndroidJniObject NotificationChannelGroup::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;");
 	}
 	jint NotificationChannelGroup::describeContents()
 	{
@@ -124,18 +136,6 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	QAndroidJniObject NotificationChannelGroup::getChannels()
-	{
-		return __thiz.callObjectMethod(
-			"getChannels",
-			"()Ljava/util/List;");
-	}
-	jboolean NotificationChannelGroup::isBlocked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBlocked",
-			"()Z");
 	}
 } // namespace __jni_impl::android::app
 

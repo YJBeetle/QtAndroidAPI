@@ -54,12 +54,12 @@ namespace __jni_impl::android::media
 		jint hashCode();
 		jint getFlags();
 		jint getUsage();
+		jint getVolumeControlStream();
 		jboolean areHapticChannelsMuted();
 		jint getAllowedCapturePolicy();
 		jint getContentType();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getVolumeControlStream();
 	};
 } // namespace __jni_impl::android::media
 
@@ -278,6 +278,12 @@ namespace __jni_impl::android::media
 			"getUsage",
 			"()I");
 	}
+	jint AudioAttributes::getVolumeControlStream()
+	{
+		return __thiz.callMethod<jint>(
+			"getVolumeControlStream",
+			"()I");
+	}
 	jboolean AudioAttributes::areHapticChannelsMuted()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -309,12 +315,6 @@ namespace __jni_impl::android::media
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
-	}
-	jint AudioAttributes::getVolumeControlStream()
-	{
-		return __thiz.callMethod<jint>(
-			"getVolumeControlStream",
-			"()I");
 	}
 } // namespace __jni_impl::android::media
 

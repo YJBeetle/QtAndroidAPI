@@ -25,12 +25,12 @@ namespace __jni_impl::android::nfc::tech
 		void connect();
 		void close();
 		QAndroidJniObject getTag();
-		QAndroidJniObject getAtqa();
 		QAndroidJniObject transceive(jbyteArray arg0);
 		jint getMaxTransceiveLength();
 		void setTimeout(jint arg0);
 		jint getTimeout();
 		jboolean isConnected();
+		QAndroidJniObject getAtqa();
 		jshort getSak();
 	};
 } // namespace __jni_impl::android::nfc::tech
@@ -76,12 +76,6 @@ namespace __jni_impl::android::nfc::tech
 			"getTag",
 			"()Landroid/nfc/Tag;");
 	}
-	QAndroidJniObject NfcA::getAtqa()
-	{
-		return __thiz.callObjectMethod(
-			"getAtqa",
-			"()[B");
-	}
 	QAndroidJniObject NfcA::transceive(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -113,6 +107,12 @@ namespace __jni_impl::android::nfc::tech
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
 			"()Z");
+	}
+	QAndroidJniObject NfcA::getAtqa()
+	{
+		return __thiz.callObjectMethod(
+			"getAtqa",
+			"()[B");
 	}
 	jshort NfcA::getSak()
 	{

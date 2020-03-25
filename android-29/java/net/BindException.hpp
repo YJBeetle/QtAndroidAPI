@@ -3,6 +3,9 @@
 #ifndef JAVA_NET_BINDEXCEPTION
 #define JAVA_NET_BINDEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
 #include "SocketException.hpp"
 
 

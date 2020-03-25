@@ -3,6 +3,8 @@
 #ifndef ANDROID_GRAPHICS_DRAWABLE_SHAPES_ROUNDRECTSHAPE
 #define ANDROID_GRAPHICS_DRAWABLE_SHAPES_ROUNDRECTSHAPE
 
+#include "../../../../__JniBaseClass.hpp"
+#include "Shape.hpp"
 #include "RectShape.hpp"
 
 namespace __jni_impl::android::graphics

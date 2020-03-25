@@ -9,6 +9,10 @@ namespace __jni_impl::android::telephony::data
 {
 	class ApnSetting_Builder;
 }
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 namespace __jni_impl::java::net
 {
 	class InetAddress;
@@ -16,10 +20,6 @@ namespace __jni_impl::java::net
 namespace __jni_impl::android::net
 {
 	class Uri;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::telephony::data
@@ -65,6 +65,9 @@ namespace __jni_impl::android::telephony::data
 		jint getProtocol();
 		jboolean isEnabled();
 		QAndroidJniObject getEntryName();
+		QAndroidJniObject getUser();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getApnName();
 		QAndroidJniObject getProxyAddress();
 		QAndroidJniObject getProxyAddressAsString();
@@ -81,16 +84,13 @@ namespace __jni_impl::android::telephony::data
 		jint getNetworkTypeBitmask();
 		jint getMvnoType();
 		jint getCarrierId();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getUser();
 	};
 } // namespace __jni_impl::android::telephony::data
 
 #include "ApnSetting_Builder.hpp"
+#include "../../os/Parcel.hpp"
 #include "../../../java/net/InetAddress.hpp"
 #include "../../net/Uri.hpp"
-#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::telephony::data
 {
@@ -299,6 +299,26 @@ namespace __jni_impl::android::telephony::data
 			"getEntryName",
 			"()Ljava/lang/String;");
 	}
+	QAndroidJniObject ApnSetting::getUser()
+	{
+		return __thiz.callObjectMethod(
+			"getUser",
+			"()Ljava/lang/String;");
+	}
+	jint ApnSetting::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void ApnSetting::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
+	}
 	QAndroidJniObject ApnSetting::getApnName()
 	{
 		return __thiz.callObjectMethod(
@@ -394,26 +414,6 @@ namespace __jni_impl::android::telephony::data
 		return __thiz.callMethod<jint>(
 			"getCarrierId",
 			"()I");
-	}
-	jint ApnSetting::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void ApnSetting::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject ApnSetting::getUser()
-	{
-		return __thiz.callObjectMethod(
-			"getUser",
-			"()Ljava/lang/String;");
 	}
 } // namespace __jni_impl::android::telephony::data
 

@@ -3,6 +3,10 @@
 #ifndef ANDROID_DATABASE_SQLITE_SQLITEACCESSPERMEXCEPTION
 #define ANDROID_DATABASE_SQLITE_SQLITEACCESSPERMEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../SQLException.hpp"
 #include "SQLiteException.hpp"
 
 

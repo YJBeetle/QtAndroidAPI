@@ -3,6 +3,7 @@
 #ifndef ANDROID_ICU_UTIL_CURRENCY
 #define ANDROID_ICU_UTIL_CURRENCY
 
+#include "../../../__JniBaseClass.hpp"
 #include "MeasureUnit.hpp"
 
 namespace __jni_impl::java::util
@@ -57,17 +58,17 @@ namespace __jni_impl::android::icu::util
 		QAndroidJniObject getSymbol(__jni_impl::android::icu::util::ULocale arg0);
 		QAndroidJniObject getSymbol(__jni_impl::java::util::Locale arg0);
 		QAndroidJniObject getSymbol();
+		static QAndroidJniObject getAvailableULocales();
+		static QAndroidJniObject getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
 		static jboolean isAvailable(jstring arg0, __jni_impl::java::util::Date arg1, __jni_impl::java::util::Date arg2);
-		static QAndroidJniObject getAvailableCurrencyCodes(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Date arg1);
 		static QAndroidJniObject getAvailableCurrencyCodes(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::java::util::Date arg1);
+		static QAndroidJniObject getAvailableCurrencyCodes(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Date arg1);
 		static QAndroidJniObject getAvailableCurrencies();
 		static QAndroidJniObject fromJavaCurrency(__jni_impl::java::util::Currency arg0);
 		QAndroidJniObject toJavaCurrency();
 		jint getNumericCode();
 		jdouble getRoundingIncrement(__jni_impl::android::icu::util::Currency_CurrencyUsage arg0);
 		jdouble getRoundingIncrement();
-		static QAndroidJniObject getAvailableULocales();
-		static QAndroidJniObject getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -235,6 +236,23 @@ namespace __jni_impl::android::icu::util
 			"getSymbol",
 			"()Ljava/lang/String;");
 	}
+	QAndroidJniObject Currency::getAvailableULocales()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Currency",
+			"getAvailableULocales",
+			"()[Landroid/icu/util/ULocale;");
+	}
+	QAndroidJniObject Currency::getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Currency",
+			"getKeywordValuesForLocale",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2);
+	}
 	jboolean Currency::isAvailable(jstring arg0, __jni_impl::java::util::Date arg1, __jni_impl::java::util::Date arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -245,21 +263,21 @@ namespace __jni_impl::android::icu::util
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object());
 	}
-	QAndroidJniObject Currency::getAvailableCurrencyCodes(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Date arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"getAvailableCurrencyCodes",
-			"(Ljava/util/Locale;Ljava/util/Date;)[Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	QAndroidJniObject Currency::getAvailableCurrencyCodes(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::java::util::Date arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Currency",
 			"getAvailableCurrencyCodes",
 			"(Landroid/icu/util/ULocale;Ljava/util/Date;)[Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	QAndroidJniObject Currency::getAvailableCurrencyCodes(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Date arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Currency",
+			"getAvailableCurrencyCodes",
+			"(Ljava/util/Locale;Ljava/util/Date;)[Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
@@ -302,23 +320,6 @@ namespace __jni_impl::android::icu::util
 		return __thiz.callMethod<jdouble>(
 			"getRoundingIncrement",
 			"()D");
-	}
-	QAndroidJniObject Currency::getAvailableULocales()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"getAvailableULocales",
-			"()[Landroid/icu/util/ULocale;");
-	}
-	QAndroidJniObject Currency::getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"getKeywordValuesForLocale",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2);
 	}
 } // namespace __jni_impl::android::icu::util
 

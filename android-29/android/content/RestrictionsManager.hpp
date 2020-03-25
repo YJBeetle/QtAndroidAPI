@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class PersistableBundle;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class PersistableBundle;
 }
 namespace __jni_impl::android::content
 {
@@ -59,8 +59,8 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		void requestPermission(jstring arg0, jstring arg1, __jni_impl::android::os::PersistableBundle arg2);
 		QAndroidJniObject getApplicationRestrictions();
+		void requestPermission(jstring arg0, jstring arg1, __jni_impl::android::os::PersistableBundle arg2);
 		jboolean hasRestrictionsProvider();
 		QAndroidJniObject createLocalApprovalIntent();
 		void notifyPermissionResponse(jstring arg0, __jni_impl::android::os::PersistableBundle arg1);
@@ -69,8 +69,8 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "../os/PersistableBundle.hpp"
 #include "../os/Bundle.hpp"
+#include "../os/PersistableBundle.hpp"
 #include "Intent.hpp"
 
 namespace __jni_impl::android::content
@@ -288,6 +288,12 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
+	QAndroidJniObject RestrictionsManager::getApplicationRestrictions()
+	{
+		return __thiz.callObjectMethod(
+			"getApplicationRestrictions",
+			"()Landroid/os/Bundle;");
+	}
 	void RestrictionsManager::requestPermission(jstring arg0, jstring arg1, __jni_impl::android::os::PersistableBundle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -296,12 +302,6 @@ namespace __jni_impl::android::content
 			arg0,
 			arg1,
 			arg2.__jniObject().object());
-	}
-	QAndroidJniObject RestrictionsManager::getApplicationRestrictions()
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationRestrictions",
-			"()Landroid/os/Bundle;");
 	}
 	jboolean RestrictionsManager::hasRestrictionsProvider()
 	{

@@ -56,19 +56,19 @@ namespace __jni_impl::android::content::res
 		jint getDimensionPixelOffset(jint arg0, jint arg1);
 		jint getDimensionPixelSize(jint arg0, jint arg1);
 		jfloat getFraction(jint arg0, jint arg1, jint arg2, jfloat arg3);
+		QAndroidJniObject getNonResourceString(jint arg0);
+		jint getLayoutDimension(jint arg0, jstring arg1);
+		jint getLayoutDimension(jint arg0, jint arg1);
 		jint getResourceId(jint arg0, jint arg1);
 		jint getSourceResourceId(jint arg0, jint arg1);
 		jboolean hasValueOrEmpty(jint arg0);
 		QAndroidJniObject peekValue(jint arg0);
 		jint getIndexCount();
-		QAndroidJniObject getNonResourceString(jint arg0);
-		jint getLayoutDimension(jint arg0, jstring arg1);
-		jint getLayoutDimension(jint arg0, jint arg1);
+		QAndroidJniObject getPositionDescription();
+		jint getChangingConfigurations();
 		jint getColor(jint arg0, jint arg1);
 		QAndroidJniObject getDrawable(jint arg0);
 		QAndroidJniObject getColorStateList(jint arg0);
-		jint getChangingConfigurations();
-		QAndroidJniObject getPositionDescription();
 		void recycle();
 	};
 } // namespace __jni_impl::android::content::res
@@ -233,6 +233,29 @@ namespace __jni_impl::android::content::res
 			arg2,
 			arg3);
 	}
+	QAndroidJniObject TypedArray::getNonResourceString(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getNonResourceString",
+			"(I)Ljava/lang/String;",
+			arg0);
+	}
+	jint TypedArray::getLayoutDimension(jint arg0, jstring arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getLayoutDimension",
+			"(ILjava/lang/String;)I",
+			arg0,
+			arg1);
+	}
+	jint TypedArray::getLayoutDimension(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getLayoutDimension",
+			"(II)I",
+			arg0,
+			arg1);
+	}
 	jint TypedArray::getResourceId(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -269,28 +292,17 @@ namespace __jni_impl::android::content::res
 			"getIndexCount",
 			"()I");
 	}
-	QAndroidJniObject TypedArray::getNonResourceString(jint arg0)
+	QAndroidJniObject TypedArray::getPositionDescription()
 	{
 		return __thiz.callObjectMethod(
-			"getNonResourceString",
-			"(I)Ljava/lang/String;",
-			arg0);
+			"getPositionDescription",
+			"()Ljava/lang/String;");
 	}
-	jint TypedArray::getLayoutDimension(jint arg0, jstring arg1)
+	jint TypedArray::getChangingConfigurations()
 	{
 		return __thiz.callMethod<jint>(
-			"getLayoutDimension",
-			"(ILjava/lang/String;)I",
-			arg0,
-			arg1);
-	}
-	jint TypedArray::getLayoutDimension(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getLayoutDimension",
-			"(II)I",
-			arg0,
-			arg1);
+			"getChangingConfigurations",
+			"()I");
 	}
 	jint TypedArray::getColor(jint arg0, jint arg1)
 	{
@@ -313,18 +325,6 @@ namespace __jni_impl::android::content::res
 			"getColorStateList",
 			"(I)Landroid/content/res/ColorStateList;",
 			arg0);
-	}
-	jint TypedArray::getChangingConfigurations()
-	{
-		return __thiz.callMethod<jint>(
-			"getChangingConfigurations",
-			"()I");
-	}
-	QAndroidJniObject TypedArray::getPositionDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getPositionDescription",
-			"()Ljava/lang/String;");
 	}
 	void TypedArray::recycle()
 	{

@@ -3,6 +3,9 @@
 #ifndef JAVA_UTIL_ZIP_ZIPERROR
 #define JAVA_UTIL_ZIP_ZIPERROR
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../lang/Error.hpp"
+#include "../../lang/VirtualMachineError.hpp"
 #include "../../lang/InternalError.hpp"
 
 

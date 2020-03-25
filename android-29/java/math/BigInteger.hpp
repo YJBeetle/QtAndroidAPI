@@ -3,6 +3,7 @@
 #ifndef JAVA_MATH_BIGINTEGER
 #define JAVA_MATH_BIGINTEGER
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Number.hpp"
 
 namespace __jni_impl::java::util

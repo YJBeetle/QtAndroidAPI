@@ -17,9 +17,13 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::app
+namespace __jni_impl::android::net
 {
-	class Notification_Style;
+	class Uri;
+}
+namespace __jni_impl::android::media
+{
+	class AudioAttributes;
 }
 namespace __jni_impl::android::app
 {
@@ -29,13 +33,9 @@ namespace __jni_impl::android::app
 {
 	class Notification_Action;
 }
-namespace __jni_impl::android::net
+namespace __jni_impl::android::app
 {
-	class Uri;
-}
-namespace __jni_impl::android::media
-{
-	class AudioAttributes;
+	class Notification_Style;
 }
 namespace __jni_impl::android::content
 {
@@ -77,22 +77,22 @@ namespace __jni_impl::android::app
 		QAndroidJniObject setPriority(jint arg0);
 		QAndroidJniObject build();
 		QAndroidJniObject setColor(jint arg0);
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
-		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getExtras();
 		QAndroidJniObject setNumber(jint arg0);
-		QAndroidJniObject setChronometerCountDown(jboolean arg0);
-		QAndroidJniObject getStyle();
-		QAndroidJniObject setStyle(__jni_impl::android::app::Notification_Style arg0);
-		QAndroidJniObject setProgress(jint arg0, jint arg1, jboolean arg2);
-		QAndroidJniObject addAction(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2);
-		QAndroidJniObject addAction(__jni_impl::android::app::Notification_Action arg0);
-		QAndroidJniObject setVisibility(jint arg0);
 		QAndroidJniObject getNotification();
 		QAndroidJniObject setGroup(jstring arg0);
-		QAndroidJniObject setSound(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject setSound(__jni_impl::android::net::Uri arg0, __jni_impl::android::media::AudioAttributes arg1);
 		QAndroidJniObject setSound(__jni_impl::android::net::Uri arg0, jint arg1);
+		QAndroidJniObject setSound(__jni_impl::android::net::Uri arg0, __jni_impl::android::media::AudioAttributes arg1);
+		QAndroidJniObject setSound(__jni_impl::android::net::Uri arg0);
+		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject setVisibility(jint arg0);
+		QAndroidJniObject addAction(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2);
+		QAndroidJniObject addAction(__jni_impl::android::app::Notification_Action arg0);
+		QAndroidJniObject setChronometerCountDown(jboolean arg0);
+		QAndroidJniObject setProgress(jint arg0, jint arg1, jboolean arg2);
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
+		QAndroidJniObject getStyle();
+		QAndroidJniObject setStyle(__jni_impl::android::app::Notification_Style arg0);
 		QAndroidJniObject setShortcutId(jstring arg0);
 		QAndroidJniObject setLocusId(__jni_impl::android::content::LocusId arg0);
 		QAndroidJniObject setBadgeIconType(jint arg0);
@@ -150,11 +150,11 @@ namespace __jni_impl::android::app
 #include "../content/Context.hpp"
 #include "Notification.hpp"
 #include "../os/Bundle.hpp"
-#include "Notification_Style.hpp"
-#include "PendingIntent.hpp"
-#include "Notification_Action.hpp"
 #include "../net/Uri.hpp"
 #include "../media/AudioAttributes.hpp"
+#include "PendingIntent.hpp"
+#include "Notification_Action.hpp"
+#include "Notification_Style.hpp"
 #include "../content/LocusId.hpp"
 #include "Notification_BubbleMetadata.hpp"
 #include "../graphics/drawable/Icon.hpp"
@@ -204,20 +204,6 @@ namespace __jni_impl::android::app
 			"(I)Landroid/app/Notification$Builder;",
 			arg0);
 	}
-	QAndroidJniObject Notification_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/app/Notification$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Notification_Builder::extend(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"extend",
-			"(Landroid/app/Notification$Extender;)Landroid/app/Notification$Builder;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject Notification_Builder::getExtras()
 	{
 		return __thiz.callObjectMethod(
@@ -231,34 +217,55 @@ namespace __jni_impl::android::app
 			"(I)Landroid/app/Notification$Builder;",
 			arg0);
 	}
-	QAndroidJniObject Notification_Builder::setChronometerCountDown(jboolean arg0)
+	QAndroidJniObject Notification_Builder::getNotification()
 	{
 		return __thiz.callObjectMethod(
-			"setChronometerCountDown",
-			"(Z)Landroid/app/Notification$Builder;",
+			"getNotification",
+			"()Landroid/app/Notification;");
+	}
+	QAndroidJniObject Notification_Builder::setGroup(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setGroup",
+			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
 			arg0);
 	}
-	QAndroidJniObject Notification_Builder::getStyle()
+	QAndroidJniObject Notification_Builder::setSound(__jni_impl::android::net::Uri arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
-			"getStyle",
-			"()Landroid/app/Notification$Style;");
+			"setSound",
+			"(Landroid/net/Uri;I)Landroid/app/Notification$Builder;",
+			arg0.__jniObject().object(),
+			arg1);
 	}
-	QAndroidJniObject Notification_Builder::setStyle(__jni_impl::android::app::Notification_Style arg0)
+	QAndroidJniObject Notification_Builder::setSound(__jni_impl::android::net::Uri arg0, __jni_impl::android::media::AudioAttributes arg1)
 	{
 		return __thiz.callObjectMethod(
-			"setStyle",
-			"(Landroid/app/Notification$Style;)Landroid/app/Notification$Builder;",
+			"setSound",
+			"(Landroid/net/Uri;Landroid/media/AudioAttributes;)Landroid/app/Notification$Builder;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
+	QAndroidJniObject Notification_Builder::setSound(__jni_impl::android::net::Uri arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSound",
+			"(Landroid/net/Uri;)Landroid/app/Notification$Builder;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject Notification_Builder::setProgress(jint arg0, jint arg1, jboolean arg2)
+	QAndroidJniObject Notification_Builder::extend(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setProgress",
-			"(IIZ)Landroid/app/Notification$Builder;",
-			arg0,
-			arg1,
-			arg2);
+			"extend",
+			"(Landroid/app/Notification$Extender;)Landroid/app/Notification$Builder;",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject Notification_Builder::setVisibility(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setVisibility",
+			"(I)Landroid/app/Notification$Builder;",
+			arg0);
 	}
 	QAndroidJniObject Notification_Builder::addAction(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2)
 	{
@@ -276,48 +283,41 @@ namespace __jni_impl::android::app
 			"(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject Notification_Builder::setVisibility(jint arg0)
+	QAndroidJniObject Notification_Builder::setChronometerCountDown(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setVisibility",
-			"(I)Landroid/app/Notification$Builder;",
+			"setChronometerCountDown",
+			"(Z)Landroid/app/Notification$Builder;",
 			arg0);
 	}
-	QAndroidJniObject Notification_Builder::getNotification()
+	QAndroidJniObject Notification_Builder::setProgress(jint arg0, jint arg1, jboolean arg2)
 	{
 		return __thiz.callObjectMethod(
-			"getNotification",
-			"()Landroid/app/Notification;");
+			"setProgress",
+			"(IIZ)Landroid/app/Notification$Builder;",
+			arg0,
+			arg1,
+			arg2);
 	}
-	QAndroidJniObject Notification_Builder::setGroup(jstring arg0)
+	QAndroidJniObject Notification_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setGroup",
-			"(Ljava/lang/String;)Landroid/app/Notification$Builder;",
-			arg0);
-	}
-	QAndroidJniObject Notification_Builder::setSound(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSound",
-			"(Landroid/net/Uri;)Landroid/app/Notification$Builder;",
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/app/Notification$Builder;",
 			arg0.__jniObject().object());
 	}
-	QAndroidJniObject Notification_Builder::setSound(__jni_impl::android::net::Uri arg0, __jni_impl::android::media::AudioAttributes arg1)
+	QAndroidJniObject Notification_Builder::getStyle()
 	{
 		return __thiz.callObjectMethod(
-			"setSound",
-			"(Landroid/net/Uri;Landroid/media/AudioAttributes;)Landroid/app/Notification$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			"getStyle",
+			"()Landroid/app/Notification$Style;");
 	}
-	QAndroidJniObject Notification_Builder::setSound(__jni_impl::android::net::Uri arg0, jint arg1)
+	QAndroidJniObject Notification_Builder::setStyle(__jni_impl::android::app::Notification_Style arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setSound",
-			"(Landroid/net/Uri;I)Landroid/app/Notification$Builder;",
-			arg0.__jniObject().object(),
-			arg1);
+			"setStyle",
+			"(Landroid/app/Notification$Style;)Landroid/app/Notification$Builder;",
+			arg0.__jniObject().object());
 	}
 	QAndroidJniObject Notification_Builder::setShortcutId(jstring arg0)
 	{

@@ -20,9 +20,9 @@ namespace __jni_impl::android::util
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
+		static QAndroidJniObject parseSize(jstring arg0);
 		jint getWidth();
 		jint getHeight();
-		static QAndroidJniObject parseSize(jstring arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -61,6 +61,14 @@ namespace __jni_impl::android::util
 			"hashCode",
 			"()I");
 	}
+	QAndroidJniObject Size::parseSize(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.Size",
+			"parseSize",
+			"(Ljava/lang/String;)Landroid/util/Size;",
+			arg0);
+	}
 	jint Size::getWidth()
 	{
 		return __thiz.callMethod<jint>(
@@ -72,14 +80,6 @@ namespace __jni_impl::android::util
 		return __thiz.callMethod<jint>(
 			"getHeight",
 			"()I");
-	}
-	QAndroidJniObject Size::parseSize(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Size",
-			"parseSize",
-			"(Ljava/lang/String;)Landroid/util/Size;",
-			arg0);
 	}
 } // namespace __jni_impl::android::util
 

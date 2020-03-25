@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_SURFACETEXTURE_OUTOFRESOURCESEXCEPTION
 #define ANDROID_GRAPHICS_SURFACETEXTURE_OUTOFRESOURCESEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
 

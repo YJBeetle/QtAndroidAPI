@@ -9,13 +9,13 @@ namespace __jni_impl::java::lang
 {
 	class ClassLoader;
 }
-namespace __jni_impl::javax::xml::parsers
-{
-	class SAXParser;
-}
 namespace __jni_impl::javax::xml::validation
 {
 	class Schema;
+}
+namespace __jni_impl::javax::xml::parsers
+{
+	class SAXParser;
 }
 
 namespace __jni_impl::javax::xml::parsers
@@ -29,29 +29,29 @@ namespace __jni_impl::javax::xml::parsers
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject newInstance();
 		static QAndroidJniObject newInstance(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
+		static QAndroidJniObject newInstance();
+		void setFeature(jstring arg0, jboolean arg1);
+		jboolean getFeature(jstring arg0);
+		void setSchema(__jni_impl::javax::xml::validation::Schema arg0);
+		QAndroidJniObject getSchema();
 		static QAndroidJniObject newDefaultInstance();
 		void setNamespaceAware(jboolean arg0);
 		static QAndroidJniObject newDefaultNSInstance();
-		static QAndroidJniObject newNSInstance(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
 		static QAndroidJniObject newNSInstance();
+		static QAndroidJniObject newNSInstance(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
 		QAndroidJniObject newSAXParser();
 		void setValidating(jboolean arg0);
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		void setXIncludeAware(jboolean arg0);
 		jboolean isXIncludeAware();
-		void setSchema(__jni_impl::javax::xml::validation::Schema arg0);
-		QAndroidJniObject getSchema();
-		void setFeature(jstring arg0, jboolean arg1);
-		jboolean getFeature(jstring arg0);
 	};
 } // namespace __jni_impl::javax::xml::parsers
 
 #include "../../../java/lang/ClassLoader.hpp"
-#include "SAXParser.hpp"
 #include "../validation/Schema.hpp"
+#include "SAXParser.hpp"
 
 namespace __jni_impl::javax::xml::parsers
 {
@@ -66,13 +66,6 @@ namespace __jni_impl::javax::xml::parsers
 	}
 	
 	// Methods
-	QAndroidJniObject SAXParserFactory::newInstance()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.parsers.SAXParserFactory",
-			"newInstance",
-			"()Ljavax/xml/parsers/SAXParserFactory;");
-	}
 	QAndroidJniObject SAXParserFactory::newInstance(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +74,41 @@ namespace __jni_impl::javax::xml::parsers
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",
 			arg0,
 			arg1.__jniObject().object());
+	}
+	QAndroidJniObject SAXParserFactory::newInstance()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.xml.parsers.SAXParserFactory",
+			"newInstance",
+			"()Ljavax/xml/parsers/SAXParserFactory;");
+	}
+	void SAXParserFactory::setFeature(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1);
+	}
+	jboolean SAXParserFactory::getFeature(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			arg0);
+	}
+	void SAXParserFactory::setSchema(__jni_impl::javax::xml::validation::Schema arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSchema",
+			"(Ljavax/xml/validation/Schema;)V",
+			arg0.__jniObject().object());
+	}
+	QAndroidJniObject SAXParserFactory::getSchema()
+	{
+		return __thiz.callObjectMethod(
+			"getSchema",
+			"()Ljavax/xml/validation/Schema;");
 	}
 	QAndroidJniObject SAXParserFactory::newDefaultInstance()
 	{
@@ -103,6 +131,13 @@ namespace __jni_impl::javax::xml::parsers
 			"newDefaultNSInstance",
 			"()Ljavax/xml/parsers/SAXParserFactory;");
 	}
+	QAndroidJniObject SAXParserFactory::newNSInstance()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.xml.parsers.SAXParserFactory",
+			"newNSInstance",
+			"()Ljavax/xml/parsers/SAXParserFactory;");
+	}
 	QAndroidJniObject SAXParserFactory::newNSInstance(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -111,13 +146,6 @@ namespace __jni_impl::javax::xml::parsers
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/SAXParserFactory;",
 			arg0,
 			arg1.__jniObject().object());
-	}
-	QAndroidJniObject SAXParserFactory::newNSInstance()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.parsers.SAXParserFactory",
-			"newNSInstance",
-			"()Ljavax/xml/parsers/SAXParserFactory;");
 	}
 	QAndroidJniObject SAXParserFactory::newSAXParser()
 	{
@@ -156,34 +184,6 @@ namespace __jni_impl::javax::xml::parsers
 		return __thiz.callMethod<jboolean>(
 			"isXIncludeAware",
 			"()Z");
-	}
-	void SAXParserFactory::setSchema(__jni_impl::javax::xml::validation::Schema arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSchema",
-			"(Ljavax/xml/validation/Schema;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SAXParserFactory::getSchema()
-	{
-		return __thiz.callObjectMethod(
-			"getSchema",
-			"()Ljavax/xml/validation/Schema;");
-	}
-	void SAXParserFactory::setFeature(jstring arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1);
-	}
-	jboolean SAXParserFactory::getFeature(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			arg0);
 	}
 } // namespace __jni_impl::javax::xml::parsers
 

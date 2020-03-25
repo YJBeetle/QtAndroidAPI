@@ -3,6 +3,7 @@
 #ifndef ANDROID_GRAPHICS_COLORMATRIXCOLORFILTER
 #define ANDROID_GRAPHICS_COLORMATRIXCOLORFILTER
 
+#include "../../__JniBaseClass.hpp"
 #include "ColorFilter.hpp"
 
 namespace __jni_impl::android::graphics

@@ -3,6 +3,7 @@
 #ifndef JAVA_NET_COOKIEMANAGER
 #define JAVA_NET_COOKIEMANAGER
 
+#include "../../__JniBaseClass.hpp"
 #include "CookieHandler.hpp"
 
 namespace __jni_impl::java::net

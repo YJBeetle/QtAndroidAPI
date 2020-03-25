@@ -32,14 +32,14 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		QAndroidJniObject toString();
-		void setExtras(__jni_impl::android::os::PersistableBundle arg0);
-		QAndroidJniObject getLabel();
 		QAndroidJniObject getExtras();
 		QAndroidJniObject getMimeType(jint arg0);
-		jboolean hasMimeType(jstring arg0);
+		QAndroidJniObject getLabel();
 		jlong getTimestamp();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void setExtras(__jni_impl::android::os::PersistableBundle arg0);
+		jboolean hasMimeType(jstring arg0);
 		static jboolean compareMimeTypes(jstring arg0, jstring arg1);
 		QAndroidJniObject filterMimeTypes(jstring arg0);
 		jint getMimeTypeCount();
@@ -112,19 +112,6 @@ namespace __jni_impl::android::content
 			"toString",
 			"()Ljava/lang/String;");
 	}
-	void ClipDescription::setExtras(__jni_impl::android::os::PersistableBundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/PersistableBundle;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ClipDescription::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;");
-	}
 	QAndroidJniObject ClipDescription::getExtras()
 	{
 		return __thiz.callObjectMethod(
@@ -138,12 +125,11 @@ namespace __jni_impl::android::content
 			"(I)Ljava/lang/String;",
 			arg0);
 	}
-	jboolean ClipDescription::hasMimeType(jstring arg0)
+	QAndroidJniObject ClipDescription::getLabel()
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasMimeType",
-			"(Ljava/lang/String;)Z",
-			arg0);
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;");
 	}
 	jlong ClipDescription::getTimestamp()
 	{
@@ -164,6 +150,20 @@ namespace __jni_impl::android::content
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	void ClipDescription::setExtras(__jni_impl::android::os::PersistableBundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtras",
+			"(Landroid/os/PersistableBundle;)V",
+			arg0.__jniObject().object());
+	}
+	jboolean ClipDescription::hasMimeType(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasMimeType",
+			"(Ljava/lang/String;)Z",
+			arg0);
 	}
 	jboolean ClipDescription::compareMimeTypes(jstring arg0, jstring arg1)
 	{

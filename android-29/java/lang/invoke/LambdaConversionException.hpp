@@ -3,6 +3,7 @@
 #ifndef JAVA_LANG_INVOKE_LAMBDACONVERSIONEXCEPTION
 #define JAVA_LANG_INVOKE_LAMBDACONVERSIONEXCEPTION
 
+#include "../../../__JniBaseClass.hpp"
 #include "../Exception.hpp"
 
 

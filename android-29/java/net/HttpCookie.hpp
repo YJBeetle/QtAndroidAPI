@@ -33,10 +33,6 @@ namespace __jni_impl::java::net
 		void setComment(jstring arg0);
 		QAndroidJniObject getComment();
 		jint getVersion();
-		void setVersion(jint arg0);
-		void setDomain(jstring arg0);
-		void setPath(jstring arg0);
-		QAndroidJniObject getDomain();
 		jboolean getSecure();
 		jboolean isHttpOnly();
 		QAndroidJniObject getPortlist();
@@ -50,6 +46,10 @@ namespace __jni_impl::java::net
 		jlong getMaxAge();
 		void setHttpOnly(jboolean arg0);
 		static jboolean domainMatches(jstring arg0, jstring arg1);
+		QAndroidJniObject getDomain();
+		void setDomain(jstring arg0);
+		void setPath(jstring arg0);
+		void setVersion(jint arg0);
 		void setSecure(jboolean arg0);
 	};
 } // namespace __jni_impl::java::net
@@ -148,33 +148,6 @@ namespace __jni_impl::java::net
 			"getVersion",
 			"()I");
 	}
-	void HttpCookie::setVersion(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVersion",
-			"(I)V",
-			arg0);
-	}
-	void HttpCookie::setDomain(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDomain",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
-	void HttpCookie::setPath(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPath",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
-	QAndroidJniObject HttpCookie::getDomain()
-	{
-		return __thiz.callObjectMethod(
-			"getDomain",
-			"()Ljava/lang/String;");
-	}
 	jboolean HttpCookie::getSecure()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -260,6 +233,33 @@ namespace __jni_impl::java::net
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
 			arg1);
+	}
+	QAndroidJniObject HttpCookie::getDomain()
+	{
+		return __thiz.callObjectMethod(
+			"getDomain",
+			"()Ljava/lang/String;");
+	}
+	void HttpCookie::setDomain(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDomain",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	void HttpCookie::setPath(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPath",
+			"(Ljava/lang/String;)V",
+			arg0);
+	}
+	void HttpCookie::setVersion(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVersion",
+			"(I)V",
+			arg0);
 	}
 	void HttpCookie::setSecure(jboolean arg0)
 	{

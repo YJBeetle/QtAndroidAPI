@@ -39,9 +39,8 @@ namespace __jni_impl::android::gesture
 		// Methods
 		void load(__jni_impl::java::io::InputStream arg0);
 		void load(__jni_impl::java::io::InputStream arg0, jboolean arg1);
-		void save(__jni_impl::java::io::OutputStream arg0, jboolean arg1);
 		void save(__jni_impl::java::io::OutputStream arg0);
-		jboolean hasChanged();
+		void save(__jni_impl::java::io::OutputStream arg0, jboolean arg1);
 		void setOrientationStyle(jint arg0);
 		jint getOrientationStyle();
 		void setSequenceType(jint arg0);
@@ -52,6 +51,7 @@ namespace __jni_impl::android::gesture
 		void removeGesture(jstring arg0, __jni_impl::android::gesture::Gesture arg1);
 		void removeEntry(jstring arg0);
 		QAndroidJniObject getGestures(jstring arg0);
+		jboolean hasChanged();
 	};
 } // namespace __jni_impl::android::gesture
 
@@ -112,14 +112,6 @@ namespace __jni_impl::android::gesture
 			arg0.__jniObject().object(),
 			arg1);
 	}
-	void GestureStore::save(__jni_impl::java::io::OutputStream arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"save",
-			"(Ljava/io/OutputStream;Z)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	void GestureStore::save(__jni_impl::java::io::OutputStream arg0)
 	{
 		__thiz.callMethod<void>(
@@ -127,11 +119,13 @@ namespace __jni_impl::android::gesture
 			"(Ljava/io/OutputStream;)V",
 			arg0.__jniObject().object());
 	}
-	jboolean GestureStore::hasChanged()
+	void GestureStore::save(__jni_impl::java::io::OutputStream arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasChanged",
-			"()Z");
+		__thiz.callMethod<void>(
+			"save",
+			"(Ljava/io/OutputStream;Z)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 	void GestureStore::setOrientationStyle(jint arg0)
 	{
@@ -201,6 +195,12 @@ namespace __jni_impl::android::gesture
 			"getGestures",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			arg0);
+	}
+	jboolean GestureStore::hasChanged()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasChanged",
+			"()Z");
 	}
 } // namespace __jni_impl::android::gesture
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_TEXT_TEXTPAINT
 #define ANDROID_TEXT_TEXTPAINT
 
+#include "../../__JniBaseClass.hpp"
 #include "../graphics/Paint.hpp"
 
 namespace __jni_impl::android::graphics

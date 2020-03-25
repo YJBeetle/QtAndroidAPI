@@ -3,6 +3,9 @@
 #ifndef JAVA_NET_CONNECTEXCEPTION
 #define JAVA_NET_CONNECTEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
 #include "SocketException.hpp"
 
 

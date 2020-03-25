@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_STYLE_LOCALESPAN
 #define ANDROID_TEXT_STYLE_LOCALESPAN
 
+#include "../../../__JniBaseClass.hpp"
+#include "CharacterStyle.hpp"
 #include "MetricAffectingSpan.hpp"
 
 namespace __jni_impl::android::os

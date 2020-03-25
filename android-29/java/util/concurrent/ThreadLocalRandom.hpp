@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_CONCURRENT_THREADLOCALRANDOM
 #define JAVA_UTIL_CONCURRENT_THREADLOCALRANDOM
 
+#include "../../../__JniBaseClass.hpp"
 #include "../Random.hpp"
 
 namespace __jni_impl::java::lang

@@ -31,18 +31,18 @@ namespace __jni_impl::android::text
 		QAndroidJniObject subSequence(jint arg0, jint arg1);
 		void getBounds(jint arg0, jint arg1, __jni_impl::android::graphics::Rect arg2);
 		static QAndroidJniObject create(jstring arg0, __jni_impl::android::text::PrecomputedText_Params arg1);
+		void setSpan(jobject arg0, jint arg1, jint arg2, jint arg3);
+		void removeSpan(jobject arg0);
 		jfloat getWidth(jint arg0, jint arg1);
-		QAndroidJniObject getParams();
 		jint getParagraphCount();
 		jint getParagraphStart(jint arg0);
 		jint getParagraphEnd(jint arg0);
+		QAndroidJniObject getParams();
 		QAndroidJniObject getSpans(jint arg0, jint arg1, jclass arg2);
 		jint getSpanStart(jobject arg0);
 		jint getSpanEnd(jobject arg0);
 		jint getSpanFlags(jobject arg0);
 		jint nextSpanTransition(jint arg0, jint arg1, jclass arg2);
-		void setSpan(jobject arg0, jint arg1, jint arg2, jint arg3);
-		void removeSpan(jobject arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -107,6 +107,23 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1.__jniObject().object());
 	}
+	void PrecomputedText::setSpan(jobject arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"setSpan",
+			"(Ljava/lang/Object;III)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3);
+	}
+	void PrecomputedText::removeSpan(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeSpan",
+			"(Ljava/lang/Object;)V",
+			arg0);
+	}
 	jfloat PrecomputedText::getWidth(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jfloat>(
@@ -114,12 +131,6 @@ namespace __jni_impl::android::text
 			"(II)F",
 			arg0,
 			arg1);
-	}
-	QAndroidJniObject PrecomputedText::getParams()
-	{
-		return __thiz.callObjectMethod(
-			"getParams",
-			"()Landroid/text/PrecomputedText$Params;");
 	}
 	jint PrecomputedText::getParagraphCount()
 	{
@@ -140,6 +151,12 @@ namespace __jni_impl::android::text
 			"getParagraphEnd",
 			"(I)I",
 			arg0);
+	}
+	QAndroidJniObject PrecomputedText::getParams()
+	{
+		return __thiz.callObjectMethod(
+			"getParams",
+			"()Landroid/text/PrecomputedText$Params;");
 	}
 	QAndroidJniObject PrecomputedText::getSpans(jint arg0, jint arg1, jclass arg2)
 	{
@@ -179,23 +196,6 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2);
-	}
-	void PrecomputedText::setSpan(jobject arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"setSpan",
-			"(Ljava/lang/Object;III)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	void PrecomputedText::removeSpan(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeSpan",
-			"(Ljava/lang/Object;)V",
-			arg0);
 	}
 } // namespace __jni_impl::android::text
 

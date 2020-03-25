@@ -3,6 +3,9 @@
 #ifndef ANDROID_WIDGET_SIMPLECURSORTREEADAPTER
 #define ANDROID_WIDGET_SIMPLECURSORTREEADAPTER
 
+#include "../../__JniBaseClass.hpp"
+#include "BaseExpandableListAdapter.hpp"
+#include "CursorTreeAdapter.hpp"
 #include "ResourceCursorTreeAdapter.hpp"
 
 namespace __jni_impl::android::content

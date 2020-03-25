@@ -3,6 +3,8 @@
 #ifndef ANDROID_MEDIA_MEDIACASEXCEPTION_RESOURCEBUSYEXCEPTION
 #define ANDROID_MEDIA_MEDIACASEXCEPTION_RESOURCEBUSYEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "MediaCasException.hpp"
 
 

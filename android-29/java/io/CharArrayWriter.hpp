@@ -3,6 +3,7 @@
 #ifndef JAVA_IO_CHARARRAYWRITER
 #define JAVA_IO_CHARARRAYWRITER
 
+#include "../../__JniBaseClass.hpp"
 #include "Writer.hpp"
 
 namespace __jni_impl::java::io

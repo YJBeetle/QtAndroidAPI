@@ -3,6 +3,7 @@
 #ifndef ANDROID_OPENGL_EGLSYNC
 #define ANDROID_OPENGL_EGLSYNC
 
+#include "../../__JniBaseClass.hpp"
 #include "EGLObjectHandle.hpp"
 
 

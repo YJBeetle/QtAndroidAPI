@@ -44,9 +44,6 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getOwner();
 		jlong getCreationTime();
 		jboolean isEnabled();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void setEnabled(jboolean arg0);
 		void setInterruptionFilter(jint arg0);
 		QAndroidJniObject getConfigurationActivity();
 		QAndroidJniObject getConditionId();
@@ -55,6 +52,9 @@ namespace __jni_impl::android::app
 		void setConditionId(__jni_impl::android::net::Uri arg0);
 		void setZenPolicy(__jni_impl::android::service::notification::ZenPolicy arg0);
 		void setConfigurationActivity(__jni_impl::android::content::ComponentName arg0);
+		void setEnabled(jboolean arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -158,27 +158,6 @@ namespace __jni_impl::android::app
 			"isEnabled",
 			"()Z");
 	}
-	jint AutomaticZenRule::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void AutomaticZenRule::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void AutomaticZenRule::setEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnabled",
-			"(Z)V",
-			arg0);
-	}
 	void AutomaticZenRule::setInterruptionFilter(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -230,6 +209,27 @@ namespace __jni_impl::android::app
 			"setConfigurationActivity",
 			"(Landroid/content/ComponentName;)V",
 			arg0.__jniObject().object());
+	}
+	void AutomaticZenRule::setEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0);
+	}
+	jint AutomaticZenRule::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I");
+	}
+	void AutomaticZenRule::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1);
 	}
 } // namespace __jni_impl::android::app
 

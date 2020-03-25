@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_LEAKEDCLOSABLEVIOLATION
 #define ANDROID_OS_STRICTMODE_LEAKEDCLOSABLEVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

@@ -3,6 +3,7 @@
 #ifndef ANDROID_TELEPHONY_CELLSIGNALSTRENGTHCDMA
 #define ANDROID_TELEPHONY_CELLSIGNALSTRENGTHCDMA
 
+#include "../../__JniBaseClass.hpp"
 #include "CellSignalStrength.hpp"
 
 namespace __jni_impl::android::os
@@ -26,10 +27,10 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject toString();
 		jint hashCode();
 		jint getLevel();
-		jint getCdmaLevel();
-		jint getEvdoLevel();
 		jint getAsuLevel();
 		jint getDbm();
+		jint getCdmaLevel();
+		jint getEvdoLevel();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getCdmaDbm();
@@ -87,18 +88,6 @@ namespace __jni_impl::android::telephony
 			"getLevel",
 			"()I");
 	}
-	jint CellSignalStrengthCdma::getCdmaLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getCdmaLevel",
-			"()I");
-	}
-	jint CellSignalStrengthCdma::getEvdoLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getEvdoLevel",
-			"()I");
-	}
 	jint CellSignalStrengthCdma::getAsuLevel()
 	{
 		return __thiz.callMethod<jint>(
@@ -109,6 +98,18 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callMethod<jint>(
 			"getDbm",
+			"()I");
+	}
+	jint CellSignalStrengthCdma::getCdmaLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getCdmaLevel",
+			"()I");
+	}
+	jint CellSignalStrengthCdma::getEvdoLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getEvdoLevel",
 			"()I");
 	}
 	jint CellSignalStrengthCdma::describeContents()

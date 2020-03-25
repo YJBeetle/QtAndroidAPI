@@ -3,6 +3,8 @@
 #ifndef ANDROID_WIDGET_FRAMELAYOUT
 #define ANDROID_WIDGET_FRAMELAYOUT
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::content

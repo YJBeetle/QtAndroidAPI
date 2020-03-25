@@ -3,6 +3,8 @@
 #ifndef ANDROID_TEXT_STYLE_REPLACEMENTSPAN
 #define ANDROID_TEXT_STYLE_REPLACEMENTSPAN
 
+#include "../../../__JniBaseClass.hpp"
+#include "CharacterStyle.hpp"
 #include "MetricAffectingSpan.hpp"
 
 namespace __jni_impl::android::graphics

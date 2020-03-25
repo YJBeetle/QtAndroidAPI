@@ -3,6 +3,7 @@
 #ifndef JAVA_NIO_BYTEBUFFER
 #define JAVA_NIO_BYTEBUFFER
 
+#include "../../__JniBaseClass.hpp"
 #include "Buffer.hpp"
 
 namespace __jni_impl::java::nio

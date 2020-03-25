@@ -48,18 +48,18 @@ namespace __jni_impl::javax::xml::parsers
 		void parse(__jni_impl::java::io::File arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1);
 		void parse(__jni_impl::org::xml::sax::InputSource arg0, __jni_impl::org::xml::sax::HandlerBase arg1);
 		void parse(__jni_impl::org::xml::sax::InputSource arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1);
-		void parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::HandlerBase arg1, jstring arg2);
 		void parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::HandlerBase arg1);
+		void parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::HandlerBase arg1, jstring arg2);
 		void parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1);
-		void parse(jstring arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1);
-		void parse(jstring arg0, __jni_impl::org::xml::sax::HandlerBase arg1);
 		void parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1, jstring arg2);
+		void parse(jstring arg0, __jni_impl::org::xml::sax::HandlerBase arg1);
+		void parse(jstring arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1);
+		QAndroidJniObject getSchema();
 		QAndroidJniObject getXMLReader();
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		jboolean isXIncludeAware();
 		QAndroidJniObject getParser();
-		QAndroidJniObject getSchema();
 	};
 } // namespace __jni_impl::javax::xml::parsers
 
@@ -136,6 +136,14 @@ namespace __jni_impl::javax::xml::parsers
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object());
 	}
+	void SAXParser::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::HandlerBase arg1)
+	{
+		__thiz.callMethod<void>(
+			"parse",
+			"(Ljava/io/InputStream;Lorg/xml/sax/HandlerBase;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object());
+	}
 	void SAXParser::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::HandlerBase arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -145,36 +153,12 @@ namespace __jni_impl::javax::xml::parsers
 			arg1.__jniObject().object(),
 			arg2);
 	}
-	void SAXParser::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::HandlerBase arg1)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/io/InputStream;Lorg/xml/sax/HandlerBase;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	void SAXParser::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1)
 	{
 		__thiz.callMethod<void>(
 			"parse",
 			"(Ljava/io/InputStream;Lorg/xml/sax/helpers/DefaultHandler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void SAXParser::parse(jstring arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/lang/String;Lorg/xml/sax/helpers/DefaultHandler;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void SAXParser::parse(jstring arg0, __jni_impl::org::xml::sax::HandlerBase arg1)
-	{
-		__thiz.callMethod<void>(
-			"parse",
-			"(Ljava/lang/String;Lorg/xml/sax/HandlerBase;)V",
-			arg0,
 			arg1.__jniObject().object());
 	}
 	void SAXParser::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1, jstring arg2)
@@ -185,6 +169,28 @@ namespace __jni_impl::javax::xml::parsers
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2);
+	}
+	void SAXParser::parse(jstring arg0, __jni_impl::org::xml::sax::HandlerBase arg1)
+	{
+		__thiz.callMethod<void>(
+			"parse",
+			"(Ljava/lang/String;Lorg/xml/sax/HandlerBase;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	void SAXParser::parse(jstring arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1)
+	{
+		__thiz.callMethod<void>(
+			"parse",
+			"(Ljava/lang/String;Lorg/xml/sax/helpers/DefaultHandler;)V",
+			arg0,
+			arg1.__jniObject().object());
+	}
+	QAndroidJniObject SAXParser::getSchema()
+	{
+		return __thiz.callObjectMethod(
+			"getSchema",
+			"()Ljavax/xml/validation/Schema;");
 	}
 	QAndroidJniObject SAXParser::getXMLReader()
 	{
@@ -215,12 +221,6 @@ namespace __jni_impl::javax::xml::parsers
 		return __thiz.callObjectMethod(
 			"getParser",
 			"()Lorg/xml/sax/Parser;");
-	}
-	QAndroidJniObject SAXParser::getSchema()
-	{
-		return __thiz.callObjectMethod(
-			"getSchema",
-			"()Ljavax/xml/validation/Schema;");
 	}
 } // namespace __jni_impl::javax::xml::parsers
 

@@ -3,6 +3,8 @@
 #ifndef ANDROID_ICU_TEXT_MESSAGEFORMAT
 #define ANDROID_ICU_TEXT_MESSAGEFORMAT
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/text/Format.hpp"
 #include "UFormat.hpp"
 
 namespace __jni_impl::android::icu::util
@@ -79,8 +81,8 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject parseToMap(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 		QAndroidJniObject parseToMap(jstring arg0);
 		static QAndroidJniObject autoQuoteApostrophe(jstring arg0);
-		QAndroidJniObject getULocale();
 		QAndroidJniObject getApostropheMode();
+		QAndroidJniObject getULocale();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -356,17 +358,17 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0);
 	}
-	QAndroidJniObject MessageFormat::getULocale()
-	{
-		return __thiz.callObjectMethod(
-			"getULocale",
-			"()Landroid/icu/util/ULocale;");
-	}
 	QAndroidJniObject MessageFormat::getApostropheMode()
 	{
 		return __thiz.callObjectMethod(
 			"getApostropheMode",
 			"()Landroid/icu/text/MessagePattern$ApostropheMode;");
+	}
+	QAndroidJniObject MessageFormat::getULocale()
+	{
+		return __thiz.callObjectMethod(
+			"getULocale",
+			"()Landroid/icu/util/ULocale;");
 	}
 } // namespace __jni_impl::android::icu::text
 

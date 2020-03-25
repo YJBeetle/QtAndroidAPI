@@ -3,6 +3,8 @@
 #ifndef ANDROID_MEDIA_MEDIADRM_SESSIONEXCEPTION
 #define ANDROID_MEDIA_MEDIADRM_SESSIONEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
 

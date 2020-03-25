@@ -3,6 +3,11 @@
 #ifndef ANDROID_WIDGET_TEXTSWITCHER
 #define ANDROID_WIDGET_TEXTSWITCHER
 
+#include "../../__JniBaseClass.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "FrameLayout.hpp"
+#include "ViewAnimator.hpp"
 #include "ViewSwitcher.hpp"
 
 namespace __jni_impl::android::content
@@ -31,9 +36,9 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void setText(jstring arg0);
-		void setCurrentText(jstring arg0);
 		QAndroidJniObject getAccessibilityClassName();
 		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
+		void setCurrentText(jstring arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -70,13 +75,6 @@ namespace __jni_impl::android::widget
 			"(Ljava/lang/CharSequence;)V",
 			arg0);
 	}
-	void TextSwitcher::setCurrentText(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCurrentText",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
 	QAndroidJniObject TextSwitcher::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
@@ -91,6 +89,13 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object());
+	}
+	void TextSwitcher::setCurrentText(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCurrentText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0);
 	}
 } // namespace __jni_impl::android::widget
 

@@ -29,10 +29,10 @@ namespace __jni_impl::android::os
 		jboolean equals(jobject arg0);
 		QAndroidJniObject toString();
 		jint hashCode();
-		static QAndroidJniObject fromString(jstring arg0);
-		QAndroidJniObject getUuid();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static QAndroidJniObject fromString(jstring arg0);
+		QAndroidJniObject getUuid();
 	};
 } // namespace __jni_impl::android::os
 
@@ -79,20 +79,6 @@ namespace __jni_impl::android::os
 			"hashCode",
 			"()I");
 	}
-	QAndroidJniObject ParcelUuid::fromString(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelUuid",
-			"fromString",
-			"(Ljava/lang/String;)Landroid/os/ParcelUuid;",
-			arg0);
-	}
-	QAndroidJniObject ParcelUuid::getUuid()
-	{
-		return __thiz.callObjectMethod(
-			"getUuid",
-			"()Ljava/util/UUID;");
-	}
 	jint ParcelUuid::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -106,6 +92,20 @@ namespace __jni_impl::android::os
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1);
+	}
+	QAndroidJniObject ParcelUuid::fromString(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelUuid",
+			"fromString",
+			"(Ljava/lang/String;)Landroid/os/ParcelUuid;",
+			arg0);
+	}
+	QAndroidJniObject ParcelUuid::getUuid()
+	{
+		return __thiz.callObjectMethod(
+			"getUuid",
+			"()Ljava/util/UUID;");
 	}
 } // namespace __jni_impl::android::os
 

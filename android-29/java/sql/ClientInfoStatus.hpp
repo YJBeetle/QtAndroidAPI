@@ -3,6 +3,7 @@
 #ifndef JAVA_SQL_CLIENTINFOSTATUS
 #define JAVA_SQL_CLIENTINFOSTATUS
 
+#include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
 

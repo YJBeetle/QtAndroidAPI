@@ -3,6 +3,7 @@
 #ifndef ANDROID_OS_STRICTMODE_FILEURIEXPOSEDVIOLATION
 #define ANDROID_OS_STRICTMODE_FILEURIEXPOSEDVIOLATION
 
+#include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
 

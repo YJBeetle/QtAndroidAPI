@@ -3,6 +3,10 @@
 #ifndef ANDROID_ICU_TEXT_COMPACTDECIMALFORMAT
 #define ANDROID_ICU_TEXT_COMPACTDECIMALFORMAT
 
+#include "../../../__JniBaseClass.hpp"
+#include "../../../java/text/Format.hpp"
+#include "UFormat.hpp"
+#include "NumberFormat.hpp"
 #include "DecimalFormat.hpp"
 
 namespace __jni_impl::android::icu::util

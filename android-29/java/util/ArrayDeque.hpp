@@ -3,6 +3,7 @@
 #ifndef JAVA_UTIL_ARRAYDEQUE
 #define JAVA_UTIL_ARRAYDEQUE
 
+#include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 
 namespace __jni_impl::java::io

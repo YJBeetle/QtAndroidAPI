@@ -15,11 +15,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::os
 {
-	class MessageQueue;
+	class Handler;
 }
 namespace __jni_impl::android::os
 {
-	class Handler;
+	class MessageQueue;
 }
 
 namespace __jni_impl::android::os
@@ -36,17 +36,17 @@ namespace __jni_impl::android::os
 		QAndroidJniObject next();
 		void execute(__jni_impl::android::os::Message arg0);
 		void release();
-		QAndroidJniObject getMessageQueue();
 		jboolean hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, jint arg2);
 		jboolean hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
 		void recycle(__jni_impl::android::os::Message arg0);
+		QAndroidJniObject getMessageQueue();
 	};
 } // namespace __jni_impl::android::os
 
 #include "Looper.hpp"
 #include "Message.hpp"
-#include "MessageQueue.hpp"
 #include "Handler.hpp"
+#include "MessageQueue.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -80,12 +80,6 @@ namespace __jni_impl::android::os
 			"release",
 			"()V");
 	}
-	QAndroidJniObject TestLooperManager::getMessageQueue()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageQueue",
-			"()Landroid/os/MessageQueue;");
-	}
 	jboolean TestLooperManager::hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, jint arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -110,6 +104,12 @@ namespace __jni_impl::android::os
 			"recycle",
 			"(Landroid/os/Message;)V",
 			arg0.__jniObject().object());
+	}
+	QAndroidJniObject TestLooperManager::getMessageQueue()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageQueue",
+			"()Landroid/os/MessageQueue;");
 	}
 } // namespace __jni_impl::android::os
 

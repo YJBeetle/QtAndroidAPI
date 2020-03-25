@@ -3,6 +3,7 @@
 #ifndef ANDROID_RENDERSCRIPT_SAMPLER
 #define ANDROID_RENDERSCRIPT_SAMPLER
 
+#include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 
 namespace __jni_impl::android::renderscript

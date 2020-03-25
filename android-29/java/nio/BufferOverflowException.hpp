@@ -3,6 +3,8 @@
 #ifndef JAVA_NIO_BUFFEROVERFLOWEXCEPTION
 #define JAVA_NIO_BUFFEROVERFLOWEXCEPTION
 
+#include "../../__JniBaseClass.hpp"
+#include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
 

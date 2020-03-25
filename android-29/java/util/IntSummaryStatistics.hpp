@@ -22,8 +22,8 @@ namespace __jni_impl::java::util
 		void accept(jint arg0);
 		void combine(__jni_impl::java::util::IntSummaryStatistics arg0);
 		jlong getCount();
-		jint getMax();
 		jint getMin();
+		jint getMax();
 		jlong getSum();
 		jdouble getAverage();
 	};
@@ -79,16 +79,16 @@ namespace __jni_impl::java::util
 			"getCount",
 			"()J");
 	}
-	jint IntSummaryStatistics::getMax()
-	{
-		return __thiz.callMethod<jint>(
-			"getMax",
-			"()I");
-	}
 	jint IntSummaryStatistics::getMin()
 	{
 		return __thiz.callMethod<jint>(
 			"getMin",
+			"()I");
+	}
+	jint IntSummaryStatistics::getMax()
+	{
+		return __thiz.callMethod<jint>(
+			"getMax",
 			"()I");
 	}
 	jlong IntSummaryStatistics::getSum()
