@@ -40,10 +40,10 @@ namespace __jni_impl::android::preference
 		
 		// Methods
 		void bind(__jni_impl::android::widget::ListView arg0);
-		void onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3);
-		QAndroidJniObject getRootAdapter();
-		QAndroidJniObject getDialog();
 		void onDismiss(__jni_impl::__JniBaseClass arg0);
+		void onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3);
+		QAndroidJniObject getDialog();
+		QAndroidJniObject getRootAdapter();
 	};
 } // namespace __jni_impl::android::preference
 
@@ -71,7 +71,16 @@ namespace __jni_impl::android::preference
 		__thiz.callMethod<void>(
 			"bind",
 			"(Landroid/widget/ListView;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void PreferenceScreen::onDismiss(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onDismiss",
+			"(Landroid/content/DialogInterface;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void PreferenceScreen::onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3)
 	{
@@ -81,26 +90,22 @@ namespace __jni_impl::android::preference
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
-	}
-	QAndroidJniObject PreferenceScreen::getRootAdapter()
-	{
-		return __thiz.callObjectMethod(
-			"getRootAdapter",
-			"()Landroid/widget/ListAdapter;");
+			arg3
+		);
 	}
 	QAndroidJniObject PreferenceScreen::getDialog()
 	{
 		return __thiz.callObjectMethod(
 			"getDialog",
-			"()Landroid/app/Dialog;");
+			"()Landroid/app/Dialog;"
+		);
 	}
-	void PreferenceScreen::onDismiss(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject PreferenceScreen::getRootAdapter()
 	{
-		__thiz.callMethod<void>(
-			"onDismiss",
-			"(Landroid/content/DialogInterface;)V",
-			arg0.__jniObject().object());
+		return __thiz.callObjectMethod(
+			"getRootAdapter",
+			"()Landroid/widget/ListAdapter;"
+		);
 	}
 } // namespace __jni_impl::android::preference
 

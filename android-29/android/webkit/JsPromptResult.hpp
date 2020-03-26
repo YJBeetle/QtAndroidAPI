@@ -41,7 +41,8 @@ namespace __jni_impl::android::webkit
 		__thiz.callMethod<void>(
 			"confirm",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

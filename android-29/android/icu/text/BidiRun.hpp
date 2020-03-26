@@ -17,14 +17,14 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getLength();
+		jint getLimit();
 		jbyte getEmbeddingLevel();
 		jboolean isOddRun();
 		jboolean isEvenRun();
-		jint getStart();
-		jint getLimit();
 		jbyte getDirection();
+		jint getStart();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -42,53 +42,61 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject BidiRun::toString()
+	jstring BidiRun::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint BidiRun::getLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getLength",
-			"()I");
-	}
-	jbyte BidiRun::getEmbeddingLevel()
-	{
-		return __thiz.callMethod<jbyte>(
-			"getEmbeddingLevel",
-			"()B");
-	}
-	jboolean BidiRun::isOddRun()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOddRun",
-			"()Z");
-	}
-	jboolean BidiRun::isEvenRun()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEvenRun",
-			"()Z");
-	}
-	jint BidiRun::getStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getStart",
-			"()I");
+			"()I"
+		);
 	}
 	jint BidiRun::getLimit()
 	{
 		return __thiz.callMethod<jint>(
 			"getLimit",
-			"()I");
+			"()I"
+		);
+	}
+	jbyte BidiRun::getEmbeddingLevel()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getEmbeddingLevel",
+			"()B"
+		);
+	}
+	jboolean BidiRun::isOddRun()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOddRun",
+			"()Z"
+		);
+	}
+	jboolean BidiRun::isEvenRun()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEvenRun",
+			"()Z"
+		);
 	}
 	jbyte BidiRun::getDirection()
 	{
 		return __thiz.callMethod<jbyte>(
 			"getDirection",
-			"()B");
+			"()B"
+		);
+	}
+	jint BidiRun::getStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getStart",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

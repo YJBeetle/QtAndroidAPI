@@ -61,28 +61,32 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"setMonth",
 			"(I)Landroid/text/style/TtsSpan$DateBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_DateBuilder::setYear(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setYear",
 			"(I)Landroid/text/style/TtsSpan$DateBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_DateBuilder::setWeekday(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setWeekday",
 			"(I)Landroid/text/style/TtsSpan$DateBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_DateBuilder::setDay(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDay",
 			"(I)Landroid/text/style/TtsSpan$DateBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

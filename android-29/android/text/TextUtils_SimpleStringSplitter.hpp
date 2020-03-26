@@ -20,7 +20,7 @@ namespace __jni_impl::android::text
 		void remove();
 		QAndroidJniObject iterator();
 		jboolean hasNext();
-		QAndroidJniObject next();
+		jstring next();
 		void setString(jstring arg0);
 	};
 } // namespace __jni_impl::android::text
@@ -44,32 +44,37 @@ namespace __jni_impl::android::text
 	{
 		__thiz.callMethod<void>(
 			"remove",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject TextUtils_SimpleStringSplitter::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jboolean TextUtils_SimpleStringSplitter::hasNext()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNext",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject TextUtils_SimpleStringSplitter::next()
+	jstring TextUtils_SimpleStringSplitter::next()
 	{
 		return __thiz.callObjectMethod(
 			"next",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void TextUtils_SimpleStringSplitter::setString(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setString",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text
 

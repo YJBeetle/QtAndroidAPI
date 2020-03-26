@@ -51,14 +51,16 @@ namespace __jni_impl::android::security
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/security/KeyStoreParameter;");
+			"()Landroid/security/KeyStoreParameter;"
+		);
 	}
 	QAndroidJniObject KeyStoreParameter_Builder::setEncryptionRequired(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setEncryptionRequired",
 			"(Z)Landroid/security/KeyStoreParameter$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::security
 

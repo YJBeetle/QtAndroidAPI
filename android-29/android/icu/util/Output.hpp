@@ -12,14 +12,14 @@ namespace __jni_impl::android::icu::util
 	{
 	public:
 		// Fields
-		QAndroidJniObject value();
+		jobject value();
 		
 		// Constructors
 		void __constructor();
 		void __constructor(jobject arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -27,11 +27,12 @@ namespace __jni_impl::android::icu::util
 namespace __jni_impl::android::icu::util
 {
 	// Fields
-	QAndroidJniObject Output::value()
+	jobject Output::value()
 	{
 		return __thiz.getObjectField(
 			"value",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	
 	// Constructors
@@ -50,11 +51,12 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject Output::toString()
+	jstring Output::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

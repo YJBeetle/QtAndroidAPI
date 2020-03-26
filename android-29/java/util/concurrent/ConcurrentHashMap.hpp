@@ -35,65 +35,65 @@ namespace __jni_impl::java::util::concurrent
 		
 		// Methods
 		jboolean remove(jobject arg0, jobject arg1);
-		QAndroidJniObject remove(jobject arg0);
-		QAndroidJniObject get(jobject arg0);
-		QAndroidJniObject put(jobject arg0, jobject arg1);
+		jobject remove(jobject arg0);
+		jobject get(jobject arg0);
+		jobject put(jobject arg0, jobject arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject values();
 		jint hashCode();
 		void clear();
 		jboolean isEmpty();
 		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
-		QAndroidJniObject replace(jobject arg0, jobject arg1);
+		jobject replace(jobject arg0, jobject arg1);
 		void replaceAll(__jni_impl::__JniBaseClass arg0);
 		jint size();
 		jboolean contains(jobject arg0);
 		QAndroidJniObject elements();
-		QAndroidJniObject merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
+		jobject merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject entrySet();
 		void putAll(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject putIfAbsent(jobject arg0, jobject arg1);
-		QAndroidJniObject compute(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject putIfAbsent(jobject arg0, jobject arg1);
+		jobject compute(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		void forEach(__jni_impl::__JniBaseClass arg0);
 		void forEach(jlong arg0, __jni_impl::__JniBaseClass arg1);
 		void forEach(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		jboolean containsKey(jobject arg0);
-		QAndroidJniObject computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject keys();
 		QAndroidJniObject keySet(jobject arg0);
 		QAndroidJniObject keySet();
 		jboolean containsValue(jobject arg0);
-		QAndroidJniObject getOrDefault(jobject arg0, jobject arg1);
-		QAndroidJniObject computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject getOrDefault(jobject arg0, jobject arg1);
+		jobject computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		jlong mappingCount();
 		static QAndroidJniObject newKeySet();
 		static QAndroidJniObject newKeySet(jint arg0);
-		QAndroidJniObject search(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject reduce(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
+		jobject search(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		jobject reduce(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		jdouble reduceToDouble(jlong arg0, __jni_impl::__JniBaseClass arg1, jdouble arg2, __jni_impl::__JniBaseClass arg3);
 		jlong reduceToLong(jlong arg0, __jni_impl::__JniBaseClass arg1, jlong arg2, __jni_impl::__JniBaseClass arg3);
 		jint reduceToInt(jlong arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
 		void forEachKey(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		void forEachKey(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject searchKeys(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject reduceKeys(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject reduceKeys(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		jobject searchKeys(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		jobject reduceKeys(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
+		jobject reduceKeys(jlong arg0, __jni_impl::__JniBaseClass arg1);
 		jdouble reduceKeysToDouble(jlong arg0, __jni_impl::__JniBaseClass arg1, jdouble arg2, __jni_impl::__JniBaseClass arg3);
 		jlong reduceKeysToLong(jlong arg0, __jni_impl::__JniBaseClass arg1, jlong arg2, __jni_impl::__JniBaseClass arg3);
 		jint reduceKeysToInt(jlong arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
 		void forEachValue(jlong arg0, __jni_impl::__JniBaseClass arg1);
 		void forEachValue(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject searchValues(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject reduceValues(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject reduceValues(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
+		jobject searchValues(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		jobject reduceValues(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		jobject reduceValues(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		jdouble reduceValuesToDouble(jlong arg0, __jni_impl::__JniBaseClass arg1, jdouble arg2, __jni_impl::__JniBaseClass arg3);
 		jlong reduceValuesToLong(jlong arg0, __jni_impl::__JniBaseClass arg1, jlong arg2, __jni_impl::__JniBaseClass arg3);
 		jint reduceValuesToInt(jlong arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
 		void forEachEntry(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		void forEachEntry(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject searchEntries(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject reduceEntries(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
+		jobject searchEntries(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		jobject reduceEntries(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject reduceEntries(jlong arg0, __jni_impl::__JniBaseClass arg1);
 		jdouble reduceEntriesToDouble(jlong arg0, __jni_impl::__JniBaseClass arg1, jdouble arg2, __jni_impl::__JniBaseClass arg3);
 		jlong reduceEntriesToLong(jlong arg0, __jni_impl::__JniBaseClass arg1, jlong arg2, __jni_impl::__JniBaseClass arg3);
@@ -155,66 +155,76 @@ namespace __jni_impl::java::util::concurrent
 			"remove",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::remove(jobject arg0)
+	jobject ConcurrentHashMap::remove(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::get(jobject arg0)
+	jobject ConcurrentHashMap::get(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::put(jobject arg0, jobject arg1)
+	jobject ConcurrentHashMap::put(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	jboolean ConcurrentHashMap::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::toString()
+	jstring ConcurrentHashMap::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ConcurrentHashMap::values()
 	{
 		return __thiz.callObjectMethod(
 			"values",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 	jint ConcurrentHashMap::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void ConcurrentHashMap::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ConcurrentHashMap::isEmpty()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ConcurrentHashMap::replace(jobject arg0, jobject arg1, jobject arg2)
 	{
@@ -223,86 +233,98 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::replace(jobject arg0, jobject arg1)
+	jobject ConcurrentHashMap::replace(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	void ConcurrentHashMap::replaceAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint ConcurrentHashMap::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean ConcurrentHashMap::contains(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ConcurrentHashMap::elements()
 	{
 		return __thiz.callObjectMethod(
 			"elements",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
+	jobject ConcurrentHashMap::merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject ConcurrentHashMap::entrySet()
 	{
 		return __thiz.callObjectMethod(
 			"entrySet",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	void ConcurrentHashMap::putAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::putIfAbsent(jobject arg0, jobject arg1)
+	jobject ConcurrentHashMap::putIfAbsent(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::compute(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	jobject ConcurrentHashMap::compute(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	void ConcurrentHashMap::forEach(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConcurrentHashMap::forEach(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -310,7 +332,8 @@ namespace __jni_impl::java::util::concurrent
 			"forEach",
 			"(JLjava/util/function/BiConsumer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConcurrentHashMap::forEach(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -319,77 +342,88 @@ namespace __jni_impl::java::util::concurrent
 			"(JLjava/util/function/BiFunction;Ljava/util/function/Consumer;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean ConcurrentHashMap::containsKey(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	jobject ConcurrentHashMap::computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject ConcurrentHashMap::keys()
 	{
 		return __thiz.callObjectMethod(
 			"keys",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	QAndroidJniObject ConcurrentHashMap::keySet(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"keySet",
 			"(Ljava/lang/Object;)Ljava/util/concurrent/ConcurrentHashMap$KeySetView;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ConcurrentHashMap::keySet()
 	{
 		return __thiz.callObjectMethod(
 			"keySet",
-			"()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;");
+			"()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;"
+		);
 	}
 	jboolean ConcurrentHashMap::containsValue(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::getOrDefault(jobject arg0, jobject arg1)
+	jobject ConcurrentHashMap::getOrDefault(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	jobject ConcurrentHashMap::computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	jlong ConcurrentHashMap::mappingCount()
 	{
 		return __thiz.callMethod<jlong>(
 			"mappingCount",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject ConcurrentHashMap::newKeySet()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ConcurrentHashMap",
 			"newKeySet",
-			"()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;");
+			"()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;"
+		);
 	}
 	QAndroidJniObject ConcurrentHashMap::newKeySet(jint arg0)
 	{
@@ -397,24 +431,27 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.ConcurrentHashMap",
 			"newKeySet",
 			"(I)Ljava/util/concurrent/ConcurrentHashMap$KeySetView;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::search(jlong arg0, __jni_impl::__JniBaseClass arg1)
+	jobject ConcurrentHashMap::search(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"search",
 			"(JLjava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::reduce(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
+	jobject ConcurrentHashMap::reduce(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"reduce",
 			"(JLjava/util/function/BiFunction;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
 	jdouble ConcurrentHashMap::reduceToDouble(jlong arg0, __jni_impl::__JniBaseClass arg1, jdouble arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -424,7 +461,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jlong ConcurrentHashMap::reduceToLong(jlong arg0, __jni_impl::__JniBaseClass arg1, jlong arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -434,7 +472,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jint ConcurrentHashMap::reduceToInt(jlong arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -444,7 +483,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void ConcurrentHashMap::forEachKey(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -453,7 +493,8 @@ namespace __jni_impl::java::util::concurrent
 			"(JLjava/util/function/Function;Ljava/util/function/Consumer;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ConcurrentHashMap::forEachKey(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -461,32 +502,36 @@ namespace __jni_impl::java::util::concurrent
 			"forEachKey",
 			"(JLjava/util/function/Consumer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::searchKeys(jlong arg0, __jni_impl::__JniBaseClass arg1)
+	jobject ConcurrentHashMap::searchKeys(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"searchKeys",
 			"(JLjava/util/function/Function;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::reduceKeys(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
+	jobject ConcurrentHashMap::reduceKeys(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"reduceKeys",
 			"(JLjava/util/function/Function;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::reduceKeys(jlong arg0, __jni_impl::__JniBaseClass arg1)
+	jobject ConcurrentHashMap::reduceKeys(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"reduceKeys",
 			"(JLjava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	jdouble ConcurrentHashMap::reduceKeysToDouble(jlong arg0, __jni_impl::__JniBaseClass arg1, jdouble arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -496,7 +541,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jlong ConcurrentHashMap::reduceKeysToLong(jlong arg0, __jni_impl::__JniBaseClass arg1, jlong arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -506,7 +552,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jint ConcurrentHashMap::reduceKeysToInt(jlong arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -516,7 +563,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void ConcurrentHashMap::forEachValue(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -524,7 +572,8 @@ namespace __jni_impl::java::util::concurrent
 			"forEachValue",
 			"(JLjava/util/function/Consumer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConcurrentHashMap::forEachValue(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -533,32 +582,36 @@ namespace __jni_impl::java::util::concurrent
 			"(JLjava/util/function/Function;Ljava/util/function/Consumer;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::searchValues(jlong arg0, __jni_impl::__JniBaseClass arg1)
+	jobject ConcurrentHashMap::searchValues(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"searchValues",
 			"(JLjava/util/function/Function;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::reduceValues(jlong arg0, __jni_impl::__JniBaseClass arg1)
+	jobject ConcurrentHashMap::reduceValues(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"reduceValues",
 			"(JLjava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::reduceValues(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
+	jobject ConcurrentHashMap::reduceValues(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"reduceValues",
 			"(JLjava/util/function/Function;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
 	jdouble ConcurrentHashMap::reduceValuesToDouble(jlong arg0, __jni_impl::__JniBaseClass arg1, jdouble arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -568,7 +621,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jlong ConcurrentHashMap::reduceValuesToLong(jlong arg0, __jni_impl::__JniBaseClass arg1, jlong arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -578,7 +632,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jint ConcurrentHashMap::reduceValuesToInt(jlong arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -588,7 +643,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void ConcurrentHashMap::forEachEntry(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -597,7 +653,8 @@ namespace __jni_impl::java::util::concurrent
 			"(JLjava/util/function/Function;Ljava/util/function/Consumer;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ConcurrentHashMap::forEachEntry(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -605,24 +662,27 @@ namespace __jni_impl::java::util::concurrent
 			"forEachEntry",
 			"(JLjava/util/function/Consumer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap::searchEntries(jlong arg0, __jni_impl::__JniBaseClass arg1)
+	jobject ConcurrentHashMap::searchEntries(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"searchEntries",
 			"(JLjava/util/function/Function;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentHashMap::reduceEntries(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
+	jobject ConcurrentHashMap::reduceEntries(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"reduceEntries",
 			"(JLjava/util/function/Function;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject ConcurrentHashMap::reduceEntries(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -630,7 +690,8 @@ namespace __jni_impl::java::util::concurrent
 			"reduceEntries",
 			"(JLjava/util/function/BiFunction;)Ljava/util/Map$Entry;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jdouble ConcurrentHashMap::reduceEntriesToDouble(jlong arg0, __jni_impl::__JniBaseClass arg1, jdouble arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -640,7 +701,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jlong ConcurrentHashMap::reduceEntriesToLong(jlong arg0, __jni_impl::__JniBaseClass arg1, jlong arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -650,7 +712,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jint ConcurrentHashMap::reduceEntriesToInt(jlong arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -660,7 +723,8 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

@@ -15,7 +15,7 @@ namespace __jni_impl::java::lang
 		// Fields
 		static jshort MIN_VALUE();
 		static jshort MAX_VALUE();
-		static QAndroidJniObject TYPE();
+		static jclass TYPE();
 		static jint SIZE();
 		static jint BYTES();
 		
@@ -25,8 +25,8 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
-		static QAndroidJniObject toString(jshort arg0);
+		jstring toString();
+		static jstring toString(jshort arg0);
 		jint hashCode();
 		static jint hashCode(jshort arg0);
 		static jshort reverseBytes(jshort arg0);
@@ -59,32 +59,37 @@ namespace __jni_impl::java::lang
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"java.lang.Short",
-			"MIN_VALUE");
+			"MIN_VALUE"
+		);
 	}
 	jshort Short::MAX_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"java.lang.Short",
-			"MAX_VALUE");
+			"MAX_VALUE"
+		);
 	}
-	QAndroidJniObject Short::TYPE()
+	jclass Short::TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Short",
 			"TYPE",
-			"Ljava/lang/Class;");
+			"Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	jint Short::SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Short",
-			"SIZE");
+			"SIZE"
+		);
 	}
 	jint Short::BYTES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Short",
-			"BYTES");
+			"BYTES"
+		);
 	}
 	
 	// Constructors
@@ -109,27 +114,31 @@ namespace __jni_impl::java::lang
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Short::toString()
+	jstring Short::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Short::toString(jshort arg0)
+	jstring Short::toString(jshort arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Short",
 			"toString",
 			"(S)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint Short::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Short::hashCode(jshort arg0)
 	{
@@ -137,7 +146,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Short",
 			"hashCode",
 			"(S)I",
-			arg0);
+			arg0
+		);
 	}
 	jshort Short::reverseBytes(jshort arg0)
 	{
@@ -145,57 +155,66 @@ namespace __jni_impl::java::lang
 			"java.lang.Short",
 			"reverseBytes",
 			"(S)S",
-			arg0);
+			arg0
+		);
 	}
 	jint Short::compareTo(__jni_impl::java::lang::Short arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Short;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Short::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jbyte Short::byteValue()
 	{
 		return __thiz.callMethod<jbyte>(
 			"byteValue",
-			"()B");
+			"()B"
+		);
 	}
 	jshort Short::shortValue()
 	{
 		return __thiz.callMethod<jshort>(
 			"shortValue",
-			"()S");
+			"()S"
+		);
 	}
 	jint Short::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Short::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat Short::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble Short::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 	QAndroidJniObject Short::valueOf(jstring arg0, jint arg1)
 	{
@@ -204,7 +223,8 @@ namespace __jni_impl::java::lang
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Short;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Short::valueOf(jstring arg0)
 	{
@@ -212,7 +232,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Short",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Short;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Short::valueOf(jshort arg0)
 	{
@@ -220,7 +241,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Short",
 			"valueOf",
 			"(S)Ljava/lang/Short;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Short::decode(jstring arg0)
 	{
@@ -228,7 +250,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Short",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/Short;",
-			arg0);
+			arg0
+		);
 	}
 	jint Short::compare(jshort arg0, jshort arg1)
 	{
@@ -237,7 +260,8 @@ namespace __jni_impl::java::lang
 			"compare",
 			"(SS)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Short::toUnsignedLong(jshort arg0)
 	{
@@ -245,7 +269,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Short",
 			"toUnsignedLong",
 			"(S)J",
-			arg0);
+			arg0
+		);
 	}
 	jint Short::toUnsignedInt(jshort arg0)
 	{
@@ -253,7 +278,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Short",
 			"toUnsignedInt",
 			"(S)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Short::compareUnsigned(jshort arg0, jshort arg1)
 	{
@@ -262,7 +288,8 @@ namespace __jni_impl::java::lang
 			"compareUnsigned",
 			"(SS)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jshort Short::parseShort(jstring arg0, jint arg1)
 	{
@@ -271,7 +298,8 @@ namespace __jni_impl::java::lang
 			"parseShort",
 			"(Ljava/lang/String;I)S",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jshort Short::parseShort(jstring arg0)
 	{
@@ -279,7 +307,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Short",
 			"parseShort",
 			"(Ljava/lang/String;)S",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang
 

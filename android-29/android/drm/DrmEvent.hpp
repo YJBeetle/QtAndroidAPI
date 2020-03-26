@@ -16,8 +16,8 @@ namespace __jni_impl::android::drm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DRM_INFO_OBJECT();
-		static QAndroidJniObject DRM_INFO_STATUS_OBJECT();
+		static jstring DRM_INFO_OBJECT();
+		static jstring DRM_INFO_STATUS_OBJECT();
 		static jint TYPE_ALL_RIGHTS_REMOVED();
 		static jint TYPE_DRM_INFO_PROCESSED();
 		
@@ -25,9 +25,9 @@ namespace __jni_impl::android::drm
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 		jint getType();
-		QAndroidJniObject getAttribute(jstring arg0);
+		jobject getAttribute(jstring arg0);
 		jint getUniqueId();
 	};
 } // namespace __jni_impl::android::drm
@@ -37,31 +37,35 @@ namespace __jni_impl::android::drm
 namespace __jni_impl::android::drm
 {
 	// Fields
-	QAndroidJniObject DrmEvent::DRM_INFO_OBJECT()
+	jstring DrmEvent::DRM_INFO_OBJECT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.drm.DrmEvent",
 			"DRM_INFO_OBJECT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DrmEvent::DRM_INFO_STATUS_OBJECT()
+	jstring DrmEvent::DRM_INFO_STATUS_OBJECT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.drm.DrmEvent",
 			"DRM_INFO_STATUS_OBJECT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DrmEvent::TYPE_ALL_RIGHTS_REMOVED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmEvent",
-			"TYPE_ALL_RIGHTS_REMOVED");
+			"TYPE_ALL_RIGHTS_REMOVED"
+		);
 	}
 	jint DrmEvent::TYPE_DRM_INFO_PROCESSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmEvent",
-			"TYPE_DRM_INFO_PROCESSED");
+			"TYPE_DRM_INFO_PROCESSED"
+		);
 	}
 	
 	// Constructors
@@ -73,30 +77,34 @@ namespace __jni_impl::android::drm
 	}
 	
 	// Methods
-	QAndroidJniObject DrmEvent::getMessage()
+	jstring DrmEvent::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DrmEvent::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject DrmEvent::getAttribute(jstring arg0)
+	jobject DrmEvent::getAttribute(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	jint DrmEvent::getUniqueId()
 	{
 		return __thiz.callMethod<jint>(
 			"getUniqueId",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::drm
 

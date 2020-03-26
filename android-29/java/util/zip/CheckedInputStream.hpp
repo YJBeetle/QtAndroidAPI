@@ -54,26 +54,30 @@ namespace __jni_impl::java::util::zip
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint CheckedInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jlong CheckedInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CheckedInputStream::getChecksum()
 	{
 		return __thiz.callObjectMethod(
 			"getChecksum",
-			"()Ljava/util/zip/Checksum;");
+			"()Ljava/util/zip/Checksum;"
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

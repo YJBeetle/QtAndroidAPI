@@ -24,7 +24,7 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_Mbc arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void setBand(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_MbcBand arg1);
 		QAndroidJniObject getBand(jint arg0);
 	};
@@ -55,11 +55,12 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject DynamicsProcessing_Mbc::toString()
+	jstring DynamicsProcessing_Mbc::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void DynamicsProcessing_Mbc::setBand(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_MbcBand arg1)
 	{
@@ -67,14 +68,16 @@ namespace __jni_impl::android::media::audiofx
 			"setBand",
 			"(ILandroid/media/audiofx/DynamicsProcessing$MbcBand;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Mbc::getBand(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getBand",
 			"(I)Landroid/media/audiofx/DynamicsProcessing$MbcBand;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

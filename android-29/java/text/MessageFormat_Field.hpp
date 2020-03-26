@@ -32,7 +32,8 @@ namespace __jni_impl::java::text
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.MessageFormat$Field",
 			"ARGUMENT",
-			"Ljava/text/MessageFormat$Field;");
+			"Ljava/text/MessageFormat$Field;"
+		);
 	}
 	
 	// Constructors

@@ -90,7 +90,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ResourceCursorTreeAdapter::newChildView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jboolean arg2, __jni_impl::android::view::ViewGroup arg3)
 	{
@@ -100,7 +101,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::widget
 

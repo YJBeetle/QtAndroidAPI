@@ -39,25 +39,29 @@ namespace __jni_impl::android::location
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssMeasurementsEvent$Callback",
-			"STATUS_LOCATION_DISABLED");
+			"STATUS_LOCATION_DISABLED"
+		);
 	}
 	jint GnssMeasurementsEvent_Callback::STATUS_NOT_ALLOWED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssMeasurementsEvent$Callback",
-			"STATUS_NOT_ALLOWED");
+			"STATUS_NOT_ALLOWED"
+		);
 	}
 	jint GnssMeasurementsEvent_Callback::STATUS_NOT_SUPPORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssMeasurementsEvent$Callback",
-			"STATUS_NOT_SUPPORTED");
+			"STATUS_NOT_SUPPORTED"
+		);
 	}
 	jint GnssMeasurementsEvent_Callback::STATUS_READY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssMeasurementsEvent$Callback",
-			"STATUS_READY");
+			"STATUS_READY"
+		);
 	}
 	
 	// Constructors
@@ -74,14 +78,16 @@ namespace __jni_impl::android::location
 		__thiz.callMethod<void>(
 			"onGnssMeasurementsReceived",
 			"(Landroid/location/GnssMeasurementsEvent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void GnssMeasurementsEvent_Callback::onStatusChanged(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onStatusChanged",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::location
 

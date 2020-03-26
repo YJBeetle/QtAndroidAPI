@@ -40,9 +40,9 @@ namespace __jni_impl::android::os
 		// Methods
 		void close();
 		QAndroidJniObject getInputStream();
-		QAndroidJniObject getTag();
+		jstring getTag();
 		jint getFlags();
-		QAndroidJniObject getText(jint arg0);
+		jstring getText(jint arg0);
 		jlong getTimeMillis();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -62,7 +62,8 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.DropBoxManager$Entry",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -119,44 +120,51 @@ namespace __jni_impl::android::os
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject DropBoxManager_Entry::getInputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getInputStream",
-			"()Ljava/io/InputStream;");
+			"()Ljava/io/InputStream;"
+		);
 	}
-	QAndroidJniObject DropBoxManager_Entry::getTag()
+	jstring DropBoxManager_Entry::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DropBoxManager_Entry::getFlags()
 	{
 		return __thiz.callMethod<jint>(
 			"getFlags",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject DropBoxManager_Entry::getText(jint arg0)
+	jstring DropBoxManager_Entry::getText(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getText",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jlong DropBoxManager_Entry::getTimeMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTimeMillis",
-			"()J");
+			"()J"
+		);
 	}
 	jint DropBoxManager_Entry::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void DropBoxManager_Entry::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -164,7 +172,8 @@ namespace __jni_impl::android::os
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::os
 

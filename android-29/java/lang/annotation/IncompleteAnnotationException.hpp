@@ -19,8 +19,8 @@ namespace __jni_impl::java::lang::annotation
 		void __constructor(jclass arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject annotationType();
-		QAndroidJniObject elementName();
+		jclass annotationType();
+		jstring elementName();
 	};
 } // namespace __jni_impl::java::lang::annotation
 
@@ -40,17 +40,19 @@ namespace __jni_impl::java::lang::annotation
 	}
 	
 	// Methods
-	QAndroidJniObject IncompleteAnnotationException::annotationType()
+	jclass IncompleteAnnotationException::annotationType()
 	{
 		return __thiz.callObjectMethod(
 			"annotationType",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
-	QAndroidJniObject IncompleteAnnotationException::elementName()
+	jstring IncompleteAnnotationException::elementName()
 	{
 		return __thiz.callObjectMethod(
 			"elementName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::lang::annotation
 

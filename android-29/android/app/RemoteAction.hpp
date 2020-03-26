@@ -13,13 +13,13 @@ namespace __jni_impl::android::app
 {
 	class PendingIntent;
 }
-namespace __jni_impl::java::io
-{
-	class PrintWriter;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::io
+{
+	class PrintWriter;
 }
 
 namespace __jni_impl::android::app
@@ -36,23 +36,23 @@ namespace __jni_impl::android::app
 		// Methods
 		QAndroidJniObject clone();
 		jboolean isEnabled();
-		jboolean shouldShowIcon();
-		QAndroidJniObject getActionIntent();
-		void setShouldShowIcon(jboolean arg0);
-		QAndroidJniObject getContentDescription();
-		void setEnabled(jboolean arg0);
-		void dump(jstring arg0, __jni_impl::java::io::PrintWriter arg1);
-		QAndroidJniObject getTitle();
-		QAndroidJniObject getIcon();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void dump(jstring arg0, __jni_impl::java::io::PrintWriter arg1);
+		jstring getTitle();
+		jstring getContentDescription();
+		void setEnabled(jboolean arg0);
+		void setShouldShowIcon(jboolean arg0);
+		jboolean shouldShowIcon();
+		QAndroidJniObject getActionIntent();
+		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::app
 
 #include "../graphics/drawable/Icon.hpp"
 #include "PendingIntent.hpp"
-#include "../../java/io/PrintWriter.hpp"
 #include "../os/Parcel.hpp"
+#include "../../java/io/PrintWriter.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -62,7 +62,8 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.RemoteAction",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -82,71 +83,22 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/app/RemoteAction;");
+			"()Landroid/app/RemoteAction;"
+		);
 	}
 	jboolean RemoteAction::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
-	}
-	jboolean RemoteAction::shouldShowIcon()
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldShowIcon",
-			"()Z");
-	}
-	QAndroidJniObject RemoteAction::getActionIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getActionIntent",
-			"()Landroid/app/PendingIntent;");
-	}
-	void RemoteAction::setShouldShowIcon(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setShouldShowIcon",
-			"(Z)V",
-			arg0);
-	}
-	QAndroidJniObject RemoteAction::getContentDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getContentDescription",
-			"()Ljava/lang/CharSequence;");
-	}
-	void RemoteAction::setEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnabled",
-			"(Z)V",
-			arg0);
-	}
-	void RemoteAction::dump(jstring arg0, __jni_impl::java::io::PrintWriter arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/PrintWriter;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject RemoteAction::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject RemoteAction::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
+			"()Z"
+		);
 	}
 	jint RemoteAction::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void RemoteAction::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -154,7 +106,68 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void RemoteAction::dump(jstring arg0, __jni_impl::java::io::PrintWriter arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/PrintWriter;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jstring RemoteAction::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring RemoteAction::getContentDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getContentDescription",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void RemoteAction::setEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	void RemoteAction::setShouldShowIcon(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setShouldShowIcon",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean RemoteAction::shouldShowIcon()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldShowIcon",
+			"()Z"
+		);
+	}
+	QAndroidJniObject RemoteAction::getActionIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getActionIntent",
+			"()Landroid/app/PendingIntent;"
+		);
+	}
+	QAndroidJniObject RemoteAction::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

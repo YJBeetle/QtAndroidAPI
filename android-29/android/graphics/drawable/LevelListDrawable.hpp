@@ -36,8 +36,8 @@ namespace __jni_impl::android::graphics::drawable
 		
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
-		void addLevel(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2);
 		QAndroidJniObject mutate();
+		void addLevel(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -67,7 +67,15 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	QAndroidJniObject LevelListDrawable::mutate()
+	{
+		return __thiz.callObjectMethod(
+			"mutate",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	void LevelListDrawable::addLevel(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2)
 	{
@@ -76,13 +84,8 @@ namespace __jni_impl::android::graphics::drawable
 			"(IILandroid/graphics/drawable/Drawable;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject LevelListDrawable::mutate()
-	{
-		return __thiz.callObjectMethod(
-			"mutate",
-			"()Landroid/graphics/drawable/Drawable;");
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

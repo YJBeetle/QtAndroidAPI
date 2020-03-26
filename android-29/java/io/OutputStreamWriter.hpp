@@ -44,7 +44,7 @@ namespace __jni_impl::java::io
 		void write(jstring arg0, jint arg1, jint arg2);
 		void flush();
 		void close();
-		QAndroidJniObject getEncoding();
+		jstring getEncoding();
 	};
 } // namespace __jni_impl::java::io
 
@@ -98,14 +98,16 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/CharSequence;II)Ljava/io/Writer;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject OutputStreamWriter::append(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/Writer;",
-			arg0);
+			arg0
+		);
 	}
 	void OutputStreamWriter::write(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -114,14 +116,16 @@ namespace __jni_impl::java::io
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void OutputStreamWriter::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void OutputStreamWriter::write(jstring arg0, jint arg1, jint arg2)
 	{
@@ -130,25 +134,29 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/String;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void OutputStreamWriter::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void OutputStreamWriter::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject OutputStreamWriter::getEncoding()
+	jstring OutputStreamWriter::getEncoding()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoding",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::io
 

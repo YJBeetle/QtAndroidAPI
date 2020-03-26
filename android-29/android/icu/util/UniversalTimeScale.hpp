@@ -42,11 +42,11 @@ namespace __jni_impl::android::icu::util
 		static jlong from(jlong arg0, jint arg1);
 		static QAndroidJniObject toBigDecimal(jlong arg0, jint arg1);
 		static QAndroidJniObject toBigDecimal(__jni_impl::android::icu::math::BigDecimal arg0, jint arg1);
-		static jlong toLong(jlong arg0, jint arg1);
+		static QAndroidJniObject bigDecimalFrom(__jni_impl::android::icu::math::BigDecimal arg0, jint arg1);
 		static QAndroidJniObject bigDecimalFrom(jdouble arg0, jint arg1);
 		static QAndroidJniObject bigDecimalFrom(jlong arg0, jint arg1);
-		static QAndroidJniObject bigDecimalFrom(__jni_impl::android::icu::math::BigDecimal arg0, jint arg1);
 		static jlong getTimeScaleValue(jint arg0, jint arg1);
+		static jlong toLong(jlong arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -59,109 +59,127 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"DB2_TIME");
+			"DB2_TIME"
+		);
 	}
 	jint UniversalTimeScale::DOTNET_DATE_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"DOTNET_DATE_TIME");
+			"DOTNET_DATE_TIME"
+		);
 	}
 	jint UniversalTimeScale::EPOCH_OFFSET_PLUS_1_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"EPOCH_OFFSET_PLUS_1_VALUE");
+			"EPOCH_OFFSET_PLUS_1_VALUE"
+		);
 	}
 	jint UniversalTimeScale::EPOCH_OFFSET_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"EPOCH_OFFSET_VALUE");
+			"EPOCH_OFFSET_VALUE"
+		);
 	}
 	jint UniversalTimeScale::EXCEL_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"EXCEL_TIME");
+			"EXCEL_TIME"
+		);
 	}
 	jint UniversalTimeScale::FROM_MAX_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"FROM_MAX_VALUE");
+			"FROM_MAX_VALUE"
+		);
 	}
 	jint UniversalTimeScale::FROM_MIN_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"FROM_MIN_VALUE");
+			"FROM_MIN_VALUE"
+		);
 	}
 	jint UniversalTimeScale::ICU4C_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"ICU4C_TIME");
+			"ICU4C_TIME"
+		);
 	}
 	jint UniversalTimeScale::JAVA_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"JAVA_TIME");
+			"JAVA_TIME"
+		);
 	}
 	jint UniversalTimeScale::MAC_OLD_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"MAC_OLD_TIME");
+			"MAC_OLD_TIME"
+		);
 	}
 	jint UniversalTimeScale::MAC_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"MAC_TIME");
+			"MAC_TIME"
+		);
 	}
 	jint UniversalTimeScale::MAX_SCALE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"MAX_SCALE");
+			"MAX_SCALE"
+		);
 	}
 	jint UniversalTimeScale::TO_MAX_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"TO_MAX_VALUE");
+			"TO_MAX_VALUE"
+		);
 	}
 	jint UniversalTimeScale::TO_MIN_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"TO_MIN_VALUE");
+			"TO_MIN_VALUE"
+		);
 	}
 	jint UniversalTimeScale::UNITS_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"UNITS_VALUE");
+			"UNITS_VALUE"
+		);
 	}
 	jint UniversalTimeScale::UNIX_MICROSECONDS_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"UNIX_MICROSECONDS_TIME");
+			"UNIX_MICROSECONDS_TIME"
+		);
 	}
 	jint UniversalTimeScale::UNIX_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"UNIX_TIME");
+			"UNIX_TIME"
+		);
 	}
 	jint UniversalTimeScale::WINDOWS_FILE_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.UniversalTimeScale",
-			"WINDOWS_FILE_TIME");
+			"WINDOWS_FILE_TIME"
+		);
 	}
 	
 	// Constructors
@@ -180,7 +198,8 @@ namespace __jni_impl::android::icu::util
 			"from",
 			"(JI)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject UniversalTimeScale::toBigDecimal(jlong arg0, jint arg1)
 	{
@@ -189,7 +208,8 @@ namespace __jni_impl::android::icu::util
 			"toBigDecimal",
 			"(JI)Landroid/icu/math/BigDecimal;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject UniversalTimeScale::toBigDecimal(__jni_impl::android::icu::math::BigDecimal arg0, jint arg1)
 	{
@@ -198,34 +218,8 @@ namespace __jni_impl::android::icu::util
 			"toBigDecimal",
 			"(Landroid/icu/math/BigDecimal;I)Landroid/icu/math/BigDecimal;",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jlong UniversalTimeScale::toLong(jlong arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.icu.util.UniversalTimeScale",
-			"toLong",
-			"(JI)J",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject UniversalTimeScale::bigDecimalFrom(jdouble arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.UniversalTimeScale",
-			"bigDecimalFrom",
-			"(DI)Landroid/icu/math/BigDecimal;",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject UniversalTimeScale::bigDecimalFrom(jlong arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.UniversalTimeScale",
-			"bigDecimalFrom",
-			"(JI)Landroid/icu/math/BigDecimal;",
-			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject UniversalTimeScale::bigDecimalFrom(__jni_impl::android::icu::math::BigDecimal arg0, jint arg1)
 	{
@@ -234,7 +228,28 @@ namespace __jni_impl::android::icu::util
 			"bigDecimalFrom",
 			"(Landroid/icu/math/BigDecimal;I)Landroid/icu/math/BigDecimal;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject UniversalTimeScale::bigDecimalFrom(jdouble arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.UniversalTimeScale",
+			"bigDecimalFrom",
+			"(DI)Landroid/icu/math/BigDecimal;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject UniversalTimeScale::bigDecimalFrom(jlong arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.UniversalTimeScale",
+			"bigDecimalFrom",
+			"(JI)Landroid/icu/math/BigDecimal;",
+			arg0,
+			arg1
+		);
 	}
 	jlong UniversalTimeScale::getTimeScaleValue(jint arg0, jint arg1)
 	{
@@ -243,7 +258,18 @@ namespace __jni_impl::android::icu::util
 			"getTimeScaleValue",
 			"(II)J",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	jlong UniversalTimeScale::toLong(jlong arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.icu.util.UniversalTimeScale",
+			"toLong",
+			"(JI)J",
+			arg0,
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

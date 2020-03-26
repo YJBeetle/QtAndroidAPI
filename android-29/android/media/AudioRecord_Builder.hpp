@@ -11,11 +11,11 @@ namespace __jni_impl::android::media
 }
 namespace __jni_impl::android::media
 {
-	class AudioPlaybackCaptureConfiguration;
+	class AudioFormat;
 }
 namespace __jni_impl::android::media
 {
-	class AudioFormat;
+	class AudioPlaybackCaptureConfiguration;
 }
 
 namespace __jni_impl::android::media
@@ -30,16 +30,16 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setAudioSource(jint arg0);
-		QAndroidJniObject setBufferSizeInBytes(jint arg0);
-		QAndroidJniObject setAudioPlaybackCaptureConfig(__jni_impl::android::media::AudioPlaybackCaptureConfiguration arg0);
 		QAndroidJniObject setAudioFormat(__jni_impl::android::media::AudioFormat arg0);
+		QAndroidJniObject setAudioPlaybackCaptureConfig(__jni_impl::android::media::AudioPlaybackCaptureConfiguration arg0);
+		QAndroidJniObject setBufferSizeInBytes(jint arg0);
+		QAndroidJniObject setAudioSource(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
 #include "AudioRecord.hpp"
-#include "AudioPlaybackCaptureConfiguration.hpp"
 #include "AudioFormat.hpp"
+#include "AudioPlaybackCaptureConfiguration.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -58,35 +58,40 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/media/AudioRecord;");
-	}
-	QAndroidJniObject AudioRecord_Builder::setAudioSource(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAudioSource",
-			"(I)Landroid/media/AudioRecord$Builder;",
-			arg0);
-	}
-	QAndroidJniObject AudioRecord_Builder::setBufferSizeInBytes(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBufferSizeInBytes",
-			"(I)Landroid/media/AudioRecord$Builder;",
-			arg0);
-	}
-	QAndroidJniObject AudioRecord_Builder::setAudioPlaybackCaptureConfig(__jni_impl::android::media::AudioPlaybackCaptureConfiguration arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAudioPlaybackCaptureConfig",
-			"(Landroid/media/AudioPlaybackCaptureConfiguration;)Landroid/media/AudioRecord$Builder;",
-			arg0.__jniObject().object());
+			"()Landroid/media/AudioRecord;"
+		);
 	}
 	QAndroidJniObject AudioRecord_Builder::setAudioFormat(__jni_impl::android::media::AudioFormat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAudioFormat",
 			"(Landroid/media/AudioFormat;)Landroid/media/AudioRecord$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AudioRecord_Builder::setAudioPlaybackCaptureConfig(__jni_impl::android::media::AudioPlaybackCaptureConfiguration arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAudioPlaybackCaptureConfig",
+			"(Landroid/media/AudioPlaybackCaptureConfiguration;)Landroid/media/AudioRecord$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AudioRecord_Builder::setBufferSizeInBytes(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBufferSizeInBytes",
+			"(I)Landroid/media/AudioRecord$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject AudioRecord_Builder::setAudioSource(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAudioSource",
+			"(I)Landroid/media/AudioRecord$Builder;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

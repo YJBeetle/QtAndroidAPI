@@ -28,8 +28,8 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject getAccessibilityClassName();
 		void toggle();
+		jstring getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -76,17 +76,19 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject RadioButton::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
 	void RadioButton::toggle()
 	{
 		__thiz.callMethod<void>(
 			"toggle",
-			"()V");
+			"()V"
+		);
+	}
+	jstring RadioButton::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

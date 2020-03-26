@@ -28,7 +28,8 @@ namespace __jni_impl::android::util
 	jboolean MutableBoolean::value()
 	{
 		return __thiz.getField<jboolean>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

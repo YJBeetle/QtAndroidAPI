@@ -52,21 +52,24 @@ namespace __jni_impl::android::security
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/security/ConfirmationPrompt;");
+			"()Landroid/security/ConfirmationPrompt;"
+		);
 	}
 	QAndroidJniObject ConfirmationPrompt_Builder::setPromptText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPromptText",
 			"(Ljava/lang/CharSequence;)Landroid/security/ConfirmationPrompt$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ConfirmationPrompt_Builder::setExtraData(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setExtraData",
 			"([B)Landroid/security/ConfirmationPrompt$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::security
 

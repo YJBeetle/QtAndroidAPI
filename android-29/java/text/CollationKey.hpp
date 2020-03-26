@@ -19,8 +19,8 @@ namespace __jni_impl::java::text
 		// Methods
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::java::text::CollationKey arg0);
-		QAndroidJniObject toByteArray();
-		QAndroidJniObject getSourceString();
+		jbyteArray toByteArray();
+		jstring getSourceString();
 	};
 } // namespace __jni_impl::java::text
 
@@ -43,26 +43,30 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint CollationKey::compareTo(__jni_impl::java::text::CollationKey arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/text/CollationKey;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject CollationKey::toByteArray()
+	jbyteArray CollationKey::toByteArray()
 	{
 		return __thiz.callObjectMethod(
 			"toByteArray",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject CollationKey::getSourceString()
+	jstring CollationKey::getSourceString()
 	{
 		return __thiz.callObjectMethod(
 			"getSourceString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::text
 

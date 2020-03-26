@@ -41,73 +41,85 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"ANIMATION_DURATION");
+			"ANIMATION_DURATION"
+		);
 	}
 	jint FrameMetrics::COMMAND_ISSUE_DURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"COMMAND_ISSUE_DURATION");
+			"COMMAND_ISSUE_DURATION"
+		);
 	}
 	jint FrameMetrics::DRAW_DURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"DRAW_DURATION");
+			"DRAW_DURATION"
+		);
 	}
 	jint FrameMetrics::FIRST_DRAW_FRAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"FIRST_DRAW_FRAME");
+			"FIRST_DRAW_FRAME"
+		);
 	}
 	jint FrameMetrics::INPUT_HANDLING_DURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"INPUT_HANDLING_DURATION");
+			"INPUT_HANDLING_DURATION"
+		);
 	}
 	jint FrameMetrics::INTENDED_VSYNC_TIMESTAMP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"INTENDED_VSYNC_TIMESTAMP");
+			"INTENDED_VSYNC_TIMESTAMP"
+		);
 	}
 	jint FrameMetrics::LAYOUT_MEASURE_DURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"LAYOUT_MEASURE_DURATION");
+			"LAYOUT_MEASURE_DURATION"
+		);
 	}
 	jint FrameMetrics::SWAP_BUFFERS_DURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"SWAP_BUFFERS_DURATION");
+			"SWAP_BUFFERS_DURATION"
+		);
 	}
 	jint FrameMetrics::SYNC_DURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"SYNC_DURATION");
+			"SYNC_DURATION"
+		);
 	}
 	jint FrameMetrics::TOTAL_DURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"TOTAL_DURATION");
+			"TOTAL_DURATION"
+		);
 	}
 	jint FrameMetrics::UNKNOWN_DELAY_DURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"UNKNOWN_DELAY_DURATION");
+			"UNKNOWN_DELAY_DURATION"
+		);
 	}
 	jint FrameMetrics::VSYNC_TIMESTAMP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.FrameMetrics",
-			"VSYNC_TIMESTAMP");
+			"VSYNC_TIMESTAMP"
+		);
 	}
 	
 	// Constructors
@@ -125,7 +137,8 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jlong>(
 			"getMetric",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

@@ -32,11 +32,11 @@ namespace __jni_impl::java::util
 		jboolean add(jobject arg0);
 		void add(jint arg0, jobject arg1);
 		jboolean remove(jobject arg0);
-		QAndroidJniObject remove(jint arg0);
-		QAndroidJniObject get(jint arg0);
+		jobject remove(jint arg0);
+		jobject get(jint arg0);
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		jint indexOf(jobject arg0);
 		void clear();
 		jint lastIndexOf(jobject arg0);
@@ -44,14 +44,14 @@ namespace __jni_impl::java::util
 		void replaceAll(__jni_impl::__JniBaseClass arg0);
 		jint size();
 		QAndroidJniObject subList(jint arg0, jint arg1);
-		QAndroidJniObject toArray(jobjectArray arg0);
-		QAndroidJniObject toArray();
+		jobjectArray toArray(jobjectArray arg0);
+		jobjectArray toArray();
 		QAndroidJniObject iterator();
 		jboolean contains(jobject arg0);
 		QAndroidJniObject spliterator();
 		jboolean addAll(__jni_impl::__JniBaseClass arg0);
 		jboolean addAll(jint arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject set(jint arg0, jobject arg1);
+		jobject set(jint arg0, jobject arg1);
 		void forEach(__jni_impl::__JniBaseClass arg0);
 		void ensureCapacity(jint arg0);
 		void trimToSize();
@@ -99,7 +99,8 @@ namespace __jni_impl::java::util
 		return __thiz.callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	void ArrayList::add(jint arg0, jobject arg1)
 	{
@@ -107,86 +108,99 @@ namespace __jni_impl::java::util
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean ArrayList::remove(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ArrayList::remove(jint arg0)
+	jobject ArrayList::remove(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayList::get(jint arg0)
+	jobject ArrayList::get(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	jboolean ArrayList::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ArrayList::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject ArrayList::clone()
+	jobject ArrayList::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint ArrayList::indexOf(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	void ArrayList::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jint ArrayList::lastIndexOf(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ArrayList::isEmpty()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ArrayList::replaceAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/UnaryOperator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint ArrayList::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ArrayList::subList(jint arg0, jint arg1)
 	{
@@ -194,46 +208,53 @@ namespace __jni_impl::java::util
 			"subList",
 			"(II)Ljava/util/List;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject ArrayList::toArray(jobjectArray arg0)
+	jobjectArray ArrayList::toArray(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobjectArray>();
 	}
-	QAndroidJniObject ArrayList::toArray()
+	jobjectArray ArrayList::toArray()
 	{
 		return __thiz.callObjectMethod(
 			"toArray",
-			"()[Ljava/lang/Object;");
+			"()[Ljava/lang/Object;"
+		).object<jobjectArray>();
 	}
 	QAndroidJniObject ArrayList::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jboolean ArrayList::contains(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ArrayList::spliterator()
 	{
 		return __thiz.callObjectMethod(
 			"spliterator",
-			"()Ljava/util/Spliterator;");
+			"()Ljava/util/Spliterator;"
+		);
 	}
 	jboolean ArrayList::addAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ArrayList::addAll(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -241,76 +262,87 @@ namespace __jni_impl::java::util
 			"addAll",
 			"(ILjava/util/Collection;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ArrayList::set(jint arg0, jobject arg1)
+	jobject ArrayList::set(jint arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	void ArrayList::forEach(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArrayList::ensureCapacity(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"ensureCapacity",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ArrayList::trimToSize()
 	{
 		__thiz.callMethod<void>(
 			"trimToSize",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ArrayList::retainAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ArrayList::removeAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ArrayList::removeIf(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArrayList::sort(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"sort",
 			"(Ljava/util/Comparator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ArrayList::listIterator()
 	{
 		return __thiz.callObjectMethod(
 			"listIterator",
-			"()Ljava/util/ListIterator;");
+			"()Ljava/util/ListIterator;"
+		);
 	}
 	QAndroidJniObject ArrayList::listIterator(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"listIterator",
 			"(I)Ljava/util/ListIterator;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util
 

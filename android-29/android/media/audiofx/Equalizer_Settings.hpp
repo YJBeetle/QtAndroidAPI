@@ -12,7 +12,7 @@ namespace __jni_impl::android::media::audiofx
 	{
 	public:
 		// Fields
-		QAndroidJniObject bandLevels();
+		jshortArray bandLevels();
 		jshort curPreset();
 		jshort numBands();
 		
@@ -21,7 +21,7 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -29,21 +29,24 @@ namespace __jni_impl::android::media::audiofx
 namespace __jni_impl::android::media::audiofx
 {
 	// Fields
-	QAndroidJniObject Equalizer_Settings::bandLevels()
+	jshortArray Equalizer_Settings::bandLevels()
 	{
 		return __thiz.getObjectField(
 			"bandLevels",
-			"[S");
+			"[S"
+		).object<jshortArray>();
 	}
 	jshort Equalizer_Settings::curPreset()
 	{
 		return __thiz.getField<jshort>(
-			"curPreset");
+			"curPreset"
+		);
 	}
 	jshort Equalizer_Settings::numBands()
 	{
 		return __thiz.getField<jshort>(
-			"numBands");
+			"numBands"
+		);
 	}
 	
 	// Constructors
@@ -62,11 +65,12 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject Equalizer_Settings::toString()
+	jstring Equalizer_Settings::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media::audiofx
 

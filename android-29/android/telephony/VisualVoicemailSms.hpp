@@ -31,11 +31,11 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		QAndroidJniObject getFields();
-		QAndroidJniObject getPrefix();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getMessageBody();
+		jstring getPrefix();
 		QAndroidJniObject getPhoneAccountHandle();
-		QAndroidJniObject getMessageBody();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -51,7 +51,8 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.VisualVoicemailSms",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -67,19 +68,15 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callObjectMethod(
 			"getFields",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject VisualVoicemailSms::getPrefix()
-	{
-		return __thiz.callObjectMethod(
-			"getPrefix",
-			"()Ljava/lang/String;");
+			"()Landroid/os/Bundle;"
+		);
 	}
 	jint VisualVoicemailSms::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void VisualVoicemailSms::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -87,19 +84,29 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring VisualVoicemailSms::getMessageBody()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageBody",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring VisualVoicemailSms::getPrefix()
+	{
+		return __thiz.callObjectMethod(
+			"getPrefix",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject VisualVoicemailSms::getPhoneAccountHandle()
 	{
 		return __thiz.callObjectMethod(
 			"getPhoneAccountHandle",
-			"()Landroid/telecom/PhoneAccountHandle;");
-	}
-	QAndroidJniObject VisualVoicemailSms::getMessageBody()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageBody",
-			"()Ljava/lang/String;");
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

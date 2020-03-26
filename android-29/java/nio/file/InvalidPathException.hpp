@@ -21,10 +21,10 @@ namespace __jni_impl::java::nio::file
 		void __constructor(jstring arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 		jint getIndex();
-		QAndroidJniObject getReason();
-		QAndroidJniObject getInput();
+		jstring getReason();
+		jstring getInput();
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -53,29 +53,33 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	QAndroidJniObject InvalidPathException::getMessage()
+	jstring InvalidPathException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint InvalidPathException::getIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject InvalidPathException::getReason()
+	jstring InvalidPathException::getReason()
 	{
 		return __thiz.callObjectMethod(
 			"getReason",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InvalidPathException::getInput()
+	jstring InvalidPathException::getInput()
 	{
 		return __thiz.callObjectMethod(
 			"getInput",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::file
 

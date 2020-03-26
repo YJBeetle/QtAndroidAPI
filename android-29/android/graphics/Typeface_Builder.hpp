@@ -91,49 +91,56 @@ namespace __jni_impl::android::graphics
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/graphics/Typeface;");
+			"()Landroid/graphics/Typeface;"
+		);
 	}
 	QAndroidJniObject Typeface_Builder::setWeight(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setWeight",
 			"(I)Landroid/graphics/Typeface$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Typeface_Builder::setItalic(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setItalic",
 			"(Z)Landroid/graphics/Typeface$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Typeface_Builder::setTtcIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTtcIndex",
 			"(I)Landroid/graphics/Typeface$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Typeface_Builder::setFallback(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setFallback",
 			"(Ljava/lang/String;)Landroid/graphics/Typeface$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Typeface_Builder::setFontVariationSettings(jarray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setFontVariationSettings",
 			"([Landroid/graphics/fonts/FontVariationAxis;)Landroid/graphics/Typeface$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Typeface_Builder::setFontVariationSettings(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setFontVariationSettings",
 			"(Ljava/lang/String;)Landroid/graphics/Typeface$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

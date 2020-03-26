@@ -24,7 +24,7 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jint getAccuracy();
 		jboolean meetsCriteria(__jni_impl::android::location::Criteria arg0);
 		jboolean requiresNetwork();
@@ -47,19 +47,22 @@ namespace __jni_impl::android::location
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.LocationProvider",
-			"AVAILABLE");
+			"AVAILABLE"
+		);
 	}
 	jint LocationProvider::OUT_OF_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.LocationProvider",
-			"OUT_OF_SERVICE");
+			"OUT_OF_SERVICE"
+		);
 	}
 	jint LocationProvider::TEMPORARILY_UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.LocationProvider",
-			"TEMPORARILY_UNAVAILABLE");
+			"TEMPORARILY_UNAVAILABLE"
+		);
 	}
 	
 	// Constructors
@@ -71,72 +74,83 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	QAndroidJniObject LocationProvider::getName()
+	jstring LocationProvider::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint LocationProvider::getAccuracy()
 	{
 		return __thiz.callMethod<jint>(
 			"getAccuracy",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean LocationProvider::meetsCriteria(__jni_impl::android::location::Criteria arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"meetsCriteria",
 			"(Landroid/location/Criteria;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LocationProvider::requiresNetwork()
 	{
 		return __thiz.callMethod<jboolean>(
 			"requiresNetwork",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean LocationProvider::requiresSatellite()
 	{
 		return __thiz.callMethod<jboolean>(
 			"requiresSatellite",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean LocationProvider::requiresCell()
 	{
 		return __thiz.callMethod<jboolean>(
 			"requiresCell",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean LocationProvider::hasMonetaryCost()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasMonetaryCost",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean LocationProvider::supportsAltitude()
 	{
 		return __thiz.callMethod<jboolean>(
 			"supportsAltitude",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean LocationProvider::supportsSpeed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"supportsSpeed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean LocationProvider::supportsBearing()
 	{
 		return __thiz.callMethod<jboolean>(
 			"supportsBearing",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint LocationProvider::getPowerRequirement()
 	{
 		return __thiz.callMethod<jint>(
 			"getPowerRequirement",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::location
 

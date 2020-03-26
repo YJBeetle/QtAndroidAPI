@@ -43,23 +43,23 @@ namespace __jni_impl::android::icu::text
 		static QAndroidJniObject getInstance(jstring arg0, jint arg1);
 		void setFilter(__jni_impl::android::icu::text::UnicodeFilter arg0);
 		QAndroidJniObject getFilter();
-		QAndroidJniObject getID();
-		static QAndroidJniObject getDisplayName(jstring arg0);
-		static QAndroidJniObject getDisplayName(jstring arg0, __jni_impl::java::util::Locale arg1);
-		static QAndroidJniObject getDisplayName(jstring arg0, __jni_impl::android::icu::util::ULocale arg1);
+		jstring getID();
+		static jstring getDisplayName(jstring arg0);
+		static jstring getDisplayName(jstring arg0, __jni_impl::java::util::Locale arg1);
+		static jstring getDisplayName(jstring arg0, __jni_impl::android::icu::util::ULocale arg1);
 		static QAndroidJniObject getAvailableIDs();
-		QAndroidJniObject getElements();
+		jarray getElements();
 		void transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, jstring arg2);
 		jint transliterate(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		void transliterate(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject transliterate(jstring arg0);
+		jstring transliterate(jstring arg0);
 		void transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1);
 		void transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, jint arg2);
 		void finishTransliteration(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1);
 		void filteredTransliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, jboolean arg2);
 		jint getMaximumContextLength();
 		static QAndroidJniObject createFromRules(jstring arg0, jstring arg1, jint arg2);
-		QAndroidJniObject toRules(jboolean arg0);
+		jstring toRules(jboolean arg0);
 		QAndroidJniObject getSourceSet();
 		QAndroidJniObject getTargetSet();
 		QAndroidJniObject getInverse();
@@ -82,13 +82,15 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.Transliterator",
-			"FORWARD");
+			"FORWARD"
+		);
 	}
 	jint Transliterator::REVERSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.Transliterator",
-			"REVERSE");
+			"REVERSE"
+		);
 	}
 	
 	// Constructors
@@ -106,7 +108,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.Transliterator",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/text/Transliterator;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Transliterator::getInstance(jstring arg0, jint arg1)
 	{
@@ -115,65 +118,74 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Ljava/lang/String;I)Landroid/icu/text/Transliterator;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Transliterator::setFilter(__jni_impl::android::icu::text::UnicodeFilter arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFilter",
 			"(Landroid/icu/text/UnicodeFilter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Transliterator::getFilter()
 	{
 		return __thiz.callObjectMethod(
 			"getFilter",
-			"()Landroid/icu/text/UnicodeFilter;");
+			"()Landroid/icu/text/UnicodeFilter;"
+		);
 	}
-	QAndroidJniObject Transliterator::getID()
+	jstring Transliterator::getID()
 	{
 		return __thiz.callObjectMethod(
 			"getID",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Transliterator::getDisplayName(jstring arg0)
+	jstring Transliterator::getDisplayName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getDisplayName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Transliterator::getDisplayName(jstring arg0, __jni_impl::java::util::Locale arg1)
+	jstring Transliterator::getDisplayName(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getDisplayName",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject Transliterator::getDisplayName(jstring arg0, __jni_impl::android::icu::util::ULocale arg1)
+	jstring Transliterator::getDisplayName(jstring arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getDisplayName",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject Transliterator::getAvailableIDs()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getAvailableIDs",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
-	QAndroidJniObject Transliterator::getElements()
+	jarray Transliterator::getElements()
 	{
 		return __thiz.callObjectMethod(
 			"getElements",
-			"()[Landroid/icu/text/Transliterator;");
+			"()[Landroid/icu/text/Transliterator;"
+		).object<jarray>();
 	}
 	void Transliterator::transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, jstring arg2)
 	{
@@ -182,7 +194,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jint Transliterator::transliterate(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
 	{
@@ -191,21 +204,24 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/text/Replaceable;II)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Transliterator::transliterate(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"transliterate",
 			"(Landroid/icu/text/Replaceable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Transliterator::transliterate(jstring arg0)
+	jstring Transliterator::transliterate(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"transliterate",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void Transliterator::transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1)
 	{
@@ -213,7 +229,8 @@ namespace __jni_impl::android::icu::text
 			"transliterate",
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Transliterator::transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, jint arg2)
 	{
@@ -222,7 +239,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Transliterator::finishTransliteration(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1)
 	{
@@ -230,7 +248,8 @@ namespace __jni_impl::android::icu::text
 			"finishTransliteration",
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Transliterator::filteredTransliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, jboolean arg2)
 	{
@@ -239,13 +258,15 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;Z)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jint Transliterator::getMaximumContextLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaximumContextLength",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Transliterator::createFromRules(jstring arg0, jstring arg1, jint arg2)
 	{
@@ -255,39 +276,45 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;Ljava/lang/String;I)Landroid/icu/text/Transliterator;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject Transliterator::toRules(jboolean arg0)
+	jstring Transliterator::toRules(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"toRules",
 			"(Z)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject Transliterator::getSourceSet()
 	{
 		return __thiz.callObjectMethod(
 			"getSourceSet",
-			"()Landroid/icu/text/UnicodeSet;");
+			"()Landroid/icu/text/UnicodeSet;"
+		);
 	}
 	QAndroidJniObject Transliterator::getTargetSet()
 	{
 		return __thiz.callObjectMethod(
 			"getTargetSet",
-			"()Landroid/icu/text/UnicodeSet;");
+			"()Landroid/icu/text/UnicodeSet;"
+		);
 	}
 	QAndroidJniObject Transliterator::getInverse()
 	{
 		return __thiz.callObjectMethod(
 			"getInverse",
-			"()Landroid/icu/text/Transliterator;");
+			"()Landroid/icu/text/Transliterator;"
+		);
 	}
 	QAndroidJniObject Transliterator::getAvailableSources()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Transliterator",
 			"getAvailableSources",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	QAndroidJniObject Transliterator::getAvailableTargets(jstring arg0)
 	{
@@ -295,7 +322,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.Transliterator",
 			"getAvailableTargets",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Transliterator::getAvailableVariants(jstring arg0, jstring arg1)
 	{
@@ -304,7 +332,8 @@ namespace __jni_impl::android::icu::text
 			"getAvailableVariants",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Enumeration;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

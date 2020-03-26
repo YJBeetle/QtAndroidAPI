@@ -57,10 +57,12 @@ namespace __jni_impl::android::media::session
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jlong getActions();
 		jint getState();
-		QAndroidJniObject getErrorMessage();
+		jstring getErrorMessage();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
 		jlong getPosition();
 		jlong getBufferedPosition();
@@ -68,8 +70,6 @@ namespace __jni_impl::android::media::session
 		QAndroidJniObject getCustomActions();
 		jlong getLastPositionUpdateTime();
 		jlong getActiveQueueItemId();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media::session
 
@@ -83,194 +83,226 @@ namespace __jni_impl::android::media::session
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_FAST_FORWARD");
+			"ACTION_FAST_FORWARD"
+		);
 	}
 	jlong PlaybackState::ACTION_PAUSE()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PAUSE");
+			"ACTION_PAUSE"
+		);
 	}
 	jlong PlaybackState::ACTION_PLAY()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PLAY");
+			"ACTION_PLAY"
+		);
 	}
 	jlong PlaybackState::ACTION_PLAY_FROM_MEDIA_ID()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PLAY_FROM_MEDIA_ID");
+			"ACTION_PLAY_FROM_MEDIA_ID"
+		);
 	}
 	jlong PlaybackState::ACTION_PLAY_FROM_SEARCH()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PLAY_FROM_SEARCH");
+			"ACTION_PLAY_FROM_SEARCH"
+		);
 	}
 	jlong PlaybackState::ACTION_PLAY_FROM_URI()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PLAY_FROM_URI");
+			"ACTION_PLAY_FROM_URI"
+		);
 	}
 	jlong PlaybackState::ACTION_PLAY_PAUSE()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PLAY_PAUSE");
+			"ACTION_PLAY_PAUSE"
+		);
 	}
 	jlong PlaybackState::ACTION_PREPARE()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PREPARE");
+			"ACTION_PREPARE"
+		);
 	}
 	jlong PlaybackState::ACTION_PREPARE_FROM_MEDIA_ID()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PREPARE_FROM_MEDIA_ID");
+			"ACTION_PREPARE_FROM_MEDIA_ID"
+		);
 	}
 	jlong PlaybackState::ACTION_PREPARE_FROM_SEARCH()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PREPARE_FROM_SEARCH");
+			"ACTION_PREPARE_FROM_SEARCH"
+		);
 	}
 	jlong PlaybackState::ACTION_PREPARE_FROM_URI()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_PREPARE_FROM_URI");
+			"ACTION_PREPARE_FROM_URI"
+		);
 	}
 	jlong PlaybackState::ACTION_REWIND()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_REWIND");
+			"ACTION_REWIND"
+		);
 	}
 	jlong PlaybackState::ACTION_SEEK_TO()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_SEEK_TO");
+			"ACTION_SEEK_TO"
+		);
 	}
 	jlong PlaybackState::ACTION_SET_RATING()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_SET_RATING");
+			"ACTION_SET_RATING"
+		);
 	}
 	jlong PlaybackState::ACTION_SKIP_TO_NEXT()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_SKIP_TO_NEXT");
+			"ACTION_SKIP_TO_NEXT"
+		);
 	}
 	jlong PlaybackState::ACTION_SKIP_TO_PREVIOUS()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_SKIP_TO_PREVIOUS");
+			"ACTION_SKIP_TO_PREVIOUS"
+		);
 	}
 	jlong PlaybackState::ACTION_SKIP_TO_QUEUE_ITEM()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_SKIP_TO_QUEUE_ITEM");
+			"ACTION_SKIP_TO_QUEUE_ITEM"
+		);
 	}
 	jlong PlaybackState::ACTION_STOP()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"ACTION_STOP");
+			"ACTION_STOP"
+		);
 	}
 	QAndroidJniObject PlaybackState::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.session.PlaybackState",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jlong PlaybackState::PLAYBACK_POSITION_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.session.PlaybackState",
-			"PLAYBACK_POSITION_UNKNOWN");
+			"PLAYBACK_POSITION_UNKNOWN"
+		);
 	}
 	jint PlaybackState::STATE_BUFFERING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_BUFFERING");
+			"STATE_BUFFERING"
+		);
 	}
 	jint PlaybackState::STATE_CONNECTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_CONNECTING");
+			"STATE_CONNECTING"
+		);
 	}
 	jint PlaybackState::STATE_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_ERROR");
+			"STATE_ERROR"
+		);
 	}
 	jint PlaybackState::STATE_FAST_FORWARDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_FAST_FORWARDING");
+			"STATE_FAST_FORWARDING"
+		);
 	}
 	jint PlaybackState::STATE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_NONE");
+			"STATE_NONE"
+		);
 	}
 	jint PlaybackState::STATE_PAUSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_PAUSED");
+			"STATE_PAUSED"
+		);
 	}
 	jint PlaybackState::STATE_PLAYING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_PLAYING");
+			"STATE_PLAYING"
+		);
 	}
 	jint PlaybackState::STATE_REWINDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_REWINDING");
+			"STATE_REWINDING"
+		);
 	}
 	jint PlaybackState::STATE_SKIPPING_TO_NEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_SKIPPING_TO_NEXT");
+			"STATE_SKIPPING_TO_NEXT"
+		);
 	}
 	jint PlaybackState::STATE_SKIPPING_TO_PREVIOUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_SKIPPING_TO_PREVIOUS");
+			"STATE_SKIPPING_TO_PREVIOUS"
+		);
 	}
 	jint PlaybackState::STATE_SKIPPING_TO_QUEUE_ITEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_SKIPPING_TO_QUEUE_ITEM");
+			"STATE_SKIPPING_TO_QUEUE_ITEM"
+		);
 	}
 	jint PlaybackState::STATE_STOPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.session.PlaybackState",
-			"STATE_STOPPED");
+			"STATE_STOPPED"
+		);
 	}
 	
 	// Constructors
@@ -282,77 +314,40 @@ namespace __jni_impl::android::media::session
 	}
 	
 	// Methods
-	QAndroidJniObject PlaybackState::toString()
+	jstring PlaybackState::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong PlaybackState::getActions()
 	{
 		return __thiz.callMethod<jlong>(
 			"getActions",
-			"()J");
+			"()J"
+		);
 	}
 	jint PlaybackState::getState()
 	{
 		return __thiz.callMethod<jint>(
 			"getState",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject PlaybackState::getErrorMessage()
+	jstring PlaybackState::getErrorMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getErrorMessage",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject PlaybackState::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	jlong PlaybackState::getPosition()
-	{
-		return __thiz.callMethod<jlong>(
-			"getPosition",
-			"()J");
-	}
-	jlong PlaybackState::getBufferedPosition()
-	{
-		return __thiz.callMethod<jlong>(
-			"getBufferedPosition",
-			"()J");
-	}
-	jfloat PlaybackState::getPlaybackSpeed()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getPlaybackSpeed",
-			"()F");
-	}
-	QAndroidJniObject PlaybackState::getCustomActions()
-	{
-		return __thiz.callObjectMethod(
-			"getCustomActions",
-			"()Ljava/util/List;");
-	}
-	jlong PlaybackState::getLastPositionUpdateTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLastPositionUpdateTime",
-			"()J");
-	}
-	jlong PlaybackState::getActiveQueueItemId()
-	{
-		return __thiz.callMethod<jlong>(
-			"getActiveQueueItemId",
-			"()J");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint PlaybackState::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PlaybackState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -360,7 +355,57 @@ namespace __jni_impl::android::media::session
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject PlaybackState::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jlong PlaybackState::getPosition()
+	{
+		return __thiz.callMethod<jlong>(
+			"getPosition",
+			"()J"
+		);
+	}
+	jlong PlaybackState::getBufferedPosition()
+	{
+		return __thiz.callMethod<jlong>(
+			"getBufferedPosition",
+			"()J"
+		);
+	}
+	jfloat PlaybackState::getPlaybackSpeed()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getPlaybackSpeed",
+			"()F"
+		);
+	}
+	QAndroidJniObject PlaybackState::getCustomActions()
+	{
+		return __thiz.callObjectMethod(
+			"getCustomActions",
+			"()Ljava/util/List;"
+		);
+	}
+	jlong PlaybackState::getLastPositionUpdateTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLastPositionUpdateTime",
+			"()J"
+		);
+	}
+	jlong PlaybackState::getActiveQueueItemId()
+	{
+		return __thiz.callMethod<jlong>(
+			"getActiveQueueItemId",
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::media::session
 

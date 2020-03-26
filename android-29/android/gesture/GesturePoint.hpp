@@ -20,7 +20,7 @@ namespace __jni_impl::android::gesture
 		void __constructor(jfloat arg0, jfloat arg1, jlong arg2);
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 	};
 } // namespace __jni_impl::android::gesture
 
@@ -31,17 +31,20 @@ namespace __jni_impl::android::gesture
 	jlong GesturePoint::timestamp()
 	{
 		return __thiz.getField<jlong>(
-			"timestamp");
+			"timestamp"
+		);
 	}
 	jfloat GesturePoint::x()
 	{
 		return __thiz.getField<jfloat>(
-			"x");
+			"x"
+		);
 	}
 	jfloat GesturePoint::y()
 	{
 		return __thiz.getField<jfloat>(
-			"y");
+			"y"
+		);
 	}
 	
 	// Constructors
@@ -56,11 +59,12 @@ namespace __jni_impl::android::gesture
 	}
 	
 	// Methods
-	QAndroidJniObject GesturePoint::clone()
+	jobject GesturePoint::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::gesture
 

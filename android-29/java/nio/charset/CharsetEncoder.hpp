@@ -46,7 +46,7 @@ namespace __jni_impl::java::nio::charset
 		QAndroidJniObject encode(__jni_impl::java::nio::CharBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1, jboolean arg2);
 		jboolean canEncode(jstring arg0);
 		jboolean canEncode(jchar arg0);
-		QAndroidJniObject replacement();
+		jbyteArray replacement();
 		QAndroidJniObject flush(__jni_impl::java::nio::ByteBuffer arg0);
 		QAndroidJniObject reset();
 		QAndroidJniObject onMalformedInput(__jni_impl::java::nio::charset::CodingErrorAction arg0);
@@ -84,14 +84,16 @@ namespace __jni_impl::java::nio::charset
 	{
 		return __thiz.callObjectMethod(
 			"charset",
-			"()Ljava/nio/charset/Charset;");
+			"()Ljava/nio/charset/Charset;"
+		);
 	}
 	QAndroidJniObject CharsetEncoder::encode(__jni_impl::java::nio::CharBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"encode",
 			"(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CharsetEncoder::encode(__jni_impl::java::nio::CharBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1, jboolean arg2)
 	{
@@ -100,92 +102,106 @@ namespace __jni_impl::java::nio::charset
 			"(Ljava/nio/CharBuffer;Ljava/nio/ByteBuffer;Z)Ljava/nio/charset/CoderResult;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jboolean CharsetEncoder::canEncode(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"canEncode",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CharsetEncoder::canEncode(jchar arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"canEncode",
 			"(C)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CharsetEncoder::replacement()
+	jbyteArray CharsetEncoder::replacement()
 	{
 		return __thiz.callObjectMethod(
 			"replacement",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject CharsetEncoder::flush(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"flush",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/charset/CoderResult;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CharsetEncoder::reset()
 	{
 		return __thiz.callObjectMethod(
 			"reset",
-			"()Ljava/nio/charset/CharsetEncoder;");
+			"()Ljava/nio/charset/CharsetEncoder;"
+		);
 	}
 	QAndroidJniObject CharsetEncoder::onMalformedInput(__jni_impl::java::nio::charset::CodingErrorAction arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onMalformedInput",
 			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CharsetEncoder::onUnmappableCharacter(__jni_impl::java::nio::charset::CodingErrorAction arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onUnmappableCharacter",
 			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean CharsetEncoder::isLegalReplacement(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLegalReplacement",
 			"([B)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CharsetEncoder::malformedInputAction()
 	{
 		return __thiz.callObjectMethod(
 			"malformedInputAction",
-			"()Ljava/nio/charset/CodingErrorAction;");
+			"()Ljava/nio/charset/CodingErrorAction;"
+		);
 	}
 	QAndroidJniObject CharsetEncoder::unmappableCharacterAction()
 	{
 		return __thiz.callObjectMethod(
 			"unmappableCharacterAction",
-			"()Ljava/nio/charset/CodingErrorAction;");
+			"()Ljava/nio/charset/CodingErrorAction;"
+		);
 	}
 	jfloat CharsetEncoder::averageBytesPerChar()
 	{
 		return __thiz.callMethod<jfloat>(
 			"averageBytesPerChar",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat CharsetEncoder::maxBytesPerChar()
 	{
 		return __thiz.callMethod<jfloat>(
 			"maxBytesPerChar",
-			"()F");
+			"()F"
+		);
 	}
 	QAndroidJniObject CharsetEncoder::replaceWith(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"replaceWith",
 			"([B)Ljava/nio/charset/CharsetEncoder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::charset
 

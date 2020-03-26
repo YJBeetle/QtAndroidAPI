@@ -46,7 +46,8 @@ namespace __jni_impl::android::content::res
 			"android.content.res.ObbScanner",
 			"getObbInfo",
 			"(Ljava/lang/String;)Landroid/content/res/ObbInfo;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::content::res
 

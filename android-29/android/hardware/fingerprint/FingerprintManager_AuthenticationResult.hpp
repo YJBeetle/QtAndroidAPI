@@ -44,7 +44,8 @@ namespace __jni_impl::android::hardware::fingerprint
 	{
 		return __thiz.callObjectMethod(
 			"getCryptoObject",
-			"()Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;");
+			"()Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;"
+		);
 	}
 } // namespace __jni_impl::android::hardware::fingerprint
 

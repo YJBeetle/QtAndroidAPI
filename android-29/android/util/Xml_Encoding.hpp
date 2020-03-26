@@ -22,7 +22,7 @@ namespace __jni_impl::android::util
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::util
@@ -36,28 +36,32 @@ namespace __jni_impl::android::util
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Xml$Encoding",
 			"US_ASCII",
-			"Landroid/util/Xml$Encoding;");
+			"Landroid/util/Xml$Encoding;"
+		);
 	}
 	QAndroidJniObject Xml_Encoding::UTF_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Xml$Encoding",
 			"UTF_8",
-			"Landroid/util/Xml$Encoding;");
+			"Landroid/util/Xml$Encoding;"
+		);
 	}
 	QAndroidJniObject Xml_Encoding::UTF_16()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Xml$Encoding",
 			"UTF_16",
-			"Landroid/util/Xml$Encoding;");
+			"Landroid/util/Xml$Encoding;"
+		);
 	}
 	QAndroidJniObject Xml_Encoding::ISO_8859_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Xml$Encoding",
 			"ISO_8859_1",
-			"Landroid/util/Xml$Encoding;");
+			"Landroid/util/Xml$Encoding;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	QAndroidJniObject Xml_Encoding::values()
+	jarray Xml_Encoding::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Xml$Encoding",
 			"values",
-			"()[Landroid/util/Xml$Encoding;");
+			"()[Landroid/util/Xml$Encoding;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Xml_Encoding::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::util
 			"android.util.Xml$Encoding",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

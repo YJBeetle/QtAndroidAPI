@@ -26,7 +26,7 @@ namespace __jni_impl::java::math
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jint arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
@@ -41,56 +41,64 @@ namespace __jni_impl::java::math
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
 			"UP",
-			"Ljava/math/RoundingMode;");
+			"Ljava/math/RoundingMode;"
+		);
 	}
 	QAndroidJniObject RoundingMode::DOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
 			"DOWN",
-			"Ljava/math/RoundingMode;");
+			"Ljava/math/RoundingMode;"
+		);
 	}
 	QAndroidJniObject RoundingMode::CEILING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
 			"CEILING",
-			"Ljava/math/RoundingMode;");
+			"Ljava/math/RoundingMode;"
+		);
 	}
 	QAndroidJniObject RoundingMode::FLOOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
 			"FLOOR",
-			"Ljava/math/RoundingMode;");
+			"Ljava/math/RoundingMode;"
+		);
 	}
 	QAndroidJniObject RoundingMode::HALF_UP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
 			"HALF_UP",
-			"Ljava/math/RoundingMode;");
+			"Ljava/math/RoundingMode;"
+		);
 	}
 	QAndroidJniObject RoundingMode::HALF_DOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
 			"HALF_DOWN",
-			"Ljava/math/RoundingMode;");
+			"Ljava/math/RoundingMode;"
+		);
 	}
 	QAndroidJniObject RoundingMode::HALF_EVEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
 			"HALF_EVEN",
-			"Ljava/math/RoundingMode;");
+			"Ljava/math/RoundingMode;"
+		);
 	}
 	QAndroidJniObject RoundingMode::UNNECESSARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.RoundingMode",
 			"UNNECESSARY",
-			"Ljava/math/RoundingMode;");
+			"Ljava/math/RoundingMode;"
+		);
 	}
 	
 	// Constructors
@@ -102,12 +110,13 @@ namespace __jni_impl::java::math
 	}
 	
 	// Methods
-	QAndroidJniObject RoundingMode::values()
+	jarray RoundingMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.math.RoundingMode",
 			"values",
-			"()[Ljava/math/RoundingMode;");
+			"()[Ljava/math/RoundingMode;"
+		).object<jarray>();
 	}
 	QAndroidJniObject RoundingMode::valueOf(jint arg0)
 	{
@@ -115,7 +124,8 @@ namespace __jni_impl::java::math
 			"java.math.RoundingMode",
 			"valueOf",
 			"(I)Ljava/math/RoundingMode;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject RoundingMode::valueOf(jstring arg0)
 	{
@@ -123,7 +133,8 @@ namespace __jni_impl::java::math
 			"java.math.RoundingMode",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/math/RoundingMode;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::math
 

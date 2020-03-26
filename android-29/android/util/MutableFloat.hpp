@@ -28,7 +28,8 @@ namespace __jni_impl::android::util
 	jfloat MutableFloat::value()
 	{
 		return __thiz.getField<jfloat>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

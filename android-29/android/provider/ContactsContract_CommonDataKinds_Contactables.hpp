@@ -18,10 +18,10 @@ namespace __jni_impl::android::provider
 		// Fields
 		static QAndroidJniObject CONTENT_FILTER_URI();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static QAndroidJniObject VISIBLE_CONTACTS_ONLY();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static jstring VISIBLE_CONTACTS_ONLY();
 		
 		// Constructors
 		void __constructor();
@@ -40,42 +40,48 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_CommonDataKinds_Contactables::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Contactables::EXTRA_ADDRESS_BOOK_INDEX()
+	jstring ContactsContract_CommonDataKinds_Contactables::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"EXTRA_ADDRESS_BOOK_INDEX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Contactables::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	jstring ContactsContract_CommonDataKinds_Contactables::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Contactables::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	jstring ContactsContract_CommonDataKinds_Contactables::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Contactables::VISIBLE_CONTACTS_ONLY()
+	jstring ContactsContract_CommonDataKinds_Contactables::VISIBLE_CONTACTS_ONLY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"VISIBLE_CONTACTS_ONLY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

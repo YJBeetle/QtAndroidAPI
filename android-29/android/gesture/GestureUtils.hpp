@@ -35,9 +35,9 @@ namespace __jni_impl::android::gesture
 		// Methods
 		static QAndroidJniObject computeOrientedBoundingBox(__jni_impl::java::util::ArrayList arg0);
 		static QAndroidJniObject computeOrientedBoundingBox(jfloatArray arg0);
-		static QAndroidJniObject spatialSampling(__jni_impl::android::gesture::Gesture arg0, jint arg1, jboolean arg2);
-		static QAndroidJniObject spatialSampling(__jni_impl::android::gesture::Gesture arg0, jint arg1);
-		static QAndroidJniObject temporalSampling(__jni_impl::android::gesture::GestureStroke arg0, jint arg1);
+		static jfloatArray spatialSampling(__jni_impl::android::gesture::Gesture arg0, jint arg1, jboolean arg2);
+		static jfloatArray spatialSampling(__jni_impl::android::gesture::Gesture arg0, jint arg1);
+		static jfloatArray temporalSampling(__jni_impl::android::gesture::GestureStroke arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::gesture
 
@@ -65,7 +65,8 @@ namespace __jni_impl::android::gesture
 			"android.gesture.GestureUtils",
 			"computeOrientedBoundingBox",
 			"(Ljava/util/ArrayList;)Landroid/gesture/OrientedBoundingBox;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject GestureUtils::computeOrientedBoundingBox(jfloatArray arg0)
 	{
@@ -73,9 +74,10 @@ namespace __jni_impl::android::gesture
 			"android.gesture.GestureUtils",
 			"computeOrientedBoundingBox",
 			"([F)Landroid/gesture/OrientedBoundingBox;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject GestureUtils::spatialSampling(__jni_impl::android::gesture::Gesture arg0, jint arg1, jboolean arg2)
+	jfloatArray GestureUtils::spatialSampling(__jni_impl::android::gesture::Gesture arg0, jint arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.gesture.GestureUtils",
@@ -83,25 +85,28 @@ namespace __jni_impl::android::gesture
 			"(Landroid/gesture/Gesture;IZ)[F",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jfloatArray>();
 	}
-	QAndroidJniObject GestureUtils::spatialSampling(__jni_impl::android::gesture::Gesture arg0, jint arg1)
+	jfloatArray GestureUtils::spatialSampling(__jni_impl::android::gesture::Gesture arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.gesture.GestureUtils",
 			"spatialSampling",
 			"(Landroid/gesture/Gesture;I)[F",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jfloatArray>();
 	}
-	QAndroidJniObject GestureUtils::temporalSampling(__jni_impl::android::gesture::GestureStroke arg0, jint arg1)
+	jfloatArray GestureUtils::temporalSampling(__jni_impl::android::gesture::GestureStroke arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.gesture.GestureUtils",
 			"temporalSampling",
 			"(Landroid/gesture/GestureStroke;I)[F",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jfloatArray>();
 	}
 } // namespace __jni_impl::android::gesture
 

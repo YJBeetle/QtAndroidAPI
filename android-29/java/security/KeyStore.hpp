@@ -25,13 +25,13 @@ namespace __jni_impl::java::io
 {
 	class OutputStream;
 }
-namespace __jni_impl::java::util
-{
-	class Date;
-}
 namespace __jni_impl::java::security::cert
 {
 	class Certificate;
+}
+namespace __jni_impl::java::util
+{
+	class Date;
 }
 
 namespace __jni_impl::java::security
@@ -56,23 +56,23 @@ namespace __jni_impl::java::security
 		void load(__jni_impl::__JniBaseClass arg0);
 		void store(__jni_impl::java::io::OutputStream arg0, jcharArray arg1);
 		void store(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getType();
+		jstring getType();
 		QAndroidJniObject aliases();
 		QAndroidJniObject getEntry(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject getProvider();
 		void deleteEntry(jstring arg0);
+		jarray getCertificateChain(jstring arg0);
+		static jstring getDefaultType();
+		QAndroidJniObject getCertificate(jstring arg0);
 		QAndroidJniObject getCreationDate(jstring arg0);
-		void setKeyEntry(jstring arg0, __jni_impl::__JniBaseClass arg1, jcharArray arg2, jarray arg3);
 		void setKeyEntry(jstring arg0, jbyteArray arg1, jarray arg2);
+		void setKeyEntry(jstring arg0, __jni_impl::__JniBaseClass arg1, jcharArray arg2, jarray arg3);
 		void setCertificateEntry(jstring arg0, __jni_impl::java::security::cert::Certificate arg1);
 		jboolean containsAlias(jstring arg0);
 		jboolean isKeyEntry(jstring arg0);
 		jboolean isCertificateEntry(jstring arg0);
-		QAndroidJniObject getCertificateAlias(__jni_impl::java::security::cert::Certificate arg0);
+		jstring getCertificateAlias(__jni_impl::java::security::cert::Certificate arg0);
 		jboolean entryInstanceOf(jstring arg0, jclass arg1);
-		QAndroidJniObject getCertificateChain(jstring arg0);
-		QAndroidJniObject getCertificate(jstring arg0);
-		static QAndroidJniObject getDefaultType();
 		void setEntry(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 	};
 } // namespace __jni_impl::java::security
@@ -82,8 +82,8 @@ namespace __jni_impl::java::security
 #include "../io/File.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
-#include "../util/Date.hpp"
 #include "cert/Certificate.hpp"
+#include "../util/Date.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -102,7 +102,8 @@ namespace __jni_impl::java::security
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject KeyStore::getKey(jstring arg0, jcharArray arg1)
 	{
@@ -110,7 +111,8 @@ namespace __jni_impl::java::security
 			"getKey",
 			"(Ljava/lang/String;[C)Ljava/security/Key;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyStore::getInstance(__jni_impl::java::io::File arg0, jcharArray arg1)
 	{
@@ -119,7 +121,8 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/io/File;[C)Ljava/security/KeyStore;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyStore::getInstance(__jni_impl::java::io::File arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -128,7 +131,8 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/io/File;Ljava/security/KeyStore$LoadStoreParameter;)Ljava/security/KeyStore;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyStore::getInstance(jstring arg0, jstring arg1)
 	{
@@ -137,7 +141,8 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyStore;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyStore::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
@@ -146,7 +151,8 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyStore;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyStore::getInstance(jstring arg0)
 	{
@@ -154,7 +160,8 @@ namespace __jni_impl::java::security
 			"java.security.KeyStore",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/KeyStore;",
-			arg0);
+			arg0
+		);
 	}
 	void KeyStore::load(__jni_impl::java::io::InputStream arg0, jcharArray arg1)
 	{
@@ -162,14 +169,16 @@ namespace __jni_impl::java::security
 			"load",
 			"(Ljava/io/InputStream;[C)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void KeyStore::load(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"load",
 			"(Ljava/security/KeyStore$LoadStoreParameter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void KeyStore::store(__jni_impl::java::io::OutputStream arg0, jcharArray arg1)
 	{
@@ -177,26 +186,30 @@ namespace __jni_impl::java::security
 			"store",
 			"(Ljava/io/OutputStream;[C)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void KeyStore::store(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"store",
 			"(Ljava/security/KeyStore$LoadStoreParameter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject KeyStore::getType()
+	jstring KeyStore::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject KeyStore::aliases()
 	{
 		return __thiz.callObjectMethod(
 			"aliases",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	QAndroidJniObject KeyStore::getEntry(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -204,27 +217,65 @@ namespace __jni_impl::java::security
 			"getEntry",
 			"(Ljava/lang/String;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Entry;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyStore::getProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
-			"()Ljava/security/Provider;");
+			"()Ljava/security/Provider;"
+		);
 	}
 	void KeyStore::deleteEntry(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"deleteEntry",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	jarray KeyStore::getCertificateChain(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCertificateChain",
+			"(Ljava/lang/String;)[Ljava/security/cert/Certificate;",
+			arg0
+		).object<jarray>();
+	}
+	jstring KeyStore::getDefaultType()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.KeyStore",
+			"getDefaultType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject KeyStore::getCertificate(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCertificate",
+			"(Ljava/lang/String;)Ljava/security/cert/Certificate;",
+			arg0
+		);
 	}
 	QAndroidJniObject KeyStore::getCreationDate(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getCreationDate",
 			"(Ljava/lang/String;)Ljava/util/Date;",
-			arg0);
+			arg0
+		);
+	}
+	void KeyStore::setKeyEntry(jstring arg0, jbyteArray arg1, jarray arg2)
+	{
+		__thiz.callMethod<void>(
+			"setKeyEntry",
+			"(Ljava/lang/String;[B[Ljava/security/cert/Certificate;)V",
+			arg0,
+			arg1,
+			arg2
+		);
 	}
 	void KeyStore::setKeyEntry(jstring arg0, __jni_impl::__JniBaseClass arg1, jcharArray arg2, jarray arg3)
 	{
@@ -234,16 +285,8 @@ namespace __jni_impl::java::security
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
-	}
-	void KeyStore::setKeyEntry(jstring arg0, jbyteArray arg1, jarray arg2)
-	{
-		__thiz.callMethod<void>(
-			"setKeyEntry",
-			"(Ljava/lang/String;[B[Ljava/security/cert/Certificate;)V",
-			arg0,
-			arg1,
-			arg2);
+			arg3
+		);
 	}
 	void KeyStore::setCertificateEntry(jstring arg0, __jni_impl::java::security::cert::Certificate arg1)
 	{
@@ -251,35 +294,40 @@ namespace __jni_impl::java::security
 			"setCertificateEntry",
 			"(Ljava/lang/String;Ljava/security/cert/Certificate;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean KeyStore::containsAlias(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsAlias",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean KeyStore::isKeyEntry(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isKeyEntry",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean KeyStore::isCertificateEntry(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCertificateEntry",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject KeyStore::getCertificateAlias(__jni_impl::java::security::cert::Certificate arg0)
+	jstring KeyStore::getCertificateAlias(__jni_impl::java::security::cert::Certificate arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getCertificateAlias",
 			"(Ljava/security/cert/Certificate;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	jboolean KeyStore::entryInstanceOf(jstring arg0, jclass arg1)
 	{
@@ -287,28 +335,8 @@ namespace __jni_impl::java::security
 			"entryInstanceOf",
 			"(Ljava/lang/String;Ljava/lang/Class;)Z",
 			arg0,
-			arg1);
-	}
-	QAndroidJniObject KeyStore::getCertificateChain(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCertificateChain",
-			"(Ljava/lang/String;)[Ljava/security/cert/Certificate;",
-			arg0);
-	}
-	QAndroidJniObject KeyStore::getCertificate(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCertificate",
-			"(Ljava/lang/String;)Ljava/security/cert/Certificate;",
-			arg0);
-	}
-	QAndroidJniObject KeyStore::getDefaultType()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.KeyStore",
-			"getDefaultType",
-			"()Ljava/lang/String;");
+			arg1
+		);
 	}
 	void KeyStore::setEntry(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -317,7 +345,8 @@ namespace __jni_impl::java::security
 			"(Ljava/lang/String;Ljava/security/KeyStore$Entry;Ljava/security/KeyStore$ProtectionParameter;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security
 

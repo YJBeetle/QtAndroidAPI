@@ -18,8 +18,8 @@ namespace __jni_impl::android::provider
 		// Fields
 		static QAndroidJniObject CONTENT_MAX_DIMENSIONS_URI();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DISPLAY_MAX_DIM();
-		static QAndroidJniObject THUMBNAIL_MAX_DIM();
+		static jstring DISPLAY_MAX_DIM();
+		static jstring THUMBNAIL_MAX_DIM();
 		
 		// Constructors
 		void __constructor();
@@ -38,28 +38,32 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"CONTENT_MAX_DIMENSIONS_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_DisplayPhoto::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_DisplayPhoto::DISPLAY_MAX_DIM()
+	jstring ContactsContract_DisplayPhoto::DISPLAY_MAX_DIM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"DISPLAY_MAX_DIM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_DisplayPhoto::THUMBNAIL_MAX_DIM()
+	jstring ContactsContract_DisplayPhoto::THUMBNAIL_MAX_DIM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DisplayPhoto",
 			"THUMBNAIL_MAX_DIM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

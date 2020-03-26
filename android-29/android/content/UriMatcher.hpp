@@ -36,7 +36,8 @@ namespace __jni_impl::android::content
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.UriMatcher",
-			"NO_MATCH");
+			"NO_MATCH"
+		);
 	}
 	
 	// Constructors
@@ -54,7 +55,8 @@ namespace __jni_impl::android::content
 		return __thiz.callMethod<jint>(
 			"match",
 			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void UriMatcher::addURI(jstring arg0, jstring arg1, jint arg2)
 	{
@@ -63,7 +65,8 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::content
 

@@ -40,19 +40,22 @@ namespace __jni_impl::android::graphics
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.ImageDecoder$DecodeException",
-			"SOURCE_EXCEPTION");
+			"SOURCE_EXCEPTION"
+		);
 	}
 	jint ImageDecoder_DecodeException::SOURCE_INCOMPLETE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.ImageDecoder$DecodeException",
-			"SOURCE_INCOMPLETE");
+			"SOURCE_INCOMPLETE"
+		);
 	}
 	jint ImageDecoder_DecodeException::SOURCE_MALFORMED_DATA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.ImageDecoder$DecodeException",
-			"SOURCE_MALFORMED_DATA");
+			"SOURCE_MALFORMED_DATA"
+		);
 	}
 	
 	// Constructors
@@ -68,13 +71,15 @@ namespace __jni_impl::android::graphics
 	{
 		return __thiz.callObjectMethod(
 			"getSource",
-			"()Landroid/graphics/ImageDecoder$Source;");
+			"()Landroid/graphics/ImageDecoder$Source;"
+		);
 	}
 	jint ImageDecoder_DecodeException::getError()
 	{
 		return __thiz.callMethod<jint>(
 			"getError",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

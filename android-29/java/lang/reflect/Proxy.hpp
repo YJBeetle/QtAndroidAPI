@@ -26,8 +26,8 @@ namespace __jni_impl::java::lang::reflect
 		
 		// Methods
 		static jboolean isProxyClass(jclass arg0);
-		static QAndroidJniObject getProxyClass(__jni_impl::java::lang::ClassLoader arg0, jarray arg1);
-		static QAndroidJniObject newProxyInstance(__jni_impl::java::lang::ClassLoader arg0, jarray arg1, __jni_impl::__JniBaseClass arg2);
+		static jclass getProxyClass(__jni_impl::java::lang::ClassLoader arg0, jarray arg1);
+		static jobject newProxyInstance(__jni_impl::java::lang::ClassLoader arg0, jarray arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject getInvocationHandler(jobject arg0);
 	};
 } // namespace __jni_impl::java::lang::reflect
@@ -54,18 +54,20 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Proxy",
 			"isProxyClass",
 			"(Ljava/lang/Class;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Proxy::getProxyClass(__jni_impl::java::lang::ClassLoader arg0, jarray arg1)
+	jclass Proxy::getProxyClass(__jni_impl::java::lang::ClassLoader arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.reflect.Proxy",
 			"getProxyClass",
 			"(Ljava/lang/ClassLoader;[Ljava/lang/Class;)Ljava/lang/Class;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jclass>();
 	}
-	QAndroidJniObject Proxy::newProxyInstance(__jni_impl::java::lang::ClassLoader arg0, jarray arg1, __jni_impl::__JniBaseClass arg2)
+	jobject Proxy::newProxyInstance(__jni_impl::java::lang::ClassLoader arg0, jarray arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.reflect.Proxy",
@@ -73,7 +75,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/ClassLoader;[Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject Proxy::getInvocationHandler(jobject arg0)
 	{
@@ -81,7 +84,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Proxy",
 			"getInvocationHandler",
 			"(Ljava/lang/Object;)Ljava/lang/reflect/InvocationHandler;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang::reflect
 

@@ -46,20 +46,23 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"getPreferredConfig",
-			"()Landroid/graphics/Bitmap$Config;");
+			"()Landroid/graphics/Bitmap$Config;"
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever_BitmapParams::getActualConfig()
 	{
 		return __thiz.callObjectMethod(
 			"getActualConfig",
-			"()Landroid/graphics/Bitmap$Config;");
+			"()Landroid/graphics/Bitmap$Config;"
+		);
 	}
 	void MediaMetadataRetriever_BitmapParams::setPreferredConfig(__jni_impl::android::graphics::Bitmap_Config arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPreferredConfig",
 			"(Landroid/graphics/Bitmap$Config;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

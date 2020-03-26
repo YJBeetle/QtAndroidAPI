@@ -52,14 +52,16 @@ namespace __jni_impl::android::text::style
 		__thiz.callMethod<void>(
 			"onClick",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ClickableSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

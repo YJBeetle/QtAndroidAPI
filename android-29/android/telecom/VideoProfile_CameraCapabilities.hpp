@@ -23,12 +23,12 @@ namespace __jni_impl::android::telecom
 		void __constructor(jint arg0, jint arg1, jboolean arg2, jfloat arg3);
 		
 		// Methods
-		jint getWidth();
-		jint getHeight();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isZoomSupported();
 		jfloat getMaxZoom();
+		jint getWidth();
+		jint getHeight();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -42,7 +42,8 @@ namespace __jni_impl::android::telecom
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.VideoProfile$CameraCapabilities",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -66,23 +67,12 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	jint VideoProfile_CameraCapabilities::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I");
-	}
-	jint VideoProfile_CameraCapabilities::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
-	}
 	jint VideoProfile_CameraCapabilities::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void VideoProfile_CameraCapabilities::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -90,19 +80,36 @@ namespace __jni_impl::android::telecom
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean VideoProfile_CameraCapabilities::isZoomSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isZoomSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jfloat VideoProfile_CameraCapabilities::getMaxZoom()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getMaxZoom",
-			"()F");
+			"()F"
+		);
+	}
+	jint VideoProfile_CameraCapabilities::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint VideoProfile_CameraCapabilities::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

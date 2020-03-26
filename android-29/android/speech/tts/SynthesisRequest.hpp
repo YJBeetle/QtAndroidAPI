@@ -21,12 +21,12 @@ namespace __jni_impl::android::speech::tts
 		void __constructor(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		
 		// Methods
-		QAndroidJniObject getLanguage();
-		QAndroidJniObject getCountry();
-		QAndroidJniObject getVariant();
-		QAndroidJniObject getText();
-		QAndroidJniObject getCharSequenceText();
-		QAndroidJniObject getVoiceName();
+		jstring getLanguage();
+		jstring getCountry();
+		jstring getVariant();
+		jstring getText();
+		jstring getCharSequenceText();
+		jstring getVoiceName();
 		jint getSpeechRate();
 		jint getPitch();
 		QAndroidJniObject getParams();
@@ -51,65 +51,75 @@ namespace __jni_impl::android::speech::tts
 	}
 	
 	// Methods
-	QAndroidJniObject SynthesisRequest::getLanguage()
+	jstring SynthesisRequest::getLanguage()
 	{
 		return __thiz.callObjectMethod(
 			"getLanguage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SynthesisRequest::getCountry()
+	jstring SynthesisRequest::getCountry()
 	{
 		return __thiz.callObjectMethod(
 			"getCountry",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SynthesisRequest::getVariant()
+	jstring SynthesisRequest::getVariant()
 	{
 		return __thiz.callObjectMethod(
 			"getVariant",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SynthesisRequest::getText()
+	jstring SynthesisRequest::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SynthesisRequest::getCharSequenceText()
+	jstring SynthesisRequest::getCharSequenceText()
 	{
 		return __thiz.callObjectMethod(
 			"getCharSequenceText",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SynthesisRequest::getVoiceName()
+	jstring SynthesisRequest::getVoiceName()
 	{
 		return __thiz.callObjectMethod(
 			"getVoiceName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SynthesisRequest::getSpeechRate()
 	{
 		return __thiz.callMethod<jint>(
 			"getSpeechRate",
-			"()I");
+			"()I"
+		);
 	}
 	jint SynthesisRequest::getPitch()
 	{
 		return __thiz.callMethod<jint>(
 			"getPitch",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SynthesisRequest::getParams()
 	{
 		return __thiz.callObjectMethod(
 			"getParams",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
 	jint SynthesisRequest::getCallerUid()
 	{
 		return __thiz.callMethod<jint>(
 			"getCallerUid",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::speech::tts
 

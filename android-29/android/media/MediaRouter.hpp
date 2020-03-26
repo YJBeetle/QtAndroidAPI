@@ -42,8 +42,6 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jint getRouteCount();
-		QAndroidJniObject getRouteAt(jint arg0);
 		QAndroidJniObject getDefaultRoute();
 		QAndroidJniObject getSelectedRoute(jint arg0);
 		void selectRoute(jint arg0, __jni_impl::android::media::MediaRouter_RouteInfo arg1);
@@ -58,6 +56,8 @@ namespace __jni_impl::android::media
 		void addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1);
 		void addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1, jint arg2);
 		void removeCallback(__jni_impl::android::media::MediaRouter_Callback arg0);
+		jint getRouteCount();
+		QAndroidJniObject getRouteAt(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -74,31 +74,36 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRouter",
-			"CALLBACK_FLAG_PERFORM_ACTIVE_SCAN");
+			"CALLBACK_FLAG_PERFORM_ACTIVE_SCAN"
+		);
 	}
 	jint MediaRouter::CALLBACK_FLAG_UNFILTERED_EVENTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRouter",
-			"CALLBACK_FLAG_UNFILTERED_EVENTS");
+			"CALLBACK_FLAG_UNFILTERED_EVENTS"
+		);
 	}
 	jint MediaRouter::ROUTE_TYPE_LIVE_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRouter",
-			"ROUTE_TYPE_LIVE_AUDIO");
+			"ROUTE_TYPE_LIVE_AUDIO"
+		);
 	}
 	jint MediaRouter::ROUTE_TYPE_LIVE_VIDEO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRouter",
-			"ROUTE_TYPE_LIVE_VIDEO");
+			"ROUTE_TYPE_LIVE_VIDEO"
+		);
 	}
 	jint MediaRouter::ROUTE_TYPE_USER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRouter",
-			"ROUTE_TYPE_USER");
+			"ROUTE_TYPE_USER"
+		);
 	}
 	
 	// Constructors
@@ -110,31 +115,20 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jint MediaRouter::getRouteCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getRouteCount",
-			"()I");
-	}
-	QAndroidJniObject MediaRouter::getRouteAt(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRouteAt",
-			"(I)Landroid/media/MediaRouter$RouteInfo;",
-			arg0);
-	}
 	QAndroidJniObject MediaRouter::getDefaultRoute()
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultRoute",
-			"()Landroid/media/MediaRouter$RouteInfo;");
+			"()Landroid/media/MediaRouter$RouteInfo;"
+		);
 	}
 	QAndroidJniObject MediaRouter::getSelectedRoute(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSelectedRoute",
 			"(I)Landroid/media/MediaRouter$RouteInfo;",
-			arg0);
+			arg0
+		);
 	}
 	void MediaRouter::selectRoute(jint arg0, __jni_impl::android::media::MediaRouter_RouteInfo arg1)
 	{
@@ -142,47 +136,54 @@ namespace __jni_impl::android::media
 			"selectRoute",
 			"(ILandroid/media/MediaRouter$RouteInfo;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaRouter::addUserRoute(__jni_impl::android::media::MediaRouter_UserRouteInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"addUserRoute",
 			"(Landroid/media/MediaRouter$UserRouteInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaRouter::removeUserRoute(__jni_impl::android::media::MediaRouter_UserRouteInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeUserRoute",
 			"(Landroid/media/MediaRouter$UserRouteInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaRouter::clearUserRoutes()
 	{
 		__thiz.callMethod<void>(
 			"clearUserRoutes",
-			"()V");
+			"()V"
+		);
 	}
 	jint MediaRouter::getCategoryCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getCategoryCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MediaRouter::getCategoryAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getCategoryAt",
 			"(I)Landroid/media/MediaRouter$RouteCategory;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaRouter::createUserRoute(__jni_impl::android::media::MediaRouter_RouteCategory arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createUserRoute",
 			"(Landroid/media/MediaRouter$RouteCategory;)Landroid/media/MediaRouter$UserRouteInfo;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaRouter::createRouteCategory(jstring arg0, jboolean arg1)
 	{
@@ -190,7 +191,8 @@ namespace __jni_impl::android::media
 			"createRouteCategory",
 			"(Ljava/lang/CharSequence;Z)Landroid/media/MediaRouter$RouteCategory;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject MediaRouter::createRouteCategory(jint arg0, jboolean arg1)
 	{
@@ -198,7 +200,8 @@ namespace __jni_impl::android::media
 			"createRouteCategory",
 			"(IZ)Landroid/media/MediaRouter$RouteCategory;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void MediaRouter::addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1)
 	{
@@ -206,7 +209,8 @@ namespace __jni_impl::android::media
 			"addCallback",
 			"(ILandroid/media/MediaRouter$Callback;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaRouter::addCallback(jint arg0, __jni_impl::android::media::MediaRouter_Callback arg1, jint arg2)
 	{
@@ -215,14 +219,31 @@ namespace __jni_impl::android::media
 			"(ILandroid/media/MediaRouter$Callback;I)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void MediaRouter::removeCallback(__jni_impl::android::media::MediaRouter_Callback arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeCallback",
 			"(Landroid/media/MediaRouter$Callback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jint MediaRouter::getRouteCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRouteCount",
+			"()I"
+		);
+	}
+	QAndroidJniObject MediaRouter::getRouteAt(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRouteAt",
+			"(I)Landroid/media/MediaRouter$RouteInfo;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

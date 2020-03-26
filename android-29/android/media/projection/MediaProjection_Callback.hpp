@@ -39,7 +39,8 @@ namespace __jni_impl::android::media::projection
 	{
 		__thiz.callMethod<void>(
 			"onStop",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::media::projection
 

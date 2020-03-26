@@ -66,104 +66,120 @@ namespace __jni_impl::android::util
 		return __thiz.callObjectMethod(
 			"name",
 			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JsonWriter::value(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"value",
 			"(Z)Landroid/util/JsonWriter;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JsonWriter::value(jdouble arg0)
 	{
 		return __thiz.callObjectMethod(
 			"value",
 			"(D)Landroid/util/JsonWriter;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JsonWriter::value(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"value",
 			"(J)Landroid/util/JsonWriter;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JsonWriter::value(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"value",
 			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JsonWriter::value(__jni_impl::java::lang::Number arg0)
 	{
 		return __thiz.callObjectMethod(
 			"value",
 			"(Ljava/lang/Number;)Landroid/util/JsonWriter;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void JsonWriter::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void JsonWriter::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void JsonWriter::setLenient(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLenient",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean JsonWriter::isLenient()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLenient",
-			"()Z");
+			"()Z"
+		);
 	}
 	void JsonWriter::setIndent(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIndent",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JsonWriter::beginArray()
 	{
 		return __thiz.callObjectMethod(
 			"beginArray",
-			"()Landroid/util/JsonWriter;");
+			"()Landroid/util/JsonWriter;"
+		);
 	}
 	QAndroidJniObject JsonWriter::endArray()
 	{
 		return __thiz.callObjectMethod(
 			"endArray",
-			"()Landroid/util/JsonWriter;");
+			"()Landroid/util/JsonWriter;"
+		);
 	}
 	QAndroidJniObject JsonWriter::beginObject()
 	{
 		return __thiz.callObjectMethod(
 			"beginObject",
-			"()Landroid/util/JsonWriter;");
+			"()Landroid/util/JsonWriter;"
+		);
 	}
 	QAndroidJniObject JsonWriter::endObject()
 	{
 		return __thiz.callObjectMethod(
 			"endObject",
-			"()Landroid/util/JsonWriter;");
+			"()Landroid/util/JsonWriter;"
+		);
 	}
 	QAndroidJniObject JsonWriter::nullValue()
 	{
 		return __thiz.callObjectMethod(
 			"nullValue",
-			"()Landroid/util/JsonWriter;");
+			"()Landroid/util/JsonWriter;"
+		);
 	}
 } // namespace __jni_impl::android::util
 

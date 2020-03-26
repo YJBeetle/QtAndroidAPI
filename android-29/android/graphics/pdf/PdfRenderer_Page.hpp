@@ -55,13 +55,15 @@ namespace __jni_impl::android::graphics::pdf
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.pdf.PdfRenderer$Page",
-			"RENDER_MODE_FOR_DISPLAY");
+			"RENDER_MODE_FOR_DISPLAY"
+		);
 	}
 	jint PdfRenderer_Page::RENDER_MODE_FOR_PRINT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.pdf.PdfRenderer$Page",
-			"RENDER_MODE_FOR_PRINT");
+			"RENDER_MODE_FOR_PRINT"
+		);
 	}
 	
 	// Constructors
@@ -77,13 +79,15 @@ namespace __jni_impl::android::graphics::pdf
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint PdfRenderer_Page::getIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
 	void PdfRenderer_Page::render(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Matrix arg2, jint arg3)
 	{
@@ -93,19 +97,22 @@ namespace __jni_impl::android::graphics::pdf
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	jint PdfRenderer_Page::getWidth()
 	{
 		return __thiz.callMethod<jint>(
 			"getWidth",
-			"()I");
+			"()I"
+		);
 	}
 	jint PdfRenderer_Page::getHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getHeight",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics::pdf
 

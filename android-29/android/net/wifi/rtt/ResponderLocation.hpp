@@ -52,7 +52,6 @@ namespace __jni_impl::android::net::wifi::rtt
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jdouble getAltitude();
 		jdouble getLatitude();
 		jdouble getLongitude();
 		jint describeContents();
@@ -74,8 +73,9 @@ namespace __jni_impl::android::net::wifi::rtt
 		QAndroidJniObject getColocatedBssids();
 		QAndroidJniObject toCivicLocationAddress();
 		QAndroidJniObject toCivicLocationSparseArray();
-		QAndroidJniObject getMapImageMimeType();
+		jstring getMapImageMimeType();
 		QAndroidJniObject getMapImageUri();
+		jdouble getAltitude();
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
@@ -92,80 +92,93 @@ namespace __jni_impl::android::net::wifi::rtt
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"ALTITUDE_FLOORS");
+			"ALTITUDE_FLOORS"
+		);
 	}
 	jint ResponderLocation::ALTITUDE_METERS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"ALTITUDE_METERS");
+			"ALTITUDE_METERS"
+		);
 	}
 	jint ResponderLocation::ALTITUDE_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"ALTITUDE_UNDEFINED");
+			"ALTITUDE_UNDEFINED"
+		);
 	}
 	QAndroidJniObject ResponderLocation::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.rtt.ResponderLocation",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ResponderLocation::DATUM_NAD83_MLLW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"DATUM_NAD83_MLLW");
+			"DATUM_NAD83_MLLW"
+		);
 	}
 	jint ResponderLocation::DATUM_NAD83_NAV88()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"DATUM_NAD83_NAV88");
+			"DATUM_NAD83_NAV88"
+		);
 	}
 	jint ResponderLocation::DATUM_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"DATUM_UNDEFINED");
+			"DATUM_UNDEFINED"
+		);
 	}
 	jint ResponderLocation::DATUM_WGS84()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"DATUM_WGS84");
+			"DATUM_WGS84"
+		);
 	}
 	jint ResponderLocation::LCI_VERSION_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"LCI_VERSION_1");
+			"LCI_VERSION_1"
+		);
 	}
 	jint ResponderLocation::LOCATION_FIXED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"LOCATION_FIXED");
+			"LOCATION_FIXED"
+		);
 	}
 	jint ResponderLocation::LOCATION_MOVEMENT_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"LOCATION_MOVEMENT_UNKNOWN");
+			"LOCATION_MOVEMENT_UNKNOWN"
+		);
 	}
 	jint ResponderLocation::LOCATION_RESERVED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"LOCATION_RESERVED");
+			"LOCATION_RESERVED"
+		);
 	}
 	jint ResponderLocation::LOCATION_VARIABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.ResponderLocation",
-			"LOCATION_VARIABLE");
+			"LOCATION_VARIABLE"
+		);
 	}
 	
 	// Constructors
@@ -182,37 +195,36 @@ namespace __jni_impl::android::net::wifi::rtt
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ResponderLocation::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jdouble ResponderLocation::getAltitude()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getAltitude",
-			"()D");
+			"()I"
+		);
 	}
 	jdouble ResponderLocation::getLatitude()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getLatitude",
-			"()D");
+			"()D"
+		);
 	}
 	jdouble ResponderLocation::getLongitude()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getLongitude",
-			"()D");
+			"()D"
+		);
 	}
 	jint ResponderLocation::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ResponderLocation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -220,121 +232,148 @@ namespace __jni_impl::android::net::wifi::rtt
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean ResponderLocation::isLciSubelementValid()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLciSubelementValid",
-			"()Z");
+			"()Z"
+		);
 	}
 	jdouble ResponderLocation::getLatitudeUncertainty()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getLatitudeUncertainty",
-			"()D");
+			"()D"
+		);
 	}
 	jdouble ResponderLocation::getLongitudeUncertainty()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getLongitudeUncertainty",
-			"()D");
+			"()D"
+		);
 	}
 	jint ResponderLocation::getAltitudeType()
 	{
 		return __thiz.callMethod<jint>(
 			"getAltitudeType",
-			"()I");
+			"()I"
+		);
 	}
 	jdouble ResponderLocation::getAltitudeUncertainty()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getAltitudeUncertainty",
-			"()D");
+			"()D"
+		);
 	}
 	jint ResponderLocation::getDatum()
 	{
 		return __thiz.callMethod<jint>(
 			"getDatum",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean ResponderLocation::getRegisteredLocationAgreementIndication()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getRegisteredLocationAgreementIndication",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ResponderLocation::getLciVersion()
 	{
 		return __thiz.callMethod<jint>(
 			"getLciVersion",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ResponderLocation::toLocation()
 	{
 		return __thiz.callObjectMethod(
 			"toLocation",
-			"()Landroid/location/Location;");
+			"()Landroid/location/Location;"
+		);
 	}
 	jboolean ResponderLocation::isZaxisSubelementValid()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isZaxisSubelementValid",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ResponderLocation::getExpectedToMove()
 	{
 		return __thiz.callMethod<jint>(
 			"getExpectedToMove",
-			"()I");
+			"()I"
+		);
 	}
 	jdouble ResponderLocation::getFloorNumber()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getFloorNumber",
-			"()D");
+			"()D"
+		);
 	}
 	jdouble ResponderLocation::getHeightAboveFloorMeters()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getHeightAboveFloorMeters",
-			"()D");
+			"()D"
+		);
 	}
 	jdouble ResponderLocation::getHeightAboveFloorUncertaintyMeters()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getHeightAboveFloorUncertaintyMeters",
-			"()D");
+			"()D"
+		);
 	}
 	QAndroidJniObject ResponderLocation::getColocatedBssids()
 	{
 		return __thiz.callObjectMethod(
 			"getColocatedBssids",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject ResponderLocation::toCivicLocationAddress()
 	{
 		return __thiz.callObjectMethod(
 			"toCivicLocationAddress",
-			"()Landroid/location/Address;");
+			"()Landroid/location/Address;"
+		);
 	}
 	QAndroidJniObject ResponderLocation::toCivicLocationSparseArray()
 	{
 		return __thiz.callObjectMethod(
 			"toCivicLocationSparseArray",
-			"()Landroid/util/SparseArray;");
+			"()Landroid/util/SparseArray;"
+		);
 	}
-	QAndroidJniObject ResponderLocation::getMapImageMimeType()
+	jstring ResponderLocation::getMapImageMimeType()
 	{
 		return __thiz.callObjectMethod(
 			"getMapImageMimeType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ResponderLocation::getMapImageUri()
 	{
 		return __thiz.callObjectMethod(
 			"getMapImageUri",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
+	}
+	jdouble ResponderLocation::getAltitude()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getAltitude",
+			"()D"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt
 

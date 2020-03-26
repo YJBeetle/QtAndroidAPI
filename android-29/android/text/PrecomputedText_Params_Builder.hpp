@@ -27,9 +27,9 @@ namespace __jni_impl::android::text
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setTextDirection(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setBreakStrategy(jint arg0);
 		QAndroidJniObject setHyphenationFrequency(jint arg0);
+		QAndroidJniObject setTextDirection(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -61,28 +61,32 @@ namespace __jni_impl::android::text
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/text/PrecomputedText$Params;");
-	}
-	QAndroidJniObject PrecomputedText_Params_Builder::setTextDirection(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTextDirection",
-			"(Landroid/text/TextDirectionHeuristic;)Landroid/text/PrecomputedText$Params$Builder;",
-			arg0.__jniObject().object());
+			"()Landroid/text/PrecomputedText$Params;"
+		);
 	}
 	QAndroidJniObject PrecomputedText_Params_Builder::setBreakStrategy(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setBreakStrategy",
 			"(I)Landroid/text/PrecomputedText$Params$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PrecomputedText_Params_Builder::setHyphenationFrequency(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setHyphenationFrequency",
 			"(I)Landroid/text/PrecomputedText$Params$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject PrecomputedText_Params_Builder::setTextDirection(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setTextDirection",
+			"(Landroid/text/TextDirectionHeuristic;)Landroid/text/PrecomputedText$Params$Builder;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text
 

@@ -22,13 +22,13 @@ namespace __jni_impl::android::bluetooth
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jbyte arg3, jbyteArray arg4);
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject getProvider();
-		QAndroidJniObject getDescriptors();
-		QAndroidJniObject getDescription();
+		jstring getName();
+		jstring getProvider();
+		jbyte getSubclass();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jbyte getSubclass();
+		jbyteArray getDescriptors();
+		jstring getDescription();
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -42,7 +42,8 @@ namespace __jni_impl::android::bluetooth
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothHidDeviceAppSdpSettings",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -59,35 +60,33 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
-	QAndroidJniObject BluetoothHidDeviceAppSdpSettings::getName()
+	jstring BluetoothHidDeviceAppSdpSettings::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothHidDeviceAppSdpSettings::getProvider()
+	jstring BluetoothHidDeviceAppSdpSettings::getProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothHidDeviceAppSdpSettings::getDescriptors()
+	jbyte BluetoothHidDeviceAppSdpSettings::getSubclass()
 	{
-		return __thiz.callObjectMethod(
-			"getDescriptors",
-			"()[B");
-	}
-	QAndroidJniObject BluetoothHidDeviceAppSdpSettings::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
+		return __thiz.callMethod<jbyte>(
+			"getSubclass",
+			"()B"
+		);
 	}
 	jint BluetoothHidDeviceAppSdpSettings::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void BluetoothHidDeviceAppSdpSettings::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -95,13 +94,22 @@ namespace __jni_impl::android::bluetooth
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	jbyte BluetoothHidDeviceAppSdpSettings::getSubclass()
+	jbyteArray BluetoothHidDeviceAppSdpSettings::getDescriptors()
 	{
-		return __thiz.callMethod<jbyte>(
-			"getSubclass",
-			"()B");
+		return __thiz.callObjectMethod(
+			"getDescriptors",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jstring BluetoothHidDeviceAppSdpSettings::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::bluetooth
 

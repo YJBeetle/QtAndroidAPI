@@ -31,7 +31,7 @@ namespace __jni_impl::android::service::notification
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -65,55 +65,64 @@ namespace __jni_impl::android::service::notification
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.notification.ZenPolicy",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ZenPolicy::PEOPLE_TYPE_ANYONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
-			"PEOPLE_TYPE_ANYONE");
+			"PEOPLE_TYPE_ANYONE"
+		);
 	}
 	jint ZenPolicy::PEOPLE_TYPE_CONTACTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
-			"PEOPLE_TYPE_CONTACTS");
+			"PEOPLE_TYPE_CONTACTS"
+		);
 	}
 	jint ZenPolicy::PEOPLE_TYPE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
-			"PEOPLE_TYPE_NONE");
+			"PEOPLE_TYPE_NONE"
+		);
 	}
 	jint ZenPolicy::PEOPLE_TYPE_STARRED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
-			"PEOPLE_TYPE_STARRED");
+			"PEOPLE_TYPE_STARRED"
+		);
 	}
 	jint ZenPolicy::PEOPLE_TYPE_UNSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
-			"PEOPLE_TYPE_UNSET");
+			"PEOPLE_TYPE_UNSET"
+		);
 	}
 	jint ZenPolicy::STATE_ALLOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
-			"STATE_ALLOW");
+			"STATE_ALLOW"
+		);
 	}
 	jint ZenPolicy::STATE_DISALLOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
-			"STATE_DISALLOW");
+			"STATE_DISALLOW"
+		);
 	}
 	jint ZenPolicy::STATE_UNSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.ZenPolicy",
-			"STATE_UNSET");
+			"STATE_UNSET"
+		);
 	}
 	
 	// Constructors
@@ -130,25 +139,29 @@ namespace __jni_impl::android::service::notification
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ZenPolicy::toString()
+	jstring ZenPolicy::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ZenPolicy::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ZenPolicy::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -156,109 +169,127 @@ namespace __jni_impl::android::service::notification
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint ZenPolicy::getPriorityMessageSenders()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityMessageSenders",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getPriorityCallSenders()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCallSenders",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getPriorityCategoryReminders()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCategoryReminders",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getPriorityCategoryEvents()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCategoryEvents",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getPriorityCategoryMessages()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCategoryMessages",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getPriorityCategoryCalls()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCategoryCalls",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getPriorityCategoryRepeatCallers()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCategoryRepeatCallers",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getPriorityCategoryAlarms()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCategoryAlarms",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getPriorityCategoryMedia()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCategoryMedia",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getPriorityCategorySystem()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCategorySystem",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getVisualEffectFullScreenIntent()
 	{
 		return __thiz.callMethod<jint>(
 			"getVisualEffectFullScreenIntent",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getVisualEffectLights()
 	{
 		return __thiz.callMethod<jint>(
 			"getVisualEffectLights",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getVisualEffectPeek()
 	{
 		return __thiz.callMethod<jint>(
 			"getVisualEffectPeek",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getVisualEffectStatusBar()
 	{
 		return __thiz.callMethod<jint>(
 			"getVisualEffectStatusBar",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getVisualEffectBadge()
 	{
 		return __thiz.callMethod<jint>(
 			"getVisualEffectBadge",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getVisualEffectAmbient()
 	{
 		return __thiz.callMethod<jint>(
 			"getVisualEffectAmbient",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZenPolicy::getVisualEffectNotificationList()
 	{
 		return __thiz.callMethod<jint>(
 			"getVisualEffectNotificationList",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::service::notification
 

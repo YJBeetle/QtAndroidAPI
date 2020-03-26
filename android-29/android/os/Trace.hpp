@@ -18,10 +18,10 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		static jboolean isEnabled();
-		static void endSection();
 		static void beginAsyncSection(jstring arg0, jint arg1);
 		static void endAsyncSection(jstring arg0, jint arg1);
 		static void beginSection(jstring arg0);
+		static void endSection();
 		static void setCounter(jstring arg0, jlong arg1);
 	};
 } // namespace __jni_impl::android::os
@@ -45,14 +45,8 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.os.Trace",
 			"isEnabled",
-			"()Z");
-	}
-	void Trace::endSection()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Trace",
-			"endSection",
-			"()V");
+			"()Z"
+		);
 	}
 	void Trace::beginAsyncSection(jstring arg0, jint arg1)
 	{
@@ -61,7 +55,8 @@ namespace __jni_impl::android::os
 			"beginAsyncSection",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Trace::endAsyncSection(jstring arg0, jint arg1)
 	{
@@ -70,7 +65,8 @@ namespace __jni_impl::android::os
 			"endAsyncSection",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Trace::beginSection(jstring arg0)
 	{
@@ -78,7 +74,16 @@ namespace __jni_impl::android::os
 			"android.os.Trace",
 			"beginSection",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Trace::endSection()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Trace",
+			"endSection",
+			"()V"
+		);
 	}
 	void Trace::setCounter(jstring arg0, jlong arg1)
 	{
@@ -87,7 +92,8 @@ namespace __jni_impl::android::os
 			"setCounter",
 			"(Ljava/lang/String;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::os
 

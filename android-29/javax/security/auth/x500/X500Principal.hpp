@@ -24,9 +24,9 @@ namespace __jni_impl::javax::security::auth::x500
 	{
 	public:
 		// Fields
-		static QAndroidJniObject RFC1779();
-		static QAndroidJniObject RFC2253();
-		static QAndroidJniObject CANONICAL();
+		static jstring RFC1779();
+		static jstring RFC2253();
+		static jstring CANONICAL();
 		
 		// Constructors
 		void __constructor(__jni_impl::java::io::InputStream arg0);
@@ -35,13 +35,13 @@ namespace __jni_impl::javax::security::auth::x500
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject getName(jstring arg0);
-		QAndroidJniObject getName(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		jstring getName();
+		jstring getName(jstring arg0);
+		jstring getName(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getEncoded();
+		jbyteArray getEncoded();
 	};
 } // namespace __jni_impl::javax::security::auth::x500
 
@@ -52,26 +52,29 @@ namespace __jni_impl::javax::security::auth::x500
 namespace __jni_impl::javax::security::auth::x500
 {
 	// Fields
-	QAndroidJniObject X500Principal::RFC1779()
+	jstring X500Principal::RFC1779()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.security.auth.x500.X500Principal",
 			"RFC1779",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject X500Principal::RFC2253()
+	jstring X500Principal::RFC2253()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.security.auth.x500.X500Principal",
 			"RFC2253",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject X500Principal::CANONICAL()
+	jstring X500Principal::CANONICAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.security.auth.x500.X500Principal",
 			"CANONICAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -106,51 +109,58 @@ namespace __jni_impl::javax::security::auth::x500
 	}
 	
 	// Methods
-	QAndroidJniObject X500Principal::getName()
+	jstring X500Principal::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject X500Principal::getName(jstring arg0)
+	jstring X500Principal::getName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject X500Principal::getName(jstring arg0, __jni_impl::__JniBaseClass arg1)
+	jstring X500Principal::getName(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getName",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
 	jboolean X500Principal::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject X500Principal::toString()
+	jstring X500Principal::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint X500Principal::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject X500Principal::getEncoded()
+	jbyteArray X500Principal::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::javax::security::auth::x500
 

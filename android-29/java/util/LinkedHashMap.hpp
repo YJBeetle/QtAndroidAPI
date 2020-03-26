@@ -27,7 +27,7 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject get(jobject arg0);
+		jobject get(jobject arg0);
 		QAndroidJniObject values();
 		void clear();
 		void replaceAll(__jni_impl::__JniBaseClass arg0);
@@ -35,7 +35,7 @@ namespace __jni_impl::java::util
 		void forEach(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject keySet();
 		jboolean containsValue(jobject arg0);
-		QAndroidJniObject getOrDefault(jobject arg0, jobject arg1);
+		jobject getOrDefault(jobject arg0, jobject arg1);
 	};
 } // namespace __jni_impl::java::util
 
@@ -85,65 +85,74 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject LinkedHashMap::get(jobject arg0)
+	jobject LinkedHashMap::get(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject LinkedHashMap::values()
 	{
 		return __thiz.callObjectMethod(
 			"values",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 	void LinkedHashMap::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	void LinkedHashMap::replaceAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject LinkedHashMap::entrySet()
 	{
 		return __thiz.callObjectMethod(
 			"entrySet",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	void LinkedHashMap::forEach(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject LinkedHashMap::keySet()
 	{
 		return __thiz.callObjectMethod(
 			"keySet",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jboolean LinkedHashMap::containsValue(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject LinkedHashMap::getOrDefault(jobject arg0, jobject arg1)
+	jobject LinkedHashMap::getOrDefault(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util
 

@@ -26,11 +26,11 @@ namespace __jni_impl::android::bluetooth::le
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject addServiceUuid(__jni_impl::android::os::ParcelUuid arg0);
 		QAndroidJniObject addServiceData(__jni_impl::android::os::ParcelUuid arg0, jbyteArray arg1);
 		QAndroidJniObject addManufacturerData(jint arg0, jbyteArray arg1);
 		QAndroidJniObject setIncludeTxPowerLevel(jboolean arg0);
 		QAndroidJniObject setIncludeDeviceName(jboolean arg0);
+		QAndroidJniObject addServiceUuid(__jni_impl::android::os::ParcelUuid arg0);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -54,14 +54,8 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/bluetooth/le/AdvertiseData;");
-	}
-	QAndroidJniObject AdvertiseData_Builder::addServiceUuid(__jni_impl::android::os::ParcelUuid arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addServiceUuid",
-			"(Landroid/os/ParcelUuid;)Landroid/bluetooth/le/AdvertiseData$Builder;",
-			arg0.__jniObject().object());
+			"()Landroid/bluetooth/le/AdvertiseData;"
+		);
 	}
 	QAndroidJniObject AdvertiseData_Builder::addServiceData(__jni_impl::android::os::ParcelUuid arg0, jbyteArray arg1)
 	{
@@ -69,7 +63,8 @@ namespace __jni_impl::android::bluetooth::le
 			"addServiceData",
 			"(Landroid/os/ParcelUuid;[B)Landroid/bluetooth/le/AdvertiseData$Builder;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject AdvertiseData_Builder::addManufacturerData(jint arg0, jbyteArray arg1)
 	{
@@ -77,21 +72,32 @@ namespace __jni_impl::android::bluetooth::le
 			"addManufacturerData",
 			"(I[B)Landroid/bluetooth/le/AdvertiseData$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject AdvertiseData_Builder::setIncludeTxPowerLevel(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIncludeTxPowerLevel",
 			"(Z)Landroid/bluetooth/le/AdvertiseData$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AdvertiseData_Builder::setIncludeDeviceName(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIncludeDeviceName",
 			"(Z)Landroid/bluetooth/le/AdvertiseData$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject AdvertiseData_Builder::addServiceUuid(__jni_impl::android::os::ParcelUuid arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addServiceUuid",
+			"(Landroid/os/ParcelUuid;)Landroid/bluetooth/le/AdvertiseData$Builder;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::bluetooth::le
 

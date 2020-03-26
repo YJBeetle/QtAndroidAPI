@@ -30,8 +30,8 @@ namespace __jni_impl::java::lang
 		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
+		jstring getName();
+		jstring toString();
 		void list();
 		QAndroidJniObject getParent();
 		void checkAccess();
@@ -81,72 +81,83 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	QAndroidJniObject ThreadGroup::getName()
+	jstring ThreadGroup::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ThreadGroup::toString()
+	jstring ThreadGroup::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ThreadGroup::list()
 	{
 		__thiz.callMethod<void>(
 			"list",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject ThreadGroup::getParent()
 	{
 		return __thiz.callObjectMethod(
 			"getParent",
-			"()Ljava/lang/ThreadGroup;");
+			"()Ljava/lang/ThreadGroup;"
+		);
 	}
 	void ThreadGroup::checkAccess()
 	{
 		__thiz.callMethod<void>(
 			"checkAccess",
-			"()V");
+			"()V"
+		);
 	}
 	void ThreadGroup::setDaemon(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDaemon",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ThreadGroup::isDaemon()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDaemon",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ThreadGroup::resume()
 	{
 		__thiz.callMethod<void>(
 			"resume",
-			"()V");
+			"()V"
+		);
 	}
 	void ThreadGroup::interrupt()
 	{
 		__thiz.callMethod<void>(
 			"interrupt",
-			"()V");
+			"()V"
+		);
 	}
 	jint ThreadGroup::getMaxPriority()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxPriority",
-			"()I");
+			"()I"
+		);
 	}
 	jint ThreadGroup::activeCount()
 	{
 		return __thiz.callMethod<jint>(
 			"activeCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint ThreadGroup::enumerate(jarray arg0, jboolean arg1)
 	{
@@ -154,14 +165,16 @@ namespace __jni_impl::java::lang
 			"enumerate",
 			"([Ljava/lang/ThreadGroup;Z)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint ThreadGroup::enumerate(jarray arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"enumerate",
 			"([Ljava/lang/ThreadGroup;)I",
-			arg0);
+			arg0
+		);
 	}
 	void ThreadGroup::uncaughtException(__jni_impl::java::lang::Thread arg0, jthrowable arg1)
 	{
@@ -169,58 +182,67 @@ namespace __jni_impl::java::lang
 			"uncaughtException",
 			"(Ljava/lang/Thread;Ljava/lang/Throwable;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ThreadGroup::stop()
 	{
 		__thiz.callMethod<void>(
 			"stop",
-			"()V");
+			"()V"
+		);
 	}
 	void ThreadGroup::suspend()
 	{
 		__thiz.callMethod<void>(
 			"suspend",
-			"()V");
+			"()V"
+		);
 	}
 	void ThreadGroup::setMaxPriority(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMaxPriority",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint ThreadGroup::activeGroupCount()
 	{
 		return __thiz.callMethod<jint>(
 			"activeGroupCount",
-			"()I");
+			"()I"
+		);
 	}
 	void ThreadGroup::destroy()
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ThreadGroup::isDestroyed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDestroyed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ThreadGroup::parentOf(__jni_impl::java::lang::ThreadGroup arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"parentOf",
 			"(Ljava/lang/ThreadGroup;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ThreadGroup::allowThreadSuspension(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"allowThreadSuspension",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang
 

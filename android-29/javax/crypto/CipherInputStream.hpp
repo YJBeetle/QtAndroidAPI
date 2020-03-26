@@ -59,14 +59,16 @@ namespace __jni_impl::javax::crypto
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint CipherInputStream::read(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0);
+			arg0
+		);
 	}
 	jint CipherInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -75,32 +77,37 @@ namespace __jni_impl::javax::crypto
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void CipherInputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jlong CipherInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint CipherInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean CipherInputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::javax::crypto
 

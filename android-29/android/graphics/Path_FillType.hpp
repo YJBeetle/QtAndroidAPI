@@ -22,7 +22,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -36,28 +36,32 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
 			"WINDING",
-			"Landroid/graphics/Path$FillType;");
+			"Landroid/graphics/Path$FillType;"
+		);
 	}
 	QAndroidJniObject Path_FillType::EVEN_ODD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
 			"EVEN_ODD",
-			"Landroid/graphics/Path$FillType;");
+			"Landroid/graphics/Path$FillType;"
+		);
 	}
 	QAndroidJniObject Path_FillType::INVERSE_WINDING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
 			"INVERSE_WINDING",
-			"Landroid/graphics/Path$FillType;");
+			"Landroid/graphics/Path$FillType;"
+		);
 	}
 	QAndroidJniObject Path_FillType::INVERSE_EVEN_ODD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
 			"INVERSE_EVEN_ODD",
-			"Landroid/graphics/Path$FillType;");
+			"Landroid/graphics/Path$FillType;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Path_FillType::values()
+	jarray Path_FillType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Path$FillType",
 			"values",
-			"()[Landroid/graphics/Path$FillType;");
+			"()[Landroid/graphics/Path$FillType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Path_FillType::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Path$FillType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Path$FillType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

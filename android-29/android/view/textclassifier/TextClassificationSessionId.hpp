@@ -23,7 +23,7 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -40,7 +40,8 @@ namespace __jni_impl::android::view::textclassifier
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextClassificationSessionId",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -57,25 +58,29 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TextClassificationSessionId::toString()
+	jstring TextClassificationSessionId::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TextClassificationSessionId::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint TextClassificationSessionId::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void TextClassificationSessionId::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -83,7 +88,8 @@ namespace __jni_impl::android::view::textclassifier
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

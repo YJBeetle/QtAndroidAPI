@@ -45,13 +45,15 @@ namespace __jni_impl::android::app
 	{
 		__thiz.callMethod<void>(
 			"disableKeyguard",
-			"()V");
+			"()V"
+		);
 	}
 	void KeyguardManager_KeyguardLock::reenableKeyguard()
 	{
 		__thiz.callMethod<void>(
 			"reenableKeyguard",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::app
 

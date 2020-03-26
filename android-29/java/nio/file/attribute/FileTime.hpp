@@ -30,7 +30,7 @@ namespace __jni_impl::java::nio::file::attribute
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(__jni_impl::java::nio::file::attribute::FileTime arg0);
 		jint compareTo(jobject arg0);
@@ -65,40 +65,46 @@ namespace __jni_impl::java::nio::file::attribute
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject FileTime::toString()
+	jstring FileTime::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint FileTime::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint FileTime::compareTo(__jni_impl::java::nio::file::attribute::FileTime arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/nio/file/attribute/FileTime;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint FileTime::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong FileTime::to(__jni_impl::java::util::concurrent::TimeUnit arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"to",
 			"(Ljava/util/concurrent/TimeUnit;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject FileTime::from(__jni_impl::java::time::Instant arg0)
 	{
@@ -106,7 +112,8 @@ namespace __jni_impl::java::nio::file::attribute
 			"java.nio.file.attribute.FileTime",
 			"from",
 			"(Ljava/time/Instant;)Ljava/nio/file/attribute/FileTime;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject FileTime::from(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -115,19 +122,22 @@ namespace __jni_impl::java::nio::file::attribute
 			"from",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/nio/file/attribute/FileTime;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong FileTime::toMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"toMillis",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject FileTime::toInstant()
 	{
 		return __thiz.callObjectMethod(
 			"toInstant",
-			"()Ljava/time/Instant;");
+			"()Ljava/time/Instant;"
+		);
 	}
 	QAndroidJniObject FileTime::fromMillis(jlong arg0)
 	{
@@ -135,7 +145,8 @@ namespace __jni_impl::java::nio::file::attribute
 			"java.nio.file.attribute.FileTime",
 			"fromMillis",
 			"(J)Ljava/nio/file/attribute/FileTime;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::file::attribute
 

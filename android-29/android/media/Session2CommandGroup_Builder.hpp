@@ -59,21 +59,24 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/media/Session2CommandGroup;");
+			"()Landroid/media/Session2CommandGroup;"
+		);
 	}
 	QAndroidJniObject Session2CommandGroup_Builder::addCommand(__jni_impl::android::media::Session2Command arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addCommand",
 			"(Landroid/media/Session2Command;)Landroid/media/Session2CommandGroup$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Session2CommandGroup_Builder::removeCommand(__jni_impl::android::media::Session2Command arg0)
 	{
 		return __thiz.callObjectMethod(
 			"removeCommand",
 			"(Landroid/media/Session2Command;)Landroid/media/Session2CommandGroup$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

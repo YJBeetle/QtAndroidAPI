@@ -54,7 +54,8 @@ namespace __jni_impl::android::app
 			"onConfirmationResult",
 			"(ZLandroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

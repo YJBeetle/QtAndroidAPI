@@ -47,7 +47,8 @@ namespace __jni_impl::android::net
 			"android.net.InetAddresses",
 			"isNumericAddress",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InetAddresses::parseNumericAddress(jstring arg0)
 	{
@@ -55,7 +56,8 @@ namespace __jni_impl::android::net
 			"android.net.InetAddresses",
 			"parseNumericAddress",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::net
 

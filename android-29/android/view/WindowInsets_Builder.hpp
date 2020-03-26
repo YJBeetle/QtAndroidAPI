@@ -68,49 +68,56 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/WindowInsets;");
+			"()Landroid/view/WindowInsets;"
+		);
 	}
 	QAndroidJniObject WindowInsets_Builder::setSystemWindowInsets(__jni_impl::android::graphics::Insets arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSystemWindowInsets",
 			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WindowInsets_Builder::setSystemGestureInsets(__jni_impl::android::graphics::Insets arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSystemGestureInsets",
 			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WindowInsets_Builder::setMandatorySystemGestureInsets(__jni_impl::android::graphics::Insets arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMandatorySystemGestureInsets",
 			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WindowInsets_Builder::setTappableElementInsets(__jni_impl::android::graphics::Insets arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTappableElementInsets",
 			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WindowInsets_Builder::setStableInsets(__jni_impl::android::graphics::Insets arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setStableInsets",
 			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WindowInsets_Builder::setDisplayCutout(__jni_impl::android::view::DisplayCutout arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDisplayCutout",
 			"(Landroid/view/DisplayCutout;)Landroid/view/WindowInsets$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

@@ -29,7 +29,7 @@ namespace __jni_impl::java::lang
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getException();
+		jthrowable getException();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -63,11 +63,12 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	QAndroidJniObject ExceptionInInitializerError::getException()
+	jthrowable ExceptionInInitializerError::getException()
 	{
 		return __thiz.callObjectMethod(
 			"getException",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
 } // namespace __jni_impl::java::lang
 

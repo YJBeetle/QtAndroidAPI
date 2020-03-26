@@ -23,8 +23,8 @@ namespace __jni_impl::javax::crypto::spec
 		
 		// Methods
 		QAndroidJniObject getPSource();
-		QAndroidJniObject getDigestAlgorithm();
-		QAndroidJniObject getMGFAlgorithm();
+		jstring getDigestAlgorithm();
+		jstring getMGFAlgorithm();
 		QAndroidJniObject getMGFParameters();
 	};
 } // namespace __jni_impl::javax::crypto::spec
@@ -39,7 +39,8 @@ namespace __jni_impl::javax::crypto::spec
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.crypto.spec.OAEPParameterSpec",
 			"DEFAULT",
-			"Ljavax/crypto/spec/OAEPParameterSpec;");
+			"Ljavax/crypto/spec/OAEPParameterSpec;"
+		);
 	}
 	
 	// Constructors
@@ -59,25 +60,29 @@ namespace __jni_impl::javax::crypto::spec
 	{
 		return __thiz.callObjectMethod(
 			"getPSource",
-			"()Ljavax/crypto/spec/PSource;");
+			"()Ljavax/crypto/spec/PSource;"
+		);
 	}
-	QAndroidJniObject OAEPParameterSpec::getDigestAlgorithm()
+	jstring OAEPParameterSpec::getDigestAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getDigestAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OAEPParameterSpec::getMGFAlgorithm()
+	jstring OAEPParameterSpec::getMGFAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getMGFAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject OAEPParameterSpec::getMGFParameters()
 	{
 		return __thiz.callObjectMethod(
 			"getMGFParameters",
-			"()Ljava/security/spec/AlgorithmParameterSpec;");
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
+		);
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

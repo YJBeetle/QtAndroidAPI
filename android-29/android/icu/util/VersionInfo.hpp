@@ -50,7 +50,7 @@ namespace __jni_impl::android::icu::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::android::icu::util::VersionInfo arg0);
@@ -75,224 +75,256 @@ namespace __jni_impl::android::icu::util
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"ICU_VERSION",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UCOL_BUILDER_VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UCOL_BUILDER_VERSION",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UCOL_RUNTIME_VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UCOL_RUNTIME_VERSION",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_10_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_10_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_11_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_11_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_1_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_1_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_1_0_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_1_0_1",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_1_1_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_1_1_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_1_1_5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_1_1_5",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_2_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_2_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_2_1_2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_2_1_2",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_2_1_5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_2_1_5",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_2_1_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_2_1_8",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_2_1_9()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_2_1_9",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_3_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_3_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_3_0_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_3_0_1",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_3_1_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_3_1_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_3_1_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_3_1_1",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_3_2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_3_2",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_4_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_4_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_4_0_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_4_0_1",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_4_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_4_1",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_5_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_5_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_5_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_5_1",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_5_2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_5_2",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_6_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_6_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_6_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_6_1",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_6_2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_6_2",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_6_3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_6_3",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_7_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_7_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_8_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_8_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	QAndroidJniObject VersionInfo::UNICODE_9_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.VersionInfo",
 			"UNICODE_9_0",
-			"Landroid/icu/util/VersionInfo;");
+			"Landroid/icu/util/VersionInfo;"
+		);
 	}
 	
 	// Constructors
@@ -309,33 +341,38 @@ namespace __jni_impl::android::icu::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject VersionInfo::toString()
+	jstring VersionInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint VersionInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint VersionInfo::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint VersionInfo::compareTo(__jni_impl::android::icu::util::VersionInfo arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Landroid/icu/util/VersionInfo;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject VersionInfo::getInstance(jstring arg0)
 	{
@@ -343,7 +380,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.VersionInfo",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/util/VersionInfo;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject VersionInfo::getInstance(jint arg0, jint arg1, jint arg2)
 	{
@@ -353,7 +391,8 @@ namespace __jni_impl::android::icu::util
 			"(III)Landroid/icu/util/VersionInfo;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject VersionInfo::getInstance(jint arg0, jint arg1)
 	{
@@ -362,7 +401,8 @@ namespace __jni_impl::android::icu::util
 			"getInstance",
 			"(II)Landroid/icu/util/VersionInfo;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject VersionInfo::getInstance(jint arg0)
 	{
@@ -370,7 +410,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.VersionInfo",
 			"getInstance",
 			"(I)Landroid/icu/util/VersionInfo;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject VersionInfo::getInstance(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -381,31 +422,36 @@ namespace __jni_impl::android::icu::util
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint VersionInfo::getMajor()
 	{
 		return __thiz.callMethod<jint>(
 			"getMajor",
-			"()I");
+			"()I"
+		);
 	}
 	jint VersionInfo::getMinor()
 	{
 		return __thiz.callMethod<jint>(
 			"getMinor",
-			"()I");
+			"()I"
+		);
 	}
 	jint VersionInfo::getMilli()
 	{
 		return __thiz.callMethod<jint>(
 			"getMilli",
-			"()I");
+			"()I"
+		);
 	}
 	jint VersionInfo::getMicro()
 	{
 		return __thiz.callMethod<jint>(
 			"getMicro",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

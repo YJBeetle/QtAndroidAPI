@@ -42,20 +42,23 @@ namespace __jni_impl::android::print
 		__thiz.callMethod<void>(
 			"onWriteFinished",
 			"([Landroid/print/PageRange;)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintDocumentAdapter_WriteResultCallback::onWriteFailed(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onWriteFailed",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintDocumentAdapter_WriteResultCallback::onWriteCancelled()
 	{
 		__thiz.callMethod<void>(
 			"onWriteCancelled",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::print
 

@@ -31,19 +31,22 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.CollationKey$BoundMode",
-			"LOWER");
+			"LOWER"
+		);
 	}
 	jint CollationKey_BoundMode::UPPER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.CollationKey$BoundMode",
-			"UPPER");
+			"UPPER"
+		);
 	}
 	jint CollationKey_BoundMode::UPPER_LONG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.CollationKey$BoundMode",
-			"UPPER_LONG");
+			"UPPER_LONG"
+		);
 	}
 	
 	// Constructors

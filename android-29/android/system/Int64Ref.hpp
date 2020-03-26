@@ -28,7 +28,8 @@ namespace __jni_impl::android::system
 	jlong Int64Ref::value()
 	{
 		return __thiz.getField<jlong>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

@@ -28,7 +28,8 @@ namespace __jni_impl::android::util
 	jshort MutableShort::value()
 	{
 		return __thiz.getField<jshort>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

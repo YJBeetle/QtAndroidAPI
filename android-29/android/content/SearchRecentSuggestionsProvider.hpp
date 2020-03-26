@@ -30,7 +30,7 @@ namespace __jni_impl::android::content
 		// Methods
 		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3);
 		jint _delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2);
-		QAndroidJniObject getType(__jni_impl::android::net::Uri arg0);
+		jstring getType(__jni_impl::android::net::Uri arg0);
 		QAndroidJniObject insert(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1);
 		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
 		jboolean onCreate();
@@ -47,13 +47,15 @@ namespace __jni_impl::android::content
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.SearchRecentSuggestionsProvider",
-			"DATABASE_MODE_2LINES");
+			"DATABASE_MODE_2LINES"
+		);
 	}
 	jint SearchRecentSuggestionsProvider::DATABASE_MODE_QUERIES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.SearchRecentSuggestionsProvider",
-			"DATABASE_MODE_QUERIES");
+			"DATABASE_MODE_QUERIES"
+		);
 	}
 	
 	// Constructors
@@ -73,7 +75,8 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint SearchRecentSuggestionsProvider::_delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2)
 	{
@@ -82,14 +85,16 @@ namespace __jni_impl::android::content
 			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject SearchRecentSuggestionsProvider::getType(__jni_impl::android::net::Uri arg0)
+	jstring SearchRecentSuggestionsProvider::getType(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getType",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject SearchRecentSuggestionsProvider::insert(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1)
 	{
@@ -97,7 +102,8 @@ namespace __jni_impl::android::content
 			"insert",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SearchRecentSuggestionsProvider::query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
@@ -108,13 +114,15 @@ namespace __jni_impl::android::content
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean SearchRecentSuggestionsProvider::onCreate()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onCreate",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::content
 

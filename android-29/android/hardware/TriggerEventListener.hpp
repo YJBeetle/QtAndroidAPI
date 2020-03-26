@@ -45,7 +45,8 @@ namespace __jni_impl::android::hardware
 		__thiz.callMethod<void>(
 			"onTrigger",
 			"(Landroid/hardware/TriggerEvent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::hardware
 

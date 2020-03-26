@@ -58,7 +58,8 @@ namespace __jni_impl::android::content
 		__thiz.callMethod<void>(
 			"handleMessage",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::content
 

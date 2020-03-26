@@ -24,7 +24,7 @@ namespace __jni_impl::android::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FEATURE_RELAXED();
+		static jstring FEATURE_RELAXED();
 		
 		// Constructors
 		void __constructor();
@@ -47,12 +47,13 @@ namespace __jni_impl::android::util
 namespace __jni_impl::android::util
 {
 	// Fields
-	QAndroidJniObject Xml::FEATURE_RELAXED()
+	jstring Xml::FEATURE_RELAXED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Xml",
 			"FEATURE_RELAXED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -71,7 +72,8 @@ namespace __jni_impl::android::util
 			"parse",
 			"(Ljava/lang/String;Lorg/xml/sax/ContentHandler;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Xml::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::android::util::Xml_Encoding arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -81,7 +83,8 @@ namespace __jni_impl::android::util
 			"(Ljava/io/InputStream;Landroid/util/Xml$Encoding;Lorg/xml/sax/ContentHandler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void Xml::parse(__jni_impl::java::io::Reader arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -90,21 +93,24 @@ namespace __jni_impl::android::util
 			"parse",
 			"(Ljava/io/Reader;Lorg/xml/sax/ContentHandler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Xml::newPullParser()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Xml",
 			"newPullParser",
-			"()Lorg/xmlpull/v1/XmlPullParser;");
+			"()Lorg/xmlpull/v1/XmlPullParser;"
+		);
 	}
 	QAndroidJniObject Xml::newSerializer()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Xml",
 			"newSerializer",
-			"()Lorg/xmlpull/v1/XmlSerializer;");
+			"()Lorg/xmlpull/v1/XmlSerializer;"
+		);
 	}
 	QAndroidJniObject Xml::findEncodingByName(jstring arg0)
 	{
@@ -112,7 +118,8 @@ namespace __jni_impl::android::util
 			"android.util.Xml",
 			"findEncodingByName",
 			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Xml::asAttributeSet(__jni_impl::__JniBaseClass arg0)
 	{
@@ -120,7 +127,8 @@ namespace __jni_impl::android::util
 			"android.util.Xml",
 			"asAttributeSet",
 			"(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::util
 

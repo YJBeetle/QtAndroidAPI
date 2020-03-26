@@ -61,7 +61,8 @@ namespace __jni_impl::java::util::concurrent::locks
 	{
 		__thiz.callMethod<void>(
 			"signal",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean AbstractQueuedLongSynchronizer_ConditionObject::await(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -69,39 +70,45 @@ namespace __jni_impl::java::util::concurrent::locks
 			"await",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AbstractQueuedLongSynchronizer_ConditionObject::await()
 	{
 		__thiz.callMethod<void>(
 			"await",
-			"()V");
+			"()V"
+		);
 	}
 	void AbstractQueuedLongSynchronizer_ConditionObject::awaitUninterruptibly()
 	{
 		__thiz.callMethod<void>(
 			"awaitUninterruptibly",
-			"()V");
+			"()V"
+		);
 	}
 	jlong AbstractQueuedLongSynchronizer_ConditionObject::awaitNanos(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"awaitNanos",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AbstractQueuedLongSynchronizer_ConditionObject::awaitUntil(__jni_impl::java::util::Date arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"awaitUntil",
 			"(Ljava/util/Date;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbstractQueuedLongSynchronizer_ConditionObject::signalAll()
 	{
 		__thiz.callMethod<void>(
 			"signalAll",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::locks
 

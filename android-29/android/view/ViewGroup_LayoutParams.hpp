@@ -52,35 +52,41 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.ViewGroup$LayoutParams",
-			"FILL_PARENT");
+			"FILL_PARENT"
+		);
 	}
 	jint ViewGroup_LayoutParams::MATCH_PARENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.ViewGroup$LayoutParams",
-			"MATCH_PARENT");
+			"MATCH_PARENT"
+		);
 	}
 	jint ViewGroup_LayoutParams::WRAP_CONTENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.ViewGroup$LayoutParams",
-			"WRAP_CONTENT");
+			"WRAP_CONTENT"
+		);
 	}
 	jint ViewGroup_LayoutParams::height()
 	{
 		return __thiz.getField<jint>(
-			"height");
+			"height"
+		);
 	}
 	QAndroidJniObject ViewGroup_LayoutParams::layoutAnimationParameters()
 	{
 		return __thiz.getObjectField(
 			"layoutAnimationParameters",
-			"Landroid/view/animation/LayoutAnimationController$AnimationParameters;");
+			"Landroid/view/animation/LayoutAnimationController$AnimationParameters;"
+		);
 	}
 	jint ViewGroup_LayoutParams::width()
 	{
 		return __thiz.getField<jint>(
-			"width");
+			"width"
+		);
 	}
 	
 	// Constructors
@@ -114,7 +120,8 @@ namespace __jni_impl::android::view
 		__thiz.callMethod<void>(
 			"resolveLayoutDirection",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

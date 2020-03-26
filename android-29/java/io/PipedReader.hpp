@@ -79,7 +79,8 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint PipedReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -88,26 +89,30 @@ namespace __jni_impl::java::io
 			"([CII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void PipedReader::connect(__jni_impl::java::io::PipedWriter arg0)
 	{
 		__thiz.callMethod<void>(
 			"connect",
 			"(Ljava/io/PipedWriter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PipedReader::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean PipedReader::ready()
 	{
 		return __thiz.callMethod<jboolean>(
 			"ready",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::io
 

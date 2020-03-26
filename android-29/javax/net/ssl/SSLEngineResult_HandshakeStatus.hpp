@@ -24,7 +24,7 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::javax::net::ssl
@@ -38,42 +38,48 @@ namespace __jni_impl::javax::net::ssl
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$HandshakeStatus",
 			"NOT_HANDSHAKING",
-			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;");
+			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
+		);
 	}
 	QAndroidJniObject SSLEngineResult_HandshakeStatus::FINISHED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$HandshakeStatus",
 			"FINISHED",
-			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;");
+			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
+		);
 	}
 	QAndroidJniObject SSLEngineResult_HandshakeStatus::NEED_TASK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$HandshakeStatus",
 			"NEED_TASK",
-			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;");
+			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
+		);
 	}
 	QAndroidJniObject SSLEngineResult_HandshakeStatus::NEED_WRAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$HandshakeStatus",
 			"NEED_WRAP",
-			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;");
+			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
+		);
 	}
 	QAndroidJniObject SSLEngineResult_HandshakeStatus::NEED_UNWRAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$HandshakeStatus",
 			"NEED_UNWRAP",
-			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;");
+			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
+		);
 	}
 	QAndroidJniObject SSLEngineResult_HandshakeStatus::NEED_UNWRAP_AGAIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$HandshakeStatus",
 			"NEED_UNWRAP_AGAIN",
-			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;");
+			"Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
+		);
 	}
 	
 	// Constructors
@@ -85,12 +91,13 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	QAndroidJniObject SSLEngineResult_HandshakeStatus::values()
+	jarray SSLEngineResult_HandshakeStatus::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.SSLEngineResult$HandshakeStatus",
 			"values",
-			"()[Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;");
+			"()[Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
+		).object<jarray>();
 	}
 	QAndroidJniObject SSLEngineResult_HandshakeStatus::valueOf(jstring arg0)
 	{
@@ -98,7 +105,8 @@ namespace __jni_impl::javax::net::ssl
 			"javax.net.ssl.SSLEngineResult$HandshakeStatus",
 			"valueOf",
 			"(Ljava/lang/String;)Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

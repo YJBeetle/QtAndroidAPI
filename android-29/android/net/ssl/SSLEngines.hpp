@@ -47,7 +47,8 @@ namespace __jni_impl::android::net::ssl
 			"android.net.ssl.SSLEngines",
 			"isSupportedEngine",
 			"(Ljavax/net/ssl/SSLEngine;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SSLEngines::setUseSessionTickets(__jni_impl::javax::net::ssl::SSLEngine arg0, jboolean arg1)
 	{
@@ -56,7 +57,8 @@ namespace __jni_impl::android::net::ssl
 			"setUseSessionTickets",
 			"(Ljavax/net/ssl/SSLEngine;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::ssl
 

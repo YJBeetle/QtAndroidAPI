@@ -20,9 +20,9 @@ namespace __jni_impl::java::security
 		// Methods
 		void destroy();
 		jboolean isDestroyed();
-		QAndroidJniObject getProtectionAlgorithm();
+		jcharArray getPassword();
+		jstring getProtectionAlgorithm();
 		QAndroidJniObject getProtectionParameters();
-		QAndroidJniObject getPassword();
 	};
 } // namespace __jni_impl::java::security
 
@@ -54,31 +54,36 @@ namespace __jni_impl::java::security
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean KeyStore_PasswordProtection::isDestroyed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDestroyed",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject KeyStore_PasswordProtection::getProtectionAlgorithm()
+	jcharArray KeyStore_PasswordProtection::getPassword()
+	{
+		return __thiz.callObjectMethod(
+			"getPassword",
+			"()[C"
+		).object<jcharArray>();
+	}
+	jstring KeyStore_PasswordProtection::getProtectionAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getProtectionAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject KeyStore_PasswordProtection::getProtectionParameters()
 	{
 		return __thiz.callObjectMethod(
 			"getProtectionParameters",
-			"()Ljava/security/spec/AlgorithmParameterSpec;");
-	}
-	QAndroidJniObject KeyStore_PasswordProtection::getPassword()
-	{
-		return __thiz.callObjectMethod(
-			"getPassword",
-			"()[C");
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

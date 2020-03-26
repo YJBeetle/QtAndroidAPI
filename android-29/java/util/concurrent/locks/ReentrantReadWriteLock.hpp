@@ -30,7 +30,7 @@ namespace __jni_impl::java::util::concurrent::locks
 		void __constructor(jboolean arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jboolean hasQueuedThreads();
 		jint getQueueLength();
 		jboolean hasWaiters(__jni_impl::__JniBaseClass arg0);
@@ -71,92 +71,106 @@ namespace __jni_impl::java::util::concurrent::locks
 	}
 	
 	// Methods
-	QAndroidJniObject ReentrantReadWriteLock::toString()
+	jstring ReentrantReadWriteLock::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean ReentrantReadWriteLock::hasQueuedThreads()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasQueuedThreads",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ReentrantReadWriteLock::getQueueLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getQueueLength",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean ReentrantReadWriteLock::hasWaiters(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasWaiters",
 			"(Ljava/util/concurrent/locks/Condition;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint ReentrantReadWriteLock::getWaitQueueLength(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getWaitQueueLength",
 			"(Ljava/util/concurrent/locks/Condition;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ReentrantReadWriteLock::isFair()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFair",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ReentrantReadWriteLock::hasQueuedThread(__jni_impl::java::lang::Thread arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasQueuedThread",
 			"(Ljava/lang/Thread;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ReentrantReadWriteLock::readLock()
 	{
 		return __thiz.callObjectMethod(
 			"readLock",
-			"()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;");
+			"()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;"
+		);
 	}
 	QAndroidJniObject ReentrantReadWriteLock::writeLock()
 	{
 		return __thiz.callObjectMethod(
 			"writeLock",
-			"()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;");
+			"()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;"
+		);
 	}
 	jint ReentrantReadWriteLock::getReadLockCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getReadLockCount",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean ReentrantReadWriteLock::isWriteLocked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWriteLocked",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ReentrantReadWriteLock::getWriteHoldCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getWriteHoldCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint ReentrantReadWriteLock::getReadHoldCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getReadHoldCount",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean ReentrantReadWriteLock::isWriteLockedByCurrentThread()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWriteLockedByCurrentThread",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::locks
 

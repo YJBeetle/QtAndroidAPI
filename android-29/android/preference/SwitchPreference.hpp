@@ -34,8 +34,8 @@ namespace __jni_impl::android::preference
 		void setSwitchTextOn(jint arg0);
 		void setSwitchTextOff(jint arg0);
 		void setSwitchTextOff(jstring arg0);
-		QAndroidJniObject getSwitchTextOn();
-		QAndroidJniObject getSwitchTextOff();
+		jstring getSwitchTextOn();
+		jstring getSwitchTextOff();
 	};
 } // namespace __jni_impl::android::preference
 
@@ -88,40 +88,46 @@ namespace __jni_impl::android::preference
 		__thiz.callMethod<void>(
 			"setSwitchTextOn",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SwitchPreference::setSwitchTextOn(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSwitchTextOn",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void SwitchPreference::setSwitchTextOff(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSwitchTextOff",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void SwitchPreference::setSwitchTextOff(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSwitchTextOff",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SwitchPreference::getSwitchTextOn()
+	jstring SwitchPreference::getSwitchTextOn()
 	{
 		return __thiz.callObjectMethod(
 			"getSwitchTextOn",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SwitchPreference::getSwitchTextOff()
+	jstring SwitchPreference::getSwitchTextOff()
 	{
 		return __thiz.callObjectMethod(
 			"getSwitchTextOff",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::preference
 

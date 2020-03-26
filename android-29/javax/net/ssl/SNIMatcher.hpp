@@ -46,13 +46,15 @@ namespace __jni_impl::javax::net::ssl
 		return __thiz.callMethod<jboolean>(
 			"matches",
 			"(Ljavax/net/ssl/SNIServerName;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint SNIMatcher::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

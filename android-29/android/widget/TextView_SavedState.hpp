@@ -24,7 +24,7 @@ namespace __jni_impl::android::widget
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::widget
@@ -39,7 +39,8 @@ namespace __jni_impl::android::widget
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.TextView$SavedState",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -51,11 +52,12 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject TextView_SavedState::toString()
+	jstring TextView_SavedState::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void TextView_SavedState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -63,7 +65,8 @@ namespace __jni_impl::android::widget
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::widget
 

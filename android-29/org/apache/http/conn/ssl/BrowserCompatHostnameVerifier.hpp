@@ -18,7 +18,7 @@ namespace __jni_impl::org::apache::http::conn::ssl
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void verify(jstring arg0, jarray arg1, jarray arg2);
 	};
 } // namespace __jni_impl::org::apache::http::conn::ssl
@@ -37,11 +37,12 @@ namespace __jni_impl::org::apache::http::conn::ssl
 	}
 	
 	// Methods
-	QAndroidJniObject BrowserCompatHostnameVerifier::toString()
+	jstring BrowserCompatHostnameVerifier::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void BrowserCompatHostnameVerifier::verify(jstring arg0, jarray arg1, jarray arg2)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::org::apache::http::conn::ssl
 

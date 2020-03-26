@@ -128,9 +128,9 @@ namespace __jni_impl::android::content
 		// Methods
 		QAndroidJniObject getClassLoader();
 		jint checkPermission(jstring arg0, jint arg1, jint arg2);
-		QAndroidJniObject getPackageName();
+		jstring getPackageName();
 		QAndroidJniObject getResources();
-		QAndroidJniObject fileList();
+		QAndroidJniObject getBaseContext();
 		QAndroidJniObject getAssets();
 		QAndroidJniObject getPackageManager();
 		QAndroidJniObject getContentResolver();
@@ -139,10 +139,10 @@ namespace __jni_impl::android::content
 		QAndroidJniObject getApplicationContext();
 		void setTheme(jint arg0);
 		QAndroidJniObject getTheme();
-		QAndroidJniObject getOpPackageName();
+		jstring getOpPackageName();
 		QAndroidJniObject getApplicationInfo();
-		QAndroidJniObject getPackageResourcePath();
-		QAndroidJniObject getPackageCodePath();
+		jstring getPackageResourcePath();
+		jstring getPackageCodePath();
 		QAndroidJniObject getSharedPreferences(jstring arg0, jint arg1);
 		jboolean moveSharedPreferencesFrom(__jni_impl::android::content::Context arg0, jstring arg1);
 		jboolean deleteSharedPreferences(jstring arg0);
@@ -154,21 +154,21 @@ namespace __jni_impl::android::content
 		QAndroidJniObject getFilesDir();
 		QAndroidJniObject getNoBackupFilesDir();
 		QAndroidJniObject getExternalFilesDir(jstring arg0);
-		QAndroidJniObject getExternalFilesDirs(jstring arg0);
+		jarray getExternalFilesDirs(jstring arg0);
 		QAndroidJniObject getObbDir();
-		QAndroidJniObject getObbDirs();
+		jarray getObbDirs();
 		QAndroidJniObject getCacheDir();
 		QAndroidJniObject getCodeCacheDir();
 		QAndroidJniObject getExternalCacheDir();
-		QAndroidJniObject getExternalCacheDirs();
-		QAndroidJniObject getExternalMediaDirs();
+		jarray getExternalCacheDirs();
+		jarray getExternalMediaDirs();
 		QAndroidJniObject getDir(jstring arg0, jint arg1);
 		QAndroidJniObject openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
 		QAndroidJniObject openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		jboolean moveDatabaseFrom(__jni_impl::android::content::Context arg0, jstring arg1);
 		jboolean deleteDatabase(jstring arg0);
 		QAndroidJniObject getDatabasePath(jstring arg0);
-		QAndroidJniObject databaseList();
+		jarray databaseList();
 		QAndroidJniObject getWallpaper();
 		QAndroidJniObject peekWallpaper();
 		jint getWallpaperDesiredMinimumWidth();
@@ -209,8 +209,8 @@ namespace __jni_impl::android::content
 		void updateServiceGroup(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		void unbindService(__jni_impl::__JniBaseClass arg0);
 		jboolean startInstrumentation(__jni_impl::android::content::ComponentName arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
-		QAndroidJniObject getSystemService(jstring arg0);
-		QAndroidJniObject getSystemServiceName(jclass arg0);
+		jobject getSystemService(jstring arg0);
+		jstring getSystemServiceName(jclass arg0);
 		jint checkCallingPermission(jstring arg0);
 		jint checkCallingOrSelfPermission(jstring arg0);
 		jint checkSelfPermission(jstring arg0);
@@ -235,7 +235,7 @@ namespace __jni_impl::android::content
 		QAndroidJniObject createDeviceProtectedStorageContext();
 		jboolean isRestricted();
 		jboolean isDeviceProtectedStorage();
-		QAndroidJniObject getBaseContext();
+		jarray fileList();
 	};
 } // namespace __jni_impl::android::content
 
@@ -285,7 +285,8 @@ namespace __jni_impl::android::content
 	{
 		return __thiz.callObjectMethod(
 			"getClassLoader",
-			"()Ljava/lang/ClassLoader;");
+			"()Ljava/lang/ClassLoader;"
+		);
 	}
 	jint ContextWrapper::checkPermission(jstring arg0, jint arg1, jint arg2)
 	{
@@ -294,98 +295,114 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;II)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject ContextWrapper::getPackageName()
+	jstring ContextWrapper::getPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContextWrapper::getResources()
 	{
 		return __thiz.callObjectMethod(
 			"getResources",
-			"()Landroid/content/res/Resources;");
+			"()Landroid/content/res/Resources;"
+		);
 	}
-	QAndroidJniObject ContextWrapper::fileList()
+	QAndroidJniObject ContextWrapper::getBaseContext()
 	{
 		return __thiz.callObjectMethod(
-			"fileList",
-			"()[Ljava/lang/String;");
+			"getBaseContext",
+			"()Landroid/content/Context;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getAssets()
 	{
 		return __thiz.callObjectMethod(
 			"getAssets",
-			"()Landroid/content/res/AssetManager;");
+			"()Landroid/content/res/AssetManager;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getPackageManager()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageManager",
-			"()Landroid/content/pm/PackageManager;");
+			"()Landroid/content/pm/PackageManager;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getContentResolver()
 	{
 		return __thiz.callObjectMethod(
 			"getContentResolver",
-			"()Landroid/content/ContentResolver;");
+			"()Landroid/content/ContentResolver;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getMainLooper()
 	{
 		return __thiz.callObjectMethod(
 			"getMainLooper",
-			"()Landroid/os/Looper;");
+			"()Landroid/os/Looper;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getMainExecutor()
 	{
 		return __thiz.callObjectMethod(
 			"getMainExecutor",
-			"()Ljava/util/concurrent/Executor;");
+			"()Ljava/util/concurrent/Executor;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getApplicationContext()
 	{
 		return __thiz.callObjectMethod(
 			"getApplicationContext",
-			"()Landroid/content/Context;");
+			"()Landroid/content/Context;"
+		);
 	}
 	void ContextWrapper::setTheme(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTheme",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContextWrapper::getTheme()
 	{
 		return __thiz.callObjectMethod(
 			"getTheme",
-			"()Landroid/content/res/Resources$Theme;");
+			"()Landroid/content/res/Resources$Theme;"
+		);
 	}
-	QAndroidJniObject ContextWrapper::getOpPackageName()
+	jstring ContextWrapper::getOpPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getOpPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContextWrapper::getApplicationInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getApplicationInfo",
-			"()Landroid/content/pm/ApplicationInfo;");
+			"()Landroid/content/pm/ApplicationInfo;"
+		);
 	}
-	QAndroidJniObject ContextWrapper::getPackageResourcePath()
+	jstring ContextWrapper::getPackageResourcePath()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageResourcePath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContextWrapper::getPackageCodePath()
+	jstring ContextWrapper::getPackageCodePath()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageCodePath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContextWrapper::getSharedPreferences(jstring arg0, jint arg1)
 	{
@@ -393,7 +410,8 @@ namespace __jni_impl::android::content
 			"getSharedPreferences",
 			"(Ljava/lang/String;I)Landroid/content/SharedPreferences;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean ContextWrapper::moveSharedPreferencesFrom(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
@@ -401,21 +419,24 @@ namespace __jni_impl::android::content
 			"moveSharedPreferencesFrom",
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean ContextWrapper::deleteSharedPreferences(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"deleteSharedPreferences",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContextWrapper::openFileInput(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"openFileInput",
 			"(Ljava/lang/String;)Ljava/io/FileInputStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContextWrapper::openFileOutput(jstring arg0, jint arg1)
 	{
@@ -423,95 +444,110 @@ namespace __jni_impl::android::content
 			"openFileOutput",
 			"(Ljava/lang/String;I)Ljava/io/FileOutputStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean ContextWrapper::deleteFile(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"deleteFile",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContextWrapper::getFileStreamPath(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getFileStreamPath",
 			"(Ljava/lang/String;)Ljava/io/File;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContextWrapper::getDataDir()
 	{
 		return __thiz.callObjectMethod(
 			"getDataDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getFilesDir()
 	{
 		return __thiz.callObjectMethod(
 			"getFilesDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getNoBackupFilesDir()
 	{
 		return __thiz.callObjectMethod(
 			"getNoBackupFilesDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getExternalFilesDir(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getExternalFilesDir",
 			"(Ljava/lang/String;)Ljava/io/File;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ContextWrapper::getExternalFilesDirs(jstring arg0)
+	jarray ContextWrapper::getExternalFilesDirs(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getExternalFilesDirs",
 			"(Ljava/lang/String;)[Ljava/io/File;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
 	QAndroidJniObject ContextWrapper::getObbDir()
 	{
 		return __thiz.callObjectMethod(
 			"getObbDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
-	QAndroidJniObject ContextWrapper::getObbDirs()
+	jarray ContextWrapper::getObbDirs()
 	{
 		return __thiz.callObjectMethod(
 			"getObbDirs",
-			"()[Ljava/io/File;");
+			"()[Ljava/io/File;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ContextWrapper::getCacheDir()
 	{
 		return __thiz.callObjectMethod(
 			"getCacheDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getCodeCacheDir()
 	{
 		return __thiz.callObjectMethod(
 			"getCodeCacheDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::getExternalCacheDir()
 	{
 		return __thiz.callObjectMethod(
 			"getExternalCacheDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
-	QAndroidJniObject ContextWrapper::getExternalCacheDirs()
+	jarray ContextWrapper::getExternalCacheDirs()
 	{
 		return __thiz.callObjectMethod(
 			"getExternalCacheDirs",
-			"()[Ljava/io/File;");
+			"()[Ljava/io/File;"
+		).object<jarray>();
 	}
-	QAndroidJniObject ContextWrapper::getExternalMediaDirs()
+	jarray ContextWrapper::getExternalMediaDirs()
 	{
 		return __thiz.callObjectMethod(
 			"getExternalMediaDirs",
-			"()[Ljava/io/File;");
+			"()[Ljava/io/File;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ContextWrapper::getDir(jstring arg0, jint arg1)
 	{
@@ -519,7 +555,8 @@ namespace __jni_impl::android::content
 			"getDir",
 			"(Ljava/lang/String;I)Ljava/io/File;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContextWrapper::openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -529,7 +566,8 @@ namespace __jni_impl::android::content
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContextWrapper::openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -538,7 +576,8 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean ContextWrapper::moveDatabaseFrom(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
@@ -546,71 +585,82 @@ namespace __jni_impl::android::content
 			"moveDatabaseFrom",
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean ContextWrapper::deleteDatabase(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"deleteDatabase",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContextWrapper::getDatabasePath(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDatabasePath",
 			"(Ljava/lang/String;)Ljava/io/File;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ContextWrapper::databaseList()
+	jarray ContextWrapper::databaseList()
 	{
 		return __thiz.callObjectMethod(
 			"databaseList",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ContextWrapper::getWallpaper()
 	{
 		return __thiz.callObjectMethod(
 			"getWallpaper",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	QAndroidJniObject ContextWrapper::peekWallpaper()
 	{
 		return __thiz.callObjectMethod(
 			"peekWallpaper",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	jint ContextWrapper::getWallpaperDesiredMinimumWidth()
 	{
 		return __thiz.callMethod<jint>(
 			"getWallpaperDesiredMinimumWidth",
-			"()I");
+			"()I"
+		);
 	}
 	jint ContextWrapper::getWallpaperDesiredMinimumHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getWallpaperDesiredMinimumHeight",
-			"()I");
+			"()I"
+		);
 	}
 	void ContextWrapper::setWallpaper(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWallpaper",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContextWrapper::setWallpaper(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWallpaper",
 			"(Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContextWrapper::clearWallpaper()
 	{
 		__thiz.callMethod<void>(
 			"clearWallpaper",
-			"()V");
+			"()V"
+		);
 	}
 	void ContextWrapper::startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -618,14 +668,16 @@ namespace __jni_impl::android::content
 			"startActivity",
 			"(Landroid/content/Intent;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ContextWrapper::startActivity(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"startActivity",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContextWrapper::startActivities(jarray arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -633,14 +685,16 @@ namespace __jni_impl::android::content
 			"startActivities",
 			"([Landroid/content/Intent;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ContextWrapper::startActivities(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"startActivities",
 			"([Landroid/content/Intent;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ContextWrapper::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5)
 	{
@@ -652,7 +706,8 @@ namespace __jni_impl::android::content
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ContextWrapper::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -663,7 +718,8 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void ContextWrapper::sendBroadcast(__jni_impl::android::content::Intent arg0, jstring arg1)
 	{
@@ -671,14 +727,16 @@ namespace __jni_impl::android::content
 			"sendBroadcast",
 			"(Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ContextWrapper::sendBroadcast(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"sendBroadcast",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContextWrapper::sendOrderedBroadcast(__jni_impl::android::content::Intent arg0, jstring arg1, __jni_impl::android::content::BroadcastReceiver arg2, __jni_impl::android::os::Handler arg3, jint arg4, jstring arg5, __jni_impl::android::os::Bundle arg6)
 	{
@@ -691,7 +749,8 @@ namespace __jni_impl::android::content
 			arg3.__jniObject().object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ContextWrapper::sendOrderedBroadcast(__jni_impl::android::content::Intent arg0, jstring arg1)
 	{
@@ -699,7 +758,8 @@ namespace __jni_impl::android::content
 			"sendOrderedBroadcast",
 			"(Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ContextWrapper::sendBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1, jstring arg2)
 	{
@@ -708,7 +768,8 @@ namespace __jni_impl::android::content
 			"(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ContextWrapper::sendBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -716,7 +777,8 @@ namespace __jni_impl::android::content
 			"sendBroadcastAsUser",
 			"(Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ContextWrapper::sendOrderedBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1, jstring arg2, __jni_impl::android::content::BroadcastReceiver arg3, __jni_impl::android::os::Handler arg4, jint arg5, jstring arg6, __jni_impl::android::os::Bundle arg7)
 	{
@@ -730,14 +792,16 @@ namespace __jni_impl::android::content
 			arg4.__jniObject().object(),
 			arg5,
 			arg6,
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 	void ContextWrapper::sendStickyBroadcast(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"sendStickyBroadcast",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContextWrapper::sendStickyOrderedBroadcast(__jni_impl::android::content::Intent arg0, __jni_impl::android::content::BroadcastReceiver arg1, __jni_impl::android::os::Handler arg2, jint arg3, jstring arg4, __jni_impl::android::os::Bundle arg5)
 	{
@@ -749,14 +813,16 @@ namespace __jni_impl::android::content
 			arg2.__jniObject().object(),
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ContextWrapper::removeStickyBroadcast(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeStickyBroadcast",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContextWrapper::sendStickyBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -764,7 +830,8 @@ namespace __jni_impl::android::content
 			"sendStickyBroadcastAsUser",
 			"(Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ContextWrapper::sendStickyOrderedBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::content::BroadcastReceiver arg2, __jni_impl::android::os::Handler arg3, jint arg4, jstring arg5, __jni_impl::android::os::Bundle arg6)
 	{
@@ -777,7 +844,8 @@ namespace __jni_impl::android::content
 			arg3.__jniObject().object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ContextWrapper::removeStickyBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -785,7 +853,8 @@ namespace __jni_impl::android::content
 			"removeStickyBroadcastAsUser",
 			"(Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContextWrapper::registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1, jstring arg2, __jni_impl::android::os::Handler arg3, jint arg4)
 	{
@@ -796,7 +865,8 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject ContextWrapper::registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1, jstring arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -806,7 +876,8 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContextWrapper::registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1, jint arg2)
 	{
@@ -815,7 +886,8 @@ namespace __jni_impl::android::content
 			"(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ContextWrapper::registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1)
 	{
@@ -823,35 +895,40 @@ namespace __jni_impl::android::content
 			"registerReceiver",
 			"(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ContextWrapper::unregisterReceiver(__jni_impl::android::content::BroadcastReceiver arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterReceiver",
 			"(Landroid/content/BroadcastReceiver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContextWrapper::startService(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"startService",
 			"(Landroid/content/Intent;)Landroid/content/ComponentName;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContextWrapper::startForegroundService(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"startForegroundService",
 			"(Landroid/content/Intent;)Landroid/content/ComponentName;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ContextWrapper::stopService(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"stopService",
 			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ContextWrapper::bindService(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -861,7 +938,8 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jboolean ContextWrapper::bindService(__jni_impl::android::content::Intent arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -870,7 +948,8 @@ namespace __jni_impl::android::content
 			"(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jboolean ContextWrapper::bindIsolatedService(__jni_impl::android::content::Intent arg0, jint arg1, jstring arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4)
 	{
@@ -881,7 +960,8 @@ namespace __jni_impl::android::content
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ContextWrapper::updateServiceGroup(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
 	{
@@ -890,14 +970,16 @@ namespace __jni_impl::android::content
 			"(Landroid/content/ServiceConnection;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ContextWrapper::unbindService(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"unbindService",
 			"(Landroid/content/ServiceConnection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ContextWrapper::startInstrumentation(__jni_impl::android::content::ComponentName arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -906,42 +988,48 @@ namespace __jni_impl::android::content
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ContextWrapper::getSystemService(jstring arg0)
+	jobject ContextWrapper::getSystemService(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject ContextWrapper::getSystemServiceName(jclass arg0)
+	jstring ContextWrapper::getSystemServiceName(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSystemServiceName",
 			"(Ljava/lang/Class;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint ContextWrapper::checkCallingPermission(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"checkCallingPermission",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint ContextWrapper::checkCallingOrSelfPermission(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"checkCallingOrSelfPermission",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint ContextWrapper::checkSelfPermission(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"checkSelfPermission",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	void ContextWrapper::enforcePermission(jstring arg0, jint arg1, jint arg2, jstring arg3)
 	{
@@ -951,7 +1039,8 @@ namespace __jni_impl::android::content
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ContextWrapper::enforceCallingPermission(jstring arg0, jstring arg1)
 	{
@@ -959,7 +1048,8 @@ namespace __jni_impl::android::content
 			"enforceCallingPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ContextWrapper::enforceCallingOrSelfPermission(jstring arg0, jstring arg1)
 	{
@@ -967,7 +1057,8 @@ namespace __jni_impl::android::content
 			"enforceCallingOrSelfPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ContextWrapper::grantUriPermission(jstring arg0, __jni_impl::android::net::Uri arg1, jint arg2)
 	{
@@ -976,7 +1067,8 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;Landroid/net/Uri;I)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ContextWrapper::revokeUriPermission(jstring arg0, __jni_impl::android::net::Uri arg1, jint arg2)
 	{
@@ -985,7 +1077,8 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;Landroid/net/Uri;I)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ContextWrapper::revokeUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
 	{
@@ -993,7 +1086,8 @@ namespace __jni_impl::android::content
 			"revokeUriPermission",
 			"(Landroid/net/Uri;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint ContextWrapper::checkUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -1003,7 +1097,8 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint ContextWrapper::checkUriPermission(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -1015,7 +1110,8 @@ namespace __jni_impl::android::content
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	jint ContextWrapper::checkCallingUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
 	{
@@ -1023,7 +1119,8 @@ namespace __jni_impl::android::content
 			"checkCallingUriPermission",
 			"(Landroid/net/Uri;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint ContextWrapper::checkCallingOrSelfUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
 	{
@@ -1031,7 +1128,8 @@ namespace __jni_impl::android::content
 			"checkCallingOrSelfUriPermission",
 			"(Landroid/net/Uri;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ContextWrapper::enforceUriPermission(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, jint arg5, jstring arg6)
 	{
@@ -1044,7 +1142,8 @@ namespace __jni_impl::android::content
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void ContextWrapper::enforceUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2, jint arg3, jstring arg4)
 	{
@@ -1055,7 +1154,8 @@ namespace __jni_impl::android::content
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void ContextWrapper::enforceCallingUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jstring arg2)
 	{
@@ -1064,7 +1164,8 @@ namespace __jni_impl::android::content
 			"(Landroid/net/Uri;ILjava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ContextWrapper::enforceCallingOrSelfUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jstring arg2)
 	{
@@ -1073,7 +1174,8 @@ namespace __jni_impl::android::content
 			"(Landroid/net/Uri;ILjava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ContextWrapper::createPackageContext(jstring arg0, jint arg1)
 	{
@@ -1081,52 +1183,60 @@ namespace __jni_impl::android::content
 			"createPackageContext",
 			"(Ljava/lang/String;I)Landroid/content/Context;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContextWrapper::createContextForSplit(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createContextForSplit",
 			"(Ljava/lang/String;)Landroid/content/Context;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContextWrapper::createConfigurationContext(__jni_impl::android::content::res::Configuration arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createConfigurationContext",
 			"(Landroid/content/res/Configuration;)Landroid/content/Context;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContextWrapper::createDisplayContext(__jni_impl::android::view::Display arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createDisplayContext",
 			"(Landroid/view/Display;)Landroid/content/Context;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContextWrapper::createDeviceProtectedStorageContext()
 	{
 		return __thiz.callObjectMethod(
 			"createDeviceProtectedStorageContext",
-			"()Landroid/content/Context;");
+			"()Landroid/content/Context;"
+		);
 	}
 	jboolean ContextWrapper::isRestricted()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRestricted",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ContextWrapper::isDeviceProtectedStorage()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDeviceProtectedStorage",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject ContextWrapper::getBaseContext()
+	jarray ContextWrapper::fileList()
 	{
 		return __thiz.callObjectMethod(
-			"getBaseContext",
-			"()Landroid/content/Context;");
+			"fileList",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::content
 

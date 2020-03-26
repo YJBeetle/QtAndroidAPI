@@ -23,13 +23,13 @@ namespace __jni_impl::android::util
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject decode(jbyteArray arg0, jint arg1);
-		static QAndroidJniObject decode(jstring arg0, jint arg1);
-		static QAndroidJniObject encode(jbyteArray arg0, jint arg1);
-		static QAndroidJniObject encode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject encodeToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject encodeToString(jbyteArray arg0, jint arg1);
+		static jbyteArray decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		static jbyteArray decode(jbyteArray arg0, jint arg1);
+		static jbyteArray decode(jstring arg0, jint arg1);
+		static jbyteArray encode(jbyteArray arg0, jint arg1);
+		static jbyteArray encode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		static jstring encodeToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		static jstring encodeToString(jbyteArray arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::util
 
@@ -41,37 +41,43 @@ namespace __jni_impl::android::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Base64",
-			"CRLF");
+			"CRLF"
+		);
 	}
 	jint Base64::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Base64",
-			"DEFAULT");
+			"DEFAULT"
+		);
 	}
 	jint Base64::NO_CLOSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Base64",
-			"NO_CLOSE");
+			"NO_CLOSE"
+		);
 	}
 	jint Base64::NO_PADDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Base64",
-			"NO_PADDING");
+			"NO_PADDING"
+		);
 	}
 	jint Base64::NO_WRAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Base64",
-			"NO_WRAP");
+			"NO_WRAP"
+		);
 	}
 	jint Base64::URL_SAFE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Base64",
-			"URL_SAFE");
+			"URL_SAFE"
+		);
 	}
 	
 	// Constructors
@@ -83,7 +89,7 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	QAndroidJniObject Base64::decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	jbyteArray Base64::decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Base64",
@@ -92,36 +98,40 @@ namespace __jni_impl::android::util
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject Base64::decode(jbyteArray arg0, jint arg1)
+	jbyteArray Base64::decode(jbyteArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Base64",
 			"decode",
 			"([BI)[B",
 			arg0,
-			arg1);
+			arg1
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject Base64::decode(jstring arg0, jint arg1)
+	jbyteArray Base64::decode(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Base64",
 			"decode",
 			"(Ljava/lang/String;I)[B",
 			arg0,
-			arg1);
+			arg1
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject Base64::encode(jbyteArray arg0, jint arg1)
+	jbyteArray Base64::encode(jbyteArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Base64",
 			"encode",
 			"([BI)[B",
 			arg0,
-			arg1);
+			arg1
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject Base64::encode(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	jbyteArray Base64::encode(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Base64",
@@ -130,9 +140,10 @@ namespace __jni_impl::android::util
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject Base64::encodeToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
+	jstring Base64::encodeToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Base64",
@@ -141,16 +152,18 @@ namespace __jni_impl::android::util
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		).object<jstring>();
 	}
-	QAndroidJniObject Base64::encodeToString(jbyteArray arg0, jint arg1)
+	jstring Base64::encodeToString(jbyteArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Base64",
 			"encodeToString",
 			"([BI)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::util
 

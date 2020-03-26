@@ -43,14 +43,16 @@ namespace __jni_impl::android::media::audiofx
 			"android.media.audiofx.AutomaticGainControl",
 			"create",
 			"(I)Landroid/media/audiofx/AutomaticGainControl;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AutomaticGainControl::isAvailable()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.media.audiofx.AutomaticGainControl",
 			"isAvailable",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

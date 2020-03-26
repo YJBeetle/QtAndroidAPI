@@ -69,65 +69,75 @@ namespace __jni_impl::java::io
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint PushbackInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	void PushbackInputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void PushbackInputStream::mark(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"mark",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong PushbackInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint PushbackInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean PushbackInputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PushbackInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void PushbackInputStream::unread(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"unread",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void PushbackInputStream::unread(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"unread",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PushbackInputStream::unread(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -136,7 +146,8 @@ namespace __jni_impl::java::io
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::java::io
 

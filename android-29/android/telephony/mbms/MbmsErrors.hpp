@@ -33,31 +33,36 @@ namespace __jni_impl::android::telephony::mbms
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors",
-			"ERROR_MIDDLEWARE_LOST");
+			"ERROR_MIDDLEWARE_LOST"
+		);
 	}
 	jint MbmsErrors::ERROR_MIDDLEWARE_NOT_BOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors",
-			"ERROR_MIDDLEWARE_NOT_BOUND");
+			"ERROR_MIDDLEWARE_NOT_BOUND"
+		);
 	}
 	jint MbmsErrors::ERROR_NO_UNIQUE_MIDDLEWARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors",
-			"ERROR_NO_UNIQUE_MIDDLEWARE");
+			"ERROR_NO_UNIQUE_MIDDLEWARE"
+		);
 	}
 	jint MbmsErrors::SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors",
-			"SUCCESS");
+			"SUCCESS"
+		);
 	}
 	jint MbmsErrors::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors",
-			"UNKNOWN");
+			"UNKNOWN"
+		);
 	}
 	
 	// Constructors

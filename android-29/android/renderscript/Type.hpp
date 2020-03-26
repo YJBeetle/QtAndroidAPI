@@ -27,6 +27,7 @@ namespace __jni_impl::android::renderscript
 		
 		// Methods
 		jint getCount();
+		QAndroidJniObject getElement();
 		jint getX();
 		jint getY();
 		jint getZ();
@@ -36,7 +37,6 @@ namespace __jni_impl::android::renderscript
 		static QAndroidJniObject createX(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2);
 		static QAndroidJniObject createXY(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3);
 		static QAndroidJniObject createXYZ(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3, jint arg4);
-		QAndroidJniObject getElement();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -60,43 +60,57 @@ namespace __jni_impl::android::renderscript
 	{
 		return __thiz.callMethod<jint>(
 			"getCount",
-			"()I");
+			"()I"
+		);
+	}
+	QAndroidJniObject Type::getElement()
+	{
+		return __thiz.callObjectMethod(
+			"getElement",
+			"()Landroid/renderscript/Element;"
+		);
 	}
 	jint Type::getX()
 	{
 		return __thiz.callMethod<jint>(
 			"getX",
-			"()I");
+			"()I"
+		);
 	}
 	jint Type::getY()
 	{
 		return __thiz.callMethod<jint>(
 			"getY",
-			"()I");
+			"()I"
+		);
 	}
 	jint Type::getZ()
 	{
 		return __thiz.callMethod<jint>(
 			"getZ",
-			"()I");
+			"()I"
+		);
 	}
 	jint Type::getYuv()
 	{
 		return __thiz.callMethod<jint>(
 			"getYuv",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Type::hasMipmaps()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasMipmaps",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Type::hasFaces()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasFaces",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Type::createX(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2)
 	{
@@ -106,7 +120,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;I)Landroid/renderscript/Type;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Type::createXY(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3)
 	{
@@ -117,7 +132,8 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Type::createXYZ(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -129,13 +145,8 @@ namespace __jni_impl::android::renderscript
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
-	}
-	QAndroidJniObject Type::getElement()
-	{
-		return __thiz.callObjectMethod(
-			"getElement",
-			"()Landroid/renderscript/Element;");
+			arg4
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

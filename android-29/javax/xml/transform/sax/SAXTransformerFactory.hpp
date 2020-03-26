@@ -13,8 +13,8 @@ namespace __jni_impl::javax::xml::transform::sax
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FEATURE();
-		static QAndroidJniObject FEATURE_XMLFILTER();
+		static jstring FEATURE();
+		static jstring FEATURE_XMLFILTER();
 		
 		// Constructors
 		void __constructor();
@@ -31,19 +31,21 @@ namespace __jni_impl::javax::xml::transform::sax
 namespace __jni_impl::javax::xml::transform::sax
 {
 	// Fields
-	QAndroidJniObject SAXTransformerFactory::FEATURE()
+	jstring SAXTransformerFactory::FEATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.sax.SAXTransformerFactory",
 			"FEATURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SAXTransformerFactory::FEATURE_XMLFILTER()
+	jstring SAXTransformerFactory::FEATURE_XMLFILTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.sax.SAXTransformerFactory",
 			"FEATURE_XMLFILTER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -59,27 +61,31 @@ namespace __jni_impl::javax::xml::transform::sax
 	{
 		return __thiz.callObjectMethod(
 			"newTransformerHandler",
-			"()Ljavax/xml/transform/sax/TransformerHandler;");
+			"()Ljavax/xml/transform/sax/TransformerHandler;"
+		);
 	}
 	QAndroidJniObject SAXTransformerFactory::newTransformerHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newTransformerHandler",
 			"(Ljavax/xml/transform/Templates;)Ljavax/xml/transform/sax/TransformerHandler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SAXTransformerFactory::newTemplatesHandler()
 	{
 		return __thiz.callObjectMethod(
 			"newTemplatesHandler",
-			"()Ljavax/xml/transform/sax/TemplatesHandler;");
+			"()Ljavax/xml/transform/sax/TemplatesHandler;"
+		);
 	}
 	QAndroidJniObject SAXTransformerFactory::newXMLFilter(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newXMLFilter",
 			"(Ljavax/xml/transform/Templates;)Lorg/xml/sax/XMLFilter;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::javax::xml::transform::sax
 

@@ -22,9 +22,9 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getDefaultUrl();
-		QAndroidJniObject getData();
+		jstring getDefaultUrl();
 		jint getRequestType();
+		jbyteArray getData();
 	};
 } // namespace __jni_impl::android::media
 
@@ -36,31 +36,36 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
-			"REQUEST_TYPE_INITIAL");
+			"REQUEST_TYPE_INITIAL"
+		);
 	}
 	jint MediaDrm_KeyRequest::REQUEST_TYPE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
-			"REQUEST_TYPE_NONE");
+			"REQUEST_TYPE_NONE"
+		);
 	}
 	jint MediaDrm_KeyRequest::REQUEST_TYPE_RELEASE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
-			"REQUEST_TYPE_RELEASE");
+			"REQUEST_TYPE_RELEASE"
+		);
 	}
 	jint MediaDrm_KeyRequest::REQUEST_TYPE_RENEWAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
-			"REQUEST_TYPE_RENEWAL");
+			"REQUEST_TYPE_RENEWAL"
+		);
 	}
 	jint MediaDrm_KeyRequest::REQUEST_TYPE_UPDATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyRequest",
-			"REQUEST_TYPE_UPDATE");
+			"REQUEST_TYPE_UPDATE"
+		);
 	}
 	
 	// Constructors
@@ -72,23 +77,26 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaDrm_KeyRequest::getDefaultUrl()
+	jstring MediaDrm_KeyRequest::getDefaultUrl()
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultUrl",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject MediaDrm_KeyRequest::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MediaDrm_KeyRequest::getRequestType()
 	{
 		return __thiz.callMethod<jint>(
 			"getRequestType",
-			"()I");
+			"()I"
+		);
+	}
+	jbyteArray MediaDrm_KeyRequest::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::media
 

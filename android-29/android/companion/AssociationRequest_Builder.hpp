@@ -46,21 +46,24 @@ namespace __jni_impl::android::companion
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/companion/AssociationRequest;");
+			"()Landroid/companion/AssociationRequest;"
+		);
 	}
 	QAndroidJniObject AssociationRequest_Builder::setSingleDevice(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSingleDevice",
 			"(Z)Landroid/companion/AssociationRequest$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AssociationRequest_Builder::addDeviceFilter(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addDeviceFilter",
 			"(Landroid/companion/DeviceFilter;)Landroid/companion/AssociationRequest$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::companion
 

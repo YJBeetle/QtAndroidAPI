@@ -42,7 +42,7 @@ namespace __jni_impl::android::database::sqlite
 		void setStrict(jboolean arg0);
 		void setDistinct(jboolean arg0);
 		jboolean isDistinct();
-		QAndroidJniObject getTables();
+		jstring getTables();
 		void setTables(jstring arg0);
 		void appendWhere(jstring arg0);
 		void appendWhereEscapeString(jstring arg0);
@@ -51,13 +51,13 @@ namespace __jni_impl::android::database::sqlite
 		QAndroidJniObject getProjectionMap();
 		void setCursorFactory(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getCursorFactory();
-		static QAndroidJniObject buildQueryString(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
+		static jstring buildQueryString(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
 		static void appendColumns(__jni_impl::java::lang::StringBuilder arg0, jarray arg1);
-		QAndroidJniObject buildQuery(jarray arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5);
-		QAndroidJniObject buildQuery(jarray arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6);
-		QAndroidJniObject buildUnionSubQuery(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jarray arg6, jstring arg7, jstring arg8);
-		QAndroidJniObject buildUnionSubQuery(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
-		QAndroidJniObject buildUnionQuery(jarray arg0, jstring arg1, jstring arg2);
+		jstring buildQuery(jarray arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5);
+		jstring buildQuery(jarray arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6);
+		jstring buildUnionSubQuery(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jarray arg6, jstring arg7, jstring arg8);
+		jstring buildUnionSubQuery(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
+		jstring buildUnionQuery(jarray arg0, jstring arg1, jstring arg2);
 	};
 } // namespace __jni_impl::android::database::sqlite
 
@@ -87,7 +87,8 @@ namespace __jni_impl::android::database::sqlite
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint SQLiteQueryBuilder::_delete(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
 	{
@@ -96,7 +97,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject SQLiteQueryBuilder::query(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
 	{
@@ -109,7 +111,8 @@ namespace __jni_impl::android::database::sqlite
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	QAndroidJniObject SQLiteQueryBuilder::query(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
 	{
@@ -123,7 +126,8 @@ namespace __jni_impl::android::database::sqlite
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	QAndroidJniObject SQLiteQueryBuilder::query(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7, __jni_impl::android::os::CancellationSignal arg8)
 	{
@@ -138,95 +142,109 @@ namespace __jni_impl::android::database::sqlite
 			arg5,
 			arg6,
 			arg7,
-			arg8.__jniObject().object());
+			arg8.__jniObject().object()
+		);
 	}
 	jboolean SQLiteQueryBuilder::isStrict()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isStrict",
-			"()Z");
+			"()Z"
+		);
 	}
 	void SQLiteQueryBuilder::setStrict(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setStrict",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteQueryBuilder::setDistinct(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDistinct",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SQLiteQueryBuilder::isDistinct()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDistinct",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject SQLiteQueryBuilder::getTables()
+	jstring SQLiteQueryBuilder::getTables()
 	{
 		return __thiz.callObjectMethod(
 			"getTables",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SQLiteQueryBuilder::setTables(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTables",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteQueryBuilder::appendWhere(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"appendWhere",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteQueryBuilder::appendWhereEscapeString(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"appendWhereEscapeString",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteQueryBuilder::appendWhereStandalone(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"appendWhereStandalone",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteQueryBuilder::setProjectionMap(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setProjectionMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteQueryBuilder::getProjectionMap()
 	{
 		return __thiz.callObjectMethod(
 			"getProjectionMap",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 	void SQLiteQueryBuilder::setCursorFactory(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCursorFactory",
 			"(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteQueryBuilder::getCursorFactory()
 	{
 		return __thiz.callObjectMethod(
 			"getCursorFactory",
-			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;");
+			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;"
+		);
 	}
-	QAndroidJniObject SQLiteQueryBuilder::buildQueryString(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
+	jstring SQLiteQueryBuilder::buildQueryString(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.sqlite.SQLiteQueryBuilder",
@@ -239,7 +257,8 @@ namespace __jni_impl::android::database::sqlite
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		).object<jstring>();
 	}
 	void SQLiteQueryBuilder::appendColumns(__jni_impl::java::lang::StringBuilder arg0, jarray arg1)
 	{
@@ -248,9 +267,10 @@ namespace __jni_impl::android::database::sqlite
 			"appendColumns",
 			"(Ljava/lang/StringBuilder;[Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject SQLiteQueryBuilder::buildQuery(jarray arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5)
+	jstring SQLiteQueryBuilder::buildQuery(jarray arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5)
 	{
 		return __thiz.callObjectMethod(
 			"buildQuery",
@@ -260,9 +280,10 @@ namespace __jni_impl::android::database::sqlite
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		).object<jstring>();
 	}
-	QAndroidJniObject SQLiteQueryBuilder::buildQuery(jarray arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6)
+	jstring SQLiteQueryBuilder::buildQuery(jarray arg0, jstring arg1, jarray arg2, jstring arg3, jstring arg4, jstring arg5, jstring arg6)
 	{
 		return __thiz.callObjectMethod(
 			"buildQuery",
@@ -273,9 +294,10 @@ namespace __jni_impl::android::database::sqlite
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		).object<jstring>();
 	}
-	QAndroidJniObject SQLiteQueryBuilder::buildUnionSubQuery(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jarray arg6, jstring arg7, jstring arg8)
+	jstring SQLiteQueryBuilder::buildUnionSubQuery(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jarray arg6, jstring arg7, jstring arg8)
 	{
 		return __thiz.callObjectMethod(
 			"buildUnionSubQuery",
@@ -288,9 +310,10 @@ namespace __jni_impl::android::database::sqlite
 			arg5,
 			arg6,
 			arg7,
-			arg8);
+			arg8
+		).object<jstring>();
 	}
-	QAndroidJniObject SQLiteQueryBuilder::buildUnionSubQuery(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
+	jstring SQLiteQueryBuilder::buildUnionSubQuery(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
 	{
 		return __thiz.callObjectMethod(
 			"buildUnionSubQuery",
@@ -302,16 +325,18 @@ namespace __jni_impl::android::database::sqlite
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		).object<jstring>();
 	}
-	QAndroidJniObject SQLiteQueryBuilder::buildUnionQuery(jarray arg0, jstring arg1, jstring arg2)
+	jstring SQLiteQueryBuilder::buildUnionQuery(jarray arg0, jstring arg1, jstring arg2)
 	{
 		return __thiz.callObjectMethod(
 			"buildUnionQuery",
 			"([Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::database::sqlite
 

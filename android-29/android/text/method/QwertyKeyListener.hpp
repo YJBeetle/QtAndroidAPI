@@ -32,10 +32,10 @@ namespace __jni_impl::android::text::method
 		
 		// Methods
 		static QAndroidJniObject getInstance(jboolean arg0, __jni_impl::android::text::method::TextKeyListener_Capitalize arg1);
-		jint getInputType();
-		static QAndroidJniObject getInstanceForFullKeyboard();
-		static void markAsReplaced(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jstring arg3);
 		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
+		jint getInputType();
+		static void markAsReplaced(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jstring arg3);
+		static QAndroidJniObject getInstanceForFullKeyboard();
 	};
 } // namespace __jni_impl::android::text::method
 
@@ -65,20 +65,26 @@ namespace __jni_impl::android::text::method
 			"getInstance",
 			"(ZLandroid/text/method/TextKeyListener$Capitalize;)Landroid/text/method/QwertyKeyListener;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean QwertyKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object()
+		);
 	}
 	jint QwertyKeyListener::getInputType()
 	{
 		return __thiz.callMethod<jint>(
 			"getInputType",
-			"()I");
-	}
-	QAndroidJniObject QwertyKeyListener::getInstanceForFullKeyboard()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.method.QwertyKeyListener",
-			"getInstanceForFullKeyboard",
-			"()Landroid/text/method/QwertyKeyListener;");
+			"()I"
+		);
 	}
 	void QwertyKeyListener::markAsReplaced(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jstring arg3)
 	{
@@ -89,17 +95,16 @@ namespace __jni_impl::android::text::method
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
-	jboolean QwertyKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
+	QAndroidJniObject QwertyKeyListener::getInstanceForFullKeyboard()
 	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object());
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.method.QwertyKeyListener",
+			"getInstanceForFullKeyboard",
+			"()Landroid/text/method/QwertyKeyListener;"
+		);
 	}
 } // namespace __jni_impl::android::text::method
 

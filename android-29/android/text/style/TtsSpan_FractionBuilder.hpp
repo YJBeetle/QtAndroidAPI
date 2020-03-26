@@ -57,42 +57,48 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"setIntegerPart",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_FractionBuilder::setIntegerPart(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIntegerPart",
 			"(J)Landroid/text/style/TtsSpan$FractionBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_FractionBuilder::setNumerator(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setNumerator",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_FractionBuilder::setNumerator(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setNumerator",
 			"(J)Landroid/text/style/TtsSpan$FractionBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_FractionBuilder::setDenominator(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDenominator",
 			"(J)Landroid/text/style/TtsSpan$FractionBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_FractionBuilder::setDenominator(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDenominator",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$FractionBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

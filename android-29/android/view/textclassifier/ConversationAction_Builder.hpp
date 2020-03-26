@@ -30,10 +30,10 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setAction(__jni_impl::android::app::RemoteAction arg0);
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setTextReply(jstring arg0);
 		QAndroidJniObject setConfidenceScore(jfloat arg0);
+		QAndroidJniObject setAction(__jni_impl::android::app::RemoteAction arg0);
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -59,35 +59,40 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/textclassifier/ConversationAction;");
-	}
-	QAndroidJniObject ConversationAction_Builder::setAction(__jni_impl::android::app::RemoteAction arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAction",
-			"(Landroid/app/RemoteAction;)Landroid/view/textclassifier/ConversationAction$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ConversationAction_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/view/textclassifier/ConversationAction$Builder;",
-			arg0.__jniObject().object());
+			"()Landroid/view/textclassifier/ConversationAction;"
+		);
 	}
 	QAndroidJniObject ConversationAction_Builder::setTextReply(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTextReply",
 			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationAction$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ConversationAction_Builder::setConfidenceScore(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setConfidenceScore",
 			"(F)Landroid/view/textclassifier/ConversationAction$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject ConversationAction_Builder::setAction(__jni_impl::android::app::RemoteAction arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAction",
+			"(Landroid/app/RemoteAction;)Landroid/view/textclassifier/ConversationAction$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ConversationAction_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textclassifier/ConversationAction$Builder;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

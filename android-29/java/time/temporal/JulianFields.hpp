@@ -32,21 +32,24 @@ namespace __jni_impl::java::time::temporal
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.JulianFields",
 			"JULIAN_DAY",
-			"Ljava/time/temporal/TemporalField;");
+			"Ljava/time/temporal/TemporalField;"
+		);
 	}
 	QAndroidJniObject JulianFields::MODIFIED_JULIAN_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.JulianFields",
 			"MODIFIED_JULIAN_DAY",
-			"Ljava/time/temporal/TemporalField;");
+			"Ljava/time/temporal/TemporalField;"
+		);
 	}
 	QAndroidJniObject JulianFields::RATA_DIE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.JulianFields",
 			"RATA_DIE",
-			"Ljava/time/temporal/TemporalField;");
+			"Ljava/time/temporal/TemporalField;"
+		);
 	}
 	
 	// Constructors

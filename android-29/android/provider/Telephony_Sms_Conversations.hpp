@@ -17,9 +17,9 @@ namespace __jni_impl::android::provider
 	public:
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
-		static QAndroidJniObject MESSAGE_COUNT();
-		static QAndroidJniObject SNIPPET();
+		static jstring DEFAULT_SORT_ORDER();
+		static jstring MESSAGE_COUNT();
+		static jstring SNIPPET();
 		
 		// Constructors
 		void __constructor();
@@ -38,28 +38,32 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Telephony_Sms_Conversations::DEFAULT_SORT_ORDER()
+	jstring Telephony_Sms_Conversations::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Sms_Conversations::MESSAGE_COUNT()
+	jstring Telephony_Sms_Conversations::MESSAGE_COUNT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"MESSAGE_COUNT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Sms_Conversations::SNIPPET()
+	jstring Telephony_Sms_Conversations::SNIPPET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Sms$Conversations",
 			"SNIPPET",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

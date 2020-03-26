@@ -20,7 +20,7 @@ namespace __jni_impl::android::system
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jlong toMillis();
 		static QAndroidJniObject fromMillis(jlong arg0);
@@ -34,12 +34,14 @@ namespace __jni_impl::android::system
 	jlong StructTimeval::tv_sec()
 	{
 		return __thiz.getField<jlong>(
-			"tv_sec");
+			"tv_sec"
+		);
 	}
 	jlong StructTimeval::tv_usec()
 	{
 		return __thiz.getField<jlong>(
-			"tv_usec");
+			"tv_usec"
+		);
 	}
 	
 	// Constructors
@@ -56,25 +58,29 @@ namespace __jni_impl::android::system
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject StructTimeval::toString()
+	jstring StructTimeval::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint StructTimeval::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jlong StructTimeval::toMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"toMillis",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject StructTimeval::fromMillis(jlong arg0)
 	{
@@ -82,7 +88,8 @@ namespace __jni_impl::android::system
 			"android.system.StructTimeval",
 			"fromMillis",
 			"(J)Landroid/system/StructTimeval;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::system
 

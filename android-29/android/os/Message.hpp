@@ -15,11 +15,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 
 namespace __jni_impl::android::os
@@ -31,7 +31,7 @@ namespace __jni_impl::android::os
 		static QAndroidJniObject CREATOR();
 		jint arg1();
 		jint arg2();
-		QAndroidJniObject obj();
+		jobject obj();
 		QAndroidJniObject replyTo();
 		jint sendingUid();
 		jint what();
@@ -40,10 +40,12 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getTarget();
 		void setTarget(__jni_impl::android::os::Handler arg0);
 		void copyFrom(__jni_impl::android::os::Message arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getData();
 		void setData(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject getCallback();
@@ -52,10 +54,8 @@ namespace __jni_impl::android::os
 		void sendToTarget();
 		jboolean isAsynchronous();
 		void setAsynchronous(jboolean arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject obtain(__jni_impl::android::os::Handler arg0);
 		static QAndroidJniObject obtain(__jni_impl::android::os::Message arg0);
+		static QAndroidJniObject obtain(__jni_impl::android::os::Handler arg0);
 		static QAndroidJniObject obtain(__jni_impl::android::os::Handler arg0, jint arg1, jint arg2, jint arg3);
 		static QAndroidJniObject obtain(__jni_impl::android::os::Handler arg0, jint arg1, jint arg2, jint arg3, jobject arg4);
 		static QAndroidJniObject obtain(__jni_impl::android::os::Handler arg0, jint arg1, jobject arg2);
@@ -68,8 +68,8 @@ namespace __jni_impl::android::os
 
 #include "Messenger.hpp"
 #include "Handler.hpp"
-#include "Bundle.hpp"
 #include "Parcel.hpp"
+#include "Bundle.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -79,39 +79,46 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.Message",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Message::arg1()
 	{
 		return __thiz.getField<jint>(
-			"arg1");
+			"arg1"
+		);
 	}
 	jint Message::arg2()
 	{
 		return __thiz.getField<jint>(
-			"arg2");
+			"arg2"
+		);
 	}
-	QAndroidJniObject Message::obj()
+	jobject Message::obj()
 	{
 		return __thiz.getObjectField(
 			"obj",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject Message::replyTo()
 	{
 		return __thiz.getObjectField(
 			"replyTo",
-			"Landroid/os/Messenger;");
+			"Landroid/os/Messenger;"
+		);
 	}
 	jint Message::sendingUid()
 	{
 		return __thiz.getField<jint>(
-			"sendingUid");
+			"sendingUid"
+		);
 	}
 	jint Message::what()
 	{
 		return __thiz.getField<jint>(
-			"what");
+			"what"
+		);
 	}
 	
 	// Constructors
@@ -123,87 +130,42 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject Message::toString()
+	jstring Message::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Message::getTarget()
 	{
 		return __thiz.callObjectMethod(
 			"getTarget",
-			"()Landroid/os/Handler;");
+			"()Landroid/os/Handler;"
+		);
 	}
 	void Message::setTarget(__jni_impl::android::os::Handler arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTarget",
 			"(Landroid/os/Handler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Message::copyFrom(__jni_impl::android::os::Message arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Message::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()Landroid/os/Bundle;");
-	}
-	void Message::setData(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setData",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Message::getCallback()
-	{
-		return __thiz.callObjectMethod(
-			"getCallback",
-			"()Ljava/lang/Runnable;");
-	}
-	jlong Message::getWhen()
-	{
-		return __thiz.callMethod<jlong>(
-			"getWhen",
-			"()J");
-	}
-	QAndroidJniObject Message::peekData()
-	{
-		return __thiz.callObjectMethod(
-			"peekData",
-			"()Landroid/os/Bundle;");
-	}
-	void Message::sendToTarget()
-	{
-		__thiz.callMethod<void>(
-			"sendToTarget",
-			"()V");
-	}
-	jboolean Message::isAsynchronous()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAsynchronous",
-			"()Z");
-	}
-	void Message::setAsynchronous(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAsynchronous",
-			"(Z)V",
-			arg0);
+			arg0.__jniObject().object()
+		);
 	}
 	jint Message::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Message::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -211,15 +173,66 @@ namespace __jni_impl::android::os
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Message::obtain(__jni_impl::android::os::Handler arg0)
+	QAndroidJniObject Message::getData()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.Message",
-			"obtain",
-			"(Landroid/os/Handler;)Landroid/os/Message;",
-			arg0.__jniObject().object());
+		return __thiz.callObjectMethod(
+			"getData",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	void Message::setData(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setData",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Message::getCallback()
+	{
+		return __thiz.callObjectMethod(
+			"getCallback",
+			"()Ljava/lang/Runnable;"
+		);
+	}
+	jlong Message::getWhen()
+	{
+		return __thiz.callMethod<jlong>(
+			"getWhen",
+			"()J"
+		);
+	}
+	QAndroidJniObject Message::peekData()
+	{
+		return __thiz.callObjectMethod(
+			"peekData",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	void Message::sendToTarget()
+	{
+		__thiz.callMethod<void>(
+			"sendToTarget",
+			"()V"
+		);
+	}
+	jboolean Message::isAsynchronous()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAsynchronous",
+			"()Z"
+		);
+	}
+	void Message::setAsynchronous(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAsynchronous",
+			"(Z)V",
+			arg0
+		);
 	}
 	QAndroidJniObject Message::obtain(__jni_impl::android::os::Message arg0)
 	{
@@ -227,7 +240,17 @@ namespace __jni_impl::android::os
 			"android.os.Message",
 			"obtain",
 			"(Landroid/os/Message;)Landroid/os/Message;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Message::obtain(__jni_impl::android::os::Handler arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Message",
+			"obtain",
+			"(Landroid/os/Handler;)Landroid/os/Message;",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Message::obtain(__jni_impl::android::os::Handler arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -238,7 +261,8 @@ namespace __jni_impl::android::os
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Message::obtain(__jni_impl::android::os::Handler arg0, jint arg1, jint arg2, jint arg3, jobject arg4)
 	{
@@ -250,7 +274,8 @@ namespace __jni_impl::android::os
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject Message::obtain(__jni_impl::android::os::Handler arg0, jint arg1, jobject arg2)
 	{
@@ -260,7 +285,8 @@ namespace __jni_impl::android::os
 			"(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Message::obtain(__jni_impl::android::os::Handler arg0, jint arg1)
 	{
@@ -269,7 +295,8 @@ namespace __jni_impl::android::os
 			"obtain",
 			"(Landroid/os/Handler;I)Landroid/os/Message;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Message::obtain(__jni_impl::android::os::Handler arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -278,20 +305,23 @@ namespace __jni_impl::android::os
 			"obtain",
 			"(Landroid/os/Handler;Ljava/lang/Runnable;)Landroid/os/Message;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Message::obtain()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Message",
 			"obtain",
-			"()Landroid/os/Message;");
+			"()Landroid/os/Message;"
+		);
 	}
 	void Message::recycle()
 	{
 		__thiz.callMethod<void>(
 			"recycle",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::os
 

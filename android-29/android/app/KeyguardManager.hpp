@@ -69,44 +69,51 @@ namespace __jni_impl::android::app
 			"createConfirmDeviceCredentialIntent",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/Intent;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyguardManager::newKeyguardLock(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newKeyguardLock",
 			"(Ljava/lang/String;)Landroid/app/KeyguardManager$KeyguardLock;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean KeyguardManager::isKeyguardLocked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isKeyguardLocked",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyguardManager::isKeyguardSecure()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isKeyguardSecure",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyguardManager::inKeyguardRestrictedInputMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"inKeyguardRestrictedInputMode",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyguardManager::isDeviceLocked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDeviceLocked",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyguardManager::isDeviceSecure()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDeviceSecure",
-			"()Z");
+			"()Z"
+		);
 	}
 	void KeyguardManager::requestDismissKeyguard(__jni_impl::android::app::Activity arg0, __jni_impl::android::app::KeyguardManager_KeyguardDismissCallback arg1)
 	{
@@ -114,14 +121,16 @@ namespace __jni_impl::android::app
 			"requestDismissKeyguard",
 			"(Landroid/app/Activity;Landroid/app/KeyguardManager$KeyguardDismissCallback;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void KeyguardManager::exitKeyguardSecurely(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"exitKeyguardSecurely",
 			"(Landroid/app/KeyguardManager$OnKeyguardExitResult;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

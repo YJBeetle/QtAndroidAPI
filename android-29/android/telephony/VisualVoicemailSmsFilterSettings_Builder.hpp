@@ -47,28 +47,32 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/telephony/VisualVoicemailSmsFilterSettings;");
+			"()Landroid/telephony/VisualVoicemailSmsFilterSettings;"
+		);
 	}
 	QAndroidJniObject VisualVoicemailSmsFilterSettings_Builder::setClientPrefix(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setClientPrefix",
 			"(Ljava/lang/String;)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject VisualVoicemailSmsFilterSettings_Builder::setOriginatingNumbers(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setOriginatingNumbers",
 			"(Ljava/util/List;)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject VisualVoicemailSmsFilterSettings_Builder::setDestinationPort(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDestinationPort",
 			"(I)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

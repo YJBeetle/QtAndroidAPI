@@ -20,8 +20,8 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor(jthrowable arg0);
 		
 		// Methods
-		QAndroidJniObject getCause();
-		QAndroidJniObject getTargetException();
+		jthrowable getCause();
+		jthrowable getTargetException();
 	};
 } // namespace __jni_impl::java::lang::reflect
 
@@ -48,17 +48,19 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	QAndroidJniObject InvocationTargetException::getCause()
+	jthrowable InvocationTargetException::getCause()
 	{
 		return __thiz.callObjectMethod(
 			"getCause",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
-	QAndroidJniObject InvocationTargetException::getTargetException()
+	jthrowable InvocationTargetException::getTargetException()
 	{
 		return __thiz.callObjectMethod(
 			"getTargetException",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
 } // namespace __jni_impl::java::lang::reflect
 

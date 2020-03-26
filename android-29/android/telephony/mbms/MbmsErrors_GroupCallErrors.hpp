@@ -30,13 +30,15 @@ namespace __jni_impl::android::telephony::mbms
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$GroupCallErrors",
-			"ERROR_DUPLICATE_START_GROUP_CALL");
+			"ERROR_DUPLICATE_START_GROUP_CALL"
+		);
 	}
 	jint MbmsErrors_GroupCallErrors::ERROR_UNABLE_TO_START_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$GroupCallErrors",
-			"ERROR_UNABLE_TO_START_SERVICE");
+			"ERROR_UNABLE_TO_START_SERVICE"
+		);
 	}
 	
 	// Constructors

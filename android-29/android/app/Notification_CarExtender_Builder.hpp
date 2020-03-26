@@ -59,7 +59,8 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/app/Notification$CarExtender$UnreadConversation;");
+			"()Landroid/app/Notification$CarExtender$UnreadConversation;"
+		);
 	}
 	QAndroidJniObject Notification_CarExtender_Builder::setReplyAction(__jni_impl::android::app::PendingIntent arg0, __jni_impl::android::app::RemoteInput arg1)
 	{
@@ -67,28 +68,32 @@ namespace __jni_impl::android::app
 			"setReplyAction",
 			"(Landroid/app/PendingIntent;Landroid/app/RemoteInput;)Landroid/app/Notification$CarExtender$Builder;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Notification_CarExtender_Builder::addMessage(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addMessage",
 			"(Ljava/lang/String;)Landroid/app/Notification$CarExtender$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Notification_CarExtender_Builder::setReadPendingIntent(__jni_impl::android::app::PendingIntent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setReadPendingIntent",
 			"(Landroid/app/PendingIntent;)Landroid/app/Notification$CarExtender$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Notification_CarExtender_Builder::setLatestTimestamp(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLatestTimestamp",
 			"(J)Landroid/app/Notification$CarExtender$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app
 

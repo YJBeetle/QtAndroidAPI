@@ -31,10 +31,10 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::ConfigurationInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getGlEsVersion();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getGlEsVersion();
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -48,50 +48,59 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ConfigurationInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ConfigurationInfo::GL_ES_VERSION_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ConfigurationInfo",
-			"GL_ES_VERSION_UNDEFINED");
+			"GL_ES_VERSION_UNDEFINED"
+		);
 	}
 	jint ConfigurationInfo::INPUT_FEATURE_FIVE_WAY_NAV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ConfigurationInfo",
-			"INPUT_FEATURE_FIVE_WAY_NAV");
+			"INPUT_FEATURE_FIVE_WAY_NAV"
+		);
 	}
 	jint ConfigurationInfo::INPUT_FEATURE_HARD_KEYBOARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ConfigurationInfo",
-			"INPUT_FEATURE_HARD_KEYBOARD");
+			"INPUT_FEATURE_HARD_KEYBOARD"
+		);
 	}
 	jint ConfigurationInfo::reqGlEsVersion()
 	{
 		return __thiz.getField<jint>(
-			"reqGlEsVersion");
+			"reqGlEsVersion"
+		);
 	}
 	jint ConfigurationInfo::reqInputFeatures()
 	{
 		return __thiz.getField<jint>(
-			"reqInputFeatures");
+			"reqInputFeatures"
+		);
 	}
 	jint ConfigurationInfo::reqKeyboardType()
 	{
 		return __thiz.getField<jint>(
-			"reqKeyboardType");
+			"reqKeyboardType"
+		);
 	}
 	jint ConfigurationInfo::reqNavigation()
 	{
 		return __thiz.getField<jint>(
-			"reqNavigation");
+			"reqNavigation"
+		);
 	}
 	jint ConfigurationInfo::reqTouchScreen()
 	{
 		return __thiz.getField<jint>(
-			"reqTouchScreen");
+			"reqTouchScreen"
+		);
 	}
 	
 	// Constructors
@@ -110,23 +119,19 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject ConfigurationInfo::toString()
+	jstring ConfigurationInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject ConfigurationInfo::getGlEsVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getGlEsVersion",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ConfigurationInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ConfigurationInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -134,7 +139,15 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring ConfigurationInfo::getGlEsVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getGlEsVersion",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::content::pm
 

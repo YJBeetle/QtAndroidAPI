@@ -25,22 +25,22 @@ namespace __jni_impl::android::service::notification
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject getKey();
+		jstring getKey();
 		QAndroidJniObject getChannel();
-		QAndroidJniObject getOverrideGroupKey();
-		jint getImportance();
-		jboolean canShowBadge();
-		jboolean canBubble();
 		jint getRank();
 		jboolean isAmbient();
 		jint getSuppressedVisualEffects();
 		jboolean matchesInterruptionFilter();
-		QAndroidJniObject getImportanceExplanation();
+		jstring getImportanceExplanation();
 		jint getUserSentiment();
 		QAndroidJniObject getSmartActions();
 		QAndroidJniObject getSmartReplies();
 		jboolean isSuspended();
 		jlong getLastAudiblyAlertedMillis();
+		jstring getOverrideGroupKey();
+		jint getImportance();
+		jboolean canShowBadge();
+		jboolean canBubble();
 	};
 } // namespace __jni_impl::android::service::notification
 
@@ -53,19 +53,22 @@ namespace __jni_impl::android::service::notification
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.NotificationListenerService$Ranking",
-			"USER_SENTIMENT_NEGATIVE");
+			"USER_SENTIMENT_NEGATIVE"
+		);
 	}
 	jint NotificationListenerService_Ranking::USER_SENTIMENT_NEUTRAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.NotificationListenerService$Ranking",
-			"USER_SENTIMENT_NEUTRAL");
+			"USER_SENTIMENT_NEUTRAL"
+		);
 	}
 	jint NotificationListenerService_Ranking::USER_SENTIMENT_POSITIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.NotificationListenerService$Ranking",
-			"USER_SENTIMENT_POSITIVE");
+			"USER_SENTIMENT_POSITIVE"
+		);
 	}
 	
 	// Constructors
@@ -82,103 +85,120 @@ namespace __jni_impl::android::service::notification
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject NotificationListenerService_Ranking::getKey()
+	jstring NotificationListenerService_Ranking::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject NotificationListenerService_Ranking::getChannel()
 	{
 		return __thiz.callObjectMethod(
 			"getChannel",
-			"()Landroid/app/NotificationChannel;");
-	}
-	QAndroidJniObject NotificationListenerService_Ranking::getOverrideGroupKey()
-	{
-		return __thiz.callObjectMethod(
-			"getOverrideGroupKey",
-			"()Ljava/lang/String;");
-	}
-	jint NotificationListenerService_Ranking::getImportance()
-	{
-		return __thiz.callMethod<jint>(
-			"getImportance",
-			"()I");
-	}
-	jboolean NotificationListenerService_Ranking::canShowBadge()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canShowBadge",
-			"()Z");
-	}
-	jboolean NotificationListenerService_Ranking::canBubble()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canBubble",
-			"()Z");
+			"()Landroid/app/NotificationChannel;"
+		);
 	}
 	jint NotificationListenerService_Ranking::getRank()
 	{
 		return __thiz.callMethod<jint>(
 			"getRank",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean NotificationListenerService_Ranking::isAmbient()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAmbient",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint NotificationListenerService_Ranking::getSuppressedVisualEffects()
 	{
 		return __thiz.callMethod<jint>(
 			"getSuppressedVisualEffects",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean NotificationListenerService_Ranking::matchesInterruptionFilter()
 	{
 		return __thiz.callMethod<jboolean>(
 			"matchesInterruptionFilter",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject NotificationListenerService_Ranking::getImportanceExplanation()
+	jstring NotificationListenerService_Ranking::getImportanceExplanation()
 	{
 		return __thiz.callObjectMethod(
 			"getImportanceExplanation",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint NotificationListenerService_Ranking::getUserSentiment()
 	{
 		return __thiz.callMethod<jint>(
 			"getUserSentiment",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject NotificationListenerService_Ranking::getSmartActions()
 	{
 		return __thiz.callObjectMethod(
 			"getSmartActions",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject NotificationListenerService_Ranking::getSmartReplies()
 	{
 		return __thiz.callObjectMethod(
 			"getSmartReplies",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean NotificationListenerService_Ranking::isSuspended()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSuspended",
-			"()Z");
+			"()Z"
+		);
 	}
 	jlong NotificationListenerService_Ranking::getLastAudiblyAlertedMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastAudiblyAlertedMillis",
-			"()J");
+			"()J"
+		);
+	}
+	jstring NotificationListenerService_Ranking::getOverrideGroupKey()
+	{
+		return __thiz.callObjectMethod(
+			"getOverrideGroupKey",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint NotificationListenerService_Ranking::getImportance()
+	{
+		return __thiz.callMethod<jint>(
+			"getImportance",
+			"()I"
+		);
+	}
+	jboolean NotificationListenerService_Ranking::canShowBadge()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canShowBadge",
+			"()Z"
+		);
+	}
+	jboolean NotificationListenerService_Ranking::canBubble()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canBubble",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::service::notification
 

@@ -24,21 +24,21 @@ namespace __jni_impl::android::inputmethodservice
 	{
 	public:
 		// Fields
-		QAndroidJniObject codes();
+		jintArray codes();
 		jint edgeFlags();
 		jint gap();
 		jint height();
 		QAndroidJniObject icon();
 		QAndroidJniObject iconPreview();
-		QAndroidJniObject label();
+		jstring label();
 		jboolean modifier();
 		jboolean on();
-		QAndroidJniObject popupCharacters();
+		jstring popupCharacters();
 		jint popupResId();
 		jboolean pressed();
 		jboolean repeatable();
 		jboolean sticky();
-		QAndroidJniObject text();
+		jstring text();
 		jint width();
 		jint x();
 		jint y();
@@ -52,7 +52,7 @@ namespace __jni_impl::android::inputmethodservice
 		void onPressed();
 		void onReleased(jboolean arg0);
 		jboolean isInside(jint arg0, jint arg1);
-		QAndroidJniObject getCurrentDrawableState();
+		jintArray getCurrentDrawableState();
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
@@ -63,101 +63,119 @@ namespace __jni_impl::android::inputmethodservice
 namespace __jni_impl::android::inputmethodservice
 {
 	// Fields
-	QAndroidJniObject Keyboard_Key::codes()
+	jintArray Keyboard_Key::codes()
 	{
 		return __thiz.getObjectField(
 			"codes",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
 	jint Keyboard_Key::edgeFlags()
 	{
 		return __thiz.getField<jint>(
-			"edgeFlags");
+			"edgeFlags"
+		);
 	}
 	jint Keyboard_Key::gap()
 	{
 		return __thiz.getField<jint>(
-			"gap");
+			"gap"
+		);
 	}
 	jint Keyboard_Key::height()
 	{
 		return __thiz.getField<jint>(
-			"height");
+			"height"
+		);
 	}
 	QAndroidJniObject Keyboard_Key::icon()
 	{
 		return __thiz.getObjectField(
 			"icon",
-			"Landroid/graphics/drawable/Drawable;");
+			"Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	QAndroidJniObject Keyboard_Key::iconPreview()
 	{
 		return __thiz.getObjectField(
 			"iconPreview",
-			"Landroid/graphics/drawable/Drawable;");
+			"Landroid/graphics/drawable/Drawable;"
+		);
 	}
-	QAndroidJniObject Keyboard_Key::label()
+	jstring Keyboard_Key::label()
 	{
 		return __thiz.getObjectField(
 			"label",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jboolean Keyboard_Key::modifier()
 	{
 		return __thiz.getField<jboolean>(
-			"modifier");
+			"modifier"
+		);
 	}
 	jboolean Keyboard_Key::on()
 	{
 		return __thiz.getField<jboolean>(
-			"on");
+			"on"
+		);
 	}
-	QAndroidJniObject Keyboard_Key::popupCharacters()
+	jstring Keyboard_Key::popupCharacters()
 	{
 		return __thiz.getObjectField(
 			"popupCharacters",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint Keyboard_Key::popupResId()
 	{
 		return __thiz.getField<jint>(
-			"popupResId");
+			"popupResId"
+		);
 	}
 	jboolean Keyboard_Key::pressed()
 	{
 		return __thiz.getField<jboolean>(
-			"pressed");
+			"pressed"
+		);
 	}
 	jboolean Keyboard_Key::repeatable()
 	{
 		return __thiz.getField<jboolean>(
-			"repeatable");
+			"repeatable"
+		);
 	}
 	jboolean Keyboard_Key::sticky()
 	{
 		return __thiz.getField<jboolean>(
-			"sticky");
+			"sticky"
+		);
 	}
-	QAndroidJniObject Keyboard_Key::text()
+	jstring Keyboard_Key::text()
 	{
 		return __thiz.getObjectField(
 			"text",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint Keyboard_Key::width()
 	{
 		return __thiz.getField<jint>(
-			"width");
+			"width"
+		);
 	}
 	jint Keyboard_Key::x()
 	{
 		return __thiz.getField<jint>(
-			"x");
+			"x"
+		);
 	}
 	jint Keyboard_Key::y()
 	{
 		return __thiz.getField<jint>(
-			"y");
+			"y"
+		);
 	}
 	
 	// Constructors
@@ -187,20 +205,23 @@ namespace __jni_impl::android::inputmethodservice
 			"squaredDistanceFrom",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Keyboard_Key::onPressed()
 	{
 		__thiz.callMethod<void>(
 			"onPressed",
-			"()V");
+			"()V"
+		);
 	}
 	void Keyboard_Key::onReleased(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onReleased",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Keyboard_Key::isInside(jint arg0, jint arg1)
 	{
@@ -208,13 +229,15 @@ namespace __jni_impl::android::inputmethodservice
 			"isInside",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Keyboard_Key::getCurrentDrawableState()
+	jintArray Keyboard_Key::getCurrentDrawableState()
 	{
 		return __thiz.callObjectMethod(
 			"getCurrentDrawableState",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
 } // namespace __jni_impl::android::inputmethodservice
 

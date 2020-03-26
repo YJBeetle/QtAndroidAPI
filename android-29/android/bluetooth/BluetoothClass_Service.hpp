@@ -37,55 +37,64 @@ namespace __jni_impl::android::bluetooth
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Service",
-			"AUDIO");
+			"AUDIO"
+		);
 	}
 	jint BluetoothClass_Service::CAPTURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Service",
-			"CAPTURE");
+			"CAPTURE"
+		);
 	}
 	jint BluetoothClass_Service::INFORMATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Service",
-			"INFORMATION");
+			"INFORMATION"
+		);
 	}
 	jint BluetoothClass_Service::LIMITED_DISCOVERABILITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Service",
-			"LIMITED_DISCOVERABILITY");
+			"LIMITED_DISCOVERABILITY"
+		);
 	}
 	jint BluetoothClass_Service::NETWORKING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Service",
-			"NETWORKING");
+			"NETWORKING"
+		);
 	}
 	jint BluetoothClass_Service::OBJECT_TRANSFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Service",
-			"OBJECT_TRANSFER");
+			"OBJECT_TRANSFER"
+		);
 	}
 	jint BluetoothClass_Service::POSITIONING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Service",
-			"POSITIONING");
+			"POSITIONING"
+		);
 	}
 	jint BluetoothClass_Service::RENDER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Service",
-			"RENDER");
+			"RENDER"
+		);
 	}
 	jint BluetoothClass_Service::TELEPHONY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Service",
-			"TELEPHONY");
+			"TELEPHONY"
+		);
 	}
 	
 	// Constructors

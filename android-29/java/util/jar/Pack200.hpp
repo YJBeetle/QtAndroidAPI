@@ -41,14 +41,16 @@ namespace __jni_impl::java::util::jar
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.jar.Pack200",
 			"newPacker",
-			"()Ljava/util/jar/Pack200$Packer;");
+			"()Ljava/util/jar/Pack200$Packer;"
+		);
 	}
 	QAndroidJniObject Pack200::newUnpacker()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.jar.Pack200",
 			"newUnpacker",
-			"()Ljava/util/jar/Pack200$Unpacker;");
+			"()Ljava/util/jar/Pack200$Unpacker;"
+		);
 	}
 } // namespace __jni_impl::java::util::jar
 

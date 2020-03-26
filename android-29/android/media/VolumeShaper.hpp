@@ -55,26 +55,30 @@ namespace __jni_impl::android::media
 			"(Landroid/media/VolumeShaper$Configuration;Landroid/media/VolumeShaper$Operation;Z)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void VolumeShaper::apply(__jni_impl::android::media::VolumeShaper_Operation arg0)
 	{
 		__thiz.callMethod<void>(
 			"apply",
 			"(Landroid/media/VolumeShaper$Operation;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void VolumeShaper::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jfloat VolumeShaper::getVolume()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getVolume",
-			"()F");
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::media
 

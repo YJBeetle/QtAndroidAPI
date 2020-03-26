@@ -35,15 +35,15 @@ namespace __jni_impl::java::time
 		// Methods
 		jint get(__jni_impl::__JniBaseClass arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(__jni_impl::java::time::ZoneOffset arg0);
 		jint compareTo(jobject arg0);
 		jlong getLong(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject of(jstring arg0);
 		static QAndroidJniObject from(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getId();
-		QAndroidJniObject query(__jni_impl::__JniBaseClass arg0);
+		jstring getId();
+		jobject query(__jni_impl::__JniBaseClass arg0);
 		jboolean isSupported(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getRules();
@@ -68,21 +68,24 @@ namespace __jni_impl::java::time
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.ZoneOffset",
 			"UTC",
-			"Ljava/time/ZoneOffset;");
+			"Ljava/time/ZoneOffset;"
+		);
 	}
 	QAndroidJniObject ZoneOffset::MIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.ZoneOffset",
 			"MIN",
-			"Ljava/time/ZoneOffset;");
+			"Ljava/time/ZoneOffset;"
+		);
 	}
 	QAndroidJniObject ZoneOffset::MAX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.ZoneOffset",
 			"MAX",
-			"Ljava/time/ZoneOffset;");
+			"Ljava/time/ZoneOffset;"
+		);
 	}
 	
 	// Constructors
@@ -99,47 +102,54 @@ namespace __jni_impl::java::time
 		return __thiz.callMethod<jint>(
 			"get",
 			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ZoneOffset::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ZoneOffset::toString()
+	jstring ZoneOffset::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ZoneOffset::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint ZoneOffset::compareTo(__jni_impl::java::time::ZoneOffset arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/time/ZoneOffset;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint ZoneOffset::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong ZoneOffset::getLong(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ZoneOffset::of(jstring arg0)
 	{
@@ -147,7 +157,8 @@ namespace __jni_impl::java::time
 			"java.time.ZoneOffset",
 			"of",
 			"(Ljava/lang/String;)Ljava/time/ZoneOffset;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ZoneOffset::from(__jni_impl::__JniBaseClass arg0)
 	{
@@ -155,53 +166,61 @@ namespace __jni_impl::java::time
 			"java.time.ZoneOffset",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/ZoneOffset;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ZoneOffset::getId()
+	jstring ZoneOffset::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ZoneOffset::query(__jni_impl::__JniBaseClass arg0)
+	jobject ZoneOffset::query(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"query",
 			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
 	jboolean ZoneOffset::isSupported(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ZoneOffset::range(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ZoneOffset::getRules()
 	{
 		return __thiz.callObjectMethod(
 			"getRules",
-			"()Ljava/time/zone/ZoneRules;");
+			"()Ljava/time/zone/ZoneRules;"
+		);
 	}
 	jint ZoneOffset::getTotalSeconds()
 	{
 		return __thiz.callMethod<jint>(
 			"getTotalSeconds",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ZoneOffset::adjustInto(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ZoneOffset::ofHours(jint arg0)
 	{
@@ -209,7 +228,8 @@ namespace __jni_impl::java::time
 			"java.time.ZoneOffset",
 			"ofHours",
 			"(I)Ljava/time/ZoneOffset;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ZoneOffset::ofHoursMinutesSeconds(jint arg0, jint arg1, jint arg2)
 	{
@@ -219,7 +239,8 @@ namespace __jni_impl::java::time
 			"(III)Ljava/time/ZoneOffset;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ZoneOffset::ofHoursMinutes(jint arg0, jint arg1)
 	{
@@ -228,7 +249,8 @@ namespace __jni_impl::java::time
 			"ofHoursMinutes",
 			"(II)Ljava/time/ZoneOffset;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ZoneOffset::ofTotalSeconds(jint arg0)
 	{
@@ -236,7 +258,8 @@ namespace __jni_impl::java::time
 			"java.time.ZoneOffset",
 			"ofTotalSeconds",
 			"(I)Ljava/time/ZoneOffset;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::time
 

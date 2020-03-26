@@ -17,17 +17,17 @@ namespace __jni_impl::android::app
 {
 	class PendingIntent;
 }
-namespace __jni_impl::android::app::slice
+namespace __jni_impl::android::app
 {
-	class Slice;
+	class RemoteInput;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Icon;
 }
-namespace __jni_impl::android::app
+namespace __jni_impl::android::app::slice
 {
-	class RemoteInput;
+	class Slice;
 }
 
 namespace __jni_impl::android::app::slice
@@ -37,14 +37,14 @@ namespace __jni_impl::android::app::slice
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject FORMAT_ACTION();
-		static QAndroidJniObject FORMAT_BUNDLE();
-		static QAndroidJniObject FORMAT_IMAGE();
-		static QAndroidJniObject FORMAT_INT();
-		static QAndroidJniObject FORMAT_LONG();
-		static QAndroidJniObject FORMAT_REMOTE_INPUT();
-		static QAndroidJniObject FORMAT_SLICE();
-		static QAndroidJniObject FORMAT_TEXT();
+		static jstring FORMAT_ACTION();
+		static jstring FORMAT_BUNDLE();
+		static jstring FORMAT_IMAGE();
+		static jstring FORMAT_INT();
+		static jstring FORMAT_LONG();
+		static jstring FORMAT_REMOTE_INPUT();
+		static jstring FORMAT_SLICE();
+		static jstring FORMAT_TEXT();
 		
 		// Constructors
 		void __constructor();
@@ -53,26 +53,26 @@ namespace __jni_impl::android::app::slice
 		jint getInt();
 		jlong getLong();
 		QAndroidJniObject getBundle();
-		QAndroidJniObject getFormat();
-		QAndroidJniObject getText();
-		QAndroidJniObject getAction();
-		QAndroidJniObject getHints();
-		QAndroidJniObject getSubType();
-		QAndroidJniObject getSlice();
-		jboolean hasHint(jstring arg0);
-		QAndroidJniObject getIcon();
+		jstring getFormat();
+		jstring getText();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getAction();
 		QAndroidJniObject getRemoteInput();
+		QAndroidJniObject getHints();
+		QAndroidJniObject getIcon();
+		jstring getSubType();
+		QAndroidJniObject getSlice();
+		jboolean hasHint(jstring arg0);
 	};
 } // namespace __jni_impl::android::app::slice
 
 #include "../../os/Parcel.hpp"
 #include "../../os/Bundle.hpp"
 #include "../PendingIntent.hpp"
-#include "Slice.hpp"
-#include "../../graphics/drawable/Icon.hpp"
 #include "../RemoteInput.hpp"
+#include "../../graphics/drawable/Icon.hpp"
+#include "Slice.hpp"
 
 namespace __jni_impl::android::app::slice
 {
@@ -82,63 +82,72 @@ namespace __jni_impl::android::app::slice
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject SliceItem::FORMAT_ACTION()
+	jstring SliceItem::FORMAT_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::FORMAT_BUNDLE()
+	jstring SliceItem::FORMAT_BUNDLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_BUNDLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::FORMAT_IMAGE()
+	jstring SliceItem::FORMAT_IMAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_IMAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::FORMAT_INT()
+	jstring SliceItem::FORMAT_INT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_INT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::FORMAT_LONG()
+	jstring SliceItem::FORMAT_LONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_LONG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::FORMAT_REMOTE_INPUT()
+	jstring SliceItem::FORMAT_REMOTE_INPUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_REMOTE_INPUT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::FORMAT_SLICE()
+	jstring SliceItem::FORMAT_SLICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_SLICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::FORMAT_TEXT()
+	jstring SliceItem::FORMAT_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceItem",
 			"FORMAT_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -154,74 +163,43 @@ namespace __jni_impl::android::app::slice
 	{
 		return __thiz.callMethod<jint>(
 			"getInt",
-			"()I");
+			"()I"
+		);
 	}
 	jlong SliceItem::getLong()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject SliceItem::getBundle()
 	{
 		return __thiz.callObjectMethod(
 			"getBundle",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
-	QAndroidJniObject SliceItem::getFormat()
+	jstring SliceItem::getFormat()
 	{
 		return __thiz.callObjectMethod(
 			"getFormat",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::getText()
+	jstring SliceItem::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject SliceItem::getAction()
-	{
-		return __thiz.callObjectMethod(
-			"getAction",
-			"()Landroid/app/PendingIntent;");
-	}
-	QAndroidJniObject SliceItem::getHints()
-	{
-		return __thiz.callObjectMethod(
-			"getHints",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject SliceItem::getSubType()
-	{
-		return __thiz.callObjectMethod(
-			"getSubType",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject SliceItem::getSlice()
-	{
-		return __thiz.callObjectMethod(
-			"getSlice",
-			"()Landroid/app/slice/Slice;");
-	}
-	jboolean SliceItem::hasHint(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasHint",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	QAndroidJniObject SliceItem::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint SliceItem::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SliceItem::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -229,13 +207,58 @@ namespace __jni_impl::android::app::slice
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject SliceItem::getAction()
+	{
+		return __thiz.callObjectMethod(
+			"getAction",
+			"()Landroid/app/PendingIntent;"
+		);
 	}
 	QAndroidJniObject SliceItem::getRemoteInput()
 	{
 		return __thiz.callObjectMethod(
 			"getRemoteInput",
-			"()Landroid/app/RemoteInput;");
+			"()Landroid/app/RemoteInput;"
+		);
+	}
+	QAndroidJniObject SliceItem::getHints()
+	{
+		return __thiz.callObjectMethod(
+			"getHints",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject SliceItem::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	jstring SliceItem::getSubType()
+	{
+		return __thiz.callObjectMethod(
+			"getSubType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject SliceItem::getSlice()
+	{
+		return __thiz.callObjectMethod(
+			"getSlice",
+			"()Landroid/app/slice/Slice;"
+		);
+	}
+	jboolean SliceItem::hasHint(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasHint",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app::slice
 

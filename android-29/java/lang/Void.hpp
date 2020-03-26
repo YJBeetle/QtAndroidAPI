@@ -12,7 +12,7 @@ namespace __jni_impl::java::lang
 	{
 	public:
 		// Fields
-		static QAndroidJniObject TYPE();
+		static jclass TYPE();
 		
 		// Constructors
 		void __constructor();
@@ -25,12 +25,13 @@ namespace __jni_impl::java::lang
 namespace __jni_impl::java::lang
 {
 	// Fields
-	QAndroidJniObject Void::TYPE()
+	jclass Void::TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Void",
 			"TYPE",
-			"Ljava/lang/Class;");
+			"Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	
 	// Constructors

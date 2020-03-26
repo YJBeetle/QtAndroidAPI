@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class Surface;
-}
 namespace __jni_impl::android::media
 {
 	class Image;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::os
 {
 	class Handler;
+}
+namespace __jni_impl::android::view
+{
+	class Surface;
 }
 
 namespace __jni_impl::android::media
@@ -32,21 +32,21 @@ namespace __jni_impl::android::media
 		static QAndroidJniObject newInstance(jint arg0, jint arg1, jint arg2, jint arg3);
 		static QAndroidJniObject newInstance(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		void close();
-		jint getWidth();
-		jint getHeight();
-		QAndroidJniObject getSurface();
 		jint getMaxImages();
 		jint getImageFormat();
 		QAndroidJniObject acquireLatestImage();
 		QAndroidJniObject acquireNextImage();
 		void setOnImageAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void discardFreeBuffers();
+		QAndroidJniObject getSurface();
+		jint getWidth();
+		jint getHeight();
 	};
 } // namespace __jni_impl::android::media
 
-#include "../view/Surface.hpp"
 #include "Image.hpp"
 #include "../os/Handler.hpp"
+#include "../view/Surface.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -70,7 +70,8 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject ImageReader::newInstance(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4)
 	{
@@ -82,55 +83,43 @@ namespace __jni_impl::android::media
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void ImageReader::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
-	}
-	jint ImageReader::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I");
-	}
-	jint ImageReader::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
-	}
-	QAndroidJniObject ImageReader::getSurface()
-	{
-		return __thiz.callObjectMethod(
-			"getSurface",
-			"()Landroid/view/Surface;");
+			"()V"
+		);
 	}
 	jint ImageReader::getMaxImages()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxImages",
-			"()I");
+			"()I"
+		);
 	}
 	jint ImageReader::getImageFormat()
 	{
 		return __thiz.callMethod<jint>(
 			"getImageFormat",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ImageReader::acquireLatestImage()
 	{
 		return __thiz.callObjectMethod(
 			"acquireLatestImage",
-			"()Landroid/media/Image;");
+			"()Landroid/media/Image;"
+		);
 	}
 	QAndroidJniObject ImageReader::acquireNextImage()
 	{
 		return __thiz.callObjectMethod(
 			"acquireNextImage",
-			"()Landroid/media/Image;");
+			"()Landroid/media/Image;"
+		);
 	}
 	void ImageReader::setOnImageAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -138,13 +127,36 @@ namespace __jni_impl::android::media
 			"setOnImageAvailableListener",
 			"(Landroid/media/ImageReader$OnImageAvailableListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ImageReader::discardFreeBuffers()
 	{
 		__thiz.callMethod<void>(
 			"discardFreeBuffers",
-			"()V");
+			"()V"
+		);
+	}
+	QAndroidJniObject ImageReader::getSurface()
+	{
+		return __thiz.callObjectMethod(
+			"getSurface",
+			"()Landroid/view/Surface;"
+		);
+	}
+	jint ImageReader::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint ImageReader::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

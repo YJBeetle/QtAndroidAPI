@@ -28,7 +28,7 @@ namespace __jni_impl::android::hardware::camera2::params
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getBounds();
 		jint getId();
 		jint getScore();
@@ -48,19 +48,22 @@ namespace __jni_impl::android::hardware::camera2::params
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.Face",
-			"ID_UNSUPPORTED");
+			"ID_UNSUPPORTED"
+		);
 	}
 	jint Face::SCORE_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.Face",
-			"SCORE_MAX");
+			"SCORE_MAX"
+		);
 	}
 	jint Face::SCORE_MIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.Face",
-			"SCORE_MIN");
+			"SCORE_MIN"
+		);
 	}
 	
 	// Constructors
@@ -72,47 +75,54 @@ namespace __jni_impl::android::hardware::camera2::params
 	}
 	
 	// Methods
-	QAndroidJniObject Face::toString()
+	jstring Face::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Face::getBounds()
 	{
 		return __thiz.callObjectMethod(
 			"getBounds",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 	jint Face::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
 	jint Face::getScore()
 	{
 		return __thiz.callMethod<jint>(
 			"getScore",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Face::getLeftEyePosition()
 	{
 		return __thiz.callObjectMethod(
 			"getLeftEyePosition",
-			"()Landroid/graphics/Point;");
+			"()Landroid/graphics/Point;"
+		);
 	}
 	QAndroidJniObject Face::getRightEyePosition()
 	{
 		return __thiz.callObjectMethod(
 			"getRightEyePosition",
-			"()Landroid/graphics/Point;");
+			"()Landroid/graphics/Point;"
+		);
 	}
 	QAndroidJniObject Face::getMouthPosition()
 	{
 		return __thiz.callObjectMethod(
 			"getMouthPosition",
-			"()Landroid/graphics/Point;");
+			"()Landroid/graphics/Point;"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

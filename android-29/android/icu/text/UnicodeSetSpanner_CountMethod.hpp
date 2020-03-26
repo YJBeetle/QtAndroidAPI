@@ -20,7 +20,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -34,14 +34,16 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$CountMethod",
 			"WHOLE_SPAN",
-			"Landroid/icu/text/UnicodeSetSpanner$CountMethod;");
+			"Landroid/icu/text/UnicodeSetSpanner$CountMethod;"
+		);
 	}
 	QAndroidJniObject UnicodeSetSpanner_CountMethod::MIN_ELEMENTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$CountMethod",
 			"MIN_ELEMENTS",
-			"Landroid/icu/text/UnicodeSetSpanner$CountMethod;");
+			"Landroid/icu/text/UnicodeSetSpanner$CountMethod;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject UnicodeSetSpanner_CountMethod::values()
+	jarray UnicodeSetSpanner_CountMethod::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UnicodeSetSpanner$CountMethod",
 			"values",
-			"()[Landroid/icu/text/UnicodeSetSpanner$CountMethod;");
+			"()[Landroid/icu/text/UnicodeSetSpanner$CountMethod;"
+		).object<jarray>();
 	}
 	QAndroidJniObject UnicodeSetSpanner_CountMethod::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.UnicodeSetSpanner$CountMethod",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSetSpanner$CountMethod;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

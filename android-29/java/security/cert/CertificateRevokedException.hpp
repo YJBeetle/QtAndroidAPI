@@ -40,12 +40,12 @@ namespace __jni_impl::java::security::cert
 		void __constructor(__jni_impl::java::util::Date arg0, __jni_impl::java::security::cert::CRLReason arg1, __jni_impl::javax::security::auth::x500::X500Principal arg2, __jni_impl::__JniBaseClass arg3);
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 		QAndroidJniObject getExtensions();
-		QAndroidJniObject getAuthorityName();
-		QAndroidJniObject getInvalidityDate();
 		QAndroidJniObject getRevocationReason();
 		QAndroidJniObject getRevocationDate();
+		QAndroidJniObject getAuthorityName();
+		QAndroidJniObject getInvalidityDate();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -72,41 +72,47 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject CertificateRevokedException::getMessage()
+	jstring CertificateRevokedException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject CertificateRevokedException::getExtensions()
 	{
 		return __thiz.callObjectMethod(
 			"getExtensions",
-			"()Ljava/util/Map;");
-	}
-	QAndroidJniObject CertificateRevokedException::getAuthorityName()
-	{
-		return __thiz.callObjectMethod(
-			"getAuthorityName",
-			"()Ljavax/security/auth/x500/X500Principal;");
-	}
-	QAndroidJniObject CertificateRevokedException::getInvalidityDate()
-	{
-		return __thiz.callObjectMethod(
-			"getInvalidityDate",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Map;"
+		);
 	}
 	QAndroidJniObject CertificateRevokedException::getRevocationReason()
 	{
 		return __thiz.callObjectMethod(
 			"getRevocationReason",
-			"()Ljava/security/cert/CRLReason;");
+			"()Ljava/security/cert/CRLReason;"
+		);
 	}
 	QAndroidJniObject CertificateRevokedException::getRevocationDate()
 	{
 		return __thiz.callObjectMethod(
 			"getRevocationDate",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
+	}
+	QAndroidJniObject CertificateRevokedException::getAuthorityName()
+	{
+		return __thiz.callObjectMethod(
+			"getAuthorityName",
+			"()Ljavax/security/auth/x500/X500Principal;"
+		);
+	}
+	QAndroidJniObject CertificateRevokedException::getInvalidityDate()
+	{
+		return __thiz.callObjectMethod(
+			"getInvalidityDate",
+			"()Ljava/util/Date;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

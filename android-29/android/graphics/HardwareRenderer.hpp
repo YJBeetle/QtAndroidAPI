@@ -61,31 +61,36 @@ namespace __jni_impl::android::graphics
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
-			"SYNC_CONTEXT_IS_STOPPED");
+			"SYNC_CONTEXT_IS_STOPPED"
+		);
 	}
 	jint HardwareRenderer::SYNC_FRAME_DROPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
-			"SYNC_FRAME_DROPPED");
+			"SYNC_FRAME_DROPPED"
+		);
 	}
 	jint HardwareRenderer::SYNC_LOST_SURFACE_REWARD_IF_FOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
-			"SYNC_LOST_SURFACE_REWARD_IF_FOUND");
+			"SYNC_LOST_SURFACE_REWARD_IF_FOUND"
+		);
 	}
 	jint HardwareRenderer::SYNC_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
-			"SYNC_OK");
+			"SYNC_OK"
+		);
 	}
 	jint HardwareRenderer::SYNC_REDRAW_REQUESTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.HardwareRenderer",
-			"SYNC_REDRAW_REQUESTED");
+			"SYNC_REDRAW_REQUESTED"
+		);
 	}
 	
 	// Constructors
@@ -101,39 +106,45 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz.callMethod<void>(
 			"start",
-			"()V");
+			"()V"
+		);
 	}
 	void HardwareRenderer::stop()
 	{
 		__thiz.callMethod<void>(
 			"stop",
-			"()V");
+			"()V"
+		);
 	}
 	void HardwareRenderer::setName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setName",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void HardwareRenderer::destroy()
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	void HardwareRenderer::setOpaque(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOpaque",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean HardwareRenderer::isOpaque()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpaque",
-			"()Z");
+			"()Z"
+		);
 	}
 	void HardwareRenderer::setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -143,7 +154,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void HardwareRenderer::setLightSourceAlpha(jfloat arg0, jfloat arg1)
 	{
@@ -151,39 +163,45 @@ namespace __jni_impl::android::graphics
 			"setLightSourceAlpha",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void HardwareRenderer::setContentRoot(__jni_impl::android::graphics::RenderNode arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentRoot",
 			"(Landroid/graphics/RenderNode;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject HardwareRenderer::createRenderRequest()
 	{
 		return __thiz.callObjectMethod(
 			"createRenderRequest",
-			"()Landroid/graphics/HardwareRenderer$FrameRenderRequest;");
+			"()Landroid/graphics/HardwareRenderer$FrameRenderRequest;"
+		);
 	}
 	void HardwareRenderer::clearContent()
 	{
 		__thiz.callMethod<void>(
 			"clearContent",
-			"()V");
+			"()V"
+		);
 	}
 	void HardwareRenderer::notifyFramePending()
 	{
 		__thiz.callMethod<void>(
 			"notifyFramePending",
-			"()V");
+			"()V"
+		);
 	}
 	void HardwareRenderer::setSurface(__jni_impl::android::view::Surface arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -31,13 +31,13 @@ namespace __jni_impl::android::telephony::mbms
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getLocales();
-		QAndroidJniObject getNameForLocale(__jni_impl::java::util::Locale arg0);
+		jstring getNameForLocale(__jni_impl::java::util::Locale arg0);
 		QAndroidJniObject getNamedContentLocales();
-		QAndroidJniObject getServiceClassName();
-		QAndroidJniObject getServiceId();
+		jstring getServiceClassName();
+		jstring getServiceId();
 		QAndroidJniObject getSessionStartTime();
 		QAndroidJniObject getSessionEndTime();
+		QAndroidJniObject getLocales();
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
@@ -63,56 +63,65 @@ namespace __jni_impl::android::telephony::mbms
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ServiceInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject ServiceInfo::getLocales()
-	{
-		return __thiz.callObjectMethod(
-			"getLocales",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject ServiceInfo::getNameForLocale(__jni_impl::java::util::Locale arg0)
+	jstring ServiceInfo::getNameForLocale(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getNameForLocale",
 			"(Ljava/util/Locale;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject ServiceInfo::getNamedContentLocales()
 	{
 		return __thiz.callObjectMethod(
 			"getNamedContentLocales",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
-	QAndroidJniObject ServiceInfo::getServiceClassName()
+	jstring ServiceInfo::getServiceClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getServiceClassName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ServiceInfo::getServiceId()
+	jstring ServiceInfo::getServiceId()
 	{
 		return __thiz.callObjectMethod(
 			"getServiceId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ServiceInfo::getSessionStartTime()
 	{
 		return __thiz.callObjectMethod(
 			"getSessionStartTime",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	QAndroidJniObject ServiceInfo::getSessionEndTime()
 	{
 		return __thiz.callObjectMethod(
 			"getSessionEndTime",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
+	}
+	QAndroidJniObject ServiceInfo::getLocales()
+	{
+		return __thiz.callObjectMethod(
+			"getLocales",
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

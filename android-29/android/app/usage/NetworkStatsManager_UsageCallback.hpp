@@ -41,7 +41,8 @@ namespace __jni_impl::android::app::usage
 			"onThresholdReached",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

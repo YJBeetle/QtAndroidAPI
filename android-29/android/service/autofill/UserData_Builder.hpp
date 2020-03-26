@@ -57,13 +57,15 @@ namespace __jni_impl::android::service::autofill
 			"add",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/service/autofill/UserData$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject UserData_Builder::build()
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/service/autofill/UserData;");
+			"()Landroid/service/autofill/UserData;"
+		);
 	}
 	QAndroidJniObject UserData_Builder::setFieldClassificationAlgorithm(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -71,7 +73,8 @@ namespace __jni_impl::android::service::autofill
 			"setFieldClassificationAlgorithm",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Landroid/service/autofill/UserData$Builder;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject UserData_Builder::setFieldClassificationAlgorithmForCategory(jstring arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -80,7 +83,8 @@ namespace __jni_impl::android::service::autofill
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/service/autofill/UserData$Builder;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

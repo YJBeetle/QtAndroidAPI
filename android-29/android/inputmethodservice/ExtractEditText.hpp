@@ -31,16 +31,16 @@ namespace __jni_impl::android::inputmethodservice
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		void startInternalChanges();
+		void finishInternalChanges();
+		jboolean hasVerticalScrollBar();
+		jboolean hasFocus();
+		jboolean hasWindowFocus();
 		void setExtractedText(__jni_impl::android::view::inputmethod::ExtractedText arg0);
 		jboolean isInputMethodTarget();
 		jboolean onTextContextMenuItem(jint arg0);
 		jboolean performClick();
 		jboolean isFocused();
-		jboolean hasFocus();
-		jboolean hasWindowFocus();
-		void startInternalChanges();
-		void finishInternalChanges();
-		jboolean hasVerticalScrollBar();
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
@@ -88,67 +88,77 @@ namespace __jni_impl::android::inputmethodservice
 	}
 	
 	// Methods
+	void ExtractEditText::startInternalChanges()
+	{
+		__thiz.callMethod<void>(
+			"startInternalChanges",
+			"()V"
+		);
+	}
+	void ExtractEditText::finishInternalChanges()
+	{
+		__thiz.callMethod<void>(
+			"finishInternalChanges",
+			"()V"
+		);
+	}
+	jboolean ExtractEditText::hasVerticalScrollBar()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasVerticalScrollBar",
+			"()Z"
+		);
+	}
+	jboolean ExtractEditText::hasFocus()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasFocus",
+			"()Z"
+		);
+	}
+	jboolean ExtractEditText::hasWindowFocus()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasWindowFocus",
+			"()Z"
+		);
+	}
 	void ExtractEditText::setExtractedText(__jni_impl::android::view::inputmethod::ExtractedText arg0)
 	{
 		__thiz.callMethod<void>(
 			"setExtractedText",
 			"(Landroid/view/inputmethod/ExtractedText;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ExtractEditText::isInputMethodTarget()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInputMethodTarget",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ExtractEditText::onTextContextMenuItem(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onTextContextMenuItem",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ExtractEditText::performClick()
 	{
 		return __thiz.callMethod<jboolean>(
 			"performClick",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ExtractEditText::isFocused()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFocused",
-			"()Z");
-	}
-	jboolean ExtractEditText::hasFocus()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasFocus",
-			"()Z");
-	}
-	jboolean ExtractEditText::hasWindowFocus()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasWindowFocus",
-			"()Z");
-	}
-	void ExtractEditText::startInternalChanges()
-	{
-		__thiz.callMethod<void>(
-			"startInternalChanges",
-			"()V");
-	}
-	void ExtractEditText::finishInternalChanges()
-	{
-		__thiz.callMethod<void>(
-			"finishInternalChanges",
-			"()V");
-	}
-	jboolean ExtractEditText::hasVerticalScrollBar()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasVerticalScrollBar",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::inputmethodservice
 

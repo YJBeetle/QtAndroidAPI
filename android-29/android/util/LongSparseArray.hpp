@@ -19,10 +19,10 @@ namespace __jni_impl::android::util
 		
 		// Methods
 		void remove(jlong arg0);
-		QAndroidJniObject get(jlong arg0, jobject arg1);
-		QAndroidJniObject get(jlong arg0);
+		jobject get(jlong arg0, jobject arg1);
+		jobject get(jlong arg0);
 		void put(jlong arg0, jobject arg1);
-		QAndroidJniObject toString();
+		jstring toString();
 		void append(jlong arg0, jobject arg1);
 		QAndroidJniObject clone();
 		void clear();
@@ -30,7 +30,7 @@ namespace __jni_impl::android::util
 		void _delete(jlong arg0);
 		void removeAt(jint arg0);
 		jlong keyAt(jint arg0);
-		QAndroidJniObject valueAt(jint arg0);
+		jobject valueAt(jint arg0);
 		void setValueAt(jint arg0, jobject arg1);
 		jint indexOfKey(jlong arg0);
 		jint indexOfValue(jobject arg0);
@@ -63,22 +63,25 @@ namespace __jni_impl::android::util
 		__thiz.callMethod<void>(
 			"remove",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject LongSparseArray::get(jlong arg0, jobject arg1)
+	jobject LongSparseArray::get(jlong arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(JLjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject LongSparseArray::get(jlong arg0)
+	jobject LongSparseArray::get(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(J)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void LongSparseArray::put(jlong arg0, jobject arg1)
 	{
@@ -86,13 +89,15 @@ namespace __jni_impl::android::util
 			"put",
 			"(JLjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject LongSparseArray::toString()
+	jstring LongSparseArray::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void LongSparseArray::append(jlong arg0, jobject arg1)
 	{
@@ -100,53 +105,61 @@ namespace __jni_impl::android::util
 			"append",
 			"(JLjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject LongSparseArray::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/util/LongSparseArray;");
+			"()Landroid/util/LongSparseArray;"
+		);
 	}
 	void LongSparseArray::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jint LongSparseArray::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	void LongSparseArray::_delete(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"delete",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void LongSparseArray::removeAt(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeAt",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong LongSparseArray::keyAt(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"keyAt",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject LongSparseArray::valueAt(jint arg0)
+	jobject LongSparseArray::valueAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"valueAt",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void LongSparseArray::setValueAt(jint arg0, jobject arg1)
 	{
@@ -154,21 +167,24 @@ namespace __jni_impl::android::util
 			"setValueAt",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint LongSparseArray::indexOfKey(jlong arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"indexOfKey",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jint LongSparseArray::indexOfValue(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"indexOfValue",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

@@ -20,8 +20,8 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject QUERIES_PROJECTION_1LINE();
-		static QAndroidJniObject QUERIES_PROJECTION_2LINE();
+		static jarray QUERIES_PROJECTION_1LINE();
+		static jarray QUERIES_PROJECTION_2LINE();
 		static jint QUERIES_PROJECTION_DATE_INDEX();
 		static jint QUERIES_PROJECTION_DISPLAY1_INDEX();
 		static jint QUERIES_PROJECTION_DISPLAY2_INDEX();
@@ -31,8 +31,8 @@ namespace __jni_impl::android::provider
 		void __constructor(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2);
 		
 		// Methods
-		void clearHistory();
 		void saveRecentQuery(jstring arg0, jstring arg1);
+		void clearHistory();
 	};
 } // namespace __jni_impl::android::provider
 
@@ -42,43 +42,49 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject SearchRecentSuggestions::QUERIES_PROJECTION_1LINE()
+	jarray SearchRecentSuggestions::QUERIES_PROJECTION_1LINE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_1LINE",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject SearchRecentSuggestions::QUERIES_PROJECTION_2LINE()
+	jarray SearchRecentSuggestions::QUERIES_PROJECTION_2LINE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SearchRecentSuggestions",
 			"QUERIES_PROJECTION_2LINE",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jint SearchRecentSuggestions::QUERIES_PROJECTION_DATE_INDEX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.SearchRecentSuggestions",
-			"QUERIES_PROJECTION_DATE_INDEX");
+			"QUERIES_PROJECTION_DATE_INDEX"
+		);
 	}
 	jint SearchRecentSuggestions::QUERIES_PROJECTION_DISPLAY1_INDEX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.SearchRecentSuggestions",
-			"QUERIES_PROJECTION_DISPLAY1_INDEX");
+			"QUERIES_PROJECTION_DISPLAY1_INDEX"
+		);
 	}
 	jint SearchRecentSuggestions::QUERIES_PROJECTION_DISPLAY2_INDEX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.SearchRecentSuggestions",
-			"QUERIES_PROJECTION_DISPLAY2_INDEX");
+			"QUERIES_PROJECTION_DISPLAY2_INDEX"
+		);
 	}
 	jint SearchRecentSuggestions::QUERIES_PROJECTION_QUERY_INDEX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.SearchRecentSuggestions",
-			"QUERIES_PROJECTION_QUERY_INDEX");
+			"QUERIES_PROJECTION_QUERY_INDEX"
+		);
 	}
 	
 	// Constructors
@@ -93,19 +99,21 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	void SearchRecentSuggestions::clearHistory()
-	{
-		__thiz.callMethod<void>(
-			"clearHistory",
-			"()V");
-	}
 	void SearchRecentSuggestions::saveRecentQuery(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
 			"saveRecentQuery",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void SearchRecentSuggestions::clearHistory()
+	{
+		__thiz.callMethod<void>(
+			"clearHistory",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::provider
 

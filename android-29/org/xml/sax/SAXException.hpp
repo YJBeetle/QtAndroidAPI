@@ -33,9 +33,9 @@ namespace __jni_impl::org::xml::sax
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getCause();
-		QAndroidJniObject toString();
-		QAndroidJniObject getMessage();
+		jthrowable getCause();
+		jstring toString();
+		jstring getMessage();
 		QAndroidJniObject getException();
 	};
 } // namespace __jni_impl::org::xml::sax
@@ -79,29 +79,33 @@ namespace __jni_impl::org::xml::sax
 	}
 	
 	// Methods
-	QAndroidJniObject SAXException::getCause()
+	jthrowable SAXException::getCause()
 	{
 		return __thiz.callObjectMethod(
 			"getCause",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
-	QAndroidJniObject SAXException::toString()
+	jstring SAXException::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SAXException::getMessage()
+	jstring SAXException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject SAXException::getException()
 	{
 		return __thiz.callObjectMethod(
 			"getException",
-			"()Ljava/lang/Exception;");
+			"()Ljava/lang/Exception;"
+		);
 	}
 } // namespace __jni_impl::org::xml::sax
 

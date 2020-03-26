@@ -22,7 +22,7 @@ namespace __jni_impl::java::beans
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getPropertyName();
+		jstring getPropertyName();
 		void propertyChange(__jni_impl::java::beans::PropertyChangeEvent arg0);
 	};
 } // namespace __jni_impl::java::beans
@@ -44,18 +44,20 @@ namespace __jni_impl::java::beans
 	}
 	
 	// Methods
-	QAndroidJniObject PropertyChangeListenerProxy::getPropertyName()
+	jstring PropertyChangeListenerProxy::getPropertyName()
 	{
 		return __thiz.callObjectMethod(
 			"getPropertyName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PropertyChangeListenerProxy::propertyChange(__jni_impl::java::beans::PropertyChangeEvent arg0)
 	{
 		__thiz.callMethod<void>(
 			"propertyChange",
 			"(Ljava/beans/PropertyChangeEvent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::beans
 

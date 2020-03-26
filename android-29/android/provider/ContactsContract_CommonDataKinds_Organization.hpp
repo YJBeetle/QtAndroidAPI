@@ -16,18 +16,18 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject COMPANY();
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject DEPARTMENT();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static QAndroidJniObject JOB_DESCRIPTION();
-		static QAndroidJniObject OFFICE_LOCATION();
-		static QAndroidJniObject PHONETIC_NAME();
-		static QAndroidJniObject PHONETIC_NAME_STYLE();
-		static QAndroidJniObject SYMBOL();
-		static QAndroidJniObject TITLE();
+		static jstring COMPANY();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring DEPARTMENT();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static jstring JOB_DESCRIPTION();
+		static jstring OFFICE_LOCATION();
+		static jstring PHONETIC_NAME();
+		static jstring PHONETIC_NAME_STYLE();
+		static jstring SYMBOL();
+		static jstring TITLE();
 		static jint TYPE_OTHER();
 		static jint TYPE_WORK();
 		
@@ -36,7 +36,7 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static jint getTypeLabelResource(jint arg0);
-		static QAndroidJniObject getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -45,101 +45,115 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::COMPANY()
+	jstring ContactsContract_CommonDataKinds_Organization::COMPANY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"COMPANY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::CONTENT_ITEM_TYPE()
+	jstring ContactsContract_CommonDataKinds_Organization::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::DEPARTMENT()
+	jstring ContactsContract_CommonDataKinds_Organization::DEPARTMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"DEPARTMENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX()
+	jstring ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"EXTRA_ADDRESS_BOOK_INDEX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	jstring ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	jstring ContactsContract_CommonDataKinds_Organization::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::JOB_DESCRIPTION()
+	jstring ContactsContract_CommonDataKinds_Organization::JOB_DESCRIPTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"JOB_DESCRIPTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::OFFICE_LOCATION()
+	jstring ContactsContract_CommonDataKinds_Organization::OFFICE_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"OFFICE_LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME()
+	jstring ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"PHONETIC_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME_STYLE()
+	jstring ContactsContract_CommonDataKinds_Organization::PHONETIC_NAME_STYLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"PHONETIC_NAME_STYLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::SYMBOL()
+	jstring ContactsContract_CommonDataKinds_Organization::SYMBOL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"SYMBOL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::TITLE()
+	jstring ContactsContract_CommonDataKinds_Organization::TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ContactsContract_CommonDataKinds_Organization::TYPE_OTHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
-			"TYPE_OTHER");
+			"TYPE_OTHER"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Organization::TYPE_WORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
-			"TYPE_WORK");
+			"TYPE_WORK"
+		);
 	}
 	
 	// Constructors
@@ -157,9 +171,10 @@ namespace __jni_impl::android::provider
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
 			"getTypeLabelResource",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Organization::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
+	jstring ContactsContract_CommonDataKinds_Organization::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Organization",
@@ -167,7 +182,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

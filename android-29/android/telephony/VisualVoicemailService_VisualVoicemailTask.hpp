@@ -47,19 +47,22 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint VisualVoicemailService_VisualVoicemailTask::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void VisualVoicemailService_VisualVoicemailTask::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

@@ -62,19 +62,22 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz.callMethod<void>(
 			"run",
-			"()V");
+			"()V"
+		);
 	}
 	jint ForkJoinWorkerThread::getPoolIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getPoolIndex",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ForkJoinWorkerThread::getPool()
 	{
 		return __thiz.callObjectMethod(
 			"getPool",
-			"()Ljava/util/concurrent/ForkJoinPool;");
+			"()Ljava/util/concurrent/ForkJoinPool;"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

@@ -42,13 +42,15 @@ namespace __jni_impl::javax::crypto::spec
 	{
 		return __thiz.callMethod<jint>(
 			"getPrimeSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint DHGenParameterSpec::getExponentSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getExponentSize",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

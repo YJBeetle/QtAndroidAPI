@@ -48,20 +48,23 @@ namespace __jni_impl::android::text::style
 			"android.text.style.CharacterStyle",
 			"wrap",
 			"(Landroid/text/style/CharacterStyle;)Landroid/text/style/CharacterStyle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CharacterStyle::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CharacterStyle::getUnderlying()
 	{
 		return __thiz.callObjectMethod(
 			"getUnderlying",
-			"()Landroid/text/style/CharacterStyle;");
+			"()Landroid/text/style/CharacterStyle;"
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

@@ -55,7 +55,7 @@ namespace __jni_impl::android::database::sqlite
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint update(jstring arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3);
 		jlong replace(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2);
 		jboolean isOpen();
@@ -66,7 +66,7 @@ namespace __jni_impl::android::database::sqlite
 		QAndroidJniObject query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6);
 		QAndroidJniObject query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8, __jni_impl::android::os::CancellationSignal arg9);
 		static QAndroidJniObject create(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getPath();
+		jstring getPath();
 		jboolean isReadOnly();
 		jint getVersion();
 		void setLocale(__jni_impl::java::util::Locale arg0);
@@ -96,7 +96,7 @@ namespace __jni_impl::android::database::sqlite
 		void setPageSize(jlong arg0);
 		void markTableSyncable(jstring arg0, jstring arg1, jstring arg2);
 		void markTableSyncable(jstring arg0, jstring arg1);
-		static QAndroidJniObject findEditTable(jstring arg0);
+		static jstring findEditTable(jstring arg0);
 		QAndroidJniObject compileStatement(jstring arg0);
 		QAndroidJniObject queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9, __jni_impl::android::os::CancellationSignal arg10);
 		QAndroidJniObject queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9);
@@ -140,79 +140,92 @@ namespace __jni_impl::android::database::sqlite
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"CONFLICT_ABORT");
+			"CONFLICT_ABORT"
+		);
 	}
 	jint SQLiteDatabase::CONFLICT_FAIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"CONFLICT_FAIL");
+			"CONFLICT_FAIL"
+		);
 	}
 	jint SQLiteDatabase::CONFLICT_IGNORE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"CONFLICT_IGNORE");
+			"CONFLICT_IGNORE"
+		);
 	}
 	jint SQLiteDatabase::CONFLICT_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"CONFLICT_NONE");
+			"CONFLICT_NONE"
+		);
 	}
 	jint SQLiteDatabase::CONFLICT_REPLACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"CONFLICT_REPLACE");
+			"CONFLICT_REPLACE"
+		);
 	}
 	jint SQLiteDatabase::CONFLICT_ROLLBACK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"CONFLICT_ROLLBACK");
+			"CONFLICT_ROLLBACK"
+		);
 	}
 	jint SQLiteDatabase::CREATE_IF_NECESSARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"CREATE_IF_NECESSARY");
+			"CREATE_IF_NECESSARY"
+		);
 	}
 	jint SQLiteDatabase::ENABLE_WRITE_AHEAD_LOGGING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"ENABLE_WRITE_AHEAD_LOGGING");
+			"ENABLE_WRITE_AHEAD_LOGGING"
+		);
 	}
 	jint SQLiteDatabase::MAX_SQL_CACHE_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"MAX_SQL_CACHE_SIZE");
+			"MAX_SQL_CACHE_SIZE"
+		);
 	}
 	jint SQLiteDatabase::NO_LOCALIZED_COLLATORS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"NO_LOCALIZED_COLLATORS");
+			"NO_LOCALIZED_COLLATORS"
+		);
 	}
 	jint SQLiteDatabase::OPEN_READONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"OPEN_READONLY");
+			"OPEN_READONLY"
+		);
 	}
 	jint SQLiteDatabase::OPEN_READWRITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"OPEN_READWRITE");
+			"OPEN_READWRITE"
+		);
 	}
 	jint SQLiteDatabase::SQLITE_MAX_LIKE_PATTERN_LENGTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.sqlite.SQLiteDatabase",
-			"SQLITE_MAX_LIKE_PATTERN_LENGTH");
+			"SQLITE_MAX_LIKE_PATTERN_LENGTH"
+		);
 	}
 	
 	// Constructors
@@ -224,11 +237,12 @@ namespace __jni_impl::android::database::sqlite
 	}
 	
 	// Methods
-	QAndroidJniObject SQLiteDatabase::toString()
+	jstring SQLiteDatabase::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SQLiteDatabase::update(jstring arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3)
 	{
@@ -238,7 +252,8 @@ namespace __jni_impl::android::database::sqlite
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jlong SQLiteDatabase::replace(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
@@ -247,13 +262,15 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean SQLiteDatabase::isOpen()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpen",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint SQLiteDatabase::_delete(jstring arg0, jstring arg1, jarray arg2)
 	{
@@ -262,7 +279,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong SQLiteDatabase::insert(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
@@ -271,7 +289,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8)
 	{
@@ -286,7 +305,8 @@ namespace __jni_impl::android::database::sqlite
 			arg5,
 			arg6,
 			arg7,
-			arg8);
+			arg8
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
 	{
@@ -300,7 +320,8 @@ namespace __jni_impl::android::database::sqlite
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
 	{
@@ -313,7 +334,8 @@ namespace __jni_impl::android::database::sqlite
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8, __jni_impl::android::os::CancellationSignal arg9)
 	{
@@ -329,7 +351,8 @@ namespace __jni_impl::android::database::sqlite
 			arg6,
 			arg7,
 			arg8,
-			arg9.__jniObject().object());
+			arg9.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::create(__jni_impl::__JniBaseClass arg0)
 	{
@@ -337,127 +360,147 @@ namespace __jni_impl::android::database::sqlite
 			"android.database.sqlite.SQLiteDatabase",
 			"create",
 			"(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject SQLiteDatabase::getPath()
+	jstring SQLiteDatabase::getPath()
 	{
 		return __thiz.callObjectMethod(
 			"getPath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean SQLiteDatabase::isReadOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReadOnly",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint SQLiteDatabase::getVersion()
 	{
 		return __thiz.callMethod<jint>(
 			"getVersion",
-			"()I");
+			"()I"
+		);
 	}
 	void SQLiteDatabase::setLocale(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLocale",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint SQLiteDatabase::releaseMemory()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.database.sqlite.SQLiteDatabase",
 			"releaseMemory",
-			"()I");
+			"()I"
+		);
 	}
 	void SQLiteDatabase::setLockingEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLockingEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteDatabase::beginTransaction()
 	{
 		__thiz.callMethod<void>(
 			"beginTransaction",
-			"()V");
+			"()V"
+		);
 	}
 	void SQLiteDatabase::beginTransactionNonExclusive()
 	{
 		__thiz.callMethod<void>(
 			"beginTransactionNonExclusive",
-			"()V");
+			"()V"
+		);
 	}
 	void SQLiteDatabase::beginTransactionWithListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"beginTransactionWithListener",
 			"(Landroid/database/sqlite/SQLiteTransactionListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SQLiteDatabase::beginTransactionWithListenerNonExclusive(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"beginTransactionWithListenerNonExclusive",
 			"(Landroid/database/sqlite/SQLiteTransactionListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SQLiteDatabase::endTransaction()
 	{
 		__thiz.callMethod<void>(
 			"endTransaction",
-			"()V");
+			"()V"
+		);
 	}
 	void SQLiteDatabase::setTransactionSuccessful()
 	{
 		__thiz.callMethod<void>(
 			"setTransactionSuccessful",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean SQLiteDatabase::inTransaction()
 	{
 		return __thiz.callMethod<jboolean>(
 			"inTransaction",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SQLiteDatabase::isDbLockedByCurrentThread()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDbLockedByCurrentThread",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SQLiteDatabase::isDbLockedByOtherThreads()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDbLockedByOtherThreads",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SQLiteDatabase::yieldIfContended()
 	{
 		return __thiz.callMethod<jboolean>(
 			"yieldIfContended",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SQLiteDatabase::yieldIfContendedSafely()
 	{
 		return __thiz.callMethod<jboolean>(
 			"yieldIfContendedSafely",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SQLiteDatabase::yieldIfContendedSafely(jlong arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"yieldIfContendedSafely",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::getSyncedTables()
 	{
 		return __thiz.callObjectMethod(
 			"getSyncedTables",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::openDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -468,7 +511,8 @@ namespace __jni_impl::android::database::sqlite
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::openDatabase(__jni_impl::java::io::File arg0, __jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg1)
 	{
@@ -477,7 +521,8 @@ namespace __jni_impl::android::database::sqlite
 			"openDatabase",
 			"(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Landroid/database/sqlite/SQLiteDatabase;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::openDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -487,7 +532,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)Landroid/database/sqlite/SQLiteDatabase;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::createInMemory(__jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg0)
 	{
@@ -495,40 +541,46 @@ namespace __jni_impl::android::database::sqlite
 			"android.database.sqlite.SQLiteDatabase",
 			"createInMemory",
 			"(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Landroid/database/sqlite/SQLiteDatabase;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SQLiteDatabase::setVersion(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVersion",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong SQLiteDatabase::getMaximumSize()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMaximumSize",
-			"()J");
+			"()J"
+		);
 	}
 	jlong SQLiteDatabase::setMaximumSize(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"setMaximumSize",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong SQLiteDatabase::getPageSize()
 	{
 		return __thiz.callMethod<jlong>(
 			"getPageSize",
-			"()J");
+			"()J"
+		);
 	}
 	void SQLiteDatabase::setPageSize(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPageSize",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteDatabase::markTableSyncable(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -537,7 +589,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void SQLiteDatabase::markTableSyncable(jstring arg0, jstring arg1)
 	{
@@ -545,22 +598,25 @@ namespace __jni_impl::android::database::sqlite
 			"markTableSyncable",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject SQLiteDatabase::findEditTable(jstring arg0)
+	jstring SQLiteDatabase::findEditTable(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"findEditTable",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject SQLiteDatabase::compileStatement(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"compileStatement",
 			"(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9, __jni_impl::android::os::CancellationSignal arg10)
 	{
@@ -577,7 +633,8 @@ namespace __jni_impl::android::database::sqlite
 			arg7,
 			arg8,
 			arg9,
-			arg10.__jniObject().object());
+			arg10.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9)
 	{
@@ -593,7 +650,8 @@ namespace __jni_impl::android::database::sqlite
 			arg6,
 			arg7,
 			arg8,
-			arg9);
+			arg9
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::rawQuery(jstring arg0, jarray arg1)
 	{
@@ -601,7 +659,8 @@ namespace __jni_impl::android::database::sqlite
 			"rawQuery",
 			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::rawQuery(jstring arg0, jarray arg1, __jni_impl::android::os::CancellationSignal arg2)
 	{
@@ -610,7 +669,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;[Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3)
 	{
@@ -620,7 +680,8 @@ namespace __jni_impl::android::database::sqlite
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3, __jni_impl::android::os::CancellationSignal arg4)
 	{
@@ -631,7 +692,8 @@ namespace __jni_impl::android::database::sqlite
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	jlong SQLiteDatabase::insertOrThrow(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
@@ -640,7 +702,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jlong SQLiteDatabase::replaceOrThrow(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
@@ -649,7 +712,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jlong SQLiteDatabase::insertWithOnConflict(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2, jint arg3)
 	{
@@ -659,7 +723,8 @@ namespace __jni_impl::android::database::sqlite
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	jint SQLiteDatabase::updateWithOnConflict(jstring arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3, jint arg4)
 	{
@@ -670,7 +735,8 @@ namespace __jni_impl::android::database::sqlite
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void SQLiteDatabase::execSQL(jstring arg0, jobjectArray arg1)
 	{
@@ -678,14 +744,16 @@ namespace __jni_impl::android::database::sqlite
 			"execSQL",
 			"(Ljava/lang/String;[Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SQLiteDatabase::execSQL(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"execSQL",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteDatabase::validateSql(jstring arg0, __jni_impl::android::os::CancellationSignal arg1)
 	{
@@ -693,58 +761,67 @@ namespace __jni_impl::android::database::sqlite
 			"validateSql",
 			"(Ljava/lang/String;Landroid/os/CancellationSignal;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean SQLiteDatabase::needUpgrade(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"needUpgrade",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteDatabase::setMaxSqlCacheSize(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMaxSqlCacheSize",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteDatabase::setForeignKeyConstraintsEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setForeignKeyConstraintsEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SQLiteDatabase::enableWriteAheadLogging()
 	{
 		return __thiz.callMethod<jboolean>(
 			"enableWriteAheadLogging",
-			"()Z");
+			"()Z"
+		);
 	}
 	void SQLiteDatabase::disableWriteAheadLogging()
 	{
 		__thiz.callMethod<void>(
 			"disableWriteAheadLogging",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean SQLiteDatabase::isWriteAheadLoggingEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWriteAheadLoggingEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::getAttachedDbs()
 	{
 		return __thiz.callObjectMethod(
 			"getAttachedDbs",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean SQLiteDatabase::isDatabaseIntegrityOk()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDatabaseIntegrityOk",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -754,7 +831,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -763,7 +841,8 @@ namespace __jni_impl::android::database::sqlite
 			"openOrCreateDatabase",
 			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(__jni_impl::java::io::File arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -772,7 +851,8 @@ namespace __jni_impl::android::database::sqlite
 			"openOrCreateDatabase",
 			"(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean SQLiteDatabase::deleteDatabase(__jni_impl::java::io::File arg0)
 	{
@@ -780,7 +860,8 @@ namespace __jni_impl::android::database::sqlite
 			"android.database.sqlite.SQLiteDatabase",
 			"deleteDatabase",
 			"(Ljava/io/File;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::database::sqlite
 

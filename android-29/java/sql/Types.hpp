@@ -67,235 +67,274 @@ namespace __jni_impl::java::sql
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"BIT");
+			"BIT"
+		);
 	}
 	jint Types::TINYINT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"TINYINT");
+			"TINYINT"
+		);
 	}
 	jint Types::SMALLINT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"SMALLINT");
+			"SMALLINT"
+		);
 	}
 	jint Types::INTEGER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"INTEGER");
+			"INTEGER"
+		);
 	}
 	jint Types::BIGINT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"BIGINT");
+			"BIGINT"
+		);
 	}
 	jint Types::FLOAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"FLOAT");
+			"FLOAT"
+		);
 	}
 	jint Types::REAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"REAL");
+			"REAL"
+		);
 	}
 	jint Types::DOUBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"DOUBLE");
+			"DOUBLE"
+		);
 	}
 	jint Types::NUMERIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"NUMERIC");
+			"NUMERIC"
+		);
 	}
 	jint Types::DECIMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"DECIMAL");
+			"DECIMAL"
+		);
 	}
 	jint Types::CHAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"CHAR");
+			"CHAR"
+		);
 	}
 	jint Types::VARCHAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"VARCHAR");
+			"VARCHAR"
+		);
 	}
 	jint Types::LONGVARCHAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"LONGVARCHAR");
+			"LONGVARCHAR"
+		);
 	}
 	jint Types::DATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"DATE");
+			"DATE"
+		);
 	}
 	jint Types::TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"TIME");
+			"TIME"
+		);
 	}
 	jint Types::TIMESTAMP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"TIMESTAMP");
+			"TIMESTAMP"
+		);
 	}
 	jint Types::BINARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"BINARY");
+			"BINARY"
+		);
 	}
 	jint Types::VARBINARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"VARBINARY");
+			"VARBINARY"
+		);
 	}
 	jint Types::LONGVARBINARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"LONGVARBINARY");
+			"LONGVARBINARY"
+		);
 	}
 	jint Types::NULL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"NULL");
+			"NULL"
+		);
 	}
 	jint Types::OTHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"OTHER");
+			"OTHER"
+		);
 	}
 	jint Types::JAVA_OBJECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"JAVA_OBJECT");
+			"JAVA_OBJECT"
+		);
 	}
 	jint Types::DISTINCT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"DISTINCT");
+			"DISTINCT"
+		);
 	}
 	jint Types::STRUCT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"STRUCT");
+			"STRUCT"
+		);
 	}
 	jint Types::ARRAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"ARRAY");
+			"ARRAY"
+		);
 	}
 	jint Types::BLOB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"BLOB");
+			"BLOB"
+		);
 	}
 	jint Types::CLOB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"CLOB");
+			"CLOB"
+		);
 	}
 	jint Types::REF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"REF");
+			"REF"
+		);
 	}
 	jint Types::DATALINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"DATALINK");
+			"DATALINK"
+		);
 	}
 	jint Types::BOOLEAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"BOOLEAN");
+			"BOOLEAN"
+		);
 	}
 	jint Types::ROWID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"ROWID");
+			"ROWID"
+		);
 	}
 	jint Types::NCHAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"NCHAR");
+			"NCHAR"
+		);
 	}
 	jint Types::NVARCHAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"NVARCHAR");
+			"NVARCHAR"
+		);
 	}
 	jint Types::LONGNVARCHAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"LONGNVARCHAR");
+			"LONGNVARCHAR"
+		);
 	}
 	jint Types::NCLOB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"NCLOB");
+			"NCLOB"
+		);
 	}
 	jint Types::SQLXML()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"SQLXML");
+			"SQLXML"
+		);
 	}
 	jint Types::REF_CURSOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"REF_CURSOR");
+			"REF_CURSOR"
+		);
 	}
 	jint Types::TIME_WITH_TIMEZONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"TIME_WITH_TIMEZONE");
+			"TIME_WITH_TIMEZONE"
+		);
 	}
 	jint Types::TIMESTAMP_WITH_TIMEZONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.sql.Types",
-			"TIMESTAMP_WITH_TIMEZONE");
+			"TIMESTAMP_WITH_TIMEZONE"
+		);
 	}
 	
 	// Constructors

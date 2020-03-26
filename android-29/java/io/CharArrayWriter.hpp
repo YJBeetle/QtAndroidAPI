@@ -23,12 +23,12 @@ namespace __jni_impl::java::io
 		void __constructor(jint arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject append(jstring arg0);
 		QAndroidJniObject append(jchar arg0);
 		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
 		jint size();
-		QAndroidJniObject toCharArray();
+		jcharArray toCharArray();
 		void write(jcharArray arg0, jint arg1, jint arg2);
 		void write(jint arg0);
 		void write(jstring arg0, jint arg1, jint arg2);
@@ -61,25 +61,28 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	QAndroidJniObject CharArrayWriter::toString()
+	jstring CharArrayWriter::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject CharArrayWriter::append(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/CharArrayWriter;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CharArrayWriter::append(jchar arg0)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(C)Ljava/io/CharArrayWriter;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CharArrayWriter::append(jstring arg0, jint arg1, jint arg2)
 	{
@@ -88,19 +91,22 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/CharSequence;II)Ljava/io/CharArrayWriter;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint CharArrayWriter::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject CharArrayWriter::toCharArray()
+	jcharArray CharArrayWriter::toCharArray()
 	{
 		return __thiz.callObjectMethod(
 			"toCharArray",
-			"()[C");
+			"()[C"
+		).object<jcharArray>();
 	}
 	void CharArrayWriter::write(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -109,14 +115,16 @@ namespace __jni_impl::java::io
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void CharArrayWriter::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CharArrayWriter::write(jstring arg0, jint arg1, jint arg2)
 	{
@@ -125,32 +133,37 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/String;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void CharArrayWriter::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void CharArrayWriter::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void CharArrayWriter::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void CharArrayWriter::writeTo(__jni_impl::java::io::Writer arg0)
 	{
 		__thiz.callMethod<void>(
 			"writeTo",
 			"(Ljava/io/Writer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::io
 

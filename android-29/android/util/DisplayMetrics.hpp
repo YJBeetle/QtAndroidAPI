@@ -50,7 +50,7 @@ namespace __jni_impl::android::util
 		// Methods
 		jboolean equals(__jni_impl::android::util::DisplayMetrics arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		void setTo(__jni_impl::android::util::DisplayMetrics arg0);
 		void setToDefaults();
@@ -65,180 +65,211 @@ namespace __jni_impl::android::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_140");
+			"DENSITY_140"
+		);
 	}
 	jint DisplayMetrics::DENSITY_180()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_180");
+			"DENSITY_180"
+		);
 	}
 	jint DisplayMetrics::DENSITY_200()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_200");
+			"DENSITY_200"
+		);
 	}
 	jint DisplayMetrics::DENSITY_220()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_220");
+			"DENSITY_220"
+		);
 	}
 	jint DisplayMetrics::DENSITY_260()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_260");
+			"DENSITY_260"
+		);
 	}
 	jint DisplayMetrics::DENSITY_280()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_280");
+			"DENSITY_280"
+		);
 	}
 	jint DisplayMetrics::DENSITY_300()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_300");
+			"DENSITY_300"
+		);
 	}
 	jint DisplayMetrics::DENSITY_340()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_340");
+			"DENSITY_340"
+		);
 	}
 	jint DisplayMetrics::DENSITY_360()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_360");
+			"DENSITY_360"
+		);
 	}
 	jint DisplayMetrics::DENSITY_400()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_400");
+			"DENSITY_400"
+		);
 	}
 	jint DisplayMetrics::DENSITY_420()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_420");
+			"DENSITY_420"
+		);
 	}
 	jint DisplayMetrics::DENSITY_440()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_440");
+			"DENSITY_440"
+		);
 	}
 	jint DisplayMetrics::DENSITY_450()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_450");
+			"DENSITY_450"
+		);
 	}
 	jint DisplayMetrics::DENSITY_560()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_560");
+			"DENSITY_560"
+		);
 	}
 	jint DisplayMetrics::DENSITY_600()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_600");
+			"DENSITY_600"
+		);
 	}
 	jint DisplayMetrics::DENSITY_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_DEFAULT");
+			"DENSITY_DEFAULT"
+		);
 	}
 	jint DisplayMetrics::DENSITY_DEVICE_STABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_DEVICE_STABLE");
+			"DENSITY_DEVICE_STABLE"
+		);
 	}
 	jint DisplayMetrics::DENSITY_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_HIGH");
+			"DENSITY_HIGH"
+		);
 	}
 	jint DisplayMetrics::DENSITY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_LOW");
+			"DENSITY_LOW"
+		);
 	}
 	jint DisplayMetrics::DENSITY_MEDIUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_MEDIUM");
+			"DENSITY_MEDIUM"
+		);
 	}
 	jint DisplayMetrics::DENSITY_TV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_TV");
+			"DENSITY_TV"
+		);
 	}
 	jint DisplayMetrics::DENSITY_XHIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_XHIGH");
+			"DENSITY_XHIGH"
+		);
 	}
 	jint DisplayMetrics::DENSITY_XXHIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_XXHIGH");
+			"DENSITY_XXHIGH"
+		);
 	}
 	jint DisplayMetrics::DENSITY_XXXHIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.DisplayMetrics",
-			"DENSITY_XXXHIGH");
+			"DENSITY_XXXHIGH"
+		);
 	}
 	jfloat DisplayMetrics::density()
 	{
 		return __thiz.getField<jfloat>(
-			"density");
+			"density"
+		);
 	}
 	jint DisplayMetrics::densityDpi()
 	{
 		return __thiz.getField<jint>(
-			"densityDpi");
+			"densityDpi"
+		);
 	}
 	jint DisplayMetrics::heightPixels()
 	{
 		return __thiz.getField<jint>(
-			"heightPixels");
+			"heightPixels"
+		);
 	}
 	jfloat DisplayMetrics::scaledDensity()
 	{
 		return __thiz.getField<jfloat>(
-			"scaledDensity");
+			"scaledDensity"
+		);
 	}
 	jint DisplayMetrics::widthPixels()
 	{
 		return __thiz.getField<jint>(
-			"widthPixels");
+			"widthPixels"
+		);
 	}
 	jfloat DisplayMetrics::xdpi()
 	{
 		return __thiz.getField<jfloat>(
-			"xdpi");
+			"xdpi"
+		);
 	}
 	jfloat DisplayMetrics::ydpi()
 	{
 		return __thiz.getField<jfloat>(
-			"ydpi");
+			"ydpi"
+		);
 	}
 	
 	// Constructors
@@ -255,39 +286,45 @@ namespace __jni_impl::android::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Landroid/util/DisplayMetrics;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DisplayMetrics::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DisplayMetrics::toString()
+	jstring DisplayMetrics::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DisplayMetrics::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void DisplayMetrics::setTo(__jni_impl::android::util::DisplayMetrics arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTo",
 			"(Landroid/util/DisplayMetrics;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DisplayMetrics::setToDefaults()
 	{
 		__thiz.callMethod<void>(
 			"setToDefaults",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::util
 

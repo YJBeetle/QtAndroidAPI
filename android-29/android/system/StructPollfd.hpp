@@ -19,13 +19,13 @@ namespace __jni_impl::android::system
 		jshort events();
 		QAndroidJniObject fd();
 		jshort revents();
-		QAndroidJniObject userData();
+		jobject userData();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::system
 
@@ -37,24 +37,28 @@ namespace __jni_impl::android::system
 	jshort StructPollfd::events()
 	{
 		return __thiz.getField<jshort>(
-			"events");
+			"events"
+		);
 	}
 	QAndroidJniObject StructPollfd::fd()
 	{
 		return __thiz.getObjectField(
 			"fd",
-			"Ljava/io/FileDescriptor;");
+			"Ljava/io/FileDescriptor;"
+		);
 	}
 	jshort StructPollfd::revents()
 	{
 		return __thiz.getField<jshort>(
-			"revents");
+			"revents"
+		);
 	}
-	QAndroidJniObject StructPollfd::userData()
+	jobject StructPollfd::userData()
 	{
 		return __thiz.getObjectField(
 			"userData",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	
 	// Constructors
@@ -66,11 +70,12 @@ namespace __jni_impl::android::system
 	}
 	
 	// Methods
-	QAndroidJniObject StructPollfd::toString()
+	jstring StructPollfd::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::system
 

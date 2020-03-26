@@ -48,14 +48,14 @@ namespace __jni_impl::android::widget
 		void check(jint arg0);
 		jint getCheckedRadioButtonId();
 		void clearCheck();
-		QAndroidJniObject getAccessibilityClassName();
+		void setOnCheckedChangeListener(__jni_impl::__JniBaseClass arg0);
+		jstring getAccessibilityClassName();
 		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
 		void setOnHierarchyChangeListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
 		jint getAutofillType();
 		QAndroidJniObject getAutofillValue();
-		void setOnCheckedChangeListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -93,25 +93,37 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"check",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint RadioGroup::getCheckedRadioButtonId()
 	{
 		return __thiz.callMethod<jint>(
 			"getCheckedRadioButtonId",
-			"()I");
+			"()I"
+		);
 	}
 	void RadioGroup::clearCheck()
 	{
 		__thiz.callMethod<void>(
 			"clearCheck",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject RadioGroup::getAccessibilityClassName()
+	void RadioGroup::setOnCheckedChangeListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnCheckedChangeListener",
+			"(Landroid/widget/RadioGroup$OnCheckedChangeListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring RadioGroup::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void RadioGroup::addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2)
 	{
@@ -120,47 +132,46 @@ namespace __jni_impl::android::widget
 			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void RadioGroup::setOnHierarchyChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnHierarchyChangeListener",
 			"(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RadioGroup::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/RadioGroup$LayoutParams;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RadioGroup::autofill(__jni_impl::android::view::autofill::AutofillValue arg0)
 	{
 		__thiz.callMethod<void>(
 			"autofill",
 			"(Landroid/view/autofill/AutofillValue;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint RadioGroup::getAutofillType()
 	{
 		return __thiz.callMethod<jint>(
 			"getAutofillType",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject RadioGroup::getAutofillValue()
 	{
 		return __thiz.callObjectMethod(
 			"getAutofillValue",
-			"()Landroid/view/autofill/AutofillValue;");
-	}
-	void RadioGroup::setOnCheckedChangeListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnCheckedChangeListener",
-			"(Landroid/widget/RadioGroup$OnCheckedChangeListener;)V",
-			arg0.__jniObject().object());
+			"()Landroid/view/autofill/AutofillValue;"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

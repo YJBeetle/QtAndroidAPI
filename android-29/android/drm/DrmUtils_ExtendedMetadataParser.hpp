@@ -17,7 +17,7 @@ namespace __jni_impl::android::drm
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject get(jstring arg0);
+		jstring get(jstring arg0);
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
 	};
@@ -37,24 +37,27 @@ namespace __jni_impl::android::drm
 	}
 	
 	// Methods
-	QAndroidJniObject DrmUtils_ExtendedMetadataParser::get(jstring arg0)
+	jstring DrmUtils_ExtendedMetadataParser::get(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject DrmUtils_ExtendedMetadataParser::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	QAndroidJniObject DrmUtils_ExtendedMetadataParser::keyIterator()
 	{
 		return __thiz.callObjectMethod(
 			"keyIterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 } // namespace __jni_impl::android::drm
 

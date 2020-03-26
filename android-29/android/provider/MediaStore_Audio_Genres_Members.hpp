@@ -16,10 +16,10 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUDIO_ID();
-		static QAndroidJniObject CONTENT_DIRECTORY();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
-		static QAndroidJniObject GENRE_ID();
+		static jstring AUDIO_ID();
+		static jstring CONTENT_DIRECTORY();
+		static jstring DEFAULT_SORT_ORDER();
+		static jstring GENRE_ID();
 		
 		// Constructors
 		void __constructor();
@@ -34,33 +34,37 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject MediaStore_Audio_Genres_Members::AUDIO_ID()
+	jstring MediaStore_Audio_Genres_Members::AUDIO_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"AUDIO_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Genres_Members::CONTENT_DIRECTORY()
+	jstring MediaStore_Audio_Genres_Members::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Genres_Members::DEFAULT_SORT_ORDER()
+	jstring MediaStore_Audio_Genres_Members::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Genres_Members::GENRE_ID()
+	jstring MediaStore_Audio_Genres_Members::GENRE_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Genres$Members",
 			"GENRE_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -79,7 +83,8 @@ namespace __jni_impl::android::provider
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::provider
 

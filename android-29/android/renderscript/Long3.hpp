@@ -31,17 +31,20 @@ namespace __jni_impl::android::renderscript
 	jlong Long3::x()
 	{
 		return __thiz.getField<jlong>(
-			"x");
+			"x"
+		);
 	}
 	jlong Long3::y()
 	{
 		return __thiz.getField<jlong>(
-			"y");
+			"y"
+		);
 	}
 	jlong Long3::z()
 	{
 		return __thiz.getField<jlong>(
-			"z");
+			"z"
+		);
 	}
 	
 	// Constructors

@@ -17,17 +17,17 @@ namespace __jni_impl::android::text::util
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		void setName(jstring arg0);
-		QAndroidJniObject getAddress();
+		jstring getAddress();
 		void setComment(jstring arg0);
-		QAndroidJniObject getComment();
-		static QAndroidJniObject quoteNameIfNecessary(jstring arg0);
-		static QAndroidJniObject quoteName(jstring arg0);
-		static QAndroidJniObject quoteComment(jstring arg0);
+		jstring getComment();
+		static jstring quoteNameIfNecessary(jstring arg0);
+		static jstring quoteName(jstring arg0);
+		static jstring quoteComment(jstring arg0);
 		void setAddress(jstring arg0);
 	};
 } // namespace __jni_impl::android::text::util
@@ -49,87 +49,99 @@ namespace __jni_impl::android::text::util
 	}
 	
 	// Methods
-	QAndroidJniObject Rfc822Token::getName()
+	jstring Rfc822Token::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Rfc822Token::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Rfc822Token::toString()
+	jstring Rfc822Token::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Rfc822Token::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void Rfc822Token::setName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setName",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Rfc822Token::getAddress()
+	jstring Rfc822Token::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Rfc822Token::setComment(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setComment",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Rfc822Token::getComment()
+	jstring Rfc822Token::getComment()
 	{
 		return __thiz.callObjectMethod(
 			"getComment",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Rfc822Token::quoteNameIfNecessary(jstring arg0)
+	jstring Rfc822Token::quoteNameIfNecessary(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.util.Rfc822Token",
 			"quoteNameIfNecessary",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Rfc822Token::quoteName(jstring arg0)
+	jstring Rfc822Token::quoteName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.util.Rfc822Token",
 			"quoteName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Rfc822Token::quoteComment(jstring arg0)
+	jstring Rfc822Token::quoteComment(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.util.Rfc822Token",
 			"quoteComment",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void Rfc822Token::setAddress(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAddress",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::util
 

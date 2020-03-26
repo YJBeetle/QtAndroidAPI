@@ -25,8 +25,8 @@ namespace __jni_impl::java::security::spec
 		void __constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::security::spec::ECParameterSpec arg1);
 		
 		// Methods
-		QAndroidJniObject getS();
 		QAndroidJniObject getParams();
+		QAndroidJniObject getS();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -48,17 +48,19 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
-	QAndroidJniObject ECPrivateKeySpec::getS()
-	{
-		return __thiz.callObjectMethod(
-			"getS",
-			"()Ljava/math/BigInteger;");
-	}
 	QAndroidJniObject ECPrivateKeySpec::getParams()
 	{
 		return __thiz.callObjectMethod(
 			"getParams",
-			"()Ljava/security/spec/ECParameterSpec;");
+			"()Ljava/security/spec/ECParameterSpec;"
+		);
+	}
+	QAndroidJniObject ECPrivateKeySpec::getS()
+	{
+		return __thiz.callObjectMethod(
+			"getS",
+			"()Ljava/math/BigInteger;"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

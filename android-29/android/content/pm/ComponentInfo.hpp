@@ -26,8 +26,8 @@ namespace __jni_impl::android::content::pm
 		jboolean directBootAware();
 		jboolean enabled();
 		jboolean exported();
-		QAndroidJniObject processName();
-		QAndroidJniObject splitName();
+		jstring processName();
+		jstring splitName();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::content::pm::ComponentInfo arg0);
@@ -35,9 +35,9 @@ namespace __jni_impl::android::content::pm
 		
 		// Methods
 		jboolean isEnabled();
+		jint getIconResource();
 		jint getLogoResource();
 		jint getBannerResource();
-		jint getIconResource();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
@@ -52,39 +52,46 @@ namespace __jni_impl::android::content::pm
 	{
 		return __thiz.getObjectField(
 			"applicationInfo",
-			"Landroid/content/pm/ApplicationInfo;");
+			"Landroid/content/pm/ApplicationInfo;"
+		);
 	}
 	jint ComponentInfo::descriptionRes()
 	{
 		return __thiz.getField<jint>(
-			"descriptionRes");
+			"descriptionRes"
+		);
 	}
 	jboolean ComponentInfo::directBootAware()
 	{
 		return __thiz.getField<jboolean>(
-			"directBootAware");
+			"directBootAware"
+		);
 	}
 	jboolean ComponentInfo::enabled()
 	{
 		return __thiz.getField<jboolean>(
-			"enabled");
+			"enabled"
+		);
 	}
 	jboolean ComponentInfo::exported()
 	{
 		return __thiz.getField<jboolean>(
-			"exported");
+			"exported"
+		);
 	}
-	QAndroidJniObject ComponentInfo::processName()
+	jstring ComponentInfo::processName()
 	{
 		return __thiz.getObjectField(
 			"processName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ComponentInfo::splitName()
+	jstring ComponentInfo::splitName()
 	{
 		return __thiz.getObjectField(
 			"splitName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -107,25 +114,29 @@ namespace __jni_impl::android::content::pm
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
-	}
-	jint ComponentInfo::getLogoResource()
-	{
-		return __thiz.callMethod<jint>(
-			"getLogoResource",
-			"()I");
-	}
-	jint ComponentInfo::getBannerResource()
-	{
-		return __thiz.callMethod<jint>(
-			"getBannerResource",
-			"()I");
+			"()Z"
+		);
 	}
 	jint ComponentInfo::getIconResource()
 	{
 		return __thiz.callMethod<jint>(
 			"getIconResource",
-			"()I");
+			"()I"
+		);
+	}
+	jint ComponentInfo::getLogoResource()
+	{
+		return __thiz.callMethod<jint>(
+			"getLogoResource",
+			"()I"
+		);
+	}
+	jint ComponentInfo::getBannerResource()
+	{
+		return __thiz.callMethod<jint>(
+			"getBannerResource",
+			"()I"
+		);
 	}
 	void ComponentInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -133,7 +144,8 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

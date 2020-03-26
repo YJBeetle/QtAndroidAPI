@@ -20,33 +20,33 @@ namespace __jni_impl::android::media::effect
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EFFECT_AUTOFIX();
-		static QAndroidJniObject EFFECT_BACKDROPPER();
-		static QAndroidJniObject EFFECT_BITMAPOVERLAY();
-		static QAndroidJniObject EFFECT_BLACKWHITE();
-		static QAndroidJniObject EFFECT_BRIGHTNESS();
-		static QAndroidJniObject EFFECT_CONTRAST();
-		static QAndroidJniObject EFFECT_CROP();
-		static QAndroidJniObject EFFECT_CROSSPROCESS();
-		static QAndroidJniObject EFFECT_DOCUMENTARY();
-		static QAndroidJniObject EFFECT_DUOTONE();
-		static QAndroidJniObject EFFECT_FILLLIGHT();
-		static QAndroidJniObject EFFECT_FISHEYE();
-		static QAndroidJniObject EFFECT_FLIP();
-		static QAndroidJniObject EFFECT_GRAIN();
-		static QAndroidJniObject EFFECT_GRAYSCALE();
-		static QAndroidJniObject EFFECT_LOMOISH();
-		static QAndroidJniObject EFFECT_NEGATIVE();
-		static QAndroidJniObject EFFECT_POSTERIZE();
-		static QAndroidJniObject EFFECT_REDEYE();
-		static QAndroidJniObject EFFECT_ROTATE();
-		static QAndroidJniObject EFFECT_SATURATE();
-		static QAndroidJniObject EFFECT_SEPIA();
-		static QAndroidJniObject EFFECT_SHARPEN();
-		static QAndroidJniObject EFFECT_STRAIGHTEN();
-		static QAndroidJniObject EFFECT_TEMPERATURE();
-		static QAndroidJniObject EFFECT_TINT();
-		static QAndroidJniObject EFFECT_VIGNETTE();
+		static jstring EFFECT_AUTOFIX();
+		static jstring EFFECT_BACKDROPPER();
+		static jstring EFFECT_BITMAPOVERLAY();
+		static jstring EFFECT_BLACKWHITE();
+		static jstring EFFECT_BRIGHTNESS();
+		static jstring EFFECT_CONTRAST();
+		static jstring EFFECT_CROP();
+		static jstring EFFECT_CROSSPROCESS();
+		static jstring EFFECT_DOCUMENTARY();
+		static jstring EFFECT_DUOTONE();
+		static jstring EFFECT_FILLLIGHT();
+		static jstring EFFECT_FISHEYE();
+		static jstring EFFECT_FLIP();
+		static jstring EFFECT_GRAIN();
+		static jstring EFFECT_GRAYSCALE();
+		static jstring EFFECT_LOMOISH();
+		static jstring EFFECT_NEGATIVE();
+		static jstring EFFECT_POSTERIZE();
+		static jstring EFFECT_REDEYE();
+		static jstring EFFECT_ROTATE();
+		static jstring EFFECT_SATURATE();
+		static jstring EFFECT_SEPIA();
+		static jstring EFFECT_SHARPEN();
+		static jstring EFFECT_STRAIGHTEN();
+		static jstring EFFECT_TEMPERATURE();
+		static jstring EFFECT_TINT();
+		static jstring EFFECT_VIGNETTE();
 		
 		// Constructors
 		void __constructor();
@@ -63,194 +63,221 @@ namespace __jni_impl::android::media::effect
 namespace __jni_impl::android::media::effect
 {
 	// Fields
-	QAndroidJniObject EffectFactory::EFFECT_AUTOFIX()
+	jstring EffectFactory::EFFECT_AUTOFIX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_AUTOFIX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_BACKDROPPER()
+	jstring EffectFactory::EFFECT_BACKDROPPER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_BACKDROPPER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_BITMAPOVERLAY()
+	jstring EffectFactory::EFFECT_BITMAPOVERLAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_BITMAPOVERLAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_BLACKWHITE()
+	jstring EffectFactory::EFFECT_BLACKWHITE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_BLACKWHITE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_BRIGHTNESS()
+	jstring EffectFactory::EFFECT_BRIGHTNESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_BRIGHTNESS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_CONTRAST()
+	jstring EffectFactory::EFFECT_CONTRAST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_CONTRAST",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_CROP()
+	jstring EffectFactory::EFFECT_CROP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_CROP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_CROSSPROCESS()
+	jstring EffectFactory::EFFECT_CROSSPROCESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_CROSSPROCESS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_DOCUMENTARY()
+	jstring EffectFactory::EFFECT_DOCUMENTARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_DOCUMENTARY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_DUOTONE()
+	jstring EffectFactory::EFFECT_DUOTONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_DUOTONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_FILLLIGHT()
+	jstring EffectFactory::EFFECT_FILLLIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_FILLLIGHT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_FISHEYE()
+	jstring EffectFactory::EFFECT_FISHEYE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_FISHEYE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_FLIP()
+	jstring EffectFactory::EFFECT_FLIP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_FLIP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_GRAIN()
+	jstring EffectFactory::EFFECT_GRAIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_GRAIN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_GRAYSCALE()
+	jstring EffectFactory::EFFECT_GRAYSCALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_GRAYSCALE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_LOMOISH()
+	jstring EffectFactory::EFFECT_LOMOISH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_LOMOISH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_NEGATIVE()
+	jstring EffectFactory::EFFECT_NEGATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_NEGATIVE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_POSTERIZE()
+	jstring EffectFactory::EFFECT_POSTERIZE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_POSTERIZE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_REDEYE()
+	jstring EffectFactory::EFFECT_REDEYE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_REDEYE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_ROTATE()
+	jstring EffectFactory::EFFECT_ROTATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_ROTATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_SATURATE()
+	jstring EffectFactory::EFFECT_SATURATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_SATURATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_SEPIA()
+	jstring EffectFactory::EFFECT_SEPIA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_SEPIA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_SHARPEN()
+	jstring EffectFactory::EFFECT_SHARPEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_SHARPEN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_STRAIGHTEN()
+	jstring EffectFactory::EFFECT_STRAIGHTEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_STRAIGHTEN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_TEMPERATURE()
+	jstring EffectFactory::EFFECT_TEMPERATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_TEMPERATURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_TINT()
+	jstring EffectFactory::EFFECT_TINT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_TINT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EffectFactory::EFFECT_VIGNETTE()
+	jstring EffectFactory::EFFECT_VIGNETTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.effect.EffectFactory",
 			"EFFECT_VIGNETTE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -267,7 +294,8 @@ namespace __jni_impl::android::media::effect
 		return __thiz.callObjectMethod(
 			"createEffect",
 			"(Ljava/lang/String;)Landroid/media/effect/Effect;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean EffectFactory::isEffectSupported(jstring arg0)
 	{
@@ -275,7 +303,8 @@ namespace __jni_impl::android::media::effect
 			"android.media.effect.EffectFactory",
 			"isEffectSupported",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media::effect
 

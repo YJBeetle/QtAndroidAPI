@@ -50,7 +50,7 @@ namespace __jni_impl::java::time::chrono
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jlong getLong(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject of(jint arg0, jint arg1, jint arg2);
@@ -102,26 +102,30 @@ namespace __jni_impl::java::time::chrono
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ThaiBuddhistDate::toString()
+	jstring ThaiBuddhistDate::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ThaiBuddhistDate::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jlong ThaiBuddhistDate::getLong(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
 			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::of(jint arg0, jint arg1, jint arg2)
 	{
@@ -131,7 +135,8 @@ namespace __jni_impl::java::time::chrono
 			"(III)Ljava/time/chrono/ThaiBuddhistDate;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::from(__jni_impl::__JniBaseClass arg0)
 	{
@@ -139,20 +144,23 @@ namespace __jni_impl::java::time::chrono
 			"java.time.chrono.ThaiBuddhistDate",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::range(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::getChronology()
 	{
 		return __thiz.callObjectMethod(
 			"getChronology",
-			"()Ljava/time/chrono/ThaiBuddhistChronology;");
+			"()Ljava/time/chrono/ThaiBuddhistChronology;"
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::plus(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -160,21 +168,24 @@ namespace __jni_impl::java::time::chrono
 			"plus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/chrono/ThaiBuddhistDate;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::plus(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"plus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::until(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"until",
 			"(Ljava/time/chrono/ChronoLocalDate;)Ljava/time/chrono/ChronoPeriod;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong ThaiBuddhistDate::until(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -182,14 +193,16 @@ namespace __jni_impl::java::time::chrono
 			"until",
 			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/TemporalUnit;)J",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::minus(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"minus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::minus(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -197,14 +210,16 @@ namespace __jni_impl::java::time::chrono
 			"minus",
 			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/chrono/ThaiBuddhistDate;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::with(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"with",
 			"(Ljava/time/temporal/TemporalAdjuster;)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::with(__jni_impl::__JniBaseClass arg0, jlong arg1)
 	{
@@ -212,20 +227,23 @@ namespace __jni_impl::java::time::chrono
 			"with",
 			"(Ljava/time/temporal/TemporalField;J)Ljava/time/chrono/ThaiBuddhistDate;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint ThaiBuddhistDate::lengthOfMonth()
 	{
 		return __thiz.callMethod<jint>(
 			"lengthOfMonth",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::now()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistDate",
 			"now",
-			"()Ljava/time/chrono/ThaiBuddhistDate;");
+			"()Ljava/time/chrono/ThaiBuddhistDate;"
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::now(__jni_impl::java::time::ZoneId arg0)
 	{
@@ -233,7 +251,8 @@ namespace __jni_impl::java::time::chrono
 			"java.time.chrono.ThaiBuddhistDate",
 			"now",
 			"(Ljava/time/ZoneId;)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::now(__jni_impl::java::time::Clock arg0)
 	{
@@ -241,26 +260,30 @@ namespace __jni_impl::java::time::chrono
 			"java.time.chrono.ThaiBuddhistDate",
 			"now",
 			"(Ljava/time/Clock;)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::getEra()
 	{
 		return __thiz.callObjectMethod(
 			"getEra",
-			"()Ljava/time/chrono/ThaiBuddhistEra;");
+			"()Ljava/time/chrono/ThaiBuddhistEra;"
+		);
 	}
 	QAndroidJniObject ThaiBuddhistDate::atTime(__jni_impl::java::time::LocalTime arg0)
 	{
 		return __thiz.callObjectMethod(
 			"atTime",
 			"(Ljava/time/LocalTime;)Ljava/time/chrono/ChronoLocalDateTime;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong ThaiBuddhistDate::toEpochDay()
 	{
 		return __thiz.callMethod<jlong>(
 			"toEpochDay",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::java::time::chrono
 

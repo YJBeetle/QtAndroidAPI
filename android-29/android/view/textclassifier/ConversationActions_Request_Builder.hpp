@@ -59,35 +59,40 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/textclassifier/ConversationActions$Request;");
+			"()Landroid/view/textclassifier/ConversationActions$Request;"
+		);
 	}
 	QAndroidJniObject ConversationActions_Request_Builder::setHints(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setHints",
 			"(Ljava/util/List;)Landroid/view/textclassifier/ConversationActions$Request$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConversationActions_Request_Builder::setTypeConfig(__jni_impl::android::view::textclassifier::TextClassifier_EntityConfig arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTypeConfig",
 			"(Landroid/view/textclassifier/TextClassifier$EntityConfig;)Landroid/view/textclassifier/ConversationActions$Request$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConversationActions_Request_Builder::setMaxSuggestions(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMaxSuggestions",
 			"(I)Landroid/view/textclassifier/ConversationActions$Request$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ConversationActions_Request_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/textclassifier/ConversationActions$Request$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

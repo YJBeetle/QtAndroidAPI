@@ -49,14 +49,16 @@ namespace __jni_impl::java::util::zip
 		__thiz.callMethod<void>(
 			"update",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CRC32::update(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		__thiz.callMethod<void>(
 			"update",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CRC32::update(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -65,19 +67,22 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong CRC32::getValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"getValue",
-			"()J");
+			"()J"
+		);
 	}
 	void CRC32::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

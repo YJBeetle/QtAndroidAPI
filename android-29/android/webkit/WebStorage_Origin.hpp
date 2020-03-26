@@ -18,7 +18,7 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		jlong getUsage();
-		QAndroidJniObject getOrigin();
+		jstring getOrigin();
 		jlong getQuota();
 	};
 } // namespace __jni_impl::android::webkit
@@ -41,19 +41,22 @@ namespace __jni_impl::android::webkit
 	{
 		return __thiz.callMethod<jlong>(
 			"getUsage",
-			"()J");
+			"()J"
+		);
 	}
-	QAndroidJniObject WebStorage_Origin::getOrigin()
+	jstring WebStorage_Origin::getOrigin()
 	{
 		return __thiz.callObjectMethod(
 			"getOrigin",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong WebStorage_Origin::getQuota()
 	{
 		return __thiz.callMethod<jlong>(
 			"getQuota",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

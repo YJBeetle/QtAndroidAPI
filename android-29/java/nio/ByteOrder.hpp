@@ -19,7 +19,7 @@ namespace __jni_impl::java::nio
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		static QAndroidJniObject nativeOrder();
 	};
 } // namespace __jni_impl::java::nio
@@ -33,14 +33,16 @@ namespace __jni_impl::java::nio
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.ByteOrder",
 			"BIG_ENDIAN",
-			"Ljava/nio/ByteOrder;");
+			"Ljava/nio/ByteOrder;"
+		);
 	}
 	QAndroidJniObject ByteOrder::LITTLE_ENDIAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.ByteOrder",
 			"LITTLE_ENDIAN",
-			"Ljava/nio/ByteOrder;");
+			"Ljava/nio/ByteOrder;"
+		);
 	}
 	
 	// Constructors
@@ -52,18 +54,20 @@ namespace __jni_impl::java::nio
 	}
 	
 	// Methods
-	QAndroidJniObject ByteOrder::toString()
+	jstring ByteOrder::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ByteOrder::nativeOrder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.ByteOrder",
 			"nativeOrder",
-			"()Ljava/nio/ByteOrder;");
+			"()Ljava/nio/ByteOrder;"
+		);
 	}
 } // namespace __jni_impl::java::nio
 

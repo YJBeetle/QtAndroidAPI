@@ -25,7 +25,6 @@ namespace __jni_impl::android::media::tv
 		void __constructor();
 		
 		// Methods
-		void onVideoSizeChanged(jstring arg0, jint arg1, jint arg2);
 		void onDisconnected(jstring arg0);
 		void onChannelRetuned(jstring arg0, __jni_impl::android::net::Uri arg1);
 		void onTracksChanged(jstring arg0, __jni_impl::__JniBaseClass arg1);
@@ -36,6 +35,7 @@ namespace __jni_impl::android::media::tv
 		void onContentBlocked(jstring arg0, __jni_impl::android::media::tv::TvContentRating arg1);
 		void onTimeShiftStatusChanged(jstring arg0, jint arg1);
 		void onConnectionFailed(jstring arg0);
+		void onVideoSizeChanged(jstring arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -55,21 +55,13 @@ namespace __jni_impl::android::media::tv
 	}
 	
 	// Methods
-	void TvView_TvInputCallback::onVideoSizeChanged(jstring arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onVideoSizeChanged",
-			"(Ljava/lang/String;II)V",
-			arg0,
-			arg1,
-			arg2);
-	}
 	void TvView_TvInputCallback::onDisconnected(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDisconnected",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void TvView_TvInputCallback::onChannelRetuned(jstring arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -77,7 +69,8 @@ namespace __jni_impl::android::media::tv
 			"onChannelRetuned",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void TvView_TvInputCallback::onTracksChanged(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -85,7 +78,8 @@ namespace __jni_impl::android::media::tv
 			"onTracksChanged",
 			"(Ljava/lang/String;Ljava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void TvView_TvInputCallback::onTrackSelected(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -94,14 +88,16 @@ namespace __jni_impl::android::media::tv
 			"(Ljava/lang/String;ILjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void TvView_TvInputCallback::onVideoAvailable(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onVideoAvailable",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void TvView_TvInputCallback::onVideoUnavailable(jstring arg0, jint arg1)
 	{
@@ -109,14 +105,16 @@ namespace __jni_impl::android::media::tv
 			"onVideoUnavailable",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void TvView_TvInputCallback::onContentAllowed(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onContentAllowed",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void TvView_TvInputCallback::onContentBlocked(jstring arg0, __jni_impl::android::media::tv::TvContentRating arg1)
 	{
@@ -124,7 +122,8 @@ namespace __jni_impl::android::media::tv
 			"onContentBlocked",
 			"(Ljava/lang/String;Landroid/media/tv/TvContentRating;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void TvView_TvInputCallback::onTimeShiftStatusChanged(jstring arg0, jint arg1)
 	{
@@ -132,14 +131,26 @@ namespace __jni_impl::android::media::tv
 			"onTimeShiftStatusChanged",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void TvView_TvInputCallback::onConnectionFailed(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onConnectionFailed",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void TvView_TvInputCallback::onVideoSizeChanged(jstring arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"onVideoSizeChanged",
+			"(Ljava/lang/String;II)V",
+			arg0,
+			arg1,
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

@@ -69,7 +69,8 @@ namespace __jni_impl::java::util::jar
 		__thiz.callMethod<void>(
 			"putNextEntry",
 			"(Ljava/util/zip/ZipEntry;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::util::jar
 

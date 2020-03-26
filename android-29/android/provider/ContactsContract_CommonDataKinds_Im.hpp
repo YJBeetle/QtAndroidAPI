@@ -16,12 +16,12 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject CUSTOM_PROTOCOL();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static QAndroidJniObject PROTOCOL();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring CUSTOM_PROTOCOL();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static jstring PROTOCOL();
 		static jint PROTOCOL_AIM();
 		static jint PROTOCOL_CUSTOM();
 		static jint PROTOCOL_GOOGLE_TALK();
@@ -41,9 +41,9 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static jint getTypeLabelResource(jint arg0);
-		static QAndroidJniObject getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
 		static jint getProtocolLabelResource(jint arg0);
-		static QAndroidJniObject getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static jstring getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -52,125 +52,144 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_CommonDataKinds_Im::CONTENT_ITEM_TYPE()
+	jstring ContactsContract_CommonDataKinds_Im::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Im::CUSTOM_PROTOCOL()
+	jstring ContactsContract_CommonDataKinds_Im::CUSTOM_PROTOCOL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"CUSTOM_PROTOCOL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX()
+	jstring ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"EXTRA_ADDRESS_BOOK_INDEX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	jstring ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	jstring ContactsContract_CommonDataKinds_Im::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Im::PROTOCOL()
+	jstring ContactsContract_CommonDataKinds_Im::PROTOCOL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"PROTOCOL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_AIM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_AIM");
+			"PROTOCOL_AIM"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_CUSTOM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_CUSTOM");
+			"PROTOCOL_CUSTOM"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_GOOGLE_TALK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_GOOGLE_TALK");
+			"PROTOCOL_GOOGLE_TALK"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_ICQ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_ICQ");
+			"PROTOCOL_ICQ"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_JABBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_JABBER");
+			"PROTOCOL_JABBER"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_MSN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_MSN");
+			"PROTOCOL_MSN"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_NETMEETING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_NETMEETING");
+			"PROTOCOL_NETMEETING"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_QQ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_QQ");
+			"PROTOCOL_QQ"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_SKYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_SKYPE");
+			"PROTOCOL_SKYPE"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::PROTOCOL_YAHOO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"PROTOCOL_YAHOO");
+			"PROTOCOL_YAHOO"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::TYPE_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"TYPE_HOME");
+			"TYPE_HOME"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::TYPE_OTHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"TYPE_OTHER");
+			"TYPE_OTHER"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Im::TYPE_WORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"TYPE_WORK");
+			"TYPE_WORK"
+		);
 	}
 	
 	// Constructors
@@ -188,9 +207,10 @@ namespace __jni_impl::android::provider
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"getTypeLabelResource",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Im::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
+	jstring ContactsContract_CommonDataKinds_Im::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
@@ -198,7 +218,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 	jint ContactsContract_CommonDataKinds_Im::getProtocolLabelResource(jint arg0)
 	{
@@ -206,9 +227,10 @@ namespace __jni_impl::android::provider
 			"android.provider.ContactsContract$CommonDataKinds$Im",
 			"getProtocolLabelResource",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Im::getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
+	jstring ContactsContract_CommonDataKinds_Im::getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
@@ -216,7 +238,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

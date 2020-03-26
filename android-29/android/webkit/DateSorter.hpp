@@ -23,7 +23,7 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		jint getIndex(jlong arg0);
-		QAndroidJniObject getLabel(jint arg0);
+		jstring getLabel(jint arg0);
 		jlong getBoundary(jint arg0);
 	};
 } // namespace __jni_impl::android::webkit
@@ -37,7 +37,8 @@ namespace __jni_impl::android::webkit
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.DateSorter",
-			"DAY_COUNT");
+			"DAY_COUNT"
+		);
 	}
 	
 	// Constructors
@@ -55,21 +56,24 @@ namespace __jni_impl::android::webkit
 		return __thiz.callMethod<jint>(
 			"getIndex",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DateSorter::getLabel(jint arg0)
+	jstring DateSorter::getLabel(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getLabel",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jlong DateSorter::getBoundary(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getBoundary",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

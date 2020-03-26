@@ -48,7 +48,8 @@ namespace __jni_impl::android::media::browse
 		__thiz.callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaBrowser_SubscriptionCallback::onError(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -56,7 +57,8 @@ namespace __jni_impl::android::media::browse
 			"onError",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -64,7 +66,8 @@ namespace __jni_impl::android::media::browse
 			"onChildrenLoaded",
 			"(Ljava/lang/String;Ljava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -73,7 +76,8 @@ namespace __jni_impl::android::media::browse
 			"(Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::browse
 

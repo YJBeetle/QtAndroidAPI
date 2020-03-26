@@ -25,12 +25,12 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
+		jstring getName();
+		jstring toString();
 		QAndroidJniObject getContext();
 		void cancel();
-		QAndroidJniObject getActivity();
 		void onCancel();
+		QAndroidJniObject getActivity();
 		void onAttached(__jni_impl::android::app::Activity arg0);
 		void onDetached();
 	};
@@ -52,54 +52,62 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject VoiceInteractor_Request::getName()
+	jstring VoiceInteractor_Request::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoiceInteractor_Request::toString()
+	jstring VoiceInteractor_Request::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject VoiceInteractor_Request::getContext()
 	{
 		return __thiz.callObjectMethod(
 			"getContext",
-			"()Landroid/content/Context;");
+			"()Landroid/content/Context;"
+		);
 	}
 	void VoiceInteractor_Request::cancel()
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
-	}
-	QAndroidJniObject VoiceInteractor_Request::getActivity()
-	{
-		return __thiz.callObjectMethod(
-			"getActivity",
-			"()Landroid/app/Activity;");
+			"()V"
+		);
 	}
 	void VoiceInteractor_Request::onCancel()
 	{
 		__thiz.callMethod<void>(
 			"onCancel",
-			"()V");
+			"()V"
+		);
+	}
+	QAndroidJniObject VoiceInteractor_Request::getActivity()
+	{
+		return __thiz.callObjectMethod(
+			"getActivity",
+			"()Landroid/app/Activity;"
+		);
 	}
 	void VoiceInteractor_Request::onAttached(__jni_impl::android::app::Activity arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAttached",
 			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void VoiceInteractor_Request::onDetached()
 	{
 		__thiz.callMethod<void>(
 			"onDetached",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::app
 

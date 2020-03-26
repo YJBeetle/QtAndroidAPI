@@ -49,7 +49,8 @@ namespace __jni_impl::android::nfc
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultAdapter",
-			"()Landroid/nfc/NfcAdapter;");
+			"()Landroid/nfc/NfcAdapter;"
+		);
 	}
 } // namespace __jni_impl::android::nfc
 

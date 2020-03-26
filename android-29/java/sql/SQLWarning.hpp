@@ -107,14 +107,16 @@ namespace __jni_impl::java::sql
 	{
 		return __thiz.callObjectMethod(
 			"getNextWarning",
-			"()Ljava/sql/SQLWarning;");
+			"()Ljava/sql/SQLWarning;"
+		);
 	}
 	void SQLWarning::setNextWarning(__jni_impl::java::sql::SQLWarning arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNextWarning",
 			"(Ljava/sql/SQLWarning;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::sql
 

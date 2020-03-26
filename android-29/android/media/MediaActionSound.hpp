@@ -35,25 +35,29 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaActionSound",
-			"FOCUS_COMPLETE");
+			"FOCUS_COMPLETE"
+		);
 	}
 	jint MediaActionSound::SHUTTER_CLICK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaActionSound",
-			"SHUTTER_CLICK");
+			"SHUTTER_CLICK"
+		);
 	}
 	jint MediaActionSound::START_VIDEO_RECORDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaActionSound",
-			"START_VIDEO_RECORDING");
+			"START_VIDEO_RECORDING"
+		);
 	}
 	jint MediaActionSound::STOP_VIDEO_RECORDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaActionSound",
-			"STOP_VIDEO_RECORDING");
+			"STOP_VIDEO_RECORDING"
+		);
 	}
 	
 	// Constructors
@@ -70,20 +74,23 @@ namespace __jni_impl::android::media
 		__thiz.callMethod<void>(
 			"load",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaActionSound::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaActionSound::play(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"play",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

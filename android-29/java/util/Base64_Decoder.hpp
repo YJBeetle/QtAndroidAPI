@@ -26,9 +26,9 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		QAndroidJniObject decode(__jni_impl::java::nio::ByteBuffer arg0);
-		QAndroidJniObject decode(jbyteArray arg0);
+		jbyteArray decode(jbyteArray arg0);
 		jint decode(jbyteArray arg0, jbyteArray arg1);
-		QAndroidJniObject decode(jstring arg0);
+		jbyteArray decode(jstring arg0);
 		QAndroidJniObject wrap(__jni_impl::java::io::InputStream arg0);
 	};
 } // namespace __jni_impl::java::util
@@ -54,14 +54,16 @@ namespace __jni_impl::java::util
 		return __thiz.callObjectMethod(
 			"decode",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Base64_Decoder::decode(jbyteArray arg0)
+	jbyteArray Base64_Decoder::decode(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"decode",
 			"([B)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
 	jint Base64_Decoder::decode(jbyteArray arg0, jbyteArray arg1)
 	{
@@ -69,21 +71,24 @@ namespace __jni_impl::java::util
 			"decode",
 			"([B[B)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Base64_Decoder::decode(jstring arg0)
+	jbyteArray Base64_Decoder::decode(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"decode",
 			"(Ljava/lang/String;)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject Base64_Decoder::wrap(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"wrap",
 			"(Ljava/io/InputStream;)Ljava/io/InputStream;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::util
 

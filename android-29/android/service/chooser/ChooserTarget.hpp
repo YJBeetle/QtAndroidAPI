@@ -34,14 +34,14 @@ namespace __jni_impl::android::service::chooser
 		void __constructor(jstring arg0, __jni_impl::android::graphics::drawable::Icon arg1, jfloat arg2, __jni_impl::android::content::ComponentName arg3, __jni_impl::android::os::Bundle arg4);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jfloat getScore();
-		QAndroidJniObject getComponentName();
-		QAndroidJniObject getTitle();
-		QAndroidJniObject getIcon();
+		QAndroidJniObject getIntentExtras();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getIntentExtras();
+		QAndroidJniObject getComponentName();
+		jstring getTitle();
+		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::service::chooser
 
@@ -58,7 +58,8 @@ namespace __jni_impl::android::service::chooser
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.chooser.ChooserTarget",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -75,41 +76,33 @@ namespace __jni_impl::android::service::chooser
 	}
 	
 	// Methods
-	QAndroidJniObject ChooserTarget::toString()
+	jstring ChooserTarget::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jfloat ChooserTarget::getScore()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getScore",
-			"()F");
+			"()F"
+		);
 	}
-	QAndroidJniObject ChooserTarget::getComponentName()
+	QAndroidJniObject ChooserTarget::getIntentExtras()
 	{
 		return __thiz.callObjectMethod(
-			"getComponentName",
-			"()Landroid/content/ComponentName;");
-	}
-	QAndroidJniObject ChooserTarget::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject ChooserTarget::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
+			"getIntentExtras",
+			"()Landroid/os/Bundle;"
+		);
 	}
 	jint ChooserTarget::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ChooserTarget::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -117,13 +110,29 @@ namespace __jni_impl::android::service::chooser
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject ChooserTarget::getIntentExtras()
+	QAndroidJniObject ChooserTarget::getComponentName()
 	{
 		return __thiz.callObjectMethod(
-			"getIntentExtras",
-			"()Landroid/os/Bundle;");
+			"getComponentName",
+			"()Landroid/content/ComponentName;"
+		);
+	}
+	jstring ChooserTarget::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject ChooserTarget::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
 	}
 } // namespace __jni_impl::android::service::chooser
 

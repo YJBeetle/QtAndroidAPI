@@ -12,9 +12,9 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
-		static QAndroidJniObject PERSON_ID();
+		static jstring CONTENT_DIRECTORY();
+		static jstring DEFAULT_SORT_ORDER();
+		static jstring PERSON_ID();
 		
 		// Constructors
 		void __constructor();
@@ -27,26 +27,29 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_People_Extensions::CONTENT_DIRECTORY()
+	jstring Contacts_People_Extensions::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People$Extensions",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_People_Extensions::DEFAULT_SORT_ORDER()
+	jstring Contacts_People_Extensions::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People$Extensions",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_People_Extensions::PERSON_ID()
+	jstring Contacts_People_Extensions::PERSON_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People$Extensions",
 			"PERSON_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

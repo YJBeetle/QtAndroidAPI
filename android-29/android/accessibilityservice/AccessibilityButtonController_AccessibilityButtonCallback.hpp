@@ -21,8 +21,8 @@ namespace __jni_impl::android::accessibilityservice
 		void __constructor();
 		
 		// Methods
-		void onClicked(__jni_impl::android::accessibilityservice::AccessibilityButtonController arg0);
 		void onAvailabilityChanged(__jni_impl::android::accessibilityservice::AccessibilityButtonController arg0, jboolean arg1);
+		void onClicked(__jni_impl::android::accessibilityservice::AccessibilityButtonController arg0);
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
@@ -41,20 +41,22 @@ namespace __jni_impl::android::accessibilityservice
 	}
 	
 	// Methods
-	void AccessibilityButtonController_AccessibilityButtonCallback::onClicked(__jni_impl::android::accessibilityservice::AccessibilityButtonController arg0)
-	{
-		__thiz.callMethod<void>(
-			"onClicked",
-			"(Landroid/accessibilityservice/AccessibilityButtonController;)V",
-			arg0.__jniObject().object());
-	}
 	void AccessibilityButtonController_AccessibilityButtonCallback::onAvailabilityChanged(__jni_impl::android::accessibilityservice::AccessibilityButtonController arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
 			"onAvailabilityChanged",
 			"(Landroid/accessibilityservice/AccessibilityButtonController;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void AccessibilityButtonController_AccessibilityButtonCallback::onClicked(__jni_impl::android::accessibilityservice::AccessibilityButtonController arg0)
+	{
+		__thiz.callMethod<void>(
+			"onClicked",
+			"(Landroid/accessibilityservice/AccessibilityButtonController;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::accessibilityservice
 

@@ -20,7 +20,7 @@ namespace __jni_impl::java::nio::charset
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getCharsetName();
+		jstring getCharsetName();
 	};
 } // namespace __jni_impl::java::nio::charset
 
@@ -39,11 +39,12 @@ namespace __jni_impl::java::nio::charset
 	}
 	
 	// Methods
-	QAndroidJniObject IllegalCharsetNameException::getCharsetName()
+	jstring IllegalCharsetNameException::getCharsetName()
 	{
 		return __thiz.callObjectMethod(
 			"getCharsetName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::charset
 

@@ -20,7 +20,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -34,14 +34,16 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$Direction",
 			"CW",
-			"Landroid/graphics/Path$Direction;");
+			"Landroid/graphics/Path$Direction;"
+		);
 	}
 	QAndroidJniObject Path_Direction::CCW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$Direction",
 			"CCW",
-			"Landroid/graphics/Path$Direction;");
+			"Landroid/graphics/Path$Direction;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Path_Direction::values()
+	jarray Path_Direction::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Path$Direction",
 			"values",
-			"()[Landroid/graphics/Path$Direction;");
+			"()[Landroid/graphics/Path$Direction;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Path_Direction::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Path$Direction",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Path$Direction;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

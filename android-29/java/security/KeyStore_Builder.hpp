@@ -33,8 +33,8 @@ namespace __jni_impl::java::security
 		static QAndroidJniObject newInstance(__jni_impl::java::io::File arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject newInstance(jstring arg0, __jni_impl::java::security::Provider arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject newInstance(__jni_impl::java::security::KeyStore arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject getKeyStore();
 		QAndroidJniObject getProtectionParameter(jstring arg0);
+		QAndroidJniObject getKeyStore();
 	};
 } // namespace __jni_impl::java::security
 
@@ -64,7 +64,8 @@ namespace __jni_impl::java::security
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyStore_Builder::newInstance(__jni_impl::java::io::File arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -73,7 +74,8 @@ namespace __jni_impl::java::security
 			"newInstance",
 			"(Ljava/io/File;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyStore_Builder::newInstance(jstring arg0, __jni_impl::java::security::Provider arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -83,7 +85,8 @@ namespace __jni_impl::java::security
 			"(Ljava/lang/String;Ljava/security/Provider;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyStore_Builder::newInstance(__jni_impl::java::security::KeyStore arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -92,20 +95,23 @@ namespace __jni_impl::java::security
 			"newInstance",
 			"(Ljava/security/KeyStore;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Builder;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject KeyStore_Builder::getKeyStore()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyStore",
-			"()Ljava/security/KeyStore;");
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyStore_Builder::getProtectionParameter(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProtectionParameter",
 			"(Ljava/lang/String;)Ljava/security/KeyStore$ProtectionParameter;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject KeyStore_Builder::getKeyStore()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyStore",
+			"()Ljava/security/KeyStore;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

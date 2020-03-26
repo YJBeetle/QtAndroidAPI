@@ -47,13 +47,15 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"getNotification",
-			"()Landroid/app/Notification;");
+			"()Landroid/app/Notification;"
+		);
 	}
 	jint MediaSession2Service_MediaNotification::getNotificationId()
 	{
 		return __thiz.callMethod<jint>(
 			"getNotificationId",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

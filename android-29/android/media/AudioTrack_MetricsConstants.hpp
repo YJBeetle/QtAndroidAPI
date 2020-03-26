@@ -12,11 +12,11 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CHANNELMASK();
-		static QAndroidJniObject CONTENTTYPE();
-		static QAndroidJniObject SAMPLERATE();
-		static QAndroidJniObject STREAMTYPE();
-		static QAndroidJniObject USAGE();
+		static jstring CHANNELMASK();
+		static jstring CONTENTTYPE();
+		static jstring SAMPLERATE();
+		static jstring STREAMTYPE();
+		static jstring USAGE();
 		
 		// Constructors
 		void __constructor();
@@ -29,40 +29,45 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject AudioTrack_MetricsConstants::CHANNELMASK()
+	jstring AudioTrack_MetricsConstants::CHANNELMASK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"CHANNELMASK",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioTrack_MetricsConstants::CONTENTTYPE()
+	jstring AudioTrack_MetricsConstants::CONTENTTYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"CONTENTTYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioTrack_MetricsConstants::SAMPLERATE()
+	jstring AudioTrack_MetricsConstants::SAMPLERATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"SAMPLERATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioTrack_MetricsConstants::STREAMTYPE()
+	jstring AudioTrack_MetricsConstants::STREAMTYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"STREAMTYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioTrack_MetricsConstants::USAGE()
+	jstring AudioTrack_MetricsConstants::USAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioTrack$MetricsConstants",
 			"USAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

@@ -23,11 +23,11 @@ namespace __jni_impl::android::print
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getLocalId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getLocalId();
 	};
 } // namespace __jni_impl::android::print
 
@@ -41,7 +41,8 @@ namespace __jni_impl::android::print
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrinterId",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -58,31 +59,29 @@ namespace __jni_impl::android::print
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PrinterId::toString()
+	jstring PrinterId::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PrinterId::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	QAndroidJniObject PrinterId::getLocalId()
-	{
-		return __thiz.callObjectMethod(
-			"getLocalId",
-			"()Ljava/lang/String;");
+			"()I"
+		);
 	}
 	jint PrinterId::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PrinterId::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -90,7 +89,15 @@ namespace __jni_impl::android::print
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring PrinterId::getLocalId()
+	{
+		return __thiz.callObjectMethod(
+			"getLocalId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::print
 

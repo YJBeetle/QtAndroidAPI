@@ -55,19 +55,22 @@ namespace __jni_impl::android::bluetooth
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothSocket",
-			"TYPE_L2CAP");
+			"TYPE_L2CAP"
+		);
 	}
 	jint BluetoothSocket::TYPE_RFCOMM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothSocket",
-			"TYPE_RFCOMM");
+			"TYPE_RFCOMM"
+		);
 	}
 	jint BluetoothSocket::TYPE_SCO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothSocket",
-			"TYPE_SCO");
+			"TYPE_SCO"
+		);
 	}
 	
 	// Constructors
@@ -83,55 +86,64 @@ namespace __jni_impl::android::bluetooth
 	{
 		__thiz.callMethod<void>(
 			"connect",
-			"()V");
+			"()V"
+		);
 	}
 	void BluetoothSocket::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject BluetoothSocket::getInputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getInputStream",
-			"()Ljava/io/InputStream;");
+			"()Ljava/io/InputStream;"
+		);
 	}
 	jboolean BluetoothSocket::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject BluetoothSocket::getOutputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getOutputStream",
-			"()Ljava/io/OutputStream;");
+			"()Ljava/io/OutputStream;"
+		);
 	}
 	QAndroidJniObject BluetoothSocket::getRemoteDevice()
 	{
 		return __thiz.callObjectMethod(
 			"getRemoteDevice",
-			"()Landroid/bluetooth/BluetoothDevice;");
+			"()Landroid/bluetooth/BluetoothDevice;"
+		);
 	}
 	jint BluetoothSocket::getMaxTransmitPacketSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxTransmitPacketSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint BluetoothSocket::getMaxReceivePacketSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxReceivePacketSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint BluetoothSocket::getConnectionType()
 	{
 		return __thiz.callMethod<jint>(
 			"getConnectionType",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

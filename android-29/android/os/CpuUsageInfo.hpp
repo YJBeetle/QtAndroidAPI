@@ -22,10 +22,10 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		jlong getActive();
-		jlong getTotal();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getActive();
+		jlong getTotal();
 	};
 } // namespace __jni_impl::android::os
 
@@ -39,7 +39,8 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.CpuUsageInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -51,23 +52,12 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jlong CpuUsageInfo::getActive()
-	{
-		return __thiz.callMethod<jlong>(
-			"getActive",
-			"()J");
-	}
-	jlong CpuUsageInfo::getTotal()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTotal",
-			"()J");
-	}
 	jint CpuUsageInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CpuUsageInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -75,7 +65,22 @@ namespace __jni_impl::android::os
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jlong CpuUsageInfo::getActive()
+	{
+		return __thiz.callMethod<jlong>(
+			"getActive",
+			"()J"
+		);
+	}
+	jlong CpuUsageInfo::getTotal()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTotal",
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::os
 

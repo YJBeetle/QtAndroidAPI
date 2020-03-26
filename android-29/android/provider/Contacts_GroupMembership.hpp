@@ -16,16 +16,16 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_DIRECTORY();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
-		static QAndroidJniObject GROUP_ID();
-		static QAndroidJniObject GROUP_SYNC_ACCOUNT();
-		static QAndroidJniObject GROUP_SYNC_ACCOUNT_TYPE();
-		static QAndroidJniObject GROUP_SYNC_ID();
-		static QAndroidJniObject PERSON_ID();
+		static jstring DEFAULT_SORT_ORDER();
+		static jstring GROUP_ID();
+		static jstring GROUP_SYNC_ACCOUNT();
+		static jstring GROUP_SYNC_ACCOUNT_TYPE();
+		static jstring GROUP_SYNC_ID();
+		static jstring PERSON_ID();
 		static QAndroidJniObject RAW_CONTENT_URI();
 		
 		// Constructors
@@ -40,82 +40,93 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_GroupMembership::CONTENT_DIRECTORY()
+	jstring Contacts_GroupMembership::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_GroupMembership::CONTENT_ITEM_TYPE()
+	jstring Contacts_GroupMembership::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_GroupMembership::CONTENT_TYPE()
+	jstring Contacts_GroupMembership::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Contacts_GroupMembership::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_GroupMembership::DEFAULT_SORT_ORDER()
+	jstring Contacts_GroupMembership::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_GroupMembership::GROUP_ID()
+	jstring Contacts_GroupMembership::GROUP_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"GROUP_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_GroupMembership::GROUP_SYNC_ACCOUNT()
+	jstring Contacts_GroupMembership::GROUP_SYNC_ACCOUNT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"GROUP_SYNC_ACCOUNT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_GroupMembership::GROUP_SYNC_ACCOUNT_TYPE()
+	jstring Contacts_GroupMembership::GROUP_SYNC_ACCOUNT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"GROUP_SYNC_ACCOUNT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_GroupMembership::GROUP_SYNC_ID()
+	jstring Contacts_GroupMembership::GROUP_SYNC_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"GROUP_SYNC_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_GroupMembership::PERSON_ID()
+	jstring Contacts_GroupMembership::PERSON_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"PERSON_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Contacts_GroupMembership::RAW_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$GroupMembership",
 			"RAW_CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors

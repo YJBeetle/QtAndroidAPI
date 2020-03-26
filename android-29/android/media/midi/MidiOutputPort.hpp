@@ -53,27 +53,31 @@ namespace __jni_impl::android::media::midi
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint MidiOutputPort::getPortNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getPortNumber",
-			"()I");
+			"()I"
+		);
 	}
 	void MidiOutputPort::onConnect(__jni_impl::android::media::midi::MidiReceiver arg0)
 	{
 		__thiz.callMethod<void>(
 			"onConnect",
 			"(Landroid/media/midi/MidiReceiver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MidiOutputPort::onDisconnect(__jni_impl::android::media::midi::MidiReceiver arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDisconnect",
 			"(Landroid/media/midi/MidiReceiver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::midi
 

@@ -68,7 +68,8 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject MbmsStreamingSession::create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::telephony::mbms::MbmsStreamingSessionCallback arg2)
 	{
@@ -78,7 +79,8 @@ namespace __jni_impl::android::telephony
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/MbmsStreamingSessionCallback;)Landroid/telephony/MbmsStreamingSession;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MbmsStreamingSession::create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::telephony::mbms::MbmsStreamingSessionCallback arg3)
 	{
@@ -89,14 +91,16 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void MbmsStreamingSession::requestUpdateStreamingServices(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"requestUpdateStreamingServices",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MbmsStreamingSession::startStreaming(__jni_impl::android::telephony::mbms::StreamingServiceInfo arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::telephony::mbms::StreamingServiceCallback arg2)
 	{
@@ -105,7 +109,8 @@ namespace __jni_impl::android::telephony
 			"(Landroid/telephony/mbms/StreamingServiceInfo;Ljava/util/concurrent/Executor;Landroid/telephony/mbms/StreamingServiceCallback;)Landroid/telephony/mbms/StreamingService;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

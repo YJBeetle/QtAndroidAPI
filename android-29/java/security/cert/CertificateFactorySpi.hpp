@@ -67,20 +67,23 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callObjectMethod(
 			"engineGenerateCertificate",
 			"(Ljava/io/InputStream;)Ljava/security/cert/Certificate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactorySpi::engineGetCertPathEncodings()
 	{
 		return __thiz.callObjectMethod(
 			"engineGetCertPathEncodings",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	QAndroidJniObject CertificateFactorySpi::engineGenerateCertPath(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGenerateCertPath",
 			"(Ljava/util/List;)Ljava/security/cert/CertPath;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactorySpi::engineGenerateCertPath(__jni_impl::java::io::InputStream arg0, jstring arg1)
 	{
@@ -88,35 +91,40 @@ namespace __jni_impl::java::security::cert
 			"engineGenerateCertPath",
 			"(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject CertificateFactorySpi::engineGenerateCertPath(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGenerateCertPath",
 			"(Ljava/io/InputStream;)Ljava/security/cert/CertPath;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactorySpi::engineGenerateCertificates(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGenerateCertificates",
 			"(Ljava/io/InputStream;)Ljava/util/Collection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactorySpi::engineGenerateCRL(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGenerateCRL",
 			"(Ljava/io/InputStream;)Ljava/security/cert/CRL;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactorySpi::engineGenerateCRLs(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGenerateCRLs",
 			"(Ljava/io/InputStream;)Ljava/util/Collection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

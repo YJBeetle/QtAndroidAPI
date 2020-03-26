@@ -27,26 +27,26 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getModifiers();
-		QAndroidJniObject getTypeParameters();
-		QAndroidJniObject newInstance(jobjectArray arg0);
-		QAndroidJniObject getParameterTypes();
-		QAndroidJniObject toGenericString();
+		jarray getTypeParameters();
+		jobject newInstance(jobjectArray arg0);
+		jarray getParameterTypes();
+		jstring toGenericString();
 		jboolean isSynthetic();
-		QAndroidJniObject getDeclaringClass();
+		jclass getDeclaringClass();
 		QAndroidJniObject getAnnotation(jclass arg0);
-		QAndroidJniObject getDeclaredAnnotations();
+		jarray getDeclaredAnnotations();
 		void setAccessible(jboolean arg0);
 		jboolean isVarArgs();
 		jint getParameterCount();
-		QAndroidJniObject getParameterAnnotations();
-		QAndroidJniObject getGenericParameterTypes();
-		QAndroidJniObject getGenericExceptionTypes();
-		QAndroidJniObject getExceptionTypes();
+		jarray getParameterAnnotations();
+		jarray getGenericParameterTypes();
+		jarray getGenericExceptionTypes();
+		jarray getExceptionTypes();
 		QAndroidJniObject getAnnotatedReturnType();
 		QAndroidJniObject getAnnotatedReceiverType();
 	};
@@ -68,141 +68,163 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	QAndroidJniObject Constructor::getName()
+	jstring Constructor::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Constructor::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Constructor::toString()
+	jstring Constructor::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Constructor::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Constructor::getModifiers()
 	{
 		return __thiz.callMethod<jint>(
 			"getModifiers",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Constructor::getTypeParameters()
+	jarray Constructor::getTypeParameters()
 	{
 		return __thiz.callObjectMethod(
 			"getTypeParameters",
-			"()[Ljava/lang/reflect/TypeVariable;");
+			"()[Ljava/lang/reflect/TypeVariable;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Constructor::newInstance(jobjectArray arg0)
+	jobject Constructor::newInstance(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newInstance",
 			"([Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject Constructor::getParameterTypes()
+	jarray Constructor::getParameterTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getParameterTypes",
-			"()[Ljava/lang/Class;");
+			"()[Ljava/lang/Class;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Constructor::toGenericString()
+	jstring Constructor::toGenericString()
 	{
 		return __thiz.callObjectMethod(
 			"toGenericString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Constructor::isSynthetic()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSynthetic",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Constructor::getDeclaringClass()
+	jclass Constructor::getDeclaringClass()
 	{
 		return __thiz.callObjectMethod(
 			"getDeclaringClass",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	QAndroidJniObject Constructor::getAnnotation(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Constructor::getDeclaredAnnotations()
+	jarray Constructor::getDeclaredAnnotations()
 	{
 		return __thiz.callObjectMethod(
 			"getDeclaredAnnotations",
-			"()[Ljava/lang/annotation/Annotation;");
+			"()[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
 	}
 	void Constructor::setAccessible(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAccessible",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Constructor::isVarArgs()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isVarArgs",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Constructor::getParameterCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getParameterCount",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Constructor::getParameterAnnotations()
+	jarray Constructor::getParameterAnnotations()
 	{
 		return __thiz.callObjectMethod(
 			"getParameterAnnotations",
-			"()[[Ljava/lang/annotation/Annotation;");
+			"()[[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Constructor::getGenericParameterTypes()
+	jarray Constructor::getGenericParameterTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getGenericParameterTypes",
-			"()[Ljava/lang/reflect/Type;");
+			"()[Ljava/lang/reflect/Type;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Constructor::getGenericExceptionTypes()
+	jarray Constructor::getGenericExceptionTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getGenericExceptionTypes",
-			"()[Ljava/lang/reflect/Type;");
+			"()[Ljava/lang/reflect/Type;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Constructor::getExceptionTypes()
+	jarray Constructor::getExceptionTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getExceptionTypes",
-			"()[Ljava/lang/Class;");
+			"()[Ljava/lang/Class;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Constructor::getAnnotatedReturnType()
 	{
 		return __thiz.callObjectMethod(
 			"getAnnotatedReturnType",
-			"()Ljava/lang/reflect/AnnotatedType;");
+			"()Ljava/lang/reflect/AnnotatedType;"
+		);
 	}
 	QAndroidJniObject Constructor::getAnnotatedReceiverType()
 	{
 		return __thiz.callObjectMethod(
 			"getAnnotatedReceiverType",
-			"()Ljava/lang/reflect/AnnotatedType;");
+			"()Ljava/lang/reflect/AnnotatedType;"
+		);
 	}
 } // namespace __jni_impl::java::lang::reflect
 

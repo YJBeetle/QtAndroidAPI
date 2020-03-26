@@ -40,37 +40,43 @@ namespace __jni_impl::java::util::logging
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.logging.ErrorManager",
-			"GENERIC_FAILURE");
+			"GENERIC_FAILURE"
+		);
 	}
 	jint ErrorManager::WRITE_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.logging.ErrorManager",
-			"WRITE_FAILURE");
+			"WRITE_FAILURE"
+		);
 	}
 	jint ErrorManager::FLUSH_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.logging.ErrorManager",
-			"FLUSH_FAILURE");
+			"FLUSH_FAILURE"
+		);
 	}
 	jint ErrorManager::CLOSE_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.logging.ErrorManager",
-			"CLOSE_FAILURE");
+			"CLOSE_FAILURE"
+		);
 	}
 	jint ErrorManager::OPEN_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.logging.ErrorManager",
-			"OPEN_FAILURE");
+			"OPEN_FAILURE"
+		);
 	}
 	jint ErrorManager::FORMAT_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.logging.ErrorManager",
-			"FORMAT_FAILURE");
+			"FORMAT_FAILURE"
+		);
 	}
 	
 	// Constructors
@@ -89,7 +95,8 @@ namespace __jni_impl::java::util::logging
 			"(Ljava/lang/String;Ljava/lang/Exception;I)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::java::util::logging
 

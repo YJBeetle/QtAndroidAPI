@@ -58,7 +58,8 @@ namespace __jni_impl::java::io
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PipedOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -67,26 +68,30 @@ namespace __jni_impl::java::io
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void PipedOutputStream::connect(__jni_impl::java::io::PipedInputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"connect",
 			"(Ljava/io/PipedInputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PipedOutputStream::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void PipedOutputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::io
 

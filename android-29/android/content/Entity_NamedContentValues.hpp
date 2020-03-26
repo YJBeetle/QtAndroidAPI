@@ -40,13 +40,15 @@ namespace __jni_impl::android::content
 	{
 		return __thiz.getObjectField(
 			"uri",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject Entity_NamedContentValues::values()
 	{
 		return __thiz.getObjectField(
 			"values",
-			"Landroid/content/ContentValues;");
+			"Landroid/content/ContentValues;"
+		);
 	}
 	
 	// Constructors

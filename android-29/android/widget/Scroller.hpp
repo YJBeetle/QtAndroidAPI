@@ -24,10 +24,6 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		jint getDuration();
-		jint timePassed();
-		void extendDuration(jint arg0);
-		void setFinalX(jint arg0);
-		void setFinalY(jint arg0);
 		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
 		void setFriction(jfloat arg0);
 		jboolean isFinished();
@@ -40,9 +36,13 @@ namespace __jni_impl::android::widget
 		jint getFinalX();
 		jint getFinalY();
 		jboolean computeScrollOffset();
-		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3);
 		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3);
 		void abortAnimation();
+		jint timePassed();
+		void extendDuration(jint arg0);
+		void setFinalX(jint arg0);
+		void setFinalY(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -83,34 +83,8 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callMethod<jint>(
 			"getDuration",
-			"()I");
-	}
-	jint Scroller::timePassed()
-	{
-		return __thiz.callMethod<jint>(
-			"timePassed",
-			"()I");
-	}
-	void Scroller::extendDuration(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"extendDuration",
-			"(I)V",
-			arg0);
-	}
-	void Scroller::setFinalX(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFinalX",
-			"(I)V",
-			arg0);
-	}
-	void Scroller::setFinalY(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFinalY",
-			"(I)V",
-			arg0);
+			"()I"
+		);
 	}
 	void Scroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 	{
@@ -124,85 +98,87 @@ namespace __jni_impl::android::widget
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void Scroller::setFriction(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFriction",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Scroller::isFinished()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFinished",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Scroller::forceFinished(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"forceFinished",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Scroller::getCurrX()
 	{
 		return __thiz.callMethod<jint>(
 			"getCurrX",
-			"()I");
+			"()I"
+		);
 	}
 	jint Scroller::getCurrY()
 	{
 		return __thiz.callMethod<jint>(
 			"getCurrY",
-			"()I");
+			"()I"
+		);
 	}
 	jfloat Scroller::getCurrVelocity()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getCurrVelocity",
-			"()F");
+			"()F"
+		);
 	}
 	jint Scroller::getStartX()
 	{
 		return __thiz.callMethod<jint>(
 			"getStartX",
-			"()I");
+			"()I"
+		);
 	}
 	jint Scroller::getStartY()
 	{
 		return __thiz.callMethod<jint>(
 			"getStartY",
-			"()I");
+			"()I"
+		);
 	}
 	jint Scroller::getFinalX()
 	{
 		return __thiz.callMethod<jint>(
 			"getFinalX",
-			"()I");
+			"()I"
+		);
 	}
 	jint Scroller::getFinalY()
 	{
 		return __thiz.callMethod<jint>(
 			"getFinalY",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Scroller::computeScrollOffset()
 	{
 		return __thiz.callMethod<jboolean>(
 			"computeScrollOffset",
-			"()Z");
-	}
-	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"startScroll",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
+			"()Z"
+		);
 	}
 	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -213,13 +189,57 @@ namespace __jni_impl::android::widget
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"startScroll",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
 	}
 	void Scroller::abortAnimation()
 	{
 		__thiz.callMethod<void>(
 			"abortAnimation",
-			"()V");
+			"()V"
+		);
+	}
+	jint Scroller::timePassed()
+	{
+		return __thiz.callMethod<jint>(
+			"timePassed",
+			"()I"
+		);
+	}
+	void Scroller::extendDuration(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"extendDuration",
+			"(I)V",
+			arg0
+		);
+	}
+	void Scroller::setFinalX(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFinalX",
+			"(I)V",
+			arg0
+		);
+	}
+	void Scroller::setFinalY(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFinalY",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

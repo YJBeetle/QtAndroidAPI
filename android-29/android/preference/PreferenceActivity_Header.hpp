@@ -13,13 +13,13 @@ namespace __jni_impl::android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content::res
 {
 	class Resources;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::preference
@@ -29,39 +29,39 @@ namespace __jni_impl::android::preference
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		QAndroidJniObject breadCrumbShortTitle();
+		jstring breadCrumbShortTitle();
 		jint breadCrumbShortTitleRes();
-		QAndroidJniObject breadCrumbTitle();
+		jstring breadCrumbTitle();
 		jint breadCrumbTitleRes();
 		QAndroidJniObject extras();
-		QAndroidJniObject fragment();
+		jstring fragment();
 		QAndroidJniObject fragmentArguments();
 		jint iconRes();
 		jlong id();
 		QAndroidJniObject intent();
-		QAndroidJniObject summary();
+		jstring summary();
 		jint summaryRes();
-		QAndroidJniObject title();
+		jstring title();
 		jint titleRes();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		QAndroidJniObject getBreadCrumbTitle(__jni_impl::android::content::res::Resources arg0);
-		QAndroidJniObject getBreadCrumbShortTitle(__jni_impl::android::content::res::Resources arg0);
-		QAndroidJniObject getTitle(__jni_impl::android::content::res::Resources arg0);
+		jstring getBreadCrumbTitle(__jni_impl::android::content::res::Resources arg0);
+		jstring getBreadCrumbShortTitle(__jni_impl::android::content::res::Resources arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getSummary(__jni_impl::android::content::res::Resources arg0);
+		jstring getTitle(__jni_impl::android::content::res::Resources arg0);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		jstring getSummary(__jni_impl::android::content::res::Resources arg0);
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../os/Bundle.hpp"
 #include "../content/Intent.hpp"
-#include "../os/Parcel.hpp"
 #include "../content/res/Resources.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -71,85 +71,100 @@ namespace __jni_impl::android::preference
 		return QAndroidJniObject::getStaticObjectField(
 			"android.preference.PreferenceActivity$Header",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject PreferenceActivity_Header::breadCrumbShortTitle()
+	jstring PreferenceActivity_Header::breadCrumbShortTitle()
 	{
 		return __thiz.getObjectField(
 			"breadCrumbShortTitle",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint PreferenceActivity_Header::breadCrumbShortTitleRes()
 	{
 		return __thiz.getField<jint>(
-			"breadCrumbShortTitleRes");
+			"breadCrumbShortTitleRes"
+		);
 	}
-	QAndroidJniObject PreferenceActivity_Header::breadCrumbTitle()
+	jstring PreferenceActivity_Header::breadCrumbTitle()
 	{
 		return __thiz.getObjectField(
 			"breadCrumbTitle",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint PreferenceActivity_Header::breadCrumbTitleRes()
 	{
 		return __thiz.getField<jint>(
-			"breadCrumbTitleRes");
+			"breadCrumbTitleRes"
+		);
 	}
 	QAndroidJniObject PreferenceActivity_Header::extras()
 	{
 		return __thiz.getObjectField(
 			"extras",
-			"Landroid/os/Bundle;");
+			"Landroid/os/Bundle;"
+		);
 	}
-	QAndroidJniObject PreferenceActivity_Header::fragment()
+	jstring PreferenceActivity_Header::fragment()
 	{
 		return __thiz.getObjectField(
 			"fragment",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject PreferenceActivity_Header::fragmentArguments()
 	{
 		return __thiz.getObjectField(
 			"fragmentArguments",
-			"Landroid/os/Bundle;");
+			"Landroid/os/Bundle;"
+		);
 	}
 	jint PreferenceActivity_Header::iconRes()
 	{
 		return __thiz.getField<jint>(
-			"iconRes");
+			"iconRes"
+		);
 	}
 	jlong PreferenceActivity_Header::id()
 	{
 		return __thiz.getField<jlong>(
-			"id");
+			"id"
+		);
 	}
 	QAndroidJniObject PreferenceActivity_Header::intent()
 	{
 		return __thiz.getObjectField(
 			"intent",
-			"Landroid/content/Intent;");
+			"Landroid/content/Intent;"
+		);
 	}
-	QAndroidJniObject PreferenceActivity_Header::summary()
+	jstring PreferenceActivity_Header::summary()
 	{
 		return __thiz.getObjectField(
 			"summary",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint PreferenceActivity_Header::summaryRes()
 	{
 		return __thiz.getField<jint>(
-			"summaryRes");
+			"summaryRes"
+		);
 	}
-	QAndroidJniObject PreferenceActivity_Header::title()
+	jstring PreferenceActivity_Header::title()
 	{
 		return __thiz.getObjectField(
 			"title",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint PreferenceActivity_Header::titleRes()
 	{
 		return __thiz.getField<jint>(
-			"titleRes");
+			"titleRes"
+		);
 	}
 	
 	// Constructors
@@ -161,39 +176,28 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
-	void PreferenceActivity_Header::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject PreferenceActivity_Header::getBreadCrumbTitle(__jni_impl::android::content::res::Resources arg0)
+	jstring PreferenceActivity_Header::getBreadCrumbTitle(__jni_impl::android::content::res::Resources arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getBreadCrumbTitle",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject PreferenceActivity_Header::getBreadCrumbShortTitle(__jni_impl::android::content::res::Resources arg0)
+	jstring PreferenceActivity_Header::getBreadCrumbShortTitle(__jni_impl::android::content::res::Resources arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getBreadCrumbShortTitle",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject PreferenceActivity_Header::getTitle(__jni_impl::android::content::res::Resources arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	jint PreferenceActivity_Header::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PreferenceActivity_Header::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -201,14 +205,32 @@ namespace __jni_impl::android::preference
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject PreferenceActivity_Header::getSummary(__jni_impl::android::content::res::Resources arg0)
+	jstring PreferenceActivity_Header::getTitle(__jni_impl::android::content::res::Resources arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	void PreferenceActivity_Header::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring PreferenceActivity_Header::getSummary(__jni_impl::android::content::res::Resources arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSummary",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::preference
 

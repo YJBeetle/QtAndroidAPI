@@ -29,12 +29,14 @@ namespace __jni_impl::android::view::animation
 	jint LayoutAnimationController_AnimationParameters::count()
 	{
 		return __thiz.getField<jint>(
-			"count");
+			"count"
+		);
 	}
 	jint LayoutAnimationController_AnimationParameters::index()
 	{
 		return __thiz.getField<jint>(
-			"index");
+			"index"
+		);
 	}
 	
 	// Constructors

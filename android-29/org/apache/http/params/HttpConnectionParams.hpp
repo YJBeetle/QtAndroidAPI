@@ -52,7 +52,8 @@ namespace __jni_impl::org::apache::http::params
 			"org.apache.http.params.HttpConnectionParams",
 			"getSocketBufferSize",
 			"(Lorg/apache/http/params/HttpParams;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void HttpConnectionParams::setSocketBufferSize(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -61,7 +62,8 @@ namespace __jni_impl::org::apache::http::params
 			"setSocketBufferSize",
 			"(Lorg/apache/http/params/HttpParams;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint HttpConnectionParams::getLinger(__jni_impl::__JniBaseClass arg0)
 	{
@@ -69,7 +71,8 @@ namespace __jni_impl::org::apache::http::params
 			"org.apache.http.params.HttpConnectionParams",
 			"getLinger",
 			"(Lorg/apache/http/params/HttpParams;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void HttpConnectionParams::setLinger(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -78,7 +81,8 @@ namespace __jni_impl::org::apache::http::params
 			"setLinger",
 			"(Lorg/apache/http/params/HttpParams;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint HttpConnectionParams::getConnectionTimeout(__jni_impl::__JniBaseClass arg0)
 	{
@@ -86,7 +90,8 @@ namespace __jni_impl::org::apache::http::params
 			"org.apache.http.params.HttpConnectionParams",
 			"getConnectionTimeout",
 			"(Lorg/apache/http/params/HttpParams;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void HttpConnectionParams::setConnectionTimeout(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -95,7 +100,8 @@ namespace __jni_impl::org::apache::http::params
 			"setConnectionTimeout",
 			"(Lorg/apache/http/params/HttpParams;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean HttpConnectionParams::isStaleCheckingEnabled(__jni_impl::__JniBaseClass arg0)
 	{
@@ -103,7 +109,8 @@ namespace __jni_impl::org::apache::http::params
 			"org.apache.http.params.HttpConnectionParams",
 			"isStaleCheckingEnabled",
 			"(Lorg/apache/http/params/HttpParams;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void HttpConnectionParams::setStaleCheckingEnabled(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
@@ -112,7 +119,8 @@ namespace __jni_impl::org::apache::http::params
 			"setStaleCheckingEnabled",
 			"(Lorg/apache/http/params/HttpParams;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void HttpConnectionParams::setTcpNoDelay(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
@@ -121,7 +129,8 @@ namespace __jni_impl::org::apache::http::params
 			"setTcpNoDelay",
 			"(Lorg/apache/http/params/HttpParams;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean HttpConnectionParams::getTcpNoDelay(__jni_impl::__JniBaseClass arg0)
 	{
@@ -129,7 +138,8 @@ namespace __jni_impl::org::apache::http::params
 			"org.apache.http.params.HttpConnectionParams",
 			"getTcpNoDelay",
 			"(Lorg/apache/http/params/HttpParams;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void HttpConnectionParams::setSoTimeout(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -138,7 +148,8 @@ namespace __jni_impl::org::apache::http::params
 			"setSoTimeout",
 			"(Lorg/apache/http/params/HttpParams;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint HttpConnectionParams::getSoTimeout(__jni_impl::__JniBaseClass arg0)
 	{
@@ -146,7 +157,8 @@ namespace __jni_impl::org::apache::http::params
 			"org.apache.http.params.HttpConnectionParams",
 			"getSoTimeout",
 			"(Lorg/apache/http/params/HttpParams;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::org::apache::http::params
 

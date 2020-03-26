@@ -30,17 +30,20 @@ namespace __jni_impl::android::icu::util
 	jint RangeValueIterator_Element::limit()
 	{
 		return __thiz.getField<jint>(
-			"limit");
+			"limit"
+		);
 	}
 	jint RangeValueIterator_Element::start()
 	{
 		return __thiz.getField<jint>(
-			"start");
+			"start"
+		);
 	}
 	jint RangeValueIterator_Element::value()
 	{
 		return __thiz.getField<jint>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

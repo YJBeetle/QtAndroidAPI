@@ -22,7 +22,7 @@ namespace __jni_impl::java::time::format
 		
 		// Methods
 		jint getErrorIndex();
-		QAndroidJniObject getParsedString();
+		jstring getParsedString();
 	};
 } // namespace __jni_impl::java::time::format
 
@@ -57,13 +57,15 @@ namespace __jni_impl::java::time::format
 	{
 		return __thiz.callMethod<jint>(
 			"getErrorIndex",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject DateTimeParseException::getParsedString()
+	jstring DateTimeParseException::getParsedString()
 	{
 		return __thiz.callObjectMethod(
 			"getParsedString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::time::format
 

@@ -70,7 +70,8 @@ namespace __jni_impl::android::renderscript
 		__thiz.callMethod<void>(
 			"resize",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AllocationAdapter::createTyped(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Type arg2)
 	{
@@ -80,42 +81,48 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;Landroid/renderscript/Type;)Landroid/renderscript/AllocationAdapter;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void AllocationAdapter::setX(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setX",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AllocationAdapter::setY(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setY",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AllocationAdapter::setZ(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setZ",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AllocationAdapter::setLOD(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLOD",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AllocationAdapter::setFace(__jni_impl::android::renderscript::Type_CubemapFace arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFace",
 			"(Landroid/renderscript/Type$CubemapFace;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AllocationAdapter::create1D(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -124,7 +131,8 @@ namespace __jni_impl::android::renderscript
 			"create1D",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;)Landroid/renderscript/AllocationAdapter;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AllocationAdapter::create2D(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -133,7 +141,8 @@ namespace __jni_impl::android::renderscript
 			"create2D",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;)Landroid/renderscript/AllocationAdapter;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

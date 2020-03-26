@@ -43,7 +43,8 @@ namespace __jni_impl::android::service::autofill
 			"android.service.autofill.Validators",
 			"or",
 			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Validators::_and(jarray arg0)
 	{
@@ -51,7 +52,8 @@ namespace __jni_impl::android::service::autofill
 			"android.service.autofill.Validators",
 			"and",
 			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Validators::_not(__jni_impl::__JniBaseClass arg0)
 	{
@@ -59,7 +61,8 @@ namespace __jni_impl::android::service::autofill
 			"android.service.autofill.Validators",
 			"not",
 			"(Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

@@ -39,7 +39,7 @@ namespace __jni_impl::android::net
 		void __constructor(jint arg0);
 		
 		// Methods
-		QAndroidJniObject sanitize(jstring arg0);
+		jstring sanitize(jstring arg0);
 	};
 } // namespace __jni_impl::android::net
 
@@ -51,133 +51,155 @@ namespace __jni_impl::android::net
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"ALL_BUT_NUL_AND_ANGLE_BRACKETS_LEGAL");
+			"ALL_BUT_NUL_AND_ANGLE_BRACKETS_LEGAL"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_BUT_NUL_LEGAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"ALL_BUT_NUL_LEGAL");
+			"ALL_BUT_NUL_LEGAL"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_BUT_WHITESPACE_LEGAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"ALL_BUT_WHITESPACE_LEGAL");
+			"ALL_BUT_WHITESPACE_LEGAL"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_ILLEGAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"ALL_ILLEGAL");
+			"ALL_ILLEGAL"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"ALL_OK");
+			"ALL_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::ALL_WHITESPACE_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"ALL_WHITESPACE_OK");
+			"ALL_WHITESPACE_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::AMP_AND_SPACE_LEGAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"AMP_AND_SPACE_LEGAL");
+			"AMP_AND_SPACE_LEGAL"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::AMP_LEGAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"AMP_LEGAL");
+			"AMP_LEGAL"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::AMP_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"AMP_OK");
+			"AMP_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::DQUOTE_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"DQUOTE_OK");
+			"DQUOTE_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::GT_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"GT_OK");
+			"GT_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::LT_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"LT_OK");
+			"LT_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::NON_7_BIT_ASCII_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"NON_7_BIT_ASCII_OK");
+			"NON_7_BIT_ASCII_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::NUL_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"NUL_OK");
+			"NUL_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::OTHER_WHITESPACE_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"OTHER_WHITESPACE_OK");
+			"OTHER_WHITESPACE_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::PCT_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"PCT_OK");
+			"PCT_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::SCRIPT_URL_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"SCRIPT_URL_OK");
+			"SCRIPT_URL_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::SPACE_LEGAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"SPACE_LEGAL");
+			"SPACE_LEGAL"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::SPACE_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"SPACE_OK");
+			"SPACE_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::SQUOTE_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"SQUOTE_OK");
+			"SQUOTE_OK"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::URL_AND_SPACE_LEGAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"URL_AND_SPACE_LEGAL");
+			"URL_AND_SPACE_LEGAL"
+		);
 	}
 	jint UrlQuerySanitizer_IllegalCharacterValueSanitizer::URL_LEGAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
-			"URL_LEGAL");
+			"URL_LEGAL"
+		);
 	}
 	
 	// Constructors
@@ -190,12 +212,13 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject UrlQuerySanitizer_IllegalCharacterValueSanitizer::sanitize(jstring arg0)
+	jstring UrlQuerySanitizer_IllegalCharacterValueSanitizer::sanitize(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"sanitize",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net
 

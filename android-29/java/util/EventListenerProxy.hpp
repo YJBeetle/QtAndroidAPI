@@ -40,7 +40,8 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callObjectMethod(
 			"getListener",
-			"()Ljava/util/EventListener;");
+			"()Ljava/util/EventListener;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

@@ -32,22 +32,26 @@ namespace __jni_impl::android::view::animation
 	jint GridLayoutAnimationController_AnimationParameters::column()
 	{
 		return __thiz.getField<jint>(
-			"column");
+			"column"
+		);
 	}
 	jint GridLayoutAnimationController_AnimationParameters::columnsCount()
 	{
 		return __thiz.getField<jint>(
-			"columnsCount");
+			"columnsCount"
+		);
 	}
 	jint GridLayoutAnimationController_AnimationParameters::row()
 	{
 		return __thiz.getField<jint>(
-			"row");
+			"row"
+		);
 	}
 	jint GridLayoutAnimationController_AnimationParameters::rowsCount()
 	{
 		return __thiz.getField<jint>(
-			"rowsCount");
+			"rowsCount"
+		);
 	}
 	
 	// Constructors

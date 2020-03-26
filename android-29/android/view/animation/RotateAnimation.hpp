@@ -89,7 +89,8 @@ namespace __jni_impl::android::view::animation
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::view::animation
 

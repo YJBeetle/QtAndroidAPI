@@ -38,24 +38,24 @@ namespace __jni_impl::android::net::wifi::p2p
 		// Fields
 		static jint BUSY();
 		static jint ERROR();
-		static QAndroidJniObject EXTRA_DISCOVERY_STATE();
-		static QAndroidJniObject EXTRA_NETWORK_INFO();
-		static QAndroidJniObject EXTRA_P2P_DEVICE_LIST();
-		static QAndroidJniObject EXTRA_WIFI_P2P_DEVICE();
-		static QAndroidJniObject EXTRA_WIFI_P2P_GROUP();
-		static QAndroidJniObject EXTRA_WIFI_P2P_INFO();
-		static QAndroidJniObject EXTRA_WIFI_STATE();
+		static jstring EXTRA_DISCOVERY_STATE();
+		static jstring EXTRA_NETWORK_INFO();
+		static jstring EXTRA_P2P_DEVICE_LIST();
+		static jstring EXTRA_WIFI_P2P_DEVICE();
+		static jstring EXTRA_WIFI_P2P_GROUP();
+		static jstring EXTRA_WIFI_P2P_INFO();
+		static jstring EXTRA_WIFI_STATE();
 		static jint NO_SERVICE_REQUESTS();
 		static jint P2P_UNSUPPORTED();
-		static QAndroidJniObject WIFI_P2P_CONNECTION_CHANGED_ACTION();
-		static QAndroidJniObject WIFI_P2P_DISCOVERY_CHANGED_ACTION();
+		static jstring WIFI_P2P_CONNECTION_CHANGED_ACTION();
+		static jstring WIFI_P2P_DISCOVERY_CHANGED_ACTION();
 		static jint WIFI_P2P_DISCOVERY_STARTED();
 		static jint WIFI_P2P_DISCOVERY_STOPPED();
-		static QAndroidJniObject WIFI_P2P_PEERS_CHANGED_ACTION();
-		static QAndroidJniObject WIFI_P2P_STATE_CHANGED_ACTION();
+		static jstring WIFI_P2P_PEERS_CHANGED_ACTION();
+		static jstring WIFI_P2P_STATE_CHANGED_ACTION();
 		static jint WIFI_P2P_STATE_DISABLED();
 		static jint WIFI_P2P_STATE_ENABLED();
-		static QAndroidJniObject WIFI_P2P_THIS_DEVICE_CHANGED_ACTION();
+		static jstring WIFI_P2P_THIS_DEVICE_CHANGED_ACTION();
 		
 		// Constructors
 		void __constructor();
@@ -65,6 +65,8 @@ namespace __jni_impl::android::net::wifi::p2p
 		void connect(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::android::net::wifi::p2p::WifiP2pConfig arg1, __jni_impl::__JniBaseClass arg2);
 		void createGroup(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
 		void createGroup(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::android::net::wifi::p2p::WifiP2pConfig arg1, __jni_impl::__JniBaseClass arg2);
+		void discoverServices(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
+		void removeGroup(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
 		void discoverPeers(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
 		void stopPeerDiscovery(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
 		void cancelConnect(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
@@ -84,8 +86,6 @@ namespace __jni_impl::android::net::wifi::p2p
 		void requestDiscoveryState(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
 		void requestNetworkInfo(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
 		void requestDeviceInfo(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
-		void discoverServices(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
-		void removeGroup(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::p2p
 
@@ -103,133 +103,153 @@ namespace __jni_impl::android::net::wifi::p2p
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
-			"BUSY");
+			"BUSY"
+		);
 	}
 	jint WifiP2pManager::ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
-			"ERROR");
+			"ERROR"
+		);
 	}
-	QAndroidJniObject WifiP2pManager::EXTRA_DISCOVERY_STATE()
+	jstring WifiP2pManager::EXTRA_DISCOVERY_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_DISCOVERY_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pManager::EXTRA_NETWORK_INFO()
+	jstring WifiP2pManager::EXTRA_NETWORK_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_NETWORK_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pManager::EXTRA_P2P_DEVICE_LIST()
+	jstring WifiP2pManager::EXTRA_P2P_DEVICE_LIST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_P2P_DEVICE_LIST",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pManager::EXTRA_WIFI_P2P_DEVICE()
+	jstring WifiP2pManager::EXTRA_WIFI_P2P_DEVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_P2P_DEVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pManager::EXTRA_WIFI_P2P_GROUP()
+	jstring WifiP2pManager::EXTRA_WIFI_P2P_GROUP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_P2P_GROUP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pManager::EXTRA_WIFI_P2P_INFO()
+	jstring WifiP2pManager::EXTRA_WIFI_P2P_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_P2P_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pManager::EXTRA_WIFI_STATE()
+	jstring WifiP2pManager::EXTRA_WIFI_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"EXTRA_WIFI_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiP2pManager::NO_SERVICE_REQUESTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
-			"NO_SERVICE_REQUESTS");
+			"NO_SERVICE_REQUESTS"
+		);
 	}
 	jint WifiP2pManager::P2P_UNSUPPORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
-			"P2P_UNSUPPORTED");
+			"P2P_UNSUPPORTED"
+		);
 	}
-	QAndroidJniObject WifiP2pManager::WIFI_P2P_CONNECTION_CHANGED_ACTION()
+	jstring WifiP2pManager::WIFI_P2P_CONNECTION_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_CONNECTION_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pManager::WIFI_P2P_DISCOVERY_CHANGED_ACTION()
+	jstring WifiP2pManager::WIFI_P2P_DISCOVERY_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_DISCOVERY_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiP2pManager::WIFI_P2P_DISCOVERY_STARTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
-			"WIFI_P2P_DISCOVERY_STARTED");
+			"WIFI_P2P_DISCOVERY_STARTED"
+		);
 	}
 	jint WifiP2pManager::WIFI_P2P_DISCOVERY_STOPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
-			"WIFI_P2P_DISCOVERY_STOPPED");
+			"WIFI_P2P_DISCOVERY_STOPPED"
+		);
 	}
-	QAndroidJniObject WifiP2pManager::WIFI_P2P_PEERS_CHANGED_ACTION()
+	jstring WifiP2pManager::WIFI_P2P_PEERS_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_PEERS_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pManager::WIFI_P2P_STATE_CHANGED_ACTION()
+	jstring WifiP2pManager::WIFI_P2P_STATE_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_STATE_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiP2pManager::WIFI_P2P_STATE_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
-			"WIFI_P2P_STATE_DISABLED");
+			"WIFI_P2P_STATE_DISABLED"
+		);
 	}
 	jint WifiP2pManager::WIFI_P2P_STATE_ENABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pManager",
-			"WIFI_P2P_STATE_ENABLED");
+			"WIFI_P2P_STATE_ENABLED"
+		);
 	}
-	QAndroidJniObject WifiP2pManager::WIFI_P2P_THIS_DEVICE_CHANGED_ACTION()
+	jstring WifiP2pManager::WIFI_P2P_THIS_DEVICE_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pManager",
 			"WIFI_P2P_THIS_DEVICE_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -248,7 +268,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/content/Context;Landroid/os/Looper;Landroid/net/wifi/p2p/WifiP2pManager$ChannelListener;)Landroid/net/wifi/p2p/WifiP2pManager$Channel;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::connect(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::android::net::wifi::p2p::WifiP2pConfig arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -257,7 +278,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pConfig;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::createGroup(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -265,7 +287,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"createGroup",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::createGroup(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::android::net::wifi::p2p::WifiP2pConfig arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -274,7 +297,26 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pConfig;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void WifiP2pManager::discoverServices(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"discoverServices",
+			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void WifiP2pManager::removeGroup(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"removeGroup",
+			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::discoverPeers(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -282,7 +324,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"discoverPeers",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::stopPeerDiscovery(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -290,7 +333,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"stopPeerDiscovery",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::cancelConnect(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -298,7 +342,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"cancelConnect",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::addLocalService(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -307,7 +352,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/nsd/WifiP2pServiceInfo;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::removeLocalService(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -316,7 +362,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/nsd/WifiP2pServiceInfo;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::clearLocalServices(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -324,7 +371,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"clearLocalServices",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::setServiceResponseListener(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -332,7 +380,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"setServiceResponseListener",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ServiceResponseListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::setDnsSdResponseListeners(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -341,7 +390,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$DnsSdServiceResponseListener;Landroid/net/wifi/p2p/WifiP2pManager$DnsSdTxtRecordListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::setUpnpServiceResponseListener(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -349,7 +399,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"setUpnpServiceResponseListener",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$UpnpServiceResponseListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::addServiceRequest(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -358,7 +409,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::removeServiceRequest(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -367,7 +419,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::clearServiceRequests(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -375,7 +428,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"clearServiceRequests",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::requestPeers(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -383,7 +437,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"requestPeers",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$PeerListListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::requestConnectionInfo(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -391,7 +446,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"requestConnectionInfo",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ConnectionInfoListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::requestGroupInfo(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -399,7 +455,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"requestGroupInfo",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$GroupInfoListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::requestP2pState(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -407,7 +464,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"requestP2pState",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$P2pStateListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::requestDiscoveryState(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -415,7 +473,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"requestDiscoveryState",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$DiscoveryStateListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::requestNetworkInfo(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -423,7 +482,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"requestNetworkInfo",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$NetworkInfoListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiP2pManager::requestDeviceInfo(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -431,23 +491,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"requestDeviceInfo",
 			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$DeviceInfoListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void WifiP2pManager::discoverServices(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"discoverServices",
-			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void WifiP2pManager::removeGroup(__jni_impl::android::net::wifi::p2p::WifiP2pManager_Channel arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"removeGroup",
-			"(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p
 

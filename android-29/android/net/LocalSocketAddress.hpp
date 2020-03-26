@@ -22,7 +22,7 @@ namespace __jni_impl::android::net
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		QAndroidJniObject getNamespace();
 	};
 } // namespace __jni_impl::android::net
@@ -51,17 +51,19 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject LocalSocketAddress::getName()
+	jstring LocalSocketAddress::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject LocalSocketAddress::getNamespace()
 	{
 		return __thiz.callObjectMethod(
 			"getNamespace",
-			"()Landroid/net/LocalSocketAddress$Namespace;");
+			"()Landroid/net/LocalSocketAddress$Namespace;"
+		);
 	}
 } // namespace __jni_impl::android::net
 

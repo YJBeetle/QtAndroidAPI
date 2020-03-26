@@ -33,21 +33,21 @@ namespace __jni_impl::java::nio::channels
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject attachment();
-		QAndroidJniObject attach(jobject arg0);
+		jobject attachment();
+		jobject attach(jobject arg0);
 		QAndroidJniObject channel();
 		jboolean isReadable();
 		jboolean isWritable();
 		QAndroidJniObject selector();
 		void cancel();
 		jboolean isValid();
+		jboolean isConnectable();
 		jint interestOps();
 		QAndroidJniObject interestOps(jint arg0);
 		jint readyOps();
 		jint interestOpsOr(jint arg0);
 		jint interestOpsAnd(jint arg0);
 		jboolean isAcceptable();
-		jboolean isConnectable();
 	};
 } // namespace __jni_impl::java::nio::channels
 
@@ -62,25 +62,29 @@ namespace __jni_impl::java::nio::channels
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.nio.channels.SelectionKey",
-			"OP_READ");
+			"OP_READ"
+		);
 	}
 	jint SelectionKey::OP_WRITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.nio.channels.SelectionKey",
-			"OP_WRITE");
+			"OP_WRITE"
+		);
 	}
 	jint SelectionKey::OP_CONNECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.nio.channels.SelectionKey",
-			"OP_CONNECT");
+			"OP_CONNECT"
+		);
 	}
 	jint SelectionKey::OP_ACCEPT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.nio.channels.SelectionKey",
-			"OP_ACCEPT");
+			"OP_ACCEPT"
+		);
 	}
 	
 	// Constructors
@@ -92,99 +96,114 @@ namespace __jni_impl::java::nio::channels
 	}
 	
 	// Methods
-	QAndroidJniObject SelectionKey::attachment()
+	jobject SelectionKey::attachment()
 	{
 		return __thiz.callObjectMethod(
 			"attachment",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject SelectionKey::attach(jobject arg0)
+	jobject SelectionKey::attach(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"attach",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject SelectionKey::channel()
 	{
 		return __thiz.callObjectMethod(
 			"channel",
-			"()Ljava/nio/channels/SelectableChannel;");
+			"()Ljava/nio/channels/SelectableChannel;"
+		);
 	}
 	jboolean SelectionKey::isReadable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReadable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SelectionKey::isWritable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWritable",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject SelectionKey::selector()
 	{
 		return __thiz.callObjectMethod(
 			"selector",
-			"()Ljava/nio/channels/Selector;");
+			"()Ljava/nio/channels/Selector;"
+		);
 	}
 	void SelectionKey::cancel()
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean SelectionKey::isValid()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValid",
-			"()Z");
+			"()Z"
+		);
+	}
+	jboolean SelectionKey::isConnectable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnectable",
+			"()Z"
+		);
 	}
 	jint SelectionKey::interestOps()
 	{
 		return __thiz.callMethod<jint>(
 			"interestOps",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SelectionKey::interestOps(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"interestOps",
 			"(I)Ljava/nio/channels/SelectionKey;",
-			arg0);
+			arg0
+		);
 	}
 	jint SelectionKey::readyOps()
 	{
 		return __thiz.callMethod<jint>(
 			"readyOps",
-			"()I");
+			"()I"
+		);
 	}
 	jint SelectionKey::interestOpsOr(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"interestOpsOr",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint SelectionKey::interestOpsAnd(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"interestOpsAnd",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SelectionKey::isAcceptable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAcceptable",
-			"()Z");
-	}
-	jboolean SelectionKey::isConnectable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnectable",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels
 

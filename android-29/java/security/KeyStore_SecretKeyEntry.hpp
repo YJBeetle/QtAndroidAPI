@@ -18,7 +18,7 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getAttributes();
 		QAndroidJniObject getSecretKey();
 	};
@@ -47,23 +47,26 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject KeyStore_SecretKeyEntry::toString()
+	jstring KeyStore_SecretKeyEntry::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject KeyStore_SecretKeyEntry::getAttributes()
 	{
 		return __thiz.callObjectMethod(
 			"getAttributes",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject KeyStore_SecretKeyEntry::getSecretKey()
 	{
 		return __thiz.callObjectMethod(
 			"getSecretKey",
-			"()Ljavax/crypto/SecretKey;");
+			"()Ljavax/crypto/SecretKey;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

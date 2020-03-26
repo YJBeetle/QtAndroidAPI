@@ -34,13 +34,13 @@ namespace __jni_impl::android::appwidget
 		void __constructor();
 		
 		// Methods
-		void onUpdate(__jni_impl::android::content::Context arg0, __jni_impl::android::appwidget::AppWidgetManager arg1, jintArray arg2);
 		void onAppWidgetOptionsChanged(__jni_impl::android::content::Context arg0, __jni_impl::android::appwidget::AppWidgetManager arg1, jint arg2, __jni_impl::android::os::Bundle arg3);
 		void onDeleted(__jni_impl::android::content::Context arg0, jintArray arg1);
 		void onRestored(__jni_impl::android::content::Context arg0, jintArray arg1, jintArray arg2);
 		void onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		void onEnabled(__jni_impl::android::content::Context arg0);
 		void onDisabled(__jni_impl::android::content::Context arg0);
+		void onUpdate(__jni_impl::android::content::Context arg0, __jni_impl::android::appwidget::AppWidgetManager arg1, jintArray arg2);
 	};
 } // namespace __jni_impl::android::appwidget
 
@@ -62,15 +62,6 @@ namespace __jni_impl::android::appwidget
 	}
 	
 	// Methods
-	void AppWidgetProvider::onUpdate(__jni_impl::android::content::Context arg0, __jni_impl::android::appwidget::AppWidgetManager arg1, jintArray arg2)
-	{
-		__thiz.callMethod<void>(
-			"onUpdate",
-			"(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;[I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2);
-	}
 	void AppWidgetProvider::onAppWidgetOptionsChanged(__jni_impl::android::content::Context arg0, __jni_impl::android::appwidget::AppWidgetManager arg1, jint arg2, __jni_impl::android::os::Bundle arg3)
 	{
 		__thiz.callMethod<void>(
@@ -79,7 +70,8 @@ namespace __jni_impl::android::appwidget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void AppWidgetProvider::onDeleted(__jni_impl::android::content::Context arg0, jintArray arg1)
 	{
@@ -87,7 +79,8 @@ namespace __jni_impl::android::appwidget
 			"onDeleted",
 			"(Landroid/content/Context;[I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void AppWidgetProvider::onRestored(__jni_impl::android::content::Context arg0, jintArray arg1, jintArray arg2)
 	{
@@ -96,7 +89,8 @@ namespace __jni_impl::android::appwidget
 			"(Landroid/content/Context;[I[I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AppWidgetProvider::onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -104,21 +98,34 @@ namespace __jni_impl::android::appwidget
 			"onReceive",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AppWidgetProvider::onEnabled(__jni_impl::android::content::Context arg0)
 	{
 		__thiz.callMethod<void>(
 			"onEnabled",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AppWidgetProvider::onDisabled(__jni_impl::android::content::Context arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDisabled",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void AppWidgetProvider::onUpdate(__jni_impl::android::content::Context arg0, __jni_impl::android::appwidget::AppWidgetManager arg1, jintArray arg2)
+	{
+		__thiz.callMethod<void>(
+			"onUpdate",
+			"(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;[I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::appwidget
 

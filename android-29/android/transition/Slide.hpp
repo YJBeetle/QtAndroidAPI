@@ -11,6 +11,10 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::transition
+{
+	class TransitionValues;
+}
 namespace __jni_impl::android::animation
 {
 	class Animator;
@@ -22,10 +26,6 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class View;
-}
-namespace __jni_impl::android::transition
-{
-	class TransitionValues;
 }
 
 namespace __jni_impl::android::transition
@@ -41,20 +41,20 @@ namespace __jni_impl::android::transition
 		void __constructor();
 		
 		// Methods
-		void setSlideEdge(jint arg0);
-		jint getSlideEdge();
-		QAndroidJniObject onAppear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
-		QAndroidJniObject onDisappear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
 		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
 		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
+		QAndroidJniObject onAppear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
+		QAndroidJniObject onDisappear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
+		void setSlideEdge(jint arg0);
+		jint getSlideEdge();
 	};
 } // namespace __jni_impl::android::transition
 
 #include "../content/Context.hpp"
+#include "TransitionValues.hpp"
 #include "../animation/Animator.hpp"
 #include "../view/ViewGroup.hpp"
 #include "../view/View.hpp"
-#include "TransitionValues.hpp"
 
 namespace __jni_impl::android::transition
 {
@@ -84,18 +84,21 @@ namespace __jni_impl::android::transition
 	}
 	
 	// Methods
-	void Slide::setSlideEdge(jint arg0)
+	void Slide::captureStartValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		__thiz.callMethod<void>(
-			"setSlideEdge",
-			"(I)V",
-			arg0);
+			"captureStartValues",
+			"(Landroid/transition/TransitionValues;)V",
+			arg0.__jniObject().object()
+		);
 	}
-	jint Slide::getSlideEdge()
+	void Slide::captureEndValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getSlideEdge",
-			"()I");
+		__thiz.callMethod<void>(
+			"captureEndValues",
+			"(Landroid/transition/TransitionValues;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Slide::onAppear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3)
 	{
@@ -105,7 +108,8 @@ namespace __jni_impl::android::transition
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Slide::onDisappear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3)
 	{
@@ -115,21 +119,23 @@ namespace __jni_impl::android::transition
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
-	void Slide::captureStartValues(__jni_impl::android::transition::TransitionValues arg0)
+	void Slide::setSlideEdge(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"captureStartValues",
-			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
+			"setSlideEdge",
+			"(I)V",
+			arg0
+		);
 	}
-	void Slide::captureEndValues(__jni_impl::android::transition::TransitionValues arg0)
+	jint Slide::getSlideEdge()
 	{
-		__thiz.callMethod<void>(
-			"captureEndValues",
-			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
+		return __thiz.callMethod<jint>(
+			"getSlideEdge",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::transition
 

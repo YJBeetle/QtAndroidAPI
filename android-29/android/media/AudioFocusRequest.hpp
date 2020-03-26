@@ -25,10 +25,10 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getAudioAttributes();
 		jint getFocusGain();
 		jboolean willPauseWhenDucked();
 		jboolean acceptsDelayedFocusGain();
+		QAndroidJniObject getAudioAttributes();
 	};
 } // namespace __jni_impl::android::media
 
@@ -48,29 +48,33 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject AudioFocusRequest::getAudioAttributes()
-	{
-		return __thiz.callObjectMethod(
-			"getAudioAttributes",
-			"()Landroid/media/AudioAttributes;");
-	}
 	jint AudioFocusRequest::getFocusGain()
 	{
 		return __thiz.callMethod<jint>(
 			"getFocusGain",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean AudioFocusRequest::willPauseWhenDucked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"willPauseWhenDucked",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AudioFocusRequest::acceptsDelayedFocusGain()
 	{
 		return __thiz.callMethod<jboolean>(
 			"acceptsDelayedFocusGain",
-			"()Z");
+			"()Z"
+		);
+	}
+	QAndroidJniObject AudioFocusRequest::getAudioAttributes()
+	{
+		return __thiz.callObjectMethod(
+			"getAudioAttributes",
+			"()Landroid/media/AudioAttributes;"
+		);
 	}
 } // namespace __jni_impl::android::media
 

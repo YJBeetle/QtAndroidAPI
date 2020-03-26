@@ -36,12 +36,14 @@ namespace __jni_impl::android::hardware
 	{
 		return __thiz.getObjectField(
 			"rect",
-			"Landroid/graphics/Rect;");
+			"Landroid/graphics/Rect;"
+		);
 	}
 	jint Camera_Area::weight()
 	{
 		return __thiz.getField<jint>(
-			"weight");
+			"weight"
+		);
 	}
 	
 	// Constructors
@@ -60,7 +62,8 @@ namespace __jni_impl::android::hardware
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::hardware
 

@@ -115,7 +115,8 @@ namespace __jni_impl::android::renderscript
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlend;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachClear(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -124,7 +125,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachClear(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -132,13 +134,15 @@ namespace __jni_impl::android::renderscript
 			"forEachClear",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDClear()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDClear",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrc(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -147,7 +151,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrc(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -155,13 +160,15 @@ namespace __jni_impl::android::renderscript
 			"forEachSrc",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrc()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDSrc",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDst(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -170,7 +177,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDst(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -178,13 +186,15 @@ namespace __jni_impl::android::renderscript
 			"forEachDst",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDst()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDDst",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrcOver(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -193,7 +203,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrcOver(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -201,13 +212,15 @@ namespace __jni_impl::android::renderscript
 			"forEachSrcOver",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrcOver()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDSrcOver",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDstOver(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -216,7 +229,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDstOver(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -224,13 +238,15 @@ namespace __jni_impl::android::renderscript
 			"forEachDstOver",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDstOver()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDDstOver",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrcIn(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -239,7 +255,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrcIn(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -247,13 +264,15 @@ namespace __jni_impl::android::renderscript
 			"forEachSrcIn",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrcIn()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDSrcIn",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDstIn(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -262,7 +281,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDstIn(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -270,13 +290,15 @@ namespace __jni_impl::android::renderscript
 			"forEachDstIn",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDstIn()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDDstIn",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrcOut(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -285,7 +307,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrcOut(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -293,13 +316,15 @@ namespace __jni_impl::android::renderscript
 			"forEachSrcOut",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrcOut()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDSrcOut",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDstOut(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -308,7 +333,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDstOut(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -316,13 +342,15 @@ namespace __jni_impl::android::renderscript
 			"forEachDstOut",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDstOut()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDDstOut",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrcAtop(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -331,7 +359,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSrcAtop(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -339,13 +368,15 @@ namespace __jni_impl::android::renderscript
 			"forEachSrcAtop",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSrcAtop()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDSrcAtop",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDstAtop(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -354,7 +385,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachDstAtop(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -362,13 +394,15 @@ namespace __jni_impl::android::renderscript
 			"forEachDstAtop",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDDstAtop()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDDstAtop",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachXor(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -377,7 +411,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachXor(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -385,13 +420,15 @@ namespace __jni_impl::android::renderscript
 			"forEachXor",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDXor()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDXor",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachMultiply(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -400,7 +437,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachMultiply(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -408,13 +446,15 @@ namespace __jni_impl::android::renderscript
 			"forEachMultiply",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDMultiply()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDMultiply",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachAdd(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -423,7 +463,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachAdd(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -431,13 +472,15 @@ namespace __jni_impl::android::renderscript
 			"forEachAdd",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDAdd()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDAdd",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSubtract(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
@@ -446,7 +489,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBlend::forEachSubtract(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -454,13 +498,15 @@ namespace __jni_impl::android::renderscript
 			"forEachSubtract",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicBlend::getKernelIDSubtract()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelIDSubtract",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

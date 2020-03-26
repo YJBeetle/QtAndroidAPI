@@ -71,13 +71,13 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		void remove();
-		QAndroidJniObject toString();
+		jstring toString();
 		jboolean hasNext(__jni_impl::java::util::regex::Pattern arg0);
 		jboolean hasNext(jstring arg0);
 		jboolean hasNext();
-		QAndroidJniObject next(__jni_impl::java::util::regex::Pattern arg0);
-		QAndroidJniObject next(jstring arg0);
-		QAndroidJniObject next();
+		jstring next(__jni_impl::java::util::regex::Pattern arg0);
+		jstring next(jstring arg0);
+		jstring next();
 		QAndroidJniObject delimiter();
 		QAndroidJniObject locale();
 		QAndroidJniObject match();
@@ -98,10 +98,10 @@ namespace __jni_impl::java::util
 		QAndroidJniObject findAll(__jni_impl::java::util::regex::Pattern arg0);
 		QAndroidJniObject tokens();
 		QAndroidJniObject useLocale(__jni_impl::java::util::Locale arg0);
-		QAndroidJniObject findWithinHorizon(__jni_impl::java::util::regex::Pattern arg0, jint arg1);
-		QAndroidJniObject findWithinHorizon(jstring arg0, jint arg1);
-		QAndroidJniObject findInLine(__jni_impl::java::util::regex::Pattern arg0);
-		QAndroidJniObject findInLine(jstring arg0);
+		jstring findWithinHorizon(__jni_impl::java::util::regex::Pattern arg0, jint arg1);
+		jstring findWithinHorizon(jstring arg0, jint arg1);
+		jstring findInLine(__jni_impl::java::util::regex::Pattern arg0);
+		jstring findInLine(jstring arg0);
 		jboolean hasNextByte(jint arg0);
 		jboolean hasNextByte();
 		jbyte nextByte();
@@ -122,7 +122,7 @@ namespace __jni_impl::java::util
 		QAndroidJniObject useDelimiter(jstring arg0);
 		QAndroidJniObject useDelimiter(__jni_impl::java::util::regex::Pattern arg0);
 		jboolean hasNextLine();
-		QAndroidJniObject nextLine();
+		jstring nextLine();
 		jboolean hasNextBoolean();
 		jboolean hasNextFloat();
 		jboolean hasNextDouble();
@@ -230,377 +230,435 @@ namespace __jni_impl::java::util
 	{
 		__thiz.callMethod<void>(
 			"remove",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject Scanner::toString()
+	jstring Scanner::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Scanner::hasNext(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNext",
 			"(Ljava/util/regex/Pattern;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Scanner::hasNext(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNext",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Scanner::hasNext()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNext",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Scanner::next(__jni_impl::java::util::regex::Pattern arg0)
+	jstring Scanner::next(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
 			"next",
 			"(Ljava/util/regex/Pattern;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject Scanner::next(jstring arg0)
+	jstring Scanner::next(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"next",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Scanner::next()
+	jstring Scanner::next()
 	{
 		return __thiz.callObjectMethod(
 			"next",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Scanner::delimiter()
 	{
 		return __thiz.callObjectMethod(
 			"delimiter",
-			"()Ljava/util/regex/Pattern;");
+			"()Ljava/util/regex/Pattern;"
+		);
 	}
 	QAndroidJniObject Scanner::locale()
 	{
 		return __thiz.callObjectMethod(
 			"locale",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
 	}
 	QAndroidJniObject Scanner::match()
 	{
 		return __thiz.callObjectMethod(
 			"match",
-			"()Ljava/util/regex/MatchResult;");
+			"()Ljava/util/regex/MatchResult;"
+		);
 	}
 	void Scanner::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Scanner::skip(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
 			"skip",
 			"(Ljava/util/regex/Pattern;)Ljava/util/Scanner;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Scanner::skip(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"skip",
 			"(Ljava/lang/String;)Ljava/util/Scanner;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Scanner::reset()
 	{
 		return __thiz.callObjectMethod(
 			"reset",
-			"()Ljava/util/Scanner;");
+			"()Ljava/util/Scanner;"
+		);
 	}
 	jint Scanner::radix()
 	{
 		return __thiz.callMethod<jint>(
 			"radix",
-			"()I");
+			"()I"
+		);
 	}
 	jdouble Scanner::nextDouble()
 	{
 		return __thiz.callMethod<jdouble>(
 			"nextDouble",
-			"()D");
+			"()D"
+		);
 	}
 	jint Scanner::nextInt()
 	{
 		return __thiz.callMethod<jint>(
 			"nextInt",
-			"()I");
+			"()I"
+		);
 	}
 	jint Scanner::nextInt(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"nextInt",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Scanner::ioException()
 	{
 		return __thiz.callObjectMethod(
 			"ioException",
-			"()Ljava/io/IOException;");
+			"()Ljava/io/IOException;"
+		);
 	}
 	jlong Scanner::nextLong()
 	{
 		return __thiz.callMethod<jlong>(
 			"nextLong",
-			"()J");
+			"()J"
+		);
 	}
 	jlong Scanner::nextLong(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"nextLong",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Scanner::nextBoolean()
 	{
 		return __thiz.callMethod<jboolean>(
 			"nextBoolean",
-			"()Z");
+			"()Z"
+		);
 	}
 	jfloat Scanner::nextFloat()
 	{
 		return __thiz.callMethod<jfloat>(
 			"nextFloat",
-			"()F");
+			"()F"
+		);
 	}
 	QAndroidJniObject Scanner::findAll(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findAll",
 			"(Ljava/lang/String;)Ljava/util/stream/Stream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Scanner::findAll(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findAll",
 			"(Ljava/util/regex/Pattern;)Ljava/util/stream/Stream;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Scanner::tokens()
 	{
 		return __thiz.callObjectMethod(
 			"tokens",
-			"()Ljava/util/stream/Stream;");
+			"()Ljava/util/stream/Stream;"
+		);
 	}
 	QAndroidJniObject Scanner::useLocale(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"useLocale",
 			"(Ljava/util/Locale;)Ljava/util/Scanner;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Scanner::findWithinHorizon(__jni_impl::java::util::regex::Pattern arg0, jint arg1)
+	jstring Scanner::findWithinHorizon(__jni_impl::java::util::regex::Pattern arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"findWithinHorizon",
 			"(Ljava/util/regex/Pattern;I)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject Scanner::findWithinHorizon(jstring arg0, jint arg1)
+	jstring Scanner::findWithinHorizon(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"findWithinHorizon",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject Scanner::findInLine(__jni_impl::java::util::regex::Pattern arg0)
+	jstring Scanner::findInLine(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findInLine",
 			"(Ljava/util/regex/Pattern;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject Scanner::findInLine(jstring arg0)
+	jstring Scanner::findInLine(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findInLine",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jboolean Scanner::hasNextByte(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextByte",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Scanner::hasNextByte()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextByte",
-			"()Z");
+			"()Z"
+		);
 	}
 	jbyte Scanner::nextByte()
 	{
 		return __thiz.callMethod<jbyte>(
 			"nextByte",
-			"()B");
+			"()B"
+		);
 	}
 	jbyte Scanner::nextByte(jint arg0)
 	{
 		return __thiz.callMethod<jbyte>(
 			"nextByte",
 			"(I)B",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Scanner::hasNextShort()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextShort",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Scanner::hasNextShort(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextShort",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jshort Scanner::nextShort(jint arg0)
 	{
 		return __thiz.callMethod<jshort>(
 			"nextShort",
 			"(I)S",
-			arg0);
+			arg0
+		);
 	}
 	jshort Scanner::nextShort()
 	{
 		return __thiz.callMethod<jshort>(
 			"nextShort",
-			"()S");
+			"()S"
+		);
 	}
 	jboolean Scanner::hasNextInt()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextInt",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Scanner::hasNextInt(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextInt",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Scanner::hasNextLong(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextLong",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Scanner::hasNextLong()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextLong",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Scanner::hasNextBigInteger(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextBigInteger",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Scanner::hasNextBigInteger()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextBigInteger",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Scanner::nextBigInteger(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"nextBigInteger",
 			"(I)Ljava/math/BigInteger;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Scanner::nextBigInteger()
 	{
 		return __thiz.callObjectMethod(
 			"nextBigInteger",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject Scanner::useRadix(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"useRadix",
 			"(I)Ljava/util/Scanner;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Scanner::useDelimiter(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"useDelimiter",
 			"(Ljava/lang/String;)Ljava/util/Scanner;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Scanner::useDelimiter(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
 			"useDelimiter",
 			"(Ljava/util/regex/Pattern;)Ljava/util/Scanner;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Scanner::hasNextLine()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextLine",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Scanner::nextLine()
+	jstring Scanner::nextLine()
 	{
 		return __thiz.callObjectMethod(
 			"nextLine",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Scanner::hasNextBoolean()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextBoolean",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Scanner::hasNextFloat()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextFloat",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Scanner::hasNextDouble()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextDouble",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Scanner::hasNextBigDecimal()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextBigDecimal",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Scanner::nextBigDecimal()
 	{
 		return __thiz.callObjectMethod(
 			"nextBigDecimal",
-			"()Ljava/math/BigDecimal;");
+			"()Ljava/math/BigDecimal;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

@@ -16,8 +16,8 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
 		static QAndroidJniObject PROFILE_CONTENT_URI();
 		
@@ -35,33 +35,37 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_StatusUpdates::CONTENT_ITEM_TYPE()
+	jstring ContactsContract_StatusUpdates::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_StatusUpdates::CONTENT_TYPE()
+	jstring ContactsContract_StatusUpdates::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_StatusUpdates::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_StatusUpdates::PROFILE_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$StatusUpdates",
 			"PROFILE_CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors
@@ -79,7 +83,8 @@ namespace __jni_impl::android::provider
 			"android.provider.ContactsContract$StatusUpdates",
 			"getPresenceIconResourceId",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint ContactsContract_StatusUpdates::getPresencePrecedence(jint arg0)
 	{
@@ -87,7 +92,8 @@ namespace __jni_impl::android::provider
 			"android.provider.ContactsContract$StatusUpdates",
 			"getPresencePrecedence",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::provider
 

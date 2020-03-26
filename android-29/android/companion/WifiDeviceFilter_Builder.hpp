@@ -50,14 +50,16 @@ namespace __jni_impl::android::companion
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/companion/WifiDeviceFilter;");
+			"()Landroid/companion/WifiDeviceFilter;"
+		);
 	}
 	QAndroidJniObject WifiDeviceFilter_Builder::setNamePattern(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setNamePattern",
 			"(Ljava/util/regex/Pattern;)Landroid/companion/WifiDeviceFilter$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::companion
 

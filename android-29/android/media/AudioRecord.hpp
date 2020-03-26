@@ -13,6 +13,18 @@ namespace __jni_impl::android::media
 {
 	class AudioFormat;
 }
+namespace __jni_impl::android::media
+{
+	class AudioManager_AudioRecordingCallback;
+}
+namespace __jni_impl::android::media
+{
+	class AudioDeviceInfo;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
+}
 namespace __jni_impl::android::os
 {
 	class PersistableBundle;
@@ -25,21 +37,9 @@ namespace __jni_impl::android::media
 {
 	class MediaSyncEvent;
 }
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
-namespace __jni_impl::android::media
-{
-	class AudioManager_AudioRecordingCallback;
-}
 namespace __jni_impl::android::media
 {
 	class AudioTimestamp;
-}
-namespace __jni_impl::android::media
-{
-	class AudioDeviceInfo;
 }
 
 namespace __jni_impl::android::media
@@ -75,23 +75,9 @@ namespace __jni_impl::android::media
 		jint getState();
 		void release();
 		QAndroidJniObject getFormat();
-		jint getSampleRate();
-		jint getChannelCount();
-		QAndroidJniObject getMetrics();
-		QAndroidJniObject getActiveMicrophones();
-		jboolean setPreferredMicrophoneDirection(jint arg0);
-		jboolean setPreferredMicrophoneFieldDimension(jfloat arg0);
-		QAndroidJniObject getActiveRecordingConfiguration();
-		jint getAudioSource();
-		jint getRecordingState();
-		void startRecording();
-		void startRecording(__jni_impl::android::media::MediaSyncEvent arg0);
-		void setRecordPositionUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
-		void setRecordPositionUpdateListener(__jni_impl::__JniBaseClass arg0);
+		jint getAudioSessionId();
 		void registerAudioRecordingCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::media::AudioManager_AudioRecordingCallback arg1);
 		void unregisterAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0);
-		jint getAudioSessionId();
-		jint getTimestamp(__jni_impl::android::media::AudioTimestamp arg0, jint arg1);
 		jint getAudioFormat();
 		jint getChannelConfiguration();
 		jint getBufferSizeInFrames();
@@ -105,18 +91,32 @@ namespace __jni_impl::android::media
 		QAndroidJniObject getRoutedDevice();
 		void addOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void removeOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0);
+		jint getSampleRate();
+		jint getChannelCount();
+		QAndroidJniObject getMetrics();
+		QAndroidJniObject getActiveMicrophones();
+		jboolean setPreferredMicrophoneDirection(jint arg0);
+		jboolean setPreferredMicrophoneFieldDimension(jfloat arg0);
+		QAndroidJniObject getActiveRecordingConfiguration();
+		jint getAudioSource();
+		jint getRecordingState();
+		void startRecording(__jni_impl::android::media::MediaSyncEvent arg0);
+		void startRecording();
+		void setRecordPositionUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void setRecordPositionUpdateListener(__jni_impl::__JniBaseClass arg0);
+		jint getTimestamp(__jni_impl::android::media::AudioTimestamp arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
 #include "../../java/nio/ByteBuffer.hpp"
 #include "AudioFormat.hpp"
+#include "AudioManager_AudioRecordingCallback.hpp"
+#include "AudioDeviceInfo.hpp"
+#include "../os/Handler.hpp"
 #include "../os/PersistableBundle.hpp"
 #include "AudioRecordingConfiguration.hpp"
 #include "MediaSyncEvent.hpp"
-#include "../os/Handler.hpp"
-#include "AudioManager_AudioRecordingCallback.hpp"
 #include "AudioTimestamp.hpp"
-#include "AudioDeviceInfo.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -125,67 +125,78 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"ERROR");
+			"ERROR"
+		);
 	}
 	jint AudioRecord::ERROR_BAD_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"ERROR_BAD_VALUE");
+			"ERROR_BAD_VALUE"
+		);
 	}
 	jint AudioRecord::ERROR_DEAD_OBJECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"ERROR_DEAD_OBJECT");
+			"ERROR_DEAD_OBJECT"
+		);
 	}
 	jint AudioRecord::ERROR_INVALID_OPERATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"ERROR_INVALID_OPERATION");
+			"ERROR_INVALID_OPERATION"
+		);
 	}
 	jint AudioRecord::READ_BLOCKING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"READ_BLOCKING");
+			"READ_BLOCKING"
+		);
 	}
 	jint AudioRecord::READ_NON_BLOCKING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"READ_NON_BLOCKING");
+			"READ_NON_BLOCKING"
+		);
 	}
 	jint AudioRecord::RECORDSTATE_RECORDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"RECORDSTATE_RECORDING");
+			"RECORDSTATE_RECORDING"
+		);
 	}
 	jint AudioRecord::RECORDSTATE_STOPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"RECORDSTATE_STOPPED");
+			"RECORDSTATE_STOPPED"
+		);
 	}
 	jint AudioRecord::STATE_INITIALIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"STATE_INITIALIZED");
+			"STATE_INITIALIZED"
+		);
 	}
 	jint AudioRecord::STATE_UNINITIALIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"STATE_UNINITIALIZED");
+			"STATE_UNINITIALIZED"
+		);
 	}
 	jint AudioRecord::SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioRecord",
-			"SUCCESS");
+			"SUCCESS"
+		);
 	}
 	
 	// Constructors
@@ -210,7 +221,8 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint AudioRecord::read(jshortArray arg0, jint arg1, jint arg2)
 	{
@@ -219,7 +231,8 @@ namespace __jni_impl::android::media
 			"([SII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AudioRecord::read(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -229,7 +242,8 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint AudioRecord::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -238,7 +252,8 @@ namespace __jni_impl::android::media
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AudioRecord::read(jfloatArray arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -248,7 +263,8 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint AudioRecord::read(__jni_impl::java::nio::ByteBuffer arg0, jint arg1)
 	{
@@ -256,7 +272,8 @@ namespace __jni_impl::android::media
 			"read",
 			"(Ljava/nio/ByteBuffer;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint AudioRecord::read(__jni_impl::java::nio::ByteBuffer arg0, jint arg1, jint arg2)
 	{
@@ -265,115 +282,43 @@ namespace __jni_impl::android::media
 			"(Ljava/nio/ByteBuffer;II)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AudioRecord::stop()
 	{
 		__thiz.callMethod<void>(
 			"stop",
-			"()V");
+			"()V"
+		);
 	}
 	jint AudioRecord::getState()
 	{
 		return __thiz.callMethod<jint>(
 			"getState",
-			"()I");
+			"()I"
+		);
 	}
 	void AudioRecord::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject AudioRecord::getFormat()
 	{
 		return __thiz.callObjectMethod(
 			"getFormat",
-			"()Landroid/media/AudioFormat;");
+			"()Landroid/media/AudioFormat;"
+		);
 	}
-	jint AudioRecord::getSampleRate()
+	jint AudioRecord::getAudioSessionId()
 	{
 		return __thiz.callMethod<jint>(
-			"getSampleRate",
-			"()I");
-	}
-	jint AudioRecord::getChannelCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getChannelCount",
-			"()I");
-	}
-	QAndroidJniObject AudioRecord::getMetrics()
-	{
-		return __thiz.callObjectMethod(
-			"getMetrics",
-			"()Landroid/os/PersistableBundle;");
-	}
-	QAndroidJniObject AudioRecord::getActiveMicrophones()
-	{
-		return __thiz.callObjectMethod(
-			"getActiveMicrophones",
-			"()Ljava/util/List;");
-	}
-	jboolean AudioRecord::setPreferredMicrophoneDirection(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setPreferredMicrophoneDirection",
-			"(I)Z",
-			arg0);
-	}
-	jboolean AudioRecord::setPreferredMicrophoneFieldDimension(jfloat arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setPreferredMicrophoneFieldDimension",
-			"(F)Z",
-			arg0);
-	}
-	QAndroidJniObject AudioRecord::getActiveRecordingConfiguration()
-	{
-		return __thiz.callObjectMethod(
-			"getActiveRecordingConfiguration",
-			"()Landroid/media/AudioRecordingConfiguration;");
-	}
-	jint AudioRecord::getAudioSource()
-	{
-		return __thiz.callMethod<jint>(
-			"getAudioSource",
-			"()I");
-	}
-	jint AudioRecord::getRecordingState()
-	{
-		return __thiz.callMethod<jint>(
-			"getRecordingState",
-			"()I");
-	}
-	void AudioRecord::startRecording()
-	{
-		__thiz.callMethod<void>(
-			"startRecording",
-			"()V");
-	}
-	void AudioRecord::startRecording(__jni_impl::android::media::MediaSyncEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"startRecording",
-			"(Landroid/media/MediaSyncEvent;)V",
-			arg0.__jniObject().object());
-	}
-	void AudioRecord::setRecordPositionUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setRecordPositionUpdateListener",
-			"(Landroid/media/AudioRecord$OnRecordPositionUpdateListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void AudioRecord::setRecordPositionUpdateListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRecordPositionUpdateListener",
-			"(Landroid/media/AudioRecord$OnRecordPositionUpdateListener;)V",
-			arg0.__jniObject().object());
+			"getAudioSessionId",
+			"()I"
+		);
 	}
 	void AudioRecord::registerAudioRecordingCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::media::AudioManager_AudioRecordingCallback arg1)
 	{
@@ -381,58 +326,51 @@ namespace __jni_impl::android::media
 			"registerAudioRecordingCallback",
 			"(Ljava/util/concurrent/Executor;Landroid/media/AudioManager$AudioRecordingCallback;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AudioRecord::unregisterAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterAudioRecordingCallback",
 			"(Landroid/media/AudioManager$AudioRecordingCallback;)V",
-			arg0.__jniObject().object());
-	}
-	jint AudioRecord::getAudioSessionId()
-	{
-		return __thiz.callMethod<jint>(
-			"getAudioSessionId",
-			"()I");
-	}
-	jint AudioRecord::getTimestamp(__jni_impl::android::media::AudioTimestamp arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getTimestamp",
-			"(Landroid/media/AudioTimestamp;I)I",
-			arg0.__jniObject().object(),
-			arg1);
+			arg0.__jniObject().object()
+		);
 	}
 	jint AudioRecord::getAudioFormat()
 	{
 		return __thiz.callMethod<jint>(
 			"getAudioFormat",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioRecord::getChannelConfiguration()
 	{
 		return __thiz.callMethod<jint>(
 			"getChannelConfiguration",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioRecord::getBufferSizeInFrames()
 	{
 		return __thiz.callMethod<jint>(
 			"getBufferSizeInFrames",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioRecord::getNotificationMarkerPosition()
 	{
 		return __thiz.callMethod<jint>(
 			"getNotificationMarkerPosition",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioRecord::getPositionNotificationPeriod()
 	{
 		return __thiz.callMethod<jint>(
 			"getPositionNotificationPeriod",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioRecord::getMinBufferSize(jint arg0, jint arg1, jint arg2)
 	{
@@ -442,40 +380,46 @@ namespace __jni_impl::android::media
 			"(III)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AudioRecord::setNotificationMarkerPosition(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setNotificationMarkerPosition",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint AudioRecord::setPositionNotificationPeriod(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setPositionNotificationPeriod",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AudioRecord::setPreferredDevice(__jni_impl::android::media::AudioDeviceInfo arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setPreferredDevice",
 			"(Landroid/media/AudioDeviceInfo;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AudioRecord::getPreferredDevice()
 	{
 		return __thiz.callObjectMethod(
 			"getPreferredDevice",
-			"()Landroid/media/AudioDeviceInfo;");
+			"()Landroid/media/AudioDeviceInfo;"
+		);
 	}
 	QAndroidJniObject AudioRecord::getRoutedDevice()
 	{
 		return __thiz.callObjectMethod(
 			"getRoutedDevice",
-			"()Landroid/media/AudioDeviceInfo;");
+			"()Landroid/media/AudioDeviceInfo;"
+		);
 	}
 	void AudioRecord::addOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -483,14 +427,122 @@ namespace __jni_impl::android::media
 			"addOnRoutingChangedListener",
 			"(Landroid/media/AudioRecord$OnRoutingChangedListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AudioRecord::removeOnRoutingChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeOnRoutingChangedListener",
 			"(Landroid/media/AudioRouting$OnRoutingChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jint AudioRecord::getSampleRate()
+	{
+		return __thiz.callMethod<jint>(
+			"getSampleRate",
+			"()I"
+		);
+	}
+	jint AudioRecord::getChannelCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getChannelCount",
+			"()I"
+		);
+	}
+	QAndroidJniObject AudioRecord::getMetrics()
+	{
+		return __thiz.callObjectMethod(
+			"getMetrics",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	QAndroidJniObject AudioRecord::getActiveMicrophones()
+	{
+		return __thiz.callObjectMethod(
+			"getActiveMicrophones",
+			"()Ljava/util/List;"
+		);
+	}
+	jboolean AudioRecord::setPreferredMicrophoneDirection(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setPreferredMicrophoneDirection",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean AudioRecord::setPreferredMicrophoneFieldDimension(jfloat arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setPreferredMicrophoneFieldDimension",
+			"(F)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject AudioRecord::getActiveRecordingConfiguration()
+	{
+		return __thiz.callObjectMethod(
+			"getActiveRecordingConfiguration",
+			"()Landroid/media/AudioRecordingConfiguration;"
+		);
+	}
+	jint AudioRecord::getAudioSource()
+	{
+		return __thiz.callMethod<jint>(
+			"getAudioSource",
+			"()I"
+		);
+	}
+	jint AudioRecord::getRecordingState()
+	{
+		return __thiz.callMethod<jint>(
+			"getRecordingState",
+			"()I"
+		);
+	}
+	void AudioRecord::startRecording(__jni_impl::android::media::MediaSyncEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"startRecording",
+			"(Landroid/media/MediaSyncEvent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AudioRecord::startRecording()
+	{
+		__thiz.callMethod<void>(
+			"startRecording",
+			"()V"
+		);
+	}
+	void AudioRecord::setRecordPositionUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setRecordPositionUpdateListener",
+			"(Landroid/media/AudioRecord$OnRecordPositionUpdateListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void AudioRecord::setRecordPositionUpdateListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRecordPositionUpdateListener",
+			"(Landroid/media/AudioRecord$OnRecordPositionUpdateListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint AudioRecord::getTimestamp(__jni_impl::android::media::AudioTimestamp arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getTimestamp",
+			"(Landroid/media/AudioTimestamp;I)I",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

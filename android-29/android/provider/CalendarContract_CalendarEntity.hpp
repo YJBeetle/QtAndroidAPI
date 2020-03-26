@@ -36,7 +36,8 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$CalendarEntity",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors
@@ -54,7 +55,8 @@ namespace __jni_impl::android::provider
 			"android.provider.CalendarContract$CalendarEntity",
 			"newEntityIterator",
 			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::provider
 

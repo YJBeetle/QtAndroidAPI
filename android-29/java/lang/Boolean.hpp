@@ -14,7 +14,7 @@ namespace __jni_impl::java::lang
 		// Fields
 		static QAndroidJniObject TRUE();
 		static QAndroidJniObject FALSE();
-		static QAndroidJniObject TYPE();
+		static jclass TYPE();
 		
 		// Constructors
 		void __constructor(jboolean arg0);
@@ -22,8 +22,8 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
-		static QAndroidJniObject toString(jboolean arg0);
+		jstring toString();
+		static jstring toString(jboolean arg0);
 		static jint hashCode(jboolean arg0);
 		jint hashCode();
 		jint compareTo(__jni_impl::java::lang::Boolean arg0);
@@ -49,21 +49,24 @@ namespace __jni_impl::java::lang
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Boolean",
 			"TRUE",
-			"Ljava/lang/Boolean;");
+			"Ljava/lang/Boolean;"
+		);
 	}
 	QAndroidJniObject Boolean::FALSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Boolean",
 			"FALSE",
-			"Ljava/lang/Boolean;");
+			"Ljava/lang/Boolean;"
+		);
 	}
-	QAndroidJniObject Boolean::TYPE()
+	jclass Boolean::TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Boolean",
 			"TYPE",
-			"Ljava/lang/Class;");
+			"Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	
 	// Constructors
@@ -88,21 +91,24 @@ namespace __jni_impl::java::lang
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Boolean::toString()
+	jstring Boolean::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Boolean::toString(jboolean arg0)
+	jstring Boolean::toString(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Boolean",
 			"toString",
 			"(Z)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint Boolean::hashCode(jboolean arg0)
 	{
@@ -110,27 +116,31 @@ namespace __jni_impl::java::lang
 			"java.lang.Boolean",
 			"hashCode",
 			"(Z)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Boolean::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Boolean::compareTo(__jni_impl::java::lang::Boolean arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Boolean;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Boolean::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Boolean::getBoolean(jstring arg0)
 	{
@@ -138,13 +148,15 @@ namespace __jni_impl::java::lang
 			"java.lang.Boolean",
 			"getBoolean",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Boolean::booleanValue()
 	{
 		return __thiz.callMethod<jboolean>(
 			"booleanValue",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Boolean::valueOf(jstring arg0)
 	{
@@ -152,7 +164,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Boolean",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Boolean;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Boolean::valueOf(jboolean arg0)
 	{
@@ -160,7 +173,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Boolean",
 			"valueOf",
 			"(Z)Ljava/lang/Boolean;",
-			arg0);
+			arg0
+		);
 	}
 	jint Boolean::compare(jboolean arg0, jboolean arg1)
 	{
@@ -169,7 +183,8 @@ namespace __jni_impl::java::lang
 			"compare",
 			"(ZZ)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Boolean::parseBoolean(jstring arg0)
 	{
@@ -177,7 +192,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Boolean",
 			"parseBoolean",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Boolean::logicalAnd(jboolean arg0, jboolean arg1)
 	{
@@ -186,7 +202,8 @@ namespace __jni_impl::java::lang
 			"logicalAnd",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Boolean::logicalOr(jboolean arg0, jboolean arg1)
 	{
@@ -195,7 +212,8 @@ namespace __jni_impl::java::lang
 			"logicalOr",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Boolean::logicalXor(jboolean arg0, jboolean arg1)
 	{
@@ -204,7 +222,8 @@ namespace __jni_impl::java::lang
 			"logicalXor",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::lang
 

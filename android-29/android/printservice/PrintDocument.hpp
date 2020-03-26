@@ -50,13 +50,15 @@ namespace __jni_impl::android::printservice
 	{
 		return __thiz.callObjectMethod(
 			"getData",
-			"()Landroid/os/ParcelFileDescriptor;");
+			"()Landroid/os/ParcelFileDescriptor;"
+		);
 	}
 	QAndroidJniObject PrintDocument::getInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getInfo",
-			"()Landroid/print/PrintDocumentInfo;");
+			"()Landroid/print/PrintDocumentInfo;"
+		);
 	}
 } // namespace __jni_impl::android::printservice
 

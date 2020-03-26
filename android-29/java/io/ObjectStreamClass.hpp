@@ -48,18 +48,18 @@ namespace __jni_impl::java::io
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NO_FIELDS();
+		static jarray NO_FIELDS();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
+		jstring getName();
+		jstring toString();
 		static QAndroidJniObject lookup(jclass arg0);
-		QAndroidJniObject getFields();
+		jarray getFields();
 		QAndroidJniObject getField(jstring arg0);
-		QAndroidJniObject forClass();
+		jclass forClass();
 		jlong getSerialVersionUID();
 		static QAndroidJniObject lookupAny(jclass arg0);
 	};
@@ -78,12 +78,13 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	// Fields
-	QAndroidJniObject ObjectStreamClass::NO_FIELDS()
+	jarray ObjectStreamClass::NO_FIELDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.io.ObjectStreamClass",
 			"NO_FIELDS",
-			"[Ljava/io/ObjectStreamField;");
+			"[Ljava/io/ObjectStreamField;"
+		).object<jarray>();
 	}
 	
 	// Constructors
@@ -95,17 +96,19 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	QAndroidJniObject ObjectStreamClass::getName()
+	jstring ObjectStreamClass::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ObjectStreamClass::toString()
+	jstring ObjectStreamClass::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ObjectStreamClass::lookup(jclass arg0)
 	{
@@ -113,32 +116,37 @@ namespace __jni_impl::java::io
 			"java.io.ObjectStreamClass",
 			"lookup",
 			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ObjectStreamClass::getFields()
+	jarray ObjectStreamClass::getFields()
 	{
 		return __thiz.callObjectMethod(
 			"getFields",
-			"()[Ljava/io/ObjectStreamField;");
+			"()[Ljava/io/ObjectStreamField;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ObjectStreamClass::getField(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getField",
 			"(Ljava/lang/String;)Ljava/io/ObjectStreamField;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ObjectStreamClass::forClass()
+	jclass ObjectStreamClass::forClass()
 	{
 		return __thiz.callObjectMethod(
 			"forClass",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	jlong ObjectStreamClass::getSerialVersionUID()
 	{
 		return __thiz.callMethod<jlong>(
 			"getSerialVersionUID",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject ObjectStreamClass::lookupAny(jclass arg0)
 	{
@@ -146,7 +154,8 @@ namespace __jni_impl::java::io
 			"java.io.ObjectStreamClass",
 			"lookupAny",
 			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::io
 

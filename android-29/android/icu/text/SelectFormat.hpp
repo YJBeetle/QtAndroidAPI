@@ -31,13 +31,13 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
-		QAndroidJniObject format(jstring arg0);
+		jstring format(jstring arg0);
 		void applyPattern(jstring arg0);
-		QAndroidJniObject toPattern();
-		QAndroidJniObject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jstring toPattern();
+		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -64,19 +64,22 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SelectFormat::toString()
+	jstring SelectFormat::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SelectFormat::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SelectFormat::format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
@@ -85,35 +88,40 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject SelectFormat::format(jstring arg0)
+	jstring SelectFormat::format(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"format",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void SelectFormat::applyPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SelectFormat::toPattern()
+	jstring SelectFormat::toPattern()
 	{
 		return __thiz.callObjectMethod(
 			"toPattern",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SelectFormat::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
+	jobject SelectFormat::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::icu::text
 

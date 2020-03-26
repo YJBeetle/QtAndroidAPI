@@ -73,19 +73,22 @@ namespace __jni_impl::android::hardware::fingerprint
 	{
 		return __thiz.callObjectMethod(
 			"getSignature",
-			"()Ljava/security/Signature;");
+			"()Ljava/security/Signature;"
+		);
 	}
 	QAndroidJniObject FingerprintManager_CryptoObject::getCipher()
 	{
 		return __thiz.callObjectMethod(
 			"getCipher",
-			"()Ljavax/crypto/Cipher;");
+			"()Ljavax/crypto/Cipher;"
+		);
 	}
 	QAndroidJniObject FingerprintManager_CryptoObject::getMac()
 	{
 		return __thiz.callObjectMethod(
 			"getMac",
-			"()Ljavax/crypto/Mac;");
+			"()Ljavax/crypto/Mac;"
+		);
 	}
 } // namespace __jni_impl::android::hardware::fingerprint
 

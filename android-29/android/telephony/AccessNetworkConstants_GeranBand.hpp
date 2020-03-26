@@ -42,85 +42,99 @@ namespace __jni_impl::android::telephony
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_450");
+			"BAND_450"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_480()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_480");
+			"BAND_480"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_710()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_710");
+			"BAND_710"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_750()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_750");
+			"BAND_750"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_850()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_850");
+			"BAND_850"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_DCS1800()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_DCS1800");
+			"BAND_DCS1800"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_E900()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_E900");
+			"BAND_E900"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_ER900()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_ER900");
+			"BAND_ER900"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_P900()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_P900");
+			"BAND_P900"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_PCS1900()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_PCS1900");
+			"BAND_PCS1900"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_R900()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_R900");
+			"BAND_R900"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_T380()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_T380");
+			"BAND_T380"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_T410()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_T410");
+			"BAND_T410"
+		);
 	}
 	jint AccessNetworkConstants_GeranBand::BAND_T810()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$GeranBand",
-			"BAND_T810");
+			"BAND_T810"
+		);
 	}
 	
 	// Constructors

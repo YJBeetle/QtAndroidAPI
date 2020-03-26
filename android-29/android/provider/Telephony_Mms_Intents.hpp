@@ -12,8 +12,8 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_CHANGED_ACTION();
-		static QAndroidJniObject DELETED_CONTENTS();
+		static jstring CONTENT_CHANGED_ACTION();
+		static jstring DELETED_CONTENTS();
 		
 		// Constructors
 		void __constructor();
@@ -26,19 +26,21 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_Mms_Intents::CONTENT_CHANGED_ACTION()
+	jstring Telephony_Mms_Intents::CONTENT_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Intents",
 			"CONTENT_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Intents::DELETED_CONTENTS()
+	jstring Telephony_Mms_Intents::DELETED_CONTENTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Intents",
 			"DELETED_CONTENTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

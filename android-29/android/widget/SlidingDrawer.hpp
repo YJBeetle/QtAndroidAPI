@@ -45,11 +45,7 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getContent();
 		void unlock();
 		QAndroidJniObject getHandle();
-		jboolean onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		QAndroidJniObject getAccessibilityClassName();
-		jboolean isOpened();
 		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		void toggle();
 		void animateToggle();
 		void animateClose();
 		void animateOpen();
@@ -57,6 +53,10 @@ namespace __jni_impl::android::widget
 		void setOnDrawerCloseListener(__jni_impl::__JniBaseClass arg0);
 		void setOnDrawerScrollListener(__jni_impl::__JniBaseClass arg0);
 		jboolean isMoving();
+		void toggle();
+		jboolean onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jstring getAccessibilityClassName();
+		jboolean isOpened();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -72,13 +72,15 @@ namespace __jni_impl::android::widget
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.SlidingDrawer",
-			"ORIENTATION_HORIZONTAL");
+			"ORIENTATION_HORIZONTAL"
+		);
 	}
 	jint SlidingDrawer::ORIENTATION_VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.SlidingDrawer",
-			"ORIENTATION_VERTICAL");
+			"ORIENTATION_VERTICAL"
+		);
 	}
 	
 	// Constructors
@@ -115,114 +117,132 @@ namespace __jni_impl::android::widget
 	{
 		__thiz.callMethod<void>(
 			"lock",
-			"()V");
+			"()V"
+		);
 	}
 	void SlidingDrawer::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void SlidingDrawer::open()
 	{
 		__thiz.callMethod<void>(
 			"open",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject SlidingDrawer::getContent()
 	{
 		return __thiz.callObjectMethod(
 			"getContent",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
 	void SlidingDrawer::unlock()
 	{
 		__thiz.callMethod<void>(
 			"unlock",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject SlidingDrawer::getHandle()
 	{
 		return __thiz.callObjectMethod(
 			"getHandle",
-			"()Landroid/view/View;");
-	}
-	jboolean SlidingDrawer::onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onInterceptTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SlidingDrawer::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	jboolean SlidingDrawer::isOpened()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOpened",
-			"()Z");
+			"()Landroid/view/View;"
+		);
 	}
 	jboolean SlidingDrawer::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	void SlidingDrawer::toggle()
-	{
-		__thiz.callMethod<void>(
-			"toggle",
-			"()V");
+			arg0.__jniObject().object()
+		);
 	}
 	void SlidingDrawer::animateToggle()
 	{
 		__thiz.callMethod<void>(
 			"animateToggle",
-			"()V");
+			"()V"
+		);
 	}
 	void SlidingDrawer::animateClose()
 	{
 		__thiz.callMethod<void>(
 			"animateClose",
-			"()V");
+			"()V"
+		);
 	}
 	void SlidingDrawer::animateOpen()
 	{
 		__thiz.callMethod<void>(
 			"animateOpen",
-			"()V");
+			"()V"
+		);
 	}
 	void SlidingDrawer::setOnDrawerOpenListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnDrawerOpenListener",
 			"(Landroid/widget/SlidingDrawer$OnDrawerOpenListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SlidingDrawer::setOnDrawerCloseListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnDrawerCloseListener",
 			"(Landroid/widget/SlidingDrawer$OnDrawerCloseListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SlidingDrawer::setOnDrawerScrollListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnDrawerScrollListener",
 			"(Landroid/widget/SlidingDrawer$OnDrawerScrollListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean SlidingDrawer::isMoving()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMoving",
-			"()Z");
+			"()Z"
+		);
+	}
+	void SlidingDrawer::toggle()
+	{
+		__thiz.callMethod<void>(
+			"toggle",
+			"()V"
+		);
+	}
+	jboolean SlidingDrawer::onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onInterceptTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring SlidingDrawer::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jboolean SlidingDrawer::isOpened()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOpened",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

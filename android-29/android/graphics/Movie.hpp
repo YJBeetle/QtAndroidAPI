@@ -33,12 +33,12 @@ namespace __jni_impl::android::graphics
 		jint duration();
 		jboolean setTime(jint arg0);
 		jint width();
-		jint height();
 		void draw(__jni_impl::android::graphics::Canvas arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::Paint arg3);
 		void draw(__jni_impl::android::graphics::Canvas arg0, jfloat arg1, jfloat arg2);
 		static QAndroidJniObject decodeStream(__jni_impl::java::io::InputStream arg0);
 		static QAndroidJniObject decodeByteArray(jbyteArray arg0, jint arg1, jint arg2);
 		static QAndroidJniObject decodeFile(jstring arg0);
+		jint height();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -63,32 +63,30 @@ namespace __jni_impl::android::graphics
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpaque",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Movie::duration()
 	{
 		return __thiz.callMethod<jint>(
 			"duration",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Movie::setTime(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setTime",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Movie::width()
 	{
 		return __thiz.callMethod<jint>(
 			"width",
-			"()I");
-	}
-	jint Movie::height()
-	{
-		return __thiz.callMethod<jint>(
-			"height",
-			"()I");
+			"()I"
+		);
 	}
 	void Movie::draw(__jni_impl::android::graphics::Canvas arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::Paint arg3)
 	{
@@ -98,7 +96,8 @@ namespace __jni_impl::android::graphics
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void Movie::draw(__jni_impl::android::graphics::Canvas arg0, jfloat arg1, jfloat arg2)
 	{
@@ -107,7 +106,8 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Canvas;FF)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Movie::decodeStream(__jni_impl::java::io::InputStream arg0)
 	{
@@ -115,7 +115,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Movie",
 			"decodeStream",
 			"(Ljava/io/InputStream;)Landroid/graphics/Movie;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Movie::decodeByteArray(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -125,7 +126,8 @@ namespace __jni_impl::android::graphics
 			"([BII)Landroid/graphics/Movie;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Movie::decodeFile(jstring arg0)
 	{
@@ -133,7 +135,15 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Movie",
 			"decodeFile",
 			"(Ljava/lang/String;)Landroid/graphics/Movie;",
-			arg0);
+			arg0
+		);
+	}
+	jint Movie::height()
+	{
+		return __thiz.callMethod<jint>(
+			"height",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

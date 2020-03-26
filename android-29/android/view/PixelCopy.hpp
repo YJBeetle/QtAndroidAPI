@@ -70,37 +70,43 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PixelCopy",
-			"ERROR_DESTINATION_INVALID");
+			"ERROR_DESTINATION_INVALID"
+		);
 	}
 	jint PixelCopy::ERROR_SOURCE_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PixelCopy",
-			"ERROR_SOURCE_INVALID");
+			"ERROR_SOURCE_INVALID"
+		);
 	}
 	jint PixelCopy::ERROR_SOURCE_NO_DATA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PixelCopy",
-			"ERROR_SOURCE_NO_DATA");
+			"ERROR_SOURCE_NO_DATA"
+		);
 	}
 	jint PixelCopy::ERROR_TIMEOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PixelCopy",
-			"ERROR_TIMEOUT");
+			"ERROR_TIMEOUT"
+		);
 	}
 	jint PixelCopy::ERROR_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PixelCopy",
-			"ERROR_UNKNOWN");
+			"ERROR_UNKNOWN"
+		);
 	}
 	jint PixelCopy::SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PixelCopy",
-			"SUCCESS");
+			"SUCCESS"
+		);
 	}
 	
 	// Constructors
@@ -122,7 +128,8 @@ namespace __jni_impl::android::view
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void PixelCopy::request(__jni_impl::android::view::Window arg0, __jni_impl::android::graphics::Bitmap arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -133,7 +140,8 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void PixelCopy::request(__jni_impl::android::view::Window arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Bitmap arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4)
 	{
@@ -145,7 +153,8 @@ namespace __jni_impl::android::view
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void PixelCopy::request(__jni_impl::android::view::Surface arg0, __jni_impl::android::graphics::Bitmap arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -156,7 +165,8 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void PixelCopy::request(__jni_impl::android::view::SurfaceView arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Bitmap arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4)
 	{
@@ -168,7 +178,8 @@ namespace __jni_impl::android::view
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void PixelCopy::request(__jni_impl::android::view::SurfaceView arg0, __jni_impl::android::graphics::Bitmap arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -179,7 +190,8 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

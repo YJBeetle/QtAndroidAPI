@@ -24,7 +24,7 @@ namespace __jni_impl::javax::xml::transform::stream
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FEATURE();
+		static jstring FEATURE();
 		
 		// Constructors
 		void __constructor(__jni_impl::java::io::File arg0);
@@ -35,12 +35,12 @@ namespace __jni_impl::javax::xml::transform::stream
 		
 		// Methods
 		void setOutputStream(__jni_impl::java::io::OutputStream arg0);
-		QAndroidJniObject getSystemId();
-		QAndroidJniObject getOutputStream();
-		void setSystemId(__jni_impl::java::io::File arg0);
+		jstring getSystemId();
 		void setSystemId(jstring arg0);
+		void setSystemId(__jni_impl::java::io::File arg0);
 		void setWriter(__jni_impl::java::io::Writer arg0);
 		QAndroidJniObject getWriter();
+		QAndroidJniObject getOutputStream();
 	};
 } // namespace __jni_impl::javax::xml::transform::stream
 
@@ -51,12 +51,13 @@ namespace __jni_impl::javax::xml::transform::stream
 namespace __jni_impl::javax::xml::transform::stream
 {
 	// Fields
-	QAndroidJniObject StreamResult::FEATURE()
+	jstring StreamResult::FEATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.stream.StreamResult",
 			"FEATURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -101,46 +102,53 @@ namespace __jni_impl::javax::xml::transform::stream
 		__thiz.callMethod<void>(
 			"setOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject StreamResult::getSystemId()
+	jstring StreamResult::getSystemId()
 	{
 		return __thiz.callObjectMethod(
 			"getSystemId",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject StreamResult::getOutputStream()
-	{
-		return __thiz.callObjectMethod(
-			"getOutputStream",
-			"()Ljava/io/OutputStream;");
-	}
-	void StreamResult::setSystemId(__jni_impl::java::io::File arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/io/File;)V",
-			arg0.__jniObject().object());
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void StreamResult::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void StreamResult::setSystemId(__jni_impl::java::io::File arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/io/File;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void StreamResult::setWriter(__jni_impl::java::io::Writer arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWriter",
 			"(Ljava/io/Writer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject StreamResult::getWriter()
 	{
 		return __thiz.callObjectMethod(
 			"getWriter",
-			"()Ljava/io/Writer;");
+			"()Ljava/io/Writer;"
+		);
+	}
+	QAndroidJniObject StreamResult::getOutputStream()
+	{
+		return __thiz.callObjectMethod(
+			"getOutputStream",
+			"()Ljava/io/OutputStream;"
+		);
 	}
 } // namespace __jni_impl::javax::xml::transform::stream
 

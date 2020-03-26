@@ -11,23 +11,23 @@ namespace __jni_impl::android::content::pm
 }
 namespace __jni_impl::android::os
 {
-	class PersistableBundle;
-}
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
-namespace __jni_impl::android::content
-{
-	class LocusId;
+	class Parcel;
 }
 namespace __jni_impl::android::content
 {
 	class Intent;
 }
+namespace __jni_impl::android::content
+{
+	class ComponentName;
+}
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class PersistableBundle;
+}
+namespace __jni_impl::android::content
+{
+	class LocusId;
 }
 namespace __jni_impl::android::os
 {
@@ -49,24 +49,21 @@ namespace __jni_impl::android::content::pm
 		static jint DISABLED_REASON_SIGNATURE_MISMATCH();
 		static jint DISABLED_REASON_UNKNOWN();
 		static jint DISABLED_REASON_VERSION_LOWER();
-		static QAndroidJniObject SHORTCUT_CATEGORY_CONVERSATION();
+		static jstring SHORTCUT_CATEGORY_CONVERSATION();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getPackage();
-		QAndroidJniObject getId();
+		jstring toString();
+		jstring getPackage();
+		jstring getId();
 		jboolean isEnabled();
-		QAndroidJniObject getCategories();
-		QAndroidJniObject getExtras();
 		jint getRank();
-		QAndroidJniObject getActivity();
-		QAndroidJniObject getLocusId();
-		QAndroidJniObject getShortLabel();
-		QAndroidJniObject getLongLabel();
-		QAndroidJniObject getDisabledMessage();
+		jarray getIntents();
+		jstring getShortLabel();
+		jstring getLongLabel();
+		jstring getDisabledMessage();
 		jint getDisabledReason();
 		jlong getLastChangedTimestamp();
 		jboolean isDynamic();
@@ -74,20 +71,23 @@ namespace __jni_impl::android::content::pm
 		jboolean isDeclaredInManifest();
 		jboolean isImmutable();
 		jboolean hasKeyFieldsOnly();
-		QAndroidJniObject getIntent();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getIntent();
+		QAndroidJniObject getActivity();
+		QAndroidJniObject getCategories();
+		QAndroidJniObject getExtras();
+		QAndroidJniObject getLocusId();
 		QAndroidJniObject getUserHandle();
-		QAndroidJniObject getIntents();
 	};
 } // namespace __jni_impl::android::content::pm
 
 #include "ShortcutInfo_Builder.hpp"
-#include "../../os/PersistableBundle.hpp"
-#include "../ComponentName.hpp"
-#include "../LocusId.hpp"
-#include "../Intent.hpp"
 #include "../../os/Parcel.hpp"
+#include "../Intent.hpp"
+#include "../ComponentName.hpp"
+#include "../../os/PersistableBundle.hpp"
+#include "../LocusId.hpp"
 #include "../../os/UserHandle.hpp"
 
 namespace __jni_impl::android::content::pm
@@ -98,62 +98,72 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ShortcutInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_APP_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
-			"DISABLED_REASON_APP_CHANGED");
+			"DISABLED_REASON_APP_CHANGED"
+		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_BACKUP_NOT_SUPPORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
-			"DISABLED_REASON_BACKUP_NOT_SUPPORTED");
+			"DISABLED_REASON_BACKUP_NOT_SUPPORTED"
+		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_BY_APP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
-			"DISABLED_REASON_BY_APP");
+			"DISABLED_REASON_BY_APP"
+		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_NOT_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
-			"DISABLED_REASON_NOT_DISABLED");
+			"DISABLED_REASON_NOT_DISABLED"
+		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_OTHER_RESTORE_ISSUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
-			"DISABLED_REASON_OTHER_RESTORE_ISSUE");
+			"DISABLED_REASON_OTHER_RESTORE_ISSUE"
+		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_SIGNATURE_MISMATCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
-			"DISABLED_REASON_SIGNATURE_MISMATCH");
+			"DISABLED_REASON_SIGNATURE_MISMATCH"
+		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
-			"DISABLED_REASON_UNKNOWN");
+			"DISABLED_REASON_UNKNOWN"
+		);
 	}
 	jint ShortcutInfo::DISABLED_REASON_VERSION_LOWER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ShortcutInfo",
-			"DISABLED_REASON_VERSION_LOWER");
+			"DISABLED_REASON_VERSION_LOWER"
+		);
 	}
-	QAndroidJniObject ShortcutInfo::SHORTCUT_CATEGORY_CONVERSATION()
+	jstring ShortcutInfo::SHORTCUT_CATEGORY_CONVERSATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ShortcutInfo",
 			"SHORTCUT_CATEGORY_CONVERSATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -165,131 +175,124 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject ShortcutInfo::toString()
+	jstring ShortcutInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ShortcutInfo::getPackage()
+	jstring ShortcutInfo::getPackage()
 	{
 		return __thiz.callObjectMethod(
 			"getPackage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ShortcutInfo::getId()
+	jstring ShortcutInfo::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean ShortcutInfo::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
-	}
-	QAndroidJniObject ShortcutInfo::getCategories()
-	{
-		return __thiz.callObjectMethod(
-			"getCategories",
-			"()Ljava/util/Set;");
-	}
-	QAndroidJniObject ShortcutInfo::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/PersistableBundle;");
+			"()Z"
+		);
 	}
 	jint ShortcutInfo::getRank()
 	{
 		return __thiz.callMethod<jint>(
 			"getRank",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject ShortcutInfo::getActivity()
+	jarray ShortcutInfo::getIntents()
 	{
 		return __thiz.callObjectMethod(
-			"getActivity",
-			"()Landroid/content/ComponentName;");
+			"getIntents",
+			"()[Landroid/content/Intent;"
+		).object<jarray>();
 	}
-	QAndroidJniObject ShortcutInfo::getLocusId()
-	{
-		return __thiz.callObjectMethod(
-			"getLocusId",
-			"()Landroid/content/LocusId;");
-	}
-	QAndroidJniObject ShortcutInfo::getShortLabel()
+	jstring ShortcutInfo::getShortLabel()
 	{
 		return __thiz.callObjectMethod(
 			"getShortLabel",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ShortcutInfo::getLongLabel()
+	jstring ShortcutInfo::getLongLabel()
 	{
 		return __thiz.callObjectMethod(
 			"getLongLabel",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ShortcutInfo::getDisabledMessage()
+	jstring ShortcutInfo::getDisabledMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getDisabledMessage",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint ShortcutInfo::getDisabledReason()
 	{
 		return __thiz.callMethod<jint>(
 			"getDisabledReason",
-			"()I");
+			"()I"
+		);
 	}
 	jlong ShortcutInfo::getLastChangedTimestamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastChangedTimestamp",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean ShortcutInfo::isDynamic()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDynamic",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ShortcutInfo::isPinned()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPinned",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ShortcutInfo::isDeclaredInManifest()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDeclaredInManifest",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ShortcutInfo::isImmutable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isImmutable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ShortcutInfo::hasKeyFieldsOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasKeyFieldsOnly",
-			"()Z");
-	}
-	QAndroidJniObject ShortcutInfo::getIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getIntent",
-			"()Landroid/content/Intent;");
+			"()Z"
+		);
 	}
 	jint ShortcutInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ShortcutInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -297,19 +300,50 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject ShortcutInfo::getIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	QAndroidJniObject ShortcutInfo::getActivity()
+	{
+		return __thiz.callObjectMethod(
+			"getActivity",
+			"()Landroid/content/ComponentName;"
+		);
+	}
+	QAndroidJniObject ShortcutInfo::getCategories()
+	{
+		return __thiz.callObjectMethod(
+			"getCategories",
+			"()Ljava/util/Set;"
+		);
+	}
+	QAndroidJniObject ShortcutInfo::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	QAndroidJniObject ShortcutInfo::getLocusId()
+	{
+		return __thiz.callObjectMethod(
+			"getLocusId",
+			"()Landroid/content/LocusId;"
+		);
 	}
 	QAndroidJniObject ShortcutInfo::getUserHandle()
 	{
 		return __thiz.callObjectMethod(
 			"getUserHandle",
-			"()Landroid/os/UserHandle;");
-	}
-	QAndroidJniObject ShortcutInfo::getIntents()
-	{
-		return __thiz.callObjectMethod(
-			"getIntents",
-			"()[Landroid/content/Intent;");
+			"()Landroid/os/UserHandle;"
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

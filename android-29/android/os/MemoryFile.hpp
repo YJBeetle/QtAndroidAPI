@@ -58,19 +58,22 @@ namespace __jni_impl::android::os
 	{
 		return __thiz.callMethod<jint>(
 			"length",
-			"()I");
+			"()I"
+		);
 	}
 	void MemoryFile::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject MemoryFile::getInputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getInputStream",
-			"()Ljava/io/InputStream;");
+			"()Ljava/io/InputStream;"
+		);
 	}
 	jint MemoryFile::readBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -80,7 +83,8 @@ namespace __jni_impl::android::os
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void MemoryFile::writeBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -90,26 +94,30 @@ namespace __jni_impl::android::os
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean MemoryFile::isPurgingAllowed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPurgingAllowed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean MemoryFile::allowPurging(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"allowPurging",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MemoryFile::getOutputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getOutputStream",
-			"()Ljava/io/OutputStream;");
+			"()Ljava/io/OutputStream;"
+		);
 	}
 } // namespace __jni_impl::android::os
 

@@ -41,13 +41,15 @@ namespace __jni_impl::javax::microedition::khronos::egl
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.microedition.khronos.egl.EGLContext",
 			"getEGL",
-			"()Ljavax/microedition/khronos/egl/EGL;");
+			"()Ljavax/microedition/khronos/egl/EGL;"
+		);
 	}
 	QAndroidJniObject EGLContext::getGL()
 	{
 		return __thiz.callObjectMethod(
 			"getGL",
-			"()Ljavax/microedition/khronos/opengles/GL;");
+			"()Ljavax/microedition/khronos/opengles/GL;"
+		);
 	}
 } // namespace __jni_impl::javax::microedition::khronos::egl
 

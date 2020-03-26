@@ -59,9 +59,9 @@ namespace __jni_impl::java::time::chrono
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getId();
+		jstring getId();
 		QAndroidJniObject range(__jni_impl::java::time::temporal::ChronoField arg0);
-		QAndroidJniObject getCalendarType();
+		jstring getCalendarType();
 		jboolean isLeapYear(jlong arg0);
 		QAndroidJniObject date(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject date(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jint arg3);
@@ -101,7 +101,8 @@ namespace __jni_impl::java::time::chrono
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.ThaiBuddhistChronology",
 			"INSTANCE",
-			"Ljava/time/chrono/ThaiBuddhistChronology;");
+			"Ljava/time/chrono/ThaiBuddhistChronology;"
+		);
 	}
 	
 	// Constructors
@@ -113,38 +114,43 @@ namespace __jni_impl::java::time::chrono
 	}
 	
 	// Methods
-	QAndroidJniObject ThaiBuddhistChronology::getId()
+	jstring ThaiBuddhistChronology::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ThaiBuddhistChronology::range(__jni_impl::java::time::temporal::ChronoField arg0)
 	{
 		return __thiz.callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/ChronoField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ThaiBuddhistChronology::getCalendarType()
+	jstring ThaiBuddhistChronology::getCalendarType()
 	{
 		return __thiz.callObjectMethod(
 			"getCalendarType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean ThaiBuddhistChronology::isLeapYear(jlong arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLeapYear",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::date(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"date",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::date(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -154,7 +160,8 @@ namespace __jni_impl::java::time::chrono
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::date(jint arg0, jint arg1, jint arg2)
 	{
@@ -163,14 +170,16 @@ namespace __jni_impl::java::time::chrono
 			"(III)Ljava/time/chrono/ThaiBuddhistDate;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::dateEpochDay(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"dateEpochDay",
 			"(J)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0);
+			arg0
+		);
 	}
 	jint ThaiBuddhistChronology::prolepticYear(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -178,7 +187,8 @@ namespace __jni_impl::java::time::chrono
 			"prolepticYear",
 			"(Ljava/time/chrono/Era;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::dateYearDay(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
 	{
@@ -187,7 +197,8 @@ namespace __jni_impl::java::time::chrono
 			"(Ljava/time/chrono/Era;II)Ljava/time/chrono/ThaiBuddhistDate;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::dateYearDay(jint arg0, jint arg1)
 	{
@@ -195,27 +206,31 @@ namespace __jni_impl::java::time::chrono
 			"dateYearDay",
 			"(II)Ljava/time/chrono/ThaiBuddhistDate;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::dateNow(__jni_impl::java::time::Clock arg0)
 	{
 		return __thiz.callObjectMethod(
 			"dateNow",
 			"(Ljava/time/Clock;)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::dateNow(__jni_impl::java::time::ZoneId arg0)
 	{
 		return __thiz.callObjectMethod(
 			"dateNow",
 			"(Ljava/time/ZoneId;)Ljava/time/chrono/ThaiBuddhistDate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::dateNow()
 	{
 		return __thiz.callObjectMethod(
 			"dateNow",
-			"()Ljava/time/chrono/ThaiBuddhistDate;");
+			"()Ljava/time/chrono/ThaiBuddhistDate;"
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::resolveDate(__jni_impl::__JniBaseClass arg0, __jni_impl::java::time::format::ResolverStyle arg1)
 	{
@@ -223,21 +238,24 @@ namespace __jni_impl::java::time::chrono
 			"resolveDate",
 			"(Ljava/util/Map;Ljava/time/format/ResolverStyle;)Ljava/time/chrono/ThaiBuddhistDate;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::eraOf(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"eraOf",
 			"(I)Ljava/time/chrono/ThaiBuddhistEra;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::zonedDateTime(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"zonedDateTime",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoZonedDateTime;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::zonedDateTime(__jni_impl::java::time::Instant arg0, __jni_impl::java::time::ZoneId arg1)
 	{
@@ -245,20 +263,23 @@ namespace __jni_impl::java::time::chrono
 			"zonedDateTime",
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/chrono/ChronoZonedDateTime;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::localDateTime(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"localDateTime",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoLocalDateTime;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThaiBuddhistChronology::eras()
 	{
 		return __thiz.callObjectMethod(
 			"eras",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::java::time::chrono
 

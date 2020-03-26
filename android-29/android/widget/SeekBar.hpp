@@ -27,7 +27,7 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject getAccessibilityClassName();
+		jstring getAccessibilityClassName();
 		void setOnSeekBarChangeListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
@@ -75,18 +75,20 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject SeekBar::getAccessibilityClassName()
+	jstring SeekBar::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void SeekBar::setOnSeekBarChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnSeekBarChangeListener",
 			"(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::widget
 

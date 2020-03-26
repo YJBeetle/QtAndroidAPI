@@ -23,13 +23,13 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getIccId();
-		jint getCardId();
 		jint getSlotIndex();
 		jboolean isEuicc();
-		QAndroidJniObject getEid();
+		jstring getEid();
+		jstring getIccId();
+		jint getCardId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isRemovable();
@@ -46,7 +46,8 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.UiccCardInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -63,55 +64,64 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject UiccCardInfo::toString()
+	jstring UiccCardInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UiccCardInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	QAndroidJniObject UiccCardInfo::getIccId()
-	{
-		return __thiz.callObjectMethod(
-			"getIccId",
-			"()Ljava/lang/String;");
-	}
-	jint UiccCardInfo::getCardId()
-	{
-		return __thiz.callMethod<jint>(
-			"getCardId",
-			"()I");
+			"()I"
+		);
 	}
 	jint UiccCardInfo::getSlotIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getSlotIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean UiccCardInfo::isEuicc()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEuicc",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject UiccCardInfo::getEid()
+	jstring UiccCardInfo::getEid()
 	{
 		return __thiz.callObjectMethod(
 			"getEid",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UiccCardInfo::getIccId()
+	{
+		return __thiz.callObjectMethod(
+			"getIccId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint UiccCardInfo::getCardId()
+	{
+		return __thiz.callMethod<jint>(
+			"getCardId",
+			"()I"
+		);
 	}
 	jint UiccCardInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UiccCardInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -119,13 +129,15 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean UiccCardInfo::isRemovable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRemovable",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

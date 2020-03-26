@@ -51,14 +51,16 @@ namespace __jni_impl::android::text::style
 	{
 		return __thiz.callObjectMethod(
 			"getUnderlying",
-			"()Landroid/text/style/MetricAffectingSpan;");
+			"()Landroid/text/style/MetricAffectingSpan;"
+		);
 	}
 	void MetricAffectingSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateMeasureState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

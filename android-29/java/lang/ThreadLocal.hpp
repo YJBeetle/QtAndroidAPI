@@ -26,7 +26,7 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		void remove();
-		QAndroidJniObject get();
+		jobject get();
 		void set(jobject arg0);
 		static QAndroidJniObject withInitial(__jni_impl::__JniBaseClass arg0);
 	};
@@ -52,20 +52,23 @@ namespace __jni_impl::java::lang
 	{
 		__thiz.callMethod<void>(
 			"remove",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject ThreadLocal::get()
+	jobject ThreadLocal::get()
 	{
 		return __thiz.callObjectMethod(
 			"get",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void ThreadLocal::set(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ThreadLocal::withInitial(__jni_impl::__JniBaseClass arg0)
 	{
@@ -73,7 +76,8 @@ namespace __jni_impl::java::lang
 			"java.lang.ThreadLocal",
 			"withInitial",
 			"(Ljava/util/function/Supplier;)Ljava/lang/ThreadLocal;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::lang
 

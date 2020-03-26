@@ -29,7 +29,8 @@ namespace __jni_impl::android::net
 	jint DnsResolver_DnsException::code()
 	{
 		return __thiz.getField<jint>(
-			"code");
+			"code"
+		);
 	}
 	
 	// Constructors

@@ -21,13 +21,13 @@ namespace __jni_impl::android::nfc
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject RTD_ALTERNATIVE_CARRIER();
-		static QAndroidJniObject RTD_HANDOVER_CARRIER();
-		static QAndroidJniObject RTD_HANDOVER_REQUEST();
-		static QAndroidJniObject RTD_HANDOVER_SELECT();
-		static QAndroidJniObject RTD_SMART_POSTER();
-		static QAndroidJniObject RTD_TEXT();
-		static QAndroidJniObject RTD_URI();
+		static jbyteArray RTD_ALTERNATIVE_CARRIER();
+		static jbyteArray RTD_HANDOVER_CARRIER();
+		static jbyteArray RTD_HANDOVER_REQUEST();
+		static jbyteArray RTD_HANDOVER_SELECT();
+		static jbyteArray RTD_SMART_POSTER();
+		static jbyteArray RTD_TEXT();
+		static jbyteArray RTD_URI();
 		static jshort TNF_ABSOLUTE_URI();
 		static jshort TNF_EMPTY();
 		static jshort TNF_EXTERNAL_TYPE();
@@ -42,11 +42,11 @@ namespace __jni_impl::android::nfc
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getId();
-		QAndroidJniObject toByteArray();
-		QAndroidJniObject getType();
+		jbyteArray getId();
+		jbyteArray toByteArray();
+		jbyteArray getType();
 		QAndroidJniObject toUri();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -57,8 +57,8 @@ namespace __jni_impl::android::nfc
 		static QAndroidJniObject createExternal(jstring arg0, jstring arg1, jbyteArray arg2);
 		static QAndroidJniObject createTextRecord(jstring arg0, jstring arg1);
 		jshort getTnf();
-		QAndroidJniObject getPayload();
-		QAndroidJniObject toMimeType();
+		jbyteArray getPayload();
+		jstring toMimeType();
 	};
 } // namespace __jni_impl::android::nfc
 
@@ -73,98 +73,113 @@ namespace __jni_impl::android::nfc
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject NdefRecord::RTD_ALTERNATIVE_CARRIER()
+	jbyteArray NdefRecord::RTD_ALTERNATIVE_CARRIER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_ALTERNATIVE_CARRIER",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NdefRecord::RTD_HANDOVER_CARRIER()
+	jbyteArray NdefRecord::RTD_HANDOVER_CARRIER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_HANDOVER_CARRIER",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NdefRecord::RTD_HANDOVER_REQUEST()
+	jbyteArray NdefRecord::RTD_HANDOVER_REQUEST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_HANDOVER_REQUEST",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NdefRecord::RTD_HANDOVER_SELECT()
+	jbyteArray NdefRecord::RTD_HANDOVER_SELECT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_HANDOVER_SELECT",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NdefRecord::RTD_SMART_POSTER()
+	jbyteArray NdefRecord::RTD_SMART_POSTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_SMART_POSTER",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NdefRecord::RTD_TEXT()
+	jbyteArray NdefRecord::RTD_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_TEXT",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NdefRecord::RTD_URI()
+	jbyteArray NdefRecord::RTD_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NdefRecord",
 			"RTD_URI",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
 	jshort NdefRecord::TNF_ABSOLUTE_URI()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.nfc.NdefRecord",
-			"TNF_ABSOLUTE_URI");
+			"TNF_ABSOLUTE_URI"
+		);
 	}
 	jshort NdefRecord::TNF_EMPTY()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.nfc.NdefRecord",
-			"TNF_EMPTY");
+			"TNF_EMPTY"
+		);
 	}
 	jshort NdefRecord::TNF_EXTERNAL_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.nfc.NdefRecord",
-			"TNF_EXTERNAL_TYPE");
+			"TNF_EXTERNAL_TYPE"
+		);
 	}
 	jshort NdefRecord::TNF_MIME_MEDIA()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.nfc.NdefRecord",
-			"TNF_MIME_MEDIA");
+			"TNF_MIME_MEDIA"
+		);
 	}
 	jshort NdefRecord::TNF_UNCHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.nfc.NdefRecord",
-			"TNF_UNCHANGED");
+			"TNF_UNCHANGED"
+		);
 	}
 	jshort NdefRecord::TNF_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.nfc.NdefRecord",
-			"TNF_UNKNOWN");
+			"TNF_UNKNOWN"
+		);
 	}
 	jshort NdefRecord::TNF_WELL_KNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.nfc.NdefRecord",
-			"TNF_WELL_KNOWN");
+			"TNF_WELL_KNOWN"
+		);
 	}
 	
 	// Constructors
@@ -192,49 +207,57 @@ namespace __jni_impl::android::nfc
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject NdefRecord::toString()
+	jstring NdefRecord::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint NdefRecord::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject NdefRecord::getId()
+	jbyteArray NdefRecord::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NdefRecord::toByteArray()
+	jbyteArray NdefRecord::toByteArray()
 	{
 		return __thiz.callObjectMethod(
 			"toByteArray",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NdefRecord::getType()
+	jbyteArray NdefRecord::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject NdefRecord::toUri()
 	{
 		return __thiz.callObjectMethod(
 			"toUri",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	jint NdefRecord::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void NdefRecord::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -242,7 +265,8 @@ namespace __jni_impl::android::nfc
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject NdefRecord::createApplicationRecord(jstring arg0)
 	{
@@ -250,7 +274,8 @@ namespace __jni_impl::android::nfc
 			"android.nfc.NdefRecord",
 			"createApplicationRecord",
 			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject NdefRecord::createUri(__jni_impl::android::net::Uri arg0)
 	{
@@ -258,7 +283,8 @@ namespace __jni_impl::android::nfc
 			"android.nfc.NdefRecord",
 			"createUri",
 			"(Landroid/net/Uri;)Landroid/nfc/NdefRecord;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject NdefRecord::createUri(jstring arg0)
 	{
@@ -266,7 +292,8 @@ namespace __jni_impl::android::nfc
 			"android.nfc.NdefRecord",
 			"createUri",
 			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject NdefRecord::createMime(jstring arg0, jbyteArray arg1)
 	{
@@ -275,7 +302,8 @@ namespace __jni_impl::android::nfc
 			"createMime",
 			"(Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject NdefRecord::createExternal(jstring arg0, jstring arg1, jbyteArray arg2)
 	{
@@ -285,7 +313,8 @@ namespace __jni_impl::android::nfc
 			"(Ljava/lang/String;Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject NdefRecord::createTextRecord(jstring arg0, jstring arg1)
 	{
@@ -294,25 +323,29 @@ namespace __jni_impl::android::nfc
 			"createTextRecord",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/nfc/NdefRecord;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jshort NdefRecord::getTnf()
 	{
 		return __thiz.callMethod<jshort>(
 			"getTnf",
-			"()S");
+			"()S"
+		);
 	}
-	QAndroidJniObject NdefRecord::getPayload()
+	jbyteArray NdefRecord::getPayload()
 	{
 		return __thiz.callObjectMethod(
 			"getPayload",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NdefRecord::toMimeType()
+	jstring NdefRecord::toMimeType()
 	{
 		return __thiz.callObjectMethod(
 			"toMimeType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::nfc
 

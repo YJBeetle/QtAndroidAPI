@@ -38,8 +38,8 @@ namespace __jni_impl::android::os
 		void release();
 		jboolean hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, jint arg2);
 		jboolean hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
-		void recycle(__jni_impl::android::os::Message arg0);
 		QAndroidJniObject getMessageQueue();
+		void recycle(__jni_impl::android::os::Message arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -65,20 +65,23 @@ namespace __jni_impl::android::os
 	{
 		return __thiz.callObjectMethod(
 			"next",
-			"()Landroid/os/Message;");
+			"()Landroid/os/Message;"
+		);
 	}
 	void TestLooperManager::execute(__jni_impl::android::os::Message arg0)
 	{
 		__thiz.callMethod<void>(
 			"execute",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TestLooperManager::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean TestLooperManager::hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, jint arg2)
 	{
@@ -87,7 +90,8 @@ namespace __jni_impl::android::os
 			"(Landroid/os/Handler;Ljava/lang/Object;I)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean TestLooperManager::hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -96,20 +100,23 @@ namespace __jni_impl::android::os
 			"(Landroid/os/Handler;Ljava/lang/Object;Ljava/lang/Runnable;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TestLooperManager::getMessageQueue()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageQueue",
+			"()Landroid/os/MessageQueue;"
+		);
 	}
 	void TestLooperManager::recycle(__jni_impl::android::os::Message arg0)
 	{
 		__thiz.callMethod<void>(
 			"recycle",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject TestLooperManager::getMessageQueue()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageQueue",
-			"()Landroid/os/MessageQueue;");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::os
 

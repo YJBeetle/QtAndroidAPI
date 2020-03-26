@@ -12,7 +12,7 @@ namespace __jni_impl::android::database
 	{
 	public:
 		// Fields
-		QAndroidJniObject data();
+		jcharArray data();
 		jint sizeCopied();
 		
 		// Constructors
@@ -27,16 +27,18 @@ namespace __jni_impl::android::database
 namespace __jni_impl::android::database
 {
 	// Fields
-	QAndroidJniObject CharArrayBuffer::data()
+	jcharArray CharArrayBuffer::data()
 	{
 		return __thiz.getObjectField(
 			"data",
-			"[C");
+			"[C"
+		).object<jcharArray>();
 	}
 	jint CharArrayBuffer::sizeCopied()
 	{
 		return __thiz.getField<jint>(
-			"sizeCopied");
+			"sizeCopied"
+		);
 	}
 	
 	// Constructors

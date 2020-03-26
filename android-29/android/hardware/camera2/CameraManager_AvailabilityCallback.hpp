@@ -42,20 +42,23 @@ namespace __jni_impl::android::hardware::camera2
 		__thiz.callMethod<void>(
 			"onCameraAvailable",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void CameraManager_AvailabilityCallback::onCameraUnavailable(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onCameraUnavailable",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void CameraManager_AvailabilityCallback::onCameraAccessPrioritiesChanged()
 	{
 		__thiz.callMethod<void>(
 			"onCameraAccessPrioritiesChanged",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

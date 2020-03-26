@@ -21,7 +21,7 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::webkit
@@ -35,21 +35,24 @@ namespace __jni_impl::android::webkit
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$PluginState",
 			"ON",
-			"Landroid/webkit/WebSettings$PluginState;");
+			"Landroid/webkit/WebSettings$PluginState;"
+		);
 	}
 	QAndroidJniObject WebSettings_PluginState::ON_DEMAND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$PluginState",
 			"ON_DEMAND",
-			"Landroid/webkit/WebSettings$PluginState;");
+			"Landroid/webkit/WebSettings$PluginState;"
+		);
 	}
 	QAndroidJniObject WebSettings_PluginState::OFF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$PluginState",
 			"OFF",
-			"Landroid/webkit/WebSettings$PluginState;");
+			"Landroid/webkit/WebSettings$PluginState;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	QAndroidJniObject WebSettings_PluginState::values()
+	jarray WebSettings_PluginState::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebSettings$PluginState",
 			"values",
-			"()[Landroid/webkit/WebSettings$PluginState;");
+			"()[Landroid/webkit/WebSettings$PluginState;"
+		).object<jarray>();
 	}
 	QAndroidJniObject WebSettings_PluginState::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::webkit
 			"android.webkit.WebSettings$PluginState",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$PluginState;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

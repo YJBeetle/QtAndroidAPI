@@ -21,18 +21,18 @@ namespace __jni_impl::android::provider
 	public:
 		// Fields
 		static QAndroidJniObject CONTENT_FILTER_URL();
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
-		static QAndroidJniObject PERSON_ID();
+		static jstring DEFAULT_SORT_ORDER();
+		static jstring PERSON_ID();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2, jarray arg3);
-		static QAndroidJniObject getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2);
+		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2, jarray arg3);
+		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -47,42 +47,48 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"CONTENT_FILTER_URL",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_Phones::CONTENT_ITEM_TYPE()
+	jstring Contacts_Phones::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Phones::CONTENT_TYPE()
+	jstring Contacts_Phones::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Contacts_Phones::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_Phones::DEFAULT_SORT_ORDER()
+	jstring Contacts_Phones::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Phones::PERSON_ID()
+	jstring Contacts_Phones::PERSON_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Phones",
 			"PERSON_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -94,7 +100,7 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject Contacts_Phones::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2, jarray arg3)
+	jstring Contacts_Phones::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2, jarray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$Phones",
@@ -103,9 +109,10 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Phones::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2)
+	jstring Contacts_Phones::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$Phones",
@@ -113,7 +120,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

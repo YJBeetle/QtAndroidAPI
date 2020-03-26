@@ -71,46 +71,53 @@ namespace __jni_impl::java::util::logging
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void MemoryHandler::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void MemoryHandler::push()
 	{
 		__thiz.callMethod<void>(
 			"push",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean MemoryHandler::isLoggable(__jni_impl::java::util::logging::LogRecord arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLoggable",
 			"(Ljava/util/logging/LogRecord;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MemoryHandler::publish(__jni_impl::java::util::logging::LogRecord arg0)
 	{
 		__thiz.callMethod<void>(
 			"publish",
 			"(Ljava/util/logging/LogRecord;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MemoryHandler::setPushLevel(__jni_impl::java::util::logging::Level arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPushLevel",
 			"(Ljava/util/logging/Level;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MemoryHandler::getPushLevel()
 	{
 		return __thiz.callObjectMethod(
 			"getPushLevel",
-			"()Ljava/util/logging/Level;");
+			"()Ljava/util/logging/Level;"
+		);
 	}
 } // namespace __jni_impl::java::util::logging
 

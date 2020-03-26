@@ -21,7 +21,7 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::net
@@ -35,21 +35,24 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.LocalSocketAddress$Namespace",
 			"ABSTRACT",
-			"Landroid/net/LocalSocketAddress$Namespace;");
+			"Landroid/net/LocalSocketAddress$Namespace;"
+		);
 	}
 	QAndroidJniObject LocalSocketAddress_Namespace::RESERVED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.LocalSocketAddress$Namespace",
 			"RESERVED",
-			"Landroid/net/LocalSocketAddress$Namespace;");
+			"Landroid/net/LocalSocketAddress$Namespace;"
+		);
 	}
 	QAndroidJniObject LocalSocketAddress_Namespace::FILESYSTEM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.LocalSocketAddress$Namespace",
 			"FILESYSTEM",
-			"Landroid/net/LocalSocketAddress$Namespace;");
+			"Landroid/net/LocalSocketAddress$Namespace;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject LocalSocketAddress_Namespace::values()
+	jarray LocalSocketAddress_Namespace::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.LocalSocketAddress$Namespace",
 			"values",
-			"()[Landroid/net/LocalSocketAddress$Namespace;");
+			"()[Landroid/net/LocalSocketAddress$Namespace;"
+		).object<jarray>();
 	}
 	QAndroidJniObject LocalSocketAddress_Namespace::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::net
 			"android.net.LocalSocketAddress$Namespace",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/net/LocalSocketAddress$Namespace;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::net
 

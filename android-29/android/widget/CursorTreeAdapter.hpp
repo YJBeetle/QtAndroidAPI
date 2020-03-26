@@ -36,28 +36,28 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		QAndroidJniObject getFilter();
-		void setGroupCursor(__jni_impl::__JniBaseClass arg0);
-		void setChildrenCursor(jint arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject runQueryOnBackgroundThread(jstring arg0);
-		QAndroidJniObject getFilterQueryProvider();
-		void setFilterQueryProvider(__jni_impl::__JniBaseClass arg0);
-		void changeCursor(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getGroup(jint arg0);
-		jint getChildrenCount(jint arg0);
 		jint getGroupCount();
 		QAndroidJniObject getChild(jint arg0, jint arg1);
+		jint getChildrenCount(jint arg0);
 		jlong getChildId(jint arg0, jint arg1);
 		jboolean hasStableIds();
 		QAndroidJniObject getGroupView(jint arg0, jboolean arg1, __jni_impl::android::view::View arg2, __jni_impl::android::view::ViewGroup arg3);
 		QAndroidJniObject getChildView(jint arg0, jint arg1, jboolean arg2, __jni_impl::android::view::View arg3, __jni_impl::android::view::ViewGroup arg4);
 		jboolean isChildSelectable(jint arg0, jint arg1);
 		void onGroupCollapsed(jint arg0);
-		QAndroidJniObject convertToString(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getCursor();
-		jlong getGroupId(jint arg0);
+		void setGroupCursor(__jni_impl::__JniBaseClass arg0);
+		void setChildrenCursor(jint arg0, __jni_impl::__JniBaseClass arg1);
+		QAndroidJniObject runQueryOnBackgroundThread(jstring arg0);
+		QAndroidJniObject getFilterQueryProvider();
+		void setFilterQueryProvider(__jni_impl::__JniBaseClass arg0);
+		void changeCursor(__jni_impl::__JniBaseClass arg0);
+		jstring convertToString(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getGroup(jint arg0);
 		void notifyDataSetChanged();
 		void notifyDataSetChanged(jboolean arg0);
 		void notifyDataSetInvalidated();
+		QAndroidJniObject getCursor();
+		jlong getGroupId(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -94,69 +94,15 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callObjectMethod(
 			"getFilter",
-			"()Landroid/widget/Filter;");
-	}
-	void CursorTreeAdapter::setGroupCursor(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGroupCursor",
-			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object());
-	}
-	void CursorTreeAdapter::setChildrenCursor(jint arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setChildrenCursor",
-			"(ILandroid/database/Cursor;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject CursorTreeAdapter::runQueryOnBackgroundThread(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"runQueryOnBackgroundThread",
-			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
-			arg0);
-	}
-	QAndroidJniObject CursorTreeAdapter::getFilterQueryProvider()
-	{
-		return __thiz.callObjectMethod(
-			"getFilterQueryProvider",
-			"()Landroid/widget/FilterQueryProvider;");
-	}
-	void CursorTreeAdapter::setFilterQueryProvider(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFilterQueryProvider",
-			"(Landroid/widget/FilterQueryProvider;)V",
-			arg0.__jniObject().object());
-	}
-	void CursorTreeAdapter::changeCursor(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"changeCursor",
-			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject CursorTreeAdapter::getGroup(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getGroup",
-			"(I)Landroid/database/Cursor;",
-			arg0);
-	}
-	jint CursorTreeAdapter::getChildrenCount(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getChildrenCount",
-			"(I)I",
-			arg0);
+			"()Landroid/widget/Filter;"
+		);
 	}
 	jint CursorTreeAdapter::getGroupCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getGroupCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject CursorTreeAdapter::getChild(jint arg0, jint arg1)
 	{
@@ -164,7 +110,16 @@ namespace __jni_impl::android::widget
 			"getChild",
 			"(II)Landroid/database/Cursor;",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	jint CursorTreeAdapter::getChildrenCount(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getChildrenCount",
+			"(I)I",
+			arg0
+		);
 	}
 	jlong CursorTreeAdapter::getChildId(jint arg0, jint arg1)
 	{
@@ -172,13 +127,15 @@ namespace __jni_impl::android::widget
 			"getChildId",
 			"(II)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean CursorTreeAdapter::hasStableIds()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasStableIds",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject CursorTreeAdapter::getGroupView(jint arg0, jboolean arg1, __jni_impl::android::view::View arg2, __jni_impl::android::view::ViewGroup arg3)
 	{
@@ -188,7 +145,8 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CursorTreeAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, __jni_impl::android::view::View arg3, __jni_impl::android::view::ViewGroup arg4)
 	{
@@ -199,7 +157,8 @@ namespace __jni_impl::android::widget
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	jboolean CursorTreeAdapter::isChildSelectable(jint arg0, jint arg1)
 	{
@@ -207,53 +166,117 @@ namespace __jni_impl::android::widget
 			"isChildSelectable",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void CursorTreeAdapter::onGroupCollapsed(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onGroupCollapsed",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CursorTreeAdapter::convertToString(__jni_impl::__JniBaseClass arg0)
+	void CursorTreeAdapter::setGroupCursor(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGroupCursor",
+			"(Landroid/database/Cursor;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void CursorTreeAdapter::setChildrenCursor(jint arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"setChildrenCursor",
+			"(ILandroid/database/Cursor;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CursorTreeAdapter::runQueryOnBackgroundThread(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"runQueryOnBackgroundThread",
+			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
+			arg0
+		);
+	}
+	QAndroidJniObject CursorTreeAdapter::getFilterQueryProvider()
+	{
+		return __thiz.callObjectMethod(
+			"getFilterQueryProvider",
+			"()Landroid/widget/FilterQueryProvider;"
+		);
+	}
+	void CursorTreeAdapter::setFilterQueryProvider(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFilterQueryProvider",
+			"(Landroid/widget/FilterQueryProvider;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void CursorTreeAdapter::changeCursor(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"changeCursor",
+			"(Landroid/database/Cursor;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring CursorTreeAdapter::convertToString(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"convertToString",
 			"(Landroid/database/Cursor;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject CursorTreeAdapter::getCursor()
+	QAndroidJniObject CursorTreeAdapter::getGroup(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getCursor",
-			"()Landroid/database/Cursor;");
-	}
-	jlong CursorTreeAdapter::getGroupId(jint arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getGroupId",
-			"(I)J",
-			arg0);
+			"getGroup",
+			"(I)Landroid/database/Cursor;",
+			arg0
+		);
 	}
 	void CursorTreeAdapter::notifyDataSetChanged()
 	{
 		__thiz.callMethod<void>(
 			"notifyDataSetChanged",
-			"()V");
+			"()V"
+		);
 	}
 	void CursorTreeAdapter::notifyDataSetChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"notifyDataSetChanged",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void CursorTreeAdapter::notifyDataSetInvalidated()
 	{
 		__thiz.callMethod<void>(
 			"notifyDataSetInvalidated",
-			"()V");
+			"()V"
+		);
+	}
+	QAndroidJniObject CursorTreeAdapter::getCursor()
+	{
+		return __thiz.callObjectMethod(
+			"getCursor",
+			"()Landroid/database/Cursor;"
+		);
+	}
+	jlong CursorTreeAdapter::getGroupId(jint arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getGroupId",
+			"(I)J",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

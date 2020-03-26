@@ -35,14 +35,14 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getType();
-		QAndroidJniObject getData();
+		jint getSvid();
 		jint getMessageId();
 		jint getSubmessageId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getSvid();
+		jbyteArray getData();
 		jint getStatus();
 	};
 } // namespace __jni_impl::android::location
@@ -57,85 +57,99 @@ namespace __jni_impl::android::location
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.GnssNavigationMessage",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint GnssNavigationMessage::STATUS_PARITY_PASSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"STATUS_PARITY_PASSED");
+			"STATUS_PARITY_PASSED"
+		);
 	}
 	jint GnssNavigationMessage::STATUS_PARITY_REBUILT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"STATUS_PARITY_REBUILT");
+			"STATUS_PARITY_REBUILT"
+		);
 	}
 	jint GnssNavigationMessage::STATUS_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"STATUS_UNKNOWN");
+			"STATUS_UNKNOWN"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_BDS_D1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_BDS_D1");
+			"TYPE_BDS_D1"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_BDS_D2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_BDS_D2");
+			"TYPE_BDS_D2"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_GAL_F()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_GAL_F");
+			"TYPE_GAL_F"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_GAL_I()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_GAL_I");
+			"TYPE_GAL_I"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_GLO_L1CA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_GLO_L1CA");
+			"TYPE_GLO_L1CA"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_GPS_CNAV2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_GPS_CNAV2");
+			"TYPE_GPS_CNAV2"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_GPS_L1CA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_GPS_L1CA");
+			"TYPE_GPS_L1CA"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_GPS_L2CNAV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_GPS_L2CNAV");
+			"TYPE_GPS_L2CNAV"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_GPS_L5CNAV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_GPS_L5CNAV");
+			"TYPE_GPS_L5CNAV"
+		);
 	}
 	jint GnssNavigationMessage::TYPE_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage",
-			"TYPE_UNKNOWN");
+			"TYPE_UNKNOWN"
+		);
 	}
 	
 	// Constructors
@@ -147,41 +161,47 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	QAndroidJniObject GnssNavigationMessage::toString()
+	jstring GnssNavigationMessage::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint GnssNavigationMessage::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject GnssNavigationMessage::getData()
+	jint GnssNavigationMessage::getSvid()
 	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B");
+		return __thiz.callMethod<jint>(
+			"getSvid",
+			"()I"
+		);
 	}
 	jint GnssNavigationMessage::getMessageId()
 	{
 		return __thiz.callMethod<jint>(
 			"getMessageId",
-			"()I");
+			"()I"
+		);
 	}
 	jint GnssNavigationMessage::getSubmessageId()
 	{
 		return __thiz.callMethod<jint>(
 			"getSubmessageId",
-			"()I");
+			"()I"
+		);
 	}
 	jint GnssNavigationMessage::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void GnssNavigationMessage::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -189,19 +209,22 @@ namespace __jni_impl::android::location
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	jint GnssNavigationMessage::getSvid()
+	jbyteArray GnssNavigationMessage::getData()
 	{
-		return __thiz.callMethod<jint>(
-			"getSvid",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jint GnssNavigationMessage::getStatus()
 	{
 		return __thiz.callMethod<jint>(
 			"getStatus",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::location
 

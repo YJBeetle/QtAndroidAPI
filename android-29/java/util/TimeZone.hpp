@@ -31,23 +31,23 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 		static QAndroidJniObject getDefault();
 		jint getOffset(jlong arg0);
 		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		QAndroidJniObject toZoneId();
 		static void setDefault(__jni_impl::java::util::TimeZone arg0);
-		QAndroidJniObject getID();
-		QAndroidJniObject getDisplayName(jboolean arg0, jint arg1);
-		QAndroidJniObject getDisplayName(jboolean arg0, jint arg1, __jni_impl::java::util::Locale arg2);
-		QAndroidJniObject getDisplayName(__jni_impl::java::util::Locale arg0);
-		QAndroidJniObject getDisplayName();
+		jstring getID();
+		jstring getDisplayName(jboolean arg0, jint arg1);
+		jstring getDisplayName(jboolean arg0, jint arg1, __jni_impl::java::util::Locale arg2);
+		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
+		jstring getDisplayName();
 		jint getDSTSavings();
 		jboolean hasSameRules(__jni_impl::java::util::TimeZone arg0);
 		static QAndroidJniObject getTimeZone(jstring arg0);
 		static QAndroidJniObject getTimeZone(__jni_impl::java::time::ZoneId arg0);
-		static QAndroidJniObject getAvailableIDs(jint arg0);
-		static QAndroidJniObject getAvailableIDs();
+		static jarray getAvailableIDs(jint arg0);
+		static jarray getAvailableIDs();
 		jint getRawOffset();
 		jboolean inDaylightTime(__jni_impl::java::util::Date arg0);
 		jboolean useDaylightTime();
@@ -68,13 +68,15 @@ namespace __jni_impl::java::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.TimeZone",
-			"SHORT");
+			"SHORT"
+		);
 	}
 	jint TimeZone::LONG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.TimeZone",
-			"LONG");
+			"LONG"
+		);
 	}
 	
 	// Constructors
@@ -86,25 +88,28 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject TimeZone::clone()
+	jobject TimeZone::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject TimeZone::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.TimeZone",
 			"getDefault",
-			"()Ljava/util/TimeZone;");
+			"()Ljava/util/TimeZone;"
+		);
 	}
 	jint TimeZone::getOffset(jlong arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getOffset",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jint TimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -116,13 +121,15 @@ namespace __jni_impl::java::util
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	QAndroidJniObject TimeZone::toZoneId()
 	{
 		return __thiz.callObjectMethod(
 			"toZoneId",
-			"()Ljava/time/ZoneId;");
+			"()Ljava/time/ZoneId;"
+		);
 	}
 	void TimeZone::setDefault(__jni_impl::java::util::TimeZone arg0)
 	{
@@ -130,56 +137,64 @@ namespace __jni_impl::java::util
 			"java.util.TimeZone",
 			"setDefault",
 			"(Ljava/util/TimeZone;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject TimeZone::getID()
+	jstring TimeZone::getID()
 	{
 		return __thiz.callObjectMethod(
 			"getID",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::getDisplayName(jboolean arg0, jint arg1)
+	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(ZI)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::getDisplayName(jboolean arg0, jint arg1, __jni_impl::java::util::Locale arg2)
+	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1, __jni_impl::java::util::Locale arg2)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(ZILjava/util/Locale;)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::getDisplayName(__jni_impl::java::util::Locale arg0)
+	jstring TimeZone::getDisplayName(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::getDisplayName()
+	jstring TimeZone::getDisplayName()
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TimeZone::getDSTSavings()
 	{
 		return __thiz.callMethod<jint>(
 			"getDSTSavings",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean TimeZone::hasSameRules(__jni_impl::java::util::TimeZone arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasSameRules",
 			"(Ljava/util/TimeZone;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TimeZone::getTimeZone(jstring arg0)
 	{
@@ -187,7 +202,8 @@ namespace __jni_impl::java::util
 			"java.util.TimeZone",
 			"getTimeZone",
 			"(Ljava/lang/String;)Ljava/util/TimeZone;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TimeZone::getTimeZone(__jni_impl::java::time::ZoneId arg0)
 	{
@@ -195,61 +211,70 @@ namespace __jni_impl::java::util
 			"java.util.TimeZone",
 			"getTimeZone",
 			"(Ljava/time/ZoneId;)Ljava/util/TimeZone;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject TimeZone::getAvailableIDs(jint arg0)
+	jarray TimeZone::getAvailableIDs(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.TimeZone",
 			"getAvailableIDs",
 			"(I)[Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
-	QAndroidJniObject TimeZone::getAvailableIDs()
+	jarray TimeZone::getAvailableIDs()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.TimeZone",
 			"getAvailableIDs",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jint TimeZone::getRawOffset()
 	{
 		return __thiz.callMethod<jint>(
 			"getRawOffset",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean TimeZone::inDaylightTime(__jni_impl::java::util::Date arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"inDaylightTime",
 			"(Ljava/util/Date;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean TimeZone::useDaylightTime()
 	{
 		return __thiz.callMethod<jboolean>(
 			"useDaylightTime",
-			"()Z");
+			"()Z"
+		);
 	}
 	void TimeZone::setID(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setID",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void TimeZone::setRawOffset(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRawOffset",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean TimeZone::observesDaylightTime()
 	{
 		return __thiz.callMethod<jboolean>(
 			"observesDaylightTime",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::util
 

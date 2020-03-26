@@ -29,42 +29,42 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		jboolean add(jobject arg0);
-		QAndroidJniObject remove();
+		jobject remove();
 		jboolean remove(jobject arg0);
 		QAndroidJniObject clone();
 		void clear();
 		jboolean isEmpty();
 		jint size();
-		QAndroidJniObject toArray();
-		QAndroidJniObject toArray(jobjectArray arg0);
+		jobjectArray toArray();
+		jobjectArray toArray(jobjectArray arg0);
 		QAndroidJniObject iterator();
 		jboolean contains(jobject arg0);
 		QAndroidJniObject spliterator();
 		jboolean addAll(__jni_impl::__JniBaseClass arg0);
 		void forEach(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject poll();
-		QAndroidJniObject peek();
+		jobject poll();
+		jobject peek();
 		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
 		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
 		jboolean removeIf(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject element();
+		jobject element();
 		void addLast(jobject arg0);
-		QAndroidJniObject pollFirst();
+		jobject pollFirst();
 		void push(jobject arg0);
 		void addFirst(jobject arg0);
-		QAndroidJniObject pollLast();
+		jobject pollLast();
 		jboolean offerLast(jobject arg0);
-		QAndroidJniObject removeFirst();
-		QAndroidJniObject getFirst();
-		QAndroidJniObject peekFirst();
+		jobject removeFirst();
+		jobject getFirst();
+		jobject peekFirst();
 		jboolean removeFirstOccurrence(jobject arg0);
 		jboolean offerFirst(jobject arg0);
-		QAndroidJniObject removeLast();
-		QAndroidJniObject getLast();
-		QAndroidJniObject peekLast();
+		jobject removeLast();
+		jobject getLast();
+		jobject peekLast();
 		jboolean removeLastOccurrence(jobject arg0);
 		jboolean offer(jobject arg0);
-		QAndroidJniObject pop();
+		jobject pop();
 		QAndroidJniObject descendingIterator();
 	};
 } // namespace __jni_impl::java::util
@@ -104,245 +104,283 @@ namespace __jni_impl::java::util
 		return __thiz.callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ArrayDeque::remove()
+	jobject ArrayDeque::remove()
 	{
 		return __thiz.callObjectMethod(
 			"remove",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean ArrayDeque::remove(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ArrayDeque::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/util/ArrayDeque;");
+			"()Ljava/util/ArrayDeque;"
+		);
 	}
 	void ArrayDeque::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ArrayDeque::isEmpty()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ArrayDeque::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject ArrayDeque::toArray()
+	jobjectArray ArrayDeque::toArray()
 	{
 		return __thiz.callObjectMethod(
 			"toArray",
-			"()[Ljava/lang/Object;");
+			"()[Ljava/lang/Object;"
+		).object<jobjectArray>();
 	}
-	QAndroidJniObject ArrayDeque::toArray(jobjectArray arg0)
+	jobjectArray ArrayDeque::toArray(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobjectArray>();
 	}
 	QAndroidJniObject ArrayDeque::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jboolean ArrayDeque::contains(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ArrayDeque::spliterator()
 	{
 		return __thiz.callObjectMethod(
 			"spliterator",
-			"()Ljava/util/Spliterator;");
+			"()Ljava/util/Spliterator;"
+		);
 	}
 	jboolean ArrayDeque::addAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArrayDeque::forEach(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ArrayDeque::poll()
+	jobject ArrayDeque::poll()
 	{
 		return __thiz.callObjectMethod(
 			"poll",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayDeque::peek()
+	jobject ArrayDeque::peek()
 	{
 		return __thiz.callObjectMethod(
 			"peek",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean ArrayDeque::retainAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ArrayDeque::removeAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ArrayDeque::removeIf(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ArrayDeque::element()
+	jobject ArrayDeque::element()
 	{
 		return __thiz.callObjectMethod(
 			"element",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void ArrayDeque::addLast(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"addLast",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ArrayDeque::pollFirst()
+	jobject ArrayDeque::pollFirst()
 	{
 		return __thiz.callObjectMethod(
 			"pollFirst",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void ArrayDeque::push(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"push",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ArrayDeque::addFirst(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"addFirst",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ArrayDeque::pollLast()
+	jobject ArrayDeque::pollLast()
 	{
 		return __thiz.callObjectMethod(
 			"pollLast",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean ArrayDeque::offerLast(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"offerLast",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ArrayDeque::removeFirst()
+	jobject ArrayDeque::removeFirst()
 	{
 		return __thiz.callObjectMethod(
 			"removeFirst",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayDeque::getFirst()
+	jobject ArrayDeque::getFirst()
 	{
 		return __thiz.callObjectMethod(
 			"getFirst",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayDeque::peekFirst()
+	jobject ArrayDeque::peekFirst()
 	{
 		return __thiz.callObjectMethod(
 			"peekFirst",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean ArrayDeque::removeFirstOccurrence(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeFirstOccurrence",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ArrayDeque::offerFirst(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"offerFirst",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ArrayDeque::removeLast()
+	jobject ArrayDeque::removeLast()
 	{
 		return __thiz.callObjectMethod(
 			"removeLast",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayDeque::getLast()
+	jobject ArrayDeque::getLast()
 	{
 		return __thiz.callObjectMethod(
 			"getLast",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayDeque::peekLast()
+	jobject ArrayDeque::peekLast()
 	{
 		return __thiz.callObjectMethod(
 			"peekLast",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean ArrayDeque::removeLastOccurrence(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeLastOccurrence",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ArrayDeque::offer(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ArrayDeque::pop()
+	jobject ArrayDeque::pop()
 	{
 		return __thiz.callObjectMethod(
 			"pop",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject ArrayDeque::descendingIterator()
 	{
 		return __thiz.callObjectMethod(
 			"descendingIterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

@@ -29,10 +29,10 @@ namespace __jni_impl::android::os
 		void acquire(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void cleanup(__jni_impl::__JniBaseClass arg0, jboolean arg1);
 		void released();
-		void acquired();
-		jboolean isAcquired();
 		void dump();
 		void dump(__jni_impl::java::io::PrintWriter arg0);
+		void acquired();
+		jboolean isAcquired();
 	};
 } // namespace __jni_impl::android::os
 
@@ -59,7 +59,8 @@ namespace __jni_impl::android::os
 		__thiz.callMethod<void>(
 			"release",
 			"(Landroid/os/IBinder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TokenWatcher::acquire(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -67,7 +68,8 @@ namespace __jni_impl::android::os
 			"acquire",
 			"(Landroid/os/IBinder;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void TokenWatcher::cleanup(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
@@ -75,38 +77,44 @@ namespace __jni_impl::android::os
 			"cleanup",
 			"(Landroid/os/IBinder;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void TokenWatcher::released()
 	{
 		__thiz.callMethod<void>(
 			"released",
-			"()V");
-	}
-	void TokenWatcher::acquired()
-	{
-		__thiz.callMethod<void>(
-			"acquired",
-			"()V");
-	}
-	jboolean TokenWatcher::isAcquired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAcquired",
-			"()Z");
+			"()V"
+		);
 	}
 	void TokenWatcher::dump()
 	{
 		__thiz.callMethod<void>(
 			"dump",
-			"()V");
+			"()V"
+		);
 	}
 	void TokenWatcher::dump(__jni_impl::java::io::PrintWriter arg0)
 	{
 		__thiz.callMethod<void>(
 			"dump",
 			"(Ljava/io/PrintWriter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void TokenWatcher::acquired()
+	{
+		__thiz.callMethod<void>(
+			"acquired",
+			"()V"
+		);
+	}
+	jboolean TokenWatcher::isAcquired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAcquired",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::os
 

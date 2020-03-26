@@ -17,10 +17,10 @@ namespace __jni_impl::java::security::cert
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getEncoded();
-		QAndroidJniObject getPolicyQualifierId();
-		QAndroidJniObject getPolicyQualifier();
+		jstring toString();
+		jbyteArray getEncoded();
+		jstring getPolicyQualifierId();
+		jbyteArray getPolicyQualifier();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -39,29 +39,33 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject PolicyQualifierInfo::toString()
+	jstring PolicyQualifierInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PolicyQualifierInfo::getEncoded()
+	jbyteArray PolicyQualifierInfo::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject PolicyQualifierInfo::getPolicyQualifierId()
+	jstring PolicyQualifierInfo::getPolicyQualifierId()
 	{
 		return __thiz.callObjectMethod(
 			"getPolicyQualifierId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PolicyQualifierInfo::getPolicyQualifier()
+	jbyteArray PolicyQualifierInfo::getPolicyQualifier()
 	{
 		return __thiz.callObjectMethod(
 			"getPolicyQualifier",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::java::security::cert
 

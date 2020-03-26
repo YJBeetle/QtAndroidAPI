@@ -53,20 +53,23 @@ namespace __jni_impl::android::util
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Base64OutputStream::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Base64OutputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::util
 

@@ -64,7 +64,7 @@ namespace __jni_impl::java::nio
 		QAndroidJniObject put(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
 		QAndroidJniObject put(jbyteArray arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(__jni_impl::java::nio::ByteBuffer arg0);
 		jint compareTo(jobject arg0);
@@ -96,7 +96,7 @@ namespace __jni_impl::java::nio
 		QAndroidJniObject limit(jint arg0);
 		jboolean isDirect();
 		jboolean hasArray();
-		QAndroidJniObject array();
+		jbyteArray array();
 		QAndroidJniObject position(jint arg0);
 		jint arrayOffset();
 		static QAndroidJniObject wrap(jbyteArray arg0, jint arg1, jint arg2);
@@ -153,7 +153,8 @@ namespace __jni_impl::java::nio
 		return __thiz.callObjectMethod(
 			"get",
 			"([B)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::get(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -162,20 +163,23 @@ namespace __jni_impl::java::nio
 			"([BII)Ljava/nio/ByteBuffer;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jbyte ByteBuffer::get(jint arg0)
 	{
 		return __thiz.callMethod<jbyte>(
 			"get",
 			"(I)B",
-			arg0);
+			arg0
+		);
 	}
 	jbyte ByteBuffer::get()
 	{
 		return __thiz.callMethod<jbyte>(
 			"get",
-			"()B");
+			"()B"
+		);
 	}
 	QAndroidJniObject ByteBuffer::get(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
@@ -185,7 +189,8 @@ namespace __jni_impl::java::nio
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject ByteBuffer::get(jint arg0, jbyteArray arg1)
 	{
@@ -193,7 +198,8 @@ namespace __jni_impl::java::nio
 			"get",
 			"(I[B)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::put(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -202,21 +208,24 @@ namespace __jni_impl::java::nio
 			"([BII)Ljava/nio/ByteBuffer;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ByteBuffer::put(jbyte arg0)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"(B)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::put(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ByteBuffer::put(jint arg0, jbyte arg1)
 	{
@@ -224,7 +233,8 @@ namespace __jni_impl::java::nio
 			"put",
 			"(IB)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::put(jint arg0, jbyteArray arg1)
 	{
@@ -232,7 +242,8 @@ namespace __jni_impl::java::nio
 			"put",
 			"(I[B)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::put(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
@@ -242,60 +253,69 @@ namespace __jni_impl::java::nio
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject ByteBuffer::put(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"([B)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ByteBuffer::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ByteBuffer::toString()
+	jstring ByteBuffer::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ByteBuffer::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint ByteBuffer::compareTo(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint ByteBuffer::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jshort ByteBuffer::getShort()
 	{
 		return __thiz.callMethod<jshort>(
 			"getShort",
-			"()S");
+			"()S"
+		);
 	}
 	jshort ByteBuffer::getShort(jint arg0)
 	{
 		return __thiz.callMethod<jshort>(
 			"getShort",
 			"(I)S",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::putShort(jint arg0, jshort arg1)
 	{
@@ -303,34 +323,39 @@ namespace __jni_impl::java::nio
 			"putShort",
 			"(IS)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::putShort(jshort arg0)
 	{
 		return __thiz.callObjectMethod(
 			"putShort",
 			"(S)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jchar ByteBuffer::getChar(jint arg0)
 	{
 		return __thiz.callMethod<jchar>(
 			"getChar",
 			"(I)C",
-			arg0);
+			arg0
+		);
 	}
 	jchar ByteBuffer::getChar()
 	{
 		return __thiz.callMethod<jchar>(
 			"getChar",
-			"()C");
+			"()C"
+		);
 	}
 	QAndroidJniObject ByteBuffer::putChar(jchar arg0)
 	{
 		return __thiz.callObjectMethod(
 			"putChar",
 			"(C)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::putChar(jint arg0, jchar arg1)
 	{
@@ -338,20 +363,23 @@ namespace __jni_impl::java::nio
 			"putChar",
 			"(IC)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint ByteBuffer::getInt(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getInt",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint ByteBuffer::getInt()
 	{
 		return __thiz.callMethod<jint>(
 			"getInt",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ByteBuffer::putInt(jint arg0, jint arg1)
 	{
@@ -359,27 +387,31 @@ namespace __jni_impl::java::nio
 			"putInt",
 			"(II)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::putInt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"putInt",
 			"(I)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jlong ByteBuffer::getLong()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
-			"()J");
+			"()J"
+		);
 	}
 	jlong ByteBuffer::getLong(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::putLong(jint arg0, jlong arg1)
 	{
@@ -387,27 +419,31 @@ namespace __jni_impl::java::nio
 			"putLong",
 			"(IJ)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::putLong(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"putLong",
 			"(J)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jfloat ByteBuffer::getFloat()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getFloat",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat ByteBuffer::getFloat(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getFloat",
 			"(I)F",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::putFloat(jint arg0, jfloat arg1)
 	{
@@ -415,34 +451,39 @@ namespace __jni_impl::java::nio
 			"putFloat",
 			"(IF)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::putFloat(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"putFloat",
 			"(F)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jdouble ByteBuffer::getDouble()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getDouble",
-			"()D");
+			"()D"
+		);
 	}
 	jdouble ByteBuffer::getDouble(jint arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getDouble",
 			"(I)D",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::putDouble(jdouble arg0)
 	{
 		return __thiz.callObjectMethod(
 			"putDouble",
 			"(D)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::putDouble(jint arg0, jdouble arg1)
 	{
@@ -450,51 +491,59 @@ namespace __jni_impl::java::nio
 			"putDouble",
 			"(ID)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::clear()
 	{
 		return __thiz.callObjectMethod(
 			"clear",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::limit(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"limit",
 			"(I)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ByteBuffer::isDirect()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDirect",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ByteBuffer::hasArray()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasArray",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject ByteBuffer::array()
+	jbyteArray ByteBuffer::array()
 	{
 		return __thiz.callObjectMethod(
 			"array",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject ByteBuffer::position(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"position",
 			"(I)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jint ByteBuffer::arrayOffset()
 	{
 		return __thiz.callMethod<jint>(
 			"arrayOffset",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ByteBuffer::wrap(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -504,7 +553,8 @@ namespace __jni_impl::java::nio
 			"([BII)Ljava/nio/ByteBuffer;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ByteBuffer::wrap(jbyteArray arg0)
 	{
@@ -512,37 +562,43 @@ namespace __jni_impl::java::nio
 			"java.nio.ByteBuffer",
 			"wrap",
 			"([B)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::mark()
 	{
 		return __thiz.callObjectMethod(
 			"mark",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::reset()
 	{
 		return __thiz.callObjectMethod(
 			"reset",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::flip()
 	{
 		return __thiz.callObjectMethod(
 			"flip",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::rewind()
 	{
 		return __thiz.callObjectMethod(
 			"rewind",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::slice()
 	{
 		return __thiz.callObjectMethod(
 			"slice",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::slice(jint arg0, jint arg1)
 	{
@@ -550,13 +606,15 @@ namespace __jni_impl::java::nio
 			"slice",
 			"(II)Ljava/nio/ByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::duplicate()
 	{
 		return __thiz.callObjectMethod(
 			"duplicate",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::allocate(jint arg0)
 	{
@@ -564,14 +622,16 @@ namespace __jni_impl::java::nio
 			"java.nio.ByteBuffer",
 			"allocate",
 			"(I)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jint ByteBuffer::mismatch(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"mismatch",
 			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint ByteBuffer::alignmentOffset(jint arg0, jint arg1)
 	{
@@ -579,7 +639,8 @@ namespace __jni_impl::java::nio
 			"alignmentOffset",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ByteBuffer::allocateDirect(jint arg0)
 	{
@@ -587,75 +648,87 @@ namespace __jni_impl::java::nio
 			"java.nio.ByteBuffer",
 			"allocateDirect",
 			"(I)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::asReadOnlyBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"asReadOnlyBuffer",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::compact()
 	{
 		return __thiz.callObjectMethod(
 			"compact",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::order(__jni_impl::java::nio::ByteOrder arg0)
 	{
 		return __thiz.callObjectMethod(
 			"order",
 			"(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ByteBuffer::order()
 	{
 		return __thiz.callObjectMethod(
 			"order",
-			"()Ljava/nio/ByteOrder;");
+			"()Ljava/nio/ByteOrder;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::alignedSlice(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"alignedSlice",
 			"(I)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ByteBuffer::asCharBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"asCharBuffer",
-			"()Ljava/nio/CharBuffer;");
+			"()Ljava/nio/CharBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::asShortBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"asShortBuffer",
-			"()Ljava/nio/ShortBuffer;");
+			"()Ljava/nio/ShortBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::asIntBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"asIntBuffer",
-			"()Ljava/nio/IntBuffer;");
+			"()Ljava/nio/IntBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::asLongBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"asLongBuffer",
-			"()Ljava/nio/LongBuffer;");
+			"()Ljava/nio/LongBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::asFloatBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"asFloatBuffer",
-			"()Ljava/nio/FloatBuffer;");
+			"()Ljava/nio/FloatBuffer;"
+		);
 	}
 	QAndroidJniObject ByteBuffer::asDoubleBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"asDoubleBuffer",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 } // namespace __jni_impl::java::nio
 

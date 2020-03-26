@@ -47,7 +47,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::os
 

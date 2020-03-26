@@ -52,55 +52,64 @@ namespace __jni_impl::android::net
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.DnsResolver",
-			"CLASS_IN");
+			"CLASS_IN"
+		);
 	}
 	jint DnsResolver::ERROR_PARSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.DnsResolver",
-			"ERROR_PARSE");
+			"ERROR_PARSE"
+		);
 	}
 	jint DnsResolver::ERROR_SYSTEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.DnsResolver",
-			"ERROR_SYSTEM");
+			"ERROR_SYSTEM"
+		);
 	}
 	jint DnsResolver::FLAG_EMPTY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.DnsResolver",
-			"FLAG_EMPTY");
+			"FLAG_EMPTY"
+		);
 	}
 	jint DnsResolver::FLAG_NO_CACHE_LOOKUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.DnsResolver",
-			"FLAG_NO_CACHE_LOOKUP");
+			"FLAG_NO_CACHE_LOOKUP"
+		);
 	}
 	jint DnsResolver::FLAG_NO_CACHE_STORE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.DnsResolver",
-			"FLAG_NO_CACHE_STORE");
+			"FLAG_NO_CACHE_STORE"
+		);
 	}
 	jint DnsResolver::FLAG_NO_RETRY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.DnsResolver",
-			"FLAG_NO_RETRY");
+			"FLAG_NO_RETRY"
+		);
 	}
 	jint DnsResolver::TYPE_A()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.DnsResolver",
-			"TYPE_A");
+			"TYPE_A"
+		);
 	}
 	jint DnsResolver::TYPE_AAAA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.DnsResolver",
-			"TYPE_AAAA");
+			"TYPE_AAAA"
+		);
 	}
 	
 	// Constructors
@@ -117,7 +126,8 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.DnsResolver",
 			"getInstance",
-			"()Landroid/net/DnsResolver;");
+			"()Landroid/net/DnsResolver;"
+		);
 	}
 	void DnsResolver::query(__jni_impl::android::net::Network arg0, jstring arg1, jint arg2, jint arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::CancellationSignal arg5, __jni_impl::__JniBaseClass arg6)
 	{
@@ -130,7 +140,8 @@ namespace __jni_impl::android::net
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void DnsResolver::query(__jni_impl::android::net::Network arg0, jstring arg1, jint arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::CancellationSignal arg4, __jni_impl::__JniBaseClass arg5)
 	{
@@ -142,7 +153,8 @@ namespace __jni_impl::android::net
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void DnsResolver::rawQuery(__jni_impl::android::net::Network arg0, jbyteArray arg1, jint arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::CancellationSignal arg4, __jni_impl::__JniBaseClass arg5)
 	{
@@ -154,7 +166,8 @@ namespace __jni_impl::android::net
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void DnsResolver::rawQuery(__jni_impl::android::net::Network arg0, jstring arg1, jint arg2, jint arg3, jint arg4, __jni_impl::__JniBaseClass arg5, __jni_impl::android::os::CancellationSignal arg6, __jni_impl::__JniBaseClass arg7)
 	{
@@ -168,7 +181,8 @@ namespace __jni_impl::android::net
 			arg4,
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net
 

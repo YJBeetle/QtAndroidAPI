@@ -12,10 +12,10 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
 		static jint TYPE_BLOG();
 		static jint TYPE_FTP();
 		static jint TYPE_HOME();
@@ -23,7 +23,7 @@ namespace __jni_impl::android::provider
 		static jint TYPE_OTHER();
 		static jint TYPE_PROFILE();
 		static jint TYPE_WORK();
-		static QAndroidJniObject URL();
+		static jstring URL();
 		
 		// Constructors
 		void __constructor();
@@ -36,82 +36,94 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_CommonDataKinds_Website::CONTENT_ITEM_TYPE()
+	jstring ContactsContract_CommonDataKinds_Website::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Website::EXTRA_ADDRESS_BOOK_INDEX()
+	jstring ContactsContract_CommonDataKinds_Website::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
 			"EXTRA_ADDRESS_BOOK_INDEX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Website::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	jstring ContactsContract_CommonDataKinds_Website::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Website::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	jstring ContactsContract_CommonDataKinds_Website::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ContactsContract_CommonDataKinds_Website::TYPE_BLOG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
-			"TYPE_BLOG");
+			"TYPE_BLOG"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Website::TYPE_FTP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
-			"TYPE_FTP");
+			"TYPE_FTP"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Website::TYPE_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
-			"TYPE_HOME");
+			"TYPE_HOME"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Website::TYPE_HOMEPAGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
-			"TYPE_HOMEPAGE");
+			"TYPE_HOMEPAGE"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Website::TYPE_OTHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
-			"TYPE_OTHER");
+			"TYPE_OTHER"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Website::TYPE_PROFILE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
-			"TYPE_PROFILE");
+			"TYPE_PROFILE"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Website::TYPE_WORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
-			"TYPE_WORK");
+			"TYPE_WORK"
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Website::URL()
+	jstring ContactsContract_CommonDataKinds_Website::URL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Website",
 			"URL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

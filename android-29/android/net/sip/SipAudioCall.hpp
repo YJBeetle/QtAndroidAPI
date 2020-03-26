@@ -39,6 +39,8 @@ namespace __jni_impl::android::net::sip
 		// Methods
 		jint getState();
 		void close();
+		jboolean isInCall();
+		void endCall();
 		QAndroidJniObject getLocalProfile();
 		QAndroidJniObject getPeerProfile();
 		void setListener(__jni_impl::android::net::sip::SipAudioCall_Listener arg0);
@@ -51,11 +53,9 @@ namespace __jni_impl::android::net::sip
 		void continueCall(jint arg0);
 		void toggleMute();
 		void setSpeakerMode(jboolean arg0);
-		void sendDtmf(jint arg0, __jni_impl::android::os::Message arg1);
 		void sendDtmf(jint arg0);
+		void sendDtmf(jint arg0, __jni_impl::android::os::Message arg1);
 		void startAudio();
-		jboolean isInCall();
-		void endCall();
 		jboolean isMuted();
 	};
 } // namespace __jni_impl::android::net::sip
@@ -85,32 +85,51 @@ namespace __jni_impl::android::net::sip
 	{
 		return __thiz.callMethod<jint>(
 			"getState",
-			"()I");
+			"()I"
+		);
 	}
 	void SipAudioCall::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
+	}
+	jboolean SipAudioCall::isInCall()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInCall",
+			"()Z"
+		);
+	}
+	void SipAudioCall::endCall()
+	{
+		__thiz.callMethod<void>(
+			"endCall",
+			"()V"
+		);
 	}
 	QAndroidJniObject SipAudioCall::getLocalProfile()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalProfile",
-			"()Landroid/net/sip/SipProfile;");
+			"()Landroid/net/sip/SipProfile;"
+		);
 	}
 	QAndroidJniObject SipAudioCall::getPeerProfile()
 	{
 		return __thiz.callObjectMethod(
 			"getPeerProfile",
-			"()Landroid/net/sip/SipProfile;");
+			"()Landroid/net/sip/SipProfile;"
+		);
 	}
 	void SipAudioCall::setListener(__jni_impl::android::net::sip::SipAudioCall_Listener arg0)
 	{
 		__thiz.callMethod<void>(
 			"setListener",
 			"(Landroid/net/sip/SipAudioCall$Listener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SipAudioCall::setListener(__jni_impl::android::net::sip::SipAudioCall_Listener arg0, jboolean arg1)
 	{
@@ -118,7 +137,8 @@ namespace __jni_impl::android::net::sip
 			"setListener",
 			"(Landroid/net/sip/SipAudioCall$Listener;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void SipAudioCall::makeCall(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::net::sip::SipSession arg1, jint arg2)
 	{
@@ -127,20 +147,23 @@ namespace __jni_impl::android::net::sip
 			"(Landroid/net/sip/SipProfile;Landroid/net/sip/SipSession;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void SipAudioCall::answerCall(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"answerCall",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SipAudioCall::isOnHold()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOnHold",
-			"()Z");
+			"()Z"
+		);
 	}
 	void SipAudioCall::attachCall(__jni_impl::android::net::sip::SipSession arg0, jstring arg1)
 	{
@@ -148,34 +171,47 @@ namespace __jni_impl::android::net::sip
 			"attachCall",
 			"(Landroid/net/sip/SipSession;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void SipAudioCall::holdCall(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"holdCall",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void SipAudioCall::continueCall(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"continueCall",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void SipAudioCall::toggleMute()
 	{
 		__thiz.callMethod<void>(
 			"toggleMute",
-			"()V");
+			"()V"
+		);
 	}
 	void SipAudioCall::setSpeakerMode(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSpeakerMode",
 			"(Z)V",
-			arg0);
+			arg0
+		);
+	}
+	void SipAudioCall::sendDtmf(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"sendDtmf",
+			"(I)V",
+			arg0
+		);
 	}
 	void SipAudioCall::sendDtmf(jint arg0, __jni_impl::android::os::Message arg1)
 	{
@@ -183,38 +219,22 @@ namespace __jni_impl::android::net::sip
 			"sendDtmf",
 			"(ILandroid/os/Message;)V",
 			arg0,
-			arg1.__jniObject().object());
-	}
-	void SipAudioCall::sendDtmf(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"sendDtmf",
-			"(I)V",
-			arg0);
+			arg1.__jniObject().object()
+		);
 	}
 	void SipAudioCall::startAudio()
 	{
 		__thiz.callMethod<void>(
 			"startAudio",
-			"()V");
-	}
-	jboolean SipAudioCall::isInCall()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInCall",
-			"()Z");
-	}
-	void SipAudioCall::endCall()
-	{
-		__thiz.callMethod<void>(
-			"endCall",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean SipAudioCall::isMuted()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMuted",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::net::sip
 

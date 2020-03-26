@@ -40,7 +40,8 @@ namespace __jni_impl::javax::net::ssl
 	{
 		return __thiz.callObjectMethod(
 			"getParameters",
-			"()Ljava/security/cert/CertPathParameters;");
+			"()Ljava/security/cert/CertPathParameters;"
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

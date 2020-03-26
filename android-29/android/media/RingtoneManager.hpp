@@ -32,15 +32,15 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_RINGTONE_PICKER();
-		static QAndroidJniObject EXTRA_RINGTONE_DEFAULT_URI();
-		static QAndroidJniObject EXTRA_RINGTONE_EXISTING_URI();
-		static QAndroidJniObject EXTRA_RINGTONE_INCLUDE_DRM();
-		static QAndroidJniObject EXTRA_RINGTONE_PICKED_URI();
-		static QAndroidJniObject EXTRA_RINGTONE_SHOW_DEFAULT();
-		static QAndroidJniObject EXTRA_RINGTONE_SHOW_SILENT();
-		static QAndroidJniObject EXTRA_RINGTONE_TITLE();
-		static QAndroidJniObject EXTRA_RINGTONE_TYPE();
+		static jstring ACTION_RINGTONE_PICKER();
+		static jstring EXTRA_RINGTONE_DEFAULT_URI();
+		static jstring EXTRA_RINGTONE_EXISTING_URI();
+		static jstring EXTRA_RINGTONE_INCLUDE_DRM();
+		static jstring EXTRA_RINGTONE_PICKED_URI();
+		static jstring EXTRA_RINGTONE_SHOW_DEFAULT();
+		static jstring EXTRA_RINGTONE_SHOW_SILENT();
+		static jstring EXTRA_RINGTONE_TITLE();
+		static jstring EXTRA_RINGTONE_TYPE();
 		static jint ID_COLUMN_INDEX();
 		static jint TITLE_COLUMN_INDEX();
 		static jint TYPE_ALARM();
@@ -87,110 +87,126 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject RingtoneManager::ACTION_RINGTONE_PICKER()
+	jstring RingtoneManager::ACTION_RINGTONE_PICKER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.RingtoneManager",
 			"ACTION_RINGTONE_PICKER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RingtoneManager::EXTRA_RINGTONE_DEFAULT_URI()
+	jstring RingtoneManager::EXTRA_RINGTONE_DEFAULT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_DEFAULT_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RingtoneManager::EXTRA_RINGTONE_EXISTING_URI()
+	jstring RingtoneManager::EXTRA_RINGTONE_EXISTING_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_EXISTING_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RingtoneManager::EXTRA_RINGTONE_INCLUDE_DRM()
+	jstring RingtoneManager::EXTRA_RINGTONE_INCLUDE_DRM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_INCLUDE_DRM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RingtoneManager::EXTRA_RINGTONE_PICKED_URI()
+	jstring RingtoneManager::EXTRA_RINGTONE_PICKED_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_PICKED_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RingtoneManager::EXTRA_RINGTONE_SHOW_DEFAULT()
+	jstring RingtoneManager::EXTRA_RINGTONE_SHOW_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_SHOW_DEFAULT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RingtoneManager::EXTRA_RINGTONE_SHOW_SILENT()
+	jstring RingtoneManager::EXTRA_RINGTONE_SHOW_SILENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_SHOW_SILENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RingtoneManager::EXTRA_RINGTONE_TITLE()
+	jstring RingtoneManager::EXTRA_RINGTONE_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RingtoneManager::EXTRA_RINGTONE_TYPE()
+	jstring RingtoneManager::EXTRA_RINGTONE_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.RingtoneManager",
 			"EXTRA_RINGTONE_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint RingtoneManager::ID_COLUMN_INDEX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.RingtoneManager",
-			"ID_COLUMN_INDEX");
+			"ID_COLUMN_INDEX"
+		);
 	}
 	jint RingtoneManager::TITLE_COLUMN_INDEX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.RingtoneManager",
-			"TITLE_COLUMN_INDEX");
+			"TITLE_COLUMN_INDEX"
+		);
 	}
 	jint RingtoneManager::TYPE_ALARM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.RingtoneManager",
-			"TYPE_ALARM");
+			"TYPE_ALARM"
+		);
 	}
 	jint RingtoneManager::TYPE_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.RingtoneManager",
-			"TYPE_ALL");
+			"TYPE_ALL"
+		);
 	}
 	jint RingtoneManager::TYPE_NOTIFICATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.RingtoneManager",
-			"TYPE_NOTIFICATION");
+			"TYPE_NOTIFICATION"
+		);
 	}
 	jint RingtoneManager::TYPE_RINGTONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.RingtoneManager",
-			"TYPE_RINGTONE");
+			"TYPE_RINGTONE"
+		);
 	}
 	jint RingtoneManager::URI_COLUMN_INDEX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.RingtoneManager",
-			"URI_COLUMN_INDEX");
+			"URI_COLUMN_INDEX"
+		);
 	}
 	
 	// Constructors
@@ -216,58 +232,67 @@ namespace __jni_impl::android::media
 			"android.media.RingtoneManager",
 			"isDefault",
 			"(Landroid/net/Uri;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RingtoneManager::setType(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setType",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint RingtoneManager::inferStreamType()
 	{
 		return __thiz.callMethod<jint>(
 			"inferStreamType",
-			"()I");
+			"()I"
+		);
 	}
 	void RingtoneManager::setStopPreviousRingtone(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setStopPreviousRingtone",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void RingtoneManager::stopPreviousRingtone()
 	{
 		__thiz.callMethod<void>(
 			"stopPreviousRingtone",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean RingtoneManager::getStopPreviousRingtone()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getStopPreviousRingtone",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RingtoneManager::getIncludeDrm()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getIncludeDrm",
-			"()Z");
+			"()Z"
+		);
 	}
 	void RingtoneManager::setIncludeDrm(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIncludeDrm",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject RingtoneManager::getCursor()
 	{
 		return __thiz.callObjectMethod(
 			"getCursor",
-			"()Landroid/database/Cursor;");
+			"()Landroid/database/Cursor;"
+		);
 	}
 	QAndroidJniObject RingtoneManager::getRingtone(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -276,28 +301,32 @@ namespace __jni_impl::android::media
 			"getRingtone",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/Ringtone;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RingtoneManager::getRingtone(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getRingtone",
 			"(I)Landroid/media/Ringtone;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject RingtoneManager::getRingtoneUri(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getRingtoneUri",
 			"(I)Landroid/net/Uri;",
-			arg0);
+			arg0
+		);
 	}
 	jint RingtoneManager::getRingtonePosition(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getRingtonePosition",
 			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RingtoneManager::getValidRingtoneUri(__jni_impl::android::content::Context arg0)
 	{
@@ -305,7 +334,8 @@ namespace __jni_impl::android::media
 			"android.media.RingtoneManager",
 			"getValidRingtoneUri",
 			"(Landroid/content/Context;)Landroid/net/Uri;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RingtoneManager::getActualDefaultRingtoneUri(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -314,7 +344,8 @@ namespace __jni_impl::android::media
 			"getActualDefaultRingtoneUri",
 			"(Landroid/content/Context;I)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RingtoneManager::setActualDefaultRingtoneUri(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::net::Uri arg2)
 	{
@@ -324,7 +355,8 @@ namespace __jni_impl::android::media
 			"(Landroid/content/Context;ILandroid/net/Uri;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jint RingtoneManager::getDefaultType(__jni_impl::android::net::Uri arg0)
 	{
@@ -332,7 +364,8 @@ namespace __jni_impl::android::media
 			"android.media.RingtoneManager",
 			"getDefaultType",
 			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RingtoneManager::getDefaultUri(jint arg0)
 	{
@@ -340,7 +373,8 @@ namespace __jni_impl::android::media
 			"android.media.RingtoneManager",
 			"getDefaultUri",
 			"(I)Landroid/net/Uri;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject RingtoneManager::openDefaultRingtoneUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -349,7 +383,8 @@ namespace __jni_impl::android::media
 			"openDefaultRingtoneUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean RingtoneManager::hasHapticChannels(__jni_impl::android::net::Uri arg0)
 	{
@@ -357,14 +392,16 @@ namespace __jni_impl::android::media
 			"android.media.RingtoneManager",
 			"hasHapticChannels",
 			"(Landroid/net/Uri;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RingtoneManager::hasHapticChannels(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasHapticChannels",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

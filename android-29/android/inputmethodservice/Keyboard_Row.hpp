@@ -44,32 +44,38 @@ namespace __jni_impl::android::inputmethodservice
 	jint Keyboard_Row::defaultHeight()
 	{
 		return __thiz.getField<jint>(
-			"defaultHeight");
+			"defaultHeight"
+		);
 	}
 	jint Keyboard_Row::defaultHorizontalGap()
 	{
 		return __thiz.getField<jint>(
-			"defaultHorizontalGap");
+			"defaultHorizontalGap"
+		);
 	}
 	jint Keyboard_Row::defaultWidth()
 	{
 		return __thiz.getField<jint>(
-			"defaultWidth");
+			"defaultWidth"
+		);
 	}
 	jint Keyboard_Row::mode()
 	{
 		return __thiz.getField<jint>(
-			"mode");
+			"mode"
+		);
 	}
 	jint Keyboard_Row::rowEdgeFlags()
 	{
 		return __thiz.getField<jint>(
-			"rowEdgeFlags");
+			"rowEdgeFlags"
+		);
 	}
 	jint Keyboard_Row::verticalGap()
 	{
 		return __thiz.getField<jint>(
-			"verticalGap");
+			"verticalGap"
+		);
 	}
 	
 	// Constructors

@@ -21,7 +21,7 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::webkit
@@ -35,21 +35,24 @@ namespace __jni_impl::android::webkit
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$RenderPriority",
 			"NORMAL",
-			"Landroid/webkit/WebSettings$RenderPriority;");
+			"Landroid/webkit/WebSettings$RenderPriority;"
+		);
 	}
 	QAndroidJniObject WebSettings_RenderPriority::HIGH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$RenderPriority",
 			"HIGH",
-			"Landroid/webkit/WebSettings$RenderPriority;");
+			"Landroid/webkit/WebSettings$RenderPriority;"
+		);
 	}
 	QAndroidJniObject WebSettings_RenderPriority::LOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$RenderPriority",
 			"LOW",
-			"Landroid/webkit/WebSettings$RenderPriority;");
+			"Landroid/webkit/WebSettings$RenderPriority;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	QAndroidJniObject WebSettings_RenderPriority::values()
+	jarray WebSettings_RenderPriority::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebSettings$RenderPriority",
 			"values",
-			"()[Landroid/webkit/WebSettings$RenderPriority;");
+			"()[Landroid/webkit/WebSettings$RenderPriority;"
+		).object<jarray>();
 	}
 	QAndroidJniObject WebSettings_RenderPriority::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::webkit
 			"android.webkit.WebSettings$RenderPriority",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$RenderPriority;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

@@ -20,16 +20,16 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
+		static jstring CONTENT_DIRECTORY();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
-		static QAndroidJniObject SYNC_EVERYTHING();
+		static jstring DEFAULT_SORT_ORDER();
+		static jstring SYNC_EVERYTHING();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getSetting(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2);
+		static jstring getSetting(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2);
 		static void setSetting(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3);
 	};
 } // namespace __jni_impl::android::provider
@@ -40,33 +40,37 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_Settings::CONTENT_DIRECTORY()
+	jstring Contacts_Settings::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Settings",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Contacts_Settings::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Settings",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_Settings::DEFAULT_SORT_ORDER()
+	jstring Contacts_Settings::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Settings",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Settings::SYNC_EVERYTHING()
+	jstring Contacts_Settings::SYNC_EVERYTHING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Settings",
 			"SYNC_EVERYTHING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -78,7 +82,7 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject Contacts_Settings::getSetting(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2)
+	jstring Contacts_Settings::getSetting(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$Settings",
@@ -86,7 +90,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 	void Contacts_Settings::setSetting(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
@@ -97,7 +102,8 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::provider
 

@@ -22,10 +22,10 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getType();
-		QAndroidJniObject getEncoded();
+		jstring getType();
+		jbyteArray getEncoded();
 		void verify(__jni_impl::__JniBaseClass arg0);
 		void verify(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Provider arg1);
@@ -53,38 +53,44 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Certificate::toString()
+	jstring Certificate::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Certificate::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Certificate::getType()
+	jstring Certificate::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Certificate::getEncoded()
+	jbyteArray Certificate::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	void Certificate::verify(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"verify",
 			"(Ljava/security/PublicKey;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Certificate::verify(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -92,7 +98,8 @@ namespace __jni_impl::java::security::cert
 			"verify",
 			"(Ljava/security/PublicKey;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Certificate::verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Provider arg1)
 	{
@@ -100,13 +107,15 @@ namespace __jni_impl::java::security::cert
 			"verify",
 			"(Ljava/security/PublicKey;Ljava/security/Provider;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Certificate::getPublicKey()
 	{
 		return __thiz.callObjectMethod(
 			"getPublicKey",
-			"()Ljava/security/PublicKey;");
+			"()Ljava/security/PublicKey;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

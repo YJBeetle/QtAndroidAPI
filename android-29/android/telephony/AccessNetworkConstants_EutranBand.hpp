@@ -76,289 +76,337 @@ namespace __jni_impl::android::telephony
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_1");
+			"BAND_1"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_10()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_10");
+			"BAND_10"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_11()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_11");
+			"BAND_11"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_12()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_12");
+			"BAND_12"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_13()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_13");
+			"BAND_13"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_14()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_14");
+			"BAND_14"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_17()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_17");
+			"BAND_17"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_18()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_18");
+			"BAND_18"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_19()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_19");
+			"BAND_19"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_2");
+			"BAND_2"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_20()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_20");
+			"BAND_20"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_21()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_21");
+			"BAND_21"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_22()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_22");
+			"BAND_22"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_23()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_23");
+			"BAND_23"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_24()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_24");
+			"BAND_24"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_25()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_25");
+			"BAND_25"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_26()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_26");
+			"BAND_26"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_27()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_27");
+			"BAND_27"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_28()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_28");
+			"BAND_28"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_3");
+			"BAND_3"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_30()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_30");
+			"BAND_30"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_31()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_31");
+			"BAND_31"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_33()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_33");
+			"BAND_33"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_34()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_34");
+			"BAND_34"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_35()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_35");
+			"BAND_35"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_36()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_36");
+			"BAND_36"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_37()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_37");
+			"BAND_37"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_38()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_38");
+			"BAND_38"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_39()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_39");
+			"BAND_39"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_4");
+			"BAND_4"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_40()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_40");
+			"BAND_40"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_41()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_41");
+			"BAND_41"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_42()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_42");
+			"BAND_42"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_43()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_43");
+			"BAND_43"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_44()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_44");
+			"BAND_44"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_45()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_45");
+			"BAND_45"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_46()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_46");
+			"BAND_46"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_47()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_47");
+			"BAND_47"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_48()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_48");
+			"BAND_48"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_5()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_5");
+			"BAND_5"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_6()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_6");
+			"BAND_6"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_65()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_65");
+			"BAND_65"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_66()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_66");
+			"BAND_66"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_68()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_68");
+			"BAND_68"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_7()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_7");
+			"BAND_7"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_70()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_70");
+			"BAND_70"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_8()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_8");
+			"BAND_8"
+		);
 	}
 	jint AccessNetworkConstants_EutranBand::BAND_9()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$EutranBand",
-			"BAND_9");
+			"BAND_9"
+		);
 	}
 	
 	// Constructors

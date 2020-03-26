@@ -21,7 +21,7 @@ namespace __jni_impl::android::hardware::camera2::params
 		jint hashCode();
 		jboolean isReprocessable();
 		QAndroidJniObject getStreamsInformation();
-		QAndroidJniObject getDescription();
+		jstring getDescription();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -44,31 +44,36 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint MandatoryStreamCombination::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean MandatoryStreamCombination::isReprocessable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReprocessable",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject MandatoryStreamCombination::getStreamsInformation()
 	{
 		return __thiz.callObjectMethod(
 			"getStreamsInformation",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
-	QAndroidJniObject MandatoryStreamCombination::getDescription()
+	jstring MandatoryStreamCombination::getDescription()
 	{
 		return __thiz.callObjectMethod(
 			"getDescription",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

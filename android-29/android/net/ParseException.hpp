@@ -14,7 +14,7 @@ namespace __jni_impl::android::net
 	{
 	public:
 		// Fields
-		QAndroidJniObject response();
+		jstring response();
 		
 		// Constructors
 		void __constructor();
@@ -27,11 +27,12 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::net
 {
 	// Fields
-	QAndroidJniObject ParseException::response()
+	jstring ParseException::response()
 	{
 		return __thiz.getObjectField(
 			"response",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

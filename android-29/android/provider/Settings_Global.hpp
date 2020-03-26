@@ -21,50 +21,50 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ADB_ENABLED();
-		static QAndroidJniObject AIRPLANE_MODE_ON();
-		static QAndroidJniObject AIRPLANE_MODE_RADIOS();
-		static QAndroidJniObject ALWAYS_FINISH_ACTIVITIES();
-		static QAndroidJniObject ANIMATOR_DURATION_SCALE();
-		static QAndroidJniObject APPLY_RAMPING_RINGER();
-		static QAndroidJniObject AUTO_TIME();
-		static QAndroidJniObject AUTO_TIME_ZONE();
-		static QAndroidJniObject BLUETOOTH_ON();
-		static QAndroidJniObject BOOT_COUNT();
-		static QAndroidJniObject CONTACT_METADATA_SYNC_ENABLED();
+		static jstring ADB_ENABLED();
+		static jstring AIRPLANE_MODE_ON();
+		static jstring AIRPLANE_MODE_RADIOS();
+		static jstring ALWAYS_FINISH_ACTIVITIES();
+		static jstring ANIMATOR_DURATION_SCALE();
+		static jstring APPLY_RAMPING_RINGER();
+		static jstring AUTO_TIME();
+		static jstring AUTO_TIME_ZONE();
+		static jstring BLUETOOTH_ON();
+		static jstring BOOT_COUNT();
+		static jstring CONTACT_METADATA_SYNC_ENABLED();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DATA_ROAMING();
-		static QAndroidJniObject DEBUG_APP();
-		static QAndroidJniObject DEVELOPMENT_SETTINGS_ENABLED();
-		static QAndroidJniObject DEVICE_NAME();
-		static QAndroidJniObject DEVICE_PROVISIONED();
-		static QAndroidJniObject HTTP_PROXY();
-		static QAndroidJniObject INSTALL_NON_MARKET_APPS();
-		static QAndroidJniObject MODE_RINGER();
-		static QAndroidJniObject NETWORK_PREFERENCE();
-		static QAndroidJniObject RADIO_BLUETOOTH();
-		static QAndroidJniObject RADIO_CELL();
-		static QAndroidJniObject RADIO_NFC();
-		static QAndroidJniObject RADIO_WIFI();
-		static QAndroidJniObject SHOW_PROCESSES();
-		static QAndroidJniObject STAY_ON_WHILE_PLUGGED_IN();
-		static QAndroidJniObject TRANSITION_ANIMATION_SCALE();
-		static QAndroidJniObject USB_MASS_STORAGE_ENABLED();
-		static QAndroidJniObject USE_GOOGLE_MAIL();
-		static QAndroidJniObject WAIT_FOR_DEBUGGER();
-		static QAndroidJniObject WIFI_DEVICE_OWNER_CONFIGS_LOCKDOWN();
-		static QAndroidJniObject WIFI_MAX_DHCP_RETRY_COUNT();
-		static QAndroidJniObject WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS();
-		static QAndroidJniObject WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON();
-		static QAndroidJniObject WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY();
-		static QAndroidJniObject WIFI_NUM_OPEN_NETWORKS_KEPT();
-		static QAndroidJniObject WIFI_ON();
-		static QAndroidJniObject WIFI_SLEEP_POLICY();
+		static jstring DATA_ROAMING();
+		static jstring DEBUG_APP();
+		static jstring DEVELOPMENT_SETTINGS_ENABLED();
+		static jstring DEVICE_NAME();
+		static jstring DEVICE_PROVISIONED();
+		static jstring HTTP_PROXY();
+		static jstring INSTALL_NON_MARKET_APPS();
+		static jstring MODE_RINGER();
+		static jstring NETWORK_PREFERENCE();
+		static jstring RADIO_BLUETOOTH();
+		static jstring RADIO_CELL();
+		static jstring RADIO_NFC();
+		static jstring RADIO_WIFI();
+		static jstring SHOW_PROCESSES();
+		static jstring STAY_ON_WHILE_PLUGGED_IN();
+		static jstring TRANSITION_ANIMATION_SCALE();
+		static jstring USB_MASS_STORAGE_ENABLED();
+		static jstring USE_GOOGLE_MAIL();
+		static jstring WAIT_FOR_DEBUGGER();
+		static jstring WIFI_DEVICE_OWNER_CONFIGS_LOCKDOWN();
+		static jstring WIFI_MAX_DHCP_RETRY_COUNT();
+		static jstring WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS();
+		static jstring WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON();
+		static jstring WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY();
+		static jstring WIFI_NUM_OPEN_NETWORKS_KEPT();
+		static jstring WIFI_ON();
+		static jstring WIFI_SLEEP_POLICY();
 		static jint WIFI_SLEEP_POLICY_DEFAULT();
 		static jint WIFI_SLEEP_POLICY_NEVER();
 		static jint WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED();
-		static QAndroidJniObject WIFI_WATCHDOG_ON();
-		static QAndroidJniObject WINDOW_ANIMATION_SCALE();
+		static jstring WIFI_WATCHDOG_ON();
+		static jstring WINDOW_ANIMATION_SCALE();
 		
 		// Constructors
 		void __constructor();
@@ -79,9 +79,9 @@ namespace __jni_impl::android::provider
 		static jfloat getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
 		static jfloat getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
 		static jboolean putFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
-		static QAndroidJniObject getString(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
-		static QAndroidJniObject getUriFor(jstring arg0);
+		static jstring getString(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
 		static jboolean putString(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2);
+		static QAndroidJniObject getUriFor(jstring arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -91,310 +91,354 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Settings_Global::ADB_ENABLED()
+	jstring Settings_Global::ADB_ENABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"ADB_ENABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::AIRPLANE_MODE_ON()
+	jstring Settings_Global::AIRPLANE_MODE_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"AIRPLANE_MODE_ON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::AIRPLANE_MODE_RADIOS()
+	jstring Settings_Global::AIRPLANE_MODE_RADIOS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"AIRPLANE_MODE_RADIOS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::ALWAYS_FINISH_ACTIVITIES()
+	jstring Settings_Global::ALWAYS_FINISH_ACTIVITIES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"ALWAYS_FINISH_ACTIVITIES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::ANIMATOR_DURATION_SCALE()
+	jstring Settings_Global::ANIMATOR_DURATION_SCALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"ANIMATOR_DURATION_SCALE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::APPLY_RAMPING_RINGER()
+	jstring Settings_Global::APPLY_RAMPING_RINGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"APPLY_RAMPING_RINGER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::AUTO_TIME()
+	jstring Settings_Global::AUTO_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"AUTO_TIME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::AUTO_TIME_ZONE()
+	jstring Settings_Global::AUTO_TIME_ZONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"AUTO_TIME_ZONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::BLUETOOTH_ON()
+	jstring Settings_Global::BLUETOOTH_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"BLUETOOTH_ON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::BOOT_COUNT()
+	jstring Settings_Global::BOOT_COUNT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"BOOT_COUNT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::CONTACT_METADATA_SYNC_ENABLED()
+	jstring Settings_Global::CONTACT_METADATA_SYNC_ENABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"CONTACT_METADATA_SYNC_ENABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Settings_Global::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Settings_Global::DATA_ROAMING()
+	jstring Settings_Global::DATA_ROAMING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DATA_ROAMING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::DEBUG_APP()
+	jstring Settings_Global::DEBUG_APP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DEBUG_APP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::DEVELOPMENT_SETTINGS_ENABLED()
+	jstring Settings_Global::DEVELOPMENT_SETTINGS_ENABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DEVELOPMENT_SETTINGS_ENABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::DEVICE_NAME()
+	jstring Settings_Global::DEVICE_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DEVICE_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::DEVICE_PROVISIONED()
+	jstring Settings_Global::DEVICE_PROVISIONED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"DEVICE_PROVISIONED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::HTTP_PROXY()
+	jstring Settings_Global::HTTP_PROXY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"HTTP_PROXY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::INSTALL_NON_MARKET_APPS()
+	jstring Settings_Global::INSTALL_NON_MARKET_APPS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"INSTALL_NON_MARKET_APPS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::MODE_RINGER()
+	jstring Settings_Global::MODE_RINGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"MODE_RINGER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::NETWORK_PREFERENCE()
+	jstring Settings_Global::NETWORK_PREFERENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"NETWORK_PREFERENCE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::RADIO_BLUETOOTH()
+	jstring Settings_Global::RADIO_BLUETOOTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"RADIO_BLUETOOTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::RADIO_CELL()
+	jstring Settings_Global::RADIO_CELL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"RADIO_CELL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::RADIO_NFC()
+	jstring Settings_Global::RADIO_NFC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"RADIO_NFC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::RADIO_WIFI()
+	jstring Settings_Global::RADIO_WIFI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"RADIO_WIFI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::SHOW_PROCESSES()
+	jstring Settings_Global::SHOW_PROCESSES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"SHOW_PROCESSES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::STAY_ON_WHILE_PLUGGED_IN()
+	jstring Settings_Global::STAY_ON_WHILE_PLUGGED_IN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"STAY_ON_WHILE_PLUGGED_IN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::TRANSITION_ANIMATION_SCALE()
+	jstring Settings_Global::TRANSITION_ANIMATION_SCALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"TRANSITION_ANIMATION_SCALE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::USB_MASS_STORAGE_ENABLED()
+	jstring Settings_Global::USB_MASS_STORAGE_ENABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"USB_MASS_STORAGE_ENABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::USE_GOOGLE_MAIL()
+	jstring Settings_Global::USE_GOOGLE_MAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"USE_GOOGLE_MAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WAIT_FOR_DEBUGGER()
+	jstring Settings_Global::WAIT_FOR_DEBUGGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WAIT_FOR_DEBUGGER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WIFI_DEVICE_OWNER_CONFIGS_LOCKDOWN()
+	jstring Settings_Global::WIFI_DEVICE_OWNER_CONFIGS_LOCKDOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_DEVICE_OWNER_CONFIGS_LOCKDOWN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WIFI_MAX_DHCP_RETRY_COUNT()
+	jstring Settings_Global::WIFI_MAX_DHCP_RETRY_COUNT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_MAX_DHCP_RETRY_COUNT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS()
+	jstring Settings_Global::WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON()
+	jstring Settings_Global::WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_NETWORKS_AVAILABLE_NOTIFICATION_ON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY()
+	jstring Settings_Global::WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WIFI_NUM_OPEN_NETWORKS_KEPT()
+	jstring Settings_Global::WIFI_NUM_OPEN_NETWORKS_KEPT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_NUM_OPEN_NETWORKS_KEPT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WIFI_ON()
+	jstring Settings_Global::WIFI_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_ON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WIFI_SLEEP_POLICY()
+	jstring Settings_Global::WIFI_SLEEP_POLICY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_SLEEP_POLICY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Settings_Global::WIFI_SLEEP_POLICY_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.Settings$Global",
-			"WIFI_SLEEP_POLICY_DEFAULT");
+			"WIFI_SLEEP_POLICY_DEFAULT"
+		);
 	}
 	jint Settings_Global::WIFI_SLEEP_POLICY_NEVER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.Settings$Global",
-			"WIFI_SLEEP_POLICY_NEVER");
+			"WIFI_SLEEP_POLICY_NEVER"
+		);
 	}
 	jint Settings_Global::WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.Settings$Global",
-			"WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED");
+			"WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED"
+		);
 	}
-	QAndroidJniObject Settings_Global::WIFI_WATCHDOG_ON()
+	jstring Settings_Global::WIFI_WATCHDOG_ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WIFI_WATCHDOG_ON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Global::WINDOW_ANIMATION_SCALE()
+	jstring Settings_Global::WINDOW_ANIMATION_SCALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Global",
 			"WINDOW_ANIMATION_SCALE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -413,7 +457,8 @@ namespace __jni_impl::android::provider
 			"getInt",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint Settings_Global::getInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2)
 	{
@@ -423,7 +468,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean Settings_Global::putInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2)
 	{
@@ -433,7 +479,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;I)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong Settings_Global::getLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jlong arg2)
 	{
@@ -443,7 +490,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)J",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong Settings_Global::getLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1)
 	{
@@ -452,7 +500,8 @@ namespace __jni_impl::android::provider
 			"getLong",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)J",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Settings_Global::putLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jlong arg2)
 	{
@@ -462,7 +511,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jfloat Settings_Global::getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1)
 	{
@@ -471,7 +521,8 @@ namespace __jni_impl::android::provider
 			"getFloat",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)F",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jfloat Settings_Global::getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
 	{
@@ -481,7 +532,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean Settings_Global::putFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
 	{
@@ -491,24 +543,18 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject Settings_Global::getString(__jni_impl::android::content::ContentResolver arg0, jstring arg1)
+	jstring Settings_Global::getString(__jni_impl::android::content::ContentResolver arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Settings$Global",
 			"getString",
 			"(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject Settings_Global::getUriFor(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Settings$Global",
-			"getUriFor",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0);
+			arg1
+		).object<jstring>();
 	}
 	jboolean Settings_Global::putString(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2)
 	{
@@ -518,7 +564,17 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	QAndroidJniObject Settings_Global::getUriFor(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.Settings$Global",
+			"getUriFor",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::provider
 

@@ -24,7 +24,7 @@ namespace __jni_impl::android::service::voice
 		// Methods
 		void sendResult(__jni_impl::android::os::Bundle arg0);
 		void sendIntermediateResult(__jni_impl::android::os::Bundle arg0);
-		QAndroidJniObject getCommand();
+		jstring getCommand();
 	};
 } // namespace __jni_impl::android::service::voice
 
@@ -48,20 +48,23 @@ namespace __jni_impl::android::service::voice
 		__thiz.callMethod<void>(
 			"sendResult",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void VoiceInteractionSession_CommandRequest::sendIntermediateResult(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"sendIntermediateResult",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject VoiceInteractionSession_CommandRequest::getCommand()
+	jstring VoiceInteractionSession_CommandRequest::getCommand()
 	{
 		return __thiz.callObjectMethod(
 			"getCommand",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::service::voice
 

@@ -60,7 +60,8 @@ namespace __jni_impl::android::opengl
 			"(FFF)F",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Matrix::multiplyMM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloatArray arg4, jint arg5)
 	{
@@ -73,7 +74,8 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Matrix::multiplyMV(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloatArray arg4, jint arg5)
 	{
@@ -86,7 +88,8 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Matrix::transposeM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
@@ -97,7 +100,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean Matrix::invertM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
@@ -108,7 +112,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Matrix::orthoM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
 	{
@@ -123,7 +128,8 @@ namespace __jni_impl::android::opengl
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void Matrix::frustumM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
 	{
@@ -138,7 +144,8 @@ namespace __jni_impl::android::opengl
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void Matrix::perspectiveM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
@@ -151,7 +158,8 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Matrix::setIdentityM(jfloatArray arg0, jint arg1)
 	{
@@ -160,7 +168,8 @@ namespace __jni_impl::android::opengl
 			"setIdentityM",
 			"([FI)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Matrix::scaleM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6)
 	{
@@ -174,7 +183,8 @@ namespace __jni_impl::android::opengl
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void Matrix::scaleM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
@@ -186,7 +196,8 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Matrix::translateM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
@@ -198,7 +209,8 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Matrix::translateM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6)
 	{
@@ -212,7 +224,8 @@ namespace __jni_impl::android::opengl
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void Matrix::rotateM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
@@ -225,7 +238,8 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Matrix::rotateM(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
 	{
@@ -240,7 +254,8 @@ namespace __jni_impl::android::opengl
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void Matrix::setRotateM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
@@ -253,7 +268,8 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Matrix::setRotateEulerM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
@@ -265,7 +281,8 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Matrix::setLookAtM(jfloatArray arg0, jint arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jfloat arg8, jfloat arg9, jfloat arg10)
 	{
@@ -283,7 +300,8 @@ namespace __jni_impl::android::opengl
 			arg7,
 			arg8,
 			arg9,
-			arg10);
+			arg10
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

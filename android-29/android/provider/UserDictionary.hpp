@@ -16,7 +16,7 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUTHORITY();
+		static jstring AUTHORITY();
 		static QAndroidJniObject CONTENT_URI();
 		
 		// Constructors
@@ -31,19 +31,21 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject UserDictionary::AUTHORITY()
+	jstring UserDictionary::AUTHORITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.UserDictionary",
 			"AUTHORITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject UserDictionary::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.UserDictionary",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors

@@ -38,8 +38,8 @@ namespace __jni_impl::android::graphics::drawable
 		jfloat getPivotY();
 		void setPivotY(jfloat arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0);
-		jfloat getFromDegrees();
 		void setFromDegrees(jfloat arg0);
+		jfloat getFromDegrees();
 		void setToDegrees(jfloat arg0);
 		jfloat getToDegrees();
 		void setPivotXRelative(jboolean arg0);
@@ -74,99 +74,114 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void RotateDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jfloat RotateDrawable::getPivotX()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getPivotX",
-			"()F");
+			"()F"
+		);
 	}
 	void RotateDrawable::setPivotX(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPivotX",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RotateDrawable::getPivotY()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getPivotY",
-			"()F");
+			"()F"
+		);
 	}
 	void RotateDrawable::setPivotY(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPivotY",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void RotateDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
 		__thiz.callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	jfloat RotateDrawable::getFromDegrees()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFromDegrees",
-			"()F");
+			arg0.__jniObject().object()
+		);
 	}
 	void RotateDrawable::setFromDegrees(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFromDegrees",
 			"(F)V",
-			arg0);
+			arg0
+		);
+	}
+	jfloat RotateDrawable::getFromDegrees()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFromDegrees",
+			"()F"
+		);
 	}
 	void RotateDrawable::setToDegrees(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setToDegrees",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RotateDrawable::getToDegrees()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getToDegrees",
-			"()F");
+			"()F"
+		);
 	}
 	void RotateDrawable::setPivotXRelative(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPivotXRelative",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RotateDrawable::isPivotXRelative()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPivotXRelative",
-			"()Z");
+			"()Z"
+		);
 	}
 	void RotateDrawable::setPivotYRelative(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPivotYRelative",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RotateDrawable::isPivotYRelative()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPivotYRelative",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

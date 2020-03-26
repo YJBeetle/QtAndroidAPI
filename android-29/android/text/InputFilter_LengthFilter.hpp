@@ -17,7 +17,7 @@ namespace __jni_impl::android::text
 		void __constructor(jint arg0);
 		
 		// Methods
-		QAndroidJniObject filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
+		jstring filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
 		jint getMax();
 	};
 } // namespace __jni_impl::android::text
@@ -37,7 +37,7 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
-	QAndroidJniObject InputFilter_LengthFilter::filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
+	jstring InputFilter_LengthFilter::filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
 	{
 		return __thiz.callObjectMethod(
 			"filter",
@@ -47,13 +47,15 @@ namespace __jni_impl::android::text
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5);
+			arg5
+		).object<jstring>();
 	}
 	jint InputFilter_LengthFilter::getMax()
 	{
 		return __thiz.callMethod<jint>(
 			"getMax",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text
 

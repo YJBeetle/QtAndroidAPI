@@ -64,7 +64,8 @@ namespace __jni_impl::android::media
 			"newInstance",
 			"(Landroid/view/Surface;I)Landroid/media/ImageWriter;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ImageWriter::newInstance(__jni_impl::android::view::Surface arg0, jint arg1, jint arg2)
 	{
@@ -74,38 +75,44 @@ namespace __jni_impl::android::media
 			"(Landroid/view/Surface;II)Landroid/media/ImageWriter;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ImageWriter::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint ImageWriter::getFormat()
 	{
 		return __thiz.callMethod<jint>(
 			"getFormat",
-			"()I");
+			"()I"
+		);
 	}
 	jint ImageWriter::getMaxImages()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxImages",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ImageWriter::dequeueInputImage()
 	{
 		return __thiz.callObjectMethod(
 			"dequeueInputImage",
-			"()Landroid/media/Image;");
+			"()Landroid/media/Image;"
+		);
 	}
 	void ImageWriter::queueInputImage(__jni_impl::android::media::Image arg0)
 	{
 		__thiz.callMethod<void>(
 			"queueInputImage",
 			"(Landroid/media/Image;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ImageWriter::setOnImageReleasedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -113,7 +120,8 @@ namespace __jni_impl::android::media
 			"setOnImageReleasedListener",
 			"(Landroid/media/ImageWriter$OnImageReleasedListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

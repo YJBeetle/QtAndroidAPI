@@ -17,8 +17,8 @@ namespace __jni_impl::java::net
 		void __constructor(jstring arg0, jcharArray arg1);
 		
 		// Methods
-		QAndroidJniObject getUserName();
-		QAndroidJniObject getPassword();
+		jcharArray getPassword();
+		jstring getUserName();
 	};
 } // namespace __jni_impl::java::net
 
@@ -38,17 +38,19 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject PasswordAuthentication::getUserName()
-	{
-		return __thiz.callObjectMethod(
-			"getUserName",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject PasswordAuthentication::getPassword()
+	jcharArray PasswordAuthentication::getPassword()
 	{
 		return __thiz.callObjectMethod(
 			"getPassword",
-			"()[C");
+			"()[C"
+		).object<jcharArray>();
+	}
+	jstring PasswordAuthentication::getUserName()
+	{
+		return __thiz.callObjectMethod(
+			"getUserName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

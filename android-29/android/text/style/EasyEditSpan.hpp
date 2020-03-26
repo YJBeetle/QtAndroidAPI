@@ -20,7 +20,7 @@ namespace __jni_impl::android::text::style
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EXTRA_TEXT_CHANGED_TYPE();
+		static jstring EXTRA_TEXT_CHANGED_TYPE();
 		static jint TEXT_DELETED();
 		static jint TEXT_MODIFIED();
 		
@@ -30,9 +30,9 @@ namespace __jni_impl::android::text::style
 		void __constructor();
 		
 		// Methods
-		jint getSpanTypeId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getSpanTypeId();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -42,24 +42,27 @@ namespace __jni_impl::android::text::style
 namespace __jni_impl::android::text::style
 {
 	// Fields
-	QAndroidJniObject EasyEditSpan::EXTRA_TEXT_CHANGED_TYPE()
+	jstring EasyEditSpan::EXTRA_TEXT_CHANGED_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.EasyEditSpan",
 			"EXTRA_TEXT_CHANGED_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint EasyEditSpan::TEXT_DELETED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.EasyEditSpan",
-			"TEXT_DELETED");
+			"TEXT_DELETED"
+		);
 	}
 	jint EasyEditSpan::TEXT_MODIFIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.EasyEditSpan",
-			"TEXT_MODIFIED");
+			"TEXT_MODIFIED"
+		);
 	}
 	
 	// Constructors
@@ -85,17 +88,12 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	jint EasyEditSpan::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I");
-	}
 	jint EasyEditSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void EasyEditSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -103,7 +101,15 @@ namespace __jni_impl::android::text::style
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint EasyEditSpan::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

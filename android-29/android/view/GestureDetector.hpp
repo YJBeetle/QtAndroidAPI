@@ -33,12 +33,12 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		
 		// Methods
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
 		void setOnDoubleTapListener(__jni_impl::__JniBaseClass arg0);
 		void setContextClickListener(__jni_impl::__JniBaseClass arg0);
 		void setIsLongpressEnabled(jboolean arg0);
 		jboolean isLongpressEnabled();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -95,46 +95,52 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	void GestureDetector::setOnDoubleTapListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnDoubleTapListener",
-			"(Landroid/view/GestureDetector$OnDoubleTapListener;)V",
-			arg0.__jniObject().object());
-	}
-	void GestureDetector::setContextClickListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContextClickListener",
-			"(Landroid/view/GestureDetector$OnContextClickListener;)V",
-			arg0.__jniObject().object());
-	}
-	void GestureDetector::setIsLongpressEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIsLongpressEnabled",
-			"(Z)V",
-			arg0);
-	}
-	jboolean GestureDetector::isLongpressEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLongpressEnabled",
-			"()Z");
-	}
 	jboolean GestureDetector::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean GestureDetector::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureDetector::setOnDoubleTapListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnDoubleTapListener",
+			"(Landroid/view/GestureDetector$OnDoubleTapListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureDetector::setContextClickListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContextClickListener",
+			"(Landroid/view/GestureDetector$OnContextClickListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureDetector::setIsLongpressEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIsLongpressEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean GestureDetector::isLongpressEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLongpressEnabled",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::view
 

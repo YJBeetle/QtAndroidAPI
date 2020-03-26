@@ -50,43 +50,50 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.IDNA",
-			"CHECK_BIDI");
+			"CHECK_BIDI"
+		);
 	}
 	jint IDNA::CHECK_CONTEXTJ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.IDNA",
-			"CHECK_CONTEXTJ");
+			"CHECK_CONTEXTJ"
+		);
 	}
 	jint IDNA::CHECK_CONTEXTO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.IDNA",
-			"CHECK_CONTEXTO");
+			"CHECK_CONTEXTO"
+		);
 	}
 	jint IDNA::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.IDNA",
-			"DEFAULT");
+			"DEFAULT"
+		);
 	}
 	jint IDNA::NONTRANSITIONAL_TO_ASCII()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.IDNA",
-			"NONTRANSITIONAL_TO_ASCII");
+			"NONTRANSITIONAL_TO_ASCII"
+		);
 	}
 	jint IDNA::NONTRANSITIONAL_TO_UNICODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.IDNA",
-			"NONTRANSITIONAL_TO_UNICODE");
+			"NONTRANSITIONAL_TO_UNICODE"
+		);
 	}
 	jint IDNA::USE_STD3_RULES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.IDNA",
-			"USE_STD3_RULES");
+			"USE_STD3_RULES"
+		);
 	}
 	
 	// Constructors
@@ -104,7 +111,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.IDNA",
 			"getUTS46Instance",
 			"(I)Landroid/icu/text/IDNA;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject IDNA::labelToASCII(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
 	{
@@ -113,7 +121,8 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject IDNA::labelToUnicode(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
 	{
@@ -122,7 +131,8 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject IDNA::nameToASCII(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
 	{
@@ -131,7 +141,8 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject IDNA::nameToUnicode(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
 	{
@@ -140,7 +151,8 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

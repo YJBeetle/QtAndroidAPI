@@ -26,14 +26,14 @@ namespace __jni_impl::android::bluetooth
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getServiceType();
 		jint getTokenRate();
 		jint getTokenBucketSize();
 		jint getPeakBandwidth();
 		jint getLatency();
 		jint getDelayVariation();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -47,31 +47,36 @@ namespace __jni_impl::android::bluetooth
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
-			"MAX");
+			"MAX"
+		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::SERVICE_BEST_EFFORT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
-			"SERVICE_BEST_EFFORT");
+			"SERVICE_BEST_EFFORT"
+		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::SERVICE_GUARANTEED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
-			"SERVICE_GUARANTEED");
+			"SERVICE_GUARANTEED"
+		);
 	}
 	jint BluetoothHidDeviceAppQosSettings::SERVICE_NO_TRAFFIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
-			"SERVICE_NO_TRAFFIC");
+			"SERVICE_NO_TRAFFIC"
+		);
 	}
 	
 	// Constructors
@@ -89,11 +94,54 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
+	jint BluetoothHidDeviceAppQosSettings::getServiceType()
+	{
+		return __thiz.callMethod<jint>(
+			"getServiceType",
+			"()I"
+		);
+	}
+	jint BluetoothHidDeviceAppQosSettings::getTokenRate()
+	{
+		return __thiz.callMethod<jint>(
+			"getTokenRate",
+			"()I"
+		);
+	}
+	jint BluetoothHidDeviceAppQosSettings::getTokenBucketSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getTokenBucketSize",
+			"()I"
+		);
+	}
+	jint BluetoothHidDeviceAppQosSettings::getPeakBandwidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getPeakBandwidth",
+			"()I"
+		);
+	}
+	jint BluetoothHidDeviceAppQosSettings::getLatency()
+	{
+		return __thiz.callMethod<jint>(
+			"getLatency",
+			"()I"
+		);
+	}
+	jint BluetoothHidDeviceAppQosSettings::getDelayVariation()
+	{
+		return __thiz.callMethod<jint>(
+			"getDelayVariation",
+			"()I"
+		);
+	}
 	jint BluetoothHidDeviceAppQosSettings::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void BluetoothHidDeviceAppQosSettings::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -101,43 +149,8 @@ namespace __jni_impl::android::bluetooth
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jint BluetoothHidDeviceAppQosSettings::getServiceType()
-	{
-		return __thiz.callMethod<jint>(
-			"getServiceType",
-			"()I");
-	}
-	jint BluetoothHidDeviceAppQosSettings::getTokenRate()
-	{
-		return __thiz.callMethod<jint>(
-			"getTokenRate",
-			"()I");
-	}
-	jint BluetoothHidDeviceAppQosSettings::getTokenBucketSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getTokenBucketSize",
-			"()I");
-	}
-	jint BluetoothHidDeviceAppQosSettings::getPeakBandwidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getPeakBandwidth",
-			"()I");
-	}
-	jint BluetoothHidDeviceAppQosSettings::getLatency()
-	{
-		return __thiz.callMethod<jint>(
-			"getLatency",
-			"()I");
-	}
-	jint BluetoothHidDeviceAppQosSettings::getDelayVariation()
-	{
-		return __thiz.callMethod<jint>(
-			"getDelayVariation",
-			"()I");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

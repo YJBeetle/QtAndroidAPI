@@ -37,7 +37,7 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::net
 
@@ -60,11 +60,12 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject SocketImpl::toString()
+	jstring SocketImpl::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

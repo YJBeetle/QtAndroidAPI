@@ -46,7 +46,8 @@ namespace __jni_impl::android::database
 		return __thiz.callObjectMethod(
 			"add",
 			"(Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MatrixCursor_RowBuilder::add(jstring arg0, jobject arg1)
 	{
@@ -54,7 +55,8 @@ namespace __jni_impl::android::database
 			"add",
 			"(Ljava/lang/String;Ljava/lang/Object;)Landroid/database/MatrixCursor$RowBuilder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::database
 

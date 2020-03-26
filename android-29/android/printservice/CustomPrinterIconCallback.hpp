@@ -45,7 +45,8 @@ namespace __jni_impl::android::printservice
 		return __thiz.callMethod<jboolean>(
 			"onCustomPrinterIconLoaded",
 			"(Landroid/graphics/drawable/Icon;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::printservice
 

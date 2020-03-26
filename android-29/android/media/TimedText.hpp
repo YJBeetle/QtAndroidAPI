@@ -26,7 +26,7 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject getBounds();
-		QAndroidJniObject getText();
+		jstring getText();
 	};
 } // namespace __jni_impl::android::media
 
@@ -50,13 +50,15 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"getBounds",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
-	QAndroidJniObject TimedText::getText()
+	jstring TimedText::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

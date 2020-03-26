@@ -29,12 +29,14 @@ namespace __jni_impl::android::view::animation
 	jint Animation_Description::type()
 	{
 		return __thiz.getField<jint>(
-			"type");
+			"type"
+		);
 	}
 	jfloat Animation_Description::value()
 	{
 		return __thiz.getField<jfloat>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

@@ -58,7 +58,7 @@ namespace __jni_impl::android::icu::util
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
 		
 		// Methods
-		QAndroidJniObject getType();
+		jstring getType();
 		void setCalculationType(__jni_impl::android::icu::util::IslamicCalendar_CalculationType arg0);
 		QAndroidJniObject getCalculationType();
 	};
@@ -77,73 +77,85 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"DHU_AL_HIJJAH");
+			"DHU_AL_HIJJAH"
+		);
 	}
 	jint IslamicCalendar::DHU_AL_QIDAH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"DHU_AL_QIDAH");
+			"DHU_AL_QIDAH"
+		);
 	}
 	jint IslamicCalendar::JUMADA_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"JUMADA_1");
+			"JUMADA_1"
+		);
 	}
 	jint IslamicCalendar::JUMADA_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"JUMADA_2");
+			"JUMADA_2"
+		);
 	}
 	jint IslamicCalendar::MUHARRAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"MUHARRAM");
+			"MUHARRAM"
+		);
 	}
 	jint IslamicCalendar::RABI_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"RABI_1");
+			"RABI_1"
+		);
 	}
 	jint IslamicCalendar::RABI_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"RABI_2");
+			"RABI_2"
+		);
 	}
 	jint IslamicCalendar::RAJAB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"RAJAB");
+			"RAJAB"
+		);
 	}
 	jint IslamicCalendar::RAMADAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"RAMADAN");
+			"RAMADAN"
+		);
 	}
 	jint IslamicCalendar::SAFAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"SAFAR");
+			"SAFAR"
+		);
 	}
 	jint IslamicCalendar::SHABAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"SHABAN");
+			"SHABAN"
+		);
 	}
 	jint IslamicCalendar::SHAWWAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IslamicCalendar",
-			"SHAWWAL");
+			"SHAWWAL"
+		);
 	}
 	
 	// Constructors
@@ -220,24 +232,27 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject IslamicCalendar::getType()
+	jstring IslamicCalendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void IslamicCalendar::setCalculationType(__jni_impl::android::icu::util::IslamicCalendar_CalculationType arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCalculationType",
 			"(Landroid/icu/util/IslamicCalendar$CalculationType;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject IslamicCalendar::getCalculationType()
 	{
 		return __thiz.callObjectMethod(
 			"getCalculationType",
-			"()Landroid/icu/util/IslamicCalendar$CalculationType;");
+			"()Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

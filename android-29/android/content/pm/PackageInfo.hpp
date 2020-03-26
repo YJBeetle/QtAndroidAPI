@@ -29,43 +29,43 @@ namespace __jni_impl::android::content::pm
 		static jint INSTALL_LOCATION_INTERNAL_ONLY();
 		static jint INSTALL_LOCATION_PREFER_EXTERNAL();
 		static jint REQUESTED_PERMISSION_GRANTED();
-		QAndroidJniObject activities();
+		jarray activities();
 		QAndroidJniObject applicationInfo();
 		jint baseRevisionCode();
-		QAndroidJniObject configPreferences();
-		QAndroidJniObject featureGroups();
+		jarray configPreferences();
+		jarray featureGroups();
 		jlong firstInstallTime();
-		QAndroidJniObject gids();
+		jintArray gids();
 		jint installLocation();
-		QAndroidJniObject instrumentation();
+		jarray instrumentation();
 		jboolean isApex();
 		jlong lastUpdateTime();
-		QAndroidJniObject packageName();
-		QAndroidJniObject permissions();
-		QAndroidJniObject providers();
-		QAndroidJniObject receivers();
-		QAndroidJniObject reqFeatures();
-		QAndroidJniObject requestedPermissions();
-		QAndroidJniObject requestedPermissionsFlags();
-		QAndroidJniObject services();
-		QAndroidJniObject sharedUserId();
+		jstring packageName();
+		jarray permissions();
+		jarray providers();
+		jarray receivers();
+		jarray reqFeatures();
+		jarray requestedPermissions();
+		jintArray requestedPermissionsFlags();
+		jarray services();
+		jstring sharedUserId();
 		jint sharedUserLabel();
-		QAndroidJniObject signatures();
+		jarray signatures();
 		QAndroidJniObject signingInfo();
-		QAndroidJniObject splitNames();
-		QAndroidJniObject splitRevisionCodes();
+		jarray splitNames();
+		jintArray splitRevisionCodes();
 		jint versionCode();
-		QAndroidJniObject versionName();
+		jstring versionName();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring toString();
 		jlong getLongVersionCode();
 		void setLongVersionCode(jlong arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -81,186 +81,218 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.PackageInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint PackageInfo::INSTALL_LOCATION_AUTO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PackageInfo",
-			"INSTALL_LOCATION_AUTO");
+			"INSTALL_LOCATION_AUTO"
+		);
 	}
 	jint PackageInfo::INSTALL_LOCATION_INTERNAL_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PackageInfo",
-			"INSTALL_LOCATION_INTERNAL_ONLY");
+			"INSTALL_LOCATION_INTERNAL_ONLY"
+		);
 	}
 	jint PackageInfo::INSTALL_LOCATION_PREFER_EXTERNAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PackageInfo",
-			"INSTALL_LOCATION_PREFER_EXTERNAL");
+			"INSTALL_LOCATION_PREFER_EXTERNAL"
+		);
 	}
 	jint PackageInfo::REQUESTED_PERMISSION_GRANTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PackageInfo",
-			"REQUESTED_PERMISSION_GRANTED");
+			"REQUESTED_PERMISSION_GRANTED"
+		);
 	}
-	QAndroidJniObject PackageInfo::activities()
+	jarray PackageInfo::activities()
 	{
 		return __thiz.getObjectField(
 			"activities",
-			"[Landroid/content/pm/ActivityInfo;");
+			"[Landroid/content/pm/ActivityInfo;"
+		).object<jarray>();
 	}
 	QAndroidJniObject PackageInfo::applicationInfo()
 	{
 		return __thiz.getObjectField(
 			"applicationInfo",
-			"Landroid/content/pm/ApplicationInfo;");
+			"Landroid/content/pm/ApplicationInfo;"
+		);
 	}
 	jint PackageInfo::baseRevisionCode()
 	{
 		return __thiz.getField<jint>(
-			"baseRevisionCode");
+			"baseRevisionCode"
+		);
 	}
-	QAndroidJniObject PackageInfo::configPreferences()
+	jarray PackageInfo::configPreferences()
 	{
 		return __thiz.getObjectField(
 			"configPreferences",
-			"[Landroid/content/pm/ConfigurationInfo;");
+			"[Landroid/content/pm/ConfigurationInfo;"
+		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::featureGroups()
+	jarray PackageInfo::featureGroups()
 	{
 		return __thiz.getObjectField(
 			"featureGroups",
-			"[Landroid/content/pm/FeatureGroupInfo;");
+			"[Landroid/content/pm/FeatureGroupInfo;"
+		).object<jarray>();
 	}
 	jlong PackageInfo::firstInstallTime()
 	{
 		return __thiz.getField<jlong>(
-			"firstInstallTime");
+			"firstInstallTime"
+		);
 	}
-	QAndroidJniObject PackageInfo::gids()
+	jintArray PackageInfo::gids()
 	{
 		return __thiz.getObjectField(
 			"gids",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
 	jint PackageInfo::installLocation()
 	{
 		return __thiz.getField<jint>(
-			"installLocation");
+			"installLocation"
+		);
 	}
-	QAndroidJniObject PackageInfo::instrumentation()
+	jarray PackageInfo::instrumentation()
 	{
 		return __thiz.getObjectField(
 			"instrumentation",
-			"[Landroid/content/pm/InstrumentationInfo;");
+			"[Landroid/content/pm/InstrumentationInfo;"
+		).object<jarray>();
 	}
 	jboolean PackageInfo::isApex()
 	{
 		return __thiz.getField<jboolean>(
-			"isApex");
+			"isApex"
+		);
 	}
 	jlong PackageInfo::lastUpdateTime()
 	{
 		return __thiz.getField<jlong>(
-			"lastUpdateTime");
+			"lastUpdateTime"
+		);
 	}
-	QAndroidJniObject PackageInfo::packageName()
+	jstring PackageInfo::packageName()
 	{
 		return __thiz.getObjectField(
 			"packageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PackageInfo::permissions()
+	jarray PackageInfo::permissions()
 	{
 		return __thiz.getObjectField(
 			"permissions",
-			"[Landroid/content/pm/PermissionInfo;");
+			"[Landroid/content/pm/PermissionInfo;"
+		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::providers()
+	jarray PackageInfo::providers()
 	{
 		return __thiz.getObjectField(
 			"providers",
-			"[Landroid/content/pm/ProviderInfo;");
+			"[Landroid/content/pm/ProviderInfo;"
+		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::receivers()
+	jarray PackageInfo::receivers()
 	{
 		return __thiz.getObjectField(
 			"receivers",
-			"[Landroid/content/pm/ActivityInfo;");
+			"[Landroid/content/pm/ActivityInfo;"
+		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::reqFeatures()
+	jarray PackageInfo::reqFeatures()
 	{
 		return __thiz.getObjectField(
 			"reqFeatures",
-			"[Landroid/content/pm/FeatureInfo;");
+			"[Landroid/content/pm/FeatureInfo;"
+		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::requestedPermissions()
+	jarray PackageInfo::requestedPermissions()
 	{
 		return __thiz.getObjectField(
 			"requestedPermissions",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::requestedPermissionsFlags()
+	jintArray PackageInfo::requestedPermissionsFlags()
 	{
 		return __thiz.getObjectField(
 			"requestedPermissionsFlags",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject PackageInfo::services()
+	jarray PackageInfo::services()
 	{
 		return __thiz.getObjectField(
 			"services",
-			"[Landroid/content/pm/ServiceInfo;");
+			"[Landroid/content/pm/ServiceInfo;"
+		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::sharedUserId()
+	jstring PackageInfo::sharedUserId()
 	{
 		return __thiz.getObjectField(
 			"sharedUserId",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PackageInfo::sharedUserLabel()
 	{
 		return __thiz.getField<jint>(
-			"sharedUserLabel");
+			"sharedUserLabel"
+		);
 	}
-	QAndroidJniObject PackageInfo::signatures()
+	jarray PackageInfo::signatures()
 	{
 		return __thiz.getObjectField(
 			"signatures",
-			"[Landroid/content/pm/Signature;");
+			"[Landroid/content/pm/Signature;"
+		).object<jarray>();
 	}
 	QAndroidJniObject PackageInfo::signingInfo()
 	{
 		return __thiz.getObjectField(
 			"signingInfo",
-			"Landroid/content/pm/SigningInfo;");
+			"Landroid/content/pm/SigningInfo;"
+		);
 	}
-	QAndroidJniObject PackageInfo::splitNames()
+	jarray PackageInfo::splitNames()
 	{
 		return __thiz.getObjectField(
 			"splitNames",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject PackageInfo::splitRevisionCodes()
+	jintArray PackageInfo::splitRevisionCodes()
 	{
 		return __thiz.getObjectField(
 			"splitRevisionCodes",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
 	jint PackageInfo::versionCode()
 	{
 		return __thiz.getField<jint>(
-			"versionCode");
+			"versionCode"
+		);
 	}
-	QAndroidJniObject PackageInfo::versionName()
+	jstring PackageInfo::versionName()
 	{
 		return __thiz.getObjectField(
 			"versionName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -272,17 +304,34 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject PackageInfo::toString()
+	jstring PackageInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jlong PackageInfo::getLongVersionCode()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLongVersionCode",
+			"()J"
+		);
+	}
+	void PackageInfo::setLongVersionCode(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLongVersionCode",
+			"(J)V",
+			arg0
+		);
 	}
 	jint PackageInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PackageInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -290,20 +339,8 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jlong PackageInfo::getLongVersionCode()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLongVersionCode",
-			"()J");
-	}
-	void PackageInfo::setLongVersionCode(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLongVersionCode",
-			"(J)V",
-			arg0);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

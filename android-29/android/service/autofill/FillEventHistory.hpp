@@ -26,11 +26,11 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getClientState();
+		jstring toString();
 		QAndroidJniObject getEvents();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getClientState();
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -45,7 +45,8 @@ namespace __jni_impl::android::service::autofill
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.FillEventHistory",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -57,29 +58,26 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject FillEventHistory::toString()
+	jstring FillEventHistory::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject FillEventHistory::getClientState()
-	{
-		return __thiz.callObjectMethod(
-			"getClientState",
-			"()Landroid/os/Bundle;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject FillEventHistory::getEvents()
 	{
 		return __thiz.callObjectMethod(
 			"getEvents",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jint FillEventHistory::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void FillEventHistory::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -87,7 +85,15 @@ namespace __jni_impl::android::service::autofill
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject FillEventHistory::getClientState()
+	{
+		return __thiz.callObjectMethod(
+			"getClientState",
+			"()Landroid/os/Bundle;"
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

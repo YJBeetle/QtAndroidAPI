@@ -96,14 +96,16 @@ namespace __jni_impl::java::io
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void FileOutputStream::write(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void FileOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -112,25 +114,29 @@ namespace __jni_impl::java::io
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void FileOutputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject FileOutputStream::getFD()
 	{
 		return __thiz.callObjectMethod(
 			"getFD",
-			"()Ljava/io/FileDescriptor;");
+			"()Ljava/io/FileDescriptor;"
+		);
 	}
 	QAndroidJniObject FileOutputStream::getChannel()
 	{
 		return __thiz.callObjectMethod(
 			"getChannel",
-			"()Ljava/nio/channels/FileChannel;");
+			"()Ljava/nio/channels/FileChannel;"
+		);
 	}
 } // namespace __jni_impl::java::io
 

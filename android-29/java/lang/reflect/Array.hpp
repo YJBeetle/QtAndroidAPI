@@ -17,7 +17,7 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject get(jobject arg0, jint arg1);
+		static jobject get(jobject arg0, jint arg1);
 		static jint getLength(jobject arg0);
 		static jboolean getBoolean(jobject arg0, jint arg1);
 		static jbyte getByte(jobject arg0, jint arg1);
@@ -27,8 +27,8 @@ namespace __jni_impl::java::lang::reflect
 		static jlong getLong(jobject arg0, jint arg1);
 		static jfloat getFloat(jobject arg0, jint arg1);
 		static jdouble getDouble(jobject arg0, jint arg1);
-		static QAndroidJniObject newInstance(jclass arg0, jint arg1);
-		static QAndroidJniObject newInstance(jclass arg0, jintArray arg1);
+		static jobject newInstance(jclass arg0, jint arg1);
+		static jobject newInstance(jclass arg0, jintArray arg1);
 		static void set(jobject arg0, jint arg1, jobject arg2);
 		static void setBoolean(jobject arg0, jint arg1, jboolean arg2);
 		static void setByte(jobject arg0, jint arg1, jbyte arg2);
@@ -55,14 +55,15 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	QAndroidJniObject Array::get(jobject arg0, jint arg1)
+	jobject Array::get(jobject arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.reflect.Array",
 			"get",
 			"(Ljava/lang/Object;I)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	jint Array::getLength(jobject arg0)
 	{
@@ -70,7 +71,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Array",
 			"getLength",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Array::getBoolean(jobject arg0, jint arg1)
 	{
@@ -79,7 +81,8 @@ namespace __jni_impl::java::lang::reflect
 			"getBoolean",
 			"(Ljava/lang/Object;I)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jbyte Array::getByte(jobject arg0, jint arg1)
 	{
@@ -88,7 +91,8 @@ namespace __jni_impl::java::lang::reflect
 			"getByte",
 			"(Ljava/lang/Object;I)B",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jshort Array::getShort(jobject arg0, jint arg1)
 	{
@@ -97,7 +101,8 @@ namespace __jni_impl::java::lang::reflect
 			"getShort",
 			"(Ljava/lang/Object;I)S",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jchar Array::getChar(jobject arg0, jint arg1)
 	{
@@ -106,7 +111,8 @@ namespace __jni_impl::java::lang::reflect
 			"getChar",
 			"(Ljava/lang/Object;I)C",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Array::getInt(jobject arg0, jint arg1)
 	{
@@ -115,7 +121,8 @@ namespace __jni_impl::java::lang::reflect
 			"getInt",
 			"(Ljava/lang/Object;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Array::getLong(jobject arg0, jint arg1)
 	{
@@ -124,7 +131,8 @@ namespace __jni_impl::java::lang::reflect
 			"getLong",
 			"(Ljava/lang/Object;I)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat Array::getFloat(jobject arg0, jint arg1)
 	{
@@ -133,7 +141,8 @@ namespace __jni_impl::java::lang::reflect
 			"getFloat",
 			"(Ljava/lang/Object;I)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Array::getDouble(jobject arg0, jint arg1)
 	{
@@ -142,25 +151,28 @@ namespace __jni_impl::java::lang::reflect
 			"getDouble",
 			"(Ljava/lang/Object;I)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Array::newInstance(jclass arg0, jint arg1)
+	jobject Array::newInstance(jclass arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.reflect.Array",
 			"newInstance",
 			"(Ljava/lang/Class;I)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject Array::newInstance(jclass arg0, jintArray arg1)
+	jobject Array::newInstance(jclass arg0, jintArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.reflect.Array",
 			"newInstance",
 			"(Ljava/lang/Class;[I)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	void Array::set(jobject arg0, jint arg1, jobject arg2)
 	{
@@ -170,7 +182,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Object;ILjava/lang/Object;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Array::setBoolean(jobject arg0, jint arg1, jboolean arg2)
 	{
@@ -180,7 +193,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Object;IZ)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Array::setByte(jobject arg0, jint arg1, jbyte arg2)
 	{
@@ -190,7 +204,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Object;IB)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Array::setChar(jobject arg0, jint arg1, jchar arg2)
 	{
@@ -200,7 +215,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Object;IC)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Array::setShort(jobject arg0, jint arg1, jshort arg2)
 	{
@@ -210,7 +226,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Object;IS)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Array::setInt(jobject arg0, jint arg1, jint arg2)
 	{
@@ -220,7 +237,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Object;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Array::setLong(jobject arg0, jint arg1, jlong arg2)
 	{
@@ -230,7 +248,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Object;IJ)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Array::setFloat(jobject arg0, jint arg1, jfloat arg2)
 	{
@@ -240,7 +259,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Object;IF)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Array::setDouble(jobject arg0, jint arg1, jdouble arg2)
 	{
@@ -250,7 +270,8 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Object;ID)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::java::lang::reflect
 

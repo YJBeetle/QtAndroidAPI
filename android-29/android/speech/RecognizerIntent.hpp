@@ -20,33 +20,33 @@ namespace __jni_impl::android::speech
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_GET_LANGUAGE_DETAILS();
-		static QAndroidJniObject ACTION_RECOGNIZE_SPEECH();
-		static QAndroidJniObject ACTION_VOICE_SEARCH_HANDS_FREE();
-		static QAndroidJniObject ACTION_WEB_SEARCH();
-		static QAndroidJniObject DETAILS_META_DATA();
-		static QAndroidJniObject EXTRA_CALLING_PACKAGE();
-		static QAndroidJniObject EXTRA_CONFIDENCE_SCORES();
-		static QAndroidJniObject EXTRA_LANGUAGE();
-		static QAndroidJniObject EXTRA_LANGUAGE_MODEL();
-		static QAndroidJniObject EXTRA_LANGUAGE_PREFERENCE();
-		static QAndroidJniObject EXTRA_MAX_RESULTS();
-		static QAndroidJniObject EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE();
-		static QAndroidJniObject EXTRA_ORIGIN();
-		static QAndroidJniObject EXTRA_PARTIAL_RESULTS();
-		static QAndroidJniObject EXTRA_PREFER_OFFLINE();
-		static QAndroidJniObject EXTRA_PROMPT();
-		static QAndroidJniObject EXTRA_RESULTS();
-		static QAndroidJniObject EXTRA_RESULTS_PENDINGINTENT();
-		static QAndroidJniObject EXTRA_RESULTS_PENDINGINTENT_BUNDLE();
-		static QAndroidJniObject EXTRA_SECURE();
-		static QAndroidJniObject EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS();
-		static QAndroidJniObject EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS();
-		static QAndroidJniObject EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS();
-		static QAndroidJniObject EXTRA_SUPPORTED_LANGUAGES();
-		static QAndroidJniObject EXTRA_WEB_SEARCH_ONLY();
-		static QAndroidJniObject LANGUAGE_MODEL_FREE_FORM();
-		static QAndroidJniObject LANGUAGE_MODEL_WEB_SEARCH();
+		static jstring ACTION_GET_LANGUAGE_DETAILS();
+		static jstring ACTION_RECOGNIZE_SPEECH();
+		static jstring ACTION_VOICE_SEARCH_HANDS_FREE();
+		static jstring ACTION_WEB_SEARCH();
+		static jstring DETAILS_META_DATA();
+		static jstring EXTRA_CALLING_PACKAGE();
+		static jstring EXTRA_CONFIDENCE_SCORES();
+		static jstring EXTRA_LANGUAGE();
+		static jstring EXTRA_LANGUAGE_MODEL();
+		static jstring EXTRA_LANGUAGE_PREFERENCE();
+		static jstring EXTRA_MAX_RESULTS();
+		static jstring EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE();
+		static jstring EXTRA_ORIGIN();
+		static jstring EXTRA_PARTIAL_RESULTS();
+		static jstring EXTRA_PREFER_OFFLINE();
+		static jstring EXTRA_PROMPT();
+		static jstring EXTRA_RESULTS();
+		static jstring EXTRA_RESULTS_PENDINGINTENT();
+		static jstring EXTRA_RESULTS_PENDINGINTENT_BUNDLE();
+		static jstring EXTRA_SECURE();
+		static jstring EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS();
+		static jstring EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS();
+		static jstring EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS();
+		static jstring EXTRA_SUPPORTED_LANGUAGES();
+		static jstring EXTRA_WEB_SEARCH_ONLY();
+		static jstring LANGUAGE_MODEL_FREE_FORM();
+		static jstring LANGUAGE_MODEL_WEB_SEARCH();
 		static jint RESULT_AUDIO_ERROR();
 		static jint RESULT_CLIENT_ERROR();
 		static jint RESULT_NETWORK_ERROR();
@@ -67,224 +67,256 @@ namespace __jni_impl::android::speech
 namespace __jni_impl::android::speech
 {
 	// Fields
-	QAndroidJniObject RecognizerIntent::ACTION_GET_LANGUAGE_DETAILS()
+	jstring RecognizerIntent::ACTION_GET_LANGUAGE_DETAILS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"ACTION_GET_LANGUAGE_DETAILS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::ACTION_RECOGNIZE_SPEECH()
+	jstring RecognizerIntent::ACTION_RECOGNIZE_SPEECH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"ACTION_RECOGNIZE_SPEECH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::ACTION_VOICE_SEARCH_HANDS_FREE()
+	jstring RecognizerIntent::ACTION_VOICE_SEARCH_HANDS_FREE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"ACTION_VOICE_SEARCH_HANDS_FREE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::ACTION_WEB_SEARCH()
+	jstring RecognizerIntent::ACTION_WEB_SEARCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"ACTION_WEB_SEARCH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::DETAILS_META_DATA()
+	jstring RecognizerIntent::DETAILS_META_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"DETAILS_META_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_CALLING_PACKAGE()
+	jstring RecognizerIntent::EXTRA_CALLING_PACKAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_CALLING_PACKAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_CONFIDENCE_SCORES()
+	jstring RecognizerIntent::EXTRA_CONFIDENCE_SCORES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_CONFIDENCE_SCORES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_LANGUAGE()
+	jstring RecognizerIntent::EXTRA_LANGUAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_LANGUAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_LANGUAGE_MODEL()
+	jstring RecognizerIntent::EXTRA_LANGUAGE_MODEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_LANGUAGE_MODEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_LANGUAGE_PREFERENCE()
+	jstring RecognizerIntent::EXTRA_LANGUAGE_PREFERENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_LANGUAGE_PREFERENCE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_MAX_RESULTS()
+	jstring RecognizerIntent::EXTRA_MAX_RESULTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_MAX_RESULTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE()
+	jstring RecognizerIntent::EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_ORIGIN()
+	jstring RecognizerIntent::EXTRA_ORIGIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_ORIGIN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_PARTIAL_RESULTS()
+	jstring RecognizerIntent::EXTRA_PARTIAL_RESULTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_PARTIAL_RESULTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_PREFER_OFFLINE()
+	jstring RecognizerIntent::EXTRA_PREFER_OFFLINE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_PREFER_OFFLINE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_PROMPT()
+	jstring RecognizerIntent::EXTRA_PROMPT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_PROMPT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_RESULTS()
+	jstring RecognizerIntent::EXTRA_RESULTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_RESULTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_RESULTS_PENDINGINTENT()
+	jstring RecognizerIntent::EXTRA_RESULTS_PENDINGINTENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_RESULTS_PENDINGINTENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_RESULTS_PENDINGINTENT_BUNDLE()
+	jstring RecognizerIntent::EXTRA_RESULTS_PENDINGINTENT_BUNDLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_RESULTS_PENDINGINTENT_BUNDLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_SECURE()
+	jstring RecognizerIntent::EXTRA_SECURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_SECURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS()
+	jstring RecognizerIntent::EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS()
+	jstring RecognizerIntent::EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_SPEECH_INPUT_MINIMUM_LENGTH_MILLIS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS()
+	jstring RecognizerIntent::EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_SUPPORTED_LANGUAGES()
+	jstring RecognizerIntent::EXTRA_SUPPORTED_LANGUAGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_SUPPORTED_LANGUAGES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::EXTRA_WEB_SEARCH_ONLY()
+	jstring RecognizerIntent::EXTRA_WEB_SEARCH_ONLY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"EXTRA_WEB_SEARCH_ONLY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::LANGUAGE_MODEL_FREE_FORM()
+	jstring RecognizerIntent::LANGUAGE_MODEL_FREE_FORM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"LANGUAGE_MODEL_FREE_FORM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RecognizerIntent::LANGUAGE_MODEL_WEB_SEARCH()
+	jstring RecognizerIntent::LANGUAGE_MODEL_WEB_SEARCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.RecognizerIntent",
 			"LANGUAGE_MODEL_WEB_SEARCH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint RecognizerIntent::RESULT_AUDIO_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.RecognizerIntent",
-			"RESULT_AUDIO_ERROR");
+			"RESULT_AUDIO_ERROR"
+		);
 	}
 	jint RecognizerIntent::RESULT_CLIENT_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.RecognizerIntent",
-			"RESULT_CLIENT_ERROR");
+			"RESULT_CLIENT_ERROR"
+		);
 	}
 	jint RecognizerIntent::RESULT_NETWORK_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.RecognizerIntent",
-			"RESULT_NETWORK_ERROR");
+			"RESULT_NETWORK_ERROR"
+		);
 	}
 	jint RecognizerIntent::RESULT_NO_MATCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.RecognizerIntent",
-			"RESULT_NO_MATCH");
+			"RESULT_NO_MATCH"
+		);
 	}
 	jint RecognizerIntent::RESULT_SERVER_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.RecognizerIntent",
-			"RESULT_SERVER_ERROR");
+			"RESULT_SERVER_ERROR"
+		);
 	}
 	
 	// Constructors
@@ -302,7 +334,8 @@ namespace __jni_impl::android::speech
 			"android.speech.RecognizerIntent",
 			"getVoiceDetailsIntent",
 			"(Landroid/content/Context;)Landroid/content/Intent;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::speech
 

@@ -80,13 +80,15 @@ namespace __jni_impl::java::io
 		return __thiz.callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0);
+			arg0
+		);
 	}
 	jint FileInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint FileInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -95,38 +97,44 @@ namespace __jni_impl::java::io
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void FileInputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jlong FileInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint FileInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject FileInputStream::getFD()
 	{
 		return __thiz.callObjectMethod(
 			"getFD",
-			"()Ljava/io/FileDescriptor;");
+			"()Ljava/io/FileDescriptor;"
+		);
 	}
 	QAndroidJniObject FileInputStream::getChannel()
 	{
 		return __thiz.callObjectMethod(
 			"getChannel",
-			"()Ljava/nio/channels/FileChannel;");
+			"()Ljava/nio/channels/FileChannel;"
+		);
 	}
 } // namespace __jni_impl::java::io
 

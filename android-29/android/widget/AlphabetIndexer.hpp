@@ -18,12 +18,12 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::__JniBaseClass arg0, jint arg1, jstring arg2);
 		
 		// Methods
-		void onChanged();
 		void onInvalidated();
-		jint getPositionForSection(jint arg0);
-		QAndroidJniObject getSections();
-		jint getSectionForPosition(jint arg0);
+		void onChanged();
 		void setCursor(__jni_impl::__JniBaseClass arg0);
+		jint getPositionForSection(jint arg0);
+		jobjectArray getSections();
+		jint getSectionForPosition(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -44,44 +44,50 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void AlphabetIndexer::onChanged()
-	{
-		__thiz.callMethod<void>(
-			"onChanged",
-			"()V");
-	}
 	void AlphabetIndexer::onInvalidated()
 	{
 		__thiz.callMethod<void>(
 			"onInvalidated",
-			"()V");
+			"()V"
+		);
 	}
-	jint AlphabetIndexer::getPositionForSection(jint arg0)
+	void AlphabetIndexer::onChanged()
 	{
-		return __thiz.callMethod<jint>(
-			"getPositionForSection",
-			"(I)I",
-			arg0);
-	}
-	QAndroidJniObject AlphabetIndexer::getSections()
-	{
-		return __thiz.callObjectMethod(
-			"getSections",
-			"()[Ljava/lang/Object;");
-	}
-	jint AlphabetIndexer::getSectionForPosition(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getSectionForPosition",
-			"(I)I",
-			arg0);
+		__thiz.callMethod<void>(
+			"onChanged",
+			"()V"
+		);
 	}
 	void AlphabetIndexer::setCursor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCursor",
 			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jint AlphabetIndexer::getPositionForSection(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getPositionForSection",
+			"(I)I",
+			arg0
+		);
+	}
+	jobjectArray AlphabetIndexer::getSections()
+	{
+		return __thiz.callObjectMethod(
+			"getSections",
+			"()[Ljava/lang/Object;"
+		).object<jobjectArray>();
+	}
+	jint AlphabetIndexer::getSectionForPosition(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getSectionForPosition",
+			"(I)I",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

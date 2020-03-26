@@ -19,7 +19,7 @@ namespace __jni_impl::android::hardware
 		jint accuracy();
 		QAndroidJniObject sensor();
 		jlong timestamp();
-		QAndroidJniObject values();
+		jfloatArray values();
 		
 		// Constructors
 		void __constructor();
@@ -36,24 +36,28 @@ namespace __jni_impl::android::hardware
 	jint SensorEvent::accuracy()
 	{
 		return __thiz.getField<jint>(
-			"accuracy");
+			"accuracy"
+		);
 	}
 	QAndroidJniObject SensorEvent::sensor()
 	{
 		return __thiz.getObjectField(
 			"sensor",
-			"Landroid/hardware/Sensor;");
+			"Landroid/hardware/Sensor;"
+		);
 	}
 	jlong SensorEvent::timestamp()
 	{
 		return __thiz.getField<jlong>(
-			"timestamp");
+			"timestamp"
+		);
 	}
-	QAndroidJniObject SensorEvent::values()
+	jfloatArray SensorEvent::values()
 	{
 		return __thiz.getObjectField(
 			"values",
-			"[F");
+			"[F"
+		).object<jfloatArray>();
 	}
 	
 	// Constructors

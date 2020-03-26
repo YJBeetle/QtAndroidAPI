@@ -26,8 +26,8 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::graphics::MaskFilter arg0);
 		
 		// Methods
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		QAndroidJniObject getMaskFilter();
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -48,18 +48,20 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
+	QAndroidJniObject MaskFilterSpan::getMaskFilter()
+	{
+		return __thiz.callObjectMethod(
+			"getMaskFilter",
+			"()Landroid/graphics/MaskFilter;"
+		);
+	}
 	void MaskFilterSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject MaskFilterSpan::getMaskFilter()
-	{
-		return __thiz.callObjectMethod(
-			"getMaskFilter",
-			"()Landroid/graphics/MaskFilter;");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

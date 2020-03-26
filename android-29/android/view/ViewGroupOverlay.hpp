@@ -52,14 +52,16 @@ namespace __jni_impl::android::view
 		__thiz.callMethod<void>(
 			"add",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ViewGroupOverlay::remove(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"remove",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

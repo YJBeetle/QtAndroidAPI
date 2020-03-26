@@ -58,7 +58,8 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint CharArrayReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -67,45 +68,52 @@ namespace __jni_impl::java::io
 			"([CII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void CharArrayReader::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void CharArrayReader::mark(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"mark",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong CharArrayReader::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CharArrayReader::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	void CharArrayReader::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean CharArrayReader::ready()
 	{
 		return __thiz.callMethod<jboolean>(
 			"ready",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::io
 

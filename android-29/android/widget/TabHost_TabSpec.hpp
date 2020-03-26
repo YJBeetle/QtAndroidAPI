@@ -33,7 +33,7 @@ namespace __jni_impl::android::widget
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getTag();
+		jstring getTag();
 		QAndroidJniObject setIndicator(jstring arg0);
 		QAndroidJniObject setIndicator(__jni_impl::android::view::View arg0);
 		QAndroidJniObject setIndicator(jstring arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
@@ -61,25 +61,28 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject TabHost_TabSpec::getTag()
+	jstring TabHost_TabSpec::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject TabHost_TabSpec::setIndicator(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIndicator",
 			"(Ljava/lang/CharSequence;)Landroid/widget/TabHost$TabSpec;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TabHost_TabSpec::setIndicator(__jni_impl::android::view::View arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIndicator",
 			"(Landroid/view/View;)Landroid/widget/TabHost$TabSpec;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TabHost_TabSpec::setIndicator(jstring arg0, __jni_impl::android::graphics::drawable::Drawable arg1)
 	{
@@ -87,28 +90,32 @@ namespace __jni_impl::android::widget
 			"setIndicator",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Landroid/widget/TabHost$TabSpec;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TabHost_TabSpec::setContent(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setContent",
 			"(I)Landroid/widget/TabHost$TabSpec;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TabHost_TabSpec::setContent(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setContent",
 			"(Landroid/content/Intent;)Landroid/widget/TabHost$TabSpec;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TabHost_TabSpec::setContent(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setContent",
 			"(Landroid/widget/TabHost$TabContentFactory;)Landroid/widget/TabHost$TabSpec;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::widget
 

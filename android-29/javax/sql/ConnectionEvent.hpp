@@ -55,7 +55,8 @@ namespace __jni_impl::javax::sql
 	{
 		return __thiz.callObjectMethod(
 			"getSQLException",
-			"()Ljava/sql/SQLException;");
+			"()Ljava/sql/SQLException;"
+		);
 	}
 } // namespace __jni_impl::javax::sql
 

@@ -45,7 +45,7 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject iterator();
 		QAndroidJniObject stream();
 		static QAndroidJniObject load(jclass arg0, __jni_impl::java::lang::ClassLoader arg1);
@@ -78,23 +78,26 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject ServiceLoader::toString()
+	jstring ServiceLoader::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ServiceLoader::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	QAndroidJniObject ServiceLoader::stream()
 	{
 		return __thiz.callObjectMethod(
 			"stream",
-			"()Ljava/util/stream/Stream;");
+			"()Ljava/util/stream/Stream;"
+		);
 	}
 	QAndroidJniObject ServiceLoader::load(jclass arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
@@ -103,7 +106,8 @@ namespace __jni_impl::java::util
 			"load",
 			"(Ljava/lang/Class;Ljava/lang/ClassLoader;)Ljava/util/ServiceLoader;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ServiceLoader::load(jclass arg0)
 	{
@@ -111,7 +115,8 @@ namespace __jni_impl::java::util
 			"java.util.ServiceLoader",
 			"load",
 			"(Ljava/lang/Class;)Ljava/util/ServiceLoader;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ServiceLoader::load(__jni_impl::__JniBaseClass arg0, jclass arg1)
 	{
@@ -120,7 +125,8 @@ namespace __jni_impl::java::util
 			"load",
 			"(Ljava/lang/ModuleLayer;Ljava/lang/Class;)Ljava/util/ServiceLoader;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ServiceLoader::loadInstalled(jclass arg0)
 	{
@@ -128,19 +134,22 @@ namespace __jni_impl::java::util
 			"java.util.ServiceLoader",
 			"loadInstalled",
 			"(Ljava/lang/Class;)Ljava/util/ServiceLoader;",
-			arg0);
+			arg0
+		);
 	}
 	void ServiceLoader::reload()
 	{
 		__thiz.callMethod<void>(
 			"reload",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject ServiceLoader::findFirst()
 	{
 		return __thiz.callObjectMethod(
 			"findFirst",
-			"()Ljava/util/Optional;");
+			"()Ljava/util/Optional;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

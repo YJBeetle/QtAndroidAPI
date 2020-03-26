@@ -40,23 +40,23 @@ namespace __jni_impl::javax::net::ssl
 		QAndroidJniObject unwrap(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		QAndroidJniObject unwrap(__jni_impl::java::nio::ByteBuffer arg0, jarray arg1);
 		QAndroidJniObject getSession();
-		QAndroidJniObject getEnabledCipherSuites();
-		QAndroidJniObject getEnabledProtocols();
+		jarray getEnabledCipherSuites();
+		jarray getEnabledProtocols();
 		jboolean getNeedClientAuth();
 		void setNeedClientAuth(jboolean arg0);
 		jboolean getWantClientAuth();
 		void setWantClientAuth(jboolean arg0);
 		void setEnabledCipherSuites(jarray arg0);
 		void setEnabledProtocols(jarray arg0);
-		QAndroidJniObject getPeerHost();
+		jstring getPeerHost();
 		jint getPeerPort();
 		QAndroidJniObject getDelegatedTask();
 		void closeInbound();
 		jboolean isInboundDone();
 		void closeOutbound();
 		jboolean isOutboundDone();
-		QAndroidJniObject getSupportedCipherSuites();
-		QAndroidJniObject getSupportedProtocols();
+		jarray getSupportedCipherSuites();
+		jarray getSupportedProtocols();
 		QAndroidJniObject getHandshakeSession();
 		void beginHandshake();
 		QAndroidJniObject getHandshakeStatus();
@@ -66,8 +66,8 @@ namespace __jni_impl::javax::net::ssl
 		jboolean getEnableSessionCreation();
 		QAndroidJniObject getSSLParameters();
 		void setSSLParameters(__jni_impl::javax::net::ssl::SSLParameters arg0);
-		QAndroidJniObject getApplicationProtocol();
-		QAndroidJniObject getHandshakeApplicationProtocol();
+		jstring getApplicationProtocol();
+		jstring getHandshakeApplicationProtocol();
 		void setHandshakeApplicationProtocolSelector(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getHandshakeApplicationProtocolSelector();
 	};
@@ -97,7 +97,8 @@ namespace __jni_impl::javax::net::ssl
 			"wrap",
 			"([Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SSLEngine::wrap(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1)
 	{
@@ -105,7 +106,8 @@ namespace __jni_impl::javax::net::ssl
 			"wrap",
 			"(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SSLEngine::wrap(jarray arg0, jint arg1, jint arg2, __jni_impl::java::nio::ByteBuffer arg3)
 	{
@@ -115,7 +117,8 @@ namespace __jni_impl::javax::net::ssl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SSLEngine::unwrap(__jni_impl::java::nio::ByteBuffer arg0, jarray arg1, jint arg2, jint arg3)
 	{
@@ -125,7 +128,8 @@ namespace __jni_impl::javax::net::ssl
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject SSLEngine::unwrap(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1)
 	{
@@ -133,7 +137,8 @@ namespace __jni_impl::javax::net::ssl
 			"unwrap",
 			"(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SSLEngine::unwrap(__jni_impl::java::nio::ByteBuffer arg0, jarray arg1)
 	{
@@ -141,201 +146,233 @@ namespace __jni_impl::javax::net::ssl
 			"unwrap",
 			"(Ljava/nio/ByteBuffer;[Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SSLEngine::getSession()
 	{
 		return __thiz.callObjectMethod(
 			"getSession",
-			"()Ljavax/net/ssl/SSLSession;");
+			"()Ljavax/net/ssl/SSLSession;"
+		);
 	}
-	QAndroidJniObject SSLEngine::getEnabledCipherSuites()
+	jarray SSLEngine::getEnabledCipherSuites()
 	{
 		return __thiz.callObjectMethod(
 			"getEnabledCipherSuites",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject SSLEngine::getEnabledProtocols()
+	jarray SSLEngine::getEnabledProtocols()
 	{
 		return __thiz.callObjectMethod(
 			"getEnabledProtocols",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jboolean SSLEngine::getNeedClientAuth()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getNeedClientAuth",
-			"()Z");
+			"()Z"
+		);
 	}
 	void SSLEngine::setNeedClientAuth(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNeedClientAuth",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SSLEngine::getWantClientAuth()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getWantClientAuth",
-			"()Z");
+			"()Z"
+		);
 	}
 	void SSLEngine::setWantClientAuth(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWantClientAuth",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void SSLEngine::setEnabledCipherSuites(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEnabledCipherSuites",
 			"([Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SSLEngine::setEnabledProtocols(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEnabledProtocols",
 			"([Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SSLEngine::getPeerHost()
+	jstring SSLEngine::getPeerHost()
 	{
 		return __thiz.callObjectMethod(
 			"getPeerHost",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SSLEngine::getPeerPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getPeerPort",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SSLEngine::getDelegatedTask()
 	{
 		return __thiz.callObjectMethod(
 			"getDelegatedTask",
-			"()Ljava/lang/Runnable;");
+			"()Ljava/lang/Runnable;"
+		);
 	}
 	void SSLEngine::closeInbound()
 	{
 		__thiz.callMethod<void>(
 			"closeInbound",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean SSLEngine::isInboundDone()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInboundDone",
-			"()Z");
+			"()Z"
+		);
 	}
 	void SSLEngine::closeOutbound()
 	{
 		__thiz.callMethod<void>(
 			"closeOutbound",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean SSLEngine::isOutboundDone()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOutboundDone",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject SSLEngine::getSupportedCipherSuites()
+	jarray SSLEngine::getSupportedCipherSuites()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedCipherSuites",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject SSLEngine::getSupportedProtocols()
+	jarray SSLEngine::getSupportedProtocols()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedProtocols",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject SSLEngine::getHandshakeSession()
 	{
 		return __thiz.callObjectMethod(
 			"getHandshakeSession",
-			"()Ljavax/net/ssl/SSLSession;");
+			"()Ljavax/net/ssl/SSLSession;"
+		);
 	}
 	void SSLEngine::beginHandshake()
 	{
 		__thiz.callMethod<void>(
 			"beginHandshake",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject SSLEngine::getHandshakeStatus()
 	{
 		return __thiz.callObjectMethod(
 			"getHandshakeStatus",
-			"()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;");
+			"()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
+		);
 	}
 	void SSLEngine::setUseClientMode(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setUseClientMode",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SSLEngine::getUseClientMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getUseClientMode",
-			"()Z");
+			"()Z"
+		);
 	}
 	void SSLEngine::setEnableSessionCreation(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEnableSessionCreation",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SSLEngine::getEnableSessionCreation()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getEnableSessionCreation",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject SSLEngine::getSSLParameters()
 	{
 		return __thiz.callObjectMethod(
 			"getSSLParameters",
-			"()Ljavax/net/ssl/SSLParameters;");
+			"()Ljavax/net/ssl/SSLParameters;"
+		);
 	}
 	void SSLEngine::setSSLParameters(__jni_impl::javax::net::ssl::SSLParameters arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSSLParameters",
 			"(Ljavax/net/ssl/SSLParameters;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject SSLEngine::getApplicationProtocol()
+	jstring SSLEngine::getApplicationProtocol()
 	{
 		return __thiz.callObjectMethod(
 			"getApplicationProtocol",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SSLEngine::getHandshakeApplicationProtocol()
+	jstring SSLEngine::getHandshakeApplicationProtocol()
 	{
 		return __thiz.callObjectMethod(
 			"getHandshakeApplicationProtocol",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SSLEngine::setHandshakeApplicationProtocolSelector(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHandshakeApplicationProtocolSelector",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SSLEngine::getHandshakeApplicationProtocolSelector()
 	{
 		return __thiz.callObjectMethod(
 			"getHandshakeApplicationProtocolSelector",
-			"()Ljava/util/function/BiFunction;");
+			"()Ljava/util/function/BiFunction;"
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

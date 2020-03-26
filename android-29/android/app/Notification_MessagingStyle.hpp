@@ -29,17 +29,17 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject getUser();
-		QAndroidJniObject getMessages();
-		QAndroidJniObject addMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0);
-		QAndroidJniObject addMessage(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2);
-		QAndroidJniObject addMessage(jstring arg0, jlong arg1, jstring arg2);
-		QAndroidJniObject getUserDisplayName();
+		jstring getUserDisplayName();
 		QAndroidJniObject setConversationTitle(jstring arg0);
-		QAndroidJniObject getConversationTitle();
+		jstring getConversationTitle();
 		QAndroidJniObject addHistoricMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0);
 		QAndroidJniObject getHistoricMessages();
 		QAndroidJniObject setGroupConversation(jboolean arg0);
 		jboolean isGroupConversation();
+		QAndroidJniObject getMessages();
+		QAndroidJniObject addMessage(jstring arg0, jlong arg1, jstring arg2);
+		QAndroidJniObject addMessage(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2);
+		QAndroidJniObject addMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -53,7 +53,8 @@ namespace __jni_impl::android::app
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$MessagingStyle",
-			"MAXIMUM_RETAINED_MESSAGES");
+			"MAXIMUM_RETAINED_MESSAGES"
+		);
 	}
 	
 	// Constructors
@@ -77,29 +78,67 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"getUser",
-			"()Landroid/app/Person;");
+			"()Landroid/app/Person;"
+		);
+	}
+	jstring Notification_MessagingStyle::getUserDisplayName()
+	{
+		return __thiz.callObjectMethod(
+			"getUserDisplayName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Notification_MessagingStyle::setConversationTitle(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setConversationTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;",
+			arg0
+		);
+	}
+	jstring Notification_MessagingStyle::getConversationTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getConversationTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Notification_MessagingStyle::addHistoricMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addHistoricMessage",
+			"(Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Notification_MessagingStyle::getHistoricMessages()
+	{
+		return __thiz.callObjectMethod(
+			"getHistoricMessages",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject Notification_MessagingStyle::setGroupConversation(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setGroupConversation",
+			"(Z)Landroid/app/Notification$MessagingStyle;",
+			arg0
+		);
+	}
+	jboolean Notification_MessagingStyle::isGroupConversation()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isGroupConversation",
+			"()Z"
+		);
 	}
 	QAndroidJniObject Notification_MessagingStyle::getMessages()
 	{
 		return __thiz.callObjectMethod(
 			"getMessages",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject Notification_MessagingStyle::addMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addMessage",
-			"(Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Notification_MessagingStyle::addMessage(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2)
-	{
-		return __thiz.callObjectMethod(
-			"addMessage",
-			"(Ljava/lang/CharSequence;JLandroid/app/Person;)Landroid/app/Notification$MessagingStyle;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject Notification_MessagingStyle::addMessage(jstring arg0, jlong arg1, jstring arg2)
 	{
@@ -108,52 +147,26 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject Notification_MessagingStyle::getUserDisplayName()
+	QAndroidJniObject Notification_MessagingStyle::addMessage(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2)
 	{
 		return __thiz.callObjectMethod(
-			"getUserDisplayName",
-			"()Ljava/lang/CharSequence;");
+			"addMessage",
+			"(Ljava/lang/CharSequence;JLandroid/app/Person;)Landroid/app/Notification$MessagingStyle;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Notification_MessagingStyle::setConversationTitle(jstring arg0)
+	QAndroidJniObject Notification_MessagingStyle::addMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setConversationTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;",
-			arg0);
-	}
-	QAndroidJniObject Notification_MessagingStyle::getConversationTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getConversationTitle",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject Notification_MessagingStyle::addHistoricMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addHistoricMessage",
+			"addMessage",
 			"(Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Notification_MessagingStyle::getHistoricMessages()
-	{
-		return __thiz.callObjectMethod(
-			"getHistoricMessages",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject Notification_MessagingStyle::setGroupConversation(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setGroupConversation",
-			"(Z)Landroid/app/Notification$MessagingStyle;",
-			arg0);
-	}
-	jboolean Notification_MessagingStyle::isGroupConversation()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isGroupConversation",
-			"()Z");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

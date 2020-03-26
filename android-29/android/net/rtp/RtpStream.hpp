@@ -28,11 +28,11 @@ namespace __jni_impl::android::net::rtp
 		QAndroidJniObject getRemoteAddress();
 		jint getRemotePort();
 		jboolean isBusy();
+		jint getMode();
 		void setMode(jint arg0);
-		void associate(__jni_impl::java::net::InetAddress arg0, jint arg1);
 		jint getLocalPort();
 		QAndroidJniObject getLocalAddress();
-		jint getMode();
+		void associate(__jni_impl::java::net::InetAddress arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::rtp
 
@@ -45,19 +45,22 @@ namespace __jni_impl::android::net::rtp
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.rtp.RtpStream",
-			"MODE_NORMAL");
+			"MODE_NORMAL"
+		);
 	}
 	jint RtpStream::MODE_RECEIVE_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.rtp.RtpStream",
-			"MODE_RECEIVE_ONLY");
+			"MODE_RECEIVE_ONLY"
+		);
 	}
 	jint RtpStream::MODE_SEND_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.rtp.RtpStream",
-			"MODE_SEND_ONLY");
+			"MODE_SEND_ONLY"
+		);
 	}
 	
 	// Constructors
@@ -73,32 +76,58 @@ namespace __jni_impl::android::net::rtp
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject RtpStream::getRemoteAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getRemoteAddress",
-			"()Ljava/net/InetAddress;");
+			"()Ljava/net/InetAddress;"
+		);
 	}
 	jint RtpStream::getRemotePort()
 	{
 		return __thiz.callMethod<jint>(
 			"getRemotePort",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean RtpStream::isBusy()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBusy",
-			"()Z");
+			"()Z"
+		);
+	}
+	jint RtpStream::getMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getMode",
+			"()I"
+		);
 	}
 	void RtpStream::setMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMode",
 			"(I)V",
-			arg0);
+			arg0
+		);
+	}
+	jint RtpStream::getLocalPort()
+	{
+		return __thiz.callMethod<jint>(
+			"getLocalPort",
+			"()I"
+		);
+	}
+	QAndroidJniObject RtpStream::getLocalAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getLocalAddress",
+			"()Ljava/net/InetAddress;"
+		);
 	}
 	void RtpStream::associate(__jni_impl::java::net::InetAddress arg0, jint arg1)
 	{
@@ -106,25 +135,8 @@ namespace __jni_impl::android::net::rtp
 			"associate",
 			"(Ljava/net/InetAddress;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jint RtpStream::getLocalPort()
-	{
-		return __thiz.callMethod<jint>(
-			"getLocalPort",
-			"()I");
-	}
-	QAndroidJniObject RtpStream::getLocalAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getLocalAddress",
-			"()Ljava/net/InetAddress;");
-	}
-	jint RtpStream::getMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getMode",
-			"()I");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::rtp
 

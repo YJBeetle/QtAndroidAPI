@@ -30,13 +30,15 @@ namespace __jni_impl::android::os::health
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.health.ServiceHealthStats",
-			"MEASUREMENT_LAUNCH_COUNT");
+			"MEASUREMENT_LAUNCH_COUNT"
+		);
 	}
 	jint ServiceHealthStats::MEASUREMENT_START_SERVICE_COUNT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.health.ServiceHealthStats",
-			"MEASUREMENT_START_SERVICE_COUNT");
+			"MEASUREMENT_START_SERVICE_COUNT"
+		);
 	}
 	
 	// Constructors

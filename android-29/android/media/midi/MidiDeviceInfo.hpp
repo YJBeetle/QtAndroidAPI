@@ -21,13 +21,13 @@ namespace __jni_impl::android::media::midi
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject PROPERTY_BLUETOOTH_DEVICE();
-		static QAndroidJniObject PROPERTY_MANUFACTURER();
-		static QAndroidJniObject PROPERTY_NAME();
-		static QAndroidJniObject PROPERTY_PRODUCT();
-		static QAndroidJniObject PROPERTY_SERIAL_NUMBER();
-		static QAndroidJniObject PROPERTY_USB_DEVICE();
-		static QAndroidJniObject PROPERTY_VERSION();
+		static jstring PROPERTY_BLUETOOTH_DEVICE();
+		static jstring PROPERTY_MANUFACTURER();
+		static jstring PROPERTY_NAME();
+		static jstring PROPERTY_PRODUCT();
+		static jstring PROPERTY_SERIAL_NUMBER();
+		static jstring PROPERTY_USB_DEVICE();
+		static jstring PROPERTY_VERSION();
 		static jint TYPE_BLUETOOTH();
 		static jint TYPE_USB();
 		static jint TYPE_VIRTUAL();
@@ -37,7 +37,7 @@ namespace __jni_impl::android::media::midi
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getProperties();
 		jint getId();
@@ -45,9 +45,9 @@ namespace __jni_impl::android::media::midi
 		jboolean isPrivate();
 		jint getInputPortCount();
 		jint getOutputPortCount();
-		QAndroidJniObject getPorts();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jarray getPorts();
 	};
 } // namespace __jni_impl::android::media::midi
 
@@ -62,74 +62,85 @@ namespace __jni_impl::android::media::midi
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject MidiDeviceInfo::PROPERTY_BLUETOOTH_DEVICE()
+	jstring MidiDeviceInfo::PROPERTY_BLUETOOTH_DEVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_BLUETOOTH_DEVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MidiDeviceInfo::PROPERTY_MANUFACTURER()
+	jstring MidiDeviceInfo::PROPERTY_MANUFACTURER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_MANUFACTURER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MidiDeviceInfo::PROPERTY_NAME()
+	jstring MidiDeviceInfo::PROPERTY_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MidiDeviceInfo::PROPERTY_PRODUCT()
+	jstring MidiDeviceInfo::PROPERTY_PRODUCT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_PRODUCT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MidiDeviceInfo::PROPERTY_SERIAL_NUMBER()
+	jstring MidiDeviceInfo::PROPERTY_SERIAL_NUMBER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_SERIAL_NUMBER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MidiDeviceInfo::PROPERTY_USB_DEVICE()
+	jstring MidiDeviceInfo::PROPERTY_USB_DEVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_USB_DEVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MidiDeviceInfo::PROPERTY_VERSION()
+	jstring MidiDeviceInfo::PROPERTY_VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.midi.MidiDeviceInfo",
 			"PROPERTY_VERSION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MidiDeviceInfo::TYPE_BLUETOOTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo",
-			"TYPE_BLUETOOTH");
+			"TYPE_BLUETOOTH"
+		);
 	}
 	jint MidiDeviceInfo::TYPE_USB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo",
-			"TYPE_USB");
+			"TYPE_USB"
+		);
 	}
 	jint MidiDeviceInfo::TYPE_VIRTUAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo",
-			"TYPE_VIRTUAL");
+			"TYPE_VIRTUAL"
+		);
 	}
 	
 	// Constructors
@@ -146,67 +157,71 @@ namespace __jni_impl::android::media::midi
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MidiDeviceInfo::toString()
+	jstring MidiDeviceInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MidiDeviceInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MidiDeviceInfo::getProperties()
 	{
 		return __thiz.callObjectMethod(
 			"getProperties",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
 	jint MidiDeviceInfo::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
 	jint MidiDeviceInfo::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean MidiDeviceInfo::isPrivate()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPrivate",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint MidiDeviceInfo::getInputPortCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getInputPortCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint MidiDeviceInfo::getOutputPortCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getOutputPortCount",
-			"()I");
-	}
-	QAndroidJniObject MidiDeviceInfo::getPorts()
-	{
-		return __thiz.callObjectMethod(
-			"getPorts",
-			"()[Landroid/media/midi/MidiDeviceInfo$PortInfo;");
+			"()I"
+		);
 	}
 	jint MidiDeviceInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void MidiDeviceInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -214,7 +229,15 @@ namespace __jni_impl::android::media::midi
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jarray MidiDeviceInfo::getPorts()
+	{
+		return __thiz.callObjectMethod(
+			"getPorts",
+			"()[Landroid/media/midi/MidiDeviceInfo$PortInfo;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::media::midi
 

@@ -48,7 +48,7 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::graphics::Bitmap arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject getSource();
+		jstring getSource();
 		QAndroidJniObject getDrawable();
 	};
 } // namespace __jni_impl::android::text::style
@@ -163,17 +163,19 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	QAndroidJniObject ImageSpan::getSource()
+	jstring ImageSpan::getSource()
 	{
 		return __thiz.callObjectMethod(
 			"getSource",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ImageSpan::getDrawable()
 	{
 		return __thiz.callObjectMethod(
 			"getDrawable",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

@@ -32,9 +32,9 @@ namespace __jni_impl::android::text
 		static QAndroidJniObject fromHtml(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject fromHtml(jstring arg0, jint arg1);
 		static QAndroidJniObject fromHtml(jstring arg0);
-		static QAndroidJniObject toHtml(__jni_impl::__JniBaseClass arg0, jint arg1);
-		static QAndroidJniObject toHtml(__jni_impl::__JniBaseClass arg0);
-		static QAndroidJniObject escapeHtml(jstring arg0);
+		static jstring toHtml(__jni_impl::__JniBaseClass arg0, jint arg1);
+		static jstring toHtml(__jni_impl::__JniBaseClass arg0);
+		static jstring escapeHtml(jstring arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -46,67 +46,78 @@ namespace __jni_impl::android::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"FROM_HTML_MODE_COMPACT");
+			"FROM_HTML_MODE_COMPACT"
+		);
 	}
 	jint Html::FROM_HTML_MODE_LEGACY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"FROM_HTML_MODE_LEGACY");
+			"FROM_HTML_MODE_LEGACY"
+		);
 	}
 	jint Html::FROM_HTML_OPTION_USE_CSS_COLORS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"FROM_HTML_OPTION_USE_CSS_COLORS");
+			"FROM_HTML_OPTION_USE_CSS_COLORS"
+		);
 	}
 	jint Html::FROM_HTML_SEPARATOR_LINE_BREAK_BLOCKQUOTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"FROM_HTML_SEPARATOR_LINE_BREAK_BLOCKQUOTE");
+			"FROM_HTML_SEPARATOR_LINE_BREAK_BLOCKQUOTE"
+		);
 	}
 	jint Html::FROM_HTML_SEPARATOR_LINE_BREAK_DIV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"FROM_HTML_SEPARATOR_LINE_BREAK_DIV");
+			"FROM_HTML_SEPARATOR_LINE_BREAK_DIV"
+		);
 	}
 	jint Html::FROM_HTML_SEPARATOR_LINE_BREAK_HEADING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"FROM_HTML_SEPARATOR_LINE_BREAK_HEADING");
+			"FROM_HTML_SEPARATOR_LINE_BREAK_HEADING"
+		);
 	}
 	jint Html::FROM_HTML_SEPARATOR_LINE_BREAK_LIST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"FROM_HTML_SEPARATOR_LINE_BREAK_LIST");
+			"FROM_HTML_SEPARATOR_LINE_BREAK_LIST"
+		);
 	}
 	jint Html::FROM_HTML_SEPARATOR_LINE_BREAK_LIST_ITEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"FROM_HTML_SEPARATOR_LINE_BREAK_LIST_ITEM");
+			"FROM_HTML_SEPARATOR_LINE_BREAK_LIST_ITEM"
+		);
 	}
 	jint Html::FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH");
+			"FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH"
+		);
 	}
 	jint Html::TO_HTML_PARAGRAPH_LINES_CONSECUTIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"TO_HTML_PARAGRAPH_LINES_CONSECUTIVE");
+			"TO_HTML_PARAGRAPH_LINES_CONSECUTIVE"
+		);
 	}
 	jint Html::TO_HTML_PARAGRAPH_LINES_INDIVIDUAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.Html",
-			"TO_HTML_PARAGRAPH_LINES_INDIVIDUAL");
+			"TO_HTML_PARAGRAPH_LINES_INDIVIDUAL"
+		);
 	}
 	
 	// Constructors
@@ -127,7 +138,8 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Html::fromHtml(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -137,7 +149,8 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/String;Landroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Html::fromHtml(jstring arg0, jint arg1)
 	{
@@ -146,7 +159,8 @@ namespace __jni_impl::android::text
 			"fromHtml",
 			"(Ljava/lang/String;I)Landroid/text/Spanned;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Html::fromHtml(jstring arg0)
 	{
@@ -154,32 +168,36 @@ namespace __jni_impl::android::text
 			"android.text.Html",
 			"fromHtml",
 			"(Ljava/lang/String;)Landroid/text/Spanned;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Html::toHtml(__jni_impl::__JniBaseClass arg0, jint arg1)
+	jstring Html::toHtml(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.Html",
 			"toHtml",
 			"(Landroid/text/Spanned;I)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject Html::toHtml(__jni_impl::__JniBaseClass arg0)
+	jstring Html::toHtml(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.Html",
 			"toHtml",
 			"(Landroid/text/Spanned;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject Html::escapeHtml(jstring arg0)
+	jstring Html::escapeHtml(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.Html",
 			"escapeHtml",
 			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::text
 

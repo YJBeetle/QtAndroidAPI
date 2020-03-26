@@ -22,7 +22,7 @@ namespace __jni_impl::java::time::format
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::time::format
@@ -36,28 +36,32 @@ namespace __jni_impl::java::time::format
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.FormatStyle",
 			"FULL",
-			"Ljava/time/format/FormatStyle;");
+			"Ljava/time/format/FormatStyle;"
+		);
 	}
 	QAndroidJniObject FormatStyle::LONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.FormatStyle",
 			"LONG",
-			"Ljava/time/format/FormatStyle;");
+			"Ljava/time/format/FormatStyle;"
+		);
 	}
 	QAndroidJniObject FormatStyle::MEDIUM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.FormatStyle",
 			"MEDIUM",
-			"Ljava/time/format/FormatStyle;");
+			"Ljava/time/format/FormatStyle;"
+		);
 	}
 	QAndroidJniObject FormatStyle::SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.FormatStyle",
 			"SHORT",
-			"Ljava/time/format/FormatStyle;");
+			"Ljava/time/format/FormatStyle;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::java::time::format
 	}
 	
 	// Methods
-	QAndroidJniObject FormatStyle::values()
+	jarray FormatStyle::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.FormatStyle",
 			"values",
-			"()[Ljava/time/format/FormatStyle;");
+			"()[Ljava/time/format/FormatStyle;"
+		).object<jarray>();
 	}
 	QAndroidJniObject FormatStyle::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::java::time::format
 			"java.time.format.FormatStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/format/FormatStyle;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::time::format
 

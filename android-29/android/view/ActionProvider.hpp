@@ -25,14 +25,14 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		jboolean isVisible();
-		QAndroidJniObject onCreateActionView();
 		QAndroidJniObject onCreateActionView(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onCreateActionView();
 		jboolean onPerformDefaultAction();
 		jboolean overridesItemVisibility();
 		void refreshVisibility();
 		void onPrepareSubMenu(__jni_impl::__JniBaseClass arg0);
 		void setVisibilityListener(__jni_impl::__JniBaseClass arg0);
+		jboolean isVisible();
 		jboolean hasSubMenu();
 	};
 } // namespace __jni_impl::android::view
@@ -54,62 +54,71 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean ActionProvider::isVisible()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVisible",
-			"()Z");
-	}
-	QAndroidJniObject ActionProvider::onCreateActionView()
-	{
-		return __thiz.callObjectMethod(
-			"onCreateActionView",
-			"()Landroid/view/View;");
-	}
 	QAndroidJniObject ActionProvider::onCreateActionView(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onCreateActionView",
 			"(Landroid/view/MenuItem;)Landroid/view/View;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ActionProvider::onCreateActionView()
+	{
+		return __thiz.callObjectMethod(
+			"onCreateActionView",
+			"()Landroid/view/View;"
+		);
 	}
 	jboolean ActionProvider::onPerformDefaultAction()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onPerformDefaultAction",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ActionProvider::overridesItemVisibility()
 	{
 		return __thiz.callMethod<jboolean>(
 			"overridesItemVisibility",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ActionProvider::refreshVisibility()
 	{
 		__thiz.callMethod<void>(
 			"refreshVisibility",
-			"()V");
+			"()V"
+		);
 	}
 	void ActionProvider::onPrepareSubMenu(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onPrepareSubMenu",
 			"(Landroid/view/SubMenu;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ActionProvider::setVisibilityListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVisibilityListener",
 			"(Landroid/view/ActionProvider$VisibilityListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ActionProvider::isVisible()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVisible",
+			"()Z"
+		);
 	}
 	jboolean ActionProvider::hasSubMenu()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasSubMenu",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::view
 

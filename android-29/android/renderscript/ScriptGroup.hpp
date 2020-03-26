@@ -31,7 +31,7 @@ namespace __jni_impl::android::renderscript
 		
 		// Methods
 		void execute();
-		QAndroidJniObject execute(jobjectArray arg0);
+		jobjectArray execute(jobjectArray arg0);
 		void destroy();
 		void setInput(__jni_impl::android::renderscript::Script_KernelID arg0, __jni_impl::android::renderscript::Allocation arg1);
 		void setOutput(__jni_impl::android::renderscript::Script_KernelID arg0, __jni_impl::android::renderscript::Allocation arg1);
@@ -59,20 +59,23 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz.callMethod<void>(
 			"execute",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject ScriptGroup::execute(jobjectArray arg0)
+	jobjectArray ScriptGroup::execute(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"execute",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobjectArray>();
 	}
 	void ScriptGroup::destroy()
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	void ScriptGroup::setInput(__jni_impl::android::renderscript::Script_KernelID arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -80,7 +83,8 @@ namespace __jni_impl::android::renderscript
 			"setInput",
 			"(Landroid/renderscript/Script$KernelID;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ScriptGroup::setOutput(__jni_impl::android::renderscript::Script_KernelID arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -88,7 +92,8 @@ namespace __jni_impl::android::renderscript
 			"setOutput",
 			"(Landroid/renderscript/Script$KernelID;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

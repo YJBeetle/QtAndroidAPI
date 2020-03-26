@@ -49,25 +49,29 @@ namespace __jni_impl::java::security::spec
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ECFieldFp::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ECFieldFp::getP()
 	{
 		return __thiz.callObjectMethod(
 			"getP",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	jint ECFieldFp::getFieldSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getFieldSize",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

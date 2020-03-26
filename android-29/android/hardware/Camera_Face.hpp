@@ -43,36 +43,42 @@ namespace __jni_impl::android::hardware
 	jint Camera_Face::id()
 	{
 		return __thiz.getField<jint>(
-			"id");
+			"id"
+		);
 	}
 	QAndroidJniObject Camera_Face::leftEye()
 	{
 		return __thiz.getObjectField(
 			"leftEye",
-			"Landroid/graphics/Point;");
+			"Landroid/graphics/Point;"
+		);
 	}
 	QAndroidJniObject Camera_Face::mouth()
 	{
 		return __thiz.getObjectField(
 			"mouth",
-			"Landroid/graphics/Point;");
+			"Landroid/graphics/Point;"
+		);
 	}
 	QAndroidJniObject Camera_Face::rect()
 	{
 		return __thiz.getObjectField(
 			"rect",
-			"Landroid/graphics/Rect;");
+			"Landroid/graphics/Rect;"
+		);
 	}
 	QAndroidJniObject Camera_Face::rightEye()
 	{
 		return __thiz.getObjectField(
 			"rightEye",
-			"Landroid/graphics/Point;");
+			"Landroid/graphics/Point;"
+		);
 	}
 	jint Camera_Face::score()
 	{
 		return __thiz.getField<jint>(
-			"score");
+			"score"
+		);
 	}
 	
 	// Constructors

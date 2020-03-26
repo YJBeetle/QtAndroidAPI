@@ -25,7 +25,7 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject createAutomaticInstallPolicy();
@@ -49,25 +49,29 @@ namespace __jni_impl::android::app::admin
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.SystemUpdatePolicy",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SystemUpdatePolicy::TYPE_INSTALL_AUTOMATIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy",
-			"TYPE_INSTALL_AUTOMATIC");
+			"TYPE_INSTALL_AUTOMATIC"
+		);
 	}
 	jint SystemUpdatePolicy::TYPE_INSTALL_WINDOWED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy",
-			"TYPE_INSTALL_WINDOWED");
+			"TYPE_INSTALL_WINDOWED"
+		);
 	}
 	jint SystemUpdatePolicy::TYPE_POSTPONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.SystemUpdatePolicy",
-			"TYPE_POSTPONE");
+			"TYPE_POSTPONE"
+		);
 	}
 	
 	// Constructors
@@ -79,17 +83,19 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	QAndroidJniObject SystemUpdatePolicy::toString()
+	jstring SystemUpdatePolicy::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SystemUpdatePolicy::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SystemUpdatePolicy::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -97,14 +103,16 @@ namespace __jni_impl::android::app::admin
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SystemUpdatePolicy::createAutomaticInstallPolicy()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.admin.SystemUpdatePolicy",
 			"createAutomaticInstallPolicy",
-			"()Landroid/app/admin/SystemUpdatePolicy;");
+			"()Landroid/app/admin/SystemUpdatePolicy;"
+		);
 	}
 	QAndroidJniObject SystemUpdatePolicy::createWindowedInstallPolicy(jint arg0, jint arg1)
 	{
@@ -113,45 +121,52 @@ namespace __jni_impl::android::app::admin
 			"createWindowedInstallPolicy",
 			"(II)Landroid/app/admin/SystemUpdatePolicy;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SystemUpdatePolicy::createPostponeInstallPolicy()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.admin.SystemUpdatePolicy",
 			"createPostponeInstallPolicy",
-			"()Landroid/app/admin/SystemUpdatePolicy;");
+			"()Landroid/app/admin/SystemUpdatePolicy;"
+		);
 	}
 	jint SystemUpdatePolicy::getPolicyType()
 	{
 		return __thiz.callMethod<jint>(
 			"getPolicyType",
-			"()I");
+			"()I"
+		);
 	}
 	jint SystemUpdatePolicy::getInstallWindowStart()
 	{
 		return __thiz.callMethod<jint>(
 			"getInstallWindowStart",
-			"()I");
+			"()I"
+		);
 	}
 	jint SystemUpdatePolicy::getInstallWindowEnd()
 	{
 		return __thiz.callMethod<jint>(
 			"getInstallWindowEnd",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SystemUpdatePolicy::setFreezePeriods(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setFreezePeriods",
 			"(Ljava/util/List;)Landroid/app/admin/SystemUpdatePolicy;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SystemUpdatePolicy::getFreezePeriods()
 	{
 		return __thiz.callObjectMethod(
 			"getFreezePeriods",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::app::admin
 

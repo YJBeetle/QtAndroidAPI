@@ -40,7 +40,8 @@ namespace __jni_impl::android::net::wifi::aware
 		__thiz.callMethod<void>(
 			"onIdentityChanged",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

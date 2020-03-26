@@ -21,12 +21,12 @@ namespace __jni_impl::java::security
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
-		QAndroidJniObject getActions();
+		jstring getActions();
 		QAndroidJniObject newPermissionCollection();
 		void checkGuard(jobject arg0);
 	};
@@ -48,56 +48,64 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject Permission::getName()
+	jstring Permission::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Permission::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Permission::toString()
+	jstring Permission::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Permission::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Permission::implies(__jni_impl::java::security::Permission arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Permission::getActions()
+	jstring Permission::getActions()
 	{
 		return __thiz.callObjectMethod(
 			"getActions",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Permission::newPermissionCollection()
 	{
 		return __thiz.callObjectMethod(
 			"newPermissionCollection",
-			"()Ljava/security/PermissionCollection;");
+			"()Ljava/security/PermissionCollection;"
+		);
 	}
 	void Permission::checkGuard(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkGuard",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::security
 

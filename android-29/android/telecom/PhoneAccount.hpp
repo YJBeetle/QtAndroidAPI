@@ -47,41 +47,41 @@ namespace __jni_impl::android::telecom
 		static jint CAPABILITY_VIDEO_CALLING();
 		static jint CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE();
 		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject EXTRA_CALL_SUBJECT_CHARACTER_ENCODING();
-		static QAndroidJniObject EXTRA_CALL_SUBJECT_MAX_LENGTH();
-		static QAndroidJniObject EXTRA_LOG_SELF_MANAGED_CALLS();
-		static QAndroidJniObject EXTRA_SUPPORTS_HANDOVER_FROM();
-		static QAndroidJniObject EXTRA_SUPPORTS_HANDOVER_TO();
+		static jstring EXTRA_CALL_SUBJECT_CHARACTER_ENCODING();
+		static jstring EXTRA_CALL_SUBJECT_MAX_LENGTH();
+		static jstring EXTRA_LOG_SELF_MANAGED_CALLS();
+		static jstring EXTRA_SUPPORTS_HANDOVER_FROM();
+		static jstring EXTRA_SUPPORTS_HANDOVER_TO();
 		static jint NO_HIGHLIGHT_COLOR();
 		static jint NO_RESOURCE_ID();
-		static QAndroidJniObject SCHEME_SIP();
-		static QAndroidJniObject SCHEME_TEL();
-		static QAndroidJniObject SCHEME_VOICEMAIL();
+		static jstring SCHEME_SIP();
+		static jstring SCHEME_TEL();
+		static jstring SCHEME_VOICEMAIL();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject builder(__jni_impl::android::telecom::PhoneAccountHandle arg0, jstring arg1);
 		QAndroidJniObject getAddress();
 		jboolean isEnabled();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
+		jstring getLabel();
+		QAndroidJniObject getIcon();
 		QAndroidJniObject getAccountHandle();
 		QAndroidJniObject toBuilder();
 		QAndroidJniObject getSubscriptionAddress();
 		jint getCapabilities();
 		jboolean hasCapabilities(jint arg0);
-		QAndroidJniObject getShortDescription();
+		jstring getShortDescription();
 		QAndroidJniObject getSupportedUriSchemes();
 		jboolean supportsUriScheme(jstring arg0);
 		jint getHighlightColor();
-		QAndroidJniObject getLabel();
-		QAndroidJniObject getIcon();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -99,136 +99,157 @@ namespace __jni_impl::android::telecom
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_CALL_PROVIDER");
+			"CAPABILITY_CALL_PROVIDER"
+		);
 	}
 	jint PhoneAccount::CAPABILITY_CALL_SUBJECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_CALL_SUBJECT");
+			"CAPABILITY_CALL_SUBJECT"
+		);
 	}
 	jint PhoneAccount::CAPABILITY_CONNECTION_MANAGER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_CONNECTION_MANAGER");
+			"CAPABILITY_CONNECTION_MANAGER"
+		);
 	}
 	jint PhoneAccount::CAPABILITY_PLACE_EMERGENCY_CALLS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_PLACE_EMERGENCY_CALLS");
+			"CAPABILITY_PLACE_EMERGENCY_CALLS"
+		);
 	}
 	jint PhoneAccount::CAPABILITY_RTT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_RTT");
+			"CAPABILITY_RTT"
+		);
 	}
 	jint PhoneAccount::CAPABILITY_SELF_MANAGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_SELF_MANAGED");
+			"CAPABILITY_SELF_MANAGED"
+		);
 	}
 	jint PhoneAccount::CAPABILITY_SIM_SUBSCRIPTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_SIM_SUBSCRIPTION");
+			"CAPABILITY_SIM_SUBSCRIPTION"
+		);
 	}
 	jint PhoneAccount::CAPABILITY_SUPPORTS_VIDEO_CALLING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_SUPPORTS_VIDEO_CALLING");
+			"CAPABILITY_SUPPORTS_VIDEO_CALLING"
+		);
 	}
 	jint PhoneAccount::CAPABILITY_VIDEO_CALLING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_VIDEO_CALLING");
+			"CAPABILITY_VIDEO_CALLING"
+		);
 	}
 	jint PhoneAccount::CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE");
+			"CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE"
+		);
 	}
 	QAndroidJniObject PhoneAccount::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject PhoneAccount::EXTRA_CALL_SUBJECT_CHARACTER_ENCODING()
+	jstring PhoneAccount::EXTRA_CALL_SUBJECT_CHARACTER_ENCODING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_CALL_SUBJECT_CHARACTER_ENCODING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PhoneAccount::EXTRA_CALL_SUBJECT_MAX_LENGTH()
+	jstring PhoneAccount::EXTRA_CALL_SUBJECT_MAX_LENGTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_CALL_SUBJECT_MAX_LENGTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PhoneAccount::EXTRA_LOG_SELF_MANAGED_CALLS()
+	jstring PhoneAccount::EXTRA_LOG_SELF_MANAGED_CALLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_LOG_SELF_MANAGED_CALLS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PhoneAccount::EXTRA_SUPPORTS_HANDOVER_FROM()
+	jstring PhoneAccount::EXTRA_SUPPORTS_HANDOVER_FROM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_SUPPORTS_HANDOVER_FROM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PhoneAccount::EXTRA_SUPPORTS_HANDOVER_TO()
+	jstring PhoneAccount::EXTRA_SUPPORTS_HANDOVER_TO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"EXTRA_SUPPORTS_HANDOVER_TO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PhoneAccount::NO_HIGHLIGHT_COLOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"NO_HIGHLIGHT_COLOR");
+			"NO_HIGHLIGHT_COLOR"
+		);
 	}
 	jint PhoneAccount::NO_RESOURCE_ID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccount",
-			"NO_RESOURCE_ID");
+			"NO_RESOURCE_ID"
+		);
 	}
-	QAndroidJniObject PhoneAccount::SCHEME_SIP()
+	jstring PhoneAccount::SCHEME_SIP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"SCHEME_SIP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PhoneAccount::SCHEME_TEL()
+	jstring PhoneAccount::SCHEME_TEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"SCHEME_TEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PhoneAccount::SCHEME_VOICEMAIL()
+	jstring PhoneAccount::SCHEME_VOICEMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccount",
 			"SCHEME_VOICEMAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -245,19 +266,22 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PhoneAccount::toString()
+	jstring PhoneAccount::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PhoneAccount::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject PhoneAccount::builder(__jni_impl::android::telecom::PhoneAccountHandle arg0, jstring arg1)
 	{
@@ -266,99 +290,29 @@ namespace __jni_impl::android::telecom
 			"builder",
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject PhoneAccount::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	jboolean PhoneAccount::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
-	}
-	QAndroidJniObject PhoneAccount::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject PhoneAccount::getAccountHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getAccountHandle",
-			"()Landroid/telecom/PhoneAccountHandle;");
-	}
-	QAndroidJniObject PhoneAccount::toBuilder()
-	{
-		return __thiz.callObjectMethod(
-			"toBuilder",
-			"()Landroid/telecom/PhoneAccount$Builder;");
-	}
-	QAndroidJniObject PhoneAccount::getSubscriptionAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getSubscriptionAddress",
-			"()Landroid/net/Uri;");
-	}
-	jint PhoneAccount::getCapabilities()
-	{
-		return __thiz.callMethod<jint>(
-			"getCapabilities",
-			"()I");
-	}
-	jboolean PhoneAccount::hasCapabilities(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasCapabilities",
-			"(I)Z",
-			arg0);
-	}
-	QAndroidJniObject PhoneAccount::getShortDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getShortDescription",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject PhoneAccount::getSupportedUriSchemes()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedUriSchemes",
-			"()Ljava/util/List;");
-	}
-	jboolean PhoneAccount::supportsUriScheme(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"supportsUriScheme",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	jint PhoneAccount::getHighlightColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getHighlightColor",
-			"()I");
-	}
-	QAndroidJniObject PhoneAccount::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject PhoneAccount::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
+			"()Z"
+		);
 	}
 	jint PhoneAccount::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PhoneAccount::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -366,7 +320,94 @@ namespace __jni_impl::android::telecom
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject PhoneAccount::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jstring PhoneAccount::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject PhoneAccount::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	QAndroidJniObject PhoneAccount::getAccountHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getAccountHandle",
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
+	}
+	QAndroidJniObject PhoneAccount::toBuilder()
+	{
+		return __thiz.callObjectMethod(
+			"toBuilder",
+			"()Landroid/telecom/PhoneAccount$Builder;"
+		);
+	}
+	QAndroidJniObject PhoneAccount::getSubscriptionAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getSubscriptionAddress",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jint PhoneAccount::getCapabilities()
+	{
+		return __thiz.callMethod<jint>(
+			"getCapabilities",
+			"()I"
+		);
+	}
+	jboolean PhoneAccount::hasCapabilities(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasCapabilities",
+			"(I)Z",
+			arg0
+		);
+	}
+	jstring PhoneAccount::getShortDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getShortDescription",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject PhoneAccount::getSupportedUriSchemes()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedUriSchemes",
+			"()Ljava/util/List;"
+		);
+	}
+	jboolean PhoneAccount::supportsUriScheme(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"supportsUriScheme",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jint PhoneAccount::getHighlightColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getHighlightColor",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

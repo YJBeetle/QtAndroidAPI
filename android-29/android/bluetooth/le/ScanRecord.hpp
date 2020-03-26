@@ -25,17 +25,17 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getBytes();
+		jstring toString();
+		jbyteArray getBytes();
 		QAndroidJniObject getServiceUuids();
-		QAndroidJniObject getManufacturerSpecificData(jint arg0);
 		QAndroidJniObject getManufacturerSpecificData();
+		jbyteArray getManufacturerSpecificData(jint arg0);
+		jint getTxPowerLevel();
 		jint getAdvertiseFlags();
 		QAndroidJniObject getServiceSolicitationUuids();
-		QAndroidJniObject getDeviceName();
+		jstring getDeviceName();
 		QAndroidJniObject getServiceData();
-		QAndroidJniObject getServiceData(__jni_impl::android::os::ParcelUuid arg0);
-		jint getTxPowerLevel();
+		jbyteArray getServiceData(__jni_impl::android::os::ParcelUuid arg0);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -55,73 +55,84 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
-	QAndroidJniObject ScanRecord::toString()
+	jstring ScanRecord::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ScanRecord::getBytes()
+	jbyteArray ScanRecord::getBytes()
 	{
 		return __thiz.callObjectMethod(
 			"getBytes",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject ScanRecord::getServiceUuids()
 	{
 		return __thiz.callObjectMethod(
 			"getServiceUuids",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject ScanRecord::getManufacturerSpecificData(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getManufacturerSpecificData",
-			"(I)[B",
-			arg0);
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject ScanRecord::getManufacturerSpecificData()
 	{
 		return __thiz.callObjectMethod(
 			"getManufacturerSpecificData",
-			"()Landroid/util/SparseArray;");
+			"()Landroid/util/SparseArray;"
+		);
 	}
-	jint ScanRecord::getAdvertiseFlags()
-	{
-		return __thiz.callMethod<jint>(
-			"getAdvertiseFlags",
-			"()I");
-	}
-	QAndroidJniObject ScanRecord::getServiceSolicitationUuids()
+	jbyteArray ScanRecord::getManufacturerSpecificData(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getServiceSolicitationUuids",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject ScanRecord::getDeviceName()
-	{
-		return __thiz.callObjectMethod(
-			"getDeviceName",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject ScanRecord::getServiceData()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceData",
-			"()Ljava/util/Map;");
-	}
-	QAndroidJniObject ScanRecord::getServiceData(__jni_impl::android::os::ParcelUuid arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getServiceData",
-			"(Landroid/os/ParcelUuid;)[B",
-			arg0.__jniObject().object());
+			"getManufacturerSpecificData",
+			"(I)[B",
+			arg0
+		).object<jbyteArray>();
 	}
 	jint ScanRecord::getTxPowerLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getTxPowerLevel",
-			"()I");
+			"()I"
+		);
+	}
+	jint ScanRecord::getAdvertiseFlags()
+	{
+		return __thiz.callMethod<jint>(
+			"getAdvertiseFlags",
+			"()I"
+		);
+	}
+	QAndroidJniObject ScanRecord::getServiceSolicitationUuids()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceSolicitationUuids",
+			"()Ljava/util/List;"
+		);
+	}
+	jstring ScanRecord::getDeviceName()
+	{
+		return __thiz.callObjectMethod(
+			"getDeviceName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject ScanRecord::getServiceData()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceData",
+			"()Ljava/util/Map;"
+		);
+	}
+	jbyteArray ScanRecord::getServiceData(__jni_impl::android::os::ParcelUuid arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getServiceData",
+			"(Landroid/os/ParcelUuid;)[B",
+			arg0.__jniObject().object()
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::bluetooth::le
 

@@ -48,13 +48,15 @@ namespace __jni_impl::android::hardware
 	{
 		return __thiz.callMethod<jint>(
 			"getMinFrequency",
-			"()I");
+			"()I"
+		);
 	}
 	jint ConsumerIrManager_CarrierFrequencyRange::getMaxFrequency()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxFrequency",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::hardware
 

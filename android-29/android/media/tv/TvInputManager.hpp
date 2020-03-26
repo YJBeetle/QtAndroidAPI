@@ -28,15 +28,15 @@ namespace __jni_impl::android::media::tv
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_BLOCKED_RATINGS_CHANGED();
-		static QAndroidJniObject ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED();
-		static QAndroidJniObject ACTION_QUERY_CONTENT_RATING_SYSTEMS();
-		static QAndroidJniObject ACTION_SETUP_INPUTS();
-		static QAndroidJniObject ACTION_VIEW_RECORDING_SCHEDULES();
+		static jstring ACTION_BLOCKED_RATINGS_CHANGED();
+		static jstring ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED();
+		static jstring ACTION_QUERY_CONTENT_RATING_SYSTEMS();
+		static jstring ACTION_SETUP_INPUTS();
+		static jstring ACTION_VIEW_RECORDING_SCHEDULES();
 		static jint INPUT_STATE_CONNECTED();
 		static jint INPUT_STATE_CONNECTED_STANDBY();
 		static jint INPUT_STATE_DISCONNECTED();
-		static QAndroidJniObject META_DATA_CONTENT_RATING_SYSTEMS();
+		static jstring META_DATA_CONTENT_RATING_SYSTEMS();
 		static jint RECORDING_ERROR_INSUFFICIENT_SPACE();
 		static jint RECORDING_ERROR_RESOURCE_BUSY();
 		static jint RECORDING_ERROR_UNKNOWN();
@@ -75,143 +75,165 @@ namespace __jni_impl::android::media::tv
 namespace __jni_impl::android::media::tv
 {
 	// Fields
-	QAndroidJniObject TvInputManager::ACTION_BLOCKED_RATINGS_CHANGED()
+	jstring TvInputManager::ACTION_BLOCKED_RATINGS_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_BLOCKED_RATINGS_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvInputManager::ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED()
+	jstring TvInputManager::ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvInputManager::ACTION_QUERY_CONTENT_RATING_SYSTEMS()
+	jstring TvInputManager::ACTION_QUERY_CONTENT_RATING_SYSTEMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_QUERY_CONTENT_RATING_SYSTEMS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvInputManager::ACTION_SETUP_INPUTS()
+	jstring TvInputManager::ACTION_SETUP_INPUTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_SETUP_INPUTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvInputManager::ACTION_VIEW_RECORDING_SCHEDULES()
+	jstring TvInputManager::ACTION_VIEW_RECORDING_SCHEDULES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"ACTION_VIEW_RECORDING_SCHEDULES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TvInputManager::INPUT_STATE_CONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"INPUT_STATE_CONNECTED");
+			"INPUT_STATE_CONNECTED"
+		);
 	}
 	jint TvInputManager::INPUT_STATE_CONNECTED_STANDBY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"INPUT_STATE_CONNECTED_STANDBY");
+			"INPUT_STATE_CONNECTED_STANDBY"
+		);
 	}
 	jint TvInputManager::INPUT_STATE_DISCONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"INPUT_STATE_DISCONNECTED");
+			"INPUT_STATE_DISCONNECTED"
+		);
 	}
-	QAndroidJniObject TvInputManager::META_DATA_CONTENT_RATING_SYSTEMS()
+	jstring TvInputManager::META_DATA_CONTENT_RATING_SYSTEMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvInputManager",
 			"META_DATA_CONTENT_RATING_SYSTEMS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TvInputManager::RECORDING_ERROR_INSUFFICIENT_SPACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"RECORDING_ERROR_INSUFFICIENT_SPACE");
+			"RECORDING_ERROR_INSUFFICIENT_SPACE"
+		);
 	}
 	jint TvInputManager::RECORDING_ERROR_RESOURCE_BUSY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"RECORDING_ERROR_RESOURCE_BUSY");
+			"RECORDING_ERROR_RESOURCE_BUSY"
+		);
 	}
 	jint TvInputManager::RECORDING_ERROR_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"RECORDING_ERROR_UNKNOWN");
+			"RECORDING_ERROR_UNKNOWN"
+		);
 	}
 	jlong TvInputManager::TIME_SHIFT_INVALID_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.tv.TvInputManager",
-			"TIME_SHIFT_INVALID_TIME");
+			"TIME_SHIFT_INVALID_TIME"
+		);
 	}
 	jint TvInputManager::TIME_SHIFT_STATUS_AVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"TIME_SHIFT_STATUS_AVAILABLE");
+			"TIME_SHIFT_STATUS_AVAILABLE"
+		);
 	}
 	jint TvInputManager::TIME_SHIFT_STATUS_UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"TIME_SHIFT_STATUS_UNAVAILABLE");
+			"TIME_SHIFT_STATUS_UNAVAILABLE"
+		);
 	}
 	jint TvInputManager::TIME_SHIFT_STATUS_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"TIME_SHIFT_STATUS_UNKNOWN");
+			"TIME_SHIFT_STATUS_UNKNOWN"
+		);
 	}
 	jint TvInputManager::TIME_SHIFT_STATUS_UNSUPPORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"TIME_SHIFT_STATUS_UNSUPPORTED");
+			"TIME_SHIFT_STATUS_UNSUPPORTED"
+		);
 	}
 	jint TvInputManager::VIDEO_UNAVAILABLE_REASON_AUDIO_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"VIDEO_UNAVAILABLE_REASON_AUDIO_ONLY");
+			"VIDEO_UNAVAILABLE_REASON_AUDIO_ONLY"
+		);
 	}
 	jint TvInputManager::VIDEO_UNAVAILABLE_REASON_BUFFERING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"VIDEO_UNAVAILABLE_REASON_BUFFERING");
+			"VIDEO_UNAVAILABLE_REASON_BUFFERING"
+		);
 	}
 	jint TvInputManager::VIDEO_UNAVAILABLE_REASON_TUNING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"VIDEO_UNAVAILABLE_REASON_TUNING");
+			"VIDEO_UNAVAILABLE_REASON_TUNING"
+		);
 	}
 	jint TvInputManager::VIDEO_UNAVAILABLE_REASON_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"VIDEO_UNAVAILABLE_REASON_UNKNOWN");
+			"VIDEO_UNAVAILABLE_REASON_UNKNOWN"
+		);
 	}
 	jint TvInputManager::VIDEO_UNAVAILABLE_REASON_WEAK_SIGNAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.tv.TvInputManager",
-			"VIDEO_UNAVAILABLE_REASON_WEAK_SIGNAL");
+			"VIDEO_UNAVAILABLE_REASON_WEAK_SIGNAL"
+		);
 	}
 	
 	// Constructors
@@ -227,47 +249,54 @@ namespace __jni_impl::android::media::tv
 	{
 		return __thiz.callObjectMethod(
 			"getTvInputList",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject TvInputManager::getTvInputInfo(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getTvInputInfo",
 			"(Ljava/lang/String;)Landroid/media/tv/TvInputInfo;",
-			arg0);
+			arg0
+		);
 	}
 	void TvInputManager::updateTvInputInfo(__jni_impl::android::media::tv::TvInputInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateTvInputInfo",
 			"(Landroid/media/tv/TvInputInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint TvInputManager::getInputState(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getInputState",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean TvInputManager::isParentalControlsEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isParentalControlsEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean TvInputManager::isRatingBlocked(__jni_impl::android::media::tv::TvContentRating arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRatingBlocked",
 			"(Landroid/media/tv/TvContentRating;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TvInputManager::getBlockedRatings()
 	{
 		return __thiz.callObjectMethod(
 			"getBlockedRatings",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	void TvInputManager::registerCallback(__jni_impl::android::media::tv::TvInputManager_TvInputCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -275,14 +304,16 @@ namespace __jni_impl::android::media::tv
 			"registerCallback",
 			"(Landroid/media/tv/TvInputManager$TvInputCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void TvInputManager::unregisterCallback(__jni_impl::android::media::tv::TvInputManager_TvInputCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterCallback",
 			"(Landroid/media/tv/TvInputManager$TvInputCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

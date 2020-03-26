@@ -46,7 +46,8 @@ namespace __jni_impl::android::graphics::drawable
 			"resize",
 			"(II)Landroid/graphics/Shader;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

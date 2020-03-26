@@ -16,8 +16,8 @@ namespace __jni_impl::android::net::wifi
 		static jint GCMP_256();
 		static jint NONE();
 		static jint TKIP();
-		static QAndroidJniObject strings();
-		static QAndroidJniObject varName();
+		static jarray strings();
+		static jstring varName();
 		
 		// Constructors
 		void __constructor();
@@ -34,39 +34,45 @@ namespace __jni_impl::android::net::wifi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$PairwiseCipher",
-			"CCMP");
+			"CCMP"
+		);
 	}
 	jint WifiConfiguration_PairwiseCipher::GCMP_256()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$PairwiseCipher",
-			"GCMP_256");
+			"GCMP_256"
+		);
 	}
 	jint WifiConfiguration_PairwiseCipher::NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$PairwiseCipher",
-			"NONE");
+			"NONE"
+		);
 	}
 	jint WifiConfiguration_PairwiseCipher::TKIP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$PairwiseCipher",
-			"TKIP");
+			"TKIP"
+		);
 	}
-	QAndroidJniObject WifiConfiguration_PairwiseCipher::strings()
+	jarray WifiConfiguration_PairwiseCipher::strings()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$PairwiseCipher",
 			"strings",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject WifiConfiguration_PairwiseCipher::varName()
+	jstring WifiConfiguration_PairwiseCipher::varName()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$PairwiseCipher",
 			"varName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

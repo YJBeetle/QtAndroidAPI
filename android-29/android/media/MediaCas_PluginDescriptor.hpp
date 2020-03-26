@@ -17,8 +17,8 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
+		jstring getName();
+		jstring toString();
 		jint getSystemId();
 	};
 } // namespace __jni_impl::android::media
@@ -37,23 +37,26 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaCas_PluginDescriptor::getName()
+	jstring MediaCas_PluginDescriptor::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCas_PluginDescriptor::toString()
+	jstring MediaCas_PluginDescriptor::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MediaCas_PluginDescriptor::getSystemId()
 	{
 		return __thiz.callMethod<jint>(
 			"getSystemId",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

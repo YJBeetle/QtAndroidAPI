@@ -31,17 +31,20 @@ namespace __jni_impl::android::renderscript
 	jbyte Byte3::x()
 	{
 		return __thiz.getField<jbyte>(
-			"x");
+			"x"
+		);
 	}
 	jbyte Byte3::y()
 	{
 		return __thiz.getField<jbyte>(
-			"y");
+			"y"
+		);
 	}
 	jbyte Byte3::z()
 	{
 		return __thiz.getField<jbyte>(
-			"z");
+			"z"
+		);
 	}
 	
 	// Constructors

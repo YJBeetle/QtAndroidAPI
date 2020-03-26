@@ -21,10 +21,6 @@ namespace __jni_impl::android::content::pm
 {
 	class ServiceInfo;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content::pm
 {
 	class PackageManager;
@@ -32,6 +28,10 @@ namespace __jni_impl::android::content::pm
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content::pm
@@ -48,11 +48,11 @@ namespace __jni_impl::android::content::pm
 		jboolean isInstantAppAvailable();
 		jint labelRes();
 		jint match();
-		QAndroidJniObject nonLocalizedLabel();
+		jstring nonLocalizedLabel();
 		jint preferredOrder();
 		jint priority();
 		QAndroidJniObject providerInfo();
-		QAndroidJniObject resolvePackageName();
+		jstring resolvePackageName();
 		QAndroidJniObject serviceInfo();
 		jint specificIndex();
 		
@@ -61,13 +61,13 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::ResolveInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
+		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
+		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
 		jint getIconResource();
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -75,9 +75,9 @@ namespace __jni_impl::android::content::pm
 #include "../IntentFilter.hpp"
 #include "ProviderInfo.hpp"
 #include "ServiceInfo.hpp"
-#include "../../os/Parcel.hpp"
 #include "PackageManager.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -87,83 +87,98 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ResolveInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	QAndroidJniObject ResolveInfo::activityInfo()
 	{
 		return __thiz.getObjectField(
 			"activityInfo",
-			"Landroid/content/pm/ActivityInfo;");
+			"Landroid/content/pm/ActivityInfo;"
+		);
 	}
 	QAndroidJniObject ResolveInfo::filter()
 	{
 		return __thiz.getObjectField(
 			"filter",
-			"Landroid/content/IntentFilter;");
+			"Landroid/content/IntentFilter;"
+		);
 	}
 	jint ResolveInfo::icon()
 	{
 		return __thiz.getField<jint>(
-			"icon");
+			"icon"
+		);
 	}
 	jboolean ResolveInfo::isDefault()
 	{
 		return __thiz.getField<jboolean>(
-			"isDefault");
+			"isDefault"
+		);
 	}
 	jboolean ResolveInfo::isInstantAppAvailable()
 	{
 		return __thiz.getField<jboolean>(
-			"isInstantAppAvailable");
+			"isInstantAppAvailable"
+		);
 	}
 	jint ResolveInfo::labelRes()
 	{
 		return __thiz.getField<jint>(
-			"labelRes");
+			"labelRes"
+		);
 	}
 	jint ResolveInfo::match()
 	{
 		return __thiz.getField<jint>(
-			"match");
+			"match"
+		);
 	}
-	QAndroidJniObject ResolveInfo::nonLocalizedLabel()
+	jstring ResolveInfo::nonLocalizedLabel()
 	{
 		return __thiz.getObjectField(
 			"nonLocalizedLabel",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint ResolveInfo::preferredOrder()
 	{
 		return __thiz.getField<jint>(
-			"preferredOrder");
+			"preferredOrder"
+		);
 	}
 	jint ResolveInfo::priority()
 	{
 		return __thiz.getField<jint>(
-			"priority");
+			"priority"
+		);
 	}
 	QAndroidJniObject ResolveInfo::providerInfo()
 	{
 		return __thiz.getObjectField(
 			"providerInfo",
-			"Landroid/content/pm/ProviderInfo;");
+			"Landroid/content/pm/ProviderInfo;"
+		);
 	}
-	QAndroidJniObject ResolveInfo::resolvePackageName()
+	jstring ResolveInfo::resolvePackageName()
 	{
 		return __thiz.getObjectField(
 			"resolvePackageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ResolveInfo::serviceInfo()
 	{
 		return __thiz.getObjectField(
 			"serviceInfo",
-			"Landroid/content/pm/ServiceInfo;");
+			"Landroid/content/pm/ServiceInfo;"
+		);
 	}
 	jint ResolveInfo::specificIndex()
 	{
 		return __thiz.getField<jint>(
-			"specificIndex");
+			"specificIndex"
+		);
 	}
 	
 	// Constructors
@@ -182,31 +197,42 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject ResolveInfo::toString()
+	jstring ResolveInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring ResolveInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadLabel",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	QAndroidJniObject ResolveInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadIcon",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object()
+		);
 	}
 	jint ResolveInfo::getIconResource()
 	{
 		return __thiz.callMethod<jint>(
 			"getIconResource",
-			"()I");
-	}
-	void ResolveInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
+			"()I"
+		);
 	}
 	jint ResolveInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ResolveInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -214,21 +240,17 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject ResolveInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
+	void ResolveInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
-		return __thiz.callObjectMethod(
-			"loadLabel",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ResolveInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadIcon",
-			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object());
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

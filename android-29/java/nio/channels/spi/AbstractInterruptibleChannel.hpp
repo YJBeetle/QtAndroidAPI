@@ -45,13 +45,15 @@ namespace __jni_impl::java::nio::channels::spi
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpen",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AbstractInterruptibleChannel::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels::spi
 

@@ -42,13 +42,13 @@ namespace __jni_impl::java::time::chrono
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		static QAndroidJniObject values();
+		jstring toString();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		jint getValue();
 		static QAndroidJniObject of(jint arg0);
 		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
+		jstring getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
 	};
 } // namespace __jni_impl::java::time::chrono
 
@@ -66,35 +66,40 @@ namespace __jni_impl::java::time::chrono
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"MEIJI",
-			"Ljava/time/chrono/JapaneseEra;");
+			"Ljava/time/chrono/JapaneseEra;"
+		);
 	}
 	QAndroidJniObject JapaneseEra::TAISHO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"TAISHO",
-			"Ljava/time/chrono/JapaneseEra;");
+			"Ljava/time/chrono/JapaneseEra;"
+		);
 	}
 	QAndroidJniObject JapaneseEra::SHOWA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"SHOWA",
-			"Ljava/time/chrono/JapaneseEra;");
+			"Ljava/time/chrono/JapaneseEra;"
+		);
 	}
 	QAndroidJniObject JapaneseEra::HEISEI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"HEISEI",
-			"Ljava/time/chrono/JapaneseEra;");
+			"Ljava/time/chrono/JapaneseEra;"
+		);
 	}
 	QAndroidJniObject JapaneseEra::REIWA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.JapaneseEra",
 			"REIWA",
-			"Ljava/time/chrono/JapaneseEra;");
+			"Ljava/time/chrono/JapaneseEra;"
+		);
 	}
 	
 	// Constructors
@@ -106,18 +111,20 @@ namespace __jni_impl::java::time::chrono
 	}
 	
 	// Methods
-	QAndroidJniObject JapaneseEra::toString()
+	jstring JapaneseEra::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject JapaneseEra::values()
+	jarray JapaneseEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.JapaneseEra",
 			"values",
-			"()[Ljava/time/chrono/JapaneseEra;");
+			"()[Ljava/time/chrono/JapaneseEra;"
+		).object<jarray>();
 	}
 	QAndroidJniObject JapaneseEra::valueOf(jstring arg0)
 	{
@@ -125,13 +132,15 @@ namespace __jni_impl::java::time::chrono
 			"java.time.chrono.JapaneseEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/JapaneseEra;",
-			arg0);
+			arg0
+		);
 	}
 	jint JapaneseEra::getValue()
 	{
 		return __thiz.callMethod<jint>(
 			"getValue",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject JapaneseEra::of(jint arg0)
 	{
@@ -139,22 +148,25 @@ namespace __jni_impl::java::time::chrono
 			"java.time.chrono.JapaneseEra",
 			"of",
 			"(I)Ljava/time/chrono/JapaneseEra;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JapaneseEra::range(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"range",
 			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject JapaneseEra::getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1)
+	jstring JapaneseEra::getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::time::chrono
 

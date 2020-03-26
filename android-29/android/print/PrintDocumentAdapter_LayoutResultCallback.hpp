@@ -48,20 +48,23 @@ namespace __jni_impl::android::print
 			"onLayoutFinished",
 			"(Landroid/print/PrintDocumentInfo;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFailed(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onLayoutFailed",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintDocumentAdapter_LayoutResultCallback::onLayoutCancelled()
 	{
 		__thiz.callMethod<void>(
 			"onLayoutCancelled",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::print
 

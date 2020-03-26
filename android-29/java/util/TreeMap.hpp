@@ -27,13 +27,13 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject remove(jobject arg0);
-		QAndroidJniObject get(jobject arg0);
-		QAndroidJniObject put(jobject arg0, jobject arg1);
+		jobject remove(jobject arg0);
+		jobject get(jobject arg0);
+		jobject put(jobject arg0, jobject arg1);
 		QAndroidJniObject values();
-		QAndroidJniObject clone();
+		jobject clone();
 		void clear();
-		QAndroidJniObject replace(jobject arg0, jobject arg1);
+		jobject replace(jobject arg0, jobject arg1);
 		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
 		void replaceAll(__jni_impl::__JniBaseClass arg0);
 		jint size();
@@ -44,16 +44,16 @@ namespace __jni_impl::java::util
 		QAndroidJniObject keySet();
 		jboolean containsValue(jobject arg0);
 		QAndroidJniObject comparator();
-		QAndroidJniObject firstKey();
+		jobject firstKey();
 		QAndroidJniObject navigableKeySet();
 		QAndroidJniObject descendingKeySet();
-		QAndroidJniObject lowerKey(jobject arg0);
-		QAndroidJniObject floorKey(jobject arg0);
-		QAndroidJniObject ceilingKey(jobject arg0);
-		QAndroidJniObject higherKey(jobject arg0);
+		jobject lowerKey(jobject arg0);
+		jobject floorKey(jobject arg0);
+		jobject ceilingKey(jobject arg0);
+		jobject higherKey(jobject arg0);
 		QAndroidJniObject pollFirstEntry();
 		QAndroidJniObject pollLastEntry();
-		QAndroidJniObject lastKey();
+		jobject lastKey();
 		QAndroidJniObject subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
 		QAndroidJniObject subMap(jobject arg0, jobject arg1);
 		QAndroidJniObject headMap(jobject arg0, jboolean arg1);
@@ -93,53 +93,60 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject TreeMap::remove(jobject arg0)
+	jobject TreeMap::remove(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::get(jobject arg0)
+	jobject TreeMap::get(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::put(jobject arg0, jobject arg1)
+	jobject TreeMap::put(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	QAndroidJniObject TreeMap::values()
 	{
 		return __thiz.callObjectMethod(
 			"values",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
-	QAndroidJniObject TreeMap::clone()
+	jobject TreeMap::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void TreeMap::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject TreeMap::replace(jobject arg0, jobject arg1)
+	jobject TreeMap::replace(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	jboolean TreeMap::replace(jobject arg0, jobject arg1, jobject arg2)
 	{
@@ -148,130 +155,150 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void TreeMap::replaceAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint TreeMap::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject TreeMap::entrySet()
 	{
 		return __thiz.callObjectMethod(
 			"entrySet",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	void TreeMap::putAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TreeMap::forEach(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean TreeMap::containsKey(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TreeMap::keySet()
 	{
 		return __thiz.callObjectMethod(
 			"keySet",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jboolean TreeMap::containsValue(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TreeMap::comparator()
 	{
 		return __thiz.callObjectMethod(
 			"comparator",
-			"()Ljava/util/Comparator;");
+			"()Ljava/util/Comparator;"
+		);
 	}
-	QAndroidJniObject TreeMap::firstKey()
+	jobject TreeMap::firstKey()
 	{
 		return __thiz.callObjectMethod(
 			"firstKey",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject TreeMap::navigableKeySet()
 	{
 		return __thiz.callObjectMethod(
 			"navigableKeySet",
-			"()Ljava/util/NavigableSet;");
+			"()Ljava/util/NavigableSet;"
+		);
 	}
 	QAndroidJniObject TreeMap::descendingKeySet()
 	{
 		return __thiz.callObjectMethod(
 			"descendingKeySet",
-			"()Ljava/util/NavigableSet;");
+			"()Ljava/util/NavigableSet;"
+		);
 	}
-	QAndroidJniObject TreeMap::lowerKey(jobject arg0)
+	jobject TreeMap::lowerKey(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"lowerKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::floorKey(jobject arg0)
+	jobject TreeMap::floorKey(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"floorKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::ceilingKey(jobject arg0)
+	jobject TreeMap::ceilingKey(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"ceilingKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject TreeMap::higherKey(jobject arg0)
+	jobject TreeMap::higherKey(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"higherKey",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject TreeMap::pollFirstEntry()
 	{
 		return __thiz.callObjectMethod(
 			"pollFirstEntry",
-			"()Ljava/util/Map$Entry;");
+			"()Ljava/util/Map$Entry;"
+		);
 	}
 	QAndroidJniObject TreeMap::pollLastEntry()
 	{
 		return __thiz.callObjectMethod(
 			"pollLastEntry",
-			"()Ljava/util/Map$Entry;");
+			"()Ljava/util/Map$Entry;"
+		);
 	}
-	QAndroidJniObject TreeMap::lastKey()
+	jobject TreeMap::lastKey()
 	{
 		return __thiz.callObjectMethod(
 			"lastKey",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject TreeMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
@@ -281,7 +308,8 @@ namespace __jni_impl::java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject TreeMap::subMap(jobject arg0, jobject arg1)
 	{
@@ -289,7 +317,8 @@ namespace __jni_impl::java::util
 			"subMap",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject TreeMap::headMap(jobject arg0, jboolean arg1)
 	{
@@ -297,21 +326,24 @@ namespace __jni_impl::java::util
 			"headMap",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableMap;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject TreeMap::headMap(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"headMap",
 			"(Ljava/lang/Object;)Ljava/util/SortedMap;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TreeMap::tailMap(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"tailMap",
 			"(Ljava/lang/Object;)Ljava/util/SortedMap;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TreeMap::tailMap(jobject arg0, jboolean arg1)
 	{
@@ -319,53 +351,61 @@ namespace __jni_impl::java::util
 			"tailMap",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableMap;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject TreeMap::descendingMap()
 	{
 		return __thiz.callObjectMethod(
 			"descendingMap",
-			"()Ljava/util/NavigableMap;");
+			"()Ljava/util/NavigableMap;"
+		);
 	}
 	QAndroidJniObject TreeMap::lowerEntry(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"lowerEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TreeMap::floorEntry(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"floorEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TreeMap::ceilingEntry(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"ceilingEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TreeMap::higherEntry(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"higherEntry",
 			"(Ljava/lang/Object;)Ljava/util/Map$Entry;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TreeMap::firstEntry()
 	{
 		return __thiz.callObjectMethod(
 			"firstEntry",
-			"()Ljava/util/Map$Entry;");
+			"()Ljava/util/Map$Entry;"
+		);
 	}
 	QAndroidJniObject TreeMap::lastEntry()
 	{
 		return __thiz.callObjectMethod(
 			"lastEntry",
-			"()Ljava/util/Map$Entry;");
+			"()Ljava/util/Map$Entry;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

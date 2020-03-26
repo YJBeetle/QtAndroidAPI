@@ -48,7 +48,8 @@ namespace __jni_impl::android::net::ssl
 			"setUseSessionTickets",
 			"(Ljavax/net/ssl/SSLSocket;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean SSLSockets::isSupportedSocket(__jni_impl::javax::net::ssl::SSLSocket arg0)
 	{
@@ -56,7 +57,8 @@ namespace __jni_impl::android::net::ssl
 			"android.net.ssl.SSLSockets",
 			"isSupportedSocket",
 			"(Ljavax/net/ssl/SSLSocket;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net::ssl
 

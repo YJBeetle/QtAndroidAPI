@@ -33,13 +33,15 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$SessionException",
-			"ERROR_RESOURCE_CONTENTION");
+			"ERROR_RESOURCE_CONTENTION"
+		);
 	}
 	jint MediaDrm_SessionException::ERROR_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$SessionException",
-			"ERROR_UNKNOWN");
+			"ERROR_UNKNOWN"
+		);
 	}
 	
 	// Constructors
@@ -57,7 +59,8 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jint>(
 			"getErrorCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

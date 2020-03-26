@@ -104,7 +104,8 @@ namespace __jni_impl::android::widget
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void OverScroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
 	{
@@ -120,75 +121,87 @@ namespace __jni_impl::android::widget
 			arg6,
 			arg7,
 			arg8,
-			arg9);
+			arg9
+		);
 	}
 	void OverScroller::setFriction(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFriction",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OverScroller::isFinished()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFinished",
-			"()Z");
+			"()Z"
+		);
 	}
 	void OverScroller::forceFinished(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"forceFinished",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jint OverScroller::getCurrX()
 	{
 		return __thiz.callMethod<jint>(
 			"getCurrX",
-			"()I");
+			"()I"
+		);
 	}
 	jint OverScroller::getCurrY()
 	{
 		return __thiz.callMethod<jint>(
 			"getCurrY",
-			"()I");
+			"()I"
+		);
 	}
 	jfloat OverScroller::getCurrVelocity()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getCurrVelocity",
-			"()F");
+			"()F"
+		);
 	}
 	jint OverScroller::getStartX()
 	{
 		return __thiz.callMethod<jint>(
 			"getStartX",
-			"()I");
+			"()I"
+		);
 	}
 	jint OverScroller::getStartY()
 	{
 		return __thiz.callMethod<jint>(
 			"getStartY",
-			"()I");
+			"()I"
+		);
 	}
 	jint OverScroller::getFinalX()
 	{
 		return __thiz.callMethod<jint>(
 			"getFinalX",
-			"()I");
+			"()I"
+		);
 	}
 	jint OverScroller::getFinalY()
 	{
 		return __thiz.callMethod<jint>(
 			"getFinalY",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean OverScroller::computeScrollOffset()
 	{
 		return __thiz.callMethod<jboolean>(
 			"computeScrollOffset",
-			"()Z");
+			"()Z"
+		);
 	}
 	void OverScroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -198,7 +211,8 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void OverScroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -209,7 +223,8 @@ namespace __jni_impl::android::widget
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean OverScroller::springBack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -221,7 +236,8 @@ namespace __jni_impl::android::widget
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void OverScroller::notifyHorizontalEdgeReached(jint arg0, jint arg1, jint arg2)
 	{
@@ -230,7 +246,8 @@ namespace __jni_impl::android::widget
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void OverScroller::notifyVerticalEdgeReached(jint arg0, jint arg1, jint arg2)
 	{
@@ -239,19 +256,22 @@ namespace __jni_impl::android::widget
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean OverScroller::isOverScrolled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOverScrolled",
-			"()Z");
+			"()Z"
+		);
 	}
 	void OverScroller::abortAnimation()
 	{
 		__thiz.callMethod<void>(
 			"abortAnimation",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

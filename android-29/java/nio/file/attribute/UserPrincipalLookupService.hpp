@@ -41,14 +41,16 @@ namespace __jni_impl::java::nio::file::attribute
 		return __thiz.callObjectMethod(
 			"lookupPrincipalByName",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/UserPrincipal;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject UserPrincipalLookupService::lookupPrincipalByGroupName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"lookupPrincipalByGroupName",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/GroupPrincipal;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::file::attribute
 

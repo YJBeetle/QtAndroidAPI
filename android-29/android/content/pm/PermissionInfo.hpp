@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "PackageItemInfo.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content::pm
 {
 	class PackageManager;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content::pm
@@ -46,8 +46,8 @@ namespace __jni_impl::android::content::pm
 		static jint PROTECTION_SIGNATURE_OR_SYSTEM();
 		jint descriptionRes();
 		jint flags();
-		QAndroidJniObject group();
-		QAndroidJniObject nonLocalizedDescription();
+		jstring group();
+		jstring nonLocalizedDescription();
 		jint protectionLevel();
 		
 		// Constructors
@@ -55,17 +55,17 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::PermissionInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		jint getProtection();
-		jint getProtectionFlags();
+		jstring toString();
+		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
+		jint getProtection();
+		jint getProtectionFlags();
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "../../os/Parcel.hpp"
 #include "PackageManager.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -75,166 +75,194 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.PermissionInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint PermissionInfo::FLAG_COSTS_MONEY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"FLAG_COSTS_MONEY");
+			"FLAG_COSTS_MONEY"
+		);
 	}
 	jint PermissionInfo::FLAG_HARD_RESTRICTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"FLAG_HARD_RESTRICTED");
+			"FLAG_HARD_RESTRICTED"
+		);
 	}
 	jint PermissionInfo::FLAG_IMMUTABLY_RESTRICTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"FLAG_IMMUTABLY_RESTRICTED");
+			"FLAG_IMMUTABLY_RESTRICTED"
+		);
 	}
 	jint PermissionInfo::FLAG_INSTALLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"FLAG_INSTALLED");
+			"FLAG_INSTALLED"
+		);
 	}
 	jint PermissionInfo::FLAG_SOFT_RESTRICTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"FLAG_SOFT_RESTRICTED");
+			"FLAG_SOFT_RESTRICTED"
+		);
 	}
 	jint PermissionInfo::PROTECTION_DANGEROUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_DANGEROUS");
+			"PROTECTION_DANGEROUS"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_APPOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_APPOP");
+			"PROTECTION_FLAG_APPOP"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_DEVELOPMENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_DEVELOPMENT");
+			"PROTECTION_FLAG_DEVELOPMENT"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_INSTALLER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_INSTALLER");
+			"PROTECTION_FLAG_INSTALLER"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_INSTANT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_INSTANT");
+			"PROTECTION_FLAG_INSTANT"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_PRE23()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_PRE23");
+			"PROTECTION_FLAG_PRE23"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_PREINSTALLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_PREINSTALLED");
+			"PROTECTION_FLAG_PREINSTALLED"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_PRIVILEGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_PRIVILEGED");
+			"PROTECTION_FLAG_PRIVILEGED"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_RUNTIME_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_RUNTIME_ONLY");
+			"PROTECTION_FLAG_RUNTIME_ONLY"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_SETUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_SETUP");
+			"PROTECTION_FLAG_SETUP"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_SYSTEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_SYSTEM");
+			"PROTECTION_FLAG_SYSTEM"
+		);
 	}
 	jint PermissionInfo::PROTECTION_FLAG_VERIFIER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_FLAG_VERIFIER");
+			"PROTECTION_FLAG_VERIFIER"
+		);
 	}
 	jint PermissionInfo::PROTECTION_MASK_BASE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_MASK_BASE");
+			"PROTECTION_MASK_BASE"
+		);
 	}
 	jint PermissionInfo::PROTECTION_MASK_FLAGS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_MASK_FLAGS");
+			"PROTECTION_MASK_FLAGS"
+		);
 	}
 	jint PermissionInfo::PROTECTION_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_NORMAL");
+			"PROTECTION_NORMAL"
+		);
 	}
 	jint PermissionInfo::PROTECTION_SIGNATURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_SIGNATURE");
+			"PROTECTION_SIGNATURE"
+		);
 	}
 	jint PermissionInfo::PROTECTION_SIGNATURE_OR_SYSTEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionInfo",
-			"PROTECTION_SIGNATURE_OR_SYSTEM");
+			"PROTECTION_SIGNATURE_OR_SYSTEM"
+		);
 	}
 	jint PermissionInfo::descriptionRes()
 	{
 		return __thiz.getField<jint>(
-			"descriptionRes");
+			"descriptionRes"
+		);
 	}
 	jint PermissionInfo::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
-	QAndroidJniObject PermissionInfo::group()
+	jstring PermissionInfo::group()
 	{
 		return __thiz.getObjectField(
 			"group",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PermissionInfo::nonLocalizedDescription()
+	jstring PermissionInfo::nonLocalizedDescription()
 	{
 		return __thiz.getObjectField(
 			"nonLocalizedDescription",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint PermissionInfo::protectionLevel()
 	{
 		return __thiz.getField<jint>(
-			"protectionLevel");
+			"protectionLevel"
+		);
 	}
 	
 	// Constructors
@@ -253,29 +281,27 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject PermissionInfo::toString()
+	jstring PermissionInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	jint PermissionInfo::getProtection()
+	jstring PermissionInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getProtection",
-			"()I");
-	}
-	jint PermissionInfo::getProtectionFlags()
-	{
-		return __thiz.callMethod<jint>(
-			"getProtectionFlags",
-			"()I");
+		return __thiz.callObjectMethod(
+			"loadDescription",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	jint PermissionInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PermissionInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -283,14 +309,22 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject PermissionInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
+	jint PermissionInfo::getProtection()
 	{
-		return __thiz.callObjectMethod(
-			"loadDescription",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
+		return __thiz.callMethod<jint>(
+			"getProtection",
+			"()I"
+		);
+	}
+	jint PermissionInfo::getProtectionFlags()
+	{
+		return __thiz.callMethod<jint>(
+			"getProtectionFlags",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

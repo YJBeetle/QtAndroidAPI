@@ -18,7 +18,7 @@ namespace __jni_impl::android::hardware::camera2::params
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getFormat();
 		jint getWidth();
@@ -48,37 +48,43 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject InputConfiguration::toString()
+	jstring InputConfiguration::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint InputConfiguration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint InputConfiguration::getFormat()
 	{
 		return __thiz.callMethod<jint>(
 			"getFormat",
-			"()I");
+			"()I"
+		);
 	}
 	jint InputConfiguration::getWidth()
 	{
 		return __thiz.callMethod<jint>(
 			"getWidth",
-			"()I");
+			"()I"
+		);
 	}
 	jint InputConfiguration::getHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getHeight",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

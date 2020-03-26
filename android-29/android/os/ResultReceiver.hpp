@@ -11,11 +11,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 
 namespace __jni_impl::android::os
@@ -30,15 +30,15 @@ namespace __jni_impl::android::os
 		void __constructor(__jni_impl::android::os::Handler arg0);
 		
 		// Methods
-		void send(jint arg0, __jni_impl::android::os::Bundle arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void send(jint arg0, __jni_impl::android::os::Bundle arg1);
 	};
 } // namespace __jni_impl::android::os
 
 #include "Handler.hpp"
-#include "Bundle.hpp"
 #include "Parcel.hpp"
+#include "Bundle.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -48,7 +48,8 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.ResultReceiver",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -61,19 +62,12 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	void ResultReceiver::send(jint arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"send",
-			"(ILandroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
 	jint ResultReceiver::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ResultReceiver::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -81,7 +75,17 @@ namespace __jni_impl::android::os
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ResultReceiver::send(jint arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(ILandroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::os
 

@@ -33,31 +33,36 @@ namespace __jni_impl::android
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$array",
-			"emailAddressTypes");
+			"emailAddressTypes"
+		);
 	}
 	jint R_array::imProtocols()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$array",
-			"imProtocols");
+			"imProtocols"
+		);
 	}
 	jint R_array::organizationTypes()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$array",
-			"organizationTypes");
+			"organizationTypes"
+		);
 	}
 	jint R_array::phoneTypes()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$array",
-			"phoneTypes");
+			"phoneTypes"
+		);
 	}
 	jint R_array::postalAddressTypes()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$array",
-			"postalAddressTypes");
+			"postalAddressTypes"
+		);
 	}
 	
 	// Constructors

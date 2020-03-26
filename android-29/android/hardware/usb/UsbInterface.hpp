@@ -26,8 +26,8 @@ namespace __jni_impl::android::hardware::usb
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
+		jstring getName();
+		jstring toString();
 		jint getId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -51,7 +51,8 @@ namespace __jni_impl::android::hardware::usb
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.usb.UsbInterface",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -63,29 +64,33 @@ namespace __jni_impl::android::hardware::usb
 	}
 	
 	// Methods
-	QAndroidJniObject UsbInterface::getName()
+	jstring UsbInterface::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UsbInterface::toString()
+	jstring UsbInterface::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsbInterface::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbInterface::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UsbInterface::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -93,44 +98,51 @@ namespace __jni_impl::android::hardware::usb
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint UsbInterface::getAlternateSetting()
 	{
 		return __thiz.callMethod<jint>(
 			"getAlternateSetting",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbInterface::getInterfaceClass()
 	{
 		return __thiz.callMethod<jint>(
 			"getInterfaceClass",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbInterface::getInterfaceSubclass()
 	{
 		return __thiz.callMethod<jint>(
 			"getInterfaceSubclass",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbInterface::getInterfaceProtocol()
 	{
 		return __thiz.callMethod<jint>(
 			"getInterfaceProtocol",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbInterface::getEndpointCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getEndpointCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject UsbInterface::getEndpoint(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getEndpoint",
 			"(I)Landroid/hardware/usb/UsbEndpoint;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::hardware::usb
 

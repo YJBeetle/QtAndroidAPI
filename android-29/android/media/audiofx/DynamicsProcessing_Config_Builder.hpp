@@ -86,7 +86,8 @@ namespace __jni_impl::android::media::audiofx
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/media/audiofx/DynamicsProcessing$Config;");
+			"()Landroid/media/audiofx/DynamicsProcessing$Config;"
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setChannelTo(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_Channel arg1)
 	{
@@ -94,14 +95,16 @@ namespace __jni_impl::android::media::audiofx
 			"setChannelTo",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Channel;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setAllChannelsTo(__jni_impl::android::media::audiofx::DynamicsProcessing_Channel arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Channel;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setInputGainByChannelIndex(jint arg0, jfloat arg1)
 	{
@@ -109,14 +112,16 @@ namespace __jni_impl::android::media::audiofx
 			"setInputGainByChannelIndex",
 			"(IF)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setInputGainAllChannelsTo(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setInputGainAllChannelsTo",
 			"(F)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setPreEqByChannelIndex(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_Eq arg1)
 	{
@@ -124,14 +129,16 @@ namespace __jni_impl::android::media::audiofx
 			"setPreEqByChannelIndex",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Eq;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setPreEqAllChannelsTo(__jni_impl::android::media::audiofx::DynamicsProcessing_Eq arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPreEqAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Eq;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setMbcByChannelIndex(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_Mbc arg1)
 	{
@@ -139,14 +146,16 @@ namespace __jni_impl::android::media::audiofx
 			"setMbcByChannelIndex",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Mbc;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setMbcAllChannelsTo(__jni_impl::android::media::audiofx::DynamicsProcessing_Mbc arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMbcAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Mbc;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setPostEqByChannelIndex(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_Eq arg1)
 	{
@@ -154,14 +163,16 @@ namespace __jni_impl::android::media::audiofx
 			"setPostEqByChannelIndex",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Eq;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setPostEqAllChannelsTo(__jni_impl::android::media::audiofx::DynamicsProcessing_Eq arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPostEqAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Eq;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setLimiterByChannelIndex(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_Limiter arg1)
 	{
@@ -169,21 +180,24 @@ namespace __jni_impl::android::media::audiofx
 			"setLimiterByChannelIndex",
 			"(ILandroid/media/audiofx/DynamicsProcessing$Limiter;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setLimiterAllChannelsTo(__jni_impl::android::media::audiofx::DynamicsProcessing_Limiter arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLimiterAllChannelsTo",
 			"(Landroid/media/audiofx/DynamicsProcessing$Limiter;)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DynamicsProcessing_Config_Builder::setPreferredFrameDuration(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPreferredFrameDuration",
 			"(F)Landroid/media/audiofx/DynamicsProcessing$Config$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

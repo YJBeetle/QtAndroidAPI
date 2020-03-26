@@ -49,9 +49,9 @@ namespace __jni_impl::android::app
 		QAndroidJniObject anrInfo();
 		QAndroidJniObject batteryInfo();
 		QAndroidJniObject crashInfo();
-		QAndroidJniObject installerPackageName();
-		QAndroidJniObject packageName();
-		QAndroidJniObject processName();
+		jstring installerPackageName();
+		jstring packageName();
+		jstring processName();
 		QAndroidJniObject runningServiceInfo();
 		jboolean systemApp();
 		jlong time();
@@ -61,10 +61,10 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		static QAndroidJniObject getErrorReportReceiver(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::app
@@ -85,94 +85,110 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ApplicationErrorReport",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ApplicationErrorReport::TYPE_ANR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
-			"TYPE_ANR");
+			"TYPE_ANR"
+		);
 	}
 	jint ApplicationErrorReport::TYPE_BATTERY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
-			"TYPE_BATTERY");
+			"TYPE_BATTERY"
+		);
 	}
 	jint ApplicationErrorReport::TYPE_CRASH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
-			"TYPE_CRASH");
+			"TYPE_CRASH"
+		);
 	}
 	jint ApplicationErrorReport::TYPE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
-			"TYPE_NONE");
+			"TYPE_NONE"
+		);
 	}
 	jint ApplicationErrorReport::TYPE_RUNNING_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ApplicationErrorReport",
-			"TYPE_RUNNING_SERVICE");
+			"TYPE_RUNNING_SERVICE"
+		);
 	}
 	QAndroidJniObject ApplicationErrorReport::anrInfo()
 	{
 		return __thiz.getObjectField(
 			"anrInfo",
-			"Landroid/app/ApplicationErrorReport$AnrInfo;");
+			"Landroid/app/ApplicationErrorReport$AnrInfo;"
+		);
 	}
 	QAndroidJniObject ApplicationErrorReport::batteryInfo()
 	{
 		return __thiz.getObjectField(
 			"batteryInfo",
-			"Landroid/app/ApplicationErrorReport$BatteryInfo;");
+			"Landroid/app/ApplicationErrorReport$BatteryInfo;"
+		);
 	}
 	QAndroidJniObject ApplicationErrorReport::crashInfo()
 	{
 		return __thiz.getObjectField(
 			"crashInfo",
-			"Landroid/app/ApplicationErrorReport$CrashInfo;");
+			"Landroid/app/ApplicationErrorReport$CrashInfo;"
+		);
 	}
-	QAndroidJniObject ApplicationErrorReport::installerPackageName()
+	jstring ApplicationErrorReport::installerPackageName()
 	{
 		return __thiz.getObjectField(
 			"installerPackageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ApplicationErrorReport::packageName()
+	jstring ApplicationErrorReport::packageName()
 	{
 		return __thiz.getObjectField(
 			"packageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ApplicationErrorReport::processName()
+	jstring ApplicationErrorReport::processName()
 	{
 		return __thiz.getObjectField(
 			"processName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ApplicationErrorReport::runningServiceInfo()
 	{
 		return __thiz.getObjectField(
 			"runningServiceInfo",
-			"Landroid/app/ApplicationErrorReport$RunningServiceInfo;");
+			"Landroid/app/ApplicationErrorReport$RunningServiceInfo;"
+		);
 	}
 	jboolean ApplicationErrorReport::systemApp()
 	{
 		return __thiz.getField<jboolean>(
-			"systemApp");
+			"systemApp"
+		);
 	}
 	jlong ApplicationErrorReport::time()
 	{
 		return __thiz.getField<jlong>(
-			"time");
+			"time"
+		);
 	}
 	jint ApplicationErrorReport::type()
 	{
 		return __thiz.getField<jint>(
-			"type");
+			"type"
+		);
 	}
 	
 	// Constructors
@@ -184,26 +200,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ApplicationErrorReport::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
-	void ApplicationErrorReport::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	jint ApplicationErrorReport::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ApplicationErrorReport::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -211,7 +213,25 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ApplicationErrorReport::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void ApplicationErrorReport::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ApplicationErrorReport::getErrorReportReceiver(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2)
 	{
@@ -221,7 +241,8 @@ namespace __jni_impl::android::app
 			"(Landroid/content/Context;Ljava/lang/String;I)Landroid/content/ComponentName;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::app
 

@@ -85,16 +85,16 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getEncoding();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getSampleRate();
 		jint getChannelMask();
 		jint getChannelIndexMask();
 		jint getChannelCount();
 		jint getFrameSizeInBytes();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -107,380 +107,443 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_CONFIGURATION_DEFAULT");
+			"CHANNEL_CONFIGURATION_DEFAULT"
+		);
 	}
 	jint AudioFormat::CHANNEL_CONFIGURATION_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_CONFIGURATION_INVALID");
+			"CHANNEL_CONFIGURATION_INVALID"
+		);
 	}
 	jint AudioFormat::CHANNEL_CONFIGURATION_MONO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_CONFIGURATION_MONO");
+			"CHANNEL_CONFIGURATION_MONO"
+		);
 	}
 	jint AudioFormat::CHANNEL_CONFIGURATION_STEREO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_CONFIGURATION_STEREO");
+			"CHANNEL_CONFIGURATION_STEREO"
+		);
 	}
 	jint AudioFormat::CHANNEL_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_INVALID");
+			"CHANNEL_INVALID"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_BACK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_BACK");
+			"CHANNEL_IN_BACK"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_BACK_PROCESSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_BACK_PROCESSED");
+			"CHANNEL_IN_BACK_PROCESSED"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_DEFAULT");
+			"CHANNEL_IN_DEFAULT"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_FRONT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_FRONT");
+			"CHANNEL_IN_FRONT"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_FRONT_PROCESSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_FRONT_PROCESSED");
+			"CHANNEL_IN_FRONT_PROCESSED"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_LEFT");
+			"CHANNEL_IN_LEFT"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_LEFT_PROCESSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_LEFT_PROCESSED");
+			"CHANNEL_IN_LEFT_PROCESSED"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_MONO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_MONO");
+			"CHANNEL_IN_MONO"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_PRESSURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_PRESSURE");
+			"CHANNEL_IN_PRESSURE"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_RIGHT");
+			"CHANNEL_IN_RIGHT"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_RIGHT_PROCESSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_RIGHT_PROCESSED");
+			"CHANNEL_IN_RIGHT_PROCESSED"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_STEREO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_STEREO");
+			"CHANNEL_IN_STEREO"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_VOICE_DNLINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_VOICE_DNLINK");
+			"CHANNEL_IN_VOICE_DNLINK"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_VOICE_UPLINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_VOICE_UPLINK");
+			"CHANNEL_IN_VOICE_UPLINK"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_X_AXIS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_X_AXIS");
+			"CHANNEL_IN_X_AXIS"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_Y_AXIS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_Y_AXIS");
+			"CHANNEL_IN_Y_AXIS"
+		);
 	}
 	jint AudioFormat::CHANNEL_IN_Z_AXIS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_IN_Z_AXIS");
+			"CHANNEL_IN_Z_AXIS"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_5POINT1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_5POINT1");
+			"CHANNEL_OUT_5POINT1"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_7POINT1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_7POINT1");
+			"CHANNEL_OUT_7POINT1"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_7POINT1_SURROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_7POINT1_SURROUND");
+			"CHANNEL_OUT_7POINT1_SURROUND"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_BACK_CENTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_BACK_CENTER");
+			"CHANNEL_OUT_BACK_CENTER"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_BACK_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_BACK_LEFT");
+			"CHANNEL_OUT_BACK_LEFT"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_BACK_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_BACK_RIGHT");
+			"CHANNEL_OUT_BACK_RIGHT"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_DEFAULT");
+			"CHANNEL_OUT_DEFAULT"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_FRONT_CENTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_FRONT_CENTER");
+			"CHANNEL_OUT_FRONT_CENTER"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_FRONT_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_FRONT_LEFT");
+			"CHANNEL_OUT_FRONT_LEFT"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_FRONT_LEFT_OF_CENTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_FRONT_LEFT_OF_CENTER");
+			"CHANNEL_OUT_FRONT_LEFT_OF_CENTER"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_FRONT_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_FRONT_RIGHT");
+			"CHANNEL_OUT_FRONT_RIGHT"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_FRONT_RIGHT_OF_CENTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_FRONT_RIGHT_OF_CENTER");
+			"CHANNEL_OUT_FRONT_RIGHT_OF_CENTER"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_LOW_FREQUENCY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_LOW_FREQUENCY");
+			"CHANNEL_OUT_LOW_FREQUENCY"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_MONO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_MONO");
+			"CHANNEL_OUT_MONO"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_QUAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_QUAD");
+			"CHANNEL_OUT_QUAD"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_SIDE_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_SIDE_LEFT");
+			"CHANNEL_OUT_SIDE_LEFT"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_SIDE_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_SIDE_RIGHT");
+			"CHANNEL_OUT_SIDE_RIGHT"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_STEREO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_STEREO");
+			"CHANNEL_OUT_STEREO"
+		);
 	}
 	jint AudioFormat::CHANNEL_OUT_SURROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"CHANNEL_OUT_SURROUND");
+			"CHANNEL_OUT_SURROUND"
+		);
 	}
 	QAndroidJniObject AudioFormat::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioFormat",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint AudioFormat::ENCODING_AAC_ELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_AAC_ELD");
+			"ENCODING_AAC_ELD"
+		);
 	}
 	jint AudioFormat::ENCODING_AAC_HE_V1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_AAC_HE_V1");
+			"ENCODING_AAC_HE_V1"
+		);
 	}
 	jint AudioFormat::ENCODING_AAC_HE_V2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_AAC_HE_V2");
+			"ENCODING_AAC_HE_V2"
+		);
 	}
 	jint AudioFormat::ENCODING_AAC_LC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_AAC_LC");
+			"ENCODING_AAC_LC"
+		);
 	}
 	jint AudioFormat::ENCODING_AAC_XHE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_AAC_XHE");
+			"ENCODING_AAC_XHE"
+		);
 	}
 	jint AudioFormat::ENCODING_AC3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_AC3");
+			"ENCODING_AC3"
+		);
 	}
 	jint AudioFormat::ENCODING_AC4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_AC4");
+			"ENCODING_AC4"
+		);
 	}
 	jint AudioFormat::ENCODING_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_DEFAULT");
+			"ENCODING_DEFAULT"
+		);
 	}
 	jint AudioFormat::ENCODING_DOLBY_MAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_DOLBY_MAT");
+			"ENCODING_DOLBY_MAT"
+		);
 	}
 	jint AudioFormat::ENCODING_DOLBY_TRUEHD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_DOLBY_TRUEHD");
+			"ENCODING_DOLBY_TRUEHD"
+		);
 	}
 	jint AudioFormat::ENCODING_DTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_DTS");
+			"ENCODING_DTS"
+		);
 	}
 	jint AudioFormat::ENCODING_DTS_HD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_DTS_HD");
+			"ENCODING_DTS_HD"
+		);
 	}
 	jint AudioFormat::ENCODING_E_AC3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_E_AC3");
+			"ENCODING_E_AC3"
+		);
 	}
 	jint AudioFormat::ENCODING_E_AC3_JOC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_E_AC3_JOC");
+			"ENCODING_E_AC3_JOC"
+		);
 	}
 	jint AudioFormat::ENCODING_IEC61937()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_IEC61937");
+			"ENCODING_IEC61937"
+		);
 	}
 	jint AudioFormat::ENCODING_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_INVALID");
+			"ENCODING_INVALID"
+		);
 	}
 	jint AudioFormat::ENCODING_MP3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_MP3");
+			"ENCODING_MP3"
+		);
 	}
 	jint AudioFormat::ENCODING_PCM_16BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_PCM_16BIT");
+			"ENCODING_PCM_16BIT"
+		);
 	}
 	jint AudioFormat::ENCODING_PCM_8BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_PCM_8BIT");
+			"ENCODING_PCM_8BIT"
+		);
 	}
 	jint AudioFormat::ENCODING_PCM_FLOAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"ENCODING_PCM_FLOAT");
+			"ENCODING_PCM_FLOAT"
+		);
 	}
 	jint AudioFormat::SAMPLE_RATE_UNSPECIFIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioFormat",
-			"SAMPLE_RATE_UNSPECIFIED");
+			"SAMPLE_RATE_UNSPECIFIED"
+		);
 	}
 	
 	// Constructors
@@ -497,61 +560,36 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AudioFormat::toString()
+	jstring AudioFormat::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AudioFormat::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioFormat::getEncoding()
 	{
 		return __thiz.callMethod<jint>(
 			"getEncoding",
-			"()I");
-	}
-	jint AudioFormat::getSampleRate()
-	{
-		return __thiz.callMethod<jint>(
-			"getSampleRate",
-			"()I");
-	}
-	jint AudioFormat::getChannelMask()
-	{
-		return __thiz.callMethod<jint>(
-			"getChannelMask",
-			"()I");
-	}
-	jint AudioFormat::getChannelIndexMask()
-	{
-		return __thiz.callMethod<jint>(
-			"getChannelIndexMask",
-			"()I");
-	}
-	jint AudioFormat::getChannelCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getChannelCount",
-			"()I");
-	}
-	jint AudioFormat::getFrameSizeInBytes()
-	{
-		return __thiz.callMethod<jint>(
-			"getFrameSizeInBytes",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioFormat::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void AudioFormat::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -559,7 +597,43 @@ namespace __jni_impl::android::media
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint AudioFormat::getSampleRate()
+	{
+		return __thiz.callMethod<jint>(
+			"getSampleRate",
+			"()I"
+		);
+	}
+	jint AudioFormat::getChannelMask()
+	{
+		return __thiz.callMethod<jint>(
+			"getChannelMask",
+			"()I"
+		);
+	}
+	jint AudioFormat::getChannelIndexMask()
+	{
+		return __thiz.callMethod<jint>(
+			"getChannelIndexMask",
+			"()I"
+		);
+	}
+	jint AudioFormat::getChannelCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getChannelCount",
+			"()I"
+		);
+	}
+	jint AudioFormat::getFrameSizeInBytes()
+	{
+		return __thiz.callMethod<jint>(
+			"getFrameSizeInBytes",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

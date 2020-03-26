@@ -29,10 +29,9 @@ namespace __jni_impl::android::graphics
 		jboolean isEmpty();
 		void offset(jint arg0, jint arg1);
 		void set(__jni_impl::android::graphics::Outline arg0);
-		void setAlpha(jfloat arg0);
+		jboolean getRect(__jni_impl::android::graphics::Rect arg0);
 		void setEmpty();
 		jfloat getAlpha();
-		jboolean getRect(__jni_impl::android::graphics::Rect arg0);
 		jboolean canClip();
 		void setRoundRect(__jni_impl::android::graphics::Rect arg0, jfloat arg1);
 		void setRoundRect(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4);
@@ -42,6 +41,7 @@ namespace __jni_impl::android::graphics
 		void setOval(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setOval(__jni_impl::android::graphics::Rect arg0);
 		void setConvexPath(__jni_impl::android::graphics::Path arg0);
+		void setAlpha(jfloat arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -72,7 +72,8 @@ namespace __jni_impl::android::graphics
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Outline::offset(jint arg0, jint arg1)
 	{
@@ -80,46 +81,45 @@ namespace __jni_impl::android::graphics
 			"offset",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Outline::set(__jni_impl::android::graphics::Outline arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object());
-	}
-	void Outline::setAlpha(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlpha",
-			"(F)V",
-			arg0);
-	}
-	void Outline::setEmpty()
-	{
-		__thiz.callMethod<void>(
-			"setEmpty",
-			"()V");
-	}
-	jfloat Outline::getAlpha()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getAlpha",
-			"()F");
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Outline::getRect(__jni_impl::android::graphics::Rect arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getRect",
 			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void Outline::setEmpty()
+	{
+		__thiz.callMethod<void>(
+			"setEmpty",
+			"()V"
+		);
+	}
+	jfloat Outline::getAlpha()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getAlpha",
+			"()F"
+		);
 	}
 	jboolean Outline::canClip()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canClip",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Outline::setRoundRect(__jni_impl::android::graphics::Rect arg0, jfloat arg1)
 	{
@@ -127,7 +127,8 @@ namespace __jni_impl::android::graphics
 			"setRoundRect",
 			"(Landroid/graphics/Rect;F)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Outline::setRoundRect(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4)
 	{
@@ -138,14 +139,16 @@ namespace __jni_impl::android::graphics
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Outline::setRect(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRect",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Outline::setRect(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -155,13 +158,15 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jfloat Outline::getRadius()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getRadius",
-			"()F");
+			"()F"
+		);
 	}
 	void Outline::setOval(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -171,21 +176,32 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Outline::setOval(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOval",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Outline::setConvexPath(__jni_impl::android::graphics::Path arg0)
 	{
 		__thiz.callMethod<void>(
 			"setConvexPath",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void Outline::setAlpha(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(F)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

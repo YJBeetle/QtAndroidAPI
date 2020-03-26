@@ -73,20 +73,23 @@ namespace __jni_impl::android::transition
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject PatternPathMotion::getPatternPath()
 	{
 		return __thiz.callObjectMethod(
 			"getPatternPath",
-			"()Landroid/graphics/Path;");
+			"()Landroid/graphics/Path;"
+		);
 	}
 	void PatternPathMotion::setPatternPath(__jni_impl::android::graphics::Path arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPatternPath",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::transition
 

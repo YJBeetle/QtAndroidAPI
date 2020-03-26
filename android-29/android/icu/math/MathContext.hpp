@@ -32,7 +32,7 @@ namespace __jni_impl::android::icu::math
 		void __constructor(jint arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getRoundingMode();
 		jint getForm();
 		jboolean getLostDigits();
@@ -49,73 +49,85 @@ namespace __jni_impl::android::icu::math
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.math.MathContext",
 			"DEFAULT",
-			"Landroid/icu/math/MathContext;");
+			"Landroid/icu/math/MathContext;"
+		);
 	}
 	jint MathContext::ENGINEERING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"ENGINEERING");
+			"ENGINEERING"
+		);
 	}
 	jint MathContext::PLAIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"PLAIN");
+			"PLAIN"
+		);
 	}
 	jint MathContext::ROUND_CEILING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"ROUND_CEILING");
+			"ROUND_CEILING"
+		);
 	}
 	jint MathContext::ROUND_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"ROUND_DOWN");
+			"ROUND_DOWN"
+		);
 	}
 	jint MathContext::ROUND_FLOOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"ROUND_FLOOR");
+			"ROUND_FLOOR"
+		);
 	}
 	jint MathContext::ROUND_HALF_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"ROUND_HALF_DOWN");
+			"ROUND_HALF_DOWN"
+		);
 	}
 	jint MathContext::ROUND_HALF_EVEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"ROUND_HALF_EVEN");
+			"ROUND_HALF_EVEN"
+		);
 	}
 	jint MathContext::ROUND_HALF_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"ROUND_HALF_UP");
+			"ROUND_HALF_UP"
+		);
 	}
 	jint MathContext::ROUND_UNNECESSARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"ROUND_UNNECESSARY");
+			"ROUND_UNNECESSARY"
+		);
 	}
 	jint MathContext::ROUND_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"ROUND_UP");
+			"ROUND_UP"
+		);
 	}
 	jint MathContext::SCIENTIFIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.math.MathContext",
-			"SCIENTIFIC");
+			"SCIENTIFIC"
+		);
 	}
 	
 	// Constructors
@@ -155,35 +167,40 @@ namespace __jni_impl::android::icu::math
 	}
 	
 	// Methods
-	QAndroidJniObject MathContext::toString()
+	jstring MathContext::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MathContext::getRoundingMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getRoundingMode",
-			"()I");
+			"()I"
+		);
 	}
 	jint MathContext::getForm()
 	{
 		return __thiz.callMethod<jint>(
 			"getForm",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean MathContext::getLostDigits()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getLostDigits",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint MathContext::getDigits()
 	{
 		return __thiz.callMethod<jint>(
 			"getDigits",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::icu::math
 

@@ -41,7 +41,8 @@ namespace __jni_impl::android::net
 	{
 		return __thiz.callMethod<jint>(
 			"getSpi",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net
 

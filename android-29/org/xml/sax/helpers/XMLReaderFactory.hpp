@@ -47,14 +47,16 @@ namespace __jni_impl::org::xml::sax::helpers
 			"org.xml.sax.helpers.XMLReaderFactory",
 			"createXMLReader",
 			"(Ljava/lang/String;)Lorg/xml/sax/XMLReader;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject XMLReaderFactory::createXMLReader()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"org.xml.sax.helpers.XMLReaderFactory",
 			"createXMLReader",
-			"()Lorg/xml/sax/XMLReader;");
+			"()Lorg/xml/sax/XMLReader;"
+		);
 	}
 } // namespace __jni_impl::org::xml::sax::helpers
 

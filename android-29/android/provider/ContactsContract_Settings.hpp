@@ -16,8 +16,8 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
 		
 		// Constructors
@@ -32,26 +32,29 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_Settings::CONTENT_ITEM_TYPE()
+	jstring ContactsContract_Settings::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Settings",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Settings::CONTENT_TYPE()
+	jstring ContactsContract_Settings::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Settings",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_Settings::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Settings",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors

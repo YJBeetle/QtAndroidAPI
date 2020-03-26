@@ -31,7 +31,7 @@ namespace __jni_impl::android::companion
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -51,7 +51,8 @@ namespace __jni_impl::android::companion
 		return QAndroidJniObject::getStaticObjectField(
 			"android.companion.BluetoothLeDeviceFilter",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -68,25 +69,29 @@ namespace __jni_impl::android::companion
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject BluetoothLeDeviceFilter::toString()
+	jstring BluetoothLeDeviceFilter::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint BluetoothLeDeviceFilter::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint BluetoothLeDeviceFilter::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void BluetoothLeDeviceFilter::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -94,14 +99,16 @@ namespace __jni_impl::android::companion
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint BluetoothLeDeviceFilter::getRenamePrefixLengthLimit()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.companion.BluetoothLeDeviceFilter",
 			"getRenamePrefixLengthLimit",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::companion
 

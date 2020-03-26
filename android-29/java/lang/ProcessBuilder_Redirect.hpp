@@ -49,21 +49,24 @@ namespace __jni_impl::java::lang
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
 			"PIPE",
-			"Ljava/lang/ProcessBuilder$Redirect;");
+			"Ljava/lang/ProcessBuilder$Redirect;"
+		);
 	}
 	QAndroidJniObject ProcessBuilder_Redirect::INHERIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
 			"INHERIT",
-			"Ljava/lang/ProcessBuilder$Redirect;");
+			"Ljava/lang/ProcessBuilder$Redirect;"
+		);
 	}
 	QAndroidJniObject ProcessBuilder_Redirect::DISCARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
 			"DISCARD",
-			"Ljava/lang/ProcessBuilder$Redirect;");
+			"Ljava/lang/ProcessBuilder$Redirect;"
+		);
 	}
 	
 	// Constructors
@@ -79,20 +82,23 @@ namespace __jni_impl::java::lang
 	{
 		return __thiz.callObjectMethod(
 			"type",
-			"()Ljava/lang/ProcessBuilder$Redirect$Type;");
+			"()Ljava/lang/ProcessBuilder$Redirect$Type;"
+		);
 	}
 	jboolean ProcessBuilder_Redirect::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ProcessBuilder_Redirect::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ProcessBuilder_Redirect::to(__jni_impl::java::io::File arg0)
 	{
@@ -100,7 +106,8 @@ namespace __jni_impl::java::lang
 			"java.lang.ProcessBuilder$Redirect",
 			"to",
 			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ProcessBuilder_Redirect::from(__jni_impl::java::io::File arg0)
 	{
@@ -108,13 +115,15 @@ namespace __jni_impl::java::lang
 			"java.lang.ProcessBuilder$Redirect",
 			"from",
 			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ProcessBuilder_Redirect::file()
 	{
 		return __thiz.callObjectMethod(
 			"file",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject ProcessBuilder_Redirect::appendTo(__jni_impl::java::io::File arg0)
 	{
@@ -122,7 +131,8 @@ namespace __jni_impl::java::lang
 			"java.lang.ProcessBuilder$Redirect",
 			"appendTo",
 			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::lang
 

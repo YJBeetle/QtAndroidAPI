@@ -24,13 +24,13 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject parseResult(jint arg0, __jni_impl::android::content::Intent arg1);
-		QAndroidJniObject getAcceptTypes();
-		jboolean isCaptureEnabled();
-		QAndroidJniObject getFilenameHint();
-		QAndroidJniObject createIntent();
-		QAndroidJniObject getTitle();
+		jstring getTitle();
 		jint getMode();
+		static jarray parseResult(jint arg0, __jni_impl::android::content::Intent arg1);
+		jarray getAcceptTypes();
+		jboolean isCaptureEnabled();
+		jstring getFilenameHint();
+		QAndroidJniObject createIntent();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -43,19 +43,22 @@ namespace __jni_impl::android::webkit
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebChromeClient$FileChooserParams",
-			"MODE_OPEN");
+			"MODE_OPEN"
+		);
 	}
 	jint WebChromeClient_FileChooserParams::MODE_OPEN_MULTIPLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebChromeClient$FileChooserParams",
-			"MODE_OPEN_MULTIPLE");
+			"MODE_OPEN_MULTIPLE"
+		);
 	}
 	jint WebChromeClient_FileChooserParams::MODE_SAVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebChromeClient$FileChooserParams",
-			"MODE_SAVE");
+			"MODE_SAVE"
+		);
 	}
 	
 	// Constructors
@@ -67,50 +70,57 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	QAndroidJniObject WebChromeClient_FileChooserParams::parseResult(jint arg0, __jni_impl::android::content::Intent arg1)
+	jstring WebChromeClient_FileChooserParams::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jint WebChromeClient_FileChooserParams::getMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getMode",
+			"()I"
+		);
+	}
+	jarray WebChromeClient_FileChooserParams::parseResult(jint arg0, __jni_impl::android::content::Intent arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebChromeClient$FileChooserParams",
 			"parseResult",
 			"(ILandroid/content/Intent;)[Landroid/net/Uri;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jarray>();
 	}
-	QAndroidJniObject WebChromeClient_FileChooserParams::getAcceptTypes()
+	jarray WebChromeClient_FileChooserParams::getAcceptTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getAcceptTypes",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jboolean WebChromeClient_FileChooserParams::isCaptureEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCaptureEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject WebChromeClient_FileChooserParams::getFilenameHint()
+	jstring WebChromeClient_FileChooserParams::getFilenameHint()
 	{
 		return __thiz.callObjectMethod(
 			"getFilenameHint",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject WebChromeClient_FileChooserParams::createIntent()
 	{
 		return __thiz.callObjectMethod(
 			"createIntent",
-			"()Landroid/content/Intent;");
-	}
-	QAndroidJniObject WebChromeClient_FileChooserParams::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
-	}
-	jint WebChromeClient_FileChooserParams::getMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getMode",
-			"()I");
+			"()Landroid/content/Intent;"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

@@ -26,11 +26,11 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject setActivity(__jni_impl::android::content::ComponentName arg0);
 		QAndroidJniObject setPackage(jstring arg0);
 		QAndroidJniObject setChangedSince(jlong arg0);
 		QAndroidJniObject setShortcutIds(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setQueryFlags(jint arg0);
-		QAndroidJniObject setActivity(__jni_impl::android::content::ComponentName arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -43,31 +43,36 @@ namespace __jni_impl::android::content::pm
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
-			"FLAG_GET_KEY_FIELDS_ONLY");
+			"FLAG_GET_KEY_FIELDS_ONLY"
+		);
 	}
 	jint LauncherApps_ShortcutQuery::FLAG_MATCH_DYNAMIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
-			"FLAG_MATCH_DYNAMIC");
+			"FLAG_MATCH_DYNAMIC"
+		);
 	}
 	jint LauncherApps_ShortcutQuery::FLAG_MATCH_MANIFEST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
-			"FLAG_MATCH_MANIFEST");
+			"FLAG_MATCH_MANIFEST"
+		);
 	}
 	jint LauncherApps_ShortcutQuery::FLAG_MATCH_PINNED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
-			"FLAG_MATCH_PINNED");
+			"FLAG_MATCH_PINNED"
+		);
 	}
 	jint LauncherApps_ShortcutQuery::FLAG_MATCH_PINNED_BY_ANY_LAUNCHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.LauncherApps$ShortcutQuery",
-			"FLAG_MATCH_PINNED_BY_ANY_LAUNCHER");
+			"FLAG_MATCH_PINNED_BY_ANY_LAUNCHER"
+		);
 	}
 	
 	// Constructors
@@ -79,40 +84,45 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
+	QAndroidJniObject LauncherApps_ShortcutQuery::setActivity(__jni_impl::android::content::ComponentName arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setActivity",
+			"(Landroid/content/ComponentName;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setPackage(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPackage",
 			"(Ljava/lang/String;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setChangedSince(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setChangedSince",
 			"(J)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setShortcutIds(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setShortcutIds",
 			"(Ljava/util/List;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setQueryFlags(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setQueryFlags",
 			"(I)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0);
-	}
-	QAndroidJniObject LauncherApps_ShortcutQuery::setActivity(__jni_impl::android::content::ComponentName arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setActivity",
-			"(Landroid/content/ComponentName;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0.__jniObject().object());
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

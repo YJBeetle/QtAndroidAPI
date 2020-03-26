@@ -21,8 +21,8 @@ namespace __jni_impl::android::webkit
 		static QAndroidJniObject getInstance();
 		void allow(jstring arg0);
 		void getOrigins(__jni_impl::__JniBaseClass arg0);
-		void getAllowed(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		void clearAll();
+		void getAllowed(jstring arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -45,28 +45,39 @@ namespace __jni_impl::android::webkit
 		__thiz.callMethod<void>(
 			"clear",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject GeolocationPermissions::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.GeolocationPermissions",
 			"getInstance",
-			"()Landroid/webkit/GeolocationPermissions;");
+			"()Landroid/webkit/GeolocationPermissions;"
+		);
 	}
 	void GeolocationPermissions::allow(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"allow",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void GeolocationPermissions::getOrigins(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"getOrigins",
 			"(Landroid/webkit/ValueCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void GeolocationPermissions::clearAll()
+	{
+		__thiz.callMethod<void>(
+			"clearAll",
+			"()V"
+		);
 	}
 	void GeolocationPermissions::getAllowed(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -74,13 +85,8 @@ namespace __jni_impl::android::webkit
 			"getAllowed",
 			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
 			arg0,
-			arg1.__jniObject().object());
-	}
-	void GeolocationPermissions::clearAll()
-	{
-		__thiz.callMethod<void>(
-			"clearAll",
-			"()V");
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

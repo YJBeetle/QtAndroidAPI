@@ -38,7 +38,7 @@ namespace __jni_impl::java::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(__jni_impl::java::net::URI arg0);
 		jint compareTo(jobject arg0);
@@ -46,27 +46,27 @@ namespace __jni_impl::java::net
 		QAndroidJniObject resolve(__jni_impl::java::net::URI arg0);
 		QAndroidJniObject resolve(jstring arg0);
 		QAndroidJniObject normalize();
-		QAndroidJniObject getScheme();
+		jstring getScheme();
 		jboolean isOpaque();
-		QAndroidJniObject getRawFragment();
-		QAndroidJniObject getRawQuery();
-		QAndroidJniObject getRawPath();
-		QAndroidJniObject getHost();
+		jstring getRawFragment();
+		jstring getRawQuery();
+		jstring getRawPath();
+		jstring getHost();
 		jint getPort();
 		static QAndroidJniObject create(jstring arg0);
-		QAndroidJniObject getAuthority();
-		QAndroidJniObject getQuery();
-		QAndroidJniObject getPath();
-		QAndroidJniObject getUserInfo();
+		jstring getAuthority();
+		jstring getQuery();
+		jstring getPath();
+		jstring getUserInfo();
 		QAndroidJniObject toURL();
-		QAndroidJniObject getRawAuthority();
+		jstring getRawAuthority();
 		QAndroidJniObject relativize(__jni_impl::java::net::URI arg0);
-		QAndroidJniObject getRawSchemeSpecificPart();
+		jstring getRawSchemeSpecificPart();
 		QAndroidJniObject parseServerAuthority();
-		QAndroidJniObject getSchemeSpecificPart();
-		QAndroidJniObject getRawUserInfo();
-		QAndroidJniObject getFragment();
-		QAndroidJniObject toASCIIString();
+		jstring getSchemeSpecificPart();
+		jstring getRawUserInfo();
+		jstring getFragment();
+		jstring toASCIIString();
 	};
 } // namespace __jni_impl::java::net
 
@@ -137,101 +137,117 @@ namespace __jni_impl::java::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject URI::toString()
+	jstring URI::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint URI::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint URI::compareTo(__jni_impl::java::net::URI arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/net/URI;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint URI::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean URI::isAbsolute()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAbsolute",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject URI::resolve(__jni_impl::java::net::URI arg0)
 	{
 		return __thiz.callObjectMethod(
 			"resolve",
 			"(Ljava/net/URI;)Ljava/net/URI;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject URI::resolve(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"resolve",
 			"(Ljava/lang/String;)Ljava/net/URI;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject URI::normalize()
 	{
 		return __thiz.callObjectMethod(
 			"normalize",
-			"()Ljava/net/URI;");
+			"()Ljava/net/URI;"
+		);
 	}
-	QAndroidJniObject URI::getScheme()
+	jstring URI::getScheme()
 	{
 		return __thiz.callObjectMethod(
 			"getScheme",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean URI::isOpaque()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpaque",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject URI::getRawFragment()
+	jstring URI::getRawFragment()
 	{
 		return __thiz.callObjectMethod(
 			"getRawFragment",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URI::getRawQuery()
+	jstring URI::getRawQuery()
 	{
 		return __thiz.callObjectMethod(
 			"getRawQuery",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URI::getRawPath()
+	jstring URI::getRawPath()
 	{
 		return __thiz.callObjectMethod(
 			"getRawPath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URI::getHost()
+	jstring URI::getHost()
 	{
 		return __thiz.callObjectMethod(
 			"getHost",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint URI::getPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getPort",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject URI::create(jstring arg0)
 	{
@@ -239,86 +255,100 @@ namespace __jni_impl::java::net
 			"java.net.URI",
 			"create",
 			"(Ljava/lang/String;)Ljava/net/URI;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject URI::getAuthority()
+	jstring URI::getAuthority()
 	{
 		return __thiz.callObjectMethod(
 			"getAuthority",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URI::getQuery()
+	jstring URI::getQuery()
 	{
 		return __thiz.callObjectMethod(
 			"getQuery",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URI::getPath()
+	jstring URI::getPath()
 	{
 		return __thiz.callObjectMethod(
 			"getPath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URI::getUserInfo()
+	jstring URI::getUserInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getUserInfo",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject URI::toURL()
 	{
 		return __thiz.callObjectMethod(
 			"toURL",
-			"()Ljava/net/URL;");
+			"()Ljava/net/URL;"
+		);
 	}
-	QAndroidJniObject URI::getRawAuthority()
+	jstring URI::getRawAuthority()
 	{
 		return __thiz.callObjectMethod(
 			"getRawAuthority",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject URI::relativize(__jni_impl::java::net::URI arg0)
 	{
 		return __thiz.callObjectMethod(
 			"relativize",
 			"(Ljava/net/URI;)Ljava/net/URI;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject URI::getRawSchemeSpecificPart()
+	jstring URI::getRawSchemeSpecificPart()
 	{
 		return __thiz.callObjectMethod(
 			"getRawSchemeSpecificPart",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject URI::parseServerAuthority()
 	{
 		return __thiz.callObjectMethod(
 			"parseServerAuthority",
-			"()Ljava/net/URI;");
+			"()Ljava/net/URI;"
+		);
 	}
-	QAndroidJniObject URI::getSchemeSpecificPart()
+	jstring URI::getSchemeSpecificPart()
 	{
 		return __thiz.callObjectMethod(
 			"getSchemeSpecificPart",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URI::getRawUserInfo()
+	jstring URI::getRawUserInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getRawUserInfo",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URI::getFragment()
+	jstring URI::getFragment()
 	{
 		return __thiz.callObjectMethod(
 			"getFragment",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URI::toASCIIString()
+	jstring URI::toASCIIString()
 	{
 		return __thiz.callObjectMethod(
 			"toASCIIString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

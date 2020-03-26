@@ -21,11 +21,11 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint size();
 		QAndroidJniObject iterator();
 		QAndroidJniObject getLabelType();
-		QAndroidJniObject getLabel();
+		jstring getLabel();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -44,35 +44,40 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject AlphabeticIndex_Bucket::toString()
+	jstring AlphabeticIndex_Bucket::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AlphabeticIndex_Bucket::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject AlphabeticIndex_Bucket::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	QAndroidJniObject AlphabeticIndex_Bucket::getLabelType()
 	{
 		return __thiz.callObjectMethod(
 			"getLabelType",
-			"()Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;");
+			"()Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
 	}
-	QAndroidJniObject AlphabeticIndex_Bucket::getLabel()
+	jstring AlphabeticIndex_Bucket::getLabel()
 	{
 		return __thiz.callObjectMethod(
 			"getLabel",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text
 

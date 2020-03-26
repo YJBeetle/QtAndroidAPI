@@ -20,7 +20,7 @@ namespace __jni_impl::android::drm
 		static jint STATUS_OK();
 		QAndroidJniObject data();
 		jint infoType();
-		QAndroidJniObject mimeType();
+		jstring mimeType();
 		jint statusCode();
 		
 		// Constructors
@@ -39,35 +39,41 @@ namespace __jni_impl::android::drm
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmInfoStatus",
-			"STATUS_ERROR");
+			"STATUS_ERROR"
+		);
 	}
 	jint DrmInfoStatus::STATUS_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmInfoStatus",
-			"STATUS_OK");
+			"STATUS_OK"
+		);
 	}
 	QAndroidJniObject DrmInfoStatus::data()
 	{
 		return __thiz.getObjectField(
 			"data",
-			"Landroid/drm/ProcessedData;");
+			"Landroid/drm/ProcessedData;"
+		);
 	}
 	jint DrmInfoStatus::infoType()
 	{
 		return __thiz.getField<jint>(
-			"infoType");
+			"infoType"
+		);
 	}
-	QAndroidJniObject DrmInfoStatus::mimeType()
+	jstring DrmInfoStatus::mimeType()
 	{
 		return __thiz.getObjectField(
 			"mimeType",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DrmInfoStatus::statusCode()
 	{
 		return __thiz.getField<jint>(
-			"statusCode");
+			"statusCode"
+		);
 	}
 	
 	// Constructors

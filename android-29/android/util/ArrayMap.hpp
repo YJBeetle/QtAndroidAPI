@@ -19,11 +19,11 @@ namespace __jni_impl::android::util
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject remove(jobject arg0);
-		QAndroidJniObject get(jobject arg0);
-		QAndroidJniObject put(jobject arg0, jobject arg1);
+		jobject remove(jobject arg0);
+		jobject get(jobject arg0);
+		jobject put(jobject arg0, jobject arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject values();
 		jint hashCode();
 		void clear();
@@ -39,10 +39,10 @@ namespace __jni_impl::android::util
 		jboolean containsAll(__jni_impl::__JniBaseClass arg0);
 		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
 		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject removeAt(jint arg0);
-		QAndroidJniObject keyAt(jint arg0);
-		QAndroidJniObject valueAt(jint arg0);
-		QAndroidJniObject setValueAt(jint arg0, jobject arg1);
+		jobject removeAt(jint arg0);
+		jobject keyAt(jint arg0);
+		jobject valueAt(jint arg0);
+		jobject setValueAt(jint arg0, jobject arg1);
 		jint indexOfKey(jobject arg0);
 		jint indexOfValue(jobject arg0);
 	};
@@ -76,181 +76,207 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	QAndroidJniObject ArrayMap::remove(jobject arg0)
+	jobject ArrayMap::remove(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayMap::get(jobject arg0)
+	jobject ArrayMap::get(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayMap::put(jobject arg0, jobject arg1)
+	jobject ArrayMap::put(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	jboolean ArrayMap::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ArrayMap::toString()
+	jstring ArrayMap::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ArrayMap::values()
 	{
 		return __thiz.callObjectMethod(
 			"values",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 	jint ArrayMap::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void ArrayMap::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ArrayMap::isEmpty()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ArrayMap::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ArrayMap::entrySet()
 	{
 		return __thiz.callObjectMethod(
 			"entrySet",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	void ArrayMap::putAll(__jni_impl::android::util::ArrayMap arg0)
 	{
 		__thiz.callMethod<void>(
 			"putAll",
 			"(Landroid/util/ArrayMap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArrayMap::putAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ArrayMap::containsKey(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsKey",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ArrayMap::keySet()
 	{
 		return __thiz.callObjectMethod(
 			"keySet",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jboolean ArrayMap::containsValue(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsValue",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	void ArrayMap::ensureCapacity(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"ensureCapacity",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ArrayMap::containsAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ArrayMap::retainAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ArrayMap::removeAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ArrayMap::removeAt(jint arg0)
+	jobject ArrayMap::removeAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"removeAt",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayMap::keyAt(jint arg0)
+	jobject ArrayMap::keyAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"keyAt",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayMap::valueAt(jint arg0)
+	jobject ArrayMap::valueAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"valueAt",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject ArrayMap::setValueAt(jint arg0, jobject arg1)
+	jobject ArrayMap::setValueAt(jint arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"setValueAt",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	jint ArrayMap::indexOfKey(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"indexOfKey",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint ArrayMap::indexOfValue(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"indexOfValue",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

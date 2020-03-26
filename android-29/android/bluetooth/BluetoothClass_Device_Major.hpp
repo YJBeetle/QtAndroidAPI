@@ -39,67 +39,78 @@ namespace __jni_impl::android::bluetooth
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"AUDIO_VIDEO");
+			"AUDIO_VIDEO"
+		);
 	}
 	jint BluetoothClass_Device_Major::COMPUTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"COMPUTER");
+			"COMPUTER"
+		);
 	}
 	jint BluetoothClass_Device_Major::HEALTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"HEALTH");
+			"HEALTH"
+		);
 	}
 	jint BluetoothClass_Device_Major::IMAGING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"IMAGING");
+			"IMAGING"
+		);
 	}
 	jint BluetoothClass_Device_Major::MISC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"MISC");
+			"MISC"
+		);
 	}
 	jint BluetoothClass_Device_Major::NETWORKING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"NETWORKING");
+			"NETWORKING"
+		);
 	}
 	jint BluetoothClass_Device_Major::PERIPHERAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"PERIPHERAL");
+			"PERIPHERAL"
+		);
 	}
 	jint BluetoothClass_Device_Major::PHONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"PHONE");
+			"PHONE"
+		);
 	}
 	jint BluetoothClass_Device_Major::TOY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"TOY");
+			"TOY"
+		);
 	}
 	jint BluetoothClass_Device_Major::UNCATEGORIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"UNCATEGORIZED");
+			"UNCATEGORIZED"
+		);
 	}
 	jint BluetoothClass_Device_Major::WEARABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"WEARABLE");
+			"WEARABLE"
+		);
 	}
 	
 	// Constructors

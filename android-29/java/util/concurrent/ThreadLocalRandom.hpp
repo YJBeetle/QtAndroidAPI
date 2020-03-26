@@ -96,14 +96,16 @@ namespace __jni_impl::java::util::concurrent
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ThreadLocalRandom",
 			"current",
-			"()Ljava/util/concurrent/ThreadLocalRandom;");
+			"()Ljava/util/concurrent/ThreadLocalRandom;"
+		);
 	}
 	jdouble ThreadLocalRandom::nextDouble(jdouble arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"nextDouble",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble ThreadLocalRandom::nextDouble(jdouble arg0, jdouble arg1)
 	{
@@ -111,20 +113,23 @@ namespace __jni_impl::java::util::concurrent
 			"nextDouble",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble ThreadLocalRandom::nextDouble()
 	{
 		return __thiz.callMethod<jdouble>(
 			"nextDouble",
-			"()D");
+			"()D"
+		);
 	}
 	jint ThreadLocalRandom::nextInt(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"nextInt",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint ThreadLocalRandom::nextInt(jint arg0, jint arg1)
 	{
@@ -132,19 +137,22 @@ namespace __jni_impl::java::util::concurrent
 			"nextInt",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint ThreadLocalRandom::nextInt()
 	{
 		return __thiz.callMethod<jint>(
 			"nextInt",
-			"()I");
+			"()I"
+		);
 	}
 	jlong ThreadLocalRandom::nextLong()
 	{
 		return __thiz.callMethod<jlong>(
 			"nextLong",
-			"()J");
+			"()J"
+		);
 	}
 	jlong ThreadLocalRandom::nextLong(jlong arg0, jlong arg1)
 	{
@@ -152,39 +160,45 @@ namespace __jni_impl::java::util::concurrent
 			"nextLong",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong ThreadLocalRandom::nextLong(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"nextLong",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	void ThreadLocalRandom::setSeed(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSeed",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ThreadLocalRandom::nextBoolean()
 	{
 		return __thiz.callMethod<jboolean>(
 			"nextBoolean",
-			"()Z");
+			"()Z"
+		);
 	}
 	jfloat ThreadLocalRandom::nextFloat()
 	{
 		return __thiz.callMethod<jfloat>(
 			"nextFloat",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble ThreadLocalRandom::nextGaussian()
 	{
 		return __thiz.callMethod<jdouble>(
 			"nextGaussian",
-			"()D");
+			"()D"
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::ints(jint arg0, jint arg1)
 	{
@@ -192,7 +206,8 @@ namespace __jni_impl::java::util::concurrent
 			"ints",
 			"(II)Ljava/util/stream/IntStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::ints(jlong arg0, jint arg1, jint arg2)
 	{
@@ -201,27 +216,31 @@ namespace __jni_impl::java::util::concurrent
 			"(JII)Ljava/util/stream/IntStream;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::ints()
 	{
 		return __thiz.callObjectMethod(
 			"ints",
-			"()Ljava/util/stream/IntStream;");
+			"()Ljava/util/stream/IntStream;"
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::ints(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"ints",
 			"(J)Ljava/util/stream/IntStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::longs(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"longs",
 			"(J)Ljava/util/stream/LongStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::longs(jlong arg0, jlong arg1, jlong arg2)
 	{
@@ -230,7 +249,8 @@ namespace __jni_impl::java::util::concurrent
 			"(JJJ)Ljava/util/stream/LongStream;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::longs(jlong arg0, jlong arg1)
 	{
@@ -238,26 +258,30 @@ namespace __jni_impl::java::util::concurrent
 			"longs",
 			"(JJ)Ljava/util/stream/LongStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::longs()
 	{
 		return __thiz.callObjectMethod(
 			"longs",
-			"()Ljava/util/stream/LongStream;");
+			"()Ljava/util/stream/LongStream;"
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::doubles(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"doubles",
 			"(J)Ljava/util/stream/DoubleStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::doubles()
 	{
 		return __thiz.callObjectMethod(
 			"doubles",
-			"()Ljava/util/stream/DoubleStream;");
+			"()Ljava/util/stream/DoubleStream;"
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
 	{
@@ -266,7 +290,8 @@ namespace __jni_impl::java::util::concurrent
 			"(JDD)Ljava/util/stream/DoubleStream;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ThreadLocalRandom::doubles(jdouble arg0, jdouble arg1)
 	{
@@ -274,7 +299,8 @@ namespace __jni_impl::java::util::concurrent
 			"doubles",
 			"(DD)Ljava/util/stream/DoubleStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

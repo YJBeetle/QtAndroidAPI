@@ -36,49 +36,57 @@ namespace __jni_impl::android::drm
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Action",
-			"DEFAULT");
+			"DEFAULT"
+		);
 	}
 	jint DrmStore_Action::DISPLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Action",
-			"DISPLAY");
+			"DISPLAY"
+		);
 	}
 	jint DrmStore_Action::EXECUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Action",
-			"EXECUTE");
+			"EXECUTE"
+		);
 	}
 	jint DrmStore_Action::OUTPUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Action",
-			"OUTPUT");
+			"OUTPUT"
+		);
 	}
 	jint DrmStore_Action::PLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Action",
-			"PLAY");
+			"PLAY"
+		);
 	}
 	jint DrmStore_Action::PREVIEW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Action",
-			"PREVIEW");
+			"PREVIEW"
+		);
 	}
 	jint DrmStore_Action::RINGTONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Action",
-			"RINGTONE");
+			"RINGTONE"
+		);
 	}
 	jint DrmStore_Action::TRANSFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Action",
-			"TRANSFER");
+			"TRANSFER"
+		);
 	}
 	
 	// Constructors

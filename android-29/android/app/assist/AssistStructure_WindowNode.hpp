@@ -21,13 +21,13 @@ namespace __jni_impl::android::app::assist
 		void __constructor();
 		
 		// Methods
+		jstring getTitle();
+		jint getTop();
+		jint getLeft();
+		QAndroidJniObject getRootViewNode();
 		jint getDisplayId();
 		jint getWidth();
 		jint getHeight();
-		jint getTop();
-		jint getLeft();
-		QAndroidJniObject getTitle();
-		QAndroidJniObject getRootViewNode();
 	};
 } // namespace __jni_impl::android::app::assist
 
@@ -46,47 +46,54 @@ namespace __jni_impl::android::app::assist
 	}
 	
 	// Methods
-	jint AssistStructure_WindowNode::getDisplayId()
+	jstring AssistStructure_WindowNode::getTitle()
 	{
-		return __thiz.callMethod<jint>(
-			"getDisplayId",
-			"()I");
-	}
-	jint AssistStructure_WindowNode::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I");
-	}
-	jint AssistStructure_WindowNode::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint AssistStructure_WindowNode::getTop()
 	{
 		return __thiz.callMethod<jint>(
 			"getTop",
-			"()I");
+			"()I"
+		);
 	}
 	jint AssistStructure_WindowNode::getLeft()
 	{
 		return __thiz.callMethod<jint>(
 			"getLeft",
-			"()I");
-	}
-	QAndroidJniObject AssistStructure_WindowNode::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
+			"()I"
+		);
 	}
 	QAndroidJniObject AssistStructure_WindowNode::getRootViewNode()
 	{
 		return __thiz.callObjectMethod(
 			"getRootViewNode",
-			"()Landroid/app/assist/AssistStructure$ViewNode;");
+			"()Landroid/app/assist/AssistStructure$ViewNode;"
+		);
+	}
+	jint AssistStructure_WindowNode::getDisplayId()
+	{
+		return __thiz.callMethod<jint>(
+			"getDisplayId",
+			"()I"
+		);
+	}
+	jint AssistStructure_WindowNode::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint AssistStructure_WindowNode::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::app::assist
 

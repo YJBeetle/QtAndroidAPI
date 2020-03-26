@@ -22,7 +22,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		jint getComponentCount();
 	};
@@ -37,28 +37,32 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Model",
 			"RGB",
-			"Landroid/graphics/ColorSpace$Model;");
+			"Landroid/graphics/ColorSpace$Model;"
+		);
 	}
 	QAndroidJniObject ColorSpace_Model::XYZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Model",
 			"XYZ",
-			"Landroid/graphics/ColorSpace$Model;");
+			"Landroid/graphics/ColorSpace$Model;"
+		);
 	}
 	QAndroidJniObject ColorSpace_Model::LAB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Model",
 			"LAB",
-			"Landroid/graphics/ColorSpace$Model;");
+			"Landroid/graphics/ColorSpace$Model;"
+		);
 	}
 	QAndroidJniObject ColorSpace_Model::CMYK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Model",
 			"CMYK",
-			"Landroid/graphics/ColorSpace$Model;");
+			"Landroid/graphics/ColorSpace$Model;"
+		);
 	}
 	
 	// Constructors
@@ -70,12 +74,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject ColorSpace_Model::values()
+	jarray ColorSpace_Model::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace$Model",
 			"values",
-			"()[Landroid/graphics/ColorSpace$Model;");
+			"()[Landroid/graphics/ColorSpace$Model;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ColorSpace_Model::valueOf(jstring arg0)
 	{
@@ -83,13 +88,15 @@ namespace __jni_impl::android::graphics
 			"android.graphics.ColorSpace$Model",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Model;",
-			arg0);
+			arg0
+		);
 	}
 	jint ColorSpace_Model::getComponentCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getComponentCount",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

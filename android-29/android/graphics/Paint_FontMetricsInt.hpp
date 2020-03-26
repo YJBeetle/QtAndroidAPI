@@ -22,7 +22,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -33,27 +33,32 @@ namespace __jni_impl::android::graphics
 	jint Paint_FontMetricsInt::ascent()
 	{
 		return __thiz.getField<jint>(
-			"ascent");
+			"ascent"
+		);
 	}
 	jint Paint_FontMetricsInt::bottom()
 	{
 		return __thiz.getField<jint>(
-			"bottom");
+			"bottom"
+		);
 	}
 	jint Paint_FontMetricsInt::descent()
 	{
 		return __thiz.getField<jint>(
-			"descent");
+			"descent"
+		);
 	}
 	jint Paint_FontMetricsInt::leading()
 	{
 		return __thiz.getField<jint>(
-			"leading");
+			"leading"
+		);
 	}
 	jint Paint_FontMetricsInt::top()
 	{
 		return __thiz.getField<jint>(
-			"top");
+			"top"
+		);
 	}
 	
 	// Constructors
@@ -65,11 +70,12 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Paint_FontMetricsInt::toString()
+	jstring Paint_FontMetricsInt::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::graphics
 

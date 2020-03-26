@@ -47,37 +47,43 @@ namespace __jni_impl::android::hardware
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
-			"RATE_FAST");
+			"RATE_FAST"
+		);
 	}
 	jint SensorDirectChannel::RATE_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
-			"RATE_NORMAL");
+			"RATE_NORMAL"
+		);
 	}
 	jint SensorDirectChannel::RATE_STOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
-			"RATE_STOP");
+			"RATE_STOP"
+		);
 	}
 	jint SensorDirectChannel::RATE_VERY_FAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
-			"RATE_VERY_FAST");
+			"RATE_VERY_FAST"
+		);
 	}
 	jint SensorDirectChannel::TYPE_HARDWARE_BUFFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
-			"TYPE_HARDWARE_BUFFER");
+			"TYPE_HARDWARE_BUFFER"
+		);
 	}
 	jint SensorDirectChannel::TYPE_MEMORY_FILE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorDirectChannel",
-			"TYPE_MEMORY_FILE");
+			"TYPE_MEMORY_FILE"
+		);
 	}
 	
 	// Constructors
@@ -93,13 +99,15 @@ namespace __jni_impl::android::hardware
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpen",
-			"()Z");
+			"()Z"
+		);
 	}
 	void SensorDirectChannel::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint SensorDirectChannel::configure(__jni_impl::android::hardware::Sensor arg0, jint arg1)
 	{
@@ -107,7 +115,8 @@ namespace __jni_impl::android::hardware
 			"configure",
 			"(Landroid/hardware/Sensor;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::hardware
 

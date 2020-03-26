@@ -21,7 +21,7 @@ namespace __jni_impl::org::json
 		QAndroidJniObject value(jboolean arg0);
 		QAndroidJniObject value(jdouble arg0);
 		QAndroidJniObject value(jlong arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject array();
 		QAndroidJniObject key(jstring arg0);
 		QAndroidJniObject object();
@@ -49,65 +49,75 @@ namespace __jni_impl::org::json
 		return __thiz.callObjectMethod(
 			"value",
 			"(Ljava/lang/Object;)Lorg/json/JSONStringer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JSONStringer::value(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"value",
 			"(Z)Lorg/json/JSONStringer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JSONStringer::value(jdouble arg0)
 	{
 		return __thiz.callObjectMethod(
 			"value",
 			"(D)Lorg/json/JSONStringer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JSONStringer::value(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"value",
 			"(J)Lorg/json/JSONStringer;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject JSONStringer::toString()
+	jstring JSONStringer::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject JSONStringer::array()
 	{
 		return __thiz.callObjectMethod(
 			"array",
-			"()Lorg/json/JSONStringer;");
+			"()Lorg/json/JSONStringer;"
+		);
 	}
 	QAndroidJniObject JSONStringer::key(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"key",
 			"(Ljava/lang/String;)Lorg/json/JSONStringer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JSONStringer::object()
 	{
 		return __thiz.callObjectMethod(
 			"object",
-			"()Lorg/json/JSONStringer;");
+			"()Lorg/json/JSONStringer;"
+		);
 	}
 	QAndroidJniObject JSONStringer::endArray()
 	{
 		return __thiz.callObjectMethod(
 			"endArray",
-			"()Lorg/json/JSONStringer;");
+			"()Lorg/json/JSONStringer;"
+		);
 	}
 	QAndroidJniObject JSONStringer::endObject()
 	{
 		return __thiz.callObjectMethod(
 			"endObject",
-			"()Lorg/json/JSONStringer;");
+			"()Lorg/json/JSONStringer;"
+		);
 	}
 } // namespace __jni_impl::org::json
 

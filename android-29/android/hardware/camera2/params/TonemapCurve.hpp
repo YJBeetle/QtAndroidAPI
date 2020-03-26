@@ -28,11 +28,11 @@ namespace __jni_impl::android::hardware::camera2::params
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
+		void copyColorCurve(jint arg0, jfloatArray arg1, jint arg2);
 		jint getPointCount(jint arg0);
 		QAndroidJniObject getPoint(jint arg0, jint arg1);
-		void copyColorCurve(jint arg0, jfloatArray arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -45,37 +45,43 @@ namespace __jni_impl::android::hardware::camera2::params
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.TonemapCurve",
-			"CHANNEL_BLUE");
+			"CHANNEL_BLUE"
+		);
 	}
 	jint TonemapCurve::CHANNEL_GREEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.TonemapCurve",
-			"CHANNEL_GREEN");
+			"CHANNEL_GREEN"
+		);
 	}
 	jint TonemapCurve::CHANNEL_RED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.TonemapCurve",
-			"CHANNEL_RED");
+			"CHANNEL_RED"
+		);
 	}
 	jfloat TonemapCurve::LEVEL_BLACK()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"android.hardware.camera2.params.TonemapCurve",
-			"LEVEL_BLACK");
+			"LEVEL_BLACK"
+		);
 	}
 	jfloat TonemapCurve::LEVEL_WHITE()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"android.hardware.camera2.params.TonemapCurve",
-			"LEVEL_WHITE");
+			"LEVEL_WHITE"
+		);
 	}
 	jint TonemapCurve::POINT_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.TonemapCurve",
-			"POINT_SIZE");
+			"POINT_SIZE"
+		);
 	}
 	
 	// Constructors
@@ -95,34 +101,22 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TonemapCurve::toString()
+	jstring TonemapCurve::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TonemapCurve::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jint TonemapCurve::getPointCount(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getPointCount",
-			"(I)I",
-			arg0);
-	}
-	QAndroidJniObject TonemapCurve::getPoint(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getPoint",
-			"(II)Landroid/graphics/PointF;",
-			arg0,
-			arg1);
+			"()I"
+		);
 	}
 	void TonemapCurve::copyColorCurve(jint arg0, jfloatArray arg1, jint arg2)
 	{
@@ -131,7 +125,25 @@ namespace __jni_impl::android::hardware::camera2::params
 			"(I[FI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	jint TonemapCurve::getPointCount(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getPointCount",
+			"(I)I",
+			arg0
+		);
+	}
+	QAndroidJniObject TonemapCurve::getPoint(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getPoint",
+			"(II)Landroid/graphics/PointF;",
+			arg0,
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

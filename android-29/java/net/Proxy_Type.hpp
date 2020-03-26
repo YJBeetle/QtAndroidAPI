@@ -21,7 +21,7 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::net
@@ -35,21 +35,24 @@ namespace __jni_impl::java::net
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Proxy$Type",
 			"DIRECT",
-			"Ljava/net/Proxy$Type;");
+			"Ljava/net/Proxy$Type;"
+		);
 	}
 	QAndroidJniObject Proxy_Type::HTTP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Proxy$Type",
 			"HTTP",
-			"Ljava/net/Proxy$Type;");
+			"Ljava/net/Proxy$Type;"
+		);
 	}
 	QAndroidJniObject Proxy_Type::SOCKS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Proxy$Type",
 			"SOCKS",
-			"Ljava/net/Proxy$Type;");
+			"Ljava/net/Proxy$Type;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject Proxy_Type::values()
+	jarray Proxy_Type::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Proxy$Type",
 			"values",
-			"()[Ljava/net/Proxy$Type;");
+			"()[Ljava/net/Proxy$Type;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Proxy_Type::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::java::net
 			"java.net.Proxy$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/net/Proxy$Type;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::net
 

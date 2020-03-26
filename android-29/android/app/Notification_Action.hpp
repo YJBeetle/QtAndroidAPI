@@ -11,15 +11,15 @@ namespace __jni_impl::android::app
 }
 namespace __jni_impl::android::os
 {
+	class Parcel;
+}
+namespace __jni_impl::android::os
+{
 	class Bundle;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Icon;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::app
@@ -42,29 +42,29 @@ namespace __jni_impl::android::app
 		static jint SEMANTIC_ACTION_UNMUTE();
 		QAndroidJniObject actionIntent();
 		jint icon();
-		QAndroidJniObject title();
+		jstring title();
 		
 		// Constructors
 		void __constructor(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2);
 		
 		// Methods
 		QAndroidJniObject clone();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getIcon();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
 		jboolean getAllowGeneratedReplies();
-		QAndroidJniObject getRemoteInputs();
+		jarray getRemoteInputs();
 		jint getSemanticAction();
 		jboolean isContextual();
-		QAndroidJniObject getDataOnlyRemoteInputs();
+		jarray getDataOnlyRemoteInputs();
+		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::app
 
 #include "PendingIntent.hpp"
+#include "../os/Parcel.hpp"
 #include "../os/Bundle.hpp"
 #include "../graphics/drawable/Icon.hpp"
-#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -74,90 +74,105 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification$Action",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_ARCHIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_ARCHIVE");
+			"SEMANTIC_ACTION_ARCHIVE"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_CALL");
+			"SEMANTIC_ACTION_CALL"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_DELETE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_DELETE");
+			"SEMANTIC_ACTION_DELETE"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_MARK_AS_READ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_MARK_AS_READ");
+			"SEMANTIC_ACTION_MARK_AS_READ"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_MARK_AS_UNREAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_MARK_AS_UNREAD");
+			"SEMANTIC_ACTION_MARK_AS_UNREAD"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_MUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_MUTE");
+			"SEMANTIC_ACTION_MUTE"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_NONE");
+			"SEMANTIC_ACTION_NONE"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_REPLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_REPLY");
+			"SEMANTIC_ACTION_REPLY"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_THUMBS_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_THUMBS_DOWN");
+			"SEMANTIC_ACTION_THUMBS_DOWN"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_THUMBS_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_THUMBS_UP");
+			"SEMANTIC_ACTION_THUMBS_UP"
+		);
 	}
 	jint Notification_Action::SEMANTIC_ACTION_UNMUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_UNMUTE");
+			"SEMANTIC_ACTION_UNMUTE"
+		);
 	}
 	QAndroidJniObject Notification_Action::actionIntent()
 	{
 		return __thiz.getObjectField(
 			"actionIntent",
-			"Landroid/app/PendingIntent;");
+			"Landroid/app/PendingIntent;"
+		);
 	}
 	jint Notification_Action::icon()
 	{
 		return __thiz.getField<jint>(
-			"icon");
+			"icon"
+		);
 	}
-	QAndroidJniObject Notification_Action::title()
+	jstring Notification_Action::title()
 	{
 		return __thiz.getObjectField(
 			"title",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -176,25 +191,15 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/app/Notification$Action;");
-	}
-	QAndroidJniObject Notification_Action::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject Notification_Action::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
+			"()Landroid/app/Notification$Action;"
+		);
 	}
 	jint Notification_Action::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Notification_Action::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -202,37 +207,57 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject Notification_Action::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
 	}
 	jboolean Notification_Action::getAllowGeneratedReplies()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAllowGeneratedReplies",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Notification_Action::getRemoteInputs()
+	jarray Notification_Action::getRemoteInputs()
 	{
 		return __thiz.callObjectMethod(
 			"getRemoteInputs",
-			"()[Landroid/app/RemoteInput;");
+			"()[Landroid/app/RemoteInput;"
+		).object<jarray>();
 	}
 	jint Notification_Action::getSemanticAction()
 	{
 		return __thiz.callMethod<jint>(
 			"getSemanticAction",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Notification_Action::isContextual()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isContextual",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Notification_Action::getDataOnlyRemoteInputs()
+	jarray Notification_Action::getDataOnlyRemoteInputs()
 	{
 		return __thiz.callObjectMethod(
 			"getDataOnlyRemoteInputs",
-			"()[Landroid/app/RemoteInput;");
+			"()[Landroid/app/RemoteInput;"
+		).object<jarray>();
+	}
+	QAndroidJniObject Notification_Action::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

@@ -17,10 +17,10 @@ namespace __jni_impl::android::util
 		void __constructor(jint arg0);
 		
 		// Methods
-		QAndroidJniObject remove(jobject arg0);
-		QAndroidJniObject get(jobject arg0);
-		QAndroidJniObject put(jobject arg0, jobject arg1);
-		QAndroidJniObject toString();
+		jobject remove(jobject arg0);
+		jobject get(jobject arg0);
+		jobject put(jobject arg0, jobject arg1);
+		jstring toString();
 		jint size();
 		void trimToSize(jint arg0);
 		void resize(jint arg0);
@@ -50,101 +50,116 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	QAndroidJniObject LruCache::remove(jobject arg0)
+	jobject LruCache::remove(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject LruCache::get(jobject arg0)
+	jobject LruCache::get(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject LruCache::put(jobject arg0, jobject arg1)
+	jobject LruCache::put(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject LruCache::toString()
+	jstring LruCache::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint LruCache::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	void LruCache::trimToSize(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"trimToSize",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void LruCache::resize(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"resize",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LruCache::snapshot()
 	{
 		return __thiz.callObjectMethod(
 			"snapshot",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 	jint LruCache::maxSize()
 	{
 		return __thiz.callMethod<jint>(
 			"maxSize",
-			"()I");
+			"()I"
+		);
 	}
 	void LruCache::evictAll()
 	{
 		__thiz.callMethod<void>(
 			"evictAll",
-			"()V");
+			"()V"
+		);
 	}
 	jint LruCache::hitCount()
 	{
 		return __thiz.callMethod<jint>(
 			"hitCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint LruCache::missCount()
 	{
 		return __thiz.callMethod<jint>(
 			"missCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint LruCache::createCount()
 	{
 		return __thiz.callMethod<jint>(
 			"createCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint LruCache::putCount()
 	{
 		return __thiz.callMethod<jint>(
 			"putCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint LruCache::evictionCount()
 	{
 		return __thiz.callMethod<jint>(
 			"evictionCount",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::util
 

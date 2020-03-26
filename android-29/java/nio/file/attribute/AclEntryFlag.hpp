@@ -22,7 +22,7 @@ namespace __jni_impl::java::nio::file::attribute
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::nio::file::attribute
@@ -36,28 +36,32 @@ namespace __jni_impl::java::nio::file::attribute
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryFlag",
 			"FILE_INHERIT",
-			"Ljava/nio/file/attribute/AclEntryFlag;");
+			"Ljava/nio/file/attribute/AclEntryFlag;"
+		);
 	}
 	QAndroidJniObject AclEntryFlag::DIRECTORY_INHERIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryFlag",
 			"DIRECTORY_INHERIT",
-			"Ljava/nio/file/attribute/AclEntryFlag;");
+			"Ljava/nio/file/attribute/AclEntryFlag;"
+		);
 	}
 	QAndroidJniObject AclEntryFlag::NO_PROPAGATE_INHERIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryFlag",
 			"NO_PROPAGATE_INHERIT",
-			"Ljava/nio/file/attribute/AclEntryFlag;");
+			"Ljava/nio/file/attribute/AclEntryFlag;"
+		);
 	}
 	QAndroidJniObject AclEntryFlag::INHERIT_ONLY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryFlag",
 			"INHERIT_ONLY",
-			"Ljava/nio/file/attribute/AclEntryFlag;");
+			"Ljava/nio/file/attribute/AclEntryFlag;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::java::nio::file::attribute
 	}
 	
 	// Methods
-	QAndroidJniObject AclEntryFlag::values()
+	jarray AclEntryFlag::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntryFlag",
 			"values",
-			"()[Ljava/nio/file/attribute/AclEntryFlag;");
+			"()[Ljava/nio/file/attribute/AclEntryFlag;"
+		).object<jarray>();
 	}
 	QAndroidJniObject AclEntryFlag::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::java::nio::file::attribute
 			"java.nio.file.attribute.AclEntryFlag",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryFlag;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::file::attribute
 

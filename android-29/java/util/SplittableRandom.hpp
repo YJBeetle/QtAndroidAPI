@@ -75,20 +75,23 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callObjectMethod(
 			"split",
-			"()Ljava/util/SplittableRandom;");
+			"()Ljava/util/SplittableRandom;"
+		);
 	}
 	jdouble SplittableRandom::nextDouble()
 	{
 		return __thiz.callMethod<jdouble>(
 			"nextDouble",
-			"()D");
+			"()D"
+		);
 	}
 	jdouble SplittableRandom::nextDouble(jdouble arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"nextDouble",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble SplittableRandom::nextDouble(jdouble arg0, jdouble arg1)
 	{
@@ -96,7 +99,8 @@ namespace __jni_impl::java::util
 			"nextDouble",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint SplittableRandom::nextInt(jint arg0, jint arg1)
 	{
@@ -104,33 +108,38 @@ namespace __jni_impl::java::util
 			"nextInt",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint SplittableRandom::nextInt(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"nextInt",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint SplittableRandom::nextInt()
 	{
 		return __thiz.callMethod<jint>(
 			"nextInt",
-			"()I");
+			"()I"
+		);
 	}
 	jlong SplittableRandom::nextLong(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"nextLong",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong SplittableRandom::nextLong()
 	{
 		return __thiz.callMethod<jlong>(
 			"nextLong",
-			"()J");
+			"()J"
+		);
 	}
 	jlong SplittableRandom::nextLong(jlong arg0, jlong arg1)
 	{
@@ -138,13 +147,15 @@ namespace __jni_impl::java::util
 			"nextLong",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean SplittableRandom::nextBoolean()
 	{
 		return __thiz.callMethod<jboolean>(
 			"nextBoolean",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject SplittableRandom::ints(jint arg0, jint arg1)
 	{
@@ -152,7 +163,8 @@ namespace __jni_impl::java::util
 			"ints",
 			"(II)Ljava/util/stream/IntStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SplittableRandom::ints(jlong arg0, jint arg1, jint arg2)
 	{
@@ -161,26 +173,30 @@ namespace __jni_impl::java::util
 			"(JII)Ljava/util/stream/IntStream;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject SplittableRandom::ints()
 	{
 		return __thiz.callObjectMethod(
 			"ints",
-			"()Ljava/util/stream/IntStream;");
+			"()Ljava/util/stream/IntStream;"
+		);
 	}
 	QAndroidJniObject SplittableRandom::ints(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"ints",
 			"(J)Ljava/util/stream/IntStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject SplittableRandom::longs()
 	{
 		return __thiz.callObjectMethod(
 			"longs",
-			"()Ljava/util/stream/LongStream;");
+			"()Ljava/util/stream/LongStream;"
+		);
 	}
 	QAndroidJniObject SplittableRandom::longs(jlong arg0, jlong arg1, jlong arg2)
 	{
@@ -189,7 +205,8 @@ namespace __jni_impl::java::util
 			"(JJJ)Ljava/util/stream/LongStream;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject SplittableRandom::longs(jlong arg0, jlong arg1)
 	{
@@ -197,20 +214,23 @@ namespace __jni_impl::java::util
 			"longs",
 			"(JJ)Ljava/util/stream/LongStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SplittableRandom::longs(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"longs",
 			"(J)Ljava/util/stream/LongStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject SplittableRandom::doubles()
 	{
 		return __thiz.callObjectMethod(
 			"doubles",
-			"()Ljava/util/stream/DoubleStream;");
+			"()Ljava/util/stream/DoubleStream;"
+		);
 	}
 	QAndroidJniObject SplittableRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
 	{
@@ -219,7 +239,8 @@ namespace __jni_impl::java::util
 			"(JDD)Ljava/util/stream/DoubleStream;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject SplittableRandom::doubles(jdouble arg0, jdouble arg1)
 	{
@@ -227,21 +248,24 @@ namespace __jni_impl::java::util
 			"doubles",
 			"(DD)Ljava/util/stream/DoubleStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SplittableRandom::doubles(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"doubles",
 			"(J)Ljava/util/stream/DoubleStream;",
-			arg0);
+			arg0
+		);
 	}
 	void SplittableRandom::nextBytes(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"nextBytes",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util
 

@@ -32,14 +32,14 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void inflate(jint arg0);
-		void show();
-		void setGravity(jint arg0);
-		jint getGravity();
 		QAndroidJniObject getDragToOpenListener();
 		void setForceShowIcon(jboolean arg0);
 		void dismiss();
 		void setOnDismissListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getMenuInflater();
+		void show();
+		void setGravity(jint arg0);
+		jint getGravity();
 		void setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getMenu();
 	};
@@ -89,71 +89,82 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"inflate",
 			"(I)V",
-			arg0);
-	}
-	void PopupMenu::show()
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"()V");
-	}
-	void PopupMenu::setGravity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGravity",
-			"(I)V",
-			arg0);
-	}
-	jint PopupMenu::getGravity()
-	{
-		return __thiz.callMethod<jint>(
-			"getGravity",
-			"()I");
+			arg0
+		);
 	}
 	QAndroidJniObject PopupMenu::getDragToOpenListener()
 	{
 		return __thiz.callObjectMethod(
 			"getDragToOpenListener",
-			"()Landroid/view/View$OnTouchListener;");
+			"()Landroid/view/View$OnTouchListener;"
+		);
 	}
 	void PopupMenu::setForceShowIcon(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setForceShowIcon",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void PopupMenu::dismiss()
 	{
 		__thiz.callMethod<void>(
 			"dismiss",
-			"()V");
+			"()V"
+		);
 	}
 	void PopupMenu::setOnDismissListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnDismissListener",
 			"(Landroid/widget/PopupMenu$OnDismissListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PopupMenu::getMenuInflater()
 	{
 		return __thiz.callObjectMethod(
 			"getMenuInflater",
-			"()Landroid/view/MenuInflater;");
+			"()Landroid/view/MenuInflater;"
+		);
+	}
+	void PopupMenu::show()
+	{
+		__thiz.callMethod<void>(
+			"show",
+			"()V"
+		);
+	}
+	void PopupMenu::setGravity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGravity",
+			"(I)V",
+			arg0
+		);
+	}
+	jint PopupMenu::getGravity()
+	{
+		return __thiz.callMethod<jint>(
+			"getGravity",
+			"()I"
+		);
 	}
 	void PopupMenu::setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnMenuItemClickListener",
 			"(Landroid/widget/PopupMenu$OnMenuItemClickListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PopupMenu::getMenu()
 	{
 		return __thiz.callObjectMethod(
 			"getMenu",
-			"()Landroid/view/Menu;");
+			"()Landroid/view/Menu;"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

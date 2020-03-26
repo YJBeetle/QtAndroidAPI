@@ -58,181 +58,211 @@ namespace __jni_impl::android::os
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"BASE");
+			"BASE"
+		);
 	}
 	jint Build_VERSION_CODES::BASE_1_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"BASE_1_1");
+			"BASE_1_1"
+		);
 	}
 	jint Build_VERSION_CODES::CUPCAKE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"CUPCAKE");
+			"CUPCAKE"
+		);
 	}
 	jint Build_VERSION_CODES::CUR_DEVELOPMENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"CUR_DEVELOPMENT");
+			"CUR_DEVELOPMENT"
+		);
 	}
 	jint Build_VERSION_CODES::DONUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"DONUT");
+			"DONUT"
+		);
 	}
 	jint Build_VERSION_CODES::ECLAIR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"ECLAIR");
+			"ECLAIR"
+		);
 	}
 	jint Build_VERSION_CODES::ECLAIR_0_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"ECLAIR_0_1");
+			"ECLAIR_0_1"
+		);
 	}
 	jint Build_VERSION_CODES::ECLAIR_MR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"ECLAIR_MR1");
+			"ECLAIR_MR1"
+		);
 	}
 	jint Build_VERSION_CODES::FROYO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"FROYO");
+			"FROYO"
+		);
 	}
 	jint Build_VERSION_CODES::GINGERBREAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"GINGERBREAD");
+			"GINGERBREAD"
+		);
 	}
 	jint Build_VERSION_CODES::GINGERBREAD_MR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"GINGERBREAD_MR1");
+			"GINGERBREAD_MR1"
+		);
 	}
 	jint Build_VERSION_CODES::HONEYCOMB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"HONEYCOMB");
+			"HONEYCOMB"
+		);
 	}
 	jint Build_VERSION_CODES::HONEYCOMB_MR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"HONEYCOMB_MR1");
+			"HONEYCOMB_MR1"
+		);
 	}
 	jint Build_VERSION_CODES::HONEYCOMB_MR2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"HONEYCOMB_MR2");
+			"HONEYCOMB_MR2"
+		);
 	}
 	jint Build_VERSION_CODES::ICE_CREAM_SANDWICH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"ICE_CREAM_SANDWICH");
+			"ICE_CREAM_SANDWICH"
+		);
 	}
 	jint Build_VERSION_CODES::ICE_CREAM_SANDWICH_MR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"ICE_CREAM_SANDWICH_MR1");
+			"ICE_CREAM_SANDWICH_MR1"
+		);
 	}
 	jint Build_VERSION_CODES::JELLY_BEAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"JELLY_BEAN");
+			"JELLY_BEAN"
+		);
 	}
 	jint Build_VERSION_CODES::JELLY_BEAN_MR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"JELLY_BEAN_MR1");
+			"JELLY_BEAN_MR1"
+		);
 	}
 	jint Build_VERSION_CODES::JELLY_BEAN_MR2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"JELLY_BEAN_MR2");
+			"JELLY_BEAN_MR2"
+		);
 	}
 	jint Build_VERSION_CODES::KITKAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"KITKAT");
+			"KITKAT"
+		);
 	}
 	jint Build_VERSION_CODES::KITKAT_WATCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"KITKAT_WATCH");
+			"KITKAT_WATCH"
+		);
 	}
 	jint Build_VERSION_CODES::LOLLIPOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"LOLLIPOP");
+			"LOLLIPOP"
+		);
 	}
 	jint Build_VERSION_CODES::LOLLIPOP_MR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"LOLLIPOP_MR1");
+			"LOLLIPOP_MR1"
+		);
 	}
 	jint Build_VERSION_CODES::M()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"M");
+			"M"
+		);
 	}
 	jint Build_VERSION_CODES::N()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"N");
+			"N"
+		);
 	}
 	jint Build_VERSION_CODES::N_MR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"N_MR1");
+			"N_MR1"
+		);
 	}
 	jint Build_VERSION_CODES::O()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"O");
+			"O"
+		);
 	}
 	jint Build_VERSION_CODES::O_MR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"O_MR1");
+			"O_MR1"
+		);
 	}
 	jint Build_VERSION_CODES::P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"P");
+			"P"
+		);
 	}
 	jint Build_VERSION_CODES::Q()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Build$VERSION_CODES",
-			"Q");
+			"Q"
+		);
 	}
 	
 	// Constructors

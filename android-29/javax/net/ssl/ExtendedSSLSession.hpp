@@ -17,8 +17,8 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getLocalSupportedSignatureAlgorithms();
-		QAndroidJniObject getPeerSupportedSignatureAlgorithms();
+		jarray getLocalSupportedSignatureAlgorithms();
+		jarray getPeerSupportedSignatureAlgorithms();
 		QAndroidJniObject getRequestedServerNames();
 		QAndroidJniObject getStatusResponses();
 	};
@@ -38,29 +38,33 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	QAndroidJniObject ExtendedSSLSession::getLocalSupportedSignatureAlgorithms()
+	jarray ExtendedSSLSession::getLocalSupportedSignatureAlgorithms()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalSupportedSignatureAlgorithms",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject ExtendedSSLSession::getPeerSupportedSignatureAlgorithms()
+	jarray ExtendedSSLSession::getPeerSupportedSignatureAlgorithms()
 	{
 		return __thiz.callObjectMethod(
 			"getPeerSupportedSignatureAlgorithms",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ExtendedSSLSession::getRequestedServerNames()
 	{
 		return __thiz.callObjectMethod(
 			"getRequestedServerNames",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject ExtendedSSLSession::getStatusResponses()
 	{
 		return __thiz.callObjectMethod(
 			"getStatusResponses",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

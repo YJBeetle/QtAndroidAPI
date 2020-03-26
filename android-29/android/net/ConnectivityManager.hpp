@@ -68,22 +68,22 @@ namespace __jni_impl::android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_BACKGROUND_DATA_SETTING_CHANGED();
-		static QAndroidJniObject ACTION_CAPTIVE_PORTAL_SIGN_IN();
-		static QAndroidJniObject ACTION_RESTRICT_BACKGROUND_CHANGED();
-		static QAndroidJniObject CONNECTIVITY_ACTION();
+		static jstring ACTION_BACKGROUND_DATA_SETTING_CHANGED();
+		static jstring ACTION_CAPTIVE_PORTAL_SIGN_IN();
+		static jstring ACTION_RESTRICT_BACKGROUND_CHANGED();
+		static jstring CONNECTIVITY_ACTION();
 		static jint DEFAULT_NETWORK_PREFERENCE();
-		static QAndroidJniObject EXTRA_CAPTIVE_PORTAL();
-		static QAndroidJniObject EXTRA_CAPTIVE_PORTAL_URL();
-		static QAndroidJniObject EXTRA_EXTRA_INFO();
-		static QAndroidJniObject EXTRA_IS_FAILOVER();
-		static QAndroidJniObject EXTRA_NETWORK();
-		static QAndroidJniObject EXTRA_NETWORK_INFO();
-		static QAndroidJniObject EXTRA_NETWORK_REQUEST();
-		static QAndroidJniObject EXTRA_NETWORK_TYPE();
-		static QAndroidJniObject EXTRA_NO_CONNECTIVITY();
-		static QAndroidJniObject EXTRA_OTHER_NETWORK_INFO();
-		static QAndroidJniObject EXTRA_REASON();
+		static jstring EXTRA_CAPTIVE_PORTAL();
+		static jstring EXTRA_CAPTIVE_PORTAL_URL();
+		static jstring EXTRA_EXTRA_INFO();
+		static jstring EXTRA_IS_FAILOVER();
+		static jstring EXTRA_NETWORK();
+		static jstring EXTRA_NETWORK_INFO();
+		static jstring EXTRA_NETWORK_REQUEST();
+		static jstring EXTRA_NETWORK_TYPE();
+		static jstring EXTRA_NO_CONNECTIVITY();
+		static jstring EXTRA_OTHER_NETWORK_INFO();
+		static jstring EXTRA_REASON();
 		static jint MULTIPATH_PREFERENCE_HANDOVER();
 		static jint MULTIPATH_PREFERENCE_PERFORMANCE();
 		static jint MULTIPATH_PREFERENCE_RELIABILITY();
@@ -113,8 +113,8 @@ namespace __jni_impl::android::net
 		QAndroidJniObject getActiveNetwork();
 		QAndroidJniObject getNetworkInfo(__jni_impl::android::net::Network arg0);
 		QAndroidJniObject getNetworkInfo(jint arg0);
-		QAndroidJniObject getAllNetworkInfo();
-		QAndroidJniObject getAllNetworks();
+		jarray getAllNetworkInfo();
+		jarray getAllNetworks();
 		QAndroidJniObject getLinkProperties(__jni_impl::android::net::Network arg0);
 		QAndroidJniObject getNetworkCapabilities(__jni_impl::android::net::Network arg0);
 		QAndroidJniObject createSocketKeepalive(__jni_impl::android::net::Network arg0, __jni_impl::android::net::IpSecManager_UdpEncapsulationSocket arg1, __jni_impl::java::net::InetAddress arg2, __jni_impl::java::net::InetAddress arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::net::SocketKeepalive_Callback arg5);
@@ -146,7 +146,7 @@ namespace __jni_impl::android::net
 		QAndroidJniObject getBoundNetworkForProcess();
 		static QAndroidJniObject getProcessDefaultNetwork();
 		jint getRestrictBackgroundStatus();
-		QAndroidJniObject getNetworkWatchlistConfigHash();
+		jbyteArray getNetworkWatchlistConfigHash();
 		jint getConnectionOwnerUid(jint arg0, __jni_impl::java::net::InetSocketAddress arg1, __jni_impl::java::net::InetSocketAddress arg2);
 	};
 } // namespace __jni_impl::android::net
@@ -169,218 +169,251 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::net
 {
 	// Fields
-	QAndroidJniObject ConnectivityManager::ACTION_BACKGROUND_DATA_SETTING_CHANGED()
+	jstring ConnectivityManager::ACTION_BACKGROUND_DATA_SETTING_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"ACTION_BACKGROUND_DATA_SETTING_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::ACTION_CAPTIVE_PORTAL_SIGN_IN()
+	jstring ConnectivityManager::ACTION_CAPTIVE_PORTAL_SIGN_IN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"ACTION_CAPTIVE_PORTAL_SIGN_IN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::ACTION_RESTRICT_BACKGROUND_CHANGED()
+	jstring ConnectivityManager::ACTION_RESTRICT_BACKGROUND_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"ACTION_RESTRICT_BACKGROUND_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::CONNECTIVITY_ACTION()
+	jstring ConnectivityManager::CONNECTIVITY_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"CONNECTIVITY_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ConnectivityManager::DEFAULT_NETWORK_PREFERENCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"DEFAULT_NETWORK_PREFERENCE");
+			"DEFAULT_NETWORK_PREFERENCE"
+		);
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_CAPTIVE_PORTAL()
+	jstring ConnectivityManager::EXTRA_CAPTIVE_PORTAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_CAPTIVE_PORTAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_CAPTIVE_PORTAL_URL()
+	jstring ConnectivityManager::EXTRA_CAPTIVE_PORTAL_URL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_CAPTIVE_PORTAL_URL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_EXTRA_INFO()
+	jstring ConnectivityManager::EXTRA_EXTRA_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_EXTRA_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_IS_FAILOVER()
+	jstring ConnectivityManager::EXTRA_IS_FAILOVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_IS_FAILOVER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_NETWORK()
+	jstring ConnectivityManager::EXTRA_NETWORK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NETWORK",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_NETWORK_INFO()
+	jstring ConnectivityManager::EXTRA_NETWORK_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NETWORK_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_NETWORK_REQUEST()
+	jstring ConnectivityManager::EXTRA_NETWORK_REQUEST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NETWORK_REQUEST",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_NETWORK_TYPE()
+	jstring ConnectivityManager::EXTRA_NETWORK_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NETWORK_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_NO_CONNECTIVITY()
+	jstring ConnectivityManager::EXTRA_NO_CONNECTIVITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_NO_CONNECTIVITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_OTHER_NETWORK_INFO()
+	jstring ConnectivityManager::EXTRA_OTHER_NETWORK_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_OTHER_NETWORK_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConnectivityManager::EXTRA_REASON()
+	jstring ConnectivityManager::EXTRA_REASON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.ConnectivityManager",
 			"EXTRA_REASON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ConnectivityManager::MULTIPATH_PREFERENCE_HANDOVER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"MULTIPATH_PREFERENCE_HANDOVER");
+			"MULTIPATH_PREFERENCE_HANDOVER"
+		);
 	}
 	jint ConnectivityManager::MULTIPATH_PREFERENCE_PERFORMANCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"MULTIPATH_PREFERENCE_PERFORMANCE");
+			"MULTIPATH_PREFERENCE_PERFORMANCE"
+		);
 	}
 	jint ConnectivityManager::MULTIPATH_PREFERENCE_RELIABILITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"MULTIPATH_PREFERENCE_RELIABILITY");
+			"MULTIPATH_PREFERENCE_RELIABILITY"
+		);
 	}
 	jint ConnectivityManager::RESTRICT_BACKGROUND_STATUS_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"RESTRICT_BACKGROUND_STATUS_DISABLED");
+			"RESTRICT_BACKGROUND_STATUS_DISABLED"
+		);
 	}
 	jint ConnectivityManager::RESTRICT_BACKGROUND_STATUS_ENABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"RESTRICT_BACKGROUND_STATUS_ENABLED");
+			"RESTRICT_BACKGROUND_STATUS_ENABLED"
+		);
 	}
 	jint ConnectivityManager::RESTRICT_BACKGROUND_STATUS_WHITELISTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"RESTRICT_BACKGROUND_STATUS_WHITELISTED");
+			"RESTRICT_BACKGROUND_STATUS_WHITELISTED"
+		);
 	}
 	jint ConnectivityManager::TYPE_BLUETOOTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_BLUETOOTH");
+			"TYPE_BLUETOOTH"
+		);
 	}
 	jint ConnectivityManager::TYPE_DUMMY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_DUMMY");
+			"TYPE_DUMMY"
+		);
 	}
 	jint ConnectivityManager::TYPE_ETHERNET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_ETHERNET");
+			"TYPE_ETHERNET"
+		);
 	}
 	jint ConnectivityManager::TYPE_MOBILE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_MOBILE");
+			"TYPE_MOBILE"
+		);
 	}
 	jint ConnectivityManager::TYPE_MOBILE_DUN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_MOBILE_DUN");
+			"TYPE_MOBILE_DUN"
+		);
 	}
 	jint ConnectivityManager::TYPE_MOBILE_HIPRI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_MOBILE_HIPRI");
+			"TYPE_MOBILE_HIPRI"
+		);
 	}
 	jint ConnectivityManager::TYPE_MOBILE_MMS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_MOBILE_MMS");
+			"TYPE_MOBILE_MMS"
+		);
 	}
 	jint ConnectivityManager::TYPE_MOBILE_SUPL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_MOBILE_SUPL");
+			"TYPE_MOBILE_SUPL"
+		);
 	}
 	jint ConnectivityManager::TYPE_VPN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_VPN");
+			"TYPE_VPN"
+		);
 	}
 	jint ConnectivityManager::TYPE_WIFI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_WIFI");
+			"TYPE_WIFI"
+		);
 	}
 	jint ConnectivityManager::TYPE_WIMAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.ConnectivityManager",
-			"TYPE_WIMAX");
+			"TYPE_WIMAX"
+		);
 	}
 	
 	// Constructors
@@ -398,72 +431,83 @@ namespace __jni_impl::android::net
 			"android.net.ConnectivityManager",
 			"isNetworkTypeValid",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void ConnectivityManager::setNetworkPreference(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNetworkPreference",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint ConnectivityManager::getNetworkPreference()
 	{
 		return __thiz.callMethod<jint>(
 			"getNetworkPreference",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ConnectivityManager::getActiveNetworkInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getActiveNetworkInfo",
-			"()Landroid/net/NetworkInfo;");
+			"()Landroid/net/NetworkInfo;"
+		);
 	}
 	QAndroidJniObject ConnectivityManager::getActiveNetwork()
 	{
 		return __thiz.callObjectMethod(
 			"getActiveNetwork",
-			"()Landroid/net/Network;");
+			"()Landroid/net/Network;"
+		);
 	}
 	QAndroidJniObject ConnectivityManager::getNetworkInfo(__jni_impl::android::net::Network arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getNetworkInfo",
 			"(Landroid/net/Network;)Landroid/net/NetworkInfo;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConnectivityManager::getNetworkInfo(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getNetworkInfo",
 			"(I)Landroid/net/NetworkInfo;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ConnectivityManager::getAllNetworkInfo()
+	jarray ConnectivityManager::getAllNetworkInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getAllNetworkInfo",
-			"()[Landroid/net/NetworkInfo;");
+			"()[Landroid/net/NetworkInfo;"
+		).object<jarray>();
 	}
-	QAndroidJniObject ConnectivityManager::getAllNetworks()
+	jarray ConnectivityManager::getAllNetworks()
 	{
 		return __thiz.callObjectMethod(
 			"getAllNetworks",
-			"()[Landroid/net/Network;");
+			"()[Landroid/net/Network;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ConnectivityManager::getLinkProperties(__jni_impl::android::net::Network arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getLinkProperties",
 			"(Landroid/net/Network;)Landroid/net/LinkProperties;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConnectivityManager::getNetworkCapabilities(__jni_impl::android::net::Network arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getNetworkCapabilities",
 			"(Landroid/net/Network;)Landroid/net/NetworkCapabilities;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConnectivityManager::createSocketKeepalive(__jni_impl::android::net::Network arg0, __jni_impl::android::net::IpSecManager_UdpEncapsulationSocket arg1, __jni_impl::java::net::InetAddress arg2, __jni_impl::java::net::InetAddress arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::net::SocketKeepalive_Callback arg5)
 	{
@@ -475,40 +519,46 @@ namespace __jni_impl::android::net
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	jboolean ConnectivityManager::getBackgroundDataSetting()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getBackgroundDataSetting",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ConnectivityManager::addDefaultNetworkActiveListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addDefaultNetworkActiveListener",
 			"(Landroid/net/ConnectivityManager$OnNetworkActiveListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::removeDefaultNetworkActiveListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeDefaultNetworkActiveListener",
 			"(Landroid/net/ConnectivityManager$OnNetworkActiveListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ConnectivityManager::isDefaultNetworkActive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDefaultNetworkActive",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ConnectivityManager::reportBadNetwork(__jni_impl::android::net::Network arg0)
 	{
 		__thiz.callMethod<void>(
 			"reportBadNetwork",
 			"(Landroid/net/Network;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::reportNetworkConnectivity(__jni_impl::android::net::Network arg0, jboolean arg1)
 	{
@@ -516,19 +566,22 @@ namespace __jni_impl::android::net
 			"reportNetworkConnectivity",
 			"(Landroid/net/Network;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ConnectivityManager::getDefaultProxy()
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultProxy",
-			"()Landroid/net/ProxyInfo;");
+			"()Landroid/net/ProxyInfo;"
+		);
 	}
 	jboolean ConnectivityManager::isActiveNetworkMetered()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isActiveNetworkMetered",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ConnectivityManager::requestNetwork(__jni_impl::android::net::NetworkRequest arg0, __jni_impl::android::net::ConnectivityManager_NetworkCallback arg1, __jni_impl::android::os::Handler arg2, jint arg3)
 	{
@@ -538,7 +591,8 @@ namespace __jni_impl::android::net
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void ConnectivityManager::requestNetwork(__jni_impl::android::net::NetworkRequest arg0, __jni_impl::android::net::ConnectivityManager_NetworkCallback arg1, jint arg2)
 	{
@@ -547,7 +601,8 @@ namespace __jni_impl::android::net
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ConnectivityManager::requestNetwork(__jni_impl::android::net::NetworkRequest arg0, __jni_impl::android::app::PendingIntent arg1)
 	{
@@ -555,7 +610,8 @@ namespace __jni_impl::android::net
 			"requestNetwork",
 			"(Landroid/net/NetworkRequest;Landroid/app/PendingIntent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::requestNetwork(__jni_impl::android::net::NetworkRequest arg0, __jni_impl::android::net::ConnectivityManager_NetworkCallback arg1, __jni_impl::android::os::Handler arg2)
 	{
@@ -564,7 +620,8 @@ namespace __jni_impl::android::net
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::requestNetwork(__jni_impl::android::net::NetworkRequest arg0, __jni_impl::android::net::ConnectivityManager_NetworkCallback arg1)
 	{
@@ -572,14 +629,16 @@ namespace __jni_impl::android::net
 			"requestNetwork",
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::releaseNetworkRequest(__jni_impl::android::app::PendingIntent arg0)
 	{
 		__thiz.callMethod<void>(
 			"releaseNetworkRequest",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::registerNetworkCallback(__jni_impl::android::net::NetworkRequest arg0, __jni_impl::android::app::PendingIntent arg1)
 	{
@@ -587,7 +646,8 @@ namespace __jni_impl::android::net
 			"registerNetworkCallback",
 			"(Landroid/net/NetworkRequest;Landroid/app/PendingIntent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::registerNetworkCallback(__jni_impl::android::net::NetworkRequest arg0, __jni_impl::android::net::ConnectivityManager_NetworkCallback arg1, __jni_impl::android::os::Handler arg2)
 	{
@@ -596,7 +656,8 @@ namespace __jni_impl::android::net
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::registerNetworkCallback(__jni_impl::android::net::NetworkRequest arg0, __jni_impl::android::net::ConnectivityManager_NetworkCallback arg1)
 	{
@@ -604,7 +665,8 @@ namespace __jni_impl::android::net
 			"registerNetworkCallback",
 			"(Landroid/net/NetworkRequest;Landroid/net/ConnectivityManager$NetworkCallback;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::registerDefaultNetworkCallback(__jni_impl::android::net::ConnectivityManager_NetworkCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -612,49 +674,56 @@ namespace __jni_impl::android::net
 			"registerDefaultNetworkCallback",
 			"(Landroid/net/ConnectivityManager$NetworkCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::registerDefaultNetworkCallback(__jni_impl::android::net::ConnectivityManager_NetworkCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerDefaultNetworkCallback",
 			"(Landroid/net/ConnectivityManager$NetworkCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ConnectivityManager::requestBandwidthUpdate(__jni_impl::android::net::Network arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"requestBandwidthUpdate",
 			"(Landroid/net/Network;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::unregisterNetworkCallback(__jni_impl::android::app::PendingIntent arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterNetworkCallback",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectivityManager::unregisterNetworkCallback(__jni_impl::android::net::ConnectivityManager_NetworkCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterNetworkCallback",
 			"(Landroid/net/ConnectivityManager$NetworkCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint ConnectivityManager::getMultipathPreference(__jni_impl::android::net::Network arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getMultipathPreference",
 			"(Landroid/net/Network;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ConnectivityManager::bindProcessToNetwork(__jni_impl::android::net::Network arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"bindProcessToNetwork",
 			"(Landroid/net/Network;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ConnectivityManager::setProcessDefaultNetwork(__jni_impl::android::net::Network arg0)
 	{
@@ -662,32 +731,37 @@ namespace __jni_impl::android::net
 			"android.net.ConnectivityManager",
 			"setProcessDefaultNetwork",
 			"(Landroid/net/Network;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConnectivityManager::getBoundNetworkForProcess()
 	{
 		return __thiz.callObjectMethod(
 			"getBoundNetworkForProcess",
-			"()Landroid/net/Network;");
+			"()Landroid/net/Network;"
+		);
 	}
 	QAndroidJniObject ConnectivityManager::getProcessDefaultNetwork()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.ConnectivityManager",
 			"getProcessDefaultNetwork",
-			"()Landroid/net/Network;");
+			"()Landroid/net/Network;"
+		);
 	}
 	jint ConnectivityManager::getRestrictBackgroundStatus()
 	{
 		return __thiz.callMethod<jint>(
 			"getRestrictBackgroundStatus",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject ConnectivityManager::getNetworkWatchlistConfigHash()
+	jbyteArray ConnectivityManager::getNetworkWatchlistConfigHash()
 	{
 		return __thiz.callObjectMethod(
 			"getNetworkWatchlistConfigHash",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jint ConnectivityManager::getConnectionOwnerUid(jint arg0, __jni_impl::java::net::InetSocketAddress arg1, __jni_impl::java::net::InetSocketAddress arg2)
 	{
@@ -696,7 +770,8 @@ namespace __jni_impl::android::net
 			"(ILjava/net/InetSocketAddress;Ljava/net/InetSocketAddress;)I",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net
 

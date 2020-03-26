@@ -21,17 +21,17 @@ namespace __jni_impl::android::provider
 	public:
 		// Fields
 		static QAndroidJniObject CONTENT_FILTER_URI();
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
 		static QAndroidJniObject ENTERPRISE_CONTENT_FILTER_URI();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static QAndroidJniObject NORMALIZED_NUMBER();
-		static QAndroidJniObject NUMBER();
-		static QAndroidJniObject SEARCH_DISPLAY_NAME_KEY();
-		static QAndroidJniObject SEARCH_PHONE_NUMBER_KEY();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static jstring NORMALIZED_NUMBER();
+		static jstring NUMBER();
+		static jstring SEARCH_DISPLAY_NAME_KEY();
+		static jstring SEARCH_PHONE_NUMBER_KEY();
 		static jint TYPE_ASSISTANT();
 		static jint TYPE_CALLBACK();
 		static jint TYPE_CAR();
@@ -58,7 +58,7 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static jint getTypeLabelResource(jint arg0);
-		static QAndroidJniObject getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -73,204 +73,236 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::CONTENT_ITEM_TYPE()
+	jstring ContactsContract_CommonDataKinds_Phone::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::CONTENT_TYPE()
+	jstring ContactsContract_CommonDataKinds_Phone::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::ENTERPRISE_CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"ENTERPRISE_CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX()
+	jstring ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"EXTRA_ADDRESS_BOOK_INDEX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	jstring ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	jstring ContactsContract_CommonDataKinds_Phone::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::NORMALIZED_NUMBER()
+	jstring ContactsContract_CommonDataKinds_Phone::NORMALIZED_NUMBER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"NORMALIZED_NUMBER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::NUMBER()
+	jstring ContactsContract_CommonDataKinds_Phone::NUMBER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"NUMBER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::SEARCH_DISPLAY_NAME_KEY()
+	jstring ContactsContract_CommonDataKinds_Phone::SEARCH_DISPLAY_NAME_KEY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"SEARCH_DISPLAY_NAME_KEY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::SEARCH_PHONE_NUMBER_KEY()
+	jstring ContactsContract_CommonDataKinds_Phone::SEARCH_PHONE_NUMBER_KEY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"SEARCH_PHONE_NUMBER_KEY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_ASSISTANT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_ASSISTANT");
+			"TYPE_ASSISTANT"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_CALLBACK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_CALLBACK");
+			"TYPE_CALLBACK"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_CAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_CAR");
+			"TYPE_CAR"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_COMPANY_MAIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_COMPANY_MAIN");
+			"TYPE_COMPANY_MAIN"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_FAX_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_FAX_HOME");
+			"TYPE_FAX_HOME"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_FAX_WORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_FAX_WORK");
+			"TYPE_FAX_WORK"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_HOME");
+			"TYPE_HOME"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_ISDN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_ISDN");
+			"TYPE_ISDN"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_MAIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_MAIN");
+			"TYPE_MAIN"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_MMS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_MMS");
+			"TYPE_MMS"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_MOBILE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_MOBILE");
+			"TYPE_MOBILE"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_OTHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_OTHER");
+			"TYPE_OTHER"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_OTHER_FAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_OTHER_FAX");
+			"TYPE_OTHER_FAX"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_PAGER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_PAGER");
+			"TYPE_PAGER"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_RADIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_RADIO");
+			"TYPE_RADIO"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_TELEX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_TELEX");
+			"TYPE_TELEX"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_TTY_TDD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_TTY_TDD");
+			"TYPE_TTY_TDD"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_WORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_WORK");
+			"TYPE_WORK"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_WORK_MOBILE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_WORK_MOBILE");
+			"TYPE_WORK_MOBILE"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Phone::TYPE_WORK_PAGER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
-			"TYPE_WORK_PAGER");
+			"TYPE_WORK_PAGER"
+		);
 	}
 	
 	// Constructors
@@ -288,9 +320,10 @@ namespace __jni_impl::android::provider
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
 			"getTypeLabelResource",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Phone::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
+	jstring ContactsContract_CommonDataKinds_Phone::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Phone",
@@ -298,7 +331,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

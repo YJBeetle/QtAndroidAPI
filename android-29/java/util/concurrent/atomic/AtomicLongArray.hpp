@@ -20,7 +20,7 @@ namespace __jni_impl::java::util::concurrent::atomic
 		// Methods
 		jlong get(jint arg0);
 		jint length();
-		QAndroidJniObject toString();
+		jstring toString();
 		void set(jint arg0, jlong arg1);
 		jlong getOpaque(jint arg0);
 		void setOpaque(jint arg0, jlong arg1);
@@ -79,19 +79,22 @@ namespace __jni_impl::java::util::concurrent::atomic
 		return __thiz.callMethod<jlong>(
 			"get",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jint AtomicLongArray::length()
 	{
 		return __thiz.callMethod<jint>(
 			"length",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject AtomicLongArray::toString()
+	jstring AtomicLongArray::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AtomicLongArray::set(jint arg0, jlong arg1)
 	{
@@ -99,14 +102,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"set",
 			"(IJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLongArray::getOpaque(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getOpaque",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicLongArray::setOpaque(jint arg0, jlong arg1)
 	{
@@ -114,14 +119,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"setOpaque",
 			"(IJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLongArray::getAcquire(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getAcquire",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicLongArray::setRelease(jint arg0, jlong arg1)
 	{
@@ -129,7 +136,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"setRelease",
 			"(IJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicLongArray::compareAndSet(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -138,7 +146,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJJ)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong AtomicLongArray::compareAndExchange(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -147,7 +156,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJJ)J",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong AtomicLongArray::compareAndExchangeAcquire(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -156,7 +166,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJJ)J",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong AtomicLongArray::compareAndExchangeRelease(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -165,7 +176,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJJ)J",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicLongArray::weakCompareAndSetPlain(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -174,7 +186,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJJ)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicLongArray::weakCompareAndSet(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -183,7 +196,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJJ)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicLongArray::weakCompareAndSetAcquire(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -192,7 +206,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJJ)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicLongArray::weakCompareAndSetRelease(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -201,7 +216,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJJ)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong AtomicLongArray::getAndSet(jint arg0, jlong arg1)
 	{
@@ -209,7 +225,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndSet",
 			"(IJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLongArray::getAndAdd(jint arg0, jlong arg1)
 	{
@@ -217,7 +234,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndAdd",
 			"(IJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AtomicLongArray::lazySet(jint arg0, jlong arg1)
 	{
@@ -225,7 +243,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"lazySet",
 			"(IJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicLongArray::weakCompareAndSetVolatile(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -234,35 +253,40 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJJ)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong AtomicLongArray::getAndIncrement(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getAndIncrement",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLongArray::getAndDecrement(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getAndDecrement",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLongArray::incrementAndGet(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"incrementAndGet",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLongArray::decrementAndGet(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"decrementAndGet",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLongArray::addAndGet(jint arg0, jlong arg1)
 	{
@@ -270,7 +294,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"addAndGet",
 			"(IJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLongArray::getAndUpdate(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -278,7 +303,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndUpdate",
 			"(ILjava/util/function/LongUnaryOperator;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong AtomicLongArray::updateAndGet(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -286,7 +312,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"updateAndGet",
 			"(ILjava/util/function/LongUnaryOperator;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong AtomicLongArray::getAndAccumulate(jint arg0, jlong arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -295,7 +322,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJLjava/util/function/LongBinaryOperator;)J",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jlong AtomicLongArray::accumulateAndGet(jint arg0, jlong arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -304,14 +332,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(IJLjava/util/function/LongBinaryOperator;)J",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jlong AtomicLongArray::getPlain(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getPlain",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicLongArray::setPlain(jint arg0, jlong arg1)
 	{
@@ -319,7 +349,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"setPlain",
 			"(IJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

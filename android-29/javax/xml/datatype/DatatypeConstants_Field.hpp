@@ -17,7 +17,7 @@ namespace __jni_impl::javax::xml::datatype
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getId();
 	};
 } // namespace __jni_impl::javax::xml::datatype
@@ -36,17 +36,19 @@ namespace __jni_impl::javax::xml::datatype
 	}
 	
 	// Methods
-	QAndroidJniObject DatatypeConstants_Field::toString()
+	jstring DatatypeConstants_Field::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DatatypeConstants_Field::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::javax::xml::datatype
 

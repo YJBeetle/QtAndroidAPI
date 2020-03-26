@@ -50,13 +50,15 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint WifiP2pServiceRequest::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject WifiP2pServiceRequest::newInstance(jint arg0)
 	{
@@ -64,7 +66,8 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 			"android.net.wifi.p2p.nsd.WifiP2pServiceRequest",
 			"newInstance",
 			"(I)Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject WifiP2pServiceRequest::newInstance(jint arg0, jstring arg1)
 	{
@@ -73,13 +76,15 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 			"newInstance",
 			"(ILjava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint WifiP2pServiceRequest::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void WifiP2pServiceRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -87,7 +92,8 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p::nsd
 

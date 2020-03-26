@@ -22,7 +22,7 @@ namespace __jni_impl::android::telephony::euicc
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getOsVersion();
+		jstring getOsVersion();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -38,7 +38,8 @@ namespace __jni_impl::android::telephony::euicc
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.euicc.EuiccInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -51,17 +52,19 @@ namespace __jni_impl::android::telephony::euicc
 	}
 	
 	// Methods
-	QAndroidJniObject EuiccInfo::getOsVersion()
+	jstring EuiccInfo::getOsVersion()
 	{
 		return __thiz.callObjectMethod(
 			"getOsVersion",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint EuiccInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void EuiccInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -69,7 +72,8 @@ namespace __jni_impl::android::telephony::euicc
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telephony::euicc
 

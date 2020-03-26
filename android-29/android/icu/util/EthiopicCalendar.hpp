@@ -55,7 +55,7 @@ namespace __jni_impl::android::icu::util
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
 		
 		// Methods
-		QAndroidJniObject getType();
+		jstring getType();
 		void setAmeteAlemEra(jboolean arg0);
 		jboolean isAmeteAlemEra();
 	};
@@ -73,79 +73,92 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"GENBOT");
+			"GENBOT"
+		);
 	}
 	jint EthiopicCalendar::HAMLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"HAMLE");
+			"HAMLE"
+		);
 	}
 	jint EthiopicCalendar::HEDAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"HEDAR");
+			"HEDAR"
+		);
 	}
 	jint EthiopicCalendar::MEGABIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"MEGABIT");
+			"MEGABIT"
+		);
 	}
 	jint EthiopicCalendar::MESKEREM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"MESKEREM");
+			"MESKEREM"
+		);
 	}
 	jint EthiopicCalendar::MIAZIA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"MIAZIA");
+			"MIAZIA"
+		);
 	}
 	jint EthiopicCalendar::NEHASSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"NEHASSE");
+			"NEHASSE"
+		);
 	}
 	jint EthiopicCalendar::PAGUMEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"PAGUMEN");
+			"PAGUMEN"
+		);
 	}
 	jint EthiopicCalendar::SENE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"SENE");
+			"SENE"
+		);
 	}
 	jint EthiopicCalendar::TAHSAS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"TAHSAS");
+			"TAHSAS"
+		);
 	}
 	jint EthiopicCalendar::TEKEMT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"TEKEMT");
+			"TEKEMT"
+		);
 	}
 	jint EthiopicCalendar::TER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"TER");
+			"TER"
+		);
 	}
 	jint EthiopicCalendar::YEKATIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.EthiopicCalendar",
-			"YEKATIT");
+			"YEKATIT"
+		);
 	}
 	
 	// Constructors
@@ -222,24 +235,27 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject EthiopicCalendar::getType()
+	jstring EthiopicCalendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void EthiopicCalendar::setAmeteAlemEra(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAmeteAlemEra",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean EthiopicCalendar::isAmeteAlemEra()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAmeteAlemEra",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

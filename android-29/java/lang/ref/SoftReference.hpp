@@ -23,7 +23,7 @@ namespace __jni_impl::java::lang::ref
 		void __constructor(jobject arg0, __jni_impl::java::lang::ref::ReferenceQueue arg1);
 		
 		// Methods
-		QAndroidJniObject get();
+		jobject get();
 	};
 } // namespace __jni_impl::java::lang::ref
 
@@ -51,11 +51,12 @@ namespace __jni_impl::java::lang::ref
 	}
 	
 	// Methods
-	QAndroidJniObject SoftReference::get()
+	jobject SoftReference::get()
 	{
 		return __thiz.callObjectMethod(
 			"get",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::lang::ref
 

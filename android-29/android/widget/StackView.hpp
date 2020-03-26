@@ -37,12 +37,12 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void advance();
-		jboolean onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		QAndroidJniObject getAccessibilityClassName();
-		void showNext();
-		void showPrevious();
 		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
+		void showNext();
+		void showPrevious();
+		jboolean onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jstring getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -95,46 +95,53 @@ namespace __jni_impl::android::widget
 	{
 		__thiz.callMethod<void>(
 			"advance",
-			"()V");
-	}
-	jboolean StackView::onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onInterceptTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject StackView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	void StackView::showNext()
-	{
-		__thiz.callMethod<void>(
-			"showNext",
-			"()V");
-	}
-	void StackView::showPrevious()
-	{
-		__thiz.callMethod<void>(
-			"showPrevious",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean StackView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean StackView::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void StackView::showNext()
+	{
+		__thiz.callMethod<void>(
+			"showNext",
+			"()V"
+		);
+	}
+	void StackView::showPrevious()
+	{
+		__thiz.callMethod<void>(
+			"showPrevious",
+			"()V"
+		);
+	}
+	jboolean StackView::onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onInterceptTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring StackView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

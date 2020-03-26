@@ -21,7 +21,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -35,21 +35,24 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Align",
 			"LEFT",
-			"Landroid/graphics/Paint$Align;");
+			"Landroid/graphics/Paint$Align;"
+		);
 	}
 	QAndroidJniObject Paint_Align::CENTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Align",
 			"CENTER",
-			"Landroid/graphics/Paint$Align;");
+			"Landroid/graphics/Paint$Align;"
+		);
 	}
 	QAndroidJniObject Paint_Align::RIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Align",
 			"RIGHT",
-			"Landroid/graphics/Paint$Align;");
+			"Landroid/graphics/Paint$Align;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Paint_Align::values()
+	jarray Paint_Align::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Paint$Align",
 			"values",
-			"()[Landroid/graphics/Paint$Align;");
+			"()[Landroid/graphics/Paint$Align;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Paint_Align::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Paint$Align",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Align;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

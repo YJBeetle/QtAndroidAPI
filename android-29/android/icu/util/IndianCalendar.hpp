@@ -55,7 +55,7 @@ namespace __jni_impl::android::icu::util
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
 		
 		// Methods
-		QAndroidJniObject getType();
+		jstring getType();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -71,79 +71,92 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"AGRAHAYANA");
+			"AGRAHAYANA"
+		);
 	}
 	jint IndianCalendar::ASADHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"ASADHA");
+			"ASADHA"
+		);
 	}
 	jint IndianCalendar::ASVINA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"ASVINA");
+			"ASVINA"
+		);
 	}
 	jint IndianCalendar::BHADRA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"BHADRA");
+			"BHADRA"
+		);
 	}
 	jint IndianCalendar::CHAITRA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"CHAITRA");
+			"CHAITRA"
+		);
 	}
 	jint IndianCalendar::IE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"IE");
+			"IE"
+		);
 	}
 	jint IndianCalendar::JYAISTHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"JYAISTHA");
+			"JYAISTHA"
+		);
 	}
 	jint IndianCalendar::KARTIKA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"KARTIKA");
+			"KARTIKA"
+		);
 	}
 	jint IndianCalendar::MAGHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"MAGHA");
+			"MAGHA"
+		);
 	}
 	jint IndianCalendar::PAUSA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"PAUSA");
+			"PAUSA"
+		);
 	}
 	jint IndianCalendar::PHALGUNA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"PHALGUNA");
+			"PHALGUNA"
+		);
 	}
 	jint IndianCalendar::SRAVANA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"SRAVANA");
+			"SRAVANA"
+		);
 	}
 	jint IndianCalendar::VAISAKHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.IndianCalendar",
-			"VAISAKHA");
+			"VAISAKHA"
+		);
 	}
 	
 	// Constructors
@@ -220,11 +233,12 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject IndianCalendar::getType()
+	jstring IndianCalendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

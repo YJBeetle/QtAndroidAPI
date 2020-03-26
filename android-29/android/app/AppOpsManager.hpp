@@ -17,47 +17,47 @@ namespace __jni_impl::android::app
 		static jint MODE_ERRORED();
 		static jint MODE_FOREGROUND();
 		static jint MODE_IGNORED();
-		static QAndroidJniObject OPSTR_ADD_VOICEMAIL();
-		static QAndroidJniObject OPSTR_ANSWER_PHONE_CALLS();
-		static QAndroidJniObject OPSTR_BODY_SENSORS();
-		static QAndroidJniObject OPSTR_CALL_PHONE();
-		static QAndroidJniObject OPSTR_CAMERA();
-		static QAndroidJniObject OPSTR_COARSE_LOCATION();
-		static QAndroidJniObject OPSTR_FINE_LOCATION();
-		static QAndroidJniObject OPSTR_GET_USAGE_STATS();
-		static QAndroidJniObject OPSTR_MOCK_LOCATION();
-		static QAndroidJniObject OPSTR_MONITOR_HIGH_POWER_LOCATION();
-		static QAndroidJniObject OPSTR_MONITOR_LOCATION();
-		static QAndroidJniObject OPSTR_PICTURE_IN_PICTURE();
-		static QAndroidJniObject OPSTR_PROCESS_OUTGOING_CALLS();
-		static QAndroidJniObject OPSTR_READ_CALENDAR();
-		static QAndroidJniObject OPSTR_READ_CALL_LOG();
-		static QAndroidJniObject OPSTR_READ_CELL_BROADCASTS();
-		static QAndroidJniObject OPSTR_READ_CONTACTS();
-		static QAndroidJniObject OPSTR_READ_EXTERNAL_STORAGE();
-		static QAndroidJniObject OPSTR_READ_PHONE_NUMBERS();
-		static QAndroidJniObject OPSTR_READ_PHONE_STATE();
-		static QAndroidJniObject OPSTR_READ_SMS();
-		static QAndroidJniObject OPSTR_RECEIVE_MMS();
-		static QAndroidJniObject OPSTR_RECEIVE_SMS();
-		static QAndroidJniObject OPSTR_RECEIVE_WAP_PUSH();
-		static QAndroidJniObject OPSTR_RECORD_AUDIO();
-		static QAndroidJniObject OPSTR_SEND_SMS();
-		static QAndroidJniObject OPSTR_SYSTEM_ALERT_WINDOW();
-		static QAndroidJniObject OPSTR_USE_FINGERPRINT();
-		static QAndroidJniObject OPSTR_USE_SIP();
-		static QAndroidJniObject OPSTR_WRITE_CALENDAR();
-		static QAndroidJniObject OPSTR_WRITE_CALL_LOG();
-		static QAndroidJniObject OPSTR_WRITE_CONTACTS();
-		static QAndroidJniObject OPSTR_WRITE_EXTERNAL_STORAGE();
-		static QAndroidJniObject OPSTR_WRITE_SETTINGS();
+		static jstring OPSTR_ADD_VOICEMAIL();
+		static jstring OPSTR_ANSWER_PHONE_CALLS();
+		static jstring OPSTR_BODY_SENSORS();
+		static jstring OPSTR_CALL_PHONE();
+		static jstring OPSTR_CAMERA();
+		static jstring OPSTR_COARSE_LOCATION();
+		static jstring OPSTR_FINE_LOCATION();
+		static jstring OPSTR_GET_USAGE_STATS();
+		static jstring OPSTR_MOCK_LOCATION();
+		static jstring OPSTR_MONITOR_HIGH_POWER_LOCATION();
+		static jstring OPSTR_MONITOR_LOCATION();
+		static jstring OPSTR_PICTURE_IN_PICTURE();
+		static jstring OPSTR_PROCESS_OUTGOING_CALLS();
+		static jstring OPSTR_READ_CALENDAR();
+		static jstring OPSTR_READ_CALL_LOG();
+		static jstring OPSTR_READ_CELL_BROADCASTS();
+		static jstring OPSTR_READ_CONTACTS();
+		static jstring OPSTR_READ_EXTERNAL_STORAGE();
+		static jstring OPSTR_READ_PHONE_NUMBERS();
+		static jstring OPSTR_READ_PHONE_STATE();
+		static jstring OPSTR_READ_SMS();
+		static jstring OPSTR_RECEIVE_MMS();
+		static jstring OPSTR_RECEIVE_SMS();
+		static jstring OPSTR_RECEIVE_WAP_PUSH();
+		static jstring OPSTR_RECORD_AUDIO();
+		static jstring OPSTR_SEND_SMS();
+		static jstring OPSTR_SYSTEM_ALERT_WINDOW();
+		static jstring OPSTR_USE_FINGERPRINT();
+		static jstring OPSTR_USE_SIP();
+		static jstring OPSTR_WRITE_CALENDAR();
+		static jstring OPSTR_WRITE_CALL_LOG();
+		static jstring OPSTR_WRITE_CONTACTS();
+		static jstring OPSTR_WRITE_EXTERNAL_STORAGE();
+		static jstring OPSTR_WRITE_SETTINGS();
 		static jint WATCH_FOREGROUND_CHANGES();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject permissionToOp(jstring arg0);
+		static jstring permissionToOp(jstring arg0);
 		void startWatchingMode(jstring arg0, jstring arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
 		void startWatchingMode(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
 		void stopWatchingMode(__jni_impl::__JniBaseClass arg0);
@@ -87,275 +87,315 @@ namespace __jni_impl::android::app
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AppOpsManager",
-			"MODE_ALLOWED");
+			"MODE_ALLOWED"
+		);
 	}
 	jint AppOpsManager::MODE_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AppOpsManager",
-			"MODE_DEFAULT");
+			"MODE_DEFAULT"
+		);
 	}
 	jint AppOpsManager::MODE_ERRORED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AppOpsManager",
-			"MODE_ERRORED");
+			"MODE_ERRORED"
+		);
 	}
 	jint AppOpsManager::MODE_FOREGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AppOpsManager",
-			"MODE_FOREGROUND");
+			"MODE_FOREGROUND"
+		);
 	}
 	jint AppOpsManager::MODE_IGNORED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AppOpsManager",
-			"MODE_IGNORED");
+			"MODE_IGNORED"
+		);
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_ADD_VOICEMAIL()
+	jstring AppOpsManager::OPSTR_ADD_VOICEMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_ADD_VOICEMAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_ANSWER_PHONE_CALLS()
+	jstring AppOpsManager::OPSTR_ANSWER_PHONE_CALLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_ANSWER_PHONE_CALLS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_BODY_SENSORS()
+	jstring AppOpsManager::OPSTR_BODY_SENSORS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_BODY_SENSORS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_CALL_PHONE()
+	jstring AppOpsManager::OPSTR_CALL_PHONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_CALL_PHONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_CAMERA()
+	jstring AppOpsManager::OPSTR_CAMERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_CAMERA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_COARSE_LOCATION()
+	jstring AppOpsManager::OPSTR_COARSE_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_COARSE_LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_FINE_LOCATION()
+	jstring AppOpsManager::OPSTR_FINE_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_FINE_LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_GET_USAGE_STATS()
+	jstring AppOpsManager::OPSTR_GET_USAGE_STATS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_GET_USAGE_STATS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_MOCK_LOCATION()
+	jstring AppOpsManager::OPSTR_MOCK_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_MOCK_LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_MONITOR_HIGH_POWER_LOCATION()
+	jstring AppOpsManager::OPSTR_MONITOR_HIGH_POWER_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_MONITOR_HIGH_POWER_LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_MONITOR_LOCATION()
+	jstring AppOpsManager::OPSTR_MONITOR_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_MONITOR_LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_PICTURE_IN_PICTURE()
+	jstring AppOpsManager::OPSTR_PICTURE_IN_PICTURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_PICTURE_IN_PICTURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_PROCESS_OUTGOING_CALLS()
+	jstring AppOpsManager::OPSTR_PROCESS_OUTGOING_CALLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_PROCESS_OUTGOING_CALLS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_READ_CALENDAR()
+	jstring AppOpsManager::OPSTR_READ_CALENDAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_READ_CALENDAR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_READ_CALL_LOG()
+	jstring AppOpsManager::OPSTR_READ_CALL_LOG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_READ_CALL_LOG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_READ_CELL_BROADCASTS()
+	jstring AppOpsManager::OPSTR_READ_CELL_BROADCASTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_READ_CELL_BROADCASTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_READ_CONTACTS()
+	jstring AppOpsManager::OPSTR_READ_CONTACTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_READ_CONTACTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_READ_EXTERNAL_STORAGE()
+	jstring AppOpsManager::OPSTR_READ_EXTERNAL_STORAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_READ_EXTERNAL_STORAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_READ_PHONE_NUMBERS()
+	jstring AppOpsManager::OPSTR_READ_PHONE_NUMBERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_READ_PHONE_NUMBERS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_READ_PHONE_STATE()
+	jstring AppOpsManager::OPSTR_READ_PHONE_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_READ_PHONE_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_READ_SMS()
+	jstring AppOpsManager::OPSTR_READ_SMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_READ_SMS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_RECEIVE_MMS()
+	jstring AppOpsManager::OPSTR_RECEIVE_MMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_RECEIVE_MMS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_RECEIVE_SMS()
+	jstring AppOpsManager::OPSTR_RECEIVE_SMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_RECEIVE_SMS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_RECEIVE_WAP_PUSH()
+	jstring AppOpsManager::OPSTR_RECEIVE_WAP_PUSH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_RECEIVE_WAP_PUSH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_RECORD_AUDIO()
+	jstring AppOpsManager::OPSTR_RECORD_AUDIO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_RECORD_AUDIO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_SEND_SMS()
+	jstring AppOpsManager::OPSTR_SEND_SMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_SEND_SMS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_SYSTEM_ALERT_WINDOW()
+	jstring AppOpsManager::OPSTR_SYSTEM_ALERT_WINDOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_SYSTEM_ALERT_WINDOW",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_USE_FINGERPRINT()
+	jstring AppOpsManager::OPSTR_USE_FINGERPRINT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_USE_FINGERPRINT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_USE_SIP()
+	jstring AppOpsManager::OPSTR_USE_SIP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_USE_SIP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_WRITE_CALENDAR()
+	jstring AppOpsManager::OPSTR_WRITE_CALENDAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_WRITE_CALENDAR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_WRITE_CALL_LOG()
+	jstring AppOpsManager::OPSTR_WRITE_CALL_LOG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_WRITE_CALL_LOG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_WRITE_CONTACTS()
+	jstring AppOpsManager::OPSTR_WRITE_CONTACTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_WRITE_CONTACTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_WRITE_EXTERNAL_STORAGE()
+	jstring AppOpsManager::OPSTR_WRITE_EXTERNAL_STORAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_WRITE_EXTERNAL_STORAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppOpsManager::OPSTR_WRITE_SETTINGS()
+	jstring AppOpsManager::OPSTR_WRITE_SETTINGS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AppOpsManager",
 			"OPSTR_WRITE_SETTINGS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AppOpsManager::WATCH_FOREGROUND_CHANGES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AppOpsManager",
-			"WATCH_FOREGROUND_CHANGES");
+			"WATCH_FOREGROUND_CHANGES"
+		);
 	}
 	
 	// Constructors
@@ -367,13 +407,14 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject AppOpsManager::permissionToOp(jstring arg0)
+	jstring AppOpsManager::permissionToOp(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.AppOpsManager",
 			"permissionToOp",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -383,7 +424,8 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -392,14 +434,16 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/app/AppOpsManager$OnOpChangedListener;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void AppOpsManager::stopWatchingMode(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"stopWatchingMode",
 			"(Landroid/app/AppOpsManager$OnOpChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint AppOpsManager::unsafeCheckOp(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -408,7 +452,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::checkOp(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -417,7 +462,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::unsafeCheckOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -426,7 +472,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::checkOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -435,7 +482,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::unsafeCheckOpRaw(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -444,7 +492,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::unsafeCheckOpRawNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -453,7 +502,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::noteOp(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -462,7 +512,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::noteOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -471,7 +522,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::noteProxyOp(jstring arg0, jstring arg1)
 	{
@@ -479,7 +531,8 @@ namespace __jni_impl::android::app
 			"noteProxyOp",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint AppOpsManager::noteProxyOpNoThrow(jstring arg0, jstring arg1, jint arg2)
 	{
@@ -488,7 +541,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Ljava/lang/String;I)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::noteProxyOpNoThrow(jstring arg0, jstring arg1)
 	{
@@ -496,7 +550,8 @@ namespace __jni_impl::android::app
 			"noteProxyOpNoThrow",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint AppOpsManager::startOp(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -505,7 +560,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AppOpsManager::startOpNoThrow(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -514,7 +570,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AppOpsManager::finishOp(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -523,7 +580,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;ILjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AppOpsManager::checkPackage(jint arg0, jstring arg1)
 	{
@@ -531,7 +589,8 @@ namespace __jni_impl::android::app
 			"checkPackage",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app
 

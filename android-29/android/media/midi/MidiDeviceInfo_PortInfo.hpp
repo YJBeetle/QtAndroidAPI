@@ -19,7 +19,7 @@ namespace __jni_impl::android::media::midi
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jint getType();
 		jint getPortNumber();
 	};
@@ -33,13 +33,15 @@ namespace __jni_impl::android::media::midi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo$PortInfo",
-			"TYPE_INPUT");
+			"TYPE_INPUT"
+		);
 	}
 	jint MidiDeviceInfo_PortInfo::TYPE_OUTPUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.midi.MidiDeviceInfo$PortInfo",
-			"TYPE_OUTPUT");
+			"TYPE_OUTPUT"
+		);
 	}
 	
 	// Constructors
@@ -51,23 +53,26 @@ namespace __jni_impl::android::media::midi
 	}
 	
 	// Methods
-	QAndroidJniObject MidiDeviceInfo_PortInfo::getName()
+	jstring MidiDeviceInfo_PortInfo::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MidiDeviceInfo_PortInfo::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
 	jint MidiDeviceInfo_PortInfo::getPortNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getPortNumber",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media::midi
 

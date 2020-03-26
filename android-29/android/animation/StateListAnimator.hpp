@@ -46,7 +46,8 @@ namespace __jni_impl::android::animation
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/animation/StateListAnimator;");
+			"()Landroid/animation/StateListAnimator;"
+		);
 	}
 	void StateListAnimator::addState(jintArray arg0, __jni_impl::android::animation::Animator arg1)
 	{
@@ -54,13 +55,15 @@ namespace __jni_impl::android::animation
 			"addState",
 			"([ILandroid/animation/Animator;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void StateListAnimator::jumpToCurrentState()
 	{
 		__thiz.callMethod<void>(
 			"jumpToCurrentState",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::animation
 

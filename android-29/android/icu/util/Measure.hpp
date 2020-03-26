@@ -26,7 +26,7 @@ namespace __jni_impl::android::icu::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getNumber();
 		QAndroidJniObject getUnit();
@@ -56,31 +56,36 @@ namespace __jni_impl::android::icu::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Measure::toString()
+	jstring Measure::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Measure::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Measure::getNumber()
 	{
 		return __thiz.callObjectMethod(
 			"getNumber",
-			"()Ljava/lang/Number;");
+			"()Ljava/lang/Number;"
+		);
 	}
 	QAndroidJniObject Measure::getUnit()
 	{
 		return __thiz.callObjectMethod(
 			"getUnit",
-			"()Landroid/icu/util/MeasureUnit;");
+			"()Landroid/icu/util/MeasureUnit;"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

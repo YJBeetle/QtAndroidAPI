@@ -79,7 +79,8 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint PipedInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -88,26 +89,30 @@ namespace __jni_impl::java::io
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void PipedInputStream::connect(__jni_impl::java::io::PipedOutputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"connect",
 			"(Ljava/io/PipedOutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PipedInputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint PipedInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::io
 

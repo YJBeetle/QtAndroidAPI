@@ -66,7 +66,8 @@ namespace __jni_impl::java::net
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Authenticator",
 			"getDefault",
-			"()Ljava/net/Authenticator;");
+			"()Ljava/net/Authenticator;"
+		);
 	}
 	void Authenticator::setDefault(__jni_impl::java::net::Authenticator arg0)
 	{
@@ -74,7 +75,8 @@ namespace __jni_impl::java::net
 			"java.net.Authenticator",
 			"setDefault",
 			"(Ljava/net/Authenticator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Authenticator::requestPasswordAuthentication(__jni_impl::java::net::Authenticator arg0, jstring arg1, __jni_impl::java::net::InetAddress arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, __jni_impl::java::net::URL arg7, __jni_impl::java::net::Authenticator_RequestorType arg8)
 	{
@@ -90,7 +92,8 @@ namespace __jni_impl::java::net
 			arg5,
 			arg6,
 			arg7.__jniObject().object(),
-			arg8.__jniObject().object());
+			arg8.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Authenticator::requestPasswordAuthentication(__jni_impl::java::net::InetAddress arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
@@ -102,7 +105,8 @@ namespace __jni_impl::java::net
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject Authenticator::requestPasswordAuthentication(jstring arg0, __jni_impl::java::net::InetAddress arg1, jint arg2, jstring arg3, jstring arg4, jstring arg5)
 	{
@@ -115,7 +119,8 @@ namespace __jni_impl::java::net
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	QAndroidJniObject Authenticator::requestPasswordAuthentication(jstring arg0, __jni_impl::java::net::InetAddress arg1, jint arg2, jstring arg3, jstring arg4, jstring arg5, __jni_impl::java::net::URL arg6, __jni_impl::java::net::Authenticator_RequestorType arg7)
 	{
@@ -130,7 +135,8 @@ namespace __jni_impl::java::net
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Authenticator::requestPasswordAuthenticationInstance(jstring arg0, __jni_impl::java::net::InetAddress arg1, jint arg2, jstring arg3, jstring arg4, jstring arg5, __jni_impl::java::net::URL arg6, __jni_impl::java::net::Authenticator_RequestorType arg7)
 	{
@@ -144,7 +150,8 @@ namespace __jni_impl::java::net
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::net
 

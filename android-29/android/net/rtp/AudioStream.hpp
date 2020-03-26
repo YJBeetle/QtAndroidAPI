@@ -63,45 +63,52 @@ namespace __jni_impl::android::net::rtp
 		__thiz.callMethod<void>(
 			"join",
 			"(Landroid/net/rtp/AudioGroup;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean AudioStream::isBusy()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBusy",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint AudioStream::getDtmfType()
 	{
 		return __thiz.callMethod<jint>(
 			"getDtmfType",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject AudioStream::getCodec()
 	{
 		return __thiz.callObjectMethod(
 			"getCodec",
-			"()Landroid/net/rtp/AudioCodec;");
+			"()Landroid/net/rtp/AudioCodec;"
+		);
 	}
 	void AudioStream::setCodec(__jni_impl::android::net::rtp::AudioCodec arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCodec",
 			"(Landroid/net/rtp/AudioCodec;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AudioStream::setDtmfType(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDtmfType",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AudioStream::getGroup()
 	{
 		return __thiz.callObjectMethod(
 			"getGroup",
-			"()Landroid/net/rtp/AudioGroup;");
+			"()Landroid/net/rtp/AudioGroup;"
+		);
 	}
 } // namespace __jni_impl::android::net::rtp
 

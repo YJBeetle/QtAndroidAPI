@@ -31,7 +31,7 @@ namespace __jni_impl::java::lang
 		static jint MIN_EXPONENT();
 		static jint SIZE();
 		static jint BYTES();
-		static QAndroidJniObject TYPE();
+		static jclass TYPE();
 		
 		// Constructors
 		void __constructor(jdouble arg0);
@@ -39,8 +39,8 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		static QAndroidJniObject toString(jdouble arg0);
-		QAndroidJniObject toString();
+		static jstring toString(jdouble arg0);
+		jstring toString();
 		jint hashCode();
 		static jint hashCode(jdouble arg0);
 		static jdouble min(jdouble arg0, jdouble arg1);
@@ -58,7 +58,7 @@ namespace __jni_impl::java::lang
 		jdouble doubleValue();
 		static QAndroidJniObject valueOf(jdouble arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject toHexString(jdouble arg0);
+		static jstring toHexString(jdouble arg0);
 		static jint compare(jdouble arg0, jdouble arg1);
 		QAndroidJniObject resolveConstantDesc(__jni_impl::java::lang::invoke::MethodHandles_Lookup arg0);
 		QAndroidJniObject describeConstable();
@@ -82,68 +82,79 @@ namespace __jni_impl::java::lang
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.Double",
-			"POSITIVE_INFINITY");
+			"POSITIVE_INFINITY"
+		);
 	}
 	jdouble Double::NEGATIVE_INFINITY()
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.Double",
-			"NEGATIVE_INFINITY");
+			"NEGATIVE_INFINITY"
+		);
 	}
 	jdouble Double::NaN()
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.Double",
-			"NaN");
+			"NaN"
+		);
 	}
 	jdouble Double::MAX_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.Double",
-			"MAX_VALUE");
+			"MAX_VALUE"
+		);
 	}
 	jdouble Double::MIN_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.Double",
-			"MIN_NORMAL");
+			"MIN_NORMAL"
+		);
 	}
 	jdouble Double::MIN_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.Double",
-			"MIN_VALUE");
+			"MIN_VALUE"
+		);
 	}
 	jint Double::MAX_EXPONENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Double",
-			"MAX_EXPONENT");
+			"MAX_EXPONENT"
+		);
 	}
 	jint Double::MIN_EXPONENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Double",
-			"MIN_EXPONENT");
+			"MIN_EXPONENT"
+		);
 	}
 	jint Double::SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Double",
-			"SIZE");
+			"SIZE"
+		);
 	}
 	jint Double::BYTES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Double",
-			"BYTES");
+			"BYTES"
+		);
 	}
-	QAndroidJniObject Double::TYPE()
+	jclass Double::TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Double",
 			"TYPE",
-			"Ljava/lang/Class;");
+			"Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	
 	// Constructors
@@ -168,27 +179,31 @@ namespace __jni_impl::java::lang
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Double::toString(jdouble arg0)
+	jstring Double::toString(jdouble arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Double",
 			"toString",
 			"(D)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Double::toString()
+	jstring Double::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Double::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Double::hashCode(jdouble arg0)
 	{
@@ -196,7 +211,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"hashCode",
 			"(D)I",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Double::min(jdouble arg0, jdouble arg1)
 	{
@@ -205,7 +221,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Double::max(jdouble arg0, jdouble arg1)
 	{
@@ -214,7 +231,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Double::doubleToRawLongBits(jdouble arg0)
 	{
@@ -222,7 +240,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"doubleToRawLongBits",
 			"(D)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong Double::doubleToLongBits(jdouble arg0)
 	{
@@ -230,7 +249,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"doubleToLongBits",
 			"(D)J",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Double::longBitsToDouble(jlong arg0)
 	{
@@ -238,57 +258,66 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"longBitsToDouble",
 			"(J)D",
-			arg0);
+			arg0
+		);
 	}
 	jint Double::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Double::compareTo(__jni_impl::java::lang::Double arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Double;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jbyte Double::byteValue()
 	{
 		return __thiz.callMethod<jbyte>(
 			"byteValue",
-			"()B");
+			"()B"
+		);
 	}
 	jshort Double::shortValue()
 	{
 		return __thiz.callMethod<jshort>(
 			"shortValue",
-			"()S");
+			"()S"
+		);
 	}
 	jint Double::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Double::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat Double::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble Double::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 	QAndroidJniObject Double::valueOf(jdouble arg0)
 	{
@@ -296,7 +325,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"valueOf",
 			"(D)Ljava/lang/Double;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Double::valueOf(jstring arg0)
 	{
@@ -304,15 +334,17 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Double;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Double::toHexString(jdouble arg0)
+	jstring Double::toHexString(jdouble arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Double",
 			"toHexString",
 			"(D)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint Double::compare(jdouble arg0, jdouble arg1)
 	{
@@ -321,20 +353,23 @@ namespace __jni_impl::java::lang
 			"compare",
 			"(DD)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Double::resolveConstantDesc(__jni_impl::java::lang::invoke::MethodHandles_Lookup arg0)
 	{
 		return __thiz.callObjectMethod(
 			"resolveConstantDesc",
 			"(Ljava/lang/invoke/MethodHandles$Lookup;)Ljava/lang/Double;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Double::describeConstable()
 	{
 		return __thiz.callObjectMethod(
 			"describeConstable",
-			"()Ljava/util/Optional;");
+			"()Ljava/util/Optional;"
+		);
 	}
 	jboolean Double::isNaN(jdouble arg0)
 	{
@@ -342,13 +377,15 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"isNaN",
 			"(D)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Double::isNaN()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNaN",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Double::isInfinite(jdouble arg0)
 	{
@@ -356,13 +393,15 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"isInfinite",
 			"(D)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Double::isInfinite()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInfinite",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Double::isFinite(jdouble arg0)
 	{
@@ -370,7 +409,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"isFinite",
 			"(D)Z",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Double::sum(jdouble arg0, jdouble arg1)
 	{
@@ -379,7 +419,8 @@ namespace __jni_impl::java::lang
 			"sum",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Double::parseDouble(jstring arg0)
 	{
@@ -387,7 +428,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Double",
 			"parseDouble",
 			"(Ljava/lang/String;)D",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang
 

@@ -17,8 +17,8 @@ namespace __jni_impl::java::util
 		void __constructor(jobject arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getSource();
+		jstring toString();
+		jobject getSource();
 	};
 } // namespace __jni_impl::java::util
 
@@ -37,17 +37,19 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject EventObject::toString()
+	jstring EventObject::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EventObject::getSource()
+	jobject EventObject::getSource()
 	{
 		return __thiz.callObjectMethod(
 			"getSource",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util
 

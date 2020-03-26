@@ -33,12 +33,12 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint apply(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getLinks();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
+		QAndroidJniObject getLinks();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -52,50 +52,58 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
-			"APPLY_STRATEGY_IGNORE");
+			"APPLY_STRATEGY_IGNORE"
+		);
 	}
 	jint TextLinks::APPLY_STRATEGY_REPLACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
-			"APPLY_STRATEGY_REPLACE");
+			"APPLY_STRATEGY_REPLACE"
+		);
 	}
 	QAndroidJniObject TextLinks::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextLinks",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint TextLinks::STATUS_DIFFERENT_TEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
-			"STATUS_DIFFERENT_TEXT");
+			"STATUS_DIFFERENT_TEXT"
+		);
 	}
 	jint TextLinks::STATUS_LINKS_APPLIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
-			"STATUS_LINKS_APPLIED");
+			"STATUS_LINKS_APPLIED"
+		);
 	}
 	jint TextLinks::STATUS_NO_LINKS_APPLIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
-			"STATUS_NO_LINKS_APPLIED");
+			"STATUS_NO_LINKS_APPLIED"
+		);
 	}
 	jint TextLinks::STATUS_NO_LINKS_FOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
-			"STATUS_NO_LINKS_FOUND");
+			"STATUS_NO_LINKS_FOUND"
+		);
 	}
 	jint TextLinks::STATUS_UNSUPPORTED_CHARACTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.TextLinks",
-			"STATUS_UNSUPPORTED_CHARACTER");
+			"STATUS_UNSUPPORTED_CHARACTER"
+		);
 	}
 	
 	// Constructors
@@ -107,11 +115,12 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	QAndroidJniObject TextLinks::toString()
+	jstring TextLinks::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TextLinks::apply(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -120,25 +129,15 @@ namespace __jni_impl::android::view::textclassifier
 			"(Landroid/text/Spannable;ILjava/util/function/Function;)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject TextLinks::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject TextLinks::getLinks()
-	{
-		return __thiz.callObjectMethod(
-			"getLinks",
-			"()Ljava/util/Collection;");
+			arg2.__jniObject().object()
+		);
 	}
 	jint TextLinks::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void TextLinks::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -146,7 +145,22 @@ namespace __jni_impl::android::view::textclassifier
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject TextLinks::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject TextLinks::getLinks()
+	{
+		return __thiz.callObjectMethod(
+			"getLinks",
+			"()Ljava/util/Collection;"
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

@@ -12,14 +12,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
-{
-	class ViewStructure;
-}
-namespace __jni_impl::android::view::autofill
-{
-	class AutofillValue;
-}
 namespace __jni_impl::java::lang
 {
 	class Integer;
@@ -27,6 +19,14 @@ namespace __jni_impl::java::lang
 namespace __jni_impl::java::lang
 {
 	class Boolean;
+}
+namespace __jni_impl::android::view
+{
+	class ViewStructure;
+}
+namespace __jni_impl::android::view::autofill
+{
+	class AutofillValue;
 }
 
 namespace __jni_impl::android::widget
@@ -46,13 +46,6 @@ namespace __jni_impl::android::widget
 		jint getHour();
 		jint getMinute();
 		jboolean isEnabled();
-		void dispatchProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
-		QAndroidJniObject getAccessibilityClassName();
-		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
-		jint getAutofillType();
-		QAndroidJniObject getAutofillValue();
-		void setEnabled(jboolean arg0);
-		jint getBaseline();
 		jboolean is24HourView();
 		void setHour(jint arg0);
 		void setCurrentHour(__jni_impl::java::lang::Integer arg0);
@@ -63,14 +56,21 @@ namespace __jni_impl::android::widget
 		void setIs24HourView(__jni_impl::java::lang::Boolean arg0);
 		void setOnTimeChangedListener(__jni_impl::__JniBaseClass arg0);
 		jboolean validateInput();
+		void dispatchProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
+		jstring getAccessibilityClassName();
+		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
+		jint getAutofillType();
+		QAndroidJniObject getAutofillValue();
+		void setEnabled(jboolean arg0);
+		jint getBaseline();
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/ViewStructure.hpp"
-#include "../view/autofill/AutofillValue.hpp"
 #include "../../java/lang/Integer.hpp"
 #include "../../java/lang/Boolean.hpp"
+#include "../view/ViewStructure.hpp"
+#include "../view/autofill/AutofillValue.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -117,19 +117,98 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callMethod<jint>(
 			"getHour",
-			"()I");
+			"()I"
+		);
 	}
 	jint TimePicker::getMinute()
 	{
 		return __thiz.callMethod<jint>(
 			"getMinute",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean TimePicker::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
+			"()Z"
+		);
+	}
+	jboolean TimePicker::is24HourView()
+	{
+		return __thiz.callMethod<jboolean>(
+			"is24HourView",
+			"()Z"
+		);
+	}
+	void TimePicker::setHour(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHour",
+			"(I)V",
+			arg0
+		);
+	}
+	void TimePicker::setCurrentHour(__jni_impl::java::lang::Integer arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCurrentHour",
+			"(Ljava/lang/Integer;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TimePicker::setMinute(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinute",
+			"(I)V",
+			arg0
+		);
+	}
+	QAndroidJniObject TimePicker::getCurrentHour()
+	{
+		return __thiz.callObjectMethod(
+			"getCurrentHour",
+			"()Ljava/lang/Integer;"
+		);
+	}
+	void TimePicker::setCurrentMinute(__jni_impl::java::lang::Integer arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCurrentMinute",
+			"(Ljava/lang/Integer;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TimePicker::getCurrentMinute()
+	{
+		return __thiz.callObjectMethod(
+			"getCurrentMinute",
+			"()Ljava/lang/Integer;"
+		);
+	}
+	void TimePicker::setIs24HourView(__jni_impl::java::lang::Boolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIs24HourView",
+			"(Ljava/lang/Boolean;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TimePicker::setOnTimeChangedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnTimeChangedListener",
+			"(Landroid/widget/TimePicker$OnTimeChangedListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean TimePicker::validateInput()
+	{
+		return __thiz.callMethod<jboolean>(
+			"validateInput",
+			"()Z"
+		);
 	}
 	void TimePicker::dispatchProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
 	{
@@ -137,111 +216,52 @@ namespace __jni_impl::android::widget
 			"dispatchProvideAutofillStructure",
 			"(Landroid/view/ViewStructure;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject TimePicker::getAccessibilityClassName()
+	jstring TimePicker::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void TimePicker::autofill(__jni_impl::android::view::autofill::AutofillValue arg0)
 	{
 		__thiz.callMethod<void>(
 			"autofill",
 			"(Landroid/view/autofill/AutofillValue;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint TimePicker::getAutofillType()
 	{
 		return __thiz.callMethod<jint>(
 			"getAutofillType",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject TimePicker::getAutofillValue()
 	{
 		return __thiz.callObjectMethod(
 			"getAutofillValue",
-			"()Landroid/view/autofill/AutofillValue;");
+			"()Landroid/view/autofill/AutofillValue;"
+		);
 	}
 	void TimePicker::setEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jint TimePicker::getBaseline()
 	{
 		return __thiz.callMethod<jint>(
 			"getBaseline",
-			"()I");
-	}
-	jboolean TimePicker::is24HourView()
-	{
-		return __thiz.callMethod<jboolean>(
-			"is24HourView",
-			"()Z");
-	}
-	void TimePicker::setHour(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHour",
-			"(I)V",
-			arg0);
-	}
-	void TimePicker::setCurrentHour(__jni_impl::java::lang::Integer arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCurrentHour",
-			"(Ljava/lang/Integer;)V",
-			arg0.__jniObject().object());
-	}
-	void TimePicker::setMinute(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinute",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject TimePicker::getCurrentHour()
-	{
-		return __thiz.callObjectMethod(
-			"getCurrentHour",
-			"()Ljava/lang/Integer;");
-	}
-	void TimePicker::setCurrentMinute(__jni_impl::java::lang::Integer arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCurrentMinute",
-			"(Ljava/lang/Integer;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject TimePicker::getCurrentMinute()
-	{
-		return __thiz.callObjectMethod(
-			"getCurrentMinute",
-			"()Ljava/lang/Integer;");
-	}
-	void TimePicker::setIs24HourView(__jni_impl::java::lang::Boolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIs24HourView",
-			"(Ljava/lang/Boolean;)V",
-			arg0.__jniObject().object());
-	}
-	void TimePicker::setOnTimeChangedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnTimeChangedListener",
-			"(Landroid/widget/TimePicker$OnTimeChangedListener;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean TimePicker::validateInput()
-	{
-		return __thiz.callMethod<jboolean>(
-			"validateInput",
-			"()Z");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

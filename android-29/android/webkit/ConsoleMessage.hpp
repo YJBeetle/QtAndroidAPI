@@ -22,8 +22,8 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		jint lineNumber();
-		QAndroidJniObject message();
-		QAndroidJniObject sourceId();
+		jstring message();
+		jstring sourceId();
 		QAndroidJniObject messageLevel();
 	};
 } // namespace __jni_impl::android::webkit
@@ -51,25 +51,29 @@ namespace __jni_impl::android::webkit
 	{
 		return __thiz.callMethod<jint>(
 			"lineNumber",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject ConsoleMessage::message()
+	jstring ConsoleMessage::message()
 	{
 		return __thiz.callObjectMethod(
 			"message",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConsoleMessage::sourceId()
+	jstring ConsoleMessage::sourceId()
 	{
 		return __thiz.callObjectMethod(
 			"sourceId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ConsoleMessage::messageLevel()
 	{
 		return __thiz.callObjectMethod(
 			"messageLevel",
-			"()Landroid/webkit/ConsoleMessage$MessageLevel;");
+			"()Landroid/webkit/ConsoleMessage$MessageLevel;"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

@@ -64,40 +64,46 @@ namespace __jni_impl::android::media::tv
 		__thiz.callMethod<void>(
 			"notifyTuned",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TvInputService_RecordingSession::notifyRecordingStopped(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"notifyRecordingStopped",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TvInputService_RecordingSession::notifyError(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"notifyError",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void TvInputService_RecordingSession::onStartRecording(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"onStartRecording",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TvInputService_RecordingSession::onStopRecording()
 	{
 		__thiz.callMethod<void>(
 			"onStopRecording",
-			"()V");
+			"()V"
+		);
 	}
 	void TvInputService_RecordingSession::onRelease()
 	{
 		__thiz.callMethod<void>(
 			"onRelease",
-			"()V");
+			"()V"
+		);
 	}
 	void TvInputService_RecordingSession::onTune(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -105,14 +111,16 @@ namespace __jni_impl::android::media::tv
 			"onTune",
 			"(Landroid/net/Uri;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void TvInputService_RecordingSession::onTune(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"onTune",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TvInputService_RecordingSession::onAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -120,7 +128,8 @@ namespace __jni_impl::android::media::tv
 			"onAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

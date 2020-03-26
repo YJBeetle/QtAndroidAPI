@@ -58,7 +58,8 @@ namespace __jni_impl::android::hardware
 		__thiz.callMethod<void>(
 			"onSensorChanged",
 			"(Landroid/hardware/SensorEvent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SensorEventCallback::onAccuracyChanged(__jni_impl::android::hardware::Sensor arg0, jint arg1)
 	{
@@ -66,21 +67,24 @@ namespace __jni_impl::android::hardware
 			"onAccuracyChanged",
 			"(Landroid/hardware/Sensor;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void SensorEventCallback::onFlushCompleted(__jni_impl::android::hardware::Sensor arg0)
 	{
 		__thiz.callMethod<void>(
 			"onFlushCompleted",
 			"(Landroid/hardware/Sensor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SensorEventCallback::onSensorAdditionalInfo(__jni_impl::android::hardware::SensorAdditionalInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"onSensorAdditionalInfo",
 			"(Landroid/hardware/SensorAdditionalInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::hardware
 

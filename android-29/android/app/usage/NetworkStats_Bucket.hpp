@@ -35,6 +35,7 @@ namespace __jni_impl::android::app::usage
 		// Methods
 		jint getState();
 		jint getTag();
+		jint getUid();
 		jint getMetered();
 		jint getRoaming();
 		jint getDefaultNetworkStatus();
@@ -44,7 +45,6 @@ namespace __jni_impl::android::app::usage
 		jlong getTxBytes();
 		jlong getRxPackets();
 		jlong getTxPackets();
-		jint getUid();
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -56,97 +56,113 @@ namespace __jni_impl::android::app::usage
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"DEFAULT_NETWORK_ALL");
+			"DEFAULT_NETWORK_ALL"
+		);
 	}
 	jint NetworkStats_Bucket::DEFAULT_NETWORK_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"DEFAULT_NETWORK_NO");
+			"DEFAULT_NETWORK_NO"
+		);
 	}
 	jint NetworkStats_Bucket::DEFAULT_NETWORK_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"DEFAULT_NETWORK_YES");
+			"DEFAULT_NETWORK_YES"
+		);
 	}
 	jint NetworkStats_Bucket::METERED_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"METERED_ALL");
+			"METERED_ALL"
+		);
 	}
 	jint NetworkStats_Bucket::METERED_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"METERED_NO");
+			"METERED_NO"
+		);
 	}
 	jint NetworkStats_Bucket::METERED_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"METERED_YES");
+			"METERED_YES"
+		);
 	}
 	jint NetworkStats_Bucket::ROAMING_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"ROAMING_ALL");
+			"ROAMING_ALL"
+		);
 	}
 	jint NetworkStats_Bucket::ROAMING_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"ROAMING_NO");
+			"ROAMING_NO"
+		);
 	}
 	jint NetworkStats_Bucket::ROAMING_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"ROAMING_YES");
+			"ROAMING_YES"
+		);
 	}
 	jint NetworkStats_Bucket::STATE_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"STATE_ALL");
+			"STATE_ALL"
+		);
 	}
 	jint NetworkStats_Bucket::STATE_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"STATE_DEFAULT");
+			"STATE_DEFAULT"
+		);
 	}
 	jint NetworkStats_Bucket::STATE_FOREGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"STATE_FOREGROUND");
+			"STATE_FOREGROUND"
+		);
 	}
 	jint NetworkStats_Bucket::TAG_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"TAG_NONE");
+			"TAG_NONE"
+		);
 	}
 	jint NetworkStats_Bucket::UID_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"UID_ALL");
+			"UID_ALL"
+		);
 	}
 	jint NetworkStats_Bucket::UID_REMOVED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"UID_REMOVED");
+			"UID_REMOVED"
+		);
 	}
 	jint NetworkStats_Bucket::UID_TETHERING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.NetworkStats$Bucket",
-			"UID_TETHERING");
+			"UID_TETHERING"
+		);
 	}
 	
 	// Constructors
@@ -162,73 +178,85 @@ namespace __jni_impl::android::app::usage
 	{
 		return __thiz.callMethod<jint>(
 			"getState",
-			"()I");
+			"()I"
+		);
 	}
 	jint NetworkStats_Bucket::getTag()
 	{
 		return __thiz.callMethod<jint>(
 			"getTag",
-			"()I");
-	}
-	jint NetworkStats_Bucket::getMetered()
-	{
-		return __thiz.callMethod<jint>(
-			"getMetered",
-			"()I");
-	}
-	jint NetworkStats_Bucket::getRoaming()
-	{
-		return __thiz.callMethod<jint>(
-			"getRoaming",
-			"()I");
-	}
-	jint NetworkStats_Bucket::getDefaultNetworkStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getDefaultNetworkStatus",
-			"()I");
-	}
-	jlong NetworkStats_Bucket::getStartTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getStartTimeStamp",
-			"()J");
-	}
-	jlong NetworkStats_Bucket::getEndTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getEndTimeStamp",
-			"()J");
-	}
-	jlong NetworkStats_Bucket::getRxBytes()
-	{
-		return __thiz.callMethod<jlong>(
-			"getRxBytes",
-			"()J");
-	}
-	jlong NetworkStats_Bucket::getTxBytes()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTxBytes",
-			"()J");
-	}
-	jlong NetworkStats_Bucket::getRxPackets()
-	{
-		return __thiz.callMethod<jlong>(
-			"getRxPackets",
-			"()J");
-	}
-	jlong NetworkStats_Bucket::getTxPackets()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTxPackets",
-			"()J");
+			"()I"
+		);
 	}
 	jint NetworkStats_Bucket::getUid()
 	{
 		return __thiz.callMethod<jint>(
 			"getUid",
-			"()I");
+			"()I"
+		);
+	}
+	jint NetworkStats_Bucket::getMetered()
+	{
+		return __thiz.callMethod<jint>(
+			"getMetered",
+			"()I"
+		);
+	}
+	jint NetworkStats_Bucket::getRoaming()
+	{
+		return __thiz.callMethod<jint>(
+			"getRoaming",
+			"()I"
+		);
+	}
+	jint NetworkStats_Bucket::getDefaultNetworkStatus()
+	{
+		return __thiz.callMethod<jint>(
+			"getDefaultNetworkStatus",
+			"()I"
+		);
+	}
+	jlong NetworkStats_Bucket::getStartTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getStartTimeStamp",
+			"()J"
+		);
+	}
+	jlong NetworkStats_Bucket::getEndTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getEndTimeStamp",
+			"()J"
+		);
+	}
+	jlong NetworkStats_Bucket::getRxBytes()
+	{
+		return __thiz.callMethod<jlong>(
+			"getRxBytes",
+			"()J"
+		);
+	}
+	jlong NetworkStats_Bucket::getTxBytes()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTxBytes",
+			"()J"
+		);
+	}
+	jlong NetworkStats_Bucket::getRxPackets()
+	{
+		return __thiz.callMethod<jlong>(
+			"getRxPackets",
+			"()J"
+		);
+	}
+	jlong NetworkStats_Bucket::getTxPackets()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTxPackets",
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

@@ -25,8 +25,8 @@ namespace __jni_impl::java::security::spec
 		void __constructor(__jni_impl::java::security::spec::ECPoint arg0, __jni_impl::java::security::spec::ECParameterSpec arg1);
 		
 		// Methods
-		QAndroidJniObject getW();
 		QAndroidJniObject getParams();
+		QAndroidJniObject getW();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -48,17 +48,19 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
-	QAndroidJniObject ECPublicKeySpec::getW()
-	{
-		return __thiz.callObjectMethod(
-			"getW",
-			"()Ljava/security/spec/ECPoint;");
-	}
 	QAndroidJniObject ECPublicKeySpec::getParams()
 	{
 		return __thiz.callObjectMethod(
 			"getParams",
-			"()Ljava/security/spec/ECParameterSpec;");
+			"()Ljava/security/spec/ECParameterSpec;"
+		);
+	}
+	QAndroidJniObject ECPublicKeySpec::getW()
+	{
+		return __thiz.callObjectMethod(
+			"getW",
+			"()Ljava/security/spec/ECPoint;"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

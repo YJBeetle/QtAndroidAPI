@@ -52,7 +52,8 @@ namespace __jni_impl::android::webkit
 			"onRenderProcessUnresponsive",
 			"(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebViewRenderProcessClient::onRenderProcessResponsive(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::webkit::WebViewRenderProcess arg1)
 	{
@@ -60,7 +61,8 @@ namespace __jni_impl::android::webkit
 			"onRenderProcessResponsive",
 			"(Landroid/webkit/WebView;Landroid/webkit/WebViewRenderProcess;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

@@ -9,25 +9,25 @@ namespace __jni_impl::java::util::regex
 {
 	class Pattern;
 }
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::text
 {
 	class TextPaint;
 }
-namespace __jni_impl::java::util
+namespace __jni_impl::android::text
 {
-	class Locale;
+	class TextUtils_TruncateAt;
 }
 namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::text
+namespace __jni_impl::android::content
 {
-	class TextUtils_TruncateAt;
+	class Context;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::text
@@ -54,49 +54,49 @@ namespace __jni_impl::android::text
 		static jint indexOf(jstring arg0, jstring arg1);
 		static jint indexOf(jstring arg0, jstring arg1, jint arg2, jint arg3);
 		static jint indexOf(jstring arg0, jchar arg1);
-		static jint indexOf(jstring arg0, jchar arg1, jint arg2, jint arg3);
 		static jint indexOf(jstring arg0, jchar arg1, jint arg2);
+		static jint indexOf(jstring arg0, jchar arg1, jint arg2, jint arg3);
 		static jboolean regionMatches(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
 		static jint lastIndexOf(jstring arg0, jchar arg1, jint arg2, jint arg3);
 		static jint lastIndexOf(jstring arg0, jchar arg1, jint arg2);
 		static jint lastIndexOf(jstring arg0, jchar arg1);
-		static QAndroidJniObject substring(jstring arg0, jint arg1, jint arg2);
+		static jstring substring(jstring arg0, jint arg1, jint arg2);
 		static jboolean isEmpty(jstring arg0);
-		static QAndroidJniObject replace(jstring arg0, jarray arg1, jarray arg2);
-		static QAndroidJniObject split(jstring arg0, __jni_impl::java::util::regex::Pattern arg1);
-		static QAndroidJniObject split(jstring arg0, jstring arg1);
-		static QAndroidJniObject concat(jarray arg0);
-		static QAndroidJniObject join(jstring arg0, __jni_impl::__JniBaseClass arg1);
-		static QAndroidJniObject join(jstring arg0, jobjectArray arg1);
+		static jstring replace(jstring arg0, jarray arg1, jarray arg2);
+		static jarray split(jstring arg0, jstring arg1);
+		static jarray split(jstring arg0, __jni_impl::java::util::regex::Pattern arg1);
+		static jstring concat(jarray arg0);
+		static jstring join(jstring arg0, jobjectArray arg1);
+		static jstring join(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		static jint getOffsetAfter(jstring arg0, jint arg1);
 		static jint getOffsetBefore(jstring arg0, jint arg1);
-		static QAndroidJniObject stringOrSpannedString(jstring arg0);
+		static jstring ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3);
+		static jstring ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
+		static void writeToParcel(jstring arg0, __jni_impl::android::os::Parcel arg1, jint arg2);
+		static jstring stringOrSpannedString(jstring arg0);
 		static jint getTrimmedLength(jstring arg0);
-		static QAndroidJniObject getReverse(jstring arg0, jint arg1, jint arg2);
+		static jstring getReverse(jstring arg0, jint arg1, jint arg2);
 		static void dumpSpans(jstring arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
-		static QAndroidJniObject expandTemplate(jstring arg0, jarray arg1);
+		static jstring expandTemplate(jstring arg0, jarray arg1);
 		static void copySpansFrom(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jclass arg3, __jni_impl::__JniBaseClass arg4, jint arg5);
-		static QAndroidJniObject listEllipsize(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, __jni_impl::android::text::TextPaint arg3, jfloat arg4, jint arg5);
-		static QAndroidJniObject commaEllipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, jstring arg3, jstring arg4);
-		static QAndroidJniObject htmlEncode(jstring arg0);
+		static jstring listEllipsize(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, __jni_impl::android::text::TextPaint arg3, jfloat arg4, jint arg5);
+		static jstring commaEllipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, jstring arg3, jstring arg4);
+		static jstring htmlEncode(jstring arg0);
 		static jboolean isGraphic(jchar arg0);
 		static jboolean isGraphic(jstring arg0);
 		static jboolean isDigitsOnly(jstring arg0);
 		static jint getCapsMode(jstring arg0, jint arg1, jint arg2);
 		static jint getLayoutDirectionFromLocale(__jni_impl::java::util::Locale arg0);
-		static QAndroidJniObject makeSafeForPresentation(jstring arg0, jint arg1, jfloat arg2, jint arg3);
-		static void writeToParcel(jstring arg0, __jni_impl::android::os::Parcel arg1, jint arg2);
-		static QAndroidJniObject ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
-		static QAndroidJniObject ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3);
+		static jstring makeSafeForPresentation(jstring arg0, jint arg1, jfloat arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::text
 
 #include "../../java/util/regex/Pattern.hpp"
-#include "../content/Context.hpp"
 #include "TextPaint.hpp"
-#include "../../java/util/Locale.hpp"
-#include "../os/Parcel.hpp"
 #include "TextUtils_TruncateAt.hpp"
+#include "../os/Parcel.hpp"
+#include "../content/Context.hpp"
+#include "../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::text
 {
@@ -105,44 +105,51 @@ namespace __jni_impl::android::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.TextUtils",
-			"CAP_MODE_CHARACTERS");
+			"CAP_MODE_CHARACTERS"
+		);
 	}
 	jint TextUtils::CAP_MODE_SENTENCES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.TextUtils",
-			"CAP_MODE_SENTENCES");
+			"CAP_MODE_SENTENCES"
+		);
 	}
 	jint TextUtils::CAP_MODE_WORDS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.TextUtils",
-			"CAP_MODE_WORDS");
+			"CAP_MODE_WORDS"
+		);
 	}
 	QAndroidJniObject TextUtils::CHAR_SEQUENCE_CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.TextUtils",
 			"CHAR_SEQUENCE_CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint TextUtils::SAFE_STRING_FLAG_FIRST_LINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.TextUtils",
-			"SAFE_STRING_FLAG_FIRST_LINE");
+			"SAFE_STRING_FLAG_FIRST_LINE"
+		);
 	}
 	jint TextUtils::SAFE_STRING_FLAG_SINGLE_LINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.TextUtils",
-			"SAFE_STRING_FLAG_SINGLE_LINE");
+			"SAFE_STRING_FLAG_SINGLE_LINE"
+		);
 	}
 	jint TextUtils::SAFE_STRING_FLAG_TRIM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.TextUtils",
-			"SAFE_STRING_FLAG_TRIM");
+			"SAFE_STRING_FLAG_TRIM"
+		);
 	}
 	
 	// Constructors
@@ -161,7 +168,8 @@ namespace __jni_impl::android::text
 			"equals",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void TextUtils::getChars(jstring arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4)
 	{
@@ -173,7 +181,8 @@ namespace __jni_impl::android::text
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jint TextUtils::indexOf(jstring arg0, jstring arg1, jint arg2)
 	{
@@ -183,7 +192,8 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint TextUtils::indexOf(jstring arg0, jstring arg1)
 	{
@@ -192,7 +202,8 @@ namespace __jni_impl::android::text
 			"indexOf",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint TextUtils::indexOf(jstring arg0, jstring arg1, jint arg2, jint arg3)
 	{
@@ -203,7 +214,8 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint TextUtils::indexOf(jstring arg0, jchar arg1)
 	{
@@ -212,7 +224,19 @@ namespace __jni_impl::android::text
 			"indexOf",
 			"(Ljava/lang/CharSequence;C)I",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	jint TextUtils::indexOf(jstring arg0, jchar arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.TextUtils",
+			"indexOf",
+			"(Ljava/lang/CharSequence;CI)I",
+			arg0,
+			arg1,
+			arg2
+		);
 	}
 	jint TextUtils::indexOf(jstring arg0, jchar arg1, jint arg2, jint arg3)
 	{
@@ -223,17 +247,8 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
-	}
-	jint TextUtils::indexOf(jstring arg0, jchar arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.TextUtils",
-			"indexOf",
-			"(Ljava/lang/CharSequence;CI)I",
-			arg0,
-			arg1,
-			arg2);
+			arg3
+		);
 	}
 	jboolean TextUtils::regionMatches(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 	{
@@ -245,7 +260,8 @@ namespace __jni_impl::android::text
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1, jint arg2, jint arg3)
 	{
@@ -256,7 +272,8 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1, jint arg2)
 	{
@@ -266,7 +283,8 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/CharSequence;CI)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint TextUtils::lastIndexOf(jstring arg0, jchar arg1)
 	{
@@ -275,9 +293,10 @@ namespace __jni_impl::android::text
 			"lastIndexOf",
 			"(Ljava/lang/CharSequence;C)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject TextUtils::substring(jstring arg0, jint arg1, jint arg2)
+	jstring TextUtils::substring(jstring arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
@@ -285,7 +304,8 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/CharSequence;II)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 	jboolean TextUtils::isEmpty(jstring arg0)
 	{
@@ -293,9 +313,10 @@ namespace __jni_impl::android::text
 			"android.text.TextUtils",
 			"isEmpty",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TextUtils::replace(jstring arg0, jarray arg1, jarray arg2)
+	jstring TextUtils::replace(jstring arg0, jarray arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
@@ -303,51 +324,57 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/CharSequence;[Ljava/lang/String;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
-	QAndroidJniObject TextUtils::split(jstring arg0, __jni_impl::java::util::regex::Pattern arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.TextUtils",
-			"split",
-			"(Ljava/lang/String;Ljava/util/regex/Pattern;)[Ljava/lang/String;",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject TextUtils::split(jstring arg0, jstring arg1)
+	jarray TextUtils::split(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
 			"split",
 			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jarray>();
 	}
-	QAndroidJniObject TextUtils::concat(jarray arg0)
+	jarray TextUtils::split(jstring arg0, __jni_impl::java::util::regex::Pattern arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.TextUtils",
+			"split",
+			"(Ljava/lang/String;Ljava/util/regex/Pattern;)[Ljava/lang/String;",
+			arg0,
+			arg1.__jniObject().object()
+		).object<jarray>();
+	}
+	jstring TextUtils::concat(jarray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
 			"concat",
 			"([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject TextUtils::join(jstring arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.TextUtils",
-			"join",
-			"(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject TextUtils::join(jstring arg0, jobjectArray arg1)
+	jstring TextUtils::join(jstring arg0, jobjectArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
 			"join",
 			"(Ljava/lang/CharSequence;[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
+	}
+	jstring TextUtils::join(jstring arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.TextUtils",
+			"join",
+			"(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;",
+			arg0,
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
 	jint TextUtils::getOffsetAfter(jstring arg0, jint arg1)
 	{
@@ -356,7 +383,8 @@ namespace __jni_impl::android::text
 			"getOffsetAfter",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint TextUtils::getOffsetBefore(jstring arg0, jint arg1)
 	{
@@ -365,15 +393,54 @@ namespace __jni_impl::android::text
 			"getOffsetBefore",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject TextUtils::stringOrSpannedString(jstring arg0)
+	jstring TextUtils::ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.TextUtils",
+			"ellipsize",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring TextUtils::ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.TextUtils",
+			"ellipsize",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;ZLandroid/text/TextUtils$EllipsizeCallback;)Ljava/lang/CharSequence;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5.__jniObject().object()
+		).object<jstring>();
+	}
+	void TextUtils::writeToParcel(jstring arg0, __jni_impl::android::os::Parcel arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.text.TextUtils",
+			"writeToParcel",
+			"(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	jstring TextUtils::stringOrSpannedString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
 			"stringOrSpannedString",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint TextUtils::getTrimmedLength(jstring arg0)
 	{
@@ -381,9 +448,10 @@ namespace __jni_impl::android::text
 			"android.text.TextUtils",
 			"getTrimmedLength",
 			"(Ljava/lang/CharSequence;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TextUtils::getReverse(jstring arg0, jint arg1, jint arg2)
+	jstring TextUtils::getReverse(jstring arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
@@ -391,7 +459,8 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/CharSequence;II)Ljava/lang/CharSequence;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 	void TextUtils::dumpSpans(jstring arg0, __jni_impl::__JniBaseClass arg1, jstring arg2)
 	{
@@ -401,16 +470,18 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/CharSequence;Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject TextUtils::expandTemplate(jstring arg0, jarray arg1)
+	jstring TextUtils::expandTemplate(jstring arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
 			"expandTemplate",
 			"(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	void TextUtils::copySpansFrom(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jclass arg3, __jni_impl::__JniBaseClass arg4, jint arg5)
 	{
@@ -423,9 +494,10 @@ namespace __jni_impl::android::text
 			arg2,
 			arg3,
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
-	QAndroidJniObject TextUtils::listEllipsize(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, __jni_impl::android::text::TextPaint arg3, jfloat arg4, jint arg5)
+	jstring TextUtils::listEllipsize(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, __jni_impl::android::text::TextPaint arg3, jfloat arg4, jint arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
@@ -436,9 +508,10 @@ namespace __jni_impl::android::text
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5);
+			arg5
+		).object<jstring>();
 	}
-	QAndroidJniObject TextUtils::commaEllipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, jstring arg3, jstring arg4)
+	jstring TextUtils::commaEllipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, jstring arg3, jstring arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
@@ -448,15 +521,17 @@ namespace __jni_impl::android::text
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		).object<jstring>();
 	}
-	QAndroidJniObject TextUtils::htmlEncode(jstring arg0)
+	jstring TextUtils::htmlEncode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
 			"htmlEncode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jboolean TextUtils::isGraphic(jchar arg0)
 	{
@@ -464,7 +539,8 @@ namespace __jni_impl::android::text
 			"android.text.TextUtils",
 			"isGraphic",
 			"(C)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean TextUtils::isGraphic(jstring arg0)
 	{
@@ -472,7 +548,8 @@ namespace __jni_impl::android::text
 			"android.text.TextUtils",
 			"isGraphic",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean TextUtils::isDigitsOnly(jstring arg0)
 	{
@@ -480,7 +557,8 @@ namespace __jni_impl::android::text
 			"android.text.TextUtils",
 			"isDigitsOnly",
 			"(Ljava/lang/CharSequence;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint TextUtils::getCapsMode(jstring arg0, jint arg1, jint arg2)
 	{
@@ -490,7 +568,8 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/CharSequence;II)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint TextUtils::getLayoutDirectionFromLocale(__jni_impl::java::util::Locale arg0)
 	{
@@ -498,9 +577,10 @@ namespace __jni_impl::android::text
 			"android.text.TextUtils",
 			"getLayoutDirectionFromLocale",
 			"(Ljava/util/Locale;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject TextUtils::makeSafeForPresentation(jstring arg0, jint arg1, jfloat arg2, jint arg3)
+	jstring TextUtils::makeSafeForPresentation(jstring arg0, jint arg1, jfloat arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.TextUtils",
@@ -509,41 +589,8 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
-	}
-	void TextUtils::writeToParcel(jstring arg0, __jni_impl::android::os::Parcel arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.TextUtils",
-			"writeToParcel",
-			"(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2);
-	}
-	QAndroidJniObject TextUtils::ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.TextUtils",
-			"ellipsize",
-			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;ZLandroid/text/TextUtils$EllipsizeCallback;)Ljava/lang/CharSequence;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5.__jniObject().object());
-	}
-	QAndroidJniObject TextUtils::ellipsize(jstring arg0, __jni_impl::android::text::TextPaint arg1, jfloat arg2, __jni_impl::android::text::TextUtils_TruncateAt arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.TextUtils",
-			"ellipsize",
-			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object());
+			arg3
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::text
 

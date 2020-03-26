@@ -24,7 +24,7 @@ namespace __jni_impl::android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_NEXT_ALARM_CLOCK_CHANGED();
+		static jstring ACTION_NEXT_ALARM_CLOCK_CHANGED();
 		static jint ELAPSED_REALTIME();
 		static jint ELAPSED_REALTIME_WAKEUP();
 		static jlong INTERVAL_DAY();
@@ -65,66 +65,76 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	// Fields
-	QAndroidJniObject AlarmManager::ACTION_NEXT_ALARM_CLOCK_CHANGED()
+	jstring AlarmManager::ACTION_NEXT_ALARM_CLOCK_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AlarmManager",
 			"ACTION_NEXT_ALARM_CLOCK_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AlarmManager::ELAPSED_REALTIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AlarmManager",
-			"ELAPSED_REALTIME");
+			"ELAPSED_REALTIME"
+		);
 	}
 	jint AlarmManager::ELAPSED_REALTIME_WAKEUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AlarmManager",
-			"ELAPSED_REALTIME_WAKEUP");
+			"ELAPSED_REALTIME_WAKEUP"
+		);
 	}
 	jlong AlarmManager::INTERVAL_DAY()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.app.AlarmManager",
-			"INTERVAL_DAY");
+			"INTERVAL_DAY"
+		);
 	}
 	jlong AlarmManager::INTERVAL_FIFTEEN_MINUTES()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.app.AlarmManager",
-			"INTERVAL_FIFTEEN_MINUTES");
+			"INTERVAL_FIFTEEN_MINUTES"
+		);
 	}
 	jlong AlarmManager::INTERVAL_HALF_DAY()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.app.AlarmManager",
-			"INTERVAL_HALF_DAY");
+			"INTERVAL_HALF_DAY"
+		);
 	}
 	jlong AlarmManager::INTERVAL_HALF_HOUR()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.app.AlarmManager",
-			"INTERVAL_HALF_HOUR");
+			"INTERVAL_HALF_HOUR"
+		);
 	}
 	jlong AlarmManager::INTERVAL_HOUR()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.app.AlarmManager",
-			"INTERVAL_HOUR");
+			"INTERVAL_HOUR"
+		);
 	}
 	jint AlarmManager::RTC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AlarmManager",
-			"RTC");
+			"RTC"
+		);
 	}
 	jint AlarmManager::RTC_WAKEUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.AlarmManager",
-			"RTC_WAKEUP");
+			"RTC_WAKEUP"
+		);
 	}
 	
 	// Constructors
@@ -145,7 +155,8 @@ namespace __jni_impl::android::app
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void AlarmManager::set(jint arg0, jlong arg1, __jni_impl::android::app::PendingIntent arg2)
 	{
@@ -154,35 +165,40 @@ namespace __jni_impl::android::app
 			"(IJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void AlarmManager::setTime(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTime",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void AlarmManager::cancel(__jni_impl::android::app::PendingIntent arg0)
 	{
 		__thiz.callMethod<void>(
 			"cancel",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AlarmManager::cancel(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"cancel",
 			"(Landroid/app/AlarmManager$OnAlarmListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AlarmManager::setTimeZone(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimeZone",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, __jni_impl::android::app::PendingIntent arg3)
 	{
@@ -192,7 +208,8 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, jstring arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5)
 	{
@@ -204,7 +221,8 @@ namespace __jni_impl::android::app
 			arg2,
 			arg3,
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void AlarmManager::setRepeating(jint arg0, jlong arg1, jlong arg2, __jni_impl::android::app::PendingIntent arg3)
 	{
@@ -214,7 +232,8 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void AlarmManager::setExact(jint arg0, jlong arg1, __jni_impl::android::app::PendingIntent arg2)
 	{
@@ -223,7 +242,8 @@ namespace __jni_impl::android::app
 			"(IJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void AlarmManager::setExact(jint arg0, jlong arg1, jstring arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4)
 	{
@@ -234,7 +254,8 @@ namespace __jni_impl::android::app
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void AlarmManager::setAlarmClock(__jni_impl::android::app::AlarmManager_AlarmClockInfo arg0, __jni_impl::android::app::PendingIntent arg1)
 	{
@@ -242,7 +263,8 @@ namespace __jni_impl::android::app
 			"setAlarmClock",
 			"(Landroid/app/AlarmManager$AlarmClockInfo;Landroid/app/PendingIntent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AlarmManager::setInexactRepeating(jint arg0, jlong arg1, jlong arg2, __jni_impl::android::app::PendingIntent arg3)
 	{
@@ -252,7 +274,8 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void AlarmManager::setAndAllowWhileIdle(jint arg0, jlong arg1, __jni_impl::android::app::PendingIntent arg2)
 	{
@@ -261,7 +284,8 @@ namespace __jni_impl::android::app
 			"(IJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void AlarmManager::setExactAndAllowWhileIdle(jint arg0, jlong arg1, __jni_impl::android::app::PendingIntent arg2)
 	{
@@ -270,13 +294,15 @@ namespace __jni_impl::android::app
 			"(IJLandroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AlarmManager::getNextAlarmClock()
 	{
 		return __thiz.callObjectMethod(
 			"getNextAlarmClock",
-			"()Landroid/app/AlarmManager$AlarmClockInfo;");
+			"()Landroid/app/AlarmManager$AlarmClockInfo;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

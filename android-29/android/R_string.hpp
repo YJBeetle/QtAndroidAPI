@@ -55,163 +55,190 @@ namespace __jni_impl::android
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"VideoView_error_button");
+			"VideoView_error_button"
+		);
 	}
 	jint R_string::VideoView_error_text_invalid_progressive_playback()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"VideoView_error_text_invalid_progressive_playback");
+			"VideoView_error_text_invalid_progressive_playback"
+		);
 	}
 	jint R_string::VideoView_error_text_unknown()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"VideoView_error_text_unknown");
+			"VideoView_error_text_unknown"
+		);
 	}
 	jint R_string::VideoView_error_title()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"VideoView_error_title");
+			"VideoView_error_title"
+		);
 	}
 	jint R_string::autofill()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"autofill");
+			"autofill"
+		);
 	}
 	jint R_string::cancel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"cancel");
+			"cancel"
+		);
 	}
 	jint R_string::copy()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"copy");
+			"copy"
+		);
 	}
 	jint R_string::copyUrl()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"copyUrl");
+			"copyUrl"
+		);
 	}
 	jint R_string::cut()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"cut");
+			"cut"
+		);
 	}
 	jint R_string::defaultMsisdnAlphaTag()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"defaultMsisdnAlphaTag");
+			"defaultMsisdnAlphaTag"
+		);
 	}
 	jint R_string::defaultVoiceMailAlphaTag()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"defaultVoiceMailAlphaTag");
+			"defaultVoiceMailAlphaTag"
+		);
 	}
 	jint R_string::dialog_alert_title()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"dialog_alert_title");
+			"dialog_alert_title"
+		);
 	}
 	jint R_string::emptyPhoneNumber()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"emptyPhoneNumber");
+			"emptyPhoneNumber"
+		);
 	}
 	jint R_string::fingerprint_icon_content_description()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"fingerprint_icon_content_description");
+			"fingerprint_icon_content_description"
+		);
 	}
 	jint R_string::httpErrorBadUrl()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"httpErrorBadUrl");
+			"httpErrorBadUrl"
+		);
 	}
 	jint R_string::httpErrorUnsupportedScheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"httpErrorUnsupportedScheme");
+			"httpErrorUnsupportedScheme"
+		);
 	}
 	jint R_string::no()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"no");
+			"no"
+		);
 	}
 	jint R_string::ok()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"ok");
+			"ok"
+		);
 	}
 	jint R_string::paste()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"paste");
+			"paste"
+		);
 	}
 	jint R_string::paste_as_plain_text()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"paste_as_plain_text");
+			"paste_as_plain_text"
+		);
 	}
 	jint R_string::search_go()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"search_go");
+			"search_go"
+		);
 	}
 	jint R_string::selectAll()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"selectAll");
+			"selectAll"
+		);
 	}
 	jint R_string::selectTextMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"selectTextMode");
+			"selectTextMode"
+		);
 	}
 	jint R_string::status_bar_notification_info_overflow()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"status_bar_notification_info_overflow");
+			"status_bar_notification_info_overflow"
+		);
 	}
 	jint R_string::unknownName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"unknownName");
+			"unknownName"
+		);
 	}
 	jint R_string::untitled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"untitled");
+			"untitled"
+		);
 	}
 	jint R_string::yes()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$string",
-			"yes");
+			"yes"
+		);
 	}
 	
 	// Constructors

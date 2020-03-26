@@ -40,8 +40,8 @@ namespace __jni_impl::javax::xml::datatype
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DATATYPEFACTORY_PROPERTY();
-		static QAndroidJniObject DATATYPEFACTORY_IMPLEMENTATION_CLASS();
+		static jstring DATATYPEFACTORY_PROPERTY();
+		static jstring DATATYPEFACTORY_IMPLEMENTATION_CLASS();
 		
 		// Constructors
 		void __constructor();
@@ -85,19 +85,21 @@ namespace __jni_impl::javax::xml::datatype
 namespace __jni_impl::javax::xml::datatype
 {
 	// Fields
-	QAndroidJniObject DatatypeFactory::DATATYPEFACTORY_PROPERTY()
+	jstring DatatypeFactory::DATATYPEFACTORY_PROPERTY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeFactory",
 			"DATATYPEFACTORY_PROPERTY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DatatypeFactory::DATATYPEFACTORY_IMPLEMENTATION_CLASS()
+	jstring DatatypeFactory::DATATYPEFACTORY_IMPLEMENTATION_CLASS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeFactory",
 			"DATATYPEFACTORY_IMPLEMENTATION_CLASS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -114,7 +116,8 @@ namespace __jni_impl::javax::xml::datatype
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.datatype.DatatypeFactory",
 			"newInstance",
-			"()Ljavax/xml/datatype/DatatypeFactory;");
+			"()Ljavax/xml/datatype/DatatypeFactory;"
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newInstance(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
@@ -123,14 +126,16 @@ namespace __jni_impl::javax::xml::datatype
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/datatype/DatatypeFactory;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.datatype.DatatypeFactory",
 			"newDefaultInstance",
-			"()Ljavax/xml/datatype/DatatypeFactory;");
+			"()Ljavax/xml/datatype/DatatypeFactory;"
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDuration(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
@@ -143,7 +148,8 @@ namespace __jni_impl::javax::xml::datatype
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDuration(jboolean arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, __jni_impl::java::math::BigInteger arg3, __jni_impl::java::math::BigInteger arg4, __jni_impl::java::math::BigInteger arg5, __jni_impl::java::math::BigDecimal arg6)
 	{
@@ -156,21 +162,24 @@ namespace __jni_impl::javax::xml::datatype
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDuration(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newDuration",
 			"(J)Ljavax/xml/datatype/Duration;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDuration(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newDuration",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jboolean arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, __jni_impl::java::math::BigInteger arg3, __jni_impl::java::math::BigInteger arg4)
 	{
@@ -181,7 +190,8 @@ namespace __jni_impl::javax::xml::datatype
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -192,28 +202,32 @@ namespace __jni_impl::javax::xml::datatype
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newDurationDayTime",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newDurationDayTime",
 			"(J)Ljavax/xml/datatype/Duration;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newDurationYearMonth",
 			"(J)Ljavax/xml/datatype/Duration;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jboolean arg0, jint arg1, jint arg2)
 	{
@@ -222,14 +236,16 @@ namespace __jni_impl::javax::xml::datatype
 			"(ZII)Ljavax/xml/datatype/Duration;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newDurationYearMonth",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jboolean arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2)
 	{
@@ -238,7 +254,8 @@ namespace __jni_impl::javax::xml::datatype
 			"(ZLjava/math/BigInteger;Ljava/math/BigInteger;)Ljavax/xml/datatype/Duration;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 	{
@@ -252,7 +269,8 @@ namespace __jni_impl::javax::xml::datatype
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(__jni_impl::java::math::BigInteger arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::math::BigDecimal arg6, jint arg7)
 	{
@@ -266,27 +284,31 @@ namespace __jni_impl::javax::xml::datatype
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar()
 	{
 		return __thiz.callObjectMethod(
 			"newXMLGregorianCalendar",
-			"()Ljavax/xml/datatype/XMLGregorianCalendar;");
+			"()Ljavax/xml/datatype/XMLGregorianCalendar;"
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newXMLGregorianCalendar",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/XMLGregorianCalendar;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(__jni_impl::java::util::GregorianCalendar arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newXMLGregorianCalendar",
 			"(Ljava/util/GregorianCalendar;)Ljavax/xml/datatype/XMLGregorianCalendar;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -297,7 +319,8 @@ namespace __jni_impl::javax::xml::datatype
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, __jni_impl::java::math::BigDecimal arg3, jint arg4)
 	{
@@ -308,7 +331,8 @@ namespace __jni_impl::javax::xml::datatype
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -318,7 +342,8 @@ namespace __jni_impl::javax::xml::datatype
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendarDate(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -328,7 +353,8 @@ namespace __jni_impl::javax::xml::datatype
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::javax::xml::datatype
 

@@ -46,14 +46,16 @@ namespace __jni_impl::android::accessibilityservice
 		__thiz.callMethod<void>(
 			"onCompleted",
 			"(Landroid/accessibilityservice/GestureDescription;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AccessibilityService_GestureResultCallback::onCancelled(__jni_impl::android::accessibilityservice::GestureDescription arg0)
 	{
 		__thiz.callMethod<void>(
 			"onCancelled",
 			"(Landroid/accessibilityservice/GestureDescription;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::accessibilityservice
 

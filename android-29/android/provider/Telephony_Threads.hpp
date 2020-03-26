@@ -44,27 +44,31 @@ namespace __jni_impl::android::provider
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.Telephony$Threads",
-			"BROADCAST_THREAD");
+			"BROADCAST_THREAD"
+		);
 	}
 	jint Telephony_Threads::COMMON_THREAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.Telephony$Threads",
-			"COMMON_THREAD");
+			"COMMON_THREAD"
+		);
 	}
 	QAndroidJniObject Telephony_Threads::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Threads",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject Telephony_Threads::OBSOLETE_THREADS_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Threads",
 			"OBSOLETE_THREADS_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors
@@ -83,7 +87,8 @@ namespace __jni_impl::android::provider
 			"getOrCreateThreadId",
 			"(Landroid/content/Context;Ljava/lang/String;)J",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jlong Telephony_Threads::getOrCreateThreadId(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -92,7 +97,8 @@ namespace __jni_impl::android::provider
 			"getOrCreateThreadId",
 			"(Landroid/content/Context;Ljava/util/Set;)J",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::provider
 

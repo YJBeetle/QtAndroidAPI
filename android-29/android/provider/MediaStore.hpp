@@ -20,55 +20,55 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_IMAGE_CAPTURE();
-		static QAndroidJniObject ACTION_IMAGE_CAPTURE_SECURE();
-		static QAndroidJniObject ACTION_REVIEW();
-		static QAndroidJniObject ACTION_REVIEW_SECURE();
-		static QAndroidJniObject ACTION_VIDEO_CAPTURE();
-		static QAndroidJniObject AUTHORITY();
+		static jstring ACTION_IMAGE_CAPTURE();
+		static jstring ACTION_IMAGE_CAPTURE_SECURE();
+		static jstring ACTION_REVIEW();
+		static jstring ACTION_REVIEW_SECURE();
+		static jstring ACTION_VIDEO_CAPTURE();
+		static jstring AUTHORITY();
 		static QAndroidJniObject AUTHORITY_URI();
-		static QAndroidJniObject EXTRA_BRIGHTNESS();
-		static QAndroidJniObject EXTRA_DURATION_LIMIT();
-		static QAndroidJniObject EXTRA_FINISH_ON_COMPLETION();
-		static QAndroidJniObject EXTRA_FULL_SCREEN();
-		static QAndroidJniObject EXTRA_MEDIA_ALBUM();
-		static QAndroidJniObject EXTRA_MEDIA_ARTIST();
-		static QAndroidJniObject EXTRA_MEDIA_FOCUS();
-		static QAndroidJniObject EXTRA_MEDIA_GENRE();
-		static QAndroidJniObject EXTRA_MEDIA_PLAYLIST();
-		static QAndroidJniObject EXTRA_MEDIA_RADIO_CHANNEL();
-		static QAndroidJniObject EXTRA_MEDIA_TITLE();
-		static QAndroidJniObject EXTRA_OUTPUT();
-		static QAndroidJniObject EXTRA_SCREEN_ORIENTATION();
-		static QAndroidJniObject EXTRA_SHOW_ACTION_ICONS();
-		static QAndroidJniObject EXTRA_SIZE_LIMIT();
-		static QAndroidJniObject EXTRA_VIDEO_QUALITY();
-		static QAndroidJniObject INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH();
-		static QAndroidJniObject INTENT_ACTION_MEDIA_SEARCH();
-		static QAndroidJniObject INTENT_ACTION_MUSIC_PLAYER();
-		static QAndroidJniObject INTENT_ACTION_STILL_IMAGE_CAMERA();
-		static QAndroidJniObject INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE();
-		static QAndroidJniObject INTENT_ACTION_TEXT_OPEN_FROM_SEARCH();
-		static QAndroidJniObject INTENT_ACTION_VIDEO_CAMERA();
-		static QAndroidJniObject INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH();
-		static QAndroidJniObject MEDIA_IGNORE_FILENAME();
-		static QAndroidJniObject MEDIA_SCANNER_VOLUME();
-		static QAndroidJniObject META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE();
-		static QAndroidJniObject UNKNOWN_STRING();
-		static QAndroidJniObject VOLUME_EXTERNAL();
-		static QAndroidJniObject VOLUME_EXTERNAL_PRIMARY();
-		static QAndroidJniObject VOLUME_INTERNAL();
+		static jstring EXTRA_BRIGHTNESS();
+		static jstring EXTRA_DURATION_LIMIT();
+		static jstring EXTRA_FINISH_ON_COMPLETION();
+		static jstring EXTRA_FULL_SCREEN();
+		static jstring EXTRA_MEDIA_ALBUM();
+		static jstring EXTRA_MEDIA_ARTIST();
+		static jstring EXTRA_MEDIA_FOCUS();
+		static jstring EXTRA_MEDIA_GENRE();
+		static jstring EXTRA_MEDIA_PLAYLIST();
+		static jstring EXTRA_MEDIA_RADIO_CHANNEL();
+		static jstring EXTRA_MEDIA_TITLE();
+		static jstring EXTRA_OUTPUT();
+		static jstring EXTRA_SCREEN_ORIENTATION();
+		static jstring EXTRA_SHOW_ACTION_ICONS();
+		static jstring EXTRA_SIZE_LIMIT();
+		static jstring EXTRA_VIDEO_QUALITY();
+		static jstring INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH();
+		static jstring INTENT_ACTION_MEDIA_SEARCH();
+		static jstring INTENT_ACTION_MUSIC_PLAYER();
+		static jstring INTENT_ACTION_STILL_IMAGE_CAMERA();
+		static jstring INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE();
+		static jstring INTENT_ACTION_TEXT_OPEN_FROM_SEARCH();
+		static jstring INTENT_ACTION_VIDEO_CAMERA();
+		static jstring INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH();
+		static jstring MEDIA_IGNORE_FILENAME();
+		static jstring MEDIA_SCANNER_VOLUME();
+		static jstring META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE();
+		static jstring UNKNOWN_STRING();
+		static jstring VOLUME_EXTERNAL();
+		static jstring VOLUME_EXTERNAL_PRIMARY();
+		static jstring VOLUME_INTERNAL();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getVersion(__jni_impl::android::content::Context arg0);
-		static QAndroidJniObject getVersion(__jni_impl::android::content::Context arg0, jstring arg1);
+		static jstring getVersion(__jni_impl::android::content::Context arg0);
+		static jstring getVersion(__jni_impl::android::content::Context arg0, jstring arg1);
 		static QAndroidJniObject setIncludePending(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject setRequireOriginal(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject getExternalVolumeNames(__jni_impl::android::content::Context arg0);
-		static QAndroidJniObject getVolumeName(__jni_impl::android::net::Uri arg0);
+		static jstring getVolumeName(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject getMediaScannerUri();
 		static QAndroidJniObject getDocumentUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject getMediaUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
@@ -81,271 +81,309 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject MediaStore::ACTION_IMAGE_CAPTURE()
+	jstring MediaStore::ACTION_IMAGE_CAPTURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_IMAGE_CAPTURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::ACTION_IMAGE_CAPTURE_SECURE()
+	jstring MediaStore::ACTION_IMAGE_CAPTURE_SECURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_IMAGE_CAPTURE_SECURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::ACTION_REVIEW()
+	jstring MediaStore::ACTION_REVIEW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_REVIEW",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::ACTION_REVIEW_SECURE()
+	jstring MediaStore::ACTION_REVIEW_SECURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_REVIEW_SECURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::ACTION_VIDEO_CAPTURE()
+	jstring MediaStore::ACTION_VIDEO_CAPTURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"ACTION_VIDEO_CAPTURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::AUTHORITY()
+	jstring MediaStore::AUTHORITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"AUTHORITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject MediaStore::AUTHORITY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"AUTHORITY_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject MediaStore::EXTRA_BRIGHTNESS()
+	jstring MediaStore::EXTRA_BRIGHTNESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_BRIGHTNESS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_DURATION_LIMIT()
+	jstring MediaStore::EXTRA_DURATION_LIMIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_DURATION_LIMIT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_FINISH_ON_COMPLETION()
+	jstring MediaStore::EXTRA_FINISH_ON_COMPLETION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_FINISH_ON_COMPLETION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_FULL_SCREEN()
+	jstring MediaStore::EXTRA_FULL_SCREEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_FULL_SCREEN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_MEDIA_ALBUM()
+	jstring MediaStore::EXTRA_MEDIA_ALBUM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_ALBUM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_MEDIA_ARTIST()
+	jstring MediaStore::EXTRA_MEDIA_ARTIST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_ARTIST",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_MEDIA_FOCUS()
+	jstring MediaStore::EXTRA_MEDIA_FOCUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_FOCUS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_MEDIA_GENRE()
+	jstring MediaStore::EXTRA_MEDIA_GENRE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_GENRE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_MEDIA_PLAYLIST()
+	jstring MediaStore::EXTRA_MEDIA_PLAYLIST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_PLAYLIST",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_MEDIA_RADIO_CHANNEL()
+	jstring MediaStore::EXTRA_MEDIA_RADIO_CHANNEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_RADIO_CHANNEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_MEDIA_TITLE()
+	jstring MediaStore::EXTRA_MEDIA_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_MEDIA_TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_OUTPUT()
+	jstring MediaStore::EXTRA_OUTPUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_OUTPUT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_SCREEN_ORIENTATION()
+	jstring MediaStore::EXTRA_SCREEN_ORIENTATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_SCREEN_ORIENTATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_SHOW_ACTION_ICONS()
+	jstring MediaStore::EXTRA_SHOW_ACTION_ICONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_SHOW_ACTION_ICONS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_SIZE_LIMIT()
+	jstring MediaStore::EXTRA_SIZE_LIMIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_SIZE_LIMIT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::EXTRA_VIDEO_QUALITY()
+	jstring MediaStore::EXTRA_VIDEO_QUALITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"EXTRA_VIDEO_QUALITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH()
+	jstring MediaStore::INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_MEDIA_PLAY_FROM_SEARCH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::INTENT_ACTION_MEDIA_SEARCH()
+	jstring MediaStore::INTENT_ACTION_MEDIA_SEARCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_MEDIA_SEARCH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::INTENT_ACTION_MUSIC_PLAYER()
+	jstring MediaStore::INTENT_ACTION_MUSIC_PLAYER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_MUSIC_PLAYER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA()
+	jstring MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_STILL_IMAGE_CAMERA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE()
+	jstring MediaStore::INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_STILL_IMAGE_CAMERA_SECURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::INTENT_ACTION_TEXT_OPEN_FROM_SEARCH()
+	jstring MediaStore::INTENT_ACTION_TEXT_OPEN_FROM_SEARCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_TEXT_OPEN_FROM_SEARCH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::INTENT_ACTION_VIDEO_CAMERA()
+	jstring MediaStore::INTENT_ACTION_VIDEO_CAMERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_VIDEO_CAMERA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH()
+	jstring MediaStore::INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"INTENT_ACTION_VIDEO_PLAY_FROM_SEARCH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::MEDIA_IGNORE_FILENAME()
+	jstring MediaStore::MEDIA_IGNORE_FILENAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"MEDIA_IGNORE_FILENAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::MEDIA_SCANNER_VOLUME()
+	jstring MediaStore::MEDIA_SCANNER_VOLUME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"MEDIA_SCANNER_VOLUME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE()
+	jstring MediaStore::META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"META_DATA_STILL_IMAGE_CAMERA_PREWARM_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::UNKNOWN_STRING()
+	jstring MediaStore::UNKNOWN_STRING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"UNKNOWN_STRING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::VOLUME_EXTERNAL()
+	jstring MediaStore::VOLUME_EXTERNAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"VOLUME_EXTERNAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::VOLUME_EXTERNAL_PRIMARY()
+	jstring MediaStore::VOLUME_EXTERNAL_PRIMARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"VOLUME_EXTERNAL_PRIMARY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::VOLUME_INTERNAL()
+	jstring MediaStore::VOLUME_INTERNAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore",
 			"VOLUME_INTERNAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -357,22 +395,24 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject MediaStore::getVersion(__jni_impl::android::content::Context arg0)
+	jstring MediaStore::getVersion(__jni_impl::android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getVersion",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore::getVersion(__jni_impl::android::content::Context arg0, jstring arg1)
+	jstring MediaStore::getVersion(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getVersion",
 			"(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	QAndroidJniObject MediaStore::setIncludePending(__jni_impl::android::net::Uri arg0)
 	{
@@ -380,7 +420,8 @@ namespace __jni_impl::android::provider
 			"android.provider.MediaStore",
 			"setIncludePending",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaStore::setRequireOriginal(__jni_impl::android::net::Uri arg0)
 	{
@@ -388,7 +429,8 @@ namespace __jni_impl::android::provider
 			"android.provider.MediaStore",
 			"setRequireOriginal",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaStore::getExternalVolumeNames(__jni_impl::android::content::Context arg0)
 	{
@@ -396,22 +438,25 @@ namespace __jni_impl::android::provider
 			"android.provider.MediaStore",
 			"getExternalVolumeNames",
 			"(Landroid/content/Context;)Ljava/util/Set;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MediaStore::getVolumeName(__jni_impl::android::net::Uri arg0)
+	jstring MediaStore::getVolumeName(__jni_impl::android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getVolumeName",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject MediaStore::getMediaScannerUri()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore",
 			"getMediaScannerUri",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject MediaStore::getDocumentUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -420,7 +465,8 @@ namespace __jni_impl::android::provider
 			"getDocumentUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaStore::getMediaUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -429,7 +475,8 @@ namespace __jni_impl::android::provider
 			"getMediaUri",
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::provider
 

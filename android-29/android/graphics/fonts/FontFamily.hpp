@@ -50,14 +50,16 @@ namespace __jni_impl::android::graphics::fonts
 	{
 		return __thiz.callMethod<jint>(
 			"getSize",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject FontFamily::getFont(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getFont",
 			"(I)Landroid/graphics/fonts/Font;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics::fonts
 

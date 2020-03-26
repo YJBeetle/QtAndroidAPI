@@ -57,31 +57,36 @@ namespace __jni_impl::java::nio::channels
 	{
 		__thiz.callMethod<void>(
 			"shutdown",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject AsynchronousChannelGroup::provider()
 	{
 		return __thiz.callObjectMethod(
 			"provider",
-			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;");
+			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
+		);
 	}
 	jboolean AsynchronousChannelGroup::isShutdown()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isShutdown",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AsynchronousChannelGroup::isTerminated()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTerminated",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AsynchronousChannelGroup::shutdownNow()
 	{
 		__thiz.callMethod<void>(
 			"shutdownNow",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean AsynchronousChannelGroup::awaitTermination(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -89,7 +94,8 @@ namespace __jni_impl::java::nio::channels
 			"awaitTermination",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousChannelGroup::withFixedThreadPool(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -98,7 +104,8 @@ namespace __jni_impl::java::nio::channels
 			"withFixedThreadPool",
 			"(ILjava/util/concurrent/ThreadFactory;)Ljava/nio/channels/AsynchronousChannelGroup;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousChannelGroup::withCachedThreadPool(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -107,7 +114,8 @@ namespace __jni_impl::java::nio::channels
 			"withCachedThreadPool",
 			"(Ljava/util/concurrent/ExecutorService;I)Ljava/nio/channels/AsynchronousChannelGroup;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject AsynchronousChannelGroup::withThreadPool(__jni_impl::__JniBaseClass arg0)
 	{
@@ -115,7 +123,8 @@ namespace __jni_impl::java::nio::channels
 			"java.nio.channels.AsynchronousChannelGroup",
 			"withThreadPool",
 			"(Ljava/util/concurrent/ExecutorService;)Ljava/nio/channels/AsynchronousChannelGroup;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::nio::channels
 

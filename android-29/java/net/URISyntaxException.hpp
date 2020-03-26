@@ -19,10 +19,10 @@ namespace __jni_impl::java::net
 		void __constructor(jstring arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 		jint getIndex();
-		QAndroidJniObject getReason();
-		QAndroidJniObject getInput();
+		jstring getReason();
+		jstring getInput();
 	};
 } // namespace __jni_impl::java::net
 
@@ -51,29 +51,33 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject URISyntaxException::getMessage()
+	jstring URISyntaxException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint URISyntaxException::getIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject URISyntaxException::getReason()
+	jstring URISyntaxException::getReason()
 	{
 		return __thiz.callObjectMethod(
 			"getReason",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject URISyntaxException::getInput()
+	jstring URISyntaxException::getInput()
 	{
 		return __thiz.callObjectMethod(
 			"getInput",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

@@ -20,21 +20,21 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BEGIN();
+		static jstring BEGIN();
 		static QAndroidJniObject CONTENT_BY_DAY_URI();
 		static QAndroidJniObject CONTENT_SEARCH_BY_DAY_URI();
 		static QAndroidJniObject CONTENT_SEARCH_URI();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject END();
-		static QAndroidJniObject END_DAY();
-		static QAndroidJniObject END_MINUTE();
+		static jstring END();
+		static jstring END_DAY();
+		static jstring END_MINUTE();
 		static QAndroidJniObject ENTERPRISE_CONTENT_BY_DAY_URI();
 		static QAndroidJniObject ENTERPRISE_CONTENT_SEARCH_BY_DAY_URI();
 		static QAndroidJniObject ENTERPRISE_CONTENT_SEARCH_URI();
 		static QAndroidJniObject ENTERPRISE_CONTENT_URI();
-		static QAndroidJniObject EVENT_ID();
-		static QAndroidJniObject START_DAY();
-		static QAndroidJniObject START_MINUTE();
+		static jstring EVENT_ID();
+		static jstring START_DAY();
+		static jstring START_MINUTE();
 		
 		// Constructors
 		void __constructor();
@@ -51,110 +51,125 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject CalendarContract_Instances::BEGIN()
+	jstring CalendarContract_Instances::BEGIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"BEGIN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject CalendarContract_Instances::CONTENT_BY_DAY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"CONTENT_BY_DAY_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject CalendarContract_Instances::CONTENT_SEARCH_BY_DAY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"CONTENT_SEARCH_BY_DAY_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject CalendarContract_Instances::CONTENT_SEARCH_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"CONTENT_SEARCH_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject CalendarContract_Instances::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject CalendarContract_Instances::END()
+	jstring CalendarContract_Instances::END()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"END",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract_Instances::END_DAY()
+	jstring CalendarContract_Instances::END_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"END_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract_Instances::END_MINUTE()
+	jstring CalendarContract_Instances::END_MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"END_MINUTE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject CalendarContract_Instances::ENTERPRISE_CONTENT_BY_DAY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"ENTERPRISE_CONTENT_BY_DAY_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject CalendarContract_Instances::ENTERPRISE_CONTENT_SEARCH_BY_DAY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"ENTERPRISE_CONTENT_SEARCH_BY_DAY_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject CalendarContract_Instances::ENTERPRISE_CONTENT_SEARCH_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"ENTERPRISE_CONTENT_SEARCH_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject CalendarContract_Instances::ENTERPRISE_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"ENTERPRISE_CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject CalendarContract_Instances::EVENT_ID()
+	jstring CalendarContract_Instances::EVENT_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"EVENT_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract_Instances::START_DAY()
+	jstring CalendarContract_Instances::START_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"START_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract_Instances::START_MINUTE()
+	jstring CalendarContract_Instances::START_MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Instances",
 			"START_MINUTE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -175,7 +190,8 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject CalendarContract_Instances::query(__jni_impl::android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3, jstring arg4)
 	{
@@ -187,7 +203,8 @@ namespace __jni_impl::android::provider
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 } // namespace __jni_impl::android::provider
 

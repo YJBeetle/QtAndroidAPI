@@ -50,14 +50,16 @@ namespace __jni_impl::android::net::http
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean X509TrustManagerExtensions::isUserAddedCertificate(__jni_impl::java::security::cert::X509Certificate arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUserAddedCertificate",
 			"(Ljava/security/cert/X509Certificate;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean X509TrustManagerExtensions::isSameTrustConfiguration(jstring arg0, jstring arg1)
 	{
@@ -65,7 +67,8 @@ namespace __jni_impl::android::net::http
 			"isSameTrustConfiguration",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::http
 

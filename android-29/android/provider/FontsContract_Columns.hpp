@@ -12,16 +12,16 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FILE_ID();
-		static QAndroidJniObject ITALIC();
-		static QAndroidJniObject RESULT_CODE();
+		static jstring FILE_ID();
+		static jstring ITALIC();
+		static jstring RESULT_CODE();
 		static jint RESULT_CODE_FONT_NOT_FOUND();
 		static jint RESULT_CODE_FONT_UNAVAILABLE();
 		static jint RESULT_CODE_MALFORMED_QUERY();
 		static jint RESULT_CODE_OK();
-		static QAndroidJniObject TTC_INDEX();
-		static QAndroidJniObject VARIATION_SETTINGS();
-		static QAndroidJniObject WEIGHT();
+		static jstring TTC_INDEX();
+		static jstring VARIATION_SETTINGS();
+		static jstring WEIGHT();
 		
 		// Constructors
 		void __constructor();
@@ -34,71 +34,81 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject FontsContract_Columns::FILE_ID()
+	jstring FontsContract_Columns::FILE_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"FILE_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FontsContract_Columns::ITALIC()
+	jstring FontsContract_Columns::ITALIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"ITALIC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FontsContract_Columns::RESULT_CODE()
+	jstring FontsContract_Columns::RESULT_CODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"RESULT_CODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint FontsContract_Columns::RESULT_CODE_FONT_NOT_FOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$Columns",
-			"RESULT_CODE_FONT_NOT_FOUND");
+			"RESULT_CODE_FONT_NOT_FOUND"
+		);
 	}
 	jint FontsContract_Columns::RESULT_CODE_FONT_UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$Columns",
-			"RESULT_CODE_FONT_UNAVAILABLE");
+			"RESULT_CODE_FONT_UNAVAILABLE"
+		);
 	}
 	jint FontsContract_Columns::RESULT_CODE_MALFORMED_QUERY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$Columns",
-			"RESULT_CODE_MALFORMED_QUERY");
+			"RESULT_CODE_MALFORMED_QUERY"
+		);
 	}
 	jint FontsContract_Columns::RESULT_CODE_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$Columns",
-			"RESULT_CODE_OK");
+			"RESULT_CODE_OK"
+		);
 	}
-	QAndroidJniObject FontsContract_Columns::TTC_INDEX()
+	jstring FontsContract_Columns::TTC_INDEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"TTC_INDEX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FontsContract_Columns::VARIATION_SETTINGS()
+	jstring FontsContract_Columns::VARIATION_SETTINGS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"VARIATION_SETTINGS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FontsContract_Columns::WEIGHT()
+	jstring FontsContract_Columns::WEIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.FontsContract$Columns",
 			"WEIGHT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

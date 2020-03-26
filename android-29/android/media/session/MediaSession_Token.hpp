@@ -39,7 +39,8 @@ namespace __jni_impl::android::media::session
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.session.MediaSession$Token",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -56,19 +57,22 @@ namespace __jni_impl::android::media::session
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint MediaSession_Token::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint MediaSession_Token::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void MediaSession_Token::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -76,7 +80,8 @@ namespace __jni_impl::android::media::session
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media::session
 

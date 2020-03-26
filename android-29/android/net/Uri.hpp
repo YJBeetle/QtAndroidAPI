@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 namespace __jni_impl::android::net
 {
 	class Uri_Builder;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::net
 namespace __jni_impl::java::io
 {
 	class File;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::net
@@ -32,51 +32,51 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(__jni_impl::android::net::Uri arg0);
 		jint compareTo(jobject arg0);
-		static QAndroidJniObject decode(jstring arg0);
-		static QAndroidJniObject encode(jstring arg0);
-		static QAndroidJniObject encode(jstring arg0, jstring arg1);
+		static jstring decode(jstring arg0);
+		static jstring encode(jstring arg0);
+		static jstring encode(jstring arg0, jstring arg1);
 		jboolean isAbsolute();
-		QAndroidJniObject getScheme();
+		jstring getScheme();
 		jboolean isOpaque();
-		QAndroidJniObject getHost();
+		jstring getHost();
 		jint getPort();
-		QAndroidJniObject getAuthority();
+		jstring getAuthority();
 		jboolean isRelative();
-		QAndroidJniObject getQuery();
-		QAndroidJniObject getPath();
-		QAndroidJniObject getUserInfo();
+		jstring getQuery();
+		jstring getPath();
+		jstring getUserInfo();
 		static QAndroidJniObject parse(jstring arg0);
-		QAndroidJniObject getSchemeSpecificPart();
-		QAndroidJniObject getFragment();
+		jstring getSchemeSpecificPart();
+		jstring getFragment();
+		static void writeToParcel(__jni_impl::android::os::Parcel arg0, __jni_impl::android::net::Uri arg1);
 		jboolean isHierarchical();
-		QAndroidJniObject getEncodedSchemeSpecificPart();
-		QAndroidJniObject getEncodedAuthority();
-		QAndroidJniObject getEncodedUserInfo();
-		QAndroidJniObject getEncodedPath();
-		QAndroidJniObject getEncodedQuery();
-		QAndroidJniObject getEncodedFragment();
+		jstring getEncodedSchemeSpecificPart();
+		jstring getEncodedAuthority();
+		jstring getEncodedUserInfo();
+		jstring getEncodedPath();
+		jstring getEncodedQuery();
+		jstring getEncodedFragment();
 		QAndroidJniObject getPathSegments();
-		QAndroidJniObject getLastPathSegment();
+		jstring getLastPathSegment();
 		QAndroidJniObject buildUpon();
 		static QAndroidJniObject fromFile(__jni_impl::java::io::File arg0);
 		static QAndroidJniObject fromParts(jstring arg0, jstring arg1, jstring arg2);
 		QAndroidJniObject getQueryParameterNames();
 		QAndroidJniObject getQueryParameters(jstring arg0);
-		QAndroidJniObject getQueryParameter(jstring arg0);
+		jstring getQueryParameter(jstring arg0);
 		jboolean getBooleanQueryParameter(jstring arg0, jboolean arg1);
 		QAndroidJniObject normalizeScheme();
 		static QAndroidJniObject withAppendedPath(__jni_impl::android::net::Uri arg0, jstring arg1);
-		static void writeToParcel(__jni_impl::android::os::Parcel arg0, __jni_impl::android::net::Uri arg1);
 	};
 } // namespace __jni_impl::android::net
 
+#include "../os/Parcel.hpp"
 #include "Uri_Builder.hpp"
 #include "../../java/io/File.hpp"
-#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -86,14 +86,16 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.Uri",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	QAndroidJniObject Uri::EMPTY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.Uri",
 			"EMPTY",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors
@@ -110,118 +112,136 @@ namespace __jni_impl::android::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Uri::toString()
+	jstring Uri::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Uri::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Uri::compareTo(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Uri::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Uri::decode(jstring arg0)
+	jstring Uri::decode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Uri",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::encode(jstring arg0)
+	jstring Uri::encode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Uri",
 			"encode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::encode(jstring arg0, jstring arg1)
+	jstring Uri::encode(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Uri",
 			"encode",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	jboolean Uri::isAbsolute()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAbsolute",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Uri::getScheme()
+	jstring Uri::getScheme()
 	{
 		return __thiz.callObjectMethod(
 			"getScheme",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Uri::isOpaque()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpaque",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Uri::getHost()
+	jstring Uri::getHost()
 	{
 		return __thiz.callObjectMethod(
 			"getHost",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Uri::getPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getPort",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Uri::getAuthority()
+	jstring Uri::getAuthority()
 	{
 		return __thiz.callObjectMethod(
 			"getAuthority",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Uri::isRelative()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRelative",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Uri::getQuery()
+	jstring Uri::getQuery()
 	{
 		return __thiz.callObjectMethod(
 			"getQuery",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getPath()
+	jstring Uri::getPath()
 	{
 		return __thiz.callObjectMethod(
 			"getPath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getUserInfo()
+	jstring Uri::getUserInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getUserInfo",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Uri::parse(jstring arg0)
 	{
@@ -229,79 +249,102 @@ namespace __jni_impl::android::net
 			"android.net.Uri",
 			"parse",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Uri::getSchemeSpecificPart()
+	jstring Uri::getSchemeSpecificPart()
 	{
 		return __thiz.callObjectMethod(
 			"getSchemeSpecificPart",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getFragment()
+	jstring Uri::getFragment()
 	{
 		return __thiz.callObjectMethod(
 			"getFragment",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void Uri::writeToParcel(__jni_impl::android::os::Parcel arg0, __jni_impl::android::net::Uri arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.net.Uri",
+			"writeToParcel",
+			"(Landroid/os/Parcel;Landroid/net/Uri;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Uri::isHierarchical()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isHierarchical",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Uri::getEncodedSchemeSpecificPart()
+	jstring Uri::getEncodedSchemeSpecificPart()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodedSchemeSpecificPart",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getEncodedAuthority()
+	jstring Uri::getEncodedAuthority()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodedAuthority",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getEncodedUserInfo()
+	jstring Uri::getEncodedUserInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodedUserInfo",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getEncodedPath()
+	jstring Uri::getEncodedPath()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodedPath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getEncodedQuery()
+	jstring Uri::getEncodedQuery()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodedQuery",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Uri::getEncodedFragment()
+	jstring Uri::getEncodedFragment()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodedFragment",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Uri::getPathSegments()
 	{
 		return __thiz.callObjectMethod(
 			"getPathSegments",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
-	QAndroidJniObject Uri::getLastPathSegment()
+	jstring Uri::getLastPathSegment()
 	{
 		return __thiz.callObjectMethod(
 			"getLastPathSegment",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Uri::buildUpon()
 	{
 		return __thiz.callObjectMethod(
 			"buildUpon",
-			"()Landroid/net/Uri$Builder;");
+			"()Landroid/net/Uri$Builder;"
+		);
 	}
 	QAndroidJniObject Uri::fromFile(__jni_impl::java::io::File arg0)
 	{
@@ -309,7 +352,8 @@ namespace __jni_impl::android::net
 			"android.net.Uri",
 			"fromFile",
 			"(Ljava/io/File;)Landroid/net/Uri;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Uri::fromParts(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -319,27 +363,31 @@ namespace __jni_impl::android::net
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Uri::getQueryParameterNames()
 	{
 		return __thiz.callObjectMethod(
 			"getQueryParameterNames",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject Uri::getQueryParameters(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getQueryParameters",
 			"(Ljava/lang/String;)Ljava/util/List;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Uri::getQueryParameter(jstring arg0)
+	jstring Uri::getQueryParameter(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getQueryParameter",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jboolean Uri::getBooleanQueryParameter(jstring arg0, jboolean arg1)
 	{
@@ -347,13 +395,15 @@ namespace __jni_impl::android::net
 			"getBooleanQueryParameter",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Uri::normalizeScheme()
 	{
 		return __thiz.callObjectMethod(
 			"normalizeScheme",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject Uri::withAppendedPath(__jni_impl::android::net::Uri arg0, jstring arg1)
 	{
@@ -362,16 +412,8 @@ namespace __jni_impl::android::net
 			"withAppendedPath",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	void Uri::writeToParcel(__jni_impl::android::os::Parcel arg0, __jni_impl::android::net::Uri arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.net.Uri",
-			"writeToParcel",
-			"(Landroid/os/Parcel;Landroid/net/Uri;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net
 

@@ -1430,8413 +1430,9815 @@ namespace __jni_impl::android
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"absListViewStyle");
+			"absListViewStyle"
+		);
 	}
 	jint R_attr::accessibilityEventTypes()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accessibilityEventTypes");
+			"accessibilityEventTypes"
+		);
 	}
 	jint R_attr::accessibilityFeedbackType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accessibilityFeedbackType");
+			"accessibilityFeedbackType"
+		);
 	}
 	jint R_attr::accessibilityFlags()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accessibilityFlags");
+			"accessibilityFlags"
+		);
 	}
 	jint R_attr::accessibilityHeading()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accessibilityHeading");
+			"accessibilityHeading"
+		);
 	}
 	jint R_attr::accessibilityLiveRegion()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accessibilityLiveRegion");
+			"accessibilityLiveRegion"
+		);
 	}
 	jint R_attr::accessibilityPaneTitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accessibilityPaneTitle");
+			"accessibilityPaneTitle"
+		);
 	}
 	jint R_attr::accessibilityTraversalAfter()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accessibilityTraversalAfter");
+			"accessibilityTraversalAfter"
+		);
 	}
 	jint R_attr::accessibilityTraversalBefore()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accessibilityTraversalBefore");
+			"accessibilityTraversalBefore"
+		);
 	}
 	jint R_attr::accountPreferences()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accountPreferences");
+			"accountPreferences"
+		);
 	}
 	jint R_attr::accountType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"accountType");
+			"accountType"
+		);
 	}
 	jint R_attr::action()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"action");
+			"action"
+		);
 	}
 	jint R_attr::actionBarDivider()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarDivider");
+			"actionBarDivider"
+		);
 	}
 	jint R_attr::actionBarItemBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarItemBackground");
+			"actionBarItemBackground"
+		);
 	}
 	jint R_attr::actionBarPopupTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarPopupTheme");
+			"actionBarPopupTheme"
+		);
 	}
 	jint R_attr::actionBarSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarSize");
+			"actionBarSize"
+		);
 	}
 	jint R_attr::actionBarSplitStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarSplitStyle");
+			"actionBarSplitStyle"
+		);
 	}
 	jint R_attr::actionBarStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarStyle");
+			"actionBarStyle"
+		);
 	}
 	jint R_attr::actionBarTabBarStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarTabBarStyle");
+			"actionBarTabBarStyle"
+		);
 	}
 	jint R_attr::actionBarTabStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarTabStyle");
+			"actionBarTabStyle"
+		);
 	}
 	jint R_attr::actionBarTabTextStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarTabTextStyle");
+			"actionBarTabTextStyle"
+		);
 	}
 	jint R_attr::actionBarTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarTheme");
+			"actionBarTheme"
+		);
 	}
 	jint R_attr::actionBarWidgetTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionBarWidgetTheme");
+			"actionBarWidgetTheme"
+		);
 	}
 	jint R_attr::actionButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionButtonStyle");
+			"actionButtonStyle"
+		);
 	}
 	jint R_attr::actionDropDownStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionDropDownStyle");
+			"actionDropDownStyle"
+		);
 	}
 	jint R_attr::actionLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionLayout");
+			"actionLayout"
+		);
 	}
 	jint R_attr::actionMenuTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionMenuTextAppearance");
+			"actionMenuTextAppearance"
+		);
 	}
 	jint R_attr::actionMenuTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionMenuTextColor");
+			"actionMenuTextColor"
+		);
 	}
 	jint R_attr::actionModeBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeBackground");
+			"actionModeBackground"
+		);
 	}
 	jint R_attr::actionModeCloseButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeCloseButtonStyle");
+			"actionModeCloseButtonStyle"
+		);
 	}
 	jint R_attr::actionModeCloseDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeCloseDrawable");
+			"actionModeCloseDrawable"
+		);
 	}
 	jint R_attr::actionModeCopyDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeCopyDrawable");
+			"actionModeCopyDrawable"
+		);
 	}
 	jint R_attr::actionModeCutDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeCutDrawable");
+			"actionModeCutDrawable"
+		);
 	}
 	jint R_attr::actionModeFindDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeFindDrawable");
+			"actionModeFindDrawable"
+		);
 	}
 	jint R_attr::actionModePasteDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModePasteDrawable");
+			"actionModePasteDrawable"
+		);
 	}
 	jint R_attr::actionModeSelectAllDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeSelectAllDrawable");
+			"actionModeSelectAllDrawable"
+		);
 	}
 	jint R_attr::actionModeShareDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeShareDrawable");
+			"actionModeShareDrawable"
+		);
 	}
 	jint R_attr::actionModeSplitBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeSplitBackground");
+			"actionModeSplitBackground"
+		);
 	}
 	jint R_attr::actionModeStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeStyle");
+			"actionModeStyle"
+		);
 	}
 	jint R_attr::actionModeWebSearchDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionModeWebSearchDrawable");
+			"actionModeWebSearchDrawable"
+		);
 	}
 	jint R_attr::actionOverflowButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionOverflowButtonStyle");
+			"actionOverflowButtonStyle"
+		);
 	}
 	jint R_attr::actionOverflowMenuStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionOverflowMenuStyle");
+			"actionOverflowMenuStyle"
+		);
 	}
 	jint R_attr::actionProviderClass()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionProviderClass");
+			"actionProviderClass"
+		);
 	}
 	jint R_attr::actionViewClass()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"actionViewClass");
+			"actionViewClass"
+		);
 	}
 	jint R_attr::activatedBackgroundIndicator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"activatedBackgroundIndicator");
+			"activatedBackgroundIndicator"
+		);
 	}
 	jint R_attr::activityCloseEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"activityCloseEnterAnimation");
+			"activityCloseEnterAnimation"
+		);
 	}
 	jint R_attr::activityCloseExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"activityCloseExitAnimation");
+			"activityCloseExitAnimation"
+		);
 	}
 	jint R_attr::activityOpenEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"activityOpenEnterAnimation");
+			"activityOpenEnterAnimation"
+		);
 	}
 	jint R_attr::activityOpenExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"activityOpenExitAnimation");
+			"activityOpenExitAnimation"
+		);
 	}
 	jint R_attr::addPrintersActivity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"addPrintersActivity");
+			"addPrintersActivity"
+		);
 	}
 	jint R_attr::addStatesFromChildren()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"addStatesFromChildren");
+			"addStatesFromChildren"
+		);
 	}
 	jint R_attr::adjustViewBounds()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"adjustViewBounds");
+			"adjustViewBounds"
+		);
 	}
 	jint R_attr::advancedPrintOptionsActivity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"advancedPrintOptionsActivity");
+			"advancedPrintOptionsActivity"
+		);
 	}
 	jint R_attr::alertDialogIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"alertDialogIcon");
+			"alertDialogIcon"
+		);
 	}
 	jint R_attr::alertDialogStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"alertDialogStyle");
+			"alertDialogStyle"
+		);
 	}
 	jint R_attr::alertDialogTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"alertDialogTheme");
+			"alertDialogTheme"
+		);
 	}
 	jint R_attr::alignmentMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"alignmentMode");
+			"alignmentMode"
+		);
 	}
 	jint R_attr::allContactsName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"allContactsName");
+			"allContactsName"
+		);
 	}
 	jint R_attr::allowAudioPlaybackCapture()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"allowAudioPlaybackCapture");
+			"allowAudioPlaybackCapture"
+		);
 	}
 	jint R_attr::allowBackup()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"allowBackup");
+			"allowBackup"
+		);
 	}
 	jint R_attr::allowClearUserData()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"allowClearUserData");
+			"allowClearUserData"
+		);
 	}
 	jint R_attr::allowEmbedded()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"allowEmbedded");
+			"allowEmbedded"
+		);
 	}
 	jint R_attr::allowParallelSyncs()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"allowParallelSyncs");
+			"allowParallelSyncs"
+		);
 	}
 	jint R_attr::allowSingleTap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"allowSingleTap");
+			"allowSingleTap"
+		);
 	}
 	jint R_attr::allowTaskReparenting()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"allowTaskReparenting");
+			"allowTaskReparenting"
+		);
 	}
 	jint R_attr::allowUndo()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"allowUndo");
+			"allowUndo"
+		);
 	}
 	jint R_attr::alpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"alpha");
+			"alpha"
+		);
 	}
 	jint R_attr::alphabeticModifiers()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"alphabeticModifiers");
+			"alphabeticModifiers"
+		);
 	}
 	jint R_attr::alphabeticShortcut()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"alphabeticShortcut");
+			"alphabeticShortcut"
+		);
 	}
 	jint R_attr::alwaysDrawnWithCache()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"alwaysDrawnWithCache");
+			"alwaysDrawnWithCache"
+		);
 	}
 	jint R_attr::alwaysRetainTaskState()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"alwaysRetainTaskState");
+			"alwaysRetainTaskState"
+		);
 	}
 	jint R_attr::amPmBackgroundColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"amPmBackgroundColor");
+			"amPmBackgroundColor"
+		);
 	}
 	jint R_attr::amPmTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"amPmTextColor");
+			"amPmTextColor"
+		);
 	}
 	jint R_attr::ambientShadowAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ambientShadowAlpha");
+			"ambientShadowAlpha"
+		);
 	}
 	jint R_attr::angle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"angle");
+			"angle"
+		);
 	}
 	jint R_attr::animateFirstView()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"animateFirstView");
+			"animateFirstView"
+		);
 	}
 	jint R_attr::animateLayoutChanges()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"animateLayoutChanges");
+			"animateLayoutChanges"
+		);
 	}
 	jint R_attr::animateOnClick()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"animateOnClick");
+			"animateOnClick"
+		);
 	}
 	jint R_attr::animation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"animation");
+			"animation"
+		);
 	}
 	jint R_attr::animationCache()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"animationCache");
+			"animationCache"
+		);
 	}
 	jint R_attr::animationDuration()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"animationDuration");
+			"animationDuration"
+		);
 	}
 	jint R_attr::animationOrder()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"animationOrder");
+			"animationOrder"
+		);
 	}
 	jint R_attr::animationResolution()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"animationResolution");
+			"animationResolution"
+		);
 	}
 	jint R_attr::antialias()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"antialias");
+			"antialias"
+		);
 	}
 	jint R_attr::anyDensity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"anyDensity");
+			"anyDensity"
+		);
 	}
 	jint R_attr::apduServiceBanner()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"apduServiceBanner");
+			"apduServiceBanner"
+		);
 	}
 	jint R_attr::apiKey()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"apiKey");
+			"apiKey"
+		);
 	}
 	jint R_attr::appCategory()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"appCategory");
+			"appCategory"
+		);
 	}
 	jint R_attr::appComponentFactory()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"appComponentFactory");
+			"appComponentFactory"
+		);
 	}
 	jint R_attr::author()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"author");
+			"author"
+		);
 	}
 	jint R_attr::authorities()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"authorities");
+			"authorities"
+		);
 	}
 	jint R_attr::autoAdvanceViewId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoAdvanceViewId");
+			"autoAdvanceViewId"
+		);
 	}
 	jint R_attr::autoCompleteTextViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoCompleteTextViewStyle");
+			"autoCompleteTextViewStyle"
+		);
 	}
 	jint R_attr::autoLink()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoLink");
+			"autoLink"
+		);
 	}
 	jint R_attr::autoMirrored()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoMirrored");
+			"autoMirrored"
+		);
 	}
 	jint R_attr::autoRemoveFromRecents()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoRemoveFromRecents");
+			"autoRemoveFromRecents"
+		);
 	}
 	jint R_attr::autoSizeMaxTextSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoSizeMaxTextSize");
+			"autoSizeMaxTextSize"
+		);
 	}
 	jint R_attr::autoSizeMinTextSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoSizeMinTextSize");
+			"autoSizeMinTextSize"
+		);
 	}
 	jint R_attr::autoSizePresetSizes()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoSizePresetSizes");
+			"autoSizePresetSizes"
+		);
 	}
 	jint R_attr::autoSizeStepGranularity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoSizeStepGranularity");
+			"autoSizeStepGranularity"
+		);
 	}
 	jint R_attr::autoSizeTextType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoSizeTextType");
+			"autoSizeTextType"
+		);
 	}
 	jint R_attr::autoStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoStart");
+			"autoStart"
+		);
 	}
 	jint R_attr::autoText()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoText");
+			"autoText"
+		);
 	}
 	jint R_attr::autoUrlDetect()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoUrlDetect");
+			"autoUrlDetect"
+		);
 	}
 	jint R_attr::autoVerify()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autoVerify");
+			"autoVerify"
+		);
 	}
 	jint R_attr::autofillHints()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autofillHints");
+			"autofillHints"
+		);
 	}
 	jint R_attr::autofilledHighlight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"autofilledHighlight");
+			"autofilledHighlight"
+		);
 	}
 	jint R_attr::background()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"background");
+			"background"
+		);
 	}
 	jint R_attr::backgroundDimAmount()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"backgroundDimAmount");
+			"backgroundDimAmount"
+		);
 	}
 	jint R_attr::backgroundDimEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"backgroundDimEnabled");
+			"backgroundDimEnabled"
+		);
 	}
 	jint R_attr::backgroundSplit()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"backgroundSplit");
+			"backgroundSplit"
+		);
 	}
 	jint R_attr::backgroundStacked()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"backgroundStacked");
+			"backgroundStacked"
+		);
 	}
 	jint R_attr::backgroundTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"backgroundTint");
+			"backgroundTint"
+		);
 	}
 	jint R_attr::backgroundTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"backgroundTintMode");
+			"backgroundTintMode"
+		);
 	}
 	jint R_attr::backupAgent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"backupAgent");
+			"backupAgent"
+		);
 	}
 	jint R_attr::backupInForeground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"backupInForeground");
+			"backupInForeground"
+		);
 	}
 	jint R_attr::banner()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"banner");
+			"banner"
+		);
 	}
 	jint R_attr::baseline()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"baseline");
+			"baseline"
+		);
 	}
 	jint R_attr::baselineAlignBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"baselineAlignBottom");
+			"baselineAlignBottom"
+		);
 	}
 	jint R_attr::baselineAligned()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"baselineAligned");
+			"baselineAligned"
+		);
 	}
 	jint R_attr::baselineAlignedChildIndex()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"baselineAlignedChildIndex");
+			"baselineAlignedChildIndex"
+		);
 	}
 	jint R_attr::bitmap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"bitmap");
+			"bitmap"
+		);
 	}
 	jint R_attr::borderlessButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"borderlessButtonStyle");
+			"borderlessButtonStyle"
+		);
 	}
 	jint R_attr::bottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"bottom");
+			"bottom"
+		);
 	}
 	jint R_attr::bottomBright()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"bottomBright");
+			"bottomBright"
+		);
 	}
 	jint R_attr::bottomDark()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"bottomDark");
+			"bottomDark"
+		);
 	}
 	jint R_attr::bottomLeftRadius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"bottomLeftRadius");
+			"bottomLeftRadius"
+		);
 	}
 	jint R_attr::bottomMedium()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"bottomMedium");
+			"bottomMedium"
+		);
 	}
 	jint R_attr::bottomOffset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"bottomOffset");
+			"bottomOffset"
+		);
 	}
 	jint R_attr::bottomRightRadius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"bottomRightRadius");
+			"bottomRightRadius"
+		);
 	}
 	jint R_attr::breadCrumbShortTitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"breadCrumbShortTitle");
+			"breadCrumbShortTitle"
+		);
 	}
 	jint R_attr::breadCrumbTitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"breadCrumbTitle");
+			"breadCrumbTitle"
+		);
 	}
 	jint R_attr::breakStrategy()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"breakStrategy");
+			"breakStrategy"
+		);
 	}
 	jint R_attr::bufferType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"bufferType");
+			"bufferType"
+		);
 	}
 	jint R_attr::button()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"button");
+			"button"
+		);
 	}
 	jint R_attr::buttonBarButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonBarButtonStyle");
+			"buttonBarButtonStyle"
+		);
 	}
 	jint R_attr::buttonBarNegativeButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonBarNegativeButtonStyle");
+			"buttonBarNegativeButtonStyle"
+		);
 	}
 	jint R_attr::buttonBarNeutralButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonBarNeutralButtonStyle");
+			"buttonBarNeutralButtonStyle"
+		);
 	}
 	jint R_attr::buttonBarPositiveButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonBarPositiveButtonStyle");
+			"buttonBarPositiveButtonStyle"
+		);
 	}
 	jint R_attr::buttonBarStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonBarStyle");
+			"buttonBarStyle"
+		);
 	}
 	jint R_attr::buttonCornerRadius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonCornerRadius");
+			"buttonCornerRadius"
+		);
 	}
 	jint R_attr::buttonGravity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonGravity");
+			"buttonGravity"
+		);
 	}
 	jint R_attr::buttonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonStyle");
+			"buttonStyle"
+		);
 	}
 	jint R_attr::buttonStyleInset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonStyleInset");
+			"buttonStyleInset"
+		);
 	}
 	jint R_attr::buttonStyleSmall()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonStyleSmall");
+			"buttonStyleSmall"
+		);
 	}
 	jint R_attr::buttonStyleToggle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonStyleToggle");
+			"buttonStyleToggle"
+		);
 	}
 	jint R_attr::buttonTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonTint");
+			"buttonTint"
+		);
 	}
 	jint R_attr::buttonTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"buttonTintMode");
+			"buttonTintMode"
+		);
 	}
 	jint R_attr::cacheColorHint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"cacheColorHint");
+			"cacheColorHint"
+		);
 	}
 	jint R_attr::calendarTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"calendarTextColor");
+			"calendarTextColor"
+		);
 	}
 	jint R_attr::calendarViewShown()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"calendarViewShown");
+			"calendarViewShown"
+		);
 	}
 	jint R_attr::calendarViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"calendarViewStyle");
+			"calendarViewStyle"
+		);
 	}
 	jint R_attr::canControlMagnification()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"canControlMagnification");
+			"canControlMagnification"
+		);
 	}
 	jint R_attr::canPerformGestures()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"canPerformGestures");
+			"canPerformGestures"
+		);
 	}
 	jint R_attr::canRecord()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"canRecord");
+			"canRecord"
+		);
 	}
 	jint R_attr::canRequestEnhancedWebAccessibility()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"canRequestEnhancedWebAccessibility");
+			"canRequestEnhancedWebAccessibility"
+		);
 	}
 	jint R_attr::canRequestFilterKeyEvents()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"canRequestFilterKeyEvents");
+			"canRequestFilterKeyEvents"
+		);
 	}
 	jint R_attr::canRequestFingerprintGestures()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"canRequestFingerprintGestures");
+			"canRequestFingerprintGestures"
+		);
 	}
 	jint R_attr::canRequestTouchExplorationMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"canRequestTouchExplorationMode");
+			"canRequestTouchExplorationMode"
+		);
 	}
 	jint R_attr::canRetrieveWindowContent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"canRetrieveWindowContent");
+			"canRetrieveWindowContent"
+		);
 	}
 	jint R_attr::candidatesTextStyleSpans()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"candidatesTextStyleSpans");
+			"candidatesTextStyleSpans"
+		);
 	}
 	jint R_attr::cantSaveState()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"cantSaveState");
+			"cantSaveState"
+		);
 	}
 	jint R_attr::capitalize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"capitalize");
+			"capitalize"
+		);
 	}
 	jint R_attr::category()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"category");
+			"category"
+		);
 	}
 	jint R_attr::centerBright()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"centerBright");
+			"centerBright"
+		);
 	}
 	jint R_attr::centerColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"centerColor");
+			"centerColor"
+		);
 	}
 	jint R_attr::centerDark()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"centerDark");
+			"centerDark"
+		);
 	}
 	jint R_attr::centerMedium()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"centerMedium");
+			"centerMedium"
+		);
 	}
 	jint R_attr::centerX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"centerX");
+			"centerX"
+		);
 	}
 	jint R_attr::centerY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"centerY");
+			"centerY"
+		);
 	}
 	jint R_attr::certDigest()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"certDigest");
+			"certDigest"
+		);
 	}
 	jint R_attr::checkBoxPreferenceStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checkBoxPreferenceStyle");
+			"checkBoxPreferenceStyle"
+		);
 	}
 	jint R_attr::checkMark()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checkMark");
+			"checkMark"
+		);
 	}
 	jint R_attr::checkMarkTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checkMarkTint");
+			"checkMarkTint"
+		);
 	}
 	jint R_attr::checkMarkTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checkMarkTintMode");
+			"checkMarkTintMode"
+		);
 	}
 	jint R_attr::checkable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checkable");
+			"checkable"
+		);
 	}
 	jint R_attr::checkableBehavior()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checkableBehavior");
+			"checkableBehavior"
+		);
 	}
 	jint R_attr::checkboxStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checkboxStyle");
+			"checkboxStyle"
+		);
 	}
 	jint R_attr::checked()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checked");
+			"checked"
+		);
 	}
 	jint R_attr::checkedButton()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checkedButton");
+			"checkedButton"
+		);
 	}
 	jint R_attr::checkedTextViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"checkedTextViewStyle");
+			"checkedTextViewStyle"
+		);
 	}
 	jint R_attr::childDivider()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"childDivider");
+			"childDivider"
+		);
 	}
 	jint R_attr::childIndicator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"childIndicator");
+			"childIndicator"
+		);
 	}
 	jint R_attr::childIndicatorEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"childIndicatorEnd");
+			"childIndicatorEnd"
+		);
 	}
 	jint R_attr::childIndicatorLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"childIndicatorLeft");
+			"childIndicatorLeft"
+		);
 	}
 	jint R_attr::childIndicatorRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"childIndicatorRight");
+			"childIndicatorRight"
+		);
 	}
 	jint R_attr::childIndicatorStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"childIndicatorStart");
+			"childIndicatorStart"
+		);
 	}
 	jint R_attr::choiceMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"choiceMode");
+			"choiceMode"
+		);
 	}
 	jint R_attr::classLoader()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"classLoader");
+			"classLoader"
+		);
 	}
 	jint R_attr::clearTaskOnLaunch()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"clearTaskOnLaunch");
+			"clearTaskOnLaunch"
+		);
 	}
 	jint R_attr::clickable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"clickable");
+			"clickable"
+		);
 	}
 	jint R_attr::clipChildren()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"clipChildren");
+			"clipChildren"
+		);
 	}
 	jint R_attr::clipOrientation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"clipOrientation");
+			"clipOrientation"
+		);
 	}
 	jint R_attr::clipToPadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"clipToPadding");
+			"clipToPadding"
+		);
 	}
 	jint R_attr::closeIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"closeIcon");
+			"closeIcon"
+		);
 	}
 	jint R_attr::codes()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"codes");
+			"codes"
+		);
 	}
 	jint R_attr::collapseColumns()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"collapseColumns");
+			"collapseColumns"
+		);
 	}
 	jint R_attr::collapseContentDescription()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"collapseContentDescription");
+			"collapseContentDescription"
+		);
 	}
 	jint R_attr::collapseIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"collapseIcon");
+			"collapseIcon"
+		);
 	}
 	jint R_attr::color()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"color");
+			"color"
+		);
 	}
 	jint R_attr::colorAccent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorAccent");
+			"colorAccent"
+		);
 	}
 	jint R_attr::colorActivatedHighlight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorActivatedHighlight");
+			"colorActivatedHighlight"
+		);
 	}
 	jint R_attr::colorBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorBackground");
+			"colorBackground"
+		);
 	}
 	jint R_attr::colorBackgroundCacheHint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorBackgroundCacheHint");
+			"colorBackgroundCacheHint"
+		);
 	}
 	jint R_attr::colorBackgroundFloating()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorBackgroundFloating");
+			"colorBackgroundFloating"
+		);
 	}
 	jint R_attr::colorButtonNormal()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorButtonNormal");
+			"colorButtonNormal"
+		);
 	}
 	jint R_attr::colorControlActivated()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorControlActivated");
+			"colorControlActivated"
+		);
 	}
 	jint R_attr::colorControlHighlight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorControlHighlight");
+			"colorControlHighlight"
+		);
 	}
 	jint R_attr::colorControlNormal()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorControlNormal");
+			"colorControlNormal"
+		);
 	}
 	jint R_attr::colorEdgeEffect()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorEdgeEffect");
+			"colorEdgeEffect"
+		);
 	}
 	jint R_attr::colorError()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorError");
+			"colorError"
+		);
 	}
 	jint R_attr::colorFocusedHighlight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorFocusedHighlight");
+			"colorFocusedHighlight"
+		);
 	}
 	jint R_attr::colorForeground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorForeground");
+			"colorForeground"
+		);
 	}
 	jint R_attr::colorForegroundInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorForegroundInverse");
+			"colorForegroundInverse"
+		);
 	}
 	jint R_attr::colorLongPressedHighlight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorLongPressedHighlight");
+			"colorLongPressedHighlight"
+		);
 	}
 	jint R_attr::colorMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorMode");
+			"colorMode"
+		);
 	}
 	jint R_attr::colorMultiSelectHighlight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorMultiSelectHighlight");
+			"colorMultiSelectHighlight"
+		);
 	}
 	jint R_attr::colorPressedHighlight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorPressedHighlight");
+			"colorPressedHighlight"
+		);
 	}
 	jint R_attr::colorPrimary()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorPrimary");
+			"colorPrimary"
+		);
 	}
 	jint R_attr::colorPrimaryDark()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorPrimaryDark");
+			"colorPrimaryDark"
+		);
 	}
 	jint R_attr::colorSecondary()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"colorSecondary");
+			"colorSecondary"
+		);
 	}
 	jint R_attr::columnCount()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"columnCount");
+			"columnCount"
+		);
 	}
 	jint R_attr::columnDelay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"columnDelay");
+			"columnDelay"
+		);
 	}
 	jint R_attr::columnOrderPreserved()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"columnOrderPreserved");
+			"columnOrderPreserved"
+		);
 	}
 	jint R_attr::columnWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"columnWidth");
+			"columnWidth"
+		);
 	}
 	jint R_attr::commitIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"commitIcon");
+			"commitIcon"
+		);
 	}
 	jint R_attr::compatibleWidthLimitDp()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"compatibleWidthLimitDp");
+			"compatibleWidthLimitDp"
+		);
 	}
 	jint R_attr::completionHint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"completionHint");
+			"completionHint"
+		);
 	}
 	jint R_attr::completionHintView()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"completionHintView");
+			"completionHintView"
+		);
 	}
 	jint R_attr::completionThreshold()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"completionThreshold");
+			"completionThreshold"
+		);
 	}
 	jint R_attr::configChanges()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"configChanges");
+			"configChanges"
+		);
 	}
 	jint R_attr::configure()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"configure");
+			"configure"
+		);
 	}
 	jint R_attr::constantSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"constantSize");
+			"constantSize"
+		);
 	}
 	jint R_attr::content()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"content");
+			"content"
+		);
 	}
 	jint R_attr::contentAgeHint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contentAgeHint");
+			"contentAgeHint"
+		);
 	}
 	jint R_attr::contentAuthority()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contentAuthority");
+			"contentAuthority"
+		);
 	}
 	jint R_attr::contentDescription()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contentDescription");
+			"contentDescription"
+		);
 	}
 	jint R_attr::contentInsetEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contentInsetEnd");
+			"contentInsetEnd"
+		);
 	}
 	jint R_attr::contentInsetEndWithActions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contentInsetEndWithActions");
+			"contentInsetEndWithActions"
+		);
 	}
 	jint R_attr::contentInsetLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contentInsetLeft");
+			"contentInsetLeft"
+		);
 	}
 	jint R_attr::contentInsetRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contentInsetRight");
+			"contentInsetRight"
+		);
 	}
 	jint R_attr::contentInsetStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contentInsetStart");
+			"contentInsetStart"
+		);
 	}
 	jint R_attr::contentInsetStartWithNavigation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contentInsetStartWithNavigation");
+			"contentInsetStartWithNavigation"
+		);
 	}
 	jint R_attr::contextClickable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contextClickable");
+			"contextClickable"
+		);
 	}
 	jint R_attr::contextDescription()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contextDescription");
+			"contextDescription"
+		);
 	}
 	jint R_attr::contextPopupMenuStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contextPopupMenuStyle");
+			"contextPopupMenuStyle"
+		);
 	}
 	jint R_attr::contextUri()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"contextUri");
+			"contextUri"
+		);
 	}
 	jint R_attr::controlX1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"controlX1");
+			"controlX1"
+		);
 	}
 	jint R_attr::controlX2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"controlX2");
+			"controlX2"
+		);
 	}
 	jint R_attr::controlY1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"controlY1");
+			"controlY1"
+		);
 	}
 	jint R_attr::controlY2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"controlY2");
+			"controlY2"
+		);
 	}
 	jint R_attr::countDown()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"countDown");
+			"countDown"
+		);
 	}
 	jint R_attr::country()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"country");
+			"country"
+		);
 	}
 	jint R_attr::cropToPadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"cropToPadding");
+			"cropToPadding"
+		);
 	}
 	jint R_attr::cursorVisible()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"cursorVisible");
+			"cursorVisible"
+		);
 	}
 	jint R_attr::customNavigationLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"customNavigationLayout");
+			"customNavigationLayout"
+		);
 	}
 	jint R_attr::customTokens()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"customTokens");
+			"customTokens"
+		);
 	}
 	jint R_attr::cycles()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"cycles");
+			"cycles"
+		);
 	}
 	jint R_attr::dashGap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dashGap");
+			"dashGap"
+		);
 	}
 	jint R_attr::dashWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dashWidth");
+			"dashWidth"
+		);
 	}
 	jint R_attr::data()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"data");
+			"data"
+		);
 	}
 	jint R_attr::datePickerDialogTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"datePickerDialogTheme");
+			"datePickerDialogTheme"
+		);
 	}
 	jint R_attr::datePickerMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"datePickerMode");
+			"datePickerMode"
+		);
 	}
 	jint R_attr::datePickerStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"datePickerStyle");
+			"datePickerStyle"
+		);
 	}
 	jint R_attr::dateTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dateTextAppearance");
+			"dateTextAppearance"
+		);
 	}
 	jint R_attr::dayOfWeekBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dayOfWeekBackground");
+			"dayOfWeekBackground"
+		);
 	}
 	jint R_attr::dayOfWeekTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dayOfWeekTextAppearance");
+			"dayOfWeekTextAppearance"
+		);
 	}
 	jint R_attr::debuggable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"debuggable");
+			"debuggable"
+		);
 	}
 	jint R_attr::defaultFocusHighlightEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"defaultFocusHighlightEnabled");
+			"defaultFocusHighlightEnabled"
+		);
 	}
 	jint R_attr::defaultHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"defaultHeight");
+			"defaultHeight"
+		);
 	}
 	jint R_attr::defaultToDeviceProtectedStorage()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"defaultToDeviceProtectedStorage");
+			"defaultToDeviceProtectedStorage"
+		);
 	}
 	jint R_attr::defaultValue()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"defaultValue");
+			"defaultValue"
+		);
 	}
 	jint R_attr::defaultWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"defaultWidth");
+			"defaultWidth"
+		);
 	}
 	jint R_attr::delay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"delay");
+			"delay"
+		);
 	}
 	jint R_attr::dependency()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dependency");
+			"dependency"
+		);
 	}
 	jint R_attr::descendantFocusability()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"descendantFocusability");
+			"descendantFocusability"
+		);
 	}
 	jint R_attr::description()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"description");
+			"description"
+		);
 	}
 	jint R_attr::detachWallpaper()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"detachWallpaper");
+			"detachWallpaper"
+		);
 	}
 	jint R_attr::detailColumn()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"detailColumn");
+			"detailColumn"
+		);
 	}
 	jint R_attr::detailSocialSummary()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"detailSocialSummary");
+			"detailSocialSummary"
+		);
 	}
 	jint R_attr::detailsElementBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"detailsElementBackground");
+			"detailsElementBackground"
+		);
 	}
 	jint R_attr::dial()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dial");
+			"dial"
+		);
 	}
 	jint R_attr::dialogCornerRadius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dialogCornerRadius");
+			"dialogCornerRadius"
+		);
 	}
 	jint R_attr::dialogIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dialogIcon");
+			"dialogIcon"
+		);
 	}
 	jint R_attr::dialogLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dialogLayout");
+			"dialogLayout"
+		);
 	}
 	jint R_attr::dialogMessage()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dialogMessage");
+			"dialogMessage"
+		);
 	}
 	jint R_attr::dialogPreferenceStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dialogPreferenceStyle");
+			"dialogPreferenceStyle"
+		);
 	}
 	jint R_attr::dialogPreferredPadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dialogPreferredPadding");
+			"dialogPreferredPadding"
+		);
 	}
 	jint R_attr::dialogTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dialogTheme");
+			"dialogTheme"
+		);
 	}
 	jint R_attr::dialogTitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dialogTitle");
+			"dialogTitle"
+		);
 	}
 	jint R_attr::digits()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"digits");
+			"digits"
+		);
 	}
 	jint R_attr::directBootAware()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"directBootAware");
+			"directBootAware"
+		);
 	}
 	jint R_attr::direction()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"direction");
+			"direction"
+		);
 	}
 	jint R_attr::directionDescriptions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"directionDescriptions");
+			"directionDescriptions"
+		);
 	}
 	jint R_attr::directionPriority()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"directionPriority");
+			"directionPriority"
+		);
 	}
 	jint R_attr::disableDependentsState()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"disableDependentsState");
+			"disableDependentsState"
+		);
 	}
 	jint R_attr::disabledAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"disabledAlpha");
+			"disabledAlpha"
+		);
 	}
 	jint R_attr::displayOptions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"displayOptions");
+			"displayOptions"
+		);
 	}
 	jint R_attr::dither()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dither");
+			"dither"
+		);
 	}
 	jint R_attr::divider()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"divider");
+			"divider"
+		);
 	}
 	jint R_attr::dividerHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dividerHeight");
+			"dividerHeight"
+		);
 	}
 	jint R_attr::dividerHorizontal()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dividerHorizontal");
+			"dividerHorizontal"
+		);
 	}
 	jint R_attr::dividerPadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dividerPadding");
+			"dividerPadding"
+		);
 	}
 	jint R_attr::dividerVertical()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dividerVertical");
+			"dividerVertical"
+		);
 	}
 	jint R_attr::documentLaunchMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"documentLaunchMode");
+			"documentLaunchMode"
+		);
 	}
 	jint R_attr::drawSelectorOnTop()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawSelectorOnTop");
+			"drawSelectorOnTop"
+		);
 	}
 	jint R_attr::drawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawable");
+			"drawable"
+		);
 	}
 	jint R_attr::drawableBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawableBottom");
+			"drawableBottom"
+		);
 	}
 	jint R_attr::drawableEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawableEnd");
+			"drawableEnd"
+		);
 	}
 	jint R_attr::drawableLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawableLeft");
+			"drawableLeft"
+		);
 	}
 	jint R_attr::drawablePadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawablePadding");
+			"drawablePadding"
+		);
 	}
 	jint R_attr::drawableRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawableRight");
+			"drawableRight"
+		);
 	}
 	jint R_attr::drawableStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawableStart");
+			"drawableStart"
+		);
 	}
 	jint R_attr::drawableTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawableTint");
+			"drawableTint"
+		);
 	}
 	jint R_attr::drawableTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawableTintMode");
+			"drawableTintMode"
+		);
 	}
 	jint R_attr::drawableTop()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawableTop");
+			"drawableTop"
+		);
 	}
 	jint R_attr::drawingCacheQuality()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"drawingCacheQuality");
+			"drawingCacheQuality"
+		);
 	}
 	jint R_attr::dropDownAnchor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownAnchor");
+			"dropDownAnchor"
+		);
 	}
 	jint R_attr::dropDownHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownHeight");
+			"dropDownHeight"
+		);
 	}
 	jint R_attr::dropDownHintAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownHintAppearance");
+			"dropDownHintAppearance"
+		);
 	}
 	jint R_attr::dropDownHorizontalOffset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownHorizontalOffset");
+			"dropDownHorizontalOffset"
+		);
 	}
 	jint R_attr::dropDownItemStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownItemStyle");
+			"dropDownItemStyle"
+		);
 	}
 	jint R_attr::dropDownListViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownListViewStyle");
+			"dropDownListViewStyle"
+		);
 	}
 	jint R_attr::dropDownSelector()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownSelector");
+			"dropDownSelector"
+		);
 	}
 	jint R_attr::dropDownSpinnerStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownSpinnerStyle");
+			"dropDownSpinnerStyle"
+		);
 	}
 	jint R_attr::dropDownVerticalOffset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownVerticalOffset");
+			"dropDownVerticalOffset"
+		);
 	}
 	jint R_attr::dropDownWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"dropDownWidth");
+			"dropDownWidth"
+		);
 	}
 	jint R_attr::duplicateParentState()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"duplicateParentState");
+			"duplicateParentState"
+		);
 	}
 	jint R_attr::duration()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"duration");
+			"duration"
+		);
 	}
 	jint R_attr::editTextBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"editTextBackground");
+			"editTextBackground"
+		);
 	}
 	jint R_attr::editTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"editTextColor");
+			"editTextColor"
+		);
 	}
 	jint R_attr::editTextPreferenceStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"editTextPreferenceStyle");
+			"editTextPreferenceStyle"
+		);
 	}
 	jint R_attr::editTextStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"editTextStyle");
+			"editTextStyle"
+		);
 	}
 	jint R_attr::editable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"editable");
+			"editable"
+		);
 	}
 	jint R_attr::editorExtras()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"editorExtras");
+			"editorExtras"
+		);
 	}
 	jint R_attr::elegantTextHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"elegantTextHeight");
+			"elegantTextHeight"
+		);
 	}
 	jint R_attr::elevation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"elevation");
+			"elevation"
+		);
 	}
 	jint R_attr::ellipsize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ellipsize");
+			"ellipsize"
+		);
 	}
 	jint R_attr::ems()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ems");
+			"ems"
+		);
 	}
 	jint R_attr::enableVrMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"enableVrMode");
+			"enableVrMode"
+		);
 	}
 	jint R_attr::enabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"enabled");
+			"enabled"
+		);
 	}
 	jint R_attr::end()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"end");
+			"end"
+		);
 	}
 	jint R_attr::endColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"endColor");
+			"endColor"
+		);
 	}
 	jint R_attr::endX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"endX");
+			"endX"
+		);
 	}
 	jint R_attr::endY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"endY");
+			"endY"
+		);
 	}
 	jint R_attr::endYear()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"endYear");
+			"endYear"
+		);
 	}
 	jint R_attr::enforceNavigationBarContrast()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"enforceNavigationBarContrast");
+			"enforceNavigationBarContrast"
+		);
 	}
 	jint R_attr::enforceStatusBarContrast()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"enforceStatusBarContrast");
+			"enforceStatusBarContrast"
+		);
 	}
 	jint R_attr::enterFadeDuration()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"enterFadeDuration");
+			"enterFadeDuration"
+		);
 	}
 	jint R_attr::entries()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"entries");
+			"entries"
+		);
 	}
 	jint R_attr::entryValues()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"entryValues");
+			"entryValues"
+		);
 	}
 	jint R_attr::eventsInterceptionEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"eventsInterceptionEnabled");
+			"eventsInterceptionEnabled"
+		);
 	}
 	jint R_attr::excludeClass()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"excludeClass");
+			"excludeClass"
+		);
 	}
 	jint R_attr::excludeFromRecents()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"excludeFromRecents");
+			"excludeFromRecents"
+		);
 	}
 	jint R_attr::excludeId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"excludeId");
+			"excludeId"
+		);
 	}
 	jint R_attr::excludeName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"excludeName");
+			"excludeName"
+		);
 	}
 	jint R_attr::exitFadeDuration()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"exitFadeDuration");
+			"exitFadeDuration"
+		);
 	}
 	jint R_attr::expandableListPreferredChildIndicatorLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"expandableListPreferredChildIndicatorLeft");
+			"expandableListPreferredChildIndicatorLeft"
+		);
 	}
 	jint R_attr::expandableListPreferredChildIndicatorRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"expandableListPreferredChildIndicatorRight");
+			"expandableListPreferredChildIndicatorRight"
+		);
 	}
 	jint R_attr::expandableListPreferredChildPaddingLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"expandableListPreferredChildPaddingLeft");
+			"expandableListPreferredChildPaddingLeft"
+		);
 	}
 	jint R_attr::expandableListPreferredItemIndicatorLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"expandableListPreferredItemIndicatorLeft");
+			"expandableListPreferredItemIndicatorLeft"
+		);
 	}
 	jint R_attr::expandableListPreferredItemIndicatorRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"expandableListPreferredItemIndicatorRight");
+			"expandableListPreferredItemIndicatorRight"
+		);
 	}
 	jint R_attr::expandableListPreferredItemPaddingLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"expandableListPreferredItemPaddingLeft");
+			"expandableListPreferredItemPaddingLeft"
+		);
 	}
 	jint R_attr::expandableListViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"expandableListViewStyle");
+			"expandableListViewStyle"
+		);
 	}
 	jint R_attr::expandableListViewWhiteStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"expandableListViewWhiteStyle");
+			"expandableListViewWhiteStyle"
+		);
 	}
 	jint R_attr::exported()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"exported");
+			"exported"
+		);
 	}
 	jint R_attr::externalService()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"externalService");
+			"externalService"
+		);
 	}
 	jint R_attr::extraTension()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"extraTension");
+			"extraTension"
+		);
 	}
 	jint R_attr::extractNativeLibs()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"extractNativeLibs");
+			"extractNativeLibs"
+		);
 	}
 	jint R_attr::factor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"factor");
+			"factor"
+		);
 	}
 	jint R_attr::fadeDuration()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fadeDuration");
+			"fadeDuration"
+		);
 	}
 	jint R_attr::fadeEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fadeEnabled");
+			"fadeEnabled"
+		);
 	}
 	jint R_attr::fadeOffset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fadeOffset");
+			"fadeOffset"
+		);
 	}
 	jint R_attr::fadeScrollbars()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fadeScrollbars");
+			"fadeScrollbars"
+		);
 	}
 	jint R_attr::fadingEdge()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fadingEdge");
+			"fadingEdge"
+		);
 	}
 	jint R_attr::fadingEdgeLength()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fadingEdgeLength");
+			"fadingEdgeLength"
+		);
 	}
 	jint R_attr::fadingMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fadingMode");
+			"fadingMode"
+		);
 	}
 	jint R_attr::fallbackLineSpacing()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fallbackLineSpacing");
+			"fallbackLineSpacing"
+		);
 	}
 	jint R_attr::fastScrollAlwaysVisible()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fastScrollAlwaysVisible");
+			"fastScrollAlwaysVisible"
+		);
 	}
 	jint R_attr::fastScrollEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fastScrollEnabled");
+			"fastScrollEnabled"
+		);
 	}
 	jint R_attr::fastScrollOverlayPosition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fastScrollOverlayPosition");
+			"fastScrollOverlayPosition"
+		);
 	}
 	jint R_attr::fastScrollPreviewBackgroundLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fastScrollPreviewBackgroundLeft");
+			"fastScrollPreviewBackgroundLeft"
+		);
 	}
 	jint R_attr::fastScrollPreviewBackgroundRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fastScrollPreviewBackgroundRight");
+			"fastScrollPreviewBackgroundRight"
+		);
 	}
 	jint R_attr::fastScrollStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fastScrollStyle");
+			"fastScrollStyle"
+		);
 	}
 	jint R_attr::fastScrollTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fastScrollTextColor");
+			"fastScrollTextColor"
+		);
 	}
 	jint R_attr::fastScrollThumbDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fastScrollThumbDrawable");
+			"fastScrollThumbDrawable"
+		);
 	}
 	jint R_attr::fastScrollTrackDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fastScrollTrackDrawable");
+			"fastScrollTrackDrawable"
+		);
 	}
 	jint R_attr::fillAfter()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fillAfter");
+			"fillAfter"
+		);
 	}
 	jint R_attr::fillAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fillAlpha");
+			"fillAlpha"
+		);
 	}
 	jint R_attr::fillBefore()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fillBefore");
+			"fillBefore"
+		);
 	}
 	jint R_attr::fillColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fillColor");
+			"fillColor"
+		);
 	}
 	jint R_attr::fillEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fillEnabled");
+			"fillEnabled"
+		);
 	}
 	jint R_attr::fillType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fillType");
+			"fillType"
+		);
 	}
 	jint R_attr::fillViewport()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fillViewport");
+			"fillViewport"
+		);
 	}
 	jint R_attr::filter()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"filter");
+			"filter"
+		);
 	}
 	jint R_attr::filterTouchesWhenObscured()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"filterTouchesWhenObscured");
+			"filterTouchesWhenObscured"
+		);
 	}
 	jint R_attr::fingerprintAuthDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fingerprintAuthDrawable");
+			"fingerprintAuthDrawable"
+		);
 	}
 	jint R_attr::finishOnCloseSystemDialogs()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"finishOnCloseSystemDialogs");
+			"finishOnCloseSystemDialogs"
+		);
 	}
 	jint R_attr::finishOnTaskLaunch()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"finishOnTaskLaunch");
+			"finishOnTaskLaunch"
+		);
 	}
 	jint R_attr::firstBaselineToTopHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"firstBaselineToTopHeight");
+			"firstBaselineToTopHeight"
+		);
 	}
 	jint R_attr::firstDayOfWeek()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"firstDayOfWeek");
+			"firstDayOfWeek"
+		);
 	}
 	jint R_attr::fitsSystemWindows()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fitsSystemWindows");
+			"fitsSystemWindows"
+		);
 	}
 	jint R_attr::flipInterval()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"flipInterval");
+			"flipInterval"
+		);
 	}
 	jint R_attr::focusable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"focusable");
+			"focusable"
+		);
 	}
 	jint R_attr::focusableInTouchMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"focusableInTouchMode");
+			"focusableInTouchMode"
+		);
 	}
 	jint R_attr::focusedByDefault()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"focusedByDefault");
+			"focusedByDefault"
+		);
 	}
 	jint R_attr::focusedMonthDateColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"focusedMonthDateColor");
+			"focusedMonthDateColor"
+		);
 	}
 	jint R_attr::font()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"font");
+			"font"
+		);
 	}
 	jint R_attr::fontFamily()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fontFamily");
+			"fontFamily"
+		);
 	}
 	jint R_attr::fontFeatureSettings()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fontFeatureSettings");
+			"fontFeatureSettings"
+		);
 	}
 	jint R_attr::fontProviderAuthority()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fontProviderAuthority");
+			"fontProviderAuthority"
+		);
 	}
 	jint R_attr::fontProviderCerts()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fontProviderCerts");
+			"fontProviderCerts"
+		);
 	}
 	jint R_attr::fontProviderPackage()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fontProviderPackage");
+			"fontProviderPackage"
+		);
 	}
 	jint R_attr::fontProviderQuery()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fontProviderQuery");
+			"fontProviderQuery"
+		);
 	}
 	jint R_attr::fontStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fontStyle");
+			"fontStyle"
+		);
 	}
 	jint R_attr::fontVariationSettings()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fontVariationSettings");
+			"fontVariationSettings"
+		);
 	}
 	jint R_attr::fontWeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fontWeight");
+			"fontWeight"
+		);
 	}
 	jint R_attr::footerDividersEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"footerDividersEnabled");
+			"footerDividersEnabled"
+		);
 	}
 	jint R_attr::forceDarkAllowed()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"forceDarkAllowed");
+			"forceDarkAllowed"
+		);
 	}
 	jint R_attr::forceHasOverlappingRendering()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"forceHasOverlappingRendering");
+			"forceHasOverlappingRendering"
+		);
 	}
 	jint R_attr::forceUriPermissions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"forceUriPermissions");
+			"forceUriPermissions"
+		);
 	}
 	jint R_attr::foreground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"foreground");
+			"foreground"
+		);
 	}
 	jint R_attr::foregroundGravity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"foregroundGravity");
+			"foregroundGravity"
+		);
 	}
 	jint R_attr::foregroundServiceType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"foregroundServiceType");
+			"foregroundServiceType"
+		);
 	}
 	jint R_attr::foregroundTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"foregroundTint");
+			"foregroundTint"
+		);
 	}
 	jint R_attr::foregroundTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"foregroundTintMode");
+			"foregroundTintMode"
+		);
 	}
 	jint R_attr::format()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"format");
+			"format"
+		);
 	}
 	jint R_attr::format12Hour()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"format12Hour");
+			"format12Hour"
+		);
 	}
 	jint R_attr::format24Hour()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"format24Hour");
+			"format24Hour"
+		);
 	}
 	jint R_attr::fraction()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fraction");
+			"fraction"
+		);
 	}
 	jint R_attr::fragment()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragment");
+			"fragment"
+		);
 	}
 	jint R_attr::fragmentAllowEnterTransitionOverlap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentAllowEnterTransitionOverlap");
+			"fragmentAllowEnterTransitionOverlap"
+		);
 	}
 	jint R_attr::fragmentAllowReturnTransitionOverlap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentAllowReturnTransitionOverlap");
+			"fragmentAllowReturnTransitionOverlap"
+		);
 	}
 	jint R_attr::fragmentCloseEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentCloseEnterAnimation");
+			"fragmentCloseEnterAnimation"
+		);
 	}
 	jint R_attr::fragmentCloseExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentCloseExitAnimation");
+			"fragmentCloseExitAnimation"
+		);
 	}
 	jint R_attr::fragmentEnterTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentEnterTransition");
+			"fragmentEnterTransition"
+		);
 	}
 	jint R_attr::fragmentExitTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentExitTransition");
+			"fragmentExitTransition"
+		);
 	}
 	jint R_attr::fragmentFadeEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentFadeEnterAnimation");
+			"fragmentFadeEnterAnimation"
+		);
 	}
 	jint R_attr::fragmentFadeExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentFadeExitAnimation");
+			"fragmentFadeExitAnimation"
+		);
 	}
 	jint R_attr::fragmentOpenEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentOpenEnterAnimation");
+			"fragmentOpenEnterAnimation"
+		);
 	}
 	jint R_attr::fragmentOpenExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentOpenExitAnimation");
+			"fragmentOpenExitAnimation"
+		);
 	}
 	jint R_attr::fragmentReenterTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentReenterTransition");
+			"fragmentReenterTransition"
+		);
 	}
 	jint R_attr::fragmentReturnTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentReturnTransition");
+			"fragmentReturnTransition"
+		);
 	}
 	jint R_attr::fragmentSharedElementEnterTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentSharedElementEnterTransition");
+			"fragmentSharedElementEnterTransition"
+		);
 	}
 	jint R_attr::fragmentSharedElementReturnTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fragmentSharedElementReturnTransition");
+			"fragmentSharedElementReturnTransition"
+		);
 	}
 	jint R_attr::freezesText()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"freezesText");
+			"freezesText"
+		);
 	}
 	jint R_attr::fromAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fromAlpha");
+			"fromAlpha"
+		);
 	}
 	jint R_attr::fromDegrees()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fromDegrees");
+			"fromDegrees"
+		);
 	}
 	jint R_attr::fromId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fromId");
+			"fromId"
+		);
 	}
 	jint R_attr::fromScene()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fromScene");
+			"fromScene"
+		);
 	}
 	jint R_attr::fromXDelta()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fromXDelta");
+			"fromXDelta"
+		);
 	}
 	jint R_attr::fromXScale()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fromXScale");
+			"fromXScale"
+		);
 	}
 	jint R_attr::fromYDelta()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fromYDelta");
+			"fromYDelta"
+		);
 	}
 	jint R_attr::fromYScale()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fromYScale");
+			"fromYScale"
+		);
 	}
 	jint R_attr::fullBackupContent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fullBackupContent");
+			"fullBackupContent"
+		);
 	}
 	jint R_attr::fullBackupOnly()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fullBackupOnly");
+			"fullBackupOnly"
+		);
 	}
 	jint R_attr::fullBright()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fullBright");
+			"fullBright"
+		);
 	}
 	jint R_attr::fullDark()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"fullDark");
+			"fullDark"
+		);
 	}
 	jint R_attr::functionalTest()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"functionalTest");
+			"functionalTest"
+		);
 	}
 	jint R_attr::galleryItemBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"galleryItemBackground");
+			"galleryItemBackground"
+		);
 	}
 	jint R_attr::galleryStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"galleryStyle");
+			"galleryStyle"
+		);
 	}
 	jint R_attr::gestureColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"gestureColor");
+			"gestureColor"
+		);
 	}
 	jint R_attr::gestureStrokeAngleThreshold()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"gestureStrokeAngleThreshold");
+			"gestureStrokeAngleThreshold"
+		);
 	}
 	jint R_attr::gestureStrokeLengthThreshold()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"gestureStrokeLengthThreshold");
+			"gestureStrokeLengthThreshold"
+		);
 	}
 	jint R_attr::gestureStrokeSquarenessThreshold()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"gestureStrokeSquarenessThreshold");
+			"gestureStrokeSquarenessThreshold"
+		);
 	}
 	jint R_attr::gestureStrokeType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"gestureStrokeType");
+			"gestureStrokeType"
+		);
 	}
 	jint R_attr::gestureStrokeWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"gestureStrokeWidth");
+			"gestureStrokeWidth"
+		);
 	}
 	jint R_attr::glEsVersion()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"glEsVersion");
+			"glEsVersion"
+		);
 	}
 	jint R_attr::goIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"goIcon");
+			"goIcon"
+		);
 	}
 	jint R_attr::gradientRadius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"gradientRadius");
+			"gradientRadius"
+		);
 	}
 	jint R_attr::grantUriPermissions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"grantUriPermissions");
+			"grantUriPermissions"
+		);
 	}
 	jint R_attr::gravity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"gravity");
+			"gravity"
+		);
 	}
 	jint R_attr::gridViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"gridViewStyle");
+			"gridViewStyle"
+		);
 	}
 	jint R_attr::groupIndicator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"groupIndicator");
+			"groupIndicator"
+		);
 	}
 	jint R_attr::hand_hour()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hand_hour");
+			"hand_hour"
+		);
 	}
 	jint R_attr::hand_minute()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hand_minute");
+			"hand_minute"
+		);
 	}
 	jint R_attr::handle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"handle");
+			"handle"
+		);
 	}
 	jint R_attr::handleProfiling()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"handleProfiling");
+			"handleProfiling"
+		);
 	}
 	jint R_attr::hapticFeedbackEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hapticFeedbackEnabled");
+			"hapticFeedbackEnabled"
+		);
 	}
 	jint R_attr::hardwareAccelerated()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hardwareAccelerated");
+			"hardwareAccelerated"
+		);
 	}
 	jint R_attr::hasCode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hasCode");
+			"hasCode"
+		);
 	}
 	jint R_attr::hasFragileUserData()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hasFragileUserData");
+			"hasFragileUserData"
+		);
 	}
 	jint R_attr::headerAmPmTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"headerAmPmTextAppearance");
+			"headerAmPmTextAppearance"
+		);
 	}
 	jint R_attr::headerBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"headerBackground");
+			"headerBackground"
+		);
 	}
 	jint R_attr::headerDayOfMonthTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"headerDayOfMonthTextAppearance");
+			"headerDayOfMonthTextAppearance"
+		);
 	}
 	jint R_attr::headerDividersEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"headerDividersEnabled");
+			"headerDividersEnabled"
+		);
 	}
 	jint R_attr::headerMonthTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"headerMonthTextAppearance");
+			"headerMonthTextAppearance"
+		);
 	}
 	jint R_attr::headerTimeTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"headerTimeTextAppearance");
+			"headerTimeTextAppearance"
+		);
 	}
 	jint R_attr::headerYearTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"headerYearTextAppearance");
+			"headerYearTextAppearance"
+		);
 	}
 	jint R_attr::height()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"height");
+			"height"
+		);
 	}
 	jint R_attr::hideOnContentScroll()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hideOnContentScroll");
+			"hideOnContentScroll"
+		);
 	}
 	jint R_attr::hint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hint");
+			"hint"
+		);
 	}
 	jint R_attr::homeAsUpIndicator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"homeAsUpIndicator");
+			"homeAsUpIndicator"
+		);
 	}
 	jint R_attr::homeLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"homeLayout");
+			"homeLayout"
+		);
 	}
 	jint R_attr::horizontalDivider()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"horizontalDivider");
+			"horizontalDivider"
+		);
 	}
 	jint R_attr::horizontalGap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"horizontalGap");
+			"horizontalGap"
+		);
 	}
 	jint R_attr::horizontalScrollViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"horizontalScrollViewStyle");
+			"horizontalScrollViewStyle"
+		);
 	}
 	jint R_attr::horizontalSpacing()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"horizontalSpacing");
+			"horizontalSpacing"
+		);
 	}
 	jint R_attr::host()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"host");
+			"host"
+		);
 	}
 	jint R_attr::hotSpotX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hotSpotX");
+			"hotSpotX"
+		);
 	}
 	jint R_attr::hotSpotY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hotSpotY");
+			"hotSpotY"
+		);
 	}
 	jint R_attr::hyphenationFrequency()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"hyphenationFrequency");
+			"hyphenationFrequency"
+		);
 	}
 	jint R_attr::icon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"icon");
+			"icon"
+		);
 	}
 	jint R_attr::iconPreview()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"iconPreview");
+			"iconPreview"
+		);
 	}
 	jint R_attr::iconSpaceReserved()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"iconSpaceReserved");
+			"iconSpaceReserved"
+		);
 	}
 	jint R_attr::iconTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"iconTint");
+			"iconTint"
+		);
 	}
 	jint R_attr::iconTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"iconTintMode");
+			"iconTintMode"
+		);
 	}
 	jint R_attr::iconifiedByDefault()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"iconifiedByDefault");
+			"iconifiedByDefault"
+		);
 	}
 	jint R_attr::id()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"id");
+			"id"
+		);
 	}
 	jint R_attr::identifier()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"identifier");
+			"identifier"
+		);
 	}
 	jint R_attr::ignoreGravity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ignoreGravity");
+			"ignoreGravity"
+		);
 	}
 	jint R_attr::imageButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imageButtonStyle");
+			"imageButtonStyle"
+		);
 	}
 	jint R_attr::imageWellStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imageWellStyle");
+			"imageWellStyle"
+		);
 	}
 	jint R_attr::imeActionId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imeActionId");
+			"imeActionId"
+		);
 	}
 	jint R_attr::imeActionLabel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imeActionLabel");
+			"imeActionLabel"
+		);
 	}
 	jint R_attr::imeExtractEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imeExtractEnterAnimation");
+			"imeExtractEnterAnimation"
+		);
 	}
 	jint R_attr::imeExtractExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imeExtractExitAnimation");
+			"imeExtractExitAnimation"
+		);
 	}
 	jint R_attr::imeFullscreenBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imeFullscreenBackground");
+			"imeFullscreenBackground"
+		);
 	}
 	jint R_attr::imeOptions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imeOptions");
+			"imeOptions"
+		);
 	}
 	jint R_attr::imeSubtypeExtraValue()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imeSubtypeExtraValue");
+			"imeSubtypeExtraValue"
+		);
 	}
 	jint R_attr::imeSubtypeLocale()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imeSubtypeLocale");
+			"imeSubtypeLocale"
+		);
 	}
 	jint R_attr::imeSubtypeMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"imeSubtypeMode");
+			"imeSubtypeMode"
+		);
 	}
 	jint R_attr::immersive()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"immersive");
+			"immersive"
+		);
 	}
 	jint R_attr::importantForAccessibility()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"importantForAccessibility");
+			"importantForAccessibility"
+		);
 	}
 	jint R_attr::importantForAutofill()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"importantForAutofill");
+			"importantForAutofill"
+		);
 	}
 	jint R_attr::inAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"inAnimation");
+			"inAnimation"
+		);
 	}
 	jint R_attr::includeFontPadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"includeFontPadding");
+			"includeFontPadding"
+		);
 	}
 	jint R_attr::includeInGlobalSearch()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"includeInGlobalSearch");
+			"includeInGlobalSearch"
+		);
 	}
 	jint R_attr::indeterminate()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indeterminate");
+			"indeterminate"
+		);
 	}
 	jint R_attr::indeterminateBehavior()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indeterminateBehavior");
+			"indeterminateBehavior"
+		);
 	}
 	jint R_attr::indeterminateDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indeterminateDrawable");
+			"indeterminateDrawable"
+		);
 	}
 	jint R_attr::indeterminateDuration()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indeterminateDuration");
+			"indeterminateDuration"
+		);
 	}
 	jint R_attr::indeterminateOnly()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indeterminateOnly");
+			"indeterminateOnly"
+		);
 	}
 	jint R_attr::indeterminateProgressStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indeterminateProgressStyle");
+			"indeterminateProgressStyle"
+		);
 	}
 	jint R_attr::indeterminateTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indeterminateTint");
+			"indeterminateTint"
+		);
 	}
 	jint R_attr::indeterminateTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indeterminateTintMode");
+			"indeterminateTintMode"
+		);
 	}
 	jint R_attr::indicatorEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indicatorEnd");
+			"indicatorEnd"
+		);
 	}
 	jint R_attr::indicatorLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indicatorLeft");
+			"indicatorLeft"
+		);
 	}
 	jint R_attr::indicatorRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indicatorRight");
+			"indicatorRight"
+		);
 	}
 	jint R_attr::indicatorStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"indicatorStart");
+			"indicatorStart"
+		);
 	}
 	jint R_attr::inflatedId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"inflatedId");
+			"inflatedId"
+		);
 	}
 	jint R_attr::inheritShowWhenLocked()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"inheritShowWhenLocked");
+			"inheritShowWhenLocked"
+		);
 	}
 	jint R_attr::initOrder()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"initOrder");
+			"initOrder"
+		);
 	}
 	jint R_attr::initialKeyguardLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"initialKeyguardLayout");
+			"initialKeyguardLayout"
+		);
 	}
 	jint R_attr::initialLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"initialLayout");
+			"initialLayout"
+		);
 	}
 	jint R_attr::innerRadius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"innerRadius");
+			"innerRadius"
+		);
 	}
 	jint R_attr::innerRadiusRatio()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"innerRadiusRatio");
+			"innerRadiusRatio"
+		);
 	}
 	jint R_attr::inputMethod()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"inputMethod");
+			"inputMethod"
+		);
 	}
 	jint R_attr::inputType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"inputType");
+			"inputType"
+		);
 	}
 	jint R_attr::inset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"inset");
+			"inset"
+		);
 	}
 	jint R_attr::insetBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"insetBottom");
+			"insetBottom"
+		);
 	}
 	jint R_attr::insetLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"insetLeft");
+			"insetLeft"
+		);
 	}
 	jint R_attr::insetRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"insetRight");
+			"insetRight"
+		);
 	}
 	jint R_attr::insetTop()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"insetTop");
+			"insetTop"
+		);
 	}
 	jint R_attr::installLocation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"installLocation");
+			"installLocation"
+		);
 	}
 	jint R_attr::interactiveUiTimeout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"interactiveUiTimeout");
+			"interactiveUiTimeout"
+		);
 	}
 	jint R_attr::interpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"interpolator");
+			"interpolator"
+		);
 	}
 	jint R_attr::isAlwaysSyncable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isAlwaysSyncable");
+			"isAlwaysSyncable"
+		);
 	}
 	jint R_attr::isAsciiCapable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isAsciiCapable");
+			"isAsciiCapable"
+		);
 	}
 	jint R_attr::isAuxiliary()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isAuxiliary");
+			"isAuxiliary"
+		);
 	}
 	jint R_attr::isDefault()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isDefault");
+			"isDefault"
+		);
 	}
 	jint R_attr::isFeatureSplit()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isFeatureSplit");
+			"isFeatureSplit"
+		);
 	}
 	jint R_attr::isGame()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isGame");
+			"isGame"
+		);
 	}
 	jint R_attr::isIndicator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isIndicator");
+			"isIndicator"
+		);
 	}
 	jint R_attr::isLightTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isLightTheme");
+			"isLightTheme"
+		);
 	}
 	jint R_attr::isModifier()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isModifier");
+			"isModifier"
+		);
 	}
 	jint R_attr::isRepeatable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isRepeatable");
+			"isRepeatable"
+		);
 	}
 	jint R_attr::isScrollContainer()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isScrollContainer");
+			"isScrollContainer"
+		);
 	}
 	jint R_attr::isSplitRequired()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isSplitRequired");
+			"isSplitRequired"
+		);
 	}
 	jint R_attr::isStatic()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isStatic");
+			"isStatic"
+		);
 	}
 	jint R_attr::isSticky()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isSticky");
+			"isSticky"
+		);
 	}
 	jint R_attr::isolatedProcess()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isolatedProcess");
+			"isolatedProcess"
+		);
 	}
 	jint R_attr::isolatedSplits()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"isolatedSplits");
+			"isolatedSplits"
+		);
 	}
 	jint R_attr::itemBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"itemBackground");
+			"itemBackground"
+		);
 	}
 	jint R_attr::itemIconDisabledAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"itemIconDisabledAlpha");
+			"itemIconDisabledAlpha"
+		);
 	}
 	jint R_attr::itemPadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"itemPadding");
+			"itemPadding"
+		);
 	}
 	jint R_attr::itemTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"itemTextAppearance");
+			"itemTextAppearance"
+		);
 	}
 	jint R_attr::justificationMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"justificationMode");
+			"justificationMode"
+		);
 	}
 	jint R_attr::keepScreenOn()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keepScreenOn");
+			"keepScreenOn"
+		);
 	}
 	jint R_attr::key()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"key");
+			"key"
+		);
 	}
 	jint R_attr::keyBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyBackground");
+			"keyBackground"
+		);
 	}
 	jint R_attr::keyEdgeFlags()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyEdgeFlags");
+			"keyEdgeFlags"
+		);
 	}
 	jint R_attr::keyHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyHeight");
+			"keyHeight"
+		);
 	}
 	jint R_attr::keyIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyIcon");
+			"keyIcon"
+		);
 	}
 	jint R_attr::keyLabel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyLabel");
+			"keyLabel"
+		);
 	}
 	jint R_attr::keyOutputText()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyOutputText");
+			"keyOutputText"
+		);
 	}
 	jint R_attr::keyPreviewHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyPreviewHeight");
+			"keyPreviewHeight"
+		);
 	}
 	jint R_attr::keyPreviewLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyPreviewLayout");
+			"keyPreviewLayout"
+		);
 	}
 	jint R_attr::keyPreviewOffset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyPreviewOffset");
+			"keyPreviewOffset"
+		);
 	}
 	jint R_attr::keySet()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keySet");
+			"keySet"
+		);
 	}
 	jint R_attr::keyTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyTextColor");
+			"keyTextColor"
+		);
 	}
 	jint R_attr::keyTextSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyTextSize");
+			"keyTextSize"
+		);
 	}
 	jint R_attr::keyWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyWidth");
+			"keyWidth"
+		);
 	}
 	jint R_attr::keyboardLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyboardLayout");
+			"keyboardLayout"
+		);
 	}
 	jint R_attr::keyboardMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyboardMode");
+			"keyboardMode"
+		);
 	}
 	jint R_attr::keyboardNavigationCluster()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keyboardNavigationCluster");
+			"keyboardNavigationCluster"
+		);
 	}
 	jint R_attr::keycode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"keycode");
+			"keycode"
+		);
 	}
 	jint R_attr::killAfterRestore()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"killAfterRestore");
+			"killAfterRestore"
+		);
 	}
 	jint R_attr::label()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"label");
+			"label"
+		);
 	}
 	jint R_attr::labelFor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"labelFor");
+			"labelFor"
+		);
 	}
 	jint R_attr::labelTextSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"labelTextSize");
+			"labelTextSize"
+		);
 	}
 	jint R_attr::languageTag()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"languageTag");
+			"languageTag"
+		);
 	}
 	jint R_attr::largeHeap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"largeHeap");
+			"largeHeap"
+		);
 	}
 	jint R_attr::largeScreens()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"largeScreens");
+			"largeScreens"
+		);
 	}
 	jint R_attr::largestWidthLimitDp()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"largestWidthLimitDp");
+			"largestWidthLimitDp"
+		);
 	}
 	jint R_attr::lastBaselineToBottomHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"lastBaselineToBottomHeight");
+			"lastBaselineToBottomHeight"
+		);
 	}
 	jint R_attr::launchMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"launchMode");
+			"launchMode"
+		);
 	}
 	jint R_attr::launchTaskBehindSourceAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"launchTaskBehindSourceAnimation");
+			"launchTaskBehindSourceAnimation"
+		);
 	}
 	jint R_attr::launchTaskBehindTargetAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"launchTaskBehindTargetAnimation");
+			"launchTaskBehindTargetAnimation"
+		);
 	}
 	jint R_attr::layerType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layerType");
+			"layerType"
+		);
 	}
 	jint R_attr::layout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout");
+			"layout"
+		);
 	}
 	jint R_attr::layoutAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layoutAnimation");
+			"layoutAnimation"
+		);
 	}
 	jint R_attr::layoutDirection()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layoutDirection");
+			"layoutDirection"
+		);
 	}
 	jint R_attr::layoutMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layoutMode");
+			"layoutMode"
+		);
 	}
 	jint R_attr::layout_above()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_above");
+			"layout_above"
+		);
 	}
 	jint R_attr::layout_alignBaseline()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignBaseline");
+			"layout_alignBaseline"
+		);
 	}
 	jint R_attr::layout_alignBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignBottom");
+			"layout_alignBottom"
+		);
 	}
 	jint R_attr::layout_alignEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignEnd");
+			"layout_alignEnd"
+		);
 	}
 	jint R_attr::layout_alignLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignLeft");
+			"layout_alignLeft"
+		);
 	}
 	jint R_attr::layout_alignParentBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignParentBottom");
+			"layout_alignParentBottom"
+		);
 	}
 	jint R_attr::layout_alignParentEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignParentEnd");
+			"layout_alignParentEnd"
+		);
 	}
 	jint R_attr::layout_alignParentLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignParentLeft");
+			"layout_alignParentLeft"
+		);
 	}
 	jint R_attr::layout_alignParentRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignParentRight");
+			"layout_alignParentRight"
+		);
 	}
 	jint R_attr::layout_alignParentStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignParentStart");
+			"layout_alignParentStart"
+		);
 	}
 	jint R_attr::layout_alignParentTop()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignParentTop");
+			"layout_alignParentTop"
+		);
 	}
 	jint R_attr::layout_alignRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignRight");
+			"layout_alignRight"
+		);
 	}
 	jint R_attr::layout_alignStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignStart");
+			"layout_alignStart"
+		);
 	}
 	jint R_attr::layout_alignTop()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignTop");
+			"layout_alignTop"
+		);
 	}
 	jint R_attr::layout_alignWithParentIfMissing()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_alignWithParentIfMissing");
+			"layout_alignWithParentIfMissing"
+		);
 	}
 	jint R_attr::layout_below()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_below");
+			"layout_below"
+		);
 	}
 	jint R_attr::layout_centerHorizontal()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_centerHorizontal");
+			"layout_centerHorizontal"
+		);
 	}
 	jint R_attr::layout_centerInParent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_centerInParent");
+			"layout_centerInParent"
+		);
 	}
 	jint R_attr::layout_centerVertical()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_centerVertical");
+			"layout_centerVertical"
+		);
 	}
 	jint R_attr::layout_column()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_column");
+			"layout_column"
+		);
 	}
 	jint R_attr::layout_columnSpan()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_columnSpan");
+			"layout_columnSpan"
+		);
 	}
 	jint R_attr::layout_columnWeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_columnWeight");
+			"layout_columnWeight"
+		);
 	}
 	jint R_attr::layout_gravity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_gravity");
+			"layout_gravity"
+		);
 	}
 	jint R_attr::layout_height()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_height");
+			"layout_height"
+		);
 	}
 	jint R_attr::layout_margin()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_margin");
+			"layout_margin"
+		);
 	}
 	jint R_attr::layout_marginBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_marginBottom");
+			"layout_marginBottom"
+		);
 	}
 	jint R_attr::layout_marginEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_marginEnd");
+			"layout_marginEnd"
+		);
 	}
 	jint R_attr::layout_marginHorizontal()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_marginHorizontal");
+			"layout_marginHorizontal"
+		);
 	}
 	jint R_attr::layout_marginLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_marginLeft");
+			"layout_marginLeft"
+		);
 	}
 	jint R_attr::layout_marginRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_marginRight");
+			"layout_marginRight"
+		);
 	}
 	jint R_attr::layout_marginStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_marginStart");
+			"layout_marginStart"
+		);
 	}
 	jint R_attr::layout_marginTop()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_marginTop");
+			"layout_marginTop"
+		);
 	}
 	jint R_attr::layout_marginVertical()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_marginVertical");
+			"layout_marginVertical"
+		);
 	}
 	jint R_attr::layout_row()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_row");
+			"layout_row"
+		);
 	}
 	jint R_attr::layout_rowSpan()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_rowSpan");
+			"layout_rowSpan"
+		);
 	}
 	jint R_attr::layout_rowWeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_rowWeight");
+			"layout_rowWeight"
+		);
 	}
 	jint R_attr::layout_scale()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_scale");
+			"layout_scale"
+		);
 	}
 	jint R_attr::layout_span()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_span");
+			"layout_span"
+		);
 	}
 	jint R_attr::layout_toEndOf()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_toEndOf");
+			"layout_toEndOf"
+		);
 	}
 	jint R_attr::layout_toLeftOf()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_toLeftOf");
+			"layout_toLeftOf"
+		);
 	}
 	jint R_attr::layout_toRightOf()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_toRightOf");
+			"layout_toRightOf"
+		);
 	}
 	jint R_attr::layout_toStartOf()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_toStartOf");
+			"layout_toStartOf"
+		);
 	}
 	jint R_attr::layout_weight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_weight");
+			"layout_weight"
+		);
 	}
 	jint R_attr::layout_width()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_width");
+			"layout_width"
+		);
 	}
 	jint R_attr::layout_x()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_x");
+			"layout_x"
+		);
 	}
 	jint R_attr::layout_y()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"layout_y");
+			"layout_y"
+		);
 	}
 	jint R_attr::left()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"left");
+			"left"
+		);
 	}
 	jint R_attr::letterSpacing()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"letterSpacing");
+			"letterSpacing"
+		);
 	}
 	jint R_attr::level()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"level");
+			"level"
+		);
 	}
 	jint R_attr::lineHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"lineHeight");
+			"lineHeight"
+		);
 	}
 	jint R_attr::lineSpacingExtra()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"lineSpacingExtra");
+			"lineSpacingExtra"
+		);
 	}
 	jint R_attr::lineSpacingMultiplier()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"lineSpacingMultiplier");
+			"lineSpacingMultiplier"
+		);
 	}
 	jint R_attr::lines()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"lines");
+			"lines"
+		);
 	}
 	jint R_attr::linksClickable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"linksClickable");
+			"linksClickable"
+		);
 	}
 	jint R_attr::listChoiceBackgroundIndicator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listChoiceBackgroundIndicator");
+			"listChoiceBackgroundIndicator"
+		);
 	}
 	jint R_attr::listChoiceIndicatorMultiple()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listChoiceIndicatorMultiple");
+			"listChoiceIndicatorMultiple"
+		);
 	}
 	jint R_attr::listChoiceIndicatorSingle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listChoiceIndicatorSingle");
+			"listChoiceIndicatorSingle"
+		);
 	}
 	jint R_attr::listDivider()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listDivider");
+			"listDivider"
+		);
 	}
 	jint R_attr::listDividerAlertDialog()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listDividerAlertDialog");
+			"listDividerAlertDialog"
+		);
 	}
 	jint R_attr::listMenuViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listMenuViewStyle");
+			"listMenuViewStyle"
+		);
 	}
 	jint R_attr::listPopupWindowStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listPopupWindowStyle");
+			"listPopupWindowStyle"
+		);
 	}
 	jint R_attr::listPreferredItemHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listPreferredItemHeight");
+			"listPreferredItemHeight"
+		);
 	}
 	jint R_attr::listPreferredItemHeightLarge()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listPreferredItemHeightLarge");
+			"listPreferredItemHeightLarge"
+		);
 	}
 	jint R_attr::listPreferredItemHeightSmall()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listPreferredItemHeightSmall");
+			"listPreferredItemHeightSmall"
+		);
 	}
 	jint R_attr::listPreferredItemPaddingEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listPreferredItemPaddingEnd");
+			"listPreferredItemPaddingEnd"
+		);
 	}
 	jint R_attr::listPreferredItemPaddingLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listPreferredItemPaddingLeft");
+			"listPreferredItemPaddingLeft"
+		);
 	}
 	jint R_attr::listPreferredItemPaddingRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listPreferredItemPaddingRight");
+			"listPreferredItemPaddingRight"
+		);
 	}
 	jint R_attr::listPreferredItemPaddingStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listPreferredItemPaddingStart");
+			"listPreferredItemPaddingStart"
+		);
 	}
 	jint R_attr::listSelector()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listSelector");
+			"listSelector"
+		);
 	}
 	jint R_attr::listSeparatorTextViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listSeparatorTextViewStyle");
+			"listSeparatorTextViewStyle"
+		);
 	}
 	jint R_attr::listViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listViewStyle");
+			"listViewStyle"
+		);
 	}
 	jint R_attr::listViewWhiteStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"listViewWhiteStyle");
+			"listViewWhiteStyle"
+		);
 	}
 	jint R_attr::lockTaskMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"lockTaskMode");
+			"lockTaskMode"
+		);
 	}
 	jint R_attr::logo()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"logo");
+			"logo"
+		);
 	}
 	jint R_attr::logoDescription()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"logoDescription");
+			"logoDescription"
+		);
 	}
 	jint R_attr::longClickable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"longClickable");
+			"longClickable"
+		);
 	}
 	jint R_attr::loopViews()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"loopViews");
+			"loopViews"
+		);
 	}
 	jint R_attr::manageSpaceActivity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"manageSpaceActivity");
+			"manageSpaceActivity"
+		);
 	}
 	jint R_attr::mapViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"mapViewStyle");
+			"mapViewStyle"
+		);
 	}
 	jint R_attr::marqueeRepeatLimit()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"marqueeRepeatLimit");
+			"marqueeRepeatLimit"
+		);
 	}
 	jint R_attr::matchOrder()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"matchOrder");
+			"matchOrder"
+		);
 	}
 	jint R_attr::max()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"max");
+			"max"
+		);
 	}
 	jint R_attr::maxAspectRatio()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxAspectRatio");
+			"maxAspectRatio"
+		);
 	}
 	jint R_attr::maxButtonHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxButtonHeight");
+			"maxButtonHeight"
+		);
 	}
 	jint R_attr::maxDate()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxDate");
+			"maxDate"
+		);
 	}
 	jint R_attr::maxEms()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxEms");
+			"maxEms"
+		);
 	}
 	jint R_attr::maxHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxHeight");
+			"maxHeight"
+		);
 	}
 	jint R_attr::maxItemsPerRow()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxItemsPerRow");
+			"maxItemsPerRow"
+		);
 	}
 	jint R_attr::maxLength()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxLength");
+			"maxLength"
+		);
 	}
 	jint R_attr::maxLevel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxLevel");
+			"maxLevel"
+		);
 	}
 	jint R_attr::maxLines()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxLines");
+			"maxLines"
+		);
 	}
 	jint R_attr::maxLongVersionCode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxLongVersionCode");
+			"maxLongVersionCode"
+		);
 	}
 	jint R_attr::maxRecents()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxRecents");
+			"maxRecents"
+		);
 	}
 	jint R_attr::maxRows()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxRows");
+			"maxRows"
+		);
 	}
 	jint R_attr::maxSdkVersion()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxSdkVersion");
+			"maxSdkVersion"
+		);
 	}
 	jint R_attr::maxWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maxWidth");
+			"maxWidth"
+		);
 	}
 	jint R_attr::maximumAngle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"maximumAngle");
+			"maximumAngle"
+		);
 	}
 	jint R_attr::measureAllChildren()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"measureAllChildren");
+			"measureAllChildren"
+		);
 	}
 	jint R_attr::measureWithLargestChild()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"measureWithLargestChild");
+			"measureWithLargestChild"
+		);
 	}
 	jint R_attr::mediaRouteButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"mediaRouteButtonStyle");
+			"mediaRouteButtonStyle"
+		);
 	}
 	jint R_attr::mediaRouteTypes()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"mediaRouteTypes");
+			"mediaRouteTypes"
+		);
 	}
 	jint R_attr::menuCategory()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"menuCategory");
+			"menuCategory"
+		);
 	}
 	jint R_attr::mimeType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"mimeType");
+			"mimeType"
+		);
 	}
 	jint R_attr::min()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"min");
+			"min"
+		);
 	}
 	jint R_attr::minAspectRatio()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minAspectRatio");
+			"minAspectRatio"
+		);
 	}
 	jint R_attr::minDate()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minDate");
+			"minDate"
+		);
 	}
 	jint R_attr::minEms()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minEms");
+			"minEms"
+		);
 	}
 	jint R_attr::minHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minHeight");
+			"minHeight"
+		);
 	}
 	jint R_attr::minLevel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minLevel");
+			"minLevel"
+		);
 	}
 	jint R_attr::minLines()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minLines");
+			"minLines"
+		);
 	}
 	jint R_attr::minResizeHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minResizeHeight");
+			"minResizeHeight"
+		);
 	}
 	jint R_attr::minResizeWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minResizeWidth");
+			"minResizeWidth"
+		);
 	}
 	jint R_attr::minSdkVersion()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minSdkVersion");
+			"minSdkVersion"
+		);
 	}
 	jint R_attr::minWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minWidth");
+			"minWidth"
+		);
 	}
 	jint R_attr::minimumHorizontalAngle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minimumHorizontalAngle");
+			"minimumHorizontalAngle"
+		);
 	}
 	jint R_attr::minimumVerticalAngle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"minimumVerticalAngle");
+			"minimumVerticalAngle"
+		);
 	}
 	jint R_attr::mipMap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"mipMap");
+			"mipMap"
+		);
 	}
 	jint R_attr::mirrorForRtl()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"mirrorForRtl");
+			"mirrorForRtl"
+		);
 	}
 	jint R_attr::mode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"mode");
+			"mode"
+		);
 	}
 	jint R_attr::moreIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"moreIcon");
+			"moreIcon"
+		);
 	}
 	jint R_attr::multiArch()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"multiArch");
+			"multiArch"
+		);
 	}
 	jint R_attr::multiprocess()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"multiprocess");
+			"multiprocess"
+		);
 	}
 	jint R_attr::name()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"name");
+			"name"
+		);
 	}
 	jint R_attr::navigationBarColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"navigationBarColor");
+			"navigationBarColor"
+		);
 	}
 	jint R_attr::navigationBarDividerColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"navigationBarDividerColor");
+			"navigationBarDividerColor"
+		);
 	}
 	jint R_attr::navigationContentDescription()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"navigationContentDescription");
+			"navigationContentDescription"
+		);
 	}
 	jint R_attr::navigationIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"navigationIcon");
+			"navigationIcon"
+		);
 	}
 	jint R_attr::navigationMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"navigationMode");
+			"navigationMode"
+		);
 	}
 	jint R_attr::negativeButtonText()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"negativeButtonText");
+			"negativeButtonText"
+		);
 	}
 	jint R_attr::nestedScrollingEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"nestedScrollingEnabled");
+			"nestedScrollingEnabled"
+		);
 	}
 	jint R_attr::networkSecurityConfig()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"networkSecurityConfig");
+			"networkSecurityConfig"
+		);
 	}
 	jint R_attr::nextClusterForward()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"nextClusterForward");
+			"nextClusterForward"
+		);
 	}
 	jint R_attr::nextFocusDown()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"nextFocusDown");
+			"nextFocusDown"
+		);
 	}
 	jint R_attr::nextFocusForward()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"nextFocusForward");
+			"nextFocusForward"
+		);
 	}
 	jint R_attr::nextFocusLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"nextFocusLeft");
+			"nextFocusLeft"
+		);
 	}
 	jint R_attr::nextFocusRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"nextFocusRight");
+			"nextFocusRight"
+		);
 	}
 	jint R_attr::nextFocusUp()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"nextFocusUp");
+			"nextFocusUp"
+		);
 	}
 	jint R_attr::noHistory()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"noHistory");
+			"noHistory"
+		);
 	}
 	jint R_attr::nonInteractiveUiTimeout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"nonInteractiveUiTimeout");
+			"nonInteractiveUiTimeout"
+		);
 	}
 	jint R_attr::normalScreens()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"normalScreens");
+			"normalScreens"
+		);
 	}
 	jint R_attr::notificationTimeout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"notificationTimeout");
+			"notificationTimeout"
+		);
 	}
 	jint R_attr::numColumns()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numColumns");
+			"numColumns"
+		);
 	}
 	jint R_attr::numStars()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numStars");
+			"numStars"
+		);
 	}
 	jint R_attr::numberPickerStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numberPickerStyle");
+			"numberPickerStyle"
+		);
 	}
 	jint R_attr::numbersBackgroundColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numbersBackgroundColor");
+			"numbersBackgroundColor"
+		);
 	}
 	jint R_attr::numbersInnerTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numbersInnerTextColor");
+			"numbersInnerTextColor"
+		);
 	}
 	jint R_attr::numbersSelectorColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numbersSelectorColor");
+			"numbersSelectorColor"
+		);
 	}
 	jint R_attr::numbersTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numbersTextColor");
+			"numbersTextColor"
+		);
 	}
 	jint R_attr::numeric()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numeric");
+			"numeric"
+		);
 	}
 	jint R_attr::numericModifiers()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numericModifiers");
+			"numericModifiers"
+		);
 	}
 	jint R_attr::numericShortcut()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"numericShortcut");
+			"numericShortcut"
+		);
 	}
 	jint R_attr::offset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"offset");
+			"offset"
+		);
 	}
 	jint R_attr::onClick()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"onClick");
+			"onClick"
+		);
 	}
 	jint R_attr::oneshot()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"oneshot");
+			"oneshot"
+		);
 	}
 	jint R_attr::opacity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"opacity");
+			"opacity"
+		);
 	}
 	jint R_attr::opticalInsetBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"opticalInsetBottom");
+			"opticalInsetBottom"
+		);
 	}
 	jint R_attr::opticalInsetLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"opticalInsetLeft");
+			"opticalInsetLeft"
+		);
 	}
 	jint R_attr::opticalInsetRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"opticalInsetRight");
+			"opticalInsetRight"
+		);
 	}
 	jint R_attr::opticalInsetTop()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"opticalInsetTop");
+			"opticalInsetTop"
+		);
 	}
 	jint R_attr::order()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"order");
+			"order"
+		);
 	}
 	jint R_attr::orderInCategory()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"orderInCategory");
+			"orderInCategory"
+		);
 	}
 	jint R_attr::ordering()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ordering");
+			"ordering"
+		);
 	}
 	jint R_attr::orderingFromXml()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"orderingFromXml");
+			"orderingFromXml"
+		);
 	}
 	jint R_attr::orientation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"orientation");
+			"orientation"
+		);
 	}
 	jint R_attr::outAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"outAnimation");
+			"outAnimation"
+		);
 	}
 	jint R_attr::outlineAmbientShadowColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"outlineAmbientShadowColor");
+			"outlineAmbientShadowColor"
+		);
 	}
 	jint R_attr::outlineProvider()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"outlineProvider");
+			"outlineProvider"
+		);
 	}
 	jint R_attr::outlineSpotShadowColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"outlineSpotShadowColor");
+			"outlineSpotShadowColor"
+		);
 	}
 	jint R_attr::overScrollFooter()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"overScrollFooter");
+			"overScrollFooter"
+		);
 	}
 	jint R_attr::overScrollHeader()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"overScrollHeader");
+			"overScrollHeader"
+		);
 	}
 	jint R_attr::overScrollMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"overScrollMode");
+			"overScrollMode"
+		);
 	}
 	jint R_attr::overlapAnchor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"overlapAnchor");
+			"overlapAnchor"
+		);
 	}
 	jint R_attr::overridesImplicitlyEnabledSubtype()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"overridesImplicitlyEnabledSubtype");
+			"overridesImplicitlyEnabledSubtype"
+		);
 	}
 	jint R_attr::packageNames()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"packageNames");
+			"packageNames"
+		);
 	}
 	jint R_attr::packageType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"packageType");
+			"packageType"
+		);
 	}
 	jint R_attr::padding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"padding");
+			"padding"
+		);
 	}
 	jint R_attr::paddingBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"paddingBottom");
+			"paddingBottom"
+		);
 	}
 	jint R_attr::paddingEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"paddingEnd");
+			"paddingEnd"
+		);
 	}
 	jint R_attr::paddingHorizontal()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"paddingHorizontal");
+			"paddingHorizontal"
+		);
 	}
 	jint R_attr::paddingLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"paddingLeft");
+			"paddingLeft"
+		);
 	}
 	jint R_attr::paddingMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"paddingMode");
+			"paddingMode"
+		);
 	}
 	jint R_attr::paddingRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"paddingRight");
+			"paddingRight"
+		);
 	}
 	jint R_attr::paddingStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"paddingStart");
+			"paddingStart"
+		);
 	}
 	jint R_attr::paddingTop()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"paddingTop");
+			"paddingTop"
+		);
 	}
 	jint R_attr::paddingVertical()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"paddingVertical");
+			"paddingVertical"
+		);
 	}
 	jint R_attr::panelBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"panelBackground");
+			"panelBackground"
+		);
 	}
 	jint R_attr::panelColorBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"panelColorBackground");
+			"panelColorBackground"
+		);
 	}
 	jint R_attr::panelColorForeground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"panelColorForeground");
+			"panelColorForeground"
+		);
 	}
 	jint R_attr::panelFullBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"panelFullBackground");
+			"panelFullBackground"
+		);
 	}
 	jint R_attr::panelTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"panelTextAppearance");
+			"panelTextAppearance"
+		);
 	}
 	jint R_attr::parentActivityName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"parentActivityName");
+			"parentActivityName"
+		);
 	}
 	jint R_attr::password()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"password");
+			"password"
+		);
 	}
 	jint R_attr::path()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"path");
+			"path"
+		);
 	}
 	jint R_attr::pathData()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"pathData");
+			"pathData"
+		);
 	}
 	jint R_attr::pathPattern()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"pathPattern");
+			"pathPattern"
+		);
 	}
 	jint R_attr::pathPrefix()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"pathPrefix");
+			"pathPrefix"
+		);
 	}
 	jint R_attr::patternPathData()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"patternPathData");
+			"patternPathData"
+		);
 	}
 	jint R_attr::permission()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"permission");
+			"permission"
+		);
 	}
 	jint R_attr::permissionFlags()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"permissionFlags");
+			"permissionFlags"
+		);
 	}
 	jint R_attr::permissionGroup()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"permissionGroup");
+			"permissionGroup"
+		);
 	}
 	jint R_attr::permissionGroupFlags()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"permissionGroupFlags");
+			"permissionGroupFlags"
+		);
 	}
 	jint R_attr::persistableMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"persistableMode");
+			"persistableMode"
+		);
 	}
 	jint R_attr::persistent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"persistent");
+			"persistent"
+		);
 	}
 	jint R_attr::persistentDrawingCache()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"persistentDrawingCache");
+			"persistentDrawingCache"
+		);
 	}
 	jint R_attr::persistentWhenFeatureAvailable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"persistentWhenFeatureAvailable");
+			"persistentWhenFeatureAvailable"
+		);
 	}
 	jint R_attr::phoneNumber()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"phoneNumber");
+			"phoneNumber"
+		);
 	}
 	jint R_attr::pivotX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"pivotX");
+			"pivotX"
+		);
 	}
 	jint R_attr::pivotY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"pivotY");
+			"pivotY"
+		);
 	}
 	jint R_attr::pointerIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"pointerIcon");
+			"pointerIcon"
+		);
 	}
 	jint R_attr::popupAnimationStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupAnimationStyle");
+			"popupAnimationStyle"
+		);
 	}
 	jint R_attr::popupBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupBackground");
+			"popupBackground"
+		);
 	}
 	jint R_attr::popupCharacters()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupCharacters");
+			"popupCharacters"
+		);
 	}
 	jint R_attr::popupElevation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupElevation");
+			"popupElevation"
+		);
 	}
 	jint R_attr::popupEnterTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupEnterTransition");
+			"popupEnterTransition"
+		);
 	}
 	jint R_attr::popupExitTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupExitTransition");
+			"popupExitTransition"
+		);
 	}
 	jint R_attr::popupKeyboard()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupKeyboard");
+			"popupKeyboard"
+		);
 	}
 	jint R_attr::popupLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupLayout");
+			"popupLayout"
+		);
 	}
 	jint R_attr::popupMenuStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupMenuStyle");
+			"popupMenuStyle"
+		);
 	}
 	jint R_attr::popupTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupTheme");
+			"popupTheme"
+		);
 	}
 	jint R_attr::popupWindowStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"popupWindowStyle");
+			"popupWindowStyle"
+		);
 	}
 	jint R_attr::port()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"port");
+			"port"
+		);
 	}
 	jint R_attr::positiveButtonText()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"positiveButtonText");
+			"positiveButtonText"
+		);
 	}
 	jint R_attr::preferenceCategoryStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"preferenceCategoryStyle");
+			"preferenceCategoryStyle"
+		);
 	}
 	jint R_attr::preferenceFragmentStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"preferenceFragmentStyle");
+			"preferenceFragmentStyle"
+		);
 	}
 	jint R_attr::preferenceInformationStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"preferenceInformationStyle");
+			"preferenceInformationStyle"
+		);
 	}
 	jint R_attr::preferenceLayoutChild()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"preferenceLayoutChild");
+			"preferenceLayoutChild"
+		);
 	}
 	jint R_attr::preferenceScreenStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"preferenceScreenStyle");
+			"preferenceScreenStyle"
+		);
 	}
 	jint R_attr::preferenceStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"preferenceStyle");
+			"preferenceStyle"
+		);
 	}
 	jint R_attr::presentationTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"presentationTheme");
+			"presentationTheme"
+		);
 	}
 	jint R_attr::previewImage()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"previewImage");
+			"previewImage"
+		);
 	}
 	jint R_attr::primaryContentAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"primaryContentAlpha");
+			"primaryContentAlpha"
+		);
 	}
 	jint R_attr::priority()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"priority");
+			"priority"
+		);
 	}
 	jint R_attr::privateImeOptions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"privateImeOptions");
+			"privateImeOptions"
+		);
 	}
 	jint R_attr::process()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"process");
+			"process"
+		);
 	}
 	jint R_attr::progress()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progress");
+			"progress"
+		);
 	}
 	jint R_attr::progressBackgroundTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBackgroundTint");
+			"progressBackgroundTint"
+		);
 	}
 	jint R_attr::progressBackgroundTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBackgroundTintMode");
+			"progressBackgroundTintMode"
+		);
 	}
 	jint R_attr::progressBarPadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBarPadding");
+			"progressBarPadding"
+		);
 	}
 	jint R_attr::progressBarStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBarStyle");
+			"progressBarStyle"
+		);
 	}
 	jint R_attr::progressBarStyleHorizontal()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBarStyleHorizontal");
+			"progressBarStyleHorizontal"
+		);
 	}
 	jint R_attr::progressBarStyleInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBarStyleInverse");
+			"progressBarStyleInverse"
+		);
 	}
 	jint R_attr::progressBarStyleLarge()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBarStyleLarge");
+			"progressBarStyleLarge"
+		);
 	}
 	jint R_attr::progressBarStyleLargeInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBarStyleLargeInverse");
+			"progressBarStyleLargeInverse"
+		);
 	}
 	jint R_attr::progressBarStyleSmall()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBarStyleSmall");
+			"progressBarStyleSmall"
+		);
 	}
 	jint R_attr::progressBarStyleSmallInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBarStyleSmallInverse");
+			"progressBarStyleSmallInverse"
+		);
 	}
 	jint R_attr::progressBarStyleSmallTitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressBarStyleSmallTitle");
+			"progressBarStyleSmallTitle"
+		);
 	}
 	jint R_attr::progressDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressDrawable");
+			"progressDrawable"
+		);
 	}
 	jint R_attr::progressTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressTint");
+			"progressTint"
+		);
 	}
 	jint R_attr::progressTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"progressTintMode");
+			"progressTintMode"
+		);
 	}
 	jint R_attr::prompt()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"prompt");
+			"prompt"
+		);
 	}
 	jint R_attr::propertyName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"propertyName");
+			"propertyName"
+		);
 	}
 	jint R_attr::propertyXName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"propertyXName");
+			"propertyXName"
+		);
 	}
 	jint R_attr::propertyYName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"propertyYName");
+			"propertyYName"
+		);
 	}
 	jint R_attr::protectionLevel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"protectionLevel");
+			"protectionLevel"
+		);
 	}
 	jint R_attr::publicKey()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"publicKey");
+			"publicKey"
+		);
 	}
 	jint R_attr::queryActionMsg()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"queryActionMsg");
+			"queryActionMsg"
+		);
 	}
 	jint R_attr::queryAfterZeroResults()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"queryAfterZeroResults");
+			"queryAfterZeroResults"
+		);
 	}
 	jint R_attr::queryBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"queryBackground");
+			"queryBackground"
+		);
 	}
 	jint R_attr::queryHint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"queryHint");
+			"queryHint"
+		);
 	}
 	jint R_attr::quickContactBadgeStyleSmallWindowLarge()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"quickContactBadgeStyleSmallWindowLarge");
+			"quickContactBadgeStyleSmallWindowLarge"
+		);
 	}
 	jint R_attr::quickContactBadgeStyleSmallWindowMedium()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"quickContactBadgeStyleSmallWindowMedium");
+			"quickContactBadgeStyleSmallWindowMedium"
+		);
 	}
 	jint R_attr::quickContactBadgeStyleSmallWindowSmall()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"quickContactBadgeStyleSmallWindowSmall");
+			"quickContactBadgeStyleSmallWindowSmall"
+		);
 	}
 	jint R_attr::quickContactBadgeStyleWindowLarge()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"quickContactBadgeStyleWindowLarge");
+			"quickContactBadgeStyleWindowLarge"
+		);
 	}
 	jint R_attr::quickContactBadgeStyleWindowMedium()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"quickContactBadgeStyleWindowMedium");
+			"quickContactBadgeStyleWindowMedium"
+		);
 	}
 	jint R_attr::quickContactBadgeStyleWindowSmall()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"quickContactBadgeStyleWindowSmall");
+			"quickContactBadgeStyleWindowSmall"
+		);
 	}
 	jint R_attr::radioButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"radioButtonStyle");
+			"radioButtonStyle"
+		);
 	}
 	jint R_attr::radius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"radius");
+			"radius"
+		);
 	}
 	jint R_attr::rating()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rating");
+			"rating"
+		);
 	}
 	jint R_attr::ratingBarStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ratingBarStyle");
+			"ratingBarStyle"
+		);
 	}
 	jint R_attr::ratingBarStyleIndicator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ratingBarStyleIndicator");
+			"ratingBarStyleIndicator"
+		);
 	}
 	jint R_attr::ratingBarStyleSmall()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ratingBarStyleSmall");
+			"ratingBarStyleSmall"
+		);
 	}
 	jint R_attr::readPermission()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"readPermission");
+			"readPermission"
+		);
 	}
 	jint R_attr::recognitionService()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"recognitionService");
+			"recognitionService"
+		);
 	}
 	jint R_attr::recreateOnConfigChanges()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"recreateOnConfigChanges");
+			"recreateOnConfigChanges"
+		);
 	}
 	jint R_attr::recycleEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"recycleEnabled");
+			"recycleEnabled"
+		);
 	}
 	jint R_attr::relinquishTaskIdentity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"relinquishTaskIdentity");
+			"relinquishTaskIdentity"
+		);
 	}
 	jint R_attr::reparent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"reparent");
+			"reparent"
+		);
 	}
 	jint R_attr::reparentWithOverlay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"reparentWithOverlay");
+			"reparentWithOverlay"
+		);
 	}
 	jint R_attr::repeatCount()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"repeatCount");
+			"repeatCount"
+		);
 	}
 	jint R_attr::repeatMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"repeatMode");
+			"repeatMode"
+		);
 	}
 	jint R_attr::reqFiveWayNav()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"reqFiveWayNav");
+			"reqFiveWayNav"
+		);
 	}
 	jint R_attr::reqHardKeyboard()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"reqHardKeyboard");
+			"reqHardKeyboard"
+		);
 	}
 	jint R_attr::reqKeyboardType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"reqKeyboardType");
+			"reqKeyboardType"
+		);
 	}
 	jint R_attr::reqNavigation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"reqNavigation");
+			"reqNavigation"
+		);
 	}
 	jint R_attr::reqTouchScreen()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"reqTouchScreen");
+			"reqTouchScreen"
+		);
 	}
 	jint R_attr::requestLegacyExternalStorage()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"requestLegacyExternalStorage");
+			"requestLegacyExternalStorage"
+		);
 	}
 	jint R_attr::requireDeviceUnlock()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"requireDeviceUnlock");
+			"requireDeviceUnlock"
+		);
 	}
 	jint R_attr::required()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"required");
+			"required"
+		);
 	}
 	jint R_attr::requiredAccountType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"requiredAccountType");
+			"requiredAccountType"
+		);
 	}
 	jint R_attr::requiredFeature()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"requiredFeature");
+			"requiredFeature"
+		);
 	}
 	jint R_attr::requiredForAllUsers()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"requiredForAllUsers");
+			"requiredForAllUsers"
+		);
 	}
 	jint R_attr::requiredNotFeature()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"requiredNotFeature");
+			"requiredNotFeature"
+		);
 	}
 	jint R_attr::requiresFadingEdge()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"requiresFadingEdge");
+			"requiresFadingEdge"
+		);
 	}
 	jint R_attr::requiresSmallestWidthDp()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"requiresSmallestWidthDp");
+			"requiresSmallestWidthDp"
+		);
 	}
 	jint R_attr::resizeClip()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"resizeClip");
+			"resizeClip"
+		);
 	}
 	jint R_attr::resizeMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"resizeMode");
+			"resizeMode"
+		);
 	}
 	jint R_attr::resizeable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"resizeable");
+			"resizeable"
+		);
 	}
 	jint R_attr::resizeableActivity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"resizeableActivity");
+			"resizeableActivity"
+		);
 	}
 	jint R_attr::resource()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"resource");
+			"resource"
+		);
 	}
 	jint R_attr::restoreAnyVersion()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"restoreAnyVersion");
+			"restoreAnyVersion"
+		);
 	}
 	jint R_attr::restoreNeedsApplication()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"restoreNeedsApplication");
+			"restoreNeedsApplication"
+		);
 	}
 	jint R_attr::restrictedAccountType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"restrictedAccountType");
+			"restrictedAccountType"
+		);
 	}
 	jint R_attr::restrictionType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"restrictionType");
+			"restrictionType"
+		);
 	}
 	jint R_attr::resumeWhilePausing()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"resumeWhilePausing");
+			"resumeWhilePausing"
+		);
 	}
 	jint R_attr::reversible()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"reversible");
+			"reversible"
+		);
 	}
 	jint R_attr::revisionCode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"revisionCode");
+			"revisionCode"
+		);
 	}
 	jint R_attr::right()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"right");
+			"right"
+		);
 	}
 	jint R_attr::ringtonePreferenceStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ringtonePreferenceStyle");
+			"ringtonePreferenceStyle"
+		);
 	}
 	jint R_attr::ringtoneType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ringtoneType");
+			"ringtoneType"
+		);
 	}
 	jint R_attr::rotation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rotation");
+			"rotation"
+		);
 	}
 	jint R_attr::rotationAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rotationAnimation");
+			"rotationAnimation"
+		);
 	}
 	jint R_attr::rotationX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rotationX");
+			"rotationX"
+		);
 	}
 	jint R_attr::rotationY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rotationY");
+			"rotationY"
+		);
 	}
 	jint R_attr::roundIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"roundIcon");
+			"roundIcon"
+		);
 	}
 	jint R_attr::rowCount()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rowCount");
+			"rowCount"
+		);
 	}
 	jint R_attr::rowDelay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rowDelay");
+			"rowDelay"
+		);
 	}
 	jint R_attr::rowEdgeFlags()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rowEdgeFlags");
+			"rowEdgeFlags"
+		);
 	}
 	jint R_attr::rowHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rowHeight");
+			"rowHeight"
+		);
 	}
 	jint R_attr::rowOrderPreserved()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"rowOrderPreserved");
+			"rowOrderPreserved"
+		);
 	}
 	jint R_attr::saveEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"saveEnabled");
+			"saveEnabled"
+		);
 	}
 	jint R_attr::scaleGravity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scaleGravity");
+			"scaleGravity"
+		);
 	}
 	jint R_attr::scaleHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scaleHeight");
+			"scaleHeight"
+		);
 	}
 	jint R_attr::scaleType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scaleType");
+			"scaleType"
+		);
 	}
 	jint R_attr::scaleWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scaleWidth");
+			"scaleWidth"
+		);
 	}
 	jint R_attr::scaleX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scaleX");
+			"scaleX"
+		);
 	}
 	jint R_attr::scaleY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scaleY");
+			"scaleY"
+		);
 	}
 	jint R_attr::scheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scheme");
+			"scheme"
+		);
 	}
 	jint R_attr::screenDensity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"screenDensity");
+			"screenDensity"
+		);
 	}
 	jint R_attr::screenOrientation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"screenOrientation");
+			"screenOrientation"
+		);
 	}
 	jint R_attr::screenReaderFocusable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"screenReaderFocusable");
+			"screenReaderFocusable"
+		);
 	}
 	jint R_attr::screenSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"screenSize");
+			"screenSize"
+		);
 	}
 	jint R_attr::scrollHorizontally()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollHorizontally");
+			"scrollHorizontally"
+		);
 	}
 	jint R_attr::scrollIndicators()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollIndicators");
+			"scrollIndicators"
+		);
 	}
 	jint R_attr::scrollViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollViewStyle");
+			"scrollViewStyle"
+		);
 	}
 	jint R_attr::scrollX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollX");
+			"scrollX"
+		);
 	}
 	jint R_attr::scrollY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollY");
+			"scrollY"
+		);
 	}
 	jint R_attr::scrollbarAlwaysDrawHorizontalTrack()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarAlwaysDrawHorizontalTrack");
+			"scrollbarAlwaysDrawHorizontalTrack"
+		);
 	}
 	jint R_attr::scrollbarAlwaysDrawVerticalTrack()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarAlwaysDrawVerticalTrack");
+			"scrollbarAlwaysDrawVerticalTrack"
+		);
 	}
 	jint R_attr::scrollbarDefaultDelayBeforeFade()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarDefaultDelayBeforeFade");
+			"scrollbarDefaultDelayBeforeFade"
+		);
 	}
 	jint R_attr::scrollbarFadeDuration()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarFadeDuration");
+			"scrollbarFadeDuration"
+		);
 	}
 	jint R_attr::scrollbarSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarSize");
+			"scrollbarSize"
+		);
 	}
 	jint R_attr::scrollbarStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarStyle");
+			"scrollbarStyle"
+		);
 	}
 	jint R_attr::scrollbarThumbHorizontal()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarThumbHorizontal");
+			"scrollbarThumbHorizontal"
+		);
 	}
 	jint R_attr::scrollbarThumbVertical()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarThumbVertical");
+			"scrollbarThumbVertical"
+		);
 	}
 	jint R_attr::scrollbarTrackHorizontal()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarTrackHorizontal");
+			"scrollbarTrackHorizontal"
+		);
 	}
 	jint R_attr::scrollbarTrackVertical()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbarTrackVertical");
+			"scrollbarTrackVertical"
+		);
 	}
 	jint R_attr::scrollbars()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollbars");
+			"scrollbars"
+		);
 	}
 	jint R_attr::scrollingCache()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"scrollingCache");
+			"scrollingCache"
+		);
 	}
 	jint R_attr::searchButtonText()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchButtonText");
+			"searchButtonText"
+		);
 	}
 	jint R_attr::searchHintIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchHintIcon");
+			"searchHintIcon"
+		);
 	}
 	jint R_attr::searchIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchIcon");
+			"searchIcon"
+		);
 	}
 	jint R_attr::searchMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchMode");
+			"searchMode"
+		);
 	}
 	jint R_attr::searchSettingsDescription()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchSettingsDescription");
+			"searchSettingsDescription"
+		);
 	}
 	jint R_attr::searchSuggestAuthority()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchSuggestAuthority");
+			"searchSuggestAuthority"
+		);
 	}
 	jint R_attr::searchSuggestIntentAction()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchSuggestIntentAction");
+			"searchSuggestIntentAction"
+		);
 	}
 	jint R_attr::searchSuggestIntentData()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchSuggestIntentData");
+			"searchSuggestIntentData"
+		);
 	}
 	jint R_attr::searchSuggestPath()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchSuggestPath");
+			"searchSuggestPath"
+		);
 	}
 	jint R_attr::searchSuggestSelection()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchSuggestSelection");
+			"searchSuggestSelection"
+		);
 	}
 	jint R_attr::searchSuggestThreshold()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchSuggestThreshold");
+			"searchSuggestThreshold"
+		);
 	}
 	jint R_attr::searchViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"searchViewStyle");
+			"searchViewStyle"
+		);
 	}
 	jint R_attr::secondaryContentAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"secondaryContentAlpha");
+			"secondaryContentAlpha"
+		);
 	}
 	jint R_attr::secondaryProgress()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"secondaryProgress");
+			"secondaryProgress"
+		);
 	}
 	jint R_attr::secondaryProgressTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"secondaryProgressTint");
+			"secondaryProgressTint"
+		);
 	}
 	jint R_attr::secondaryProgressTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"secondaryProgressTintMode");
+			"secondaryProgressTintMode"
+		);
 	}
 	jint R_attr::secureElementName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"secureElementName");
+			"secureElementName"
+		);
 	}
 	jint R_attr::seekBarStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"seekBarStyle");
+			"seekBarStyle"
+		);
 	}
 	jint R_attr::segmentedButtonStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"segmentedButtonStyle");
+			"segmentedButtonStyle"
+		);
 	}
 	jint R_attr::selectAllOnFocus()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"selectAllOnFocus");
+			"selectAllOnFocus"
+		);
 	}
 	jint R_attr::selectable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"selectable");
+			"selectable"
+		);
 	}
 	jint R_attr::selectableItemBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"selectableItemBackground");
+			"selectableItemBackground"
+		);
 	}
 	jint R_attr::selectableItemBackgroundBorderless()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"selectableItemBackgroundBorderless");
+			"selectableItemBackgroundBorderless"
+		);
 	}
 	jint R_attr::selectedDateVerticalBar()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"selectedDateVerticalBar");
+			"selectedDateVerticalBar"
+		);
 	}
 	jint R_attr::selectedWeekBackgroundColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"selectedWeekBackgroundColor");
+			"selectedWeekBackgroundColor"
+		);
 	}
 	jint R_attr::selectionDividerHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"selectionDividerHeight");
+			"selectionDividerHeight"
+		);
 	}
 	jint R_attr::sessionService()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"sessionService");
+			"sessionService"
+		);
 	}
 	jint R_attr::settingsActivity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"settingsActivity");
+			"settingsActivity"
+		);
 	}
 	jint R_attr::settingsSliceUri()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"settingsSliceUri");
+			"settingsSliceUri"
+		);
 	}
 	jint R_attr::setupActivity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"setupActivity");
+			"setupActivity"
+		);
 	}
 	jint R_attr::shadowColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shadowColor");
+			"shadowColor"
+		);
 	}
 	jint R_attr::shadowDx()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shadowDx");
+			"shadowDx"
+		);
 	}
 	jint R_attr::shadowDy()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shadowDy");
+			"shadowDy"
+		);
 	}
 	jint R_attr::shadowRadius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shadowRadius");
+			"shadowRadius"
+		);
 	}
 	jint R_attr::shape()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shape");
+			"shape"
+		);
 	}
 	jint R_attr::shareInterpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shareInterpolator");
+			"shareInterpolator"
+		);
 	}
 	jint R_attr::sharedUserId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"sharedUserId");
+			"sharedUserId"
+		);
 	}
 	jint R_attr::sharedUserLabel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"sharedUserLabel");
+			"sharedUserLabel"
+		);
 	}
 	jint R_attr::shell()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shell");
+			"shell"
+		);
 	}
 	jint R_attr::shortcutDisabledMessage()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shortcutDisabledMessage");
+			"shortcutDisabledMessage"
+		);
 	}
 	jint R_attr::shortcutId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shortcutId");
+			"shortcutId"
+		);
 	}
 	jint R_attr::shortcutLongLabel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shortcutLongLabel");
+			"shortcutLongLabel"
+		);
 	}
 	jint R_attr::shortcutShortLabel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shortcutShortLabel");
+			"shortcutShortLabel"
+		);
 	}
 	jint R_attr::shouldDisableView()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shouldDisableView");
+			"shouldDisableView"
+		);
 	}
 	jint R_attr::showAsAction()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showAsAction");
+			"showAsAction"
+		);
 	}
 	jint R_attr::showDefault()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showDefault");
+			"showDefault"
+		);
 	}
 	jint R_attr::showDividers()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showDividers");
+			"showDividers"
+		);
 	}
 	jint R_attr::showForAllUsers()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showForAllUsers");
+			"showForAllUsers"
+		);
 	}
 	jint R_attr::showMetadataInPreview()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showMetadataInPreview");
+			"showMetadataInPreview"
+		);
 	}
 	jint R_attr::showOnLockScreen()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showOnLockScreen");
+			"showOnLockScreen"
+		);
 	}
 	jint R_attr::showSilent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showSilent");
+			"showSilent"
+		);
 	}
 	jint R_attr::showText()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showText");
+			"showText"
+		);
 	}
 	jint R_attr::showWeekNumber()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showWeekNumber");
+			"showWeekNumber"
+		);
 	}
 	jint R_attr::showWhenLocked()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"showWhenLocked");
+			"showWhenLocked"
+		);
 	}
 	jint R_attr::shownWeekCount()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shownWeekCount");
+			"shownWeekCount"
+		);
 	}
 	jint R_attr::shrinkColumns()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"shrinkColumns");
+			"shrinkColumns"
+		);
 	}
 	jint R_attr::singleLine()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"singleLine");
+			"singleLine"
+		);
 	}
 	jint R_attr::singleLineTitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"singleLineTitle");
+			"singleLineTitle"
+		);
 	}
 	jint R_attr::singleUser()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"singleUser");
+			"singleUser"
+		);
 	}
 	jint R_attr::slideEdge()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"slideEdge");
+			"slideEdge"
+		);
 	}
 	jint R_attr::smallIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"smallIcon");
+			"smallIcon"
+		);
 	}
 	jint R_attr::smallScreens()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"smallScreens");
+			"smallScreens"
+		);
 	}
 	jint R_attr::smoothScrollbar()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"smoothScrollbar");
+			"smoothScrollbar"
+		);
 	}
 	jint R_attr::soundEffectsEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"soundEffectsEnabled");
+			"soundEffectsEnabled"
+		);
 	}
 	jint R_attr::spacing()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"spacing");
+			"spacing"
+		);
 	}
 	jint R_attr::spinnerDropDownItemStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"spinnerDropDownItemStyle");
+			"spinnerDropDownItemStyle"
+		);
 	}
 	jint R_attr::spinnerItemStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"spinnerItemStyle");
+			"spinnerItemStyle"
+		);
 	}
 	jint R_attr::spinnerMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"spinnerMode");
+			"spinnerMode"
+		);
 	}
 	jint R_attr::spinnerStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"spinnerStyle");
+			"spinnerStyle"
+		);
 	}
 	jint R_attr::spinnersShown()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"spinnersShown");
+			"spinnersShown"
+		);
 	}
 	jint R_attr::splitMotionEvents()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"splitMotionEvents");
+			"splitMotionEvents"
+		);
 	}
 	jint R_attr::splitName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"splitName");
+			"splitName"
+		);
 	}
 	jint R_attr::splitTrack()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"splitTrack");
+			"splitTrack"
+		);
 	}
 	jint R_attr::spotShadowAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"spotShadowAlpha");
+			"spotShadowAlpha"
+		);
 	}
 	jint R_attr::src()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"src");
+			"src"
+		);
 	}
 	jint R_attr::ssp()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ssp");
+			"ssp"
+		);
 	}
 	jint R_attr::sspPattern()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"sspPattern");
+			"sspPattern"
+		);
 	}
 	jint R_attr::sspPrefix()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"sspPrefix");
+			"sspPrefix"
+		);
 	}
 	jint R_attr::stackFromBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"stackFromBottom");
+			"stackFromBottom"
+		);
 	}
 	jint R_attr::stackViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"stackViewStyle");
+			"stackViewStyle"
+		);
 	}
 	jint R_attr::starStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"starStyle");
+			"starStyle"
+		);
 	}
 	jint R_attr::start()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"start");
+			"start"
+		);
 	}
 	jint R_attr::startColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"startColor");
+			"startColor"
+		);
 	}
 	jint R_attr::startDelay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"startDelay");
+			"startDelay"
+		);
 	}
 	jint R_attr::startOffset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"startOffset");
+			"startOffset"
+		);
 	}
 	jint R_attr::startX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"startX");
+			"startX"
+		);
 	}
 	jint R_attr::startY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"startY");
+			"startY"
+		);
 	}
 	jint R_attr::startYear()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"startYear");
+			"startYear"
+		);
 	}
 	jint R_attr::stateListAnimator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"stateListAnimator");
+			"stateListAnimator"
+		);
 	}
 	jint R_attr::stateNotNeeded()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"stateNotNeeded");
+			"stateNotNeeded"
+		);
 	}
 	jint R_attr::state_above_anchor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_above_anchor");
+			"state_above_anchor"
+		);
 	}
 	jint R_attr::state_accelerated()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_accelerated");
+			"state_accelerated"
+		);
 	}
 	jint R_attr::state_activated()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_activated");
+			"state_activated"
+		);
 	}
 	jint R_attr::state_active()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_active");
+			"state_active"
+		);
 	}
 	jint R_attr::state_checkable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_checkable");
+			"state_checkable"
+		);
 	}
 	jint R_attr::state_checked()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_checked");
+			"state_checked"
+		);
 	}
 	jint R_attr::state_drag_can_accept()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_drag_can_accept");
+			"state_drag_can_accept"
+		);
 	}
 	jint R_attr::state_drag_hovered()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_drag_hovered");
+			"state_drag_hovered"
+		);
 	}
 	jint R_attr::state_empty()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_empty");
+			"state_empty"
+		);
 	}
 	jint R_attr::state_enabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_enabled");
+			"state_enabled"
+		);
 	}
 	jint R_attr::state_expanded()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_expanded");
+			"state_expanded"
+		);
 	}
 	jint R_attr::state_first()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_first");
+			"state_first"
+		);
 	}
 	jint R_attr::state_focused()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_focused");
+			"state_focused"
+		);
 	}
 	jint R_attr::state_hovered()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_hovered");
+			"state_hovered"
+		);
 	}
 	jint R_attr::state_last()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_last");
+			"state_last"
+		);
 	}
 	jint R_attr::state_long_pressable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_long_pressable");
+			"state_long_pressable"
+		);
 	}
 	jint R_attr::state_middle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_middle");
+			"state_middle"
+		);
 	}
 	jint R_attr::state_multiline()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_multiline");
+			"state_multiline"
+		);
 	}
 	jint R_attr::state_pressed()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_pressed");
+			"state_pressed"
+		);
 	}
 	jint R_attr::state_selected()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_selected");
+			"state_selected"
+		);
 	}
 	jint R_attr::state_single()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_single");
+			"state_single"
+		);
 	}
 	jint R_attr::state_window_focused()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"state_window_focused");
+			"state_window_focused"
+		);
 	}
 	jint R_attr::staticWallpaperPreview()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"staticWallpaperPreview");
+			"staticWallpaperPreview"
+		);
 	}
 	jint R_attr::statusBarColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"statusBarColor");
+			"statusBarColor"
+		);
 	}
 	jint R_attr::stepSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"stepSize");
+			"stepSize"
+		);
 	}
 	jint R_attr::stopWithTask()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"stopWithTask");
+			"stopWithTask"
+		);
 	}
 	jint R_attr::streamType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"streamType");
+			"streamType"
+		);
 	}
 	jint R_attr::stretchColumns()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"stretchColumns");
+			"stretchColumns"
+		);
 	}
 	jint R_attr::stretchMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"stretchMode");
+			"stretchMode"
+		);
 	}
 	jint R_attr::strokeAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"strokeAlpha");
+			"strokeAlpha"
+		);
 	}
 	jint R_attr::strokeColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"strokeColor");
+			"strokeColor"
+		);
 	}
 	jint R_attr::strokeLineCap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"strokeLineCap");
+			"strokeLineCap"
+		);
 	}
 	jint R_attr::strokeLineJoin()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"strokeLineJoin");
+			"strokeLineJoin"
+		);
 	}
 	jint R_attr::strokeMiterLimit()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"strokeMiterLimit");
+			"strokeMiterLimit"
+		);
 	}
 	jint R_attr::strokeWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"strokeWidth");
+			"strokeWidth"
+		);
 	}
 	jint R_attr::subMenuArrow()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"subMenuArrow");
+			"subMenuArrow"
+		);
 	}
 	jint R_attr::submitBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"submitBackground");
+			"submitBackground"
+		);
 	}
 	jint R_attr::subtitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"subtitle");
+			"subtitle"
+		);
 	}
 	jint R_attr::subtitleTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"subtitleTextAppearance");
+			"subtitleTextAppearance"
+		);
 	}
 	jint R_attr::subtitleTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"subtitleTextColor");
+			"subtitleTextColor"
+		);
 	}
 	jint R_attr::subtitleTextStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"subtitleTextStyle");
+			"subtitleTextStyle"
+		);
 	}
 	jint R_attr::subtypeExtraValue()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"subtypeExtraValue");
+			"subtypeExtraValue"
+		);
 	}
 	jint R_attr::subtypeId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"subtypeId");
+			"subtypeId"
+		);
 	}
 	jint R_attr::subtypeLocale()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"subtypeLocale");
+			"subtypeLocale"
+		);
 	}
 	jint R_attr::suggestActionMsg()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"suggestActionMsg");
+			"suggestActionMsg"
+		);
 	}
 	jint R_attr::suggestActionMsgColumn()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"suggestActionMsgColumn");
+			"suggestActionMsgColumn"
+		);
 	}
 	jint R_attr::suggestionRowLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"suggestionRowLayout");
+			"suggestionRowLayout"
+		);
 	}
 	jint R_attr::summary()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"summary");
+			"summary"
+		);
 	}
 	jint R_attr::summaryColumn()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"summaryColumn");
+			"summaryColumn"
+		);
 	}
 	jint R_attr::summaryOff()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"summaryOff");
+			"summaryOff"
+		);
 	}
 	jint R_attr::summaryOn()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"summaryOn");
+			"summaryOn"
+		);
 	}
 	jint R_attr::supportsAssist()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"supportsAssist");
+			"supportsAssist"
+		);
 	}
 	jint R_attr::supportsLaunchVoiceAssistFromKeyguard()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"supportsLaunchVoiceAssistFromKeyguard");
+			"supportsLaunchVoiceAssistFromKeyguard"
+		);
 	}
 	jint R_attr::supportsLocalInteraction()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"supportsLocalInteraction");
+			"supportsLocalInteraction"
+		);
 	}
 	jint R_attr::supportsMultipleDisplays()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"supportsMultipleDisplays");
+			"supportsMultipleDisplays"
+		);
 	}
 	jint R_attr::supportsPictureInPicture()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"supportsPictureInPicture");
+			"supportsPictureInPicture"
+		);
 	}
 	jint R_attr::supportsRtl()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"supportsRtl");
+			"supportsRtl"
+		);
 	}
 	jint R_attr::supportsSwitchingToNextInputMethod()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"supportsSwitchingToNextInputMethod");
+			"supportsSwitchingToNextInputMethod"
+		);
 	}
 	jint R_attr::supportsUploading()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"supportsUploading");
+			"supportsUploading"
+		);
 	}
 	jint R_attr::switchMinWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"switchMinWidth");
+			"switchMinWidth"
+		);
 	}
 	jint R_attr::switchPadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"switchPadding");
+			"switchPadding"
+		);
 	}
 	jint R_attr::switchPreferenceStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"switchPreferenceStyle");
+			"switchPreferenceStyle"
+		);
 	}
 	jint R_attr::switchStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"switchStyle");
+			"switchStyle"
+		);
 	}
 	jint R_attr::switchTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"switchTextAppearance");
+			"switchTextAppearance"
+		);
 	}
 	jint R_attr::switchTextOff()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"switchTextOff");
+			"switchTextOff"
+		);
 	}
 	jint R_attr::switchTextOn()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"switchTextOn");
+			"switchTextOn"
+		);
 	}
 	jint R_attr::syncable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"syncable");
+			"syncable"
+		);
 	}
 	jint R_attr::tabStripEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tabStripEnabled");
+			"tabStripEnabled"
+		);
 	}
 	jint R_attr::tabStripLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tabStripLeft");
+			"tabStripLeft"
+		);
 	}
 	jint R_attr::tabStripRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tabStripRight");
+			"tabStripRight"
+		);
 	}
 	jint R_attr::tabWidgetStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tabWidgetStyle");
+			"tabWidgetStyle"
+		);
 	}
 	jint R_attr::tag()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tag");
+			"tag"
+		);
 	}
 	jint R_attr::targetActivity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"targetActivity");
+			"targetActivity"
+		);
 	}
 	jint R_attr::targetClass()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"targetClass");
+			"targetClass"
+		);
 	}
 	jint R_attr::targetDescriptions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"targetDescriptions");
+			"targetDescriptions"
+		);
 	}
 	jint R_attr::targetId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"targetId");
+			"targetId"
+		);
 	}
 	jint R_attr::targetName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"targetName");
+			"targetName"
+		);
 	}
 	jint R_attr::targetPackage()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"targetPackage");
+			"targetPackage"
+		);
 	}
 	jint R_attr::targetProcesses()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"targetProcesses");
+			"targetProcesses"
+		);
 	}
 	jint R_attr::targetSandboxVersion()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"targetSandboxVersion");
+			"targetSandboxVersion"
+		);
 	}
 	jint R_attr::targetSdkVersion()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"targetSdkVersion");
+			"targetSdkVersion"
+		);
 	}
 	jint R_attr::taskAffinity()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"taskAffinity");
+			"taskAffinity"
+		);
 	}
 	jint R_attr::taskCloseEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"taskCloseEnterAnimation");
+			"taskCloseEnterAnimation"
+		);
 	}
 	jint R_attr::taskCloseExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"taskCloseExitAnimation");
+			"taskCloseExitAnimation"
+		);
 	}
 	jint R_attr::taskOpenEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"taskOpenEnterAnimation");
+			"taskOpenEnterAnimation"
+		);
 	}
 	jint R_attr::taskOpenExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"taskOpenExitAnimation");
+			"taskOpenExitAnimation"
+		);
 	}
 	jint R_attr::taskToBackEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"taskToBackEnterAnimation");
+			"taskToBackEnterAnimation"
+		);
 	}
 	jint R_attr::taskToBackExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"taskToBackExitAnimation");
+			"taskToBackExitAnimation"
+		);
 	}
 	jint R_attr::taskToFrontEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"taskToFrontEnterAnimation");
+			"taskToFrontEnterAnimation"
+		);
 	}
 	jint R_attr::taskToFrontExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"taskToFrontExitAnimation");
+			"taskToFrontExitAnimation"
+		);
 	}
 	jint R_attr::tension()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tension");
+			"tension"
+		);
 	}
 	jint R_attr::testOnly()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"testOnly");
+			"testOnly"
+		);
 	}
 	jint R_attr::text()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"text");
+			"text"
+		);
 	}
 	jint R_attr::textAlignment()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAlignment");
+			"textAlignment"
+		);
 	}
 	jint R_attr::textAllCaps()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAllCaps");
+			"textAllCaps"
+		);
 	}
 	jint R_attr::textAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearance");
+			"textAppearance"
+		);
 	}
 	jint R_attr::textAppearanceButton()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceButton");
+			"textAppearanceButton"
+		);
 	}
 	jint R_attr::textAppearanceInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceInverse");
+			"textAppearanceInverse"
+		);
 	}
 	jint R_attr::textAppearanceLarge()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceLarge");
+			"textAppearanceLarge"
+		);
 	}
 	jint R_attr::textAppearanceLargeInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceLargeInverse");
+			"textAppearanceLargeInverse"
+		);
 	}
 	jint R_attr::textAppearanceLargePopupMenu()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceLargePopupMenu");
+			"textAppearanceLargePopupMenu"
+		);
 	}
 	jint R_attr::textAppearanceListItem()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceListItem");
+			"textAppearanceListItem"
+		);
 	}
 	jint R_attr::textAppearanceListItemSecondary()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceListItemSecondary");
+			"textAppearanceListItemSecondary"
+		);
 	}
 	jint R_attr::textAppearanceListItemSmall()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceListItemSmall");
+			"textAppearanceListItemSmall"
+		);
 	}
 	jint R_attr::textAppearanceMedium()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceMedium");
+			"textAppearanceMedium"
+		);
 	}
 	jint R_attr::textAppearanceMediumInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceMediumInverse");
+			"textAppearanceMediumInverse"
+		);
 	}
 	jint R_attr::textAppearancePopupMenuHeader()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearancePopupMenuHeader");
+			"textAppearancePopupMenuHeader"
+		);
 	}
 	jint R_attr::textAppearanceSearchResultSubtitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceSearchResultSubtitle");
+			"textAppearanceSearchResultSubtitle"
+		);
 	}
 	jint R_attr::textAppearanceSearchResultTitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceSearchResultTitle");
+			"textAppearanceSearchResultTitle"
+		);
 	}
 	jint R_attr::textAppearanceSmall()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceSmall");
+			"textAppearanceSmall"
+		);
 	}
 	jint R_attr::textAppearanceSmallInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceSmallInverse");
+			"textAppearanceSmallInverse"
+		);
 	}
 	jint R_attr::textAppearanceSmallPopupMenu()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textAppearanceSmallPopupMenu");
+			"textAppearanceSmallPopupMenu"
+		);
 	}
 	jint R_attr::textCheckMark()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textCheckMark");
+			"textCheckMark"
+		);
 	}
 	jint R_attr::textCheckMarkInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textCheckMarkInverse");
+			"textCheckMarkInverse"
+		);
 	}
 	jint R_attr::textColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColor");
+			"textColor"
+		);
 	}
 	jint R_attr::textColorAlertDialogListItem()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorAlertDialogListItem");
+			"textColorAlertDialogListItem"
+		);
 	}
 	jint R_attr::textColorHighlight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorHighlight");
+			"textColorHighlight"
+		);
 	}
 	jint R_attr::textColorHighlightInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorHighlightInverse");
+			"textColorHighlightInverse"
+		);
 	}
 	jint R_attr::textColorHint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorHint");
+			"textColorHint"
+		);
 	}
 	jint R_attr::textColorHintInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorHintInverse");
+			"textColorHintInverse"
+		);
 	}
 	jint R_attr::textColorLink()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorLink");
+			"textColorLink"
+		);
 	}
 	jint R_attr::textColorLinkInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorLinkInverse");
+			"textColorLinkInverse"
+		);
 	}
 	jint R_attr::textColorPrimary()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorPrimary");
+			"textColorPrimary"
+		);
 	}
 	jint R_attr::textColorPrimaryDisableOnly()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorPrimaryDisableOnly");
+			"textColorPrimaryDisableOnly"
+		);
 	}
 	jint R_attr::textColorPrimaryInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorPrimaryInverse");
+			"textColorPrimaryInverse"
+		);
 	}
 	jint R_attr::textColorPrimaryInverseDisableOnly()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorPrimaryInverseDisableOnly");
+			"textColorPrimaryInverseDisableOnly"
+		);
 	}
 	jint R_attr::textColorPrimaryInverseNoDisable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorPrimaryInverseNoDisable");
+			"textColorPrimaryInverseNoDisable"
+		);
 	}
 	jint R_attr::textColorPrimaryNoDisable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorPrimaryNoDisable");
+			"textColorPrimaryNoDisable"
+		);
 	}
 	jint R_attr::textColorSecondary()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorSecondary");
+			"textColorSecondary"
+		);
 	}
 	jint R_attr::textColorSecondaryInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorSecondaryInverse");
+			"textColorSecondaryInverse"
+		);
 	}
 	jint R_attr::textColorSecondaryInverseNoDisable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorSecondaryInverseNoDisable");
+			"textColorSecondaryInverseNoDisable"
+		);
 	}
 	jint R_attr::textColorSecondaryNoDisable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorSecondaryNoDisable");
+			"textColorSecondaryNoDisable"
+		);
 	}
 	jint R_attr::textColorTertiary()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorTertiary");
+			"textColorTertiary"
+		);
 	}
 	jint R_attr::textColorTertiaryInverse()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textColorTertiaryInverse");
+			"textColorTertiaryInverse"
+		);
 	}
 	jint R_attr::textCursorDrawable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textCursorDrawable");
+			"textCursorDrawable"
+		);
 	}
 	jint R_attr::textDirection()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textDirection");
+			"textDirection"
+		);
 	}
 	jint R_attr::textEditNoPasteWindowLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textEditNoPasteWindowLayout");
+			"textEditNoPasteWindowLayout"
+		);
 	}
 	jint R_attr::textEditPasteWindowLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textEditPasteWindowLayout");
+			"textEditPasteWindowLayout"
+		);
 	}
 	jint R_attr::textEditSideNoPasteWindowLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textEditSideNoPasteWindowLayout");
+			"textEditSideNoPasteWindowLayout"
+		);
 	}
 	jint R_attr::textEditSidePasteWindowLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textEditSidePasteWindowLayout");
+			"textEditSidePasteWindowLayout"
+		);
 	}
 	jint R_attr::textEditSuggestionItemLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textEditSuggestionItemLayout");
+			"textEditSuggestionItemLayout"
+		);
 	}
 	jint R_attr::textFilterEnabled()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textFilterEnabled");
+			"textFilterEnabled"
+		);
 	}
 	jint R_attr::textFontWeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textFontWeight");
+			"textFontWeight"
+		);
 	}
 	jint R_attr::textIsSelectable()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textIsSelectable");
+			"textIsSelectable"
+		);
 	}
 	jint R_attr::textLocale()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textLocale");
+			"textLocale"
+		);
 	}
 	jint R_attr::textOff()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textOff");
+			"textOff"
+		);
 	}
 	jint R_attr::textOn()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textOn");
+			"textOn"
+		);
 	}
 	jint R_attr::textScaleX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textScaleX");
+			"textScaleX"
+		);
 	}
 	jint R_attr::textSelectHandle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textSelectHandle");
+			"textSelectHandle"
+		);
 	}
 	jint R_attr::textSelectHandleLeft()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textSelectHandleLeft");
+			"textSelectHandleLeft"
+		);
 	}
 	jint R_attr::textSelectHandleRight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textSelectHandleRight");
+			"textSelectHandleRight"
+		);
 	}
 	jint R_attr::textSelectHandleWindowStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textSelectHandleWindowStyle");
+			"textSelectHandleWindowStyle"
+		);
 	}
 	jint R_attr::textSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textSize");
+			"textSize"
+		);
 	}
 	jint R_attr::textStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textStyle");
+			"textStyle"
+		);
 	}
 	jint R_attr::textSuggestionsWindowStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textSuggestionsWindowStyle");
+			"textSuggestionsWindowStyle"
+		);
 	}
 	jint R_attr::textViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"textViewStyle");
+			"textViewStyle"
+		);
 	}
 	jint R_attr::theme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"theme");
+			"theme"
+		);
 	}
 	jint R_attr::thickness()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"thickness");
+			"thickness"
+		);
 	}
 	jint R_attr::thicknessRatio()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"thicknessRatio");
+			"thicknessRatio"
+		);
 	}
 	jint R_attr::thumb()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"thumb");
+			"thumb"
+		);
 	}
 	jint R_attr::thumbOffset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"thumbOffset");
+			"thumbOffset"
+		);
 	}
 	jint R_attr::thumbPosition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"thumbPosition");
+			"thumbPosition"
+		);
 	}
 	jint R_attr::thumbTextPadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"thumbTextPadding");
+			"thumbTextPadding"
+		);
 	}
 	jint R_attr::thumbTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"thumbTint");
+			"thumbTint"
+		);
 	}
 	jint R_attr::thumbTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"thumbTintMode");
+			"thumbTintMode"
+		);
 	}
 	jint R_attr::thumbnail()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"thumbnail");
+			"thumbnail"
+		);
 	}
 	jint R_attr::tickMark()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tickMark");
+			"tickMark"
+		);
 	}
 	jint R_attr::tickMarkTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tickMarkTint");
+			"tickMarkTint"
+		);
 	}
 	jint R_attr::tickMarkTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tickMarkTintMode");
+			"tickMarkTintMode"
+		);
 	}
 	jint R_attr::tileMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tileMode");
+			"tileMode"
+		);
 	}
 	jint R_attr::tileModeX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tileModeX");
+			"tileModeX"
+		);
 	}
 	jint R_attr::tileModeY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tileModeY");
+			"tileModeY"
+		);
 	}
 	jint R_attr::timePickerDialogTheme()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"timePickerDialogTheme");
+			"timePickerDialogTheme"
+		);
 	}
 	jint R_attr::timePickerMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"timePickerMode");
+			"timePickerMode"
+		);
 	}
 	jint R_attr::timePickerStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"timePickerStyle");
+			"timePickerStyle"
+		);
 	}
 	jint R_attr::timeZone()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"timeZone");
+			"timeZone"
+		);
 	}
 	jint R_attr::tint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tint");
+			"tint"
+		);
 	}
 	jint R_attr::tintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tintMode");
+			"tintMode"
+		);
 	}
 	jint R_attr::title()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"title");
+			"title"
+		);
 	}
 	jint R_attr::titleCondensed()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"titleCondensed");
+			"titleCondensed"
+		);
 	}
 	jint R_attr::titleMargin()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"titleMargin");
+			"titleMargin"
+		);
 	}
 	jint R_attr::titleMarginBottom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"titleMarginBottom");
+			"titleMarginBottom"
+		);
 	}
 	jint R_attr::titleMarginEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"titleMarginEnd");
+			"titleMarginEnd"
+		);
 	}
 	jint R_attr::titleMarginStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"titleMarginStart");
+			"titleMarginStart"
+		);
 	}
 	jint R_attr::titleMarginTop()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"titleMarginTop");
+			"titleMarginTop"
+		);
 	}
 	jint R_attr::titleTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"titleTextAppearance");
+			"titleTextAppearance"
+		);
 	}
 	jint R_attr::titleTextColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"titleTextColor");
+			"titleTextColor"
+		);
 	}
 	jint R_attr::titleTextStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"titleTextStyle");
+			"titleTextStyle"
+		);
 	}
 	jint R_attr::toAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"toAlpha");
+			"toAlpha"
+		);
 	}
 	jint R_attr::toDegrees()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"toDegrees");
+			"toDegrees"
+		);
 	}
 	jint R_attr::toId()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"toId");
+			"toId"
+		);
 	}
 	jint R_attr::toScene()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"toScene");
+			"toScene"
+		);
 	}
 	jint R_attr::toXDelta()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"toXDelta");
+			"toXDelta"
+		);
 	}
 	jint R_attr::toXScale()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"toXScale");
+			"toXScale"
+		);
 	}
 	jint R_attr::toYDelta()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"toYDelta");
+			"toYDelta"
+		);
 	}
 	jint R_attr::toYScale()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"toYScale");
+			"toYScale"
+		);
 	}
 	jint R_attr::toolbarStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"toolbarStyle");
+			"toolbarStyle"
+		);
 	}
 	jint R_attr::tooltipText()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tooltipText");
+			"tooltipText"
+		);
 	}
 	jint R_attr::top()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"top");
+			"top"
+		);
 	}
 	jint R_attr::topBright()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"topBright");
+			"topBright"
+		);
 	}
 	jint R_attr::topDark()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"topDark");
+			"topDark"
+		);
 	}
 	jint R_attr::topLeftRadius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"topLeftRadius");
+			"topLeftRadius"
+		);
 	}
 	jint R_attr::topOffset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"topOffset");
+			"topOffset"
+		);
 	}
 	jint R_attr::topRightRadius()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"topRightRadius");
+			"topRightRadius"
+		);
 	}
 	jint R_attr::touchscreenBlocksFocus()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"touchscreenBlocksFocus");
+			"touchscreenBlocksFocus"
+		);
 	}
 	jint R_attr::track()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"track");
+			"track"
+		);
 	}
 	jint R_attr::trackTint()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"trackTint");
+			"trackTint"
+		);
 	}
 	jint R_attr::trackTintMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"trackTintMode");
+			"trackTintMode"
+		);
 	}
 	jint R_attr::transcriptMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"transcriptMode");
+			"transcriptMode"
+		);
 	}
 	jint R_attr::transformPivotX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"transformPivotX");
+			"transformPivotX"
+		);
 	}
 	jint R_attr::transformPivotY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"transformPivotY");
+			"transformPivotY"
+		);
 	}
 	jint R_attr::transition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"transition");
+			"transition"
+		);
 	}
 	jint R_attr::transitionGroup()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"transitionGroup");
+			"transitionGroup"
+		);
 	}
 	jint R_attr::transitionName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"transitionName");
+			"transitionName"
+		);
 	}
 	jint R_attr::transitionOrdering()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"transitionOrdering");
+			"transitionOrdering"
+		);
 	}
 	jint R_attr::transitionVisibilityMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"transitionVisibilityMode");
+			"transitionVisibilityMode"
+		);
 	}
 	jint R_attr::translateX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"translateX");
+			"translateX"
+		);
 	}
 	jint R_attr::translateY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"translateY");
+			"translateY"
+		);
 	}
 	jint R_attr::translationX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"translationX");
+			"translationX"
+		);
 	}
 	jint R_attr::translationY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"translationY");
+			"translationY"
+		);
 	}
 	jint R_attr::translationZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"translationZ");
+			"translationZ"
+		);
 	}
 	jint R_attr::trimPathEnd()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"trimPathEnd");
+			"trimPathEnd"
+		);
 	}
 	jint R_attr::trimPathOffset()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"trimPathOffset");
+			"trimPathOffset"
+		);
 	}
 	jint R_attr::trimPathStart()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"trimPathStart");
+			"trimPathStart"
+		);
 	}
 	jint R_attr::ttcIndex()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"ttcIndex");
+			"ttcIndex"
+		);
 	}
 	jint R_attr::tunerCount()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"tunerCount");
+			"tunerCount"
+		);
 	}
 	jint R_attr::turnScreenOn()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"turnScreenOn");
+			"turnScreenOn"
+		);
 	}
 	jint R_attr::type()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"type");
+			"type"
+		);
 	}
 	jint R_attr::typeface()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"typeface");
+			"typeface"
+		);
 	}
 	jint R_attr::uiOptions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"uiOptions");
+			"uiOptions"
+		);
 	}
 	jint R_attr::uncertainGestureColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"uncertainGestureColor");
+			"uncertainGestureColor"
+		);
 	}
 	jint R_attr::unfocusedMonthDateColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"unfocusedMonthDateColor");
+			"unfocusedMonthDateColor"
+		);
 	}
 	jint R_attr::unselectedAlpha()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"unselectedAlpha");
+			"unselectedAlpha"
+		);
 	}
 	jint R_attr::updatePeriodMillis()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"updatePeriodMillis");
+			"updatePeriodMillis"
+		);
 	}
 	jint R_attr::use32bitAbi()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"use32bitAbi");
+			"use32bitAbi"
+		);
 	}
 	jint R_attr::useAppZygote()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"useAppZygote");
+			"useAppZygote"
+		);
 	}
 	jint R_attr::useDefaultMargins()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"useDefaultMargins");
+			"useDefaultMargins"
+		);
 	}
 	jint R_attr::useEmbeddedDex()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"useEmbeddedDex");
+			"useEmbeddedDex"
+		);
 	}
 	jint R_attr::useIntrinsicSizeAsMinimum()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"useIntrinsicSizeAsMinimum");
+			"useIntrinsicSizeAsMinimum"
+		);
 	}
 	jint R_attr::useLevel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"useLevel");
+			"useLevel"
+		);
 	}
 	jint R_attr::userVisible()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"userVisible");
+			"userVisible"
+		);
 	}
 	jint R_attr::usesCleartextTraffic()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"usesCleartextTraffic");
+			"usesCleartextTraffic"
+		);
 	}
 	jint R_attr::value()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"value");
+			"value"
+		);
 	}
 	jint R_attr::valueFrom()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"valueFrom");
+			"valueFrom"
+		);
 	}
 	jint R_attr::valueTo()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"valueTo");
+			"valueTo"
+		);
 	}
 	jint R_attr::valueType()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"valueType");
+			"valueType"
+		);
 	}
 	jint R_attr::variablePadding()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"variablePadding");
+			"variablePadding"
+		);
 	}
 	jint R_attr::vendor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"vendor");
+			"vendor"
+		);
 	}
 	jint R_attr::version()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"version");
+			"version"
+		);
 	}
 	jint R_attr::versionCode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"versionCode");
+			"versionCode"
+		);
 	}
 	jint R_attr::versionCodeMajor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"versionCodeMajor");
+			"versionCodeMajor"
+		);
 	}
 	jint R_attr::versionMajor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"versionMajor");
+			"versionMajor"
+		);
 	}
 	jint R_attr::versionName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"versionName");
+			"versionName"
+		);
 	}
 	jint R_attr::verticalCorrection()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"verticalCorrection");
+			"verticalCorrection"
+		);
 	}
 	jint R_attr::verticalDivider()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"verticalDivider");
+			"verticalDivider"
+		);
 	}
 	jint R_attr::verticalGap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"verticalGap");
+			"verticalGap"
+		);
 	}
 	jint R_attr::verticalScrollbarPosition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"verticalScrollbarPosition");
+			"verticalScrollbarPosition"
+		);
 	}
 	jint R_attr::verticalSpacing()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"verticalSpacing");
+			"verticalSpacing"
+		);
 	}
 	jint R_attr::viewportHeight()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"viewportHeight");
+			"viewportHeight"
+		);
 	}
 	jint R_attr::viewportWidth()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"viewportWidth");
+			"viewportWidth"
+		);
 	}
 	jint R_attr::visibility()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"visibility");
+			"visibility"
+		);
 	}
 	jint R_attr::visible()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"visible");
+			"visible"
+		);
 	}
 	jint R_attr::visibleToInstantApps()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"visibleToInstantApps");
+			"visibleToInstantApps"
+		);
 	}
 	jint R_attr::vmSafeMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"vmSafeMode");
+			"vmSafeMode"
+		);
 	}
 	jint R_attr::voiceIcon()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"voiceIcon");
+			"voiceIcon"
+		);
 	}
 	jint R_attr::voiceLanguage()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"voiceLanguage");
+			"voiceLanguage"
+		);
 	}
 	jint R_attr::voiceLanguageModel()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"voiceLanguageModel");
+			"voiceLanguageModel"
+		);
 	}
 	jint R_attr::voiceMaxResults()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"voiceMaxResults");
+			"voiceMaxResults"
+		);
 	}
 	jint R_attr::voicePromptText()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"voicePromptText");
+			"voicePromptText"
+		);
 	}
 	jint R_attr::voiceSearchMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"voiceSearchMode");
+			"voiceSearchMode"
+		);
 	}
 	jint R_attr::wallpaperCloseEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"wallpaperCloseEnterAnimation");
+			"wallpaperCloseEnterAnimation"
+		);
 	}
 	jint R_attr::wallpaperCloseExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"wallpaperCloseExitAnimation");
+			"wallpaperCloseExitAnimation"
+		);
 	}
 	jint R_attr::wallpaperIntraCloseEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"wallpaperIntraCloseEnterAnimation");
+			"wallpaperIntraCloseEnterAnimation"
+		);
 	}
 	jint R_attr::wallpaperIntraCloseExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"wallpaperIntraCloseExitAnimation");
+			"wallpaperIntraCloseExitAnimation"
+		);
 	}
 	jint R_attr::wallpaperIntraOpenEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"wallpaperIntraOpenEnterAnimation");
+			"wallpaperIntraOpenEnterAnimation"
+		);
 	}
 	jint R_attr::wallpaperIntraOpenExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"wallpaperIntraOpenExitAnimation");
+			"wallpaperIntraOpenExitAnimation"
+		);
 	}
 	jint R_attr::wallpaperOpenEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"wallpaperOpenEnterAnimation");
+			"wallpaperOpenEnterAnimation"
+		);
 	}
 	jint R_attr::wallpaperOpenExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"wallpaperOpenExitAnimation");
+			"wallpaperOpenExitAnimation"
+		);
 	}
 	jint R_attr::webTextViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"webTextViewStyle");
+			"webTextViewStyle"
+		);
 	}
 	jint R_attr::webViewStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"webViewStyle");
+			"webViewStyle"
+		);
 	}
 	jint R_attr::weekDayTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"weekDayTextAppearance");
+			"weekDayTextAppearance"
+		);
 	}
 	jint R_attr::weekNumberColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"weekNumberColor");
+			"weekNumberColor"
+		);
 	}
 	jint R_attr::weekSeparatorLineColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"weekSeparatorLineColor");
+			"weekSeparatorLineColor"
+		);
 	}
 	jint R_attr::weightSum()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"weightSum");
+			"weightSum"
+		);
 	}
 	jint R_attr::widgetCategory()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"widgetCategory");
+			"widgetCategory"
+		);
 	}
 	jint R_attr::widgetFeatures()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"widgetFeatures");
+			"widgetFeatures"
+		);
 	}
 	jint R_attr::widgetLayout()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"widgetLayout");
+			"widgetLayout"
+		);
 	}
 	jint R_attr::width()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"width");
+			"width"
+		);
 	}
 	jint R_attr::windowActionBar()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowActionBar");
+			"windowActionBar"
+		);
 	}
 	jint R_attr::windowActionBarOverlay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowActionBarOverlay");
+			"windowActionBarOverlay"
+		);
 	}
 	jint R_attr::windowActionModeOverlay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowActionModeOverlay");
+			"windowActionModeOverlay"
+		);
 	}
 	jint R_attr::windowActivityTransitions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowActivityTransitions");
+			"windowActivityTransitions"
+		);
 	}
 	jint R_attr::windowAllowEnterTransitionOverlap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowAllowEnterTransitionOverlap");
+			"windowAllowEnterTransitionOverlap"
+		);
 	}
 	jint R_attr::windowAllowReturnTransitionOverlap()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowAllowReturnTransitionOverlap");
+			"windowAllowReturnTransitionOverlap"
+		);
 	}
 	jint R_attr::windowAnimationStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowAnimationStyle");
+			"windowAnimationStyle"
+		);
 	}
 	jint R_attr::windowBackground()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowBackground");
+			"windowBackground"
+		);
 	}
 	jint R_attr::windowBackgroundFallback()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowBackgroundFallback");
+			"windowBackgroundFallback"
+		);
 	}
 	jint R_attr::windowClipToOutline()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowClipToOutline");
+			"windowClipToOutline"
+		);
 	}
 	jint R_attr::windowCloseOnTouchOutside()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowCloseOnTouchOutside");
+			"windowCloseOnTouchOutside"
+		);
 	}
 	jint R_attr::windowContentOverlay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowContentOverlay");
+			"windowContentOverlay"
+		);
 	}
 	jint R_attr::windowContentTransitionManager()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowContentTransitionManager");
+			"windowContentTransitionManager"
+		);
 	}
 	jint R_attr::windowContentTransitions()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowContentTransitions");
+			"windowContentTransitions"
+		);
 	}
 	jint R_attr::windowDisablePreview()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowDisablePreview");
+			"windowDisablePreview"
+		);
 	}
 	jint R_attr::windowDrawsSystemBarBackgrounds()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowDrawsSystemBarBackgrounds");
+			"windowDrawsSystemBarBackgrounds"
+		);
 	}
 	jint R_attr::windowElevation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowElevation");
+			"windowElevation"
+		);
 	}
 	jint R_attr::windowEnableSplitTouch()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowEnableSplitTouch");
+			"windowEnableSplitTouch"
+		);
 	}
 	jint R_attr::windowEnterAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowEnterAnimation");
+			"windowEnterAnimation"
+		);
 	}
 	jint R_attr::windowEnterTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowEnterTransition");
+			"windowEnterTransition"
+		);
 	}
 	jint R_attr::windowExitAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowExitAnimation");
+			"windowExitAnimation"
+		);
 	}
 	jint R_attr::windowExitTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowExitTransition");
+			"windowExitTransition"
+		);
 	}
 	jint R_attr::windowFrame()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowFrame");
+			"windowFrame"
+		);
 	}
 	jint R_attr::windowFullscreen()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowFullscreen");
+			"windowFullscreen"
+		);
 	}
 	jint R_attr::windowHideAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowHideAnimation");
+			"windowHideAnimation"
+		);
 	}
 	jint R_attr::windowIsFloating()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowIsFloating");
+			"windowIsFloating"
+		);
 	}
 	jint R_attr::windowIsTranslucent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowIsTranslucent");
+			"windowIsTranslucent"
+		);
 	}
 	jint R_attr::windowLayoutInDisplayCutoutMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowLayoutInDisplayCutoutMode");
+			"windowLayoutInDisplayCutoutMode"
+		);
 	}
 	jint R_attr::windowLightNavigationBar()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowLightNavigationBar");
+			"windowLightNavigationBar"
+		);
 	}
 	jint R_attr::windowLightStatusBar()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowLightStatusBar");
+			"windowLightStatusBar"
+		);
 	}
 	jint R_attr::windowMinWidthMajor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowMinWidthMajor");
+			"windowMinWidthMajor"
+		);
 	}
 	jint R_attr::windowMinWidthMinor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowMinWidthMinor");
+			"windowMinWidthMinor"
+		);
 	}
 	jint R_attr::windowNoDisplay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowNoDisplay");
+			"windowNoDisplay"
+		);
 	}
 	jint R_attr::windowNoTitle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowNoTitle");
+			"windowNoTitle"
+		);
 	}
 	jint R_attr::windowOverscan()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowOverscan");
+			"windowOverscan"
+		);
 	}
 	jint R_attr::windowReenterTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowReenterTransition");
+			"windowReenterTransition"
+		);
 	}
 	jint R_attr::windowReturnTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowReturnTransition");
+			"windowReturnTransition"
+		);
 	}
 	jint R_attr::windowSharedElementEnterTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowSharedElementEnterTransition");
+			"windowSharedElementEnterTransition"
+		);
 	}
 	jint R_attr::windowSharedElementExitTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowSharedElementExitTransition");
+			"windowSharedElementExitTransition"
+		);
 	}
 	jint R_attr::windowSharedElementReenterTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowSharedElementReenterTransition");
+			"windowSharedElementReenterTransition"
+		);
 	}
 	jint R_attr::windowSharedElementReturnTransition()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowSharedElementReturnTransition");
+			"windowSharedElementReturnTransition"
+		);
 	}
 	jint R_attr::windowSharedElementsUseOverlay()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowSharedElementsUseOverlay");
+			"windowSharedElementsUseOverlay"
+		);
 	}
 	jint R_attr::windowShowAnimation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowShowAnimation");
+			"windowShowAnimation"
+		);
 	}
 	jint R_attr::windowShowWallpaper()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowShowWallpaper");
+			"windowShowWallpaper"
+		);
 	}
 	jint R_attr::windowSoftInputMode()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowSoftInputMode");
+			"windowSoftInputMode"
+		);
 	}
 	jint R_attr::windowSplashscreenContent()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowSplashscreenContent");
+			"windowSplashscreenContent"
+		);
 	}
 	jint R_attr::windowSwipeToDismiss()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowSwipeToDismiss");
+			"windowSwipeToDismiss"
+		);
 	}
 	jint R_attr::windowTitleBackgroundStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowTitleBackgroundStyle");
+			"windowTitleBackgroundStyle"
+		);
 	}
 	jint R_attr::windowTitleSize()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowTitleSize");
+			"windowTitleSize"
+		);
 	}
 	jint R_attr::windowTitleStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowTitleStyle");
+			"windowTitleStyle"
+		);
 	}
 	jint R_attr::windowTransitionBackgroundFadeDuration()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowTransitionBackgroundFadeDuration");
+			"windowTransitionBackgroundFadeDuration"
+		);
 	}
 	jint R_attr::windowTranslucentNavigation()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowTranslucentNavigation");
+			"windowTranslucentNavigation"
+		);
 	}
 	jint R_attr::windowTranslucentStatus()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"windowTranslucentStatus");
+			"windowTranslucentStatus"
+		);
 	}
 	jint R_attr::writePermission()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"writePermission");
+			"writePermission"
+		);
 	}
 	jint R_attr::x()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"x");
+			"x"
+		);
 	}
 	jint R_attr::xlargeScreens()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"xlargeScreens");
+			"xlargeScreens"
+		);
 	}
 	jint R_attr::y()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"y");
+			"y"
+		);
 	}
 	jint R_attr::yearListItemTextAppearance()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"yearListItemTextAppearance");
+			"yearListItemTextAppearance"
+		);
 	}
 	jint R_attr::yearListSelectorColor()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"yearListSelectorColor");
+			"yearListSelectorColor"
+		);
 	}
 	jint R_attr::yesNoPreferenceStyle()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"yesNoPreferenceStyle");
+			"yesNoPreferenceStyle"
+		);
 	}
 	jint R_attr::zAdjustment()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"zAdjustment");
+			"zAdjustment"
+		);
 	}
 	jint R_attr::zygotePreloadName()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$attr",
-			"zygotePreloadName");
+			"zygotePreloadName"
+		);
 	}
 	
 	// Constructors

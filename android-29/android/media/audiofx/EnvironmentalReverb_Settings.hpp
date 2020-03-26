@@ -28,7 +28,7 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -39,52 +39,62 @@ namespace __jni_impl::android::media::audiofx
 	jshort EnvironmentalReverb_Settings::decayHFRatio()
 	{
 		return __thiz.getField<jshort>(
-			"decayHFRatio");
+			"decayHFRatio"
+		);
 	}
 	jint EnvironmentalReverb_Settings::decayTime()
 	{
 		return __thiz.getField<jint>(
-			"decayTime");
+			"decayTime"
+		);
 	}
 	jshort EnvironmentalReverb_Settings::density()
 	{
 		return __thiz.getField<jshort>(
-			"density");
+			"density"
+		);
 	}
 	jshort EnvironmentalReverb_Settings::diffusion()
 	{
 		return __thiz.getField<jshort>(
-			"diffusion");
+			"diffusion"
+		);
 	}
 	jint EnvironmentalReverb_Settings::reflectionsDelay()
 	{
 		return __thiz.getField<jint>(
-			"reflectionsDelay");
+			"reflectionsDelay"
+		);
 	}
 	jshort EnvironmentalReverb_Settings::reflectionsLevel()
 	{
 		return __thiz.getField<jshort>(
-			"reflectionsLevel");
+			"reflectionsLevel"
+		);
 	}
 	jint EnvironmentalReverb_Settings::reverbDelay()
 	{
 		return __thiz.getField<jint>(
-			"reverbDelay");
+			"reverbDelay"
+		);
 	}
 	jshort EnvironmentalReverb_Settings::reverbLevel()
 	{
 		return __thiz.getField<jshort>(
-			"reverbLevel");
+			"reverbLevel"
+		);
 	}
 	jshort EnvironmentalReverb_Settings::roomHFLevel()
 	{
 		return __thiz.getField<jshort>(
-			"roomHFLevel");
+			"roomHFLevel"
+		);
 	}
 	jshort EnvironmentalReverb_Settings::roomLevel()
 	{
 		return __thiz.getField<jshort>(
-			"roomLevel");
+			"roomLevel"
+		);
 	}
 	
 	// Constructors
@@ -103,11 +113,12 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject EnvironmentalReverb_Settings::toString()
+	jstring EnvironmentalReverb_Settings::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media::audiofx
 

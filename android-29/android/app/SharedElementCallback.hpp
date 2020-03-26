@@ -68,14 +68,16 @@ namespace __jni_impl::android::app
 			"(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void SharedElementCallback::onRejectSharedElements(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onRejectSharedElements",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SharedElementCallback::onMapSharedElements(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -83,7 +85,8 @@ namespace __jni_impl::android::app
 			"onMapSharedElements",
 			"(Ljava/util/List;Ljava/util/Map;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SharedElementCallback::onSharedElementStart(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -92,7 +95,8 @@ namespace __jni_impl::android::app
 			"(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SharedElementCallback::onCaptureSharedElementSnapshot(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Matrix arg1, __jni_impl::android::graphics::RectF arg2)
 	{
@@ -101,7 +105,8 @@ namespace __jni_impl::android::app
 			"(Landroid/view/View;Landroid/graphics/Matrix;Landroid/graphics/RectF;)Landroid/os/Parcelable;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SharedElementCallback::onCreateSnapshotView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -109,7 +114,8 @@ namespace __jni_impl::android::app
 			"onCreateSnapshotView",
 			"(Landroid/content/Context;Landroid/os/Parcelable;)Landroid/view/View;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SharedElementCallback::onSharedElementsArrived(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -118,7 +124,8 @@ namespace __jni_impl::android::app
 			"(Ljava/util/List;Ljava/util/List;Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

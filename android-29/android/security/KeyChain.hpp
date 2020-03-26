@@ -28,15 +28,15 @@ namespace __jni_impl::android::security
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_KEYCHAIN_CHANGED();
-		static QAndroidJniObject ACTION_KEY_ACCESS_CHANGED();
-		static QAndroidJniObject ACTION_STORAGE_CHANGED();
-		static QAndroidJniObject ACTION_TRUST_STORE_CHANGED();
-		static QAndroidJniObject EXTRA_CERTIFICATE();
-		static QAndroidJniObject EXTRA_KEY_ACCESSIBLE();
-		static QAndroidJniObject EXTRA_KEY_ALIAS();
-		static QAndroidJniObject EXTRA_NAME();
-		static QAndroidJniObject EXTRA_PKCS12();
+		static jstring ACTION_KEYCHAIN_CHANGED();
+		static jstring ACTION_KEY_ACCESS_CHANGED();
+		static jstring ACTION_STORAGE_CHANGED();
+		static jstring ACTION_TRUST_STORE_CHANGED();
+		static jstring EXTRA_CERTIFICATE();
+		static jstring EXTRA_KEY_ACCESSIBLE();
+		static jstring EXTRA_KEY_ALIAS();
+		static jstring EXTRA_NAME();
+		static jstring EXTRA_PKCS12();
 		
 		// Constructors
 		void __constructor();
@@ -46,7 +46,7 @@ namespace __jni_impl::android::security
 		static void choosePrivateKeyAlias(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, jarray arg2, jarray arg3, __jni_impl::android::net::Uri arg4, jstring arg5);
 		static void choosePrivateKeyAlias(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, jarray arg2, jarray arg3, jstring arg4, jint arg5, jstring arg6);
 		static QAndroidJniObject getPrivateKey(__jni_impl::android::content::Context arg0, jstring arg1);
-		static QAndroidJniObject getCertificateChain(__jni_impl::android::content::Context arg0, jstring arg1);
+		static jarray getCertificateChain(__jni_impl::android::content::Context arg0, jstring arg1);
 		static jboolean isKeyAlgorithmSupported(jstring arg0);
 		static jboolean isBoundKeyAlgorithm(jstring arg0);
 	};
@@ -60,68 +60,77 @@ namespace __jni_impl::android::security
 namespace __jni_impl::android::security
 {
 	// Fields
-	QAndroidJniObject KeyChain::ACTION_KEYCHAIN_CHANGED()
+	jstring KeyChain::ACTION_KEYCHAIN_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.security.KeyChain",
 			"ACTION_KEYCHAIN_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject KeyChain::ACTION_KEY_ACCESS_CHANGED()
+	jstring KeyChain::ACTION_KEY_ACCESS_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.security.KeyChain",
 			"ACTION_KEY_ACCESS_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject KeyChain::ACTION_STORAGE_CHANGED()
+	jstring KeyChain::ACTION_STORAGE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.security.KeyChain",
 			"ACTION_STORAGE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject KeyChain::ACTION_TRUST_STORE_CHANGED()
+	jstring KeyChain::ACTION_TRUST_STORE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.security.KeyChain",
 			"ACTION_TRUST_STORE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject KeyChain::EXTRA_CERTIFICATE()
+	jstring KeyChain::EXTRA_CERTIFICATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.security.KeyChain",
 			"EXTRA_CERTIFICATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject KeyChain::EXTRA_KEY_ACCESSIBLE()
+	jstring KeyChain::EXTRA_KEY_ACCESSIBLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.security.KeyChain",
 			"EXTRA_KEY_ACCESSIBLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject KeyChain::EXTRA_KEY_ALIAS()
+	jstring KeyChain::EXTRA_KEY_ALIAS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.security.KeyChain",
 			"EXTRA_KEY_ALIAS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject KeyChain::EXTRA_NAME()
+	jstring KeyChain::EXTRA_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.security.KeyChain",
 			"EXTRA_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject KeyChain::EXTRA_PKCS12()
+	jstring KeyChain::EXTRA_PKCS12()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.security.KeyChain",
 			"EXTRA_PKCS12",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -138,7 +147,8 @@ namespace __jni_impl::android::security
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.security.KeyChain",
 			"createInstallIntent",
-			"()Landroid/content/Intent;");
+			"()Landroid/content/Intent;"
+		);
 	}
 	void KeyChain::choosePrivateKeyAlias(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, jarray arg2, jarray arg3, __jni_impl::android::net::Uri arg4, jstring arg5)
 	{
@@ -151,7 +161,8 @@ namespace __jni_impl::android::security
 			arg2,
 			arg3,
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void KeyChain::choosePrivateKeyAlias(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, jarray arg2, jarray arg3, jstring arg4, jint arg5, jstring arg6)
 	{
@@ -165,7 +176,8 @@ namespace __jni_impl::android::security
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	QAndroidJniObject KeyChain::getPrivateKey(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
@@ -174,16 +186,18 @@ namespace __jni_impl::android::security
 			"getPrivateKey",
 			"(Landroid/content/Context;Ljava/lang/String;)Ljava/security/PrivateKey;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject KeyChain::getCertificateChain(__jni_impl::android::content::Context arg0, jstring arg1)
+	jarray KeyChain::getCertificateChain(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.security.KeyChain",
 			"getCertificateChain",
 			"(Landroid/content/Context;Ljava/lang/String;)[Ljava/security/cert/X509Certificate;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jarray>();
 	}
 	jboolean KeyChain::isKeyAlgorithmSupported(jstring arg0)
 	{
@@ -191,7 +205,8 @@ namespace __jni_impl::android::security
 			"android.security.KeyChain",
 			"isKeyAlgorithmSupported",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean KeyChain::isBoundKeyAlgorithm(jstring arg0)
 	{
@@ -199,7 +214,8 @@ namespace __jni_impl::android::security
 			"android.security.KeyChain",
 			"isBoundKeyAlgorithm",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::security
 

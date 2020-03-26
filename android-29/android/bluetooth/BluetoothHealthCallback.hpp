@@ -61,7 +61,8 @@ namespace __jni_impl::android::bluetooth
 			arg2,
 			arg3,
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void BluetoothHealthCallback::onHealthAppConfigurationStatusChange(__jni_impl::android::bluetooth::BluetoothHealthAppConfiguration arg0, jint arg1)
 	{
@@ -69,7 +70,8 @@ namespace __jni_impl::android::bluetooth
 			"onHealthAppConfigurationStatusChange",
 			"(Landroid/bluetooth/BluetoothHealthAppConfiguration;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

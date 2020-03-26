@@ -13,13 +13,13 @@ namespace __jni_impl::android::graphics
 {
 	class Bitmap;
 }
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 
 namespace __jni_impl::android::view
@@ -60,16 +60,16 @@ namespace __jni_impl::android::view
 		jboolean equals(jobject arg0);
 		static QAndroidJniObject load(__jni_impl::android::content::res::Resources arg0, jint arg1);
 		static QAndroidJniObject create(__jni_impl::android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2);
-		static QAndroidJniObject getSystemIcon(__jni_impl::android::content::Context arg0, jint arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static QAndroidJniObject getSystemIcon(__jni_impl::android::content::Context arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/res/Resources.hpp"
 #include "../graphics/Bitmap.hpp"
-#include "../content/Context.hpp"
 #include "../os/Parcel.hpp"
+#include "../content/Context.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -79,145 +79,169 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.PointerIcon",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint PointerIcon::TYPE_ALIAS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_ALIAS");
+			"TYPE_ALIAS"
+		);
 	}
 	jint PointerIcon::TYPE_ALL_SCROLL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_ALL_SCROLL");
+			"TYPE_ALL_SCROLL"
+		);
 	}
 	jint PointerIcon::TYPE_ARROW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_ARROW");
+			"TYPE_ARROW"
+		);
 	}
 	jint PointerIcon::TYPE_CELL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_CELL");
+			"TYPE_CELL"
+		);
 	}
 	jint PointerIcon::TYPE_CONTEXT_MENU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_CONTEXT_MENU");
+			"TYPE_CONTEXT_MENU"
+		);
 	}
 	jint PointerIcon::TYPE_COPY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_COPY");
+			"TYPE_COPY"
+		);
 	}
 	jint PointerIcon::TYPE_CROSSHAIR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_CROSSHAIR");
+			"TYPE_CROSSHAIR"
+		);
 	}
 	jint PointerIcon::TYPE_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_DEFAULT");
+			"TYPE_DEFAULT"
+		);
 	}
 	jint PointerIcon::TYPE_GRAB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_GRAB");
+			"TYPE_GRAB"
+		);
 	}
 	jint PointerIcon::TYPE_GRABBING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_GRABBING");
+			"TYPE_GRABBING"
+		);
 	}
 	jint PointerIcon::TYPE_HAND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_HAND");
+			"TYPE_HAND"
+		);
 	}
 	jint PointerIcon::TYPE_HELP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_HELP");
+			"TYPE_HELP"
+		);
 	}
 	jint PointerIcon::TYPE_HORIZONTAL_DOUBLE_ARROW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_HORIZONTAL_DOUBLE_ARROW");
+			"TYPE_HORIZONTAL_DOUBLE_ARROW"
+		);
 	}
 	jint PointerIcon::TYPE_NO_DROP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_NO_DROP");
+			"TYPE_NO_DROP"
+		);
 	}
 	jint PointerIcon::TYPE_NULL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_NULL");
+			"TYPE_NULL"
+		);
 	}
 	jint PointerIcon::TYPE_TEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_TEXT");
+			"TYPE_TEXT"
+		);
 	}
 	jint PointerIcon::TYPE_TOP_LEFT_DIAGONAL_DOUBLE_ARROW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_TOP_LEFT_DIAGONAL_DOUBLE_ARROW");
+			"TYPE_TOP_LEFT_DIAGONAL_DOUBLE_ARROW"
+		);
 	}
 	jint PointerIcon::TYPE_TOP_RIGHT_DIAGONAL_DOUBLE_ARROW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_TOP_RIGHT_DIAGONAL_DOUBLE_ARROW");
+			"TYPE_TOP_RIGHT_DIAGONAL_DOUBLE_ARROW"
+		);
 	}
 	jint PointerIcon::TYPE_VERTICAL_DOUBLE_ARROW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_VERTICAL_DOUBLE_ARROW");
+			"TYPE_VERTICAL_DOUBLE_ARROW"
+		);
 	}
 	jint PointerIcon::TYPE_VERTICAL_TEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_VERTICAL_TEXT");
+			"TYPE_VERTICAL_TEXT"
+		);
 	}
 	jint PointerIcon::TYPE_WAIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_WAIT");
+			"TYPE_WAIT"
+		);
 	}
 	jint PointerIcon::TYPE_ZOOM_IN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_ZOOM_IN");
+			"TYPE_ZOOM_IN"
+		);
 	}
 	jint PointerIcon::TYPE_ZOOM_OUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.PointerIcon",
-			"TYPE_ZOOM_OUT");
+			"TYPE_ZOOM_OUT"
+		);
 	}
 	
 	// Constructors
@@ -234,7 +258,8 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PointerIcon::load(__jni_impl::android::content::res::Resources arg0, jint arg1)
 	{
@@ -243,7 +268,8 @@ namespace __jni_impl::android::view
 			"load",
 			"(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject PointerIcon::create(__jni_impl::android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2)
 	{
@@ -253,7 +279,24 @@ namespace __jni_impl::android::view
 			"(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	jint PointerIcon::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void PointerIcon::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	QAndroidJniObject PointerIcon::getSystemIcon(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -262,21 +305,8 @@ namespace __jni_impl::android::view
 			"getSystemIcon",
 			"(Landroid/content/Context;I)Landroid/view/PointerIcon;",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jint PointerIcon::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void PointerIcon::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view
 

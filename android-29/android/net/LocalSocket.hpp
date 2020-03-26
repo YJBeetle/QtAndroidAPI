@@ -13,6 +13,10 @@ namespace __jni_impl::java::io
 {
 	class InputStream;
 }
+namespace __jni_impl::android::net
+{
+	class Credentials;
+}
 namespace __jni_impl::java::io
 {
 	class FileDescriptor;
@@ -20,10 +24,6 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class OutputStream;
-}
-namespace __jni_impl::android::net
-{
-	class Credentials;
 }
 
 namespace __jni_impl::android::net
@@ -41,12 +41,15 @@ namespace __jni_impl::android::net
 		void __constructor(jint arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void connect(__jni_impl::android::net::LocalSocketAddress arg0, jint arg1);
 		void connect(__jni_impl::android::net::LocalSocketAddress arg0);
 		void close();
 		QAndroidJniObject getInputStream();
 		void bind(__jni_impl::android::net::LocalSocketAddress arg0);
+		void setFileDescriptorsForSend(jarray arg0);
+		jarray getAncillaryFileDescriptors();
+		QAndroidJniObject getPeerCredentials();
 		jboolean isConnected();
 		QAndroidJniObject getFileDescriptor();
 		jboolean isClosed();
@@ -64,17 +67,14 @@ namespace __jni_impl::android::net
 		jint getSendBufferSize();
 		void setReceiveBufferSize(jint arg0);
 		jint getReceiveBufferSize();
-		void setFileDescriptorsForSend(jarray arg0);
-		QAndroidJniObject getAncillaryFileDescriptors();
-		QAndroidJniObject getPeerCredentials();
 	};
 } // namespace __jni_impl::android::net
 
 #include "LocalSocketAddress.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "Credentials.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/OutputStream.hpp"
-#include "Credentials.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -83,19 +83,22 @@ namespace __jni_impl::android::net
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.LocalSocket",
-			"SOCKET_DGRAM");
+			"SOCKET_DGRAM"
+		);
 	}
 	jint LocalSocket::SOCKET_SEQPACKET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.LocalSocket",
-			"SOCKET_SEQPACKET");
+			"SOCKET_SEQPACKET"
+		);
 	}
 	jint LocalSocket::SOCKET_STREAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.LocalSocket",
-			"SOCKET_STREAM");
+			"SOCKET_STREAM"
+		);
 	}
 	
 	// Constructors
@@ -114,11 +117,12 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject LocalSocket::toString()
+	jstring LocalSocket::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void LocalSocket::connect(__jni_impl::android::net::LocalSocketAddress arg0, jint arg1)
 	{
@@ -126,157 +130,182 @@ namespace __jni_impl::android::net
 			"connect",
 			"(Landroid/net/LocalSocketAddress;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void LocalSocket::connect(__jni_impl::android::net::LocalSocketAddress arg0)
 	{
 		__thiz.callMethod<void>(
 			"connect",
 			"(Landroid/net/LocalSocketAddress;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LocalSocket::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject LocalSocket::getInputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getInputStream",
-			"()Ljava/io/InputStream;");
+			"()Ljava/io/InputStream;"
+		);
 	}
 	void LocalSocket::bind(__jni_impl::android::net::LocalSocketAddress arg0)
 	{
 		__thiz.callMethod<void>(
 			"bind",
 			"(Landroid/net/LocalSocketAddress;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean LocalSocket::isConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z");
-	}
-	QAndroidJniObject LocalSocket::getFileDescriptor()
-	{
-		return __thiz.callObjectMethod(
-			"getFileDescriptor",
-			"()Ljava/io/FileDescriptor;");
-	}
-	jboolean LocalSocket::isClosed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isClosed",
-			"()Z");
-	}
-	QAndroidJniObject LocalSocket::getOutputStream()
-	{
-		return __thiz.callObjectMethod(
-			"getOutputStream",
-			"()Ljava/io/OutputStream;");
-	}
-	jboolean LocalSocket::isBound()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBound",
-			"()Z");
-	}
-	jboolean LocalSocket::isInputShutdown()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInputShutdown",
-			"()Z");
-	}
-	jboolean LocalSocket::isOutputShutdown()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOutputShutdown",
-			"()Z");
-	}
-	void LocalSocket::shutdownInput()
-	{
-		__thiz.callMethod<void>(
-			"shutdownInput",
-			"()V");
-	}
-	void LocalSocket::shutdownOutput()
-	{
-		__thiz.callMethod<void>(
-			"shutdownOutput",
-			"()V");
-	}
-	QAndroidJniObject LocalSocket::getRemoteSocketAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getRemoteSocketAddress",
-			"()Landroid/net/LocalSocketAddress;");
-	}
-	QAndroidJniObject LocalSocket::getLocalSocketAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getLocalSocketAddress",
-			"()Landroid/net/LocalSocketAddress;");
-	}
-	void LocalSocket::setSoTimeout(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSoTimeout",
-			"(I)V",
-			arg0);
-	}
-	jint LocalSocket::getSoTimeout()
-	{
-		return __thiz.callMethod<jint>(
-			"getSoTimeout",
-			"()I");
-	}
-	void LocalSocket::setSendBufferSize(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSendBufferSize",
-			"(I)V",
-			arg0);
-	}
-	jint LocalSocket::getSendBufferSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getSendBufferSize",
-			"()I");
-	}
-	void LocalSocket::setReceiveBufferSize(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReceiveBufferSize",
-			"(I)V",
-			arg0);
-	}
-	jint LocalSocket::getReceiveBufferSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getReceiveBufferSize",
-			"()I");
+			arg0.__jniObject().object()
+		);
 	}
 	void LocalSocket::setFileDescriptorsForSend(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFileDescriptorsForSend",
 			"([Ljava/io/FileDescriptor;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject LocalSocket::getAncillaryFileDescriptors()
+	jarray LocalSocket::getAncillaryFileDescriptors()
 	{
 		return __thiz.callObjectMethod(
 			"getAncillaryFileDescriptors",
-			"()[Ljava/io/FileDescriptor;");
+			"()[Ljava/io/FileDescriptor;"
+		).object<jarray>();
 	}
 	QAndroidJniObject LocalSocket::getPeerCredentials()
 	{
 		return __thiz.callObjectMethod(
 			"getPeerCredentials",
-			"()Landroid/net/Credentials;");
+			"()Landroid/net/Credentials;"
+		);
+	}
+	jboolean LocalSocket::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
+		);
+	}
+	QAndroidJniObject LocalSocket::getFileDescriptor()
+	{
+		return __thiz.callObjectMethod(
+			"getFileDescriptor",
+			"()Ljava/io/FileDescriptor;"
+		);
+	}
+	jboolean LocalSocket::isClosed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClosed",
+			"()Z"
+		);
+	}
+	QAndroidJniObject LocalSocket::getOutputStream()
+	{
+		return __thiz.callObjectMethod(
+			"getOutputStream",
+			"()Ljava/io/OutputStream;"
+		);
+	}
+	jboolean LocalSocket::isBound()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBound",
+			"()Z"
+		);
+	}
+	jboolean LocalSocket::isInputShutdown()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInputShutdown",
+			"()Z"
+		);
+	}
+	jboolean LocalSocket::isOutputShutdown()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOutputShutdown",
+			"()Z"
+		);
+	}
+	void LocalSocket::shutdownInput()
+	{
+		__thiz.callMethod<void>(
+			"shutdownInput",
+			"()V"
+		);
+	}
+	void LocalSocket::shutdownOutput()
+	{
+		__thiz.callMethod<void>(
+			"shutdownOutput",
+			"()V"
+		);
+	}
+	QAndroidJniObject LocalSocket::getRemoteSocketAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getRemoteSocketAddress",
+			"()Landroid/net/LocalSocketAddress;"
+		);
+	}
+	QAndroidJniObject LocalSocket::getLocalSocketAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getLocalSocketAddress",
+			"()Landroid/net/LocalSocketAddress;"
+		);
+	}
+	void LocalSocket::setSoTimeout(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSoTimeout",
+			"(I)V",
+			arg0
+		);
+	}
+	jint LocalSocket::getSoTimeout()
+	{
+		return __thiz.callMethod<jint>(
+			"getSoTimeout",
+			"()I"
+		);
+	}
+	void LocalSocket::setSendBufferSize(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSendBufferSize",
+			"(I)V",
+			arg0
+		);
+	}
+	jint LocalSocket::getSendBufferSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getSendBufferSize",
+			"()I"
+		);
+	}
+	void LocalSocket::setReceiveBufferSize(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setReceiveBufferSize",
+			"(I)V",
+			arg0
+		);
+	}
+	jint LocalSocket::getReceiveBufferSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getReceiveBufferSize",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net
 

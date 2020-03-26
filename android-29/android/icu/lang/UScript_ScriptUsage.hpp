@@ -24,7 +24,7 @@ namespace __jni_impl::android::icu::lang
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::lang
@@ -38,42 +38,48 @@ namespace __jni_impl::android::icu::lang
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
 			"NOT_ENCODED",
-			"Landroid/icu/lang/UScript$ScriptUsage;");
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
 	}
 	QAndroidJniObject UScript_ScriptUsage::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
 			"UNKNOWN",
-			"Landroid/icu/lang/UScript$ScriptUsage;");
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
 	}
 	QAndroidJniObject UScript_ScriptUsage::EXCLUDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
 			"EXCLUDED",
-			"Landroid/icu/lang/UScript$ScriptUsage;");
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
 	}
 	QAndroidJniObject UScript_ScriptUsage::LIMITED_USE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
 			"LIMITED_USE",
-			"Landroid/icu/lang/UScript$ScriptUsage;");
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
 	}
 	QAndroidJniObject UScript_ScriptUsage::ASPIRATIONAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
 			"ASPIRATIONAL",
-			"Landroid/icu/lang/UScript$ScriptUsage;");
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
 	}
 	QAndroidJniObject UScript_ScriptUsage::RECOMMENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.lang.UScript$ScriptUsage",
 			"RECOMMENDED",
-			"Landroid/icu/lang/UScript$ScriptUsage;");
+			"Landroid/icu/lang/UScript$ScriptUsage;"
+		);
 	}
 	
 	// Constructors
@@ -85,12 +91,13 @@ namespace __jni_impl::android::icu::lang
 	}
 	
 	// Methods
-	QAndroidJniObject UScript_ScriptUsage::values()
+	jarray UScript_ScriptUsage::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript$ScriptUsage",
 			"values",
-			"()[Landroid/icu/lang/UScript$ScriptUsage;");
+			"()[Landroid/icu/lang/UScript$ScriptUsage;"
+		).object<jarray>();
 	}
 	QAndroidJniObject UScript_ScriptUsage::valueOf(jstring arg0)
 	{
@@ -98,7 +105,8 @@ namespace __jni_impl::android::icu::lang
 			"android.icu.lang.UScript$ScriptUsage",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/lang/UScript$ScriptUsage;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::lang
 

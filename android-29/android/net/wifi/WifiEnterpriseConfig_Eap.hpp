@@ -37,55 +37,64 @@ namespace __jni_impl::android::net::wifi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Eap",
-			"AKA");
+			"AKA"
+		);
 	}
 	jint WifiEnterpriseConfig_Eap::AKA_PRIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Eap",
-			"AKA_PRIME");
+			"AKA_PRIME"
+		);
 	}
 	jint WifiEnterpriseConfig_Eap::NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Eap",
-			"NONE");
+			"NONE"
+		);
 	}
 	jint WifiEnterpriseConfig_Eap::PEAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Eap",
-			"PEAP");
+			"PEAP"
+		);
 	}
 	jint WifiEnterpriseConfig_Eap::PWD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Eap",
-			"PWD");
+			"PWD"
+		);
 	}
 	jint WifiEnterpriseConfig_Eap::SIM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Eap",
-			"SIM");
+			"SIM"
+		);
 	}
 	jint WifiEnterpriseConfig_Eap::TLS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Eap",
-			"TLS");
+			"TLS"
+		);
 	}
 	jint WifiEnterpriseConfig_Eap::TTLS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Eap",
-			"TTLS");
+			"TTLS"
+		);
 	}
 	jint WifiEnterpriseConfig_Eap::UNAUTH_TLS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Eap",
-			"UNAUTH_TLS");
+			"UNAUTH_TLS"
+		);
 	}
 	
 	// Constructors

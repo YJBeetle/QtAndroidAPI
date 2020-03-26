@@ -19,7 +19,7 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
-		QAndroidJniObject getValue();
+		jbyteArray getValue();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -32,7 +32,8 @@ namespace __jni_impl::javax::crypto::spec
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.crypto.spec.PSource$PSpecified",
 			"DEFAULT",
-			"Ljavax/crypto/spec/PSource$PSpecified;");
+			"Ljavax/crypto/spec/PSource$PSpecified;"
+		);
 	}
 	
 	// Constructors
@@ -45,11 +46,12 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
-	QAndroidJniObject PSource_PSpecified::getValue()
+	jbyteArray PSource_PSpecified::getValue()
 	{
 		return __thiz.callObjectMethod(
 			"getValue",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

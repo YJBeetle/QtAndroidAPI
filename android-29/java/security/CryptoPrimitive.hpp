@@ -28,7 +28,7 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::security
@@ -42,70 +42,80 @@ namespace __jni_impl::java::security
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"MESSAGE_DIGEST",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	QAndroidJniObject CryptoPrimitive::SECURE_RANDOM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"SECURE_RANDOM",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	QAndroidJniObject CryptoPrimitive::BLOCK_CIPHER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"BLOCK_CIPHER",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	QAndroidJniObject CryptoPrimitive::STREAM_CIPHER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"STREAM_CIPHER",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	QAndroidJniObject CryptoPrimitive::MAC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"MAC",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	QAndroidJniObject CryptoPrimitive::KEY_WRAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"KEY_WRAP",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	QAndroidJniObject CryptoPrimitive::PUBLIC_KEY_ENCRYPTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"PUBLIC_KEY_ENCRYPTION",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	QAndroidJniObject CryptoPrimitive::SIGNATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"SIGNATURE",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	QAndroidJniObject CryptoPrimitive::KEY_ENCAPSULATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"KEY_ENCAPSULATION",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	QAndroidJniObject CryptoPrimitive::KEY_AGREEMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.CryptoPrimitive",
 			"KEY_AGREEMENT",
-			"Ljava/security/CryptoPrimitive;");
+			"Ljava/security/CryptoPrimitive;"
+		);
 	}
 	
 	// Constructors
@@ -117,12 +127,13 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject CryptoPrimitive::values()
+	jarray CryptoPrimitive::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.CryptoPrimitive",
 			"values",
-			"()[Ljava/security/CryptoPrimitive;");
+			"()[Ljava/security/CryptoPrimitive;"
+		).object<jarray>();
 	}
 	QAndroidJniObject CryptoPrimitive::valueOf(jstring arg0)
 	{
@@ -130,7 +141,8 @@ namespace __jni_impl::java::security
 			"java.security.CryptoPrimitive",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/CryptoPrimitive;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::security
 

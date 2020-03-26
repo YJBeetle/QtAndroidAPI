@@ -27,7 +27,7 @@ namespace __jni_impl::android::service::carrier
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CARRIER_SERVICE_INTERFACE();
+		static jstring CARRIER_SERVICE_INTERFACE();
 		
 		// Constructors
 		void __constructor();
@@ -46,12 +46,13 @@ namespace __jni_impl::android::service::carrier
 namespace __jni_impl::android::service::carrier
 {
 	// Fields
-	QAndroidJniObject CarrierService::CARRIER_SERVICE_INTERFACE()
+	jstring CarrierService::CARRIER_SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.carrier.CarrierService",
 			"CARRIER_SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -68,21 +69,24 @@ namespace __jni_impl::android::service::carrier
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CarrierService::onLoadConfig(__jni_impl::android::service::carrier::CarrierIdentifier arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onLoadConfig",
 			"(Landroid/service/carrier/CarrierIdentifier;)Landroid/os/PersistableBundle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CarrierService::notifyCarrierNetworkChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"notifyCarrierNetworkChange",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::service::carrier
 

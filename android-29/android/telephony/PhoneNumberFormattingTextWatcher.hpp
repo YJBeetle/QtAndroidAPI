@@ -18,9 +18,9 @@ namespace __jni_impl::android::telephony
 		void __constructor(jstring arg0);
 		
 		// Methods
-		void onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
 		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
 		void afterTextChanged(__jni_impl::__JniBaseClass arg0);
+		void onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -45,16 +45,6 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	void PhoneNumberFormattingTextWatcher::onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"onTextChanged",
-			"(Ljava/lang/CharSequence;III)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
 	void PhoneNumberFormattingTextWatcher::beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -63,14 +53,27 @@ namespace __jni_impl::android::telephony
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void PhoneNumberFormattingTextWatcher::afterTextChanged(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"afterTextChanged",
 			"(Landroid/text/Editable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void PhoneNumberFormattingTextWatcher::onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"onTextChanged",
+			"(Ljava/lang/CharSequence;III)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

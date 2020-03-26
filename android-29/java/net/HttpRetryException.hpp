@@ -20,9 +20,9 @@ namespace __jni_impl::java::net
 		void __constructor(jstring arg0, jint arg1, jstring arg2);
 		
 		// Methods
-		QAndroidJniObject getLocation();
-		QAndroidJniObject getReason();
+		jstring getLocation();
 		jint responseCode();
+		jstring getReason();
 	};
 } // namespace __jni_impl::java::net
 
@@ -51,23 +51,26 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject HttpRetryException::getLocation()
+	jstring HttpRetryException::getLocation()
 	{
 		return __thiz.callObjectMethod(
 			"getLocation",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject HttpRetryException::getReason()
-	{
-		return __thiz.callObjectMethod(
-			"getReason",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint HttpRetryException::responseCode()
 	{
 		return __thiz.callMethod<jint>(
 			"responseCode",
-			"()I");
+			"()I"
+		);
+	}
+	jstring HttpRetryException::getReason()
+	{
+		return __thiz.callObjectMethod(
+			"getReason",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

@@ -24,20 +24,20 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getLevel();
 		jint getAsuLevel();
 		jint getDbm();
-		jint getCdmaLevel();
-		jint getEvdoLevel();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getCdmaDbm();
 		jint getCdmaEcio();
 		jint getEvdoDbm();
 		jint getEvdoEcio();
 		jint getEvdoSnr();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getCdmaLevel();
+		jint getEvdoLevel();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -51,7 +51,8 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellSignalStrengthCdma",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -68,55 +69,85 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CellSignalStrengthCdma::toString()
+	jstring CellSignalStrengthCdma::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CellSignalStrengthCdma::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthCdma::getLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getLevel",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthCdma::getAsuLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getAsuLevel",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthCdma::getDbm()
 	{
 		return __thiz.callMethod<jint>(
 			"getDbm",
-			"()I");
+			"()I"
+		);
 	}
-	jint CellSignalStrengthCdma::getCdmaLevel()
+	jint CellSignalStrengthCdma::getCdmaDbm()
 	{
 		return __thiz.callMethod<jint>(
-			"getCdmaLevel",
-			"()I");
+			"getCdmaDbm",
+			"()I"
+		);
 	}
-	jint CellSignalStrengthCdma::getEvdoLevel()
+	jint CellSignalStrengthCdma::getCdmaEcio()
 	{
 		return __thiz.callMethod<jint>(
-			"getEvdoLevel",
-			"()I");
+			"getCdmaEcio",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthCdma::getEvdoDbm()
+	{
+		return __thiz.callMethod<jint>(
+			"getEvdoDbm",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthCdma::getEvdoEcio()
+	{
+		return __thiz.callMethod<jint>(
+			"getEvdoEcio",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthCdma::getEvdoSnr()
+	{
+		return __thiz.callMethod<jint>(
+			"getEvdoSnr",
+			"()I"
+		);
 	}
 	jint CellSignalStrengthCdma::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CellSignalStrengthCdma::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -124,37 +155,22 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	jint CellSignalStrengthCdma::getCdmaDbm()
+	jint CellSignalStrengthCdma::getCdmaLevel()
 	{
 		return __thiz.callMethod<jint>(
-			"getCdmaDbm",
-			"()I");
+			"getCdmaLevel",
+			"()I"
+		);
 	}
-	jint CellSignalStrengthCdma::getCdmaEcio()
+	jint CellSignalStrengthCdma::getEvdoLevel()
 	{
 		return __thiz.callMethod<jint>(
-			"getCdmaEcio",
-			"()I");
-	}
-	jint CellSignalStrengthCdma::getEvdoDbm()
-	{
-		return __thiz.callMethod<jint>(
-			"getEvdoDbm",
-			"()I");
-	}
-	jint CellSignalStrengthCdma::getEvdoEcio()
-	{
-		return __thiz.callMethod<jint>(
-			"getEvdoEcio",
-			"()I");
-	}
-	jint CellSignalStrengthCdma::getEvdoSnr()
-	{
-		return __thiz.callMethod<jint>(
-			"getEvdoSnr",
-			"()I");
+			"getEvdoLevel",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

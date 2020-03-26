@@ -23,8 +23,8 @@ namespace __jni_impl::android::media::midi
 		// Methods
 		void connect(__jni_impl::android::media::midi::MidiReceiver arg0);
 		void onConnect(__jni_impl::android::media::midi::MidiReceiver arg0);
-		void disconnect(__jni_impl::android::media::midi::MidiReceiver arg0);
 		void onDisconnect(__jni_impl::android::media::midi::MidiReceiver arg0);
+		void disconnect(__jni_impl::android::media::midi::MidiReceiver arg0);
 	};
 } // namespace __jni_impl::android::media::midi
 
@@ -48,28 +48,32 @@ namespace __jni_impl::android::media::midi
 		__thiz.callMethod<void>(
 			"connect",
 			"(Landroid/media/midi/MidiReceiver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MidiSender::onConnect(__jni_impl::android::media::midi::MidiReceiver arg0)
 	{
 		__thiz.callMethod<void>(
 			"onConnect",
 			"(Landroid/media/midi/MidiReceiver;)V",
-			arg0.__jniObject().object());
-	}
-	void MidiSender::disconnect(__jni_impl::android::media::midi::MidiReceiver arg0)
-	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"(Landroid/media/midi/MidiReceiver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MidiSender::onDisconnect(__jni_impl::android::media::midi::MidiReceiver arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDisconnect",
 			"(Landroid/media/midi/MidiReceiver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void MidiSender::disconnect(__jni_impl::android::media::midi::MidiReceiver arg0)
+	{
+		__thiz.callMethod<void>(
+			"disconnect",
+			"(Landroid/media/midi/MidiReceiver;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::midi
 

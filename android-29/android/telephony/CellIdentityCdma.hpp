@@ -24,14 +24,14 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		jint getSystemId();
 		jint getLatitude();
 		jint getLongitude();
-		jint getBasestationId();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getSystemId();
 		jint getNetworkId();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getBasestationId();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -45,7 +45,8 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellIdentityCdma",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -62,43 +63,50 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CellIdentityCdma::toString()
+	jstring CellIdentityCdma::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CellIdentityCdma::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jint CellIdentityCdma::getSystemId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSystemId",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellIdentityCdma::getLatitude()
 	{
 		return __thiz.callMethod<jint>(
 			"getLatitude",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellIdentityCdma::getLongitude()
 	{
 		return __thiz.callMethod<jint>(
 			"getLongitude",
-			"()I");
+			"()I"
+		);
 	}
-	jint CellIdentityCdma::getBasestationId()
+	jint CellIdentityCdma::getSystemId()
 	{
 		return __thiz.callMethod<jint>(
-			"getBasestationId",
-			"()I");
+			"getSystemId",
+			"()I"
+		);
+	}
+	jint CellIdentityCdma::getNetworkId()
+	{
+		return __thiz.callMethod<jint>(
+			"getNetworkId",
+			"()I"
+		);
 	}
 	void CellIdentityCdma::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -106,13 +114,15 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	jint CellIdentityCdma::getNetworkId()
+	jint CellIdentityCdma::getBasestationId()
 	{
 		return __thiz.callMethod<jint>(
-			"getNetworkId",
-			"()I");
+			"getBasestationId",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

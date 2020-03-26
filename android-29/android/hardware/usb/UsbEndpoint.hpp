@@ -22,7 +22,7 @@ namespace __jni_impl::android::hardware::usb
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getType();
 		jint getAddress();
 		jint getAttributes();
@@ -45,7 +45,8 @@ namespace __jni_impl::android::hardware::usb
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.usb.UsbEndpoint",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -57,35 +58,40 @@ namespace __jni_impl::android::hardware::usb
 	}
 	
 	// Methods
-	QAndroidJniObject UsbEndpoint::toString()
+	jstring UsbEndpoint::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsbEndpoint::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbEndpoint::getAddress()
 	{
 		return __thiz.callMethod<jint>(
 			"getAddress",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbEndpoint::getAttributes()
 	{
 		return __thiz.callMethod<jint>(
 			"getAttributes",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbEndpoint::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UsbEndpoint::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -93,31 +99,36 @@ namespace __jni_impl::android::hardware::usb
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint UsbEndpoint::getEndpointNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getEndpointNumber",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbEndpoint::getDirection()
 	{
 		return __thiz.callMethod<jint>(
 			"getDirection",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbEndpoint::getMaxPacketSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxPacketSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbEndpoint::getInterval()
 	{
 		return __thiz.callMethod<jint>(
 			"getInterval",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::hardware::usb
 

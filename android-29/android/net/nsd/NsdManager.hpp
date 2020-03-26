@@ -16,8 +16,8 @@ namespace __jni_impl::android::net::nsd
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_NSD_STATE_CHANGED();
-		static QAndroidJniObject EXTRA_NSD_STATE();
+		static jstring ACTION_NSD_STATE_CHANGED();
+		static jstring EXTRA_NSD_STATE();
 		static jint FAILURE_ALREADY_ACTIVE();
 		static jint FAILURE_INTERNAL_ERROR();
 		static jint FAILURE_MAX_LIMIT();
@@ -29,11 +29,11 @@ namespace __jni_impl::android::net::nsd
 		void __constructor();
 		
 		// Methods
+		void resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1);
+		void discoverServices(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		void registerService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		void unregisterService(__jni_impl::__JniBaseClass arg0);
 		void stopServiceDiscovery(__jni_impl::__JniBaseClass arg0);
-		void resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1);
-		void discoverServices(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 	};
 } // namespace __jni_impl::android::net::nsd
 
@@ -42,55 +42,63 @@ namespace __jni_impl::android::net::nsd
 namespace __jni_impl::android::net::nsd
 {
 	// Fields
-	QAndroidJniObject NsdManager::ACTION_NSD_STATE_CHANGED()
+	jstring NsdManager::ACTION_NSD_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.nsd.NsdManager",
 			"ACTION_NSD_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NsdManager::EXTRA_NSD_STATE()
+	jstring NsdManager::EXTRA_NSD_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.nsd.NsdManager",
 			"EXTRA_NSD_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint NsdManager::FAILURE_ALREADY_ACTIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.nsd.NsdManager",
-			"FAILURE_ALREADY_ACTIVE");
+			"FAILURE_ALREADY_ACTIVE"
+		);
 	}
 	jint NsdManager::FAILURE_INTERNAL_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.nsd.NsdManager",
-			"FAILURE_INTERNAL_ERROR");
+			"FAILURE_INTERNAL_ERROR"
+		);
 	}
 	jint NsdManager::FAILURE_MAX_LIMIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.nsd.NsdManager",
-			"FAILURE_MAX_LIMIT");
+			"FAILURE_MAX_LIMIT"
+		);
 	}
 	jint NsdManager::NSD_STATE_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.nsd.NsdManager",
-			"NSD_STATE_DISABLED");
+			"NSD_STATE_DISABLED"
+		);
 	}
 	jint NsdManager::NSD_STATE_ENABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.nsd.NsdManager",
-			"NSD_STATE_ENABLED");
+			"NSD_STATE_ENABLED"
+		);
 	}
 	jint NsdManager::PROTOCOL_DNS_SD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.nsd.NsdManager",
-			"PROTOCOL_DNS_SD");
+			"PROTOCOL_DNS_SD"
+		);
 	}
 	
 	// Constructors
@@ -102,36 +110,14 @@ namespace __jni_impl::android::net::nsd
 	}
 	
 	// Methods
-	void NsdManager::registerService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"registerService",
-			"(Landroid/net/nsd/NsdServiceInfo;ILandroid/net/nsd/NsdManager$RegistrationListener;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object());
-	}
-	void NsdManager::unregisterService(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterService",
-			"(Landroid/net/nsd/NsdManager$RegistrationListener;)V",
-			arg0.__jniObject().object());
-	}
-	void NsdManager::stopServiceDiscovery(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"stopServiceDiscovery",
-			"(Landroid/net/nsd/NsdManager$DiscoveryListener;)V",
-			arg0.__jniObject().object());
-	}
 	void NsdManager::resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
 			"resolveService",
 			"(Landroid/net/nsd/NsdServiceInfo;Landroid/net/nsd/NsdManager$ResolveListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void NsdManager::discoverServices(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -140,7 +126,34 @@ namespace __jni_impl::android::net::nsd
 			"(Ljava/lang/String;ILandroid/net/nsd/NsdManager$DiscoveryListener;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void NsdManager::registerService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"registerService",
+			"(Landroid/net/nsd/NsdServiceInfo;ILandroid/net/nsd/NsdManager$RegistrationListener;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void NsdManager::unregisterService(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterService",
+			"(Landroid/net/nsd/NsdManager$RegistrationListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void NsdManager::stopServiceDiscovery(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"stopServiceDiscovery",
+			"(Landroid/net/nsd/NsdManager$DiscoveryListener;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net::nsd
 

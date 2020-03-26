@@ -12,9 +12,9 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FORMAT();
-		static QAndroidJniObject MIME_TYPE();
-		static QAndroidJniObject TRACKS();
+		static jstring FORMAT();
+		static jstring MIME_TYPE();
+		static jstring TRACKS();
 		
 		// Constructors
 		void __constructor();
@@ -27,26 +27,29 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject MediaExtractor_MetricsConstants::FORMAT()
+	jstring MediaExtractor_MetricsConstants::FORMAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaExtractor$MetricsConstants",
 			"FORMAT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaExtractor_MetricsConstants::MIME_TYPE()
+	jstring MediaExtractor_MetricsConstants::MIME_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaExtractor$MetricsConstants",
 			"MIME_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaExtractor_MetricsConstants::TRACKS()
+	jstring MediaExtractor_MetricsConstants::TRACKS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaExtractor$MetricsConstants",
 			"TRACKS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

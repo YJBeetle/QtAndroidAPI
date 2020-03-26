@@ -19,8 +19,8 @@ namespace __jni_impl::android::net::wifi
 		static jint SUITE_B_192();
 		static jint WPA_EAP();
 		static jint WPA_PSK();
-		static QAndroidJniObject strings();
-		static QAndroidJniObject varName();
+		static jarray strings();
+		static jstring varName();
 		
 		// Constructors
 		void __constructor();
@@ -37,57 +37,66 @@ namespace __jni_impl::android::net::wifi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
-			"IEEE8021X");
+			"IEEE8021X"
+		);
 	}
 	jint WifiConfiguration_KeyMgmt::NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
-			"NONE");
+			"NONE"
+		);
 	}
 	jint WifiConfiguration_KeyMgmt::OWE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
-			"OWE");
+			"OWE"
+		);
 	}
 	jint WifiConfiguration_KeyMgmt::SAE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
-			"SAE");
+			"SAE"
+		);
 	}
 	jint WifiConfiguration_KeyMgmt::SUITE_B_192()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
-			"SUITE_B_192");
+			"SUITE_B_192"
+		);
 	}
 	jint WifiConfiguration_KeyMgmt::WPA_EAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
-			"WPA_EAP");
+			"WPA_EAP"
+		);
 	}
 	jint WifiConfiguration_KeyMgmt::WPA_PSK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
-			"WPA_PSK");
+			"WPA_PSK"
+		);
 	}
-	QAndroidJniObject WifiConfiguration_KeyMgmt::strings()
+	jarray WifiConfiguration_KeyMgmt::strings()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
 			"strings",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject WifiConfiguration_KeyMgmt::varName()
+	jstring WifiConfiguration_KeyMgmt::varName()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$KeyMgmt",
 			"varName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

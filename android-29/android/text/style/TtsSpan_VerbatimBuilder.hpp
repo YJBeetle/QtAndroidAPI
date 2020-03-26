@@ -50,7 +50,8 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"setVerbatim",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$VerbatimBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

@@ -15,8 +15,8 @@ namespace __jni_impl::android::net::wifi
 		static jint LEAP();
 		static jint OPEN();
 		static jint SHARED();
-		static QAndroidJniObject strings();
-		static QAndroidJniObject varName();
+		static jarray strings();
+		static jstring varName();
 		
 		// Constructors
 		void __constructor();
@@ -33,33 +33,38 @@ namespace __jni_impl::android::net::wifi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$AuthAlgorithm",
-			"LEAP");
+			"LEAP"
+		);
 	}
 	jint WifiConfiguration_AuthAlgorithm::OPEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$AuthAlgorithm",
-			"OPEN");
+			"OPEN"
+		);
 	}
 	jint WifiConfiguration_AuthAlgorithm::SHARED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$AuthAlgorithm",
-			"SHARED");
+			"SHARED"
+		);
 	}
-	QAndroidJniObject WifiConfiguration_AuthAlgorithm::strings()
+	jarray WifiConfiguration_AuthAlgorithm::strings()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$AuthAlgorithm",
 			"strings",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject WifiConfiguration_AuthAlgorithm::varName()
+	jstring WifiConfiguration_AuthAlgorithm::varName()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$AuthAlgorithm",
 			"varName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

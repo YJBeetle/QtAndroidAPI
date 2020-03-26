@@ -56,75 +56,86 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callObjectMethod(
 			"clear",
-			"()Ljava/util/Locale$Builder;");
+			"()Ljava/util/Locale$Builder;"
+		);
 	}
 	QAndroidJniObject Locale_Builder::build()
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
 	}
 	QAndroidJniObject Locale_Builder::setLanguageTag(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLanguageTag",
 			"(Ljava/lang/String;)Ljava/util/Locale$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Locale_Builder::setLocale(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLocale",
 			"(Ljava/util/Locale;)Ljava/util/Locale$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Locale_Builder::clearExtensions()
 	{
 		return __thiz.callObjectMethod(
 			"clearExtensions",
-			"()Ljava/util/Locale$Builder;");
+			"()Ljava/util/Locale$Builder;"
+		);
 	}
 	QAndroidJniObject Locale_Builder::setLanguage(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLanguage",
 			"(Ljava/lang/String;)Ljava/util/Locale$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Locale_Builder::setScript(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setScript",
 			"(Ljava/lang/String;)Ljava/util/Locale$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Locale_Builder::setRegion(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setRegion",
 			"(Ljava/lang/String;)Ljava/util/Locale$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Locale_Builder::setVariant(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setVariant",
 			"(Ljava/lang/String;)Ljava/util/Locale$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Locale_Builder::addUnicodeLocaleAttribute(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addUnicodeLocaleAttribute",
 			"(Ljava/lang/String;)Ljava/util/Locale$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Locale_Builder::removeUnicodeLocaleAttribute(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"removeUnicodeLocaleAttribute",
 			"(Ljava/lang/String;)Ljava/util/Locale$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Locale_Builder::setUnicodeLocaleKeyword(jstring arg0, jstring arg1)
 	{
@@ -132,7 +143,8 @@ namespace __jni_impl::java::util
 			"setUnicodeLocaleKeyword",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Locale$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Locale_Builder::setExtension(jchar arg0, jstring arg1)
 	{
@@ -140,7 +152,8 @@ namespace __jni_impl::java::util
 			"setExtension",
 			"(CLjava/lang/String;)Ljava/util/Locale$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::util
 

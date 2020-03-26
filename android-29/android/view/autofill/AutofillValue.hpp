@@ -23,10 +23,12 @@ namespace __jni_impl::android::view::autofill
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jboolean isText();
-		QAndroidJniObject getTextValue();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getTextValue();
 		jboolean isToggle();
 		jboolean getToggleValue();
 		jint getListValue();
@@ -37,8 +39,6 @@ namespace __jni_impl::android::view::autofill
 		static QAndroidJniObject forToggle(jboolean arg0);
 		static QAndroidJniObject forList(jint arg0);
 		static QAndroidJniObject forDate(jlong arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::autofill
 
@@ -52,7 +52,8 @@ namespace __jni_impl::android::view::autofill
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.autofill.AutofillValue",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -69,105 +70,36 @@ namespace __jni_impl::android::view::autofill
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AutofillValue::toString()
+	jstring AutofillValue::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AutofillValue::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean AutofillValue::isText()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isText",
-			"()Z");
-	}
-	QAndroidJniObject AutofillValue::getTextValue()
-	{
-		return __thiz.callObjectMethod(
-			"getTextValue",
-			"()Ljava/lang/CharSequence;");
-	}
-	jboolean AutofillValue::isToggle()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isToggle",
-			"()Z");
-	}
-	jboolean AutofillValue::getToggleValue()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getToggleValue",
-			"()Z");
-	}
-	jint AutofillValue::getListValue()
-	{
-		return __thiz.callMethod<jint>(
-			"getListValue",
-			"()I");
-	}
-	jboolean AutofillValue::isList()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isList",
-			"()Z");
-	}
-	jlong AutofillValue::getDateValue()
-	{
-		return __thiz.callMethod<jlong>(
-			"getDateValue",
-			"()J");
-	}
-	jboolean AutofillValue::isDate()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDate",
-			"()Z");
-	}
-	QAndroidJniObject AutofillValue::forText(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.autofill.AutofillValue",
-			"forText",
-			"(Ljava/lang/CharSequence;)Landroid/view/autofill/AutofillValue;",
-			arg0);
-	}
-	QAndroidJniObject AutofillValue::forToggle(jboolean arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.autofill.AutofillValue",
-			"forToggle",
-			"(Z)Landroid/view/autofill/AutofillValue;",
-			arg0);
-	}
-	QAndroidJniObject AutofillValue::forList(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.autofill.AutofillValue",
-			"forList",
-			"(I)Landroid/view/autofill/AutofillValue;",
-			arg0);
-	}
-	QAndroidJniObject AutofillValue::forDate(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.autofill.AutofillValue",
-			"forDate",
-			"(J)Landroid/view/autofill/AutofillValue;",
-			arg0);
+			"()Z"
+		);
 	}
 	jint AutofillValue::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void AutofillValue::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -175,7 +107,93 @@ namespace __jni_impl::android::view::autofill
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring AutofillValue::getTextValue()
+	{
+		return __thiz.callObjectMethod(
+			"getTextValue",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jboolean AutofillValue::isToggle()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isToggle",
+			"()Z"
+		);
+	}
+	jboolean AutofillValue::getToggleValue()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getToggleValue",
+			"()Z"
+		);
+	}
+	jint AutofillValue::getListValue()
+	{
+		return __thiz.callMethod<jint>(
+			"getListValue",
+			"()I"
+		);
+	}
+	jboolean AutofillValue::isList()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isList",
+			"()Z"
+		);
+	}
+	jlong AutofillValue::getDateValue()
+	{
+		return __thiz.callMethod<jlong>(
+			"getDateValue",
+			"()J"
+		);
+	}
+	jboolean AutofillValue::isDate()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDate",
+			"()Z"
+		);
+	}
+	QAndroidJniObject AutofillValue::forText(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.autofill.AutofillValue",
+			"forText",
+			"(Ljava/lang/CharSequence;)Landroid/view/autofill/AutofillValue;",
+			arg0
+		);
+	}
+	QAndroidJniObject AutofillValue::forToggle(jboolean arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.autofill.AutofillValue",
+			"forToggle",
+			"(Z)Landroid/view/autofill/AutofillValue;",
+			arg0
+		);
+	}
+	QAndroidJniObject AutofillValue::forList(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.autofill.AutofillValue",
+			"forList",
+			"(I)Landroid/view/autofill/AutofillValue;",
+			arg0
+		);
+	}
+	QAndroidJniObject AutofillValue::forDate(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.autofill.AutofillValue",
+			"forDate",
+			"(J)Landroid/view/autofill/AutofillValue;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::autofill
 

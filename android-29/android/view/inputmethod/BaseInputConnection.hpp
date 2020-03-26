@@ -54,17 +54,9 @@ namespace __jni_impl::android::view::inputmethod
 		
 		// Methods
 		QAndroidJniObject getHandler();
-		jboolean beginBatchEdit();
-		jboolean endBatchEdit();
-		jboolean setSelection(jint arg0, jint arg1);
-		static void removeComposingSpans(__jni_impl::__JniBaseClass arg0);
-		static void setComposingSpans(__jni_impl::__JniBaseClass arg0);
-		static jint getComposingSpanStart(__jni_impl::__JniBaseClass arg0);
-		static jint getComposingSpanEnd(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getEditable();
-		QAndroidJniObject getTextBeforeCursor(jint arg0, jint arg1);
-		QAndroidJniObject getTextAfterCursor(jint arg0, jint arg1);
-		QAndroidJniObject getSelectedText(jint arg0);
+		jstring getTextBeforeCursor(jint arg0, jint arg1);
+		jstring getTextAfterCursor(jint arg0, jint arg1);
+		jstring getSelectedText(jint arg0);
 		jint getCursorCapsMode(jint arg0);
 		QAndroidJniObject getExtractedText(__jni_impl::android::view::inputmethod::ExtractedTextRequest arg0, jint arg1);
 		jboolean deleteSurroundingText(jint arg0, jint arg1);
@@ -84,6 +76,14 @@ namespace __jni_impl::android::view::inputmethod
 		jboolean requestCursorUpdates(jint arg0);
 		void closeConnection();
 		jboolean commitContent(__jni_impl::android::view::inputmethod::InputContentInfo arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
+		jboolean setSelection(jint arg0, jint arg1);
+		jboolean beginBatchEdit();
+		jboolean endBatchEdit();
+		static void removeComposingSpans(__jni_impl::__JniBaseClass arg0);
+		static void setComposingSpans(__jni_impl::__JniBaseClass arg0);
+		static jint getComposingSpanStart(__jni_impl::__JniBaseClass arg0);
+		static jint getComposingSpanEnd(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getEditable();
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -116,95 +116,42 @@ namespace __jni_impl::android::view::inputmethod
 	{
 		return __thiz.callObjectMethod(
 			"getHandler",
-			"()Landroid/os/Handler;");
+			"()Landroid/os/Handler;"
+		);
 	}
-	jboolean BaseInputConnection::beginBatchEdit()
-	{
-		return __thiz.callMethod<jboolean>(
-			"beginBatchEdit",
-			"()Z");
-	}
-	jboolean BaseInputConnection::endBatchEdit()
-	{
-		return __thiz.callMethod<jboolean>(
-			"endBatchEdit",
-			"()Z");
-	}
-	jboolean BaseInputConnection::setSelection(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setSelection",
-			"(II)Z",
-			arg0,
-			arg1);
-	}
-	void BaseInputConnection::removeComposingSpans(__jni_impl::__JniBaseClass arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.view.inputmethod.BaseInputConnection",
-			"removeComposingSpans",
-			"(Landroid/text/Spannable;)V",
-			arg0.__jniObject().object());
-	}
-	void BaseInputConnection::setComposingSpans(__jni_impl::__JniBaseClass arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.view.inputmethod.BaseInputConnection",
-			"setComposingSpans",
-			"(Landroid/text/Spannable;)V",
-			arg0.__jniObject().object());
-	}
-	jint BaseInputConnection::getComposingSpanStart(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.inputmethod.BaseInputConnection",
-			"getComposingSpanStart",
-			"(Landroid/text/Spannable;)I",
-			arg0.__jniObject().object());
-	}
-	jint BaseInputConnection::getComposingSpanEnd(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.inputmethod.BaseInputConnection",
-			"getComposingSpanEnd",
-			"(Landroid/text/Spannable;)I",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject BaseInputConnection::getEditable()
-	{
-		return __thiz.callObjectMethod(
-			"getEditable",
-			"()Landroid/text/Editable;");
-	}
-	QAndroidJniObject BaseInputConnection::getTextBeforeCursor(jint arg0, jint arg1)
+	jstring BaseInputConnection::getTextBeforeCursor(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getTextBeforeCursor",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject BaseInputConnection::getTextAfterCursor(jint arg0, jint arg1)
+	jstring BaseInputConnection::getTextAfterCursor(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getTextAfterCursor",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject BaseInputConnection::getSelectedText(jint arg0)
+	jstring BaseInputConnection::getSelectedText(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSelectedText",
 			"(I)Ljava/lang/CharSequence;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint BaseInputConnection::getCursorCapsMode(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getCursorCapsMode",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BaseInputConnection::getExtractedText(__jni_impl::android::view::inputmethod::ExtractedTextRequest arg0, jint arg1)
 	{
@@ -212,7 +159,8 @@ namespace __jni_impl::android::view::inputmethod
 			"getExtractedText",
 			"(Landroid/view/inputmethod/ExtractedTextRequest;I)Landroid/view/inputmethod/ExtractedText;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean BaseInputConnection::deleteSurroundingText(jint arg0, jint arg1)
 	{
@@ -220,7 +168,8 @@ namespace __jni_impl::android::view::inputmethod
 			"deleteSurroundingText",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean BaseInputConnection::deleteSurroundingTextInCodePoints(jint arg0, jint arg1)
 	{
@@ -228,7 +177,8 @@ namespace __jni_impl::android::view::inputmethod
 			"deleteSurroundingTextInCodePoints",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean BaseInputConnection::setComposingText(jstring arg0, jint arg1)
 	{
@@ -236,7 +186,8 @@ namespace __jni_impl::android::view::inputmethod
 			"setComposingText",
 			"(Ljava/lang/CharSequence;I)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean BaseInputConnection::setComposingRegion(jint arg0, jint arg1)
 	{
@@ -244,13 +195,15 @@ namespace __jni_impl::android::view::inputmethod
 			"setComposingRegion",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean BaseInputConnection::finishComposingText()
 	{
 		return __thiz.callMethod<jboolean>(
 			"finishComposingText",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BaseInputConnection::commitText(jstring arg0, jint arg1)
 	{
@@ -258,56 +211,64 @@ namespace __jni_impl::android::view::inputmethod
 			"commitText",
 			"(Ljava/lang/CharSequence;I)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean BaseInputConnection::commitCompletion(__jni_impl::android::view::inputmethod::CompletionInfo arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"commitCompletion",
 			"(Landroid/view/inputmethod/CompletionInfo;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean BaseInputConnection::commitCorrection(__jni_impl::android::view::inputmethod::CorrectionInfo arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"commitCorrection",
 			"(Landroid/view/inputmethod/CorrectionInfo;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean BaseInputConnection::performEditorAction(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"performEditorAction",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BaseInputConnection::performContextMenuAction(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"performContextMenuAction",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BaseInputConnection::sendKeyEvent(__jni_impl::android::view::KeyEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"sendKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean BaseInputConnection::clearMetaKeyStates(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"clearMetaKeyStates",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BaseInputConnection::reportFullscreenMode(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"reportFullscreenMode",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BaseInputConnection::performPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -315,20 +276,23 @@ namespace __jni_impl::android::view::inputmethod
 			"performPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean BaseInputConnection::requestCursorUpdates(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"requestCursorUpdates",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void BaseInputConnection::closeConnection()
 	{
 		__thiz.callMethod<void>(
 			"closeConnection",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean BaseInputConnection::commitContent(__jni_impl::android::view::inputmethod::InputContentInfo arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -337,7 +301,74 @@ namespace __jni_impl::android::view::inputmethod
 			"(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	jboolean BaseInputConnection::setSelection(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setSelection",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	jboolean BaseInputConnection::beginBatchEdit()
+	{
+		return __thiz.callMethod<jboolean>(
+			"beginBatchEdit",
+			"()Z"
+		);
+	}
+	jboolean BaseInputConnection::endBatchEdit()
+	{
+		return __thiz.callMethod<jboolean>(
+			"endBatchEdit",
+			"()Z"
+		);
+	}
+	void BaseInputConnection::removeComposingSpans(__jni_impl::__JniBaseClass arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.view.inputmethod.BaseInputConnection",
+			"removeComposingSpans",
+			"(Landroid/text/Spannable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void BaseInputConnection::setComposingSpans(__jni_impl::__JniBaseClass arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.view.inputmethod.BaseInputConnection",
+			"setComposingSpans",
+			"(Landroid/text/Spannable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint BaseInputConnection::getComposingSpanStart(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.inputmethod.BaseInputConnection",
+			"getComposingSpanStart",
+			"(Landroid/text/Spannable;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jint BaseInputConnection::getComposingSpanEnd(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.inputmethod.BaseInputConnection",
+			"getComposingSpanEnd",
+			"(Landroid/text/Spannable;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BaseInputConnection::getEditable()
+	{
+		return __thiz.callObjectMethod(
+			"getEditable",
+			"()Landroid/text/Editable;"
+		);
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

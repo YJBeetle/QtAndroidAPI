@@ -24,6 +24,7 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject allowDefaults();
 		QAndroidJniObject setAudioAdjustMode(jint arg0);
 		jint getAudioAdjustMode();
 		QAndroidJniObject setSyncSource(jint arg0);
@@ -32,7 +33,6 @@ namespace __jni_impl::android::media
 		jfloat getTolerance();
 		QAndroidJniObject setFrameRate(jfloat arg0);
 		jfloat getFrameRate();
-		QAndroidJniObject allowDefaults();
 	};
 } // namespace __jni_impl::android::media
 
@@ -44,43 +44,50 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.SyncParams",
-			"AUDIO_ADJUST_MODE_DEFAULT");
+			"AUDIO_ADJUST_MODE_DEFAULT"
+		);
 	}
 	jint SyncParams::AUDIO_ADJUST_MODE_RESAMPLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.SyncParams",
-			"AUDIO_ADJUST_MODE_RESAMPLE");
+			"AUDIO_ADJUST_MODE_RESAMPLE"
+		);
 	}
 	jint SyncParams::AUDIO_ADJUST_MODE_STRETCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.SyncParams",
-			"AUDIO_ADJUST_MODE_STRETCH");
+			"AUDIO_ADJUST_MODE_STRETCH"
+		);
 	}
 	jint SyncParams::SYNC_SOURCE_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.SyncParams",
-			"SYNC_SOURCE_AUDIO");
+			"SYNC_SOURCE_AUDIO"
+		);
 	}
 	jint SyncParams::SYNC_SOURCE_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.SyncParams",
-			"SYNC_SOURCE_DEFAULT");
+			"SYNC_SOURCE_DEFAULT"
+		);
 	}
 	jint SyncParams::SYNC_SOURCE_SYSTEM_CLOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.SyncParams",
-			"SYNC_SOURCE_SYSTEM_CLOCK");
+			"SYNC_SOURCE_SYSTEM_CLOCK"
+		);
 	}
 	jint SyncParams::SYNC_SOURCE_VSYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.SyncParams",
-			"SYNC_SOURCE_VSYNC");
+			"SYNC_SOURCE_VSYNC"
+		);
 	}
 	
 	// Constructors
@@ -92,63 +99,72 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	QAndroidJniObject SyncParams::allowDefaults()
+	{
+		return __thiz.callObjectMethod(
+			"allowDefaults",
+			"()Landroid/media/SyncParams;"
+		);
+	}
 	QAndroidJniObject SyncParams::setAudioAdjustMode(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAudioAdjustMode",
 			"(I)Landroid/media/SyncParams;",
-			arg0);
+			arg0
+		);
 	}
 	jint SyncParams::getAudioAdjustMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getAudioAdjustMode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SyncParams::setSyncSource(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSyncSource",
 			"(I)Landroid/media/SyncParams;",
-			arg0);
+			arg0
+		);
 	}
 	jint SyncParams::getSyncSource()
 	{
 		return __thiz.callMethod<jint>(
 			"getSyncSource",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SyncParams::setTolerance(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTolerance",
 			"(F)Landroid/media/SyncParams;",
-			arg0);
+			arg0
+		);
 	}
 	jfloat SyncParams::getTolerance()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getTolerance",
-			"()F");
+			"()F"
+		);
 	}
 	QAndroidJniObject SyncParams::setFrameRate(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setFrameRate",
 			"(F)Landroid/media/SyncParams;",
-			arg0);
+			arg0
+		);
 	}
 	jfloat SyncParams::getFrameRate()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getFrameRate",
-			"()F");
-	}
-	QAndroidJniObject SyncParams::allowDefaults()
-	{
-		return __thiz.callObjectMethod(
-			"allowDefaults",
-			"()Landroid/media/SyncParams;");
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::media
 

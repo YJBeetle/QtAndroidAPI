@@ -22,7 +22,7 @@ namespace __jni_impl::android::util
 		jboolean get(jint arg0, jboolean arg1);
 		void put(jint arg0, jboolean arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		void append(jint arg0, jboolean arg1);
 		jint hashCode();
 		QAndroidJniObject clone();
@@ -64,7 +64,8 @@ namespace __jni_impl::android::util
 		return __thiz.callMethod<jboolean>(
 			"get",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SparseBooleanArray::get(jint arg0, jboolean arg1)
 	{
@@ -72,7 +73,8 @@ namespace __jni_impl::android::util
 			"get",
 			"(IZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SparseBooleanArray::put(jint arg0, jboolean arg1)
 	{
@@ -80,20 +82,23 @@ namespace __jni_impl::android::util
 			"put",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean SparseBooleanArray::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SparseBooleanArray::toString()
+	jstring SparseBooleanArray::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SparseBooleanArray::append(jint arg0, jboolean arg1)
 	{
@@ -101,59 +106,68 @@ namespace __jni_impl::android::util
 			"append",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint SparseBooleanArray::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SparseBooleanArray::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/util/SparseBooleanArray;");
+			"()Landroid/util/SparseBooleanArray;"
+		);
 	}
 	void SparseBooleanArray::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jint SparseBooleanArray::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	void SparseBooleanArray::_delete(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"delete",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void SparseBooleanArray::removeAt(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeAt",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint SparseBooleanArray::keyAt(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"keyAt",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SparseBooleanArray::valueAt(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"valueAt",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void SparseBooleanArray::setValueAt(jint arg0, jboolean arg1)
 	{
@@ -161,21 +175,24 @@ namespace __jni_impl::android::util
 			"setValueAt",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint SparseBooleanArray::indexOfKey(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"indexOfKey",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint SparseBooleanArray::indexOfValue(jboolean arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"indexOfValue",
 			"(Z)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

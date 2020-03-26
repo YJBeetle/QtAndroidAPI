@@ -30,12 +30,14 @@ namespace __jni_impl::android::renderscript
 	jdouble Double2::x()
 	{
 		return __thiz.getField<jdouble>(
-			"x");
+			"x"
+		);
 	}
 	jdouble Double2::y()
 	{
 		return __thiz.getField<jdouble>(
-			"y");
+			"y"
+		);
 	}
 	
 	// Constructors

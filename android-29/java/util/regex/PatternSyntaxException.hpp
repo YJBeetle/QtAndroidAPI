@@ -20,10 +20,10 @@ namespace __jni_impl::java::util::regex
 		void __constructor(jstring arg0, jstring arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 		jint getIndex();
-		QAndroidJniObject getPattern();
-		QAndroidJniObject getDescription();
+		jstring getPattern();
+		jstring getDescription();
 	};
 } // namespace __jni_impl::java::util::regex
 
@@ -44,29 +44,33 @@ namespace __jni_impl::java::util::regex
 	}
 	
 	// Methods
-	QAndroidJniObject PatternSyntaxException::getMessage()
+	jstring PatternSyntaxException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PatternSyntaxException::getIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject PatternSyntaxException::getPattern()
+	jstring PatternSyntaxException::getPattern()
 	{
 		return __thiz.callObjectMethod(
 			"getPattern",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PatternSyntaxException::getDescription()
+	jstring PatternSyntaxException::getDescription()
 	{
 		return __thiz.callObjectMethod(
 			"getDescription",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::regex
 

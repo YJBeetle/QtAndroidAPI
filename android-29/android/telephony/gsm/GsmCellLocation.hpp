@@ -24,7 +24,7 @@ namespace __jni_impl::android::telephony::gsm
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		void setStateInvalid();
 		jint getLac();
@@ -62,43 +62,50 @@ namespace __jni_impl::android::telephony::gsm
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject GsmCellLocation::toString()
+	jstring GsmCellLocation::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint GsmCellLocation::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void GsmCellLocation::setStateInvalid()
 	{
 		__thiz.callMethod<void>(
 			"setStateInvalid",
-			"()V");
+			"()V"
+		);
 	}
 	jint GsmCellLocation::getLac()
 	{
 		return __thiz.callMethod<jint>(
 			"getLac",
-			"()I");
+			"()I"
+		);
 	}
 	jint GsmCellLocation::getCid()
 	{
 		return __thiz.callMethod<jint>(
 			"getCid",
-			"()I");
+			"()I"
+		);
 	}
 	jint GsmCellLocation::getPsc()
 	{
 		return __thiz.callMethod<jint>(
 			"getPsc",
-			"()I");
+			"()I"
+		);
 	}
 	void GsmCellLocation::setLacAndCid(jint arg0, jint arg1)
 	{
@@ -106,14 +113,16 @@ namespace __jni_impl::android::telephony::gsm
 			"setLacAndCid",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void GsmCellLocation::fillInNotifierBundle(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"fillInNotifierBundle",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::telephony::gsm
 

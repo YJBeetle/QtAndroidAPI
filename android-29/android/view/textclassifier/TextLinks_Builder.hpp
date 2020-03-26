@@ -54,7 +54,8 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/textclassifier/TextLinks;");
+			"()Landroid/view/textclassifier/TextLinks;"
+		);
 	}
 	QAndroidJniObject TextLinks_Builder::addLink(jint arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Bundle arg3)
 	{
@@ -64,7 +65,8 @@ namespace __jni_impl::android::view::textclassifier
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TextLinks_Builder::addLink(jint arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -73,20 +75,23 @@ namespace __jni_impl::android::view::textclassifier
 			"(IILjava/util/Map;)Landroid/view/textclassifier/TextLinks$Builder;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TextLinks_Builder::clearTextLinks()
 	{
 		return __thiz.callObjectMethod(
 			"clearTextLinks",
-			"()Landroid/view/textclassifier/TextLinks$Builder;");
+			"()Landroid/view/textclassifier/TextLinks$Builder;"
+		);
 	}
 	QAndroidJniObject TextLinks_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextLinks$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

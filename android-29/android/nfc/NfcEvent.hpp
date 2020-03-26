@@ -36,17 +36,20 @@ namespace __jni_impl::android::nfc
 	{
 		return __thiz.getObjectField(
 			"nfcAdapter",
-			"Landroid/nfc/NfcAdapter;");
+			"Landroid/nfc/NfcAdapter;"
+		);
 	}
 	jint NfcEvent::peerLlcpMajorVersion()
 	{
 		return __thiz.getField<jint>(
-			"peerLlcpMajorVersion");
+			"peerLlcpMajorVersion"
+		);
 	}
 	jint NfcEvent::peerLlcpMinorVersion()
 	{
 		return __thiz.getField<jint>(
-			"peerLlcpMinorVersion");
+			"peerLlcpMinorVersion"
+		);
 	}
 	
 	// Constructors

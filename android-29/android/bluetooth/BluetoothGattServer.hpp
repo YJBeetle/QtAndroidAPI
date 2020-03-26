@@ -75,20 +75,23 @@ namespace __jni_impl::android::bluetooth
 			"connect",
 			"(Landroid/bluetooth/BluetoothDevice;Z)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void BluetoothGattServer::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject BluetoothGattServer::getService(__jni_impl::java::util::UUID arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getService",
 			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattService;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BluetoothGattServer::setPreferredPhy(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -98,47 +101,54 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void BluetoothGattServer::readPhy(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		__thiz.callMethod<void>(
 			"readPhy",
 			"(Landroid/bluetooth/BluetoothDevice;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothGattServer::getServices()
 	{
 		return __thiz.callObjectMethod(
 			"getServices",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jint BluetoothGattServer::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getConnectionState",
 			"(Landroid/bluetooth/BluetoothDevice;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothGattServer::getConnectedDevices()
 	{
 		return __thiz.callObjectMethod(
 			"getConnectedDevices",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject BluetoothGattServer::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0);
+			arg0
+		);
 	}
 	void BluetoothGattServer::cancelConnection(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		__thiz.callMethod<void>(
 			"cancelConnection",
 			"(Landroid/bluetooth/BluetoothDevice;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean BluetoothGattServer::sendResponse(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4)
 	{
@@ -149,7 +159,8 @@ namespace __jni_impl::android::bluetooth
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean BluetoothGattServer::notifyCharacteristicChanged(__jni_impl::android::bluetooth::BluetoothDevice arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1, jboolean arg2)
 	{
@@ -158,27 +169,31 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothGattCharacteristic;Z)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jboolean BluetoothGattServer::addService(__jni_impl::android::bluetooth::BluetoothGattService arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"addService",
 			"(Landroid/bluetooth/BluetoothGattService;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean BluetoothGattServer::removeService(__jni_impl::android::bluetooth::BluetoothGattService arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeService",
 			"(Landroid/bluetooth/BluetoothGattService;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BluetoothGattServer::clearServices()
 	{
 		__thiz.callMethod<void>(
 			"clearServices",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

@@ -21,8 +21,8 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getHeaders();
 		QAndroidJniObject getBody();
+		QAndroidJniObject getHeaders();
 	};
 } // namespace __jni_impl::java::net
 
@@ -41,17 +41,19 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject CacheResponse::getHeaders()
-	{
-		return __thiz.callObjectMethod(
-			"getHeaders",
-			"()Ljava/util/Map;");
-	}
 	QAndroidJniObject CacheResponse::getBody()
 	{
 		return __thiz.callObjectMethod(
 			"getBody",
-			"()Ljava/io/InputStream;");
+			"()Ljava/io/InputStream;"
+		);
+	}
+	QAndroidJniObject CacheResponse::getHeaders()
+	{
+		return __thiz.callObjectMethod(
+			"getHeaders",
+			"()Ljava/util/Map;"
+		);
 	}
 } // namespace __jni_impl::java::net
 

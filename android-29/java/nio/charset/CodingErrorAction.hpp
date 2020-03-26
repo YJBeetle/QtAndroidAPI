@@ -20,7 +20,7 @@ namespace __jni_impl::java::nio::charset
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::nio::charset
 
@@ -33,21 +33,24 @@ namespace __jni_impl::java::nio::charset
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CodingErrorAction",
 			"IGNORE",
-			"Ljava/nio/charset/CodingErrorAction;");
+			"Ljava/nio/charset/CodingErrorAction;"
+		);
 	}
 	QAndroidJniObject CodingErrorAction::REPLACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CodingErrorAction",
 			"REPLACE",
-			"Ljava/nio/charset/CodingErrorAction;");
+			"Ljava/nio/charset/CodingErrorAction;"
+		);
 	}
 	QAndroidJniObject CodingErrorAction::REPORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CodingErrorAction",
 			"REPORT",
-			"Ljava/nio/charset/CodingErrorAction;");
+			"Ljava/nio/charset/CodingErrorAction;"
+		);
 	}
 	
 	// Constructors
@@ -59,11 +62,12 @@ namespace __jni_impl::java::nio::charset
 	}
 	
 	// Methods
-	QAndroidJniObject CodingErrorAction::toString()
+	jstring CodingErrorAction::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::charset
 

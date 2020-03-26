@@ -19,7 +19,7 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::nio::file
@@ -33,7 +33,8 @@ namespace __jni_impl::java::nio::file
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.LinkOption",
 			"NOFOLLOW_LINKS",
-			"Ljava/nio/file/LinkOption;");
+			"Ljava/nio/file/LinkOption;"
+		);
 	}
 	
 	// Constructors
@@ -45,12 +46,13 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	QAndroidJniObject LinkOption::values()
+	jarray LinkOption::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.LinkOption",
 			"values",
-			"()[Ljava/nio/file/LinkOption;");
+			"()[Ljava/nio/file/LinkOption;"
+		).object<jarray>();
 	}
 	QAndroidJniObject LinkOption::valueOf(jstring arg0)
 	{
@@ -58,7 +60,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.LinkOption",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/LinkOption;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

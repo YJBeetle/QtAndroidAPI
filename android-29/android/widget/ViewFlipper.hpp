@@ -26,7 +26,7 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getAccessibilityClassName();
+		jstring getAccessibilityClassName();
 		void setFlipInterval(jint arg0);
 		jint getFlipInterval();
 		void startFlipping();
@@ -61,55 +61,63 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject ViewFlipper::getAccessibilityClassName()
+	jstring ViewFlipper::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void ViewFlipper::setFlipInterval(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFlipInterval",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint ViewFlipper::getFlipInterval()
 	{
 		return __thiz.callMethod<jint>(
 			"getFlipInterval",
-			"()I");
+			"()I"
+		);
 	}
 	void ViewFlipper::startFlipping()
 	{
 		__thiz.callMethod<void>(
 			"startFlipping",
-			"()V");
+			"()V"
+		);
 	}
 	void ViewFlipper::stopFlipping()
 	{
 		__thiz.callMethod<void>(
 			"stopFlipping",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ViewFlipper::isFlipping()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFlipping",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ViewFlipper::setAutoStart(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAutoStart",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ViewFlipper::isAutoStart()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAutoStart",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

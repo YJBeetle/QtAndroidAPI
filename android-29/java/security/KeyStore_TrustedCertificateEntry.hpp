@@ -22,7 +22,7 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::java::security::cert::Certificate arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getAttributes();
 		QAndroidJniObject getTrustedCertificate();
 	};
@@ -52,23 +52,26 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject KeyStore_TrustedCertificateEntry::toString()
+	jstring KeyStore_TrustedCertificateEntry::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject KeyStore_TrustedCertificateEntry::getAttributes()
 	{
 		return __thiz.callObjectMethod(
 			"getAttributes",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject KeyStore_TrustedCertificateEntry::getTrustedCertificate()
 	{
 		return __thiz.callObjectMethod(
 			"getTrustedCertificate",
-			"()Ljava/security/cert/Certificate;");
+			"()Ljava/security/cert/Certificate;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

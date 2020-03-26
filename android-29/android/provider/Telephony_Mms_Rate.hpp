@@ -17,7 +17,7 @@ namespace __jni_impl::android::provider
 	public:
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject SENT_TIME();
+		static jstring SENT_TIME();
 		
 		// Constructors
 		void __constructor();
@@ -36,14 +36,16 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Rate",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Telephony_Mms_Rate::SENT_TIME()
+	jstring Telephony_Mms_Rate::SENT_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Rate",
 			"SENT_TIME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

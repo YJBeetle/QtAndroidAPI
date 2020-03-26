@@ -33,25 +33,29 @@ namespace __jni_impl::android::hardware::biometrics
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.biometrics.BiometricManager",
-			"BIOMETRIC_ERROR_HW_UNAVAILABLE");
+			"BIOMETRIC_ERROR_HW_UNAVAILABLE"
+		);
 	}
 	jint BiometricManager::BIOMETRIC_ERROR_NONE_ENROLLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.biometrics.BiometricManager",
-			"BIOMETRIC_ERROR_NONE_ENROLLED");
+			"BIOMETRIC_ERROR_NONE_ENROLLED"
+		);
 	}
 	jint BiometricManager::BIOMETRIC_ERROR_NO_HARDWARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.biometrics.BiometricManager",
-			"BIOMETRIC_ERROR_NO_HARDWARE");
+			"BIOMETRIC_ERROR_NO_HARDWARE"
+		);
 	}
 	jint BiometricManager::BIOMETRIC_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.biometrics.BiometricManager",
-			"BIOMETRIC_SUCCESS");
+			"BIOMETRIC_SUCCESS"
+		);
 	}
 	
 	// Constructors
@@ -67,7 +71,8 @@ namespace __jni_impl::android::hardware::biometrics
 	{
 		return __thiz.callMethod<jint>(
 			"canAuthenticate",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::hardware::biometrics
 

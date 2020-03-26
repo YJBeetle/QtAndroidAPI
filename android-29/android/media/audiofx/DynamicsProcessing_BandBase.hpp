@@ -17,11 +17,11 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jboolean arg0, jfloat arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jboolean isEnabled();
+		void setEnabled(jboolean arg0);
 		jfloat getCutoffFrequency();
 		void setCutoffFrequency(jfloat arg0);
-		void setEnabled(jboolean arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -41,37 +41,42 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject DynamicsProcessing_BandBase::toString()
+	jstring DynamicsProcessing_BandBase::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean DynamicsProcessing_BandBase::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
-	}
-	jfloat DynamicsProcessing_BandBase::getCutoffFrequency()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getCutoffFrequency",
-			"()F");
-	}
-	void DynamicsProcessing_BandBase::setCutoffFrequency(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCutoffFrequency",
-			"(F)V",
-			arg0);
+			"()Z"
+		);
 	}
 	void DynamicsProcessing_BandBase::setEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
+	}
+	jfloat DynamicsProcessing_BandBase::getCutoffFrequency()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getCutoffFrequency",
+			"()F"
+		);
+	}
+	void DynamicsProcessing_BandBase::setCutoffFrequency(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCutoffFrequency",
+			"(F)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

@@ -22,12 +22,12 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor(__jni_impl::javax::net::ssl::SSLSocket arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getSession();
-		QAndroidJniObject getPeerCertificates();
-		QAndroidJniObject getLocalCertificates();
-		QAndroidJniObject getPeerCertificateChain();
+		jarray getPeerCertificates();
+		jarray getLocalCertificates();
+		jarray getPeerCertificateChain();
 		QAndroidJniObject getSocket();
-		QAndroidJniObject getCipherSuite();
+		QAndroidJniObject getSession();
+		jstring getCipherSuite();
 		QAndroidJniObject getPeerPrincipal();
 		QAndroidJniObject getLocalPrincipal();
 	};
@@ -50,53 +50,61 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	QAndroidJniObject HandshakeCompletedEvent::getSession()
-	{
-		return __thiz.callObjectMethod(
-			"getSession",
-			"()Ljavax/net/ssl/SSLSession;");
-	}
-	QAndroidJniObject HandshakeCompletedEvent::getPeerCertificates()
+	jarray HandshakeCompletedEvent::getPeerCertificates()
 	{
 		return __thiz.callObjectMethod(
 			"getPeerCertificates",
-			"()[Ljava/security/cert/Certificate;");
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
 	}
-	QAndroidJniObject HandshakeCompletedEvent::getLocalCertificates()
+	jarray HandshakeCompletedEvent::getLocalCertificates()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalCertificates",
-			"()[Ljava/security/cert/Certificate;");
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
 	}
-	QAndroidJniObject HandshakeCompletedEvent::getPeerCertificateChain()
+	jarray HandshakeCompletedEvent::getPeerCertificateChain()
 	{
 		return __thiz.callObjectMethod(
 			"getPeerCertificateChain",
-			"()[Ljavax/security/cert/X509Certificate;");
+			"()[Ljavax/security/cert/X509Certificate;"
+		).object<jarray>();
 	}
 	QAndroidJniObject HandshakeCompletedEvent::getSocket()
 	{
 		return __thiz.callObjectMethod(
 			"getSocket",
-			"()Ljavax/net/ssl/SSLSocket;");
+			"()Ljavax/net/ssl/SSLSocket;"
+		);
 	}
-	QAndroidJniObject HandshakeCompletedEvent::getCipherSuite()
+	QAndroidJniObject HandshakeCompletedEvent::getSession()
+	{
+		return __thiz.callObjectMethod(
+			"getSession",
+			"()Ljavax/net/ssl/SSLSession;"
+		);
+	}
+	jstring HandshakeCompletedEvent::getCipherSuite()
 	{
 		return __thiz.callObjectMethod(
 			"getCipherSuite",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject HandshakeCompletedEvent::getPeerPrincipal()
 	{
 		return __thiz.callObjectMethod(
 			"getPeerPrincipal",
-			"()Ljava/security/Principal;");
+			"()Ljava/security/Principal;"
+		);
 	}
 	QAndroidJniObject HandshakeCompletedEvent::getLocalPrincipal()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalPrincipal",
-			"()Ljava/security/Principal;");
+			"()Ljava/security/Principal;"
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

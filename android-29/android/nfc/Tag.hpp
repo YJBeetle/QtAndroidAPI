@@ -22,9 +22,9 @@ namespace __jni_impl::android::nfc
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getId();
-		QAndroidJniObject getTechList();
+		jstring toString();
+		jbyteArray getId();
+		jarray getTechList();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -40,7 +40,8 @@ namespace __jni_impl::android::nfc
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.Tag",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -52,29 +53,33 @@ namespace __jni_impl::android::nfc
 	}
 	
 	// Methods
-	QAndroidJniObject Tag::toString()
+	jstring Tag::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Tag::getId()
+	jbyteArray Tag::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject Tag::getTechList()
+	jarray Tag::getTechList()
 	{
 		return __thiz.callObjectMethod(
 			"getTechList",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jint Tag::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Tag::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::nfc
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::nfc
 

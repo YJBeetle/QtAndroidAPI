@@ -55,7 +55,8 @@ namespace __jni_impl::android::telephony::mbms
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

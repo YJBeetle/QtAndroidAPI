@@ -52,20 +52,23 @@ namespace __jni_impl::java::security
 			"login",
 			"(Ljavax/security/auth/Subject;Ljavax/security/auth/callback/CallbackHandler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AuthProvider::logout()
 	{
 		__thiz.callMethod<void>(
 			"logout",
-			"()V");
+			"()V"
+		);
 	}
 	void AuthProvider::setCallbackHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCallbackHandler",
 			"(Ljavax/security/auth/callback/CallbackHandler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security
 

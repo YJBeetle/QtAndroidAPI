@@ -31,15 +31,15 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERVICE_INTERFACE();
+		static jstring SERVICE_INTERFACE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject onGetSession(__jni_impl::android::media::MediaSession2_ControllerInfo arg0);
 		QAndroidJniObject onUpdateNotification(__jni_impl::android::media::MediaSession2 arg0);
 		void addSession(__jni_impl::android::media::MediaSession2 arg0);
@@ -56,12 +56,13 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject MediaSession2Service::SERVICE_INTERFACE()
+	jstring MediaSession2Service::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaSession2Service",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -73,58 +74,66 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaSession2Service::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
-	}
 	void MediaSession2Service::onCreate()
 	{
 		__thiz.callMethod<void>(
 			"onCreate",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaSession2Service::onDestroy()
 	{
 		__thiz.callMethod<void>(
 			"onDestroy",
-			"()V");
+			"()V"
+		);
+	}
+	QAndroidJniObject MediaSession2Service::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaSession2Service::onGetSession(__jni_impl::android::media::MediaSession2_ControllerInfo arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onGetSession",
 			"(Landroid/media/MediaSession2$ControllerInfo;)Landroid/media/MediaSession2;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaSession2Service::onUpdateNotification(__jni_impl::android::media::MediaSession2 arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onUpdateNotification",
 			"(Landroid/media/MediaSession2;)Landroid/media/MediaSession2Service$MediaNotification;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaSession2Service::addSession(__jni_impl::android::media::MediaSession2 arg0)
 	{
 		__thiz.callMethod<void>(
 			"addSession",
 			"(Landroid/media/MediaSession2;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaSession2Service::removeSession(__jni_impl::android::media::MediaSession2 arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeSession",
 			"(Landroid/media/MediaSession2;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaSession2Service::getSessions()
 	{
 		return __thiz.callObjectMethod(
 			"getSessions",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::media
 

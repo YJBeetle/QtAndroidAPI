@@ -31,8 +31,8 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getLanguage();
+		jstring toString();
+		jstring getLanguage();
 		QAndroidJniObject getFormat();
 		jint getTrackType();
 		jint describeContents();
@@ -50,37 +50,43 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
-			"MEDIA_TRACK_TYPE_AUDIO");
+			"MEDIA_TRACK_TYPE_AUDIO"
+		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_METADATA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
-			"MEDIA_TRACK_TYPE_METADATA");
+			"MEDIA_TRACK_TYPE_METADATA"
+		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_SUBTITLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
-			"MEDIA_TRACK_TYPE_SUBTITLE");
+			"MEDIA_TRACK_TYPE_SUBTITLE"
+		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_TIMEDTEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
-			"MEDIA_TRACK_TYPE_TIMEDTEXT");
+			"MEDIA_TRACK_TYPE_TIMEDTEXT"
+		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
-			"MEDIA_TRACK_TYPE_UNKNOWN");
+			"MEDIA_TRACK_TYPE_UNKNOWN"
+		);
 	}
 	jint MediaPlayer_TrackInfo::MEDIA_TRACK_TYPE_VIDEO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaPlayer$TrackInfo",
-			"MEDIA_TRACK_TYPE_VIDEO");
+			"MEDIA_TRACK_TYPE_VIDEO"
+		);
 	}
 	
 	// Constructors
@@ -92,35 +98,40 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaPlayer_TrackInfo::toString()
+	jstring MediaPlayer_TrackInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_TrackInfo::getLanguage()
+	jstring MediaPlayer_TrackInfo::getLanguage()
 	{
 		return __thiz.callObjectMethod(
 			"getLanguage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject MediaPlayer_TrackInfo::getFormat()
 	{
 		return __thiz.callObjectMethod(
 			"getFormat",
-			"()Landroid/media/MediaFormat;");
+			"()Landroid/media/MediaFormat;"
+		);
 	}
 	jint MediaPlayer_TrackInfo::getTrackType()
 	{
 		return __thiz.callMethod<jint>(
 			"getTrackType",
-			"()I");
+			"()I"
+		);
 	}
 	jint MediaPlayer_TrackInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void MediaPlayer_TrackInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -128,7 +139,8 @@ namespace __jni_impl::android::media
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

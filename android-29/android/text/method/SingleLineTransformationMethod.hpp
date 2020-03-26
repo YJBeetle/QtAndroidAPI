@@ -41,7 +41,8 @@ namespace __jni_impl::android::text::method
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.SingleLineTransformationMethod",
 			"getInstance",
-			"()Landroid/text/method/SingleLineTransformationMethod;");
+			"()Landroid/text/method/SingleLineTransformationMethod;"
+		);
 	}
 } // namespace __jni_impl::android::text::method
 

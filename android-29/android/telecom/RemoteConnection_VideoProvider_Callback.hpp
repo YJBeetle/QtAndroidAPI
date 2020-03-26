@@ -62,7 +62,8 @@ namespace __jni_impl::android::telecom
 			"onSessionModifyRequestReceived",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;Landroid/telecom/VideoProfile;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onCallSessionEvent(__jni_impl::android::telecom::RemoteConnection_VideoProvider arg0, jint arg1)
 	{
@@ -70,7 +71,8 @@ namespace __jni_impl::android::telecom
 			"onCallSessionEvent",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onSessionModifyResponseReceived(__jni_impl::android::telecom::RemoteConnection_VideoProvider arg0, jint arg1, __jni_impl::android::telecom::VideoProfile arg2, __jni_impl::android::telecom::VideoProfile arg3)
 	{
@@ -80,7 +82,8 @@ namespace __jni_impl::android::telecom
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onPeerDimensionsChanged(__jni_impl::android::telecom::RemoteConnection_VideoProvider arg0, jint arg1, jint arg2)
 	{
@@ -89,7 +92,8 @@ namespace __jni_impl::android::telecom
 			"(Landroid/telecom/RemoteConnection$VideoProvider;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onCallDataUsageChanged(__jni_impl::android::telecom::RemoteConnection_VideoProvider arg0, jlong arg1)
 	{
@@ -97,7 +101,8 @@ namespace __jni_impl::android::telecom
 			"onCallDataUsageChanged",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;J)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onCameraCapabilitiesChanged(__jni_impl::android::telecom::RemoteConnection_VideoProvider arg0, __jni_impl::android::telecom::VideoProfile_CameraCapabilities arg1)
 	{
@@ -105,7 +110,8 @@ namespace __jni_impl::android::telecom
 			"onCameraCapabilitiesChanged",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;Landroid/telecom/VideoProfile$CameraCapabilities;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RemoteConnection_VideoProvider_Callback::onVideoQualityChanged(__jni_impl::android::telecom::RemoteConnection_VideoProvider arg0, jint arg1)
 	{
@@ -113,7 +119,8 @@ namespace __jni_impl::android::telecom
 			"onVideoQualityChanged",
 			"(Landroid/telecom/RemoteConnection$VideoProvider;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

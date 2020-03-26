@@ -69,46 +69,53 @@ namespace __jni_impl::android::transition
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ArcMotion::setMinimumHorizontalAngle(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMinimumHorizontalAngle",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat ArcMotion::getMinimumHorizontalAngle()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getMinimumHorizontalAngle",
-			"()F");
+			"()F"
+		);
 	}
 	void ArcMotion::setMinimumVerticalAngle(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMinimumVerticalAngle",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat ArcMotion::getMinimumVerticalAngle()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getMinimumVerticalAngle",
-			"()F");
+			"()F"
+		);
 	}
 	void ArcMotion::setMaximumAngle(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMaximumAngle",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat ArcMotion::getMaximumAngle()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getMaximumAngle",
-			"()F");
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::transition
 

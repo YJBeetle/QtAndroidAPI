@@ -17,10 +17,10 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		void onFinished(jint arg0, jboolean arg1);
 		void onBadgingChanged(jint arg0);
 		void onCreated(jint arg0);
 		void onActiveChanged(jint arg0, jboolean arg1);
+		void onFinished(jint arg0, jboolean arg1);
 		void onProgressChanged(jint arg0, jfloat arg1);
 	};
 } // namespace __jni_impl::android::content::pm
@@ -39,27 +39,21 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	void PackageInstaller_SessionCallback::onFinished(jint arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"onFinished",
-			"(IZ)V",
-			arg0,
-			arg1);
-	}
 	void PackageInstaller_SessionCallback::onBadgingChanged(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onBadgingChanged",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PackageInstaller_SessionCallback::onCreated(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onCreated",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PackageInstaller_SessionCallback::onActiveChanged(jint arg0, jboolean arg1)
 	{
@@ -67,7 +61,17 @@ namespace __jni_impl::android::content::pm
 			"onActiveChanged",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void PackageInstaller_SessionCallback::onFinished(jint arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"onFinished",
+			"(IZ)V",
+			arg0,
+			arg1
+		);
 	}
 	void PackageInstaller_SessionCallback::onProgressChanged(jint arg0, jfloat arg1)
 	{
@@ -75,7 +79,8 @@ namespace __jni_impl::android::content::pm
 			"onProgressChanged",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

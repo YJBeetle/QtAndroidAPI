@@ -40,25 +40,25 @@ namespace __jni_impl::android::media::browse
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EXTRA_PAGE();
-		static QAndroidJniObject EXTRA_PAGE_SIZE();
+		static jstring EXTRA_PAGE();
+		static jstring EXTRA_PAGE_SIZE();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::media::browse::MediaBrowser_ConnectionCallback arg2, __jni_impl::android::os::Bundle arg3);
 		
 		// Methods
 		void connect();
-		QAndroidJniObject getRoot();
+		jstring getRoot();
 		void getItem(jstring arg0, __jni_impl::android::media::browse::MediaBrowser_ItemCallback arg1);
-		QAndroidJniObject getSessionToken();
 		jboolean isConnected();
 		QAndroidJniObject getExtras();
-		void disconnect();
+		QAndroidJniObject getSessionToken();
 		QAndroidJniObject getServiceComponent();
 		void subscribe(jstring arg0, __jni_impl::android::media::browse::MediaBrowser_SubscriptionCallback arg1);
 		void subscribe(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::media::browse::MediaBrowser_SubscriptionCallback arg2);
-		void unsubscribe(jstring arg0);
 		void unsubscribe(jstring arg0, __jni_impl::android::media::browse::MediaBrowser_SubscriptionCallback arg1);
+		void unsubscribe(jstring arg0);
+		void disconnect();
 	};
 } // namespace __jni_impl::android::media::browse
 
@@ -73,19 +73,21 @@ namespace __jni_impl::android::media::browse
 namespace __jni_impl::android::media::browse
 {
 	// Fields
-	QAndroidJniObject MediaBrowser::EXTRA_PAGE()
+	jstring MediaBrowser::EXTRA_PAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.browse.MediaBrowser",
 			"EXTRA_PAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaBrowser::EXTRA_PAGE_SIZE()
+	jstring MediaBrowser::EXTRA_PAGE_SIZE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.browse.MediaBrowser",
 			"EXTRA_PAGE_SIZE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -105,13 +107,15 @@ namespace __jni_impl::android::media::browse
 	{
 		__thiz.callMethod<void>(
 			"connect",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject MediaBrowser::getRoot()
+	jstring MediaBrowser::getRoot()
 	{
 		return __thiz.callObjectMethod(
 			"getRoot",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void MediaBrowser::getItem(jstring arg0, __jni_impl::android::media::browse::MediaBrowser_ItemCallback arg1)
 	{
@@ -119,37 +123,36 @@ namespace __jni_impl::android::media::browse
 			"getItem",
 			"(Ljava/lang/String;Landroid/media/browse/MediaBrowser$ItemCallback;)V",
 			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject MediaBrowser::getSessionToken()
-	{
-		return __thiz.callObjectMethod(
-			"getSessionToken",
-			"()Landroid/media/session/MediaSession$Token;");
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean MediaBrowser::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject MediaBrowser::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
-	void MediaBrowser::disconnect()
+	QAndroidJniObject MediaBrowser::getSessionToken()
 	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"()V");
+		return __thiz.callObjectMethod(
+			"getSessionToken",
+			"()Landroid/media/session/MediaSession$Token;"
+		);
 	}
 	QAndroidJniObject MediaBrowser::getServiceComponent()
 	{
 		return __thiz.callObjectMethod(
 			"getServiceComponent",
-			"()Landroid/content/ComponentName;");
+			"()Landroid/content/ComponentName;"
+		);
 	}
 	void MediaBrowser::subscribe(jstring arg0, __jni_impl::android::media::browse::MediaBrowser_SubscriptionCallback arg1)
 	{
@@ -157,7 +160,8 @@ namespace __jni_impl::android::media::browse
 			"subscribe",
 			"(Ljava/lang/String;Landroid/media/browse/MediaBrowser$SubscriptionCallback;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaBrowser::subscribe(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::media::browse::MediaBrowser_SubscriptionCallback arg2)
 	{
@@ -166,14 +170,8 @@ namespace __jni_impl::android::media::browse
 			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/media/browse/MediaBrowser$SubscriptionCallback;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	void MediaBrowser::unsubscribe(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"unsubscribe",
-			"(Ljava/lang/String;)V",
-			arg0);
+			arg2.__jniObject().object()
+		);
 	}
 	void MediaBrowser::unsubscribe(jstring arg0, __jni_impl::android::media::browse::MediaBrowser_SubscriptionCallback arg1)
 	{
@@ -181,7 +179,23 @@ namespace __jni_impl::android::media::browse
 			"unsubscribe",
 			"(Ljava/lang/String;Landroid/media/browse/MediaBrowser$SubscriptionCallback;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaBrowser::unsubscribe(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"unsubscribe",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void MediaBrowser::disconnect()
+	{
+		__thiz.callMethod<void>(
+			"disconnect",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::media::browse
 

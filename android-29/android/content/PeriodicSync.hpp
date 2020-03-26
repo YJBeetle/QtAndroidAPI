@@ -26,7 +26,7 @@ namespace __jni_impl::android::content
 		// Fields
 		static QAndroidJniObject CREATOR();
 		QAndroidJniObject account();
-		QAndroidJniObject authority();
+		jstring authority();
 		QAndroidJniObject extras();
 		jlong period();
 		
@@ -35,7 +35,7 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -53,30 +53,35 @@ namespace __jni_impl::android::content
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.PeriodicSync",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	QAndroidJniObject PeriodicSync::account()
 	{
 		return __thiz.getObjectField(
 			"account",
-			"Landroid/accounts/Account;");
+			"Landroid/accounts/Account;"
+		);
 	}
-	QAndroidJniObject PeriodicSync::authority()
+	jstring PeriodicSync::authority()
 	{
 		return __thiz.getObjectField(
 			"authority",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject PeriodicSync::extras()
 	{
 		return __thiz.getObjectField(
 			"extras",
-			"Landroid/os/Bundle;");
+			"Landroid/os/Bundle;"
+		);
 	}
 	jlong PeriodicSync::period()
 	{
 		return __thiz.getField<jlong>(
-			"period");
+			"period"
+		);
 	}
 	
 	// Constructors
@@ -97,19 +102,22 @@ namespace __jni_impl::android::content
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PeriodicSync::toString()
+	jstring PeriodicSync::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PeriodicSync::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PeriodicSync::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -117,7 +125,8 @@ namespace __jni_impl::android::content
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content
 

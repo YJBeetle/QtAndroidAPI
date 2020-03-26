@@ -30,7 +30,7 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void removeRoute(jint arg0);
 		void removeRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0);
 		void addRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0);
@@ -61,32 +61,36 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaRouter_RouteGroup::toString()
+	jstring MediaRouter_RouteGroup::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void MediaRouter_RouteGroup::removeRoute(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeRoute",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaRouter_RouteGroup::removeRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeRoute",
 			"(Landroid/media/MediaRouter$RouteInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaRouter_RouteGroup::addRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"addRoute",
 			"(Landroid/media/MediaRouter$RouteInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaRouter_RouteGroup::addRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0, jint arg1)
 	{
@@ -94,48 +98,55 @@ namespace __jni_impl::android::media
 			"addRoute",
 			"(Landroid/media/MediaRouter$RouteInfo;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint MediaRouter_RouteGroup::getRouteCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getRouteCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MediaRouter_RouteGroup::getRouteAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getRouteAt",
 			"(I)Landroid/media/MediaRouter$RouteInfo;",
-			arg0);
+			arg0
+		);
 	}
 	void MediaRouter_RouteGroup::setIconDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIconDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaRouter_RouteGroup::setIconResource(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIconResource",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaRouter_RouteGroup::requestSetVolume(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"requestSetVolume",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaRouter_RouteGroup::requestUpdateVolume(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"requestUpdateVolume",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

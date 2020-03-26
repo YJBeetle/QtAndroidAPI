@@ -12,30 +12,30 @@ namespace __jni_impl::android::media::tv
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ANIMAL_WILDLIFE();
-		static QAndroidJniObject ARTS();
-		static QAndroidJniObject COMEDY();
-		static QAndroidJniObject DRAMA();
-		static QAndroidJniObject EDUCATION();
-		static QAndroidJniObject ENTERTAINMENT();
-		static QAndroidJniObject FAMILY_KIDS();
-		static QAndroidJniObject GAMING();
-		static QAndroidJniObject LIFE_STYLE();
-		static QAndroidJniObject MOVIES();
-		static QAndroidJniObject MUSIC();
-		static QAndroidJniObject NEWS();
-		static QAndroidJniObject PREMIER();
-		static QAndroidJniObject SHOPPING();
-		static QAndroidJniObject SPORTS();
-		static QAndroidJniObject TECH_SCIENCE();
-		static QAndroidJniObject TRAVEL();
+		static jstring ANIMAL_WILDLIFE();
+		static jstring ARTS();
+		static jstring COMEDY();
+		static jstring DRAMA();
+		static jstring EDUCATION();
+		static jstring ENTERTAINMENT();
+		static jstring FAMILY_KIDS();
+		static jstring GAMING();
+		static jstring LIFE_STYLE();
+		static jstring MOVIES();
+		static jstring MUSIC();
+		static jstring NEWS();
+		static jstring PREMIER();
+		static jstring SHOPPING();
+		static jstring SPORTS();
+		static jstring TECH_SCIENCE();
+		static jstring TRAVEL();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject decode(jstring arg0);
-		static QAndroidJniObject encode(jarray arg0);
+		static jarray decode(jstring arg0);
+		static jstring encode(jarray arg0);
 		static jboolean isCanonical(jstring arg0);
 	};
 } // namespace __jni_impl::android::media::tv
@@ -44,124 +44,141 @@ namespace __jni_impl::android::media::tv
 namespace __jni_impl::android::media::tv
 {
 	// Fields
-	QAndroidJniObject TvContract_Programs_Genres::ANIMAL_WILDLIFE()
+	jstring TvContract_Programs_Genres::ANIMAL_WILDLIFE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"ANIMAL_WILDLIFE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::ARTS()
+	jstring TvContract_Programs_Genres::ARTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"ARTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::COMEDY()
+	jstring TvContract_Programs_Genres::COMEDY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"COMEDY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::DRAMA()
+	jstring TvContract_Programs_Genres::DRAMA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"DRAMA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::EDUCATION()
+	jstring TvContract_Programs_Genres::EDUCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"EDUCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::ENTERTAINMENT()
+	jstring TvContract_Programs_Genres::ENTERTAINMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"ENTERTAINMENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::FAMILY_KIDS()
+	jstring TvContract_Programs_Genres::FAMILY_KIDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"FAMILY_KIDS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::GAMING()
+	jstring TvContract_Programs_Genres::GAMING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"GAMING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::LIFE_STYLE()
+	jstring TvContract_Programs_Genres::LIFE_STYLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"LIFE_STYLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::MOVIES()
+	jstring TvContract_Programs_Genres::MOVIES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"MOVIES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::MUSIC()
+	jstring TvContract_Programs_Genres::MUSIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"MUSIC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::NEWS()
+	jstring TvContract_Programs_Genres::NEWS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"NEWS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::PREMIER()
+	jstring TvContract_Programs_Genres::PREMIER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"PREMIER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::SHOPPING()
+	jstring TvContract_Programs_Genres::SHOPPING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"SHOPPING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::SPORTS()
+	jstring TvContract_Programs_Genres::SPORTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"SPORTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::TECH_SCIENCE()
+	jstring TvContract_Programs_Genres::TECH_SCIENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"TECH_SCIENCE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::TRAVEL()
+	jstring TvContract_Programs_Genres::TRAVEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Programs$Genres",
 			"TRAVEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -173,21 +190,23 @@ namespace __jni_impl::android::media::tv
 	}
 	
 	// Methods
-	QAndroidJniObject TvContract_Programs_Genres::decode(jstring arg0)
+	jarray TvContract_Programs_Genres::decode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract$Programs$Genres",
 			"decode",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
-	QAndroidJniObject TvContract_Programs_Genres::encode(jarray arg0)
+	jstring TvContract_Programs_Genres::encode(jarray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.tv.TvContract$Programs$Genres",
 			"encode",
 			"([Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jboolean TvContract_Programs_Genres::isCanonical(jstring arg0)
 	{
@@ -195,7 +214,8 @@ namespace __jni_impl::android::media::tv
 			"android.media.tv.TvContract$Programs$Genres",
 			"isCanonical",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

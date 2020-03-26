@@ -17,9 +17,9 @@ namespace __jni_impl::java::security::spec
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
-		QAndroidJniObject getEncoded();
-		QAndroidJniObject getFormat();
-		QAndroidJniObject getAlgorithm();
+		jbyteArray getEncoded();
+		jstring getFormat();
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -38,23 +38,26 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
-	QAndroidJniObject EncodedKeySpec::getEncoded()
+	jbyteArray EncodedKeySpec::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject EncodedKeySpec::getFormat()
+	jstring EncodedKeySpec::getFormat()
 	{
 		return __thiz.callObjectMethod(
 			"getFormat",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject EncodedKeySpec::getAlgorithm()
+	jstring EncodedKeySpec::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::spec
 

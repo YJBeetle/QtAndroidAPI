@@ -51,56 +51,64 @@ namespace __jni_impl::android::net::wifi::aware
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/net/wifi/aware/PublishConfig;");
+			"()Landroid/net/wifi/aware/PublishConfig;"
+		);
 	}
 	QAndroidJniObject PublishConfig_Builder::setServiceName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setServiceName",
 			"(Ljava/lang/String;)Landroid/net/wifi/aware/PublishConfig$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PublishConfig_Builder::setServiceSpecificInfo(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setServiceSpecificInfo",
 			"([B)Landroid/net/wifi/aware/PublishConfig$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PublishConfig_Builder::setMatchFilter(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMatchFilter",
 			"(Ljava/util/List;)Landroid/net/wifi/aware/PublishConfig$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PublishConfig_Builder::setPublishType(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPublishType",
 			"(I)Landroid/net/wifi/aware/PublishConfig$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PublishConfig_Builder::setTtlSec(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTtlSec",
 			"(I)Landroid/net/wifi/aware/PublishConfig$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PublishConfig_Builder::setTerminateNotificationEnabled(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTerminateNotificationEnabled",
 			"(Z)Landroid/net/wifi/aware/PublishConfig$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PublishConfig_Builder::setRangingEnabled(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setRangingEnabled",
 			"(Z)Landroid/net/wifi/aware/PublishConfig$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

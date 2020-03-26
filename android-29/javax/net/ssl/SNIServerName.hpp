@@ -18,10 +18,10 @@ namespace __jni_impl::javax::net::ssl
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getType();
-		QAndroidJniObject getEncoded();
+		jbyteArray getEncoded();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -44,31 +44,36 @@ namespace __jni_impl::javax::net::ssl
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SNIServerName::toString()
+	jstring SNIServerName::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SNIServerName::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint SNIServerName::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SNIServerName::getEncoded()
+	jbyteArray SNIServerName::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::javax::net::ssl
 

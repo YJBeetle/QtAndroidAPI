@@ -139,7 +139,7 @@ namespace __jni_impl::android::renderscript
 		static QAndroidJniObject createSized(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2);
 		static QAndroidJniObject createFromBitmap(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::graphics::Bitmap arg1);
 		static QAndroidJniObject createFromBitmap(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::graphics::Bitmap arg1, __jni_impl::android::renderscript::Allocation_MipmapControl arg2, jint arg3);
-		static QAndroidJniObject createAllocations(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Type arg1, jint arg2, jint arg3);
+		static jarray createAllocations(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Type arg1, jint arg2, jint arg3);
 		jlong getStride();
 		jlong getTimeStamp();
 		QAndroidJniObject getSurface();
@@ -172,49 +172,57 @@ namespace __jni_impl::android::renderscript
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.Allocation",
-			"USAGE_GRAPHICS_CONSTANTS");
+			"USAGE_GRAPHICS_CONSTANTS"
+		);
 	}
 	jint Allocation::USAGE_GRAPHICS_RENDER_TARGET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.Allocation",
-			"USAGE_GRAPHICS_RENDER_TARGET");
+			"USAGE_GRAPHICS_RENDER_TARGET"
+		);
 	}
 	jint Allocation::USAGE_GRAPHICS_TEXTURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.Allocation",
-			"USAGE_GRAPHICS_TEXTURE");
+			"USAGE_GRAPHICS_TEXTURE"
+		);
 	}
 	jint Allocation::USAGE_GRAPHICS_VERTEX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.Allocation",
-			"USAGE_GRAPHICS_VERTEX");
+			"USAGE_GRAPHICS_VERTEX"
+		);
 	}
 	jint Allocation::USAGE_IO_INPUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.Allocation",
-			"USAGE_IO_INPUT");
+			"USAGE_IO_INPUT"
+		);
 	}
 	jint Allocation::USAGE_IO_OUTPUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.Allocation",
-			"USAGE_IO_OUTPUT");
+			"USAGE_IO_OUTPUT"
+		);
 	}
 	jint Allocation::USAGE_SCRIPT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.Allocation",
-			"USAGE_SCRIPT");
+			"USAGE_SCRIPT"
+		);
 	}
 	jint Allocation::USAGE_SHARED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.Allocation",
-			"USAGE_SHARED");
+			"USAGE_SHARED"
+		);
 	}
 	
 	// Constructors
@@ -230,161 +238,185 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Allocation::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Landroid/renderscript/Type;");
+			"()Landroid/renderscript/Type;"
+		);
 	}
 	void Allocation::syncAll(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"syncAll",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Allocation::getByteBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"getByteBuffer",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	void Allocation::resize(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"resize",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFrom(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"(Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Allocation::copyFrom(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFrom(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFrom(jshortArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"([S)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFrom(jintArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"([I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFrom(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFrom(__jni_impl::android::renderscript::Allocation arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Allocation::copyFrom(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"([Landroid/renderscript/BaseObj;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Allocation::getElement()
 	{
 		return __thiz.callObjectMethod(
 			"getElement",
-			"()Landroid/renderscript/Element;");
+			"()Landroid/renderscript/Element;"
+		);
 	}
 	jint Allocation::getUsage()
 	{
 		return __thiz.callMethod<jint>(
 			"getUsage",
-			"()I");
+			"()I"
+		);
 	}
 	void Allocation::setAutoPadding(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAutoPadding",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Allocation::getBytesSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getBytesSize",
-			"()I");
+			"()I"
+		);
 	}
 	void Allocation::ioSend()
 	{
 		__thiz.callMethod<void>(
 			"ioSend",
-			"()V");
+			"()V"
+		);
 	}
 	void Allocation::ioReceive()
 	{
 		__thiz.callMethod<void>(
 			"ioReceive",
-			"()V");
+			"()V"
+		);
 	}
 	void Allocation::copyFromUnchecked(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFromUnchecked",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFromUnchecked(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFromUnchecked",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFromUnchecked(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFromUnchecked",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFromUnchecked(jshortArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFromUnchecked",
 			"([S)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyFromUnchecked(jintArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFromUnchecked",
 			"([I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::setFromFieldPacker(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::FieldPacker arg4)
 	{
@@ -395,7 +427,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void Allocation::setFromFieldPacker(jint arg0, __jni_impl::android::renderscript::FieldPacker arg1)
 	{
@@ -403,7 +436,8 @@ namespace __jni_impl::android::renderscript
 			"setFromFieldPacker",
 			"(ILandroid/renderscript/FieldPacker;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Allocation::setFromFieldPacker(jint arg0, jint arg1, __jni_impl::android::renderscript::FieldPacker arg2)
 	{
@@ -412,13 +446,15 @@ namespace __jni_impl::android::renderscript
 			"(IILandroid/renderscript/FieldPacker;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void Allocation::generateMipmaps()
 	{
 		__thiz.callMethod<void>(
 			"generateMipmaps",
-			"()V");
+			"()V"
+		);
 	}
 	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, jfloatArray arg2)
 	{
@@ -427,7 +463,8 @@ namespace __jni_impl::android::renderscript
 			"(II[F)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, jobject arg2)
 	{
@@ -436,7 +473,8 @@ namespace __jni_impl::android::renderscript
 			"(IILjava/lang/Object;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, jintArray arg2)
 	{
@@ -445,7 +483,8 @@ namespace __jni_impl::android::renderscript
 			"(II[I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, jbyteArray arg2)
 	{
@@ -454,7 +493,8 @@ namespace __jni_impl::android::renderscript
 			"(II[B)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, jshortArray arg2)
 	{
@@ -463,7 +503,8 @@ namespace __jni_impl::android::renderscript
 			"(II[S)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3)
 	{
@@ -473,7 +514,8 @@ namespace __jni_impl::android::renderscript
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, jintArray arg2)
 	{
@@ -482,7 +524,8 @@ namespace __jni_impl::android::renderscript
 			"(II[I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, jshortArray arg2)
 	{
@@ -491,7 +534,8 @@ namespace __jni_impl::android::renderscript
 			"(II[S)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, jbyteArray arg2)
 	{
@@ -500,7 +544,8 @@ namespace __jni_impl::android::renderscript
 			"(II[B)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, jobject arg2)
 	{
@@ -509,7 +554,8 @@ namespace __jni_impl::android::renderscript
 			"(IILjava/lang/Object;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeFrom(jint arg0, jint arg1, jfloatArray arg2)
 	{
@@ -518,7 +564,8 @@ namespace __jni_impl::android::renderscript
 			"(II[F)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap arg2)
 	{
@@ -527,7 +574,8 @@ namespace __jni_impl::android::renderscript
 			"(IILandroid/graphics/Bitmap;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jobject arg4)
 	{
@@ -538,7 +586,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jfloatArray arg4)
 	{
@@ -549,7 +598,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jshortArray arg4)
 	{
@@ -560,7 +610,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
 	{
@@ -571,7 +622,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4)
 	{
@@ -582,7 +634,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, jint arg6)
 	{
@@ -595,7 +648,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void Allocation::copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7, jint arg8, jint arg9)
 	{
@@ -611,7 +665,8 @@ namespace __jni_impl::android::renderscript
 			arg6.__jniObject().object(),
 			arg7,
 			arg8,
-			arg9);
+			arg9
+		);
 	}
 	void Allocation::copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jobject arg6)
 	{
@@ -624,49 +679,56 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void Allocation::copyTo(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyTo",
 			"(Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Allocation::copyTo(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyTo",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyTo(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyTo",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyTo(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyTo",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyTo(jintArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyTo",
 			"([I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copyTo(jshortArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyTo",
 			"([S)V",
-			arg0);
+			arg0
+		);
 	}
 	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, jobject arg2)
 	{
@@ -675,7 +737,8 @@ namespace __jni_impl::android::renderscript
 			"(IILjava/lang/Object;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, jfloatArray arg2)
 	{
@@ -684,7 +747,8 @@ namespace __jni_impl::android::renderscript
 			"(II[F)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, jintArray arg2)
 	{
@@ -693,7 +757,8 @@ namespace __jni_impl::android::renderscript
 			"(II[I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, jshortArray arg2)
 	{
@@ -702,7 +767,8 @@ namespace __jni_impl::android::renderscript
 			"(II[S)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, jbyteArray arg2)
 	{
@@ -711,7 +777,8 @@ namespace __jni_impl::android::renderscript
 			"(II[B)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeTo(jint arg0, jint arg1, jfloatArray arg2)
 	{
@@ -720,7 +787,8 @@ namespace __jni_impl::android::renderscript
 			"(II[F)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeTo(jint arg0, jint arg1, jbyteArray arg2)
 	{
@@ -729,7 +797,8 @@ namespace __jni_impl::android::renderscript
 			"(II[B)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeTo(jint arg0, jint arg1, jintArray arg2)
 	{
@@ -738,7 +807,8 @@ namespace __jni_impl::android::renderscript
 			"(II[I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeTo(jint arg0, jint arg1, jobject arg2)
 	{
@@ -747,7 +817,8 @@ namespace __jni_impl::android::renderscript
 			"(IILjava/lang/Object;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy1DRangeTo(jint arg0, jint arg1, jshortArray arg2)
 	{
@@ -756,7 +827,8 @@ namespace __jni_impl::android::renderscript
 			"(II[S)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jfloatArray arg4)
 	{
@@ -767,7 +839,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jobject arg4)
 	{
@@ -778,7 +851,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4)
 	{
@@ -789,7 +863,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jshortArray arg4)
 	{
@@ -800,7 +875,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
 	{
@@ -811,7 +887,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Allocation::copy3DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jobject arg6)
 	{
@@ -824,7 +901,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	QAndroidJniObject Allocation::createTyped(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Type arg1, __jni_impl::android::renderscript::Allocation_MipmapControl arg2, jint arg3)
 	{
@@ -835,7 +913,8 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Allocation::createTyped(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Type arg1, jint arg2)
 	{
@@ -845,7 +924,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;I)Landroid/renderscript/Allocation;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Allocation::createTyped(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Type arg1)
 	{
@@ -854,7 +934,8 @@ namespace __jni_impl::android::renderscript
 			"createTyped",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Allocation::createSized(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3)
 	{
@@ -865,7 +946,8 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Allocation::createSized(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2)
 	{
@@ -875,7 +957,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;I)Landroid/renderscript/Allocation;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Allocation::createFromBitmap(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::graphics::Bitmap arg1)
 	{
@@ -884,7 +967,8 @@ namespace __jni_impl::android::renderscript
 			"createFromBitmap",
 			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Allocation::createFromBitmap(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::graphics::Bitmap arg1, __jni_impl::android::renderscript::Allocation_MipmapControl arg2, jint arg3)
 	{
@@ -895,9 +979,10 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
-	QAndroidJniObject Allocation::createAllocations(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Type arg1, jint arg2, jint arg3)
+	jarray Allocation::createAllocations(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Type arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Allocation",
@@ -906,32 +991,37 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		).object<jarray>();
 	}
 	jlong Allocation::getStride()
 	{
 		return __thiz.callMethod<jlong>(
 			"getStride",
-			"()J");
+			"()J"
+		);
 	}
 	jlong Allocation::getTimeStamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTimeStamp",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject Allocation::getSurface()
 	{
 		return __thiz.callObjectMethod(
 			"getSurface",
-			"()Landroid/view/Surface;");
+			"()Landroid/view/Surface;"
+		);
 	}
 	void Allocation::setSurface(__jni_impl::android::view::Surface arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Allocation::createCubemapFromBitmap(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::graphics::Bitmap arg1)
 	{
@@ -940,7 +1030,8 @@ namespace __jni_impl::android::renderscript
 			"createCubemapFromBitmap",
 			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Allocation::createCubemapFromBitmap(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::graphics::Bitmap arg1, __jni_impl::android::renderscript::Allocation_MipmapControl arg2, jint arg3)
 	{
@@ -951,7 +1042,8 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Allocation::createCubemapFromCubeFaces(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::graphics::Bitmap arg1, __jni_impl::android::graphics::Bitmap arg2, __jni_impl::android::graphics::Bitmap arg3, __jni_impl::android::graphics::Bitmap arg4, __jni_impl::android::graphics::Bitmap arg5, __jni_impl::android::graphics::Bitmap arg6, __jni_impl::android::renderscript::Allocation_MipmapControl arg7, jint arg8)
 	{
@@ -967,7 +1059,8 @@ namespace __jni_impl::android::renderscript
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
 			arg7.__jniObject().object(),
-			arg8);
+			arg8
+		);
 	}
 	QAndroidJniObject Allocation::createCubemapFromCubeFaces(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::graphics::Bitmap arg1, __jni_impl::android::graphics::Bitmap arg2, __jni_impl::android::graphics::Bitmap arg3, __jni_impl::android::graphics::Bitmap arg4, __jni_impl::android::graphics::Bitmap arg5, __jni_impl::android::graphics::Bitmap arg6)
 	{
@@ -981,7 +1074,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Allocation::createFromBitmapResource(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::content::res::Resources arg1, jint arg2)
 	{
@@ -991,7 +1085,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/RenderScript;Landroid/content/res/Resources;I)Landroid/renderscript/Allocation;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Allocation::createFromBitmapResource(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::content::res::Resources arg1, jint arg2, __jni_impl::android::renderscript::Allocation_MipmapControl arg3, jint arg4)
 	{
@@ -1003,7 +1098,8 @@ namespace __jni_impl::android::renderscript
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject Allocation::createFromString(__jni_impl::android::renderscript::RenderScript arg0, jstring arg1, jint arg2)
 	{
@@ -1013,14 +1109,16 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/RenderScript;Ljava/lang/String;I)Landroid/renderscript/Allocation;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Allocation::setOnBufferAvailableListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnBufferAvailableListener",
 			"(Landroid/renderscript/Allocation$OnBufferAvailableListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

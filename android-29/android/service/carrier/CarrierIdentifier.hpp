@@ -25,16 +25,16 @@ namespace __jni_impl::android::service::carrier
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getMcc();
-		QAndroidJniObject getMnc();
-		QAndroidJniObject getSpn();
-		QAndroidJniObject getImsi();
-		QAndroidJniObject getGid1();
-		QAndroidJniObject getGid2();
+		jstring getMcc();
+		jstring getMnc();
+		jstring getSpn();
+		jstring getImsi();
+		jstring getGid1();
+		jstring getGid2();
 		jint getCarrierId();
 		jint getSpecificCarrierId();
 	};
@@ -50,7 +50,8 @@ namespace __jni_impl::android::service::carrier
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.carrier.CarrierIdentifier",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -96,25 +97,29 @@ namespace __jni_impl::android::service::carrier
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CarrierIdentifier::toString()
+	jstring CarrierIdentifier::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CarrierIdentifier::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint CarrierIdentifier::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CarrierIdentifier::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -122,55 +127,64 @@ namespace __jni_impl::android::service::carrier
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject CarrierIdentifier::getMcc()
+	jstring CarrierIdentifier::getMcc()
 	{
 		return __thiz.callObjectMethod(
 			"getMcc",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CarrierIdentifier::getMnc()
+	jstring CarrierIdentifier::getMnc()
 	{
 		return __thiz.callObjectMethod(
 			"getMnc",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CarrierIdentifier::getSpn()
+	jstring CarrierIdentifier::getSpn()
 	{
 		return __thiz.callObjectMethod(
 			"getSpn",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CarrierIdentifier::getImsi()
+	jstring CarrierIdentifier::getImsi()
 	{
 		return __thiz.callObjectMethod(
 			"getImsi",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CarrierIdentifier::getGid1()
+	jstring CarrierIdentifier::getGid1()
 	{
 		return __thiz.callObjectMethod(
 			"getGid1",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CarrierIdentifier::getGid2()
+	jstring CarrierIdentifier::getGid2()
 	{
 		return __thiz.callObjectMethod(
 			"getGid2",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CarrierIdentifier::getCarrierId()
 	{
 		return __thiz.callMethod<jint>(
 			"getCarrierId",
-			"()I");
+			"()I"
+		);
 	}
 	jint CarrierIdentifier::getSpecificCarrierId()
 	{
 		return __thiz.callMethod<jint>(
 			"getSpecificCarrierId",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::service::carrier
 

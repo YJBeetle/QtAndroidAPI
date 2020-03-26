@@ -65,13 +65,15 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.getObjectField(
 			"columnSpec",
-			"Landroid/widget/GridLayout$Spec;");
+			"Landroid/widget/GridLayout$Spec;"
+		);
 	}
 	QAndroidJniObject GridLayout_LayoutParams::rowSpec()
 	{
 		return __thiz.getObjectField(
 			"rowSpec",
-			"Landroid/widget/GridLayout$Spec;");
+			"Landroid/widget/GridLayout$Spec;"
+		);
 	}
 	
 	// Constructors
@@ -125,20 +127,23 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint GridLayout_LayoutParams::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void GridLayout_LayoutParams::setGravity(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setGravity",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

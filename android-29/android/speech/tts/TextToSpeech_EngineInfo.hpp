@@ -13,14 +13,14 @@ namespace __jni_impl::android::speech::tts
 	public:
 		// Fields
 		jint icon();
-		QAndroidJniObject label();
-		QAndroidJniObject name();
+		jstring label();
+		jstring name();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::speech::tts
 
@@ -31,19 +31,22 @@ namespace __jni_impl::android::speech::tts
 	jint TextToSpeech_EngineInfo::icon()
 	{
 		return __thiz.getField<jint>(
-			"icon");
+			"icon"
+		);
 	}
-	QAndroidJniObject TextToSpeech_EngineInfo::label()
+	jstring TextToSpeech_EngineInfo::label()
 	{
 		return __thiz.getObjectField(
 			"label",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TextToSpeech_EngineInfo::name()
+	jstring TextToSpeech_EngineInfo::name()
 	{
 		return __thiz.getObjectField(
 			"name",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -55,11 +58,12 @@ namespace __jni_impl::android::speech::tts
 	}
 	
 	// Methods
-	QAndroidJniObject TextToSpeech_EngineInfo::toString()
+	jstring TextToSpeech_EngineInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::speech::tts
 

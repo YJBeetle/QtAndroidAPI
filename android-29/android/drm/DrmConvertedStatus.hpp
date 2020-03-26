@@ -15,7 +15,7 @@ namespace __jni_impl::android::drm
 		static jint STATUS_ERROR();
 		static jint STATUS_INPUTDATA_ERROR();
 		static jint STATUS_OK();
-		QAndroidJniObject convertedData();
+		jbyteArray convertedData();
 		jint offset();
 		jint statusCode();
 		
@@ -34,35 +34,41 @@ namespace __jni_impl::android::drm
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmConvertedStatus",
-			"STATUS_ERROR");
+			"STATUS_ERROR"
+		);
 	}
 	jint DrmConvertedStatus::STATUS_INPUTDATA_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmConvertedStatus",
-			"STATUS_INPUTDATA_ERROR");
+			"STATUS_INPUTDATA_ERROR"
+		);
 	}
 	jint DrmConvertedStatus::STATUS_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmConvertedStatus",
-			"STATUS_OK");
+			"STATUS_OK"
+		);
 	}
-	QAndroidJniObject DrmConvertedStatus::convertedData()
+	jbyteArray DrmConvertedStatus::convertedData()
 	{
 		return __thiz.getObjectField(
 			"convertedData",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
 	jint DrmConvertedStatus::offset()
 	{
 		return __thiz.getField<jint>(
-			"offset");
+			"offset"
+		);
 	}
 	jint DrmConvertedStatus::statusCode()
 	{
 		return __thiz.getField<jint>(
-			"statusCode");
+			"statusCode"
+		);
 	}
 	
 	// Constructors

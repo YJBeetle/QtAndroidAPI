@@ -18,11 +18,11 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jboolean firstDateInPtnIsLaterDate();
-		QAndroidJniObject getFirstPart();
-		QAndroidJniObject getSecondPart();
+		jstring getFirstPart();
+		jstring getSecondPart();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -48,37 +48,43 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DateIntervalInfo_PatternInfo::toString()
+	jstring DateIntervalInfo_PatternInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateIntervalInfo_PatternInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean DateIntervalInfo_PatternInfo::firstDateInPtnIsLaterDate()
 	{
 		return __thiz.callMethod<jboolean>(
 			"firstDateInPtnIsLaterDate",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject DateIntervalInfo_PatternInfo::getFirstPart()
+	jstring DateIntervalInfo_PatternInfo::getFirstPart()
 	{
 		return __thiz.callObjectMethod(
 			"getFirstPart",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateIntervalInfo_PatternInfo::getSecondPart()
+	jstring DateIntervalInfo_PatternInfo::getSecondPart()
 	{
 		return __thiz.callObjectMethod(
 			"getSecondPart",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text
 

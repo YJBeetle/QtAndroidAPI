@@ -50,13 +50,12 @@ namespace __jni_impl::android::widget
 		// Methods
 		void setGravity(jint arg0);
 		jint getGravity();
-		void setOrientation(jint arg0);
-		QAndroidJniObject getAccessibilityClassName();
+		jint getOrientation();
+		jstring getAccessibilityClassName();
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		jboolean shouldDelayChildPressedState();
 		void onRtlPropertiesChanged(jint arg0);
 		jint getBaseline();
-		jint getOrientation();
 		void setDividerDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setShowDividers(jint arg0);
 		jint getShowDividers();
@@ -73,6 +72,7 @@ namespace __jni_impl::android::widget
 		void setWeightSum(jfloat arg0);
 		void setHorizontalGravity(jint arg0);
 		void setVerticalGravity(jint arg0);
+		void setOrientation(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -89,37 +89,43 @@ namespace __jni_impl::android::widget
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.LinearLayout",
-			"HORIZONTAL");
+			"HORIZONTAL"
+		);
 	}
 	jint LinearLayout::SHOW_DIVIDER_BEGINNING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.LinearLayout",
-			"SHOW_DIVIDER_BEGINNING");
+			"SHOW_DIVIDER_BEGINNING"
+		);
 	}
 	jint LinearLayout::SHOW_DIVIDER_END()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.LinearLayout",
-			"SHOW_DIVIDER_END");
+			"SHOW_DIVIDER_END"
+		);
 	}
 	jint LinearLayout::SHOW_DIVIDER_MIDDLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.LinearLayout",
-			"SHOW_DIVIDER_MIDDLE");
+			"SHOW_DIVIDER_MIDDLE"
+		);
 	}
 	jint LinearLayout::SHOW_DIVIDER_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.LinearLayout",
-			"SHOW_DIVIDER_NONE");
+			"SHOW_DIVIDER_NONE"
+		);
 	}
 	jint LinearLayout::VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.LinearLayout",
-			"VERTICAL");
+			"VERTICAL"
+		);
 	}
 	
 	// Constructors
@@ -164,163 +170,188 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"setGravity",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint LinearLayout::getGravity()
 	{
 		return __thiz.callMethod<jint>(
 			"getGravity",
-			"()I");
+			"()I"
+		);
 	}
-	void LinearLayout::setOrientation(jint arg0)
+	jint LinearLayout::getOrientation()
 	{
-		__thiz.callMethod<void>(
-			"setOrientation",
-			"(I)V",
-			arg0);
+		return __thiz.callMethod<jint>(
+			"getOrientation",
+			"()I"
+		);
 	}
-	QAndroidJniObject LinearLayout::getAccessibilityClassName()
+	jstring LinearLayout::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	QAndroidJniObject LinearLayout::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/LinearLayout$LayoutParams;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LinearLayout::shouldDelayChildPressedState()
 	{
 		return __thiz.callMethod<jboolean>(
 			"shouldDelayChildPressedState",
-			"()Z");
+			"()Z"
+		);
 	}
 	void LinearLayout::onRtlPropertiesChanged(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onRtlPropertiesChanged",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint LinearLayout::getBaseline()
 	{
 		return __thiz.callMethod<jint>(
 			"getBaseline",
-			"()I");
-	}
-	jint LinearLayout::getOrientation()
-	{
-		return __thiz.callMethod<jint>(
-			"getOrientation",
-			"()I");
+			"()I"
+		);
 	}
 	void LinearLayout::setDividerDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDividerDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LinearLayout::setShowDividers(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setShowDividers",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint LinearLayout::getShowDividers()
 	{
 		return __thiz.callMethod<jint>(
 			"getShowDividers",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject LinearLayout::getDividerDrawable()
 	{
 		return __thiz.callObjectMethod(
 			"getDividerDrawable",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	void LinearLayout::setDividerPadding(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDividerPadding",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint LinearLayout::getDividerPadding()
 	{
 		return __thiz.callMethod<jint>(
 			"getDividerPadding",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean LinearLayout::isBaselineAligned()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBaselineAligned",
-			"()Z");
+			"()Z"
+		);
 	}
 	void LinearLayout::setBaselineAligned(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBaselineAligned",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean LinearLayout::isMeasureWithLargestChildEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMeasureWithLargestChildEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	void LinearLayout::setMeasureWithLargestChildEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMeasureWithLargestChildEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jint LinearLayout::getBaselineAlignedChildIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getBaselineAlignedChildIndex",
-			"()I");
+			"()I"
+		);
 	}
 	void LinearLayout::setBaselineAlignedChildIndex(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBaselineAlignedChildIndex",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat LinearLayout::getWeightSum()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getWeightSum",
-			"()F");
+			"()F"
+		);
 	}
 	void LinearLayout::setWeightSum(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWeightSum",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void LinearLayout::setHorizontalGravity(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHorizontalGravity",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void LinearLayout::setVerticalGravity(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVerticalGravity",
 			"(I)V",
-			arg0);
+			arg0
+		);
+	}
+	void LinearLayout::setOrientation(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOrientation",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

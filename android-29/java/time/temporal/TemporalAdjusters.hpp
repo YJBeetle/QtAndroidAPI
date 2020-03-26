@@ -59,7 +59,8 @@ namespace __jni_impl::java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"next",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::previousOrSame(__jni_impl::java::time::DayOfWeek arg0)
 	{
@@ -67,14 +68,16 @@ namespace __jni_impl::java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"previousOrSame",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::firstDayOfYear()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
 			"firstDayOfYear",
-			"()Ljava/time/temporal/TemporalAdjuster;");
+			"()Ljava/time/temporal/TemporalAdjuster;"
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::previous(__jni_impl::java::time::DayOfWeek arg0)
 	{
@@ -82,14 +85,16 @@ namespace __jni_impl::java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"previous",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::lastDayOfMonth()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
 			"lastDayOfMonth",
-			"()Ljava/time/temporal/TemporalAdjuster;");
+			"()Ljava/time/temporal/TemporalAdjuster;"
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::nextOrSame(__jni_impl::java::time::DayOfWeek arg0)
 	{
@@ -97,7 +102,8 @@ namespace __jni_impl::java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"nextOrSame",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::dayOfWeekInMonth(jint arg0, __jni_impl::java::time::DayOfWeek arg1)
 	{
@@ -106,7 +112,8 @@ namespace __jni_impl::java::time::temporal
 			"dayOfWeekInMonth",
 			"(ILjava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::ofDateAdjuster(__jni_impl::__JniBaseClass arg0)
 	{
@@ -114,35 +121,40 @@ namespace __jni_impl::java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"ofDateAdjuster",
 			"(Ljava/util/function/UnaryOperator;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::firstDayOfMonth()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
 			"firstDayOfMonth",
-			"()Ljava/time/temporal/TemporalAdjuster;");
+			"()Ljava/time/temporal/TemporalAdjuster;"
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::firstDayOfNextMonth()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
 			"firstDayOfNextMonth",
-			"()Ljava/time/temporal/TemporalAdjuster;");
+			"()Ljava/time/temporal/TemporalAdjuster;"
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::lastDayOfYear()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
 			"lastDayOfYear",
-			"()Ljava/time/temporal/TemporalAdjuster;");
+			"()Ljava/time/temporal/TemporalAdjuster;"
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::firstDayOfNextYear()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
 			"firstDayOfNextYear",
-			"()Ljava/time/temporal/TemporalAdjuster;");
+			"()Ljava/time/temporal/TemporalAdjuster;"
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::firstInMonth(__jni_impl::java::time::DayOfWeek arg0)
 	{
@@ -150,7 +162,8 @@ namespace __jni_impl::java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"firstInMonth",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TemporalAdjusters::lastInMonth(__jni_impl::java::time::DayOfWeek arg0)
 	{
@@ -158,7 +171,8 @@ namespace __jni_impl::java::time::temporal
 			"java.time.temporal.TemporalAdjusters",
 			"lastInMonth",
 			"(Ljava/time/DayOfWeek;)Ljava/time/temporal/TemporalAdjuster;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::time::temporal
 

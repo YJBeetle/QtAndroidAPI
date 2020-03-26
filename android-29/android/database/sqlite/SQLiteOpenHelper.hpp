@@ -32,15 +32,15 @@ namespace __jni_impl::android::database::sqlite
 		
 		// Methods
 		void close();
+		void onCreate(__jni_impl::android::database::sqlite::SQLiteDatabase arg0);
 		void setLookasideConfig(jint arg0, jint arg1);
 		void setIdleConnectionTimeout(jlong arg0);
-		void onCreate(__jni_impl::android::database::sqlite::SQLiteDatabase arg0);
+		jstring getDatabaseName();
 		void setWriteAheadLoggingEnabled(jboolean arg0);
 		void setOpenParams(__jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg0);
 		QAndroidJniObject getWritableDatabase();
 		QAndroidJniObject getReadableDatabase();
 		void onConfigure(__jni_impl::android::database::sqlite::SQLiteDatabase arg0);
-		QAndroidJniObject getDatabaseName();
 		void onUpgrade(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2);
 		void onDowngrade(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2);
 		void onOpen(__jni_impl::android::database::sqlite::SQLiteDatabase arg0);
@@ -93,7 +93,16 @@ namespace __jni_impl::android::database::sqlite
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
+	}
+	void SQLiteOpenHelper::onCreate(__jni_impl::android::database::sqlite::SQLiteDatabase arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"(Landroid/database/sqlite/SQLiteDatabase;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void SQLiteOpenHelper::setLookasideConfig(jint arg0, jint arg1)
 	{
@@ -101,60 +110,61 @@ namespace __jni_impl::android::database::sqlite
 			"setLookasideConfig",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SQLiteOpenHelper::setIdleConnectionTimeout(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIdleConnectionTimeout",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
-	void SQLiteOpenHelper::onCreate(__jni_impl::android::database::sqlite::SQLiteDatabase arg0)
+	jstring SQLiteOpenHelper::getDatabaseName()
 	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"(Landroid/database/sqlite/SQLiteDatabase;)V",
-			arg0.__jniObject().object());
+		return __thiz.callObjectMethod(
+			"getDatabaseName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SQLiteOpenHelper::setWriteAheadLoggingEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWriteAheadLoggingEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteOpenHelper::setOpenParams(__jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOpenParams",
 			"(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SQLiteOpenHelper::getWritableDatabase()
 	{
 		return __thiz.callObjectMethod(
 			"getWritableDatabase",
-			"()Landroid/database/sqlite/SQLiteDatabase;");
+			"()Landroid/database/sqlite/SQLiteDatabase;"
+		);
 	}
 	QAndroidJniObject SQLiteOpenHelper::getReadableDatabase()
 	{
 		return __thiz.callObjectMethod(
 			"getReadableDatabase",
-			"()Landroid/database/sqlite/SQLiteDatabase;");
+			"()Landroid/database/sqlite/SQLiteDatabase;"
+		);
 	}
 	void SQLiteOpenHelper::onConfigure(__jni_impl::android::database::sqlite::SQLiteDatabase arg0)
 	{
 		__thiz.callMethod<void>(
 			"onConfigure",
 			"(Landroid/database/sqlite/SQLiteDatabase;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SQLiteOpenHelper::getDatabaseName()
-	{
-		return __thiz.callObjectMethod(
-			"getDatabaseName",
-			"()Ljava/lang/String;");
+			arg0.__jniObject().object()
+		);
 	}
 	void SQLiteOpenHelper::onUpgrade(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2)
 	{
@@ -163,7 +173,8 @@ namespace __jni_impl::android::database::sqlite
 			"(Landroid/database/sqlite/SQLiteDatabase;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void SQLiteOpenHelper::onDowngrade(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2)
 	{
@@ -172,14 +183,16 @@ namespace __jni_impl::android::database::sqlite
 			"(Landroid/database/sqlite/SQLiteDatabase;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void SQLiteOpenHelper::onOpen(__jni_impl::android::database::sqlite::SQLiteDatabase arg0)
 	{
 		__thiz.callMethod<void>(
 			"onOpen",
 			"(Landroid/database/sqlite/SQLiteDatabase;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::database::sqlite
 

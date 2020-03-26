@@ -54,7 +54,8 @@ namespace __jni_impl::android::renderscript
 			"add",
 			"(Landroid/renderscript/Element;Ljava/lang/String;)Landroid/renderscript/Element$Builder;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Element_Builder::add(__jni_impl::android::renderscript::Element arg0, jstring arg1, jint arg2)
 	{
@@ -63,13 +64,15 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Element;Ljava/lang/String;I)Landroid/renderscript/Element$Builder;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Element_Builder::create()
 	{
 		return __thiz.callObjectMethod(
 			"create",
-			"()Landroid/renderscript/Element;");
+			"()Landroid/renderscript/Element;"
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

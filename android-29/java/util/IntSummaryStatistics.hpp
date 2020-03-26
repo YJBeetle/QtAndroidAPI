@@ -18,14 +18,14 @@ namespace __jni_impl::java::util
 		void __constructor(jlong arg0, jint arg1, jint arg2, jlong arg3);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void accept(jint arg0);
 		void combine(__jni_impl::java::util::IntSummaryStatistics arg0);
 		jlong getCount();
 		jint getMin();
-		jint getMax();
 		jlong getSum();
 		jdouble getAverage();
+		jint getMax();
 	};
 } // namespace __jni_impl::java::util
 
@@ -53,55 +53,63 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject IntSummaryStatistics::toString()
+	jstring IntSummaryStatistics::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void IntSummaryStatistics::accept(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"accept",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void IntSummaryStatistics::combine(__jni_impl::java::util::IntSummaryStatistics arg0)
 	{
 		__thiz.callMethod<void>(
 			"combine",
 			"(Ljava/util/IntSummaryStatistics;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong IntSummaryStatistics::getCount()
 	{
 		return __thiz.callMethod<jlong>(
 			"getCount",
-			"()J");
+			"()J"
+		);
 	}
 	jint IntSummaryStatistics::getMin()
 	{
 		return __thiz.callMethod<jint>(
 			"getMin",
-			"()I");
-	}
-	jint IntSummaryStatistics::getMax()
-	{
-		return __thiz.callMethod<jint>(
-			"getMax",
-			"()I");
+			"()I"
+		);
 	}
 	jlong IntSummaryStatistics::getSum()
 	{
 		return __thiz.callMethod<jlong>(
 			"getSum",
-			"()J");
+			"()J"
+		);
 	}
 	jdouble IntSummaryStatistics::getAverage()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getAverage",
-			"()D");
+			"()D"
+		);
+	}
+	jint IntSummaryStatistics::getMax()
+	{
+		return __thiz.callMethod<jint>(
+			"getMax",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::util
 

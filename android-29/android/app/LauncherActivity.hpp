@@ -72,20 +72,23 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"setTitle",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void LauncherActivity::setTitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LauncherActivity::makeListItems()
 	{
 		return __thiz.callObjectMethod(
 			"makeListItems",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

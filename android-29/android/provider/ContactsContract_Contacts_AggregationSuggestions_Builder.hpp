@@ -47,28 +47,32 @@ namespace __jni_impl::android::provider
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::setContactId(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setContactId",
 			"(J)Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::addNameParameter(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addNameParameter",
 			"(Ljava/lang/String;)Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::setLimit(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLimit",
 			"(I)Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::provider
 

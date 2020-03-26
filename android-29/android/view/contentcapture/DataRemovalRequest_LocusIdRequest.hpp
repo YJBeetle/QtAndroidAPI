@@ -50,13 +50,15 @@ namespace __jni_impl::android::view::contentcapture
 	{
 		return __thiz.callMethod<jint>(
 			"getFlags",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject DataRemovalRequest_LocusIdRequest::getLocusId()
 	{
 		return __thiz.callObjectMethod(
 			"getLocusId",
-			"()Landroid/content/LocusId;");
+			"()Landroid/content/LocusId;"
+		);
 	}
 } // namespace __jni_impl::android::view::contentcapture
 

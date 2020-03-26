@@ -22,12 +22,12 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		static void sleep(jlong arg0);
+		static jlong uptimeMillis();
 		static jboolean setCurrentTimeMillis(jlong arg0);
 		static jlong elapsedRealtime();
 		static jlong elapsedRealtimeNanos();
 		static jlong currentThreadTimeMillis();
 		static QAndroidJniObject currentGnssTimeClock();
-		static jlong uptimeMillis();
 	};
 } // namespace __jni_impl::android::os
 
@@ -52,7 +52,16 @@ namespace __jni_impl::android::os
 			"android.os.SystemClock",
 			"sleep",
 			"(J)V",
-			arg0);
+			arg0
+		);
+	}
+	jlong SystemClock::uptimeMillis()
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.os.SystemClock",
+			"uptimeMillis",
+			"()J"
+		);
 	}
 	jboolean SystemClock::setCurrentTimeMillis(jlong arg0)
 	{
@@ -60,42 +69,40 @@ namespace __jni_impl::android::os
 			"android.os.SystemClock",
 			"setCurrentTimeMillis",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	jlong SystemClock::elapsedRealtime()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.SystemClock",
 			"elapsedRealtime",
-			"()J");
+			"()J"
+		);
 	}
 	jlong SystemClock::elapsedRealtimeNanos()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.SystemClock",
 			"elapsedRealtimeNanos",
-			"()J");
+			"()J"
+		);
 	}
 	jlong SystemClock::currentThreadTimeMillis()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.SystemClock",
 			"currentThreadTimeMillis",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject SystemClock::currentGnssTimeClock()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.SystemClock",
 			"currentGnssTimeClock",
-			"()Ljava/time/Clock;");
-	}
-	jlong SystemClock::uptimeMillis()
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.os.SystemClock",
-			"uptimeMillis",
-			"()J");
+			"()Ljava/time/Clock;"
+		);
 	}
 } // namespace __jni_impl::android::os
 

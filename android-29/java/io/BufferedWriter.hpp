@@ -63,14 +63,16 @@ namespace __jni_impl::java::io
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void BufferedWriter::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void BufferedWriter::write(jstring arg0, jint arg1, jint arg2)
 	{
@@ -79,25 +81,29 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/String;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void BufferedWriter::newLine()
 	{
 		__thiz.callMethod<void>(
 			"newLine",
-			"()V");
+			"()V"
+		);
 	}
 	void BufferedWriter::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void BufferedWriter::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::io
 

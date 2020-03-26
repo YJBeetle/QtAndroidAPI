@@ -22,9 +22,9 @@ namespace __jni_impl::java::sql
 		
 		// Methods
 		jint getIndex();
+		jint getDataSize();
 		jboolean getRead();
 		jint getTransferSize();
-		jint getDataSize();
 		jboolean getParameter();
 	};
 } // namespace __jni_impl::java::sql
@@ -64,31 +64,36 @@ namespace __jni_impl::java::sql
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
-	}
-	jboolean DataTruncation::getRead()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getRead",
-			"()Z");
-	}
-	jint DataTruncation::getTransferSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getTransferSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint DataTruncation::getDataSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getDataSize",
-			"()I");
+			"()I"
+		);
+	}
+	jboolean DataTruncation::getRead()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getRead",
+			"()Z"
+		);
+	}
+	jint DataTruncation::getTransferSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getTransferSize",
+			"()I"
+		);
 	}
 	jboolean DataTruncation::getParameter()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getParameter",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::sql
 

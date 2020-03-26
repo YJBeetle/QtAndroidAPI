@@ -24,7 +24,7 @@ namespace __jni_impl::java::time::format
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		jboolean isStandalone();
 		QAndroidJniObject asStandalone();
@@ -41,42 +41,48 @@ namespace __jni_impl::java::time::format
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
 			"FULL",
-			"Ljava/time/format/TextStyle;");
+			"Ljava/time/format/TextStyle;"
+		);
 	}
 	QAndroidJniObject TextStyle::FULL_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
 			"FULL_STANDALONE",
-			"Ljava/time/format/TextStyle;");
+			"Ljava/time/format/TextStyle;"
+		);
 	}
 	QAndroidJniObject TextStyle::SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
 			"SHORT",
-			"Ljava/time/format/TextStyle;");
+			"Ljava/time/format/TextStyle;"
+		);
 	}
 	QAndroidJniObject TextStyle::SHORT_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
 			"SHORT_STANDALONE",
-			"Ljava/time/format/TextStyle;");
+			"Ljava/time/format/TextStyle;"
+		);
 	}
 	QAndroidJniObject TextStyle::NARROW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
 			"NARROW",
-			"Ljava/time/format/TextStyle;");
+			"Ljava/time/format/TextStyle;"
+		);
 	}
 	QAndroidJniObject TextStyle::NARROW_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.TextStyle",
 			"NARROW_STANDALONE",
-			"Ljava/time/format/TextStyle;");
+			"Ljava/time/format/TextStyle;"
+		);
 	}
 	
 	// Constructors
@@ -88,12 +94,13 @@ namespace __jni_impl::java::time::format
 	}
 	
 	// Methods
-	QAndroidJniObject TextStyle::values()
+	jarray TextStyle::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.TextStyle",
 			"values",
-			"()[Ljava/time/format/TextStyle;");
+			"()[Ljava/time/format/TextStyle;"
+		).object<jarray>();
 	}
 	QAndroidJniObject TextStyle::valueOf(jstring arg0)
 	{
@@ -101,25 +108,29 @@ namespace __jni_impl::java::time::format
 			"java.time.format.TextStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/format/TextStyle;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean TextStyle::isStandalone()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isStandalone",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject TextStyle::asStandalone()
 	{
 		return __thiz.callObjectMethod(
 			"asStandalone",
-			"()Ljava/time/format/TextStyle;");
+			"()Ljava/time/format/TextStyle;"
+		);
 	}
 	QAndroidJniObject TextStyle::asNormal()
 	{
 		return __thiz.callObjectMethod(
 			"asNormal",
-			"()Ljava/time/format/TextStyle;");
+			"()Ljava/time/format/TextStyle;"
+		);
 	}
 } // namespace __jni_impl::java::time::format
 

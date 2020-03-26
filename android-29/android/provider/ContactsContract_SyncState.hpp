@@ -32,14 +32,14 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
+		static jstring CONTENT_DIRECTORY();
 		static QAndroidJniObject CONTENT_URI();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject get(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1);
+		static jbyteArray get(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1);
 		static void set(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1, jbyteArray arg2);
 		static QAndroidJniObject getWithUri(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1);
 		static QAndroidJniObject newSetOperation(__jni_impl::android::accounts::Account arg0, jbyteArray arg1);
@@ -55,19 +55,21 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_SyncState::CONTENT_DIRECTORY()
+	jstring ContactsContract_SyncState::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$SyncState",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_SyncState::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$SyncState",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors
@@ -79,14 +81,15 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject ContactsContract_SyncState::get(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1)
+	jbyteArray ContactsContract_SyncState::get(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$SyncState",
 			"get",
 			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)[B",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jbyteArray>();
 	}
 	void ContactsContract_SyncState::set(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1, jbyteArray arg2)
 	{
@@ -96,7 +99,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;[B)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ContactsContract_SyncState::getWithUri(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1)
 	{
@@ -105,7 +109,8 @@ namespace __jni_impl::android::provider
 			"getWithUri",
 			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)Landroid/util/Pair;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContactsContract_SyncState::newSetOperation(__jni_impl::android::accounts::Account arg0, jbyteArray arg1)
 	{
@@ -114,7 +119,8 @@ namespace __jni_impl::android::provider
 			"newSetOperation",
 			"(Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::provider
 

@@ -45,7 +45,8 @@ namespace __jni_impl::javax::xml::validation
 		return __thiz.callObjectMethod(
 			"newFactory",
 			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::javax::xml::validation
 

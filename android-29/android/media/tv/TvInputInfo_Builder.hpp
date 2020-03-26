@@ -64,28 +64,32 @@ namespace __jni_impl::android::media::tv
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/media/tv/TvInputInfo;");
+			"()Landroid/media/tv/TvInputInfo;"
+		);
 	}
 	QAndroidJniObject TvInputInfo_Builder::setTunerCount(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTunerCount",
 			"(I)Landroid/media/tv/TvInputInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TvInputInfo_Builder::setCanRecord(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setCanRecord",
 			"(Z)Landroid/media/tv/TvInputInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TvInputInfo_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/media/tv/TvInputInfo$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

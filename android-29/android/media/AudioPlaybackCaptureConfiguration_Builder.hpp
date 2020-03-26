@@ -54,35 +54,40 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/media/AudioPlaybackCaptureConfiguration;");
+			"()Landroid/media/AudioPlaybackCaptureConfiguration;"
+		);
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::addMatchingUsage(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addMatchingUsage",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::addMatchingUid(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addMatchingUid",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::excludeUsage(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"excludeUsage",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::excludeUid(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"excludeUid",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

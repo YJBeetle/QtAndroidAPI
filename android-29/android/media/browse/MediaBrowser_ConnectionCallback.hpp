@@ -41,19 +41,22 @@ namespace __jni_impl::android::media::browse
 	{
 		__thiz.callMethod<void>(
 			"onConnected",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaBrowser_ConnectionCallback::onConnectionSuspended()
 	{
 		__thiz.callMethod<void>(
 			"onConnectionSuspended",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaBrowser_ConnectionCallback::onConnectionFailed()
 	{
 		__thiz.callMethod<void>(
 			"onConnectionFailed",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::media::browse
 

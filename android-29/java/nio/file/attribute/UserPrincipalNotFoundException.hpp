@@ -19,7 +19,7 @@ namespace __jni_impl::java::nio::file::attribute
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 	};
 } // namespace __jni_impl::java::nio::file::attribute
 
@@ -38,11 +38,12 @@ namespace __jni_impl::java::nio::file::attribute
 	}
 	
 	// Methods
-	QAndroidJniObject UserPrincipalNotFoundException::getName()
+	jstring UserPrincipalNotFoundException::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::file::attribute
 

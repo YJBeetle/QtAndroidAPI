@@ -40,7 +40,8 @@ namespace __jni_impl::android::webkit
 		__thiz.callMethod<void>(
 			"onComplete",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

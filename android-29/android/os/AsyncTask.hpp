@@ -27,14 +27,14 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject get();
-		QAndroidJniObject get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
+		jobject get();
+		jobject get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
 		static void execute(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject execute(jobjectArray arg0);
 		jboolean cancel(jboolean arg0);
 		jboolean isCancelled();
-		QAndroidJniObject getStatus();
 		QAndroidJniObject executeOnExecutor(__jni_impl::__JniBaseClass arg0, jobjectArray arg1);
+		QAndroidJniObject getStatus();
 	};
 } // namespace __jni_impl::android::os
 
@@ -49,14 +49,16 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.AsyncTask",
 			"SERIAL_EXECUTOR",
-			"Ljava/util/concurrent/Executor;");
+			"Ljava/util/concurrent/Executor;"
+		);
 	}
 	QAndroidJniObject AsyncTask::THREAD_POOL_EXECUTOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.AsyncTask",
 			"THREAD_POOL_EXECUTOR",
-			"Ljava/util/concurrent/Executor;");
+			"Ljava/util/concurrent/Executor;"
+		);
 	}
 	
 	// Constructors
@@ -68,19 +70,21 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject AsyncTask::get()
+	jobject AsyncTask::get()
 	{
 		return __thiz.callObjectMethod(
 			"get",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject AsyncTask::get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
+	jobject AsyncTask::get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	void AsyncTask::execute(__jni_impl::__JniBaseClass arg0)
 	{
@@ -88,33 +92,31 @@ namespace __jni_impl::android::os
 			"android.os.AsyncTask",
 			"execute",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsyncTask::execute(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"execute",
 			"([Ljava/lang/Object;)Landroid/os/AsyncTask;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AsyncTask::cancel(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"cancel",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AsyncTask::isCancelled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCancelled",
-			"()Z");
-	}
-	QAndroidJniObject AsyncTask::getStatus()
-	{
-		return __thiz.callObjectMethod(
-			"getStatus",
-			"()Landroid/os/AsyncTask$Status;");
+			"()Z"
+		);
 	}
 	QAndroidJniObject AsyncTask::executeOnExecutor(__jni_impl::__JniBaseClass arg0, jobjectArray arg1)
 	{
@@ -122,7 +124,15 @@ namespace __jni_impl::android::os
 			"executeOnExecutor",
 			"(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject AsyncTask::getStatus()
+	{
+		return __thiz.callObjectMethod(
+			"getStatus",
+			"()Landroid/os/AsyncTask$Status;"
+		);
 	}
 } // namespace __jni_impl::android::os
 

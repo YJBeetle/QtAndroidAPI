@@ -42,13 +42,15 @@ namespace __jni_impl::android::hardware::camera2
 	{
 		return __thiz.callObjectMethod(
 			"getPartialResults",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject TotalCaptureResult::getPhysicalCameraResults()
 	{
 		return __thiz.callObjectMethod(
 			"getPhysicalCameraResults",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

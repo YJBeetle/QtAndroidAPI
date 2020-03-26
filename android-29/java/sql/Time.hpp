@@ -27,7 +27,7 @@ namespace __jni_impl::java::sql
 		void __constructor(jlong arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(__jni_impl::java::time::LocalTime arg0);
 		QAndroidJniObject toInstant();
@@ -69,11 +69,12 @@ namespace __jni_impl::java::sql
 	}
 	
 	// Methods
-	QAndroidJniObject Time::toString()
+	jstring Time::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Time::valueOf(jstring arg0)
 	{
@@ -81,7 +82,8 @@ namespace __jni_impl::java::sql
 			"java.sql.Time",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Time;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Time::valueOf(__jni_impl::java::time::LocalTime arg0)
 	{
@@ -89,71 +91,82 @@ namespace __jni_impl::java::sql
 			"java.sql.Time",
 			"valueOf",
 			"(Ljava/time/LocalTime;)Ljava/sql/Time;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Time::toInstant()
 	{
 		return __thiz.callObjectMethod(
 			"toInstant",
-			"()Ljava/time/Instant;");
+			"()Ljava/time/Instant;"
+		);
 	}
 	jint Time::getYear()
 	{
 		return __thiz.callMethod<jint>(
 			"getYear",
-			"()I");
+			"()I"
+		);
 	}
 	void Time::setTime(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTime",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Time::getDate()
 	{
 		return __thiz.callMethod<jint>(
 			"getDate",
-			"()I");
+			"()I"
+		);
 	}
 	jint Time::getDay()
 	{
 		return __thiz.callMethod<jint>(
 			"getDay",
-			"()I");
+			"()I"
+		);
 	}
 	jint Time::getMonth()
 	{
 		return __thiz.callMethod<jint>(
 			"getMonth",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Time::toLocalTime()
 	{
 		return __thiz.callObjectMethod(
 			"toLocalTime",
-			"()Ljava/time/LocalTime;");
+			"()Ljava/time/LocalTime;"
+		);
 	}
 	void Time::setDate(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDate",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Time::setMonth(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMonth",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Time::setYear(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setYear",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::sql
 

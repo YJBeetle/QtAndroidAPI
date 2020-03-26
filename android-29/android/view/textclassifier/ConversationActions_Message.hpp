@@ -36,10 +36,10 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getText();
-		QAndroidJniObject getExtras();
+		jstring getText();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
 		QAndroidJniObject getAuthor();
 		QAndroidJniObject getReferenceTime();
 	};
@@ -58,21 +58,24 @@ namespace __jni_impl::android::view::textclassifier
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Message",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	QAndroidJniObject ConversationActions_Message::PERSON_USER_OTHERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Message",
 			"PERSON_USER_OTHERS",
-			"Landroid/app/Person;");
+			"Landroid/app/Person;"
+		);
 	}
 	QAndroidJniObject ConversationActions_Message::PERSON_USER_SELF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Message",
 			"PERSON_USER_SELF",
-			"Landroid/app/Person;");
+			"Landroid/app/Person;"
+		);
 	}
 	
 	// Constructors
@@ -84,23 +87,19 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	QAndroidJniObject ConversationActions_Message::getText()
+	jstring ConversationActions_Message::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject ConversationActions_Message::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint ConversationActions_Message::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ConversationActions_Message::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -108,19 +107,29 @@ namespace __jni_impl::android::view::textclassifier
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject ConversationActions_Message::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
 	}
 	QAndroidJniObject ConversationActions_Message::getAuthor()
 	{
 		return __thiz.callObjectMethod(
 			"getAuthor",
-			"()Landroid/app/Person;");
+			"()Landroid/app/Person;"
+		);
 	}
 	QAndroidJniObject ConversationActions_Message::getReferenceTime()
 	{
 		return __thiz.callObjectMethod(
 			"getReferenceTime",
-			"()Ljava/time/ZonedDateTime;");
+			"()Ljava/time/ZonedDateTime;"
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

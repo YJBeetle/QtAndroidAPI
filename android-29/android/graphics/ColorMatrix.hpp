@@ -23,15 +23,15 @@ namespace __jni_impl::android::graphics
 		void set(jfloatArray arg0);
 		void set(__jni_impl::android::graphics::ColorMatrix arg0);
 		void reset();
-		QAndroidJniObject getArray();
+		jfloatArray getArray();
 		void setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		void setSaturation(jfloat arg0);
+		void setRGB2YUV();
+		void setYUV2RGB();
 		void setRotate(jint arg0, jfloat arg1);
 		void setConcat(__jni_impl::android::graphics::ColorMatrix arg0, __jni_impl::android::graphics::ColorMatrix arg1);
 		void preConcat(__jni_impl::android::graphics::ColorMatrix arg0);
 		void postConcat(__jni_impl::android::graphics::ColorMatrix arg0);
-		void setSaturation(jfloat arg0);
-		void setRGB2YUV();
-		void setYUV2RGB();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -68,33 +68,38 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	void ColorMatrix::set(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	void ColorMatrix::set(__jni_impl::android::graphics::ColorMatrix arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"(Landroid/graphics/ColorMatrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ColorMatrix::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject ColorMatrix::getArray()
+	jfloatArray ColorMatrix::getArray()
 	{
 		return __thiz.callObjectMethod(
 			"getArray",
-			"()[F");
+			"()[F"
+		).object<jfloatArray>();
 	}
 	void ColorMatrix::setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -104,7 +109,30 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void ColorMatrix::setSaturation(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSaturation",
+			"(F)V",
+			arg0
+		);
+	}
+	void ColorMatrix::setRGB2YUV()
+	{
+		__thiz.callMethod<void>(
+			"setRGB2YUV",
+			"()V"
+		);
+	}
+	void ColorMatrix::setYUV2RGB()
+	{
+		__thiz.callMethod<void>(
+			"setYUV2RGB",
+			"()V"
+		);
 	}
 	void ColorMatrix::setRotate(jint arg0, jfloat arg1)
 	{
@@ -112,7 +140,8 @@ namespace __jni_impl::android::graphics
 			"setRotate",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ColorMatrix::setConcat(__jni_impl::android::graphics::ColorMatrix arg0, __jni_impl::android::graphics::ColorMatrix arg1)
 	{
@@ -120,40 +149,24 @@ namespace __jni_impl::android::graphics
 			"setConcat",
 			"(Landroid/graphics/ColorMatrix;Landroid/graphics/ColorMatrix;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ColorMatrix::preConcat(__jni_impl::android::graphics::ColorMatrix arg0)
 	{
 		__thiz.callMethod<void>(
 			"preConcat",
 			"(Landroid/graphics/ColorMatrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ColorMatrix::postConcat(__jni_impl::android::graphics::ColorMatrix arg0)
 	{
 		__thiz.callMethod<void>(
 			"postConcat",
 			"(Landroid/graphics/ColorMatrix;)V",
-			arg0.__jniObject().object());
-	}
-	void ColorMatrix::setSaturation(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSaturation",
-			"(F)V",
-			arg0);
-	}
-	void ColorMatrix::setRGB2YUV()
-	{
-		__thiz.callMethod<void>(
-			"setRGB2YUV",
-			"()V");
-	}
-	void ColorMatrix::setYUV2RGB()
-	{
-		__thiz.callMethod<void>(
-			"setYUV2RGB",
-			"()V");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

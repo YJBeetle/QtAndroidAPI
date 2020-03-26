@@ -17,10 +17,10 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jboolean arg0, jboolean arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jboolean isEnabled();
-		jboolean isInUse();
 		void setEnabled(jboolean arg0);
+		jboolean isInUse();
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -40,30 +40,34 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject DynamicsProcessing_Stage::toString()
+	jstring DynamicsProcessing_Stage::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean DynamicsProcessing_Stage::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
-	}
-	jboolean DynamicsProcessing_Stage::isInUse()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInUse",
-			"()Z");
+			"()Z"
+		);
 	}
 	void DynamicsProcessing_Stage::setEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
+	}
+	jboolean DynamicsProcessing_Stage::isInUse()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInUse",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

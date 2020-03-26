@@ -28,7 +28,8 @@ namespace __jni_impl::android::util
 	jbyte MutableByte::value()
 	{
 		return __thiz.getField<jbyte>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

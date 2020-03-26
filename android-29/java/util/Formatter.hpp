@@ -61,7 +61,7 @@ namespace __jni_impl::java::util
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject format(__jni_impl::java::util::Locale arg0, jstring arg1, jobjectArray arg2);
 		QAndroidJniObject format(jstring arg0, jobjectArray arg1);
 		QAndroidJniObject locale();
@@ -221,11 +221,12 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject Formatter::toString()
+	jstring Formatter::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Formatter::format(__jni_impl::java::util::Locale arg0, jstring arg1, jobjectArray arg2)
 	{
@@ -234,7 +235,8 @@ namespace __jni_impl::java::util
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Formatter::format(jstring arg0, jobjectArray arg1)
 	{
@@ -242,37 +244,43 @@ namespace __jni_impl::java::util
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Formatter::locale()
 	{
 		return __thiz.callObjectMethod(
 			"locale",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
 	}
 	QAndroidJniObject Formatter::out()
 	{
 		return __thiz.callObjectMethod(
 			"out",
-			"()Ljava/lang/Appendable;");
+			"()Ljava/lang/Appendable;"
+		);
 	}
 	void Formatter::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void Formatter::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Formatter::ioException()
 	{
 		return __thiz.callObjectMethod(
 			"ioException",
-			"()Ljava/io/IOException;");
+			"()Ljava/io/IOException;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

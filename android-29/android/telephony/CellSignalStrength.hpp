@@ -38,31 +38,36 @@ namespace __jni_impl::android::telephony
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
-			"SIGNAL_STRENGTH_GOOD");
+			"SIGNAL_STRENGTH_GOOD"
+		);
 	}
 	jint CellSignalStrength::SIGNAL_STRENGTH_GREAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
-			"SIGNAL_STRENGTH_GREAT");
+			"SIGNAL_STRENGTH_GREAT"
+		);
 	}
 	jint CellSignalStrength::SIGNAL_STRENGTH_MODERATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
-			"SIGNAL_STRENGTH_MODERATE");
+			"SIGNAL_STRENGTH_MODERATE"
+		);
 	}
 	jint CellSignalStrength::SIGNAL_STRENGTH_NONE_OR_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
-			"SIGNAL_STRENGTH_NONE_OR_UNKNOWN");
+			"SIGNAL_STRENGTH_NONE_OR_UNKNOWN"
+		);
 	}
 	jint CellSignalStrength::SIGNAL_STRENGTH_POOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellSignalStrength",
-			"SIGNAL_STRENGTH_POOR");
+			"SIGNAL_STRENGTH_POOR"
+		);
 	}
 	
 	// Constructors
@@ -79,31 +84,36 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint CellSignalStrength::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrength::getLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getLevel",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrength::getAsuLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getAsuLevel",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrength::getDbm()
 	{
 		return __thiz.callMethod<jint>(
 			"getDbm",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

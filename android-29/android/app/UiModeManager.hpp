@@ -12,10 +12,10 @@ namespace __jni_impl::android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_ENTER_CAR_MODE();
-		static QAndroidJniObject ACTION_ENTER_DESK_MODE();
-		static QAndroidJniObject ACTION_EXIT_CAR_MODE();
-		static QAndroidJniObject ACTION_EXIT_DESK_MODE();
+		static jstring ACTION_ENTER_CAR_MODE();
+		static jstring ACTION_ENTER_DESK_MODE();
+		static jstring ACTION_EXIT_CAR_MODE();
+		static jstring ACTION_EXIT_DESK_MODE();
 		static jint DISABLE_CAR_MODE_GO_HOME();
 		static jint ENABLE_CAR_MODE_ALLOW_SLEEP();
 		static jint ENABLE_CAR_MODE_GO_CAR_HOME();
@@ -39,69 +39,79 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	// Fields
-	QAndroidJniObject UiModeManager::ACTION_ENTER_CAR_MODE()
+	jstring UiModeManager::ACTION_ENTER_CAR_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.UiModeManager",
 			"ACTION_ENTER_CAR_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UiModeManager::ACTION_ENTER_DESK_MODE()
+	jstring UiModeManager::ACTION_ENTER_DESK_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.UiModeManager",
 			"ACTION_ENTER_DESK_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UiModeManager::ACTION_EXIT_CAR_MODE()
+	jstring UiModeManager::ACTION_EXIT_CAR_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.UiModeManager",
 			"ACTION_EXIT_CAR_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UiModeManager::ACTION_EXIT_DESK_MODE()
+	jstring UiModeManager::ACTION_EXIT_DESK_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.UiModeManager",
 			"ACTION_EXIT_DESK_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UiModeManager::DISABLE_CAR_MODE_GO_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiModeManager",
-			"DISABLE_CAR_MODE_GO_HOME");
+			"DISABLE_CAR_MODE_GO_HOME"
+		);
 	}
 	jint UiModeManager::ENABLE_CAR_MODE_ALLOW_SLEEP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiModeManager",
-			"ENABLE_CAR_MODE_ALLOW_SLEEP");
+			"ENABLE_CAR_MODE_ALLOW_SLEEP"
+		);
 	}
 	jint UiModeManager::ENABLE_CAR_MODE_GO_CAR_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiModeManager",
-			"ENABLE_CAR_MODE_GO_CAR_HOME");
+			"ENABLE_CAR_MODE_GO_CAR_HOME"
+		);
 	}
 	jint UiModeManager::MODE_NIGHT_AUTO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiModeManager",
-			"MODE_NIGHT_AUTO");
+			"MODE_NIGHT_AUTO"
+		);
 	}
 	jint UiModeManager::MODE_NIGHT_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiModeManager",
-			"MODE_NIGHT_NO");
+			"MODE_NIGHT_NO"
+		);
 	}
 	jint UiModeManager::MODE_NIGHT_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiModeManager",
-			"MODE_NIGHT_YES");
+			"MODE_NIGHT_YES"
+		);
 	}
 	
 	// Constructors
@@ -118,33 +128,38 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"enableCarMode",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void UiModeManager::disableCarMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"disableCarMode",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint UiModeManager::getCurrentModeType()
 	{
 		return __thiz.callMethod<jint>(
 			"getCurrentModeType",
-			"()I");
+			"()I"
+		);
 	}
 	void UiModeManager::setNightMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNightMode",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint UiModeManager::getNightMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getNightMode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::app
 

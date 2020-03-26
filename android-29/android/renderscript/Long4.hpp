@@ -32,22 +32,26 @@ namespace __jni_impl::android::renderscript
 	jlong Long4::w()
 	{
 		return __thiz.getField<jlong>(
-			"w");
+			"w"
+		);
 	}
 	jlong Long4::x()
 	{
 		return __thiz.getField<jlong>(
-			"x");
+			"x"
+		);
 	}
 	jlong Long4::y()
 	{
 		return __thiz.getField<jlong>(
-			"y");
+			"y"
+		);
 	}
 	jlong Long4::z()
 	{
 		return __thiz.getField<jlong>(
-			"z");
+			"z"
+		);
 	}
 	
 	// Constructors

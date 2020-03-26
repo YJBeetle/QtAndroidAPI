@@ -42,13 +42,13 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getCertificates();
+		jarray getCertificates();
 		QAndroidJniObject getMainAttributes();
 		QAndroidJniObject getAttributes();
 		QAndroidJniObject getManifest();
 		QAndroidJniObject getJarFile();
 		QAndroidJniObject getJarEntry();
-		QAndroidJniObject getEntryName();
+		jstring getEntryName();
 		QAndroidJniObject getJarFileURL();
 	};
 } // namespace __jni_impl::java::net
@@ -73,53 +73,61 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject JarURLConnection::getCertificates()
+	jarray JarURLConnection::getCertificates()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificates",
-			"()[Ljava/security/cert/Certificate;");
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
 	}
 	QAndroidJniObject JarURLConnection::getMainAttributes()
 	{
 		return __thiz.callObjectMethod(
 			"getMainAttributes",
-			"()Ljava/util/jar/Attributes;");
+			"()Ljava/util/jar/Attributes;"
+		);
 	}
 	QAndroidJniObject JarURLConnection::getAttributes()
 	{
 		return __thiz.callObjectMethod(
 			"getAttributes",
-			"()Ljava/util/jar/Attributes;");
+			"()Ljava/util/jar/Attributes;"
+		);
 	}
 	QAndroidJniObject JarURLConnection::getManifest()
 	{
 		return __thiz.callObjectMethod(
 			"getManifest",
-			"()Ljava/util/jar/Manifest;");
+			"()Ljava/util/jar/Manifest;"
+		);
 	}
 	QAndroidJniObject JarURLConnection::getJarFile()
 	{
 		return __thiz.callObjectMethod(
 			"getJarFile",
-			"()Ljava/util/jar/JarFile;");
+			"()Ljava/util/jar/JarFile;"
+		);
 	}
 	QAndroidJniObject JarURLConnection::getJarEntry()
 	{
 		return __thiz.callObjectMethod(
 			"getJarEntry",
-			"()Ljava/util/jar/JarEntry;");
+			"()Ljava/util/jar/JarEntry;"
+		);
 	}
-	QAndroidJniObject JarURLConnection::getEntryName()
+	jstring JarURLConnection::getEntryName()
 	{
 		return __thiz.callObjectMethod(
 			"getEntryName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject JarURLConnection::getJarFileURL()
 	{
 		return __thiz.callObjectMethod(
 			"getJarFileURL",
-			"()Ljava/net/URL;");
+			"()Ljava/net/URL;"
+		);
 	}
 } // namespace __jni_impl::java::net
 

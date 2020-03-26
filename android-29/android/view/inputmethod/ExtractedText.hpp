@@ -20,13 +20,13 @@ namespace __jni_impl::android::view::inputmethod
 		static jint FLAG_SELECTING();
 		static jint FLAG_SINGLE_LINE();
 		jint flags();
-		QAndroidJniObject hint();
+		jstring hint();
 		jint partialEndOffset();
 		jint partialStartOffset();
 		jint selectionEnd();
 		jint selectionStart();
 		jint startOffset();
-		QAndroidJniObject text();
+		jstring text();
 		
 		// Constructors
 		void __constructor();
@@ -47,61 +47,72 @@ namespace __jni_impl::android::view::inputmethod
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.ExtractedText",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ExtractedText::FLAG_SELECTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.inputmethod.ExtractedText",
-			"FLAG_SELECTING");
+			"FLAG_SELECTING"
+		);
 	}
 	jint ExtractedText::FLAG_SINGLE_LINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.inputmethod.ExtractedText",
-			"FLAG_SINGLE_LINE");
+			"FLAG_SINGLE_LINE"
+		);
 	}
 	jint ExtractedText::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
-	QAndroidJniObject ExtractedText::hint()
+	jstring ExtractedText::hint()
 	{
 		return __thiz.getObjectField(
 			"hint",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint ExtractedText::partialEndOffset()
 	{
 		return __thiz.getField<jint>(
-			"partialEndOffset");
+			"partialEndOffset"
+		);
 	}
 	jint ExtractedText::partialStartOffset()
 	{
 		return __thiz.getField<jint>(
-			"partialStartOffset");
+			"partialStartOffset"
+		);
 	}
 	jint ExtractedText::selectionEnd()
 	{
 		return __thiz.getField<jint>(
-			"selectionEnd");
+			"selectionEnd"
+		);
 	}
 	jint ExtractedText::selectionStart()
 	{
 		return __thiz.getField<jint>(
-			"selectionStart");
+			"selectionStart"
+		);
 	}
 	jint ExtractedText::startOffset()
 	{
 		return __thiz.getField<jint>(
-			"startOffset");
+			"startOffset"
+		);
 	}
-	QAndroidJniObject ExtractedText::text()
+	jstring ExtractedText::text()
 	{
 		return __thiz.getObjectField(
 			"text",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -117,7 +128,8 @@ namespace __jni_impl::android::view::inputmethod
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ExtractedText::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -125,7 +137,8 @@ namespace __jni_impl::android::view::inputmethod
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

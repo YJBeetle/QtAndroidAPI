@@ -24,7 +24,7 @@ namespace __jni_impl::java::lang
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::lang
@@ -38,42 +38,48 @@ namespace __jni_impl::java::lang
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
 			"NEW",
-			"Ljava/lang/Thread$State;");
+			"Ljava/lang/Thread$State;"
+		);
 	}
 	QAndroidJniObject Thread_State::RUNNABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
 			"RUNNABLE",
-			"Ljava/lang/Thread$State;");
+			"Ljava/lang/Thread$State;"
+		);
 	}
 	QAndroidJniObject Thread_State::BLOCKED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
 			"BLOCKED",
-			"Ljava/lang/Thread$State;");
+			"Ljava/lang/Thread$State;"
+		);
 	}
 	QAndroidJniObject Thread_State::WAITING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
 			"WAITING",
-			"Ljava/lang/Thread$State;");
+			"Ljava/lang/Thread$State;"
+		);
 	}
 	QAndroidJniObject Thread_State::TIMED_WAITING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
 			"TIMED_WAITING",
-			"Ljava/lang/Thread$State;");
+			"Ljava/lang/Thread$State;"
+		);
 	}
 	QAndroidJniObject Thread_State::TERMINATED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
 			"TERMINATED",
-			"Ljava/lang/Thread$State;");
+			"Ljava/lang/Thread$State;"
+		);
 	}
 	
 	// Constructors
@@ -85,12 +91,13 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	QAndroidJniObject Thread_State::values()
+	jarray Thread_State::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Thread$State",
 			"values",
-			"()[Ljava/lang/Thread$State;");
+			"()[Ljava/lang/Thread$State;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Thread_State::valueOf(jstring arg0)
 	{
@@ -98,7 +105,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Thread$State",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Thread$State;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang
 

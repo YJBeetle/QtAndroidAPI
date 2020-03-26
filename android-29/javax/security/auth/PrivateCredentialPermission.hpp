@@ -33,10 +33,10 @@ namespace __jni_impl::javax::security::auth
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
-		QAndroidJniObject getActions();
-		QAndroidJniObject getPrincipals();
+		jstring getActions();
+		jarray getPrincipals();
 		QAndroidJniObject newPermissionCollection();
-		QAndroidJniObject getCredentialClass();
+		jstring getCredentialClass();
 	};
 } // namespace __jni_impl::javax::security::auth
 
@@ -64,44 +64,51 @@ namespace __jni_impl::javax::security::auth
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint PrivateCredentialPermission::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean PrivateCredentialPermission::implies(__jni_impl::java::security::Permission arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject PrivateCredentialPermission::getActions()
+	jstring PrivateCredentialPermission::getActions()
 	{
 		return __thiz.callObjectMethod(
 			"getActions",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PrivateCredentialPermission::getPrincipals()
+	jarray PrivateCredentialPermission::getPrincipals()
 	{
 		return __thiz.callObjectMethod(
 			"getPrincipals",
-			"()[[Ljava/lang/String;");
+			"()[[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject PrivateCredentialPermission::newPermissionCollection()
 	{
 		return __thiz.callObjectMethod(
 			"newPermissionCollection",
-			"()Ljava/security/PermissionCollection;");
+			"()Ljava/security/PermissionCollection;"
+		);
 	}
-	QAndroidJniObject PrivateCredentialPermission::getCredentialClass()
+	jstring PrivateCredentialPermission::getCredentialClass()
 	{
 		return __thiz.callObjectMethod(
 			"getCredentialClass",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::security::auth
 

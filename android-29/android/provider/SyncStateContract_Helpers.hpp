@@ -37,7 +37,7 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject get(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::accounts::Account arg2);
+		static jbyteArray get(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::accounts::Account arg2);
 		static void update(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, jbyteArray arg2);
 		static void set(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::accounts::Account arg2, jbyteArray arg3);
 		static QAndroidJniObject insert(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::accounts::Account arg2, jbyteArray arg3);
@@ -66,7 +66,7 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject SyncStateContract_Helpers::get(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::accounts::Account arg2)
+	jbyteArray SyncStateContract_Helpers::get(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::accounts::Account arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.SyncStateContract$Helpers",
@@ -74,7 +74,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)[B",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jbyteArray>();
 	}
 	void SyncStateContract_Helpers::update(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, jbyteArray arg2)
 	{
@@ -84,7 +85,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;[B)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void SyncStateContract_Helpers::set(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::accounts::Account arg2, jbyteArray arg3)
 	{
@@ -95,7 +97,8 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject SyncStateContract_Helpers::insert(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::accounts::Account arg2, jbyteArray arg3)
 	{
@@ -106,7 +109,8 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject SyncStateContract_Helpers::getWithUri(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::accounts::Account arg2)
 	{
@@ -116,7 +120,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)Landroid/util/Pair;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SyncStateContract_Helpers::newUpdateOperation(__jni_impl::android::net::Uri arg0, jbyteArray arg1)
 	{
@@ -125,7 +130,8 @@ namespace __jni_impl::android::provider
 			"newUpdateOperation",
 			"(Landroid/net/Uri;[B)Landroid/content/ContentProviderOperation;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SyncStateContract_Helpers::newSetOperation(__jni_impl::android::net::Uri arg0, __jni_impl::android::accounts::Account arg1, jbyteArray arg2)
 	{
@@ -135,7 +141,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/net/Uri;Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::provider
 

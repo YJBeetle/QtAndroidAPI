@@ -36,8 +36,8 @@ namespace __jni_impl::android::util
 		// Methods
 		static jboolean equals(jshort arg0, jshort arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
-		static QAndroidJniObject toString(jshort arg0);
+		jstring toString();
+		static jstring toString(jshort arg0);
 		jint hashCode();
 		static jint hashCode(jshort arg0);
 		static jshort abs(jshort arg0);
@@ -54,7 +54,7 @@ namespace __jni_impl::android::util
 		static QAndroidJniObject valueOf(jfloat arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(jshort arg0);
-		static QAndroidJniObject toHexString(jshort arg0);
+		static jstring toHexString(jshort arg0);
 		static jint compare(jshort arg0, jshort arg1);
 		jboolean isNaN();
 		static jboolean isNaN(jshort arg0);
@@ -65,7 +65,6 @@ namespace __jni_impl::android::util
 		static jshort floor(jshort arg0);
 		static jshort round(jshort arg0);
 		static jboolean isNormalized(jshort arg0);
-		static jfloat toFloat(jshort arg0);
 		jshort halfValue();
 		static jshort halfToShortBits(jshort arg0);
 		static jint halfToIntBits(jshort arg0);
@@ -80,6 +79,7 @@ namespace __jni_impl::android::util
 		static jint getSignificand(jshort arg0);
 		static jshort toHalf(jfloat arg0);
 		static jshort parseHalf(jstring arg0);
+		static jfloat toFloat(jshort arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -91,79 +91,92 @@ namespace __jni_impl::android::util
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"EPSILON");
+			"EPSILON"
+		);
 	}
 	jshort Half::LOWEST_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"LOWEST_VALUE");
+			"LOWEST_VALUE"
+		);
 	}
 	jint Half::MAX_EXPONENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Half",
-			"MAX_EXPONENT");
+			"MAX_EXPONENT"
+		);
 	}
 	jshort Half::MAX_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"MAX_VALUE");
+			"MAX_VALUE"
+		);
 	}
 	jint Half::MIN_EXPONENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Half",
-			"MIN_EXPONENT");
+			"MIN_EXPONENT"
+		);
 	}
 	jshort Half::MIN_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"MIN_NORMAL");
+			"MIN_NORMAL"
+		);
 	}
 	jshort Half::MIN_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"MIN_VALUE");
+			"MIN_VALUE"
+		);
 	}
 	jshort Half::NEGATIVE_INFINITY()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"NEGATIVE_INFINITY");
+			"NEGATIVE_INFINITY"
+		);
 	}
 	jshort Half::NEGATIVE_ZERO()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"NEGATIVE_ZERO");
+			"NEGATIVE_ZERO"
+		);
 	}
 	jshort Half::NaN()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"NaN");
+			"NaN"
+		);
 	}
 	jshort Half::POSITIVE_INFINITY()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"POSITIVE_INFINITY");
+			"POSITIVE_INFINITY"
+		);
 	}
 	jshort Half::POSITIVE_ZERO()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"android.util.Half",
-			"POSITIVE_ZERO");
+			"POSITIVE_ZERO"
+		);
 	}
 	jint Half::SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Half",
-			"SIZE");
+			"SIZE"
+		);
 	}
 	
 	// Constructors
@@ -204,34 +217,39 @@ namespace __jni_impl::android::util
 			"equals",
 			"(SS)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Half::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Half::toString()
+	jstring Half::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Half::toString(jshort arg0)
+	jstring Half::toString(jshort arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Half",
 			"toString",
 			"(S)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint Half::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Half::hashCode(jshort arg0)
 	{
@@ -239,7 +257,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"hashCode",
 			"(S)I",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::abs(jshort arg0)
 	{
@@ -247,7 +266,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"abs",
 			"(S)S",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::min(jshort arg0, jshort arg1)
 	{
@@ -256,7 +276,8 @@ namespace __jni_impl::android::util
 			"min",
 			"(SS)S",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jshort Half::max(jshort arg0, jshort arg1)
 	{
@@ -265,57 +286,66 @@ namespace __jni_impl::android::util
 			"max",
 			"(SS)S",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Half::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Half::compareTo(__jni_impl::android::util::Half arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Landroid/util/Half;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jbyte Half::byteValue()
 	{
 		return __thiz.callMethod<jbyte>(
 			"byteValue",
-			"()B");
+			"()B"
+		);
 	}
 	jshort Half::shortValue()
 	{
 		return __thiz.callMethod<jshort>(
 			"shortValue",
-			"()S");
+			"()S"
+		);
 	}
 	jint Half::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Half::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat Half::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble Half::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 	QAndroidJniObject Half::valueOf(jfloat arg0)
 	{
@@ -323,7 +353,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"valueOf",
 			"(F)Landroid/util/Half;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Half::valueOf(jstring arg0)
 	{
@@ -331,7 +362,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/util/Half;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Half::valueOf(jshort arg0)
 	{
@@ -339,15 +371,17 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"valueOf",
 			"(S)Landroid/util/Half;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Half::toHexString(jshort arg0)
+	jstring Half::toHexString(jshort arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Half",
 			"toHexString",
 			"(S)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint Half::compare(jshort arg0, jshort arg1)
 	{
@@ -356,13 +390,15 @@ namespace __jni_impl::android::util
 			"compare",
 			"(SS)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Half::isNaN()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNaN",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Half::isNaN(jshort arg0)
 	{
@@ -370,7 +406,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"isNaN",
 			"(S)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Half::isInfinite(jshort arg0)
 	{
@@ -378,7 +415,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"isInfinite",
 			"(S)Z",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::copySign(jshort arg0, jshort arg1)
 	{
@@ -387,7 +425,8 @@ namespace __jni_impl::android::util
 			"copySign",
 			"(SS)S",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Half::getExponent(jshort arg0)
 	{
@@ -395,7 +434,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"getExponent",
 			"(S)I",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::ceil(jshort arg0)
 	{
@@ -403,7 +443,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"ceil",
 			"(S)S",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::floor(jshort arg0)
 	{
@@ -411,7 +452,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"floor",
 			"(S)S",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::round(jshort arg0)
 	{
@@ -419,7 +461,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"round",
 			"(S)S",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Half::isNormalized(jshort arg0)
 	{
@@ -427,21 +470,15 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"isNormalized",
 			"(S)Z",
-			arg0);
-	}
-	jfloat Half::toFloat(jshort arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.util.Half",
-			"toFloat",
-			"(S)F",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::halfValue()
 	{
 		return __thiz.callMethod<jshort>(
 			"halfValue",
-			"()S");
+			"()S"
+		);
 	}
 	jshort Half::halfToShortBits(jshort arg0)
 	{
@@ -449,7 +486,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"halfToShortBits",
 			"(S)S",
-			arg0);
+			arg0
+		);
 	}
 	jint Half::halfToIntBits(jshort arg0)
 	{
@@ -457,7 +495,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"halfToIntBits",
 			"(S)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Half::halfToRawIntBits(jshort arg0)
 	{
@@ -465,7 +504,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"halfToRawIntBits",
 			"(S)I",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::intBitsToHalf(jint arg0)
 	{
@@ -473,7 +513,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"intBitsToHalf",
 			"(I)S",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::trunc(jshort arg0)
 	{
@@ -481,7 +522,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"trunc",
 			"(S)S",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Half::less(jshort arg0, jshort arg1)
 	{
@@ -490,7 +532,8 @@ namespace __jni_impl::android::util
 			"less",
 			"(SS)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Half::lessEquals(jshort arg0, jshort arg1)
 	{
@@ -499,7 +542,8 @@ namespace __jni_impl::android::util
 			"lessEquals",
 			"(SS)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Half::greater(jshort arg0, jshort arg1)
 	{
@@ -508,7 +552,8 @@ namespace __jni_impl::android::util
 			"greater",
 			"(SS)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Half::greaterEquals(jshort arg0, jshort arg1)
 	{
@@ -517,7 +562,8 @@ namespace __jni_impl::android::util
 			"greaterEquals",
 			"(SS)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Half::getSign(jshort arg0)
 	{
@@ -525,7 +571,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"getSign",
 			"(S)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Half::getSignificand(jshort arg0)
 	{
@@ -533,7 +580,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"getSignificand",
 			"(S)I",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::toHalf(jfloat arg0)
 	{
@@ -541,7 +589,8 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"toHalf",
 			"(F)S",
-			arg0);
+			arg0
+		);
 	}
 	jshort Half::parseHalf(jstring arg0)
 	{
@@ -549,7 +598,17 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"parseHalf",
 			"(Ljava/lang/String;)S",
-			arg0);
+			arg0
+		);
+	}
+	jfloat Half::toFloat(jshort arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.util.Half",
+			"toFloat",
+			"(S)F",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

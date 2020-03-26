@@ -22,7 +22,7 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::security::cert
@@ -36,28 +36,32 @@ namespace __jni_impl::java::security::cert
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"ONLY_END_ENTITY",
-			"Ljava/security/cert/PKIXRevocationChecker$Option;");
+			"Ljava/security/cert/PKIXRevocationChecker$Option;"
+		);
 	}
 	QAndroidJniObject PKIXRevocationChecker_Option::PREFER_CRLS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"PREFER_CRLS",
-			"Ljava/security/cert/PKIXRevocationChecker$Option;");
+			"Ljava/security/cert/PKIXRevocationChecker$Option;"
+		);
 	}
 	QAndroidJniObject PKIXRevocationChecker_Option::NO_FALLBACK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"NO_FALLBACK",
-			"Ljava/security/cert/PKIXRevocationChecker$Option;");
+			"Ljava/security/cert/PKIXRevocationChecker$Option;"
+		);
 	}
 	QAndroidJniObject PKIXRevocationChecker_Option::SOFT_FAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"SOFT_FAIL",
-			"Ljava/security/cert/PKIXRevocationChecker$Option;");
+			"Ljava/security/cert/PKIXRevocationChecker$Option;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject PKIXRevocationChecker_Option::values()
+	jarray PKIXRevocationChecker_Option::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"values",
-			"()[Ljava/security/cert/PKIXRevocationChecker$Option;");
+			"()[Ljava/security/cert/PKIXRevocationChecker$Option;"
+		).object<jarray>();
 	}
 	QAndroidJniObject PKIXRevocationChecker_Option::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::java::security::cert
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/cert/PKIXRevocationChecker$Option;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

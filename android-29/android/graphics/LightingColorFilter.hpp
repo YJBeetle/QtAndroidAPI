@@ -43,13 +43,15 @@ namespace __jni_impl::android::graphics
 	{
 		return __thiz.callMethod<jint>(
 			"getColorMultiply",
-			"()I");
+			"()I"
+		);
 	}
 	jint LightingColorFilter::getColorAdd()
 	{
 		return __thiz.callMethod<jint>(
 			"getColorAdd",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

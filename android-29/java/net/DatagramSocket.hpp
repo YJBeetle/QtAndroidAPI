@@ -49,10 +49,11 @@ namespace __jni_impl::java::net
 		jboolean getBroadcast();
 		jboolean isConnected();
 		void send(__jni_impl::java::net::DatagramPacket arg0);
-		void disconnect();
 		jboolean isClosed();
+		QAndroidJniObject getInetAddress();
+		void disconnect();
 		jboolean isBound();
-		QAndroidJniObject getOption(__jni_impl::__JniBaseClass arg0);
+		jobject getOption(__jni_impl::__JniBaseClass arg0);
 		jint getLocalPort();
 		QAndroidJniObject getLocalAddress();
 		QAndroidJniObject setOption(__jni_impl::__JniBaseClass arg0, jobject arg1);
@@ -72,7 +73,6 @@ namespace __jni_impl::java::net
 		void receive(__jni_impl::java::net::DatagramPacket arg0);
 		void setBroadcast(jboolean arg0);
 		static void setDatagramSocketImplFactory(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getInetAddress();
 	};
 } // namespace __jni_impl::java::net
 
@@ -123,95 +123,117 @@ namespace __jni_impl::java::net
 			"connect",
 			"(Ljava/net/InetAddress;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void DatagramSocket::connect(__jni_impl::java::net::SocketAddress arg0)
 	{
 		__thiz.callMethod<void>(
 			"connect",
 			"(Ljava/net/SocketAddress;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DatagramSocket::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint DatagramSocket::getPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getPort",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject DatagramSocket::getChannel()
 	{
 		return __thiz.callObjectMethod(
 			"getChannel",
-			"()Ljava/nio/channels/DatagramChannel;");
+			"()Ljava/nio/channels/DatagramChannel;"
+		);
 	}
 	void DatagramSocket::bind(__jni_impl::java::net::SocketAddress arg0)
 	{
 		__thiz.callMethod<void>(
 			"bind",
 			"(Ljava/net/SocketAddress;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DatagramSocket::getBroadcast()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getBroadcast",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean DatagramSocket::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
+			"()Z"
+		);
 	}
 	void DatagramSocket::send(__jni_impl::java::net::DatagramPacket arg0)
 	{
 		__thiz.callMethod<void>(
 			"send",
 			"(Ljava/net/DatagramPacket;)V",
-			arg0.__jniObject().object());
-	}
-	void DatagramSocket::disconnect()
-	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"()V");
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DatagramSocket::isClosed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isClosed",
-			"()Z");
+			"()Z"
+		);
+	}
+	QAndroidJniObject DatagramSocket::getInetAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getInetAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	void DatagramSocket::disconnect()
+	{
+		__thiz.callMethod<void>(
+			"disconnect",
+			"()V"
+		);
 	}
 	jboolean DatagramSocket::isBound()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBound",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject DatagramSocket::getOption(__jni_impl::__JniBaseClass arg0)
+	jobject DatagramSocket::getOption(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getOption",
 			"(Ljava/net/SocketOption;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
 	jint DatagramSocket::getLocalPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getLocalPort",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject DatagramSocket::getLocalAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalAddress",
-			"()Ljava/net/InetAddress;");
+			"()Ljava/net/InetAddress;"
+		);
 	}
 	QAndroidJniObject DatagramSocket::setOption(__jni_impl::__JniBaseClass arg0, jobject arg1)
 	{
@@ -219,104 +241,120 @@ namespace __jni_impl::java::net
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/net/DatagramSocket;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DatagramSocket::supportedOptions()
 	{
 		return __thiz.callObjectMethod(
 			"supportedOptions",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject DatagramSocket::getRemoteSocketAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getRemoteSocketAddress",
-			"()Ljava/net/SocketAddress;");
+			"()Ljava/net/SocketAddress;"
+		);
 	}
 	QAndroidJniObject DatagramSocket::getLocalSocketAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalSocketAddress",
-			"()Ljava/net/SocketAddress;");
+			"()Ljava/net/SocketAddress;"
+		);
 	}
 	void DatagramSocket::setSoTimeout(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSoTimeout",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint DatagramSocket::getSoTimeout()
 	{
 		return __thiz.callMethod<jint>(
 			"getSoTimeout",
-			"()I");
+			"()I"
+		);
 	}
 	void DatagramSocket::setSendBufferSize(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSendBufferSize",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint DatagramSocket::getSendBufferSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getSendBufferSize",
-			"()I");
+			"()I"
+		);
 	}
 	void DatagramSocket::setReceiveBufferSize(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setReceiveBufferSize",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint DatagramSocket::getReceiveBufferSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getReceiveBufferSize",
-			"()I");
+			"()I"
+		);
 	}
 	void DatagramSocket::setTrafficClass(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTrafficClass",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint DatagramSocket::getTrafficClass()
 	{
 		return __thiz.callMethod<jint>(
 			"getTrafficClass",
-			"()I");
+			"()I"
+		);
 	}
 	void DatagramSocket::setReuseAddress(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setReuseAddress",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DatagramSocket::getReuseAddress()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getReuseAddress",
-			"()Z");
+			"()Z"
+		);
 	}
 	void DatagramSocket::receive(__jni_impl::java::net::DatagramPacket arg0)
 	{
 		__thiz.callMethod<void>(
 			"receive",
 			"(Ljava/net/DatagramPacket;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DatagramSocket::setBroadcast(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBroadcast",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void DatagramSocket::setDatagramSocketImplFactory(__jni_impl::__JniBaseClass arg0)
 	{
@@ -324,13 +362,8 @@ namespace __jni_impl::java::net
 			"java.net.DatagramSocket",
 			"setDatagramSocketImplFactory",
 			"(Ljava/net/DatagramSocketImplFactory;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject DatagramSocket::getInetAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getInetAddress",
-			"()Ljava/net/InetAddress;");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::net
 

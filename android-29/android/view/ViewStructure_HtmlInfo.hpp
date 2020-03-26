@@ -18,7 +18,7 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		QAndroidJniObject getAttributes();
-		QAndroidJniObject getTag();
+		jstring getTag();
 	};
 } // namespace __jni_impl::android::view
 
@@ -40,13 +40,15 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callObjectMethod(
 			"getAttributes",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
-	QAndroidJniObject ViewStructure_HtmlInfo::getTag()
+	jstring ViewStructure_HtmlInfo::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view
 

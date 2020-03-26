@@ -85,13 +85,15 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GZIPOutputStream::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

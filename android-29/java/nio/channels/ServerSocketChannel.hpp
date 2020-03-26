@@ -69,14 +69,16 @@ namespace __jni_impl::java::nio::channels
 	{
 		return __thiz.callObjectMethod(
 			"accept",
-			"()Ljava/nio/channels/SocketChannel;");
+			"()Ljava/nio/channels/SocketChannel;"
+		);
 	}
 	QAndroidJniObject ServerSocketChannel::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.ServerSocketChannel",
 			"open",
-			"()Ljava/nio/channels/ServerSocketChannel;");
+			"()Ljava/nio/channels/ServerSocketChannel;"
+		);
 	}
 	QAndroidJniObject ServerSocketChannel::bind(__jni_impl::java::net::SocketAddress arg0, jint arg1)
 	{
@@ -84,26 +86,30 @@ namespace __jni_impl::java::nio::channels
 			"bind",
 			"(Ljava/net/SocketAddress;I)Ljava/nio/channels/ServerSocketChannel;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ServerSocketChannel::bind(__jni_impl::java::net::SocketAddress arg0)
 	{
 		return __thiz.callObjectMethod(
 			"bind",
 			"(Ljava/net/SocketAddress;)Ljava/nio/channels/ServerSocketChannel;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ServerSocketChannel::socket()
 	{
 		return __thiz.callObjectMethod(
 			"socket",
-			"()Ljava/net/ServerSocket;");
+			"()Ljava/net/ServerSocket;"
+		);
 	}
 	QAndroidJniObject ServerSocketChannel::getLocalAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalAddress",
-			"()Ljava/net/SocketAddress;");
+			"()Ljava/net/SocketAddress;"
+		);
 	}
 	QAndroidJniObject ServerSocketChannel::setOption(__jni_impl::__JniBaseClass arg0, jobject arg1)
 	{
@@ -111,13 +117,15 @@ namespace __jni_impl::java::nio::channels
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/ServerSocketChannel;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint ServerSocketChannel::validOps()
 	{
 		return __thiz.callMethod<jint>(
 			"validOps",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels
 

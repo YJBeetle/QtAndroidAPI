@@ -35,9 +35,9 @@ namespace __jni_impl::android::net::http
 		void __constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getCertificate();
-		QAndroidJniObject getUrl();
+		jstring getUrl();
 		jboolean addError(jint arg0);
 		jboolean hasError(jint arg0);
 		jint getPrimaryError();
@@ -54,43 +54,50 @@ namespace __jni_impl::android::net::http
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.http.SslError",
-			"SSL_DATE_INVALID");
+			"SSL_DATE_INVALID"
+		);
 	}
 	jint SslError::SSL_EXPIRED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.http.SslError",
-			"SSL_EXPIRED");
+			"SSL_EXPIRED"
+		);
 	}
 	jint SslError::SSL_IDMISMATCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.http.SslError",
-			"SSL_IDMISMATCH");
+			"SSL_IDMISMATCH"
+		);
 	}
 	jint SslError::SSL_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.http.SslError",
-			"SSL_INVALID");
+			"SSL_INVALID"
+		);
 	}
 	jint SslError::SSL_MAX_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.http.SslError",
-			"SSL_MAX_ERROR");
+			"SSL_MAX_ERROR"
+		);
 	}
 	jint SslError::SSL_NOTYETVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.http.SslError",
-			"SSL_NOTYETVALID");
+			"SSL_NOTYETVALID"
+		);
 	}
 	jint SslError::SSL_UNTRUSTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.http.SslError",
-			"SSL_UNTRUSTED");
+			"SSL_UNTRUSTED"
+		);
 	}
 	
 	// Constructors
@@ -130,43 +137,49 @@ namespace __jni_impl::android::net::http
 	}
 	
 	// Methods
-	QAndroidJniObject SslError::toString()
+	jstring SslError::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject SslError::getCertificate()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificate",
-			"()Landroid/net/http/SslCertificate;");
+			"()Landroid/net/http/SslCertificate;"
+		);
 	}
-	QAndroidJniObject SslError::getUrl()
+	jstring SslError::getUrl()
 	{
 		return __thiz.callObjectMethod(
 			"getUrl",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean SslError::addError(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"addError",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SslError::hasError(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasError",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint SslError::getPrimaryError()
 	{
 		return __thiz.callMethod<jint>(
 			"getPrimaryError",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net::http
 

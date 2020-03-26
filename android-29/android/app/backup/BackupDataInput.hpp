@@ -21,7 +21,7 @@ namespace __jni_impl::android::app::backup
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getKey();
+		jstring getKey();
 		jint getDataSize();
 		jint readEntityData(jbyteArray arg0, jint arg1, jint arg2);
 		jboolean readNextHeader();
@@ -44,17 +44,19 @@ namespace __jni_impl::android::app::backup
 	}
 	
 	// Methods
-	QAndroidJniObject BackupDataInput::getKey()
+	jstring BackupDataInput::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint BackupDataInput::getDataSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getDataSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint BackupDataInput::readEntityData(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -63,19 +65,22 @@ namespace __jni_impl::android::app::backup
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean BackupDataInput::readNextHeader()
 	{
 		return __thiz.callMethod<jboolean>(
 			"readNextHeader",
-			"()Z");
+			"()Z"
+		);
 	}
 	void BackupDataInput::skipEntityData()
 	{
 		__thiz.callMethod<void>(
 			"skipEntityData",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::app::backup
 

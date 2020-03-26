@@ -22,7 +22,7 @@ namespace __jni_impl::org::xmlpull::v1
 		void printStackTrace();
 		jint getLineNumber();
 		jint getColumnNumber();
-		QAndroidJniObject getDetail();
+		jthrowable getDetail();
 	};
 } // namespace __jni_impl::org::xmlpull::v1
 
@@ -54,25 +54,29 @@ namespace __jni_impl::org::xmlpull::v1
 	{
 		__thiz.callMethod<void>(
 			"printStackTrace",
-			"()V");
+			"()V"
+		);
 	}
 	jint XmlPullParserException::getLineNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getLineNumber",
-			"()I");
+			"()I"
+		);
 	}
 	jint XmlPullParserException::getColumnNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnNumber",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject XmlPullParserException::getDetail()
+	jthrowable XmlPullParserException::getDetail()
 	{
 		return __thiz.callObjectMethod(
 			"getDetail",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
 } // namespace __jni_impl::org::xmlpull::v1
 

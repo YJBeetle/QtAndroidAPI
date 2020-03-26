@@ -86,269 +86,310 @@ namespace __jni_impl::android::view
 			"android.view.ViewConfiguration",
 			"get",
 			"(Landroid/content/Context;)Landroid/view/ViewConfiguration;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint ViewConfiguration::getScaledScrollBarSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledScrollBarSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScrollDefaultDelay()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getScrollDefaultDelay",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getFadingEdgeLength()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getFadingEdgeLength",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledFadingEdgeLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledFadingEdgeLength",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getPressedStateDuration()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getPressedStateDuration",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getLongPressTimeout()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getLongPressTimeout",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getKeyRepeatTimeout()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getKeyRepeatTimeout",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getKeyRepeatDelay()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getKeyRepeatDelay",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getTapTimeout()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getTapTimeout",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getJumpTapTimeout()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getJumpTapTimeout",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getDoubleTapTimeout()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getDoubleTapTimeout",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getEdgeSlop()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getEdgeSlop",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledEdgeSlop()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledEdgeSlop",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getTouchSlop()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getTouchSlop",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledTouchSlop()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledTouchSlop",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledHoverSlop()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledHoverSlop",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledPagingTouchSlop()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledPagingTouchSlop",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledDoubleTapSlop()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledDoubleTapSlop",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getWindowTouchSlop()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getWindowTouchSlop",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledWindowTouchSlop()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledWindowTouchSlop",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getMinimumFlingVelocity()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getMinimumFlingVelocity",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledMinimumFlingVelocity()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledMinimumFlingVelocity",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getMaximumFlingVelocity()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getMaximumFlingVelocity",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledMaximumFlingVelocity()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledMaximumFlingVelocity",
-			"()I");
+			"()I"
+		);
 	}
 	jfloat ViewConfiguration::getScaledHorizontalScrollFactor()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getScaledHorizontalScrollFactor",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat ViewConfiguration::getScaledVerticalScrollFactor()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getScaledVerticalScrollFactor",
-			"()F");
+			"()F"
+		);
 	}
 	jint ViewConfiguration::getMaximumDrawingCacheSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getMaximumDrawingCacheSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledMaximumDrawingCacheSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledMaximumDrawingCacheSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledOverscrollDistance()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledOverscrollDistance",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScaledOverflingDistance()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledOverflingDistance",
-			"()I");
+			"()I"
+		);
 	}
 	jlong ViewConfiguration::getZoomControlsTimeout()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.view.ViewConfiguration",
 			"getZoomControlsTimeout",
-			"()J");
+			"()J"
+		);
 	}
 	jlong ViewConfiguration::getGlobalActionKeyTimeout()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.view.ViewConfiguration",
 			"getGlobalActionKeyTimeout",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat ViewConfiguration::getScrollFriction()
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(
 			"android.view.ViewConfiguration",
 			"getScrollFriction",
-			"()F");
+			"()F"
+		);
 	}
 	jlong ViewConfiguration::getDefaultActionModeHideDuration()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.view.ViewConfiguration",
 			"getDefaultActionModeHideDuration",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat ViewConfiguration::getAmbiguousGestureMultiplier()
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(
 			"android.view.ViewConfiguration",
 			"getAmbiguousGestureMultiplier",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean ViewConfiguration::hasPermanentMenuKey()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasPermanentMenuKey",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ViewConfiguration::shouldShowMenuShortcutsWhenKeyboardPresent()
 	{
 		return __thiz.callMethod<jboolean>(
 			"shouldShowMenuShortcutsWhenKeyboardPresent",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ViewConfiguration::getScaledMinimumScalingSpan()
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledMinimumScalingSpan",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScrollBarFadeDuration()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getScrollBarFadeDuration",
-			"()I");
+			"()I"
+		);
 	}
 	jint ViewConfiguration::getScrollBarSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
 			"getScrollBarSize",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::view
 

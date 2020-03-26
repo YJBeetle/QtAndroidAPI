@@ -40,7 +40,8 @@ namespace __jni_impl::android::view::inspector
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.inspector.WindowInspector",
 			"getGlobalWindowViews",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::view::inspector
 

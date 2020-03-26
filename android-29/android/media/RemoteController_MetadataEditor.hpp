@@ -45,7 +45,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz.callMethod<void>(
 			"apply",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::media
 

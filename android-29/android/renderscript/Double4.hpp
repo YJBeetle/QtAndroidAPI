@@ -32,22 +32,26 @@ namespace __jni_impl::android::renderscript
 	jdouble Double4::w()
 	{
 		return __thiz.getField<jdouble>(
-			"w");
+			"w"
+		);
 	}
 	jdouble Double4::x()
 	{
 		return __thiz.getField<jdouble>(
-			"x");
+			"x"
+		);
 	}
 	jdouble Double4::y()
 	{
 		return __thiz.getField<jdouble>(
-			"y");
+			"y"
+		);
 	}
 	jdouble Double4::z()
 	{
 		return __thiz.getField<jdouble>(
-			"z");
+			"z"
+		);
 	}
 	
 	// Constructors

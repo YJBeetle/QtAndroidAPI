@@ -11,15 +11,15 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::view
 {
-	class KeyCharacterMap;
-}
-namespace __jni_impl::android::view
-{
 	class InputDevice_MotionRange;
 }
 namespace __jni_impl::android::os
 {
 	class Vibrator;
+}
+namespace __jni_impl::android::view
+{
+	class KeyCharacterMap;
 }
 
 namespace __jni_impl::android::view
@@ -69,37 +69,37 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
-		QAndroidJniObject getDescriptor();
+		jstring getName();
+		jstring toString();
+		jstring getDescriptor();
 		jint getId();
 		jboolean isEnabled();
 		jboolean isVirtual();
-		QAndroidJniObject getKeyCharacterMap();
-		static QAndroidJniObject getDeviceIds();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getVendorId();
+		jint getProductId();
+		static jintArray getDeviceIds();
 		jint getControllerNumber();
 		jboolean isExternal();
 		jint getSources();
 		jboolean supportsSource(jint arg0);
 		jint getKeyboardType();
-		QAndroidJniObject hasKeys(jintArray arg0);
+		jbooleanArray hasKeys(jintArray arg0);
 		QAndroidJniObject getMotionRange(jint arg0, jint arg1);
 		QAndroidJniObject getMotionRange(jint arg0);
 		QAndroidJniObject getMotionRanges();
 		QAndroidJniObject getVibrator();
 		jboolean hasMicrophone();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getVendorId();
-		jint getProductId();
 		static QAndroidJniObject getDevice(jint arg0);
+		QAndroidJniObject getKeyCharacterMap();
 	};
 } // namespace __jni_impl::android::view
 
 #include "../os/Parcel.hpp"
-#include "KeyCharacterMap.hpp"
 #include "InputDevice_MotionRange.hpp"
 #include "../os/Vibrator.hpp"
+#include "KeyCharacterMap.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -109,217 +109,253 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.InputDevice",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint InputDevice::KEYBOARD_TYPE_ALPHABETIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"KEYBOARD_TYPE_ALPHABETIC");
+			"KEYBOARD_TYPE_ALPHABETIC"
+		);
 	}
 	jint InputDevice::KEYBOARD_TYPE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"KEYBOARD_TYPE_NONE");
+			"KEYBOARD_TYPE_NONE"
+		);
 	}
 	jint InputDevice::KEYBOARD_TYPE_NON_ALPHABETIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"KEYBOARD_TYPE_NON_ALPHABETIC");
+			"KEYBOARD_TYPE_NON_ALPHABETIC"
+		);
 	}
 	jint InputDevice::MOTION_RANGE_ORIENTATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"MOTION_RANGE_ORIENTATION");
+			"MOTION_RANGE_ORIENTATION"
+		);
 	}
 	jint InputDevice::MOTION_RANGE_PRESSURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"MOTION_RANGE_PRESSURE");
+			"MOTION_RANGE_PRESSURE"
+		);
 	}
 	jint InputDevice::MOTION_RANGE_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"MOTION_RANGE_SIZE");
+			"MOTION_RANGE_SIZE"
+		);
 	}
 	jint InputDevice::MOTION_RANGE_TOOL_MAJOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"MOTION_RANGE_TOOL_MAJOR");
+			"MOTION_RANGE_TOOL_MAJOR"
+		);
 	}
 	jint InputDevice::MOTION_RANGE_TOOL_MINOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"MOTION_RANGE_TOOL_MINOR");
+			"MOTION_RANGE_TOOL_MINOR"
+		);
 	}
 	jint InputDevice::MOTION_RANGE_TOUCH_MAJOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"MOTION_RANGE_TOUCH_MAJOR");
+			"MOTION_RANGE_TOUCH_MAJOR"
+		);
 	}
 	jint InputDevice::MOTION_RANGE_TOUCH_MINOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"MOTION_RANGE_TOUCH_MINOR");
+			"MOTION_RANGE_TOUCH_MINOR"
+		);
 	}
 	jint InputDevice::MOTION_RANGE_X()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"MOTION_RANGE_X");
+			"MOTION_RANGE_X"
+		);
 	}
 	jint InputDevice::MOTION_RANGE_Y()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"MOTION_RANGE_Y");
+			"MOTION_RANGE_Y"
+		);
 	}
 	jint InputDevice::SOURCE_ANY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_ANY");
+			"SOURCE_ANY"
+		);
 	}
 	jint InputDevice::SOURCE_BLUETOOTH_STYLUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_BLUETOOTH_STYLUS");
+			"SOURCE_BLUETOOTH_STYLUS"
+		);
 	}
 	jint InputDevice::SOURCE_CLASS_BUTTON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_CLASS_BUTTON");
+			"SOURCE_CLASS_BUTTON"
+		);
 	}
 	jint InputDevice::SOURCE_CLASS_JOYSTICK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_CLASS_JOYSTICK");
+			"SOURCE_CLASS_JOYSTICK"
+		);
 	}
 	jint InputDevice::SOURCE_CLASS_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_CLASS_MASK");
+			"SOURCE_CLASS_MASK"
+		);
 	}
 	jint InputDevice::SOURCE_CLASS_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_CLASS_NONE");
+			"SOURCE_CLASS_NONE"
+		);
 	}
 	jint InputDevice::SOURCE_CLASS_POINTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_CLASS_POINTER");
+			"SOURCE_CLASS_POINTER"
+		);
 	}
 	jint InputDevice::SOURCE_CLASS_POSITION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_CLASS_POSITION");
+			"SOURCE_CLASS_POSITION"
+		);
 	}
 	jint InputDevice::SOURCE_CLASS_TRACKBALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_CLASS_TRACKBALL");
+			"SOURCE_CLASS_TRACKBALL"
+		);
 	}
 	jint InputDevice::SOURCE_DPAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_DPAD");
+			"SOURCE_DPAD"
+		);
 	}
 	jint InputDevice::SOURCE_GAMEPAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_GAMEPAD");
+			"SOURCE_GAMEPAD"
+		);
 	}
 	jint InputDevice::SOURCE_HDMI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_HDMI");
+			"SOURCE_HDMI"
+		);
 	}
 	jint InputDevice::SOURCE_JOYSTICK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_JOYSTICK");
+			"SOURCE_JOYSTICK"
+		);
 	}
 	jint InputDevice::SOURCE_KEYBOARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_KEYBOARD");
+			"SOURCE_KEYBOARD"
+		);
 	}
 	jint InputDevice::SOURCE_MOUSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_MOUSE");
+			"SOURCE_MOUSE"
+		);
 	}
 	jint InputDevice::SOURCE_MOUSE_RELATIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_MOUSE_RELATIVE");
+			"SOURCE_MOUSE_RELATIVE"
+		);
 	}
 	jint InputDevice::SOURCE_ROTARY_ENCODER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_ROTARY_ENCODER");
+			"SOURCE_ROTARY_ENCODER"
+		);
 	}
 	jint InputDevice::SOURCE_STYLUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_STYLUS");
+			"SOURCE_STYLUS"
+		);
 	}
 	jint InputDevice::SOURCE_TOUCHPAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_TOUCHPAD");
+			"SOURCE_TOUCHPAD"
+		);
 	}
 	jint InputDevice::SOURCE_TOUCHSCREEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_TOUCHSCREEN");
+			"SOURCE_TOUCHSCREEN"
+		);
 	}
 	jint InputDevice::SOURCE_TOUCH_NAVIGATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_TOUCH_NAVIGATION");
+			"SOURCE_TOUCH_NAVIGATION"
+		);
 	}
 	jint InputDevice::SOURCE_TRACKBALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_TRACKBALL");
+			"SOURCE_TRACKBALL"
+		);
 	}
 	jint InputDevice::SOURCE_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.InputDevice",
-			"SOURCE_UNKNOWN");
+			"SOURCE_UNKNOWN"
+		);
 	}
 	
 	// Constructors
@@ -331,131 +367,54 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	QAndroidJniObject InputDevice::getName()
+	jstring InputDevice::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InputDevice::toString()
+	jstring InputDevice::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InputDevice::getDescriptor()
+	jstring InputDevice::getDescriptor()
 	{
 		return __thiz.callObjectMethod(
 			"getDescriptor",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint InputDevice::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean InputDevice::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InputDevice::isVirtual()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isVirtual",
-			"()Z");
-	}
-	QAndroidJniObject InputDevice::getKeyCharacterMap()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyCharacterMap",
-			"()Landroid/view/KeyCharacterMap;");
-	}
-	QAndroidJniObject InputDevice::getDeviceIds()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.InputDevice",
-			"getDeviceIds",
-			"()[I");
-	}
-	jint InputDevice::getControllerNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getControllerNumber",
-			"()I");
-	}
-	jboolean InputDevice::isExternal()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isExternal",
-			"()Z");
-	}
-	jint InputDevice::getSources()
-	{
-		return __thiz.callMethod<jint>(
-			"getSources",
-			"()I");
-	}
-	jboolean InputDevice::supportsSource(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"supportsSource",
-			"(I)Z",
-			arg0);
-	}
-	jint InputDevice::getKeyboardType()
-	{
-		return __thiz.callMethod<jint>(
-			"getKeyboardType",
-			"()I");
-	}
-	QAndroidJniObject InputDevice::hasKeys(jintArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"hasKeys",
-			"([I)[Z",
-			arg0);
-	}
-	QAndroidJniObject InputDevice::getMotionRange(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getMotionRange",
-			"(II)Landroid/view/InputDevice$MotionRange;",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject InputDevice::getMotionRange(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getMotionRange",
-			"(I)Landroid/view/InputDevice$MotionRange;",
-			arg0);
-	}
-	QAndroidJniObject InputDevice::getMotionRanges()
-	{
-		return __thiz.callObjectMethod(
-			"getMotionRanges",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject InputDevice::getVibrator()
-	{
-		return __thiz.callObjectMethod(
-			"getVibrator",
-			"()Landroid/os/Vibrator;");
-	}
-	jboolean InputDevice::hasMicrophone()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasMicrophone",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint InputDevice::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void InputDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -463,19 +422,112 @@ namespace __jni_impl::android::view
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint InputDevice::getVendorId()
 	{
 		return __thiz.callMethod<jint>(
 			"getVendorId",
-			"()I");
+			"()I"
+		);
 	}
 	jint InputDevice::getProductId()
 	{
 		return __thiz.callMethod<jint>(
 			"getProductId",
-			"()I");
+			"()I"
+		);
+	}
+	jintArray InputDevice::getDeviceIds()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.InputDevice",
+			"getDeviceIds",
+			"()[I"
+		).object<jintArray>();
+	}
+	jint InputDevice::getControllerNumber()
+	{
+		return __thiz.callMethod<jint>(
+			"getControllerNumber",
+			"()I"
+		);
+	}
+	jboolean InputDevice::isExternal()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isExternal",
+			"()Z"
+		);
+	}
+	jint InputDevice::getSources()
+	{
+		return __thiz.callMethod<jint>(
+			"getSources",
+			"()I"
+		);
+	}
+	jboolean InputDevice::supportsSource(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"supportsSource",
+			"(I)Z",
+			arg0
+		);
+	}
+	jint InputDevice::getKeyboardType()
+	{
+		return __thiz.callMethod<jint>(
+			"getKeyboardType",
+			"()I"
+		);
+	}
+	jbooleanArray InputDevice::hasKeys(jintArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"hasKeys",
+			"([I)[Z",
+			arg0
+		).object<jbooleanArray>();
+	}
+	QAndroidJniObject InputDevice::getMotionRange(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getMotionRange",
+			"(II)Landroid/view/InputDevice$MotionRange;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject InputDevice::getMotionRange(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getMotionRange",
+			"(I)Landroid/view/InputDevice$MotionRange;",
+			arg0
+		);
+	}
+	QAndroidJniObject InputDevice::getMotionRanges()
+	{
+		return __thiz.callObjectMethod(
+			"getMotionRanges",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject InputDevice::getVibrator()
+	{
+		return __thiz.callObjectMethod(
+			"getVibrator",
+			"()Landroid/os/Vibrator;"
+		);
+	}
+	jboolean InputDevice::hasMicrophone()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasMicrophone",
+			"()Z"
+		);
 	}
 	QAndroidJniObject InputDevice::getDevice(jint arg0)
 	{
@@ -483,7 +535,15 @@ namespace __jni_impl::android::view
 			"android.view.InputDevice",
 			"getDevice",
 			"(I)Landroid/view/InputDevice;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject InputDevice::getKeyCharacterMap()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyCharacterMap",
+			"()Landroid/view/KeyCharacterMap;"
+		);
 	}
 } // namespace __jni_impl::android::view
 

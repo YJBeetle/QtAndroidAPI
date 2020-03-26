@@ -20,9 +20,9 @@ namespace __jni_impl::javax::crypto::spec
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getEncoded();
-		QAndroidJniObject getFormat();
-		QAndroidJniObject getAlgorithm();
+		jbyteArray getEncoded();
+		jstring getFormat();
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -57,31 +57,36 @@ namespace __jni_impl::javax::crypto::spec
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint SecretKeySpec::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SecretKeySpec::getEncoded()
+	jbyteArray SecretKeySpec::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject SecretKeySpec::getFormat()
+	jstring SecretKeySpec::getFormat()
 	{
 		return __thiz.callObjectMethod(
 			"getFormat",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SecretKeySpec::getAlgorithm()
+	jstring SecretKeySpec::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

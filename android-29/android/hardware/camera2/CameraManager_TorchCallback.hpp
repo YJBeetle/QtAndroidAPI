@@ -41,7 +41,8 @@ namespace __jni_impl::android::hardware::camera2
 		__thiz.callMethod<void>(
 			"onTorchModeUnavailable",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void CameraManager_TorchCallback::onTorchModeChanged(jstring arg0, jboolean arg1)
 	{
@@ -49,7 +50,8 @@ namespace __jni_impl::android::hardware::camera2
 			"onTorchModeChanged",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

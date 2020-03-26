@@ -35,9 +35,9 @@ namespace __jni_impl::android::database
 		jint getType(jint arg0);
 		jboolean isNull(jint arg0);
 		jint getCount();
-		QAndroidJniObject getString(jint arg0);
-		QAndroidJniObject getColumnNames();
-		QAndroidJniObject getBlob(jint arg0);
+		jstring getString(jint arg0);
+		jarray getColumnNames();
+		jbyteArray getBlob(jint arg0);
 		void deactivate();
 		jboolean requery();
 		jboolean onMove(jint arg0, jint arg1);
@@ -70,93 +70,107 @@ namespace __jni_impl::android::database
 		return __thiz.callMethod<jshort>(
 			"getShort",
 			"(I)S",
-			arg0);
+			arg0
+		);
 	}
 	jint MergeCursor::getInt(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getInt",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong MergeCursor::getLong(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jfloat MergeCursor::getFloat(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getFloat",
 			"(I)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble MergeCursor::getDouble(jint arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getDouble",
 			"(I)D",
-			arg0);
+			arg0
+		);
 	}
 	void MergeCursor::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint MergeCursor::getType(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean MergeCursor::isNull(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNull",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint MergeCursor::getCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getCount",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MergeCursor::getString(jint arg0)
+	jstring MergeCursor::getString(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject MergeCursor::getColumnNames()
+	jarray MergeCursor::getColumnNames()
 	{
 		return __thiz.callObjectMethod(
 			"getColumnNames",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject MergeCursor::getBlob(jint arg0)
+	jbyteArray MergeCursor::getBlob(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getBlob",
 			"(I)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
 	void MergeCursor::deactivate()
 	{
 		__thiz.callMethod<void>(
 			"deactivate",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean MergeCursor::requery()
 	{
 		return __thiz.callMethod<jboolean>(
 			"requery",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean MergeCursor::onMove(jint arg0, jint arg1)
 	{
@@ -164,35 +178,40 @@ namespace __jni_impl::android::database
 			"onMove",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void MergeCursor::registerContentObserver(__jni_impl::android::database::ContentObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerContentObserver",
 			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MergeCursor::unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterContentObserver",
 			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MergeCursor::registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MergeCursor::unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::database
 

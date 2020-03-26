@@ -38,19 +38,22 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Session2Command$Result",
-			"RESULT_ERROR_UNKNOWN_ERROR");
+			"RESULT_ERROR_UNKNOWN_ERROR"
+		);
 	}
 	jint Session2Command_Result::RESULT_INFO_SKIPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Session2Command$Result",
-			"RESULT_INFO_SKIPPED");
+			"RESULT_INFO_SKIPPED"
+		);
 	}
 	jint Session2Command_Result::RESULT_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Session2Command$Result",
-			"RESULT_SUCCESS");
+			"RESULT_SUCCESS"
+		);
 	}
 	
 	// Constructors
@@ -68,13 +71,15 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jint>(
 			"getResultCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Session2Command_Result::getResultData()
 	{
 		return __thiz.callObjectMethod(
 			"getResultData",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
 } // namespace __jni_impl::android::media
 

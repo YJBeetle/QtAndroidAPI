@@ -49,7 +49,7 @@ namespace __jni_impl::android::app::slice
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SLICE_TYPE();
+		static jstring SLICE_TYPE();
 		
 		// Constructors
 		void __constructor(jarray arg0);
@@ -58,7 +58,7 @@ namespace __jni_impl::android::app::slice
 		// Methods
 		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3);
 		jint _delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2);
-		QAndroidJniObject getType(__jni_impl::android::net::Uri arg0);
+		jstring getType(__jni_impl::android::net::Uri arg0);
 		QAndroidJniObject insert(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1);
 		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3);
 		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
@@ -87,12 +87,13 @@ namespace __jni_impl::android::app::slice
 namespace __jni_impl::android::app::slice
 {
 	// Fields
-	QAndroidJniObject SliceProvider::SLICE_TYPE()
+	jstring SliceProvider::SLICE_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceProvider",
 			"SLICE_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -119,7 +120,8 @@ namespace __jni_impl::android::app::slice
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint SliceProvider::_delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2)
 	{
@@ -128,14 +130,16 @@ namespace __jni_impl::android::app::slice
 			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject SliceProvider::getType(__jni_impl::android::net::Uri arg0)
+	jstring SliceProvider::getType(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getType",
 			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject SliceProvider::insert(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1)
 	{
@@ -143,7 +147,8 @@ namespace __jni_impl::android::app::slice
 			"insert",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SliceProvider::query(__jni_impl::android::net::Uri arg0, jarray arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3)
 	{
@@ -153,7 +158,8 @@ namespace __jni_impl::android::app::slice
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SliceProvider::query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
@@ -164,7 +170,8 @@ namespace __jni_impl::android::app::slice
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject SliceProvider::query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, __jni_impl::android::os::CancellationSignal arg5)
 	{
@@ -176,7 +183,8 @@ namespace __jni_impl::android::app::slice
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SliceProvider::call(jstring arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -185,7 +193,8 @@ namespace __jni_impl::android::app::slice
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void SliceProvider::attachInfo(__jni_impl::android::content::Context arg0, __jni_impl::android::content::pm::ProviderInfo arg1)
 	{
@@ -193,7 +202,8 @@ namespace __jni_impl::android::app::slice
 			"attachInfo",
 			"(Landroid/content/Context;Landroid/content/pm/ProviderInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SliceProvider::onBindSlice(__jni_impl::android::net::Uri arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -201,42 +211,48 @@ namespace __jni_impl::android::app::slice
 			"onBindSlice",
 			"(Landroid/net/Uri;Ljava/util/Set;)Landroid/app/slice/Slice;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SliceProvider::onSlicePinned(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"onSlicePinned",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SliceProvider::onSliceUnpinned(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"onSliceUnpinned",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SliceProvider::onGetSliceDescendants(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onGetSliceDescendants",
 			"(Landroid/net/Uri;)Ljava/util/Collection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SliceProvider::onMapIntentToUri(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onMapIntentToUri",
 			"(Landroid/content/Intent;)Landroid/net/Uri;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SliceProvider::onCreatePermissionRequest(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onCreatePermissionRequest",
 			"(Landroid/net/Uri;)Landroid/app/PendingIntent;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app::slice
 

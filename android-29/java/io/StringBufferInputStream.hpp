@@ -48,32 +48,37 @@ namespace __jni_impl::java::io
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint StringBufferInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jlong StringBufferInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint StringBufferInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 	void StringBufferInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::io
 

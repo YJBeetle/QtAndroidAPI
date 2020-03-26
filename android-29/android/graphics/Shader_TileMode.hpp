@@ -21,7 +21,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -35,21 +35,24 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Shader$TileMode",
 			"CLAMP",
-			"Landroid/graphics/Shader$TileMode;");
+			"Landroid/graphics/Shader$TileMode;"
+		);
 	}
 	QAndroidJniObject Shader_TileMode::REPEAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Shader$TileMode",
 			"REPEAT",
-			"Landroid/graphics/Shader$TileMode;");
+			"Landroid/graphics/Shader$TileMode;"
+		);
 	}
 	QAndroidJniObject Shader_TileMode::MIRROR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Shader$TileMode",
 			"MIRROR",
-			"Landroid/graphics/Shader$TileMode;");
+			"Landroid/graphics/Shader$TileMode;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Shader_TileMode::values()
+	jarray Shader_TileMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Shader$TileMode",
 			"values",
-			"()[Landroid/graphics/Shader$TileMode;");
+			"()[Landroid/graphics/Shader$TileMode;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Shader_TileMode::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Shader$TileMode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Shader$TileMode;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

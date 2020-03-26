@@ -108,32 +108,37 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DeflaterOutputStream::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void DeflaterOutputStream::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void DeflaterOutputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void DeflaterOutputStream::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

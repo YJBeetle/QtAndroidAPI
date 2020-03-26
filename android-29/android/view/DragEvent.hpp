@@ -7,7 +7,7 @@
 
 namespace __jni_impl::android::content
 {
-	class ClipData;
+	class ClipDescription;
 }
 namespace __jni_impl::android::os
 {
@@ -15,7 +15,7 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::content
 {
-	class ClipDescription;
+	class ClipData;
 }
 
 namespace __jni_impl::android::view
@@ -36,22 +36,22 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jboolean getResult();
-		jfloat getX();
-		jfloat getY();
-		QAndroidJniObject getClipData();
-		jint getAction();
+		QAndroidJniObject getClipDescription();
+		jobject getLocalState();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getClipDescription();
-		QAndroidJniObject getLocalState();
+		QAndroidJniObject getClipData();
+		jint getAction();
+		jfloat getX();
+		jfloat getY();
 	};
 } // namespace __jni_impl::android::view
 
-#include "../content/ClipData.hpp"
-#include "../os/Parcel.hpp"
 #include "../content/ClipDescription.hpp"
+#include "../os/Parcel.hpp"
+#include "../content/ClipData.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -60,44 +60,51 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.DragEvent",
-			"ACTION_DRAG_ENDED");
+			"ACTION_DRAG_ENDED"
+		);
 	}
 	jint DragEvent::ACTION_DRAG_ENTERED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.DragEvent",
-			"ACTION_DRAG_ENTERED");
+			"ACTION_DRAG_ENTERED"
+		);
 	}
 	jint DragEvent::ACTION_DRAG_EXITED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.DragEvent",
-			"ACTION_DRAG_EXITED");
+			"ACTION_DRAG_EXITED"
+		);
 	}
 	jint DragEvent::ACTION_DRAG_LOCATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.DragEvent",
-			"ACTION_DRAG_LOCATION");
+			"ACTION_DRAG_LOCATION"
+		);
 	}
 	jint DragEvent::ACTION_DRAG_STARTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.DragEvent",
-			"ACTION_DRAG_STARTED");
+			"ACTION_DRAG_STARTED"
+		);
 	}
 	jint DragEvent::ACTION_DROP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.DragEvent",
-			"ACTION_DROP");
+			"ACTION_DROP"
+		);
 	}
 	QAndroidJniObject DragEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.DragEvent",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -109,47 +116,40 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	QAndroidJniObject DragEvent::toString()
+	jstring DragEvent::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean DragEvent::getResult()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getResult",
-			"()Z");
+			"()Z"
+		);
 	}
-	jfloat DragEvent::getX()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getX",
-			"()F");
-	}
-	jfloat DragEvent::getY()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getY",
-			"()F");
-	}
-	QAndroidJniObject DragEvent::getClipData()
+	QAndroidJniObject DragEvent::getClipDescription()
 	{
 		return __thiz.callObjectMethod(
-			"getClipData",
-			"()Landroid/content/ClipData;");
+			"getClipDescription",
+			"()Landroid/content/ClipDescription;"
+		);
 	}
-	jint DragEvent::getAction()
+	jobject DragEvent::getLocalState()
 	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getLocalState",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint DragEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void DragEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -157,19 +157,36 @@ namespace __jni_impl::android::view
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject DragEvent::getClipDescription()
+	QAndroidJniObject DragEvent::getClipData()
 	{
 		return __thiz.callObjectMethod(
-			"getClipDescription",
-			"()Landroid/content/ClipDescription;");
+			"getClipData",
+			"()Landroid/content/ClipData;"
+		);
 	}
-	QAndroidJniObject DragEvent::getLocalState()
+	jint DragEvent::getAction()
 	{
-		return __thiz.callObjectMethod(
-			"getLocalState",
-			"()Ljava/lang/Object;");
+		return __thiz.callMethod<jint>(
+			"getAction",
+			"()I"
+		);
+	}
+	jfloat DragEvent::getX()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getX",
+			"()F"
+		);
+	}
+	jfloat DragEvent::getY()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getY",
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::view
 

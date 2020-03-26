@@ -28,7 +28,7 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		jint getType();
-		QAndroidJniObject getExtra();
+		jstring getExtra();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -40,61 +40,71 @@ namespace __jni_impl::android::webkit
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"ANCHOR_TYPE");
+			"ANCHOR_TYPE"
+		);
 	}
 	jint WebView_HitTestResult::EDIT_TEXT_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"EDIT_TEXT_TYPE");
+			"EDIT_TEXT_TYPE"
+		);
 	}
 	jint WebView_HitTestResult::EMAIL_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"EMAIL_TYPE");
+			"EMAIL_TYPE"
+		);
 	}
 	jint WebView_HitTestResult::GEO_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"GEO_TYPE");
+			"GEO_TYPE"
+		);
 	}
 	jint WebView_HitTestResult::IMAGE_ANCHOR_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"IMAGE_ANCHOR_TYPE");
+			"IMAGE_ANCHOR_TYPE"
+		);
 	}
 	jint WebView_HitTestResult::IMAGE_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"IMAGE_TYPE");
+			"IMAGE_TYPE"
+		);
 	}
 	jint WebView_HitTestResult::PHONE_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"PHONE_TYPE");
+			"PHONE_TYPE"
+		);
 	}
 	jint WebView_HitTestResult::SRC_ANCHOR_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"SRC_ANCHOR_TYPE");
+			"SRC_ANCHOR_TYPE"
+		);
 	}
 	jint WebView_HitTestResult::SRC_IMAGE_ANCHOR_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"SRC_IMAGE_ANCHOR_TYPE");
+			"SRC_IMAGE_ANCHOR_TYPE"
+		);
 	}
 	jint WebView_HitTestResult::UNKNOWN_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView$HitTestResult",
-			"UNKNOWN_TYPE");
+			"UNKNOWN_TYPE"
+		);
 	}
 	
 	// Constructors
@@ -110,13 +120,15 @@ namespace __jni_impl::android::webkit
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject WebView_HitTestResult::getExtra()
+	jstring WebView_HitTestResult::getExtra()
 	{
 		return __thiz.callObjectMethod(
 			"getExtra",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::webkit
 

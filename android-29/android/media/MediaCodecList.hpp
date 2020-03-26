@@ -29,9 +29,9 @@ namespace __jni_impl::android::media
 		// Methods
 		static jint getCodecCount();
 		static QAndroidJniObject getCodecInfoAt(jint arg0);
-		QAndroidJniObject getCodecInfos();
-		QAndroidJniObject findDecoderForFormat(__jni_impl::android::media::MediaFormat arg0);
-		QAndroidJniObject findEncoderForFormat(__jni_impl::android::media::MediaFormat arg0);
+		jarray getCodecInfos();
+		jstring findDecoderForFormat(__jni_impl::android::media::MediaFormat arg0);
+		jstring findEncoderForFormat(__jni_impl::android::media::MediaFormat arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -45,13 +45,15 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodecList",
-			"ALL_CODECS");
+			"ALL_CODECS"
+		);
 	}
 	jint MediaCodecList::REGULAR_CODECS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodecList",
-			"REGULAR_CODECS");
+			"REGULAR_CODECS"
+		);
 	}
 	
 	// Constructors
@@ -69,7 +71,8 @@ namespace __jni_impl::android::media
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.media.MediaCodecList",
 			"getCodecCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MediaCodecList::getCodecInfoAt(jint arg0)
 	{
@@ -77,27 +80,31 @@ namespace __jni_impl::android::media
 			"android.media.MediaCodecList",
 			"getCodecInfoAt",
 			"(I)Landroid/media/MediaCodecInfo;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MediaCodecList::getCodecInfos()
+	jarray MediaCodecList::getCodecInfos()
 	{
 		return __thiz.callObjectMethod(
 			"getCodecInfos",
-			"()[Landroid/media/MediaCodecInfo;");
+			"()[Landroid/media/MediaCodecInfo;"
+		).object<jarray>();
 	}
-	QAndroidJniObject MediaCodecList::findDecoderForFormat(__jni_impl::android::media::MediaFormat arg0)
+	jstring MediaCodecList::findDecoderForFormat(__jni_impl::android::media::MediaFormat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findDecoderForFormat",
 			"(Landroid/media/MediaFormat;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodecList::findEncoderForFormat(__jni_impl::android::media::MediaFormat arg0)
+	jstring MediaCodecList::findEncoderForFormat(__jni_impl::android::media::MediaFormat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findEncoderForFormat",
 			"(Landroid/media/MediaFormat;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

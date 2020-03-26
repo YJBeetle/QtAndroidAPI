@@ -21,8 +21,8 @@ namespace __jni_impl::java::util
 		void __constructor(jchar arg0, jclass arg1);
 		
 		// Methods
-		QAndroidJniObject getMessage();
-		QAndroidJniObject getArgumentClass();
+		jstring getMessage();
+		jclass getArgumentClass();
 		jchar getConversion();
 	};
 } // namespace __jni_impl::java::util
@@ -43,23 +43,26 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject IllegalFormatConversionException::getMessage()
+	jstring IllegalFormatConversionException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject IllegalFormatConversionException::getArgumentClass()
+	jclass IllegalFormatConversionException::getArgumentClass()
 	{
 		return __thiz.callObjectMethod(
 			"getArgumentClass",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	jchar IllegalFormatConversionException::getConversion()
 	{
 		return __thiz.callMethod<jchar>(
 			"getConversion",
-			"()C");
+			"()C"
+		);
 	}
 } // namespace __jni_impl::java::util
 

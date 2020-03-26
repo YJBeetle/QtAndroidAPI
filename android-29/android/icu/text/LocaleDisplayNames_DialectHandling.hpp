@@ -20,7 +20,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -34,14 +34,16 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"STANDARD_NAMES",
-			"Landroid/icu/text/LocaleDisplayNames$DialectHandling;");
+			"Landroid/icu/text/LocaleDisplayNames$DialectHandling;"
+		);
 	}
 	QAndroidJniObject LocaleDisplayNames_DialectHandling::DIALECT_NAMES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"DIALECT_NAMES",
-			"Landroid/icu/text/LocaleDisplayNames$DialectHandling;");
+			"Landroid/icu/text/LocaleDisplayNames$DialectHandling;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject LocaleDisplayNames_DialectHandling::values()
+	jarray LocaleDisplayNames_DialectHandling::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"values",
-			"()[Landroid/icu/text/LocaleDisplayNames$DialectHandling;");
+			"()[Landroid/icu/text/LocaleDisplayNames$DialectHandling;"
+		).object<jarray>();
 	}
 	QAndroidJniObject LocaleDisplayNames_DialectHandling::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.LocaleDisplayNames$DialectHandling",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/LocaleDisplayNames$DialectHandling;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

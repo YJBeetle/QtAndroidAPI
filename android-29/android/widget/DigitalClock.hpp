@@ -24,7 +24,7 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getAccessibilityClassName();
+		jstring getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -52,11 +52,12 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject DigitalClock::getAccessibilityClassName()
+	jstring DigitalClock::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

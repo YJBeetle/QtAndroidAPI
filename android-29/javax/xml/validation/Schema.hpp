@@ -50,13 +50,15 @@ namespace __jni_impl::javax::xml::validation
 	{
 		return __thiz.callObjectMethod(
 			"newValidator",
-			"()Ljavax/xml/validation/Validator;");
+			"()Ljavax/xml/validation/Validator;"
+		);
 	}
 	QAndroidJniObject Schema::newValidatorHandler()
 	{
 		return __thiz.callObjectMethod(
 			"newValidatorHandler",
-			"()Ljavax/xml/validation/ValidatorHandler;");
+			"()Ljavax/xml/validation/ValidatorHandler;"
+		);
 	}
 } // namespace __jni_impl::javax::xml::validation
 

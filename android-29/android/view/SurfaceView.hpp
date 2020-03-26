@@ -10,6 +10,10 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::view
+{
+	class SurfaceControl;
+}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
@@ -17,10 +21,6 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class Region;
-}
-namespace __jni_impl::android::view
-{
-	class SurfaceControl;
 }
 
 namespace __jni_impl::android::view
@@ -37,21 +37,21 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		QAndroidJniObject getHolder();
+		QAndroidJniObject getSurfaceControl();
+		void setSecure(jboolean arg0);
 		jboolean gatherTransparentRegion(__jni_impl::android::graphics::Region arg0);
 		void setVisibility(jint arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0);
 		void setZOrderMediaOverlay(jboolean arg0);
 		void setZOrderOnTop(jboolean arg0);
-		QAndroidJniObject getHolder();
-		QAndroidJniObject getSurfaceControl();
-		void setSecure(jboolean arg0);
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
+#include "SurfaceControl.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/Region.hpp"
-#include "SurfaceControl.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -94,59 +94,67 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean SurfaceView::gatherTransparentRegion(__jni_impl::android::graphics::Region arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"gatherTransparentRegion",
-			"(Landroid/graphics/Region;)Z",
-			arg0.__jniObject().object());
-	}
-	void SurfaceView::setVisibility(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVisibility",
-			"(I)V",
-			arg0);
-	}
-	void SurfaceView::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	void SurfaceView::setZOrderMediaOverlay(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setZOrderMediaOverlay",
-			"(Z)V",
-			arg0);
-	}
-	void SurfaceView::setZOrderOnTop(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setZOrderOnTop",
-			"(Z)V",
-			arg0);
-	}
 	QAndroidJniObject SurfaceView::getHolder()
 	{
 		return __thiz.callObjectMethod(
 			"getHolder",
-			"()Landroid/view/SurfaceHolder;");
+			"()Landroid/view/SurfaceHolder;"
+		);
 	}
 	QAndroidJniObject SurfaceView::getSurfaceControl()
 	{
 		return __thiz.callObjectMethod(
 			"getSurfaceControl",
-			"()Landroid/view/SurfaceControl;");
+			"()Landroid/view/SurfaceControl;"
+		);
 	}
 	void SurfaceView::setSecure(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSecure",
 			"(Z)V",
-			arg0);
+			arg0
+		);
+	}
+	jboolean SurfaceView::gatherTransparentRegion(__jni_impl::android::graphics::Region arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"gatherTransparentRegion",
+			"(Landroid/graphics/Region;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void SurfaceView::setVisibility(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVisibility",
+			"(I)V",
+			arg0
+		);
+	}
+	void SurfaceView::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SurfaceView::setZOrderMediaOverlay(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setZOrderMediaOverlay",
+			"(Z)V",
+			arg0
+		);
+	}
+	void SurfaceView::setZOrderOnTop(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setZOrderOnTop",
+			"(Z)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

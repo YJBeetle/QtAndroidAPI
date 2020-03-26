@@ -56,21 +56,24 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"bigText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Notification_BigTextStyle::setSummaryText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSummaryText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Notification_BigTextStyle::setBigContentTitle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setBigContentTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app
 

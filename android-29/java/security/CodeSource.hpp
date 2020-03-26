@@ -38,12 +38,12 @@ namespace __jni_impl::java::security
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getLocation();
-		QAndroidJniObject getCertificates();
+		jarray getCertificates();
 		jboolean implies(__jni_impl::java::security::CodeSource arg0);
-		QAndroidJniObject getCodeSigners();
+		jarray getCodeSigners();
 	};
 } // namespace __jni_impl::java::security
 
@@ -73,44 +73,51 @@ namespace __jni_impl::java::security
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CodeSource::toString()
+	jstring CodeSource::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CodeSource::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject CodeSource::getLocation()
 	{
 		return __thiz.callObjectMethod(
 			"getLocation",
-			"()Ljava/net/URL;");
+			"()Ljava/net/URL;"
+		);
 	}
-	QAndroidJniObject CodeSource::getCertificates()
+	jarray CodeSource::getCertificates()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificates",
-			"()[Ljava/security/cert/Certificate;");
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
 	}
 	jboolean CodeSource::implies(__jni_impl::java::security::CodeSource arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/CodeSource;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject CodeSource::getCodeSigners()
+	jarray CodeSource::getCodeSigners()
 	{
 		return __thiz.callObjectMethod(
 			"getCodeSigners",
-			"()[Ljava/security/CodeSigner;");
+			"()[Ljava/security/CodeSigner;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::security
 

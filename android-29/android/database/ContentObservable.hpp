@@ -55,14 +55,16 @@ namespace __jni_impl::android::database
 		__thiz.callMethod<void>(
 			"registerObserver",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ContentObservable::registerObserver(__jni_impl::android::database::ContentObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerObserver",
 			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContentObservable::dispatchChange(jboolean arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -70,21 +72,24 @@ namespace __jni_impl::android::database
 			"dispatchChange",
 			"(ZLandroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ContentObservable::dispatchChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"dispatchChange",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void ContentObservable::notifyChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"notifyChange",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::database
 

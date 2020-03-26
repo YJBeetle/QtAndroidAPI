@@ -19,7 +19,7 @@ namespace __jni_impl::android::text::method
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CHARACTERS();
+		static jcharArray CHARACTERS();
 		
 		// Constructors
 		void __constructor();
@@ -37,12 +37,13 @@ namespace __jni_impl::android::text::method
 namespace __jni_impl::android::text::method
 {
 	// Fields
-	QAndroidJniObject DateKeyListener::CHARACTERS()
+	jcharArray DateKeyListener::CHARACTERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.DateKeyListener",
 			"CHARACTERS",
-			"[C");
+			"[C"
+		).object<jcharArray>();
 	}
 	
 	// Constructors
@@ -67,20 +68,23 @@ namespace __jni_impl::android::text::method
 			"android.text.method.DateKeyListener",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/method/DateKeyListener;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateKeyListener::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.DateKeyListener",
 			"getInstance",
-			"()Landroid/text/method/DateKeyListener;");
+			"()Landroid/text/method/DateKeyListener;"
+		);
 	}
 	jint DateKeyListener::getInputType()
 	{
 		return __thiz.callMethod<jint>(
 			"getInputType",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::method
 

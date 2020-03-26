@@ -46,19 +46,22 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"getBuffer",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	jint Image_Plane::getRowStride()
 	{
 		return __thiz.callMethod<jint>(
 			"getRowStride",
-			"()I");
+			"()I"
+		);
 	}
 	jint Image_Plane::getPixelStride()
 	{
 		return __thiz.callMethod<jint>(
 			"getPixelStride",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

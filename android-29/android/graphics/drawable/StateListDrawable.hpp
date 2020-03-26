@@ -36,11 +36,11 @@ namespace __jni_impl::android::graphics::drawable
 		
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
-		jint getStateCount();
-		void addState(jintArray arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
-		QAndroidJniObject getStateSet(jint arg0);
+		jintArray getStateSet(jint arg0);
 		QAndroidJniObject getStateDrawable(jint arg0);
 		jint findStateDrawableIndex(jintArray arg0);
+		jint getStateCount();
+		void addState(jintArray arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
 		jboolean isStateful();
 		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		QAndroidJniObject mutate();
@@ -73,13 +73,39 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	jintArray StateListDrawable::getStateSet(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getStateSet",
+			"(I)[I",
+			arg0
+		).object<jintArray>();
+	}
+	QAndroidJniObject StateListDrawable::getStateDrawable(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getStateDrawable",
+			"(I)Landroid/graphics/drawable/Drawable;",
+			arg0
+		);
+	}
+	jint StateListDrawable::findStateDrawableIndex(jintArray arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"findStateDrawableIndex",
+			"([I)I",
+			arg0
+		);
 	}
 	jint StateListDrawable::getStateCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getStateCount",
-			"()I");
+			"()I"
+		);
 	}
 	void StateListDrawable::addState(jintArray arg0, __jni_impl::android::graphics::drawable::Drawable arg1)
 	{
@@ -87,47 +113,30 @@ namespace __jni_impl::android::graphics::drawable
 			"addState",
 			"([ILandroid/graphics/drawable/Drawable;)V",
 			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject StateListDrawable::getStateSet(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getStateSet",
-			"(I)[I",
-			arg0);
-	}
-	QAndroidJniObject StateListDrawable::getStateDrawable(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getStateDrawable",
-			"(I)Landroid/graphics/drawable/Drawable;",
-			arg0);
-	}
-	jint StateListDrawable::findStateDrawableIndex(jintArray arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"findStateDrawableIndex",
-			"([I)I",
-			arg0);
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean StateListDrawable::isStateful()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isStateful",
-			"()Z");
+			"()Z"
+		);
 	}
 	void StateListDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject StateListDrawable::mutate()
 	{
 		return __thiz.callObjectMethod(
 			"mutate",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

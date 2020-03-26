@@ -55,7 +55,8 @@ namespace __jni_impl::android::graphics
 		__thiz.callMethod<void>(
 			"getColorMatrix",
 			"(Landroid/graphics/ColorMatrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -22,7 +22,7 @@ namespace __jni_impl::javax::crypto::spec
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jint getEffectiveKeyBits();
-		QAndroidJniObject getIV();
+		jbyteArray getIV();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -63,25 +63,29 @@ namespace __jni_impl::javax::crypto::spec
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint RC2ParameterSpec::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint RC2ParameterSpec::getEffectiveKeyBits()
 	{
 		return __thiz.callMethod<jint>(
 			"getEffectiveKeyBits",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject RC2ParameterSpec::getIV()
+	jbyteArray RC2ParameterSpec::getIV()
 	{
 		return __thiz.callObjectMethod(
 			"getIV",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

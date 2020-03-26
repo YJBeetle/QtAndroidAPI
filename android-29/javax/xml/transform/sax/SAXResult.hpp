@@ -12,7 +12,7 @@ namespace __jni_impl::javax::xml::transform::sax
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FEATURE();
+		static jstring FEATURE();
 		
 		// Constructors
 		void __constructor();
@@ -20,7 +20,7 @@ namespace __jni_impl::javax::xml::transform::sax
 		
 		// Methods
 		QAndroidJniObject getHandler();
-		QAndroidJniObject getSystemId();
+		jstring getSystemId();
 		void setSystemId(jstring arg0);
 		void setHandler(__jni_impl::__JniBaseClass arg0);
 		void setLexicalHandler(__jni_impl::__JniBaseClass arg0);
@@ -32,12 +32,13 @@ namespace __jni_impl::javax::xml::transform::sax
 namespace __jni_impl::javax::xml::transform::sax
 {
 	// Fields
-	QAndroidJniObject SAXResult::FEATURE()
+	jstring SAXResult::FEATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.sax.SAXResult",
 			"FEATURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -60,40 +61,46 @@ namespace __jni_impl::javax::xml::transform::sax
 	{
 		return __thiz.callObjectMethod(
 			"getHandler",
-			"()Lorg/xml/sax/ContentHandler;");
+			"()Lorg/xml/sax/ContentHandler;"
+		);
 	}
-	QAndroidJniObject SAXResult::getSystemId()
+	jstring SAXResult::getSystemId()
 	{
 		return __thiz.callObjectMethod(
 			"getSystemId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SAXResult::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SAXResult::setHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHandler",
 			"(Lorg/xml/sax/ContentHandler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SAXResult::setLexicalHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLexicalHandler",
 			"(Lorg/xml/sax/ext/LexicalHandler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SAXResult::getLexicalHandler()
 	{
 		return __thiz.callObjectMethod(
 			"getLexicalHandler",
-			"()Lorg/xml/sax/ext/LexicalHandler;");
+			"()Lorg/xml/sax/ext/LexicalHandler;"
+		);
 	}
 } // namespace __jni_impl::javax::xml::transform::sax
 

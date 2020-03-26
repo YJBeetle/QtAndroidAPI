@@ -17,8 +17,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 		void __constructor(jobject arg0, jboolean arg1);
 		
 		// Methods
-		QAndroidJniObject get(jbooleanArray arg0);
-		QAndroidJniObject getReference();
+		jobject get(jbooleanArray arg0);
+		jobject getReference();
 		void set(jobject arg0, jboolean arg1);
 		jboolean compareAndSet(jobject arg0, jobject arg1, jboolean arg2, jboolean arg3);
 		jboolean weakCompareAndSet(jobject arg0, jobject arg1, jboolean arg2, jboolean arg3);
@@ -43,18 +43,20 @@ namespace __jni_impl::java::util::concurrent::atomic
 	}
 	
 	// Methods
-	QAndroidJniObject AtomicMarkableReference::get(jbooleanArray arg0)
+	jobject AtomicMarkableReference::get(jbooleanArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"([Z)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicMarkableReference::getReference()
+	jobject AtomicMarkableReference::getReference()
 	{
 		return __thiz.callObjectMethod(
 			"getReference",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void AtomicMarkableReference::set(jobject arg0, jboolean arg1)
 	{
@@ -62,7 +64,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"set",
 			"(Ljava/lang/Object;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicMarkableReference::compareAndSet(jobject arg0, jobject arg1, jboolean arg2, jboolean arg3)
 	{
@@ -72,7 +75,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean AtomicMarkableReference::weakCompareAndSet(jobject arg0, jobject arg1, jboolean arg2, jboolean arg3)
 	{
@@ -82,13 +86,15 @@ namespace __jni_impl::java::util::concurrent::atomic
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean AtomicMarkableReference::isMarked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMarked",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AtomicMarkableReference::attemptMark(jobject arg0, jboolean arg1)
 	{
@@ -96,7 +102,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"attemptMark",
 			"(Ljava/lang/Object;Z)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

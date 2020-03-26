@@ -21,8 +21,8 @@ namespace __jni_impl::java::security::cert
 		void __constructor(__jni_impl::java::security::cert::TrustAnchor arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject clone();
+		jstring toString();
+		jobject clone();
 		QAndroidJniObject getPublicKey();
 		QAndroidJniObject getTrustAnchor();
 		QAndroidJniObject getPolicyTree();
@@ -47,35 +47,40 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject PKIXCertPathValidatorResult::toString()
+	jstring PKIXCertPathValidatorResult::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PKIXCertPathValidatorResult::clone()
+	jobject PKIXCertPathValidatorResult::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject PKIXCertPathValidatorResult::getPublicKey()
 	{
 		return __thiz.callObjectMethod(
 			"getPublicKey",
-			"()Ljava/security/PublicKey;");
+			"()Ljava/security/PublicKey;"
+		);
 	}
 	QAndroidJniObject PKIXCertPathValidatorResult::getTrustAnchor()
 	{
 		return __thiz.callObjectMethod(
 			"getTrustAnchor",
-			"()Ljava/security/cert/TrustAnchor;");
+			"()Ljava/security/cert/TrustAnchor;"
+		);
 	}
 	QAndroidJniObject PKIXCertPathValidatorResult::getPolicyTree()
 	{
 		return __thiz.callObjectMethod(
 			"getPolicyTree",
-			"()Ljava/security/cert/PolicyNode;");
+			"()Ljava/security/cert/PolicyNode;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

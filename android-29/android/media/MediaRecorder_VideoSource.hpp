@@ -36,19 +36,22 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$VideoSource",
-			"CAMERA");
+			"CAMERA"
+		);
 	}
 	jint MediaRecorder_VideoSource::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$VideoSource",
-			"DEFAULT");
+			"DEFAULT"
+		);
 	}
 	jint MediaRecorder_VideoSource::SURFACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$VideoSource",
-			"SURFACE");
+			"SURFACE"
+		);
 	}
 	
 	// Constructors

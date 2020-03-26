@@ -16,13 +16,13 @@ namespace __jni_impl::android::app
 {
 	class LocalActivityManager;
 }
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
 namespace __jni_impl::android::widget
 {
 	class TabHost_TabSpec;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
 }
 namespace __jni_impl::android::widget
 {
@@ -53,17 +53,17 @@ namespace __jni_impl::android::widget
 		// Methods
 		void setup();
 		void setup(__jni_impl::android::app::LocalActivityManager arg0);
-		void onTouchModeChanged(jboolean arg0);
-		void dispatchWindowFocusChanged(jboolean arg0);
-		QAndroidJniObject getAccessibilityClassName();
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		void addTab(__jni_impl::android::widget::TabHost_TabSpec arg0);
+		void onTouchModeChanged(jboolean arg0);
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
+		void dispatchWindowFocusChanged(jboolean arg0);
+		jstring getAccessibilityClassName();
 		QAndroidJniObject getTabWidget();
 		void setCurrentTab(jint arg0);
 		QAndroidJniObject newTabSpec(jstring arg0);
 		void clearAllTabs();
 		jint getCurrentTab();
-		QAndroidJniObject getCurrentTabTag();
+		jstring getCurrentTabTag();
 		QAndroidJniObject getCurrentTabView();
 		QAndroidJniObject getCurrentView();
 		void setCurrentTabByTag(jstring arg0);
@@ -74,8 +74,8 @@ namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../app/LocalActivityManager.hpp"
-#include "../view/KeyEvent.hpp"
 #include "TabHost_TabSpec.hpp"
+#include "../view/KeyEvent.hpp"
 #include "TabWidget.hpp"
 #include "../view/View.hpp"
 #include "FrameLayout.hpp"
@@ -125,118 +125,136 @@ namespace __jni_impl::android::widget
 	{
 		__thiz.callMethod<void>(
 			"setup",
-			"()V");
+			"()V"
+		);
 	}
 	void TabHost::setup(__jni_impl::android::app::LocalActivityManager arg0)
 	{
 		__thiz.callMethod<void>(
 			"setup",
 			"(Landroid/app/LocalActivityManager;)V",
-			arg0.__jniObject().object());
-	}
-	void TabHost::onTouchModeChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTouchModeChanged",
-			"(Z)V",
-			arg0);
-	}
-	void TabHost::dispatchWindowFocusChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"dispatchWindowFocusChanged",
-			"(Z)V",
-			arg0);
-	}
-	QAndroidJniObject TabHost::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	jboolean TabHost::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TabHost::addTab(__jni_impl::android::widget::TabHost_TabSpec arg0)
 	{
 		__thiz.callMethod<void>(
 			"addTab",
 			"(Landroid/widget/TabHost$TabSpec;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void TabHost::onTouchModeChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTouchModeChanged",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean TabHost::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void TabHost::dispatchWindowFocusChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"dispatchWindowFocusChanged",
+			"(Z)V",
+			arg0
+		);
+	}
+	jstring TabHost::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	QAndroidJniObject TabHost::getTabWidget()
 	{
 		return __thiz.callObjectMethod(
 			"getTabWidget",
-			"()Landroid/widget/TabWidget;");
+			"()Landroid/widget/TabWidget;"
+		);
 	}
 	void TabHost::setCurrentTab(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCurrentTab",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TabHost::newTabSpec(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newTabSpec",
 			"(Ljava/lang/String;)Landroid/widget/TabHost$TabSpec;",
-			arg0);
+			arg0
+		);
 	}
 	void TabHost::clearAllTabs()
 	{
 		__thiz.callMethod<void>(
 			"clearAllTabs",
-			"()V");
+			"()V"
+		);
 	}
 	jint TabHost::getCurrentTab()
 	{
 		return __thiz.callMethod<jint>(
 			"getCurrentTab",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject TabHost::getCurrentTabTag()
+	jstring TabHost::getCurrentTabTag()
 	{
 		return __thiz.callObjectMethod(
 			"getCurrentTabTag",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject TabHost::getCurrentTabView()
 	{
 		return __thiz.callObjectMethod(
 			"getCurrentTabView",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
 	QAndroidJniObject TabHost::getCurrentView()
 	{
 		return __thiz.callObjectMethod(
 			"getCurrentView",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
 	void TabHost::setCurrentTabByTag(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCurrentTabByTag",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TabHost::getTabContentView()
 	{
 		return __thiz.callObjectMethod(
 			"getTabContentView",
-			"()Landroid/widget/FrameLayout;");
+			"()Landroid/widget/FrameLayout;"
+		);
 	}
 	void TabHost::setOnTabChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnTabChangedListener",
 			"(Landroid/widget/TabHost$OnTabChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::widget
 

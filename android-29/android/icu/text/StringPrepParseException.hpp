@@ -34,7 +34,7 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getError();
 	};
@@ -48,73 +48,85 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"ACE_PREFIX_ERROR");
+			"ACE_PREFIX_ERROR"
+		);
 	}
 	jint StringPrepParseException::BUFFER_OVERFLOW_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"BUFFER_OVERFLOW_ERROR");
+			"BUFFER_OVERFLOW_ERROR"
+		);
 	}
 	jint StringPrepParseException::CHECK_BIDI_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"CHECK_BIDI_ERROR");
+			"CHECK_BIDI_ERROR"
+		);
 	}
 	jint StringPrepParseException::DOMAIN_NAME_TOO_LONG_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"DOMAIN_NAME_TOO_LONG_ERROR");
+			"DOMAIN_NAME_TOO_LONG_ERROR"
+		);
 	}
 	jint StringPrepParseException::ILLEGAL_CHAR_FOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"ILLEGAL_CHAR_FOUND");
+			"ILLEGAL_CHAR_FOUND"
+		);
 	}
 	jint StringPrepParseException::INVALID_CHAR_FOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"INVALID_CHAR_FOUND");
+			"INVALID_CHAR_FOUND"
+		);
 	}
 	jint StringPrepParseException::LABEL_TOO_LONG_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"LABEL_TOO_LONG_ERROR");
+			"LABEL_TOO_LONG_ERROR"
+		);
 	}
 	jint StringPrepParseException::PROHIBITED_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"PROHIBITED_ERROR");
+			"PROHIBITED_ERROR"
+		);
 	}
 	jint StringPrepParseException::STD3_ASCII_RULES_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"STD3_ASCII_RULES_ERROR");
+			"STD3_ASCII_RULES_ERROR"
+		);
 	}
 	jint StringPrepParseException::UNASSIGNED_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"UNASSIGNED_ERROR");
+			"UNASSIGNED_ERROR"
+		);
 	}
 	jint StringPrepParseException::VERIFICATION_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"VERIFICATION_ERROR");
+			"VERIFICATION_ERROR"
+		);
 	}
 	jint StringPrepParseException::ZERO_LENGTH_LABEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.StringPrepParseException",
-			"ZERO_LENGTH_LABEL");
+			"ZERO_LENGTH_LABEL"
+		);
 	}
 	
 	// Constructors
@@ -154,25 +166,29 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject StringPrepParseException::toString()
+	jstring StringPrepParseException::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint StringPrepParseException::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint StringPrepParseException::getError()
 	{
 		return __thiz.callMethod<jint>(
 			"getError",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

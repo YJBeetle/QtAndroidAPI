@@ -110,81 +110,93 @@ namespace __jni_impl::android::text
 	{
 		return __thiz.callMethod<jint>(
 			"getLineCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint DynamicLayout::getLineTop(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getLineTop",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint DynamicLayout::getLineDescent(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getLineDescent",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint DynamicLayout::getLineStart(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getLineStart",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint DynamicLayout::getParagraphDirection(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getParagraphDirection",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DynamicLayout::getLineContainsTab(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getLineContainsTab",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DynamicLayout::getLineDirections(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getLineDirections",
 			"(I)Landroid/text/Layout$Directions;",
-			arg0);
+			arg0
+		);
 	}
 	jint DynamicLayout::getTopPadding()
 	{
 		return __thiz.callMethod<jint>(
 			"getTopPadding",
-			"()I");
+			"()I"
+		);
 	}
 	jint DynamicLayout::getBottomPadding()
 	{
 		return __thiz.callMethod<jint>(
 			"getBottomPadding",
-			"()I");
+			"()I"
+		);
 	}
 	jint DynamicLayout::getEllipsisCount(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getEllipsisCount",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint DynamicLayout::getEllipsisStart(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getEllipsisStart",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint DynamicLayout::getEllipsizedWidth()
 	{
 		return __thiz.callMethod<jint>(
 			"getEllipsizedWidth",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text
 

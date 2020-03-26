@@ -31,10 +31,10 @@ namespace __jni_impl::android::accessibilityservice
 		// Methods
 		jboolean reset(jboolean arg0);
 		jboolean setScale(jfloat arg0, jboolean arg1);
-		jfloat getScale();
-		void addListener(__jni_impl::__JniBaseClass arg0);
 		void addListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void addListener(__jni_impl::__JniBaseClass arg0);
 		jboolean removeListener(__jni_impl::__JniBaseClass arg0);
+		jfloat getScale();
 		QAndroidJniObject getMagnificationRegion();
 		jfloat getCenterX();
 		jfloat getCenterY();
@@ -64,7 +64,8 @@ namespace __jni_impl::android::accessibilityservice
 		return __thiz.callMethod<jboolean>(
 			"reset",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AccessibilityService_MagnificationController::setScale(jfloat arg0, jboolean arg1)
 	{
@@ -72,20 +73,8 @@ namespace __jni_impl::android::accessibilityservice
 			"setScale",
 			"(FZ)Z",
 			arg0,
-			arg1);
-	}
-	jfloat AccessibilityService_MagnificationController::getScale()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getScale",
-			"()F");
-	}
-	void AccessibilityService_MagnificationController::addListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"addListener",
-			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;)V",
-			arg0.__jniObject().object());
+			arg1
+		);
 	}
 	void AccessibilityService_MagnificationController::addListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -93,32 +82,52 @@ namespace __jni_impl::android::accessibilityservice
 			"addListener",
 			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void AccessibilityService_MagnificationController::addListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"addListener",
+			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean AccessibilityService_MagnificationController::removeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeListener",
 			"(Landroid/accessibilityservice/AccessibilityService$MagnificationController$OnMagnificationChangedListener;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jfloat AccessibilityService_MagnificationController::getScale()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getScale",
+			"()F"
+		);
 	}
 	QAndroidJniObject AccessibilityService_MagnificationController::getMagnificationRegion()
 	{
 		return __thiz.callObjectMethod(
 			"getMagnificationRegion",
-			"()Landroid/graphics/Region;");
+			"()Landroid/graphics/Region;"
+		);
 	}
 	jfloat AccessibilityService_MagnificationController::getCenterX()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getCenterX",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat AccessibilityService_MagnificationController::getCenterY()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getCenterY",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean AccessibilityService_MagnificationController::setCenter(jfloat arg0, jfloat arg1, jboolean arg2)
 	{
@@ -127,7 +136,8 @@ namespace __jni_impl::android::accessibilityservice
 			"(FFZ)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::accessibilityservice
 

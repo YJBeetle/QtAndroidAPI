@@ -35,14 +35,14 @@ namespace __jni_impl::android::transition
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void setReparent(jboolean arg0);
-		QAndroidJniObject getTransitionProperties();
-		QAndroidJniObject createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2);
-		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
-		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
 		jboolean getReparentWithOverlay();
 		void setReparentWithOverlay(jboolean arg0);
 		jboolean getReparent();
+		jarray getTransitionProperties();
+		QAndroidJniObject createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2);
+		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
+		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
+		void setReparent(jboolean arg0);
 	};
 } // namespace __jni_impl::android::transition
 
@@ -72,18 +72,34 @@ namespace __jni_impl::android::transition
 	}
 	
 	// Methods
-	void ChangeTransform::setReparent(jboolean arg0)
+	jboolean ChangeTransform::getReparentWithOverlay()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getReparentWithOverlay",
+			"()Z"
+		);
+	}
+	void ChangeTransform::setReparentWithOverlay(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setReparent",
+			"setReparentWithOverlay",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ChangeTransform::getTransitionProperties()
+	jboolean ChangeTransform::getReparent()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getReparent",
+			"()Z"
+		);
+	}
+	jarray ChangeTransform::getTransitionProperties()
 	{
 		return __thiz.callObjectMethod(
 			"getTransitionProperties",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ChangeTransform::createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2)
 	{
@@ -92,40 +108,32 @@ namespace __jni_impl::android::transition
 			"(Landroid/view/ViewGroup;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ChangeTransform::captureStartValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		__thiz.callMethod<void>(
 			"captureStartValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ChangeTransform::captureEndValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		__thiz.callMethod<void>(
 			"captureEndValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	jboolean ChangeTransform::getReparentWithOverlay()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getReparentWithOverlay",
-			"()Z");
-	}
-	void ChangeTransform::setReparentWithOverlay(jboolean arg0)
+	void ChangeTransform::setReparent(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setReparentWithOverlay",
+			"setReparent",
 			"(Z)V",
-			arg0);
-	}
-	jboolean ChangeTransform::getReparent()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getReparent",
-			"()Z");
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::transition
 

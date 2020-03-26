@@ -11,15 +11,15 @@ namespace __jni_impl::android::icu::lang
 }
 namespace __jni_impl::java::util
 {
-	class BitSet;
-}
-namespace __jni_impl::java::util
-{
 	class Locale;
 }
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
+}
+namespace __jni_impl::java::util
+{
+	class BitSet;
 }
 
 namespace __jni_impl::android::icu::lang
@@ -224,27 +224,27 @@ namespace __jni_impl::android::icu::lang
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getName(jint arg0);
+		static jstring getName(jint arg0);
 		static jint getScript(jint arg0);
+		static jboolean isRightToLeft(jint arg0);
 		static QAndroidJniObject getUsage(jint arg0);
+		static jintArray getCode(__jni_impl::java::util::Locale arg0);
+		static jintArray getCode(jstring arg0);
+		static jintArray getCode(__jni_impl::android::icu::util::ULocale arg0);
 		static jint getCodeFromName(jstring arg0);
 		static jboolean hasScript(jint arg0, jint arg1);
 		static jint getScriptExtensions(jint arg0, __jni_impl::java::util::BitSet arg1);
-		static QAndroidJniObject getShortName(jint arg0);
-		static QAndroidJniObject getSampleString(jint arg0);
+		static jstring getShortName(jint arg0);
+		static jstring getSampleString(jint arg0);
 		static jboolean breaksBetweenLetters(jint arg0);
 		static jboolean isCased(jint arg0);
-		static jboolean isRightToLeft(jint arg0);
-		static QAndroidJniObject getCode(jstring arg0);
-		static QAndroidJniObject getCode(__jni_impl::java::util::Locale arg0);
-		static QAndroidJniObject getCode(__jni_impl::android::icu::util::ULocale arg0);
 	};
 } // namespace __jni_impl::android::icu::lang
 
 #include "UScript_ScriptUsage.hpp"
-#include "../../../java/util/BitSet.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../java/util/BitSet.hpp"
 
 namespace __jni_impl::android::icu::lang
 {
@@ -253,1147 +253,1338 @@ namespace __jni_impl::android::icu::lang
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ADLAM");
+			"ADLAM"
+		);
 	}
 	jint UScript::AFAKA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"AFAKA");
+			"AFAKA"
+		);
 	}
 	jint UScript::AHOM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"AHOM");
+			"AHOM"
+		);
 	}
 	jint UScript::ANATOLIAN_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ANATOLIAN_HIEROGLYPHS");
+			"ANATOLIAN_HIEROGLYPHS"
+		);
 	}
 	jint UScript::ARABIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ARABIC");
+			"ARABIC"
+		);
 	}
 	jint UScript::ARMENIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ARMENIAN");
+			"ARMENIAN"
+		);
 	}
 	jint UScript::AVESTAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"AVESTAN");
+			"AVESTAN"
+		);
 	}
 	jint UScript::BALINESE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BALINESE");
+			"BALINESE"
+		);
 	}
 	jint UScript::BAMUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BAMUM");
+			"BAMUM"
+		);
 	}
 	jint UScript::BASSA_VAH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BASSA_VAH");
+			"BASSA_VAH"
+		);
 	}
 	jint UScript::BATAK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BATAK");
+			"BATAK"
+		);
 	}
 	jint UScript::BENGALI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BENGALI");
+			"BENGALI"
+		);
 	}
 	jint UScript::BHAIKSUKI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BHAIKSUKI");
+			"BHAIKSUKI"
+		);
 	}
 	jint UScript::BLISSYMBOLS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BLISSYMBOLS");
+			"BLISSYMBOLS"
+		);
 	}
 	jint UScript::BOOK_PAHLAVI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BOOK_PAHLAVI");
+			"BOOK_PAHLAVI"
+		);
 	}
 	jint UScript::BOPOMOFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BOPOMOFO");
+			"BOPOMOFO"
+		);
 	}
 	jint UScript::BRAHMI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BRAHMI");
+			"BRAHMI"
+		);
 	}
 	jint UScript::BRAILLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BRAILLE");
+			"BRAILLE"
+		);
 	}
 	jint UScript::BUGINESE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BUGINESE");
+			"BUGINESE"
+		);
 	}
 	jint UScript::BUHID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"BUHID");
+			"BUHID"
+		);
 	}
 	jint UScript::CANADIAN_ABORIGINAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CANADIAN_ABORIGINAL");
+			"CANADIAN_ABORIGINAL"
+		);
 	}
 	jint UScript::CARIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CARIAN");
+			"CARIAN"
+		);
 	}
 	jint UScript::CAUCASIAN_ALBANIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CAUCASIAN_ALBANIAN");
+			"CAUCASIAN_ALBANIAN"
+		);
 	}
 	jint UScript::CHAKMA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CHAKMA");
+			"CHAKMA"
+		);
 	}
 	jint UScript::CHAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CHAM");
+			"CHAM"
+		);
 	}
 	jint UScript::CHEROKEE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CHEROKEE");
+			"CHEROKEE"
+		);
 	}
 	jint UScript::CIRTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CIRTH");
+			"CIRTH"
+		);
 	}
 	jint UScript::COMMON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"COMMON");
+			"COMMON"
+		);
 	}
 	jint UScript::COPTIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"COPTIC");
+			"COPTIC"
+		);
 	}
 	jint UScript::CUNEIFORM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CUNEIFORM");
+			"CUNEIFORM"
+		);
 	}
 	jint UScript::CYPRIOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CYPRIOT");
+			"CYPRIOT"
+		);
 	}
 	jint UScript::CYRILLIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"CYRILLIC");
+			"CYRILLIC"
+		);
 	}
 	jint UScript::DEMOTIC_EGYPTIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"DEMOTIC_EGYPTIAN");
+			"DEMOTIC_EGYPTIAN"
+		);
 	}
 	jint UScript::DESERET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"DESERET");
+			"DESERET"
+		);
 	}
 	jint UScript::DEVANAGARI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"DEVANAGARI");
+			"DEVANAGARI"
+		);
 	}
 	jint UScript::DOGRA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"DOGRA");
+			"DOGRA"
+		);
 	}
 	jint UScript::DUPLOYAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"DUPLOYAN");
+			"DUPLOYAN"
+		);
 	}
 	jint UScript::EASTERN_SYRIAC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"EASTERN_SYRIAC");
+			"EASTERN_SYRIAC"
+		);
 	}
 	jint UScript::EGYPTIAN_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"EGYPTIAN_HIEROGLYPHS");
+			"EGYPTIAN_HIEROGLYPHS"
+		);
 	}
 	jint UScript::ELBASAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ELBASAN");
+			"ELBASAN"
+		);
 	}
 	jint UScript::ESTRANGELO_SYRIAC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ESTRANGELO_SYRIAC");
+			"ESTRANGELO_SYRIAC"
+		);
 	}
 	jint UScript::ETHIOPIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ETHIOPIC");
+			"ETHIOPIC"
+		);
 	}
 	jint UScript::GEORGIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"GEORGIAN");
+			"GEORGIAN"
+		);
 	}
 	jint UScript::GLAGOLITIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"GLAGOLITIC");
+			"GLAGOLITIC"
+		);
 	}
 	jint UScript::GOTHIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"GOTHIC");
+			"GOTHIC"
+		);
 	}
 	jint UScript::GRANTHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"GRANTHA");
+			"GRANTHA"
+		);
 	}
 	jint UScript::GREEK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"GREEK");
+			"GREEK"
+		);
 	}
 	jint UScript::GUJARATI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"GUJARATI");
+			"GUJARATI"
+		);
 	}
 	jint UScript::GUNJALA_GONDI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"GUNJALA_GONDI");
+			"GUNJALA_GONDI"
+		);
 	}
 	jint UScript::GURMUKHI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"GURMUKHI");
+			"GURMUKHI"
+		);
 	}
 	jint UScript::HAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HAN");
+			"HAN"
+		);
 	}
 	jint UScript::HANGUL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HANGUL");
+			"HANGUL"
+		);
 	}
 	jint UScript::HANIFI_ROHINGYA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HANIFI_ROHINGYA");
+			"HANIFI_ROHINGYA"
+		);
 	}
 	jint UScript::HANUNOO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HANUNOO");
+			"HANUNOO"
+		);
 	}
 	jint UScript::HAN_WITH_BOPOMOFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HAN_WITH_BOPOMOFO");
+			"HAN_WITH_BOPOMOFO"
+		);
 	}
 	jint UScript::HARAPPAN_INDUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HARAPPAN_INDUS");
+			"HARAPPAN_INDUS"
+		);
 	}
 	jint UScript::HATRAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HATRAN");
+			"HATRAN"
+		);
 	}
 	jint UScript::HEBREW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HEBREW");
+			"HEBREW"
+		);
 	}
 	jint UScript::HIERATIC_EGYPTIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HIERATIC_EGYPTIAN");
+			"HIERATIC_EGYPTIAN"
+		);
 	}
 	jint UScript::HIRAGANA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"HIRAGANA");
+			"HIRAGANA"
+		);
 	}
 	jint UScript::IMPERIAL_ARAMAIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"IMPERIAL_ARAMAIC");
+			"IMPERIAL_ARAMAIC"
+		);
 	}
 	jint UScript::INHERITED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"INHERITED");
+			"INHERITED"
+		);
 	}
 	jint UScript::INSCRIPTIONAL_PAHLAVI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"INSCRIPTIONAL_PAHLAVI");
+			"INSCRIPTIONAL_PAHLAVI"
+		);
 	}
 	jint UScript::INSCRIPTIONAL_PARTHIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"INSCRIPTIONAL_PARTHIAN");
+			"INSCRIPTIONAL_PARTHIAN"
+		);
 	}
 	jint UScript::INVALID_CODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"INVALID_CODE");
+			"INVALID_CODE"
+		);
 	}
 	jint UScript::JAMO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"JAMO");
+			"JAMO"
+		);
 	}
 	jint UScript::JAPANESE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"JAPANESE");
+			"JAPANESE"
+		);
 	}
 	jint UScript::JAVANESE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"JAVANESE");
+			"JAVANESE"
+		);
 	}
 	jint UScript::JURCHEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"JURCHEN");
+			"JURCHEN"
+		);
 	}
 	jint UScript::KAITHI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KAITHI");
+			"KAITHI"
+		);
 	}
 	jint UScript::KANNADA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KANNADA");
+			"KANNADA"
+		);
 	}
 	jint UScript::KATAKANA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KATAKANA");
+			"KATAKANA"
+		);
 	}
 	jint UScript::KATAKANA_OR_HIRAGANA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KATAKANA_OR_HIRAGANA");
+			"KATAKANA_OR_HIRAGANA"
+		);
 	}
 	jint UScript::KAYAH_LI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KAYAH_LI");
+			"KAYAH_LI"
+		);
 	}
 	jint UScript::KHAROSHTHI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KHAROSHTHI");
+			"KHAROSHTHI"
+		);
 	}
 	jint UScript::KHMER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KHMER");
+			"KHMER"
+		);
 	}
 	jint UScript::KHOJKI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KHOJKI");
+			"KHOJKI"
+		);
 	}
 	jint UScript::KHUDAWADI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KHUDAWADI");
+			"KHUDAWADI"
+		);
 	}
 	jint UScript::KHUTSURI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KHUTSURI");
+			"KHUTSURI"
+		);
 	}
 	jint UScript::KOREAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KOREAN");
+			"KOREAN"
+		);
 	}
 	jint UScript::KPELLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"KPELLE");
+			"KPELLE"
+		);
 	}
 	jint UScript::LANNA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LANNA");
+			"LANNA"
+		);
 	}
 	jint UScript::LAO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LAO");
+			"LAO"
+		);
 	}
 	jint UScript::LATIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LATIN");
+			"LATIN"
+		);
 	}
 	jint UScript::LATIN_FRAKTUR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LATIN_FRAKTUR");
+			"LATIN_FRAKTUR"
+		);
 	}
 	jint UScript::LATIN_GAELIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LATIN_GAELIC");
+			"LATIN_GAELIC"
+		);
 	}
 	jint UScript::LEPCHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LEPCHA");
+			"LEPCHA"
+		);
 	}
 	jint UScript::LIMBU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LIMBU");
+			"LIMBU"
+		);
 	}
 	jint UScript::LINEAR_A()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LINEAR_A");
+			"LINEAR_A"
+		);
 	}
 	jint UScript::LINEAR_B()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LINEAR_B");
+			"LINEAR_B"
+		);
 	}
 	jint UScript::LISU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LISU");
+			"LISU"
+		);
 	}
 	jint UScript::LOMA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LOMA");
+			"LOMA"
+		);
 	}
 	jint UScript::LYCIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LYCIAN");
+			"LYCIAN"
+		);
 	}
 	jint UScript::LYDIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"LYDIAN");
+			"LYDIAN"
+		);
 	}
 	jint UScript::MAHAJANI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MAHAJANI");
+			"MAHAJANI"
+		);
 	}
 	jint UScript::MAKASAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MAKASAR");
+			"MAKASAR"
+		);
 	}
 	jint UScript::MALAYALAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MALAYALAM");
+			"MALAYALAM"
+		);
 	}
 	jint UScript::MANDAEAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MANDAEAN");
+			"MANDAEAN"
+		);
 	}
 	jint UScript::MANDAIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MANDAIC");
+			"MANDAIC"
+		);
 	}
 	jint UScript::MANICHAEAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MANICHAEAN");
+			"MANICHAEAN"
+		);
 	}
 	jint UScript::MARCHEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MARCHEN");
+			"MARCHEN"
+		);
 	}
 	jint UScript::MASARAM_GONDI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MASARAM_GONDI");
+			"MASARAM_GONDI"
+		);
 	}
 	jint UScript::MATHEMATICAL_NOTATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MATHEMATICAL_NOTATION");
+			"MATHEMATICAL_NOTATION"
+		);
 	}
 	jint UScript::MAYAN_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MAYAN_HIEROGLYPHS");
+			"MAYAN_HIEROGLYPHS"
+		);
 	}
 	jint UScript::MEDEFAIDRIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MEDEFAIDRIN");
+			"MEDEFAIDRIN"
+		);
 	}
 	jint UScript::MEITEI_MAYEK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MEITEI_MAYEK");
+			"MEITEI_MAYEK"
+		);
 	}
 	jint UScript::MENDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MENDE");
+			"MENDE"
+		);
 	}
 	jint UScript::MEROITIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MEROITIC");
+			"MEROITIC"
+		);
 	}
 	jint UScript::MEROITIC_CURSIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MEROITIC_CURSIVE");
+			"MEROITIC_CURSIVE"
+		);
 	}
 	jint UScript::MEROITIC_HIEROGLYPHS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MEROITIC_HIEROGLYPHS");
+			"MEROITIC_HIEROGLYPHS"
+		);
 	}
 	jint UScript::MIAO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MIAO");
+			"MIAO"
+		);
 	}
 	jint UScript::MODI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MODI");
+			"MODI"
+		);
 	}
 	jint UScript::MONGOLIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MONGOLIAN");
+			"MONGOLIAN"
+		);
 	}
 	jint UScript::MOON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MOON");
+			"MOON"
+		);
 	}
 	jint UScript::MRO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MRO");
+			"MRO"
+		);
 	}
 	jint UScript::MULTANI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MULTANI");
+			"MULTANI"
+		);
 	}
 	jint UScript::MYANMAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"MYANMAR");
+			"MYANMAR"
+		);
 	}
 	jint UScript::NABATAEAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"NABATAEAN");
+			"NABATAEAN"
+		);
 	}
 	jint UScript::NAKHI_GEBA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"NAKHI_GEBA");
+			"NAKHI_GEBA"
+		);
 	}
 	jint UScript::NEWA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"NEWA");
+			"NEWA"
+		);
 	}
 	jint UScript::NEW_TAI_LUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"NEW_TAI_LUE");
+			"NEW_TAI_LUE"
+		);
 	}
 	jint UScript::NKO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"NKO");
+			"NKO"
+		);
 	}
 	jint UScript::NUSHU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"NUSHU");
+			"NUSHU"
+		);
 	}
 	jint UScript::OGHAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OGHAM");
+			"OGHAM"
+		);
 	}
 	jint UScript::OLD_CHURCH_SLAVONIC_CYRILLIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OLD_CHURCH_SLAVONIC_CYRILLIC");
+			"OLD_CHURCH_SLAVONIC_CYRILLIC"
+		);
 	}
 	jint UScript::OLD_HUNGARIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OLD_HUNGARIAN");
+			"OLD_HUNGARIAN"
+		);
 	}
 	jint UScript::OLD_ITALIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OLD_ITALIC");
+			"OLD_ITALIC"
+		);
 	}
 	jint UScript::OLD_NORTH_ARABIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OLD_NORTH_ARABIAN");
+			"OLD_NORTH_ARABIAN"
+		);
 	}
 	jint UScript::OLD_PERMIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OLD_PERMIC");
+			"OLD_PERMIC"
+		);
 	}
 	jint UScript::OLD_PERSIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OLD_PERSIAN");
+			"OLD_PERSIAN"
+		);
 	}
 	jint UScript::OLD_SOGDIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OLD_SOGDIAN");
+			"OLD_SOGDIAN"
+		);
 	}
 	jint UScript::OLD_SOUTH_ARABIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OLD_SOUTH_ARABIAN");
+			"OLD_SOUTH_ARABIAN"
+		);
 	}
 	jint UScript::OL_CHIKI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OL_CHIKI");
+			"OL_CHIKI"
+		);
 	}
 	jint UScript::ORIYA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ORIYA");
+			"ORIYA"
+		);
 	}
 	jint UScript::ORKHON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ORKHON");
+			"ORKHON"
+		);
 	}
 	jint UScript::OSAGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OSAGE");
+			"OSAGE"
+		);
 	}
 	jint UScript::OSMANYA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"OSMANYA");
+			"OSMANYA"
+		);
 	}
 	jint UScript::PAHAWH_HMONG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"PAHAWH_HMONG");
+			"PAHAWH_HMONG"
+		);
 	}
 	jint UScript::PALMYRENE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"PALMYRENE");
+			"PALMYRENE"
+		);
 	}
 	jint UScript::PAU_CIN_HAU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"PAU_CIN_HAU");
+			"PAU_CIN_HAU"
+		);
 	}
 	jint UScript::PHAGS_PA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"PHAGS_PA");
+			"PHAGS_PA"
+		);
 	}
 	jint UScript::PHOENICIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"PHOENICIAN");
+			"PHOENICIAN"
+		);
 	}
 	jint UScript::PHONETIC_POLLARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"PHONETIC_POLLARD");
+			"PHONETIC_POLLARD"
+		);
 	}
 	jint UScript::PSALTER_PAHLAVI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"PSALTER_PAHLAVI");
+			"PSALTER_PAHLAVI"
+		);
 	}
 	jint UScript::REJANG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"REJANG");
+			"REJANG"
+		);
 	}
 	jint UScript::RONGORONGO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"RONGORONGO");
+			"RONGORONGO"
+		);
 	}
 	jint UScript::RUNIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"RUNIC");
+			"RUNIC"
+		);
 	}
 	jint UScript::SAMARITAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SAMARITAN");
+			"SAMARITAN"
+		);
 	}
 	jint UScript::SARATI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SARATI");
+			"SARATI"
+		);
 	}
 	jint UScript::SAURASHTRA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SAURASHTRA");
+			"SAURASHTRA"
+		);
 	}
 	jint UScript::SHARADA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SHARADA");
+			"SHARADA"
+		);
 	}
 	jint UScript::SHAVIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SHAVIAN");
+			"SHAVIAN"
+		);
 	}
 	jint UScript::SIDDHAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SIDDHAM");
+			"SIDDHAM"
+		);
 	}
 	jint UScript::SIGN_WRITING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SIGN_WRITING");
+			"SIGN_WRITING"
+		);
 	}
 	jint UScript::SIMPLIFIED_HAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SIMPLIFIED_HAN");
+			"SIMPLIFIED_HAN"
+		);
 	}
 	jint UScript::SINDHI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SINDHI");
+			"SINDHI"
+		);
 	}
 	jint UScript::SINHALA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SINHALA");
+			"SINHALA"
+		);
 	}
 	jint UScript::SOGDIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SOGDIAN");
+			"SOGDIAN"
+		);
 	}
 	jint UScript::SORA_SOMPENG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SORA_SOMPENG");
+			"SORA_SOMPENG"
+		);
 	}
 	jint UScript::SOYOMBO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SOYOMBO");
+			"SOYOMBO"
+		);
 	}
 	jint UScript::SUNDANESE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SUNDANESE");
+			"SUNDANESE"
+		);
 	}
 	jint UScript::SYLOTI_NAGRI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SYLOTI_NAGRI");
+			"SYLOTI_NAGRI"
+		);
 	}
 	jint UScript::SYMBOLS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SYMBOLS");
+			"SYMBOLS"
+		);
 	}
 	jint UScript::SYMBOLS_EMOJI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SYMBOLS_EMOJI");
+			"SYMBOLS_EMOJI"
+		);
 	}
 	jint UScript::SYRIAC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"SYRIAC");
+			"SYRIAC"
+		);
 	}
 	jint UScript::TAGALOG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TAGALOG");
+			"TAGALOG"
+		);
 	}
 	jint UScript::TAGBANWA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TAGBANWA");
+			"TAGBANWA"
+		);
 	}
 	jint UScript::TAI_LE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TAI_LE");
+			"TAI_LE"
+		);
 	}
 	jint UScript::TAI_VIET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TAI_VIET");
+			"TAI_VIET"
+		);
 	}
 	jint UScript::TAKRI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TAKRI");
+			"TAKRI"
+		);
 	}
 	jint UScript::TAMIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TAMIL");
+			"TAMIL"
+		);
 	}
 	jint UScript::TANGUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TANGUT");
+			"TANGUT"
+		);
 	}
 	jint UScript::TELUGU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TELUGU");
+			"TELUGU"
+		);
 	}
 	jint UScript::TENGWAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TENGWAR");
+			"TENGWAR"
+		);
 	}
 	jint UScript::THAANA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"THAANA");
+			"THAANA"
+		);
 	}
 	jint UScript::THAI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"THAI");
+			"THAI"
+		);
 	}
 	jint UScript::TIBETAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TIBETAN");
+			"TIBETAN"
+		);
 	}
 	jint UScript::TIFINAGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TIFINAGH");
+			"TIFINAGH"
+		);
 	}
 	jint UScript::TIRHUTA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TIRHUTA");
+			"TIRHUTA"
+		);
 	}
 	jint UScript::TRADITIONAL_HAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"TRADITIONAL_HAN");
+			"TRADITIONAL_HAN"
+		);
 	}
 	jint UScript::UCAS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"UCAS");
+			"UCAS"
+		);
 	}
 	jint UScript::UGARITIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"UGARITIC");
+			"UGARITIC"
+		);
 	}
 	jint UScript::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"UNKNOWN");
+			"UNKNOWN"
+		);
 	}
 	jint UScript::UNWRITTEN_LANGUAGES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"UNWRITTEN_LANGUAGES");
+			"UNWRITTEN_LANGUAGES"
+		);
 	}
 	jint UScript::VAI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"VAI");
+			"VAI"
+		);
 	}
 	jint UScript::VISIBLE_SPEECH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"VISIBLE_SPEECH");
+			"VISIBLE_SPEECH"
+		);
 	}
 	jint UScript::WARANG_CITI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"WARANG_CITI");
+			"WARANG_CITI"
+		);
 	}
 	jint UScript::WESTERN_SYRIAC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"WESTERN_SYRIAC");
+			"WESTERN_SYRIAC"
+		);
 	}
 	jint UScript::WOLEAI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"WOLEAI");
+			"WOLEAI"
+		);
 	}
 	jint UScript::YI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"YI");
+			"YI"
+		);
 	}
 	jint UScript::ZANABAZAR_SQUARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.lang.UScript",
-			"ZANABAZAR_SQUARE");
+			"ZANABAZAR_SQUARE"
+		);
 	}
 	
 	// Constructors
@@ -1405,13 +1596,14 @@ namespace __jni_impl::android::icu::lang
 	}
 	
 	// Methods
-	QAndroidJniObject UScript::getName(jint arg0)
+	jstring UScript::getName(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getName",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint UScript::getScript(jint arg0)
 	{
@@ -1419,7 +1611,17 @@ namespace __jni_impl::android::icu::lang
 			"android.icu.lang.UScript",
 			"getScript",
 			"(I)I",
-			arg0);
+			arg0
+		);
+	}
+	jboolean UScript::isRightToLeft(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.icu.lang.UScript",
+			"isRightToLeft",
+			"(I)Z",
+			arg0
+		);
 	}
 	QAndroidJniObject UScript::getUsage(jint arg0)
 	{
@@ -1427,7 +1629,35 @@ namespace __jni_impl::android::icu::lang
 			"android.icu.lang.UScript",
 			"getUsage",
 			"(I)Landroid/icu/lang/UScript$ScriptUsage;",
-			arg0);
+			arg0
+		);
+	}
+	jintArray UScript::getCode(__jni_impl::java::util::Locale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UScript",
+			"getCode",
+			"(Ljava/util/Locale;)[I",
+			arg0.__jniObject().object()
+		).object<jintArray>();
+	}
+	jintArray UScript::getCode(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UScript",
+			"getCode",
+			"(Ljava/lang/String;)[I",
+			arg0
+		).object<jintArray>();
+	}
+	jintArray UScript::getCode(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UScript",
+			"getCode",
+			"(Landroid/icu/util/ULocale;)[I",
+			arg0.__jniObject().object()
+		).object<jintArray>();
 	}
 	jint UScript::getCodeFromName(jstring arg0)
 	{
@@ -1435,7 +1665,8 @@ namespace __jni_impl::android::icu::lang
 			"android.icu.lang.UScript",
 			"getCodeFromName",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean UScript::hasScript(jint arg0, jint arg1)
 	{
@@ -1444,7 +1675,8 @@ namespace __jni_impl::android::icu::lang
 			"hasScript",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint UScript::getScriptExtensions(jint arg0, __jni_impl::java::util::BitSet arg1)
 	{
@@ -1453,23 +1685,26 @@ namespace __jni_impl::android::icu::lang
 			"getScriptExtensions",
 			"(ILjava/util/BitSet;)I",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject UScript::getShortName(jint arg0)
+	jstring UScript::getShortName(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getShortName",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject UScript::getSampleString(jint arg0)
+	jstring UScript::getSampleString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getSampleString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jboolean UScript::breaksBetweenLetters(jint arg0)
 	{
@@ -1477,7 +1712,8 @@ namespace __jni_impl::android::icu::lang
 			"android.icu.lang.UScript",
 			"breaksBetweenLetters",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean UScript::isCased(jint arg0)
 	{
@@ -1485,39 +1721,8 @@ namespace __jni_impl::android::icu::lang
 			"android.icu.lang.UScript",
 			"isCased",
 			"(I)Z",
-			arg0);
-	}
-	jboolean UScript::isRightToLeft(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.icu.lang.UScript",
-			"isRightToLeft",
-			"(I)Z",
-			arg0);
-	}
-	QAndroidJniObject UScript::getCode(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UScript",
-			"getCode",
-			"(Ljava/lang/String;)[I",
-			arg0);
-	}
-	QAndroidJniObject UScript::getCode(__jni_impl::java::util::Locale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UScript",
-			"getCode",
-			"(Ljava/util/Locale;)[I",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject UScript::getCode(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UScript",
-			"getCode",
-			"(Landroid/icu/util/ULocale;)[I",
-			arg0.__jniObject().object());
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::lang
 

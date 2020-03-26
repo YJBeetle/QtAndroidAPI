@@ -59,7 +59,8 @@ namespace __jni_impl::java::io
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void BufferedOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -68,13 +69,15 @@ namespace __jni_impl::java::io
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void BufferedOutputStream::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::io
 

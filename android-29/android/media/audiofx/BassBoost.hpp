@@ -42,13 +42,15 @@ namespace __jni_impl::android::media::audiofx
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.audiofx.BassBoost",
-			"PARAM_STRENGTH");
+			"PARAM_STRENGTH"
+		);
 	}
 	jint BassBoost::PARAM_STRENGTH_SUPPORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.audiofx.BassBoost",
-			"PARAM_STRENGTH_SUPPORTED");
+			"PARAM_STRENGTH_SUPPORTED"
+		);
 	}
 	
 	// Constructors
@@ -66,40 +68,46 @@ namespace __jni_impl::android::media::audiofx
 	{
 		return __thiz.callObjectMethod(
 			"getProperties",
-			"()Landroid/media/audiofx/BassBoost$Settings;");
+			"()Landroid/media/audiofx/BassBoost$Settings;"
+		);
 	}
 	void BassBoost::setProperties(__jni_impl::android::media::audiofx::BassBoost_Settings arg0)
 	{
 		__thiz.callMethod<void>(
 			"setProperties",
 			"(Landroid/media/audiofx/BassBoost$Settings;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean BassBoost::getStrengthSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getStrengthSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	void BassBoost::setStrength(jshort arg0)
 	{
 		__thiz.callMethod<void>(
 			"setStrength",
 			"(S)V",
-			arg0);
+			arg0
+		);
 	}
 	jshort BassBoost::getRoundedStrength()
 	{
 		return __thiz.callMethod<jshort>(
 			"getRoundedStrength",
-			"()S");
+			"()S"
+		);
 	}
 	void BassBoost::setParameterListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setParameterListener",
 			"(Landroid/media/audiofx/BassBoost$OnParameterChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

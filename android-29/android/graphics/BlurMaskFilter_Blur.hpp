@@ -22,7 +22,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -36,28 +36,32 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
 			"NORMAL",
-			"Landroid/graphics/BlurMaskFilter$Blur;");
+			"Landroid/graphics/BlurMaskFilter$Blur;"
+		);
 	}
 	QAndroidJniObject BlurMaskFilter_Blur::SOLID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
 			"SOLID",
-			"Landroid/graphics/BlurMaskFilter$Blur;");
+			"Landroid/graphics/BlurMaskFilter$Blur;"
+		);
 	}
 	QAndroidJniObject BlurMaskFilter_Blur::OUTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
 			"OUTER",
-			"Landroid/graphics/BlurMaskFilter$Blur;");
+			"Landroid/graphics/BlurMaskFilter$Blur;"
+		);
 	}
 	QAndroidJniObject BlurMaskFilter_Blur::INNER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
 			"INNER",
-			"Landroid/graphics/BlurMaskFilter$Blur;");
+			"Landroid/graphics/BlurMaskFilter$Blur;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject BlurMaskFilter_Blur::values()
+	jarray BlurMaskFilter_Blur::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.BlurMaskFilter$Blur",
 			"values",
-			"()[Landroid/graphics/BlurMaskFilter$Blur;");
+			"()[Landroid/graphics/BlurMaskFilter$Blur;"
+		).object<jarray>();
 	}
 	QAndroidJniObject BlurMaskFilter_Blur::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.BlurMaskFilter$Blur",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/BlurMaskFilter$Blur;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

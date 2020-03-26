@@ -39,37 +39,43 @@ namespace __jni_impl::android::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.AndroidCharacter",
-			"EAST_ASIAN_WIDTH_AMBIGUOUS");
+			"EAST_ASIAN_WIDTH_AMBIGUOUS"
+		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_FULL_WIDTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.AndroidCharacter",
-			"EAST_ASIAN_WIDTH_FULL_WIDTH");
+			"EAST_ASIAN_WIDTH_FULL_WIDTH"
+		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_HALF_WIDTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.AndroidCharacter",
-			"EAST_ASIAN_WIDTH_HALF_WIDTH");
+			"EAST_ASIAN_WIDTH_HALF_WIDTH"
+		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_NARROW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.AndroidCharacter",
-			"EAST_ASIAN_WIDTH_NARROW");
+			"EAST_ASIAN_WIDTH_NARROW"
+		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_NEUTRAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.AndroidCharacter",
-			"EAST_ASIAN_WIDTH_NEUTRAL");
+			"EAST_ASIAN_WIDTH_NEUTRAL"
+		);
 	}
 	jint AndroidCharacter::EAST_ASIAN_WIDTH_WIDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.AndroidCharacter",
-			"EAST_ASIAN_WIDTH_WIDE");
+			"EAST_ASIAN_WIDTH_WIDE"
+		);
 	}
 	
 	// Constructors
@@ -89,7 +95,8 @@ namespace __jni_impl::android::text
 			"([C[BI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AndroidCharacter::getEastAsianWidth(jchar arg0)
 	{
@@ -97,7 +104,8 @@ namespace __jni_impl::android::text
 			"android.text.AndroidCharacter",
 			"getEastAsianWidth",
 			"(C)I",
-			arg0);
+			arg0
+		);
 	}
 	void AndroidCharacter::getEastAsianWidths(jcharArray arg0, jint arg1, jint arg2, jbyteArray arg3)
 	{
@@ -108,7 +116,8 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean AndroidCharacter::mirror(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -118,7 +127,8 @@ namespace __jni_impl::android::text
 			"([CII)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jchar AndroidCharacter::getMirror(jchar arg0)
 	{
@@ -126,7 +136,8 @@ namespace __jni_impl::android::text
 			"android.text.AndroidCharacter",
 			"getMirror",
 			"(C)C",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text
 

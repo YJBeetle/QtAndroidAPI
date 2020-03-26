@@ -19,13 +19,13 @@ namespace __jni_impl::org::xml::sax::helpers
 		
 		// Methods
 		jint getLineNumber();
-		QAndroidJniObject getSystemId();
 		jint getColumnNumber();
+		jstring getSystemId();
 		void setColumnNumber(jint arg0);
-		void setLineNumber(jint arg0);
 		void setSystemId(jstring arg0);
 		void setPublicId(jstring arg0);
-		QAndroidJniObject getPublicId();
+		jstring getPublicId();
+		void setLineNumber(jint arg0);
 	};
 } // namespace __jni_impl::org::xml::sax::helpers
 
@@ -54,53 +54,61 @@ namespace __jni_impl::org::xml::sax::helpers
 	{
 		return __thiz.callMethod<jint>(
 			"getLineNumber",
-			"()I");
-	}
-	QAndroidJniObject LocatorImpl::getSystemId()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemId",
-			"()Ljava/lang/String;");
+			"()I"
+		);
 	}
 	jint LocatorImpl::getColumnNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnNumber",
-			"()I");
+			"()I"
+		);
+	}
+	jstring LocatorImpl::getSystemId()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void LocatorImpl::setColumnNumber(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setColumnNumber",
 			"(I)V",
-			arg0);
-	}
-	void LocatorImpl::setLineNumber(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLineNumber",
-			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void LocatorImpl::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void LocatorImpl::setPublicId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPublicId",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject LocatorImpl::getPublicId()
+	jstring LocatorImpl::getPublicId()
 	{
 		return __thiz.callObjectMethod(
 			"getPublicId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void LocatorImpl::setLineNumber(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLineNumber",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::org::xml::sax::helpers
 

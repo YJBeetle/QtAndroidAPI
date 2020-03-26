@@ -25,7 +25,7 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		void validate(jint arg0);
 		void set(__jni_impl::android::icu::text::Transliterator_Position arg0);
@@ -39,22 +39,26 @@ namespace __jni_impl::android::icu::text
 	jint Transliterator_Position::contextLimit()
 	{
 		return __thiz.getField<jint>(
-			"contextLimit");
+			"contextLimit"
+		);
 	}
 	jint Transliterator_Position::contextStart()
 	{
 		return __thiz.getField<jint>(
-			"contextStart");
+			"contextStart"
+		);
 	}
 	jint Transliterator_Position::limit()
 	{
 		return __thiz.getField<jint>(
-			"limit");
+			"limit"
+		);
 	}
 	jint Transliterator_Position::start()
 	{
 		return __thiz.getField<jint>(
-			"start");
+			"start"
+		);
 	}
 	
 	// Constructors
@@ -97,33 +101,38 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Transliterator_Position::toString()
+	jstring Transliterator_Position::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Transliterator_Position::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void Transliterator_Position::validate(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"validate",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Transliterator_Position::set(__jni_impl::android::icu::text::Transliterator_Position arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"(Landroid/icu/text/Transliterator$Position;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

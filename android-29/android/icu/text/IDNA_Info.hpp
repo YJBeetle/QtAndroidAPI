@@ -41,19 +41,22 @@ namespace __jni_impl::android::icu::text
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTransitionalDifferent",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean IDNA_Info::hasErrors()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasErrors",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject IDNA_Info::getErrors()
 	{
 		return __thiz.callObjectMethod(
 			"getErrors",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

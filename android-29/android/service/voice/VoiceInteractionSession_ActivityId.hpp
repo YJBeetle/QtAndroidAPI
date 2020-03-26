@@ -41,13 +41,15 @@ namespace __jni_impl::android::service::voice
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint VoiceInteractionSession_ActivityId::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::service::voice
 

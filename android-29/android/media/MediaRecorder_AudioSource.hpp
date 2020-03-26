@@ -44,67 +44,78 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"CAMCORDER");
+			"CAMCORDER"
+		);
 	}
 	jint MediaRecorder_AudioSource::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"DEFAULT");
+			"DEFAULT"
+		);
 	}
 	jint MediaRecorder_AudioSource::MIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"MIC");
+			"MIC"
+		);
 	}
 	jint MediaRecorder_AudioSource::REMOTE_SUBMIX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"REMOTE_SUBMIX");
+			"REMOTE_SUBMIX"
+		);
 	}
 	jint MediaRecorder_AudioSource::UNPROCESSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"UNPROCESSED");
+			"UNPROCESSED"
+		);
 	}
 	jint MediaRecorder_AudioSource::VOICE_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"VOICE_CALL");
+			"VOICE_CALL"
+		);
 	}
 	jint MediaRecorder_AudioSource::VOICE_COMMUNICATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"VOICE_COMMUNICATION");
+			"VOICE_COMMUNICATION"
+		);
 	}
 	jint MediaRecorder_AudioSource::VOICE_DOWNLINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"VOICE_DOWNLINK");
+			"VOICE_DOWNLINK"
+		);
 	}
 	jint MediaRecorder_AudioSource::VOICE_PERFORMANCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"VOICE_PERFORMANCE");
+			"VOICE_PERFORMANCE"
+		);
 	}
 	jint MediaRecorder_AudioSource::VOICE_RECOGNITION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"VOICE_RECOGNITION");
+			"VOICE_RECOGNITION"
+		);
 	}
 	jint MediaRecorder_AudioSource::VOICE_UPLINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$AudioSource",
-			"VOICE_UPLINK");
+			"VOICE_UPLINK"
+		);
 	}
 	
 	// Constructors

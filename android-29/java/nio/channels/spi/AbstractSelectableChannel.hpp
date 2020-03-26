@@ -39,9 +39,9 @@ namespace __jni_impl::java::nio::channels::spi
 		QAndroidJniObject _register(__jni_impl::java::nio::channels::Selector arg0, jint arg1, jobject arg2);
 		QAndroidJniObject provider();
 		QAndroidJniObject keyFor(__jni_impl::java::nio::channels::Selector arg0);
-		QAndroidJniObject blockingLock();
-		QAndroidJniObject configureBlocking(jboolean arg0);
 		jboolean isBlocking();
+		jobject blockingLock();
+		QAndroidJniObject configureBlocking(jboolean arg0);
 	};
 } // namespace __jni_impl::java::nio::channels::spi
 
@@ -67,7 +67,8 @@ namespace __jni_impl::java::nio::channels::spi
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRegistered",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject AbstractSelectableChannel::_register(__jni_impl::java::nio::channels::Selector arg0, jint arg1, jobject arg2)
 	{
@@ -76,39 +77,45 @@ namespace __jni_impl::java::nio::channels::spi
 			"(Ljava/nio/channels/Selector;ILjava/lang/Object;)Ljava/nio/channels/SelectionKey;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject AbstractSelectableChannel::provider()
 	{
 		return __thiz.callObjectMethod(
 			"provider",
-			"()Ljava/nio/channels/spi/SelectorProvider;");
+			"()Ljava/nio/channels/spi/SelectorProvider;"
+		);
 	}
 	QAndroidJniObject AbstractSelectableChannel::keyFor(__jni_impl::java::nio::channels::Selector arg0)
 	{
 		return __thiz.callObjectMethod(
 			"keyFor",
 			"(Ljava/nio/channels/Selector;)Ljava/nio/channels/SelectionKey;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject AbstractSelectableChannel::blockingLock()
+	jboolean AbstractSelectableChannel::isBlocking()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBlocking",
+			"()Z"
+		);
+	}
+	jobject AbstractSelectableChannel::blockingLock()
 	{
 		return __thiz.callObjectMethod(
 			"blockingLock",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject AbstractSelectableChannel::configureBlocking(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"configureBlocking",
 			"(Z)Ljava/nio/channels/SelectableChannel;",
-			arg0);
-	}
-	jboolean AbstractSelectableChannel::isBlocking()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBlocking",
-			"()Z");
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::channels::spi
 

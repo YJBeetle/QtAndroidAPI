@@ -79,7 +79,8 @@ namespace __jni_impl::android::hardware::camera2
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void CameraCaptureSession_CaptureCallback::onCaptureProgressed(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0, __jni_impl::android::hardware::camera2::CaptureRequest arg1, __jni_impl::android::hardware::camera2::CaptureResult arg2)
 	{
@@ -88,7 +89,8 @@ namespace __jni_impl::android::hardware::camera2
 			"(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureResult;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void CameraCaptureSession_CaptureCallback::onCaptureCompleted(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0, __jni_impl::android::hardware::camera2::CaptureRequest arg1, __jni_impl::android::hardware::camera2::TotalCaptureResult arg2)
 	{
@@ -97,7 +99,8 @@ namespace __jni_impl::android::hardware::camera2
 			"(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void CameraCaptureSession_CaptureCallback::onCaptureFailed(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0, __jni_impl::android::hardware::camera2::CaptureRequest arg1, __jni_impl::android::hardware::camera2::CaptureFailure arg2)
 	{
@@ -106,7 +109,8 @@ namespace __jni_impl::android::hardware::camera2
 			"(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void CameraCaptureSession_CaptureCallback::onCaptureSequenceCompleted(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0, jint arg1, jlong arg2)
 	{
@@ -115,7 +119,8 @@ namespace __jni_impl::android::hardware::camera2
 			"(Landroid/hardware/camera2/CameraCaptureSession;IJ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void CameraCaptureSession_CaptureCallback::onCaptureSequenceAborted(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0, jint arg1)
 	{
@@ -123,7 +128,8 @@ namespace __jni_impl::android::hardware::camera2
 			"onCaptureSequenceAborted",
 			"(Landroid/hardware/camera2/CameraCaptureSession;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void CameraCaptureSession_CaptureCallback::onCaptureBufferLost(__jni_impl::android::hardware::camera2::CameraCaptureSession arg0, __jni_impl::android::hardware::camera2::CaptureRequest arg1, __jni_impl::android::view::Surface arg2, jlong arg3)
 	{
@@ -133,7 +139,8 @@ namespace __jni_impl::android::hardware::camera2
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

@@ -43,11 +43,11 @@ namespace __jni_impl::android::icu::text
 		jint getIndex();
 		void setIndex(jint arg0);
 		void setPattern(jstring arg0);
-		jboolean isCanonical();
-		QAndroidJniObject getPattern();
+		jstring getPattern();
 		QAndroidJniObject getCollator();
 		void setCollator(__jni_impl::android::icu::text::RuleBasedCollator arg0);
 		void setCanonical(jboolean arg0);
+		jboolean isCanonical();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -113,65 +113,75 @@ namespace __jni_impl::android::icu::text
 		__thiz.callMethod<void>(
 			"setTarget",
 			"(Ljava/text/CharacterIterator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void StringSearch::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	jint StringSearch::getIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
 	void StringSearch::setIndex(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIndex",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void StringSearch::setPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPattern",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	jboolean StringSearch::isCanonical()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCanonical",
-			"()Z");
-	}
-	QAndroidJniObject StringSearch::getPattern()
+	jstring StringSearch::getPattern()
 	{
 		return __thiz.callObjectMethod(
 			"getPattern",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject StringSearch::getCollator()
 	{
 		return __thiz.callObjectMethod(
 			"getCollator",
-			"()Landroid/icu/text/RuleBasedCollator;");
+			"()Landroid/icu/text/RuleBasedCollator;"
+		);
 	}
 	void StringSearch::setCollator(__jni_impl::android::icu::text::RuleBasedCollator arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCollator",
 			"(Landroid/icu/text/RuleBasedCollator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void StringSearch::setCanonical(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCanonical",
 			"(Z)V",
-			arg0);
+			arg0
+		);
+	}
+	jboolean StringSearch::isCanonical()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCanonical",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

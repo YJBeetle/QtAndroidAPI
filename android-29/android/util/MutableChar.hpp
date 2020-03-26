@@ -28,7 +28,8 @@ namespace __jni_impl::android::util
 	jchar MutableChar::value()
 	{
 		return __thiz.getField<jchar>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

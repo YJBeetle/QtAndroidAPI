@@ -39,31 +39,36 @@ namespace __jni_impl::android::hardware::camera2
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
-			"CAMERA_DISABLED");
+			"CAMERA_DISABLED"
+		);
 	}
 	jint CameraAccessException::CAMERA_DISCONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
-			"CAMERA_DISCONNECTED");
+			"CAMERA_DISCONNECTED"
+		);
 	}
 	jint CameraAccessException::CAMERA_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
-			"CAMERA_ERROR");
+			"CAMERA_ERROR"
+		);
 	}
 	jint CameraAccessException::CAMERA_IN_USE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
-			"CAMERA_IN_USE");
+			"CAMERA_IN_USE"
+		);
 	}
 	jint CameraAccessException::MAX_CAMERAS_IN_USE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraAccessException",
-			"MAX_CAMERAS_IN_USE");
+			"MAX_CAMERAS_IN_USE"
+		);
 	}
 	
 	// Constructors
@@ -105,7 +110,8 @@ namespace __jni_impl::android::hardware::camera2
 	{
 		return __thiz.callMethod<jint>(
 			"getReason",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

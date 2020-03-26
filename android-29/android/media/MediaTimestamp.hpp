@@ -19,7 +19,7 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jlong getAnchorMediaTimeUs();
 		jlong getAnchorSytemNanoTime();
 		jlong getAnchorSystemNanoTime();
@@ -36,7 +36,8 @@ namespace __jni_impl::android::media
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaTimestamp",
 			"TIMESTAMP_UNKNOWN",
-			"Landroid/media/MediaTimestamp;");
+			"Landroid/media/MediaTimestamp;"
+		);
 	}
 	
 	// Constructors
@@ -56,37 +57,43 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MediaTimestamp::toString()
+	jstring MediaTimestamp::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong MediaTimestamp::getAnchorMediaTimeUs()
 	{
 		return __thiz.callMethod<jlong>(
 			"getAnchorMediaTimeUs",
-			"()J");
+			"()J"
+		);
 	}
 	jlong MediaTimestamp::getAnchorSytemNanoTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getAnchorSytemNanoTime",
-			"()J");
+			"()J"
+		);
 	}
 	jlong MediaTimestamp::getAnchorSystemNanoTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getAnchorSystemNanoTime",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat MediaTimestamp::getMediaClockRate()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getMediaClockRate",
-			"()F");
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::media
 

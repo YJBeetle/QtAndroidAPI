@@ -22,7 +22,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -36,28 +36,32 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$RenderIntent",
 			"PERCEPTUAL",
-			"Landroid/graphics/ColorSpace$RenderIntent;");
+			"Landroid/graphics/ColorSpace$RenderIntent;"
+		);
 	}
 	QAndroidJniObject ColorSpace_RenderIntent::RELATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$RenderIntent",
 			"RELATIVE",
-			"Landroid/graphics/ColorSpace$RenderIntent;");
+			"Landroid/graphics/ColorSpace$RenderIntent;"
+		);
 	}
 	QAndroidJniObject ColorSpace_RenderIntent::SATURATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$RenderIntent",
 			"SATURATION",
-			"Landroid/graphics/ColorSpace$RenderIntent;");
+			"Landroid/graphics/ColorSpace$RenderIntent;"
+		);
 	}
 	QAndroidJniObject ColorSpace_RenderIntent::ABSOLUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$RenderIntent",
 			"ABSOLUTE",
-			"Landroid/graphics/ColorSpace$RenderIntent;");
+			"Landroid/graphics/ColorSpace$RenderIntent;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject ColorSpace_RenderIntent::values()
+	jarray ColorSpace_RenderIntent::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.ColorSpace$RenderIntent",
 			"values",
-			"()[Landroid/graphics/ColorSpace$RenderIntent;");
+			"()[Landroid/graphics/ColorSpace$RenderIntent;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ColorSpace_RenderIntent::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.ColorSpace$RenderIntent",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$RenderIntent;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

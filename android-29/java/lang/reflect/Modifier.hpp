@@ -29,7 +29,7 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject toString(jint arg0);
+		static jstring toString(jint arg0);
 		static jboolean isInterface(jint arg0);
 		static jint classModifiers();
 		static jboolean isStatic(jint arg0);
@@ -59,73 +59,85 @@ namespace __jni_impl::java::lang::reflect
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"PUBLIC");
+			"PUBLIC"
+		);
 	}
 	jint Modifier::PRIVATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"PRIVATE");
+			"PRIVATE"
+		);
 	}
 	jint Modifier::PROTECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"PROTECTED");
+			"PROTECTED"
+		);
 	}
 	jint Modifier::STATIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"STATIC");
+			"STATIC"
+		);
 	}
 	jint Modifier::FINAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"FINAL");
+			"FINAL"
+		);
 	}
 	jint Modifier::SYNCHRONIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"SYNCHRONIZED");
+			"SYNCHRONIZED"
+		);
 	}
 	jint Modifier::VOLATILE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"VOLATILE");
+			"VOLATILE"
+		);
 	}
 	jint Modifier::TRANSIENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"TRANSIENT");
+			"TRANSIENT"
+		);
 	}
 	jint Modifier::NATIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"NATIVE");
+			"NATIVE"
+		);
 	}
 	jint Modifier::INTERFACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"INTERFACE");
+			"INTERFACE"
+		);
 	}
 	jint Modifier::ABSTRACT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"ABSTRACT");
+			"ABSTRACT"
+		);
 	}
 	jint Modifier::STRICT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.reflect.Modifier",
-			"STRICT");
+			"STRICT"
+		);
 	}
 	
 	// Constructors
@@ -137,13 +149,14 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	QAndroidJniObject Modifier::toString(jint arg0)
+	jstring Modifier::toString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.reflect.Modifier",
 			"toString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jboolean Modifier::isInterface(jint arg0)
 	{
@@ -151,14 +164,16 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isInterface",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Modifier::classModifiers()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"classModifiers",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Modifier::isStatic(jint arg0)
 	{
@@ -166,7 +181,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isStatic",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Modifier::isPublic(jint arg0)
 	{
@@ -174,7 +190,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isPublic",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Modifier::isProtected(jint arg0)
 	{
@@ -182,21 +199,24 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isProtected",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Modifier::methodModifiers()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"methodModifiers",
-			"()I");
+			"()I"
+		);
 	}
 	jint Modifier::constructorModifiers()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"constructorModifiers",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Modifier::isFinal(jint arg0)
 	{
@@ -204,7 +224,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isFinal",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Modifier::isAbstract(jint arg0)
 	{
@@ -212,7 +233,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isAbstract",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Modifier::isVolatile(jint arg0)
 	{
@@ -220,7 +242,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isVolatile",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Modifier::isPrivate(jint arg0)
 	{
@@ -228,7 +251,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isPrivate",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Modifier::isNative(jint arg0)
 	{
@@ -236,7 +260,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isNative",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Modifier::isSynchronized(jint arg0)
 	{
@@ -244,7 +269,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isSynchronized",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Modifier::isTransient(jint arg0)
 	{
@@ -252,7 +278,8 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isTransient",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Modifier::isStrict(jint arg0)
 	{
@@ -260,28 +287,32 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.Modifier",
 			"isStrict",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Modifier::interfaceModifiers()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"interfaceModifiers",
-			"()I");
+			"()I"
+		);
 	}
 	jint Modifier::fieldModifiers()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"fieldModifiers",
-			"()I");
+			"()I"
+		);
 	}
 	jint Modifier::parameterModifiers()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"java.lang.reflect.Modifier",
 			"parameterModifiers",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::lang::reflect
 

@@ -38,10 +38,10 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		void close();
-		QAndroidJniObject sendSessionCommand(__jni_impl::android::media::Session2Command arg0, __jni_impl::android::os::Bundle arg1);
+		QAndroidJniObject getConnectedToken();
+		jobject sendSessionCommand(__jni_impl::android::media::Session2Command arg0, __jni_impl::android::os::Bundle arg1);
 		void cancelSessionCommand(jobject arg0);
 		jboolean isPlaybackActive();
-		QAndroidJniObject getConnectedToken();
 	};
 } // namespace __jni_impl::android::media
 
@@ -68,34 +68,39 @@ namespace __jni_impl::android::media
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject MediaController2::sendSessionCommand(__jni_impl::android::media::Session2Command arg0, __jni_impl::android::os::Bundle arg1)
+	QAndroidJniObject MediaController2::getConnectedToken()
+	{
+		return __thiz.callObjectMethod(
+			"getConnectedToken",
+			"()Landroid/media/Session2Token;"
+		);
+	}
+	jobject MediaController2::sendSessionCommand(__jni_impl::android::media::Session2Command arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		return __thiz.callObjectMethod(
 			"sendSessionCommand",
 			"(Landroid/media/Session2Command;Landroid/os/Bundle;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	void MediaController2::cancelSessionCommand(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"cancelSessionCommand",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean MediaController2::isPlaybackActive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPlaybackActive",
-			"()Z");
-	}
-	QAndroidJniObject MediaController2::getConnectedToken()
-	{
-		return __thiz.callObjectMethod(
-			"getConnectedToken",
-			"()Landroid/media/Session2Token;");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::media
 

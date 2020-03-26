@@ -28,7 +28,7 @@ namespace __jni_impl::java::security::spec
 		jint getM();
 		jint getFieldSize();
 		QAndroidJniObject getReductionPolynomial();
-		QAndroidJniObject getMidTermsOfReductionPolynomial();
+		jintArray getMidTermsOfReductionPolynomial();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -69,37 +69,43 @@ namespace __jni_impl::java::security::spec
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ECFieldF2m::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint ECFieldF2m::getM()
 	{
 		return __thiz.callMethod<jint>(
 			"getM",
-			"()I");
+			"()I"
+		);
 	}
 	jint ECFieldF2m::getFieldSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getFieldSize",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ECFieldF2m::getReductionPolynomial()
 	{
 		return __thiz.callObjectMethod(
 			"getReductionPolynomial",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
-	QAndroidJniObject ECFieldF2m::getMidTermsOfReductionPolynomial()
+	jintArray ECFieldF2m::getMidTermsOfReductionPolynomial()
 	{
 		return __thiz.callObjectMethod(
 			"getMidTermsOfReductionPolynomial",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
 } // namespace __jni_impl::java::security::spec
 

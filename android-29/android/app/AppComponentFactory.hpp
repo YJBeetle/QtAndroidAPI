@@ -86,7 +86,8 @@ namespace __jni_impl::android::app
 			"instantiateClassLoader",
 			"(Ljava/lang/ClassLoader;Landroid/content/pm/ApplicationInfo;)Ljava/lang/ClassLoader;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AppComponentFactory::instantiateApplication(__jni_impl::java::lang::ClassLoader arg0, jstring arg1)
 	{
@@ -94,7 +95,8 @@ namespace __jni_impl::android::app
 			"instantiateApplication",
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject AppComponentFactory::instantiateActivity(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2)
 	{
@@ -103,7 +105,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AppComponentFactory::instantiateReceiver(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2)
 	{
@@ -112,7 +115,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AppComponentFactory::instantiateService(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2)
 	{
@@ -121,7 +125,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AppComponentFactory::instantiateProvider(__jni_impl::java::lang::ClassLoader arg0, jstring arg1)
 	{
@@ -129,7 +134,8 @@ namespace __jni_impl::android::app
 			"instantiateProvider",
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app
 

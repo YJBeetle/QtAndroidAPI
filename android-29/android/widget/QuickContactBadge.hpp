@@ -19,10 +19,6 @@ namespace __jni_impl::android::view
 {
 	class View;
 }
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -30,6 +26,10 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
 }
 
 namespace __jni_impl::android::widget
@@ -48,26 +48,26 @@ namespace __jni_impl::android::widget
 		// Methods
 		void setOverlay(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void onClick(__jni_impl::android::view::View arg0);
-		QAndroidJniObject getAccessibilityClassName();
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		void setMode(jint arg0);
 		void setPrioritizedMimeType(jstring arg0);
 		void setImageToDefault();
 		void assignContactUri(__jni_impl::android::net::Uri arg0);
 		void assignContactFromEmail(jstring arg0, jboolean arg1);
 		void assignContactFromEmail(jstring arg0, jboolean arg1, __jni_impl::android::os::Bundle arg2);
-		void assignContactFromPhone(jstring arg0, jboolean arg1, __jni_impl::android::os::Bundle arg2);
 		void assignContactFromPhone(jstring arg0, jboolean arg1);
+		void assignContactFromPhone(jstring arg0, jboolean arg1, __jni_impl::android::os::Bundle arg2);
 		void setExcludeMimes(jarray arg0);
+		jstring getAccessibilityClassName();
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
+		void setMode(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"
-#include "../graphics/Canvas.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
+#include "../graphics/Canvas.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -115,55 +115,39 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"setOverlay",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void QuickContactBadge::onClick(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"onClick",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject QuickContactBadge::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	void QuickContactBadge::drawableHotspotChanged(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"drawableHotspotChanged",
-			"(FF)V",
-			arg0,
-			arg1);
-	}
-	void QuickContactBadge::setMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMode",
-			"(I)V",
-			arg0);
+			arg0.__jniObject().object()
+		);
 	}
 	void QuickContactBadge::setPrioritizedMimeType(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPrioritizedMimeType",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void QuickContactBadge::setImageToDefault()
 	{
 		__thiz.callMethod<void>(
 			"setImageToDefault",
-			"()V");
+			"()V"
+		);
 	}
 	void QuickContactBadge::assignContactUri(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"assignContactUri",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void QuickContactBadge::assignContactFromEmail(jstring arg0, jboolean arg1)
 	{
@@ -171,7 +155,8 @@ namespace __jni_impl::android::widget
 			"assignContactFromEmail",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void QuickContactBadge::assignContactFromEmail(jstring arg0, jboolean arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -180,7 +165,17 @@ namespace __jni_impl::android::widget
 			"(Ljava/lang/String;ZLandroid/os/Bundle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void QuickContactBadge::assignContactFromPhone(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"assignContactFromPhone",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1
+		);
 	}
 	void QuickContactBadge::assignContactFromPhone(jstring arg0, jboolean arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -189,22 +184,40 @@ namespace __jni_impl::android::widget
 			"(Ljava/lang/String;ZLandroid/os/Bundle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
-	}
-	void QuickContactBadge::assignContactFromPhone(jstring arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"assignContactFromPhone",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1);
+			arg2.__jniObject().object()
+		);
 	}
 	void QuickContactBadge::setExcludeMimes(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setExcludeMimes",
 			"([Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	jstring QuickContactBadge::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void QuickContactBadge::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"drawableHotspotChanged",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void QuickContactBadge::setMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMode",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

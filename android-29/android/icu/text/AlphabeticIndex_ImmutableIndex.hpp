@@ -47,27 +47,31 @@ namespace __jni_impl::android::icu::text
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jint AlphabeticIndex_ImmutableIndex::getBucketCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getBucketCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint AlphabeticIndex_ImmutableIndex::getBucketIndex(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getBucketIndex",
 			"(Ljava/lang/CharSequence;)I",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AlphabeticIndex_ImmutableIndex::getBucket(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getBucket",
 			"(I)Landroid/icu/text/AlphabeticIndex$Bucket;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

@@ -26,9 +26,9 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -42,27 +42,32 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$MemoryInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jlong ActivityManager_MemoryInfo::availMem()
 	{
 		return __thiz.getField<jlong>(
-			"availMem");
+			"availMem"
+		);
 	}
 	jboolean ActivityManager_MemoryInfo::lowMemory()
 	{
 		return __thiz.getField<jboolean>(
-			"lowMemory");
+			"lowMemory"
+		);
 	}
 	jlong ActivityManager_MemoryInfo::threshold()
 	{
 		return __thiz.getField<jlong>(
-			"threshold");
+			"threshold"
+		);
 	}
 	jlong ActivityManager_MemoryInfo::totalMem()
 	{
 		return __thiz.getField<jlong>(
-			"totalMem");
+			"totalMem"
+		);
 	}
 	
 	// Constructors
@@ -74,18 +79,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ActivityManager_MemoryInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
 	jint ActivityManager_MemoryInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ActivityManager_MemoryInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -93,7 +92,16 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ActivityManager_MemoryInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

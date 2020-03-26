@@ -29,15 +29,15 @@ namespace __jni_impl::android::text::style
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_SUGGESTION_PICKED();
+		static jstring ACTION_SUGGESTION_PICKED();
 		static QAndroidJniObject CREATOR();
 		static jint FLAG_AUTO_CORRECTION();
 		static jint FLAG_EASY_CORRECT();
 		static jint FLAG_MISSPELLED();
 		static jint SUGGESTIONS_MAX_SIZE();
-		static QAndroidJniObject SUGGESTION_SPAN_PICKED_AFTER();
-		static QAndroidJniObject SUGGESTION_SPAN_PICKED_BEFORE();
-		static QAndroidJniObject SUGGESTION_SPAN_PICKED_HASHCODE();
+		static jstring SUGGESTION_SPAN_PICKED_AFTER();
+		static jstring SUGGESTION_SPAN_PICKED_BEFORE();
+		static jstring SUGGESTION_SPAN_PICKED_HASHCODE();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::os::Parcel arg0);
@@ -48,16 +48,16 @@ namespace __jni_impl::android::text::style
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getLocale();
+		jstring getLocale();
 		jint getFlags();
-		jint getSpanTypeId();
-		QAndroidJniObject getSuggestions();
+		jarray getSuggestions();
 		QAndroidJniObject getLocaleObject();
 		jint getUnderlineColor();
-		void setFlags(jint arg0);
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void setFlags(jint arg0);
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
+		jint getSpanTypeId();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -69,64 +69,73 @@ namespace __jni_impl::android::text::style
 namespace __jni_impl::android::text::style
 {
 	// Fields
-	QAndroidJniObject SuggestionSpan::ACTION_SUGGESTION_PICKED()
+	jstring SuggestionSpan::ACTION_SUGGESTION_PICKED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"ACTION_SUGGESTION_PICKED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject SuggestionSpan::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SuggestionSpan::FLAG_AUTO_CORRECTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.SuggestionSpan",
-			"FLAG_AUTO_CORRECTION");
+			"FLAG_AUTO_CORRECTION"
+		);
 	}
 	jint SuggestionSpan::FLAG_EASY_CORRECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.SuggestionSpan",
-			"FLAG_EASY_CORRECT");
+			"FLAG_EASY_CORRECT"
+		);
 	}
 	jint SuggestionSpan::FLAG_MISSPELLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.SuggestionSpan",
-			"FLAG_MISSPELLED");
+			"FLAG_MISSPELLED"
+		);
 	}
 	jint SuggestionSpan::SUGGESTIONS_MAX_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.SuggestionSpan",
-			"SUGGESTIONS_MAX_SIZE");
+			"SUGGESTIONS_MAX_SIZE"
+		);
 	}
-	QAndroidJniObject SuggestionSpan::SUGGESTION_SPAN_PICKED_AFTER()
+	jstring SuggestionSpan::SUGGESTION_SPAN_PICKED_AFTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"SUGGESTION_SPAN_PICKED_AFTER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SuggestionSpan::SUGGESTION_SPAN_PICKED_BEFORE()
+	jstring SuggestionSpan::SUGGESTION_SPAN_PICKED_BEFORE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"SUGGESTION_SPAN_PICKED_BEFORE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SuggestionSpan::SUGGESTION_SPAN_PICKED_HASHCODE()
+	jstring SuggestionSpan::SUGGESTION_SPAN_PICKED_HASHCODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.SuggestionSpan",
 			"SUGGESTION_SPAN_PICKED_HASHCODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -173,69 +182,57 @@ namespace __jni_impl::android::text::style
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint SuggestionSpan::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SuggestionSpan::getLocale()
+	jstring SuggestionSpan::getLocale()
 	{
 		return __thiz.callObjectMethod(
 			"getLocale",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SuggestionSpan::getFlags()
 	{
 		return __thiz.callMethod<jint>(
 			"getFlags",
-			"()I");
+			"()I"
+		);
 	}
-	jint SuggestionSpan::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I");
-	}
-	QAndroidJniObject SuggestionSpan::getSuggestions()
+	jarray SuggestionSpan::getSuggestions()
 	{
 		return __thiz.callObjectMethod(
 			"getSuggestions",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject SuggestionSpan::getLocaleObject()
 	{
 		return __thiz.callObjectMethod(
 			"getLocaleObject",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
 	}
 	jint SuggestionSpan::getUnderlineColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getUnderlineColor",
-			"()I");
-	}
-	void SuggestionSpan::setFlags(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFlags",
-			"(I)V",
-			arg0);
-	}
-	void SuggestionSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
+			"()I"
+		);
 	}
 	jint SuggestionSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SuggestionSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -243,7 +240,31 @@ namespace __jni_impl::android::text::style
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void SuggestionSpan::setFlags(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFlags",
+			"(I)V",
+			arg0
+		);
+	}
+	void SuggestionSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
+	{
+		__thiz.callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint SuggestionSpan::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

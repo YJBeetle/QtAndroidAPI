@@ -41,7 +41,7 @@ namespace __jni_impl::javax::xml::parsers
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getProperty(jstring arg0);
+		jobject getProperty(jstring arg0);
 		void setProperty(jstring arg0, jobject arg1);
 		void reset();
 		void parse(__jni_impl::java::io::File arg0, __jni_impl::org::xml::sax::HandlerBase arg1);
@@ -83,12 +83,13 @@ namespace __jni_impl::javax::xml::parsers
 	}
 	
 	// Methods
-	QAndroidJniObject SAXParser::getProperty(jstring arg0)
+	jobject SAXParser::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void SAXParser::setProperty(jstring arg0, jobject arg1)
 	{
@@ -96,13 +97,15 @@ namespace __jni_impl::javax::xml::parsers
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SAXParser::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void SAXParser::parse(__jni_impl::java::io::File arg0, __jni_impl::org::xml::sax::HandlerBase arg1)
 	{
@@ -110,7 +113,8 @@ namespace __jni_impl::javax::xml::parsers
 			"parse",
 			"(Ljava/io/File;Lorg/xml/sax/HandlerBase;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SAXParser::parse(__jni_impl::java::io::File arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1)
 	{
@@ -118,7 +122,8 @@ namespace __jni_impl::javax::xml::parsers
 			"parse",
 			"(Ljava/io/File;Lorg/xml/sax/helpers/DefaultHandler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SAXParser::parse(__jni_impl::org::xml::sax::InputSource arg0, __jni_impl::org::xml::sax::HandlerBase arg1)
 	{
@@ -126,7 +131,8 @@ namespace __jni_impl::javax::xml::parsers
 			"parse",
 			"(Lorg/xml/sax/InputSource;Lorg/xml/sax/HandlerBase;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SAXParser::parse(__jni_impl::org::xml::sax::InputSource arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1)
 	{
@@ -134,7 +140,8 @@ namespace __jni_impl::javax::xml::parsers
 			"parse",
 			"(Lorg/xml/sax/InputSource;Lorg/xml/sax/helpers/DefaultHandler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SAXParser::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::HandlerBase arg1)
 	{
@@ -142,7 +149,8 @@ namespace __jni_impl::javax::xml::parsers
 			"parse",
 			"(Ljava/io/InputStream;Lorg/xml/sax/HandlerBase;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SAXParser::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::HandlerBase arg1, jstring arg2)
 	{
@@ -151,7 +159,8 @@ namespace __jni_impl::javax::xml::parsers
 			"(Ljava/io/InputStream;Lorg/xml/sax/HandlerBase;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void SAXParser::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1)
 	{
@@ -159,7 +168,8 @@ namespace __jni_impl::javax::xml::parsers
 			"parse",
 			"(Ljava/io/InputStream;Lorg/xml/sax/helpers/DefaultHandler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SAXParser::parse(__jni_impl::java::io::InputStream arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1, jstring arg2)
 	{
@@ -168,7 +178,8 @@ namespace __jni_impl::javax::xml::parsers
 			"(Ljava/io/InputStream;Lorg/xml/sax/helpers/DefaultHandler;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void SAXParser::parse(jstring arg0, __jni_impl::org::xml::sax::HandlerBase arg1)
 	{
@@ -176,7 +187,8 @@ namespace __jni_impl::javax::xml::parsers
 			"parse",
 			"(Ljava/lang/String;Lorg/xml/sax/HandlerBase;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SAXParser::parse(jstring arg0, __jni_impl::org::xml::sax::helpers::DefaultHandler arg1)
 	{
@@ -184,43 +196,50 @@ namespace __jni_impl::javax::xml::parsers
 			"parse",
 			"(Ljava/lang/String;Lorg/xml/sax/helpers/DefaultHandler;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SAXParser::getSchema()
 	{
 		return __thiz.callObjectMethod(
 			"getSchema",
-			"()Ljavax/xml/validation/Schema;");
+			"()Ljavax/xml/validation/Schema;"
+		);
 	}
 	QAndroidJniObject SAXParser::getXMLReader()
 	{
 		return __thiz.callObjectMethod(
 			"getXMLReader",
-			"()Lorg/xml/sax/XMLReader;");
+			"()Lorg/xml/sax/XMLReader;"
+		);
 	}
 	jboolean SAXParser::isNamespaceAware()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNamespaceAware",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SAXParser::isValidating()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValidating",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SAXParser::isXIncludeAware()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isXIncludeAware",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject SAXParser::getParser()
 	{
 		return __thiz.callObjectMethod(
 			"getParser",
-			"()Lorg/xml/sax/Parser;");
+			"()Lorg/xml/sax/Parser;"
+		);
 	}
 } // namespace __jni_impl::javax::xml::parsers
 

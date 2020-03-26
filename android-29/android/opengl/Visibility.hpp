@@ -49,7 +49,8 @@ namespace __jni_impl::android::opengl
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	jint Visibility::frustumCullSpheres(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6, jint arg7)
 	{
@@ -64,7 +65,8 @@ namespace __jni_impl::android::opengl
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void Visibility::computeBoundingSphere(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4)
 	{
@@ -76,7 +78,8 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

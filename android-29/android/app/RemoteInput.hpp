@@ -28,8 +28,8 @@ namespace __jni_impl::android::app
 		static jint EDIT_CHOICES_BEFORE_SENDING_AUTO();
 		static jint EDIT_CHOICES_BEFORE_SENDING_DISABLED();
 		static jint EDIT_CHOICES_BEFORE_SENDING_ENABLED();
-		static QAndroidJniObject EXTRA_RESULTS_DATA();
-		static QAndroidJniObject RESULTS_CLIP_LABEL();
+		static jstring EXTRA_RESULTS_DATA();
+		static jstring RESULTS_CLIP_LABEL();
 		static jint SOURCE_CHOICE();
 		static jint SOURCE_FREE_FORM_INPUT();
 		
@@ -37,12 +37,11 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getLabel();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getResultKey();
-		QAndroidJniObject getChoices();
+		QAndroidJniObject getExtras();
+		jstring getResultKey();
+		jarray getChoices();
 		QAndroidJniObject getAllowedDataTypes();
 		jboolean isDataOnly();
 		jboolean getAllowFreeFormInput();
@@ -53,6 +52,7 @@ namespace __jni_impl::android::app
 		static void addDataResultToIntent(__jni_impl::android::app::RemoteInput arg0, __jni_impl::android::content::Intent arg1, __jni_impl::__JniBaseClass arg2);
 		static void setResultsSource(__jni_impl::android::content::Intent arg0, jint arg1);
 		static jint getResultsSource(__jni_impl::android::content::Intent arg0);
+		jstring getLabel();
 	};
 } // namespace __jni_impl::android::app
 
@@ -68,51 +68,59 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.RemoteInput",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint RemoteInput::EDIT_CHOICES_BEFORE_SENDING_AUTO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.RemoteInput",
-			"EDIT_CHOICES_BEFORE_SENDING_AUTO");
+			"EDIT_CHOICES_BEFORE_SENDING_AUTO"
+		);
 	}
 	jint RemoteInput::EDIT_CHOICES_BEFORE_SENDING_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.RemoteInput",
-			"EDIT_CHOICES_BEFORE_SENDING_DISABLED");
+			"EDIT_CHOICES_BEFORE_SENDING_DISABLED"
+		);
 	}
 	jint RemoteInput::EDIT_CHOICES_BEFORE_SENDING_ENABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.RemoteInput",
-			"EDIT_CHOICES_BEFORE_SENDING_ENABLED");
+			"EDIT_CHOICES_BEFORE_SENDING_ENABLED"
+		);
 	}
-	QAndroidJniObject RemoteInput::EXTRA_RESULTS_DATA()
+	jstring RemoteInput::EXTRA_RESULTS_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.RemoteInput",
 			"EXTRA_RESULTS_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RemoteInput::RESULTS_CLIP_LABEL()
+	jstring RemoteInput::RESULTS_CLIP_LABEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.RemoteInput",
 			"RESULTS_CLIP_LABEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint RemoteInput::SOURCE_CHOICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.RemoteInput",
-			"SOURCE_CHOICE");
+			"SOURCE_CHOICE"
+		);
 	}
 	jint RemoteInput::SOURCE_FREE_FORM_INPUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.RemoteInput",
-			"SOURCE_FREE_FORM_INPUT");
+			"SOURCE_FREE_FORM_INPUT"
+		);
 	}
 	
 	// Constructors
@@ -124,23 +132,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject RemoteInput::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject RemoteInput::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;");
-	}
 	jint RemoteInput::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void RemoteInput::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -148,43 +145,57 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject RemoteInput::getResultKey()
+	QAndroidJniObject RemoteInput::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jstring RemoteInput::getResultKey()
 	{
 		return __thiz.callObjectMethod(
 			"getResultKey",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RemoteInput::getChoices()
+	jarray RemoteInput::getChoices()
 	{
 		return __thiz.callObjectMethod(
 			"getChoices",
-			"()[Ljava/lang/CharSequence;");
+			"()[Ljava/lang/CharSequence;"
+		).object<jarray>();
 	}
 	QAndroidJniObject RemoteInput::getAllowedDataTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getAllowedDataTypes",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jboolean RemoteInput::isDataOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDataOnly",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RemoteInput::getAllowFreeFormInput()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAllowFreeFormInput",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint RemoteInput::getEditChoicesBeforeSending()
 	{
 		return __thiz.callMethod<jint>(
 			"getEditChoicesBeforeSending",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject RemoteInput::getDataResultsFromIntent(__jni_impl::android::content::Intent arg0, jstring arg1)
 	{
@@ -193,7 +204,8 @@ namespace __jni_impl::android::app
 			"getDataResultsFromIntent",
 			"(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject RemoteInput::getResultsFromIntent(__jni_impl::android::content::Intent arg0)
 	{
@@ -201,7 +213,8 @@ namespace __jni_impl::android::app
 			"android.app.RemoteInput",
 			"getResultsFromIntent",
 			"(Landroid/content/Intent;)Landroid/os/Bundle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RemoteInput::addResultsToIntent(jarray arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -211,7 +224,8 @@ namespace __jni_impl::android::app
 			"([Landroid/app/RemoteInput;Landroid/content/Intent;Landroid/os/Bundle;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void RemoteInput::addDataResultToIntent(__jni_impl::android::app::RemoteInput arg0, __jni_impl::android::content::Intent arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -221,7 +235,8 @@ namespace __jni_impl::android::app
 			"(Landroid/app/RemoteInput;Landroid/content/Intent;Ljava/util/Map;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void RemoteInput::setResultsSource(__jni_impl::android::content::Intent arg0, jint arg1)
 	{
@@ -230,7 +245,8 @@ namespace __jni_impl::android::app
 			"setResultsSource",
 			"(Landroid/content/Intent;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint RemoteInput::getResultsSource(__jni_impl::android::content::Intent arg0)
 	{
@@ -238,7 +254,15 @@ namespace __jni_impl::android::app
 			"android.app.RemoteInput",
 			"getResultsSource",
 			"(Landroid/content/Intent;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jstring RemoteInput::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::app
 

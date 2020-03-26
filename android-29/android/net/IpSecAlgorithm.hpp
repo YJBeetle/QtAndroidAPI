@@ -16,26 +16,26 @@ namespace __jni_impl::android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUTH_CRYPT_AES_GCM();
-		static QAndroidJniObject AUTH_HMAC_MD5();
-		static QAndroidJniObject AUTH_HMAC_SHA1();
-		static QAndroidJniObject AUTH_HMAC_SHA256();
-		static QAndroidJniObject AUTH_HMAC_SHA384();
-		static QAndroidJniObject AUTH_HMAC_SHA512();
+		static jstring AUTH_CRYPT_AES_GCM();
+		static jstring AUTH_HMAC_MD5();
+		static jstring AUTH_HMAC_SHA1();
+		static jstring AUTH_HMAC_SHA256();
+		static jstring AUTH_HMAC_SHA384();
+		static jstring AUTH_HMAC_SHA512();
 		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject CRYPT_AES_CBC();
+		static jstring CRYPT_AES_CBC();
 		
 		// Constructors
 		void __constructor(jstring arg0, jbyteArray arg1);
 		void __constructor(jstring arg0, jbyteArray arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
-		QAndroidJniObject getKey();
-		jint getTruncationLengthBits();
+		jstring getName();
+		jstring toString();
+		jbyteArray getKey();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getTruncationLengthBits();
 	};
 } // namespace __jni_impl::android::net
 
@@ -44,61 +44,69 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::net
 {
 	// Fields
-	QAndroidJniObject IpSecAlgorithm::AUTH_CRYPT_AES_GCM()
+	jstring IpSecAlgorithm::AUTH_CRYPT_AES_GCM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_CRYPT_AES_GCM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject IpSecAlgorithm::AUTH_HMAC_MD5()
+	jstring IpSecAlgorithm::AUTH_HMAC_MD5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_MD5",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject IpSecAlgorithm::AUTH_HMAC_SHA1()
+	jstring IpSecAlgorithm::AUTH_HMAC_SHA1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_SHA1",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject IpSecAlgorithm::AUTH_HMAC_SHA256()
+	jstring IpSecAlgorithm::AUTH_HMAC_SHA256()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_SHA256",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject IpSecAlgorithm::AUTH_HMAC_SHA384()
+	jstring IpSecAlgorithm::AUTH_HMAC_SHA384()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_SHA384",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject IpSecAlgorithm::AUTH_HMAC_SHA512()
+	jstring IpSecAlgorithm::AUTH_HMAC_SHA512()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"AUTH_HMAC_SHA512",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject IpSecAlgorithm::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject IpSecAlgorithm::CRYPT_AES_CBC()
+	jstring IpSecAlgorithm::CRYPT_AES_CBC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.IpSecAlgorithm",
 			"CRYPT_AES_CBC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -121,35 +129,33 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject IpSecAlgorithm::getName()
+	jstring IpSecAlgorithm::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject IpSecAlgorithm::toString()
+	jstring IpSecAlgorithm::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject IpSecAlgorithm::getKey()
+	jbyteArray IpSecAlgorithm::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()[B");
-	}
-	jint IpSecAlgorithm::getTruncationLengthBits()
-	{
-		return __thiz.callMethod<jint>(
-			"getTruncationLengthBits",
-			"()I");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jint IpSecAlgorithm::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void IpSecAlgorithm::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -157,7 +163,15 @@ namespace __jni_impl::android::net
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint IpSecAlgorithm::getTruncationLengthBits()
+	{
+		return __thiz.callMethod<jint>(
+			"getTruncationLengthBits",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net
 

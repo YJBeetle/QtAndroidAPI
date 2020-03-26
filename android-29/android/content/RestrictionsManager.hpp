@@ -9,13 +9,13 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::os
-{
-	class PersistableBundle;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
+}
+namespace __jni_impl::android::os
+{
+	class PersistableBundle;
 }
 
 namespace __jni_impl::android::content
@@ -24,28 +24,28 @@ namespace __jni_impl::android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_PERMISSION_RESPONSE_RECEIVED();
-		static QAndroidJniObject ACTION_REQUEST_LOCAL_APPROVAL();
-		static QAndroidJniObject ACTION_REQUEST_PERMISSION();
-		static QAndroidJniObject EXTRA_PACKAGE_NAME();
-		static QAndroidJniObject EXTRA_REQUEST_BUNDLE();
-		static QAndroidJniObject EXTRA_REQUEST_ID();
-		static QAndroidJniObject EXTRA_REQUEST_TYPE();
-		static QAndroidJniObject EXTRA_RESPONSE_BUNDLE();
-		static QAndroidJniObject META_DATA_APP_RESTRICTIONS();
-		static QAndroidJniObject REQUEST_KEY_APPROVE_LABEL();
-		static QAndroidJniObject REQUEST_KEY_DATA();
-		static QAndroidJniObject REQUEST_KEY_DENY_LABEL();
-		static QAndroidJniObject REQUEST_KEY_ICON();
-		static QAndroidJniObject REQUEST_KEY_ID();
-		static QAndroidJniObject REQUEST_KEY_MESSAGE();
-		static QAndroidJniObject REQUEST_KEY_NEW_REQUEST();
-		static QAndroidJniObject REQUEST_KEY_TITLE();
-		static QAndroidJniObject REQUEST_TYPE_APPROVAL();
-		static QAndroidJniObject RESPONSE_KEY_ERROR_CODE();
-		static QAndroidJniObject RESPONSE_KEY_MESSAGE();
-		static QAndroidJniObject RESPONSE_KEY_RESPONSE_TIMESTAMP();
-		static QAndroidJniObject RESPONSE_KEY_RESULT();
+		static jstring ACTION_PERMISSION_RESPONSE_RECEIVED();
+		static jstring ACTION_REQUEST_LOCAL_APPROVAL();
+		static jstring ACTION_REQUEST_PERMISSION();
+		static jstring EXTRA_PACKAGE_NAME();
+		static jstring EXTRA_REQUEST_BUNDLE();
+		static jstring EXTRA_REQUEST_ID();
+		static jstring EXTRA_REQUEST_TYPE();
+		static jstring EXTRA_RESPONSE_BUNDLE();
+		static jstring META_DATA_APP_RESTRICTIONS();
+		static jstring REQUEST_KEY_APPROVE_LABEL();
+		static jstring REQUEST_KEY_DATA();
+		static jstring REQUEST_KEY_DENY_LABEL();
+		static jstring REQUEST_KEY_ICON();
+		static jstring REQUEST_KEY_ID();
+		static jstring REQUEST_KEY_MESSAGE();
+		static jstring REQUEST_KEY_NEW_REQUEST();
+		static jstring REQUEST_KEY_TITLE();
+		static jstring REQUEST_TYPE_APPROVAL();
+		static jstring RESPONSE_KEY_ERROR_CODE();
+		static jstring RESPONSE_KEY_MESSAGE();
+		static jstring RESPONSE_KEY_RESPONSE_TIMESTAMP();
+		static jstring RESPONSE_KEY_RESULT();
 		static jint RESULT_APPROVED();
 		static jint RESULT_DENIED();
 		static jint RESULT_ERROR();
@@ -60,223 +60,253 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		QAndroidJniObject getApplicationRestrictions();
-		void requestPermission(jstring arg0, jstring arg1, __jni_impl::android::os::PersistableBundle arg2);
 		jboolean hasRestrictionsProvider();
 		QAndroidJniObject createLocalApprovalIntent();
 		void notifyPermissionResponse(jstring arg0, __jni_impl::android::os::PersistableBundle arg1);
 		QAndroidJniObject getManifestRestrictions(jstring arg0);
 		static QAndroidJniObject convertRestrictionsToBundle(__jni_impl::__JniBaseClass arg0);
+		void requestPermission(jstring arg0, jstring arg1, __jni_impl::android::os::PersistableBundle arg2);
 	};
 } // namespace __jni_impl::android::content
 
 #include "../os/Bundle.hpp"
-#include "../os/PersistableBundle.hpp"
 #include "Intent.hpp"
+#include "../os/PersistableBundle.hpp"
 
 namespace __jni_impl::android::content
 {
 	// Fields
-	QAndroidJniObject RestrictionsManager::ACTION_PERMISSION_RESPONSE_RECEIVED()
+	jstring RestrictionsManager::ACTION_PERMISSION_RESPONSE_RECEIVED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"ACTION_PERMISSION_RESPONSE_RECEIVED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::ACTION_REQUEST_LOCAL_APPROVAL()
+	jstring RestrictionsManager::ACTION_REQUEST_LOCAL_APPROVAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"ACTION_REQUEST_LOCAL_APPROVAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::ACTION_REQUEST_PERMISSION()
+	jstring RestrictionsManager::ACTION_REQUEST_PERMISSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"ACTION_REQUEST_PERMISSION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::EXTRA_PACKAGE_NAME()
+	jstring RestrictionsManager::EXTRA_PACKAGE_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_PACKAGE_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::EXTRA_REQUEST_BUNDLE()
+	jstring RestrictionsManager::EXTRA_REQUEST_BUNDLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_REQUEST_BUNDLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::EXTRA_REQUEST_ID()
+	jstring RestrictionsManager::EXTRA_REQUEST_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_REQUEST_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::EXTRA_REQUEST_TYPE()
+	jstring RestrictionsManager::EXTRA_REQUEST_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_REQUEST_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::EXTRA_RESPONSE_BUNDLE()
+	jstring RestrictionsManager::EXTRA_RESPONSE_BUNDLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"EXTRA_RESPONSE_BUNDLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::META_DATA_APP_RESTRICTIONS()
+	jstring RestrictionsManager::META_DATA_APP_RESTRICTIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"META_DATA_APP_RESTRICTIONS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::REQUEST_KEY_APPROVE_LABEL()
+	jstring RestrictionsManager::REQUEST_KEY_APPROVE_LABEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_APPROVE_LABEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::REQUEST_KEY_DATA()
+	jstring RestrictionsManager::REQUEST_KEY_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::REQUEST_KEY_DENY_LABEL()
+	jstring RestrictionsManager::REQUEST_KEY_DENY_LABEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_DENY_LABEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::REQUEST_KEY_ICON()
+	jstring RestrictionsManager::REQUEST_KEY_ICON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_ICON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::REQUEST_KEY_ID()
+	jstring RestrictionsManager::REQUEST_KEY_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::REQUEST_KEY_MESSAGE()
+	jstring RestrictionsManager::REQUEST_KEY_MESSAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_MESSAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::REQUEST_KEY_NEW_REQUEST()
+	jstring RestrictionsManager::REQUEST_KEY_NEW_REQUEST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_NEW_REQUEST",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::REQUEST_KEY_TITLE()
+	jstring RestrictionsManager::REQUEST_KEY_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_KEY_TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::REQUEST_TYPE_APPROVAL()
+	jstring RestrictionsManager::REQUEST_TYPE_APPROVAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"REQUEST_TYPE_APPROVAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::RESPONSE_KEY_ERROR_CODE()
+	jstring RestrictionsManager::RESPONSE_KEY_ERROR_CODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"RESPONSE_KEY_ERROR_CODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::RESPONSE_KEY_MESSAGE()
+	jstring RestrictionsManager::RESPONSE_KEY_MESSAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"RESPONSE_KEY_MESSAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::RESPONSE_KEY_RESPONSE_TIMESTAMP()
+	jstring RestrictionsManager::RESPONSE_KEY_RESPONSE_TIMESTAMP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"RESPONSE_KEY_RESPONSE_TIMESTAMP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RestrictionsManager::RESPONSE_KEY_RESULT()
+	jstring RestrictionsManager::RESPONSE_KEY_RESULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.RestrictionsManager",
 			"RESPONSE_KEY_RESULT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint RestrictionsManager::RESULT_APPROVED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.RestrictionsManager",
-			"RESULT_APPROVED");
+			"RESULT_APPROVED"
+		);
 	}
 	jint RestrictionsManager::RESULT_DENIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.RestrictionsManager",
-			"RESULT_DENIED");
+			"RESULT_DENIED"
+		);
 	}
 	jint RestrictionsManager::RESULT_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.RestrictionsManager",
-			"RESULT_ERROR");
+			"RESULT_ERROR"
+		);
 	}
 	jint RestrictionsManager::RESULT_ERROR_BAD_REQUEST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.RestrictionsManager",
-			"RESULT_ERROR_BAD_REQUEST");
+			"RESULT_ERROR_BAD_REQUEST"
+		);
 	}
 	jint RestrictionsManager::RESULT_ERROR_INTERNAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.RestrictionsManager",
-			"RESULT_ERROR_INTERNAL");
+			"RESULT_ERROR_INTERNAL"
+		);
 	}
 	jint RestrictionsManager::RESULT_ERROR_NETWORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.RestrictionsManager",
-			"RESULT_ERROR_NETWORK");
+			"RESULT_ERROR_NETWORK"
+		);
 	}
 	jint RestrictionsManager::RESULT_NO_RESPONSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.RestrictionsManager",
-			"RESULT_NO_RESPONSE");
+			"RESULT_NO_RESPONSE"
+		);
 	}
 	jint RestrictionsManager::RESULT_UNKNOWN_REQUEST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.RestrictionsManager",
-			"RESULT_UNKNOWN_REQUEST");
+			"RESULT_UNKNOWN_REQUEST"
+		);
 	}
 	
 	// Constructors
@@ -292,7 +322,48 @@ namespace __jni_impl::android::content
 	{
 		return __thiz.callObjectMethod(
 			"getApplicationRestrictions",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jboolean RestrictionsManager::hasRestrictionsProvider()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasRestrictionsProvider",
+			"()Z"
+		);
+	}
+	QAndroidJniObject RestrictionsManager::createLocalApprovalIntent()
+	{
+		return __thiz.callObjectMethod(
+			"createLocalApprovalIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	void RestrictionsManager::notifyPermissionResponse(jstring arg0, __jni_impl::android::os::PersistableBundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"notifyPermissionResponse",
+			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject RestrictionsManager::getManifestRestrictions(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getManifestRestrictions",
+			"(Ljava/lang/String;)Ljava/util/List;",
+			arg0
+		);
+	}
+	QAndroidJniObject RestrictionsManager::convertRestrictionsToBundle(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.RestrictionsManager",
+			"convertRestrictionsToBundle",
+			"(Ljava/util/List;)Landroid/os/Bundle;",
+			arg0.__jniObject().object()
+		);
 	}
 	void RestrictionsManager::requestPermission(jstring arg0, jstring arg1, __jni_impl::android::os::PersistableBundle arg2)
 	{
@@ -301,42 +372,8 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
-	}
-	jboolean RestrictionsManager::hasRestrictionsProvider()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasRestrictionsProvider",
-			"()Z");
-	}
-	QAndroidJniObject RestrictionsManager::createLocalApprovalIntent()
-	{
-		return __thiz.callObjectMethod(
-			"createLocalApprovalIntent",
-			"()Landroid/content/Intent;");
-	}
-	void RestrictionsManager::notifyPermissionResponse(jstring arg0, __jni_impl::android::os::PersistableBundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyPermissionResponse",
-			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject RestrictionsManager::getManifestRestrictions(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getManifestRestrictions",
-			"(Ljava/lang/String;)Ljava/util/List;",
-			arg0);
-	}
-	QAndroidJniObject RestrictionsManager::convertRestrictionsToBundle(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.RestrictionsManager",
-			"convertRestrictionsToBundle",
-			"(Ljava/util/List;)Landroid/os/Bundle;",
-			arg0.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::content
 

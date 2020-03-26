@@ -43,8 +43,8 @@ namespace __jni_impl::android::renderscript
 		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2);
 		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1);
 		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1);
-		QAndroidJniObject getKernelID();
 		void setLUT(__jni_impl::android::renderscript::Allocation arg0);
+		QAndroidJniObject getKernelID();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -74,7 +74,8 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsic3DLUT::forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
@@ -82,7 +83,8 @@ namespace __jni_impl::android::renderscript
 			"forEach",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsic3DLUT::create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1)
 	{
@@ -91,20 +93,23 @@ namespace __jni_impl::android::renderscript
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsic3DLUT;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject ScriptIntrinsic3DLUT::getKernelID()
-	{
-		return __thiz.callObjectMethod(
-			"getKernelID",
-			"()Landroid/renderscript/Script$KernelID;");
+			arg1.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsic3DLUT::setLUT(__jni_impl::android::renderscript::Allocation arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLUT",
 			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ScriptIntrinsic3DLUT::getKernelID()
+	{
+		return __thiz.callObjectMethod(
+			"getKernelID",
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

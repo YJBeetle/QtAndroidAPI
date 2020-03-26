@@ -31,7 +31,7 @@ namespace __jni_impl::android::service::notification
 		static QAndroidJniObject CREATOR();
 		static jint FLAG_RELEVANT_ALWAYS();
 		static jint FLAG_RELEVANT_NOW();
-		static QAndroidJniObject SCHEME();
+		static jstring SCHEME();
 		static jint STATE_ERROR();
 		static jint STATE_FALSE();
 		static jint STATE_TRUE();
@@ -39,10 +39,10 @@ namespace __jni_impl::android::service::notification
 		jint flags();
 		jint icon();
 		QAndroidJniObject id();
-		QAndroidJniObject line1();
-		QAndroidJniObject line2();
+		jstring line1();
+		jstring line2();
 		jint state();
-		QAndroidJniObject summary();
+		jstring summary();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::os::Parcel arg0);
@@ -51,15 +51,15 @@ namespace __jni_impl::android::service::notification
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject copy();
-		static QAndroidJniObject relevanceToString(jint arg0);
-		static QAndroidJniObject newId(__jni_impl::android::content::Context arg0);
-		static jboolean isValidId(__jni_impl::android::net::Uri arg0, jstring arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject stateToString(jint arg0);
+		static jstring relevanceToString(jint arg0);
+		static QAndroidJniObject newId(__jni_impl::android::content::Context arg0);
+		static jboolean isValidId(__jni_impl::android::net::Uri arg0, jstring arg1);
+		static jstring stateToString(jint arg0);
 	};
 } // namespace __jni_impl::android::service::notification
 
@@ -76,89 +76,104 @@ namespace __jni_impl::android::service::notification
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.notification.Condition",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Condition::FLAG_RELEVANT_ALWAYS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.Condition",
-			"FLAG_RELEVANT_ALWAYS");
+			"FLAG_RELEVANT_ALWAYS"
+		);
 	}
 	jint Condition::FLAG_RELEVANT_NOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.Condition",
-			"FLAG_RELEVANT_NOW");
+			"FLAG_RELEVANT_NOW"
+		);
 	}
-	QAndroidJniObject Condition::SCHEME()
+	jstring Condition::SCHEME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.notification.Condition",
 			"SCHEME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Condition::STATE_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.Condition",
-			"STATE_ERROR");
+			"STATE_ERROR"
+		);
 	}
 	jint Condition::STATE_FALSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.Condition",
-			"STATE_FALSE");
+			"STATE_FALSE"
+		);
 	}
 	jint Condition::STATE_TRUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.Condition",
-			"STATE_TRUE");
+			"STATE_TRUE"
+		);
 	}
 	jint Condition::STATE_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.notification.Condition",
-			"STATE_UNKNOWN");
+			"STATE_UNKNOWN"
+		);
 	}
 	jint Condition::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
 	jint Condition::icon()
 	{
 		return __thiz.getField<jint>(
-			"icon");
+			"icon"
+		);
 	}
 	QAndroidJniObject Condition::id()
 	{
 		return __thiz.getObjectField(
 			"id",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Condition::line1()
+	jstring Condition::line1()
 	{
 		return __thiz.getObjectField(
 			"line1",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Condition::line2()
+	jstring Condition::line2()
 	{
 		return __thiz.getObjectField(
 			"line2",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Condition::state()
 	{
 		return __thiz.getField<jint>(
-			"state");
+			"state"
+		);
 	}
-	QAndroidJniObject Condition::summary()
+	jstring Condition::summary()
 	{
 		return __thiz.getObjectField(
 			"summary",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -198,33 +213,54 @@ namespace __jni_impl::android::service::notification
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Condition::toString()
+	jstring Condition::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Condition::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Condition::copy()
 	{
 		return __thiz.callObjectMethod(
 			"copy",
-			"()Landroid/service/notification/Condition;");
+			"()Landroid/service/notification/Condition;"
+		);
 	}
-	QAndroidJniObject Condition::relevanceToString(jint arg0)
+	jint Condition::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Condition::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jstring Condition::relevanceToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.service.notification.Condition",
 			"relevanceToString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject Condition::newId(__jni_impl::android::content::Context arg0)
 	{
@@ -232,7 +268,8 @@ namespace __jni_impl::android::service::notification
 			"android.service.notification.Condition",
 			"newId",
 			"(Landroid/content/Context;)Landroid/net/Uri$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Condition::isValidId(__jni_impl::android::net::Uri arg0, jstring arg1)
 	{
@@ -241,29 +278,17 @@ namespace __jni_impl::android::service::notification
 			"isValidId",
 			"(Landroid/net/Uri;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	jint Condition::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Condition::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject Condition::stateToString(jint arg0)
+	jstring Condition::stateToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.service.notification.Condition",
 			"stateToString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::service::notification
 

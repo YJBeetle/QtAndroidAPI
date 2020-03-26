@@ -17,8 +17,8 @@ namespace __jni_impl::android::accounts
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		QAndroidJniObject name();
-		QAndroidJniObject type();
+		jstring name();
+		jstring type();
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1);
@@ -26,7 +26,7 @@ namespace __jni_impl::android::accounts
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -43,19 +43,22 @@ namespace __jni_impl::android::accounts
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.Account",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject Account::name()
+	jstring Account::name()
 	{
 		return __thiz.getObjectField(
 			"name",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Account::type()
+	jstring Account::type()
 	{
 		return __thiz.getObjectField(
 			"type",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -81,25 +84,29 @@ namespace __jni_impl::android::accounts
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Account::toString()
+	jstring Account::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Account::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Account::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Account::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -107,7 +114,8 @@ namespace __jni_impl::android::accounts
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::accounts
 

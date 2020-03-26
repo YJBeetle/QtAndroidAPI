@@ -47,7 +47,8 @@ namespace __jni_impl::android::media
 			"onVolumeSetRequest",
 			"(Landroid/media/MediaRouter$RouteInfo;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void MediaRouter_VolumeCallback::onVolumeUpdateRequest(__jni_impl::android::media::MediaRouter_RouteInfo arg0, jint arg1)
 	{
@@ -55,7 +56,8 @@ namespace __jni_impl::android::media
 			"onVolumeUpdateRequest",
 			"(Landroid/media/MediaRouter$RouteInfo;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

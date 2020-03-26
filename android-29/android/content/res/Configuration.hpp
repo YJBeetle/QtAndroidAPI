@@ -125,16 +125,17 @@ namespace __jni_impl::android::content::res
 		// Methods
 		jboolean equals(__jni_impl::android::content::res::Configuration arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(__jni_impl::android::content::res::Configuration arg0);
 		jint compareTo(jobject arg0);
 		void setLocale(__jni_impl::java::util::Locale arg0);
 		jint diff(__jni_impl::android::content::res::Configuration arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint getLayoutDirection();
 		void setLayoutDirection(__jni_impl::java::util::Locale arg0);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		QAndroidJniObject getLocales();
 		jboolean isLayoutSizeAtLeast(jint arg0);
 		void setTo(__jni_impl::android::content::res::Configuration arg0);
 		void setToDefaults();
@@ -144,8 +145,7 @@ namespace __jni_impl::android::content::res
 		jboolean isScreenRound();
 		jboolean isScreenWideColorGamut();
 		jboolean isScreenHdr();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getLocales();
 	};
 } // namespace __jni_impl::android::content::res
 
@@ -160,543 +160,636 @@ namespace __jni_impl::android::content::res
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_HDR_MASK");
+			"COLOR_MODE_HDR_MASK"
+		);
 	}
 	jint Configuration::COLOR_MODE_HDR_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_HDR_NO");
+			"COLOR_MODE_HDR_NO"
+		);
 	}
 	jint Configuration::COLOR_MODE_HDR_SHIFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_HDR_SHIFT");
+			"COLOR_MODE_HDR_SHIFT"
+		);
 	}
 	jint Configuration::COLOR_MODE_HDR_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_HDR_UNDEFINED");
+			"COLOR_MODE_HDR_UNDEFINED"
+		);
 	}
 	jint Configuration::COLOR_MODE_HDR_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_HDR_YES");
+			"COLOR_MODE_HDR_YES"
+		);
 	}
 	jint Configuration::COLOR_MODE_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_UNDEFINED");
+			"COLOR_MODE_UNDEFINED"
+		);
 	}
 	jint Configuration::COLOR_MODE_WIDE_COLOR_GAMUT_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_WIDE_COLOR_GAMUT_MASK");
+			"COLOR_MODE_WIDE_COLOR_GAMUT_MASK"
+		);
 	}
 	jint Configuration::COLOR_MODE_WIDE_COLOR_GAMUT_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_WIDE_COLOR_GAMUT_NO");
+			"COLOR_MODE_WIDE_COLOR_GAMUT_NO"
+		);
 	}
 	jint Configuration::COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED");
+			"COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED"
+		);
 	}
 	jint Configuration::COLOR_MODE_WIDE_COLOR_GAMUT_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"COLOR_MODE_WIDE_COLOR_GAMUT_YES");
+			"COLOR_MODE_WIDE_COLOR_GAMUT_YES"
+		);
 	}
 	QAndroidJniObject Configuration::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.res.Configuration",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Configuration::DENSITY_DPI_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"DENSITY_DPI_UNDEFINED");
+			"DENSITY_DPI_UNDEFINED"
+		);
 	}
 	jint Configuration::HARDKEYBOARDHIDDEN_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"HARDKEYBOARDHIDDEN_NO");
+			"HARDKEYBOARDHIDDEN_NO"
+		);
 	}
 	jint Configuration::HARDKEYBOARDHIDDEN_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"HARDKEYBOARDHIDDEN_UNDEFINED");
+			"HARDKEYBOARDHIDDEN_UNDEFINED"
+		);
 	}
 	jint Configuration::HARDKEYBOARDHIDDEN_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"HARDKEYBOARDHIDDEN_YES");
+			"HARDKEYBOARDHIDDEN_YES"
+		);
 	}
 	jint Configuration::KEYBOARDHIDDEN_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"KEYBOARDHIDDEN_NO");
+			"KEYBOARDHIDDEN_NO"
+		);
 	}
 	jint Configuration::KEYBOARDHIDDEN_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"KEYBOARDHIDDEN_UNDEFINED");
+			"KEYBOARDHIDDEN_UNDEFINED"
+		);
 	}
 	jint Configuration::KEYBOARDHIDDEN_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"KEYBOARDHIDDEN_YES");
+			"KEYBOARDHIDDEN_YES"
+		);
 	}
 	jint Configuration::KEYBOARD_12KEY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"KEYBOARD_12KEY");
+			"KEYBOARD_12KEY"
+		);
 	}
 	jint Configuration::KEYBOARD_NOKEYS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"KEYBOARD_NOKEYS");
+			"KEYBOARD_NOKEYS"
+		);
 	}
 	jint Configuration::KEYBOARD_QWERTY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"KEYBOARD_QWERTY");
+			"KEYBOARD_QWERTY"
+		);
 	}
 	jint Configuration::KEYBOARD_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"KEYBOARD_UNDEFINED");
+			"KEYBOARD_UNDEFINED"
+		);
 	}
 	jint Configuration::MNC_ZERO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"MNC_ZERO");
+			"MNC_ZERO"
+		);
 	}
 	jint Configuration::NAVIGATIONHIDDEN_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"NAVIGATIONHIDDEN_NO");
+			"NAVIGATIONHIDDEN_NO"
+		);
 	}
 	jint Configuration::NAVIGATIONHIDDEN_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"NAVIGATIONHIDDEN_UNDEFINED");
+			"NAVIGATIONHIDDEN_UNDEFINED"
+		);
 	}
 	jint Configuration::NAVIGATIONHIDDEN_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"NAVIGATIONHIDDEN_YES");
+			"NAVIGATIONHIDDEN_YES"
+		);
 	}
 	jint Configuration::NAVIGATION_DPAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"NAVIGATION_DPAD");
+			"NAVIGATION_DPAD"
+		);
 	}
 	jint Configuration::NAVIGATION_NONAV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"NAVIGATION_NONAV");
+			"NAVIGATION_NONAV"
+		);
 	}
 	jint Configuration::NAVIGATION_TRACKBALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"NAVIGATION_TRACKBALL");
+			"NAVIGATION_TRACKBALL"
+		);
 	}
 	jint Configuration::NAVIGATION_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"NAVIGATION_UNDEFINED");
+			"NAVIGATION_UNDEFINED"
+		);
 	}
 	jint Configuration::NAVIGATION_WHEEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"NAVIGATION_WHEEL");
+			"NAVIGATION_WHEEL"
+		);
 	}
 	jint Configuration::ORIENTATION_LANDSCAPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"ORIENTATION_LANDSCAPE");
+			"ORIENTATION_LANDSCAPE"
+		);
 	}
 	jint Configuration::ORIENTATION_PORTRAIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"ORIENTATION_PORTRAIT");
+			"ORIENTATION_PORTRAIT"
+		);
 	}
 	jint Configuration::ORIENTATION_SQUARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"ORIENTATION_SQUARE");
+			"ORIENTATION_SQUARE"
+		);
 	}
 	jint Configuration::ORIENTATION_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"ORIENTATION_UNDEFINED");
+			"ORIENTATION_UNDEFINED"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_LTR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_LAYOUTDIR_LTR");
+			"SCREENLAYOUT_LAYOUTDIR_LTR"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_LAYOUTDIR_MASK");
+			"SCREENLAYOUT_LAYOUTDIR_MASK"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_RTL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_LAYOUTDIR_RTL");
+			"SCREENLAYOUT_LAYOUTDIR_RTL"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_SHIFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_LAYOUTDIR_SHIFT");
+			"SCREENLAYOUT_LAYOUTDIR_SHIFT"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_LAYOUTDIR_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_LAYOUTDIR_UNDEFINED");
+			"SCREENLAYOUT_LAYOUTDIR_UNDEFINED"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_LONG_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_LONG_MASK");
+			"SCREENLAYOUT_LONG_MASK"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_LONG_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_LONG_NO");
+			"SCREENLAYOUT_LONG_NO"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_LONG_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_LONG_UNDEFINED");
+			"SCREENLAYOUT_LONG_UNDEFINED"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_LONG_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_LONG_YES");
+			"SCREENLAYOUT_LONG_YES"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_ROUND_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_ROUND_MASK");
+			"SCREENLAYOUT_ROUND_MASK"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_ROUND_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_ROUND_NO");
+			"SCREENLAYOUT_ROUND_NO"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_ROUND_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_ROUND_UNDEFINED");
+			"SCREENLAYOUT_ROUND_UNDEFINED"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_ROUND_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_ROUND_YES");
+			"SCREENLAYOUT_ROUND_YES"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_LARGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_SIZE_LARGE");
+			"SCREENLAYOUT_SIZE_LARGE"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_SIZE_MASK");
+			"SCREENLAYOUT_SIZE_MASK"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_SIZE_NORMAL");
+			"SCREENLAYOUT_SIZE_NORMAL"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_SMALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_SIZE_SMALL");
+			"SCREENLAYOUT_SIZE_SMALL"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_SIZE_UNDEFINED");
+			"SCREENLAYOUT_SIZE_UNDEFINED"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_SIZE_XLARGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_SIZE_XLARGE");
+			"SCREENLAYOUT_SIZE_XLARGE"
+		);
 	}
 	jint Configuration::SCREENLAYOUT_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREENLAYOUT_UNDEFINED");
+			"SCREENLAYOUT_UNDEFINED"
+		);
 	}
 	jint Configuration::SCREEN_HEIGHT_DP_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREEN_HEIGHT_DP_UNDEFINED");
+			"SCREEN_HEIGHT_DP_UNDEFINED"
+		);
 	}
 	jint Configuration::SCREEN_WIDTH_DP_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SCREEN_WIDTH_DP_UNDEFINED");
+			"SCREEN_WIDTH_DP_UNDEFINED"
+		);
 	}
 	jint Configuration::SMALLEST_SCREEN_WIDTH_DP_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"SMALLEST_SCREEN_WIDTH_DP_UNDEFINED");
+			"SMALLEST_SCREEN_WIDTH_DP_UNDEFINED"
+		);
 	}
 	jint Configuration::TOUCHSCREEN_FINGER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"TOUCHSCREEN_FINGER");
+			"TOUCHSCREEN_FINGER"
+		);
 	}
 	jint Configuration::TOUCHSCREEN_NOTOUCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"TOUCHSCREEN_NOTOUCH");
+			"TOUCHSCREEN_NOTOUCH"
+		);
 	}
 	jint Configuration::TOUCHSCREEN_STYLUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"TOUCHSCREEN_STYLUS");
+			"TOUCHSCREEN_STYLUS"
+		);
 	}
 	jint Configuration::TOUCHSCREEN_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"TOUCHSCREEN_UNDEFINED");
+			"TOUCHSCREEN_UNDEFINED"
+		);
 	}
 	jint Configuration::UI_MODE_NIGHT_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_NIGHT_MASK");
+			"UI_MODE_NIGHT_MASK"
+		);
 	}
 	jint Configuration::UI_MODE_NIGHT_NO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_NIGHT_NO");
+			"UI_MODE_NIGHT_NO"
+		);
 	}
 	jint Configuration::UI_MODE_NIGHT_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_NIGHT_UNDEFINED");
+			"UI_MODE_NIGHT_UNDEFINED"
+		);
 	}
 	jint Configuration::UI_MODE_NIGHT_YES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_NIGHT_YES");
+			"UI_MODE_NIGHT_YES"
+		);
 	}
 	jint Configuration::UI_MODE_TYPE_APPLIANCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_TYPE_APPLIANCE");
+			"UI_MODE_TYPE_APPLIANCE"
+		);
 	}
 	jint Configuration::UI_MODE_TYPE_CAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_TYPE_CAR");
+			"UI_MODE_TYPE_CAR"
+		);
 	}
 	jint Configuration::UI_MODE_TYPE_DESK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_TYPE_DESK");
+			"UI_MODE_TYPE_DESK"
+		);
 	}
 	jint Configuration::UI_MODE_TYPE_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_TYPE_MASK");
+			"UI_MODE_TYPE_MASK"
+		);
 	}
 	jint Configuration::UI_MODE_TYPE_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_TYPE_NORMAL");
+			"UI_MODE_TYPE_NORMAL"
+		);
 	}
 	jint Configuration::UI_MODE_TYPE_TELEVISION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_TYPE_TELEVISION");
+			"UI_MODE_TYPE_TELEVISION"
+		);
 	}
 	jint Configuration::UI_MODE_TYPE_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_TYPE_UNDEFINED");
+			"UI_MODE_TYPE_UNDEFINED"
+		);
 	}
 	jint Configuration::UI_MODE_TYPE_VR_HEADSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_TYPE_VR_HEADSET");
+			"UI_MODE_TYPE_VR_HEADSET"
+		);
 	}
 	jint Configuration::UI_MODE_TYPE_WATCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.Configuration",
-			"UI_MODE_TYPE_WATCH");
+			"UI_MODE_TYPE_WATCH"
+		);
 	}
 	jint Configuration::colorMode()
 	{
 		return __thiz.getField<jint>(
-			"colorMode");
+			"colorMode"
+		);
 	}
 	jint Configuration::densityDpi()
 	{
 		return __thiz.getField<jint>(
-			"densityDpi");
+			"densityDpi"
+		);
 	}
 	jfloat Configuration::fontScale()
 	{
 		return __thiz.getField<jfloat>(
-			"fontScale");
+			"fontScale"
+		);
 	}
 	jint Configuration::hardKeyboardHidden()
 	{
 		return __thiz.getField<jint>(
-			"hardKeyboardHidden");
+			"hardKeyboardHidden"
+		);
 	}
 	jint Configuration::keyboard()
 	{
 		return __thiz.getField<jint>(
-			"keyboard");
+			"keyboard"
+		);
 	}
 	jint Configuration::keyboardHidden()
 	{
 		return __thiz.getField<jint>(
-			"keyboardHidden");
+			"keyboardHidden"
+		);
 	}
 	QAndroidJniObject Configuration::locale()
 	{
 		return __thiz.getObjectField(
 			"locale",
-			"Ljava/util/Locale;");
+			"Ljava/util/Locale;"
+		);
 	}
 	jint Configuration::mcc()
 	{
 		return __thiz.getField<jint>(
-			"mcc");
+			"mcc"
+		);
 	}
 	jint Configuration::mnc()
 	{
 		return __thiz.getField<jint>(
-			"mnc");
+			"mnc"
+		);
 	}
 	jint Configuration::navigation()
 	{
 		return __thiz.getField<jint>(
-			"navigation");
+			"navigation"
+		);
 	}
 	jint Configuration::navigationHidden()
 	{
 		return __thiz.getField<jint>(
-			"navigationHidden");
+			"navigationHidden"
+		);
 	}
 	jint Configuration::orientation()
 	{
 		return __thiz.getField<jint>(
-			"orientation");
+			"orientation"
+		);
 	}
 	jint Configuration::screenHeightDp()
 	{
 		return __thiz.getField<jint>(
-			"screenHeightDp");
+			"screenHeightDp"
+		);
 	}
 	jint Configuration::screenLayout()
 	{
 		return __thiz.getField<jint>(
-			"screenLayout");
+			"screenLayout"
+		);
 	}
 	jint Configuration::screenWidthDp()
 	{
 		return __thiz.getField<jint>(
-			"screenWidthDp");
+			"screenWidthDp"
+		);
 	}
 	jint Configuration::smallestScreenWidthDp()
 	{
 		return __thiz.getField<jint>(
-			"smallestScreenWidthDp");
+			"smallestScreenWidthDp"
+		);
 	}
 	jint Configuration::touchscreen()
 	{
 		return __thiz.getField<jint>(
-			"touchscreen");
+			"touchscreen"
+		);
 	}
 	jint Configuration::uiMode()
 	{
 		return __thiz.getField<jint>(
-			"uiMode");
+			"uiMode"
+		);
 	}
 	
 	// Constructors
@@ -720,107 +813,132 @@ namespace __jni_impl::android::content::res
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Landroid/content/res/Configuration;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Configuration::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Configuration::toString()
+	jstring Configuration::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Configuration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Configuration::compareTo(__jni_impl::android::content::res::Configuration arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Landroid/content/res/Configuration;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Configuration::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	void Configuration::setLocale(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLocale",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Configuration::diff(__jni_impl::android::content::res::Configuration arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"diff",
 			"(Landroid/content/res/Configuration;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	jint Configuration::getLayoutDirection()
+	jint Configuration::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getLayoutDirection",
-			"()I");
+			"describeContents",
+			"()I"
+		);
 	}
-	void Configuration::setLayoutDirection(__jni_impl::java::util::Locale arg0)
+	void Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
-			"setLayoutDirection",
-			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	void Configuration::readFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz.callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Configuration::getLocales()
+	jint Configuration::getLayoutDirection()
 	{
-		return __thiz.callObjectMethod(
-			"getLocales",
-			"()Landroid/os/LocaleList;");
+		return __thiz.callMethod<jint>(
+			"getLayoutDirection",
+			"()I"
+		);
+	}
+	void Configuration::setLayoutDirection(__jni_impl::java::util::Locale arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLayoutDirection",
+			"(Ljava/util/Locale;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Configuration::isLayoutSizeAtLeast(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLayoutSizeAtLeast",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void Configuration::setTo(__jni_impl::android::content::res::Configuration arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTo",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Configuration::setToDefaults()
 	{
 		__thiz.callMethod<void>(
 			"setToDefaults",
-			"()V");
+			"()V"
+		);
 	}
 	jint Configuration::updateFrom(__jni_impl::android::content::res::Configuration arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"updateFrom",
 			"(Landroid/content/res/Configuration;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Configuration::needNewResources(jint arg0, jint arg1)
 	{
@@ -829,46 +947,44 @@ namespace __jni_impl::android::content::res
 			"needNewResources",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Configuration::setLocales(__jni_impl::android::os::LocaleList arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLocales",
 			"(Landroid/os/LocaleList;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Configuration::isScreenRound()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isScreenRound",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Configuration::isScreenWideColorGamut()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isScreenWideColorGamut",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Configuration::isScreenHdr()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isScreenHdr",
-			"()Z");
+			"()Z"
+		);
 	}
-	jint Configuration::describeContents()
+	QAndroidJniObject Configuration::getLocales()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+		return __thiz.callObjectMethod(
+			"getLocales",
+			"()Landroid/os/LocaleList;"
+		);
 	}
 } // namespace __jni_impl::android::content::res
 

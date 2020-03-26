@@ -16,6 +16,18 @@ namespace __jni_impl::android::os
 {
 	class Handler;
 }
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
+}
 namespace __jni_impl::android::view
 {
 	class View;
@@ -43,10 +55,6 @@ namespace __jni_impl::android::view::accessibility
 namespace __jni_impl::android::view::inputmethod
 {
 	class EditorInfo;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
 }
 namespace __jni_impl::android::view
 {
@@ -136,14 +144,6 @@ namespace __jni_impl::android::content::pm
 {
 	class PackageInfo;
 }
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
-}
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
 
 namespace __jni_impl::android::webkit
 {
@@ -154,9 +154,9 @@ namespace __jni_impl::android::webkit
 		static jint RENDERER_PRIORITY_BOUND();
 		static jint RENDERER_PRIORITY_IMPORTANT();
 		static jint RENDERER_PRIORITY_WAIVED();
-		static QAndroidJniObject SCHEME_GEO();
-		static QAndroidJniObject SCHEME_MAILTO();
-		static QAndroidJniObject SCHEME_TEL();
+		static jstring SCHEME_GEO();
+		static jstring SCHEME_MAILTO();
+		static jstring SCHEME_TEL();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jboolean arg3);
@@ -172,6 +172,17 @@ namespace __jni_impl::android::webkit
 		jint findAll(jstring arg0);
 		void clearCache(jboolean arg0);
 		QAndroidJniObject getHandler();
+		void onResume();
+		void onPause();
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
+		void onWindowFocusChanged(jboolean arg0);
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
+		jstring getTitle();
 		jboolean pageUp(jboolean arg0);
 		jboolean pageDown(jboolean arg0);
 		void setTextClassifier(__jni_impl::__JniBaseClass arg0);
@@ -179,7 +190,7 @@ namespace __jni_impl::android::webkit
 		jboolean requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2);
 		QAndroidJniObject findFocus();
 		jboolean requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1);
-		QAndroidJniObject getAccessibilityClassName();
+		jstring getAccessibilityClassName();
 		jboolean shouldDelayChildPressedState();
 		jboolean performLongClick();
 		void onProvideVirtualStructure(__jni_impl::android::view::ViewStructure arg0);
@@ -207,12 +218,12 @@ namespace __jni_impl::android::webkit
 		void setCertificate(__jni_impl::android::net::http::SslCertificate arg0);
 		void savePassword(jstring arg0, jstring arg1, jstring arg2);
 		void setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
-		QAndroidJniObject getHttpAuthUsernamePassword(jstring arg0, jstring arg1);
+		jarray getHttpAuthUsernamePassword(jstring arg0, jstring arg1);
 		void setNetworkAvailable(jboolean arg0);
 		QAndroidJniObject saveState(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject restoreState(__jni_impl::android::os::Bundle arg0);
-		void loadUrl(jstring arg0);
 		void loadUrl(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void loadUrl(jstring arg0);
 		void postUrl(jstring arg0, jbyteArray arg1);
 		void loadData(jstring arg0, jstring arg1, jstring arg2);
 		void loadDataWithBaseURL(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
@@ -230,16 +241,16 @@ namespace __jni_impl::android::webkit
 		void postVisualStateCallback(jlong arg0, __jni_impl::android::webkit::WebView_VisualStateCallback arg1);
 		void clearView();
 		QAndroidJniObject capturePicture();
-		QAndroidJniObject createPrintDocumentAdapter();
 		QAndroidJniObject createPrintDocumentAdapter(jstring arg0);
+		QAndroidJniObject createPrintDocumentAdapter();
 		jfloat getScale();
 		void setInitialScale(jint arg0);
 		void invokeZoomPicker();
 		QAndroidJniObject getHitTestResult();
 		void requestFocusNodeHref(__jni_impl::android::os::Message arg0);
 		void requestImageRef(__jni_impl::android::os::Message arg0);
-		QAndroidJniObject getUrl();
-		QAndroidJniObject getOriginalUrl();
+		jstring getUrl();
+		jstring getOriginalUrl();
 		QAndroidJniObject getFavicon();
 		jint getProgress();
 		jint getContentHeight();
@@ -257,7 +268,7 @@ namespace __jni_impl::android::webkit
 		void findNext(jboolean arg0);
 		void findAllAsync(jstring arg0);
 		jboolean showFindDialog(jstring arg0, jboolean arg1);
-		static QAndroidJniObject findAddress(jstring arg0);
+		static jstring findAddress(jstring arg0);
 		static void enableSlowWholeDocumentDraw();
 		void clearMatches();
 		void documentHasImages(__jni_impl::android::os::Message arg0);
@@ -273,7 +284,7 @@ namespace __jni_impl::android::webkit
 		void setPictureListener(__jni_impl::__JniBaseClass arg0);
 		void addJavascriptInterface(jobject arg0, jstring arg1);
 		void removeJavascriptInterface(jstring arg0);
-		QAndroidJniObject createWebMessageChannel();
+		jarray createWebMessageChannel();
 		void postWebMessage(__jni_impl::android::webkit::WebMessage arg0, __jni_impl::android::net::Uri arg1);
 		QAndroidJniObject getSettings();
 		static void setWebContentsDebuggingEnabled(jboolean arg0);
@@ -295,22 +306,14 @@ namespace __jni_impl::android::webkit
 		static QAndroidJniObject getWebViewClassLoader();
 		QAndroidJniObject getWebViewLooper();
 		static QAndroidJniObject getCurrentWebViewPackage();
-		void onResume();
-		void onPause();
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		void onWindowFocusChanged(jboolean arg0);
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
-		QAndroidJniObject getTitle();
 	};
 } // namespace __jni_impl::android::webkit
 
 #include "../content/Context.hpp"
 #include "../os/Handler.hpp"
+#include "../content/res/Configuration.hpp"
+#include "../view/KeyEvent.hpp"
+#include "../view/MotionEvent.hpp"
 #include "../view/View.hpp"
 #include "../graphics/Rect.hpp"
 #include "../graphics/Canvas.hpp"
@@ -318,7 +321,6 @@ namespace __jni_impl::android::webkit
 #include "../util/SparseArray.hpp"
 #include "../view/accessibility/AccessibilityNodeProvider.hpp"
 #include "../view/inputmethod/EditorInfo.hpp"
-#include "../view/MotionEvent.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../graphics/Paint.hpp"
 #include "../view/DragEvent.hpp"
@@ -341,8 +343,6 @@ namespace __jni_impl::android::webkit
 #include "../../java/lang/ClassLoader.hpp"
 #include "../os/Looper.hpp"
 #include "../content/pm/PackageInfo.hpp"
-#include "../content/res/Configuration.hpp"
-#include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::webkit
 {
@@ -351,40 +351,46 @@ namespace __jni_impl::android::webkit
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView",
-			"RENDERER_PRIORITY_BOUND");
+			"RENDERER_PRIORITY_BOUND"
+		);
 	}
 	jint WebView::RENDERER_PRIORITY_IMPORTANT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView",
-			"RENDERER_PRIORITY_IMPORTANT");
+			"RENDERER_PRIORITY_IMPORTANT"
+		);
 	}
 	jint WebView::RENDERER_PRIORITY_WAIVED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.WebView",
-			"RENDERER_PRIORITY_WAIVED");
+			"RENDERER_PRIORITY_WAIVED"
+		);
 	}
-	QAndroidJniObject WebView::SCHEME_GEO()
+	jstring WebView::SCHEME_GEO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebView",
 			"SCHEME_GEO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WebView::SCHEME_MAILTO()
+	jstring WebView::SCHEME_MAILTO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebView",
 			"SCHEME_MAILTO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WebView::SCHEME_TEL()
+	jstring WebView::SCHEME_TEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebView",
 			"SCHEME_TEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -438,66 +444,165 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::freeMemory()
 	{
 		__thiz.callMethod<void>(
 			"freeMemory",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::reload()
 	{
 		__thiz.callMethod<void>(
 			"reload",
-			"()V");
+			"()V"
+		);
 	}
 	jint WebView::findAll(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"findAll",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::clearCache(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"clearCache",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject WebView::getHandler()
 	{
 		return __thiz.callObjectMethod(
 			"getHandler",
-			"()Landroid/os/Handler;");
+			"()Landroid/os/Handler;"
+		);
+	}
+	void WebView::onResume()
+	{
+		__thiz.callMethod<void>(
+			"onResume",
+			"()V"
+		);
+	}
+	void WebView::onPause()
+	{
+		__thiz.callMethod<void>(
+			"onPause",
+			"()V"
+		);
+	}
+	jboolean WebView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean WebView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean WebView::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyMultiple",
+			"(IILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jboolean WebView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean WebView::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean WebView::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onGenericMotionEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void WebView::onWindowFocusChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onWindowFocusChanged",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean WebView::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring WebView::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean WebView::pageUp(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"pageUp",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WebView::pageDown(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"pageDown",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::setTextClassifier(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTextClassifier",
 			"(Landroid/view/textclassifier/TextClassifier;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WebView::getTextClassifier()
 	{
 		return __thiz.callObjectMethod(
 			"getTextClassifier",
-			"()Landroid/view/textclassifier/TextClassifier;");
+			"()Landroid/view/textclassifier/TextClassifier;"
+		);
 	}
 	jboolean WebView::requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2)
 	{
@@ -506,13 +611,15 @@ namespace __jni_impl::android::webkit
 			"(Landroid/view/View;Landroid/graphics/Rect;Z)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject WebView::findFocus()
 	{
 		return __thiz.callObjectMethod(
 			"findFocus",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
 	jboolean WebView::requestFocus(jint arg0, __jni_impl::android::graphics::Rect arg1)
 	{
@@ -520,32 +627,37 @@ namespace __jni_impl::android::webkit
 			"requestFocus",
 			"(ILandroid/graphics/Rect;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject WebView::getAccessibilityClassName()
+	jstring WebView::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jboolean WebView::shouldDelayChildPressedState()
 	{
 		return __thiz.callMethod<jboolean>(
 			"shouldDelayChildPressedState",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WebView::performLongClick()
 	{
 		return __thiz.callMethod<jboolean>(
 			"performLongClick",
-			"()Z");
+			"()Z"
+		);
 	}
 	void WebView::onProvideVirtualStructure(__jni_impl::android::view::ViewStructure arg0)
 	{
 		__thiz.callMethod<void>(
 			"onProvideVirtualStructure",
 			"(Landroid/view/ViewStructure;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::onProvideAutofillVirtualStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
 	{
@@ -553,79 +665,91 @@ namespace __jni_impl::android::webkit
 			"onProvideAutofillVirtualStructure",
 			"(Landroid/view/ViewStructure;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void WebView::autofill(__jni_impl::android::util::SparseArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"autofill",
 			"(Landroid/util/SparseArray;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean WebView::isVisibleToUserForAutofill(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isVisibleToUserForAutofill",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject WebView::getAccessibilityNodeProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityNodeProvider",
-			"()Landroid/view/accessibility/AccessibilityNodeProvider;");
+			"()Landroid/view/accessibility/AccessibilityNodeProvider;"
+		);
 	}
 	void WebView::onStartTemporaryDetach()
 	{
 		__thiz.callMethod<void>(
 			"onStartTemporaryDetach",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::onFinishTemporaryDetach()
 	{
 		__thiz.callMethod<void>(
 			"onFinishTemporaryDetach",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean WebView::onCheckIsTextEditor()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onCheckIsTextEditor",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject WebView::onCreateInputConnection(__jni_impl::android::view::inputmethod::EditorInfo arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onCreateInputConnection",
 			"(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean WebView::onHoverEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onHoverEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::setLayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::computeScroll()
 	{
 		__thiz.callMethod<void>(
 			"computeScroll",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::setScrollBarStyle(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setScrollBarStyle",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::setLayerType(jint arg0, __jni_impl::android::graphics::Paint arg1)
 	{
@@ -633,67 +757,77 @@ namespace __jni_impl::android::webkit
 			"setLayerType",
 			"(ILandroid/graphics/Paint;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebView::setBackgroundColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBackgroundColor",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WebView::onDragEvent(__jni_impl::android::view::DragEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onDragEvent",
 			"(Landroid/view/DragEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::setOverScrollMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOverScrollMode",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::setHorizontalScrollbarOverlay(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHorizontalScrollbarOverlay",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::setVerticalScrollbarOverlay(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVerticalScrollbarOverlay",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WebView::overlayHorizontalScrollbar()
 	{
 		return __thiz.callMethod<jboolean>(
 			"overlayHorizontalScrollbar",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WebView::overlayVerticalScrollbar()
 	{
 		return __thiz.callMethod<jboolean>(
 			"overlayVerticalScrollbar",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject WebView::getCertificate()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificate",
-			"()Landroid/net/http/SslCertificate;");
+			"()Landroid/net/http/SslCertificate;"
+		);
 	}
 	void WebView::setCertificate(__jni_impl::android::net::http::SslCertificate arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCertificate",
 			"(Landroid/net/http/SslCertificate;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::savePassword(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -702,7 +836,8 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void WebView::setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
@@ -712,43 +847,41 @@ namespace __jni_impl::android::webkit
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
-	QAndroidJniObject WebView::getHttpAuthUsernamePassword(jstring arg0, jstring arg1)
+	jarray WebView::getHttpAuthUsernamePassword(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getHttpAuthUsernamePassword",
 			"(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jarray>();
 	}
 	void WebView::setNetworkAvailable(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNetworkAvailable",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject WebView::saveState(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"saveState",
 			"(Landroid/os/Bundle;)Landroid/webkit/WebBackForwardList;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WebView::restoreState(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"restoreState",
 			"(Landroid/os/Bundle;)Landroid/webkit/WebBackForwardList;",
-			arg0.__jniObject().object());
-	}
-	void WebView::loadUrl(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"loadUrl",
-			"(Ljava/lang/String;)V",
-			arg0);
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::loadUrl(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -756,7 +889,16 @@ namespace __jni_impl::android::webkit
 			"loadUrl",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void WebView::loadUrl(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"loadUrl",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
 	}
 	void WebView::postUrl(jstring arg0, jbyteArray arg1)
 	{
@@ -764,7 +906,8 @@ namespace __jni_impl::android::webkit
 			"postUrl",
 			"(Ljava/lang/String;[B)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void WebView::loadData(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -773,7 +916,8 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void WebView::loadDataWithBaseURL(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
@@ -784,7 +928,8 @@ namespace __jni_impl::android::webkit
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void WebView::evaluateJavascript(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -792,14 +937,16 @@ namespace __jni_impl::android::webkit
 			"evaluateJavascript",
 			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebView::saveWebArchive(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"saveWebArchive",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::saveWebArchive(jstring arg0, jboolean arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -808,57 +955,66 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;ZLandroid/webkit/ValueCallback;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void WebView::stopLoading()
 	{
 		__thiz.callMethod<void>(
 			"stopLoading",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean WebView::canGoBack()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canGoBack",
-			"()Z");
+			"()Z"
+		);
 	}
 	void WebView::goBack()
 	{
 		__thiz.callMethod<void>(
 			"goBack",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean WebView::canGoForward()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canGoForward",
-			"()Z");
+			"()Z"
+		);
 	}
 	void WebView::goForward()
 	{
 		__thiz.callMethod<void>(
 			"goForward",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean WebView::canGoBackOrForward(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"canGoBackOrForward",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::goBackOrForward(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"goBackOrForward",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WebView::isPrivateBrowsingEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPrivateBrowsingEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	void WebView::postVisualStateCallback(jlong arg0, __jni_impl::android::webkit::WebView_VisualStateCallback arg1)
 	{
@@ -866,131 +1022,152 @@ namespace __jni_impl::android::webkit
 			"postVisualStateCallback",
 			"(JLandroid/webkit/WebView$VisualStateCallback;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebView::clearView()
 	{
 		__thiz.callMethod<void>(
 			"clearView",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject WebView::capturePicture()
 	{
 		return __thiz.callObjectMethod(
 			"capturePicture",
-			"()Landroid/graphics/Picture;");
-	}
-	QAndroidJniObject WebView::createPrintDocumentAdapter()
-	{
-		return __thiz.callObjectMethod(
-			"createPrintDocumentAdapter",
-			"()Landroid/print/PrintDocumentAdapter;");
+			"()Landroid/graphics/Picture;"
+		);
 	}
 	QAndroidJniObject WebView::createPrintDocumentAdapter(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createPrintDocumentAdapter",
 			"(Ljava/lang/String;)Landroid/print/PrintDocumentAdapter;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject WebView::createPrintDocumentAdapter()
+	{
+		return __thiz.callObjectMethod(
+			"createPrintDocumentAdapter",
+			"()Landroid/print/PrintDocumentAdapter;"
+		);
 	}
 	jfloat WebView::getScale()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getScale",
-			"()F");
+			"()F"
+		);
 	}
 	void WebView::setInitialScale(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInitialScale",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::invokeZoomPicker()
 	{
 		__thiz.callMethod<void>(
 			"invokeZoomPicker",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject WebView::getHitTestResult()
 	{
 		return __thiz.callObjectMethod(
 			"getHitTestResult",
-			"()Landroid/webkit/WebView$HitTestResult;");
+			"()Landroid/webkit/WebView$HitTestResult;"
+		);
 	}
 	void WebView::requestFocusNodeHref(__jni_impl::android::os::Message arg0)
 	{
 		__thiz.callMethod<void>(
 			"requestFocusNodeHref",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::requestImageRef(__jni_impl::android::os::Message arg0)
 	{
 		__thiz.callMethod<void>(
 			"requestImageRef",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject WebView::getUrl()
+	jstring WebView::getUrl()
 	{
 		return __thiz.callObjectMethod(
 			"getUrl",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WebView::getOriginalUrl()
+	jstring WebView::getOriginalUrl()
 	{
 		return __thiz.callObjectMethod(
 			"getOriginalUrl",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject WebView::getFavicon()
 	{
 		return __thiz.callObjectMethod(
 			"getFavicon",
-			"()Landroid/graphics/Bitmap;");
+			"()Landroid/graphics/Bitmap;"
+		);
 	}
 	jint WebView::getProgress()
 	{
 		return __thiz.callMethod<jint>(
 			"getProgress",
-			"()I");
+			"()I"
+		);
 	}
 	jint WebView::getContentHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getContentHeight",
-			"()I");
+			"()I"
+		);
 	}
 	void WebView::pauseTimers()
 	{
 		__thiz.callMethod<void>(
 			"pauseTimers",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::resumeTimers()
 	{
 		__thiz.callMethod<void>(
 			"resumeTimers",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::clearFormData()
 	{
 		__thiz.callMethod<void>(
 			"clearFormData",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::clearHistory()
 	{
 		__thiz.callMethod<void>(
 			"clearHistory",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::clearSslPreferences()
 	{
 		__thiz.callMethod<void>(
 			"clearSslPreferences",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::clearClientCertPreferences(__jni_impl::__JniBaseClass arg0)
 	{
@@ -998,7 +1175,8 @@ namespace __jni_impl::android::webkit
 			"android.webkit.WebView",
 			"clearClientCertPreferences",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::startSafeBrowsing(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -1007,7 +1185,8 @@ namespace __jni_impl::android::webkit
 			"startSafeBrowsing",
 			"(Landroid/content/Context;Landroid/webkit/ValueCallback;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebView::setSafeBrowsingWhitelist(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -1016,41 +1195,47 @@ namespace __jni_impl::android::webkit
 			"setSafeBrowsingWhitelist",
 			"(Ljava/util/List;Landroid/webkit/ValueCallback;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WebView::getSafeBrowsingPrivacyPolicyUrl()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebView",
 			"getSafeBrowsingPrivacyPolicyUrl",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject WebView::copyBackForwardList()
 	{
 		return __thiz.callObjectMethod(
 			"copyBackForwardList",
-			"()Landroid/webkit/WebBackForwardList;");
+			"()Landroid/webkit/WebBackForwardList;"
+		);
 	}
 	void WebView::setFindListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFindListener",
 			"(Landroid/webkit/WebView$FindListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::findNext(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"findNext",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::findAllAsync(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"findAllAsync",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WebView::showFindDialog(jstring arg0, jboolean arg1)
 	{
@@ -1058,54 +1243,62 @@ namespace __jni_impl::android::webkit
 			"showFindDialog",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject WebView::findAddress(jstring arg0)
+	jstring WebView::findAddress(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebView",
 			"findAddress",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void WebView::enableSlowWholeDocumentDraw()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.webkit.WebView",
 			"enableSlowWholeDocumentDraw",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::clearMatches()
 	{
 		__thiz.callMethod<void>(
 			"clearMatches",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::documentHasImages(__jni_impl::android::os::Message arg0)
 	{
 		__thiz.callMethod<void>(
 			"documentHasImages",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::setWebViewClient(__jni_impl::android::webkit::WebViewClient arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWebViewClient",
 			"(Landroid/webkit/WebViewClient;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WebView::getWebViewClient()
 	{
 		return __thiz.callObjectMethod(
 			"getWebViewClient",
-			"()Landroid/webkit/WebViewClient;");
+			"()Landroid/webkit/WebViewClient;"
+		);
 	}
 	QAndroidJniObject WebView::getWebViewRenderProcess()
 	{
 		return __thiz.callObjectMethod(
 			"getWebViewRenderProcess",
-			"()Landroid/webkit/WebViewRenderProcess;");
+			"()Landroid/webkit/WebViewRenderProcess;"
+		);
 	}
 	void WebView::setWebViewRenderProcessClient(__jni_impl::__JniBaseClass arg0, __jni_impl::android::webkit::WebViewRenderProcessClient arg1)
 	{
@@ -1113,47 +1306,54 @@ namespace __jni_impl::android::webkit
 			"setWebViewRenderProcessClient",
 			"(Ljava/util/concurrent/Executor;Landroid/webkit/WebViewRenderProcessClient;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebView::setWebViewRenderProcessClient(__jni_impl::android::webkit::WebViewRenderProcessClient arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWebViewRenderProcessClient",
 			"(Landroid/webkit/WebViewRenderProcessClient;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WebView::getWebViewRenderProcessClient()
 	{
 		return __thiz.callObjectMethod(
 			"getWebViewRenderProcessClient",
-			"()Landroid/webkit/WebViewRenderProcessClient;");
+			"()Landroid/webkit/WebViewRenderProcessClient;"
+		);
 	}
 	void WebView::setDownloadListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDownloadListener",
 			"(Landroid/webkit/DownloadListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::setWebChromeClient(__jni_impl::android::webkit::WebChromeClient arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWebChromeClient",
 			"(Landroid/webkit/WebChromeClient;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WebView::getWebChromeClient()
 	{
 		return __thiz.callObjectMethod(
 			"getWebChromeClient",
-			"()Landroid/webkit/WebChromeClient;");
+			"()Landroid/webkit/WebChromeClient;"
+		);
 	}
 	void WebView::setPictureListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPictureListener",
 			"(Landroid/webkit/WebView$PictureListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebView::addJavascriptInterface(jobject arg0, jstring arg1)
 	{
@@ -1161,20 +1361,23 @@ namespace __jni_impl::android::webkit
 			"addJavascriptInterface",
 			"(Ljava/lang/Object;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void WebView::removeJavascriptInterface(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeJavascriptInterface",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WebView::createWebMessageChannel()
+	jarray WebView::createWebMessageChannel()
 	{
 		return __thiz.callObjectMethod(
 			"createWebMessageChannel",
-			"()[Landroid/webkit/WebMessagePort;");
+			"()[Landroid/webkit/WebMessagePort;"
+		).object<jarray>();
 	}
 	void WebView::postWebMessage(__jni_impl::android::webkit::WebMessage arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -1182,13 +1385,15 @@ namespace __jni_impl::android::webkit
 			"postWebMessage",
 			"(Landroid/webkit/WebMessage;Landroid/net/Uri;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WebView::getSettings()
 	{
 		return __thiz.callObjectMethod(
 			"getSettings",
-			"()Landroid/webkit/WebSettings;");
+			"()Landroid/webkit/WebSettings;"
+		);
 	}
 	void WebView::setWebContentsDebuggingEnabled(jboolean arg0)
 	{
@@ -1196,7 +1401,8 @@ namespace __jni_impl::android::webkit
 			"android.webkit.WebView",
 			"setWebContentsDebuggingEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::setDataDirectorySuffix(jstring arg0)
 	{
@@ -1204,14 +1410,16 @@ namespace __jni_impl::android::webkit
 			"android.webkit.WebView",
 			"setDataDirectorySuffix",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::disableWebView()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.webkit.WebView",
 			"disableWebView",
-			"()V");
+			"()V"
+		);
 	}
 	void WebView::onChildViewAdded(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1)
 	{
@@ -1219,7 +1427,8 @@ namespace __jni_impl::android::webkit
 			"onChildViewAdded",
 			"(Landroid/view/View;Landroid/view/View;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebView::onChildViewRemoved(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1)
 	{
@@ -1227,7 +1436,8 @@ namespace __jni_impl::android::webkit
 			"onChildViewRemoved",
 			"(Landroid/view/View;Landroid/view/View;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebView::onGlobalFocusChanged(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1)
 	{
@@ -1235,14 +1445,16 @@ namespace __jni_impl::android::webkit
 			"onGlobalFocusChanged",
 			"(Landroid/view/View;Landroid/view/View;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebView::setMapTrackballToArrowKeys(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMapTrackballToArrowKeys",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebView::flingScroll(jint arg0, jint arg1)
 	{
@@ -1250,38 +1462,44 @@ namespace __jni_impl::android::webkit
 			"flingScroll",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean WebView::canZoomIn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canZoomIn",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WebView::canZoomOut()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canZoomOut",
-			"()Z");
+			"()Z"
+		);
 	}
 	void WebView::zoomBy(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"zoomBy",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WebView::zoomIn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"zoomIn",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WebView::zoomOut()
 	{
 		return __thiz.callMethod<jboolean>(
 			"zoomOut",
-			"()Z");
+			"()Z"
+		);
 	}
 	void WebView::setRendererPriorityPolicy(jint arg0, jboolean arg1)
 	{
@@ -1289,117 +1507,45 @@ namespace __jni_impl::android::webkit
 			"setRendererPriorityPolicy",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint WebView::getRendererRequestedPriority()
 	{
 		return __thiz.callMethod<jint>(
 			"getRendererRequestedPriority",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean WebView::getRendererPriorityWaivedWhenNotVisible()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getRendererPriorityWaivedWhenNotVisible",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject WebView::getWebViewClassLoader()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebView",
 			"getWebViewClassLoader",
-			"()Ljava/lang/ClassLoader;");
+			"()Ljava/lang/ClassLoader;"
+		);
 	}
 	QAndroidJniObject WebView::getWebViewLooper()
 	{
 		return __thiz.callObjectMethod(
 			"getWebViewLooper",
-			"()Landroid/os/Looper;");
+			"()Landroid/os/Looper;"
+		);
 	}
 	QAndroidJniObject WebView::getCurrentWebViewPackage()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebView",
 			"getCurrentWebViewPackage",
-			"()Landroid/content/pm/PackageInfo;");
-	}
-	void WebView::onResume()
-	{
-		__thiz.callMethod<void>(
-			"onResume",
-			"()V");
-	}
-	void WebView::onPause()
-	{
-		__thiz.callMethod<void>(
-			"onPause",
-			"()V");
-	}
-	jboolean WebView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean WebView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	jboolean WebView::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyMultiple",
-			"(IILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	jboolean WebView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean WebView::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean WebView::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onGenericMotionEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	void WebView::onWindowFocusChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onWindowFocusChanged",
-			"(Z)V",
-			arg0);
-	}
-	jboolean WebView::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject WebView::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/String;");
+			"()Landroid/content/pm/PackageInfo;"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

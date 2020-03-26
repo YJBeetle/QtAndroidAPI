@@ -41,13 +41,15 @@ namespace __jni_impl::android::database
 	{
 		__thiz.callMethod<void>(
 			"notifyChanged",
-			"()V");
+			"()V"
+		);
 	}
 	void DataSetObservable::notifyInvalidated()
 	{
 		__thiz.callMethod<void>(
 			"notifyInvalidated",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::database
 

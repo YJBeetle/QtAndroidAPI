@@ -9,13 +9,13 @@ namespace __jni_impl::android::net
 {
 	class NetworkInfo_State;
 }
-namespace __jni_impl::android::net
-{
-	class NetworkInfo_DetailedState;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::net
+{
+	class NetworkInfo_DetailedState;
 }
 
 namespace __jni_impl::android::net
@@ -30,28 +30,28 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getTypeName();
+		jstring toString();
+		jstring getTypeName();
 		QAndroidJniObject getState();
 		jint getType();
+		jboolean isAvailable();
 		jboolean isConnected();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getSubtype();
 		jboolean isFailover();
-		QAndroidJniObject getSubtypeName();
+		jstring getSubtypeName();
 		jboolean isConnectedOrConnecting();
 		jboolean isRoaming();
 		QAndroidJniObject getDetailedState();
-		QAndroidJniObject getExtraInfo();
-		QAndroidJniObject getReason();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jboolean isAvailable();
-		jint getSubtype();
+		jstring getExtraInfo();
+		jstring getReason();
 	};
 } // namespace __jni_impl::android::net
 
 #include "NetworkInfo_State.hpp"
-#include "NetworkInfo_DetailedState.hpp"
 #include "../os/Parcel.hpp"
+#include "NetworkInfo_DetailedState.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -61,7 +61,8 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -73,83 +74,54 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject NetworkInfo::toString()
+	jstring NetworkInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NetworkInfo::getTypeName()
+	jstring NetworkInfo::getTypeName()
 	{
 		return __thiz.callObjectMethod(
 			"getTypeName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject NetworkInfo::getState()
 	{
 		return __thiz.callObjectMethod(
 			"getState",
-			"()Landroid/net/NetworkInfo$State;");
+			"()Landroid/net/NetworkInfo$State;"
+		);
 	}
 	jint NetworkInfo::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
+	}
+	jboolean NetworkInfo::isAvailable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAvailable",
+			"()Z"
+		);
 	}
 	jboolean NetworkInfo::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
-	}
-	jboolean NetworkInfo::isFailover()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFailover",
-			"()Z");
-	}
-	QAndroidJniObject NetworkInfo::getSubtypeName()
-	{
-		return __thiz.callObjectMethod(
-			"getSubtypeName",
-			"()Ljava/lang/String;");
-	}
-	jboolean NetworkInfo::isConnectedOrConnecting()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnectedOrConnecting",
-			"()Z");
-	}
-	jboolean NetworkInfo::isRoaming()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRoaming",
-			"()Z");
-	}
-	QAndroidJniObject NetworkInfo::getDetailedState()
-	{
-		return __thiz.callObjectMethod(
-			"getDetailedState",
-			"()Landroid/net/NetworkInfo$DetailedState;");
-	}
-	QAndroidJniObject NetworkInfo::getExtraInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getExtraInfo",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject NetworkInfo::getReason()
-	{
-		return __thiz.callObjectMethod(
-			"getReason",
-			"()Ljava/lang/String;");
+			"()Z"
+		);
 	}
 	jint NetworkInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void NetworkInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -157,19 +129,64 @@ namespace __jni_impl::android::net
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jboolean NetworkInfo::isAvailable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAvailable",
-			"()Z");
+			arg1
+		);
 	}
 	jint NetworkInfo::getSubtype()
 	{
 		return __thiz.callMethod<jint>(
 			"getSubtype",
-			"()I");
+			"()I"
+		);
+	}
+	jboolean NetworkInfo::isFailover()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFailover",
+			"()Z"
+		);
+	}
+	jstring NetworkInfo::getSubtypeName()
+	{
+		return __thiz.callObjectMethod(
+			"getSubtypeName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean NetworkInfo::isConnectedOrConnecting()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnectedOrConnecting",
+			"()Z"
+		);
+	}
+	jboolean NetworkInfo::isRoaming()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRoaming",
+			"()Z"
+		);
+	}
+	QAndroidJniObject NetworkInfo::getDetailedState()
+	{
+		return __thiz.callObjectMethod(
+			"getDetailedState",
+			"()Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	jstring NetworkInfo::getExtraInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getExtraInfo",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring NetworkInfo::getReason()
+	{
+		return __thiz.callObjectMethod(
+			"getReason",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net
 

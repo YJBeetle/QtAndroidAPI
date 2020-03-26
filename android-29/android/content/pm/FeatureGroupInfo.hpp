@@ -17,7 +17,7 @@ namespace __jni_impl::android::content::pm
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		QAndroidJniObject features();
+		jarray features();
 		
 		// Constructors
 		void __constructor();
@@ -39,13 +39,15 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.FeatureGroupInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject FeatureGroupInfo::features()
+	jarray FeatureGroupInfo::features()
 	{
 		return __thiz.getObjectField(
 			"features",
-			"[Landroid/content/pm/FeatureInfo;");
+			"[Landroid/content/pm/FeatureInfo;"
+		).object<jarray>();
 	}
 	
 	// Constructors
@@ -68,7 +70,8 @@ namespace __jni_impl::android::content::pm
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void FeatureGroupInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -76,7 +79,8 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

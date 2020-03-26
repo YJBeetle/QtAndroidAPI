@@ -27,9 +27,9 @@ namespace __jni_impl::android::service::chooser
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BIND_PERMISSION();
-		static QAndroidJniObject META_DATA_NAME();
-		static QAndroidJniObject SERVICE_INTERFACE();
+		static jstring BIND_PERMISSION();
+		static jstring META_DATA_NAME();
+		static jstring SERVICE_INTERFACE();
 		
 		// Constructors
 		void __constructor();
@@ -47,26 +47,29 @@ namespace __jni_impl::android::service::chooser
 namespace __jni_impl::android::service::chooser
 {
 	// Fields
-	QAndroidJniObject ChooserTargetService::BIND_PERMISSION()
+	jstring ChooserTargetService::BIND_PERMISSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.chooser.ChooserTargetService",
 			"BIND_PERMISSION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ChooserTargetService::META_DATA_NAME()
+	jstring ChooserTargetService::META_DATA_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.chooser.ChooserTargetService",
 			"META_DATA_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ChooserTargetService::SERVICE_INTERFACE()
+	jstring ChooserTargetService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.chooser.ChooserTargetService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -83,7 +86,8 @@ namespace __jni_impl::android::service::chooser
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ChooserTargetService::onGetChooserTargets(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::content::IntentFilter arg1)
 	{
@@ -91,7 +95,8 @@ namespace __jni_impl::android::service::chooser
 			"onGetChooserTargets",
 			"(Landroid/content/ComponentName;Landroid/content/IntentFilter;)Ljava/util/List;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::service::chooser
 

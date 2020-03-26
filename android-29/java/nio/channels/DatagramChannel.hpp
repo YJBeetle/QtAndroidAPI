@@ -46,9 +46,9 @@ namespace __jni_impl::java::nio::channels
 		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject open();
 		QAndroidJniObject bind(__jni_impl::java::net::SocketAddress arg0);
-		QAndroidJniObject getRemoteAddress();
 		jboolean isConnected();
 		QAndroidJniObject socket();
+		QAndroidJniObject getRemoteAddress();
 		jint send(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::net::SocketAddress arg1);
 		QAndroidJniObject disconnect();
 		QAndroidJniObject getLocalAddress();
@@ -81,7 +81,8 @@ namespace __jni_impl::java::nio::channels
 		return __thiz.callMethod<jlong>(
 			"write",
 			"([Ljava/nio/ByteBuffer;)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong DatagramChannel::write(jarray arg0, jint arg1, jint arg2)
 	{
@@ -90,28 +91,32 @@ namespace __jni_impl::java::nio::channels
 			"([Ljava/nio/ByteBuffer;II)J",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint DatagramChannel::write(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"write",
 			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong DatagramChannel::read(jarray arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"read",
 			"([Ljava/nio/ByteBuffer;)J",
-			arg0);
+			arg0
+		);
 	}
 	jint DatagramChannel::read(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"read",
 			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong DatagramChannel::read(jarray arg0, jint arg1, jint arg2)
 	{
@@ -120,14 +125,16 @@ namespace __jni_impl::java::nio::channels
 			"([Ljava/nio/ByteBuffer;II)J",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject DatagramChannel::connect(__jni_impl::java::net::SocketAddress arg0)
 	{
 		return __thiz.callObjectMethod(
 			"connect",
 			"(Ljava/net/SocketAddress;)Ljava/nio/channels/DatagramChannel;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DatagramChannel::open(__jni_impl::__JniBaseClass arg0)
 	{
@@ -135,39 +142,45 @@ namespace __jni_impl::java::nio::channels
 			"java.nio.channels.DatagramChannel",
 			"open",
 			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/DatagramChannel;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DatagramChannel::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.DatagramChannel",
 			"open",
-			"()Ljava/nio/channels/DatagramChannel;");
+			"()Ljava/nio/channels/DatagramChannel;"
+		);
 	}
 	QAndroidJniObject DatagramChannel::bind(__jni_impl::java::net::SocketAddress arg0)
 	{
 		return __thiz.callObjectMethod(
 			"bind",
 			"(Ljava/net/SocketAddress;)Ljava/nio/channels/DatagramChannel;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject DatagramChannel::getRemoteAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getRemoteAddress",
-			"()Ljava/net/SocketAddress;");
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DatagramChannel::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject DatagramChannel::socket()
 	{
 		return __thiz.callObjectMethod(
 			"socket",
-			"()Ljava/net/DatagramSocket;");
+			"()Ljava/net/DatagramSocket;"
+		);
+	}
+	QAndroidJniObject DatagramChannel::getRemoteAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getRemoteAddress",
+			"()Ljava/net/SocketAddress;"
+		);
 	}
 	jint DatagramChannel::send(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::net::SocketAddress arg1)
 	{
@@ -175,19 +188,22 @@ namespace __jni_impl::java::nio::channels
 			"send",
 			"(Ljava/nio/ByteBuffer;Ljava/net/SocketAddress;)I",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DatagramChannel::disconnect()
 	{
 		return __thiz.callObjectMethod(
 			"disconnect",
-			"()Ljava/nio/channels/DatagramChannel;");
+			"()Ljava/nio/channels/DatagramChannel;"
+		);
 	}
 	QAndroidJniObject DatagramChannel::getLocalAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalAddress",
-			"()Ljava/net/SocketAddress;");
+			"()Ljava/net/SocketAddress;"
+		);
 	}
 	QAndroidJniObject DatagramChannel::setOption(__jni_impl::__JniBaseClass arg0, jobject arg1)
 	{
@@ -195,20 +211,23 @@ namespace __jni_impl::java::nio::channels
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/DatagramChannel;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DatagramChannel::receive(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"receive",
 			"(Ljava/nio/ByteBuffer;)Ljava/net/SocketAddress;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint DatagramChannel::validOps()
 	{
 		return __thiz.callMethod<jint>(
 			"validOps",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels
 

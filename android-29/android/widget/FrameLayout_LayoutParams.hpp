@@ -52,12 +52,14 @@ namespace __jni_impl::android::widget
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.FrameLayout$LayoutParams",
-			"UNSPECIFIED_GRAVITY");
+			"UNSPECIFIED_GRAVITY"
+		);
 	}
 	jint FrameLayout_LayoutParams::gravity()
 	{
 		return __thiz.getField<jint>(
-			"gravity");
+			"gravity"
+		);
 	}
 	
 	// Constructors

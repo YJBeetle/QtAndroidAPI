@@ -56,16 +56,16 @@ namespace __jni_impl::android::location
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EXTRA_PROVIDER_NAME();
-		static QAndroidJniObject GPS_PROVIDER();
-		static QAndroidJniObject KEY_LOCATION_CHANGED();
-		static QAndroidJniObject KEY_PROVIDER_ENABLED();
-		static QAndroidJniObject KEY_PROXIMITY_ENTERING();
-		static QAndroidJniObject KEY_STATUS_CHANGED();
-		static QAndroidJniObject MODE_CHANGED_ACTION();
-		static QAndroidJniObject NETWORK_PROVIDER();
-		static QAndroidJniObject PASSIVE_PROVIDER();
-		static QAndroidJniObject PROVIDERS_CHANGED_ACTION();
+		static jstring EXTRA_PROVIDER_NAME();
+		static jstring GPS_PROVIDER();
+		static jstring KEY_LOCATION_CHANGED();
+		static jstring KEY_PROVIDER_ENABLED();
+		static jstring KEY_PROXIMITY_ENTERING();
+		static jstring KEY_STATUS_CHANGED();
+		static jstring MODE_CHANGED_ACTION();
+		static jstring NETWORK_PROVIDER();
+		static jstring PASSIVE_PROVIDER();
+		static jstring PROVIDERS_CHANGED_ACTION();
 		
 		// Constructors
 		void __constructor();
@@ -75,7 +75,7 @@ namespace __jni_impl::android::location
 		QAndroidJniObject getProviders(__jni_impl::android::location::Criteria arg0, jboolean arg1);
 		QAndroidJniObject getProviders(jboolean arg0);
 		QAndroidJniObject getAllProviders();
-		QAndroidJniObject getBestProvider(__jni_impl::android::location::Criteria arg0, jboolean arg1);
+		jstring getBestProvider(__jni_impl::android::location::Criteria arg0, jboolean arg1);
 		void requestLocationUpdates(jlong arg0, jfloat arg1, __jni_impl::android::location::Criteria arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Looper arg4);
 		void requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __jni_impl::android::app::PendingIntent arg3);
 		void requestLocationUpdates(jlong arg0, jfloat arg1, __jni_impl::android::location::Criteria arg2, __jni_impl::android::app::PendingIntent arg3);
@@ -116,7 +116,7 @@ namespace __jni_impl::android::location
 		void unregisterGnssNavigationMessageCallback(__jni_impl::android::location::GnssNavigationMessage_Callback arg0);
 		QAndroidJniObject getGpsStatus(__jni_impl::android::location::GpsStatus arg0);
 		jint getGnssYearOfHardware();
-		QAndroidJniObject getGnssHardwareModelName();
+		jstring getGnssHardwareModelName();
 		jboolean sendExtraCommand(jstring arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
 	};
 } // namespace __jni_impl::android::location
@@ -136,75 +136,85 @@ namespace __jni_impl::android::location
 namespace __jni_impl::android::location
 {
 	// Fields
-	QAndroidJniObject LocationManager::EXTRA_PROVIDER_NAME()
+	jstring LocationManager::EXTRA_PROVIDER_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"EXTRA_PROVIDER_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LocationManager::GPS_PROVIDER()
+	jstring LocationManager::GPS_PROVIDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"GPS_PROVIDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LocationManager::KEY_LOCATION_CHANGED()
+	jstring LocationManager::KEY_LOCATION_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_LOCATION_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LocationManager::KEY_PROVIDER_ENABLED()
+	jstring LocationManager::KEY_PROVIDER_ENABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_PROVIDER_ENABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LocationManager::KEY_PROXIMITY_ENTERING()
+	jstring LocationManager::KEY_PROXIMITY_ENTERING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_PROXIMITY_ENTERING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LocationManager::KEY_STATUS_CHANGED()
+	jstring LocationManager::KEY_STATUS_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"KEY_STATUS_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LocationManager::MODE_CHANGED_ACTION()
+	jstring LocationManager::MODE_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"MODE_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LocationManager::NETWORK_PROVIDER()
+	jstring LocationManager::NETWORK_PROVIDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"NETWORK_PROVIDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LocationManager::PASSIVE_PROVIDER()
+	jstring LocationManager::PASSIVE_PROVIDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"PASSIVE_PROVIDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LocationManager::PROVIDERS_CHANGED_ACTION()
+	jstring LocationManager::PROVIDERS_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.LocationManager",
 			"PROVIDERS_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -221,7 +231,8 @@ namespace __jni_impl::android::location
 		return __thiz.callObjectMethod(
 			"getProvider",
 			"(Ljava/lang/String;)Landroid/location/LocationProvider;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LocationManager::getProviders(__jni_impl::android::location::Criteria arg0, jboolean arg1)
 	{
@@ -229,28 +240,32 @@ namespace __jni_impl::android::location
 			"getProviders",
 			"(Landroid/location/Criteria;Z)Ljava/util/List;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject LocationManager::getProviders(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProviders",
 			"(Z)Ljava/util/List;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LocationManager::getAllProviders()
 	{
 		return __thiz.callObjectMethod(
 			"getAllProviders",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
-	QAndroidJniObject LocationManager::getBestProvider(__jni_impl::android::location::Criteria arg0, jboolean arg1)
+	jstring LocationManager::getBestProvider(__jni_impl::android::location::Criteria arg0, jboolean arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getBestProvider",
 			"(Landroid/location/Criteria;Z)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, __jni_impl::android::location::Criteria arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Looper arg4)
 	{
@@ -261,7 +276,8 @@ namespace __jni_impl::android::location
 			arg1,
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __jni_impl::android::app::PendingIntent arg3)
 	{
@@ -271,7 +287,8 @@ namespace __jni_impl::android::location
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, __jni_impl::android::location::Criteria arg2, __jni_impl::android::app::PendingIntent arg3)
 	{
@@ -281,7 +298,8 @@ namespace __jni_impl::android::location
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Looper arg4)
 	{
@@ -292,7 +310,8 @@ namespace __jni_impl::android::location
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -302,7 +321,8 @@ namespace __jni_impl::android::location
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void LocationManager::requestSingleUpdate(jstring arg0, __jni_impl::android::app::PendingIntent arg1)
 	{
@@ -310,7 +330,8 @@ namespace __jni_impl::android::location
 			"requestSingleUpdate",
 			"(Ljava/lang/String;Landroid/app/PendingIntent;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LocationManager::requestSingleUpdate(__jni_impl::android::location::Criteria arg0, __jni_impl::android::app::PendingIntent arg1)
 	{
@@ -318,7 +339,8 @@ namespace __jni_impl::android::location
 			"requestSingleUpdate",
 			"(Landroid/location/Criteria;Landroid/app/PendingIntent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LocationManager::requestSingleUpdate(__jni_impl::android::location::Criteria arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Looper arg2)
 	{
@@ -327,7 +349,8 @@ namespace __jni_impl::android::location
 			"(Landroid/location/Criteria;Landroid/location/LocationListener;Landroid/os/Looper;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void LocationManager::requestSingleUpdate(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Looper arg2)
 	{
@@ -336,21 +359,24 @@ namespace __jni_impl::android::location
 			"(Ljava/lang/String;Landroid/location/LocationListener;Landroid/os/Looper;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void LocationManager::removeUpdates(__jni_impl::android::app::PendingIntent arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeUpdates",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LocationManager::removeUpdates(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeUpdates",
 			"(Landroid/location/LocationListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LocationManager::addProximityAlert(jdouble arg0, jdouble arg1, jfloat arg2, jlong arg3, __jni_impl::android::app::PendingIntent arg4)
 	{
@@ -361,34 +387,39 @@ namespace __jni_impl::android::location
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void LocationManager::removeProximityAlert(__jni_impl::android::app::PendingIntent arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeProximityAlert",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LocationManager::isLocationEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLocationEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean LocationManager::isProviderEnabled(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isProviderEnabled",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LocationManager::getLastKnownLocation(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getLastKnownLocation",
 			"(Ljava/lang/String;)Landroid/location/Location;",
-			arg0);
+			arg0
+		);
 	}
 	void LocationManager::addTestProvider(jstring arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4, jboolean arg5, jboolean arg6, jboolean arg7, jint arg8, jint arg9)
 	{
@@ -404,14 +435,16 @@ namespace __jni_impl::android::location
 			arg6,
 			arg7,
 			arg8,
-			arg9);
+			arg9
+		);
 	}
 	void LocationManager::removeTestProvider(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeTestProvider",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void LocationManager::setTestProviderLocation(jstring arg0, __jni_impl::android::location::Location arg1)
 	{
@@ -419,14 +452,16 @@ namespace __jni_impl::android::location
 			"setTestProviderLocation",
 			"(Ljava/lang/String;Landroid/location/Location;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LocationManager::clearTestProviderLocation(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"clearTestProviderLocation",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void LocationManager::setTestProviderEnabled(jstring arg0, jboolean arg1)
 	{
@@ -434,14 +469,16 @@ namespace __jni_impl::android::location
 			"setTestProviderEnabled",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void LocationManager::clearTestProviderEnabled(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"clearTestProviderEnabled",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void LocationManager::setTestProviderStatus(jstring arg0, jint arg1, __jni_impl::android::os::Bundle arg2, jlong arg3)
 	{
@@ -451,28 +488,32 @@ namespace __jni_impl::android::location
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void LocationManager::clearTestProviderStatus(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"clearTestProviderStatus",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean LocationManager::addGpsStatusListener(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"addGpsStatusListener",
 			"(Landroid/location/GpsStatus$Listener;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LocationManager::removeGpsStatusListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeGpsStatusListener",
 			"(Landroid/location/GpsStatus$Listener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LocationManager::registerGnssStatusCallback(__jni_impl::android::location::GnssStatus_Callback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -480,21 +521,24 @@ namespace __jni_impl::android::location
 			"registerGnssStatusCallback",
 			"(Landroid/location/GnssStatus$Callback;Landroid/os/Handler;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean LocationManager::registerGnssStatusCallback(__jni_impl::android::location::GnssStatus_Callback arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"registerGnssStatusCallback",
 			"(Landroid/location/GnssStatus$Callback;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LocationManager::unregisterGnssStatusCallback(__jni_impl::android::location::GnssStatus_Callback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterGnssStatusCallback",
 			"(Landroid/location/GnssStatus$Callback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LocationManager::addNmeaListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -502,21 +546,24 @@ namespace __jni_impl::android::location
 			"addNmeaListener",
 			"(Landroid/location/OnNmeaMessageListener;Landroid/os/Handler;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean LocationManager::addNmeaListener(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"addNmeaListener",
 			"(Landroid/location/OnNmeaMessageListener;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LocationManager::removeNmeaListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeNmeaListener",
 			"(Landroid/location/OnNmeaMessageListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LocationManager::registerGnssMeasurementsCallback(__jni_impl::android::location::GnssMeasurementsEvent_Callback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -524,21 +571,24 @@ namespace __jni_impl::android::location
 			"registerGnssMeasurementsCallback",
 			"(Landroid/location/GnssMeasurementsEvent$Callback;Landroid/os/Handler;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean LocationManager::registerGnssMeasurementsCallback(__jni_impl::android::location::GnssMeasurementsEvent_Callback arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"registerGnssMeasurementsCallback",
 			"(Landroid/location/GnssMeasurementsEvent$Callback;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LocationManager::unregisterGnssMeasurementsCallback(__jni_impl::android::location::GnssMeasurementsEvent_Callback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterGnssMeasurementsCallback",
 			"(Landroid/location/GnssMeasurementsEvent$Callback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LocationManager::registerGnssNavigationMessageCallback(__jni_impl::android::location::GnssNavigationMessage_Callback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -546,40 +596,46 @@ namespace __jni_impl::android::location
 			"registerGnssNavigationMessageCallback",
 			"(Landroid/location/GnssNavigationMessage$Callback;Landroid/os/Handler;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean LocationManager::registerGnssNavigationMessageCallback(__jni_impl::android::location::GnssNavigationMessage_Callback arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"registerGnssNavigationMessageCallback",
 			"(Landroid/location/GnssNavigationMessage$Callback;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LocationManager::unregisterGnssNavigationMessageCallback(__jni_impl::android::location::GnssNavigationMessage_Callback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterGnssNavigationMessageCallback",
 			"(Landroid/location/GnssNavigationMessage$Callback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject LocationManager::getGpsStatus(__jni_impl::android::location::GpsStatus arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getGpsStatus",
 			"(Landroid/location/GpsStatus;)Landroid/location/GpsStatus;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint LocationManager::getGnssYearOfHardware()
 	{
 		return __thiz.callMethod<jint>(
 			"getGnssYearOfHardware",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject LocationManager::getGnssHardwareModelName()
+	jstring LocationManager::getGnssHardwareModelName()
 	{
 		return __thiz.callObjectMethod(
 			"getGnssHardwareModelName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean LocationManager::sendExtraCommand(jstring arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -588,7 +644,8 @@ namespace __jni_impl::android::location
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::location
 

@@ -39,7 +39,8 @@ namespace __jni_impl::android::security
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEncryptionRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::security
 

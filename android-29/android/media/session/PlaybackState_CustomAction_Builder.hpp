@@ -53,14 +53,16 @@ namespace __jni_impl::android::media::session
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/media/session/PlaybackState$CustomAction;");
+			"()Landroid/media/session/PlaybackState$CustomAction;"
+		);
 	}
 	QAndroidJniObject PlaybackState_CustomAction_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/media/session/PlaybackState$CustomAction$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::session
 

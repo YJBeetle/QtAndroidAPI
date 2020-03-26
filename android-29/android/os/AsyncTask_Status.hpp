@@ -21,7 +21,7 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::os
@@ -35,21 +35,24 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.AsyncTask$Status",
 			"PENDING",
-			"Landroid/os/AsyncTask$Status;");
+			"Landroid/os/AsyncTask$Status;"
+		);
 	}
 	QAndroidJniObject AsyncTask_Status::RUNNING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.AsyncTask$Status",
 			"RUNNING",
-			"Landroid/os/AsyncTask$Status;");
+			"Landroid/os/AsyncTask$Status;"
+		);
 	}
 	QAndroidJniObject AsyncTask_Status::FINISHED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.AsyncTask$Status",
 			"FINISHED",
-			"Landroid/os/AsyncTask$Status;");
+			"Landroid/os/AsyncTask$Status;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject AsyncTask_Status::values()
+	jarray AsyncTask_Status::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.AsyncTask$Status",
 			"values",
-			"()[Landroid/os/AsyncTask$Status;");
+			"()[Landroid/os/AsyncTask$Status;"
+		).object<jarray>();
 	}
 	QAndroidJniObject AsyncTask_Status::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::os
 			"android.os.AsyncTask$Status",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/os/AsyncTask$Status;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::os
 

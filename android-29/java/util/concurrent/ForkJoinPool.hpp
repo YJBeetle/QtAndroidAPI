@@ -46,9 +46,9 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, jboolean arg3);
 		
 		// Methods
-		QAndroidJniObject invoke(__jni_impl::java::util::concurrent::ForkJoinTask arg0);
+		jobject invoke(__jni_impl::java::util::concurrent::ForkJoinTask arg0);
 		void shutdown();
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getFactory();
 		void execute(__jni_impl::__JniBaseClass arg0);
 		void execute(__jni_impl::java::util::concurrent::ForkJoinTask arg0);
@@ -94,7 +94,8 @@ namespace __jni_impl::java::util::concurrent
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.concurrent.ForkJoinPool",
 			"defaultForkJoinWorkerThreadFactory",
-			"Ljava/util/concurrent/ForkJoinPool$ForkJoinWorkerThreadFactory;");
+			"Ljava/util/concurrent/ForkJoinPool$ForkJoinWorkerThreadFactory;"
+		);
 	}
 	
 	// Constructors
@@ -139,82 +140,94 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	QAndroidJniObject ForkJoinPool::invoke(__jni_impl::java::util::concurrent::ForkJoinTask arg0)
+	jobject ForkJoinPool::invoke(__jni_impl::java::util::concurrent::ForkJoinTask arg0)
 	{
 		return __thiz.callObjectMethod(
 			"invoke",
 			"(Ljava/util/concurrent/ForkJoinTask;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
 	void ForkJoinPool::shutdown()
 	{
 		__thiz.callMethod<void>(
 			"shutdown",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject ForkJoinPool::toString()
+	jstring ForkJoinPool::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ForkJoinPool::getFactory()
 	{
 		return __thiz.callObjectMethod(
 			"getFactory",
-			"()Ljava/util/concurrent/ForkJoinPool$ForkJoinWorkerThreadFactory;");
+			"()Ljava/util/concurrent/ForkJoinPool$ForkJoinWorkerThreadFactory;"
+		);
 	}
 	void ForkJoinPool::execute(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"execute",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ForkJoinPool::execute(__jni_impl::java::util::concurrent::ForkJoinTask arg0)
 	{
 		__thiz.callMethod<void>(
 			"execute",
 			"(Ljava/util/concurrent/ForkJoinTask;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ForkJoinPool::getUncaughtExceptionHandler()
 	{
 		return __thiz.callObjectMethod(
 			"getUncaughtExceptionHandler",
-			"()Ljava/lang/Thread$UncaughtExceptionHandler;");
+			"()Ljava/lang/Thread$UncaughtExceptionHandler;"
+		);
 	}
 	jboolean ForkJoinPool::isShutdown()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isShutdown",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ForkJoinPool::getCommonPoolParallelism()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"java.util.concurrent.ForkJoinPool",
 			"getCommonPoolParallelism",
-			"()I");
+			"()I"
+		);
 	}
 	jint ForkJoinPool::getParallelism()
 	{
 		return __thiz.callMethod<jint>(
 			"getParallelism",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ForkJoinPool::invokeAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"invokeAll",
 			"(Ljava/util/Collection;)Ljava/util/List;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong ForkJoinPool::getQueuedTaskCount()
 	{
 		return __thiz.callMethod<jlong>(
 			"getQueuedTaskCount",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean ForkJoinPool::awaitQuiescence(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -222,80 +235,93 @@ namespace __jni_impl::java::util::concurrent
 			"awaitQuiescence",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean ForkJoinPool::isTerminated()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTerminated",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ForkJoinPool::isQuiescent()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isQuiescent",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject ForkJoinPool::commonPool()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinPool",
 			"commonPool",
-			"()Ljava/util/concurrent/ForkJoinPool;");
+			"()Ljava/util/concurrent/ForkJoinPool;"
+		);
 	}
 	jint ForkJoinPool::getPoolSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getPoolSize",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean ForkJoinPool::getAsyncMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAsyncMode",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ForkJoinPool::getRunningThreadCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getRunningThreadCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint ForkJoinPool::getActiveThreadCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getActiveThreadCount",
-			"()I");
+			"()I"
+		);
 	}
 	jlong ForkJoinPool::getStealCount()
 	{
 		return __thiz.callMethod<jlong>(
 			"getStealCount",
-			"()J");
+			"()J"
+		);
 	}
 	jint ForkJoinPool::getQueuedSubmissionCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getQueuedSubmissionCount",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean ForkJoinPool::hasQueuedSubmissions()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasQueuedSubmissions",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject ForkJoinPool::shutdownNow()
 	{
 		return __thiz.callObjectMethod(
 			"shutdownNow",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean ForkJoinPool::isTerminating()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTerminating",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ForkJoinPool::awaitTermination(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -303,7 +329,8 @@ namespace __jni_impl::java::util::concurrent
 			"awaitTermination",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ForkJoinPool::managedBlock(__jni_impl::__JniBaseClass arg0)
 	{
@@ -311,7 +338,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.ForkJoinPool",
 			"managedBlock",
 			"(Ljava/util/concurrent/ForkJoinPool$ManagedBlocker;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ForkJoinPool::submit(__jni_impl::__JniBaseClass arg0, jobject arg1)
 	{
@@ -319,21 +347,24 @@ namespace __jni_impl::java::util::concurrent
 			"submit",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/ForkJoinTask;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ForkJoinPool::submit(__jni_impl::java::util::concurrent::ForkJoinTask arg0)
 	{
 		return __thiz.callObjectMethod(
 			"submit",
 			"(Ljava/util/concurrent/ForkJoinTask;)Ljava/util/concurrent/ForkJoinTask;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ForkJoinPool::submit(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"submit",
 			"(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/ForkJoinTask;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

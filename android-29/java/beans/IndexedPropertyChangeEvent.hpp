@@ -51,7 +51,8 @@ namespace __jni_impl::java::beans
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::beans
 

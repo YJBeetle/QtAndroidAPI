@@ -18,12 +18,12 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getCertificates();
-		QAndroidJniObject getType();
-		QAndroidJniObject getEncoded(jstring arg0);
-		QAndroidJniObject getEncoded();
+		jstring getType();
+		jbyteArray getEncoded(jstring arg0);
+		jbyteArray getEncoded();
 		QAndroidJniObject getEncodings();
 	};
 } // namespace __jni_impl::java::security::cert
@@ -47,50 +47,58 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CertPath::toString()
+	jstring CertPath::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CertPath::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject CertPath::getCertificates()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificates",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
-	QAndroidJniObject CertPath::getType()
+	jstring CertPath::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CertPath::getEncoded(jstring arg0)
+	jbyteArray CertPath::getEncoded(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
 			"(Ljava/lang/String;)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject CertPath::getEncoded()
+	jbyteArray CertPath::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject CertPath::getEncodings()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodings",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

@@ -22,7 +22,7 @@ namespace __jni_impl::android::service::voice
 		
 		// Methods
 		QAndroidJniObject getCaptureAudioFormat();
-		QAndroidJniObject getTriggerAudio();
+		jbyteArray getTriggerAudio();
 	};
 } // namespace __jni_impl::android::service::voice
 
@@ -45,13 +45,15 @@ namespace __jni_impl::android::service::voice
 	{
 		return __thiz.callObjectMethod(
 			"getCaptureAudioFormat",
-			"()Landroid/media/AudioFormat;");
+			"()Landroid/media/AudioFormat;"
+		);
 	}
-	QAndroidJniObject AlwaysOnHotwordDetector_EventPayload::getTriggerAudio()
+	jbyteArray AlwaysOnHotwordDetector_EventPayload::getTriggerAudio()
 	{
 		return __thiz.callObjectMethod(
 			"getTriggerAudio",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::service::voice
 

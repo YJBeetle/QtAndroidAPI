@@ -21,7 +21,7 @@ namespace __jni_impl::java::text
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		jchar next();
 		jchar last();
 		jchar first();
@@ -73,81 +73,94 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint StringCharacterIterator::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject StringCharacterIterator::clone()
+	jobject StringCharacterIterator::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jchar StringCharacterIterator::next()
 	{
 		return __thiz.callMethod<jchar>(
 			"next",
-			"()C");
+			"()C"
+		);
 	}
 	jchar StringCharacterIterator::last()
 	{
 		return __thiz.callMethod<jchar>(
 			"last",
-			"()C");
+			"()C"
+		);
 	}
 	jchar StringCharacterIterator::first()
 	{
 		return __thiz.callMethod<jchar>(
 			"first",
-			"()C");
+			"()C"
+		);
 	}
 	jchar StringCharacterIterator::current()
 	{
 		return __thiz.callMethod<jchar>(
 			"current",
-			"()C");
+			"()C"
+		);
 	}
 	jint StringCharacterIterator::getIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jint StringCharacterIterator::getBeginIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getBeginIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jint StringCharacterIterator::getEndIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getEndIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jchar StringCharacterIterator::setIndex(jint arg0)
 	{
 		return __thiz.callMethod<jchar>(
 			"setIndex",
 			"(I)C",
-			arg0);
+			arg0
+		);
 	}
 	void StringCharacterIterator::setText(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	jchar StringCharacterIterator::previous()
 	{
 		return __thiz.callMethod<jchar>(
 			"previous",
-			"()C");
+			"()C"
+		);
 	}
 } // namespace __jni_impl::java::text
 

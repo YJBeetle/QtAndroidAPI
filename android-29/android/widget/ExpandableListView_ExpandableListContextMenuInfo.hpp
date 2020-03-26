@@ -35,18 +35,21 @@ namespace __jni_impl::android::widget
 	jlong ExpandableListView_ExpandableListContextMenuInfo::id()
 	{
 		return __thiz.getField<jlong>(
-			"id");
+			"id"
+		);
 	}
 	jlong ExpandableListView_ExpandableListContextMenuInfo::packedPosition()
 	{
 		return __thiz.getField<jlong>(
-			"packedPosition");
+			"packedPosition"
+		);
 	}
 	QAndroidJniObject ExpandableListView_ExpandableListContextMenuInfo::targetView()
 	{
 		return __thiz.getObjectField(
 			"targetView",
-			"Landroid/view/View;");
+			"Landroid/view/View;"
+		);
 	}
 	
 	// Constructors

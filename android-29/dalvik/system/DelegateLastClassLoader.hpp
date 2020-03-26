@@ -77,14 +77,16 @@ namespace __jni_impl::dalvik::system
 		return __thiz.callObjectMethod(
 			"getResource",
 			"(Ljava/lang/String;)Ljava/net/URL;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DelegateLastClassLoader::getResources(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::dalvik::system
 

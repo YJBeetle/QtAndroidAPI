@@ -17,9 +17,9 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jfloat getScore();
-		QAndroidJniObject getCategoryId();
+		jstring getCategoryId();
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -37,23 +37,26 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject FieldClassification_Match::toString()
+	jstring FieldClassification_Match::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jfloat FieldClassification_Match::getScore()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getScore",
-			"()F");
+			"()F"
+		);
 	}
-	QAndroidJniObject FieldClassification_Match::getCategoryId()
+	jstring FieldClassification_Match::getCategoryId()
 	{
 		return __thiz.callObjectMethod(
 			"getCategoryId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::service::autofill
 

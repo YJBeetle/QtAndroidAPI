@@ -21,7 +21,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -35,21 +35,24 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
 			"LEADING",
-			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;");
+			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
+		);
 	}
 	QAndroidJniObject UnicodeSetSpanner_TrimOption::BOTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
 			"BOTH",
-			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;");
+			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
+		);
 	}
 	QAndroidJniObject UnicodeSetSpanner_TrimOption::TRAILING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
 			"TRAILING",
-			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;");
+			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::values()
+	jarray UnicodeSetSpanner_TrimOption::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
 			"values",
-			"()[Landroid/icu/text/UnicodeSetSpanner$TrimOption;");
+			"()[Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
+		).object<jarray>();
 	}
 	QAndroidJniObject UnicodeSetSpanner_TrimOption::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.UnicodeSetSpanner$TrimOption",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSetSpanner$TrimOption;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

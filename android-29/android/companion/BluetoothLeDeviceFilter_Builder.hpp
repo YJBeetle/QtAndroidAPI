@@ -64,21 +64,24 @@ namespace __jni_impl::android::companion
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/companion/BluetoothLeDeviceFilter;");
+			"()Landroid/companion/BluetoothLeDeviceFilter;"
+		);
 	}
 	QAndroidJniObject BluetoothLeDeviceFilter_Builder::setNamePattern(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setNamePattern",
 			"(Ljava/util/regex/Pattern;)Landroid/companion/BluetoothLeDeviceFilter$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothLeDeviceFilter_Builder::setScanFilter(__jni_impl::android::bluetooth::le::ScanFilter arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setScanFilter",
 			"(Landroid/bluetooth/le/ScanFilter;)Landroid/companion/BluetoothLeDeviceFilter$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothLeDeviceFilter_Builder::setRawDataFilter(jbyteArray arg0, jbyteArray arg1)
 	{
@@ -86,7 +89,8 @@ namespace __jni_impl::android::companion
 			"setRawDataFilter",
 			"([B[B)Landroid/companion/BluetoothLeDeviceFilter$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject BluetoothLeDeviceFilter_Builder::setRenameFromBytes(jstring arg0, jstring arg1, jint arg2, jint arg3, __jni_impl::java::nio::ByteOrder arg4)
 	{
@@ -97,7 +101,8 @@ namespace __jni_impl::android::companion
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothLeDeviceFilter_Builder::setRenameFromName(jstring arg0, jstring arg1, jint arg2, jint arg3)
 	{
@@ -107,7 +112,8 @@ namespace __jni_impl::android::companion
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::companion
 

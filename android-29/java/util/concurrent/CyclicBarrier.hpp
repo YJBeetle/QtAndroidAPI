@@ -64,13 +64,15 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	jint CyclicBarrier::await()
 	{
 		return __thiz.callMethod<jint>(
 			"await",
-			"()I");
+			"()I"
+		);
 	}
 	jint CyclicBarrier::await(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -78,25 +80,29 @@ namespace __jni_impl::java::util::concurrent
 			"await",
 			"(JLjava/util/concurrent/TimeUnit;)I",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint CyclicBarrier::getParties()
 	{
 		return __thiz.callMethod<jint>(
 			"getParties",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean CyclicBarrier::isBroken()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBroken",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint CyclicBarrier::getNumberWaiting()
 	{
 		return __thiz.callMethod<jint>(
 			"getNumberWaiting",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

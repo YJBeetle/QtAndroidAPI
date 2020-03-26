@@ -53,28 +53,32 @@ namespace __jni_impl::android::animation
 		return __thiz.callObjectMethod(
 			"before",
 			"(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AnimatorSet_Builder::after(__jni_impl::android::animation::Animator arg0)
 	{
 		return __thiz.callObjectMethod(
 			"after",
 			"(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AnimatorSet_Builder::after(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"after",
 			"(J)Landroid/animation/AnimatorSet$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AnimatorSet_Builder::with(__jni_impl::android::animation::Animator arg0)
 	{
 		return __thiz.callObjectMethod(
 			"with",
 			"(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::animation
 

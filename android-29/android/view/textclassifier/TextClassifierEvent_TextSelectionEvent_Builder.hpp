@@ -50,35 +50,40 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent;");
+			"()Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent;"
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordStartIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setRelativeWordStartIndex",
 			"(I)Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordEndIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setRelativeWordEndIndex",
 			"(I)Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeSuggestedWordStartIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setRelativeSuggestedWordStartIndex",
 			"(I)Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeSuggestedWordEndIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setRelativeSuggestedWordEndIndex",
 			"(I)Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

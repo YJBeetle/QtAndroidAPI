@@ -32,25 +32,29 @@ namespace __jni_impl::android::drm
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$DrmObjectType",
-			"CONTENT");
+			"CONTENT"
+		);
 	}
 	jint DrmStore_DrmObjectType::RIGHTS_OBJECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$DrmObjectType",
-			"RIGHTS_OBJECT");
+			"RIGHTS_OBJECT"
+		);
 	}
 	jint DrmStore_DrmObjectType::TRIGGER_OBJECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$DrmObjectType",
-			"TRIGGER_OBJECT");
+			"TRIGGER_OBJECT"
+		);
 	}
 	jint DrmStore_DrmObjectType::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$DrmObjectType",
-			"UNKNOWN");
+			"UNKNOWN"
+		);
 	}
 	
 	// Constructors

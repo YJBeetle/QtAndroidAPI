@@ -32,10 +32,10 @@ namespace __jni_impl::android::graphics::fonts
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		jint getWeight();
 		jint getSlant();
+		jint getWeight();
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
@@ -47,79 +47,92 @@ namespace __jni_impl::android::graphics::fonts
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_SLANT_ITALIC");
+			"FONT_SLANT_ITALIC"
+		);
 	}
 	jint FontStyle::FONT_SLANT_UPRIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_SLANT_UPRIGHT");
+			"FONT_SLANT_UPRIGHT"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_BLACK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_BLACK");
+			"FONT_WEIGHT_BLACK"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_BOLD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_BOLD");
+			"FONT_WEIGHT_BOLD"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_EXTRA_BOLD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_EXTRA_BOLD");
+			"FONT_WEIGHT_EXTRA_BOLD"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_EXTRA_LIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_EXTRA_LIGHT");
+			"FONT_WEIGHT_EXTRA_LIGHT"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_LIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_LIGHT");
+			"FONT_WEIGHT_LIGHT"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_MAX");
+			"FONT_WEIGHT_MAX"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_MEDIUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_MEDIUM");
+			"FONT_WEIGHT_MEDIUM"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_MIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_MIN");
+			"FONT_WEIGHT_MIN"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_NORMAL");
+			"FONT_WEIGHT_NORMAL"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_SEMI_BOLD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_SEMI_BOLD");
+			"FONT_WEIGHT_SEMI_BOLD"
+		);
 	}
 	jint FontStyle::FONT_WEIGHT_THIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.fonts.FontStyle",
-			"FONT_WEIGHT_THIN");
+			"FONT_WEIGHT_THIN"
+		);
 	}
 	
 	// Constructors
@@ -144,31 +157,36 @@ namespace __jni_impl::android::graphics::fonts
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject FontStyle::toString()
+	jstring FontStyle::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint FontStyle::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jint FontStyle::getWeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getWeight",
-			"()I");
+			"()I"
+		);
 	}
 	jint FontStyle::getSlant()
 	{
 		return __thiz.callMethod<jint>(
 			"getSlant",
-			"()I");
+			"()I"
+		);
+	}
+	jint FontStyle::getWeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getWeight",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics::fonts
 

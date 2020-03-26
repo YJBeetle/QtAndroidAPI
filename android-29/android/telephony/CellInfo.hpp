@@ -29,13 +29,13 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jboolean isRegistered();
-		jlong getTimeStamp();
-		jint getCellConnectionStatus();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getCellConnectionStatus();
+		jlong getTimeStamp();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -48,44 +48,51 @@ namespace __jni_impl::android::telephony
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellInfo",
-			"CONNECTION_NONE");
+			"CONNECTION_NONE"
+		);
 	}
 	jint CellInfo::CONNECTION_PRIMARY_SERVING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellInfo",
-			"CONNECTION_PRIMARY_SERVING");
+			"CONNECTION_PRIMARY_SERVING"
+		);
 	}
 	jint CellInfo::CONNECTION_SECONDARY_SERVING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellInfo",
-			"CONNECTION_SECONDARY_SERVING");
+			"CONNECTION_SECONDARY_SERVING"
+		);
 	}
 	jint CellInfo::CONNECTION_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellInfo",
-			"CONNECTION_UNKNOWN");
+			"CONNECTION_UNKNOWN"
+		);
 	}
 	QAndroidJniObject CellInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint CellInfo::UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.CellInfo",
-			"UNAVAILABLE");
+			"UNAVAILABLE"
+		);
 	}
 	jlong CellInfo::UNAVAILABLE_LONG()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.telephony.CellInfo",
-			"UNAVAILABLE_LONG");
+			"UNAVAILABLE_LONG"
+		);
 	}
 	
 	// Constructors
@@ -102,43 +109,36 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CellInfo::toString()
+	jstring CellInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CellInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean CellInfo::isRegistered()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRegistered",
-			"()Z");
-	}
-	jlong CellInfo::getTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeStamp",
-			"()J");
-	}
-	jint CellInfo::getCellConnectionStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getCellConnectionStatus",
-			"()I");
+			"()Z"
+		);
 	}
 	jint CellInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CellInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -146,7 +146,22 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint CellInfo::getCellConnectionStatus()
+	{
+		return __thiz.callMethod<jint>(
+			"getCellConnectionStatus",
+			"()I"
+		);
+	}
+	jlong CellInfo::getTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeStamp",
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

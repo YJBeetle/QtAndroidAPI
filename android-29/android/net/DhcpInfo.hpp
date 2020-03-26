@@ -28,7 +28,7 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -42,37 +42,44 @@ namespace __jni_impl::android::net
 	jint DhcpInfo::dns1()
 	{
 		return __thiz.getField<jint>(
-			"dns1");
+			"dns1"
+		);
 	}
 	jint DhcpInfo::dns2()
 	{
 		return __thiz.getField<jint>(
-			"dns2");
+			"dns2"
+		);
 	}
 	jint DhcpInfo::gateway()
 	{
 		return __thiz.getField<jint>(
-			"gateway");
+			"gateway"
+		);
 	}
 	jint DhcpInfo::ipAddress()
 	{
 		return __thiz.getField<jint>(
-			"ipAddress");
+			"ipAddress"
+		);
 	}
 	jint DhcpInfo::leaseDuration()
 	{
 		return __thiz.getField<jint>(
-			"leaseDuration");
+			"leaseDuration"
+		);
 	}
 	jint DhcpInfo::netmask()
 	{
 		return __thiz.getField<jint>(
-			"netmask");
+			"netmask"
+		);
 	}
 	jint DhcpInfo::serverAddress()
 	{
 		return __thiz.getField<jint>(
-			"serverAddress");
+			"serverAddress"
+		);
 	}
 	
 	// Constructors
@@ -84,17 +91,19 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject DhcpInfo::toString()
+	jstring DhcpInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DhcpInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void DhcpInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -102,7 +111,8 @@ namespace __jni_impl::android::net
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net
 

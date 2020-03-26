@@ -18,11 +18,11 @@ namespace __jni_impl::android::provider
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getCertificates();
-		QAndroidJniObject getQuery();
-		QAndroidJniObject getProviderAuthority();
-		QAndroidJniObject getProviderPackage();
+		jstring getQuery();
+		jstring getProviderAuthority();
+		jstring getProviderPackage();
 	};
 } // namespace __jni_impl::android::provider
 
@@ -53,35 +53,40 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject FontRequest::toString()
+	jstring FontRequest::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject FontRequest::getCertificates()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificates",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
-	QAndroidJniObject FontRequest::getQuery()
+	jstring FontRequest::getQuery()
 	{
 		return __thiz.callObjectMethod(
 			"getQuery",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FontRequest::getProviderAuthority()
+	jstring FontRequest::getProviderAuthority()
 	{
 		return __thiz.callObjectMethod(
 			"getProviderAuthority",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FontRequest::getProviderPackage()
+	jstring FontRequest::getProviderPackage()
 	{
 		return __thiz.callObjectMethod(
 			"getProviderPackage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

@@ -18,23 +18,23 @@ namespace __jni_impl::android::content::pm
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		QAndroidJniObject dataDir();
+		jstring dataDir();
 		jboolean functionalTest();
 		jboolean handleProfiling();
-		QAndroidJniObject publicSourceDir();
-		QAndroidJniObject sourceDir();
-		QAndroidJniObject splitNames();
-		QAndroidJniObject splitPublicSourceDirs();
-		QAndroidJniObject splitSourceDirs();
-		QAndroidJniObject targetPackage();
-		QAndroidJniObject targetProcesses();
+		jstring publicSourceDir();
+		jstring sourceDir();
+		jarray splitNames();
+		jarray splitPublicSourceDirs();
+		jarray splitSourceDirs();
+		jstring targetPackage();
+		jstring targetProcesses();
 		
 		// Constructors
 		void __constructor();
 		void __constructor(__jni_impl::android::content::pm::InstrumentationInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -50,65 +50,76 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.InstrumentationInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject InstrumentationInfo::dataDir()
+	jstring InstrumentationInfo::dataDir()
 	{
 		return __thiz.getObjectField(
 			"dataDir",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean InstrumentationInfo::functionalTest()
 	{
 		return __thiz.getField<jboolean>(
-			"functionalTest");
+			"functionalTest"
+		);
 	}
 	jboolean InstrumentationInfo::handleProfiling()
 	{
 		return __thiz.getField<jboolean>(
-			"handleProfiling");
+			"handleProfiling"
+		);
 	}
-	QAndroidJniObject InstrumentationInfo::publicSourceDir()
+	jstring InstrumentationInfo::publicSourceDir()
 	{
 		return __thiz.getObjectField(
 			"publicSourceDir",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InstrumentationInfo::sourceDir()
+	jstring InstrumentationInfo::sourceDir()
 	{
 		return __thiz.getObjectField(
 			"sourceDir",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InstrumentationInfo::splitNames()
+	jarray InstrumentationInfo::splitNames()
 	{
 		return __thiz.getObjectField(
 			"splitNames",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject InstrumentationInfo::splitPublicSourceDirs()
+	jarray InstrumentationInfo::splitPublicSourceDirs()
 	{
 		return __thiz.getObjectField(
 			"splitPublicSourceDirs",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject InstrumentationInfo::splitSourceDirs()
+	jarray InstrumentationInfo::splitSourceDirs()
 	{
 		return __thiz.getObjectField(
 			"splitSourceDirs",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject InstrumentationInfo::targetPackage()
+	jstring InstrumentationInfo::targetPackage()
 	{
 		return __thiz.getObjectField(
 			"targetPackage",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InstrumentationInfo::targetProcesses()
+	jstring InstrumentationInfo::targetProcesses()
 	{
 		return __thiz.getObjectField(
 			"targetProcesses",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -127,17 +138,19 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject InstrumentationInfo::toString()
+	jstring InstrumentationInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint InstrumentationInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void InstrumentationInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -145,7 +158,8 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

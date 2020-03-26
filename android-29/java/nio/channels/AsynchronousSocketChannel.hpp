@@ -82,7 +82,8 @@ namespace __jni_impl::java::nio::channels
 	{
 		return __thiz.callObjectMethod(
 			"provider",
-			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;");
+			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
+		);
 	}
 	void AsynchronousSocketChannel::write(__jni_impl::java::nio::ByteBuffer arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -91,7 +92,8 @@ namespace __jni_impl::java::nio::channels
 			"(Ljava/nio/ByteBuffer;Ljava/lang/Object;Ljava/nio/channels/CompletionHandler;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void AsynchronousSocketChannel::write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2, jobject arg3, __jni_impl::__JniBaseClass arg4)
 	{
@@ -102,14 +104,16 @@ namespace __jni_impl::java::nio::channels
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::write(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"write",
 			"(Ljava/nio/ByteBuffer;)Ljava/util/concurrent/Future;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AsynchronousSocketChannel::write(jarray arg0, jint arg1, jint arg2, jlong arg3, __jni_impl::java::util::concurrent::TimeUnit arg4, jobject arg5, __jni_impl::__JniBaseClass arg6)
 	{
@@ -122,7 +126,8 @@ namespace __jni_impl::java::nio::channels
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void AsynchronousSocketChannel::read(__jni_impl::java::nio::ByteBuffer arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -131,7 +136,8 @@ namespace __jni_impl::java::nio::channels
 			"(Ljava/nio/ByteBuffer;Ljava/lang/Object;Ljava/nio/channels/CompletionHandler;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void AsynchronousSocketChannel::read(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2, jobject arg3, __jni_impl::__JniBaseClass arg4)
 	{
@@ -142,14 +148,16 @@ namespace __jni_impl::java::nio::channels
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::read(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"read",
 			"(Ljava/nio/ByteBuffer;)Ljava/util/concurrent/Future;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AsynchronousSocketChannel::read(jarray arg0, jint arg1, jint arg2, jlong arg3, __jni_impl::java::util::concurrent::TimeUnit arg4, jobject arg5, __jni_impl::__JniBaseClass arg6)
 	{
@@ -162,14 +170,16 @@ namespace __jni_impl::java::nio::channels
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::connect(__jni_impl::java::net::SocketAddress arg0)
 	{
 		return __thiz.callObjectMethod(
 			"connect",
 			"(Ljava/net/SocketAddress;)Ljava/util/concurrent/Future;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AsynchronousSocketChannel::connect(__jni_impl::java::net::SocketAddress arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -178,7 +188,8 @@ namespace __jni_impl::java::nio::channels
 			"(Ljava/net/SocketAddress;Ljava/lang/Object;Ljava/nio/channels/CompletionHandler;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::open(__jni_impl::java::nio::channels::AsynchronousChannelGroup arg0)
 	{
@@ -186,33 +197,38 @@ namespace __jni_impl::java::nio::channels
 			"java.nio.channels.AsynchronousSocketChannel",
 			"open",
 			"(Ljava/nio/channels/AsynchronousChannelGroup;)Ljava/nio/channels/AsynchronousSocketChannel;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.AsynchronousSocketChannel",
 			"open",
-			"()Ljava/nio/channels/AsynchronousSocketChannel;");
+			"()Ljava/nio/channels/AsynchronousSocketChannel;"
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::bind(__jni_impl::java::net::SocketAddress arg0)
 	{
 		return __thiz.callObjectMethod(
 			"bind",
 			"(Ljava/net/SocketAddress;)Ljava/nio/channels/AsynchronousSocketChannel;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::getRemoteAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getRemoteAddress",
-			"()Ljava/net/SocketAddress;");
+			"()Ljava/net/SocketAddress;"
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::getLocalAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalAddress",
-			"()Ljava/net/SocketAddress;");
+			"()Ljava/net/SocketAddress;"
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::setOption(__jni_impl::__JniBaseClass arg0, jobject arg1)
 	{
@@ -220,19 +236,22 @@ namespace __jni_impl::java::nio::channels
 			"setOption",
 			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/AsynchronousSocketChannel;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::shutdownInput()
 	{
 		return __thiz.callObjectMethod(
 			"shutdownInput",
-			"()Ljava/nio/channels/AsynchronousSocketChannel;");
+			"()Ljava/nio/channels/AsynchronousSocketChannel;"
+		);
 	}
 	QAndroidJniObject AsynchronousSocketChannel::shutdownOutput()
 	{
 		return __thiz.callObjectMethod(
 			"shutdownOutput",
-			"()Ljava/nio/channels/AsynchronousSocketChannel;");
+			"()Ljava/nio/channels/AsynchronousSocketChannel;"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels
 

@@ -22,10 +22,10 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::__JniBaseClass arg0, jarray arg1, __jni_impl::__JniBaseClass arg2);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getAttributes();
 		QAndroidJniObject getPrivateKey();
-		QAndroidJniObject getCertificateChain();
+		jarray getCertificateChain();
 		QAndroidJniObject getCertificate();
 	};
 } // namespace __jni_impl::java::security
@@ -56,35 +56,40 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject KeyStore_PrivateKeyEntry::toString()
+	jstring KeyStore_PrivateKeyEntry::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject KeyStore_PrivateKeyEntry::getAttributes()
 	{
 		return __thiz.callObjectMethod(
 			"getAttributes",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject KeyStore_PrivateKeyEntry::getPrivateKey()
 	{
 		return __thiz.callObjectMethod(
 			"getPrivateKey",
-			"()Ljava/security/PrivateKey;");
+			"()Ljava/security/PrivateKey;"
+		);
 	}
-	QAndroidJniObject KeyStore_PrivateKeyEntry::getCertificateChain()
+	jarray KeyStore_PrivateKeyEntry::getCertificateChain()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificateChain",
-			"()[Ljava/security/cert/Certificate;");
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
 	}
 	QAndroidJniObject KeyStore_PrivateKeyEntry::getCertificate()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificate",
-			"()Ljava/security/cert/Certificate;");
+			"()Ljava/security/cert/Certificate;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

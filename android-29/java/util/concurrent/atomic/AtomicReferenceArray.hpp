@@ -26,30 +26,30 @@ namespace __jni_impl::java::util::concurrent::atomic
 		void __constructor(jobjectArray arg0);
 		
 		// Methods
-		QAndroidJniObject get(jint arg0);
+		jobject get(jint arg0);
 		jint length();
-		QAndroidJniObject toString();
+		jstring toString();
 		void set(jint arg0, jobject arg1);
-		QAndroidJniObject getOpaque(jint arg0);
+		jobject getOpaque(jint arg0);
 		void setOpaque(jint arg0, jobject arg1);
-		QAndroidJniObject getAcquire(jint arg0);
+		jobject getAcquire(jint arg0);
 		void setRelease(jint arg0, jobject arg1);
 		jboolean compareAndSet(jint arg0, jobject arg1, jobject arg2);
-		QAndroidJniObject compareAndExchange(jint arg0, jobject arg1, jobject arg2);
-		QAndroidJniObject compareAndExchangeAcquire(jint arg0, jobject arg1, jobject arg2);
-		QAndroidJniObject compareAndExchangeRelease(jint arg0, jobject arg1, jobject arg2);
+		jobject compareAndExchange(jint arg0, jobject arg1, jobject arg2);
+		jobject compareAndExchangeAcquire(jint arg0, jobject arg1, jobject arg2);
+		jobject compareAndExchangeRelease(jint arg0, jobject arg1, jobject arg2);
 		jboolean weakCompareAndSetPlain(jint arg0, jobject arg1, jobject arg2);
 		jboolean weakCompareAndSet(jint arg0, jobject arg1, jobject arg2);
 		jboolean weakCompareAndSetAcquire(jint arg0, jobject arg1, jobject arg2);
 		jboolean weakCompareAndSetRelease(jint arg0, jobject arg1, jobject arg2);
-		QAndroidJniObject getAndSet(jint arg0, jobject arg1);
+		jobject getAndSet(jint arg0, jobject arg1);
 		void lazySet(jint arg0, jobject arg1);
 		jboolean weakCompareAndSetVolatile(jint arg0, jobject arg1, jobject arg2);
-		QAndroidJniObject getAndUpdate(jint arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject updateAndGet(jint arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject getAndAccumulate(jint arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject accumulateAndGet(jint arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject getPlain(jint arg0);
+		jobject getAndUpdate(jint arg0, __jni_impl::__JniBaseClass arg1);
+		jobject updateAndGet(jint arg0, __jni_impl::__JniBaseClass arg1);
+		jobject getAndAccumulate(jint arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
+		jobject accumulateAndGet(jint arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
+		jobject getPlain(jint arg0);
 		void setPlain(jint arg0, jobject arg1);
 	};
 } // namespace __jni_impl::java::util::concurrent::atomic
@@ -78,24 +78,27 @@ namespace __jni_impl::java::util::concurrent::atomic
 	}
 	
 	// Methods
-	QAndroidJniObject AtomicReferenceArray::get(jint arg0)
+	jobject AtomicReferenceArray::get(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	jint AtomicReferenceArray::length()
 	{
 		return __thiz.callMethod<jint>(
 			"length",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject AtomicReferenceArray::toString()
+	jstring AtomicReferenceArray::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AtomicReferenceArray::set(jint arg0, jobject arg1)
 	{
@@ -103,14 +106,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"set",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject AtomicReferenceArray::getOpaque(jint arg0)
+	jobject AtomicReferenceArray::getOpaque(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getOpaque",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void AtomicReferenceArray::setOpaque(jint arg0, jobject arg1)
 	{
@@ -118,14 +123,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"setOpaque",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject AtomicReferenceArray::getAcquire(jint arg0)
+	jobject AtomicReferenceArray::getAcquire(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAcquire",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void AtomicReferenceArray::setRelease(jint arg0, jobject arg1)
 	{
@@ -133,7 +140,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"setRelease",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicReferenceArray::compareAndSet(jint arg0, jobject arg1, jobject arg2)
 	{
@@ -142,34 +150,38 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(ILjava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject AtomicReferenceArray::compareAndExchange(jint arg0, jobject arg1, jobject arg2)
+	jobject AtomicReferenceArray::compareAndExchange(jint arg0, jobject arg1, jobject arg2)
 	{
 		return __thiz.callObjectMethod(
 			"compareAndExchange",
 			"(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicReferenceArray::compareAndExchangeAcquire(jint arg0, jobject arg1, jobject arg2)
+	jobject AtomicReferenceArray::compareAndExchangeAcquire(jint arg0, jobject arg1, jobject arg2)
 	{
 		return __thiz.callObjectMethod(
 			"compareAndExchangeAcquire",
 			"(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicReferenceArray::compareAndExchangeRelease(jint arg0, jobject arg1, jobject arg2)
+	jobject AtomicReferenceArray::compareAndExchangeRelease(jint arg0, jobject arg1, jobject arg2)
 	{
 		return __thiz.callObjectMethod(
 			"compareAndExchangeRelease",
 			"(ILjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jobject>();
 	}
 	jboolean AtomicReferenceArray::weakCompareAndSetPlain(jint arg0, jobject arg1, jobject arg2)
 	{
@@ -178,7 +190,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(ILjava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicReferenceArray::weakCompareAndSet(jint arg0, jobject arg1, jobject arg2)
 	{
@@ -187,7 +200,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(ILjava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicReferenceArray::weakCompareAndSetAcquire(jint arg0, jobject arg1, jobject arg2)
 	{
@@ -196,7 +210,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(ILjava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicReferenceArray::weakCompareAndSetRelease(jint arg0, jobject arg1, jobject arg2)
 	{
@@ -205,15 +220,17 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(ILjava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject AtomicReferenceArray::getAndSet(jint arg0, jobject arg1)
+	jobject AtomicReferenceArray::getAndSet(jint arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getAndSet",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	void AtomicReferenceArray::lazySet(jint arg0, jobject arg1)
 	{
@@ -221,7 +238,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"lazySet",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicReferenceArray::weakCompareAndSetVolatile(jint arg0, jobject arg1, jobject arg2)
 	{
@@ -230,48 +248,54 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(ILjava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject AtomicReferenceArray::getAndUpdate(jint arg0, __jni_impl::__JniBaseClass arg1)
+	jobject AtomicReferenceArray::getAndUpdate(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getAndUpdate",
 			"(ILjava/util/function/UnaryOperator;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicReferenceArray::updateAndGet(jint arg0, __jni_impl::__JniBaseClass arg1)
+	jobject AtomicReferenceArray::updateAndGet(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"updateAndGet",
 			"(ILjava/util/function/UnaryOperator;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicReferenceArray::getAndAccumulate(jint arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
+	jobject AtomicReferenceArray::getAndAccumulate(jint arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"getAndAccumulate",
 			"(ILjava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicReferenceArray::accumulateAndGet(jint arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
+	jobject AtomicReferenceArray::accumulateAndGet(jint arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"accumulateAndGet",
 			"(ILjava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicReferenceArray::getPlain(jint arg0)
+	jobject AtomicReferenceArray::getPlain(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPlain",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void AtomicReferenceArray::setPlain(jint arg0, jobject arg1)
 	{
@@ -279,7 +303,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"setPlain",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

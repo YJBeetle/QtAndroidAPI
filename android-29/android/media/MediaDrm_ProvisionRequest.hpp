@@ -17,8 +17,8 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getDefaultUrl();
-		QAndroidJniObject getData();
+		jstring getDefaultUrl();
+		jbyteArray getData();
 	};
 } // namespace __jni_impl::android::media
 
@@ -36,17 +36,19 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaDrm_ProvisionRequest::getDefaultUrl()
+	jstring MediaDrm_ProvisionRequest::getDefaultUrl()
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultUrl",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaDrm_ProvisionRequest::getData()
+	jbyteArray MediaDrm_ProvisionRequest::getData()
 	{
 		return __thiz.callObjectMethod(
 			"getData",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::media
 

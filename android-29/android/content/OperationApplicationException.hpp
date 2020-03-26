@@ -82,7 +82,8 @@ namespace __jni_impl::android::content
 	{
 		return __thiz.callMethod<jint>(
 			"getNumSuccessfulYieldPoints",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::content
 

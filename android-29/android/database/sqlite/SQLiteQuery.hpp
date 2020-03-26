@@ -27,7 +27,7 @@ namespace __jni_impl::android::database::sqlite
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::database::sqlite
 
@@ -47,11 +47,12 @@ namespace __jni_impl::android::database::sqlite
 	}
 	
 	// Methods
-	QAndroidJniObject SQLiteQuery::toString()
+	jstring SQLiteQuery::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::database::sqlite
 

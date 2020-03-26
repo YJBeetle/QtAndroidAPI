@@ -21,7 +21,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -35,21 +35,24 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Cap",
 			"BUTT",
-			"Landroid/graphics/Paint$Cap;");
+			"Landroid/graphics/Paint$Cap;"
+		);
 	}
 	QAndroidJniObject Paint_Cap::ROUND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Cap",
 			"ROUND",
-			"Landroid/graphics/Paint$Cap;");
+			"Landroid/graphics/Paint$Cap;"
+		);
 	}
 	QAndroidJniObject Paint_Cap::SQUARE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Cap",
 			"SQUARE",
-			"Landroid/graphics/Paint$Cap;");
+			"Landroid/graphics/Paint$Cap;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Paint_Cap::values()
+	jarray Paint_Cap::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Paint$Cap",
 			"values",
-			"()[Landroid/graphics/Paint$Cap;");
+			"()[Landroid/graphics/Paint$Cap;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Paint_Cap::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Paint$Cap",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Cap;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

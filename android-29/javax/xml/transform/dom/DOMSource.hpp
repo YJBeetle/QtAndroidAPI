@@ -12,7 +12,7 @@ namespace __jni_impl::javax::xml::transform::dom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FEATURE();
+		static jstring FEATURE();
 		
 		// Constructors
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
@@ -23,7 +23,7 @@ namespace __jni_impl::javax::xml::transform::dom
 		jboolean isEmpty();
 		QAndroidJniObject getNode();
 		void setNode(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getSystemId();
+		jstring getSystemId();
 		void setSystemId(jstring arg0);
 	};
 } // namespace __jni_impl::javax::xml::transform::dom
@@ -32,12 +32,13 @@ namespace __jni_impl::javax::xml::transform::dom
 namespace __jni_impl::javax::xml::transform::dom
 {
 	// Fields
-	QAndroidJniObject DOMSource::FEATURE()
+	jstring DOMSource::FEATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.dom.DOMSource",
 			"FEATURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -68,33 +69,38 @@ namespace __jni_impl::javax::xml::transform::dom
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject DOMSource::getNode()
 	{
 		return __thiz.callObjectMethod(
 			"getNode",
-			"()Lorg/w3c/dom/Node;");
+			"()Lorg/w3c/dom/Node;"
+		);
 	}
 	void DOMSource::setNode(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNode",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DOMSource::getSystemId()
+	jstring DOMSource::getSystemId()
 	{
 		return __thiz.callObjectMethod(
 			"getSystemId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void DOMSource::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::javax::xml::transform::dom
 

@@ -23,7 +23,7 @@ namespace __jni_impl::android::bluetooth
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -43,7 +43,8 @@ namespace __jni_impl::android::bluetooth
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothClass",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -60,25 +61,29 @@ namespace __jni_impl::android::bluetooth
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject BluetoothClass::toString()
+	jstring BluetoothClass::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint BluetoothClass::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint BluetoothClass::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void BluetoothClass::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -86,26 +91,30 @@ namespace __jni_impl::android::bluetooth
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint BluetoothClass::getMajorDeviceClass()
 	{
 		return __thiz.callMethod<jint>(
 			"getMajorDeviceClass",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean BluetoothClass::hasService(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasService",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint BluetoothClass::getDeviceClass()
 	{
 		return __thiz.callMethod<jint>(
 			"getDeviceClass",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

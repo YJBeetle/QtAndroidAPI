@@ -12,17 +12,17 @@ namespace __jni_impl::android
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTIVITY_RECOGNITION();
-		static QAndroidJniObject CALENDAR();
-		static QAndroidJniObject CALL_LOG();
-		static QAndroidJniObject CAMERA();
-		static QAndroidJniObject CONTACTS();
-		static QAndroidJniObject LOCATION();
-		static QAndroidJniObject MICROPHONE();
-		static QAndroidJniObject PHONE();
-		static QAndroidJniObject SENSORS();
-		static QAndroidJniObject SMS();
-		static QAndroidJniObject STORAGE();
+		static jstring ACTIVITY_RECOGNITION();
+		static jstring CALENDAR();
+		static jstring CALL_LOG();
+		static jstring CAMERA();
+		static jstring CONTACTS();
+		static jstring LOCATION();
+		static jstring MICROPHONE();
+		static jstring PHONE();
+		static jstring SENSORS();
+		static jstring SMS();
+		static jstring STORAGE();
 		
 		// Constructors
 		void __constructor();
@@ -35,82 +35,93 @@ namespace __jni_impl::android
 namespace __jni_impl::android
 {
 	// Fields
-	QAndroidJniObject Manifest_permission_group::ACTIVITY_RECOGNITION()
+	jstring Manifest_permission_group::ACTIVITY_RECOGNITION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"ACTIVITY_RECOGNITION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::CALENDAR()
+	jstring Manifest_permission_group::CALENDAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"CALENDAR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::CALL_LOG()
+	jstring Manifest_permission_group::CALL_LOG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"CALL_LOG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::CAMERA()
+	jstring Manifest_permission_group::CAMERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"CAMERA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::CONTACTS()
+	jstring Manifest_permission_group::CONTACTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"CONTACTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::LOCATION()
+	jstring Manifest_permission_group::LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::MICROPHONE()
+	jstring Manifest_permission_group::MICROPHONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"MICROPHONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::PHONE()
+	jstring Manifest_permission_group::PHONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"PHONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::SENSORS()
+	jstring Manifest_permission_group::SENSORS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"SENSORS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::SMS()
+	jstring Manifest_permission_group::SMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"SMS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Manifest_permission_group::STORAGE()
+	jstring Manifest_permission_group::STORAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.Manifest$permission_group",
 			"STORAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

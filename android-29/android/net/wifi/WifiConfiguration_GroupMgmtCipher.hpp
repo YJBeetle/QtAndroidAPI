@@ -31,19 +31,22 @@ namespace __jni_impl::android::net::wifi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$GroupMgmtCipher",
-			"BIP_CMAC_256");
+			"BIP_CMAC_256"
+		);
 	}
 	jint WifiConfiguration_GroupMgmtCipher::BIP_GMAC_128()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$GroupMgmtCipher",
-			"BIP_GMAC_128");
+			"BIP_GMAC_128"
+		);
 	}
 	jint WifiConfiguration_GroupMgmtCipher::BIP_GMAC_256()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$GroupMgmtCipher",
-			"BIP_GMAC_256");
+			"BIP_GMAC_256"
+		);
 	}
 	
 	// Constructors

@@ -52,7 +52,8 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaSync;Ljava/nio/ByteBuffer;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::media
 

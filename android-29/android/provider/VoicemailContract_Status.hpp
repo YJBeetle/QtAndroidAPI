@@ -16,7 +16,7 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONFIGURATION_STATE();
+		static jstring CONFIGURATION_STATE();
 		static jint CONFIGURATION_STATE_CAN_BE_CONFIGURED();
 		static jint CONFIGURATION_STATE_CONFIGURING();
 		static jint CONFIGURATION_STATE_DISABLED();
@@ -24,7 +24,7 @@ namespace __jni_impl::android::provider
 		static jint CONFIGURATION_STATE_NOT_CONFIGURED();
 		static jint CONFIGURATION_STATE_OK();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DATA_CHANNEL_STATE();
+		static jstring DATA_CHANNEL_STATE();
 		static jint DATA_CHANNEL_STATE_BAD_CONFIGURATION();
 		static jint DATA_CHANNEL_STATE_COMMUNICATION_ERROR();
 		static jint DATA_CHANNEL_STATE_NO_CONNECTION();
@@ -32,21 +32,21 @@ namespace __jni_impl::android::provider
 		static jint DATA_CHANNEL_STATE_OK();
 		static jint DATA_CHANNEL_STATE_SERVER_CONNECTION_ERROR();
 		static jint DATA_CHANNEL_STATE_SERVER_ERROR();
-		static QAndroidJniObject DIR_TYPE();
-		static QAndroidJniObject ITEM_TYPE();
-		static QAndroidJniObject NOTIFICATION_CHANNEL_STATE();
+		static jstring DIR_TYPE();
+		static jstring ITEM_TYPE();
+		static jstring NOTIFICATION_CHANNEL_STATE();
 		static jint NOTIFICATION_CHANNEL_STATE_MESSAGE_WAITING();
 		static jint NOTIFICATION_CHANNEL_STATE_NO_CONNECTION();
 		static jint NOTIFICATION_CHANNEL_STATE_OK();
-		static QAndroidJniObject PHONE_ACCOUNT_COMPONENT_NAME();
-		static QAndroidJniObject PHONE_ACCOUNT_ID();
-		static QAndroidJniObject QUOTA_OCCUPIED();
-		static QAndroidJniObject QUOTA_TOTAL();
+		static jstring PHONE_ACCOUNT_COMPONENT_NAME();
+		static jstring PHONE_ACCOUNT_ID();
+		static jstring QUOTA_OCCUPIED();
+		static jstring QUOTA_TOTAL();
 		static jint QUOTA_UNAVAILABLE();
-		static QAndroidJniObject SETTINGS_URI();
-		static QAndroidJniObject SOURCE_PACKAGE();
-		static QAndroidJniObject SOURCE_TYPE();
-		static QAndroidJniObject VOICEMAIL_ACCESS_URI();
+		static jstring SETTINGS_URI();
+		static jstring SOURCE_PACKAGE();
+		static jstring SOURCE_TYPE();
+		static jstring VOICEMAIL_ACCESS_URI();
 		
 		// Constructors
 		void __constructor();
@@ -61,205 +61,236 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject VoicemailContract_Status::CONFIGURATION_STATE()
+	jstring VoicemailContract_Status::CONFIGURATION_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"CONFIGURATION_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_CAN_BE_CONFIGURED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"CONFIGURATION_STATE_CAN_BE_CONFIGURED");
+			"CONFIGURATION_STATE_CAN_BE_CONFIGURED"
+		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_CONFIGURING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"CONFIGURATION_STATE_CONFIGURING");
+			"CONFIGURATION_STATE_CONFIGURING"
+		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"CONFIGURATION_STATE_DISABLED");
+			"CONFIGURATION_STATE_DISABLED"
+		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_FAILED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"CONFIGURATION_STATE_FAILED");
+			"CONFIGURATION_STATE_FAILED"
+		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_NOT_CONFIGURED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"CONFIGURATION_STATE_NOT_CONFIGURED");
+			"CONFIGURATION_STATE_NOT_CONFIGURED"
+		);
 	}
 	jint VoicemailContract_Status::CONFIGURATION_STATE_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"CONFIGURATION_STATE_OK");
+			"CONFIGURATION_STATE_OK"
+		);
 	}
 	QAndroidJniObject VoicemailContract_Status::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject VoicemailContract_Status::DATA_CHANNEL_STATE()
+	jstring VoicemailContract_Status::DATA_CHANNEL_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"DATA_CHANNEL_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_BAD_CONFIGURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"DATA_CHANNEL_STATE_BAD_CONFIGURATION");
+			"DATA_CHANNEL_STATE_BAD_CONFIGURATION"
+		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_COMMUNICATION_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"DATA_CHANNEL_STATE_COMMUNICATION_ERROR");
+			"DATA_CHANNEL_STATE_COMMUNICATION_ERROR"
+		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_NO_CONNECTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"DATA_CHANNEL_STATE_NO_CONNECTION");
+			"DATA_CHANNEL_STATE_NO_CONNECTION"
+		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_NO_CONNECTION_CELLULAR_REQUIRED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"DATA_CHANNEL_STATE_NO_CONNECTION_CELLULAR_REQUIRED");
+			"DATA_CHANNEL_STATE_NO_CONNECTION_CELLULAR_REQUIRED"
+		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"DATA_CHANNEL_STATE_OK");
+			"DATA_CHANNEL_STATE_OK"
+		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_SERVER_CONNECTION_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"DATA_CHANNEL_STATE_SERVER_CONNECTION_ERROR");
+			"DATA_CHANNEL_STATE_SERVER_CONNECTION_ERROR"
+		);
 	}
 	jint VoicemailContract_Status::DATA_CHANNEL_STATE_SERVER_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"DATA_CHANNEL_STATE_SERVER_ERROR");
+			"DATA_CHANNEL_STATE_SERVER_ERROR"
+		);
 	}
-	QAndroidJniObject VoicemailContract_Status::DIR_TYPE()
+	jstring VoicemailContract_Status::DIR_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"DIR_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract_Status::ITEM_TYPE()
+	jstring VoicemailContract_Status::ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE()
+	jstring VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"NOTIFICATION_CHANNEL_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE_MESSAGE_WAITING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"NOTIFICATION_CHANNEL_STATE_MESSAGE_WAITING");
+			"NOTIFICATION_CHANNEL_STATE_MESSAGE_WAITING"
+		);
 	}
 	jint VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE_NO_CONNECTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"NOTIFICATION_CHANNEL_STATE_NO_CONNECTION");
+			"NOTIFICATION_CHANNEL_STATE_NO_CONNECTION"
+		);
 	}
 	jint VoicemailContract_Status::NOTIFICATION_CHANNEL_STATE_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"NOTIFICATION_CHANNEL_STATE_OK");
+			"NOTIFICATION_CHANNEL_STATE_OK"
+		);
 	}
-	QAndroidJniObject VoicemailContract_Status::PHONE_ACCOUNT_COMPONENT_NAME()
+	jstring VoicemailContract_Status::PHONE_ACCOUNT_COMPONENT_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"PHONE_ACCOUNT_COMPONENT_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract_Status::PHONE_ACCOUNT_ID()
+	jstring VoicemailContract_Status::PHONE_ACCOUNT_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"PHONE_ACCOUNT_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract_Status::QUOTA_OCCUPIED()
+	jstring VoicemailContract_Status::QUOTA_OCCUPIED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"QUOTA_OCCUPIED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract_Status::QUOTA_TOTAL()
+	jstring VoicemailContract_Status::QUOTA_TOTAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"QUOTA_TOTAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint VoicemailContract_Status::QUOTA_UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.VoicemailContract$Status",
-			"QUOTA_UNAVAILABLE");
+			"QUOTA_UNAVAILABLE"
+		);
 	}
-	QAndroidJniObject VoicemailContract_Status::SETTINGS_URI()
+	jstring VoicemailContract_Status::SETTINGS_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"SETTINGS_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract_Status::SOURCE_PACKAGE()
+	jstring VoicemailContract_Status::SOURCE_PACKAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"SOURCE_PACKAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract_Status::SOURCE_TYPE()
+	jstring VoicemailContract_Status::SOURCE_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"SOURCE_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract_Status::VOICEMAIL_ACCESS_URI()
+	jstring VoicemailContract_Status::VOICEMAIL_ACCESS_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract$Status",
 			"VOICEMAIL_ACCESS_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -277,7 +308,8 @@ namespace __jni_impl::android::provider
 			"android.provider.VoicemailContract$Status",
 			"buildSourceUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::provider
 

@@ -20,15 +20,15 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
+		static jstring CONTENT_DIRECTORY();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static jstring DEFAULT_SORT_ORDER();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2);
+		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -38,26 +38,29 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_Organizations::CONTENT_DIRECTORY()
+	jstring Contacts_Organizations::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Organizations",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Contacts_Organizations::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Organizations",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_Organizations::DEFAULT_SORT_ORDER()
+	jstring Contacts_Organizations::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Organizations",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -69,7 +72,7 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject Contacts_Organizations::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2)
+	jstring Contacts_Organizations::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Contacts$Organizations",
@@ -77,7 +80,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

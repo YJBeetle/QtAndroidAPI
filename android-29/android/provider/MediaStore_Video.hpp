@@ -20,7 +20,7 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static jstring DEFAULT_SORT_ORDER();
 		
 		// Constructors
 		void __constructor();
@@ -36,12 +36,13 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject MediaStore_Video::DEFAULT_SORT_ORDER()
+	jstring MediaStore_Video::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Video",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -61,7 +62,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::provider
 

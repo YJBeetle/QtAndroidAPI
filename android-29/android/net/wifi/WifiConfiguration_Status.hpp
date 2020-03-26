@@ -15,7 +15,7 @@ namespace __jni_impl::android::net::wifi
 		static jint CURRENT();
 		static jint DISABLED();
 		static jint ENABLED();
-		static QAndroidJniObject strings();
+		static jarray strings();
 		
 		// Constructors
 		void __constructor();
@@ -32,26 +32,30 @@ namespace __jni_impl::android::net::wifi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$Status",
-			"CURRENT");
+			"CURRENT"
+		);
 	}
 	jint WifiConfiguration_Status::DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$Status",
-			"DISABLED");
+			"DISABLED"
+		);
 	}
 	jint WifiConfiguration_Status::ENABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$Status",
-			"ENABLED");
+			"ENABLED"
+		);
 	}
-	QAndroidJniObject WifiConfiguration_Status::strings()
+	jarray WifiConfiguration_Status::strings()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$Status",
 			"strings",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	
 	// Constructors

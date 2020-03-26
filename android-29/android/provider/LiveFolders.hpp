@@ -12,19 +12,19 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_CREATE_LIVE_FOLDER();
-		static QAndroidJniObject DESCRIPTION();
+		static jstring ACTION_CREATE_LIVE_FOLDER();
+		static jstring DESCRIPTION();
 		static jint DISPLAY_MODE_GRID();
 		static jint DISPLAY_MODE_LIST();
-		static QAndroidJniObject EXTRA_LIVE_FOLDER_BASE_INTENT();
-		static QAndroidJniObject EXTRA_LIVE_FOLDER_DISPLAY_MODE();
-		static QAndroidJniObject EXTRA_LIVE_FOLDER_ICON();
-		static QAndroidJniObject EXTRA_LIVE_FOLDER_NAME();
-		static QAndroidJniObject ICON_BITMAP();
-		static QAndroidJniObject ICON_PACKAGE();
-		static QAndroidJniObject ICON_RESOURCE();
-		static QAndroidJniObject INTENT();
-		static QAndroidJniObject NAME();
+		static jstring EXTRA_LIVE_FOLDER_BASE_INTENT();
+		static jstring EXTRA_LIVE_FOLDER_DISPLAY_MODE();
+		static jstring EXTRA_LIVE_FOLDER_ICON();
+		static jstring EXTRA_LIVE_FOLDER_NAME();
+		static jstring ICON_BITMAP();
+		static jstring ICON_PACKAGE();
+		static jstring ICON_RESOURCE();
+		static jstring INTENT();
+		static jstring NAME();
 		
 		// Constructors
 		void __constructor();
@@ -37,94 +37,107 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject LiveFolders::ACTION_CREATE_LIVE_FOLDER()
+	jstring LiveFolders::ACTION_CREATE_LIVE_FOLDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"ACTION_CREATE_LIVE_FOLDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LiveFolders::DESCRIPTION()
+	jstring LiveFolders::DESCRIPTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"DESCRIPTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint LiveFolders::DISPLAY_MODE_GRID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.LiveFolders",
-			"DISPLAY_MODE_GRID");
+			"DISPLAY_MODE_GRID"
+		);
 	}
 	jint LiveFolders::DISPLAY_MODE_LIST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.LiveFolders",
-			"DISPLAY_MODE_LIST");
+			"DISPLAY_MODE_LIST"
+		);
 	}
-	QAndroidJniObject LiveFolders::EXTRA_LIVE_FOLDER_BASE_INTENT()
+	jstring LiveFolders::EXTRA_LIVE_FOLDER_BASE_INTENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"EXTRA_LIVE_FOLDER_BASE_INTENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LiveFolders::EXTRA_LIVE_FOLDER_DISPLAY_MODE()
+	jstring LiveFolders::EXTRA_LIVE_FOLDER_DISPLAY_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"EXTRA_LIVE_FOLDER_DISPLAY_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LiveFolders::EXTRA_LIVE_FOLDER_ICON()
+	jstring LiveFolders::EXTRA_LIVE_FOLDER_ICON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"EXTRA_LIVE_FOLDER_ICON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LiveFolders::EXTRA_LIVE_FOLDER_NAME()
+	jstring LiveFolders::EXTRA_LIVE_FOLDER_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"EXTRA_LIVE_FOLDER_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LiveFolders::ICON_BITMAP()
+	jstring LiveFolders::ICON_BITMAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"ICON_BITMAP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LiveFolders::ICON_PACKAGE()
+	jstring LiveFolders::ICON_PACKAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"ICON_PACKAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LiveFolders::ICON_RESOURCE()
+	jstring LiveFolders::ICON_RESOURCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"ICON_RESOURCE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LiveFolders::INTENT()
+	jstring LiveFolders::INTENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"INTENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LiveFolders::NAME()
+	jstring LiveFolders::NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.LiveFolders",
 			"NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

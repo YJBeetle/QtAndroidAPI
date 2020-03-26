@@ -34,37 +34,43 @@ namespace __jni_impl::android::telephony
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
-			"CDMA2000");
+			"CDMA2000"
+		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::EUTRAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
-			"EUTRAN");
+			"EUTRAN"
+		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::GERAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
-			"GERAN");
+			"GERAN"
+		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::IWLAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
-			"IWLAN");
+			"IWLAN"
+		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
-			"UNKNOWN");
+			"UNKNOWN"
+		);
 	}
 	jint AccessNetworkConstants_AccessNetworkType::UTRAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.AccessNetworkConstants$AccessNetworkType",
-			"UTRAN");
+			"UTRAN"
+		);
 	}
 	
 	// Constructors

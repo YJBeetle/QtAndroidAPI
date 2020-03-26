@@ -38,10 +38,13 @@ namespace __jni_impl::android::net::wifi::rtt
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
+		QAndroidJniObject getMacAddress();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getStatus();
+		jint getRssi();
 		QAndroidJniObject getPeerHandle();
 		jint getDistanceMm();
 		jint getDistanceStdDevMm();
@@ -49,9 +52,6 @@ namespace __jni_impl::android::net::wifi::rtt
 		jint getNumSuccessfulMeasurements();
 		QAndroidJniObject getUnverifiedResponderLocation();
 		jlong getRangingTimestampMillis();
-		jint getStatus();
-		QAndroidJniObject getMacAddress();
-		jint getRssi();
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
@@ -68,25 +68,29 @@ namespace __jni_impl::android::net::wifi::rtt
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.rtt.RangingResult",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint RangingResult::STATUS_FAIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResult",
-			"STATUS_FAIL");
+			"STATUS_FAIL"
+		);
 	}
 	jint RangingResult::STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResult",
-			"STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC");
+			"STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC"
+		);
 	}
 	jint RangingResult::STATUS_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResult",
-			"STATUS_SUCCESS");
+			"STATUS_SUCCESS"
+		);
 	}
 	
 	// Constructors
@@ -103,25 +107,36 @@ namespace __jni_impl::android::net::wifi::rtt
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject RangingResult::toString()
+	jstring RangingResult::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint RangingResult::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
+	}
+	QAndroidJniObject RangingResult::getMacAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getMacAddress",
+			"()Landroid/net/MacAddress;"
+		);
 	}
 	jint RangingResult::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void RangingResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -129,67 +144,71 @@ namespace __jni_impl::android::net::wifi::rtt
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject RangingResult::getPeerHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getPeerHandle",
-			"()Landroid/net/wifi/aware/PeerHandle;");
-	}
-	jint RangingResult::getDistanceMm()
-	{
-		return __thiz.callMethod<jint>(
-			"getDistanceMm",
-			"()I");
-	}
-	jint RangingResult::getDistanceStdDevMm()
-	{
-		return __thiz.callMethod<jint>(
-			"getDistanceStdDevMm",
-			"()I");
-	}
-	jint RangingResult::getNumAttemptedMeasurements()
-	{
-		return __thiz.callMethod<jint>(
-			"getNumAttemptedMeasurements",
-			"()I");
-	}
-	jint RangingResult::getNumSuccessfulMeasurements()
-	{
-		return __thiz.callMethod<jint>(
-			"getNumSuccessfulMeasurements",
-			"()I");
-	}
-	QAndroidJniObject RangingResult::getUnverifiedResponderLocation()
-	{
-		return __thiz.callObjectMethod(
-			"getUnverifiedResponderLocation",
-			"()Landroid/net/wifi/rtt/ResponderLocation;");
-	}
-	jlong RangingResult::getRangingTimestampMillis()
-	{
-		return __thiz.callMethod<jlong>(
-			"getRangingTimestampMillis",
-			"()J");
+			arg1
+		);
 	}
 	jint RangingResult::getStatus()
 	{
 		return __thiz.callMethod<jint>(
 			"getStatus",
-			"()I");
-	}
-	QAndroidJniObject RangingResult::getMacAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getMacAddress",
-			"()Landroid/net/MacAddress;");
+			"()I"
+		);
 	}
 	jint RangingResult::getRssi()
 	{
 		return __thiz.callMethod<jint>(
 			"getRssi",
-			"()I");
+			"()I"
+		);
+	}
+	QAndroidJniObject RangingResult::getPeerHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getPeerHandle",
+			"()Landroid/net/wifi/aware/PeerHandle;"
+		);
+	}
+	jint RangingResult::getDistanceMm()
+	{
+		return __thiz.callMethod<jint>(
+			"getDistanceMm",
+			"()I"
+		);
+	}
+	jint RangingResult::getDistanceStdDevMm()
+	{
+		return __thiz.callMethod<jint>(
+			"getDistanceStdDevMm",
+			"()I"
+		);
+	}
+	jint RangingResult::getNumAttemptedMeasurements()
+	{
+		return __thiz.callMethod<jint>(
+			"getNumAttemptedMeasurements",
+			"()I"
+		);
+	}
+	jint RangingResult::getNumSuccessfulMeasurements()
+	{
+		return __thiz.callMethod<jint>(
+			"getNumSuccessfulMeasurements",
+			"()I"
+		);
+	}
+	QAndroidJniObject RangingResult::getUnverifiedResponderLocation()
+	{
+		return __thiz.callObjectMethod(
+			"getUnverifiedResponderLocation",
+			"()Landroid/net/wifi/rtt/ResponderLocation;"
+		);
+	}
+	jlong RangingResult::getRangingTimestampMillis()
+	{
+		return __thiz.callMethod<jlong>(
+			"getRangingTimestampMillis",
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt
 

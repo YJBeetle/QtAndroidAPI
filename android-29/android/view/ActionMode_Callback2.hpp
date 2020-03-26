@@ -57,7 +57,8 @@ namespace __jni_impl::android::view
 			"(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

@@ -28,7 +28,7 @@ namespace __jni_impl::java::net
 		// Methods
 		QAndroidJniObject type();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject address();
 	};
@@ -45,7 +45,8 @@ namespace __jni_impl::java::net
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Proxy",
 			"NO_PROXY",
-			"Ljava/net/Proxy;");
+			"Ljava/net/Proxy;"
+		);
 	}
 	
 	// Constructors
@@ -63,32 +64,37 @@ namespace __jni_impl::java::net
 	{
 		return __thiz.callObjectMethod(
 			"type",
-			"()Ljava/net/Proxy$Type;");
+			"()Ljava/net/Proxy$Type;"
+		);
 	}
 	jboolean Proxy::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Proxy::toString()
+	jstring Proxy::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Proxy::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Proxy::address()
 	{
 		return __thiz.callObjectMethod(
 			"address",
-			"()Ljava/net/SocketAddress;");
+			"()Ljava/net/SocketAddress;"
+		);
 	}
 } // namespace __jni_impl::java::net
 

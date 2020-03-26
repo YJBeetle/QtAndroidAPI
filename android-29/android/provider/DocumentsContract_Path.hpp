@@ -23,12 +23,12 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getPath();
-		QAndroidJniObject getRootId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getRootId();
 	};
 } // namespace __jni_impl::android::provider
 
@@ -42,7 +42,8 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Path",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -61,37 +62,36 @@ namespace __jni_impl::android::provider
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DocumentsContract_Path::toString()
+	jstring DocumentsContract_Path::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DocumentsContract_Path::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject DocumentsContract_Path::getPath()
 	{
 		return __thiz.callObjectMethod(
 			"getPath",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject DocumentsContract_Path::getRootId()
-	{
-		return __thiz.callObjectMethod(
-			"getRootId",
-			"()Ljava/lang/String;");
+			"()Ljava/util/List;"
+		);
 	}
 	jint DocumentsContract_Path::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void DocumentsContract_Path::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -99,7 +99,15 @@ namespace __jni_impl::android::provider
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring DocumentsContract_Path::getRootId()
+	{
+		return __thiz.callObjectMethod(
+			"getRootId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

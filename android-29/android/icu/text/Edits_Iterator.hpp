@@ -17,7 +17,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jboolean next();
 		jint newLength();
 		jint oldLength();
@@ -46,81 +46,93 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject Edits_Iterator::toString()
+	jstring Edits_Iterator::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Edits_Iterator::next()
 	{
 		return __thiz.callMethod<jboolean>(
 			"next",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Edits_Iterator::newLength()
 	{
 		return __thiz.callMethod<jint>(
 			"newLength",
-			"()I");
+			"()I"
+		);
 	}
 	jint Edits_Iterator::oldLength()
 	{
 		return __thiz.callMethod<jint>(
 			"oldLength",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Edits_Iterator::findSourceIndex(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"findSourceIndex",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Edits_Iterator::findDestinationIndex(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"findDestinationIndex",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Edits_Iterator::destinationIndexFromSourceIndex(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"destinationIndexFromSourceIndex",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Edits_Iterator::sourceIndexFromDestinationIndex(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"sourceIndexFromDestinationIndex",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Edits_Iterator::hasChange()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasChange",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Edits_Iterator::replacementIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"replacementIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jint Edits_Iterator::destinationIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"destinationIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jint Edits_Iterator::sourceIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"sourceIndex",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

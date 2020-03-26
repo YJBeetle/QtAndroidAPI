@@ -26,7 +26,7 @@ namespace __jni_impl::android::animation
 		
 		// Methods
 		QAndroidJniObject evaluate(jfloat arg0, __jni_impl::java::lang::Number arg1, __jni_impl::java::lang::Number arg2);
-		QAndroidJniObject evaluate(jfloat arg0, jobject arg1, jobject arg2);
+		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -53,16 +53,18 @@ namespace __jni_impl::android::animation
 			"(FLjava/lang/Number;Ljava/lang/Number;)Ljava/lang/Float;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject FloatEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
+	jobject FloatEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
 	{
 		return __thiz.callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::animation
 

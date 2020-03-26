@@ -20,10 +20,10 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor();
 		
 		// Methods
-		jint getColumnCount();
-		jint getSelectionMode();
 		jint getRowCount();
 		jboolean isHierarchical();
+		jint getColumnCount();
+		jint getSelectionMode();
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2);
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2, jint arg3);
 	};
@@ -37,19 +37,22 @@ namespace __jni_impl::android::view::accessibility
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
-			"SELECTION_MODE_MULTIPLE");
+			"SELECTION_MODE_MULTIPLE"
+		);
 	}
 	jint AccessibilityNodeInfo_CollectionInfo::SELECTION_MODE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
-			"SELECTION_MODE_NONE");
+			"SELECTION_MODE_NONE"
+		);
 	}
 	jint AccessibilityNodeInfo_CollectionInfo::SELECTION_MODE_SINGLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
-			"SELECTION_MODE_SINGLE");
+			"SELECTION_MODE_SINGLE"
+		);
 	}
 	
 	// Constructors
@@ -61,29 +64,33 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
-	jint AccessibilityNodeInfo_CollectionInfo::getColumnCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnCount",
-			"()I");
-	}
-	jint AccessibilityNodeInfo_CollectionInfo::getSelectionMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getSelectionMode",
-			"()I");
-	}
 	jint AccessibilityNodeInfo_CollectionInfo::getRowCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getRowCount",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean AccessibilityNodeInfo_CollectionInfo::isHierarchical()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isHierarchical",
-			"()Z");
+			"()Z"
+		);
+	}
+	jint AccessibilityNodeInfo_CollectionInfo::getColumnCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnCount",
+			"()I"
+		);
+	}
+	jint AccessibilityNodeInfo_CollectionInfo::getSelectionMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getSelectionMode",
+			"()I"
+		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2)
 	{
@@ -93,7 +100,8 @@ namespace __jni_impl::android::view::accessibility
 			"(IIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2, jint arg3)
 	{
@@ -104,7 +112,8 @@ namespace __jni_impl::android::view::accessibility
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::view::accessibility
 

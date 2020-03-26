@@ -16,13 +16,13 @@ namespace __jni_impl::android::graphics
 {
 	class Paint_FontMetricsInt;
 }
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
 }
 
 namespace __jni_impl::android::text::style
@@ -40,16 +40,16 @@ namespace __jni_impl::android::text::style
 		
 		// Methods
 		jint getSize(__jni_impl::android::graphics::Paint arg0, jstring arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Paint_FontMetricsInt arg4);
-		void draw(__jni_impl::android::graphics::Canvas arg0, jstring arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, __jni_impl::android::graphics::Paint arg8);
 		jint getVerticalAlignment();
 		QAndroidJniObject getDrawable();
+		void draw(__jni_impl::android::graphics::Canvas arg0, jstring arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, __jni_impl::android::graphics::Paint arg8);
 	};
 } // namespace __jni_impl::android::text::style
 
 #include "../../graphics/Paint.hpp"
 #include "../../graphics/Paint_FontMetricsInt.hpp"
-#include "../../graphics/Canvas.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
+#include "../../graphics/Canvas.hpp"
 
 namespace __jni_impl::android::text::style
 {
@@ -58,19 +58,22 @@ namespace __jni_impl::android::text::style
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.DynamicDrawableSpan",
-			"ALIGN_BASELINE");
+			"ALIGN_BASELINE"
+		);
 	}
 	jint DynamicDrawableSpan::ALIGN_BOTTOM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.DynamicDrawableSpan",
-			"ALIGN_BOTTOM");
+			"ALIGN_BOTTOM"
+		);
 	}
 	jint DynamicDrawableSpan::ALIGN_CENTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.DynamicDrawableSpan",
-			"ALIGN_CENTER");
+			"ALIGN_CENTER"
+		);
 	}
 	
 	// Constructors
@@ -91,7 +94,22 @@ namespace __jni_impl::android::text::style
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
+	}
+	jint DynamicDrawableSpan::getVerticalAlignment()
+	{
+		return __thiz.callMethod<jint>(
+			"getVerticalAlignment",
+			"()I"
+		);
+	}
+	QAndroidJniObject DynamicDrawableSpan::getDrawable()
+	{
+		return __thiz.callObjectMethod(
+			"getDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	void DynamicDrawableSpan::draw(__jni_impl::android::graphics::Canvas arg0, jstring arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, __jni_impl::android::graphics::Paint arg8)
 	{
@@ -106,19 +124,8 @@ namespace __jni_impl::android::text::style
 			arg5,
 			arg6,
 			arg7,
-			arg8.__jniObject().object());
-	}
-	jint DynamicDrawableSpan::getVerticalAlignment()
-	{
-		return __thiz.callMethod<jint>(
-			"getVerticalAlignment",
-			"()I");
-	}
-	QAndroidJniObject DynamicDrawableSpan::getDrawable()
-	{
-		return __thiz.callObjectMethod(
-			"getDrawable",
-			"()Landroid/graphics/drawable/Drawable;");
+			arg8.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

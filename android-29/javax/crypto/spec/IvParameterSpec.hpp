@@ -18,7 +18,7 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jbyteArray arg0, jint arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject getIV();
+		jbyteArray getIV();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -46,11 +46,12 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
-	QAndroidJniObject IvParameterSpec::getIV()
+	jbyteArray IvParameterSpec::getIV()
 	{
 		return __thiz.callObjectMethod(
 			"getIV",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

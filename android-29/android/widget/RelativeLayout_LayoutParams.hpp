@@ -36,8 +36,8 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject debug(jstring arg0);
-		QAndroidJniObject getRules();
+		jstring debug(jstring arg0);
+		jintArray getRules();
 		void addRule(jint arg0, jint arg1);
 		void addRule(jint arg0);
 		void removeRule(jint arg0);
@@ -56,7 +56,8 @@ namespace __jni_impl::android::widget
 	jboolean RelativeLayout_LayoutParams::alignWithParent()
 	{
 		return __thiz.getField<jboolean>(
-			"alignWithParent");
+			"alignWithParent"
+		);
 	}
 	
 	// Constructors
@@ -99,18 +100,20 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject RelativeLayout_LayoutParams::debug(jstring arg0)
+	jstring RelativeLayout_LayoutParams::debug(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject RelativeLayout_LayoutParams::getRules()
+	jintArray RelativeLayout_LayoutParams::getRules()
 	{
 		return __thiz.callObjectMethod(
 			"getRules",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
 	void RelativeLayout_LayoutParams::addRule(jint arg0, jint arg1)
 	{
@@ -118,35 +121,40 @@ namespace __jni_impl::android::widget
 			"addRule",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void RelativeLayout_LayoutParams::addRule(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"addRule",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void RelativeLayout_LayoutParams::removeRule(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeRule",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint RelativeLayout_LayoutParams::getRule(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getRule",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	void RelativeLayout_LayoutParams::resolveLayoutDirection(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"resolveLayoutDirection",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

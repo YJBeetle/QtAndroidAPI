@@ -17,11 +17,11 @@ namespace __jni_impl::android::util
 		void __constructor(jclass arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject get(jobject arg0);
+		jstring getName();
+		jobject get(jobject arg0);
 		static QAndroidJniObject of(jclass arg0, jclass arg1, jstring arg2);
 		void set(jobject arg0, jobject arg1);
-		QAndroidJniObject getType();
+		jclass getType();
 		jboolean isReadOnly();
 	};
 } // namespace __jni_impl::android::util
@@ -42,18 +42,20 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	QAndroidJniObject Property::getName()
+	jstring Property::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Property::get(jobject arg0)
+	jobject Property::get(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject Property::of(jclass arg0, jclass arg1, jstring arg2)
 	{
@@ -63,7 +65,8 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Landroid/util/Property;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Property::set(jobject arg0, jobject arg1)
 	{
@@ -71,19 +74,22 @@ namespace __jni_impl::android::util
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Property::getType()
+	jclass Property::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	jboolean Property::isReadOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReadOnly",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::util
 

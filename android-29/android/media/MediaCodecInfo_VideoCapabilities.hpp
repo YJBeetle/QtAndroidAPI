@@ -56,33 +56,38 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jint>(
 			"getWidthAlignment",
-			"()I");
+			"()I"
+		);
 	}
 	jint MediaCodecInfo_VideoCapabilities::getHeightAlignment()
 	{
 		return __thiz.callMethod<jint>(
 			"getHeightAlignment",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedFrameRates()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedFrameRates",
-			"()Landroid/util/Range;");
+			"()Landroid/util/Range;"
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedWidthsFor(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedWidthsFor",
 			"(I)Landroid/util/Range;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedHeightsFor(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedHeightsFor",
 			"(I)Landroid/util/Range;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedFrameRatesFor(jint arg0, jint arg1)
 	{
@@ -90,25 +95,29 @@ namespace __jni_impl::android::media
 			"getSupportedFrameRatesFor",
 			"(II)Landroid/util/Range;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getBitrateRange()
 	{
 		return __thiz.callObjectMethod(
 			"getBitrateRange",
-			"()Landroid/util/Range;");
+			"()Landroid/util/Range;"
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedWidths()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedWidths",
-			"()Landroid/util/Range;");
+			"()Landroid/util/Range;"
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedHeights()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedHeights",
-			"()Landroid/util/Range;");
+			"()Landroid/util/Range;"
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getAchievableFrameRatesFor(jint arg0, jint arg1)
 	{
@@ -116,13 +125,15 @@ namespace __jni_impl::android::media
 			"getAchievableFrameRatesFor",
 			"(II)Landroid/util/Range;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedPerformancePoints()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedPerformancePoints",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean MediaCodecInfo_VideoCapabilities::areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2)
 	{
@@ -131,7 +142,8 @@ namespace __jni_impl::android::media
 			"(IID)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean MediaCodecInfo_VideoCapabilities::isSizeSupported(jint arg0, jint arg1)
 	{
@@ -139,7 +151,8 @@ namespace __jni_impl::android::media
 			"isSizeSupported",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

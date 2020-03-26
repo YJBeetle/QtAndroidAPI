@@ -42,7 +42,8 @@ namespace __jni_impl::android::app::backup
 		__thiz.callMethod<void>(
 			"restoreStarting",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void RestoreObserver::onUpdate(jint arg0, jstring arg1)
 	{
@@ -50,14 +51,16 @@ namespace __jni_impl::android::app::backup
 			"onUpdate",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void RestoreObserver::restoreFinished(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"restoreFinished",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app::backup
 

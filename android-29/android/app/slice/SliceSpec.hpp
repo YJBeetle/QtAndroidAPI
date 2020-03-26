@@ -23,8 +23,8 @@ namespace __jni_impl::android::app::slice
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
-		QAndroidJniObject getType();
+		jstring toString();
+		jstring getType();
 		jint getRevision();
 		jboolean canRender(__jni_impl::android::app::slice::SliceSpec arg0);
 		jint describeContents();
@@ -42,7 +42,8 @@ namespace __jni_impl::android::app::slice
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.slice.SliceSpec",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -61,38 +62,44 @@ namespace __jni_impl::android::app::slice
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SliceSpec::toString()
+	jstring SliceSpec::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SliceSpec::getType()
+	jstring SliceSpec::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SliceSpec::getRevision()
 	{
 		return __thiz.callMethod<jint>(
 			"getRevision",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean SliceSpec::canRender(__jni_impl::android::app::slice::SliceSpec arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"canRender",
 			"(Landroid/app/slice/SliceSpec;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint SliceSpec::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SliceSpec::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -100,7 +107,8 @@ namespace __jni_impl::android::app::slice
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app::slice
 

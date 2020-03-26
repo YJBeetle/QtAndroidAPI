@@ -16,10 +16,10 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DATABASE_CREATION_TIMESTAMP();
-		static QAndroidJniObject STATUS();
+		static jstring DATABASE_CREATION_TIMESTAMP();
+		static jstring STATUS();
 		static jint STATUS_BUSY();
 		static jint STATUS_EMPTY();
 		static jint STATUS_NORMAL();
@@ -36,51 +36,58 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_ProviderStatus::CONTENT_TYPE()
+	jstring ContactsContract_ProviderStatus::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$ProviderStatus",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_ProviderStatus::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$ProviderStatus",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_ProviderStatus::DATABASE_CREATION_TIMESTAMP()
+	jstring ContactsContract_ProviderStatus::DATABASE_CREATION_TIMESTAMP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$ProviderStatus",
 			"DATABASE_CREATION_TIMESTAMP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_ProviderStatus::STATUS()
+	jstring ContactsContract_ProviderStatus::STATUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$ProviderStatus",
 			"STATUS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ContactsContract_ProviderStatus::STATUS_BUSY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$ProviderStatus",
-			"STATUS_BUSY");
+			"STATUS_BUSY"
+		);
 	}
 	jint ContactsContract_ProviderStatus::STATUS_EMPTY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$ProviderStatus",
-			"STATUS_EMPTY");
+			"STATUS_EMPTY"
+		);
 	}
 	jint ContactsContract_ProviderStatus::STATUS_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$ProviderStatus",
-			"STATUS_NORMAL");
+			"STATUS_NORMAL"
+		);
 	}
 	
 	// Constructors

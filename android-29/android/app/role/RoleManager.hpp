@@ -16,14 +16,14 @@ namespace __jni_impl::android::app::role
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ROLE_ASSISTANT();
-		static QAndroidJniObject ROLE_BROWSER();
-		static QAndroidJniObject ROLE_CALL_REDIRECTION();
-		static QAndroidJniObject ROLE_CALL_SCREENING();
-		static QAndroidJniObject ROLE_DIALER();
-		static QAndroidJniObject ROLE_EMERGENCY();
-		static QAndroidJniObject ROLE_HOME();
-		static QAndroidJniObject ROLE_SMS();
+		static jstring ROLE_ASSISTANT();
+		static jstring ROLE_BROWSER();
+		static jstring ROLE_CALL_REDIRECTION();
+		static jstring ROLE_CALL_SCREENING();
+		static jstring ROLE_DIALER();
+		static jstring ROLE_EMERGENCY();
+		static jstring ROLE_HOME();
+		static jstring ROLE_SMS();
 		
 		// Constructors
 		void __constructor();
@@ -40,61 +40,69 @@ namespace __jni_impl::android::app::role
 namespace __jni_impl::android::app::role
 {
 	// Fields
-	QAndroidJniObject RoleManager::ROLE_ASSISTANT()
+	jstring RoleManager::ROLE_ASSISTANT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_ASSISTANT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RoleManager::ROLE_BROWSER()
+	jstring RoleManager::ROLE_BROWSER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_BROWSER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RoleManager::ROLE_CALL_REDIRECTION()
+	jstring RoleManager::ROLE_CALL_REDIRECTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_CALL_REDIRECTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RoleManager::ROLE_CALL_SCREENING()
+	jstring RoleManager::ROLE_CALL_SCREENING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_CALL_SCREENING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RoleManager::ROLE_DIALER()
+	jstring RoleManager::ROLE_DIALER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_DIALER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RoleManager::ROLE_EMERGENCY()
+	jstring RoleManager::ROLE_EMERGENCY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_EMERGENCY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RoleManager::ROLE_HOME()
+	jstring RoleManager::ROLE_HOME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_HOME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject RoleManager::ROLE_SMS()
+	jstring RoleManager::ROLE_SMS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.role.RoleManager",
 			"ROLE_SMS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -111,21 +119,24 @@ namespace __jni_impl::android::app::role
 		return __thiz.callObjectMethod(
 			"createRequestRoleIntent",
 			"(Ljava/lang/String;)Landroid/content/Intent;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RoleManager::isRoleAvailable(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRoleAvailable",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RoleManager::isRoleHeld(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRoleHeld",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app::role
 

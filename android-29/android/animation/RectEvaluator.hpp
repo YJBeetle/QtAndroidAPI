@@ -22,7 +22,7 @@ namespace __jni_impl::android::animation
 		void __constructor(__jni_impl::android::graphics::Rect arg0);
 		
 		// Methods
-		QAndroidJniObject evaluate(jfloat arg0, jobject arg1, jobject arg2);
+		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
 		QAndroidJniObject evaluate(jfloat arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2);
 	};
 } // namespace __jni_impl::android::animation
@@ -49,14 +49,15 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	QAndroidJniObject RectEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
+	jobject RectEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
 	{
 		return __thiz.callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jobject>();
 	}
 	QAndroidJniObject RectEvaluator::evaluate(jfloat arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2)
 	{
@@ -65,7 +66,8 @@ namespace __jni_impl::android::animation
 			"(FLandroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Rect;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::animation
 

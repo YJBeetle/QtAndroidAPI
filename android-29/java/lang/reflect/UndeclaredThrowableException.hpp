@@ -28,7 +28,7 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor(jthrowable arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getUndeclaredThrowable();
+		jthrowable getUndeclaredThrowable();
 	};
 } // namespace __jni_impl::java::lang::reflect
 
@@ -57,11 +57,12 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	QAndroidJniObject UndeclaredThrowableException::getUndeclaredThrowable()
+	jthrowable UndeclaredThrowableException::getUndeclaredThrowable()
 	{
 		return __thiz.callObjectMethod(
 			"getUndeclaredThrowable",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
 } // namespace __jni_impl::java::lang::reflect
 

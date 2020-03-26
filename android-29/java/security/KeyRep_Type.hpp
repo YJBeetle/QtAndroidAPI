@@ -21,7 +21,7 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::security
@@ -35,21 +35,24 @@ namespace __jni_impl::java::security
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.KeyRep$Type",
 			"SECRET",
-			"Ljava/security/KeyRep$Type;");
+			"Ljava/security/KeyRep$Type;"
+		);
 	}
 	QAndroidJniObject KeyRep_Type::PUBLIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.KeyRep$Type",
 			"PUBLIC",
-			"Ljava/security/KeyRep$Type;");
+			"Ljava/security/KeyRep$Type;"
+		);
 	}
 	QAndroidJniObject KeyRep_Type::PRIVATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.KeyRep$Type",
 			"PRIVATE",
-			"Ljava/security/KeyRep$Type;");
+			"Ljava/security/KeyRep$Type;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject KeyRep_Type::values()
+	jarray KeyRep_Type::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.KeyRep$Type",
 			"values",
-			"()[Ljava/security/KeyRep$Type;");
+			"()[Ljava/security/KeyRep$Type;"
+		).object<jarray>();
 	}
 	QAndroidJniObject KeyRep_Type::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::java::security
 			"java.security.KeyRep$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/KeyRep$Type;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::security
 

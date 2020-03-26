@@ -34,9 +34,9 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getType();
-		QAndroidJniObject getDatasetId();
+		jstring getDatasetId();
 		QAndroidJniObject getClientState();
 		QAndroidJniObject getSelectedDatasetIds();
 		QAndroidJniObject getIgnoredDatasetIds();
@@ -57,31 +57,36 @@ namespace __jni_impl::android::service::autofill
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
-			"TYPE_AUTHENTICATION_SELECTED");
+			"TYPE_AUTHENTICATION_SELECTED"
+		);
 	}
 	jint FillEventHistory_Event::TYPE_CONTEXT_COMMITTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
-			"TYPE_CONTEXT_COMMITTED");
+			"TYPE_CONTEXT_COMMITTED"
+		);
 	}
 	jint FillEventHistory_Event::TYPE_DATASET_AUTHENTICATION_SELECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
-			"TYPE_DATASET_AUTHENTICATION_SELECTED");
+			"TYPE_DATASET_AUTHENTICATION_SELECTED"
+		);
 	}
 	jint FillEventHistory_Event::TYPE_DATASET_SELECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
-			"TYPE_DATASET_SELECTED");
+			"TYPE_DATASET_SELECTED"
+		);
 	}
 	jint FillEventHistory_Event::TYPE_SAVE_SHOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.FillEventHistory$Event",
-			"TYPE_SAVE_SHOWN");
+			"TYPE_SAVE_SHOWN"
+		);
 	}
 	
 	// Constructors
@@ -93,59 +98,68 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject FillEventHistory_Event::toString()
+	jstring FillEventHistory_Event::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint FillEventHistory_Event::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject FillEventHistory_Event::getDatasetId()
+	jstring FillEventHistory_Event::getDatasetId()
 	{
 		return __thiz.callObjectMethod(
 			"getDatasetId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject FillEventHistory_Event::getClientState()
 	{
 		return __thiz.callObjectMethod(
 			"getClientState",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getSelectedDatasetIds()
 	{
 		return __thiz.callObjectMethod(
 			"getSelectedDatasetIds",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getIgnoredDatasetIds()
 	{
 		return __thiz.callObjectMethod(
 			"getIgnoredDatasetIds",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getChangedFields()
 	{
 		return __thiz.callObjectMethod(
 			"getChangedFields",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getFieldsClassification()
 	{
 		return __thiz.callObjectMethod(
 			"getFieldsClassification",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getManuallyEnteredField()
 	{
 		return __thiz.callObjectMethod(
 			"getManuallyEnteredField",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

@@ -51,7 +51,8 @@ namespace __jni_impl::android::net::wifi::aware
 		__thiz.callMethod<void>(
 			"updatePublish",
 			"(Landroid/net/wifi/aware/PublishConfig;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

@@ -56,109 +56,127 @@ namespace __jni_impl::android::mtp
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_CANCEL_TRANSACTION");
+			"EVENT_CANCEL_TRANSACTION"
+		);
 	}
 	jint MtpEvent::EVENT_CAPTURE_COMPLETE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_CAPTURE_COMPLETE");
+			"EVENT_CAPTURE_COMPLETE"
+		);
 	}
 	jint MtpEvent::EVENT_DEVICE_INFO_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_DEVICE_INFO_CHANGED");
+			"EVENT_DEVICE_INFO_CHANGED"
+		);
 	}
 	jint MtpEvent::EVENT_DEVICE_PROP_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_DEVICE_PROP_CHANGED");
+			"EVENT_DEVICE_PROP_CHANGED"
+		);
 	}
 	jint MtpEvent::EVENT_DEVICE_RESET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_DEVICE_RESET");
+			"EVENT_DEVICE_RESET"
+		);
 	}
 	jint MtpEvent::EVENT_OBJECT_ADDED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_OBJECT_ADDED");
+			"EVENT_OBJECT_ADDED"
+		);
 	}
 	jint MtpEvent::EVENT_OBJECT_INFO_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_OBJECT_INFO_CHANGED");
+			"EVENT_OBJECT_INFO_CHANGED"
+		);
 	}
 	jint MtpEvent::EVENT_OBJECT_PROP_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_OBJECT_PROP_CHANGED");
+			"EVENT_OBJECT_PROP_CHANGED"
+		);
 	}
 	jint MtpEvent::EVENT_OBJECT_PROP_DESC_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_OBJECT_PROP_DESC_CHANGED");
+			"EVENT_OBJECT_PROP_DESC_CHANGED"
+		);
 	}
 	jint MtpEvent::EVENT_OBJECT_REFERENCES_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_OBJECT_REFERENCES_CHANGED");
+			"EVENT_OBJECT_REFERENCES_CHANGED"
+		);
 	}
 	jint MtpEvent::EVENT_OBJECT_REMOVED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_OBJECT_REMOVED");
+			"EVENT_OBJECT_REMOVED"
+		);
 	}
 	jint MtpEvent::EVENT_REQUEST_OBJECT_TRANSFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_REQUEST_OBJECT_TRANSFER");
+			"EVENT_REQUEST_OBJECT_TRANSFER"
+		);
 	}
 	jint MtpEvent::EVENT_STORAGE_INFO_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_STORAGE_INFO_CHANGED");
+			"EVENT_STORAGE_INFO_CHANGED"
+		);
 	}
 	jint MtpEvent::EVENT_STORE_ADDED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_STORE_ADDED");
+			"EVENT_STORE_ADDED"
+		);
 	}
 	jint MtpEvent::EVENT_STORE_FULL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_STORE_FULL");
+			"EVENT_STORE_FULL"
+		);
 	}
 	jint MtpEvent::EVENT_STORE_REMOVED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_STORE_REMOVED");
+			"EVENT_STORE_REMOVED"
+		);
 	}
 	jint MtpEvent::EVENT_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_UNDEFINED");
+			"EVENT_UNDEFINED"
+		);
 	}
 	jint MtpEvent::EVENT_UNREPORTED_STATUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.mtp.MtpEvent",
-			"EVENT_UNREPORTED_STATUS");
+			"EVENT_UNREPORTED_STATUS"
+		);
 	}
 	
 	// Constructors
@@ -174,61 +192,71 @@ namespace __jni_impl::android::mtp
 	{
 		return __thiz.callMethod<jint>(
 			"getObjectHandle",
-			"()I");
+			"()I"
+		);
 	}
 	jint MtpEvent::getStorageId()
 	{
 		return __thiz.callMethod<jint>(
 			"getStorageId",
-			"()I");
+			"()I"
+		);
 	}
 	jint MtpEvent::getEventCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getEventCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint MtpEvent::getParameter1()
 	{
 		return __thiz.callMethod<jint>(
 			"getParameter1",
-			"()I");
+			"()I"
+		);
 	}
 	jint MtpEvent::getParameter2()
 	{
 		return __thiz.callMethod<jint>(
 			"getParameter2",
-			"()I");
+			"()I"
+		);
 	}
 	jint MtpEvent::getParameter3()
 	{
 		return __thiz.callMethod<jint>(
 			"getParameter3",
-			"()I");
+			"()I"
+		);
 	}
 	jint MtpEvent::getDevicePropCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getDevicePropCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint MtpEvent::getTransactionId()
 	{
 		return __thiz.callMethod<jint>(
 			"getTransactionId",
-			"()I");
+			"()I"
+		);
 	}
 	jint MtpEvent::getObjectPropCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getObjectPropCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint MtpEvent::getObjectFormatCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getObjectFormatCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::mtp
 

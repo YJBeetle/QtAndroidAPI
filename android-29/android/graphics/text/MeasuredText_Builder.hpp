@@ -62,7 +62,8 @@ namespace __jni_impl::android::graphics::text
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/graphics/text/MeasuredText;");
+			"()Landroid/graphics/text/MeasuredText;"
+		);
 	}
 	QAndroidJniObject MeasuredText_Builder::appendStyleRun(__jni_impl::android::graphics::Paint arg0, jint arg1, jboolean arg2)
 	{
@@ -71,7 +72,8 @@ namespace __jni_impl::android::graphics::text
 			"(Landroid/graphics/Paint;IZ)Landroid/graphics/text/MeasuredText$Builder;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MeasuredText_Builder::appendReplacementRun(__jni_impl::android::graphics::Paint arg0, jint arg1, jfloat arg2)
 	{
@@ -80,21 +82,24 @@ namespace __jni_impl::android::graphics::text
 			"(Landroid/graphics/Paint;IF)Landroid/graphics/text/MeasuredText$Builder;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MeasuredText_Builder::setComputeHyphenation(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setComputeHyphenation",
 			"(Z)Landroid/graphics/text/MeasuredText$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MeasuredText_Builder::setComputeLayout(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setComputeLayout",
 			"(Z)Landroid/graphics/text/MeasuredText$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics::text
 

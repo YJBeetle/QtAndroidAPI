@@ -37,7 +37,7 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::app
 
@@ -52,46 +52,54 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.getObjectField(
 			"baseActivity",
-			"Landroid/content/ComponentName;");
+			"Landroid/content/ComponentName;"
+		);
 	}
 	QAndroidJniObject TaskInfo::baseIntent()
 	{
 		return __thiz.getObjectField(
 			"baseIntent",
-			"Landroid/content/Intent;");
+			"Landroid/content/Intent;"
+		);
 	}
 	jboolean TaskInfo::isRunning()
 	{
 		return __thiz.getField<jboolean>(
-			"isRunning");
+			"isRunning"
+		);
 	}
 	jint TaskInfo::numActivities()
 	{
 		return __thiz.getField<jint>(
-			"numActivities");
+			"numActivities"
+		);
 	}
 	QAndroidJniObject TaskInfo::origActivity()
 	{
 		return __thiz.getObjectField(
 			"origActivity",
-			"Landroid/content/ComponentName;");
+			"Landroid/content/ComponentName;"
+		);
 	}
 	QAndroidJniObject TaskInfo::taskDescription()
 	{
 		return __thiz.getObjectField(
 			"taskDescription",
-			"Landroid/app/ActivityManager$TaskDescription;");
+			"Landroid/app/ActivityManager$TaskDescription;"
+		);
 	}
 	jint TaskInfo::taskId()
 	{
 		return __thiz.getField<jint>(
-			"taskId");
+			"taskId"
+		);
 	}
 	QAndroidJniObject TaskInfo::topActivity()
 	{
 		return __thiz.getObjectField(
 			"topActivity",
-			"Landroid/content/ComponentName;");
+			"Landroid/content/ComponentName;"
+		);
 	}
 	
 	// Constructors
@@ -103,11 +111,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject TaskInfo::toString()
+	jstring TaskInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::app
 

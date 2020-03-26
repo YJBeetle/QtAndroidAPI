@@ -31,19 +31,22 @@ namespace __jni_impl::android::telephony::mbms
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$StreamingErrors",
-			"ERROR_CONCURRENT_SERVICE_LIMIT_REACHED");
+			"ERROR_CONCURRENT_SERVICE_LIMIT_REACHED"
+		);
 	}
 	jint MbmsErrors_StreamingErrors::ERROR_DUPLICATE_START_STREAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$StreamingErrors",
-			"ERROR_DUPLICATE_START_STREAM");
+			"ERROR_DUPLICATE_START_STREAM"
+		);
 	}
 	jint MbmsErrors_StreamingErrors::ERROR_UNABLE_TO_START_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.MbmsErrors$StreamingErrors",
-			"ERROR_UNABLE_TO_START_SERVICE");
+			"ERROR_UNABLE_TO_START_SERVICE"
+		);
 	}
 	
 	// Constructors

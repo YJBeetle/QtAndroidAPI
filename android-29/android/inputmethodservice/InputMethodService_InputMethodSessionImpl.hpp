@@ -75,7 +75,8 @@ namespace __jni_impl::android::inputmethodservice
 		__thiz.callMethod<void>(
 			"displayCompletions",
 			"([Landroid/view/inputmethod/CompletionInfo;)V",
-			arg0);
+			arg0
+		);
 	}
 	void InputMethodService_InputMethodSessionImpl::updateExtractedText(jint arg0, __jni_impl::android::view::inputmethod::ExtractedText arg1)
 	{
@@ -83,7 +84,8 @@ namespace __jni_impl::android::inputmethodservice
 			"updateExtractedText",
 			"(ILandroid/view/inputmethod/ExtractedText;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void InputMethodService_InputMethodSessionImpl::toggleSoftInput(jint arg0, jint arg1)
 	{
@@ -91,7 +93,8 @@ namespace __jni_impl::android::inputmethodservice
 			"toggleSoftInput",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void InputMethodService_InputMethodSessionImpl::updateSelection(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -103,34 +106,39 @@ namespace __jni_impl::android::inputmethodservice
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void InputMethodService_InputMethodSessionImpl::viewClicked(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"viewClicked",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void InputMethodService_InputMethodSessionImpl::updateCursor(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateCursor",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void InputMethodService_InputMethodSessionImpl::updateCursorAnchorInfo(__jni_impl::android::view::inputmethod::CursorAnchorInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateCursorAnchorInfo",
 			"(Landroid/view/inputmethod/CursorAnchorInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void InputMethodService_InputMethodSessionImpl::finishInput()
 	{
 		__thiz.callMethod<void>(
 			"finishInput",
-			"()V");
+			"()V"
+		);
 	}
 	void InputMethodService_InputMethodSessionImpl::appPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -138,7 +146,8 @@ namespace __jni_impl::android::inputmethodservice
 			"appPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::inputmethodservice
 

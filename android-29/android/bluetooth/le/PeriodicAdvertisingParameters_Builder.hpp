@@ -46,21 +46,24 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/bluetooth/le/PeriodicAdvertisingParameters;");
+			"()Landroid/bluetooth/le/PeriodicAdvertisingParameters;"
+		);
 	}
 	QAndroidJniObject PeriodicAdvertisingParameters_Builder::setIncludeTxPower(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIncludeTxPower",
 			"(Z)Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PeriodicAdvertisingParameters_Builder::setInterval(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setInterval",
 			"(I)Landroid/bluetooth/le/PeriodicAdvertisingParameters$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::bluetooth::le
 

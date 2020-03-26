@@ -33,31 +33,36 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMuxer$OutputFormat",
-			"MUXER_OUTPUT_3GPP");
+			"MUXER_OUTPUT_3GPP"
+		);
 	}
 	jint MediaMuxer_OutputFormat::MUXER_OUTPUT_HEIF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMuxer$OutputFormat",
-			"MUXER_OUTPUT_HEIF");
+			"MUXER_OUTPUT_HEIF"
+		);
 	}
 	jint MediaMuxer_OutputFormat::MUXER_OUTPUT_MPEG_4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMuxer$OutputFormat",
-			"MUXER_OUTPUT_MPEG_4");
+			"MUXER_OUTPUT_MPEG_4"
+		);
 	}
 	jint MediaMuxer_OutputFormat::MUXER_OUTPUT_OGG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMuxer$OutputFormat",
-			"MUXER_OUTPUT_OGG");
+			"MUXER_OUTPUT_OGG"
+		);
 	}
 	jint MediaMuxer_OutputFormat::MUXER_OUTPUT_WEBM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMuxer$OutputFormat",
-			"MUXER_OUTPUT_WEBM");
+			"MUXER_OUTPUT_WEBM"
+		);
 	}
 	
 	// Constructors

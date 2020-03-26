@@ -12,12 +12,12 @@ namespace __jni_impl::android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FEATURE_DELETE();
-		static QAndroidJniObject FEATURE_DOWNLOAD();
-		static QAndroidJniObject FEATURE_EDIT();
-		static QAndroidJniObject FEATURE_PRINT();
-		static QAndroidJniObject FEATURE_SEND();
-		static QAndroidJniObject FEATURE_VIEW();
+		static jstring FEATURE_DELETE();
+		static jstring FEATURE_DOWNLOAD();
+		static jstring FEATURE_EDIT();
+		static jstring FEATURE_PRINT();
+		static jstring FEATURE_SEND();
+		static jstring FEATURE_VIEW();
 		
 		// Constructors
 		void __constructor();
@@ -30,47 +30,53 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content
 {
 	// Fields
-	QAndroidJniObject QuickViewConstants::FEATURE_DELETE()
+	jstring QuickViewConstants::FEATURE_DELETE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_DELETE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject QuickViewConstants::FEATURE_DOWNLOAD()
+	jstring QuickViewConstants::FEATURE_DOWNLOAD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_DOWNLOAD",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject QuickViewConstants::FEATURE_EDIT()
+	jstring QuickViewConstants::FEATURE_EDIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_EDIT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject QuickViewConstants::FEATURE_PRINT()
+	jstring QuickViewConstants::FEATURE_PRINT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_PRINT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject QuickViewConstants::FEATURE_SEND()
+	jstring QuickViewConstants::FEATURE_SEND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_SEND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject QuickViewConstants::FEATURE_VIEW()
+	jstring QuickViewConstants::FEATURE_VIEW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.QuickViewConstants",
 			"FEATURE_VIEW",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

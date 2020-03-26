@@ -64,25 +64,29 @@ namespace __jni_impl::android::net::wifi::aware
 		__thiz.callMethod<void>(
 			"onSubscribeStarted",
 			"(Landroid/net/wifi/aware/SubscribeDiscoverySession;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DiscoverySessionCallback::onSessionConfigUpdated()
 	{
 		__thiz.callMethod<void>(
 			"onSessionConfigUpdated",
-			"()V");
+			"()V"
+		);
 	}
 	void DiscoverySessionCallback::onSessionConfigFailed()
 	{
 		__thiz.callMethod<void>(
 			"onSessionConfigFailed",
-			"()V");
+			"()V"
+		);
 	}
 	void DiscoverySessionCallback::onSessionTerminated()
 	{
 		__thiz.callMethod<void>(
 			"onSessionTerminated",
-			"()V");
+			"()V"
+		);
 	}
 	void DiscoverySessionCallback::onServiceDiscovered(__jni_impl::android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -91,7 +95,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"(Landroid/net/wifi/aware/PeerHandle;[BLjava/util/List;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DiscoverySessionCallback::onServiceDiscoveredWithinRange(__jni_impl::android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, __jni_impl::__JniBaseClass arg2, jint arg3)
 	{
@@ -101,28 +106,32 @@ namespace __jni_impl::android::net::wifi::aware
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void DiscoverySessionCallback::onPublishStarted(__jni_impl::android::net::wifi::aware::PublishDiscoverySession arg0)
 	{
 		__thiz.callMethod<void>(
 			"onPublishStarted",
 			"(Landroid/net/wifi/aware/PublishDiscoverySession;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DiscoverySessionCallback::onMessageSendSucceeded(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onMessageSendSucceeded",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void DiscoverySessionCallback::onMessageSendFailed(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onMessageSendFailed",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void DiscoverySessionCallback::onMessageReceived(__jni_impl::android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1)
 	{
@@ -130,7 +139,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"onMessageReceived",
 			"(Landroid/net/wifi/aware/PeerHandle;[B)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

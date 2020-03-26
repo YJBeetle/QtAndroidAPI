@@ -12,16 +12,16 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CODEC();
-		static QAndroidJniObject ENCODER();
-		static QAndroidJniObject HEIGHT();
-		static QAndroidJniObject MIME_TYPE();
-		static QAndroidJniObject MODE();
-		static QAndroidJniObject MODE_AUDIO();
-		static QAndroidJniObject MODE_VIDEO();
-		static QAndroidJniObject ROTATION();
-		static QAndroidJniObject SECURE();
-		static QAndroidJniObject WIDTH();
+		static jstring CODEC();
+		static jstring ENCODER();
+		static jstring HEIGHT();
+		static jstring MIME_TYPE();
+		static jstring MODE();
+		static jstring MODE_AUDIO();
+		static jstring MODE_VIDEO();
+		static jstring ROTATION();
+		static jstring SECURE();
+		static jstring WIDTH();
 		
 		// Constructors
 		void __constructor();
@@ -34,75 +34,85 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject MediaCodec_MetricsConstants::CODEC()
+	jstring MediaCodec_MetricsConstants::CODEC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"CODEC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec_MetricsConstants::ENCODER()
+	jstring MediaCodec_MetricsConstants::ENCODER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"ENCODER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec_MetricsConstants::HEIGHT()
+	jstring MediaCodec_MetricsConstants::HEIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"HEIGHT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec_MetricsConstants::MIME_TYPE()
+	jstring MediaCodec_MetricsConstants::MIME_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"MIME_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec_MetricsConstants::MODE()
+	jstring MediaCodec_MetricsConstants::MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec_MetricsConstants::MODE_AUDIO()
+	jstring MediaCodec_MetricsConstants::MODE_AUDIO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"MODE_AUDIO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec_MetricsConstants::MODE_VIDEO()
+	jstring MediaCodec_MetricsConstants::MODE_VIDEO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"MODE_VIDEO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec_MetricsConstants::ROTATION()
+	jstring MediaCodec_MetricsConstants::ROTATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"ROTATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec_MetricsConstants::SECURE()
+	jstring MediaCodec_MetricsConstants::SECURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"SECURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec_MetricsConstants::WIDTH()
+	jstring MediaCodec_MetricsConstants::WIDTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec$MetricsConstants",
 			"WIDTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

@@ -39,19 +39,22 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodecInfo$EncoderCapabilities",
-			"BITRATE_MODE_CBR");
+			"BITRATE_MODE_CBR"
+		);
 	}
 	jint MediaCodecInfo_EncoderCapabilities::BITRATE_MODE_CQ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodecInfo$EncoderCapabilities",
-			"BITRATE_MODE_CQ");
+			"BITRATE_MODE_CQ"
+		);
 	}
 	jint MediaCodecInfo_EncoderCapabilities::BITRATE_MODE_VBR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodecInfo$EncoderCapabilities",
-			"BITRATE_MODE_VBR");
+			"BITRATE_MODE_VBR"
+		);
 	}
 	
 	// Constructors
@@ -67,20 +70,23 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"getComplexityRange",
-			"()Landroid/util/Range;");
+			"()Landroid/util/Range;"
+		);
 	}
 	jboolean MediaCodecInfo_EncoderCapabilities::isBitrateModeSupported(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBitrateModeSupported",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodecInfo_EncoderCapabilities::getQualityRange()
 	{
 		return __thiz.callObjectMethod(
 			"getQualityRange",
-			"()Landroid/util/Range;");
+			"()Landroid/util/Range;"
+		);
 	}
 } // namespace __jni_impl::android::media
 

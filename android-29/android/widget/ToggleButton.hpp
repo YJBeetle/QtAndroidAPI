@@ -32,14 +32,14 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject getAccessibilityClassName();
-		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		QAndroidJniObject getTextOn();
+		jstring getTextOn();
 		void setTextOn(jstring arg0);
-		QAndroidJniObject getTextOff();
+		jstring getTextOff();
 		void setTextOff(jstring arg0);
-		void setChecked(jboolean arg0);
 		jfloat getDisabledAlpha();
+		jstring getAccessibilityClassName();
+		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setChecked(jboolean arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -87,57 +87,65 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject ToggleButton::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	void ToggleButton::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBackgroundDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ToggleButton::getTextOn()
+	jstring ToggleButton::getTextOn()
 	{
 		return __thiz.callObjectMethod(
 			"getTextOn",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void ToggleButton::setTextOn(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTextOn",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ToggleButton::getTextOff()
+	jstring ToggleButton::getTextOff()
 	{
 		return __thiz.callObjectMethod(
 			"getTextOff",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void ToggleButton::setTextOff(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTextOff",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
+	}
+	jfloat ToggleButton::getDisabledAlpha()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getDisabledAlpha",
+			"()F"
+		);
+	}
+	jstring ToggleButton::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void ToggleButton::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBackgroundDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void ToggleButton::setChecked(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setChecked",
 			"(Z)V",
-			arg0);
-	}
-	jfloat ToggleButton::getDisabledAlpha()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getDisabledAlpha",
-			"()F");
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

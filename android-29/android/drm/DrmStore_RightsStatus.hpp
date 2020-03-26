@@ -32,25 +32,29 @@ namespace __jni_impl::android::drm
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$RightsStatus",
-			"RIGHTS_EXPIRED");
+			"RIGHTS_EXPIRED"
+		);
 	}
 	jint DrmStore_RightsStatus::RIGHTS_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$RightsStatus",
-			"RIGHTS_INVALID");
+			"RIGHTS_INVALID"
+		);
 	}
 	jint DrmStore_RightsStatus::RIGHTS_NOT_ACQUIRED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$RightsStatus",
-			"RIGHTS_NOT_ACQUIRED");
+			"RIGHTS_NOT_ACQUIRED"
+		);
 	}
 	jint DrmStore_RightsStatus::RIGHTS_VALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$RightsStatus",
-			"RIGHTS_VALID");
+			"RIGHTS_VALID"
+		);
 	}
 	
 	// Constructors

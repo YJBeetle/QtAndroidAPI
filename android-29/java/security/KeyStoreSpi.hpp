@@ -34,7 +34,7 @@ namespace __jni_impl::java::security
 		
 		// Methods
 		QAndroidJniObject engineGetKey(jstring arg0, jcharArray arg1);
-		QAndroidJniObject engineGetCertificateChain(jstring arg0);
+		jarray engineGetCertificateChain(jstring arg0);
 		QAndroidJniObject engineGetCertificate(jstring arg0);
 		QAndroidJniObject engineGetCreationDate(jstring arg0);
 		void engineSetKeyEntry(jstring arg0, jbyteArray arg1, jarray arg2);
@@ -46,7 +46,7 @@ namespace __jni_impl::java::security
 		jint engineSize();
 		jboolean engineIsKeyEntry(jstring arg0);
 		jboolean engineIsCertificateEntry(jstring arg0);
-		QAndroidJniObject engineGetCertificateAlias(__jni_impl::java::security::cert::Certificate arg0);
+		jstring engineGetCertificateAlias(__jni_impl::java::security::cert::Certificate arg0);
 		void engineStore(__jni_impl::__JniBaseClass arg0);
 		void engineStore(__jni_impl::java::io::OutputStream arg0, jcharArray arg1);
 		void engineLoad(__jni_impl::__JniBaseClass arg0);
@@ -82,28 +82,32 @@ namespace __jni_impl::java::security
 			"engineGetKey",
 			"(Ljava/lang/String;[C)Ljava/security/Key;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject KeyStoreSpi::engineGetCertificateChain(jstring arg0)
+	jarray KeyStoreSpi::engineGetCertificateChain(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGetCertificateChain",
 			"(Ljava/lang/String;)[Ljava/security/cert/Certificate;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
 	QAndroidJniObject KeyStoreSpi::engineGetCertificate(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGetCertificate",
 			"(Ljava/lang/String;)Ljava/security/cert/Certificate;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject KeyStoreSpi::engineGetCreationDate(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGetCreationDate",
 			"(Ljava/lang/String;)Ljava/util/Date;",
-			arg0);
+			arg0
+		);
 	}
 	void KeyStoreSpi::engineSetKeyEntry(jstring arg0, jbyteArray arg1, jarray arg2)
 	{
@@ -112,7 +116,8 @@ namespace __jni_impl::java::security
 			"(Ljava/lang/String;[B[Ljava/security/cert/Certificate;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void KeyStoreSpi::engineSetKeyEntry(jstring arg0, __jni_impl::__JniBaseClass arg1, jcharArray arg2, jarray arg3)
 	{
@@ -122,7 +127,8 @@ namespace __jni_impl::java::security
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void KeyStoreSpi::engineSetCertificateEntry(jstring arg0, __jni_impl::java::security::cert::Certificate arg1)
 	{
@@ -130,61 +136,70 @@ namespace __jni_impl::java::security
 			"engineSetCertificateEntry",
 			"(Ljava/lang/String;Ljava/security/cert/Certificate;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void KeyStoreSpi::engineDeleteEntry(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"engineDeleteEntry",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject KeyStoreSpi::engineAliases()
 	{
 		return __thiz.callObjectMethod(
 			"engineAliases",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	jboolean KeyStoreSpi::engineContainsAlias(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"engineContainsAlias",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint KeyStoreSpi::engineSize()
 	{
 		return __thiz.callMethod<jint>(
 			"engineSize",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean KeyStoreSpi::engineIsKeyEntry(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"engineIsKeyEntry",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean KeyStoreSpi::engineIsCertificateEntry(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"engineIsCertificateEntry",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject KeyStoreSpi::engineGetCertificateAlias(__jni_impl::java::security::cert::Certificate arg0)
+	jstring KeyStoreSpi::engineGetCertificateAlias(__jni_impl::java::security::cert::Certificate arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGetCertificateAlias",
 			"(Ljava/security/cert/Certificate;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	void KeyStoreSpi::engineStore(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"engineStore",
 			"(Ljava/security/KeyStore$LoadStoreParameter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void KeyStoreSpi::engineStore(__jni_impl::java::io::OutputStream arg0, jcharArray arg1)
 	{
@@ -192,14 +207,16 @@ namespace __jni_impl::java::security
 			"engineStore",
 			"(Ljava/io/OutputStream;[C)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void KeyStoreSpi::engineLoad(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"engineLoad",
 			"(Ljava/security/KeyStore$LoadStoreParameter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void KeyStoreSpi::engineLoad(__jni_impl::java::io::InputStream arg0, jcharArray arg1)
 	{
@@ -207,7 +224,8 @@ namespace __jni_impl::java::security
 			"engineLoad",
 			"(Ljava/io/InputStream;[C)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyStoreSpi::engineGetEntry(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -215,7 +233,8 @@ namespace __jni_impl::java::security
 			"engineGetEntry",
 			"(Ljava/lang/String;Ljava/security/KeyStore$ProtectionParameter;)Ljava/security/KeyStore$Entry;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void KeyStoreSpi::engineSetEntry(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -224,7 +243,8 @@ namespace __jni_impl::java::security
 			"(Ljava/lang/String;Ljava/security/KeyStore$Entry;Ljava/security/KeyStore$ProtectionParameter;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean KeyStoreSpi::engineEntryInstanceOf(jstring arg0, jclass arg1)
 	{
@@ -232,14 +252,16 @@ namespace __jni_impl::java::security
 			"engineEntryInstanceOf",
 			"(Ljava/lang/String;Ljava/lang/Class;)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean KeyStoreSpi::engineProbe(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"engineProbe",
 			"(Ljava/io/InputStream;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security
 

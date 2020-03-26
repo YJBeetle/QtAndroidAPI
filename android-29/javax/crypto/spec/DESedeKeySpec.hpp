@@ -19,7 +19,7 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jbyteArray arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject getKey();
+		jbyteArray getKey();
 		static jboolean isParityAdjusted(jbyteArray arg0, jint arg1);
 	};
 } // namespace __jni_impl::javax::crypto::spec
@@ -32,7 +32,8 @@ namespace __jni_impl::javax::crypto::spec
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"javax.crypto.spec.DESedeKeySpec",
-			"DES_EDE_KEY_LEN");
+			"DES_EDE_KEY_LEN"
+		);
 	}
 	
 	// Constructors
@@ -53,11 +54,12 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
-	QAndroidJniObject DESedeKeySpec::getKey()
+	jbyteArray DESedeKeySpec::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jboolean DESedeKeySpec::isParityAdjusted(jbyteArray arg0, jint arg1)
 	{
@@ -66,7 +68,8 @@ namespace __jni_impl::javax::crypto::spec
 			"isParityAdjusted",
 			"([BI)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

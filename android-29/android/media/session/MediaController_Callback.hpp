@@ -66,7 +66,8 @@ namespace __jni_impl::android::media::session
 	{
 		__thiz.callMethod<void>(
 			"onSessionDestroyed",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaController_Callback::onSessionEvent(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -74,49 +75,56 @@ namespace __jni_impl::android::media::session
 			"onSessionEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaController_Callback::onPlaybackStateChanged(__jni_impl::android::media::session::PlaybackState arg0)
 	{
 		__thiz.callMethod<void>(
 			"onPlaybackStateChanged",
 			"(Landroid/media/session/PlaybackState;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaController_Callback::onMetadataChanged(__jni_impl::android::media::MediaMetadata arg0)
 	{
 		__thiz.callMethod<void>(
 			"onMetadataChanged",
 			"(Landroid/media/MediaMetadata;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaController_Callback::onQueueChanged(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onQueueChanged",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaController_Callback::onQueueTitleChanged(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onQueueTitleChanged",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaController_Callback::onAudioInfoChanged(__jni_impl::android::media::session::MediaController_PlaybackInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAudioInfoChanged",
 			"(Landroid/media/session/MediaController$PlaybackInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaController_Callback::onExtrasChanged(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"onExtrasChanged",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::session
 

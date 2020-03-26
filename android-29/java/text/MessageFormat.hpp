@@ -49,24 +49,24 @@ namespace __jni_impl::java::text
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		QAndroidJniObject format(jobjectArray arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
-		static QAndroidJniObject format(jstring arg0, jobjectArray arg1);
+		static jstring format(jstring arg0, jobjectArray arg1);
 		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
-		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
-		QAndroidJniObject parse(jstring arg0);
+		jobjectArray parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jobjectArray parse(jstring arg0);
 		QAndroidJniObject getLocale();
-		QAndroidJniObject getFormats();
+		jarray getFormats();
 		void setLocale(__jni_impl::java::util::Locale arg0);
 		void setFormat(jint arg0, __jni_impl::java::text::Format arg1);
 		void applyPattern(jstring arg0);
-		QAndroidJniObject toPattern();
-		QAndroidJniObject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jstring toPattern();
+		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 		QAndroidJniObject formatToCharacterIterator(jobject arg0);
 		void setFormatsByArgumentIndex(jarray arg0);
 		void setFormats(jarray arg0);
 		void setFormatByArgumentIndex(jint arg0, __jni_impl::java::text::Format arg1);
-		QAndroidJniObject getFormatsByArgumentIndex();
+		jarray getFormatsByArgumentIndex();
 	};
 } // namespace __jni_impl::java::text
 
@@ -105,19 +105,22 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint MessageFormat::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MessageFormat::clone()
+	jobject MessageFormat::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject MessageFormat::format(jobjectArray arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
@@ -126,16 +129,18 @@ namespace __jni_impl::java::text
 			"([Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MessageFormat::format(jstring arg0, jobjectArray arg1)
+	jstring MessageFormat::format(jstring arg0, jobjectArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.MessageFormat",
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	QAndroidJniObject MessageFormat::format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
@@ -144,41 +149,47 @@ namespace __jni_impl::java::text
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MessageFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
+	jobjectArray MessageFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)[Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobjectArray>();
 	}
-	QAndroidJniObject MessageFormat::parse(jstring arg0)
+	jobjectArray MessageFormat::parse(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)[Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobjectArray>();
 	}
 	QAndroidJniObject MessageFormat::getLocale()
 	{
 		return __thiz.callObjectMethod(
 			"getLocale",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
 	}
-	QAndroidJniObject MessageFormat::getFormats()
+	jarray MessageFormat::getFormats()
 	{
 		return __thiz.callObjectMethod(
 			"getFormats",
-			"()[Ljava/text/Format;");
+			"()[Ljava/text/Format;"
+		).object<jarray>();
 	}
 	void MessageFormat::setLocale(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLocale",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MessageFormat::setFormat(jint arg0, __jni_impl::java::text::Format arg1)
 	{
@@ -186,49 +197,56 @@ namespace __jni_impl::java::text
 			"setFormat",
 			"(ILjava/text/Format;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MessageFormat::applyPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MessageFormat::toPattern()
+	jstring MessageFormat::toPattern()
 	{
 		return __thiz.callObjectMethod(
 			"toPattern",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MessageFormat::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
+	jobject MessageFormat::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject MessageFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0);
+			arg0
+		);
 	}
 	void MessageFormat::setFormatsByArgumentIndex(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFormatsByArgumentIndex",
 			"([Ljava/text/Format;)V",
-			arg0);
+			arg0
+		);
 	}
 	void MessageFormat::setFormats(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFormats",
 			"([Ljava/text/Format;)V",
-			arg0);
+			arg0
+		);
 	}
 	void MessageFormat::setFormatByArgumentIndex(jint arg0, __jni_impl::java::text::Format arg1)
 	{
@@ -236,13 +254,15 @@ namespace __jni_impl::java::text
 			"setFormatByArgumentIndex",
 			"(ILjava/text/Format;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MessageFormat::getFormatsByArgumentIndex()
+	jarray MessageFormat::getFormatsByArgumentIndex()
 	{
 		return __thiz.callObjectMethod(
 			"getFormatsByArgumentIndex",
-			"()[Ljava/text/Format;");
+			"()[Ljava/text/Format;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::text
 

@@ -26,7 +26,7 @@ namespace __jni_impl::java::util::concurrent::locks
 		
 		// Methods
 		void lock();
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject newCondition();
 		jint getHoldCount();
 		void lockInterruptibly();
@@ -57,31 +57,36 @@ namespace __jni_impl::java::util::concurrent::locks
 	{
 		__thiz.callMethod<void>(
 			"lock",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject ReentrantReadWriteLock_WriteLock::toString()
+	jstring ReentrantReadWriteLock_WriteLock::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ReentrantReadWriteLock_WriteLock::newCondition()
 	{
 		return __thiz.callObjectMethod(
 			"newCondition",
-			"()Ljava/util/concurrent/locks/Condition;");
+			"()Ljava/util/concurrent/locks/Condition;"
+		);
 	}
 	jint ReentrantReadWriteLock_WriteLock::getHoldCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getHoldCount",
-			"()I");
+			"()I"
+		);
 	}
 	void ReentrantReadWriteLock_WriteLock::lockInterruptibly()
 	{
 		__thiz.callMethod<void>(
 			"lockInterruptibly",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ReentrantReadWriteLock_WriteLock::tryLock(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -89,25 +94,29 @@ namespace __jni_impl::java::util::concurrent::locks
 			"tryLock",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean ReentrantReadWriteLock_WriteLock::tryLock()
 	{
 		return __thiz.callMethod<jboolean>(
 			"tryLock",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ReentrantReadWriteLock_WriteLock::unlock()
 	{
 		__thiz.callMethod<void>(
 			"unlock",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ReentrantReadWriteLock_WriteLock::isHeldByCurrentThread()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isHeldByCurrentThread",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::locks
 

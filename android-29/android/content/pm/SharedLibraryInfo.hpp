@@ -30,15 +30,15 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
+		jstring getName();
+		jstring toString();
 		jint getType();
 		jint getVersion();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jlong getLongVersion();
 		QAndroidJniObject getDeclaringPackage();
 		QAndroidJniObject getDependentPackages();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -53,31 +53,36 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.SharedLibraryInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SharedLibraryInfo::TYPE_BUILTIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.SharedLibraryInfo",
-			"TYPE_BUILTIN");
+			"TYPE_BUILTIN"
+		);
 	}
 	jint SharedLibraryInfo::TYPE_DYNAMIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.SharedLibraryInfo",
-			"TYPE_DYNAMIC");
+			"TYPE_DYNAMIC"
+		);
 	}
 	jint SharedLibraryInfo::TYPE_STATIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.SharedLibraryInfo",
-			"TYPE_STATIC");
+			"TYPE_STATIC"
+		);
 	}
 	jint SharedLibraryInfo::VERSION_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.SharedLibraryInfo",
-			"VERSION_UNDEFINED");
+			"VERSION_UNDEFINED"
+		);
 	}
 	
 	// Constructors
@@ -89,53 +94,40 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject SharedLibraryInfo::getName()
+	jstring SharedLibraryInfo::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SharedLibraryInfo::toString()
+	jstring SharedLibraryInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SharedLibraryInfo::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
 	jint SharedLibraryInfo::getVersion()
 	{
 		return __thiz.callMethod<jint>(
 			"getVersion",
-			"()I");
-	}
-	jlong SharedLibraryInfo::getLongVersion()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLongVersion",
-			"()J");
-	}
-	QAndroidJniObject SharedLibraryInfo::getDeclaringPackage()
-	{
-		return __thiz.callObjectMethod(
-			"getDeclaringPackage",
-			"()Landroid/content/pm/VersionedPackage;");
-	}
-	QAndroidJniObject SharedLibraryInfo::getDependentPackages()
-	{
-		return __thiz.callObjectMethod(
-			"getDependentPackages",
-			"()Ljava/util/List;");
+			"()I"
+		);
 	}
 	jint SharedLibraryInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SharedLibraryInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -143,7 +135,29 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jlong SharedLibraryInfo::getLongVersion()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLongVersion",
+			"()J"
+		);
+	}
+	QAndroidJniObject SharedLibraryInfo::getDeclaringPackage()
+	{
+		return __thiz.callObjectMethod(
+			"getDeclaringPackage",
+			"()Landroid/content/pm/VersionedPackage;"
+		);
+	}
+	QAndroidJniObject SharedLibraryInfo::getDependentPackages()
+	{
+		return __thiz.callObjectMethod(
+			"getDependentPackages",
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

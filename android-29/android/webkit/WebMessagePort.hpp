@@ -57,21 +57,24 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void WebMessagePort::postMessage(__jni_impl::android::webkit::WebMessage arg0)
 	{
 		__thiz.callMethod<void>(
 			"postMessage",
 			"(Landroid/webkit/WebMessage;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebMessagePort::setWebMessageCallback(__jni_impl::android::webkit::WebMessagePort_WebMessageCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWebMessageCallback",
 			"(Landroid/webkit/WebMessagePort$WebMessageCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebMessagePort::setWebMessageCallback(__jni_impl::android::webkit::WebMessagePort_WebMessageCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -79,7 +82,8 @@ namespace __jni_impl::android::webkit
 			"setWebMessageCallback",
 			"(Landroid/webkit/WebMessagePort$WebMessageCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

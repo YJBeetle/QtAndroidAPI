@@ -5,6 +5,10 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::graphics
+{
+	class Matrix;
+}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -25,10 +29,6 @@ namespace __jni_impl::android::os
 {
 	class LocaleList;
 }
-namespace __jni_impl::android::graphics
-{
-	class Matrix;
-}
 
 namespace __jni_impl::android::app::assist
 {
@@ -48,24 +48,24 @@ namespace __jni_impl::android::app::assist
 		// Methods
 		jint getId();
 		jboolean isOpaque();
-		QAndroidJniObject getClassName();
+		jstring getClassName();
 		jboolean isEnabled();
-		QAndroidJniObject getText();
-		QAndroidJniObject getHint();
-		jint getInputType();
-		jint getWidth();
-		jint getHeight();
-		jint getTextColor();
-		jint getTextStyle();
+		jstring getText();
+		jint getTextSelectionStart();
+		jint getTextSelectionEnd();
+		jfloat getTextSize();
+		QAndroidJniObject getTransformation();
 		QAndroidJniObject getExtras();
+		jstring getHint();
+		jint getInputType();
 		jint getChildCount();
 		QAndroidJniObject getChildAt(jint arg0);
 		QAndroidJniObject getAutofillId();
 		jint getAutofillType();
-		QAndroidJniObject getAutofillHints();
+		jarray getAutofillHints();
 		QAndroidJniObject getAutofillValue();
 		jint getImportantForAutofill();
-		QAndroidJniObject getContentDescription();
+		jstring getContentDescription();
 		jboolean isFocused();
 		jint getVisibility();
 		jboolean isClickable();
@@ -81,37 +81,37 @@ namespace __jni_impl::android::app::assist
 		jfloat getElevation();
 		jboolean isSelected();
 		jboolean isActivated();
-		QAndroidJniObject getIdPackage();
-		QAndroidJniObject getIdType();
-		QAndroidJniObject getIdEntry();
+		jint getTextColor();
+		jint getTextStyle();
+		jstring getIdPackage();
+		jstring getIdType();
+		jstring getIdEntry();
 		jboolean isAssistBlocked();
-		QAndroidJniObject getWebDomain();
-		QAndroidJniObject getWebScheme();
+		jstring getWebDomain();
+		jstring getWebScheme();
 		QAndroidJniObject getHtmlInfo();
 		QAndroidJniObject getLocaleList();
 		jint getTextBackgroundColor();
-		QAndroidJniObject getTextLineCharOffsets();
-		QAndroidJniObject getTextLineBaselines();
-		QAndroidJniObject getTextIdEntry();
+		jintArray getTextLineCharOffsets();
+		jintArray getTextLineBaselines();
+		jstring getTextIdEntry();
 		jint getMinTextEms();
 		jint getMaxTextEms();
 		jint getMaxTextLength();
+		jarray getAutofillOptions();
 		jboolean isChecked();
 		jboolean isCheckable();
-		jint getTextSelectionStart();
-		jint getTextSelectionEnd();
-		jfloat getTextSize();
-		QAndroidJniObject getTransformation();
-		QAndroidJniObject getAutofillOptions();
+		jint getWidth();
+		jint getHeight();
 	};
 } // namespace __jni_impl::android::app::assist
 
+#include "../../graphics/Matrix.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../view/autofill/AutofillId.hpp"
 #include "../../view/autofill/AutofillValue.hpp"
 #include "../../view/ViewStructure_HtmlInfo.hpp"
 #include "../../os/LocaleList.hpp"
-#include "../../graphics/Matrix.hpp"
 
 namespace __jni_impl::android::app::assist
 {
@@ -120,31 +120,36 @@ namespace __jni_impl::android::app::assist
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
-			"TEXT_COLOR_UNDEFINED");
+			"TEXT_COLOR_UNDEFINED"
+		);
 	}
 	jint AssistStructure_ViewNode::TEXT_STYLE_BOLD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
-			"TEXT_STYLE_BOLD");
+			"TEXT_STYLE_BOLD"
+		);
 	}
 	jint AssistStructure_ViewNode::TEXT_STYLE_ITALIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
-			"TEXT_STYLE_ITALIC");
+			"TEXT_STYLE_ITALIC"
+		);
 	}
 	jint AssistStructure_ViewNode::TEXT_STYLE_STRIKE_THRU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
-			"TEXT_STYLE_STRIKE_THRU");
+			"TEXT_STYLE_STRIKE_THRU"
+		);
 	}
 	jint AssistStructure_ViewNode::TEXT_STYLE_UNDERLINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.assist.AssistStructure$ViewNode",
-			"TEXT_STYLE_UNDERLINE");
+			"TEXT_STYLE_UNDERLINE"
+		);
 	}
 	
 	// Constructors
@@ -160,344 +165,401 @@ namespace __jni_impl::android::app::assist
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean AssistStructure_ViewNode::isOpaque()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpaque",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getClassName()
+	jstring AssistStructure_ViewNode::getClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getClassName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean AssistStructure_ViewNode::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getText()
+	jstring AssistStructure_ViewNode::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getHint()
+	jint AssistStructure_ViewNode::getTextSelectionStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextSelectionStart",
+			"()I"
+		);
+	}
+	jint AssistStructure_ViewNode::getTextSelectionEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextSelectionEnd",
+			"()I"
+		);
+	}
+	jfloat AssistStructure_ViewNode::getTextSize()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getTextSize",
+			"()F"
+		);
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getTransformation()
 	{
 		return __thiz.callObjectMethod(
-			"getHint",
-			"()Ljava/lang/String;");
-	}
-	jint AssistStructure_ViewNode::getInputType()
-	{
-		return __thiz.callMethod<jint>(
-			"getInputType",
-			"()I");
-	}
-	jint AssistStructure_ViewNode::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I");
-	}
-	jint AssistStructure_ViewNode::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
-	}
-	jint AssistStructure_ViewNode::getTextColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextColor",
-			"()I");
-	}
-	jint AssistStructure_ViewNode::getTextStyle()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextStyle",
-			"()I");
+			"getTransformation",
+			"()Landroid/graphics/Matrix;"
+		);
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jstring AssistStructure_ViewNode::getHint()
+	{
+		return __thiz.callObjectMethod(
+			"getHint",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint AssistStructure_ViewNode::getInputType()
+	{
+		return __thiz.callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
 	}
 	jint AssistStructure_ViewNode::getChildCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getChildCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getChildAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getChildAt",
 			"(I)Landroid/app/assist/AssistStructure$ViewNode;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getAutofillId()
 	{
 		return __thiz.callObjectMethod(
 			"getAutofillId",
-			"()Landroid/view/autofill/AutofillId;");
+			"()Landroid/view/autofill/AutofillId;"
+		);
 	}
 	jint AssistStructure_ViewNode::getAutofillType()
 	{
 		return __thiz.callMethod<jint>(
 			"getAutofillType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getAutofillHints()
+	jarray AssistStructure_ViewNode::getAutofillHints()
 	{
 		return __thiz.callObjectMethod(
 			"getAutofillHints",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getAutofillValue()
 	{
 		return __thiz.callObjectMethod(
 			"getAutofillValue",
-			"()Landroid/view/autofill/AutofillValue;");
+			"()Landroid/view/autofill/AutofillValue;"
+		);
 	}
 	jint AssistStructure_ViewNode::getImportantForAutofill()
 	{
 		return __thiz.callMethod<jint>(
 			"getImportantForAutofill",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getContentDescription()
+	jstring AssistStructure_ViewNode::getContentDescription()
 	{
 		return __thiz.callObjectMethod(
 			"getContentDescription",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jboolean AssistStructure_ViewNode::isFocused()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFocused",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint AssistStructure_ViewNode::getVisibility()
 	{
 		return __thiz.callMethod<jint>(
 			"getVisibility",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean AssistStructure_ViewNode::isClickable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isClickable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AssistStructure_ViewNode::isLongClickable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLongClickable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AssistStructure_ViewNode::isContextClickable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isContextClickable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AssistStructure_ViewNode::isFocusable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFocusable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AssistStructure_ViewNode::isAccessibilityFocused()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAccessibilityFocused",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint AssistStructure_ViewNode::getScrollX()
 	{
 		return __thiz.callMethod<jint>(
 			"getScrollX",
-			"()I");
+			"()I"
+		);
 	}
 	jint AssistStructure_ViewNode::getScrollY()
 	{
 		return __thiz.callMethod<jint>(
 			"getScrollY",
-			"()I");
+			"()I"
+		);
 	}
 	jfloat AssistStructure_ViewNode::getAlpha()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getAlpha",
-			"()F");
+			"()F"
+		);
 	}
 	jint AssistStructure_ViewNode::getTop()
 	{
 		return __thiz.callMethod<jint>(
 			"getTop",
-			"()I");
+			"()I"
+		);
 	}
 	jint AssistStructure_ViewNode::getLeft()
 	{
 		return __thiz.callMethod<jint>(
 			"getLeft",
-			"()I");
+			"()I"
+		);
 	}
 	jfloat AssistStructure_ViewNode::getElevation()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getElevation",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean AssistStructure_ViewNode::isSelected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSelected",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AssistStructure_ViewNode::isActivated()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isActivated",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getIdPackage()
+	jint AssistStructure_ViewNode::getTextColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextColor",
+			"()I"
+		);
+	}
+	jint AssistStructure_ViewNode::getTextStyle()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextStyle",
+			"()I"
+		);
+	}
+	jstring AssistStructure_ViewNode::getIdPackage()
 	{
 		return __thiz.callObjectMethod(
 			"getIdPackage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getIdType()
+	jstring AssistStructure_ViewNode::getIdType()
 	{
 		return __thiz.callObjectMethod(
 			"getIdType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getIdEntry()
+	jstring AssistStructure_ViewNode::getIdEntry()
 	{
 		return __thiz.callObjectMethod(
 			"getIdEntry",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean AssistStructure_ViewNode::isAssistBlocked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAssistBlocked",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getWebDomain()
+	jstring AssistStructure_ViewNode::getWebDomain()
 	{
 		return __thiz.callObjectMethod(
 			"getWebDomain",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getWebScheme()
+	jstring AssistStructure_ViewNode::getWebScheme()
 	{
 		return __thiz.callObjectMethod(
 			"getWebScheme",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getHtmlInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getHtmlInfo",
-			"()Landroid/view/ViewStructure$HtmlInfo;");
+			"()Landroid/view/ViewStructure$HtmlInfo;"
+		);
 	}
 	QAndroidJniObject AssistStructure_ViewNode::getLocaleList()
 	{
 		return __thiz.callObjectMethod(
 			"getLocaleList",
-			"()Landroid/os/LocaleList;");
+			"()Landroid/os/LocaleList;"
+		);
 	}
 	jint AssistStructure_ViewNode::getTextBackgroundColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getTextBackgroundColor",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getTextLineCharOffsets()
+	jintArray AssistStructure_ViewNode::getTextLineCharOffsets()
 	{
 		return __thiz.callObjectMethod(
 			"getTextLineCharOffsets",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getTextLineBaselines()
+	jintArray AssistStructure_ViewNode::getTextLineBaselines()
 	{
 		return __thiz.callObjectMethod(
 			"getTextLineBaselines",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AssistStructure_ViewNode::getTextIdEntry()
+	jstring AssistStructure_ViewNode::getTextIdEntry()
 	{
 		return __thiz.callObjectMethod(
 			"getTextIdEntry",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AssistStructure_ViewNode::getMinTextEms()
 	{
 		return __thiz.callMethod<jint>(
 			"getMinTextEms",
-			"()I");
+			"()I"
+		);
 	}
 	jint AssistStructure_ViewNode::getMaxTextEms()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxTextEms",
-			"()I");
+			"()I"
+		);
 	}
 	jint AssistStructure_ViewNode::getMaxTextLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxTextLength",
-			"()I");
+			"()I"
+		);
+	}
+	jarray AssistStructure_ViewNode::getAutofillOptions()
+	{
+		return __thiz.callObjectMethod(
+			"getAutofillOptions",
+			"()[Ljava/lang/CharSequence;"
+		).object<jarray>();
 	}
 	jboolean AssistStructure_ViewNode::isChecked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isChecked",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AssistStructure_ViewNode::isCheckable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCheckable",
-			"()Z");
+			"()Z"
+		);
 	}
-	jint AssistStructure_ViewNode::getTextSelectionStart()
+	jint AssistStructure_ViewNode::getWidth()
 	{
 		return __thiz.callMethod<jint>(
-			"getTextSelectionStart",
-			"()I");
+			"getWidth",
+			"()I"
+		);
 	}
-	jint AssistStructure_ViewNode::getTextSelectionEnd()
+	jint AssistStructure_ViewNode::getHeight()
 	{
 		return __thiz.callMethod<jint>(
-			"getTextSelectionEnd",
-			"()I");
-	}
-	jfloat AssistStructure_ViewNode::getTextSize()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getTextSize",
-			"()F");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getTransformation()
-	{
-		return __thiz.callObjectMethod(
-			"getTransformation",
-			"()Landroid/graphics/Matrix;");
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getAutofillOptions()
-	{
-		return __thiz.callObjectMethod(
-			"getAutofillOptions",
-			"()[Ljava/lang/CharSequence;");
+			"getHeight",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::app::assist
 

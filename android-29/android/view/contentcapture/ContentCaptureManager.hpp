@@ -53,33 +53,38 @@ namespace __jni_impl::android::view::contentcapture
 	{
 		return __thiz.callObjectMethod(
 			"getServiceComponentName",
-			"()Landroid/content/ComponentName;");
+			"()Landroid/content/ComponentName;"
+		);
 	}
 	jboolean ContentCaptureManager::isContentCaptureEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isContentCaptureEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject ContentCaptureManager::getContentCaptureConditions()
 	{
 		return __thiz.callObjectMethod(
 			"getContentCaptureConditions",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	void ContentCaptureManager::setContentCaptureEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentCaptureEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void ContentCaptureManager::removeData(__jni_impl::android::view::contentcapture::DataRemovalRequest arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeData",
 			"(Landroid/view/contentcapture/DataRemovalRequest;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view::contentcapture
 

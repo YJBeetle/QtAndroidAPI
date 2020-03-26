@@ -42,8 +42,8 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		QAndroidJniObject clone();
-		jfloat getSweepAngle();
 		jfloat getStartAngle();
+		jfloat getSweepAngle();
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1);
 	};
@@ -75,38 +75,44 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ArcShape::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ArcShape::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/graphics/drawable/shapes/ArcShape;");
-	}
-	jfloat ArcShape::getSweepAngle()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getSweepAngle",
-			"()F");
+			"()Landroid/graphics/drawable/shapes/ArcShape;"
+		);
 	}
 	jfloat ArcShape::getStartAngle()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getStartAngle",
-			"()F");
+			"()F"
+		);
+	}
+	jfloat ArcShape::getSweepAngle()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getSweepAngle",
+			"()F"
+		);
 	}
 	void ArcShape::getOutline(__jni_impl::android::graphics::Outline arg0)
 	{
 		__thiz.callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArcShape::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1)
 	{
@@ -114,7 +120,8 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			"draw",
 			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable::shapes
 

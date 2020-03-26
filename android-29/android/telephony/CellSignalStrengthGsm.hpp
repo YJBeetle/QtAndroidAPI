@@ -24,7 +24,7 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getLevel();
 		jint getAsuLevel();
@@ -46,7 +46,8 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellSignalStrengthGsm",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -63,55 +64,64 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CellSignalStrengthGsm::toString()
+	jstring CellSignalStrengthGsm::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CellSignalStrengthGsm::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthGsm::getLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getLevel",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthGsm::getAsuLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getAsuLevel",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthGsm::getDbm()
 	{
 		return __thiz.callMethod<jint>(
 			"getDbm",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthGsm::getTimingAdvance()
 	{
 		return __thiz.callMethod<jint>(
 			"getTimingAdvance",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthGsm::getBitErrorRate()
 	{
 		return __thiz.callMethod<jint>(
 			"getBitErrorRate",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthGsm::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CellSignalStrengthGsm::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -119,7 +129,8 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

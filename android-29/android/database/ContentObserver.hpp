@@ -56,21 +56,24 @@ namespace __jni_impl::android::database
 			"onChange",
 			"(ZLandroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ContentObserver::onChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onChange",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void ContentObserver::dispatchChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"dispatchChange",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void ContentObserver::dispatchChange(jboolean arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -78,13 +81,15 @@ namespace __jni_impl::android::database
 			"dispatchChange",
 			"(ZLandroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean ContentObserver::deliverSelfNotifications()
 	{
 		return __thiz.callMethod<jboolean>(
 			"deliverSelfNotifications",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::database
 

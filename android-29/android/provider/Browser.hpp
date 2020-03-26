@@ -16,10 +16,10 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EXTRA_APPLICATION_ID();
-		static QAndroidJniObject EXTRA_CREATE_NEW_TAB();
-		static QAndroidJniObject EXTRA_HEADERS();
-		static QAndroidJniObject INITIAL_ZOOM_LEVEL();
+		static jstring EXTRA_APPLICATION_ID();
+		static jstring EXTRA_CREATE_NEW_TAB();
+		static jstring EXTRA_HEADERS();
+		static jstring INITIAL_ZOOM_LEVEL();
 		
 		// Constructors
 		void __constructor();
@@ -34,33 +34,37 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Browser::EXTRA_APPLICATION_ID()
+	jstring Browser::EXTRA_APPLICATION_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Browser",
 			"EXTRA_APPLICATION_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Browser::EXTRA_CREATE_NEW_TAB()
+	jstring Browser::EXTRA_CREATE_NEW_TAB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Browser",
 			"EXTRA_CREATE_NEW_TAB",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Browser::EXTRA_HEADERS()
+	jstring Browser::EXTRA_HEADERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Browser",
 			"EXTRA_HEADERS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Browser::INITIAL_ZOOM_LEVEL()
+	jstring Browser::INITIAL_ZOOM_LEVEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Browser",
 			"INITIAL_ZOOM_LEVEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -79,7 +83,8 @@ namespace __jni_impl::android::provider
 			"sendString",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::provider
 

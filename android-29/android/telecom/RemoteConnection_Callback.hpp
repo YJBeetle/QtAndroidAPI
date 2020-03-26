@@ -93,7 +93,8 @@ namespace __jni_impl::android::telecom
 			"onRingbackRequested",
 			"(Landroid/telecom/RemoteConnection;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RemoteConnection_Callback::onDisconnected(__jni_impl::android::telecom::RemoteConnection arg0, __jni_impl::android::telecom::DisconnectCause arg1)
 	{
@@ -101,7 +102,8 @@ namespace __jni_impl::android::telecom
 			"onDisconnected",
 			"(Landroid/telecom/RemoteConnection;Landroid/telecom/DisconnectCause;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RemoteConnection_Callback::onConnectionCapabilitiesChanged(__jni_impl::android::telecom::RemoteConnection arg0, jint arg1)
 	{
@@ -109,7 +111,8 @@ namespace __jni_impl::android::telecom
 			"onConnectionCapabilitiesChanged",
 			"(Landroid/telecom/RemoteConnection;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RemoteConnection_Callback::onConnectionPropertiesChanged(__jni_impl::android::telecom::RemoteConnection arg0, jint arg1)
 	{
@@ -117,7 +120,8 @@ namespace __jni_impl::android::telecom
 			"onConnectionPropertiesChanged",
 			"(Landroid/telecom/RemoteConnection;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RemoteConnection_Callback::onPostDialWait(__jni_impl::android::telecom::RemoteConnection arg0, jstring arg1)
 	{
@@ -125,7 +129,8 @@ namespace __jni_impl::android::telecom
 			"onPostDialWait",
 			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RemoteConnection_Callback::onPostDialChar(__jni_impl::android::telecom::RemoteConnection arg0, jchar arg1)
 	{
@@ -133,7 +138,8 @@ namespace __jni_impl::android::telecom
 			"onPostDialChar",
 			"(Landroid/telecom/RemoteConnection;C)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RemoteConnection_Callback::onVoipAudioChanged(__jni_impl::android::telecom::RemoteConnection arg0, jboolean arg1)
 	{
@@ -141,7 +147,8 @@ namespace __jni_impl::android::telecom
 			"onVoipAudioChanged",
 			"(Landroid/telecom/RemoteConnection;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RemoteConnection_Callback::onStatusHintsChanged(__jni_impl::android::telecom::RemoteConnection arg0, __jni_impl::android::telecom::StatusHints arg1)
 	{
@@ -149,7 +156,8 @@ namespace __jni_impl::android::telecom
 			"onStatusHintsChanged",
 			"(Landroid/telecom/RemoteConnection;Landroid/telecom/StatusHints;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RemoteConnection_Callback::onAddressChanged(__jni_impl::android::telecom::RemoteConnection arg0, __jni_impl::android::net::Uri arg1, jint arg2)
 	{
@@ -158,7 +166,8 @@ namespace __jni_impl::android::telecom
 			"(Landroid/telecom/RemoteConnection;Landroid/net/Uri;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void RemoteConnection_Callback::onCallerDisplayNameChanged(__jni_impl::android::telecom::RemoteConnection arg0, jstring arg1, jint arg2)
 	{
@@ -167,7 +176,8 @@ namespace __jni_impl::android::telecom
 			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void RemoteConnection_Callback::onVideoStateChanged(__jni_impl::android::telecom::RemoteConnection arg0, jint arg1)
 	{
@@ -175,14 +185,16 @@ namespace __jni_impl::android::telecom
 			"onVideoStateChanged",
 			"(Landroid/telecom/RemoteConnection;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void RemoteConnection_Callback::onDestroyed(__jni_impl::android::telecom::RemoteConnection arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDestroyed",
 			"(Landroid/telecom/RemoteConnection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RemoteConnection_Callback::onConferenceableConnectionsChanged(__jni_impl::android::telecom::RemoteConnection arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -190,7 +202,8 @@ namespace __jni_impl::android::telecom
 			"onConferenceableConnectionsChanged",
 			"(Landroid/telecom/RemoteConnection;Ljava/util/List;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RemoteConnection_Callback::onVideoProviderChanged(__jni_impl::android::telecom::RemoteConnection arg0, __jni_impl::android::telecom::RemoteConnection_VideoProvider arg1)
 	{
@@ -198,7 +211,8 @@ namespace __jni_impl::android::telecom
 			"onVideoProviderChanged",
 			"(Landroid/telecom/RemoteConnection;Landroid/telecom/RemoteConnection$VideoProvider;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RemoteConnection_Callback::onConferenceChanged(__jni_impl::android::telecom::RemoteConnection arg0, __jni_impl::android::telecom::RemoteConference arg1)
 	{
@@ -206,7 +220,8 @@ namespace __jni_impl::android::telecom
 			"onConferenceChanged",
 			"(Landroid/telecom/RemoteConnection;Landroid/telecom/RemoteConference;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RemoteConnection_Callback::onConnectionEvent(__jni_impl::android::telecom::RemoteConnection arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -215,7 +230,8 @@ namespace __jni_impl::android::telecom
 			"(Landroid/telecom/RemoteConnection;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void RemoteConnection_Callback::onExtrasChanged(__jni_impl::android::telecom::RemoteConnection arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -223,7 +239,8 @@ namespace __jni_impl::android::telecom
 			"onExtrasChanged",
 			"(Landroid/telecom/RemoteConnection;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RemoteConnection_Callback::onStateChanged(__jni_impl::android::telecom::RemoteConnection arg0, jint arg1)
 	{
@@ -231,7 +248,8 @@ namespace __jni_impl::android::telecom
 			"onStateChanged",
 			"(Landroid/telecom/RemoteConnection;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

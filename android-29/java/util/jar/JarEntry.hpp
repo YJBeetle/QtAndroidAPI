@@ -28,10 +28,10 @@ namespace __jni_impl::java::util::jar
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getCertificates();
-		QAndroidJniObject getRealName();
+		jarray getCertificates();
+		jstring getRealName();
 		QAndroidJniObject getAttributes();
-		QAndroidJniObject getCodeSigners();
+		jarray getCodeSigners();
 	};
 } // namespace __jni_impl::java::util::jar
 
@@ -66,29 +66,33 @@ namespace __jni_impl::java::util::jar
 	}
 	
 	// Methods
-	QAndroidJniObject JarEntry::getCertificates()
+	jarray JarEntry::getCertificates()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificates",
-			"()[Ljava/security/cert/Certificate;");
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
 	}
-	QAndroidJniObject JarEntry::getRealName()
+	jstring JarEntry::getRealName()
 	{
 		return __thiz.callObjectMethod(
 			"getRealName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject JarEntry::getAttributes()
 	{
 		return __thiz.callObjectMethod(
 			"getAttributes",
-			"()Ljava/util/jar/Attributes;");
+			"()Ljava/util/jar/Attributes;"
+		);
 	}
-	QAndroidJniObject JarEntry::getCodeSigners()
+	jarray JarEntry::getCodeSigners()
 	{
 		return __thiz.callObjectMethod(
 			"getCodeSigners",
-			"()[Ljava/security/CodeSigner;");
+			"()[Ljava/security/CodeSigner;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::util::jar
 

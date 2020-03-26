@@ -42,18 +42,18 @@ namespace __jni_impl::android::media
 		jint getLocation();
 		jint getId();
 		jint getType();
-		QAndroidJniObject getAddress();
+		jstring getAddress();
 		jint getDirectionality();
-		jint getGroup();
 		QAndroidJniObject getPosition();
-		QAndroidJniObject getDescription();
+		jint getGroup();
+		QAndroidJniObject getOrientation();
+		jstring getDescription();
 		jint getIndexInTheGroup();
 		QAndroidJniObject getFrequencyResponse();
 		QAndroidJniObject getChannelMapping();
 		jfloat getSensitivity();
 		jfloat getMaxSpl();
 		jfloat getMinSpl();
-		QAndroidJniObject getOrientation();
 	};
 } // namespace __jni_impl::android::media
 
@@ -66,111 +66,129 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"CHANNEL_MAPPING_DIRECT");
+			"CHANNEL_MAPPING_DIRECT"
+		);
 	}
 	jint MicrophoneInfo::CHANNEL_MAPPING_PROCESSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"CHANNEL_MAPPING_PROCESSED");
+			"CHANNEL_MAPPING_PROCESSED"
+		);
 	}
 	jint MicrophoneInfo::DIRECTIONALITY_BI_DIRECTIONAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"DIRECTIONALITY_BI_DIRECTIONAL");
+			"DIRECTIONALITY_BI_DIRECTIONAL"
+		);
 	}
 	jint MicrophoneInfo::DIRECTIONALITY_CARDIOID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"DIRECTIONALITY_CARDIOID");
+			"DIRECTIONALITY_CARDIOID"
+		);
 	}
 	jint MicrophoneInfo::DIRECTIONALITY_HYPER_CARDIOID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"DIRECTIONALITY_HYPER_CARDIOID");
+			"DIRECTIONALITY_HYPER_CARDIOID"
+		);
 	}
 	jint MicrophoneInfo::DIRECTIONALITY_OMNI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"DIRECTIONALITY_OMNI");
+			"DIRECTIONALITY_OMNI"
+		);
 	}
 	jint MicrophoneInfo::DIRECTIONALITY_SUPER_CARDIOID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"DIRECTIONALITY_SUPER_CARDIOID");
+			"DIRECTIONALITY_SUPER_CARDIOID"
+		);
 	}
 	jint MicrophoneInfo::DIRECTIONALITY_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"DIRECTIONALITY_UNKNOWN");
+			"DIRECTIONALITY_UNKNOWN"
+		);
 	}
 	jint MicrophoneInfo::GROUP_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"GROUP_UNKNOWN");
+			"GROUP_UNKNOWN"
+		);
 	}
 	jint MicrophoneInfo::INDEX_IN_THE_GROUP_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"INDEX_IN_THE_GROUP_UNKNOWN");
+			"INDEX_IN_THE_GROUP_UNKNOWN"
+		);
 	}
 	jint MicrophoneInfo::LOCATION_MAINBODY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"LOCATION_MAINBODY");
+			"LOCATION_MAINBODY"
+		);
 	}
 	jint MicrophoneInfo::LOCATION_MAINBODY_MOVABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"LOCATION_MAINBODY_MOVABLE");
+			"LOCATION_MAINBODY_MOVABLE"
+		);
 	}
 	jint MicrophoneInfo::LOCATION_PERIPHERAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"LOCATION_PERIPHERAL");
+			"LOCATION_PERIPHERAL"
+		);
 	}
 	jint MicrophoneInfo::LOCATION_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MicrophoneInfo",
-			"LOCATION_UNKNOWN");
+			"LOCATION_UNKNOWN"
+		);
 	}
 	QAndroidJniObject MicrophoneInfo::ORIENTATION_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MicrophoneInfo",
 			"ORIENTATION_UNKNOWN",
-			"Landroid/media/MicrophoneInfo$Coordinate3F;");
+			"Landroid/media/MicrophoneInfo$Coordinate3F;"
+		);
 	}
 	QAndroidJniObject MicrophoneInfo::POSITION_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MicrophoneInfo",
 			"POSITION_UNKNOWN",
-			"Landroid/media/MicrophoneInfo$Coordinate3F;");
+			"Landroid/media/MicrophoneInfo$Coordinate3F;"
+		);
 	}
 	jfloat MicrophoneInfo::SENSITIVITY_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"android.media.MicrophoneInfo",
-			"SENSITIVITY_UNKNOWN");
+			"SENSITIVITY_UNKNOWN"
+		);
 	}
 	jfloat MicrophoneInfo::SPL_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"android.media.MicrophoneInfo",
-			"SPL_UNKNOWN");
+			"SPL_UNKNOWN"
+		);
 	}
 	
 	// Constructors
@@ -186,91 +204,106 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jint>(
 			"getLocation",
-			"()I");
+			"()I"
+		);
 	}
 	jint MicrophoneInfo::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
 	jint MicrophoneInfo::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MicrophoneInfo::getAddress()
+	jstring MicrophoneInfo::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MicrophoneInfo::getDirectionality()
 	{
 		return __thiz.callMethod<jint>(
 			"getDirectionality",
-			"()I");
-	}
-	jint MicrophoneInfo::getGroup()
-	{
-		return __thiz.callMethod<jint>(
-			"getGroup",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MicrophoneInfo::getPosition()
 	{
 		return __thiz.callObjectMethod(
 			"getPosition",
-			"()Landroid/media/MicrophoneInfo$Coordinate3F;");
+			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
+		);
 	}
-	QAndroidJniObject MicrophoneInfo::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
-	}
-	jint MicrophoneInfo::getIndexInTheGroup()
+	jint MicrophoneInfo::getGroup()
 	{
 		return __thiz.callMethod<jint>(
-			"getIndexInTheGroup",
-			"()I");
-	}
-	QAndroidJniObject MicrophoneInfo::getFrequencyResponse()
-	{
-		return __thiz.callObjectMethod(
-			"getFrequencyResponse",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject MicrophoneInfo::getChannelMapping()
-	{
-		return __thiz.callObjectMethod(
-			"getChannelMapping",
-			"()Ljava/util/List;");
-	}
-	jfloat MicrophoneInfo::getSensitivity()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getSensitivity",
-			"()F");
-	}
-	jfloat MicrophoneInfo::getMaxSpl()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMaxSpl",
-			"()F");
-	}
-	jfloat MicrophoneInfo::getMinSpl()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMinSpl",
-			"()F");
+			"getGroup",
+			"()I"
+		);
 	}
 	QAndroidJniObject MicrophoneInfo::getOrientation()
 	{
 		return __thiz.callObjectMethod(
 			"getOrientation",
-			"()Landroid/media/MicrophoneInfo$Coordinate3F;");
+			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
+		);
+	}
+	jstring MicrophoneInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint MicrophoneInfo::getIndexInTheGroup()
+	{
+		return __thiz.callMethod<jint>(
+			"getIndexInTheGroup",
+			"()I"
+		);
+	}
+	QAndroidJniObject MicrophoneInfo::getFrequencyResponse()
+	{
+		return __thiz.callObjectMethod(
+			"getFrequencyResponse",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject MicrophoneInfo::getChannelMapping()
+	{
+		return __thiz.callObjectMethod(
+			"getChannelMapping",
+			"()Ljava/util/List;"
+		);
+	}
+	jfloat MicrophoneInfo::getSensitivity()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getSensitivity",
+			"()F"
+		);
+	}
+	jfloat MicrophoneInfo::getMaxSpl()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMaxSpl",
+			"()F"
+		);
+	}
+	jfloat MicrophoneInfo::getMinSpl()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMinSpl",
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::media
 

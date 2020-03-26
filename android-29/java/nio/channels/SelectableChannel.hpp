@@ -35,10 +35,10 @@ namespace __jni_impl::java::nio::channels
 		QAndroidJniObject _register(__jni_impl::java::nio::channels::Selector arg0, jint arg1, jobject arg2);
 		QAndroidJniObject provider();
 		QAndroidJniObject keyFor(__jni_impl::java::nio::channels::Selector arg0);
-		jint validOps();
-		QAndroidJniObject blockingLock();
-		QAndroidJniObject configureBlocking(jboolean arg0);
 		jboolean isBlocking();
+		jint validOps();
+		jobject blockingLock();
+		QAndroidJniObject configureBlocking(jboolean arg0);
 	};
 } // namespace __jni_impl::java::nio::channels
 
@@ -63,7 +63,8 @@ namespace __jni_impl::java::nio::channels
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRegistered",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject SelectableChannel::_register(__jni_impl::java::nio::channels::Selector arg0, jint arg1)
 	{
@@ -71,7 +72,8 @@ namespace __jni_impl::java::nio::channels
 			"register",
 			"(Ljava/nio/channels/Selector;I)Ljava/nio/channels/SelectionKey;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SelectableChannel::_register(__jni_impl::java::nio::channels::Selector arg0, jint arg1, jobject arg2)
 	{
@@ -80,45 +82,52 @@ namespace __jni_impl::java::nio::channels
 			"(Ljava/nio/channels/Selector;ILjava/lang/Object;)Ljava/nio/channels/SelectionKey;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject SelectableChannel::provider()
 	{
 		return __thiz.callObjectMethod(
 			"provider",
-			"()Ljava/nio/channels/spi/SelectorProvider;");
+			"()Ljava/nio/channels/spi/SelectorProvider;"
+		);
 	}
 	QAndroidJniObject SelectableChannel::keyFor(__jni_impl::java::nio::channels::Selector arg0)
 	{
 		return __thiz.callObjectMethod(
 			"keyFor",
 			"(Ljava/nio/channels/Selector;)Ljava/nio/channels/SelectionKey;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean SelectableChannel::isBlocking()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBlocking",
+			"()Z"
+		);
 	}
 	jint SelectableChannel::validOps()
 	{
 		return __thiz.callMethod<jint>(
 			"validOps",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SelectableChannel::blockingLock()
+	jobject SelectableChannel::blockingLock()
 	{
 		return __thiz.callObjectMethod(
 			"blockingLock",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject SelectableChannel::configureBlocking(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"configureBlocking",
 			"(Z)Ljava/nio/channels/SelectableChannel;",
-			arg0);
-	}
-	jboolean SelectableChannel::isBlocking()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBlocking",
-			"()Z");
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::channels
 

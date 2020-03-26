@@ -68,7 +68,8 @@ namespace __jni_impl::android::bluetooth
 	{
 		return __thiz.callObjectMethod(
 			"getAdapter",
-			"()Landroid/bluetooth/BluetoothAdapter;");
+			"()Landroid/bluetooth/BluetoothAdapter;"
+		);
 	}
 	jint BluetoothManager::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1)
 	{
@@ -76,14 +77,16 @@ namespace __jni_impl::android::bluetooth
 			"getConnectionState",
 			"(Landroid/bluetooth/BluetoothDevice;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject BluetoothManager::getConnectedDevices(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getConnectedDevices",
 			"(I)Ljava/util/List;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BluetoothManager::getDevicesMatchingConnectionStates(jint arg0, jintArray arg1)
 	{
@@ -91,7 +94,8 @@ namespace __jni_impl::android::bluetooth
 			"getDevicesMatchingConnectionStates",
 			"(I[I)Ljava/util/List;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject BluetoothManager::openGattServer(__jni_impl::android::content::Context arg0, __jni_impl::android::bluetooth::BluetoothGattServerCallback arg1)
 	{
@@ -99,7 +103,8 @@ namespace __jni_impl::android::bluetooth
 			"openGattServer",
 			"(Landroid/content/Context;Landroid/bluetooth/BluetoothGattServerCallback;)Landroid/bluetooth/BluetoothGattServer;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

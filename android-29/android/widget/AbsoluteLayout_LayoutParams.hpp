@@ -30,7 +30,7 @@ namespace __jni_impl::android::widget
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject debug(jstring arg0);
+		jstring debug(jstring arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -43,12 +43,14 @@ namespace __jni_impl::android::widget
 	jint AbsoluteLayout_LayoutParams::x()
 	{
 		return __thiz.getField<jint>(
-			"x");
+			"x"
+		);
 	}
 	jint AbsoluteLayout_LayoutParams::y()
 	{
 		return __thiz.getField<jint>(
-			"y");
+			"y"
+		);
 	}
 	
 	// Constructors
@@ -79,12 +81,13 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject AbsoluteLayout_LayoutParams::debug(jstring arg0)
+	jstring AbsoluteLayout_LayoutParams::debug(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

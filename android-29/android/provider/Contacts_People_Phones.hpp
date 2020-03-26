@@ -12,8 +12,8 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static jstring CONTENT_DIRECTORY();
+		static jstring DEFAULT_SORT_ORDER();
 		
 		// Constructors
 		void __constructor();
@@ -26,19 +26,21 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_People_Phones::CONTENT_DIRECTORY()
+	jstring Contacts_People_Phones::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People$Phones",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_People_Phones::DEFAULT_SORT_ORDER()
+	jstring Contacts_People_Phones::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People$Phones",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

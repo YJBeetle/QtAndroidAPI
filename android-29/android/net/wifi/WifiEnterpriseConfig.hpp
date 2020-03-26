@@ -27,37 +27,37 @@ namespace __jni_impl::android::net::wifi
 		void __constructor(__jni_impl::android::net::wifi::WifiEnterpriseConfig arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		void setPassword(jstring arg0);
+		jstring toString();
 		void setEapMethod(jint arg0);
 		jint getEapMethod();
 		void setPhase2Method(jint arg0);
 		jint getPhase2Method();
 		void setIdentity(jstring arg0);
-		QAndroidJniObject getIdentity();
+		jstring getIdentity();
 		void setAnonymousIdentity(jstring arg0);
-		QAndroidJniObject getAnonymousIdentity();
+		jstring getAnonymousIdentity();
 		void setCaCertificate(__jni_impl::java::security::cert::X509Certificate arg0);
 		QAndroidJniObject getCaCertificate();
 		void setCaCertificates(jarray arg0);
-		QAndroidJniObject getCaCertificates();
+		jarray getCaCertificates();
 		void setClientKeyEntry(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::cert::X509Certificate arg1);
 		void setClientKeyEntryWithCertificateChain(__jni_impl::__JniBaseClass arg0, jarray arg1);
 		QAndroidJniObject getClientCertificate();
-		QAndroidJniObject getClientCertificateChain();
+		jarray getClientCertificateChain();
 		void setSubjectMatch(jstring arg0);
-		QAndroidJniObject getSubjectMatch();
+		jstring getSubjectMatch();
 		void setAltSubjectMatch(jstring arg0);
-		QAndroidJniObject getAltSubjectMatch();
+		jstring getAltSubjectMatch();
 		void setDomainSuffixMatch(jstring arg0);
-		QAndroidJniObject getDomainSuffixMatch();
+		jstring getDomainSuffixMatch();
 		void setRealm(jstring arg0);
-		QAndroidJniObject getRealm();
+		jstring getRealm();
 		void setPlmn(jstring arg0);
-		QAndroidJniObject getPlmn();
+		jstring getPlmn();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getPassword();
+		void setPassword(jstring arg0);
+		jstring getPassword();
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -72,7 +72,8 @@ namespace __jni_impl::android::net::wifi
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiEnterpriseConfig",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -91,96 +92,102 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	QAndroidJniObject WifiEnterpriseConfig::toString()
+	jstring WifiEnterpriseConfig::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	void WifiEnterpriseConfig::setPassword(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPassword",
-			"(Ljava/lang/String;)V",
-			arg0);
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiEnterpriseConfig::setEapMethod(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEapMethod",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint WifiEnterpriseConfig::getEapMethod()
 	{
 		return __thiz.callMethod<jint>(
 			"getEapMethod",
-			"()I");
+			"()I"
+		);
 	}
 	void WifiEnterpriseConfig::setPhase2Method(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPhase2Method",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint WifiEnterpriseConfig::getPhase2Method()
 	{
 		return __thiz.callMethod<jint>(
 			"getPhase2Method",
-			"()I");
+			"()I"
+		);
 	}
 	void WifiEnterpriseConfig::setIdentity(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIdentity",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getIdentity()
+	jstring WifiEnterpriseConfig::getIdentity()
 	{
 		return __thiz.callObjectMethod(
 			"getIdentity",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiEnterpriseConfig::setAnonymousIdentity(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAnonymousIdentity",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getAnonymousIdentity()
+	jstring WifiEnterpriseConfig::getAnonymousIdentity()
 	{
 		return __thiz.callObjectMethod(
 			"getAnonymousIdentity",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiEnterpriseConfig::setCaCertificate(__jni_impl::java::security::cert::X509Certificate arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCaCertificate",
 			"(Ljava/security/cert/X509Certificate;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WifiEnterpriseConfig::getCaCertificate()
 	{
 		return __thiz.callObjectMethod(
 			"getCaCertificate",
-			"()Ljava/security/cert/X509Certificate;");
+			"()Ljava/security/cert/X509Certificate;"
+		);
 	}
 	void WifiEnterpriseConfig::setCaCertificates(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCaCertificates",
 			"([Ljava/security/cert/X509Certificate;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getCaCertificates()
+	jarray WifiEnterpriseConfig::getCaCertificates()
 	{
 		return __thiz.callObjectMethod(
 			"getCaCertificates",
-			"()[Ljava/security/cert/X509Certificate;");
+			"()[Ljava/security/cert/X509Certificate;"
+		).object<jarray>();
 	}
 	void WifiEnterpriseConfig::setClientKeyEntry(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::cert::X509Certificate arg1)
 	{
@@ -188,7 +195,8 @@ namespace __jni_impl::android::net::wifi
 			"setClientKeyEntry",
 			"(Ljava/security/PrivateKey;Ljava/security/cert/X509Certificate;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiEnterpriseConfig::setClientKeyEntryWithCertificateChain(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -196,90 +204,104 @@ namespace __jni_impl::android::net::wifi
 			"setClientKeyEntryWithCertificateChain",
 			"(Ljava/security/PrivateKey;[Ljava/security/cert/X509Certificate;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject WifiEnterpriseConfig::getClientCertificate()
 	{
 		return __thiz.callObjectMethod(
 			"getClientCertificate",
-			"()Ljava/security/cert/X509Certificate;");
+			"()Ljava/security/cert/X509Certificate;"
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getClientCertificateChain()
+	jarray WifiEnterpriseConfig::getClientCertificateChain()
 	{
 		return __thiz.callObjectMethod(
 			"getClientCertificateChain",
-			"()[Ljava/security/cert/X509Certificate;");
+			"()[Ljava/security/cert/X509Certificate;"
+		).object<jarray>();
 	}
 	void WifiEnterpriseConfig::setSubjectMatch(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSubjectMatch",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getSubjectMatch()
+	jstring WifiEnterpriseConfig::getSubjectMatch()
 	{
 		return __thiz.callObjectMethod(
 			"getSubjectMatch",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiEnterpriseConfig::setAltSubjectMatch(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAltSubjectMatch",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getAltSubjectMatch()
+	jstring WifiEnterpriseConfig::getAltSubjectMatch()
 	{
 		return __thiz.callObjectMethod(
 			"getAltSubjectMatch",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiEnterpriseConfig::setDomainSuffixMatch(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDomainSuffixMatch",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getDomainSuffixMatch()
+	jstring WifiEnterpriseConfig::getDomainSuffixMatch()
 	{
 		return __thiz.callObjectMethod(
 			"getDomainSuffixMatch",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiEnterpriseConfig::setRealm(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRealm",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getRealm()
+	jstring WifiEnterpriseConfig::getRealm()
 	{
 		return __thiz.callObjectMethod(
 			"getRealm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiEnterpriseConfig::setPlmn(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPlmn",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getPlmn()
+	jstring WifiEnterpriseConfig::getPlmn()
 	{
 		return __thiz.callObjectMethod(
 			"getPlmn",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiEnterpriseConfig::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void WifiEnterpriseConfig::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -287,13 +309,23 @@ namespace __jni_impl::android::net::wifi
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject WifiEnterpriseConfig::getPassword()
+	void WifiEnterpriseConfig::setPassword(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPassword",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	jstring WifiEnterpriseConfig::getPassword()
 	{
 		return __thiz.callObjectMethod(
 			"getPassword",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net::wifi
 

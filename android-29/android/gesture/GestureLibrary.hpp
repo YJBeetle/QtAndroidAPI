@@ -66,58 +66,67 @@ namespace __jni_impl::android::gesture
 	{
 		return __thiz.callMethod<jboolean>(
 			"load",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean GestureLibrary::save()
 	{
 		return __thiz.callMethod<jboolean>(
 			"save",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean GestureLibrary::isReadOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReadOnly",
-			"()Z");
+			"()Z"
+		);
 	}
 	void GestureLibrary::setOrientationStyle(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOrientationStyle",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint GestureLibrary::getOrientationStyle()
 	{
 		return __thiz.callMethod<jint>(
 			"getOrientationStyle",
-			"()I");
+			"()I"
+		);
 	}
 	void GestureLibrary::setSequenceType(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSequenceType",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint GestureLibrary::getSequenceType()
 	{
 		return __thiz.callMethod<jint>(
 			"getSequenceType",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject GestureLibrary::getGestureEntries()
 	{
 		return __thiz.callObjectMethod(
 			"getGestureEntries",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject GestureLibrary::recognize(__jni_impl::android::gesture::Gesture arg0)
 	{
 		return __thiz.callObjectMethod(
 			"recognize",
 			"(Landroid/gesture/Gesture;)Ljava/util/ArrayList;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void GestureLibrary::addGesture(jstring arg0, __jni_impl::android::gesture::Gesture arg1)
 	{
@@ -125,7 +134,8 @@ namespace __jni_impl::android::gesture
 			"addGesture",
 			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GestureLibrary::removeGesture(jstring arg0, __jni_impl::android::gesture::Gesture arg1)
 	{
@@ -133,21 +143,24 @@ namespace __jni_impl::android::gesture
 			"removeGesture",
 			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GestureLibrary::removeEntry(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeEntry",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject GestureLibrary::getGestures(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getGestures",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::gesture
 

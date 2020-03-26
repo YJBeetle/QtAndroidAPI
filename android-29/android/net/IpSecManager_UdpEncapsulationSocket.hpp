@@ -21,7 +21,7 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void close();
 		jint getPort();
 		QAndroidJniObject getFileDescriptor();
@@ -43,29 +43,33 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject IpSecManager_UdpEncapsulationSocket::toString()
+	jstring IpSecManager_UdpEncapsulationSocket::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void IpSecManager_UdpEncapsulationSocket::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint IpSecManager_UdpEncapsulationSocket::getPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getPort",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject IpSecManager_UdpEncapsulationSocket::getFileDescriptor()
 	{
 		return __thiz.callObjectMethod(
 			"getFileDescriptor",
-			"()Ljava/io/FileDescriptor;");
+			"()Ljava/io/FileDescriptor;"
+		);
 	}
 } // namespace __jni_impl::android::net
 

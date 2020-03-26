@@ -53,14 +53,16 @@ namespace __jni_impl::android::graphics::pdf
 	{
 		return __thiz.callObjectMethod(
 			"create",
-			"()Landroid/graphics/pdf/PdfDocument$PageInfo;");
+			"()Landroid/graphics/pdf/PdfDocument$PageInfo;"
+		);
 	}
 	QAndroidJniObject PdfDocument_PageInfo_Builder::setContentRect(__jni_impl::android::graphics::Rect arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setContentRect",
 			"(Landroid/graphics/Rect;)Landroid/graphics/pdf/PdfDocument$PageInfo$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics::pdf
 

@@ -12,23 +12,15 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::graphics
 {
-	class Canvas;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
-}
-namespace __jni_impl::android::graphics
-{
-	class Matrix;
-}
-namespace __jni_impl::android::graphics
-{
-	class SurfaceTexture;
+	class Bitmap;
 }
 namespace __jni_impl::android::view
 {
 	class View;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
 }
 namespace __jni_impl::android::graphics
 {
@@ -40,7 +32,15 @@ namespace __jni_impl::android::graphics::drawable
 }
 namespace __jni_impl::android::graphics
 {
-	class Bitmap;
+	class Matrix;
+}
+namespace __jni_impl::android::graphics
+{
+	class SurfaceTexture;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
 }
 
 namespace __jni_impl::android::view
@@ -59,14 +59,10 @@ namespace __jni_impl::android::view
 		// Methods
 		void setOpaque(jboolean arg0);
 		jboolean isOpaque();
-		QAndroidJniObject lockCanvas(__jni_impl::android::graphics::Rect arg0);
-		QAndroidJniObject lockCanvas();
-		void unlockCanvasAndPost(__jni_impl::android::graphics::Canvas arg0);
-		void setTransform(__jni_impl::android::graphics::Matrix arg0);
-		QAndroidJniObject getSurfaceTexture();
-		void setSurfaceTexture(__jni_impl::android::graphics::SurfaceTexture arg0);
-		QAndroidJniObject getSurfaceTextureListener();
-		void setSurfaceTextureListener(__jni_impl::__JniBaseClass arg0);
+		jboolean isAvailable();
+		QAndroidJniObject getBitmap();
+		QAndroidJniObject getBitmap(jint arg0, jint arg1);
+		QAndroidJniObject getBitmap(__jni_impl::android::graphics::Bitmap arg0);
 		void setLayerType(jint arg0, __jni_impl::android::graphics::Paint arg1);
 		void setLayerPaint(__jni_impl::android::graphics::Paint arg0);
 		jint getLayerType();
@@ -74,23 +70,27 @@ namespace __jni_impl::android::view
 		void draw(__jni_impl::android::graphics::Canvas arg0);
 		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setForeground(__jni_impl::android::graphics::drawable::Drawable arg0);
-		QAndroidJniObject getBitmap();
-		QAndroidJniObject getBitmap(jint arg0, jint arg1);
-		QAndroidJniObject getBitmap(__jni_impl::android::graphics::Bitmap arg0);
+		void setTransform(__jni_impl::android::graphics::Matrix arg0);
+		QAndroidJniObject getSurfaceTexture();
+		void setSurfaceTexture(__jni_impl::android::graphics::SurfaceTexture arg0);
+		QAndroidJniObject getSurfaceTextureListener();
+		void setSurfaceTextureListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getTransform(__jni_impl::android::graphics::Matrix arg0);
-		jboolean isAvailable();
+		QAndroidJniObject lockCanvas(__jni_impl::android::graphics::Rect arg0);
+		QAndroidJniObject lockCanvas();
+		void unlockCanvasAndPost(__jni_impl::android::graphics::Canvas arg0);
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
-#include "../graphics/Canvas.hpp"
-#include "../graphics/Rect.hpp"
-#include "../graphics/Matrix.hpp"
-#include "../graphics/SurfaceTexture.hpp"
+#include "../graphics/Bitmap.hpp"
 #include "View.hpp"
+#include "../graphics/Canvas.hpp"
 #include "../graphics/Paint.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "../graphics/Bitmap.hpp"
+#include "../graphics/Matrix.hpp"
+#include "../graphics/SurfaceTexture.hpp"
+#include "../graphics/Rect.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -138,120 +138,29 @@ namespace __jni_impl::android::view
 		__thiz.callMethod<void>(
 			"setOpaque",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean TextureView::isOpaque()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpaque",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject TextureView::lockCanvas(__jni_impl::android::graphics::Rect arg0)
+	jboolean TextureView::isAvailable()
 	{
-		return __thiz.callObjectMethod(
-			"lockCanvas",
-			"(Landroid/graphics/Rect;)Landroid/graphics/Canvas;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject TextureView::lockCanvas()
-	{
-		return __thiz.callObjectMethod(
-			"lockCanvas",
-			"()Landroid/graphics/Canvas;");
-	}
-	void TextureView::unlockCanvasAndPost(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"unlockCanvasAndPost",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	void TextureView::setTransform(__jni_impl::android::graphics::Matrix arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTransform",
-			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject TextureView::getSurfaceTexture()
-	{
-		return __thiz.callObjectMethod(
-			"getSurfaceTexture",
-			"()Landroid/graphics/SurfaceTexture;");
-	}
-	void TextureView::setSurfaceTexture(__jni_impl::android::graphics::SurfaceTexture arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSurfaceTexture",
-			"(Landroid/graphics/SurfaceTexture;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject TextureView::getSurfaceTextureListener()
-	{
-		return __thiz.callObjectMethod(
-			"getSurfaceTextureListener",
-			"()Landroid/view/TextureView$SurfaceTextureListener;");
-	}
-	void TextureView::setSurfaceTextureListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSurfaceTextureListener",
-			"(Landroid/view/TextureView$SurfaceTextureListener;)V",
-			arg0.__jniObject().object());
-	}
-	void TextureView::setLayerType(jint arg0, __jni_impl::android::graphics::Paint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setLayerType",
-			"(ILandroid/graphics/Paint;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void TextureView::setLayerPaint(__jni_impl::android::graphics::Paint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLayerPaint",
-			"(Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object());
-	}
-	jint TextureView::getLayerType()
-	{
-		return __thiz.callMethod<jint>(
-			"getLayerType",
-			"()I");
-	}
-	void TextureView::buildLayer()
-	{
-		__thiz.callMethod<void>(
-			"buildLayer",
-			"()V");
-	}
-	void TextureView::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	void TextureView::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBackgroundDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
-	}
-	void TextureView::setForeground(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setForeground",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+		return __thiz.callMethod<jboolean>(
+			"isAvailable",
+			"()Z"
+		);
 	}
 	QAndroidJniObject TextureView::getBitmap()
 	{
 		return __thiz.callObjectMethod(
 			"getBitmap",
-			"()Landroid/graphics/Bitmap;");
+			"()Landroid/graphics/Bitmap;"
+		);
 	}
 	QAndroidJniObject TextureView::getBitmap(jint arg0, jint arg1)
 	{
@@ -259,27 +168,140 @@ namespace __jni_impl::android::view
 			"getBitmap",
 			"(II)Landroid/graphics/Bitmap;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject TextureView::getBitmap(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getBitmap",
 			"(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void TextureView::setLayerType(jint arg0, __jni_impl::android::graphics::Paint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setLayerType",
+			"(ILandroid/graphics/Paint;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void TextureView::setLayerPaint(__jni_impl::android::graphics::Paint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLayerPaint",
+			"(Landroid/graphics/Paint;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint TextureView::getLayerType()
+	{
+		return __thiz.callMethod<jint>(
+			"getLayerType",
+			"()I"
+		);
+	}
+	void TextureView::buildLayer()
+	{
+		__thiz.callMethod<void>(
+			"buildLayer",
+			"()V"
+		);
+	}
+	void TextureView::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TextureView::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBackgroundDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TextureView::setForeground(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setForeground",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TextureView::setTransform(__jni_impl::android::graphics::Matrix arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTransform",
+			"(Landroid/graphics/Matrix;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TextureView::getSurfaceTexture()
+	{
+		return __thiz.callObjectMethod(
+			"getSurfaceTexture",
+			"()Landroid/graphics/SurfaceTexture;"
+		);
+	}
+	void TextureView::setSurfaceTexture(__jni_impl::android::graphics::SurfaceTexture arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSurfaceTexture",
+			"(Landroid/graphics/SurfaceTexture;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TextureView::getSurfaceTextureListener()
+	{
+		return __thiz.callObjectMethod(
+			"getSurfaceTextureListener",
+			"()Landroid/view/TextureView$SurfaceTextureListener;"
+		);
+	}
+	void TextureView::setSurfaceTextureListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSurfaceTextureListener",
+			"(Landroid/view/TextureView$SurfaceTextureListener;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TextureView::getTransform(__jni_impl::android::graphics::Matrix arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getTransform",
 			"(Landroid/graphics/Matrix;)Landroid/graphics/Matrix;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	jboolean TextureView::isAvailable()
+	QAndroidJniObject TextureView::lockCanvas(__jni_impl::android::graphics::Rect arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isAvailable",
-			"()Z");
+		return __thiz.callObjectMethod(
+			"lockCanvas",
+			"(Landroid/graphics/Rect;)Landroid/graphics/Canvas;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TextureView::lockCanvas()
+	{
+		return __thiz.callObjectMethod(
+			"lockCanvas",
+			"()Landroid/graphics/Canvas;"
+		);
+	}
+	void TextureView::unlockCanvasAndPost(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"unlockCanvasAndPost",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

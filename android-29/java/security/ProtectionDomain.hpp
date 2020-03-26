@@ -34,12 +34,12 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::java::security::CodeSource arg0, __jni_impl::java::security::PermissionCollection arg1, __jni_impl::java::lang::ClassLoader arg2, jarray arg3);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getClassLoader();
 		QAndroidJniObject getCodeSource();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
 		QAndroidJniObject getPermissions();
-		QAndroidJniObject getPrincipals();
+		jarray getPrincipals();
 		jboolean staticPermissionsOnly();
 	};
 } // namespace __jni_impl::java::security
@@ -74,48 +74,55 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject ProtectionDomain::toString()
+	jstring ProtectionDomain::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ProtectionDomain::getClassLoader()
 	{
 		return __thiz.callObjectMethod(
 			"getClassLoader",
-			"()Ljava/lang/ClassLoader;");
+			"()Ljava/lang/ClassLoader;"
+		);
 	}
 	QAndroidJniObject ProtectionDomain::getCodeSource()
 	{
 		return __thiz.callObjectMethod(
 			"getCodeSource",
-			"()Ljava/security/CodeSource;");
+			"()Ljava/security/CodeSource;"
+		);
 	}
 	jboolean ProtectionDomain::implies(__jni_impl::java::security::Permission arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ProtectionDomain::getPermissions()
 	{
 		return __thiz.callObjectMethod(
 			"getPermissions",
-			"()Ljava/security/PermissionCollection;");
+			"()Ljava/security/PermissionCollection;"
+		);
 	}
-	QAndroidJniObject ProtectionDomain::getPrincipals()
+	jarray ProtectionDomain::getPrincipals()
 	{
 		return __thiz.callObjectMethod(
 			"getPrincipals",
-			"()[Ljava/security/Principal;");
+			"()[Ljava/security/Principal;"
+		).object<jarray>();
 	}
 	jboolean ProtectionDomain::staticPermissionsOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"staticPermissionsOnly",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::security
 

@@ -47,13 +47,15 @@ namespace __jni_impl::java::security::cert
 			"engineValidate",
 			"(Ljava/security/cert/CertPath;Ljava/security/cert/CertPathParameters;)Ljava/security/cert/CertPathValidatorResult;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertPathValidatorSpi::engineGetRevocationChecker()
 	{
 		return __thiz.callObjectMethod(
 			"engineGetRevocationChecker",
-			"()Ljava/security/cert/CertPathChecker;");
+			"()Ljava/security/cert/CertPathChecker;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

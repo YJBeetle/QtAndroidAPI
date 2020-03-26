@@ -54,13 +54,15 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.CollationElementIterator",
-			"IGNORABLE");
+			"IGNORABLE"
+		);
 	}
 	jint CollationElementIterator::NULLORDER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.CollationElementIterator",
-			"NULLORDER");
+			"NULLORDER"
+		);
 	}
 	
 	// Constructors
@@ -77,65 +79,75 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint CollationElementIterator::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint CollationElementIterator::next()
 	{
 		return __thiz.callMethod<jint>(
 			"next",
-			"()I");
+			"()I"
+		);
 	}
 	void CollationElementIterator::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	jint CollationElementIterator::getOffset()
 	{
 		return __thiz.callMethod<jint>(
 			"getOffset",
-			"()I");
+			"()I"
+		);
 	}
 	void CollationElementIterator::setOffset(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOffset",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CollationElementIterator::setText(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void CollationElementIterator::setText(__jni_impl::android::icu::text::UCharacterIterator arg0)
 	{
 		__thiz.callMethod<void>(
 			"setText",
 			"(Landroid/icu/text/UCharacterIterator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CollationElementIterator::setText(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/text/CharacterIterator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint CollationElementIterator::previous()
 	{
 		return __thiz.callMethod<jint>(
 			"previous",
-			"()I");
+			"()I"
+		);
 	}
 	jint CollationElementIterator::primaryOrder(jint arg0)
 	{
@@ -143,7 +155,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.CollationElementIterator",
 			"primaryOrder",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint CollationElementIterator::secondaryOrder(jint arg0)
 	{
@@ -151,7 +164,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.CollationElementIterator",
 			"secondaryOrder",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint CollationElementIterator::tertiaryOrder(jint arg0)
 	{
@@ -159,14 +173,16 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.CollationElementIterator",
 			"tertiaryOrder",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint CollationElementIterator::getMaxExpansion(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxExpansion",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

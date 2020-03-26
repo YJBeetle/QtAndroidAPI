@@ -17,9 +17,9 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
-		QAndroidJniObject getData();
+		jstring getName();
+		jstring toString();
+		jobject getData();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -37,23 +37,26 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject AlphabeticIndex_Record::getName()
+	jstring AlphabeticIndex_Record::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AlphabeticIndex_Record::toString()
+	jstring AlphabeticIndex_Record::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AlphabeticIndex_Record::getData()
+	jobject AlphabeticIndex_Record::getData()
 	{
 		return __thiz.callObjectMethod(
 			"getData",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::icu::text
 

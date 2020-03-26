@@ -20,7 +20,7 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getDiagnosticInfo();
+		jstring getDiagnosticInfo();
 	};
 } // namespace __jni_impl::android::media
 
@@ -38,11 +38,12 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaCasStateException::getDiagnosticInfo()
+	jstring MediaCasStateException::getDiagnosticInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getDiagnosticInfo",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

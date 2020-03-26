@@ -22,7 +22,7 @@ namespace __jni_impl::android::icu::util
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::util
@@ -36,28 +36,32 @@ namespace __jni_impl::android::icu::util
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"ISLAMIC",
-			"Landroid/icu/util/IslamicCalendar$CalculationType;");
+			"Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
 	}
 	QAndroidJniObject IslamicCalendar_CalculationType::ISLAMIC_CIVIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"ISLAMIC_CIVIL",
-			"Landroid/icu/util/IslamicCalendar$CalculationType;");
+			"Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
 	}
 	QAndroidJniObject IslamicCalendar_CalculationType::ISLAMIC_UMALQURA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"ISLAMIC_UMALQURA",
-			"Landroid/icu/util/IslamicCalendar$CalculationType;");
+			"Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
 	}
 	QAndroidJniObject IslamicCalendar_CalculationType::ISLAMIC_TBLA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"ISLAMIC_TBLA",
-			"Landroid/icu/util/IslamicCalendar$CalculationType;");
+			"Landroid/icu/util/IslamicCalendar$CalculationType;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject IslamicCalendar_CalculationType::values()
+	jarray IslamicCalendar_CalculationType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"values",
-			"()[Landroid/icu/util/IslamicCalendar$CalculationType;");
+			"()[Landroid/icu/util/IslamicCalendar$CalculationType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject IslamicCalendar_CalculationType::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.IslamicCalendar$CalculationType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/IslamicCalendar$CalculationType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

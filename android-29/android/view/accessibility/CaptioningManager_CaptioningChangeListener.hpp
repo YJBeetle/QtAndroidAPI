@@ -53,28 +53,32 @@ namespace __jni_impl::android::view::accessibility
 		__thiz.callMethod<void>(
 			"onEnabledChanged",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void CaptioningManager_CaptioningChangeListener::onUserStyleChanged(__jni_impl::android::view::accessibility::CaptioningManager_CaptionStyle arg0)
 	{
 		__thiz.callMethod<void>(
 			"onUserStyleChanged",
 			"(Landroid/view/accessibility/CaptioningManager$CaptionStyle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CaptioningManager_CaptioningChangeListener::onLocaleChanged(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz.callMethod<void>(
 			"onLocaleChanged",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CaptioningManager_CaptioningChangeListener::onFontScaleChanged(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"onFontScaleChanged",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::accessibility
 

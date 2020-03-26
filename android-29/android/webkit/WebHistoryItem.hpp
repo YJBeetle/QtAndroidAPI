@@ -21,10 +21,10 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getUrl();
-		QAndroidJniObject getOriginalUrl();
+		jstring getTitle();
+		jstring getUrl();
+		jstring getOriginalUrl();
 		QAndroidJniObject getFavicon();
-		QAndroidJniObject getTitle();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -43,29 +43,33 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	QAndroidJniObject WebHistoryItem::getUrl()
+	jstring WebHistoryItem::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring WebHistoryItem::getUrl()
 	{
 		return __thiz.callObjectMethod(
 			"getUrl",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WebHistoryItem::getOriginalUrl()
+	jstring WebHistoryItem::getOriginalUrl()
 	{
 		return __thiz.callObjectMethod(
 			"getOriginalUrl",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject WebHistoryItem::getFavicon()
 	{
 		return __thiz.callObjectMethod(
 			"getFavicon",
-			"()Landroid/graphics/Bitmap;");
-	}
-	QAndroidJniObject WebHistoryItem::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/String;");
+			"()Landroid/graphics/Bitmap;"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

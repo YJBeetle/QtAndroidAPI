@@ -12,6 +12,10 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
+}
 namespace __jni_impl::android::view
 {
 	class ViewStructure;
@@ -23,10 +27,6 @@ namespace __jni_impl::android::util
 namespace __jni_impl::android::view::autofill
 {
 	class AutofillValue;
-}
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
 }
 namespace __jni_impl::android::widget
 {
@@ -55,7 +55,7 @@ namespace __jni_impl::android::widget
 		jint getFirstDayOfWeek();
 		void setFirstDayOfWeek(jint arg0);
 		void dispatchProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
-		QAndroidJniObject getAccessibilityClassName();
+		jstring getAccessibilityClassName();
 		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
 		jint getAutofillType();
 		QAndroidJniObject getAutofillValue();
@@ -75,10 +75,10 @@ namespace __jni_impl::android::widget
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
+#include "../content/res/Configuration.hpp"
 #include "../view/ViewStructure.hpp"
 #include "../util/SparseArray.hpp"
 #include "../view/autofill/AutofillValue.hpp"
-#include "../content/res/Configuration.hpp"
 #include "CalendarView.hpp"
 
 namespace __jni_impl::android::widget
@@ -130,44 +130,51 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jint DatePicker::getYear()
 	{
 		return __thiz.callMethod<jint>(
 			"getYear",
-			"()I");
+			"()I"
+		);
 	}
 	jint DatePicker::getDayOfMonth()
 	{
 		return __thiz.callMethod<jint>(
 			"getDayOfMonth",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean DatePicker::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint DatePicker::getMonth()
 	{
 		return __thiz.callMethod<jint>(
 			"getMonth",
-			"()I");
+			"()I"
+		);
 	}
 	jint DatePicker::getFirstDayOfWeek()
 	{
 		return __thiz.callMethod<jint>(
 			"getFirstDayOfWeek",
-			"()I");
+			"()I"
+		);
 	}
 	void DatePicker::setFirstDayOfWeek(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFirstDayOfWeek",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void DatePicker::dispatchProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
 	{
@@ -175,39 +182,45 @@ namespace __jni_impl::android::widget
 			"dispatchProvideAutofillStructure",
 			"(Landroid/view/ViewStructure;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject DatePicker::getAccessibilityClassName()
+	jstring DatePicker::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void DatePicker::autofill(__jni_impl::android::view::autofill::AutofillValue arg0)
 	{
 		__thiz.callMethod<void>(
 			"autofill",
 			"(Landroid/view/autofill/AutofillValue;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint DatePicker::getAutofillType()
 	{
 		return __thiz.callMethod<jint>(
 			"getAutofillType",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject DatePicker::getAutofillValue()
 	{
 		return __thiz.callObjectMethod(
 			"getAutofillValue",
-			"()Landroid/view/autofill/AutofillValue;");
+			"()Landroid/view/autofill/AutofillValue;"
+		);
 	}
 	void DatePicker::setEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void DatePicker::updateDate(jint arg0, jint arg1, jint arg2)
 	{
@@ -216,72 +229,83 @@ namespace __jni_impl::android::widget
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong DatePicker::getMinDate()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMinDate",
-			"()J");
+			"()J"
+		);
 	}
 	void DatePicker::setMinDate(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMinDate",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong DatePicker::getMaxDate()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMaxDate",
-			"()J");
+			"()J"
+		);
 	}
 	void DatePicker::setMaxDate(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMaxDate",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void DatePicker::setOnDateChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnDateChangedListener",
 			"(Landroid/widget/DatePicker$OnDateChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DatePicker::getCalendarViewShown()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getCalendarViewShown",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject DatePicker::getCalendarView()
 	{
 		return __thiz.callObjectMethod(
 			"getCalendarView",
-			"()Landroid/widget/CalendarView;");
+			"()Landroid/widget/CalendarView;"
+		);
 	}
 	void DatePicker::setCalendarViewShown(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCalendarViewShown",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DatePicker::getSpinnersShown()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getSpinnersShown",
-			"()Z");
+			"()Z"
+		);
 	}
 	void DatePicker::setSpinnersShown(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSpinnersShown",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

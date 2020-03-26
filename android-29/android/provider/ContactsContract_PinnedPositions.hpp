@@ -37,13 +37,15 @@ namespace __jni_impl::android::provider
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$PinnedPositions",
-			"DEMOTED");
+			"DEMOTED"
+		);
 	}
 	jint ContactsContract_PinnedPositions::UNPINNED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$PinnedPositions",
-			"UNPINNED");
+			"UNPINNED"
+		);
 	}
 	
 	// Constructors
@@ -62,7 +64,8 @@ namespace __jni_impl::android::provider
 			"undemote",
 			"(Landroid/content/ContentResolver;J)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ContactsContract_PinnedPositions::pin(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2)
 	{
@@ -72,7 +75,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;JI)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::provider
 

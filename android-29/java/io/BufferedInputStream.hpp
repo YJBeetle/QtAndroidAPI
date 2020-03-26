@@ -66,51 +66,59 @@ namespace __jni_impl::java::io
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint BufferedInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	void BufferedInputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void BufferedInputStream::mark(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"mark",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong BufferedInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint BufferedInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean BufferedInputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	void BufferedInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::io
 

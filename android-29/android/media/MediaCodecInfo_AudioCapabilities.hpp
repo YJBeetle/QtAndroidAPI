@@ -21,11 +21,11 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getBitrateRange();
-		QAndroidJniObject getSupportedSampleRates();
-		QAndroidJniObject getSupportedSampleRateRanges();
+		jintArray getSupportedSampleRates();
+		jarray getSupportedSampleRateRanges();
 		jint getMaxInputChannelCount();
 		jboolean isSampleRateSupported(jint arg0);
+		QAndroidJniObject getBitrateRange();
 	};
 } // namespace __jni_impl::android::media
 
@@ -44,36 +44,41 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaCodecInfo_AudioCapabilities::getBitrateRange()
-	{
-		return __thiz.callObjectMethod(
-			"getBitrateRange",
-			"()Landroid/util/Range;");
-	}
-	QAndroidJniObject MediaCodecInfo_AudioCapabilities::getSupportedSampleRates()
+	jintArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRates()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedSampleRates",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject MediaCodecInfo_AudioCapabilities::getSupportedSampleRateRanges()
+	jarray MediaCodecInfo_AudioCapabilities::getSupportedSampleRateRanges()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedSampleRateRanges",
-			"()[Landroid/util/Range;");
+			"()[Landroid/util/Range;"
+		).object<jarray>();
 	}
 	jint MediaCodecInfo_AudioCapabilities::getMaxInputChannelCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxInputChannelCount",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean MediaCodecInfo_AudioCapabilities::isSampleRateSupported(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSampleRateSupported",
 			"(I)Z",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject MediaCodecInfo_AudioCapabilities::getBitrateRange()
+	{
+		return __thiz.callObjectMethod(
+			"getBitrateRange",
+			"()Landroid/util/Range;"
+		);
 	}
 } // namespace __jni_impl::android::media
 

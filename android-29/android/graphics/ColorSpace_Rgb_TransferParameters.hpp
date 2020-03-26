@@ -37,37 +37,44 @@ namespace __jni_impl::android::graphics
 	jdouble ColorSpace_Rgb_TransferParameters::a()
 	{
 		return __thiz.getField<jdouble>(
-			"a");
+			"a"
+		);
 	}
 	jdouble ColorSpace_Rgb_TransferParameters::b()
 	{
 		return __thiz.getField<jdouble>(
-			"b");
+			"b"
+		);
 	}
 	jdouble ColorSpace_Rgb_TransferParameters::c()
 	{
 		return __thiz.getField<jdouble>(
-			"c");
+			"c"
+		);
 	}
 	jdouble ColorSpace_Rgb_TransferParameters::d()
 	{
 		return __thiz.getField<jdouble>(
-			"d");
+			"d"
+		);
 	}
 	jdouble ColorSpace_Rgb_TransferParameters::e()
 	{
 		return __thiz.getField<jdouble>(
-			"e");
+			"e"
+		);
 	}
 	jdouble ColorSpace_Rgb_TransferParameters::f()
 	{
 		return __thiz.getField<jdouble>(
-			"f");
+			"f"
+		);
 	}
 	jdouble ColorSpace_Rgb_TransferParameters::g()
 	{
 		return __thiz.getField<jdouble>(
-			"g");
+			"g"
+		);
 	}
 	
 	// Constructors
@@ -102,13 +109,15 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ColorSpace_Rgb_TransferParameters::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

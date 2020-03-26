@@ -54,7 +54,8 @@ namespace __jni_impl::android::content
 			"android.content.ContentUris",
 			"parseId",
 			"(Landroid/net/Uri;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContentUris::appendId(__jni_impl::android::net::Uri_Builder arg0, jlong arg1)
 	{
@@ -63,7 +64,8 @@ namespace __jni_impl::android::content
 			"appendId",
 			"(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContentUris::withAppendedId(__jni_impl::android::net::Uri arg0, jlong arg1)
 	{
@@ -72,7 +74,8 @@ namespace __jni_impl::android::content
 			"withAppendedId",
 			"(Landroid/net/Uri;J)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContentUris::removeId(__jni_impl::android::net::Uri arg0)
 	{
@@ -80,7 +83,8 @@ namespace __jni_impl::android::content
 			"android.content.ContentUris",
 			"removeId",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::content
 

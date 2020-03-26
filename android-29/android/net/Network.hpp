@@ -55,12 +55,12 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject openConnection(__jni_impl::java::net::URL arg0, __jni_impl::java::net::Proxy arg1);
 		QAndroidJniObject openConnection(__jni_impl::java::net::URL arg0);
 		QAndroidJniObject getByName(jstring arg0);
-		QAndroidJniObject getAllByName(jstring arg0);
+		jarray getAllByName(jstring arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getSocketFactory();
@@ -90,7 +90,8 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.Network",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -107,19 +108,22 @@ namespace __jni_impl::android::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Network::toString()
+	jstring Network::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Network::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Network::openConnection(__jni_impl::java::net::URL arg0, __jni_impl::java::net::Proxy arg1)
 	{
@@ -127,34 +131,39 @@ namespace __jni_impl::android::net
 			"openConnection",
 			"(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/URLConnection;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Network::openConnection(__jni_impl::java::net::URL arg0)
 	{
 		return __thiz.callObjectMethod(
 			"openConnection",
 			"(Ljava/net/URL;)Ljava/net/URLConnection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Network::getByName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Network::getAllByName(jstring arg0)
+	jarray Network::getAllByName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAllByName",
 			"(Ljava/lang/String;)[Ljava/net/InetAddress;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
 	jint Network::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Network::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -162,34 +171,39 @@ namespace __jni_impl::android::net
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Network::getSocketFactory()
 	{
 		return __thiz.callObjectMethod(
 			"getSocketFactory",
-			"()Ljavax/net/SocketFactory;");
+			"()Ljavax/net/SocketFactory;"
+		);
 	}
 	void Network::bindSocket(__jni_impl::java::net::Socket arg0)
 	{
 		__thiz.callMethod<void>(
 			"bindSocket",
 			"(Ljava/net/Socket;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Network::bindSocket(__jni_impl::java::io::FileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
 			"bindSocket",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Network::bindSocket(__jni_impl::java::net::DatagramSocket arg0)
 	{
 		__thiz.callMethod<void>(
 			"bindSocket",
 			"(Ljava/net/DatagramSocket;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Network::fromNetworkHandle(jlong arg0)
 	{
@@ -197,13 +211,15 @@ namespace __jni_impl::android::net
 			"android.net.Network",
 			"fromNetworkHandle",
 			"(J)Landroid/net/Network;",
-			arg0);
+			arg0
+		);
 	}
 	jlong Network::getNetworkHandle()
 	{
 		return __thiz.callMethod<jlong>(
 			"getNetworkHandle",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::net
 

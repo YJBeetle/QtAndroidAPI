@@ -34,12 +34,12 @@ namespace __jni_impl::java::util::prefs
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject name();
+		jstring name();
 		void remove(jstring arg0);
 		QAndroidJniObject parent();
-		QAndroidJniObject get(jstring arg0, jstring arg1);
+		jstring get(jstring arg0, jstring arg1);
 		void put(jstring arg0, jstring arg1);
-		QAndroidJniObject toString();
+		jstring toString();
 		jboolean getBoolean(jstring arg0, jboolean arg1);
 		void putBoolean(jstring arg0, jboolean arg1);
 		jint getInt(jstring arg0, jint arg1);
@@ -52,15 +52,15 @@ namespace __jni_impl::java::util::prefs
 		void putDouble(jstring arg0, jdouble arg1);
 		void clear();
 		void flush();
-		QAndroidJniObject keys();
+		jarray keys();
 		void removeNode();
 		QAndroidJniObject node(jstring arg0);
 		void sync();
 		void putByteArray(jstring arg0, jbyteArray arg1);
-		QAndroidJniObject getByteArray(jstring arg0, jbyteArray arg1);
-		QAndroidJniObject childrenNames();
+		jbyteArray getByteArray(jstring arg0, jbyteArray arg1);
+		jarray childrenNames();
 		jboolean nodeExists(jstring arg0);
-		QAndroidJniObject absolutePath();
+		jstring absolutePath();
 		jboolean isUserNode();
 		void addPreferenceChangeListener(__jni_impl::__JniBaseClass arg0);
 		void removePreferenceChangeListener(__jni_impl::__JniBaseClass arg0);
@@ -89,32 +89,36 @@ namespace __jni_impl::java::util::prefs
 	}
 	
 	// Methods
-	QAndroidJniObject AbstractPreferences::name()
+	jstring AbstractPreferences::name()
 	{
 		return __thiz.callObjectMethod(
 			"name",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AbstractPreferences::remove(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"remove",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AbstractPreferences::parent()
 	{
 		return __thiz.callObjectMethod(
 			"parent",
-			"()Ljava/util/prefs/Preferences;");
+			"()Ljava/util/prefs/Preferences;"
+		);
 	}
-	QAndroidJniObject AbstractPreferences::get(jstring arg0, jstring arg1)
+	jstring AbstractPreferences::get(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	void AbstractPreferences::put(jstring arg0, jstring arg1)
 	{
@@ -122,13 +126,15 @@ namespace __jni_impl::java::util::prefs
 			"put",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject AbstractPreferences::toString()
+	jstring AbstractPreferences::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean AbstractPreferences::getBoolean(jstring arg0, jboolean arg1)
 	{
@@ -136,7 +142,8 @@ namespace __jni_impl::java::util::prefs
 			"getBoolean",
 			"(Ljava/lang/String;Z)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AbstractPreferences::putBoolean(jstring arg0, jboolean arg1)
 	{
@@ -144,7 +151,8 @@ namespace __jni_impl::java::util::prefs
 			"putBoolean",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint AbstractPreferences::getInt(jstring arg0, jint arg1)
 	{
@@ -152,7 +160,8 @@ namespace __jni_impl::java::util::prefs
 			"getInt",
 			"(Ljava/lang/String;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AbstractPreferences::putInt(jstring arg0, jint arg1)
 	{
@@ -160,7 +169,8 @@ namespace __jni_impl::java::util::prefs
 			"putInt",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AbstractPreferences::getLong(jstring arg0, jlong arg1)
 	{
@@ -168,7 +178,8 @@ namespace __jni_impl::java::util::prefs
 			"getLong",
 			"(Ljava/lang/String;J)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AbstractPreferences::putLong(jstring arg0, jlong arg1)
 	{
@@ -176,7 +187,8 @@ namespace __jni_impl::java::util::prefs
 			"putLong",
 			"(Ljava/lang/String;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat AbstractPreferences::getFloat(jstring arg0, jfloat arg1)
 	{
@@ -184,7 +196,8 @@ namespace __jni_impl::java::util::prefs
 			"getFloat",
 			"(Ljava/lang/String;F)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AbstractPreferences::putFloat(jstring arg0, jfloat arg1)
 	{
@@ -192,7 +205,8 @@ namespace __jni_impl::java::util::prefs
 			"putFloat",
 			"(Ljava/lang/String;F)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble AbstractPreferences::getDouble(jstring arg0, jdouble arg1)
 	{
@@ -200,7 +214,8 @@ namespace __jni_impl::java::util::prefs
 			"getDouble",
 			"(Ljava/lang/String;D)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AbstractPreferences::putDouble(jstring arg0, jdouble arg1)
 	{
@@ -208,44 +223,51 @@ namespace __jni_impl::java::util::prefs
 			"putDouble",
 			"(Ljava/lang/String;D)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AbstractPreferences::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	void AbstractPreferences::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject AbstractPreferences::keys()
+	jarray AbstractPreferences::keys()
 	{
 		return __thiz.callObjectMethod(
 			"keys",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	void AbstractPreferences::removeNode()
 	{
 		__thiz.callMethod<void>(
 			"removeNode",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject AbstractPreferences::node(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"node",
 			"(Ljava/lang/String;)Ljava/util/prefs/Preferences;",
-			arg0);
+			arg0
+		);
 	}
 	void AbstractPreferences::sync()
 	{
 		__thiz.callMethod<void>(
 			"sync",
-			"()V");
+			"()V"
+		);
 	}
 	void AbstractPreferences::putByteArray(jstring arg0, jbyteArray arg1)
 	{
@@ -253,82 +275,94 @@ namespace __jni_impl::java::util::prefs
 			"putByteArray",
 			"(Ljava/lang/String;[B)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject AbstractPreferences::getByteArray(jstring arg0, jbyteArray arg1)
+	jbyteArray AbstractPreferences::getByteArray(jstring arg0, jbyteArray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getByteArray",
 			"(Ljava/lang/String;[B)[B",
 			arg0,
-			arg1);
+			arg1
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject AbstractPreferences::childrenNames()
+	jarray AbstractPreferences::childrenNames()
 	{
 		return __thiz.callObjectMethod(
 			"childrenNames",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jboolean AbstractPreferences::nodeExists(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"nodeExists",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AbstractPreferences::absolutePath()
+	jstring AbstractPreferences::absolutePath()
 	{
 		return __thiz.callObjectMethod(
 			"absolutePath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean AbstractPreferences::isUserNode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUserNode",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AbstractPreferences::addPreferenceChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addPreferenceChangeListener",
 			"(Ljava/util/prefs/PreferenceChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbstractPreferences::removePreferenceChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removePreferenceChangeListener",
 			"(Ljava/util/prefs/PreferenceChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbstractPreferences::addNodeChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addNodeChangeListener",
 			"(Ljava/util/prefs/NodeChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbstractPreferences::removeNodeChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeNodeChangeListener",
 			"(Ljava/util/prefs/NodeChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbstractPreferences::exportNode(__jni_impl::java::io::OutputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"exportNode",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbstractPreferences::exportSubtree(__jni_impl::java::io::OutputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"exportSubtree",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::util::prefs
 

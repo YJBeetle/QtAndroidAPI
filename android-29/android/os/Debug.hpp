@@ -34,6 +34,8 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		static void getMemoryInfo(__jni_impl::android::os::Debug_MemoryInfo arg0);
+		static void startAllocCounting();
+		static void stopAllocCounting();
 		static void waitForDebugger();
 		static jboolean waitingForDebugger();
 		static jboolean isDebuggerConnected();
@@ -42,9 +44,9 @@ namespace __jni_impl::android::os
 		static void stopNativeTracing();
 		static void enableEmulatorTraceOutput();
 		static void startMethodTracing(jstring arg0, jint arg1, jint arg2);
-		static void startMethodTracing(jstring arg0, jint arg1);
-		static void startMethodTracing();
 		static void startMethodTracing(jstring arg0);
+		static void startMethodTracing();
+		static void startMethodTracing(jstring arg0, jint arg1);
 		static void startMethodTracingSampling(jstring arg0, jint arg1, jint arg2);
 		static void stopMethodTracing();
 		static jlong threadCpuTimeNanos();
@@ -81,7 +83,7 @@ namespace __jni_impl::android::os
 		static jint getThreadGcInvocationCount();
 		static void resetThreadGcInvocationCount();
 		static void resetAllCounts();
-		static QAndroidJniObject getRuntimeStat(jstring arg0);
+		static jstring getRuntimeStat(jstring arg0);
 		static QAndroidJniObject getRuntimeStats();
 		static jlong getNativeHeapSize();
 		static jlong getNativeHeapAllocatedSize();
@@ -99,8 +101,6 @@ namespace __jni_impl::android::os
 		static jint getBinderDeathObjectCount();
 		static jboolean dumpService(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, jarray arg2);
 		static void attachJvmtiAgent(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
-		static void startAllocCounting();
-		static void stopAllocCounting();
 	};
 } // namespace __jni_impl::android::os
 
@@ -115,25 +115,29 @@ namespace __jni_impl::android::os
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Debug",
-			"SHOW_CLASSLOADER");
+			"SHOW_CLASSLOADER"
+		);
 	}
 	jint Debug::SHOW_FULL_DETAIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Debug",
-			"SHOW_FULL_DETAIL");
+			"SHOW_FULL_DETAIL"
+		);
 	}
 	jint Debug::SHOW_INITIALIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Debug",
-			"SHOW_INITIALIZED");
+			"SHOW_INITIALIZED"
+		);
 	}
 	jint Debug::TRACE_COUNT_ALLOCS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Debug",
-			"TRACE_COUNT_ALLOCS");
+			"TRACE_COUNT_ALLOCS"
+		);
 	}
 	
 	// Constructors
@@ -151,28 +155,48 @@ namespace __jni_impl::android::os
 			"android.os.Debug",
 			"getMemoryInfo",
 			"(Landroid/os/Debug$MemoryInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void Debug::startAllocCounting()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"startAllocCounting",
+			"()V"
+		);
+	}
+	void Debug::stopAllocCounting()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"stopAllocCounting",
+			"()V"
+		);
 	}
 	void Debug::waitForDebugger()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"waitForDebugger",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Debug::waitingForDebugger()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.os.Debug",
 			"waitingForDebugger",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Debug::isDebuggerConnected()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.os.Debug",
 			"isDebuggerConnected",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Debug::changeDebugPort(jint arg0)
 	{
@@ -180,28 +204,32 @@ namespace __jni_impl::android::os
 			"android.os.Debug",
 			"changeDebugPort",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Debug::startNativeTracing()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"startNativeTracing",
-			"()V");
+			"()V"
+		);
 	}
 	void Debug::stopNativeTracing()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"stopNativeTracing",
-			"()V");
+			"()V"
+		);
 	}
 	void Debug::enableEmulatorTraceOutput()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"enableEmulatorTraceOutput",
-			"()V");
+			"()V"
+		);
 	}
 	void Debug::startMethodTracing(jstring arg0, jint arg1, jint arg2)
 	{
@@ -211,7 +239,25 @@ namespace __jni_impl::android::os
 			"(Ljava/lang/String;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void Debug::startMethodTracing(jstring arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"startMethodTracing",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Debug::startMethodTracing()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"startMethodTracing",
+			"()V"
+		);
 	}
 	void Debug::startMethodTracing(jstring arg0, jint arg1)
 	{
@@ -220,22 +266,8 @@ namespace __jni_impl::android::os
 			"startMethodTracing",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
-	}
-	void Debug::startMethodTracing()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Debug",
-			"startMethodTracing",
-			"()V");
-	}
-	void Debug::startMethodTracing(jstring arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Debug",
-			"startMethodTracing",
-			"(Ljava/lang/String;)V",
-			arg0);
+			arg1
+		);
 	}
 	void Debug::startMethodTracingSampling(jstring arg0, jint arg1, jint arg2)
 	{
@@ -245,295 +277,337 @@ namespace __jni_impl::android::os
 			"(Ljava/lang/String;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Debug::stopMethodTracing()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"stopMethodTracing",
-			"()V");
+			"()V"
+		);
 	}
 	jlong Debug::threadCpuTimeNanos()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.Debug",
 			"threadCpuTimeNanos",
-			"()J");
+			"()J"
+		);
 	}
 	jint Debug::getGlobalAllocCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalAllocCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalAllocCount()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalAllocCount",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getGlobalAllocSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalAllocSize",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalAllocSize()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalAllocSize",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getGlobalFreedCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalFreedCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalFreedCount()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalFreedCount",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getGlobalFreedSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalFreedSize",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalFreedSize()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalFreedSize",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getGlobalGcInvocationCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalGcInvocationCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalGcInvocationCount()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalGcInvocationCount",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getGlobalClassInitCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalClassInitCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalClassInitCount()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalClassInitCount",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getGlobalClassInitTime()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalClassInitTime",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalClassInitTime()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalClassInitTime",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getGlobalExternalAllocCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalExternalAllocCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalExternalAllocSize()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalExternalAllocSize",
-			"()V");
+			"()V"
+		);
 	}
 	void Debug::resetGlobalExternalAllocCount()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalExternalAllocCount",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getGlobalExternalAllocSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalExternalAllocSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint Debug::getGlobalExternalFreedCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalExternalFreedCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalExternalFreedCount()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalExternalFreedCount",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getGlobalExternalFreedSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getGlobalExternalFreedSize",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetGlobalExternalFreedSize()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetGlobalExternalFreedSize",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getThreadAllocCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadAllocCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetThreadAllocCount()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadAllocCount",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getThreadAllocSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadAllocSize",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetThreadAllocSize()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadAllocSize",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getThreadExternalAllocCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadExternalAllocCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetThreadExternalAllocCount()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadExternalAllocCount",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getThreadExternalAllocSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadExternalAllocSize",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetThreadExternalAllocSize()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadExternalAllocSize",
-			"()V");
+			"()V"
+		);
 	}
 	jint Debug::getThreadGcInvocationCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getThreadGcInvocationCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::resetThreadGcInvocationCount()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetThreadGcInvocationCount",
-			"()V");
+			"()V"
+		);
 	}
 	void Debug::resetAllCounts()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"resetAllCounts",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject Debug::getRuntimeStat(jstring arg0)
+	jstring Debug::getRuntimeStat(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Debug",
 			"getRuntimeStat",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject Debug::getRuntimeStats()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Debug",
 			"getRuntimeStats",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 	jlong Debug::getNativeHeapSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.Debug",
 			"getNativeHeapSize",
-			"()J");
+			"()J"
+		);
 	}
 	jlong Debug::getNativeHeapAllocatedSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.Debug",
 			"getNativeHeapAllocatedSize",
-			"()J");
+			"()J"
+		);
 	}
 	jlong Debug::getNativeHeapFreeSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.Debug",
 			"getNativeHeapFreeSize",
-			"()J");
+			"()J"
+		);
 	}
 	jlong Debug::getPss()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.Debug",
 			"getPss",
-			"()J");
+			"()J"
+		);
 	}
 	jint Debug::setAllocationLimit(jint arg0)
 	{
@@ -541,7 +615,8 @@ namespace __jni_impl::android::os
 			"android.os.Debug",
 			"setAllocationLimit",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Debug::setGlobalAllocationLimit(jint arg0)
 	{
@@ -549,7 +624,8 @@ namespace __jni_impl::android::os
 			"android.os.Debug",
 			"setGlobalAllocationLimit",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	void Debug::printLoadedClasses(jint arg0)
 	{
@@ -557,14 +633,16 @@ namespace __jni_impl::android::os
 			"android.os.Debug",
 			"printLoadedClasses",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Debug::getLoadedClassCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getLoadedClassCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Debug::dumpHprofData(jstring arg0)
 	{
@@ -572,42 +650,48 @@ namespace __jni_impl::android::os
 			"android.os.Debug",
 			"dumpHprofData",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Debug::getBinderSentTransactions()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderSentTransactions",
-			"()I");
+			"()I"
+		);
 	}
 	jint Debug::getBinderReceivedTransactions()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderReceivedTransactions",
-			"()I");
+			"()I"
+		);
 	}
 	jint Debug::getBinderLocalObjectCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderLocalObjectCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint Debug::getBinderProxyObjectCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderProxyObjectCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint Debug::getBinderDeathObjectCount()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Debug",
 			"getBinderDeathObjectCount",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Debug::dumpService(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, jarray arg2)
 	{
@@ -617,7 +701,8 @@ namespace __jni_impl::android::os
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;[Ljava/lang/String;)Z",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Debug::attachJvmtiAgent(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2)
 	{
@@ -627,21 +712,8 @@ namespace __jni_impl::android::os
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
-	}
-	void Debug::startAllocCounting()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Debug",
-			"startAllocCounting",
-			"()V");
-	}
-	void Debug::stopAllocCounting()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Debug",
-			"stopAllocCounting",
-			"()V");
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::os
 

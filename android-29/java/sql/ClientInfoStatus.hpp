@@ -22,7 +22,7 @@ namespace __jni_impl::java::sql
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::sql
@@ -36,28 +36,32 @@ namespace __jni_impl::java::sql
 		return QAndroidJniObject::getStaticObjectField(
 			"java.sql.ClientInfoStatus",
 			"REASON_UNKNOWN",
-			"Ljava/sql/ClientInfoStatus;");
+			"Ljava/sql/ClientInfoStatus;"
+		);
 	}
 	QAndroidJniObject ClientInfoStatus::REASON_UNKNOWN_PROPERTY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.sql.ClientInfoStatus",
 			"REASON_UNKNOWN_PROPERTY",
-			"Ljava/sql/ClientInfoStatus;");
+			"Ljava/sql/ClientInfoStatus;"
+		);
 	}
 	QAndroidJniObject ClientInfoStatus::REASON_VALUE_INVALID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.sql.ClientInfoStatus",
 			"REASON_VALUE_INVALID",
-			"Ljava/sql/ClientInfoStatus;");
+			"Ljava/sql/ClientInfoStatus;"
+		);
 	}
 	QAndroidJniObject ClientInfoStatus::REASON_VALUE_TRUNCATED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.sql.ClientInfoStatus",
 			"REASON_VALUE_TRUNCATED",
-			"Ljava/sql/ClientInfoStatus;");
+			"Ljava/sql/ClientInfoStatus;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::java::sql
 	}
 	
 	// Methods
-	QAndroidJniObject ClientInfoStatus::values()
+	jarray ClientInfoStatus::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.sql.ClientInfoStatus",
 			"values",
-			"()[Ljava/sql/ClientInfoStatus;");
+			"()[Ljava/sql/ClientInfoStatus;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ClientInfoStatus::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::java::sql
 			"java.sql.ClientInfoStatus",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/ClientInfoStatus;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::sql
 

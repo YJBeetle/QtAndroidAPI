@@ -34,7 +34,8 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.view.FrameStats",
-			"UNDEFINED_TIME_NANO");
+			"UNDEFINED_TIME_NANO"
+		);
 	}
 	
 	// Constructors
@@ -50,32 +51,37 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callMethod<jlong>(
 			"getRefreshPeriodNano",
-			"()J");
+			"()J"
+		);
 	}
 	jint FrameStats::getFrameCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getFrameCount",
-			"()I");
+			"()I"
+		);
 	}
 	jlong FrameStats::getStartTimeNano()
 	{
 		return __thiz.callMethod<jlong>(
 			"getStartTimeNano",
-			"()J");
+			"()J"
+		);
 	}
 	jlong FrameStats::getEndTimeNano()
 	{
 		return __thiz.callMethod<jlong>(
 			"getEndTimeNano",
-			"()J");
+			"()J"
+		);
 	}
 	jlong FrameStats::getFramePresentedTimeNano(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getFramePresentedTimeNano",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

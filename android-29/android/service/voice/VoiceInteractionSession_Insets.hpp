@@ -44,36 +44,42 @@ namespace __jni_impl::android::service::voice
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession$Insets",
-			"TOUCHABLE_INSETS_CONTENT");
+			"TOUCHABLE_INSETS_CONTENT"
+		);
 	}
 	jint VoiceInteractionSession_Insets::TOUCHABLE_INSETS_FRAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession$Insets",
-			"TOUCHABLE_INSETS_FRAME");
+			"TOUCHABLE_INSETS_FRAME"
+		);
 	}
 	jint VoiceInteractionSession_Insets::TOUCHABLE_INSETS_REGION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.voice.VoiceInteractionSession$Insets",
-			"TOUCHABLE_INSETS_REGION");
+			"TOUCHABLE_INSETS_REGION"
+		);
 	}
 	QAndroidJniObject VoiceInteractionSession_Insets::contentInsets()
 	{
 		return __thiz.getObjectField(
 			"contentInsets",
-			"Landroid/graphics/Rect;");
+			"Landroid/graphics/Rect;"
+		);
 	}
 	jint VoiceInteractionSession_Insets::touchableInsets()
 	{
 		return __thiz.getField<jint>(
-			"touchableInsets");
+			"touchableInsets"
+		);
 	}
 	QAndroidJniObject VoiceInteractionSession_Insets::touchableRegion()
 	{
 		return __thiz.getObjectField(
 			"touchableRegion",
-			"Landroid/graphics/Region;");
+			"Landroid/graphics/Region;"
+		);
 	}
 	
 	// Constructors

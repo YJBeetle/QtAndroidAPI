@@ -50,7 +50,8 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"setDigits",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DigitsBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

@@ -44,7 +44,8 @@ namespace __jni_impl::android::util
 			"android.util.StatsLog",
 			"logStart",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean StatsLog::logStop(jint arg0)
 	{
@@ -52,7 +53,8 @@ namespace __jni_impl::android::util
 			"android.util.StatsLog",
 			"logStop",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean StatsLog::logEvent(jint arg0)
 	{
@@ -60,7 +62,8 @@ namespace __jni_impl::android::util
 			"android.util.StatsLog",
 			"logEvent",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean StatsLog::logBinaryPushStateChanged(jstring arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4)
 	{
@@ -72,7 +75,8 @@ namespace __jni_impl::android::util
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 } // namespace __jni_impl::android::util
 

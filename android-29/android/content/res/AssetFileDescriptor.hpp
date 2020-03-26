@@ -15,15 +15,15 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::java::io
 {
-	class FileDescriptor;
-}
-namespace __jni_impl::java::io
-{
 	class FileInputStream;
 }
 namespace __jni_impl::java::io
 {
 	class FileOutputStream;
+}
+namespace __jni_impl::java::io
+{
+	class FileDescriptor;
 }
 namespace __jni_impl::android::os
 {
@@ -44,26 +44,26 @@ namespace __jni_impl::android::content::res
 		void __constructor(__jni_impl::android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2, __jni_impl::android::os::Bundle arg3);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jlong getLength();
 		void close();
-		QAndroidJniObject getFileDescriptor();
-		QAndroidJniObject getExtras();
 		QAndroidJniObject getParcelFileDescriptor();
 		jlong getStartOffset();
 		jlong getDeclaredLength();
 		QAndroidJniObject createInputStream();
 		QAndroidJniObject createOutputStream();
+		QAndroidJniObject getFileDescriptor();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::content::res
 
 #include "../../os/ParcelFileDescriptor.hpp"
 #include "../../os/Bundle.hpp"
-#include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/FileInputStream.hpp"
 #include "../../../java/io/FileOutputStream.hpp"
+#include "../../../java/io/FileDescriptor.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::res
@@ -74,13 +74,15 @@ namespace __jni_impl::android::content::res
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.res.AssetFileDescriptor",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jlong AssetFileDescriptor::UNKNOWN_LENGTH()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.content.res.AssetFileDescriptor",
-			"UNKNOWN_LENGTH");
+			"UNKNOWN_LENGTH"
+		);
 	}
 	
 	// Constructors
@@ -105,71 +107,75 @@ namespace __jni_impl::android::content::res
 	}
 	
 	// Methods
-	QAndroidJniObject AssetFileDescriptor::toString()
+	jstring AssetFileDescriptor::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong AssetFileDescriptor::getLength()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLength",
-			"()J");
+			"()J"
+		);
 	}
 	void AssetFileDescriptor::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
-	}
-	QAndroidJniObject AssetFileDescriptor::getFileDescriptor()
-	{
-		return __thiz.callObjectMethod(
-			"getFileDescriptor",
-			"()Ljava/io/FileDescriptor;");
-	}
-	QAndroidJniObject AssetFileDescriptor::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
+			"()V"
+		);
 	}
 	QAndroidJniObject AssetFileDescriptor::getParcelFileDescriptor()
 	{
 		return __thiz.callObjectMethod(
 			"getParcelFileDescriptor",
-			"()Landroid/os/ParcelFileDescriptor;");
+			"()Landroid/os/ParcelFileDescriptor;"
+		);
 	}
 	jlong AssetFileDescriptor::getStartOffset()
 	{
 		return __thiz.callMethod<jlong>(
 			"getStartOffset",
-			"()J");
+			"()J"
+		);
 	}
 	jlong AssetFileDescriptor::getDeclaredLength()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDeclaredLength",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject AssetFileDescriptor::createInputStream()
 	{
 		return __thiz.callObjectMethod(
 			"createInputStream",
-			"()Ljava/io/FileInputStream;");
+			"()Ljava/io/FileInputStream;"
+		);
 	}
 	QAndroidJniObject AssetFileDescriptor::createOutputStream()
 	{
 		return __thiz.callObjectMethod(
 			"createOutputStream",
-			"()Ljava/io/FileOutputStream;");
+			"()Ljava/io/FileOutputStream;"
+		);
+	}
+	QAndroidJniObject AssetFileDescriptor::getFileDescriptor()
+	{
+		return __thiz.callObjectMethod(
+			"getFileDescriptor",
+			"()Ljava/io/FileDescriptor;"
+		);
 	}
 	jint AssetFileDescriptor::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void AssetFileDescriptor::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -177,7 +183,15 @@ namespace __jni_impl::android::content::res
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject AssetFileDescriptor::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
 	}
 } // namespace __jni_impl::android::content::res
 

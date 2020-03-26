@@ -52,49 +52,57 @@ namespace __jni_impl::android::graphics::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
-			"BREAK_STRATEGY_BALANCED");
+			"BREAK_STRATEGY_BALANCED"
+		);
 	}
 	jint LineBreaker::BREAK_STRATEGY_HIGH_QUALITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
-			"BREAK_STRATEGY_HIGH_QUALITY");
+			"BREAK_STRATEGY_HIGH_QUALITY"
+		);
 	}
 	jint LineBreaker::BREAK_STRATEGY_SIMPLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
-			"BREAK_STRATEGY_SIMPLE");
+			"BREAK_STRATEGY_SIMPLE"
+		);
 	}
 	jint LineBreaker::HYPHENATION_FREQUENCY_FULL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
-			"HYPHENATION_FREQUENCY_FULL");
+			"HYPHENATION_FREQUENCY_FULL"
+		);
 	}
 	jint LineBreaker::HYPHENATION_FREQUENCY_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
-			"HYPHENATION_FREQUENCY_NONE");
+			"HYPHENATION_FREQUENCY_NONE"
+		);
 	}
 	jint LineBreaker::HYPHENATION_FREQUENCY_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
-			"HYPHENATION_FREQUENCY_NORMAL");
+			"HYPHENATION_FREQUENCY_NORMAL"
+		);
 	}
 	jint LineBreaker::JUSTIFICATION_MODE_INTER_WORD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
-			"JUSTIFICATION_MODE_INTER_WORD");
+			"JUSTIFICATION_MODE_INTER_WORD"
+		);
 	}
 	jint LineBreaker::JUSTIFICATION_MODE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.text.LineBreaker",
-			"JUSTIFICATION_MODE_NONE");
+			"JUSTIFICATION_MODE_NONE"
+		);
 	}
 	
 	// Constructors
@@ -113,7 +121,8 @@ namespace __jni_impl::android::graphics::text
 			"(Landroid/graphics/text/MeasuredText;Landroid/graphics/text/LineBreaker$ParagraphConstraints;I)Landroid/graphics/text/LineBreaker$Result;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::graphics::text
 

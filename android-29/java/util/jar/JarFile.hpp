@@ -45,7 +45,7 @@ namespace __jni_impl::java::util::jar
 	{
 	public:
 		// Fields
-		static QAndroidJniObject MANIFEST_NAME();
+		static jstring MANIFEST_NAME();
 		
 		// Constructors
 		void __constructor(__jni_impl::java::io::File arg0, jboolean arg1, jint arg2);
@@ -82,12 +82,13 @@ namespace __jni_impl::java::util::jar
 namespace __jni_impl::java::util::jar
 {
 	// Fields
-	QAndroidJniObject JarFile::MANIFEST_NAME()
+	jstring JarFile::MANIFEST_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.JarFile",
 			"MANIFEST_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -146,72 +147,83 @@ namespace __jni_impl::java::util::jar
 	{
 		return __thiz.callObjectMethod(
 			"stream",
-			"()Ljava/util/stream/Stream;");
+			"()Ljava/util/stream/Stream;"
+		);
 	}
 	QAndroidJniObject JarFile::entries()
 	{
 		return __thiz.callObjectMethod(
 			"entries",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	QAndroidJniObject JarFile::getInputStream(__jni_impl::java::util::zip::ZipEntry arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getInputStream",
 			"(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject JarFile::getManifest()
 	{
 		return __thiz.callObjectMethod(
 			"getManifest",
-			"()Ljava/util/jar/Manifest;");
+			"()Ljava/util/jar/Manifest;"
+		);
 	}
 	QAndroidJniObject JarFile::getEntry(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getEntry",
 			"(Ljava/lang/String;)Ljava/util/zip/ZipEntry;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JarFile::runtimeVersion()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.jar.JarFile",
 			"runtimeVersion",
-			"()Ljava/lang/Runtime$Version;");
+			"()Ljava/lang/Runtime$Version;"
+		);
 	}
 	jboolean JarFile::isMultiRelease()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMultiRelease",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject JarFile::getJarEntry(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getJarEntry",
 			"(Ljava/lang/String;)Ljava/util/jar/JarEntry;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject JarFile::baseVersion()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.jar.JarFile",
 			"baseVersion",
-			"()Ljava/lang/Runtime$Version;");
+			"()Ljava/lang/Runtime$Version;"
+		);
 	}
 	QAndroidJniObject JarFile::getVersion()
 	{
 		return __thiz.callObjectMethod(
 			"getVersion",
-			"()Ljava/lang/Runtime$Version;");
+			"()Ljava/lang/Runtime$Version;"
+		);
 	}
 	QAndroidJniObject JarFile::versionedStream()
 	{
 		return __thiz.callObjectMethod(
 			"versionedStream",
-			"()Ljava/util/stream/Stream;");
+			"()Ljava/util/stream/Stream;"
+		);
 	}
 } // namespace __jni_impl::java::util::jar
 

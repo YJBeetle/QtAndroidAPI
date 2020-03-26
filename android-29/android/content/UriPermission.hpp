@@ -27,13 +27,13 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getUri();
+		jstring toString();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isReadPermission();
 		jboolean isWritePermission();
 		jlong getPersistedTime();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getUri();
 	};
 } // namespace __jni_impl::android::content
 
@@ -48,13 +48,15 @@ namespace __jni_impl::android::content
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.UriPermission",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jlong UriPermission::INVALID_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.content.UriPermission",
-			"INVALID_TIME");
+			"INVALID_TIME"
+		);
 	}
 	
 	// Constructors
@@ -66,41 +68,19 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	QAndroidJniObject UriPermission::toString()
+	jstring UriPermission::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject UriPermission::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;");
-	}
-	jboolean UriPermission::isReadPermission()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isReadPermission",
-			"()Z");
-	}
-	jboolean UriPermission::isWritePermission()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWritePermission",
-			"()Z");
-	}
-	jlong UriPermission::getPersistedTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getPersistedTime",
-			"()J");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UriPermission::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UriPermission::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -108,7 +88,36 @@ namespace __jni_impl::android::content
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jboolean UriPermission::isReadPermission()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isReadPermission",
+			"()Z"
+		);
+	}
+	jboolean UriPermission::isWritePermission()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWritePermission",
+			"()Z"
+		);
+	}
+	jlong UriPermission::getPersistedTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getPersistedTime",
+			"()J"
+		);
+	}
+	QAndroidJniObject UriPermission::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
 	}
 } // namespace __jni_impl::android::content
 

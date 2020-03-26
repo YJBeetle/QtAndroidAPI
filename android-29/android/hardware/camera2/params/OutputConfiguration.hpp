@@ -35,6 +35,8 @@ namespace __jni_impl::android::hardware::camera2::params
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void enableSurfaceSharing();
 		void setPhysicalCameraId(jstring arg0);
 		void addSurface(__jni_impl::android::view::Surface arg0);
@@ -43,8 +45,6 @@ namespace __jni_impl::android::hardware::camera2::params
 		QAndroidJniObject getSurfaces();
 		jint getSurfaceGroupId();
 		QAndroidJniObject getSurface();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -60,13 +60,15 @@ namespace __jni_impl::android::hardware::camera2::params
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.params.OutputConfiguration",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint OutputConfiguration::SURFACE_GROUP_ID_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.OutputConfiguration",
-			"SURFACE_GROUP_ID_NONE");
+			"SURFACE_GROUP_ID_NONE"
+		);
 	}
 	
 	// Constructors
@@ -100,70 +102,22 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint OutputConfiguration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	void OutputConfiguration::enableSurfaceSharing()
-	{
-		__thiz.callMethod<void>(
-			"enableSurfaceSharing",
-			"()V");
-	}
-	void OutputConfiguration::setPhysicalCameraId(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPhysicalCameraId",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
-	void OutputConfiguration::addSurface(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"addSurface",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
-	}
-	void OutputConfiguration::removeSurface(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeSurface",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
-	}
-	jint OutputConfiguration::getMaxSharedSurfaceCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxSharedSurfaceCount",
-			"()I");
-	}
-	QAndroidJniObject OutputConfiguration::getSurfaces()
-	{
-		return __thiz.callObjectMethod(
-			"getSurfaces",
-			"()Ljava/util/List;");
-	}
-	jint OutputConfiguration::getSurfaceGroupId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSurfaceGroupId",
-			"()I");
-	}
-	QAndroidJniObject OutputConfiguration::getSurface()
-	{
-		return __thiz.callObjectMethod(
-			"getSurface",
-			"()Landroid/view/Surface;");
+			"()I"
+		);
 	}
 	jint OutputConfiguration::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void OutputConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -171,7 +125,67 @@ namespace __jni_impl::android::hardware::camera2::params
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void OutputConfiguration::enableSurfaceSharing()
+	{
+		__thiz.callMethod<void>(
+			"enableSurfaceSharing",
+			"()V"
+		);
+	}
+	void OutputConfiguration::setPhysicalCameraId(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPhysicalCameraId",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void OutputConfiguration::addSurface(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"addSurface",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void OutputConfiguration::removeSurface(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeSurface",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint OutputConfiguration::getMaxSharedSurfaceCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxSharedSurfaceCount",
+			"()I"
+		);
+	}
+	QAndroidJniObject OutputConfiguration::getSurfaces()
+	{
+		return __thiz.callObjectMethod(
+			"getSurfaces",
+			"()Ljava/util/List;"
+		);
+	}
+	jint OutputConfiguration::getSurfaceGroupId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSurfaceGroupId",
+			"()I"
+		);
+	}
+	QAndroidJniObject OutputConfiguration::getSurface()
+	{
+		return __thiz.callObjectMethod(
+			"getSurface",
+			"()Landroid/view/Surface;"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

@@ -21,7 +21,7 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::nio::file
@@ -35,21 +35,24 @@ namespace __jni_impl::java::nio::file
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardCopyOption",
 			"REPLACE_EXISTING",
-			"Ljava/nio/file/StandardCopyOption;");
+			"Ljava/nio/file/StandardCopyOption;"
+		);
 	}
 	QAndroidJniObject StandardCopyOption::COPY_ATTRIBUTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardCopyOption",
 			"COPY_ATTRIBUTES",
-			"Ljava/nio/file/StandardCopyOption;");
+			"Ljava/nio/file/StandardCopyOption;"
+		);
 	}
 	QAndroidJniObject StandardCopyOption::ATOMIC_MOVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardCopyOption",
 			"ATOMIC_MOVE",
-			"Ljava/nio/file/StandardCopyOption;");
+			"Ljava/nio/file/StandardCopyOption;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	QAndroidJniObject StandardCopyOption::values()
+	jarray StandardCopyOption::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.StandardCopyOption",
 			"values",
-			"()[Ljava/nio/file/StandardCopyOption;");
+			"()[Ljava/nio/file/StandardCopyOption;"
+		).object<jarray>();
 	}
 	QAndroidJniObject StandardCopyOption::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.StandardCopyOption",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/StandardCopyOption;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

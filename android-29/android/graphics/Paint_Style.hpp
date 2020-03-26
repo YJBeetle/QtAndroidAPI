@@ -21,7 +21,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -35,21 +35,24 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Style",
 			"FILL",
-			"Landroid/graphics/Paint$Style;");
+			"Landroid/graphics/Paint$Style;"
+		);
 	}
 	QAndroidJniObject Paint_Style::STROKE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Style",
 			"STROKE",
-			"Landroid/graphics/Paint$Style;");
+			"Landroid/graphics/Paint$Style;"
+		);
 	}
 	QAndroidJniObject Paint_Style::FILL_AND_STROKE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Style",
 			"FILL_AND_STROKE",
-			"Landroid/graphics/Paint$Style;");
+			"Landroid/graphics/Paint$Style;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Paint_Style::values()
+	jarray Paint_Style::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Paint$Style",
 			"values",
-			"()[Landroid/graphics/Paint$Style;");
+			"()[Landroid/graphics/Paint$Style;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Paint_Style::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Paint$Style",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Style;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

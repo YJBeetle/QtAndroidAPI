@@ -57,52 +57,60 @@ namespace __jni_impl::java::io
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint LineNumberInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	void LineNumberInputStream::mark(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"mark",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong LineNumberInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint LineNumberInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 	void LineNumberInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	jint LineNumberInputStream::getLineNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getLineNumber",
-			"()I");
+			"()I"
+		);
 	}
 	void LineNumberInputStream::setLineNumber(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLineNumber",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::io
 

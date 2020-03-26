@@ -47,7 +47,8 @@ namespace __jni_impl::android::view
 			"inflate",
 			"(ILandroid/view/Menu;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

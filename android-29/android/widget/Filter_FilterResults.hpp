@@ -13,7 +13,7 @@ namespace __jni_impl::android::widget
 	public:
 		// Fields
 		jint count();
-		QAndroidJniObject values();
+		jobject values();
 		
 		// Constructors
 		void __constructor();
@@ -29,13 +29,15 @@ namespace __jni_impl::android::widget
 	jint Filter_FilterResults::count()
 	{
 		return __thiz.getField<jint>(
-			"count");
+			"count"
+		);
 	}
-	QAndroidJniObject Filter_FilterResults::values()
+	jobject Filter_FilterResults::values()
 	{
 		return __thiz.getObjectField(
 			"values",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	
 	// Constructors

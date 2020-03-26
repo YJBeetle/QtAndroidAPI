@@ -72,13 +72,15 @@ namespace __jni_impl::java::util::zip
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.ZipOutputStream",
-			"STORED");
+			"STORED"
+		);
 	}
 	jint ZipOutputStream::DEFLATED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.ZipOutputStream",
-			"DEFLATED");
+			"DEFLATED"
+		);
 	}
 	
 	// Constructors
@@ -106,53 +108,61 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ZipOutputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void ZipOutputStream::setMethod(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMethod",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ZipOutputStream::setComment(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setComment",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ZipOutputStream::setLevel(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLevel",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ZipOutputStream::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
+			"()V"
+		);
 	}
 	void ZipOutputStream::closeEntry()
 	{
 		__thiz.callMethod<void>(
 			"closeEntry",
-			"()V");
+			"()V"
+		);
 	}
 	void ZipOutputStream::putNextEntry(__jni_impl::java::util::zip::ZipEntry arg0)
 	{
 		__thiz.callMethod<void>(
 			"putNextEntry",
 			"(Ljava/util/zip/ZipEntry;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

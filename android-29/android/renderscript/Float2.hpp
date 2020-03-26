@@ -30,12 +30,14 @@ namespace __jni_impl::android::renderscript
 	jfloat Float2::x()
 	{
 		return __thiz.getField<jfloat>(
-			"x");
+			"x"
+		);
 	}
 	jfloat Float2::y()
 	{
 		return __thiz.getField<jfloat>(
-			"y");
+			"y"
+		);
 	}
 	
 	// Constructors

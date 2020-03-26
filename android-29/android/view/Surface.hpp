@@ -13,6 +13,10 @@ namespace __jni_impl::android::graphics
 {
 	class SurfaceTexture;
 }
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
@@ -20,10 +24,6 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class Rect;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::view
@@ -43,24 +43,24 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::graphics::SurfaceTexture arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void release();
 		jboolean isValid();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		QAndroidJniObject lockCanvas(__jni_impl::android::graphics::Rect arg0);
 		void unlockCanvasAndPost(__jni_impl::android::graphics::Canvas arg0);
 		QAndroidJniObject lockHardwareCanvas();
 		void unlockCanvas(__jni_impl::android::graphics::Canvas arg0);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
 #include "SurfaceControl.hpp"
 #include "../graphics/SurfaceTexture.hpp"
+#include "../os/Parcel.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/Rect.hpp"
-#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -70,31 +70,36 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.Surface",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Surface::ROTATION_0()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Surface",
-			"ROTATION_0");
+			"ROTATION_0"
+		);
 	}
 	jint Surface::ROTATION_180()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Surface",
-			"ROTATION_180");
+			"ROTATION_180"
+		);
 	}
 	jint Surface::ROTATION_270()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Surface",
-			"ROTATION_270");
+			"ROTATION_270"
+		);
 	}
 	jint Surface::ROTATION_90()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Surface",
-			"ROTATION_90");
+			"ROTATION_90"
+		);
 	}
 	
 	// Constructors
@@ -114,63 +119,33 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	QAndroidJniObject Surface::toString()
+	jstring Surface::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Surface::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Surface::isValid()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValid",
-			"()Z");
-	}
-	QAndroidJniObject Surface::lockCanvas(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callObjectMethod(
-			"lockCanvas",
-			"(Landroid/graphics/Rect;)Landroid/graphics/Canvas;",
-			arg0.__jniObject().object());
-	}
-	void Surface::unlockCanvasAndPost(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"unlockCanvasAndPost",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Surface::lockHardwareCanvas()
-	{
-		return __thiz.callObjectMethod(
-			"lockHardwareCanvas",
-			"()Landroid/graphics/Canvas;");
-	}
-	void Surface::unlockCanvas(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"unlockCanvas",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	void Surface::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			"()Z"
+		);
 	}
 	jint Surface::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Surface::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -178,7 +153,47 @@ namespace __jni_impl::android::view
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void Surface::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Surface::lockCanvas(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callObjectMethod(
+			"lockCanvas",
+			"(Landroid/graphics/Rect;)Landroid/graphics/Canvas;",
+			arg0.__jniObject().object()
+		);
+	}
+	void Surface::unlockCanvasAndPost(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"unlockCanvasAndPost",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Surface::lockHardwareCanvas()
+	{
+		return __thiz.callObjectMethod(
+			"lockHardwareCanvas",
+			"()Landroid/graphics/Canvas;"
+		);
+	}
+	void Surface::unlockCanvas(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"unlockCanvas",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

@@ -16,13 +16,13 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static jstring DEFAULT_SORT_ORDER();
 		static QAndroidJniObject DELETED_CONTENT_URI();
-		static QAndroidJniObject GROUP_ANDROID_STARRED();
-		static QAndroidJniObject GROUP_MY_CONTACTS();
+		static jstring GROUP_ANDROID_STARRED();
+		static jstring GROUP_MY_CONTACTS();
 		
 		// Constructors
 		void __constructor();
@@ -36,54 +36,61 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_Groups::CONTENT_ITEM_TYPE()
+	jstring Contacts_Groups::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Groups::CONTENT_TYPE()
+	jstring Contacts_Groups::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Contacts_Groups::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_Groups::DEFAULT_SORT_ORDER()
+	jstring Contacts_Groups::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Contacts_Groups::DELETED_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"DELETED_CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_Groups::GROUP_ANDROID_STARRED()
+	jstring Contacts_Groups::GROUP_ANDROID_STARRED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"GROUP_ANDROID_STARRED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Groups::GROUP_MY_CONTACTS()
+	jstring Contacts_Groups::GROUP_MY_CONTACTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Groups",
 			"GROUP_MY_CONTACTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

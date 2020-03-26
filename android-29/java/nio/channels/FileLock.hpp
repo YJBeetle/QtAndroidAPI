@@ -25,7 +25,7 @@ namespace __jni_impl::java::nio::channels
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jlong size();
 		jlong position();
 		void close();
@@ -54,59 +54,68 @@ namespace __jni_impl::java::nio::channels
 	}
 	
 	// Methods
-	QAndroidJniObject FileLock::toString()
+	jstring FileLock::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong FileLock::size()
 	{
 		return __thiz.callMethod<jlong>(
 			"size",
-			"()J");
+			"()J"
+		);
 	}
 	jlong FileLock::position()
 	{
 		return __thiz.callMethod<jlong>(
 			"position",
-			"()J");
+			"()J"
+		);
 	}
 	void FileLock::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void FileLock::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject FileLock::channel()
 	{
 		return __thiz.callObjectMethod(
 			"channel",
-			"()Ljava/nio/channels/FileChannel;");
+			"()Ljava/nio/channels/FileChannel;"
+		);
 	}
 	jboolean FileLock::isShared()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isShared",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean FileLock::isValid()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValid",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject FileLock::acquiredBy()
 	{
 		return __thiz.callObjectMethod(
 			"acquiredBy",
-			"()Ljava/nio/channels/Channel;");
+			"()Ljava/nio/channels/Channel;"
+		);
 	}
 	jboolean FileLock::overlaps(jlong arg0, jlong arg1)
 	{
@@ -114,7 +123,8 @@ namespace __jni_impl::java::nio::channels
 			"overlaps",
 			"(JJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::nio::channels
 

@@ -22,11 +22,11 @@ namespace __jni_impl::android::text
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		QAndroidJniObject getValue();
-		QAndroidJniObject getKey();
-		jint getSpanTypeId();
+		jstring getValue();
+		jstring getKey();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getSpanTypeId();
 	};
 } // namespace __jni_impl::android::text
 
@@ -54,29 +54,26 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
-	QAndroidJniObject Annotation::getValue()
+	jstring Annotation::getValue()
 	{
 		return __thiz.callObjectMethod(
 			"getValue",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Annotation::getKey()
+	jstring Annotation::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()Ljava/lang/String;");
-	}
-	jint Annotation::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Annotation::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Annotation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -84,7 +81,15 @@ namespace __jni_impl::android::text
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint Annotation::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text
 

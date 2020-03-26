@@ -62,14 +62,16 @@ namespace __jni_impl::android::content
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/content/ContentProviderOperation;");
+			"()Landroid/content/ContentProviderOperation;"
+		);
 	}
 	QAndroidJniObject ContentProviderOperation_Builder::withValueBackReferences(__jni_impl::android::content::ContentValues arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withValueBackReferences",
 			"(Landroid/content/ContentValues;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContentProviderOperation_Builder::withValueBackReference(jstring arg0, jint arg1)
 	{
@@ -77,7 +79,8 @@ namespace __jni_impl::android::content
 			"withValueBackReference",
 			"(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContentProviderOperation_Builder::withSelectionBackReference(jint arg0, jint arg1)
 	{
@@ -85,14 +88,16 @@ namespace __jni_impl::android::content
 			"withSelectionBackReference",
 			"(II)Landroid/content/ContentProviderOperation$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContentProviderOperation_Builder::withValues(__jni_impl::android::content::ContentValues arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withValues",
 			"(Landroid/content/ContentValues;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContentProviderOperation_Builder::withValue(jstring arg0, jobject arg1)
 	{
@@ -100,7 +105,8 @@ namespace __jni_impl::android::content
 			"withValue",
 			"(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContentProviderOperation_Builder::withSelection(jstring arg0, jarray arg1)
 	{
@@ -108,21 +114,24 @@ namespace __jni_impl::android::content
 			"withSelection",
 			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContentProviderOperation_Builder::withExpectedCount(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withExpectedCount",
 			"(I)Landroid/content/ContentProviderOperation$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContentProviderOperation_Builder::withYieldAllowed(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withYieldAllowed",
 			"(Z)Landroid/content/ContentProviderOperation$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::content
 

@@ -36,13 +36,15 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DeletedContacts",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	jlong ContactsContract_DeletedContacts::DAYS_KEPT_MILLISECONDS()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.provider.ContactsContract$DeletedContacts",
-			"DAYS_KEPT_MILLISECONDS");
+			"DAYS_KEPT_MILLISECONDS"
+		);
 	}
 	
 	// Constructors

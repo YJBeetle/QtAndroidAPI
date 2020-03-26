@@ -23,8 +23,8 @@ namespace __jni_impl::javax::sql
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::sql::SQLException arg2);
 		
 		// Methods
-		QAndroidJniObject getStatement();
 		QAndroidJniObject getSQLException();
+		QAndroidJniObject getStatement();
 	};
 } // namespace __jni_impl::javax::sql
 
@@ -54,17 +54,19 @@ namespace __jni_impl::javax::sql
 	}
 	
 	// Methods
-	QAndroidJniObject StatementEvent::getStatement()
-	{
-		return __thiz.callObjectMethod(
-			"getStatement",
-			"()Ljava/sql/PreparedStatement;");
-	}
 	QAndroidJniObject StatementEvent::getSQLException()
 	{
 		return __thiz.callObjectMethod(
 			"getSQLException",
-			"()Ljava/sql/SQLException;");
+			"()Ljava/sql/SQLException;"
+		);
+	}
+	QAndroidJniObject StatementEvent::getStatement()
+	{
+		return __thiz.callObjectMethod(
+			"getStatement",
+			"()Ljava/sql/PreparedStatement;"
+		);
 	}
 } // namespace __jni_impl::javax::sql
 

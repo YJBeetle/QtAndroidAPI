@@ -22,9 +22,9 @@ namespace __jni_impl::android::se::omapi
 		
 		// Methods
 		void shutdown();
-		QAndroidJniObject getVersion();
+		jstring getVersion();
 		jboolean isConnected();
-		QAndroidJniObject getReaders();
+		jarray getReaders();
 	};
 } // namespace __jni_impl::android::se::omapi
 
@@ -50,25 +50,29 @@ namespace __jni_impl::android::se::omapi
 	{
 		__thiz.callMethod<void>(
 			"shutdown",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject SEService::getVersion()
+	jstring SEService::getVersion()
 	{
 		return __thiz.callObjectMethod(
 			"getVersion",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean SEService::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject SEService::getReaders()
+	jarray SEService::getReaders()
 	{
 		return __thiz.callObjectMethod(
 			"getReaders",
-			"()[Landroid/se/omapi/Reader;");
+			"()[Landroid/se/omapi/Reader;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::se::omapi
 

@@ -18,12 +18,12 @@ namespace __jni_impl::android::print
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getId();
+		jstring getId();
 		jint getHorizontalDpi();
 		jint getVerticalDpi();
-		QAndroidJniObject getLabel();
+		jstring getLabel();
 	};
 } // namespace __jni_impl::android::print
 
@@ -50,43 +50,50 @@ namespace __jni_impl::android::print
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PrintAttributes_Resolution::toString()
+	jstring PrintAttributes_Resolution::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PrintAttributes_Resolution::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject PrintAttributes_Resolution::getId()
+	jstring PrintAttributes_Resolution::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PrintAttributes_Resolution::getHorizontalDpi()
 	{
 		return __thiz.callMethod<jint>(
 			"getHorizontalDpi",
-			"()I");
+			"()I"
+		);
 	}
 	jint PrintAttributes_Resolution::getVerticalDpi()
 	{
 		return __thiz.callMethod<jint>(
 			"getVerticalDpi",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject PrintAttributes_Resolution::getLabel()
+	jstring PrintAttributes_Resolution::getLabel()
 	{
 		return __thiz.callObjectMethod(
 			"getLabel",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::print
 

@@ -39,7 +39,8 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ChangedPackages",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -57,19 +58,22 @@ namespace __jni_impl::android::content::pm
 	{
 		return __thiz.callMethod<jint>(
 			"getSequenceNumber",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ChangedPackages::getPackageNames()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageNames",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jint ChangedPackages::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ChangedPackages::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -77,7 +81,8 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

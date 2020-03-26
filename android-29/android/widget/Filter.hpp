@@ -23,7 +23,7 @@ namespace __jni_impl::android::widget
 		// Methods
 		void filter(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		void filter(jstring arg0);
-		QAndroidJniObject convertResultToString(jobject arg0);
+		jstring convertResultToString(jobject arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -48,21 +48,24 @@ namespace __jni_impl::android::widget
 			"filter",
 			"(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterListener;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Filter::filter(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"filter",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Filter::convertResultToString(jobject arg0)
+	jstring Filter::convertResultToString(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"convertResultToString",
 			"(Ljava/lang/Object;)Ljava/lang/CharSequence;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

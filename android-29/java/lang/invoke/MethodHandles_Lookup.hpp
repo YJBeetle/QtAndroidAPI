@@ -51,17 +51,17 @@ namespace __jni_impl::java::lang::invoke
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject findClass(jstring arg0);
-		QAndroidJniObject defineClass(jbyteArray arg0);
+		jstring toString();
+		jclass findClass(jstring arg0);
+		jclass defineClass(jbyteArray arg0);
 		QAndroidJniObject in(jclass arg0);
 		QAndroidJniObject revealDirect(__jni_impl::java::lang::invoke::MethodHandle arg0);
-		QAndroidJniObject lookupClass();
+		jclass lookupClass();
 		QAndroidJniObject findVirtual(jclass arg0, jstring arg1, __jni_impl::java::lang::invoke::MethodType arg2);
 		QAndroidJniObject findStatic(jclass arg0, jstring arg1, __jni_impl::java::lang::invoke::MethodType arg2);
 		QAndroidJniObject unreflect(__jni_impl::java::lang::reflect::Method arg0);
 		jint lookupModes();
-		QAndroidJniObject accessClass(jclass arg0);
+		jclass accessClass(jclass arg0);
 		QAndroidJniObject bind(jobject arg0, jstring arg1, __jni_impl::java::lang::invoke::MethodType arg2);
 		jboolean hasPrivateAccess();
 		QAndroidJniObject dropLookupMode(jint arg0);
@@ -96,37 +96,43 @@ namespace __jni_impl::java::lang::invoke
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
-			"PUBLIC");
+			"PUBLIC"
+		);
 	}
 	jint MethodHandles_Lookup::PRIVATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
-			"PRIVATE");
+			"PRIVATE"
+		);
 	}
 	jint MethodHandles_Lookup::PROTECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
-			"PROTECTED");
+			"PROTECTED"
+		);
 	}
 	jint MethodHandles_Lookup::PACKAGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
-			"PACKAGE");
+			"PACKAGE"
+		);
 	}
 	jint MethodHandles_Lookup::MODULE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
-			"MODULE");
+			"MODULE"
+		);
 	}
 	jint MethodHandles_Lookup::UNCONDITIONAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.invoke.MethodHandles$Lookup",
-			"UNCONDITIONAL");
+			"UNCONDITIONAL"
+		);
 	}
 	
 	// Constructors
@@ -138,45 +144,51 @@ namespace __jni_impl::java::lang::invoke
 	}
 	
 	// Methods
-	QAndroidJniObject MethodHandles_Lookup::toString()
+	jstring MethodHandles_Lookup::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MethodHandles_Lookup::findClass(jstring arg0)
+	jclass MethodHandles_Lookup::findClass(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findClass",
 			"(Ljava/lang/String;)Ljava/lang/Class;",
-			arg0);
+			arg0
+		).object<jclass>();
 	}
-	QAndroidJniObject MethodHandles_Lookup::defineClass(jbyteArray arg0)
+	jclass MethodHandles_Lookup::defineClass(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"defineClass",
 			"([B)Ljava/lang/Class;",
-			arg0);
+			arg0
+		).object<jclass>();
 	}
 	QAndroidJniObject MethodHandles_Lookup::in(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"in",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodHandles$Lookup;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::revealDirect(__jni_impl::java::lang::invoke::MethodHandle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"revealDirect",
 			"(Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/MethodHandleInfo;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::lookupClass()
+	jclass MethodHandles_Lookup::lookupClass()
 	{
 		return __thiz.callObjectMethod(
 			"lookupClass",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	QAndroidJniObject MethodHandles_Lookup::findVirtual(jclass arg0, jstring arg1, __jni_impl::java::lang::invoke::MethodType arg2)
 	{
@@ -185,7 +197,8 @@ namespace __jni_impl::java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::findStatic(jclass arg0, jstring arg1, __jni_impl::java::lang::invoke::MethodType arg2)
 	{
@@ -194,27 +207,31 @@ namespace __jni_impl::java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::unreflect(__jni_impl::java::lang::reflect::Method arg0)
 	{
 		return __thiz.callObjectMethod(
 			"unreflect",
 			"(Ljava/lang/reflect/Method;)Ljava/lang/invoke/MethodHandle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint MethodHandles_Lookup::lookupModes()
 	{
 		return __thiz.callMethod<jint>(
 			"lookupModes",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MethodHandles_Lookup::accessClass(jclass arg0)
+	jclass MethodHandles_Lookup::accessClass(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"accessClass",
 			"(Ljava/lang/Class;)Ljava/lang/Class;",
-			arg0);
+			arg0
+		).object<jclass>();
 	}
 	QAndroidJniObject MethodHandles_Lookup::bind(jobject arg0, jstring arg1, __jni_impl::java::lang::invoke::MethodType arg2)
 	{
@@ -223,20 +240,23 @@ namespace __jni_impl::java::lang::invoke
 			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean MethodHandles_Lookup::hasPrivateAccess()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasPrivateAccess",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::dropLookupMode(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"dropLookupMode",
 			"(I)Ljava/lang/invoke/MethodHandles$Lookup;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::findConstructor(jclass arg0, __jni_impl::java::lang::invoke::MethodType arg1)
 	{
@@ -244,7 +264,8 @@ namespace __jni_impl::java::lang::invoke
 			"findConstructor",
 			"(Ljava/lang/Class;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::findSpecial(jclass arg0, jstring arg1, __jni_impl::java::lang::invoke::MethodType arg2, jclass arg3)
 	{
@@ -254,7 +275,8 @@ namespace __jni_impl::java::lang::invoke
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::findGetter(jclass arg0, jstring arg1, jclass arg2)
 	{
@@ -263,7 +285,8 @@ namespace __jni_impl::java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::findSetter(jclass arg0, jstring arg1, jclass arg2)
 	{
@@ -272,7 +295,8 @@ namespace __jni_impl::java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::findVarHandle(jclass arg0, jstring arg1, jclass arg2)
 	{
@@ -281,7 +305,8 @@ namespace __jni_impl::java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/VarHandle;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::findStaticGetter(jclass arg0, jstring arg1, jclass arg2)
 	{
@@ -290,7 +315,8 @@ namespace __jni_impl::java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::findStaticSetter(jclass arg0, jstring arg1, jclass arg2)
 	{
@@ -299,7 +325,8 @@ namespace __jni_impl::java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::findStaticVarHandle(jclass arg0, jstring arg1, jclass arg2)
 	{
@@ -308,7 +335,8 @@ namespace __jni_impl::java::lang::invoke
 			"(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/invoke/VarHandle;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::unreflectSpecial(__jni_impl::java::lang::reflect::Method arg0, jclass arg1)
 	{
@@ -316,35 +344,40 @@ namespace __jni_impl::java::lang::invoke
 			"unreflectSpecial",
 			"(Ljava/lang/reflect/Method;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::unreflectConstructor(__jni_impl::java::lang::reflect::Constructor arg0)
 	{
 		return __thiz.callObjectMethod(
 			"unreflectConstructor",
 			"(Ljava/lang/reflect/Constructor;)Ljava/lang/invoke/MethodHandle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::unreflectGetter(__jni_impl::java::lang::reflect::Field arg0)
 	{
 		return __thiz.callObjectMethod(
 			"unreflectGetter",
 			"(Ljava/lang/reflect/Field;)Ljava/lang/invoke/MethodHandle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::unreflectSetter(__jni_impl::java::lang::reflect::Field arg0)
 	{
 		return __thiz.callObjectMethod(
 			"unreflectSetter",
 			"(Ljava/lang/reflect/Field;)Ljava/lang/invoke/MethodHandle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MethodHandles_Lookup::unreflectVarHandle(__jni_impl::java::lang::reflect::Field arg0)
 	{
 		return __thiz.callObjectMethod(
 			"unreflectVarHandle",
 			"(Ljava/lang/reflect/Field;)Ljava/lang/invoke/VarHandle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::lang::invoke
 

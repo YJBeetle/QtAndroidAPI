@@ -20,51 +20,51 @@ namespace __jni_impl::android::text::style
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ANIMACY_ANIMATE();
-		static QAndroidJniObject ANIMACY_INANIMATE();
-		static QAndroidJniObject ARG_ANIMACY();
-		static QAndroidJniObject ARG_CASE();
-		static QAndroidJniObject ARG_COUNTRY_CODE();
-		static QAndroidJniObject ARG_CURRENCY();
-		static QAndroidJniObject ARG_DAY();
-		static QAndroidJniObject ARG_DENOMINATOR();
-		static QAndroidJniObject ARG_DIGITS();
-		static QAndroidJniObject ARG_DOMAIN();
-		static QAndroidJniObject ARG_EXTENSION();
-		static QAndroidJniObject ARG_FRACTIONAL_PART();
-		static QAndroidJniObject ARG_FRAGMENT_ID();
-		static QAndroidJniObject ARG_GENDER();
-		static QAndroidJniObject ARG_HOURS();
-		static QAndroidJniObject ARG_INTEGER_PART();
-		static QAndroidJniObject ARG_MINUTES();
-		static QAndroidJniObject ARG_MONTH();
-		static QAndroidJniObject ARG_MULTIPLICITY();
-		static QAndroidJniObject ARG_NUMBER();
-		static QAndroidJniObject ARG_NUMBER_PARTS();
-		static QAndroidJniObject ARG_NUMERATOR();
-		static QAndroidJniObject ARG_PASSWORD();
-		static QAndroidJniObject ARG_PATH();
-		static QAndroidJniObject ARG_PORT();
-		static QAndroidJniObject ARG_PROTOCOL();
-		static QAndroidJniObject ARG_QUANTITY();
-		static QAndroidJniObject ARG_QUERY_STRING();
-		static QAndroidJniObject ARG_TEXT();
-		static QAndroidJniObject ARG_UNIT();
-		static QAndroidJniObject ARG_USERNAME();
-		static QAndroidJniObject ARG_VERBATIM();
-		static QAndroidJniObject ARG_WEEKDAY();
-		static QAndroidJniObject ARG_YEAR();
-		static QAndroidJniObject CASE_ABLATIVE();
-		static QAndroidJniObject CASE_ACCUSATIVE();
-		static QAndroidJniObject CASE_DATIVE();
-		static QAndroidJniObject CASE_GENITIVE();
-		static QAndroidJniObject CASE_INSTRUMENTAL();
-		static QAndroidJniObject CASE_LOCATIVE();
-		static QAndroidJniObject CASE_NOMINATIVE();
-		static QAndroidJniObject CASE_VOCATIVE();
-		static QAndroidJniObject GENDER_FEMALE();
-		static QAndroidJniObject GENDER_MALE();
-		static QAndroidJniObject GENDER_NEUTRAL();
+		static jstring ANIMACY_ANIMATE();
+		static jstring ANIMACY_INANIMATE();
+		static jstring ARG_ANIMACY();
+		static jstring ARG_CASE();
+		static jstring ARG_COUNTRY_CODE();
+		static jstring ARG_CURRENCY();
+		static jstring ARG_DAY();
+		static jstring ARG_DENOMINATOR();
+		static jstring ARG_DIGITS();
+		static jstring ARG_DOMAIN();
+		static jstring ARG_EXTENSION();
+		static jstring ARG_FRACTIONAL_PART();
+		static jstring ARG_FRAGMENT_ID();
+		static jstring ARG_GENDER();
+		static jstring ARG_HOURS();
+		static jstring ARG_INTEGER_PART();
+		static jstring ARG_MINUTES();
+		static jstring ARG_MONTH();
+		static jstring ARG_MULTIPLICITY();
+		static jstring ARG_NUMBER();
+		static jstring ARG_NUMBER_PARTS();
+		static jstring ARG_NUMERATOR();
+		static jstring ARG_PASSWORD();
+		static jstring ARG_PATH();
+		static jstring ARG_PORT();
+		static jstring ARG_PROTOCOL();
+		static jstring ARG_QUANTITY();
+		static jstring ARG_QUERY_STRING();
+		static jstring ARG_TEXT();
+		static jstring ARG_UNIT();
+		static jstring ARG_USERNAME();
+		static jstring ARG_VERBATIM();
+		static jstring ARG_WEEKDAY();
+		static jstring ARG_YEAR();
+		static jstring CASE_ABLATIVE();
+		static jstring CASE_ACCUSATIVE();
+		static jstring CASE_DATIVE();
+		static jstring CASE_GENITIVE();
+		static jstring CASE_INSTRUMENTAL();
+		static jstring CASE_LOCATIVE();
+		static jstring CASE_NOMINATIVE();
+		static jstring CASE_VOCATIVE();
+		static jstring GENDER_FEMALE();
+		static jstring GENDER_MALE();
+		static jstring GENDER_NEUTRAL();
 		static jint MONTH_APRIL();
 		static jint MONTH_AUGUST();
 		static jint MONTH_DECEMBER();
@@ -77,22 +77,22 @@ namespace __jni_impl::android::text::style
 		static jint MONTH_NOVEMBER();
 		static jint MONTH_OCTOBER();
 		static jint MONTH_SEPTEMBER();
-		static QAndroidJniObject MULTIPLICITY_DUAL();
-		static QAndroidJniObject MULTIPLICITY_PLURAL();
-		static QAndroidJniObject MULTIPLICITY_SINGLE();
-		static QAndroidJniObject TYPE_CARDINAL();
-		static QAndroidJniObject TYPE_DATE();
-		static QAndroidJniObject TYPE_DECIMAL();
-		static QAndroidJniObject TYPE_DIGITS();
-		static QAndroidJniObject TYPE_ELECTRONIC();
-		static QAndroidJniObject TYPE_FRACTION();
-		static QAndroidJniObject TYPE_MEASURE();
-		static QAndroidJniObject TYPE_MONEY();
-		static QAndroidJniObject TYPE_ORDINAL();
-		static QAndroidJniObject TYPE_TELEPHONE();
-		static QAndroidJniObject TYPE_TEXT();
-		static QAndroidJniObject TYPE_TIME();
-		static QAndroidJniObject TYPE_VERBATIM();
+		static jstring MULTIPLICITY_DUAL();
+		static jstring MULTIPLICITY_PLURAL();
+		static jstring MULTIPLICITY_SINGLE();
+		static jstring TYPE_CARDINAL();
+		static jstring TYPE_DATE();
+		static jstring TYPE_DECIMAL();
+		static jstring TYPE_DIGITS();
+		static jstring TYPE_ELECTRONIC();
+		static jstring TYPE_FRACTION();
+		static jstring TYPE_MEASURE();
+		static jstring TYPE_MONEY();
+		static jstring TYPE_ORDINAL();
+		static jstring TYPE_TELEPHONE();
+		static jstring TYPE_TEXT();
+		static jstring TYPE_TIME();
+		static jstring TYPE_VERBATIM();
 		static jint WEEKDAY_FRIDAY();
 		static jint WEEKDAY_MONDAY();
 		static jint WEEKDAY_SATURDAY();
@@ -106,11 +106,11 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		QAndroidJniObject getType();
-		jint getSpanTypeId();
-		QAndroidJniObject getArgs();
+		jstring getType();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getArgs();
+		jint getSpanTypeId();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -120,546 +120,626 @@ namespace __jni_impl::android::text::style
 namespace __jni_impl::android::text::style
 {
 	// Fields
-	QAndroidJniObject TtsSpan::ANIMACY_ANIMATE()
+	jstring TtsSpan::ANIMACY_ANIMATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ANIMACY_ANIMATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ANIMACY_INANIMATE()
+	jstring TtsSpan::ANIMACY_INANIMATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ANIMACY_INANIMATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_ANIMACY()
+	jstring TtsSpan::ARG_ANIMACY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_ANIMACY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_CASE()
+	jstring TtsSpan::ARG_CASE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_CASE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_COUNTRY_CODE()
+	jstring TtsSpan::ARG_COUNTRY_CODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_COUNTRY_CODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_CURRENCY()
+	jstring TtsSpan::ARG_CURRENCY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_CURRENCY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_DAY()
+	jstring TtsSpan::ARG_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_DENOMINATOR()
+	jstring TtsSpan::ARG_DENOMINATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_DENOMINATOR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_DIGITS()
+	jstring TtsSpan::ARG_DIGITS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_DIGITS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_DOMAIN()
+	jstring TtsSpan::ARG_DOMAIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_DOMAIN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_EXTENSION()
+	jstring TtsSpan::ARG_EXTENSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_EXTENSION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_FRACTIONAL_PART()
+	jstring TtsSpan::ARG_FRACTIONAL_PART()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_FRACTIONAL_PART",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_FRAGMENT_ID()
+	jstring TtsSpan::ARG_FRAGMENT_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_FRAGMENT_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_GENDER()
+	jstring TtsSpan::ARG_GENDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_GENDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_HOURS()
+	jstring TtsSpan::ARG_HOURS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_HOURS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_INTEGER_PART()
+	jstring TtsSpan::ARG_INTEGER_PART()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_INTEGER_PART",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_MINUTES()
+	jstring TtsSpan::ARG_MINUTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_MINUTES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_MONTH()
+	jstring TtsSpan::ARG_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_MONTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_MULTIPLICITY()
+	jstring TtsSpan::ARG_MULTIPLICITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_MULTIPLICITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_NUMBER()
+	jstring TtsSpan::ARG_NUMBER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_NUMBER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_NUMBER_PARTS()
+	jstring TtsSpan::ARG_NUMBER_PARTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_NUMBER_PARTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_NUMERATOR()
+	jstring TtsSpan::ARG_NUMERATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_NUMERATOR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_PASSWORD()
+	jstring TtsSpan::ARG_PASSWORD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_PASSWORD",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_PATH()
+	jstring TtsSpan::ARG_PATH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_PATH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_PORT()
+	jstring TtsSpan::ARG_PORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_PORT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_PROTOCOL()
+	jstring TtsSpan::ARG_PROTOCOL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_PROTOCOL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_QUANTITY()
+	jstring TtsSpan::ARG_QUANTITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_QUANTITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_QUERY_STRING()
+	jstring TtsSpan::ARG_QUERY_STRING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_QUERY_STRING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_TEXT()
+	jstring TtsSpan::ARG_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_UNIT()
+	jstring TtsSpan::ARG_UNIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_UNIT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_USERNAME()
+	jstring TtsSpan::ARG_USERNAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_USERNAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_VERBATIM()
+	jstring TtsSpan::ARG_VERBATIM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_VERBATIM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_WEEKDAY()
+	jstring TtsSpan::ARG_WEEKDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_WEEKDAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::ARG_YEAR()
+	jstring TtsSpan::ARG_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"ARG_YEAR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::CASE_ABLATIVE()
+	jstring TtsSpan::CASE_ABLATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"CASE_ABLATIVE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::CASE_ACCUSATIVE()
+	jstring TtsSpan::CASE_ACCUSATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"CASE_ACCUSATIVE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::CASE_DATIVE()
+	jstring TtsSpan::CASE_DATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"CASE_DATIVE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::CASE_GENITIVE()
+	jstring TtsSpan::CASE_GENITIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"CASE_GENITIVE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::CASE_INSTRUMENTAL()
+	jstring TtsSpan::CASE_INSTRUMENTAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"CASE_INSTRUMENTAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::CASE_LOCATIVE()
+	jstring TtsSpan::CASE_LOCATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"CASE_LOCATIVE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::CASE_NOMINATIVE()
+	jstring TtsSpan::CASE_NOMINATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"CASE_NOMINATIVE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::CASE_VOCATIVE()
+	jstring TtsSpan::CASE_VOCATIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"CASE_VOCATIVE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::GENDER_FEMALE()
+	jstring TtsSpan::GENDER_FEMALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"GENDER_FEMALE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::GENDER_MALE()
+	jstring TtsSpan::GENDER_MALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"GENDER_MALE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::GENDER_NEUTRAL()
+	jstring TtsSpan::GENDER_NEUTRAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"GENDER_NEUTRAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TtsSpan::MONTH_APRIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_APRIL");
+			"MONTH_APRIL"
+		);
 	}
 	jint TtsSpan::MONTH_AUGUST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_AUGUST");
+			"MONTH_AUGUST"
+		);
 	}
 	jint TtsSpan::MONTH_DECEMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_DECEMBER");
+			"MONTH_DECEMBER"
+		);
 	}
 	jint TtsSpan::MONTH_FEBRUARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_FEBRUARY");
+			"MONTH_FEBRUARY"
+		);
 	}
 	jint TtsSpan::MONTH_JANUARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_JANUARY");
+			"MONTH_JANUARY"
+		);
 	}
 	jint TtsSpan::MONTH_JULY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_JULY");
+			"MONTH_JULY"
+		);
 	}
 	jint TtsSpan::MONTH_JUNE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_JUNE");
+			"MONTH_JUNE"
+		);
 	}
 	jint TtsSpan::MONTH_MARCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_MARCH");
+			"MONTH_MARCH"
+		);
 	}
 	jint TtsSpan::MONTH_MAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_MAY");
+			"MONTH_MAY"
+		);
 	}
 	jint TtsSpan::MONTH_NOVEMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_NOVEMBER");
+			"MONTH_NOVEMBER"
+		);
 	}
 	jint TtsSpan::MONTH_OCTOBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_OCTOBER");
+			"MONTH_OCTOBER"
+		);
 	}
 	jint TtsSpan::MONTH_SEPTEMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"MONTH_SEPTEMBER");
+			"MONTH_SEPTEMBER"
+		);
 	}
-	QAndroidJniObject TtsSpan::MULTIPLICITY_DUAL()
+	jstring TtsSpan::MULTIPLICITY_DUAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"MULTIPLICITY_DUAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::MULTIPLICITY_PLURAL()
+	jstring TtsSpan::MULTIPLICITY_PLURAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"MULTIPLICITY_PLURAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::MULTIPLICITY_SINGLE()
+	jstring TtsSpan::MULTIPLICITY_SINGLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"MULTIPLICITY_SINGLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_CARDINAL()
+	jstring TtsSpan::TYPE_CARDINAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_CARDINAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_DATE()
+	jstring TtsSpan::TYPE_DATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_DATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_DECIMAL()
+	jstring TtsSpan::TYPE_DECIMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_DECIMAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_DIGITS()
+	jstring TtsSpan::TYPE_DIGITS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_DIGITS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_ELECTRONIC()
+	jstring TtsSpan::TYPE_ELECTRONIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_ELECTRONIC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_FRACTION()
+	jstring TtsSpan::TYPE_FRACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_FRACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_MEASURE()
+	jstring TtsSpan::TYPE_MEASURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_MEASURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_MONEY()
+	jstring TtsSpan::TYPE_MONEY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_MONEY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_ORDINAL()
+	jstring TtsSpan::TYPE_ORDINAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_ORDINAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_TELEPHONE()
+	jstring TtsSpan::TYPE_TELEPHONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_TELEPHONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_TEXT()
+	jstring TtsSpan::TYPE_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_TIME()
+	jstring TtsSpan::TYPE_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_TIME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TtsSpan::TYPE_VERBATIM()
+	jstring TtsSpan::TYPE_VERBATIM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.style.TtsSpan",
 			"TYPE_VERBATIM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TtsSpan::WEEKDAY_FRIDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"WEEKDAY_FRIDAY");
+			"WEEKDAY_FRIDAY"
+		);
 	}
 	jint TtsSpan::WEEKDAY_MONDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"WEEKDAY_MONDAY");
+			"WEEKDAY_MONDAY"
+		);
 	}
 	jint TtsSpan::WEEKDAY_SATURDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"WEEKDAY_SATURDAY");
+			"WEEKDAY_SATURDAY"
+		);
 	}
 	jint TtsSpan::WEEKDAY_SUNDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"WEEKDAY_SUNDAY");
+			"WEEKDAY_SUNDAY"
+		);
 	}
 	jint TtsSpan::WEEKDAY_THURSDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"WEEKDAY_THURSDAY");
+			"WEEKDAY_THURSDAY"
+		);
 	}
 	jint TtsSpan::WEEKDAY_TUESDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"WEEKDAY_TUESDAY");
+			"WEEKDAY_TUESDAY"
+		);
 	}
 	jint TtsSpan::WEEKDAY_WEDNESDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.text.style.TtsSpan",
-			"WEEKDAY_WEDNESDAY");
+			"WEEKDAY_WEDNESDAY"
+		);
 	}
 	
 	// Constructors
@@ -680,29 +760,19 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	QAndroidJniObject TtsSpan::getType()
+	jstring TtsSpan::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
-	}
-	jint TtsSpan::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I");
-	}
-	QAndroidJniObject TtsSpan::getArgs()
-	{
-		return __thiz.callObjectMethod(
-			"getArgs",
-			"()Landroid/os/PersistableBundle;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TtsSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void TtsSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -710,7 +780,22 @@ namespace __jni_impl::android::text::style
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject TtsSpan::getArgs()
+	{
+		return __thiz.callObjectMethod(
+			"getArgs",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	jint TtsSpan::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

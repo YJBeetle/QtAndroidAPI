@@ -42,14 +42,16 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callObjectMethod(
 			"engineGetCertificates",
 			"(Ljava/security/cert/CertSelector;)Ljava/util/Collection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertStoreSpi::engineGetCRLs(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"engineGetCRLs",
 			"(Ljava/security/cert/CRLSelector;)Ljava/util/Collection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

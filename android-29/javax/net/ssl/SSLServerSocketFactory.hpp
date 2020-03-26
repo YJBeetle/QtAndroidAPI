@@ -23,8 +23,8 @@ namespace __jni_impl::javax::net::ssl
 		
 		// Methods
 		static QAndroidJniObject getDefault();
-		QAndroidJniObject getSupportedCipherSuites();
-		QAndroidJniObject getDefaultCipherSuites();
+		jarray getDefaultCipherSuites();
+		jarray getSupportedCipherSuites();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -48,19 +48,22 @@ namespace __jni_impl::javax::net::ssl
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.SSLServerSocketFactory",
 			"getDefault",
-			"()Ljavax/net/ServerSocketFactory;");
+			"()Ljavax/net/ServerSocketFactory;"
+		);
 	}
-	QAndroidJniObject SSLServerSocketFactory::getSupportedCipherSuites()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedCipherSuites",
-			"()[Ljava/lang/String;");
-	}
-	QAndroidJniObject SSLServerSocketFactory::getDefaultCipherSuites()
+	jarray SSLServerSocketFactory::getDefaultCipherSuites()
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultCipherSuites",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jarray SSLServerSocketFactory::getSupportedCipherSuites()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedCipherSuites",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::javax::net::ssl
 

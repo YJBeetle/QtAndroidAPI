@@ -17,8 +17,8 @@ namespace __jni_impl::android::os
 	public:
 		// Fields
 		static jint ACQUIRE_CAUSES_WAKEUP();
-		static QAndroidJniObject ACTION_DEVICE_IDLE_MODE_CHANGED();
-		static QAndroidJniObject ACTION_POWER_SAVE_MODE_CHANGED();
+		static jstring ACTION_DEVICE_IDLE_MODE_CHANGED();
+		static jstring ACTION_POWER_SAVE_MODE_CHANGED();
 		static jint FULL_WAKE_LOCK();
 		static jint LOCATION_MODE_ALL_DISABLED_WHEN_SCREEN_OFF();
 		static jint LOCATION_MODE_FOREGROUND_ONLY();
@@ -69,135 +69,157 @@ namespace __jni_impl::android::os
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"ACQUIRE_CAUSES_WAKEUP");
+			"ACQUIRE_CAUSES_WAKEUP"
+		);
 	}
-	QAndroidJniObject PowerManager::ACTION_DEVICE_IDLE_MODE_CHANGED()
+	jstring PowerManager::ACTION_DEVICE_IDLE_MODE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.PowerManager",
 			"ACTION_DEVICE_IDLE_MODE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PowerManager::ACTION_POWER_SAVE_MODE_CHANGED()
+	jstring PowerManager::ACTION_POWER_SAVE_MODE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.PowerManager",
 			"ACTION_POWER_SAVE_MODE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PowerManager::FULL_WAKE_LOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"FULL_WAKE_LOCK");
+			"FULL_WAKE_LOCK"
+		);
 	}
 	jint PowerManager::LOCATION_MODE_ALL_DISABLED_WHEN_SCREEN_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"LOCATION_MODE_ALL_DISABLED_WHEN_SCREEN_OFF");
+			"LOCATION_MODE_ALL_DISABLED_WHEN_SCREEN_OFF"
+		);
 	}
 	jint PowerManager::LOCATION_MODE_FOREGROUND_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"LOCATION_MODE_FOREGROUND_ONLY");
+			"LOCATION_MODE_FOREGROUND_ONLY"
+		);
 	}
 	jint PowerManager::LOCATION_MODE_GPS_DISABLED_WHEN_SCREEN_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"LOCATION_MODE_GPS_DISABLED_WHEN_SCREEN_OFF");
+			"LOCATION_MODE_GPS_DISABLED_WHEN_SCREEN_OFF"
+		);
 	}
 	jint PowerManager::LOCATION_MODE_NO_CHANGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"LOCATION_MODE_NO_CHANGE");
+			"LOCATION_MODE_NO_CHANGE"
+		);
 	}
 	jint PowerManager::LOCATION_MODE_THROTTLE_REQUESTS_WHEN_SCREEN_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"LOCATION_MODE_THROTTLE_REQUESTS_WHEN_SCREEN_OFF");
+			"LOCATION_MODE_THROTTLE_REQUESTS_WHEN_SCREEN_OFF"
+		);
 	}
 	jint PowerManager::ON_AFTER_RELEASE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"ON_AFTER_RELEASE");
+			"ON_AFTER_RELEASE"
+		);
 	}
 	jint PowerManager::PARTIAL_WAKE_LOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"PARTIAL_WAKE_LOCK");
+			"PARTIAL_WAKE_LOCK"
+		);
 	}
 	jint PowerManager::PROXIMITY_SCREEN_OFF_WAKE_LOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"PROXIMITY_SCREEN_OFF_WAKE_LOCK");
+			"PROXIMITY_SCREEN_OFF_WAKE_LOCK"
+		);
 	}
 	jint PowerManager::RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY");
+			"RELEASE_FLAG_WAIT_FOR_NO_PROXIMITY"
+		);
 	}
 	jint PowerManager::SCREEN_BRIGHT_WAKE_LOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"SCREEN_BRIGHT_WAKE_LOCK");
+			"SCREEN_BRIGHT_WAKE_LOCK"
+		);
 	}
 	jint PowerManager::SCREEN_DIM_WAKE_LOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"SCREEN_DIM_WAKE_LOCK");
+			"SCREEN_DIM_WAKE_LOCK"
+		);
 	}
 	jint PowerManager::THERMAL_STATUS_CRITICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"THERMAL_STATUS_CRITICAL");
+			"THERMAL_STATUS_CRITICAL"
+		);
 	}
 	jint PowerManager::THERMAL_STATUS_EMERGENCY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"THERMAL_STATUS_EMERGENCY");
+			"THERMAL_STATUS_EMERGENCY"
+		);
 	}
 	jint PowerManager::THERMAL_STATUS_LIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"THERMAL_STATUS_LIGHT");
+			"THERMAL_STATUS_LIGHT"
+		);
 	}
 	jint PowerManager::THERMAL_STATUS_MODERATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"THERMAL_STATUS_MODERATE");
+			"THERMAL_STATUS_MODERATE"
+		);
 	}
 	jint PowerManager::THERMAL_STATUS_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"THERMAL_STATUS_NONE");
+			"THERMAL_STATUS_NONE"
+		);
 	}
 	jint PowerManager::THERMAL_STATUS_SEVERE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"THERMAL_STATUS_SEVERE");
+			"THERMAL_STATUS_SEVERE"
+		);
 	}
 	jint PowerManager::THERMAL_STATUS_SHUTDOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.PowerManager",
-			"THERMAL_STATUS_SHUTDOWN");
+			"THERMAL_STATUS_SHUTDOWN"
+		);
 	}
 	
 	// Constructors
@@ -215,64 +237,74 @@ namespace __jni_impl::android::os
 			"newWakeLock",
 			"(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean PowerManager::isWakeLockLevelSupported(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWakeLockLevelSupported",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PowerManager::isScreenOn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isScreenOn",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PowerManager::isPowerSaveMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPowerSaveMode",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint PowerManager::getLocationPowerSaveMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getLocationPowerSaveMode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean PowerManager::isDeviceIdleMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDeviceIdleMode",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PowerManager::isIgnoringBatteryOptimizations(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isIgnoringBatteryOptimizations",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PowerManager::isSustainedPerformanceModeSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSustainedPerformanceModeSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint PowerManager::getCurrentThermalStatus()
 	{
 		return __thiz.callMethod<jint>(
 			"getCurrentThermalStatus",
-			"()I");
+			"()I"
+		);
 	}
 	void PowerManager::addThermalStatusListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addThermalStatusListener",
 			"(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PowerManager::addThermalStatusListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -280,27 +312,31 @@ namespace __jni_impl::android::os
 			"addThermalStatusListener",
 			"(Ljava/util/concurrent/Executor;Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PowerManager::removeThermalStatusListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeThermalStatusListener",
 			"(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PowerManager::reboot(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"reboot",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PowerManager::isInteractive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInteractive",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::os
 

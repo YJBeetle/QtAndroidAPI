@@ -29,16 +29,16 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void show();
 		void setOnZoomInClickListener(__jni_impl::__JniBaseClass arg0);
 		void setOnZoomOutClickListener(__jni_impl::__JniBaseClass arg0);
 		void setIsZoomInEnabled(jboolean arg0);
 		void setIsZoomOutEnabled(jboolean arg0);
-		void setZoomSpeed(jlong arg0);
 		void hide();
-		QAndroidJniObject getAccessibilityClassName();
 		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean hasFocus();
+		void show();
+		jstring getAccessibilityClassName();
+		void setZoomSpeed(jlong arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -67,71 +67,81 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void ZoomControls::show()
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"()V");
-	}
 	void ZoomControls::setOnZoomInClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnZoomInClickListener",
 			"(Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ZoomControls::setOnZoomOutClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnZoomOutClickListener",
 			"(Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ZoomControls::setIsZoomInEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIsZoomInEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void ZoomControls::setIsZoomOutEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIsZoomOutEnabled",
 			"(Z)V",
-			arg0);
-	}
-	void ZoomControls::setZoomSpeed(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setZoomSpeed",
-			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void ZoomControls::hide()
 	{
 		__thiz.callMethod<void>(
 			"hide",
-			"()V");
-	}
-	QAndroidJniObject ZoomControls::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()V"
+		);
 	}
 	jboolean ZoomControls::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ZoomControls::hasFocus()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasFocus",
-			"()Z");
+			"()Z"
+		);
+	}
+	void ZoomControls::show()
+	{
+		__thiz.callMethod<void>(
+			"show",
+			"()V"
+		);
+	}
+	jstring ZoomControls::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void ZoomControls::setZoomSpeed(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setZoomSpeed",
+			"(J)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

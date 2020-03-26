@@ -57,28 +57,32 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/app/PictureInPictureParams;");
+			"()Landroid/app/PictureInPictureParams;"
+		);
 	}
 	QAndroidJniObject PictureInPictureParams_Builder::setAspectRatio(__jni_impl::android::util::Rational arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAspectRatio",
 			"(Landroid/util/Rational;)Landroid/app/PictureInPictureParams$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PictureInPictureParams_Builder::setSourceRectHint(__jni_impl::android::graphics::Rect arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSourceRectHint",
 			"(Landroid/graphics/Rect;)Landroid/app/PictureInPictureParams$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PictureInPictureParams_Builder::setActions(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setActions",
 			"(Ljava/util/List;)Landroid/app/PictureInPictureParams$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

@@ -17,10 +17,10 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject name();
-		QAndroidJniObject type();
+		jstring name();
+		jstring type();
 		jboolean isReadOnly();
-		QAndroidJniObject getAttribute(jstring arg0);
+		jobject getAttribute(jstring arg0);
 		jlong getTotalSpace();
 		jlong getUsableSpace();
 		jlong getBlockSize();
@@ -45,75 +45,86 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	QAndroidJniObject FileStore::name()
+	jstring FileStore::name()
 	{
 		return __thiz.callObjectMethod(
 			"name",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FileStore::type()
+	jstring FileStore::type()
 	{
 		return __thiz.callObjectMethod(
 			"type",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean FileStore::isReadOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReadOnly",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject FileStore::getAttribute(jstring arg0)
+	jobject FileStore::getAttribute(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	jlong FileStore::getTotalSpace()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTotalSpace",
-			"()J");
+			"()J"
+		);
 	}
 	jlong FileStore::getUsableSpace()
 	{
 		return __thiz.callMethod<jlong>(
 			"getUsableSpace",
-			"()J");
+			"()J"
+		);
 	}
 	jlong FileStore::getBlockSize()
 	{
 		return __thiz.callMethod<jlong>(
 			"getBlockSize",
-			"()J");
+			"()J"
+		);
 	}
 	jlong FileStore::getUnallocatedSpace()
 	{
 		return __thiz.callMethod<jlong>(
 			"getUnallocatedSpace",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean FileStore::supportsFileAttributeView(jclass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"supportsFileAttributeView",
 			"(Ljava/lang/Class;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean FileStore::supportsFileAttributeView(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"supportsFileAttributeView",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject FileStore::getFileStoreAttributeView(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getFileStoreAttributeView",
 			"(Ljava/lang/Class;)Ljava/nio/file/attribute/FileStoreAttributeView;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

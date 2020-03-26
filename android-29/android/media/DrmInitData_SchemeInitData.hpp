@@ -12,8 +12,8 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		QAndroidJniObject data();
-		QAndroidJniObject mimeType();
+		jbyteArray data();
+		jstring mimeType();
 		
 		// Constructors
 		void __constructor();
@@ -28,17 +28,19 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject DrmInitData_SchemeInitData::data()
+	jbyteArray DrmInitData_SchemeInitData::data()
 	{
 		return __thiz.getObjectField(
 			"data",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject DrmInitData_SchemeInitData::mimeType()
+	jstring DrmInitData_SchemeInitData::mimeType()
 	{
 		return __thiz.getObjectField(
 			"mimeType",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -55,13 +57,15 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint DrmInitData_SchemeInitData::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

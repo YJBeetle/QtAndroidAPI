@@ -41,19 +41,22 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callMethod<jint>(
 			"characteristics",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Spliterators_AbstractSpliterator::estimateSize()
 	{
 		return __thiz.callMethod<jlong>(
 			"estimateSize",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject Spliterators_AbstractSpliterator::trySplit()
 	{
 		return __thiz.callObjectMethod(
 			"trySplit",
-			"()Ljava/util/Spliterator;");
+			"()Ljava/util/Spliterator;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

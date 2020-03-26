@@ -25,7 +25,7 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::security::cert
@@ -39,49 +39,56 @@ namespace __jni_impl::java::security::cert
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"UNSPECIFIED",
-			"Ljava/security/cert/CertPathValidatorException$BasicReason;");
+			"Ljava/security/cert/CertPathValidatorException$BasicReason;"
+		);
 	}
 	QAndroidJniObject CertPathValidatorException_BasicReason::EXPIRED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"EXPIRED",
-			"Ljava/security/cert/CertPathValidatorException$BasicReason;");
+			"Ljava/security/cert/CertPathValidatorException$BasicReason;"
+		);
 	}
 	QAndroidJniObject CertPathValidatorException_BasicReason::NOT_YET_VALID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"NOT_YET_VALID",
-			"Ljava/security/cert/CertPathValidatorException$BasicReason;");
+			"Ljava/security/cert/CertPathValidatorException$BasicReason;"
+		);
 	}
 	QAndroidJniObject CertPathValidatorException_BasicReason::REVOKED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"REVOKED",
-			"Ljava/security/cert/CertPathValidatorException$BasicReason;");
+			"Ljava/security/cert/CertPathValidatorException$BasicReason;"
+		);
 	}
 	QAndroidJniObject CertPathValidatorException_BasicReason::UNDETERMINED_REVOCATION_STATUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"UNDETERMINED_REVOCATION_STATUS",
-			"Ljava/security/cert/CertPathValidatorException$BasicReason;");
+			"Ljava/security/cert/CertPathValidatorException$BasicReason;"
+		);
 	}
 	QAndroidJniObject CertPathValidatorException_BasicReason::INVALID_SIGNATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"INVALID_SIGNATURE",
-			"Ljava/security/cert/CertPathValidatorException$BasicReason;");
+			"Ljava/security/cert/CertPathValidatorException$BasicReason;"
+		);
 	}
 	QAndroidJniObject CertPathValidatorException_BasicReason::ALGORITHM_CONSTRAINED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"ALGORITHM_CONSTRAINED",
-			"Ljava/security/cert/CertPathValidatorException$BasicReason;");
+			"Ljava/security/cert/CertPathValidatorException$BasicReason;"
+		);
 	}
 	
 	// Constructors
@@ -93,12 +100,13 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject CertPathValidatorException_BasicReason::values()
+	jarray CertPathValidatorException_BasicReason::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"values",
-			"()[Ljava/security/cert/CertPathValidatorException$BasicReason;");
+			"()[Ljava/security/cert/CertPathValidatorException$BasicReason;"
+		).object<jarray>();
 	}
 	QAndroidJniObject CertPathValidatorException_BasicReason::valueOf(jstring arg0)
 	{
@@ -106,7 +114,8 @@ namespace __jni_impl::java::security::cert
 			"java.security.cert.CertPathValidatorException$BasicReason",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/cert/CertPathValidatorException$BasicReason;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

@@ -33,23 +33,23 @@ namespace __jni_impl::javax::xml::validation
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getProperty(jstring arg0);
-		static QAndroidJniObject newInstance(jstring arg0);
+		jobject getProperty(jstring arg0);
 		static QAndroidJniObject newInstance(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
+		static QAndroidJniObject newInstance(jstring arg0);
 		void setProperty(jstring arg0, jobject arg1);
 		void setFeature(jstring arg0, jboolean arg1);
 		jboolean getFeature(jstring arg0);
-		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getErrorHandler();
 		static QAndroidJniObject newDefaultInstance();
 		jboolean isSchemaLanguageSupported(jstring arg0);
+		QAndroidJniObject newSchema(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject newSchema(__jni_impl::java::io::File arg0);
 		QAndroidJniObject newSchema(__jni_impl::java::net::URL arg0);
 		QAndroidJniObject newSchema(jarray arg0);
 		QAndroidJniObject newSchema();
-		QAndroidJniObject newSchema(__jni_impl::__JniBaseClass arg0);
 		void setResourceResolver(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getResourceResolver();
+		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getErrorHandler();
 	};
 } // namespace __jni_impl::javax::xml::validation
 
@@ -71,20 +71,13 @@ namespace __jni_impl::javax::xml::validation
 	}
 	
 	// Methods
-	QAndroidJniObject SchemaFactory::getProperty(jstring arg0)
+	jobject SchemaFactory::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
-	}
-	QAndroidJniObject SchemaFactory::newInstance(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.xml.validation.SchemaFactory",
-			"newInstance",
-			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject SchemaFactory::newInstance(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2)
 	{
@@ -94,7 +87,17 @@ namespace __jni_impl::javax::xml::validation
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/validation/SchemaFactory;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SchemaFactory::newInstance(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.xml.validation.SchemaFactory",
+			"newInstance",
+			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
+			arg0
+		);
 	}
 	void SchemaFactory::setProperty(jstring arg0, jobject arg1)
 	{
@@ -102,7 +105,8 @@ namespace __jni_impl::javax::xml::validation
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SchemaFactory::setFeature(jstring arg0, jboolean arg1)
 	{
@@ -110,88 +114,101 @@ namespace __jni_impl::javax::xml::validation
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean SchemaFactory::getFeature(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	void SchemaFactory::setErrorHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setErrorHandler",
-			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SchemaFactory::getErrorHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorHandler",
-			"()Lorg/xml/sax/ErrorHandler;");
+			arg0
+		);
 	}
 	QAndroidJniObject SchemaFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.validation.SchemaFactory",
 			"newDefaultInstance",
-			"()Ljavax/xml/validation/SchemaFactory;");
+			"()Ljavax/xml/validation/SchemaFactory;"
+		);
 	}
 	jboolean SchemaFactory::isSchemaLanguageSupported(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSchemaLanguageSupported",
 			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	QAndroidJniObject SchemaFactory::newSchema(__jni_impl::java::io::File arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newSchema",
-			"(Ljava/io/File;)Ljavax/xml/validation/Schema;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SchemaFactory::newSchema(__jni_impl::java::net::URL arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newSchema",
-			"(Ljava/net/URL;)Ljavax/xml/validation/Schema;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SchemaFactory::newSchema(jarray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newSchema",
-			"([Ljavax/xml/transform/Source;)Ljavax/xml/validation/Schema;",
-			arg0);
-	}
-	QAndroidJniObject SchemaFactory::newSchema()
-	{
-		return __thiz.callObjectMethod(
-			"newSchema",
-			"()Ljavax/xml/validation/Schema;");
+			arg0
+		);
 	}
 	QAndroidJniObject SchemaFactory::newSchema(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newSchema",
 			"(Ljavax/xml/transform/Source;)Ljavax/xml/validation/Schema;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SchemaFactory::newSchema(__jni_impl::java::io::File arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newSchema",
+			"(Ljava/io/File;)Ljavax/xml/validation/Schema;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SchemaFactory::newSchema(__jni_impl::java::net::URL arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newSchema",
+			"(Ljava/net/URL;)Ljavax/xml/validation/Schema;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SchemaFactory::newSchema(jarray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newSchema",
+			"([Ljavax/xml/transform/Source;)Ljavax/xml/validation/Schema;",
+			arg0
+		);
+	}
+	QAndroidJniObject SchemaFactory::newSchema()
+	{
+		return __thiz.callObjectMethod(
+			"newSchema",
+			"()Ljavax/xml/validation/Schema;"
+		);
 	}
 	void SchemaFactory::setResourceResolver(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResourceResolver",
 			"(Lorg/w3c/dom/ls/LSResourceResolver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SchemaFactory::getResourceResolver()
 	{
 		return __thiz.callObjectMethod(
 			"getResourceResolver",
-			"()Lorg/w3c/dom/ls/LSResourceResolver;");
+			"()Lorg/w3c/dom/ls/LSResourceResolver;"
+		);
+	}
+	void SchemaFactory::setErrorHandler(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setErrorHandler",
+			"(Lorg/xml/sax/ErrorHandler;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SchemaFactory::getErrorHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getErrorHandler",
+			"()Lorg/xml/sax/ErrorHandler;"
+		);
 	}
 } // namespace __jni_impl::javax::xml::validation
 

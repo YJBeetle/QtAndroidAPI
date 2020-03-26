@@ -46,7 +46,8 @@ namespace __jni_impl::android::webkit
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebStorage",
 			"getInstance",
-			"()Landroid/webkit/WebStorage;");
+			"()Landroid/webkit/WebStorage;"
+		);
 	}
 	void WebStorage::getUsageForOrigin(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -54,14 +55,16 @@ namespace __jni_impl::android::webkit
 			"getUsageForOrigin",
 			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebStorage::getOrigins(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"getOrigins",
 			"(Landroid/webkit/ValueCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WebStorage::getQuotaForOrigin(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -69,7 +72,8 @@ namespace __jni_impl::android::webkit
 			"getQuotaForOrigin",
 			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebStorage::setQuotaForOrigin(jstring arg0, jlong arg1)
 	{
@@ -77,20 +81,23 @@ namespace __jni_impl::android::webkit
 			"setQuotaForOrigin",
 			"(Ljava/lang/String;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void WebStorage::deleteOrigin(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"deleteOrigin",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebStorage::deleteAllData()
 	{
 		__thiz.callMethod<void>(
 			"deleteAllData",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

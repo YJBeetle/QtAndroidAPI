@@ -27,14 +27,14 @@ namespace __jni_impl::android::view::textservice
 		void __constructor(jint arg0, jarray arg1);
 		
 		// Methods
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getSuggestionsCount();
 		jint getSequence();
 		jint getCookie();
 		void setCookieAndSequence(jint arg0, jint arg1);
 		jint getSuggestionsAttributes();
-		QAndroidJniObject getSuggestionAt(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getSuggestionAt(jint arg0);
 	};
 } // namespace __jni_impl::android::view::textservice
 
@@ -48,25 +48,29 @@ namespace __jni_impl::android::view::textservice
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textservice.SuggestionsInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SuggestionsInfo::RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textservice.SuggestionsInfo",
-			"RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS");
+			"RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS"
+		);
 	}
 	jint SuggestionsInfo::RESULT_ATTR_IN_THE_DICTIONARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textservice.SuggestionsInfo",
-			"RESULT_ATTR_IN_THE_DICTIONARY");
+			"RESULT_ATTR_IN_THE_DICTIONARY"
+		);
 	}
 	jint SuggestionsInfo::RESULT_ATTR_LOOKS_LIKE_TYPO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textservice.SuggestionsInfo",
-			"RESULT_ATTR_LOOKS_LIKE_TYPO");
+			"RESULT_ATTR_LOOKS_LIKE_TYPO"
+		);
 	}
 	
 	// Constructors
@@ -97,50 +101,12 @@ namespace __jni_impl::android::view::textservice
 	}
 	
 	// Methods
-	jint SuggestionsInfo::getSuggestionsCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getSuggestionsCount",
-			"()I");
-	}
-	jint SuggestionsInfo::getSequence()
-	{
-		return __thiz.callMethod<jint>(
-			"getSequence",
-			"()I");
-	}
-	jint SuggestionsInfo::getCookie()
-	{
-		return __thiz.callMethod<jint>(
-			"getCookie",
-			"()I");
-	}
-	void SuggestionsInfo::setCookieAndSequence(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setCookieAndSequence",
-			"(II)V",
-			arg0,
-			arg1);
-	}
-	jint SuggestionsInfo::getSuggestionsAttributes()
-	{
-		return __thiz.callMethod<jint>(
-			"getSuggestionsAttributes",
-			"()I");
-	}
-	QAndroidJniObject SuggestionsInfo::getSuggestionAt(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSuggestionAt",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
 	jint SuggestionsInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SuggestionsInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -148,7 +114,53 @@ namespace __jni_impl::android::view::textservice
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint SuggestionsInfo::getSuggestionsCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getSuggestionsCount",
+			"()I"
+		);
+	}
+	jint SuggestionsInfo::getSequence()
+	{
+		return __thiz.callMethod<jint>(
+			"getSequence",
+			"()I"
+		);
+	}
+	jint SuggestionsInfo::getCookie()
+	{
+		return __thiz.callMethod<jint>(
+			"getCookie",
+			"()I"
+		);
+	}
+	void SuggestionsInfo::setCookieAndSequence(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setCookieAndSequence",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	jint SuggestionsInfo::getSuggestionsAttributes()
+	{
+		return __thiz.callMethod<jint>(
+			"getSuggestionsAttributes",
+			"()I"
+		);
+	}
+	jstring SuggestionsInfo::getSuggestionAt(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSuggestionAt",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::textservice
 

@@ -55,7 +55,8 @@ namespace __jni_impl::android::util
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint Base64InputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -64,45 +65,52 @@ namespace __jni_impl::android::util
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Base64InputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void Base64InputStream::mark(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"mark",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong Base64InputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint Base64InputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Base64InputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Base64InputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::util
 

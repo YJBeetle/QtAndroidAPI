@@ -45,13 +45,15 @@ namespace __jni_impl::java::net
 	{
 		__thiz.callMethod<void>(
 			"abort",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject CacheRequest::getBody()
 	{
 		return __thiz.callObjectMethod(
 			"getBody",
-			"()Ljava/io/OutputStream;");
+			"()Ljava/io/OutputStream;"
+		);
 	}
 } // namespace __jni_impl::java::net
 

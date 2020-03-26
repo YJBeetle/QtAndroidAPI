@@ -49,13 +49,15 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint PorterDuffColorFilter::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

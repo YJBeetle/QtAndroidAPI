@@ -14,6 +14,10 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::view
 {
+	class View;
+}
+namespace __jni_impl::android::view
+{
 	class ViewGroup_LayoutParams;
 }
 namespace __jni_impl::android::widget
@@ -23,10 +27,6 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::widget
 {
 	class TableRow_LayoutParams;
-}
-namespace __jni_impl::android::view
-{
-	class View;
 }
 
 namespace __jni_impl::android::widget
@@ -41,19 +41,19 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getAccessibilityClassName();
-		void setOnHierarchyChangeListener(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getVirtualChildAt(jint arg0);
 		jint getVirtualChildCount();
+		jstring getAccessibilityClassName();
+		void setOnHierarchyChangeListener(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
+#include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "LinearLayout_LayoutParams.hpp"
 #include "TableRow_LayoutParams.hpp"
-#include "../view/View.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -77,38 +77,43 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject TableRow::getAccessibilityClassName()
+	QAndroidJniObject TableRow::getVirtualChildAt(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getVirtualChildAt",
+			"(I)Landroid/view/View;",
+			arg0
+		);
+	}
+	jint TableRow::getVirtualChildCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getVirtualChildCount",
+			"()I"
+		);
+	}
+	jstring TableRow::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void TableRow::setOnHierarchyChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnHierarchyChangeListener",
 			"(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TableRow::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/TableRow$LayoutParams;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject TableRow::getVirtualChildAt(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getVirtualChildAt",
-			"(I)Landroid/view/View;",
-			arg0);
-	}
-	jint TableRow::getVirtualChildCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getVirtualChildCount",
-			"()I");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::widget
 

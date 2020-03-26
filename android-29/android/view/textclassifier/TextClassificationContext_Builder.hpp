@@ -47,14 +47,16 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/textclassifier/TextClassificationContext;");
+			"()Landroid/view/textclassifier/TextClassificationContext;"
+		);
 	}
 	QAndroidJniObject TextClassificationContext_Builder::setWidgetVersion(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setWidgetVersion",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassificationContext$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

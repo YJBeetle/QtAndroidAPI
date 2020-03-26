@@ -30,9 +30,9 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject getView();
 		void onProvideShadowMetrics(__jni_impl::android::graphics::Point arg0, __jni_impl::android::graphics::Point arg1);
 		void onDrawShadow(__jni_impl::android::graphics::Canvas arg0);
-		QAndroidJniObject getView();
 	};
 } // namespace __jni_impl::android::view
 
@@ -60,26 +60,29 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
+	QAndroidJniObject View_DragShadowBuilder::getView()
+	{
+		return __thiz.callObjectMethod(
+			"getView",
+			"()Landroid/view/View;"
+		);
+	}
 	void View_DragShadowBuilder::onProvideShadowMetrics(__jni_impl::android::graphics::Point arg0, __jni_impl::android::graphics::Point arg1)
 	{
 		__thiz.callMethod<void>(
 			"onProvideShadowMetrics",
 			"(Landroid/graphics/Point;Landroid/graphics/Point;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void View_DragShadowBuilder::onDrawShadow(__jni_impl::android::graphics::Canvas arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDrawShadow",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject View_DragShadowBuilder::getView()
-	{
-		return __thiz.callObjectMethod(
-			"getView",
-			"()Landroid/view/View;");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

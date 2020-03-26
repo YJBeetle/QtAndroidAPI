@@ -17,7 +17,7 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject keyFor(jstring arg0);
+		static jstring keyFor(jstring arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -35,13 +35,14 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject MediaStore_Audio::keyFor(jstring arg0)
+	jstring MediaStore_Audio::keyFor(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.MediaStore$Audio",
 			"keyFor",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

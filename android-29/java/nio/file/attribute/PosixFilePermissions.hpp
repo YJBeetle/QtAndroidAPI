@@ -21,9 +21,9 @@ namespace __jni_impl::java::nio::file::attribute
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject toString(__jni_impl::__JniBaseClass arg0);
-		static QAndroidJniObject asFileAttribute(__jni_impl::__JniBaseClass arg0);
+		static jstring toString(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject fromString(jstring arg0);
+		static QAndroidJniObject asFileAttribute(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::java::nio::file::attribute
 
@@ -42,21 +42,14 @@ namespace __jni_impl::java::nio::file::attribute
 	}
 	
 	// Methods
-	QAndroidJniObject PosixFilePermissions::toString(__jni_impl::__JniBaseClass arg0)
+	jstring PosixFilePermissions::toString(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.PosixFilePermissions",
 			"toString",
 			"(Ljava/util/Set;)Ljava/lang/String;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject PosixFilePermissions::asFileAttribute(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.attribute.PosixFilePermissions",
-			"asFileAttribute",
-			"(Ljava/util/Set;)Ljava/nio/file/attribute/FileAttribute;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject PosixFilePermissions::fromString(jstring arg0)
 	{
@@ -64,7 +57,17 @@ namespace __jni_impl::java::nio::file::attribute
 			"java.nio.file.attribute.PosixFilePermissions",
 			"fromString",
 			"(Ljava/lang/String;)Ljava/util/Set;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject PosixFilePermissions::asFileAttribute(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.attribute.PosixFilePermissions",
+			"asFileAttribute",
+			"(Ljava/util/Set;)Ljava/nio/file/attribute/FileAttribute;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::nio::file::attribute
 

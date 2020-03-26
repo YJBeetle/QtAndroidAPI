@@ -33,15 +33,15 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getProperty(jstring arg0);
+		static jstring getProperty(jstring arg0);
 		static void setProperty(jstring arg0, jstring arg1);
 		static jint addProvider(__jni_impl::java::security::Provider arg0);
 		static QAndroidJniObject getProvider(jstring arg0);
 		static jint insertProviderAt(__jni_impl::java::security::Provider arg0, jint arg1);
-		static QAndroidJniObject getProviders();
-		static QAndroidJniObject getProviders(__jni_impl::__JniBaseClass arg0);
-		static QAndroidJniObject getProviders(jstring arg0);
-		static QAndroidJniObject getAlgorithmProperty(jstring arg0, jstring arg1);
+		static jarray getProviders();
+		static jarray getProviders(__jni_impl::__JniBaseClass arg0);
+		static jarray getProviders(jstring arg0);
+		static jstring getAlgorithmProperty(jstring arg0, jstring arg1);
 		static void removeProvider(jstring arg0);
 		static QAndroidJniObject getAlgorithms(jstring arg0);
 	};
@@ -65,13 +65,14 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject Security::getProperty(jstring arg0)
+	jstring Security::getProperty(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Security",
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void Security::setProperty(jstring arg0, jstring arg1)
 	{
@@ -80,7 +81,8 @@ namespace __jni_impl::java::security
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Security::addProvider(__jni_impl::java::security::Provider arg0)
 	{
@@ -88,7 +90,8 @@ namespace __jni_impl::java::security
 			"java.security.Security",
 			"addProvider",
 			"(Ljava/security/Provider;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Security::getProvider(jstring arg0)
 	{
@@ -96,7 +99,8 @@ namespace __jni_impl::java::security
 			"java.security.Security",
 			"getProvider",
 			"(Ljava/lang/String;)Ljava/security/Provider;",
-			arg0);
+			arg0
+		);
 	}
 	jint Security::insertProviderAt(__jni_impl::java::security::Provider arg0, jint arg1)
 	{
@@ -105,39 +109,44 @@ namespace __jni_impl::java::security
 			"insertProviderAt",
 			"(Ljava/security/Provider;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Security::getProviders()
+	jarray Security::getProviders()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Security",
 			"getProviders",
-			"()[Ljava/security/Provider;");
+			"()[Ljava/security/Provider;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Security::getProviders(__jni_impl::__JniBaseClass arg0)
+	jarray Security::getProviders(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Security",
 			"getProviders",
 			"(Ljava/util/Map;)[Ljava/security/Provider;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jarray>();
 	}
-	QAndroidJniObject Security::getProviders(jstring arg0)
+	jarray Security::getProviders(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Security",
 			"getProviders",
 			"(Ljava/lang/String;)[Ljava/security/Provider;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
-	QAndroidJniObject Security::getAlgorithmProperty(jstring arg0, jstring arg1)
+	jstring Security::getAlgorithmProperty(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.Security",
 			"getAlgorithmProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	void Security::removeProvider(jstring arg0)
 	{
@@ -145,7 +154,8 @@ namespace __jni_impl::java::security
 			"java.security.Security",
 			"removeProvider",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Security::getAlgorithms(jstring arg0)
 	{
@@ -153,7 +163,8 @@ namespace __jni_impl::java::security
 			"java.security.Security",
 			"getAlgorithms",
 			"(Ljava/lang/String;)Ljava/util/Set;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::security
 

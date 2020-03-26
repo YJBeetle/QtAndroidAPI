@@ -21,10 +21,10 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		jboolean empty();
-		QAndroidJniObject peek();
+		jobject peek();
 		jint search(jobject arg0);
-		QAndroidJniObject push(jobject arg0);
-		QAndroidJniObject pop();
+		jobject push(jobject arg0);
+		jobject pop();
 	};
 } // namespace __jni_impl::java::util
 
@@ -46,33 +46,38 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callMethod<jboolean>(
 			"empty",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Stack::peek()
+	jobject Stack::peek()
 	{
 		return __thiz.callObjectMethod(
 			"peek",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint Stack::search(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"search",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Stack::push(jobject arg0)
+	jobject Stack::push(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"push",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject Stack::pop()
+	jobject Stack::pop()
 	{
 		return __thiz.callObjectMethod(
 			"pop",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util
 

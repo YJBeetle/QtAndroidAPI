@@ -40,7 +40,8 @@ namespace __jni_impl::java::security
 	{
 		return __thiz.callObjectMethod(
 			"getCallbackHandler",
-			"()Ljavax/security/auth/callback/CallbackHandler;");
+			"()Ljavax/security/auth/callback/CallbackHandler;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

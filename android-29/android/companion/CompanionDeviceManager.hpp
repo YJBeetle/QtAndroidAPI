@@ -28,7 +28,7 @@ namespace __jni_impl::android::companion
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EXTRA_DEVICE();
+		static jstring EXTRA_DEVICE();
 		
 		// Constructors
 		void __constructor();
@@ -50,12 +50,13 @@ namespace __jni_impl::android::companion
 namespace __jni_impl::android::companion
 {
 	// Fields
-	QAndroidJniObject CompanionDeviceManager::EXTRA_DEVICE()
+	jstring CompanionDeviceManager::EXTRA_DEVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.companion.CompanionDeviceManager",
 			"EXTRA_DEVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -71,28 +72,32 @@ namespace __jni_impl::android::companion
 	{
 		return __thiz.callObjectMethod(
 			"getAssociations",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	void CompanionDeviceManager::disassociate(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"disassociate",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void CompanionDeviceManager::requestNotificationAccess(__jni_impl::android::content::ComponentName arg0)
 	{
 		__thiz.callMethod<void>(
 			"requestNotificationAccess",
 			"(Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean CompanionDeviceManager::hasNotificationAccess(__jni_impl::android::content::ComponentName arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNotificationAccess",
 			"(Landroid/content/ComponentName;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CompanionDeviceManager::associate(__jni_impl::android::companion::AssociationRequest arg0, __jni_impl::android::companion::CompanionDeviceManager_Callback arg1, __jni_impl::android::os::Handler arg2)
 	{
@@ -101,7 +106,8 @@ namespace __jni_impl::android::companion
 			"(Landroid/companion/AssociationRequest;Landroid/companion/CompanionDeviceManager$Callback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::companion
 

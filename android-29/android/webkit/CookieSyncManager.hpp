@@ -25,9 +25,9 @@ namespace __jni_impl::android::webkit
 		static QAndroidJniObject getInstance();
 		void sync();
 		static QAndroidJniObject createInstance(__jni_impl::android::content::Context arg0);
-		void startSync();
 		void resetSync();
 		void stopSync();
+		void startSync();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -50,20 +50,23 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz.callMethod<void>(
 			"run",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject CookieSyncManager::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.CookieSyncManager",
 			"getInstance",
-			"()Landroid/webkit/CookieSyncManager;");
+			"()Landroid/webkit/CookieSyncManager;"
+		);
 	}
 	void CookieSyncManager::sync()
 	{
 		__thiz.callMethod<void>(
 			"sync",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject CookieSyncManager::createInstance(__jni_impl::android::content::Context arg0)
 	{
@@ -71,25 +74,29 @@ namespace __jni_impl::android::webkit
 			"android.webkit.CookieSyncManager",
 			"createInstance",
 			"(Landroid/content/Context;)Landroid/webkit/CookieSyncManager;",
-			arg0.__jniObject().object());
-	}
-	void CookieSyncManager::startSync()
-	{
-		__thiz.callMethod<void>(
-			"startSync",
-			"()V");
+			arg0.__jniObject().object()
+		);
 	}
 	void CookieSyncManager::resetSync()
 	{
 		__thiz.callMethod<void>(
 			"resetSync",
-			"()V");
+			"()V"
+		);
 	}
 	void CookieSyncManager::stopSync()
 	{
 		__thiz.callMethod<void>(
 			"stopSync",
-			"()V");
+			"()V"
+		);
+	}
+	void CookieSyncManager::startSync()
+	{
+		__thiz.callMethod<void>(
+			"startSync",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

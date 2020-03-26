@@ -26,10 +26,10 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		jint getSpanTypeId();
+		QAndroidJniObject getAlignment();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getAlignment();
+		jint getSpanTypeId();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -57,17 +57,19 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	jint AlignmentSpan_Standard::getSpanTypeId()
+	QAndroidJniObject AlignmentSpan_Standard::getAlignment()
 	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getAlignment",
+			"()Landroid/text/Layout$Alignment;"
+		);
 	}
 	jint AlignmentSpan_Standard::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void AlignmentSpan_Standard::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -75,13 +77,15 @@ namespace __jni_impl::android::text::style
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject AlignmentSpan_Standard::getAlignment()
+	jint AlignmentSpan_Standard::getSpanTypeId()
 	{
-		return __thiz.callObjectMethod(
-			"getAlignment",
-			"()Landroid/text/Layout$Alignment;");
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

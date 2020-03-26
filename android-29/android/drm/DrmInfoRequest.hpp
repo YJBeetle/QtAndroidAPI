@@ -12,8 +12,8 @@ namespace __jni_impl::android::drm
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACCOUNT_ID();
-		static QAndroidJniObject SUBSCRIPTION_ID();
+		static jstring ACCOUNT_ID();
+		static jstring SUBSCRIPTION_ID();
 		static jint TYPE_REGISTRATION_INFO();
 		static jint TYPE_RIGHTS_ACQUISITION_INFO();
 		static jint TYPE_RIGHTS_ACQUISITION_PROGRESS_INFO();
@@ -23,11 +23,11 @@ namespace __jni_impl::android::drm
 		void __constructor(jint arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject get(jstring arg0);
+		jobject get(jstring arg0);
 		void put(jstring arg0, jobject arg1);
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
-		QAndroidJniObject getMimeType();
+		jstring getMimeType();
 		jint getInfoType();
 	};
 } // namespace __jni_impl::android::drm
@@ -36,43 +36,49 @@ namespace __jni_impl::android::drm
 namespace __jni_impl::android::drm
 {
 	// Fields
-	QAndroidJniObject DrmInfoRequest::ACCOUNT_ID()
+	jstring DrmInfoRequest::ACCOUNT_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.drm.DrmInfoRequest",
 			"ACCOUNT_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DrmInfoRequest::SUBSCRIPTION_ID()
+	jstring DrmInfoRequest::SUBSCRIPTION_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.drm.DrmInfoRequest",
 			"SUBSCRIPTION_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DrmInfoRequest::TYPE_REGISTRATION_INFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmInfoRequest",
-			"TYPE_REGISTRATION_INFO");
+			"TYPE_REGISTRATION_INFO"
+		);
 	}
 	jint DrmInfoRequest::TYPE_RIGHTS_ACQUISITION_INFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmInfoRequest",
-			"TYPE_RIGHTS_ACQUISITION_INFO");
+			"TYPE_RIGHTS_ACQUISITION_INFO"
+		);
 	}
 	jint DrmInfoRequest::TYPE_RIGHTS_ACQUISITION_PROGRESS_INFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmInfoRequest",
-			"TYPE_RIGHTS_ACQUISITION_PROGRESS_INFO");
+			"TYPE_RIGHTS_ACQUISITION_PROGRESS_INFO"
+		);
 	}
 	jint DrmInfoRequest::TYPE_UNREGISTRATION_INFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmInfoRequest",
-			"TYPE_UNREGISTRATION_INFO");
+			"TYPE_UNREGISTRATION_INFO"
+		);
 	}
 	
 	// Constructors
@@ -86,12 +92,13 @@ namespace __jni_impl::android::drm
 	}
 	
 	// Methods
-	QAndroidJniObject DrmInfoRequest::get(jstring arg0)
+	jobject DrmInfoRequest::get(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void DrmInfoRequest::put(jstring arg0, jobject arg1)
 	{
@@ -99,31 +106,36 @@ namespace __jni_impl::android::drm
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DrmInfoRequest::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	QAndroidJniObject DrmInfoRequest::keyIterator()
 	{
 		return __thiz.callObjectMethod(
 			"keyIterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
-	QAndroidJniObject DrmInfoRequest::getMimeType()
+	jstring DrmInfoRequest::getMimeType()
 	{
 		return __thiz.callObjectMethod(
 			"getMimeType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DrmInfoRequest::getInfoType()
 	{
 		return __thiz.callMethod<jint>(
 			"getInfoType",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::drm
 

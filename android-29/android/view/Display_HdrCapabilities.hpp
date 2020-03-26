@@ -29,7 +29,7 @@ namespace __jni_impl::android::view
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getSupportedHdrTypes();
+		jintArray getSupportedHdrTypes();
 		jfloat getDesiredMaxLuminance();
 		jfloat getDesiredMaxAverageLuminance();
 		jfloat getDesiredMinLuminance();
@@ -48,37 +48,43 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.Display$HdrCapabilities",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_DOLBY_VISION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
-			"HDR_TYPE_DOLBY_VISION");
+			"HDR_TYPE_DOLBY_VISION"
+		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_HDR10()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
-			"HDR_TYPE_HDR10");
+			"HDR_TYPE_HDR10"
+		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_HDR10_PLUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
-			"HDR_TYPE_HDR10_PLUS");
+			"HDR_TYPE_HDR10_PLUS"
+		);
 	}
 	jint Display_HdrCapabilities::HDR_TYPE_HLG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Display$HdrCapabilities",
-			"HDR_TYPE_HLG");
+			"HDR_TYPE_HLG"
+		);
 	}
 	jfloat Display_HdrCapabilities::INVALID_LUMINANCE()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"android.view.Display$HdrCapabilities",
-			"INVALID_LUMINANCE");
+			"INVALID_LUMINANCE"
+		);
 	}
 	
 	// Constructors
@@ -95,43 +101,50 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Display_HdrCapabilities::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Display_HdrCapabilities::getSupportedHdrTypes()
+	jintArray Display_HdrCapabilities::getSupportedHdrTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedHdrTypes",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
 	jfloat Display_HdrCapabilities::getDesiredMaxLuminance()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getDesiredMaxLuminance",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat Display_HdrCapabilities::getDesiredMaxAverageLuminance()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getDesiredMaxAverageLuminance",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat Display_HdrCapabilities::getDesiredMinLuminance()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getDesiredMinLuminance",
-			"()F");
+			"()F"
+		);
 	}
 	jint Display_HdrCapabilities::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Display_HdrCapabilities::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -139,7 +152,8 @@ namespace __jni_impl::android::view
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view
 

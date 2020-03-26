@@ -20,7 +20,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -34,14 +34,16 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Canvas$EdgeType",
 			"BW",
-			"Landroid/graphics/Canvas$EdgeType;");
+			"Landroid/graphics/Canvas$EdgeType;"
+		);
 	}
 	QAndroidJniObject Canvas_EdgeType::AA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Canvas$EdgeType",
 			"AA",
-			"Landroid/graphics/Canvas$EdgeType;");
+			"Landroid/graphics/Canvas$EdgeType;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Canvas_EdgeType::values()
+	jarray Canvas_EdgeType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Canvas$EdgeType",
 			"values",
-			"()[Landroid/graphics/Canvas$EdgeType;");
+			"()[Landroid/graphics/Canvas$EdgeType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Canvas_EdgeType::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Canvas$EdgeType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Canvas$EdgeType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

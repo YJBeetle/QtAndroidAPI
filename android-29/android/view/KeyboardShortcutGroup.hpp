@@ -27,11 +27,11 @@ namespace __jni_impl::android::view
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getItems();
-		QAndroidJniObject getLabel();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void addItem(__jni_impl::android::view::KeyboardShortcutInfo arg0);
+		QAndroidJniObject getItems();
+		jstring getLabel();
 	};
 } // namespace __jni_impl::android::view
 
@@ -46,7 +46,8 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.KeyboardShortcutGroup",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -67,23 +68,12 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	QAndroidJniObject KeyboardShortcutGroup::getItems()
-	{
-		return __thiz.callObjectMethod(
-			"getItems",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject KeyboardShortcutGroup::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;");
-	}
 	jint KeyboardShortcutGroup::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void KeyboardShortcutGroup::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -91,14 +81,30 @@ namespace __jni_impl::android::view
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void KeyboardShortcutGroup::addItem(__jni_impl::android::view::KeyboardShortcutInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"addItem",
 			"(Landroid/view/KeyboardShortcutInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject KeyboardShortcutGroup::getItems()
+	{
+		return __thiz.callObjectMethod(
+			"getItems",
+			"()Ljava/util/List;"
+		);
+	}
+	jstring KeyboardShortcutGroup::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view
 

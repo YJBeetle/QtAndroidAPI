@@ -49,7 +49,7 @@ namespace __jni_impl::android::icu::util
 		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
 		
 		// Methods
-		QAndroidJniObject getType();
+		jstring getType();
 		jint getActualMaximum(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::util
@@ -66,31 +66,36 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
-			"CURRENT_ERA");
+			"CURRENT_ERA"
+		);
 	}
 	jint JapaneseCalendar::HEISEI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
-			"HEISEI");
+			"HEISEI"
+		);
 	}
 	jint JapaneseCalendar::MEIJI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
-			"MEIJI");
+			"MEIJI"
+		);
 	}
 	jint JapaneseCalendar::SHOWA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
-			"SHOWA");
+			"SHOWA"
+		);
 	}
 	jint JapaneseCalendar::TAISHO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.JapaneseCalendar",
-			"TAISHO");
+			"TAISHO"
+		);
 	}
 	
 	// Constructors
@@ -177,18 +182,20 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject JapaneseCalendar::getType()
+	jstring JapaneseCalendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint JapaneseCalendar::getActualMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getActualMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

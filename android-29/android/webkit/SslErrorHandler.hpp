@@ -41,13 +41,15 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
 	}
 	void SslErrorHandler::proceed()
 	{
 		__thiz.callMethod<void>(
 			"proceed",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

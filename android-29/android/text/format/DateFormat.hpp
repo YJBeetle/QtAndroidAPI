@@ -37,15 +37,15 @@ namespace __jni_impl::android::text::format
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject format(jstring arg0, __jni_impl::java::util::Calendar arg1);
-		static QAndroidJniObject format(jstring arg0, jlong arg1);
-		static QAndroidJniObject format(jstring arg0, __jni_impl::java::util::Date arg1);
-		static QAndroidJniObject getBestDateTimePattern(__jni_impl::java::util::Locale arg0, jstring arg1);
+		static jstring format(jstring arg0, __jni_impl::java::util::Calendar arg1);
+		static jstring format(jstring arg0, jlong arg1);
+		static jstring format(jstring arg0, __jni_impl::java::util::Date arg1);
+		static jstring getBestDateTimePattern(__jni_impl::java::util::Locale arg0, jstring arg1);
 		static QAndroidJniObject getTimeFormat(__jni_impl::android::content::Context arg0);
 		static QAndroidJniObject getDateFormat(__jni_impl::android::content::Context arg0);
 		static QAndroidJniObject getLongDateFormat(__jni_impl::android::content::Context arg0);
 		static QAndroidJniObject getMediumDateFormat(__jni_impl::android::content::Context arg0);
-		static QAndroidJniObject getDateFormatOrder(__jni_impl::android::content::Context arg0);
+		static jcharArray getDateFormatOrder(__jni_impl::android::content::Context arg0);
 		static jboolean is24HourFormat(__jni_impl::android::content::Context arg0);
 	};
 } // namespace __jni_impl::android::text::format
@@ -69,41 +69,45 @@ namespace __jni_impl::android::text::format
 	}
 	
 	// Methods
-	QAndroidJniObject DateFormat::format(jstring arg0, __jni_impl::java::util::Calendar arg1)
+	jstring DateFormat::format(jstring arg0, __jni_impl::java::util::Calendar arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"format",
 			"(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::format(jstring arg0, jlong arg1)
+	jstring DateFormat::format(jstring arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"format",
 			"(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::format(jstring arg0, __jni_impl::java::util::Date arg1)
+	jstring DateFormat::format(jstring arg0, __jni_impl::java::util::Date arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"format",
 			"(Ljava/lang/CharSequence;Ljava/util/Date;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::getBestDateTimePattern(__jni_impl::java::util::Locale arg0, jstring arg1)
+	jstring DateFormat::getBestDateTimePattern(__jni_impl::java::util::Locale arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"getBestDateTimePattern",
 			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	QAndroidJniObject DateFormat::getTimeFormat(__jni_impl::android::content::Context arg0)
 	{
@@ -111,7 +115,8 @@ namespace __jni_impl::android::text::format
 			"android.text.format.DateFormat",
 			"getTimeFormat",
 			"(Landroid/content/Context;)Ljava/text/DateFormat;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getDateFormat(__jni_impl::android::content::Context arg0)
 	{
@@ -119,7 +124,8 @@ namespace __jni_impl::android::text::format
 			"android.text.format.DateFormat",
 			"getDateFormat",
 			"(Landroid/content/Context;)Ljava/text/DateFormat;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getLongDateFormat(__jni_impl::android::content::Context arg0)
 	{
@@ -127,7 +133,8 @@ namespace __jni_impl::android::text::format
 			"android.text.format.DateFormat",
 			"getLongDateFormat",
 			"(Landroid/content/Context;)Ljava/text/DateFormat;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getMediumDateFormat(__jni_impl::android::content::Context arg0)
 	{
@@ -135,15 +142,17 @@ namespace __jni_impl::android::text::format
 			"android.text.format.DateFormat",
 			"getMediumDateFormat",
 			"(Landroid/content/Context;)Ljava/text/DateFormat;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DateFormat::getDateFormatOrder(__jni_impl::android::content::Context arg0)
+	jcharArray DateFormat::getDateFormatOrder(__jni_impl::android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.format.DateFormat",
 			"getDateFormatOrder",
 			"(Landroid/content/Context;)[C",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jcharArray>();
 	}
 	jboolean DateFormat::is24HourFormat(__jni_impl::android::content::Context arg0)
 	{
@@ -151,7 +160,8 @@ namespace __jni_impl::android::text::format
 			"android.text.format.DateFormat",
 			"is24HourFormat",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text::format
 

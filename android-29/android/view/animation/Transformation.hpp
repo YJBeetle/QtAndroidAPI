@@ -25,16 +25,16 @@ namespace __jni_impl::android::view::animation
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void clear();
 		void set(__jni_impl::android::view::animation::Transformation arg0);
-		QAndroidJniObject toShortString();
+		jstring toShortString();
 		void compose(__jni_impl::android::view::animation::Transformation arg0);
-		void setAlpha(jfloat arg0);
 		QAndroidJniObject getMatrix();
 		jfloat getAlpha();
 		jint getTransformationType();
 		void setTransformationType(jint arg0);
+		void setAlpha(jfloat arg0);
 	};
 } // namespace __jni_impl::android::view::animation
 
@@ -47,25 +47,29 @@ namespace __jni_impl::android::view::animation
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.Transformation",
-			"TYPE_ALPHA");
+			"TYPE_ALPHA"
+		);
 	}
 	jint Transformation::TYPE_BOTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.Transformation",
-			"TYPE_BOTH");
+			"TYPE_BOTH"
+		);
 	}
 	jint Transformation::TYPE_IDENTITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.Transformation",
-			"TYPE_IDENTITY");
+			"TYPE_IDENTITY"
+		);
 	}
 	jint Transformation::TYPE_MATRIX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.Transformation",
-			"TYPE_MATRIX");
+			"TYPE_MATRIX"
+		);
 	}
 	
 	// Constructors
@@ -77,69 +81,79 @@ namespace __jni_impl::android::view::animation
 	}
 	
 	// Methods
-	QAndroidJniObject Transformation::toString()
+	jstring Transformation::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Transformation::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	void Transformation::set(__jni_impl::android::view::animation::Transformation arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"(Landroid/view/animation/Transformation;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Transformation::toShortString()
+	jstring Transformation::toShortString()
 	{
 		return __thiz.callObjectMethod(
 			"toShortString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Transformation::compose(__jni_impl::android::view::animation::Transformation arg0)
 	{
 		__thiz.callMethod<void>(
 			"compose",
 			"(Landroid/view/animation/Transformation;)V",
-			arg0.__jniObject().object());
-	}
-	void Transformation::setAlpha(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlpha",
-			"(F)V",
-			arg0);
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Transformation::getMatrix()
 	{
 		return __thiz.callObjectMethod(
 			"getMatrix",
-			"()Landroid/graphics/Matrix;");
+			"()Landroid/graphics/Matrix;"
+		);
 	}
 	jfloat Transformation::getAlpha()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getAlpha",
-			"()F");
+			"()F"
+		);
 	}
 	jint Transformation::getTransformationType()
 	{
 		return __thiz.callMethod<jint>(
 			"getTransformationType",
-			"()I");
+			"()I"
+		);
 	}
 	void Transformation::setTransformationType(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTransformationType",
 			"(I)V",
-			arg0);
+			arg0
+		);
+	}
+	void Transformation::setAlpha(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(F)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::animation
 

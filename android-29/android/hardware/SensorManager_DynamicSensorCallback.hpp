@@ -46,14 +46,16 @@ namespace __jni_impl::android::hardware
 		__thiz.callMethod<void>(
 			"onDynamicSensorConnected",
 			"(Landroid/hardware/Sensor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SensorManager_DynamicSensorCallback::onDynamicSensorDisconnected(__jni_impl::android::hardware::Sensor arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDynamicSensorDisconnected",
 			"(Landroid/hardware/Sensor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::hardware
 

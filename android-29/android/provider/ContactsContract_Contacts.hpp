@@ -27,20 +27,20 @@ namespace __jni_impl::android::provider
 		static QAndroidJniObject CONTENT_FILTER_URI();
 		static QAndroidJniObject CONTENT_FREQUENT_URI();
 		static QAndroidJniObject CONTENT_GROUP_URI();
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
+		static jstring CONTENT_ITEM_TYPE();
 		static QAndroidJniObject CONTENT_LOOKUP_URI();
 		static QAndroidJniObject CONTENT_MULTI_VCARD_URI();
 		static QAndroidJniObject CONTENT_STREQUENT_FILTER_URI();
 		static QAndroidJniObject CONTENT_STREQUENT_URI();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject CONTENT_VCARD_TYPE();
+		static jstring CONTENT_VCARD_TYPE();
 		static QAndroidJniObject CONTENT_VCARD_URI();
 		static QAndroidJniObject ENTERPRISE_CONTENT_FILTER_URI();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static QAndroidJniObject QUERY_PARAMETER_VCARD_NO_PHOTO();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static jstring QUERY_PARAMETER_VCARD_NO_PHOTO();
 		
 		// Constructors
 		void __constructor();
@@ -68,119 +68,136 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::CONTENT_FREQUENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_FREQUENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::CONTENT_GROUP_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_GROUP_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_ITEM_TYPE()
+	jstring ContactsContract_Contacts::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_Contacts::CONTENT_LOOKUP_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_LOOKUP_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::CONTENT_MULTI_VCARD_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_MULTI_VCARD_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::CONTENT_STREQUENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_STREQUENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::CONTENT_STREQUENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_STREQUENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_TYPE()
+	jstring ContactsContract_Contacts::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_Contacts::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::CONTENT_VCARD_TYPE()
+	jstring ContactsContract_Contacts::CONTENT_VCARD_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_VCARD_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_Contacts::CONTENT_VCARD_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"CONTENT_VCARD_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::ENTERPRISE_CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"ENTERPRISE_CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX()
+	jstring ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"EXTRA_ADDRESS_BOOK_INDEX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	jstring ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	jstring ContactsContract_Contacts::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts::QUERY_PARAMETER_VCARD_NO_PHOTO()
+	jstring ContactsContract_Contacts::QUERY_PARAMETER_VCARD_NO_PHOTO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts",
 			"QUERY_PARAMETER_VCARD_NO_PHOTO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -199,7 +216,8 @@ namespace __jni_impl::android::provider
 			"getLookupUri",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::getLookupUri(jlong arg0, jstring arg1)
 	{
@@ -208,7 +226,8 @@ namespace __jni_impl::android::provider
 			"getLookupUri",
 			"(JLjava/lang/String;)Landroid/net/Uri;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::lookupContact(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -217,7 +236,8 @@ namespace __jni_impl::android::provider
 			"lookupContact",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ContactsContract_Contacts::markAsContacted(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
 	{
@@ -226,7 +246,8 @@ namespace __jni_impl::android::provider
 			"markAsContacted",
 			"(Landroid/content/ContentResolver;J)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean ContactsContract_Contacts::isEnterpriseContactId(jlong arg0)
 	{
@@ -234,7 +255,8 @@ namespace __jni_impl::android::provider
 			"android.provider.ContactsContract$Contacts",
 			"isEnterpriseContactId",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -243,7 +265,8 @@ namespace __jni_impl::android::provider
 			"openContactPhotoInputStream",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Ljava/io/InputStream;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jboolean arg2)
 	{
@@ -253,7 +276,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;Z)Ljava/io/InputStream;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::provider
 

@@ -30,16 +30,16 @@ namespace __jni_impl::java::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getHostAddress();
-		QAndroidJniObject getAddress();
-		QAndroidJniObject getHostName();
+		jstring getHostAddress();
+		jbyteArray getAddress();
+		jstring getHostName();
 		static QAndroidJniObject getByName(jstring arg0);
 		jboolean isLinkLocalAddress();
 		jboolean isReachable(__jni_impl::java::net::NetworkInterface arg0, jint arg1, jint arg2);
 		jboolean isReachable(jint arg0);
-		static QAndroidJniObject getAllByName(jstring arg0);
+		static jarray getAllByName(jstring arg0);
 		static QAndroidJniObject getByAddress(jbyteArray arg0);
 		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1);
 		jboolean isMulticastAddress();
@@ -51,7 +51,7 @@ namespace __jni_impl::java::net
 		jboolean isMCLinkLocal();
 		jboolean isMCSiteLocal();
 		jboolean isMCOrgLocal();
-		QAndroidJniObject getCanonicalHostName();
+		jstring getCanonicalHostName();
 		static QAndroidJniObject getLoopbackAddress();
 		static QAndroidJniObject getLocalHost();
 	};
@@ -79,37 +79,43 @@ namespace __jni_impl::java::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject InetAddress::toString()
+	jstring InetAddress::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint InetAddress::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject InetAddress::getHostAddress()
+	jstring InetAddress::getHostAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getHostAddress",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InetAddress::getAddress()
+	jbyteArray InetAddress::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject InetAddress::getHostName()
+	jstring InetAddress::getHostName()
 	{
 		return __thiz.callObjectMethod(
 			"getHostName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject InetAddress::getByName(jstring arg0)
 	{
@@ -117,13 +123,15 @@ namespace __jni_impl::java::net
 			"java.net.InetAddress",
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/InetAddress;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean InetAddress::isLinkLocalAddress()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLinkLocalAddress",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InetAddress::isReachable(__jni_impl::java::net::NetworkInterface arg0, jint arg1, jint arg2)
 	{
@@ -132,22 +140,25 @@ namespace __jni_impl::java::net
 			"(Ljava/net/NetworkInterface;II)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean InetAddress::isReachable(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReachable",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject InetAddress::getAllByName(jstring arg0)
+	jarray InetAddress::getAllByName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getAllByName",
 			"(Ljava/lang/String;)[Ljava/net/InetAddress;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
 	QAndroidJniObject InetAddress::getByAddress(jbyteArray arg0)
 	{
@@ -155,7 +166,8 @@ namespace __jni_impl::java::net
 			"java.net.InetAddress",
 			"getByAddress",
 			"([B)Ljava/net/InetAddress;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InetAddress::getByAddress(jstring arg0, jbyteArray arg1)
 	{
@@ -164,81 +176,94 @@ namespace __jni_impl::java::net
 			"getByAddress",
 			"(Ljava/lang/String;[B)Ljava/net/InetAddress;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean InetAddress::isMulticastAddress()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMulticastAddress",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InetAddress::isAnyLocalAddress()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAnyLocalAddress",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InetAddress::isLoopbackAddress()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLoopbackAddress",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InetAddress::isSiteLocalAddress()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSiteLocalAddress",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InetAddress::isMCGlobal()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMCGlobal",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InetAddress::isMCNodeLocal()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMCNodeLocal",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InetAddress::isMCLinkLocal()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMCLinkLocal",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InetAddress::isMCSiteLocal()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMCSiteLocal",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InetAddress::isMCOrgLocal()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMCOrgLocal",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject InetAddress::getCanonicalHostName()
+	jstring InetAddress::getCanonicalHostName()
 	{
 		return __thiz.callObjectMethod(
 			"getCanonicalHostName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject InetAddress::getLoopbackAddress()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getLoopbackAddress",
-			"()Ljava/net/InetAddress;");
+			"()Ljava/net/InetAddress;"
+		);
 	}
 	QAndroidJniObject InetAddress::getLocalHost()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.InetAddress",
 			"getLocalHost",
-			"()Ljava/net/InetAddress;");
+			"()Ljava/net/InetAddress;"
+		);
 	}
 } // namespace __jni_impl::java::net
 

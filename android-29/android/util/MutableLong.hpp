@@ -28,7 +28,8 @@ namespace __jni_impl::android::util
 	jlong MutableLong::value()
 	{
 		return __thiz.getField<jlong>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

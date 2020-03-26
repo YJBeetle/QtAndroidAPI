@@ -52,20 +52,23 @@ namespace __jni_impl::android::webkit
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.ServiceWorkerController",
 			"getInstance",
-			"()Landroid/webkit/ServiceWorkerController;");
+			"()Landroid/webkit/ServiceWorkerController;"
+		);
 	}
 	void ServiceWorkerController::setServiceWorkerClient(__jni_impl::android::webkit::ServiceWorkerClient arg0)
 	{
 		__thiz.callMethod<void>(
 			"setServiceWorkerClient",
 			"(Landroid/webkit/ServiceWorkerClient;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ServiceWorkerController::getServiceWorkerWebSettings()
 	{
 		return __thiz.callObjectMethod(
 			"getServiceWorkerWebSettings",
-			"()Landroid/webkit/ServiceWorkerWebSettings;");
+			"()Landroid/webkit/ServiceWorkerWebSettings;"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

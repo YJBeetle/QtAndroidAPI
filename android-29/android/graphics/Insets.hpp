@@ -33,7 +33,7 @@ namespace __jni_impl::android::graphics
 		// Methods
 		static QAndroidJniObject add(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject min(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1);
 		static QAndroidJniObject max(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1);
@@ -56,34 +56,40 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Insets",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	QAndroidJniObject Insets::NONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Insets",
 			"NONE",
-			"Landroid/graphics/Insets;");
+			"Landroid/graphics/Insets;"
+		);
 	}
 	jint Insets::bottom()
 	{
 		return __thiz.getField<jint>(
-			"bottom");
+			"bottom"
+		);
 	}
 	jint Insets::left()
 	{
 		return __thiz.getField<jint>(
-			"left");
+			"left"
+		);
 	}
 	jint Insets::right()
 	{
 		return __thiz.getField<jint>(
-			"right");
+			"right"
+		);
 	}
 	jint Insets::top()
 	{
 		return __thiz.getField<jint>(
-			"top");
+			"top"
+		);
 	}
 	
 	// Constructors
@@ -102,26 +108,30 @@ namespace __jni_impl::android::graphics
 			"add",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Insets::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Insets::toString()
+	jstring Insets::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Insets::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Insets::min(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1)
 	{
@@ -130,7 +140,8 @@ namespace __jni_impl::android::graphics
 			"min",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Insets::max(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1)
 	{
@@ -139,7 +150,8 @@ namespace __jni_impl::android::graphics
 			"max",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Insets::of(__jni_impl::android::graphics::Rect arg0)
 	{
@@ -147,7 +159,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Insets",
 			"of",
 			"(Landroid/graphics/Rect;)Landroid/graphics/Insets;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Insets::of(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -158,7 +171,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Insets::subtract(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1)
 	{
@@ -167,13 +181,15 @@ namespace __jni_impl::android::graphics
 			"subtract",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint Insets::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Insets::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -181,7 +197,8 @@ namespace __jni_impl::android::graphics
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

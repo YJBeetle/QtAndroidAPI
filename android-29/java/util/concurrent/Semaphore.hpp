@@ -22,7 +22,7 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor(jint arg0, jboolean arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void release();
 		void release(jint arg0);
 		void acquire();
@@ -65,55 +65,63 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	QAndroidJniObject Semaphore::toString()
+	jstring Semaphore::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Semaphore::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	void Semaphore::release(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"release",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Semaphore::acquire()
 	{
 		__thiz.callMethod<void>(
 			"acquire",
-			"()V");
+			"()V"
+		);
 	}
 	void Semaphore::acquire(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"acquire",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Semaphore::hasQueuedThreads()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasQueuedThreads",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Semaphore::getQueueLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getQueueLength",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Semaphore::isFair()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFair",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Semaphore::tryAcquire(jint arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
 	{
@@ -122,14 +130,16 @@ namespace __jni_impl::java::util::concurrent
 			"(IJLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean Semaphore::tryAcquire(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"tryAcquire",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Semaphore::tryAcquire(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -137,38 +147,44 @@ namespace __jni_impl::java::util::concurrent
 			"tryAcquire",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Semaphore::tryAcquire()
 	{
 		return __thiz.callMethod<jboolean>(
 			"tryAcquire",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Semaphore::drainPermits()
 	{
 		return __thiz.callMethod<jint>(
 			"drainPermits",
-			"()I");
+			"()I"
+		);
 	}
 	void Semaphore::acquireUninterruptibly()
 	{
 		__thiz.callMethod<void>(
 			"acquireUninterruptibly",
-			"()V");
+			"()V"
+		);
 	}
 	void Semaphore::acquireUninterruptibly(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"acquireUninterruptibly",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Semaphore::availablePermits()
 	{
 		return __thiz.callMethod<jint>(
 			"availablePermits",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

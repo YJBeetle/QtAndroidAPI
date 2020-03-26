@@ -21,7 +21,7 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void release();
 		void acquire();
 		void setReferenceCounted(jboolean arg0);
@@ -44,36 +44,41 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	QAndroidJniObject WifiManager_MulticastLock::toString()
+	jstring WifiManager_MulticastLock::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiManager_MulticastLock::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	void WifiManager_MulticastLock::acquire()
 	{
 		__thiz.callMethod<void>(
 			"acquire",
-			"()V");
+			"()V"
+		);
 	}
 	void WifiManager_MulticastLock::setReferenceCounted(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setReferenceCounted",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WifiManager_MulticastLock::isHeld()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isHeld",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi
 

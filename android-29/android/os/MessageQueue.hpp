@@ -21,10 +21,10 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
+		jboolean isIdle();
 		void addIdleHandler(__jni_impl::__JniBaseClass arg0);
 		void removeIdleHandler(__jni_impl::__JniBaseClass arg0);
 		void addOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
-		jboolean isIdle();
 		void removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0);
 	};
 } // namespace __jni_impl::android::os
@@ -44,19 +44,28 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
+	jboolean MessageQueue::isIdle()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isIdle",
+			"()Z"
+		);
+	}
 	void MessageQueue::addIdleHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addIdleHandler",
 			"(Landroid/os/MessageQueue$IdleHandler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MessageQueue::removeIdleHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeIdleHandler",
 			"(Landroid/os/MessageQueue$IdleHandler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MessageQueue::addOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -65,20 +74,16 @@ namespace __jni_impl::android::os
 			"(Ljava/io/FileDescriptor;ILandroid/os/MessageQueue$OnFileDescriptorEventListener;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
-	}
-	jboolean MessageQueue::isIdle()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isIdle",
-			"()Z");
+			arg2.__jniObject().object()
+		);
 	}
 	void MessageQueue::removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeOnFileDescriptorEventListener",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::os
 

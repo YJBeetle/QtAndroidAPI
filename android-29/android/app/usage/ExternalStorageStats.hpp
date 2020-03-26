@@ -22,13 +22,13 @@ namespace __jni_impl::android::app::usage
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jlong getTotalBytes();
 		jlong getAppBytes();
 		jlong getAudioBytes();
 		jlong getVideoBytes();
 		jlong getImageBytes();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -42,7 +42,8 @@ namespace __jni_impl::android::app::usage
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.usage.ExternalStorageStats",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -54,41 +55,12 @@ namespace __jni_impl::android::app::usage
 	}
 	
 	// Methods
-	jlong ExternalStorageStats::getTotalBytes()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTotalBytes",
-			"()J");
-	}
-	jlong ExternalStorageStats::getAppBytes()
-	{
-		return __thiz.callMethod<jlong>(
-			"getAppBytes",
-			"()J");
-	}
-	jlong ExternalStorageStats::getAudioBytes()
-	{
-		return __thiz.callMethod<jlong>(
-			"getAudioBytes",
-			"()J");
-	}
-	jlong ExternalStorageStats::getVideoBytes()
-	{
-		return __thiz.callMethod<jlong>(
-			"getVideoBytes",
-			"()J");
-	}
-	jlong ExternalStorageStats::getImageBytes()
-	{
-		return __thiz.callMethod<jlong>(
-			"getImageBytes",
-			"()J");
-	}
 	jint ExternalStorageStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ExternalStorageStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -96,7 +68,43 @@ namespace __jni_impl::android::app::usage
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jlong ExternalStorageStats::getTotalBytes()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTotalBytes",
+			"()J"
+		);
+	}
+	jlong ExternalStorageStats::getAppBytes()
+	{
+		return __thiz.callMethod<jlong>(
+			"getAppBytes",
+			"()J"
+		);
+	}
+	jlong ExternalStorageStats::getAudioBytes()
+	{
+		return __thiz.callMethod<jlong>(
+			"getAudioBytes",
+			"()J"
+		);
+	}
+	jlong ExternalStorageStats::getVideoBytes()
+	{
+		return __thiz.callMethod<jlong>(
+			"getVideoBytes",
+			"()J"
+		);
+	}
+	jlong ExternalStorageStats::getImageBytes()
+	{
+		return __thiz.callMethod<jlong>(
+			"getImageBytes",
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

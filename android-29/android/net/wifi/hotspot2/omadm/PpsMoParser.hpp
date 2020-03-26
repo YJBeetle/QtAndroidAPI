@@ -46,7 +46,8 @@ namespace __jni_impl::android::net::wifi::hotspot2::omadm
 			"android.net.wifi.hotspot2.omadm.PpsMoParser",
 			"parseMoText",
 			"(Ljava/lang/String;)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::hotspot2::omadm
 

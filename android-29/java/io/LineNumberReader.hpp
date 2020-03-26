@@ -26,7 +26,7 @@ namespace __jni_impl::java::io
 		// Methods
 		jint read();
 		jint read(jcharArray arg0, jint arg1, jint arg2);
-		QAndroidJniObject readLine();
+		jstring readLine();
 		void mark(jint arg0);
 		jlong skip(jlong arg0);
 		void reset();
@@ -63,7 +63,8 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint LineNumberReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -72,46 +73,53 @@ namespace __jni_impl::java::io
 			"([CII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject LineNumberReader::readLine()
+	jstring LineNumberReader::readLine()
 	{
 		return __thiz.callObjectMethod(
 			"readLine",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void LineNumberReader::mark(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"mark",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong LineNumberReader::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	void LineNumberReader::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	jint LineNumberReader::getLineNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getLineNumber",
-			"()I");
+			"()I"
+		);
 	}
 	void LineNumberReader::setLineNumber(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLineNumber",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::io
 

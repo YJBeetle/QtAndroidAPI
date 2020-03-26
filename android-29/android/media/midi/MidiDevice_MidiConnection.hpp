@@ -49,7 +49,8 @@ namespace __jni_impl::android::media::midi
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::media::midi
 

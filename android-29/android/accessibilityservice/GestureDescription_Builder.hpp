@@ -50,14 +50,16 @@ namespace __jni_impl::android::accessibilityservice
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/accessibilityservice/GestureDescription;");
+			"()Landroid/accessibilityservice/GestureDescription;"
+		);
 	}
 	QAndroidJniObject GestureDescription_Builder::addStroke(__jni_impl::android::accessibilityservice::GestureDescription_StrokeDescription arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addStroke",
 			"(Landroid/accessibilityservice/GestureDescription$StrokeDescription;)Landroid/accessibilityservice/GestureDescription$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::accessibilityservice
 

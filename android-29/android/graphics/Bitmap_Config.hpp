@@ -24,7 +24,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -38,42 +38,48 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
 			"ALPHA_8",
-			"Landroid/graphics/Bitmap$Config;");
+			"Landroid/graphics/Bitmap$Config;"
+		);
 	}
 	QAndroidJniObject Bitmap_Config::RGB_565()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
 			"RGB_565",
-			"Landroid/graphics/Bitmap$Config;");
+			"Landroid/graphics/Bitmap$Config;"
+		);
 	}
 	QAndroidJniObject Bitmap_Config::ARGB_4444()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
 			"ARGB_4444",
-			"Landroid/graphics/Bitmap$Config;");
+			"Landroid/graphics/Bitmap$Config;"
+		);
 	}
 	QAndroidJniObject Bitmap_Config::ARGB_8888()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
 			"ARGB_8888",
-			"Landroid/graphics/Bitmap$Config;");
+			"Landroid/graphics/Bitmap$Config;"
+		);
 	}
 	QAndroidJniObject Bitmap_Config::RGBA_F16()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
 			"RGBA_F16",
-			"Landroid/graphics/Bitmap$Config;");
+			"Landroid/graphics/Bitmap$Config;"
+		);
 	}
 	QAndroidJniObject Bitmap_Config::HARDWARE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Bitmap$Config",
 			"HARDWARE",
-			"Landroid/graphics/Bitmap$Config;");
+			"Landroid/graphics/Bitmap$Config;"
+		);
 	}
 	
 	// Constructors
@@ -85,12 +91,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Bitmap_Config::values()
+	jarray Bitmap_Config::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Bitmap$Config",
 			"values",
-			"()[Landroid/graphics/Bitmap$Config;");
+			"()[Landroid/graphics/Bitmap$Config;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Bitmap_Config::valueOf(jstring arg0)
 	{
@@ -98,7 +105,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Bitmap$Config",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Bitmap$Config;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

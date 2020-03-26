@@ -50,34 +50,39 @@ namespace __jni_impl::android::view
 		return __thiz.callObjectMethod(
 			"setName",
 			"(Ljava/lang/String;)Landroid/view/SurfaceControl$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject SurfaceControl_Builder::setOpaque(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setOpaque",
 			"(Z)Landroid/view/SurfaceControl$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject SurfaceControl_Builder::build()
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/SurfaceControl;");
+			"()Landroid/view/SurfaceControl;"
+		);
 	}
 	QAndroidJniObject SurfaceControl_Builder::setParent(__jni_impl::android::view::SurfaceControl arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setParent",
 			"(Landroid/view/SurfaceControl;)Landroid/view/SurfaceControl$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SurfaceControl_Builder::setFormat(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setFormat",
 			"(I)Landroid/view/SurfaceControl$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject SurfaceControl_Builder::setBufferSize(jint arg0, jint arg1)
 	{
@@ -85,7 +90,8 @@ namespace __jni_impl::android::view
 			"setBufferSize",
 			"(II)Landroid/view/SurfaceControl$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view
 

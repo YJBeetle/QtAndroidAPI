@@ -31,12 +31,12 @@ namespace __jni_impl::android::service::textservice
 		// Methods
 		void onClose();
 		QAndroidJniObject getBundle();
-		QAndroidJniObject getLocale();
-		QAndroidJniObject onGetSentenceSuggestionsMultiple(jarray arg0, jint arg1);
-		QAndroidJniObject onGetSuggestions(__jni_impl::android::view::textservice::TextInfo arg0, jint arg1);
-		QAndroidJniObject onGetSuggestionsMultiple(jarray arg0, jint arg1, jboolean arg2);
-		void onCreate();
+		jstring getLocale();
 		void onCancel();
+		void onCreate();
+		jarray onGetSentenceSuggestionsMultiple(jarray arg0, jint arg1);
+		QAndroidJniObject onGetSuggestions(__jni_impl::android::view::textservice::TextInfo arg0, jint arg1);
+		jarray onGetSuggestionsMultiple(jarray arg0, jint arg1, jboolean arg2);
 	};
 } // namespace __jni_impl::android::service::textservice
 
@@ -61,27 +61,45 @@ namespace __jni_impl::android::service::textservice
 	{
 		__thiz.callMethod<void>(
 			"onClose",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject SpellCheckerService_Session::getBundle()
 	{
 		return __thiz.callObjectMethod(
 			"getBundle",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
-	QAndroidJniObject SpellCheckerService_Session::getLocale()
+	jstring SpellCheckerService_Session::getLocale()
 	{
 		return __thiz.callObjectMethod(
 			"getLocale",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SpellCheckerService_Session::onGetSentenceSuggestionsMultiple(jarray arg0, jint arg1)
+	void SpellCheckerService_Session::onCancel()
+	{
+		__thiz.callMethod<void>(
+			"onCancel",
+			"()V"
+		);
+	}
+	void SpellCheckerService_Session::onCreate()
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	jarray SpellCheckerService_Session::onGetSentenceSuggestionsMultiple(jarray arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"onGetSentenceSuggestionsMultiple",
 			"([Landroid/view/textservice/TextInfo;I)[Landroid/view/textservice/SentenceSuggestionsInfo;",
 			arg0,
-			arg1);
+			arg1
+		).object<jarray>();
 	}
 	QAndroidJniObject SpellCheckerService_Session::onGetSuggestions(__jni_impl::android::view::textservice::TextInfo arg0, jint arg1)
 	{
@@ -89,28 +107,18 @@ namespace __jni_impl::android::service::textservice
 			"onGetSuggestions",
 			"(Landroid/view/textservice/TextInfo;I)Landroid/view/textservice/SuggestionsInfo;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject SpellCheckerService_Session::onGetSuggestionsMultiple(jarray arg0, jint arg1, jboolean arg2)
+	jarray SpellCheckerService_Session::onGetSuggestionsMultiple(jarray arg0, jint arg1, jboolean arg2)
 	{
 		return __thiz.callObjectMethod(
 			"onGetSuggestionsMultiple",
 			"([Landroid/view/textservice/TextInfo;IZ)[Landroid/view/textservice/SuggestionsInfo;",
 			arg0,
 			arg1,
-			arg2);
-	}
-	void SpellCheckerService_Session::onCreate()
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V");
-	}
-	void SpellCheckerService_Session::onCancel()
-	{
-		__thiz.callMethod<void>(
-			"onCancel",
-			"()V");
+			arg2
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::service::textservice
 

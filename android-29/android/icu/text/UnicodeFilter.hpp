@@ -44,14 +44,16 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean UnicodeFilter::contains(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

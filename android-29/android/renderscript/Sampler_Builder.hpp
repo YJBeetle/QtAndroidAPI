@@ -60,42 +60,48 @@ namespace __jni_impl::android::renderscript
 	{
 		return __thiz.callObjectMethod(
 			"create",
-			"()Landroid/renderscript/Sampler;");
+			"()Landroid/renderscript/Sampler;"
+		);
 	}
 	void Sampler_Builder::setMinification(__jni_impl::android::renderscript::Sampler_Value arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMinification",
 			"(Landroid/renderscript/Sampler$Value;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Sampler_Builder::setMagnification(__jni_impl::android::renderscript::Sampler_Value arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMagnification",
 			"(Landroid/renderscript/Sampler$Value;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Sampler_Builder::setWrapS(__jni_impl::android::renderscript::Sampler_Value arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWrapS",
 			"(Landroid/renderscript/Sampler$Value;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Sampler_Builder::setWrapT(__jni_impl::android::renderscript::Sampler_Value arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWrapT",
 			"(Landroid/renderscript/Sampler$Value;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Sampler_Builder::setAnisotropy(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAnisotropy",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

@@ -20,18 +20,18 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ADDRESS();
+		static jstring ADDRESS();
 		static QAndroidJniObject CONTENT_FILTER_URI();
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
+		static jstring CONTENT_ITEM_TYPE();
 		static QAndroidJniObject CONTENT_LOOKUP_URI();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DISPLAY_NAME();
+		static jstring DISPLAY_NAME();
 		static QAndroidJniObject ENTERPRISE_CONTENT_FILTER_URI();
 		static QAndroidJniObject ENTERPRISE_CONTENT_LOOKUP_URI();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static QAndroidJniObject EXTRA_ADDRESS_BOOK_INDEX_TITLES();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
+		static jstring EXTRA_ADDRESS_BOOK_INDEX_TITLES();
 		static jint TYPE_HOME();
 		static jint TYPE_MOBILE();
 		static jint TYPE_OTHER();
@@ -42,7 +42,7 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static jint getTypeLabelResource(jint arg0);
-		static QAndroidJniObject getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -52,113 +52,129 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::ADDRESS()
+	jstring ContactsContract_CommonDataKinds_Email::ADDRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"ADDRESS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_CommonDataKinds_Email::CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::CONTENT_ITEM_TYPE()
+	jstring ContactsContract_CommonDataKinds_Email::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_CommonDataKinds_Email::CONTENT_LOOKUP_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_LOOKUP_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::CONTENT_TYPE()
+	jstring ContactsContract_CommonDataKinds_Email::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_CommonDataKinds_Email::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::DISPLAY_NAME()
+	jstring ContactsContract_CommonDataKinds_Email::DISPLAY_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"DISPLAY_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_CommonDataKinds_Email::ENTERPRISE_CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"ENTERPRISE_CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_CommonDataKinds_Email::ENTERPRISE_CONTENT_LOOKUP_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"ENTERPRISE_CONTENT_LOOKUP_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX()
+	jstring ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"EXTRA_ADDRESS_BOOK_INDEX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	jstring ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	jstring ContactsContract_CommonDataKinds_Email::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ContactsContract_CommonDataKinds_Email::TYPE_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
-			"TYPE_HOME");
+			"TYPE_HOME"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Email::TYPE_MOBILE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
-			"TYPE_MOBILE");
+			"TYPE_MOBILE"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Email::TYPE_OTHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
-			"TYPE_OTHER");
+			"TYPE_OTHER"
+		);
 	}
 	jint ContactsContract_CommonDataKinds_Email::TYPE_WORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
-			"TYPE_WORK");
+			"TYPE_WORK"
+		);
 	}
 	
 	// Constructors
@@ -176,9 +192,10 @@ namespace __jni_impl::android::provider
 			"android.provider.ContactsContract$CommonDataKinds$Email",
 			"getTypeLabelResource",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ContactsContract_CommonDataKinds_Email::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
+	jstring ContactsContract_CommonDataKinds_Email::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.ContactsContract$CommonDataKinds$Email",
@@ -186,7 +203,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

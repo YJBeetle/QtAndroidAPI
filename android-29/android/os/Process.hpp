@@ -57,7 +57,7 @@ namespace __jni_impl::android::os
 		static jint getGidForName(jstring arg0);
 		static void setThreadPriority(jint arg0);
 		static void setThreadPriority(jint arg0, jint arg1);
-		static QAndroidJniObject getExclusiveCores();
+		static jintArray getExclusiveCores();
 		static jint getThreadPriority(jint arg0);
 		static jboolean supportsProcesses();
 		static void killProcess(jint arg0);
@@ -74,133 +74,155 @@ namespace __jni_impl::android::os
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"BLUETOOTH_UID");
+			"BLUETOOTH_UID"
+		);
 	}
 	jint Process::FIRST_APPLICATION_UID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"FIRST_APPLICATION_UID");
+			"FIRST_APPLICATION_UID"
+		);
 	}
 	jint Process::INVALID_UID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"INVALID_UID");
+			"INVALID_UID"
+		);
 	}
 	jint Process::LAST_APPLICATION_UID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"LAST_APPLICATION_UID");
+			"LAST_APPLICATION_UID"
+		);
 	}
 	jint Process::PHONE_UID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"PHONE_UID");
+			"PHONE_UID"
+		);
 	}
 	jint Process::ROOT_UID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"ROOT_UID");
+			"ROOT_UID"
+		);
 	}
 	jint Process::SHELL_UID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"SHELL_UID");
+			"SHELL_UID"
+		);
 	}
 	jint Process::SIGNAL_KILL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"SIGNAL_KILL");
+			"SIGNAL_KILL"
+		);
 	}
 	jint Process::SIGNAL_QUIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"SIGNAL_QUIT");
+			"SIGNAL_QUIT"
+		);
 	}
 	jint Process::SIGNAL_USR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"SIGNAL_USR1");
+			"SIGNAL_USR1"
+		);
 	}
 	jint Process::SYSTEM_UID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"SYSTEM_UID");
+			"SYSTEM_UID"
+		);
 	}
 	jint Process::THREAD_PRIORITY_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_AUDIO");
+			"THREAD_PRIORITY_AUDIO"
+		);
 	}
 	jint Process::THREAD_PRIORITY_BACKGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_BACKGROUND");
+			"THREAD_PRIORITY_BACKGROUND"
+		);
 	}
 	jint Process::THREAD_PRIORITY_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_DEFAULT");
+			"THREAD_PRIORITY_DEFAULT"
+		);
 	}
 	jint Process::THREAD_PRIORITY_DISPLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_DISPLAY");
+			"THREAD_PRIORITY_DISPLAY"
+		);
 	}
 	jint Process::THREAD_PRIORITY_FOREGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_FOREGROUND");
+			"THREAD_PRIORITY_FOREGROUND"
+		);
 	}
 	jint Process::THREAD_PRIORITY_LESS_FAVORABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_LESS_FAVORABLE");
+			"THREAD_PRIORITY_LESS_FAVORABLE"
+		);
 	}
 	jint Process::THREAD_PRIORITY_LOWEST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_LOWEST");
+			"THREAD_PRIORITY_LOWEST"
+		);
 	}
 	jint Process::THREAD_PRIORITY_MORE_FAVORABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_MORE_FAVORABLE");
+			"THREAD_PRIORITY_MORE_FAVORABLE"
+		);
 	}
 	jint Process::THREAD_PRIORITY_URGENT_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_URGENT_AUDIO");
+			"THREAD_PRIORITY_URGENT_AUDIO"
+		);
 	}
 	jint Process::THREAD_PRIORITY_URGENT_DISPLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_URGENT_DISPLAY");
+			"THREAD_PRIORITY_URGENT_DISPLAY"
+		);
 	}
 	jint Process::THREAD_PRIORITY_VIDEO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.Process",
-			"THREAD_PRIORITY_VIDEO");
+			"THREAD_PRIORITY_VIDEO"
+		);
 	}
 	
 	// Constructors
@@ -217,56 +239,64 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.Process",
 			"getElapsedCpuTime",
-			"()J");
+			"()J"
+		);
 	}
 	jlong Process::getStartElapsedRealtime()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.Process",
 			"getStartElapsedRealtime",
-			"()J");
+			"()J"
+		);
 	}
 	jlong Process::getStartUptimeMillis()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.Process",
 			"getStartUptimeMillis",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean Process::is64Bit()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.os.Process",
 			"is64Bit",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Process::myPid()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Process",
 			"myPid",
-			"()I");
+			"()I"
+		);
 	}
 	jint Process::myTid()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Process",
 			"myTid",
-			"()I");
+			"()I"
+		);
 	}
 	jint Process::myUid()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Process",
 			"myUid",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Process::myUserHandle()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Process",
 			"myUserHandle",
-			"()Landroid/os/UserHandle;");
+			"()Landroid/os/UserHandle;"
+		);
 	}
 	jboolean Process::isApplicationUid(jint arg0)
 	{
@@ -274,14 +304,16 @@ namespace __jni_impl::android::os
 			"android.os.Process",
 			"isApplicationUid",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Process::isIsolated()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.os.Process",
 			"isIsolated",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Process::getUidForName(jstring arg0)
 	{
@@ -289,7 +321,8 @@ namespace __jni_impl::android::os
 			"android.os.Process",
 			"getUidForName",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Process::getGidForName(jstring arg0)
 	{
@@ -297,7 +330,8 @@ namespace __jni_impl::android::os
 			"android.os.Process",
 			"getGidForName",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	void Process::setThreadPriority(jint arg0)
 	{
@@ -305,7 +339,8 @@ namespace __jni_impl::android::os
 			"android.os.Process",
 			"setThreadPriority",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Process::setThreadPriority(jint arg0, jint arg1)
 	{
@@ -314,14 +349,16 @@ namespace __jni_impl::android::os
 			"setThreadPriority",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Process::getExclusiveCores()
+	jintArray Process::getExclusiveCores()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Process",
 			"getExclusiveCores",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
 	jint Process::getThreadPriority(jint arg0)
 	{
@@ -329,14 +366,16 @@ namespace __jni_impl::android::os
 			"android.os.Process",
 			"getThreadPriority",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Process::supportsProcesses()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.os.Process",
 			"supportsProcesses",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Process::killProcess(jint arg0)
 	{
@@ -344,7 +383,8 @@ namespace __jni_impl::android::os
 			"android.os.Process",
 			"killProcess",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Process::sendSignal(jint arg0, jint arg1)
 	{
@@ -353,7 +393,8 @@ namespace __jni_impl::android::os
 			"sendSignal",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::os
 

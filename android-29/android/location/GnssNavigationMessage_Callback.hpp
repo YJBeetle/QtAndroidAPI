@@ -24,8 +24,8 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
-		void onStatusChanged(jint arg0);
 		void onGnssNavigationMessageReceived(__jni_impl::android::location::GnssNavigationMessage arg0);
+		void onStatusChanged(jint arg0);
 	};
 } // namespace __jni_impl::android::location
 
@@ -38,19 +38,22 @@ namespace __jni_impl::android::location
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage$Callback",
-			"STATUS_LOCATION_DISABLED");
+			"STATUS_LOCATION_DISABLED"
+		);
 	}
 	jint GnssNavigationMessage_Callback::STATUS_NOT_SUPPORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage$Callback",
-			"STATUS_NOT_SUPPORTED");
+			"STATUS_NOT_SUPPORTED"
+		);
 	}
 	jint GnssNavigationMessage_Callback::STATUS_READY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GnssNavigationMessage$Callback",
-			"STATUS_READY");
+			"STATUS_READY"
+		);
 	}
 	
 	// Constructors
@@ -62,19 +65,21 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	void GnssNavigationMessage_Callback::onStatusChanged(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onStatusChanged",
-			"(I)V",
-			arg0);
-	}
 	void GnssNavigationMessage_Callback::onGnssNavigationMessageReceived(__jni_impl::android::location::GnssNavigationMessage arg0)
 	{
 		__thiz.callMethod<void>(
 			"onGnssNavigationMessageReceived",
 			"(Landroid/location/GnssNavigationMessage;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void GnssNavigationMessage_Callback::onStatusChanged(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onStatusChanged",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::location
 

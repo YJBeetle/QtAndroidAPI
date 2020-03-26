@@ -50,8 +50,8 @@ namespace __jni_impl::java::util
 		static QAndroidJniObject getControl(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getCandidateLocales(jstring arg0, __jni_impl::java::util::Locale arg1);
 		static QAndroidJniObject getNoFallbackControl(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject toBundleName(jstring arg0, __jni_impl::java::util::Locale arg1);
-		QAndroidJniObject toResourceName(jstring arg0, jstring arg1);
+		jstring toBundleName(jstring arg0, __jni_impl::java::util::Locale arg1);
+		jstring toResourceName(jstring arg0, jstring arg1);
 	};
 } // namespace __jni_impl::java::util
 
@@ -69,33 +69,38 @@ namespace __jni_impl::java::util
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.ResourceBundle$Control",
 			"FORMAT_DEFAULT",
-			"Ljava/util/List;");
+			"Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject ResourceBundle_Control::FORMAT_CLASS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.ResourceBundle$Control",
 			"FORMAT_CLASS",
-			"Ljava/util/List;");
+			"Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject ResourceBundle_Control::FORMAT_PROPERTIES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.ResourceBundle$Control",
 			"FORMAT_PROPERTIES",
-			"Ljava/util/List;");
+			"Ljava/util/List;"
+		);
 	}
 	jlong ResourceBundle_Control::TTL_DONT_CACHE()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"java.util.ResourceBundle$Control",
-			"TTL_DONT_CACHE");
+			"TTL_DONT_CACHE"
+		);
 	}
 	jlong ResourceBundle_Control::TTL_NO_EXPIRATION_CONTROL()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"java.util.ResourceBundle$Control",
-			"TTL_NO_EXPIRATION_CONTROL");
+			"TTL_NO_EXPIRATION_CONTROL"
+		);
 	}
 	
 	// Constructors
@@ -112,7 +117,8 @@ namespace __jni_impl::java::util
 		return __thiz.callObjectMethod(
 			"getFormats",
 			"(Ljava/lang/String;)Ljava/util/List;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ResourceBundle_Control::getFallbackLocale(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -120,7 +126,8 @@ namespace __jni_impl::java::util
 			"getFallbackLocale",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/Locale;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ResourceBundle_Control::newBundle(jstring arg0, __jni_impl::java::util::Locale arg1, jstring arg2, __jni_impl::java::lang::ClassLoader arg3, jboolean arg4)
 	{
@@ -131,7 +138,8 @@ namespace __jni_impl::java::util
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
-			arg4);
+			arg4
+		);
 	}
 	jlong ResourceBundle_Control::getTimeToLive(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -139,7 +147,8 @@ namespace __jni_impl::java::util
 			"getTimeToLive",
 			"(Ljava/lang/String;Ljava/util/Locale;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean ResourceBundle_Control::needsReload(jstring arg0, __jni_impl::java::util::Locale arg1, jstring arg2, __jni_impl::java::lang::ClassLoader arg3, __jni_impl::java::util::ResourceBundle arg4, jlong arg5)
 	{
@@ -151,7 +160,8 @@ namespace __jni_impl::java::util
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	QAndroidJniObject ResourceBundle_Control::getControl(__jni_impl::__JniBaseClass arg0)
 	{
@@ -159,7 +169,8 @@ namespace __jni_impl::java::util
 			"java.util.ResourceBundle$Control",
 			"getControl",
 			"(Ljava/util/List;)Ljava/util/ResourceBundle$Control;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ResourceBundle_Control::getCandidateLocales(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -167,7 +178,8 @@ namespace __jni_impl::java::util
 			"getCandidateLocales",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/List;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ResourceBundle_Control::getNoFallbackControl(__jni_impl::__JniBaseClass arg0)
 	{
@@ -175,23 +187,26 @@ namespace __jni_impl::java::util
 			"java.util.ResourceBundle$Control",
 			"getNoFallbackControl",
 			"(Ljava/util/List;)Ljava/util/ResourceBundle$Control;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ResourceBundle_Control::toBundleName(jstring arg0, __jni_impl::java::util::Locale arg1)
+	jstring ResourceBundle_Control::toBundleName(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
 		return __thiz.callObjectMethod(
 			"toBundleName",
 			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject ResourceBundle_Control::toResourceName(jstring arg0, jstring arg1)
+	jstring ResourceBundle_Control::toResourceName(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
 			"toResourceName",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

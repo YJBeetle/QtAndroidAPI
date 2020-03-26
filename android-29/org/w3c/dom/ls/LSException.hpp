@@ -32,19 +32,22 @@ namespace __jni_impl::org::w3c::dom::ls
 	jshort LSException::code()
 	{
 		return __thiz.getField<jshort>(
-			"code");
+			"code"
+		);
 	}
 	jshort LSException::PARSE_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.ls.LSException",
-			"PARSE_ERR");
+			"PARSE_ERR"
+		);
 	}
 	jshort LSException::SERIALIZE_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.ls.LSException",
-			"SERIALIZE_ERR");
+			"SERIALIZE_ERR"
+		);
 	}
 	
 	// Constructors

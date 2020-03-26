@@ -45,7 +45,8 @@ namespace __jni_impl::java::util::zip
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.GZIPInputStream",
-			"GZIP_MAGIC");
+			"GZIP_MAGIC"
+		);
 	}
 	
 	// Constructors
@@ -73,13 +74,15 @@ namespace __jni_impl::java::util::zip
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GZIPInputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

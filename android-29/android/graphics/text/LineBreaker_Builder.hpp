@@ -22,10 +22,10 @@ namespace __jni_impl::android::graphics::text
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setJustificationMode(jint arg0);
-		QAndroidJniObject setIndents(jintArray arg0);
 		QAndroidJniObject setBreakStrategy(jint arg0);
 		QAndroidJniObject setHyphenationFrequency(jint arg0);
+		QAndroidJniObject setIndents(jintArray arg0);
+		QAndroidJniObject setJustificationMode(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::text
 
@@ -48,35 +48,40 @@ namespace __jni_impl::android::graphics::text
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/graphics/text/LineBreaker;");
-	}
-	QAndroidJniObject LineBreaker_Builder::setJustificationMode(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setJustificationMode",
-			"(I)Landroid/graphics/text/LineBreaker$Builder;",
-			arg0);
-	}
-	QAndroidJniObject LineBreaker_Builder::setIndents(jintArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIndents",
-			"([I)Landroid/graphics/text/LineBreaker$Builder;",
-			arg0);
+			"()Landroid/graphics/text/LineBreaker;"
+		);
 	}
 	QAndroidJniObject LineBreaker_Builder::setBreakStrategy(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setBreakStrategy",
 			"(I)Landroid/graphics/text/LineBreaker$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LineBreaker_Builder::setHyphenationFrequency(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setHyphenationFrequency",
 			"(I)Landroid/graphics/text/LineBreaker$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject LineBreaker_Builder::setIndents(jintArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setIndents",
+			"([I)Landroid/graphics/text/LineBreaker$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject LineBreaker_Builder::setJustificationMode(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setJustificationMode",
+			"(I)Landroid/graphics/text/LineBreaker$Builder;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics::text
 

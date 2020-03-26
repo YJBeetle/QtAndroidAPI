@@ -40,7 +40,8 @@ namespace __jni_impl::android::text::style
 	{
 		return __thiz.callMethod<jint>(
 			"getTabStop",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

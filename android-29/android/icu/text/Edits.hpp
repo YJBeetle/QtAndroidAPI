@@ -54,14 +54,16 @@ namespace __jni_impl::android::icu::text
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void Edits::addUnchanged(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"addUnchanged",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Edits::addReplace(jint arg0, jint arg1)
 	{
@@ -69,49 +71,57 @@ namespace __jni_impl::android::icu::text
 			"addReplace",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Edits::lengthDelta()
 	{
 		return __thiz.callMethod<jint>(
 			"lengthDelta",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Edits::hasChanges()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasChanges",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Edits::numberOfChanges()
 	{
 		return __thiz.callMethod<jint>(
 			"numberOfChanges",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Edits::getCoarseChangesIterator()
 	{
 		return __thiz.callObjectMethod(
 			"getCoarseChangesIterator",
-			"()Landroid/icu/text/Edits$Iterator;");
+			"()Landroid/icu/text/Edits$Iterator;"
+		);
 	}
 	QAndroidJniObject Edits::getCoarseIterator()
 	{
 		return __thiz.callObjectMethod(
 			"getCoarseIterator",
-			"()Landroid/icu/text/Edits$Iterator;");
+			"()Landroid/icu/text/Edits$Iterator;"
+		);
 	}
 	QAndroidJniObject Edits::getFineChangesIterator()
 	{
 		return __thiz.callObjectMethod(
 			"getFineChangesIterator",
-			"()Landroid/icu/text/Edits$Iterator;");
+			"()Landroid/icu/text/Edits$Iterator;"
+		);
 	}
 	QAndroidJniObject Edits::getFineIterator()
 	{
 		return __thiz.callObjectMethod(
 			"getFineIterator",
-			"()Landroid/icu/text/Edits$Iterator;");
+			"()Landroid/icu/text/Edits$Iterator;"
+		);
 	}
 	QAndroidJniObject Edits::mergeAndAppend(__jni_impl::android::icu::text::Edits arg0, __jni_impl::android::icu::text::Edits arg1)
 	{
@@ -119,7 +129,8 @@ namespace __jni_impl::android::icu::text
 			"mergeAndAppend",
 			"(Landroid/icu/text/Edits;Landroid/icu/text/Edits;)Landroid/icu/text/Edits;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

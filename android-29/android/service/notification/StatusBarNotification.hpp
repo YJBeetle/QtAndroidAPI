@@ -31,26 +31,26 @@ namespace __jni_impl::android::service::notification
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject clone();
-		QAndroidJniObject getPackageName();
-		QAndroidJniObject getKey();
+		jstring getPackageName();
+		jstring getKey();
 		jint getId();
-		QAndroidJniObject getTag();
+		jstring getTag();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isClearable();
 		jboolean isGroup();
 		jboolean isOngoing();
 		jint getUserId();
 		jint getUid();
-		QAndroidJniObject getOpPkg();
+		jstring getOpPkg();
 		QAndroidJniObject getNotification();
 		QAndroidJniObject getUser();
 		jlong getPostTime();
-		QAndroidJniObject getGroupKey();
+		jstring getGroupKey();
 		void setOverrideGroupKey(jstring arg0);
-		QAndroidJniObject getOverrideGroupKey();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getOverrideGroupKey();
 	};
 } // namespace __jni_impl::android::service::notification
 
@@ -66,7 +66,8 @@ namespace __jni_impl::android::service::notification
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.notification.StatusBarNotification",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -95,120 +96,54 @@ namespace __jni_impl::android::service::notification
 	}
 	
 	// Methods
-	QAndroidJniObject StatusBarNotification::toString()
+	jstring StatusBarNotification::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject StatusBarNotification::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/service/notification/StatusBarNotification;");
+			"()Landroid/service/notification/StatusBarNotification;"
+		);
 	}
-	QAndroidJniObject StatusBarNotification::getPackageName()
+	jstring StatusBarNotification::getPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StatusBarNotification::getKey()
+	jstring StatusBarNotification::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint StatusBarNotification::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject StatusBarNotification::getTag()
+	jstring StatusBarNotification::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Ljava/lang/String;");
-	}
-	jboolean StatusBarNotification::isClearable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isClearable",
-			"()Z");
-	}
-	jboolean StatusBarNotification::isGroup()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isGroup",
-			"()Z");
-	}
-	jboolean StatusBarNotification::isOngoing()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOngoing",
-			"()Z");
-	}
-	jint StatusBarNotification::getUserId()
-	{
-		return __thiz.callMethod<jint>(
-			"getUserId",
-			"()I");
-	}
-	jint StatusBarNotification::getUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getUid",
-			"()I");
-	}
-	QAndroidJniObject StatusBarNotification::getOpPkg()
-	{
-		return __thiz.callObjectMethod(
-			"getOpPkg",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject StatusBarNotification::getNotification()
-	{
-		return __thiz.callObjectMethod(
-			"getNotification",
-			"()Landroid/app/Notification;");
-	}
-	QAndroidJniObject StatusBarNotification::getUser()
-	{
-		return __thiz.callObjectMethod(
-			"getUser",
-			"()Landroid/os/UserHandle;");
-	}
-	jlong StatusBarNotification::getPostTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getPostTime",
-			"()J");
-	}
-	QAndroidJniObject StatusBarNotification::getGroupKey()
-	{
-		return __thiz.callObjectMethod(
-			"getGroupKey",
-			"()Ljava/lang/String;");
-	}
-	void StatusBarNotification::setOverrideGroupKey(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOverrideGroupKey",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
-	QAndroidJniObject StatusBarNotification::getOverrideGroupKey()
-	{
-		return __thiz.callObjectMethod(
-			"getOverrideGroupKey",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint StatusBarNotification::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void StatusBarNotification::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -216,7 +151,93 @@ namespace __jni_impl::android::service::notification
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jboolean StatusBarNotification::isClearable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClearable",
+			"()Z"
+		);
+	}
+	jboolean StatusBarNotification::isGroup()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isGroup",
+			"()Z"
+		);
+	}
+	jboolean StatusBarNotification::isOngoing()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOngoing",
+			"()Z"
+		);
+	}
+	jint StatusBarNotification::getUserId()
+	{
+		return __thiz.callMethod<jint>(
+			"getUserId",
+			"()I"
+		);
+	}
+	jint StatusBarNotification::getUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getUid",
+			"()I"
+		);
+	}
+	jstring StatusBarNotification::getOpPkg()
+	{
+		return __thiz.callObjectMethod(
+			"getOpPkg",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject StatusBarNotification::getNotification()
+	{
+		return __thiz.callObjectMethod(
+			"getNotification",
+			"()Landroid/app/Notification;"
+		);
+	}
+	QAndroidJniObject StatusBarNotification::getUser()
+	{
+		return __thiz.callObjectMethod(
+			"getUser",
+			"()Landroid/os/UserHandle;"
+		);
+	}
+	jlong StatusBarNotification::getPostTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getPostTime",
+			"()J"
+		);
+	}
+	jstring StatusBarNotification::getGroupKey()
+	{
+		return __thiz.callObjectMethod(
+			"getGroupKey",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void StatusBarNotification::setOverrideGroupKey(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOverrideGroupKey",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	jstring StatusBarNotification::getOverrideGroupKey()
+	{
+		return __thiz.callObjectMethod(
+			"getOverrideGroupKey",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::service::notification
 

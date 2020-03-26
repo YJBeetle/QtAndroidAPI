@@ -38,7 +38,8 @@ namespace __jni_impl::android::telephony::mbms
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.mbms.StreamingServiceInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -54,7 +55,8 @@ namespace __jni_impl::android::telephony::mbms
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void StreamingServiceInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -62,7 +64,8 @@ namespace __jni_impl::android::telephony::mbms
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

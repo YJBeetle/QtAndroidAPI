@@ -28,10 +28,10 @@ namespace __jni_impl::android::telephony::mbms
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getUri();
-		QAndroidJniObject getMimeType();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getUri();
+		jstring getMimeType();
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
@@ -46,7 +46,8 @@ namespace __jni_impl::android::telephony::mbms
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.mbms.FileInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -63,31 +64,22 @@ namespace __jni_impl::android::telephony::mbms
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint FileInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	QAndroidJniObject FileInfo::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;");
-	}
-	QAndroidJniObject FileInfo::getMimeType()
-	{
-		return __thiz.callObjectMethod(
-			"getMimeType",
-			"()Ljava/lang/String;");
+			"()I"
+		);
 	}
 	jint FileInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void FileInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -95,7 +87,22 @@ namespace __jni_impl::android::telephony::mbms
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject FileInfo::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jstring FileInfo::getMimeType()
+	{
+		return __thiz.callObjectMethod(
+			"getMimeType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

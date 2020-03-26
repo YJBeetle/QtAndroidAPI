@@ -30,9 +30,9 @@ namespace __jni_impl::java::util::prefs
 		void __constructor(__jni_impl::java::util::prefs::Preferences arg0, jstring arg1, jstring arg2);
 		
 		// Methods
-		QAndroidJniObject getKey();
+		jstring getKey();
 		QAndroidJniObject getNode();
-		QAndroidJniObject getNewValue();
+		jstring getNewValue();
 	};
 } // namespace __jni_impl::java::util::prefs
 
@@ -56,23 +56,26 @@ namespace __jni_impl::java::util::prefs
 	}
 	
 	// Methods
-	QAndroidJniObject PreferenceChangeEvent::getKey()
+	jstring PreferenceChangeEvent::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject PreferenceChangeEvent::getNode()
 	{
 		return __thiz.callObjectMethod(
 			"getNode",
-			"()Ljava/util/prefs/Preferences;");
+			"()Ljava/util/prefs/Preferences;"
+		);
 	}
-	QAndroidJniObject PreferenceChangeEvent::getNewValue()
+	jstring PreferenceChangeEvent::getNewValue()
 	{
 		return __thiz.callObjectMethod(
 			"getNewValue",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::prefs
 

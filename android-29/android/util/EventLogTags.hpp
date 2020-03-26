@@ -59,14 +59,16 @@ namespace __jni_impl::android::util
 		return __thiz.callObjectMethod(
 			"get",
 			"(I)Landroid/util/EventLogTags$Description;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject EventLogTags::get(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Landroid/util/EventLogTags$Description;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

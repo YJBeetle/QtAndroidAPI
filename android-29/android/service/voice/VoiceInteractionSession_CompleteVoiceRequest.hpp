@@ -26,7 +26,7 @@ namespace __jni_impl::android::service::voice
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 		QAndroidJniObject getVoicePrompt();
 		void sendCompleteResult(__jni_impl::android::os::Bundle arg0);
 	};
@@ -48,24 +48,27 @@ namespace __jni_impl::android::service::voice
 	}
 	
 	// Methods
-	QAndroidJniObject VoiceInteractionSession_CompleteVoiceRequest::getMessage()
+	jstring VoiceInteractionSession_CompleteVoiceRequest::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	QAndroidJniObject VoiceInteractionSession_CompleteVoiceRequest::getVoicePrompt()
 	{
 		return __thiz.callObjectMethod(
 			"getVoicePrompt",
-			"()Landroid/app/VoiceInteractor$Prompt;");
+			"()Landroid/app/VoiceInteractor$Prompt;"
+		);
 	}
 	void VoiceInteractionSession_CompleteVoiceRequest::sendCompleteResult(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"sendCompleteResult",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::service::voice
 

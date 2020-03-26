@@ -38,9 +38,9 @@ namespace __jni_impl::java::security
 		void initialize(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1);
 		void initialize(jint arg0);
 		QAndroidJniObject getProvider();
-		QAndroidJniObject genKeyPair();
-		QAndroidJniObject getAlgorithm();
 		QAndroidJniObject generateKeyPair();
+		QAndroidJniObject genKeyPair();
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::java::security
 
@@ -68,7 +68,8 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyPairGenerator;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyPairGenerator::getInstance(jstring arg0, jstring arg1)
 	{
@@ -77,7 +78,8 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyPairGenerator;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyPairGenerator::getInstance(jstring arg0)
 	{
@@ -85,14 +87,16 @@ namespace __jni_impl::java::security
 			"java.security.KeyPairGenerator",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/KeyPairGenerator;",
-			arg0);
+			arg0
+		);
 	}
 	void KeyPairGenerator::initialize(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"initialize",
 			"(Ljava/security/spec/AlgorithmParameterSpec;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void KeyPairGenerator::initialize(jint arg0, __jni_impl::java::security::SecureRandom arg1)
 	{
@@ -100,7 +104,8 @@ namespace __jni_impl::java::security
 			"initialize",
 			"(ILjava/security/SecureRandom;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void KeyPairGenerator::initialize(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1)
 	{
@@ -108,38 +113,44 @@ namespace __jni_impl::java::security
 			"initialize",
 			"(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void KeyPairGenerator::initialize(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"initialize",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject KeyPairGenerator::getProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
-			"()Ljava/security/Provider;");
-	}
-	QAndroidJniObject KeyPairGenerator::genKeyPair()
-	{
-		return __thiz.callObjectMethod(
-			"genKeyPair",
-			"()Ljava/security/KeyPair;");
-	}
-	QAndroidJniObject KeyPairGenerator::getAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/security/Provider;"
+		);
 	}
 	QAndroidJniObject KeyPairGenerator::generateKeyPair()
 	{
 		return __thiz.callObjectMethod(
 			"generateKeyPair",
-			"()Ljava/security/KeyPair;");
+			"()Ljava/security/KeyPair;"
+		);
+	}
+	QAndroidJniObject KeyPairGenerator::genKeyPair()
+	{
+		return __thiz.callObjectMethod(
+			"genKeyPair",
+			"()Ljava/security/KeyPair;"
+		);
+	}
+	jstring KeyPairGenerator::getAlgorithm()
+	{
+		return __thiz.callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

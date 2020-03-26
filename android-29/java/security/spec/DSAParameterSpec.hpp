@@ -49,19 +49,22 @@ namespace __jni_impl::java::security::spec
 	{
 		return __thiz.callObjectMethod(
 			"getP",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject DSAParameterSpec::getQ()
 	{
 		return __thiz.callObjectMethod(
 			"getQ",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject DSAParameterSpec::getG()
 	{
 		return __thiz.callObjectMethod(
 			"getG",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

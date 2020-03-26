@@ -24,12 +24,12 @@ namespace __jni_impl::android::print
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		jint getStart();
 		jint getEnd();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getStart();
 	};
 } // namespace __jni_impl::android::print
 
@@ -43,14 +43,16 @@ namespace __jni_impl::android::print
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PageRange",
 			"ALL_PAGES",
-			"Landroid/print/PageRange;");
+			"Landroid/print/PageRange;"
+		);
 	}
 	QAndroidJniObject PageRange::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PageRange",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -69,37 +71,36 @@ namespace __jni_impl::android::print
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PageRange::toString()
+	jstring PageRange::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PageRange::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jint PageRange::getStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getStart",
-			"()I");
+			"()I"
+		);
 	}
 	jint PageRange::getEnd()
 	{
 		return __thiz.callMethod<jint>(
 			"getEnd",
-			"()I");
+			"()I"
+		);
 	}
 	jint PageRange::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PageRange::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -107,7 +108,15 @@ namespace __jni_impl::android::print
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint PageRange::getStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getStart",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::print
 

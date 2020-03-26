@@ -33,31 +33,36 @@ namespace __jni_impl::android::telecom
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Connection$RttModifyStatus",
-			"SESSION_MODIFY_REQUEST_FAIL");
+			"SESSION_MODIFY_REQUEST_FAIL"
+		);
 	}
 	jint Connection_RttModifyStatus::SESSION_MODIFY_REQUEST_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Connection$RttModifyStatus",
-			"SESSION_MODIFY_REQUEST_INVALID");
+			"SESSION_MODIFY_REQUEST_INVALID"
+		);
 	}
 	jint Connection_RttModifyStatus::SESSION_MODIFY_REQUEST_REJECTED_BY_REMOTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Connection$RttModifyStatus",
-			"SESSION_MODIFY_REQUEST_REJECTED_BY_REMOTE");
+			"SESSION_MODIFY_REQUEST_REJECTED_BY_REMOTE"
+		);
 	}
 	jint Connection_RttModifyStatus::SESSION_MODIFY_REQUEST_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Connection$RttModifyStatus",
-			"SESSION_MODIFY_REQUEST_SUCCESS");
+			"SESSION_MODIFY_REQUEST_SUCCESS"
+		);
 	}
 	jint Connection_RttModifyStatus::SESSION_MODIFY_REQUEST_TIMED_OUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Connection$RttModifyStatus",
-			"SESSION_MODIFY_REQUEST_TIMED_OUT");
+			"SESSION_MODIFY_REQUEST_TIMED_OUT"
+		);
 	}
 	
 	// Constructors

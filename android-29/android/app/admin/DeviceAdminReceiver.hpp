@@ -41,45 +41,45 @@ namespace __jni_impl::android::app::admin
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_CHOOSE_PRIVATE_KEY_ALIAS();
-		static QAndroidJniObject ACTION_DEVICE_ADMIN_DISABLED();
-		static QAndroidJniObject ACTION_DEVICE_ADMIN_DISABLE_REQUESTED();
-		static QAndroidJniObject ACTION_DEVICE_ADMIN_ENABLED();
-		static QAndroidJniObject ACTION_LOCK_TASK_ENTERING();
-		static QAndroidJniObject ACTION_LOCK_TASK_EXITING();
-		static QAndroidJniObject ACTION_NETWORK_LOGS_AVAILABLE();
-		static QAndroidJniObject ACTION_PASSWORD_CHANGED();
-		static QAndroidJniObject ACTION_PASSWORD_EXPIRING();
-		static QAndroidJniObject ACTION_PASSWORD_FAILED();
-		static QAndroidJniObject ACTION_PASSWORD_SUCCEEDED();
-		static QAndroidJniObject ACTION_PROFILE_PROVISIONING_COMPLETE();
+		static jstring ACTION_CHOOSE_PRIVATE_KEY_ALIAS();
+		static jstring ACTION_DEVICE_ADMIN_DISABLED();
+		static jstring ACTION_DEVICE_ADMIN_DISABLE_REQUESTED();
+		static jstring ACTION_DEVICE_ADMIN_ENABLED();
+		static jstring ACTION_LOCK_TASK_ENTERING();
+		static jstring ACTION_LOCK_TASK_EXITING();
+		static jstring ACTION_NETWORK_LOGS_AVAILABLE();
+		static jstring ACTION_PASSWORD_CHANGED();
+		static jstring ACTION_PASSWORD_EXPIRING();
+		static jstring ACTION_PASSWORD_FAILED();
+		static jstring ACTION_PASSWORD_SUCCEEDED();
+		static jstring ACTION_PROFILE_PROVISIONING_COMPLETE();
 		static jint BUGREPORT_FAILURE_FAILED_COMPLETING();
 		static jint BUGREPORT_FAILURE_FILE_NO_LONGER_AVAILABLE();
-		static QAndroidJniObject DEVICE_ADMIN_META_DATA();
-		static QAndroidJniObject EXTRA_DISABLE_WARNING();
-		static QAndroidJniObject EXTRA_LOCK_TASK_PACKAGE();
-		static QAndroidJniObject EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE();
+		static jstring DEVICE_ADMIN_META_DATA();
+		static jstring EXTRA_DISABLE_WARNING();
+		static jstring EXTRA_LOCK_TASK_PACKAGE();
+		static jstring EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		void onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
-		QAndroidJniObject onChoosePrivateKeyAlias(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::net::Uri arg3, jstring arg4);
+		jstring onChoosePrivateKeyAlias(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::net::Uri arg3, jstring arg4);
 		void onNetworkLogsAvailable(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jlong arg2, jint arg3);
+		void onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		QAndroidJniObject getManager(__jni_impl::android::content::Context arg0);
 		QAndroidJniObject getWho(__jni_impl::android::content::Context arg0);
 		void onEnabled(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
-		QAndroidJniObject onDisableRequested(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
+		jstring onDisableRequested(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		void onDisabled(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		void onPasswordChanged(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		void onPasswordChanged(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2);
 		void onPasswordFailed(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		void onPasswordFailed(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2);
-		void onPasswordSucceeded(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2);
 		void onPasswordSucceeded(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
-		void onPasswordExpiring(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
+		void onPasswordSucceeded(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2);
 		void onPasswordExpiring(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2);
+		void onPasswordExpiring(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		void onProfileProvisioningComplete(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		void onReadyForUserInitialization(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 		void onLockTaskModeEntering(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jstring arg2);
@@ -110,129 +110,147 @@ namespace __jni_impl::android::app::admin
 namespace __jni_impl::android::app::admin
 {
 	// Fields
-	QAndroidJniObject DeviceAdminReceiver::ACTION_CHOOSE_PRIVATE_KEY_ALIAS()
+	jstring DeviceAdminReceiver::ACTION_CHOOSE_PRIVATE_KEY_ALIAS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_CHOOSE_PRIVATE_KEY_ALIAS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLED()
+	jstring DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_DEVICE_ADMIN_DISABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLE_REQUESTED()
+	jstring DeviceAdminReceiver::ACTION_DEVICE_ADMIN_DISABLE_REQUESTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_DEVICE_ADMIN_DISABLE_REQUESTED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_DEVICE_ADMIN_ENABLED()
+	jstring DeviceAdminReceiver::ACTION_DEVICE_ADMIN_ENABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_DEVICE_ADMIN_ENABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_LOCK_TASK_ENTERING()
+	jstring DeviceAdminReceiver::ACTION_LOCK_TASK_ENTERING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_LOCK_TASK_ENTERING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_LOCK_TASK_EXITING()
+	jstring DeviceAdminReceiver::ACTION_LOCK_TASK_EXITING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_LOCK_TASK_EXITING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_NETWORK_LOGS_AVAILABLE()
+	jstring DeviceAdminReceiver::ACTION_NETWORK_LOGS_AVAILABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_NETWORK_LOGS_AVAILABLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_PASSWORD_CHANGED()
+	jstring DeviceAdminReceiver::ACTION_PASSWORD_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_PASSWORD_EXPIRING()
+	jstring DeviceAdminReceiver::ACTION_PASSWORD_EXPIRING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_EXPIRING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_PASSWORD_FAILED()
+	jstring DeviceAdminReceiver::ACTION_PASSWORD_FAILED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_FAILED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_PASSWORD_SUCCEEDED()
+	jstring DeviceAdminReceiver::ACTION_PASSWORD_SUCCEEDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PASSWORD_SUCCEEDED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::ACTION_PROFILE_PROVISIONING_COMPLETE()
+	jstring DeviceAdminReceiver::ACTION_PROFILE_PROVISIONING_COMPLETE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"ACTION_PROFILE_PROVISIONING_COMPLETE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DeviceAdminReceiver::BUGREPORT_FAILURE_FAILED_COMPLETING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.DeviceAdminReceiver",
-			"BUGREPORT_FAILURE_FAILED_COMPLETING");
+			"BUGREPORT_FAILURE_FAILED_COMPLETING"
+		);
 	}
 	jint DeviceAdminReceiver::BUGREPORT_FAILURE_FILE_NO_LONGER_AVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.DeviceAdminReceiver",
-			"BUGREPORT_FAILURE_FILE_NO_LONGER_AVAILABLE");
+			"BUGREPORT_FAILURE_FILE_NO_LONGER_AVAILABLE"
+		);
 	}
-	QAndroidJniObject DeviceAdminReceiver::DEVICE_ADMIN_META_DATA()
+	jstring DeviceAdminReceiver::DEVICE_ADMIN_META_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"DEVICE_ADMIN_META_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::EXTRA_DISABLE_WARNING()
+	jstring DeviceAdminReceiver::EXTRA_DISABLE_WARNING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"EXTRA_DISABLE_WARNING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::EXTRA_LOCK_TASK_PACKAGE()
+	jstring DeviceAdminReceiver::EXTRA_LOCK_TASK_PACKAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"EXTRA_LOCK_TASK_PACKAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DeviceAdminReceiver::EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE()
+	jstring DeviceAdminReceiver::EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DeviceAdminReceiver",
 			"EXTRA_TRANSFER_OWNERSHIP_ADMIN_EXTRAS_BUNDLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -244,15 +262,7 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	void DeviceAdminReceiver::onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
-	{
-		__thiz.callMethod<void>(
-			"onReceive",
-			"(Landroid/content/Context;Landroid/content/Intent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject DeviceAdminReceiver::onChoosePrivateKeyAlias(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::net::Uri arg3, jstring arg4)
+	jstring DeviceAdminReceiver::onChoosePrivateKeyAlias(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::net::Uri arg3, jstring arg4)
 	{
 		return __thiz.callObjectMethod(
 			"onChoosePrivateKeyAlias",
@@ -261,7 +271,8 @@ namespace __jni_impl::android::app::admin
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
-			arg4);
+			arg4
+		).object<jstring>();
 	}
 	void DeviceAdminReceiver::onNetworkLogsAvailable(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jlong arg2, jint arg3)
 	{
@@ -271,21 +282,33 @@ namespace __jni_impl::android::app::admin
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void DeviceAdminReceiver::onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
+	{
+		__thiz.callMethod<void>(
+			"onReceive",
+			"(Landroid/content/Context;Landroid/content/Intent;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DeviceAdminReceiver::getManager(__jni_impl::android::content::Context arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getManager",
 			"(Landroid/content/Context;)Landroid/app/admin/DevicePolicyManager;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DeviceAdminReceiver::getWho(__jni_impl::android::content::Context arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getWho",
 			"(Landroid/content/Context;)Landroid/content/ComponentName;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onEnabled(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -293,15 +316,17 @@ namespace __jni_impl::android::app::admin
 			"onEnabled",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DeviceAdminReceiver::onDisableRequested(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
+	jstring DeviceAdminReceiver::onDisableRequested(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
 		return __thiz.callObjectMethod(
 			"onDisableRequested",
 			"(Landroid/content/Context;Landroid/content/Intent;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
 	void DeviceAdminReceiver::onDisabled(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -309,7 +334,8 @@ namespace __jni_impl::android::app::admin
 			"onDisabled",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onPasswordChanged(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -317,7 +343,8 @@ namespace __jni_impl::android::app::admin
 			"onPasswordChanged",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onPasswordChanged(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -326,7 +353,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onPasswordFailed(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -334,7 +362,8 @@ namespace __jni_impl::android::app::admin
 			"onPasswordFailed",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onPasswordFailed(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -343,7 +372,17 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void DeviceAdminReceiver::onPasswordSucceeded(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPasswordSucceeded",
+			"(Landroid/content/Context;Landroid/content/Intent;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onPasswordSucceeded(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -352,23 +391,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	void DeviceAdminReceiver::onPasswordSucceeded(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPasswordSucceeded",
-			"(Landroid/content/Context;Landroid/content/Intent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void DeviceAdminReceiver::onPasswordExpiring(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPasswordExpiring",
-			"(Landroid/content/Context;Landroid/content/Intent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onPasswordExpiring(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -377,7 +401,17 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void DeviceAdminReceiver::onPasswordExpiring(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPasswordExpiring",
+			"(Landroid/content/Context;Landroid/content/Intent;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onProfileProvisioningComplete(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -385,7 +419,8 @@ namespace __jni_impl::android::app::admin
 			"onProfileProvisioningComplete",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onReadyForUserInitialization(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -393,7 +428,8 @@ namespace __jni_impl::android::app::admin
 			"onReadyForUserInitialization",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onLockTaskModeEntering(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jstring arg2)
 	{
@@ -402,7 +438,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DeviceAdminReceiver::onLockTaskModeExiting(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -410,7 +447,8 @@ namespace __jni_impl::android::app::admin
 			"onLockTaskModeExiting",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onSystemUpdatePending(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jlong arg2)
 	{
@@ -419,7 +457,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;J)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DeviceAdminReceiver::onBugreportSharingDeclined(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -427,7 +466,8 @@ namespace __jni_impl::android::app::admin
 			"onBugreportSharingDeclined",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onBugreportShared(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jstring arg2)
 	{
@@ -436,7 +476,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DeviceAdminReceiver::onBugreportFailed(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jint arg2)
 	{
@@ -445,7 +486,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DeviceAdminReceiver::onSecurityLogsAvailable(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -453,7 +495,8 @@ namespace __jni_impl::android::app::admin
 			"onSecurityLogsAvailable",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onUserAdded(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -462,7 +505,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onUserRemoved(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -471,7 +515,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onUserStarted(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -480,7 +525,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onUserStopped(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -489,7 +535,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onUserSwitched(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -498,7 +545,8 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onTransferOwnershipComplete(__jni_impl::android::content::Context arg0, __jni_impl::android::os::PersistableBundle arg1)
 	{
@@ -506,7 +554,8 @@ namespace __jni_impl::android::app::admin
 			"onTransferOwnershipComplete",
 			"(Landroid/content/Context;Landroid/os/PersistableBundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeviceAdminReceiver::onTransferAffiliatedProfileOwnershipComplete(__jni_impl::android::content::Context arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -514,7 +563,8 @@ namespace __jni_impl::android::app::admin
 			"onTransferAffiliatedProfileOwnershipComplete",
 			"(Landroid/content/Context;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app::admin
 

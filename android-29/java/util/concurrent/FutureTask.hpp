@@ -27,9 +27,9 @@ namespace __jni_impl::java::util::concurrent
 		
 		// Methods
 		void run();
-		QAndroidJniObject get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
-		QAndroidJniObject get();
-		QAndroidJniObject toString();
+		jobject get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
+		jobject get();
+		jstring toString();
 		jboolean cancel(jboolean arg0);
 		jboolean isDone();
 		jboolean isCancelled();
@@ -65,46 +65,53 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz.callMethod<void>(
 			"run",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject FutureTask::get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
+	jobject FutureTask::get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject FutureTask::get()
+	jobject FutureTask::get()
 	{
 		return __thiz.callObjectMethod(
 			"get",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject FutureTask::toString()
+	jstring FutureTask::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean FutureTask::cancel(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"cancel",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean FutureTask::isDone()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDone",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean FutureTask::isCancelled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCancelled",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

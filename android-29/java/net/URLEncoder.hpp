@@ -25,9 +25,9 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject encode(jstring arg0);
-		static QAndroidJniObject encode(jstring arg0, __jni_impl::java::nio::charset::Charset arg1);
-		static QAndroidJniObject encode(jstring arg0, jstring arg1);
+		static jstring encode(jstring arg0);
+		static jstring encode(jstring arg0, __jni_impl::java::nio::charset::Charset arg1);
+		static jstring encode(jstring arg0, jstring arg1);
 	};
 } // namespace __jni_impl::java::net
 
@@ -47,31 +47,34 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject URLEncoder::encode(jstring arg0)
+	jstring URLEncoder::encode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLEncoder",
 			"encode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject URLEncoder::encode(jstring arg0, __jni_impl::java::nio::charset::Charset arg1)
+	jstring URLEncoder::encode(jstring arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLEncoder",
 			"encode",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject URLEncoder::encode(jstring arg0, jstring arg1)
+	jstring URLEncoder::encode(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLEncoder",
 			"encode",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

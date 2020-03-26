@@ -32,7 +32,7 @@ namespace __jni_impl::android::telecom
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isMuted();
@@ -40,7 +40,7 @@ namespace __jni_impl::android::telecom
 		jint getSupportedRouteMask();
 		QAndroidJniObject getActiveBluetoothDevice();
 		QAndroidJniObject getSupportedBluetoothDevices();
-		static QAndroidJniObject audioRouteToString(jint arg0);
+		static jstring audioRouteToString(jint arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -55,37 +55,43 @@ namespace __jni_impl::android::telecom
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.CallAudioState",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint CallAudioState::ROUTE_BLUETOOTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.CallAudioState",
-			"ROUTE_BLUETOOTH");
+			"ROUTE_BLUETOOTH"
+		);
 	}
 	jint CallAudioState::ROUTE_EARPIECE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.CallAudioState",
-			"ROUTE_EARPIECE");
+			"ROUTE_EARPIECE"
+		);
 	}
 	jint CallAudioState::ROUTE_SPEAKER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.CallAudioState",
-			"ROUTE_SPEAKER");
+			"ROUTE_SPEAKER"
+		);
 	}
 	jint CallAudioState::ROUTE_WIRED_HEADSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.CallAudioState",
-			"ROUTE_WIRED_HEADSET");
+			"ROUTE_WIRED_HEADSET"
+		);
 	}
 	jint CallAudioState::ROUTE_WIRED_OR_EARPIECE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.CallAudioState",
-			"ROUTE_WIRED_OR_EARPIECE");
+			"ROUTE_WIRED_OR_EARPIECE"
+		);
 	}
 	
 	// Constructors
@@ -105,19 +111,22 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CallAudioState::toString()
+	jstring CallAudioState::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CallAudioState::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CallAudioState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -125,45 +134,52 @@ namespace __jni_impl::android::telecom
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean CallAudioState::isMuted()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMuted",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint CallAudioState::getRoute()
 	{
 		return __thiz.callMethod<jint>(
 			"getRoute",
-			"()I");
+			"()I"
+		);
 	}
 	jint CallAudioState::getSupportedRouteMask()
 	{
 		return __thiz.callMethod<jint>(
 			"getSupportedRouteMask",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject CallAudioState::getActiveBluetoothDevice()
 	{
 		return __thiz.callObjectMethod(
 			"getActiveBluetoothDevice",
-			"()Landroid/bluetooth/BluetoothDevice;");
+			"()Landroid/bluetooth/BluetoothDevice;"
+		);
 	}
 	QAndroidJniObject CallAudioState::getSupportedBluetoothDevices()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedBluetoothDevices",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
-	QAndroidJniObject CallAudioState::audioRouteToString(jint arg0)
+	jstring CallAudioState::audioRouteToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telecom.CallAudioState",
 			"audioRouteToString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telecom
 

@@ -45,10 +45,10 @@ namespace __jni_impl::java::nio::charset
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject name();
+		jstring name();
 		static QAndroidJniObject forName(jstring arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::java::nio::charset::Charset arg0);
@@ -63,8 +63,8 @@ namespace __jni_impl::java::nio::charset
 		QAndroidJniObject newEncoder();
 		QAndroidJniObject aliases();
 		static QAndroidJniObject availableCharsets();
-		QAndroidJniObject displayName();
-		QAndroidJniObject displayName(__jni_impl::java::util::Locale arg0);
+		jstring displayName();
+		jstring displayName(__jni_impl::java::util::Locale arg0);
 		QAndroidJniObject newDecoder();
 	};
 } // namespace __jni_impl::java::nio::charset
@@ -90,11 +90,12 @@ namespace __jni_impl::java::nio::charset
 	}
 	
 	// Methods
-	QAndroidJniObject Charset::name()
+	jstring Charset::name()
 	{
 		return __thiz.callObjectMethod(
 			"name",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Charset::forName(jstring arg0)
 	{
@@ -102,87 +103,100 @@ namespace __jni_impl::java::nio::charset
 			"java.nio.charset.Charset",
 			"forName",
 			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Charset::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Charset::toString()
+	jstring Charset::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Charset::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Charset::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Charset::compareTo(__jni_impl::java::nio::charset::Charset arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/nio/charset/Charset;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Charset::decode(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"decode",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Charset::encode(__jni_impl::java::nio::CharBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"encode",
 			"(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Charset::encode(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"encode",
 			"(Ljava/lang/String;)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Charset::canEncode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canEncode",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Charset::contains(__jni_impl::java::nio::charset::Charset arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Ljava/nio/charset/Charset;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Charset::isRegistered()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRegistered",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Charset::defaultCharset()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.charset.Charset",
 			"defaultCharset",
-			"()Ljava/nio/charset/Charset;");
+			"()Ljava/nio/charset/Charset;"
+		);
 	}
 	jboolean Charset::isSupported(jstring arg0)
 	{
@@ -190,45 +204,52 @@ namespace __jni_impl::java::nio::charset
 			"java.nio.charset.Charset",
 			"isSupported",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Charset::newEncoder()
 	{
 		return __thiz.callObjectMethod(
 			"newEncoder",
-			"()Ljava/nio/charset/CharsetEncoder;");
+			"()Ljava/nio/charset/CharsetEncoder;"
+		);
 	}
 	QAndroidJniObject Charset::aliases()
 	{
 		return __thiz.callObjectMethod(
 			"aliases",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject Charset::availableCharsets()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.charset.Charset",
 			"availableCharsets",
-			"()Ljava/util/SortedMap;");
+			"()Ljava/util/SortedMap;"
+		);
 	}
-	QAndroidJniObject Charset::displayName()
+	jstring Charset::displayName()
 	{
 		return __thiz.callObjectMethod(
 			"displayName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Charset::displayName(__jni_impl::java::util::Locale arg0)
+	jstring Charset::displayName(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"displayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject Charset::newDecoder()
 	{
 		return __thiz.callObjectMethod(
 			"newDecoder",
-			"()Ljava/nio/charset/CharsetDecoder;");
+			"()Ljava/nio/charset/CharsetDecoder;"
+		);
 	}
 } // namespace __jni_impl::java::nio::charset
 

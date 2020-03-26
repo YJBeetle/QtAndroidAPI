@@ -25,7 +25,7 @@ namespace __jni_impl::android::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject get(jstring arg0, jint arg1, jint arg2, __jni_impl::android::view::View arg3);
+		static jstring get(jstring arg0, jint arg1, jint arg2, __jni_impl::android::view::View arg3);
 		static jint getSize(__jni_impl::android::view::View arg0);
 	};
 } // namespace __jni_impl::android::text
@@ -46,7 +46,7 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
-	QAndroidJniObject AutoText::get(jstring arg0, jint arg1, jint arg2, __jni_impl::android::view::View arg3)
+	jstring AutoText::get(jstring arg0, jint arg1, jint arg2, __jni_impl::android::view::View arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.AutoText",
@@ -55,7 +55,8 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		).object<jstring>();
 	}
 	jint AutoText::getSize(__jni_impl::android::view::View arg0)
 	{
@@ -63,7 +64,8 @@ namespace __jni_impl::android::text
 			"android.text.AutoText",
 			"getSize",
 			"(Landroid/view/View;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text
 

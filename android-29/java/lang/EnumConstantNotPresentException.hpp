@@ -19,8 +19,8 @@ namespace __jni_impl::java::lang
 		void __constructor(jclass arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject enumType();
-		QAndroidJniObject constantName();
+		jclass enumType();
+		jstring constantName();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -40,17 +40,19 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	QAndroidJniObject EnumConstantNotPresentException::enumType()
+	jclass EnumConstantNotPresentException::enumType()
 	{
 		return __thiz.callObjectMethod(
 			"enumType",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
-	QAndroidJniObject EnumConstantNotPresentException::constantName()
+	jstring EnumConstantNotPresentException::constantName()
 	{
 		return __thiz.callObjectMethod(
 			"constantName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::lang
 

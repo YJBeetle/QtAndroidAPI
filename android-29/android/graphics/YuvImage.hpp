@@ -26,9 +26,9 @@ namespace __jni_impl::android::graphics
 		
 		// Methods
 		jboolean compressToJpeg(__jni_impl::android::graphics::Rect arg0, jint arg1, __jni_impl::java::io::OutputStream arg2);
-		QAndroidJniObject getYuvData();
+		jbyteArray getYuvData();
 		jint getYuvFormat();
-		QAndroidJniObject getStrides();
+		jintArray getStrides();
 		jint getWidth();
 		jint getHeight();
 	};
@@ -62,37 +62,43 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Rect;ILjava/io/OutputStream;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject YuvImage::getYuvData()
+	jbyteArray YuvImage::getYuvData()
 	{
 		return __thiz.callObjectMethod(
 			"getYuvData",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jint YuvImage::getYuvFormat()
 	{
 		return __thiz.callMethod<jint>(
 			"getYuvFormat",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject YuvImage::getStrides()
+	jintArray YuvImage::getStrides()
 	{
 		return __thiz.callObjectMethod(
 			"getStrides",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
 	jint YuvImage::getWidth()
 	{
 		return __thiz.callMethod<jint>(
 			"getWidth",
-			"()I");
+			"()I"
+		);
 	}
 	jint YuvImage::getHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getHeight",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -152,10 +152,6 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static void glColorPointer(jint arg0, jint arg1, jint arg2, jint arg3);
-		static void glNormalPointer(jint arg0, jint arg1, jint arg2);
-		static void glTexCoordPointer(jint arg0, jint arg1, jint arg2, jint arg3);
-		static void glVertexPointer(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glBindBuffer(jint arg0, jint arg1);
 		static void glBufferData(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, jint arg3);
 		static void glBufferSubData(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3);
@@ -164,10 +160,10 @@ namespace __jni_impl::android::opengl
 		static void glDrawElements(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glGenBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glGenBuffers(jint arg0, jintArray arg1, jint arg2);
-		static void glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2);
 		static void glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glGetBufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2);
 		static void glGetBufferParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetBufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetFloatv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glGetFloatv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
 		static void glGetTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
@@ -177,15 +173,15 @@ namespace __jni_impl::android::opengl
 		static jboolean glIsBuffer(jint arg0);
 		static jboolean glIsEnabled(jint arg0);
 		static jboolean glIsTexture(jint arg0);
-		static void glTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glTexParameteri(jint arg0, jint arg1, jint arg2);
-		static void glTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
+		static void glTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glClipPlanef(jint arg0, jfloatArray arg1, jint arg2);
-		static void glClipPlanex(jint arg0, jintArray arg1, jint arg2);
+		static void glClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
 		static void glClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glClipPlanex(jint arg0, jintArray arg1, jint arg2);
 		static void glColor4ub(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3);
 		static void glGetClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
 		static void glGetClipPlanef(jint arg0, jfloatArray arg1, jint arg2);
@@ -195,32 +191,36 @@ namespace __jni_impl::android::opengl
 		static void glGetFixedv(jint arg0, jintArray arg1, jint arg2);
 		static void glGetLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glGetLightfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
-		static void glGetLightxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetLightxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetLightxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetMaterialfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glGetMaterialfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glGetMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glGetMaterialxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glGetTexEnvfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
-		static void glGetTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetTexEnvxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetTexEnvxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexEnvxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glPointParameterf(jint arg0, jfloat arg1);
-		static void glPointParameterfv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glPointParameterfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
+		static void glPointParameterfv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glPointParameterx(jint arg0, jint arg1);
-		static void glPointParameterxv(jint arg0, jintArray arg1, jint arg2);
 		static void glPointParameterxv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glPointParameterxv(jint arg0, jintArray arg1, jint arg2);
 		static void glPointSizePointerOES(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2);
 		static void glTexEnvi(jint arg0, jint arg1, jint arg2);
 		static void glTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glColorPointer(jint arg0, jint arg1, jint arg2, jint arg3);
+		static void glNormalPointer(jint arg0, jint arg1, jint arg2);
+		static void glTexCoordPointer(jint arg0, jint arg1, jint arg2, jint arg3);
+		static void glVertexPointer(jint arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::opengl
 
@@ -235,733 +235,855 @@ namespace __jni_impl::android::opengl
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_ACTIVE_TEXTURE");
+			"GL_ACTIVE_TEXTURE"
+		);
 	}
 	jint GLES11::GL_ADD_SIGNED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_ADD_SIGNED");
+			"GL_ADD_SIGNED"
+		);
 	}
 	jint GLES11::GL_ALPHA_SCALE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_ALPHA_SCALE");
+			"GL_ALPHA_SCALE"
+		);
 	}
 	jint GLES11::GL_ALPHA_TEST_FUNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_ALPHA_TEST_FUNC");
+			"GL_ALPHA_TEST_FUNC"
+		);
 	}
 	jint GLES11::GL_ALPHA_TEST_REF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_ALPHA_TEST_REF");
+			"GL_ALPHA_TEST_REF"
+		);
 	}
 	jint GLES11::GL_ARRAY_BUFFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_ARRAY_BUFFER");
+			"GL_ARRAY_BUFFER"
+		);
 	}
 	jint GLES11::GL_ARRAY_BUFFER_BINDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_ARRAY_BUFFER_BINDING");
+			"GL_ARRAY_BUFFER_BINDING"
+		);
 	}
 	jint GLES11::GL_BLEND_DST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_BLEND_DST");
+			"GL_BLEND_DST"
+		);
 	}
 	jint GLES11::GL_BLEND_SRC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_BLEND_SRC");
+			"GL_BLEND_SRC"
+		);
 	}
 	jint GLES11::GL_BUFFER_ACCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_BUFFER_ACCESS");
+			"GL_BUFFER_ACCESS"
+		);
 	}
 	jint GLES11::GL_BUFFER_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_BUFFER_SIZE");
+			"GL_BUFFER_SIZE"
+		);
 	}
 	jint GLES11::GL_BUFFER_USAGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_BUFFER_USAGE");
+			"GL_BUFFER_USAGE"
+		);
 	}
 	jint GLES11::GL_CLIENT_ACTIVE_TEXTURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CLIENT_ACTIVE_TEXTURE");
+			"GL_CLIENT_ACTIVE_TEXTURE"
+		);
 	}
 	jint GLES11::GL_CLIP_PLANE0()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CLIP_PLANE0");
+			"GL_CLIP_PLANE0"
+		);
 	}
 	jint GLES11::GL_CLIP_PLANE1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CLIP_PLANE1");
+			"GL_CLIP_PLANE1"
+		);
 	}
 	jint GLES11::GL_CLIP_PLANE2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CLIP_PLANE2");
+			"GL_CLIP_PLANE2"
+		);
 	}
 	jint GLES11::GL_CLIP_PLANE3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CLIP_PLANE3");
+			"GL_CLIP_PLANE3"
+		);
 	}
 	jint GLES11::GL_CLIP_PLANE4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CLIP_PLANE4");
+			"GL_CLIP_PLANE4"
+		);
 	}
 	jint GLES11::GL_CLIP_PLANE5()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CLIP_PLANE5");
+			"GL_CLIP_PLANE5"
+		);
 	}
 	jint GLES11::GL_COLOR_ARRAY_BUFFER_BINDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COLOR_ARRAY_BUFFER_BINDING");
+			"GL_COLOR_ARRAY_BUFFER_BINDING"
+		);
 	}
 	jint GLES11::GL_COLOR_ARRAY_POINTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COLOR_ARRAY_POINTER");
+			"GL_COLOR_ARRAY_POINTER"
+		);
 	}
 	jint GLES11::GL_COLOR_ARRAY_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COLOR_ARRAY_SIZE");
+			"GL_COLOR_ARRAY_SIZE"
+		);
 	}
 	jint GLES11::GL_COLOR_ARRAY_STRIDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COLOR_ARRAY_STRIDE");
+			"GL_COLOR_ARRAY_STRIDE"
+		);
 	}
 	jint GLES11::GL_COLOR_ARRAY_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COLOR_ARRAY_TYPE");
+			"GL_COLOR_ARRAY_TYPE"
+		);
 	}
 	jint GLES11::GL_COLOR_CLEAR_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COLOR_CLEAR_VALUE");
+			"GL_COLOR_CLEAR_VALUE"
+		);
 	}
 	jint GLES11::GL_COLOR_WRITEMASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COLOR_WRITEMASK");
+			"GL_COLOR_WRITEMASK"
+		);
 	}
 	jint GLES11::GL_COMBINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COMBINE");
+			"GL_COMBINE"
+		);
 	}
 	jint GLES11::GL_COMBINE_ALPHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COMBINE_ALPHA");
+			"GL_COMBINE_ALPHA"
+		);
 	}
 	jint GLES11::GL_COMBINE_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COMBINE_RGB");
+			"GL_COMBINE_RGB"
+		);
 	}
 	jint GLES11::GL_CONSTANT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CONSTANT");
+			"GL_CONSTANT"
+		);
 	}
 	jint GLES11::GL_COORD_REPLACE_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_COORD_REPLACE_OES");
+			"GL_COORD_REPLACE_OES"
+		);
 	}
 	jint GLES11::GL_CULL_FACE_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CULL_FACE_MODE");
+			"GL_CULL_FACE_MODE"
+		);
 	}
 	jint GLES11::GL_CURRENT_COLOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CURRENT_COLOR");
+			"GL_CURRENT_COLOR"
+		);
 	}
 	jint GLES11::GL_CURRENT_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CURRENT_NORMAL");
+			"GL_CURRENT_NORMAL"
+		);
 	}
 	jint GLES11::GL_CURRENT_TEXTURE_COORDS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_CURRENT_TEXTURE_COORDS");
+			"GL_CURRENT_TEXTURE_COORDS"
+		);
 	}
 	jint GLES11::GL_DEPTH_CLEAR_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_DEPTH_CLEAR_VALUE");
+			"GL_DEPTH_CLEAR_VALUE"
+		);
 	}
 	jint GLES11::GL_DEPTH_FUNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_DEPTH_FUNC");
+			"GL_DEPTH_FUNC"
+		);
 	}
 	jint GLES11::GL_DEPTH_RANGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_DEPTH_RANGE");
+			"GL_DEPTH_RANGE"
+		);
 	}
 	jint GLES11::GL_DEPTH_WRITEMASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_DEPTH_WRITEMASK");
+			"GL_DEPTH_WRITEMASK"
+		);
 	}
 	jint GLES11::GL_DOT3_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_DOT3_RGB");
+			"GL_DOT3_RGB"
+		);
 	}
 	jint GLES11::GL_DOT3_RGBA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_DOT3_RGBA");
+			"GL_DOT3_RGBA"
+		);
 	}
 	jint GLES11::GL_DYNAMIC_DRAW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_DYNAMIC_DRAW");
+			"GL_DYNAMIC_DRAW"
+		);
 	}
 	jint GLES11::GL_ELEMENT_ARRAY_BUFFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_ELEMENT_ARRAY_BUFFER");
+			"GL_ELEMENT_ARRAY_BUFFER"
+		);
 	}
 	jint GLES11::GL_ELEMENT_ARRAY_BUFFER_BINDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_ELEMENT_ARRAY_BUFFER_BINDING");
+			"GL_ELEMENT_ARRAY_BUFFER_BINDING"
+		);
 	}
 	jint GLES11::GL_FRONT_FACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_FRONT_FACE");
+			"GL_FRONT_FACE"
+		);
 	}
 	jint GLES11::GL_GENERATE_MIPMAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_GENERATE_MIPMAP");
+			"GL_GENERATE_MIPMAP"
+		);
 	}
 	jint GLES11::GL_GENERATE_MIPMAP_HINT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_GENERATE_MIPMAP_HINT");
+			"GL_GENERATE_MIPMAP_HINT"
+		);
 	}
 	jint GLES11::GL_INTERPOLATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_INTERPOLATE");
+			"GL_INTERPOLATE"
+		);
 	}
 	jint GLES11::GL_LINE_WIDTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_LINE_WIDTH");
+			"GL_LINE_WIDTH"
+		);
 	}
 	jint GLES11::GL_LOGIC_OP_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_LOGIC_OP_MODE");
+			"GL_LOGIC_OP_MODE"
+		);
 	}
 	jint GLES11::GL_MATRIX_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_MATRIX_MODE");
+			"GL_MATRIX_MODE"
+		);
 	}
 	jint GLES11::GL_MAX_CLIP_PLANES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_MAX_CLIP_PLANES");
+			"GL_MAX_CLIP_PLANES"
+		);
 	}
 	jint GLES11::GL_MODELVIEW_MATRIX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_MODELVIEW_MATRIX");
+			"GL_MODELVIEW_MATRIX"
+		);
 	}
 	jint GLES11::GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES");
+			"GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES"
+		);
 	}
 	jint GLES11::GL_MODELVIEW_STACK_DEPTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_MODELVIEW_STACK_DEPTH");
+			"GL_MODELVIEW_STACK_DEPTH"
+		);
 	}
 	jint GLES11::GL_NORMAL_ARRAY_BUFFER_BINDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_NORMAL_ARRAY_BUFFER_BINDING");
+			"GL_NORMAL_ARRAY_BUFFER_BINDING"
+		);
 	}
 	jint GLES11::GL_NORMAL_ARRAY_POINTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_NORMAL_ARRAY_POINTER");
+			"GL_NORMAL_ARRAY_POINTER"
+		);
 	}
 	jint GLES11::GL_NORMAL_ARRAY_STRIDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_NORMAL_ARRAY_STRIDE");
+			"GL_NORMAL_ARRAY_STRIDE"
+		);
 	}
 	jint GLES11::GL_NORMAL_ARRAY_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_NORMAL_ARRAY_TYPE");
+			"GL_NORMAL_ARRAY_TYPE"
+		);
 	}
 	jint GLES11::GL_OPERAND0_ALPHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_OPERAND0_ALPHA");
+			"GL_OPERAND0_ALPHA"
+		);
 	}
 	jint GLES11::GL_OPERAND0_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_OPERAND0_RGB");
+			"GL_OPERAND0_RGB"
+		);
 	}
 	jint GLES11::GL_OPERAND1_ALPHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_OPERAND1_ALPHA");
+			"GL_OPERAND1_ALPHA"
+		);
 	}
 	jint GLES11::GL_OPERAND1_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_OPERAND1_RGB");
+			"GL_OPERAND1_RGB"
+		);
 	}
 	jint GLES11::GL_OPERAND2_ALPHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_OPERAND2_ALPHA");
+			"GL_OPERAND2_ALPHA"
+		);
 	}
 	jint GLES11::GL_OPERAND2_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_OPERAND2_RGB");
+			"GL_OPERAND2_RGB"
+		);
 	}
 	jint GLES11::GL_POINT_DISTANCE_ATTENUATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_DISTANCE_ATTENUATION");
+			"GL_POINT_DISTANCE_ATTENUATION"
+		);
 	}
 	jint GLES11::GL_POINT_FADE_THRESHOLD_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_FADE_THRESHOLD_SIZE");
+			"GL_POINT_FADE_THRESHOLD_SIZE"
+		);
 	}
 	jint GLES11::GL_POINT_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_SIZE");
+			"GL_POINT_SIZE"
+		);
 	}
 	jint GLES11::GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES");
+			"GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES"
+		);
 	}
 	jint GLES11::GL_POINT_SIZE_ARRAY_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_SIZE_ARRAY_OES");
+			"GL_POINT_SIZE_ARRAY_OES"
+		);
 	}
 	jint GLES11::GL_POINT_SIZE_ARRAY_POINTER_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_SIZE_ARRAY_POINTER_OES");
+			"GL_POINT_SIZE_ARRAY_POINTER_OES"
+		);
 	}
 	jint GLES11::GL_POINT_SIZE_ARRAY_STRIDE_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_SIZE_ARRAY_STRIDE_OES");
+			"GL_POINT_SIZE_ARRAY_STRIDE_OES"
+		);
 	}
 	jint GLES11::GL_POINT_SIZE_ARRAY_TYPE_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_SIZE_ARRAY_TYPE_OES");
+			"GL_POINT_SIZE_ARRAY_TYPE_OES"
+		);
 	}
 	jint GLES11::GL_POINT_SIZE_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_SIZE_MAX");
+			"GL_POINT_SIZE_MAX"
+		);
 	}
 	jint GLES11::GL_POINT_SIZE_MIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_SIZE_MIN");
+			"GL_POINT_SIZE_MIN"
+		);
 	}
 	jint GLES11::GL_POINT_SPRITE_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POINT_SPRITE_OES");
+			"GL_POINT_SPRITE_OES"
+		);
 	}
 	jint GLES11::GL_POLYGON_OFFSET_FACTOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POLYGON_OFFSET_FACTOR");
+			"GL_POLYGON_OFFSET_FACTOR"
+		);
 	}
 	jint GLES11::GL_POLYGON_OFFSET_UNITS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_POLYGON_OFFSET_UNITS");
+			"GL_POLYGON_OFFSET_UNITS"
+		);
 	}
 	jint GLES11::GL_PREVIOUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_PREVIOUS");
+			"GL_PREVIOUS"
+		);
 	}
 	jint GLES11::GL_PRIMARY_COLOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_PRIMARY_COLOR");
+			"GL_PRIMARY_COLOR"
+		);
 	}
 	jint GLES11::GL_PROJECTION_MATRIX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_PROJECTION_MATRIX");
+			"GL_PROJECTION_MATRIX"
+		);
 	}
 	jint GLES11::GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES");
+			"GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES"
+		);
 	}
 	jint GLES11::GL_PROJECTION_STACK_DEPTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_PROJECTION_STACK_DEPTH");
+			"GL_PROJECTION_STACK_DEPTH"
+		);
 	}
 	jint GLES11::GL_RGB_SCALE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_RGB_SCALE");
+			"GL_RGB_SCALE"
+		);
 	}
 	jint GLES11::GL_SAMPLES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SAMPLES");
+			"GL_SAMPLES"
+		);
 	}
 	jint GLES11::GL_SAMPLE_BUFFERS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SAMPLE_BUFFERS");
+			"GL_SAMPLE_BUFFERS"
+		);
 	}
 	jint GLES11::GL_SAMPLE_COVERAGE_INVERT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SAMPLE_COVERAGE_INVERT");
+			"GL_SAMPLE_COVERAGE_INVERT"
+		);
 	}
 	jint GLES11::GL_SAMPLE_COVERAGE_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SAMPLE_COVERAGE_VALUE");
+			"GL_SAMPLE_COVERAGE_VALUE"
+		);
 	}
 	jint GLES11::GL_SCISSOR_BOX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SCISSOR_BOX");
+			"GL_SCISSOR_BOX"
+		);
 	}
 	jint GLES11::GL_SHADE_MODEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SHADE_MODEL");
+			"GL_SHADE_MODEL"
+		);
 	}
 	jint GLES11::GL_SRC0_ALPHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SRC0_ALPHA");
+			"GL_SRC0_ALPHA"
+		);
 	}
 	jint GLES11::GL_SRC0_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SRC0_RGB");
+			"GL_SRC0_RGB"
+		);
 	}
 	jint GLES11::GL_SRC1_ALPHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SRC1_ALPHA");
+			"GL_SRC1_ALPHA"
+		);
 	}
 	jint GLES11::GL_SRC1_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SRC1_RGB");
+			"GL_SRC1_RGB"
+		);
 	}
 	jint GLES11::GL_SRC2_ALPHA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SRC2_ALPHA");
+			"GL_SRC2_ALPHA"
+		);
 	}
 	jint GLES11::GL_SRC2_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SRC2_RGB");
+			"GL_SRC2_RGB"
+		);
 	}
 	jint GLES11::GL_STATIC_DRAW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_STATIC_DRAW");
+			"GL_STATIC_DRAW"
+		);
 	}
 	jint GLES11::GL_STENCIL_CLEAR_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_STENCIL_CLEAR_VALUE");
+			"GL_STENCIL_CLEAR_VALUE"
+		);
 	}
 	jint GLES11::GL_STENCIL_FAIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_STENCIL_FAIL");
+			"GL_STENCIL_FAIL"
+		);
 	}
 	jint GLES11::GL_STENCIL_FUNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_STENCIL_FUNC");
+			"GL_STENCIL_FUNC"
+		);
 	}
 	jint GLES11::GL_STENCIL_PASS_DEPTH_FAIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_STENCIL_PASS_DEPTH_FAIL");
+			"GL_STENCIL_PASS_DEPTH_FAIL"
+		);
 	}
 	jint GLES11::GL_STENCIL_PASS_DEPTH_PASS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_STENCIL_PASS_DEPTH_PASS");
+			"GL_STENCIL_PASS_DEPTH_PASS"
+		);
 	}
 	jint GLES11::GL_STENCIL_REF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_STENCIL_REF");
+			"GL_STENCIL_REF"
+		);
 	}
 	jint GLES11::GL_STENCIL_VALUE_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_STENCIL_VALUE_MASK");
+			"GL_STENCIL_VALUE_MASK"
+		);
 	}
 	jint GLES11::GL_STENCIL_WRITEMASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_STENCIL_WRITEMASK");
+			"GL_STENCIL_WRITEMASK"
+		);
 	}
 	jint GLES11::GL_SUBTRACT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_SUBTRACT");
+			"GL_SUBTRACT"
+		);
 	}
 	jint GLES11::GL_TEXTURE_BINDING_2D()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_TEXTURE_BINDING_2D");
+			"GL_TEXTURE_BINDING_2D"
+		);
 	}
 	jint GLES11::GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING");
+			"GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING"
+		);
 	}
 	jint GLES11::GL_TEXTURE_COORD_ARRAY_POINTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_TEXTURE_COORD_ARRAY_POINTER");
+			"GL_TEXTURE_COORD_ARRAY_POINTER"
+		);
 	}
 	jint GLES11::GL_TEXTURE_COORD_ARRAY_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_TEXTURE_COORD_ARRAY_SIZE");
+			"GL_TEXTURE_COORD_ARRAY_SIZE"
+		);
 	}
 	jint GLES11::GL_TEXTURE_COORD_ARRAY_STRIDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_TEXTURE_COORD_ARRAY_STRIDE");
+			"GL_TEXTURE_COORD_ARRAY_STRIDE"
+		);
 	}
 	jint GLES11::GL_TEXTURE_COORD_ARRAY_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_TEXTURE_COORD_ARRAY_TYPE");
+			"GL_TEXTURE_COORD_ARRAY_TYPE"
+		);
 	}
 	jint GLES11::GL_TEXTURE_MATRIX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_TEXTURE_MATRIX");
+			"GL_TEXTURE_MATRIX"
+		);
 	}
 	jint GLES11::GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES");
+			"GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES"
+		);
 	}
 	jint GLES11::GL_TEXTURE_STACK_DEPTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_TEXTURE_STACK_DEPTH");
+			"GL_TEXTURE_STACK_DEPTH"
+		);
 	}
 	jint GLES11::GL_VERTEX_ARRAY_BUFFER_BINDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_VERTEX_ARRAY_BUFFER_BINDING");
+			"GL_VERTEX_ARRAY_BUFFER_BINDING"
+		);
 	}
 	jint GLES11::GL_VERTEX_ARRAY_POINTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_VERTEX_ARRAY_POINTER");
+			"GL_VERTEX_ARRAY_POINTER"
+		);
 	}
 	jint GLES11::GL_VERTEX_ARRAY_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_VERTEX_ARRAY_SIZE");
+			"GL_VERTEX_ARRAY_SIZE"
+		);
 	}
 	jint GLES11::GL_VERTEX_ARRAY_STRIDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_VERTEX_ARRAY_STRIDE");
+			"GL_VERTEX_ARRAY_STRIDE"
+		);
 	}
 	jint GLES11::GL_VERTEX_ARRAY_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_VERTEX_ARRAY_TYPE");
+			"GL_VERTEX_ARRAY_TYPE"
+		);
 	}
 	jint GLES11::GL_VIEWPORT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_VIEWPORT");
+			"GL_VIEWPORT"
+		);
 	}
 	jint GLES11::GL_WRITE_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLES11",
-			"GL_WRITE_ONLY");
+			"GL_WRITE_ONLY"
+		);
 	}
 	
 	// Constructors
@@ -973,49 +1095,6 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
-	void GLES11::glColorPointer(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glColorPointer",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	void GLES11::glNormalPointer(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glNormalPointer",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2);
-	}
-	void GLES11::glTexCoordPointer(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexCoordPointer",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	void GLES11::glVertexPointer(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glVertexPointer",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
 	void GLES11::glBindBuffer(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1023,7 +1102,8 @@ namespace __jni_impl::android::opengl
 			"glBindBuffer",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void GLES11::glBufferData(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, jint arg3)
 	{
@@ -1034,7 +1114,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glBufferSubData(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3)
 	{
@@ -1045,7 +1126,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void GLES11::glDeleteBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
 	{
@@ -1054,7 +1136,8 @@ namespace __jni_impl::android::opengl
 			"glDeleteBuffers",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glDeleteBuffers(jint arg0, jintArray arg1, jint arg2)
 	{
@@ -1064,7 +1147,8 @@ namespace __jni_impl::android::opengl
 			"(I[II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GLES11::glDrawElements(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -1075,7 +1159,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glGenBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
 	{
@@ -1084,7 +1169,8 @@ namespace __jni_impl::android::opengl
 			"glGenBuffers",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glGenBuffers(jint arg0, jintArray arg1, jint arg2)
 	{
@@ -1094,7 +1180,18 @@ namespace __jni_impl::android::opengl
 			"(I[II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void GLES11::glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetBooleanv",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2)
 	{
@@ -1104,26 +1201,8 @@ namespace __jni_impl::android::opengl
 			"(I[ZI)V",
 			arg0,
 			arg1,
-			arg2);
-	}
-	void GLES11::glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetBooleanv",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	void GLES11::glGetBufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetBufferParameteriv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
+			arg2
+		);
 	}
 	void GLES11::glGetBufferParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1134,7 +1213,19 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void GLES11::glGetBufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetBufferParameteriv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetFloatv(jint arg0, jfloatArray arg1, jint arg2)
 	{
@@ -1144,7 +1235,8 @@ namespace __jni_impl::android::opengl
 			"(I[FI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GLES11::glGetFloatv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
 	{
@@ -1153,7 +1245,8 @@ namespace __jni_impl::android::opengl
 			"glGetFloatv",
 			"(ILjava/nio/FloatBuffer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glGetTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
 	{
@@ -1163,7 +1256,8 @@ namespace __jni_impl::android::opengl
 			"(IILjava/nio/FloatBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
@@ -1174,7 +1268,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glGetTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1185,7 +1280,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glGetTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
@@ -1195,7 +1291,8 @@ namespace __jni_impl::android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean GLES11::glIsBuffer(jint arg0)
 	{
@@ -1203,7 +1300,8 @@ namespace __jni_impl::android::opengl
 			"android.opengl.GLES11",
 			"glIsBuffer",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean GLES11::glIsEnabled(jint arg0)
 	{
@@ -1211,7 +1309,8 @@ namespace __jni_impl::android::opengl
 			"android.opengl.GLES11",
 			"glIsEnabled",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean GLES11::glIsTexture(jint arg0)
 	{
@@ -1219,17 +1318,8 @@ namespace __jni_impl::android::opengl
 			"android.opengl.GLES11",
 			"glIsTexture",
 			"(I)Z",
-			arg0);
-	}
-	void GLES11::glTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexParameterfv",
-			"(IILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
+			arg0
+		);
 	}
 	void GLES11::glTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
@@ -1240,7 +1330,19 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void GLES11::glTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexParameterfv",
+			"(IILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glTexParameteri(jint arg0, jint arg1, jint arg2)
 	{
@@ -1250,7 +1352,19 @@ namespace __jni_impl::android::opengl
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void GLES11::glTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexParameteriv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1261,26 +1375,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
-	}
-	void GLES11::glTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexParameteriv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
-	}
-	void GLES11::glClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glClipPlanef",
-			"(ILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1.__jniObject().object());
+			arg3
+		);
 	}
 	void GLES11::glClipPlanef(jint arg0, jfloatArray arg1, jint arg2)
 	{
@@ -1290,7 +1386,28 @@ namespace __jni_impl::android::opengl
 			"(I[FI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void GLES11::glClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glClipPlanef",
+			"(ILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES11::glClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glClipPlanex",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glClipPlanex(jint arg0, jintArray arg1, jint arg2)
 	{
@@ -1300,16 +1417,8 @@ namespace __jni_impl::android::opengl
 			"(I[II)V",
 			arg0,
 			arg1,
-			arg2);
-	}
-	void GLES11::glClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glClipPlanex",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object());
+			arg2
+		);
 	}
 	void GLES11::glColor4ub(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3)
 	{
@@ -1320,7 +1429,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glGetClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
 	{
@@ -1329,7 +1439,8 @@ namespace __jni_impl::android::opengl
 			"glGetClipPlanef",
 			"(ILjava/nio/FloatBuffer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glGetClipPlanef(jint arg0, jfloatArray arg1, jint arg2)
 	{
@@ -1339,7 +1450,8 @@ namespace __jni_impl::android::opengl
 			"(I[FI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GLES11::glGetClipPlanex(jint arg0, jintArray arg1, jint arg2)
 	{
@@ -1349,7 +1461,8 @@ namespace __jni_impl::android::opengl
 			"(I[II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GLES11::glGetClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
 	{
@@ -1358,7 +1471,8 @@ namespace __jni_impl::android::opengl
 			"glGetClipPlanex",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glGetFixedv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
 	{
@@ -1367,7 +1481,8 @@ namespace __jni_impl::android::opengl
 			"glGetFixedv",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glGetFixedv(jint arg0, jintArray arg1, jint arg2)
 	{
@@ -1377,7 +1492,8 @@ namespace __jni_impl::android::opengl
 			"(I[II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GLES11::glGetLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
@@ -1388,7 +1504,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glGetLightfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
 	{
@@ -1398,17 +1515,8 @@ namespace __jni_impl::android::opengl
 			"(IILjava/nio/FloatBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
-	}
-	void GLES11::glGetLightxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetLightxv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetLightxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1419,7 +1527,19 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void GLES11::glGetLightxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetLightxv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetMaterialfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
 	{
@@ -1429,7 +1549,8 @@ namespace __jni_impl::android::opengl
 			"(IILjava/nio/FloatBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetMaterialfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
@@ -1440,7 +1561,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glGetMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1451,7 +1573,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glGetMaterialxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
@@ -1461,7 +1584,8 @@ namespace __jni_impl::android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
@@ -1472,7 +1596,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glGetTexEnvfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
 	{
@@ -1482,17 +1607,8 @@ namespace __jni_impl::android::opengl
 			"(IILjava/nio/FloatBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
-	}
-	void GLES11::glGetTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetTexEnviv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1503,17 +1619,19 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
-	void GLES11::glGetTexEnvxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	void GLES11::glGetTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES11",
-			"glGetTexEnvxv",
+			"glGetTexEnviv",
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetTexEnvxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1524,7 +1642,19 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void GLES11::glGetTexEnvxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetTexEnvxv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
@@ -1534,7 +1664,8 @@ namespace __jni_impl::android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glGetTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1545,7 +1676,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glPointParameterf(jint arg0, jfloat arg1)
 	{
@@ -1554,7 +1686,18 @@ namespace __jni_impl::android::opengl
 			"glPointParameterf",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void GLES11::glPointParameterfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glPointParameterfv",
+			"(ILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glPointParameterfv(jint arg0, jfloatArray arg1, jint arg2)
 	{
@@ -1564,16 +1707,8 @@ namespace __jni_impl::android::opengl
 			"(I[FI)V",
 			arg0,
 			arg1,
-			arg2);
-	}
-	void GLES11::glPointParameterfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glPointParameterfv",
-			"(ILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1.__jniObject().object());
+			arg2
+		);
 	}
 	void GLES11::glPointParameterx(jint arg0, jint arg1)
 	{
@@ -1582,7 +1717,18 @@ namespace __jni_impl::android::opengl
 			"glPointParameterx",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void GLES11::glPointParameterxv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glPointParameterxv",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
 	}
 	void GLES11::glPointParameterxv(jint arg0, jintArray arg1, jint arg2)
 	{
@@ -1592,16 +1738,8 @@ namespace __jni_impl::android::opengl
 			"(I[II)V",
 			arg0,
 			arg1,
-			arg2);
-	}
-	void GLES11::glPointParameterxv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glPointParameterxv",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object());
+			arg2
+		);
 	}
 	void GLES11::glPointSizePointerOES(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2)
 	{
@@ -1611,7 +1749,8 @@ namespace __jni_impl::android::opengl
 			"(IILjava/nio/Buffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glTexEnvi(jint arg0, jint arg1, jint arg2)
 	{
@@ -1621,7 +1760,8 @@ namespace __jni_impl::android::opengl
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GLES11::glTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1632,7 +1772,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GLES11::glTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
@@ -1642,17 +1783,8 @@ namespace __jni_impl::android::opengl
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
-	}
-	void GLES11::glTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexParameterxv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void GLES11::glTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
@@ -1663,7 +1795,66 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void GLES11::glTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexParameterxv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES11::glColorPointer(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glColorPointer",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES11::glNormalPointer(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glNormalPointer",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES11::glTexCoordPointer(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexCoordPointer",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES11::glVertexPointer(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glVertexPointer",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

@@ -25,10 +25,10 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Signature arg2);
 		
 		// Methods
-		QAndroidJniObject getSignature();
-		QAndroidJniObject getObject();
+		jbyteArray getSignature();
+		jobject getObject();
 		jboolean verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Signature arg1);
-		QAndroidJniObject getAlgorithm();
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::java::security
 
@@ -51,17 +51,19 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject SignedObject::getSignature()
+	jbyteArray SignedObject::getSignature()
 	{
 		return __thiz.callObjectMethod(
 			"getSignature",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject SignedObject::getObject()
+	jobject SignedObject::getObject()
 	{
 		return __thiz.callObjectMethod(
 			"getObject",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean SignedObject::verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Signature arg1)
 	{
@@ -69,13 +71,15 @@ namespace __jni_impl::java::security
 			"verify",
 			"(Ljava/security/PublicKey;Ljava/security/Signature;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject SignedObject::getAlgorithm()
+	jstring SignedObject::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

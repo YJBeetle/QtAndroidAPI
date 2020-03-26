@@ -68,20 +68,23 @@ namespace __jni_impl::java::security
 		__thiz.callMethod<void>(
 			"add",
 			"(Ljava/security/Permission;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Permissions::elements()
 	{
 		return __thiz.callObjectMethod(
 			"elements",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	jboolean Permissions::implies(__jni_impl::java::security::Permission arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security
 

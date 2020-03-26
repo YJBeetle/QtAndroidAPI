@@ -22,8 +22,8 @@ namespace __jni_impl::android::graphics::text
 		
 		// Methods
 		void getBounds(jint arg0, jint arg1, __jni_impl::android::graphics::Rect arg2);
-		jfloat getWidth(jint arg0, jint arg1);
 		jfloat getCharWidthAt(jint arg0);
+		jfloat getWidth(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::graphics::text
 
@@ -49,7 +49,16 @@ namespace __jni_impl::android::graphics::text
 			"(IILandroid/graphics/Rect;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	jfloat MeasuredText::getCharWidthAt(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getCharWidthAt",
+			"(I)F",
+			arg0
+		);
 	}
 	jfloat MeasuredText::getWidth(jint arg0, jint arg1)
 	{
@@ -57,14 +66,8 @@ namespace __jni_impl::android::graphics::text
 			"getWidth",
 			"(II)F",
 			arg0,
-			arg1);
-	}
-	jfloat MeasuredText::getCharWidthAt(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getCharWidthAt",
-			"(I)F",
-			arg0);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::graphics::text
 

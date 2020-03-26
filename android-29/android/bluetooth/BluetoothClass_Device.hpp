@@ -78,301 +78,351 @@ namespace __jni_impl::android::bluetooth
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_CAMCORDER");
+			"AUDIO_VIDEO_CAMCORDER"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_CAR_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_CAR_AUDIO");
+			"AUDIO_VIDEO_CAR_AUDIO"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_HANDSFREE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_HANDSFREE");
+			"AUDIO_VIDEO_HANDSFREE"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_HEADPHONES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_HEADPHONES");
+			"AUDIO_VIDEO_HEADPHONES"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_HIFI_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_HIFI_AUDIO");
+			"AUDIO_VIDEO_HIFI_AUDIO"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_LOUDSPEAKER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_LOUDSPEAKER");
+			"AUDIO_VIDEO_LOUDSPEAKER"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_MICROPHONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_MICROPHONE");
+			"AUDIO_VIDEO_MICROPHONE"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_PORTABLE_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_PORTABLE_AUDIO");
+			"AUDIO_VIDEO_PORTABLE_AUDIO"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_SET_TOP_BOX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_SET_TOP_BOX");
+			"AUDIO_VIDEO_SET_TOP_BOX"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_UNCATEGORIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_UNCATEGORIZED");
+			"AUDIO_VIDEO_UNCATEGORIZED"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_VCR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_VCR");
+			"AUDIO_VIDEO_VCR"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_VIDEO_CAMERA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_VIDEO_CAMERA");
+			"AUDIO_VIDEO_VIDEO_CAMERA"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_VIDEO_CONFERENCING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_VIDEO_CONFERENCING");
+			"AUDIO_VIDEO_VIDEO_CONFERENCING"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_VIDEO_DISPLAY_AND_LOUDSPEAKER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_VIDEO_DISPLAY_AND_LOUDSPEAKER");
+			"AUDIO_VIDEO_VIDEO_DISPLAY_AND_LOUDSPEAKER"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_VIDEO_GAMING_TOY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_VIDEO_GAMING_TOY");
+			"AUDIO_VIDEO_VIDEO_GAMING_TOY"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_VIDEO_MONITOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_VIDEO_MONITOR");
+			"AUDIO_VIDEO_VIDEO_MONITOR"
+		);
 	}
 	jint BluetoothClass_Device::AUDIO_VIDEO_WEARABLE_HEADSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"AUDIO_VIDEO_WEARABLE_HEADSET");
+			"AUDIO_VIDEO_WEARABLE_HEADSET"
+		);
 	}
 	jint BluetoothClass_Device::COMPUTER_DESKTOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"COMPUTER_DESKTOP");
+			"COMPUTER_DESKTOP"
+		);
 	}
 	jint BluetoothClass_Device::COMPUTER_HANDHELD_PC_PDA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"COMPUTER_HANDHELD_PC_PDA");
+			"COMPUTER_HANDHELD_PC_PDA"
+		);
 	}
 	jint BluetoothClass_Device::COMPUTER_LAPTOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"COMPUTER_LAPTOP");
+			"COMPUTER_LAPTOP"
+		);
 	}
 	jint BluetoothClass_Device::COMPUTER_PALM_SIZE_PC_PDA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"COMPUTER_PALM_SIZE_PC_PDA");
+			"COMPUTER_PALM_SIZE_PC_PDA"
+		);
 	}
 	jint BluetoothClass_Device::COMPUTER_SERVER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"COMPUTER_SERVER");
+			"COMPUTER_SERVER"
+		);
 	}
 	jint BluetoothClass_Device::COMPUTER_UNCATEGORIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"COMPUTER_UNCATEGORIZED");
+			"COMPUTER_UNCATEGORIZED"
+		);
 	}
 	jint BluetoothClass_Device::COMPUTER_WEARABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"COMPUTER_WEARABLE");
+			"COMPUTER_WEARABLE"
+		);
 	}
 	jint BluetoothClass_Device::HEALTH_BLOOD_PRESSURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"HEALTH_BLOOD_PRESSURE");
+			"HEALTH_BLOOD_PRESSURE"
+		);
 	}
 	jint BluetoothClass_Device::HEALTH_DATA_DISPLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"HEALTH_DATA_DISPLAY");
+			"HEALTH_DATA_DISPLAY"
+		);
 	}
 	jint BluetoothClass_Device::HEALTH_GLUCOSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"HEALTH_GLUCOSE");
+			"HEALTH_GLUCOSE"
+		);
 	}
 	jint BluetoothClass_Device::HEALTH_PULSE_OXIMETER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"HEALTH_PULSE_OXIMETER");
+			"HEALTH_PULSE_OXIMETER"
+		);
 	}
 	jint BluetoothClass_Device::HEALTH_PULSE_RATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"HEALTH_PULSE_RATE");
+			"HEALTH_PULSE_RATE"
+		);
 	}
 	jint BluetoothClass_Device::HEALTH_THERMOMETER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"HEALTH_THERMOMETER");
+			"HEALTH_THERMOMETER"
+		);
 	}
 	jint BluetoothClass_Device::HEALTH_UNCATEGORIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"HEALTH_UNCATEGORIZED");
+			"HEALTH_UNCATEGORIZED"
+		);
 	}
 	jint BluetoothClass_Device::HEALTH_WEIGHING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"HEALTH_WEIGHING");
+			"HEALTH_WEIGHING"
+		);
 	}
 	jint BluetoothClass_Device::PHONE_CELLULAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"PHONE_CELLULAR");
+			"PHONE_CELLULAR"
+		);
 	}
 	jint BluetoothClass_Device::PHONE_CORDLESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"PHONE_CORDLESS");
+			"PHONE_CORDLESS"
+		);
 	}
 	jint BluetoothClass_Device::PHONE_ISDN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"PHONE_ISDN");
+			"PHONE_ISDN"
+		);
 	}
 	jint BluetoothClass_Device::PHONE_MODEM_OR_GATEWAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"PHONE_MODEM_OR_GATEWAY");
+			"PHONE_MODEM_OR_GATEWAY"
+		);
 	}
 	jint BluetoothClass_Device::PHONE_SMART()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"PHONE_SMART");
+			"PHONE_SMART"
+		);
 	}
 	jint BluetoothClass_Device::PHONE_UNCATEGORIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"PHONE_UNCATEGORIZED");
+			"PHONE_UNCATEGORIZED"
+		);
 	}
 	jint BluetoothClass_Device::TOY_CONTROLLER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"TOY_CONTROLLER");
+			"TOY_CONTROLLER"
+		);
 	}
 	jint BluetoothClass_Device::TOY_DOLL_ACTION_FIGURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"TOY_DOLL_ACTION_FIGURE");
+			"TOY_DOLL_ACTION_FIGURE"
+		);
 	}
 	jint BluetoothClass_Device::TOY_GAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"TOY_GAME");
+			"TOY_GAME"
+		);
 	}
 	jint BluetoothClass_Device::TOY_ROBOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"TOY_ROBOT");
+			"TOY_ROBOT"
+		);
 	}
 	jint BluetoothClass_Device::TOY_UNCATEGORIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"TOY_UNCATEGORIZED");
+			"TOY_UNCATEGORIZED"
+		);
 	}
 	jint BluetoothClass_Device::TOY_VEHICLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"TOY_VEHICLE");
+			"TOY_VEHICLE"
+		);
 	}
 	jint BluetoothClass_Device::WEARABLE_GLASSES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"WEARABLE_GLASSES");
+			"WEARABLE_GLASSES"
+		);
 	}
 	jint BluetoothClass_Device::WEARABLE_HELMET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"WEARABLE_HELMET");
+			"WEARABLE_HELMET"
+		);
 	}
 	jint BluetoothClass_Device::WEARABLE_JACKET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"WEARABLE_JACKET");
+			"WEARABLE_JACKET"
+		);
 	}
 	jint BluetoothClass_Device::WEARABLE_PAGER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"WEARABLE_PAGER");
+			"WEARABLE_PAGER"
+		);
 	}
 	jint BluetoothClass_Device::WEARABLE_UNCATEGORIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"WEARABLE_UNCATEGORIZED");
+			"WEARABLE_UNCATEGORIZED"
+		);
 	}
 	jint BluetoothClass_Device::WEARABLE_WRIST_WATCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothClass$Device",
-			"WEARABLE_WRIST_WATCH");
+			"WEARABLE_WRIST_WATCH"
+		);
 	}
 	
 	// Constructors

@@ -69,7 +69,8 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void BluetoothGattCallback::onPhyRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -79,7 +80,8 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void BluetoothGattCallback::onConnectionStateChange(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
 	{
@@ -88,7 +90,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothGatt;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void BluetoothGattCallback::onServicesDiscovered(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1)
 	{
@@ -96,7 +99,8 @@ namespace __jni_impl::android::bluetooth
 			"onServicesDiscovered",
 			"(Landroid/bluetooth/BluetoothGatt;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void BluetoothGattCallback::onCharacteristicRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2)
 	{
@@ -105,7 +109,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothGatt;Landroid/bluetooth/BluetoothGattCharacteristic;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void BluetoothGattCallback::onCharacteristicWrite(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2)
 	{
@@ -114,7 +119,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothGatt;Landroid/bluetooth/BluetoothGattCharacteristic;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void BluetoothGattCallback::onCharacteristicChanged(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1)
 	{
@@ -122,7 +128,8 @@ namespace __jni_impl::android::bluetooth
 			"onCharacteristicChanged",
 			"(Landroid/bluetooth/BluetoothGatt;Landroid/bluetooth/BluetoothGattCharacteristic;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void BluetoothGattCallback::onDescriptorRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattDescriptor arg1, jint arg2)
 	{
@@ -131,7 +138,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothGatt;Landroid/bluetooth/BluetoothGattDescriptor;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void BluetoothGattCallback::onDescriptorWrite(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattDescriptor arg1, jint arg2)
 	{
@@ -140,7 +148,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothGatt;Landroid/bluetooth/BluetoothGattDescriptor;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void BluetoothGattCallback::onReliableWriteCompleted(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1)
 	{
@@ -148,7 +157,8 @@ namespace __jni_impl::android::bluetooth
 			"onReliableWriteCompleted",
 			"(Landroid/bluetooth/BluetoothGatt;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void BluetoothGattCallback::onReadRemoteRssi(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
 	{
@@ -157,7 +167,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothGatt;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void BluetoothGattCallback::onMtuChanged(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
 	{
@@ -166,7 +177,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothGatt;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

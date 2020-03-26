@@ -19,10 +19,10 @@ namespace __jni_impl::android::hardware::camera2::params
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		void copyTo(jintArray arg0, jint arg1);
 		jint getOffsetForIndex(jint arg0, jint arg1);
+		void copyTo(jintArray arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -34,7 +34,8 @@ namespace __jni_impl::android::hardware::camera2::params
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.BlackLevelPattern",
-			"COUNT");
+			"COUNT"
+		);
 	}
 	
 	// Constructors
@@ -51,27 +52,22 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject BlackLevelPattern::toString()
+	jstring BlackLevelPattern::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint BlackLevelPattern::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	void BlackLevelPattern::copyTo(jintArray arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"copyTo",
-			"([II)V",
-			arg0,
-			arg1);
+			"()I"
+		);
 	}
 	jint BlackLevelPattern::getOffsetForIndex(jint arg0, jint arg1)
 	{
@@ -79,7 +75,17 @@ namespace __jni_impl::android::hardware::camera2::params
 			"getOffsetForIndex",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void BlackLevelPattern::copyTo(jintArray arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"copyTo",
+			"([II)V",
+			arg0,
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

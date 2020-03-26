@@ -38,19 +38,22 @@ namespace __jni_impl::android::view::autofill
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.autofill.AutofillManager$AutofillCallback",
-			"EVENT_INPUT_HIDDEN");
+			"EVENT_INPUT_HIDDEN"
+		);
 	}
 	jint AutofillManager_AutofillCallback::EVENT_INPUT_SHOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.autofill.AutofillManager$AutofillCallback",
-			"EVENT_INPUT_SHOWN");
+			"EVENT_INPUT_SHOWN"
+		);
 	}
 	jint AutofillManager_AutofillCallback::EVENT_INPUT_UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.autofill.AutofillManager$AutofillCallback",
-			"EVENT_INPUT_UNAVAILABLE");
+			"EVENT_INPUT_UNAVAILABLE"
+		);
 	}
 	
 	// Constructors
@@ -68,7 +71,8 @@ namespace __jni_impl::android::view::autofill
 			"onAutofillEvent",
 			"(Landroid/view/View;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void AutofillManager_AutofillCallback::onAutofillEvent(__jni_impl::android::view::View arg0, jint arg1, jint arg2)
 	{
@@ -77,7 +81,8 @@ namespace __jni_impl::android::view::autofill
 			"(Landroid/view/View;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::view::autofill
 

@@ -25,7 +25,7 @@ namespace __jni_impl::java::util::concurrent::locks
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jboolean validate(jlong arg0);
 		void unlock(jlong arg0);
 		jlong readLock();
@@ -73,37 +73,42 @@ namespace __jni_impl::java::util::concurrent::locks
 	}
 	
 	// Methods
-	QAndroidJniObject StampedLock::toString()
+	jstring StampedLock::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean StampedLock::validate(jlong arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"validate",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	void StampedLock::unlock(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"unlock",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong StampedLock::readLock()
 	{
 		return __thiz.callMethod<jlong>(
 			"readLock",
-			"()J");
+			"()J"
+		);
 	}
 	jlong StampedLock::writeLock()
 	{
 		return __thiz.callMethod<jlong>(
 			"writeLock",
-			"()J");
+			"()J"
+		);
 	}
 	jlong StampedLock::tryReadLock(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -111,19 +116,22 @@ namespace __jni_impl::java::util::concurrent::locks
 			"tryReadLock",
 			"(JLjava/util/concurrent/TimeUnit;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong StampedLock::tryReadLock()
 	{
 		return __thiz.callMethod<jlong>(
 			"tryReadLock",
-			"()J");
+			"()J"
+		);
 	}
 	jint StampedLock::getReadLockCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getReadLockCount",
-			"()I");
+			"()I"
+		);
 	}
 	jlong StampedLock::tryWriteLock(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -131,90 +139,104 @@ namespace __jni_impl::java::util::concurrent::locks
 			"tryWriteLock",
 			"(JLjava/util/concurrent/TimeUnit;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong StampedLock::tryWriteLock()
 	{
 		return __thiz.callMethod<jlong>(
 			"tryWriteLock",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean StampedLock::isWriteLocked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWriteLocked",
-			"()Z");
+			"()Z"
+		);
 	}
 	void StampedLock::unlockWrite(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"unlockWrite",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void StampedLock::unlockRead(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"unlockRead",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong StampedLock::writeLockInterruptibly()
 	{
 		return __thiz.callMethod<jlong>(
 			"writeLockInterruptibly",
-			"()J");
+			"()J"
+		);
 	}
 	jlong StampedLock::readLockInterruptibly()
 	{
 		return __thiz.callMethod<jlong>(
 			"readLockInterruptibly",
-			"()J");
+			"()J"
+		);
 	}
 	jlong StampedLock::tryOptimisticRead()
 	{
 		return __thiz.callMethod<jlong>(
 			"tryOptimisticRead",
-			"()J");
+			"()J"
+		);
 	}
 	jlong StampedLock::tryConvertToWriteLock(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"tryConvertToWriteLock",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong StampedLock::tryConvertToReadLock(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"tryConvertToReadLock",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong StampedLock::tryConvertToOptimisticRead(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"tryConvertToOptimisticRead",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jboolean StampedLock::tryUnlockWrite()
 	{
 		return __thiz.callMethod<jboolean>(
 			"tryUnlockWrite",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean StampedLock::tryUnlockRead()
 	{
 		return __thiz.callMethod<jboolean>(
 			"tryUnlockRead",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean StampedLock::isReadLocked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReadLocked",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean StampedLock::isWriteLockStamp(jlong arg0)
 	{
@@ -222,7 +244,8 @@ namespace __jni_impl::java::util::concurrent::locks
 			"java.util.concurrent.locks.StampedLock",
 			"isWriteLockStamp",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean StampedLock::isReadLockStamp(jlong arg0)
 	{
@@ -230,7 +253,8 @@ namespace __jni_impl::java::util::concurrent::locks
 			"java.util.concurrent.locks.StampedLock",
 			"isReadLockStamp",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean StampedLock::isLockStamp(jlong arg0)
 	{
@@ -238,7 +262,8 @@ namespace __jni_impl::java::util::concurrent::locks
 			"java.util.concurrent.locks.StampedLock",
 			"isLockStamp",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean StampedLock::isOptimisticReadStamp(jlong arg0)
 	{
@@ -246,25 +271,29 @@ namespace __jni_impl::java::util::concurrent::locks
 			"java.util.concurrent.locks.StampedLock",
 			"isOptimisticReadStamp",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject StampedLock::asReadLock()
 	{
 		return __thiz.callObjectMethod(
 			"asReadLock",
-			"()Ljava/util/concurrent/locks/Lock;");
+			"()Ljava/util/concurrent/locks/Lock;"
+		);
 	}
 	QAndroidJniObject StampedLock::asWriteLock()
 	{
 		return __thiz.callObjectMethod(
 			"asWriteLock",
-			"()Ljava/util/concurrent/locks/Lock;");
+			"()Ljava/util/concurrent/locks/Lock;"
+		);
 	}
 	QAndroidJniObject StampedLock::asReadWriteLock()
 	{
 		return __thiz.callObjectMethod(
 			"asReadWriteLock",
-			"()Ljava/util/concurrent/locks/ReadWriteLock;");
+			"()Ljava/util/concurrent/locks/ReadWriteLock;"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::locks
 

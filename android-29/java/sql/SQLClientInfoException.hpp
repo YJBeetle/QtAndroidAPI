@@ -121,7 +121,8 @@ namespace __jni_impl::java::sql
 	{
 		return __thiz.callObjectMethod(
 			"getFailedProperties",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 } // namespace __jni_impl::java::sql
 

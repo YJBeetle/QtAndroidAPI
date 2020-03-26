@@ -19,7 +19,7 @@ namespace __jni_impl::android::media::session
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getPackageName();
+		jstring getPackageName();
 		jint getUid();
 		jint getPid();
 	};
@@ -47,31 +47,36 @@ namespace __jni_impl::android::media::session
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint MediaSessionManager_RemoteUserInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MediaSessionManager_RemoteUserInfo::getPackageName()
+	jstring MediaSessionManager_RemoteUserInfo::getPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MediaSessionManager_RemoteUserInfo::getUid()
 	{
 		return __thiz.callMethod<jint>(
 			"getUid",
-			"()I");
+			"()I"
+		);
 	}
 	jint MediaSessionManager_RemoteUserInfo::getPid()
 	{
 		return __thiz.callMethod<jint>(
 			"getPid",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media::session
 

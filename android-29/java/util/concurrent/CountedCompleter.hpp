@@ -23,7 +23,7 @@ namespace __jni_impl::java::util::concurrent
 		QAndroidJniObject getCompleter();
 		void setPendingCount(jint arg0);
 		void tryComplete();
-		QAndroidJniObject getRawResult();
+		jobject getRawResult();
 		QAndroidJniObject firstComplete();
 		void helpComplete(jint arg0);
 		jboolean onExceptionalCompletion(jthrowable arg0, __jni_impl::java::util::concurrent::CountedCompleter arg1);
@@ -57,51 +57,59 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz.callMethod<void>(
 			"compute",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject CountedCompleter::getRoot()
 	{
 		return __thiz.callObjectMethod(
 			"getRoot",
-			"()Ljava/util/concurrent/CountedCompleter;");
+			"()Ljava/util/concurrent/CountedCompleter;"
+		);
 	}
 	QAndroidJniObject CountedCompleter::getCompleter()
 	{
 		return __thiz.callObjectMethod(
 			"getCompleter",
-			"()Ljava/util/concurrent/CountedCompleter;");
+			"()Ljava/util/concurrent/CountedCompleter;"
+		);
 	}
 	void CountedCompleter::setPendingCount(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPendingCount",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CountedCompleter::tryComplete()
 	{
 		__thiz.callMethod<void>(
 			"tryComplete",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject CountedCompleter::getRawResult()
+	jobject CountedCompleter::getRawResult()
 	{
 		return __thiz.callObjectMethod(
 			"getRawResult",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject CountedCompleter::firstComplete()
 	{
 		return __thiz.callObjectMethod(
 			"firstComplete",
-			"()Ljava/util/concurrent/CountedCompleter;");
+			"()Ljava/util/concurrent/CountedCompleter;"
+		);
 	}
 	void CountedCompleter::helpComplete(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"helpComplete",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CountedCompleter::onExceptionalCompletion(jthrowable arg0, __jni_impl::java::util::concurrent::CountedCompleter arg1)
 	{
@@ -109,20 +117,23 @@ namespace __jni_impl::java::util::concurrent
 			"onExceptionalCompletion",
 			"(Ljava/lang/Throwable;Ljava/util/concurrent/CountedCompleter;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint CountedCompleter::getPendingCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getPendingCount",
-			"()I");
+			"()I"
+		);
 	}
 	void CountedCompleter::addToPendingCount(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"addToPendingCount",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CountedCompleter::compareAndSetPendingCount(jint arg0, jint arg1)
 	{
@@ -130,45 +141,52 @@ namespace __jni_impl::java::util::concurrent
 			"compareAndSetPendingCount",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint CountedCompleter::decrementPendingCountUnlessZero()
 	{
 		return __thiz.callMethod<jint>(
 			"decrementPendingCountUnlessZero",
-			"()I");
+			"()I"
+		);
 	}
 	void CountedCompleter::propagateCompletion()
 	{
 		__thiz.callMethod<void>(
 			"propagateCompletion",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject CountedCompleter::nextComplete()
 	{
 		return __thiz.callObjectMethod(
 			"nextComplete",
-			"()Ljava/util/concurrent/CountedCompleter;");
+			"()Ljava/util/concurrent/CountedCompleter;"
+		);
 	}
 	void CountedCompleter::quietlyCompleteRoot()
 	{
 		__thiz.callMethod<void>(
 			"quietlyCompleteRoot",
-			"()V");
+			"()V"
+		);
 	}
 	void CountedCompleter::complete(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"complete",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void CountedCompleter::onCompletion(__jni_impl::java::util::concurrent::CountedCompleter arg0)
 	{
 		__thiz.callMethod<void>(
 			"onCompletion",
 			"(Ljava/util/concurrent/CountedCompleter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

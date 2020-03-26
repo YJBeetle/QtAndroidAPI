@@ -52,21 +52,24 @@ namespace __jni_impl::android::media::midi
 		__thiz.callMethod<void>(
 			"onDeviceAdded",
 			"(Landroid/media/midi/MidiDeviceInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MidiManager_DeviceCallback::onDeviceRemoved(__jni_impl::android::media::midi::MidiDeviceInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDeviceRemoved",
 			"(Landroid/media/midi/MidiDeviceInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MidiManager_DeviceCallback::onDeviceStatusChanged(__jni_impl::android::media::midi::MidiDeviceStatus arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDeviceStatusChanged",
 			"(Landroid/media/midi/MidiDeviceStatus;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::midi
 

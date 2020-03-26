@@ -36,49 +36,57 @@ namespace __jni_impl::android::net::wifi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Phase2",
-			"AKA");
+			"AKA"
+		);
 	}
 	jint WifiEnterpriseConfig_Phase2::AKA_PRIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Phase2",
-			"AKA_PRIME");
+			"AKA_PRIME"
+		);
 	}
 	jint WifiEnterpriseConfig_Phase2::GTC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Phase2",
-			"GTC");
+			"GTC"
+		);
 	}
 	jint WifiEnterpriseConfig_Phase2::MSCHAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Phase2",
-			"MSCHAP");
+			"MSCHAP"
+		);
 	}
 	jint WifiEnterpriseConfig_Phase2::MSCHAPV2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Phase2",
-			"MSCHAPV2");
+			"MSCHAPV2"
+		);
 	}
 	jint WifiEnterpriseConfig_Phase2::NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Phase2",
-			"NONE");
+			"NONE"
+		);
 	}
 	jint WifiEnterpriseConfig_Phase2::PAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Phase2",
-			"PAP");
+			"PAP"
+		);
 	}
 	jint WifiEnterpriseConfig_Phase2::SIM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiEnterpriseConfig$Phase2",
-			"SIM");
+			"SIM"
+		);
 	}
 	
 	// Constructors

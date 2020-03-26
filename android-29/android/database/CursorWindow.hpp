@@ -6,13 +6,13 @@
 #include "../../__JniBaseClass.hpp"
 #include "sqlite/SQLiteClosable.hpp"
 
-namespace __jni_impl::android::database
-{
-	class CharArrayBuffer;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::database
+{
+	class CharArrayBuffer;
 }
 
 namespace __jni_impl::android::database
@@ -29,7 +29,7 @@ namespace __jni_impl::android::database
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jshort getShort(jint arg0, jint arg1);
 		jint getInt(jint arg0, jint arg1);
 		jlong getLong(jint arg0, jint arg1);
@@ -40,10 +40,12 @@ namespace __jni_impl::android::database
 		void clear();
 		jint getType(jint arg0, jint arg1);
 		jboolean isNull(jint arg0, jint arg1);
-		QAndroidJniObject getString(jint arg0, jint arg1);
+		jstring getString(jint arg0, jint arg1);
 		jboolean isFloat(jint arg0, jint arg1);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean putNull(jint arg0, jint arg1);
-		QAndroidJniObject getBlob(jint arg0, jint arg1);
+		jbyteArray getBlob(jint arg0, jint arg1);
 		void copyStringToBuffer(jint arg0, jint arg1, __jni_impl::android::database::CharArrayBuffer arg2);
 		jint getStartPosition();
 		void setStartPosition(jint arg0);
@@ -57,13 +59,11 @@ namespace __jni_impl::android::database
 		jboolean putBlob(jbyteArray arg0, jint arg1, jint arg2);
 		static QAndroidJniObject newFromParcel(__jni_impl::android::os::Parcel arg0);
 		jboolean putString(jstring arg0, jint arg1, jint arg2);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::database
 
-#include "CharArrayBuffer.hpp"
 #include "../os/Parcel.hpp"
+#include "CharArrayBuffer.hpp"
 
 namespace __jni_impl::android::database
 {
@@ -73,7 +73,8 @@ namespace __jni_impl::android::database
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorWindow",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -101,11 +102,12 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
-	QAndroidJniObject CursorWindow::toString()
+	jstring CursorWindow::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jshort CursorWindow::getShort(jint arg0, jint arg1)
 	{
@@ -113,7 +115,8 @@ namespace __jni_impl::android::database
 			"getShort",
 			"(II)S",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint CursorWindow::getInt(jint arg0, jint arg1)
 	{
@@ -121,7 +124,8 @@ namespace __jni_impl::android::database
 			"getInt",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong CursorWindow::getLong(jint arg0, jint arg1)
 	{
@@ -129,7 +133,8 @@ namespace __jni_impl::android::database
 			"getLong",
 			"(II)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean CursorWindow::putLong(jlong arg0, jint arg1, jint arg2)
 	{
@@ -138,7 +143,8 @@ namespace __jni_impl::android::database
 			"(JII)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jfloat CursorWindow::getFloat(jint arg0, jint arg1)
 	{
@@ -146,7 +152,8 @@ namespace __jni_impl::android::database
 			"getFloat",
 			"(II)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble CursorWindow::getDouble(jint arg0, jint arg1)
 	{
@@ -154,7 +161,8 @@ namespace __jni_impl::android::database
 			"getDouble",
 			"(II)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean CursorWindow::putDouble(jdouble arg0, jint arg1, jint arg2)
 	{
@@ -163,13 +171,15 @@ namespace __jni_impl::android::database
 			"(DII)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void CursorWindow::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jint CursorWindow::getType(jint arg0, jint arg1)
 	{
@@ -177,7 +187,8 @@ namespace __jni_impl::android::database
 			"getType",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean CursorWindow::isNull(jint arg0, jint arg1)
 	{
@@ -185,15 +196,17 @@ namespace __jni_impl::android::database
 			"isNull",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject CursorWindow::getString(jint arg0, jint arg1)
+	jstring CursorWindow::getString(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getString",
 			"(II)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	jboolean CursorWindow::isFloat(jint arg0, jint arg1)
 	{
@@ -201,7 +214,24 @@ namespace __jni_impl::android::database
 			"isFloat",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	jint CursorWindow::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void CursorWindow::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	jboolean CursorWindow::putNull(jint arg0, jint arg1)
 	{
@@ -209,15 +239,17 @@ namespace __jni_impl::android::database
 			"putNull",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject CursorWindow::getBlob(jint arg0, jint arg1)
+	jbyteArray CursorWindow::getBlob(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getBlob",
 			"(II)[B",
 			arg0,
-			arg1);
+			arg1
+		).object<jbyteArray>();
 	}
 	void CursorWindow::copyStringToBuffer(jint arg0, jint arg1, __jni_impl::android::database::CharArrayBuffer arg2)
 	{
@@ -226,45 +258,52 @@ namespace __jni_impl::android::database
 			"(IILandroid/database/CharArrayBuffer;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jint CursorWindow::getStartPosition()
 	{
 		return __thiz.callMethod<jint>(
 			"getStartPosition",
-			"()I");
+			"()I"
+		);
 	}
 	void CursorWindow::setStartPosition(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setStartPosition",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CursorWindow::getNumRows()
 	{
 		return __thiz.callMethod<jint>(
 			"getNumRows",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean CursorWindow::setNumColumns(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setNumColumns",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CursorWindow::allocRow()
 	{
 		return __thiz.callMethod<jboolean>(
 			"allocRow",
-			"()Z");
+			"()Z"
+		);
 	}
 	void CursorWindow::freeLastRow()
 	{
 		__thiz.callMethod<void>(
 			"freeLastRow",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean CursorWindow::isBlob(jint arg0, jint arg1)
 	{
@@ -272,7 +311,8 @@ namespace __jni_impl::android::database
 			"isBlob",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean CursorWindow::isLong(jint arg0, jint arg1)
 	{
@@ -280,7 +320,8 @@ namespace __jni_impl::android::database
 			"isLong",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean CursorWindow::isString(jint arg0, jint arg1)
 	{
@@ -288,7 +329,8 @@ namespace __jni_impl::android::database
 			"isString",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean CursorWindow::putBlob(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -297,7 +339,8 @@ namespace __jni_impl::android::database
 			"([BII)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject CursorWindow::newFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
@@ -305,7 +348,8 @@ namespace __jni_impl::android::database
 			"android.database.CursorWindow",
 			"newFromParcel",
 			"(Landroid/os/Parcel;)Landroid/database/CursorWindow;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean CursorWindow::putString(jstring arg0, jint arg1, jint arg2)
 	{
@@ -314,21 +358,8 @@ namespace __jni_impl::android::database
 			"(Ljava/lang/String;II)Z",
 			arg0,
 			arg1,
-			arg2);
-	}
-	jint CursorWindow::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void CursorWindow::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::database
 

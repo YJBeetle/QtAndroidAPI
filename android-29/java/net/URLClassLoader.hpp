@@ -65,7 +65,7 @@ namespace __jni_impl::java::net
 		QAndroidJniObject getResourceAsStream(jstring arg0);
 		QAndroidJniObject findResources(jstring arg0);
 		void close();
-		QAndroidJniObject getURLs();
+		jarray getURLs();
 	};
 } // namespace __jni_impl::java::net
 
@@ -136,7 +136,8 @@ namespace __jni_impl::java::net
 			"newInstance",
 			"([Ljava/net/URL;Ljava/lang/ClassLoader;)Ljava/net/URLClassLoader;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject URLClassLoader::newInstance(jarray arg0)
 	{
@@ -144,40 +145,46 @@ namespace __jni_impl::java::net
 			"java.net.URLClassLoader",
 			"newInstance",
 			"([Ljava/net/URL;)Ljava/net/URLClassLoader;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject URLClassLoader::findResource(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findResource",
 			"(Ljava/lang/String;)Ljava/net/URL;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject URLClassLoader::getResourceAsStream(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getResourceAsStream",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject URLClassLoader::findResources(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0);
+			arg0
+		);
 	}
 	void URLClassLoader::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject URLClassLoader::getURLs()
+	jarray URLClassLoader::getURLs()
 	{
 		return __thiz.callObjectMethod(
 			"getURLs",
-			"()[Ljava/net/URL;");
+			"()[Ljava/net/URL;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::net
 

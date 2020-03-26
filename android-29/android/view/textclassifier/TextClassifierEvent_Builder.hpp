@@ -9,13 +9,13 @@ namespace __jni_impl::android::icu::util
 {
 	class ULocale;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::view::textclassifier
 {
 	class TextClassificationContext;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -30,7 +30,6 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject setLocale(__jni_impl::android::icu::util::ULocale arg0);
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setEntityTypes(jarray arg0);
 		QAndroidJniObject setEventContext(__jni_impl::android::view::textclassifier::TextClassificationContext arg0);
 		QAndroidJniObject setResultId(jstring arg0);
@@ -38,12 +37,13 @@ namespace __jni_impl::android::view::textclassifier
 		QAndroidJniObject setScores(jfloatArray arg0);
 		QAndroidJniObject setModelName(jstring arg0);
 		QAndroidJniObject setActionIndices(jintArray arg0);
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../icu/util/ULocale.hpp"
-#include "../../os/Bundle.hpp"
 #include "TextClassificationContext.hpp"
+#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -63,63 +63,72 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"setLocale",
 			"(Landroid/icu/util/ULocale;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject TextClassifierEvent_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setEntityTypes(jarray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setEntityTypes",
 			"([Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setEventContext(__jni_impl::android::view::textclassifier::TextClassificationContext arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setEventContext",
 			"(Landroid/view/textclassifier/TextClassificationContext;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setResultId(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setResultId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setEventIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setEventIndex",
 			"(I)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setScores(jfloatArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setScores",
 			"([F)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setModelName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setModelName",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setActionIndices(jintArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setActionIndices",
 			"([I)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject TextClassifierEvent_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

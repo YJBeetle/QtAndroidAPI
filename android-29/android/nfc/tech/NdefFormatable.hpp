@@ -57,45 +57,52 @@ namespace __jni_impl::android::nfc::tech
 			"android.nfc.tech.NdefFormatable",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NdefFormatable;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void NdefFormatable::format(__jni_impl::android::nfc::NdefMessage arg0)
 	{
 		__thiz.callMethod<void>(
 			"format",
 			"(Landroid/nfc/NdefMessage;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void NdefFormatable::connect()
 	{
 		__thiz.callMethod<void>(
 			"connect",
-			"()V");
+			"()V"
+		);
 	}
 	void NdefFormatable::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject NdefFormatable::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Landroid/nfc/Tag;");
+			"()Landroid/nfc/Tag;"
+		);
 	}
 	jboolean NdefFormatable::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
+			"()Z"
+		);
 	}
 	void NdefFormatable::formatReadOnly(__jni_impl::android::nfc::NdefMessage arg0)
 	{
 		__thiz.callMethod<void>(
 			"formatReadOnly",
 			"(Landroid/nfc/NdefMessage;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::nfc::tech
 

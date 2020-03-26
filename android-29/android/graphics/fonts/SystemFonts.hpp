@@ -40,7 +40,8 @@ namespace __jni_impl::android::graphics::fonts
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.fonts.SystemFonts",
 			"getAvailableFonts",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 } // namespace __jni_impl::android::graphics::fonts
 

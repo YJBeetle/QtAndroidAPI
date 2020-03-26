@@ -25,21 +25,21 @@ namespace __jni_impl::android::view::textclassifier
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject HINT_FOR_IN_APP();
-		static QAndroidJniObject HINT_FOR_NOTIFICATION();
+		static jstring HINT_FOR_IN_APP();
+		static jstring HINT_FOR_NOTIFICATION();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
 		QAndroidJniObject getTypeConfig();
 		QAndroidJniObject getConversation();
 		jint getMaxSuggestions();
-		QAndroidJniObject getCallingPackageName();
-		QAndroidJniObject getExtras();
+		jstring getCallingPackageName();
 		QAndroidJniObject getHints();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -55,21 +55,24 @@ namespace __jni_impl::android::view::textclassifier
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject ConversationActions_Request::HINT_FOR_IN_APP()
+	jstring ConversationActions_Request::HINT_FOR_IN_APP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
 			"HINT_FOR_IN_APP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ConversationActions_Request::HINT_FOR_NOTIFICATION()
+	jstring ConversationActions_Request::HINT_FOR_NOTIFICATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
 			"HINT_FOR_NOTIFICATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -81,47 +84,12 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	QAndroidJniObject ConversationActions_Request::getTypeConfig()
-	{
-		return __thiz.callObjectMethod(
-			"getTypeConfig",
-			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;");
-	}
-	QAndroidJniObject ConversationActions_Request::getConversation()
-	{
-		return __thiz.callObjectMethod(
-			"getConversation",
-			"()Ljava/util/List;");
-	}
-	jint ConversationActions_Request::getMaxSuggestions()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxSuggestions",
-			"()I");
-	}
-	QAndroidJniObject ConversationActions_Request::getCallingPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getCallingPackageName",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject ConversationActions_Request::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject ConversationActions_Request::getHints()
-	{
-		return __thiz.callObjectMethod(
-			"getHints",
-			"()Ljava/util/List;");
-	}
 	jint ConversationActions_Request::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ConversationActions_Request::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -129,7 +97,50 @@ namespace __jni_impl::android::view::textclassifier
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject ConversationActions_Request::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject ConversationActions_Request::getTypeConfig()
+	{
+		return __thiz.callObjectMethod(
+			"getTypeConfig",
+			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
+		);
+	}
+	QAndroidJniObject ConversationActions_Request::getConversation()
+	{
+		return __thiz.callObjectMethod(
+			"getConversation",
+			"()Ljava/util/List;"
+		);
+	}
+	jint ConversationActions_Request::getMaxSuggestions()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxSuggestions",
+			"()I"
+		);
+	}
+	jstring ConversationActions_Request::getCallingPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getCallingPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject ConversationActions_Request::getHints()
+	{
+		return __thiz.callObjectMethod(
+			"getHints",
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

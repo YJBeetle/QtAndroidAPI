@@ -27,16 +27,16 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		void setCid(jint arg0);
-		void setRssi(jint arg0);
+		jstring toString();
 		jint getNetworkType();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getLac();
 		jint getCid();
 		jint getPsc();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getRssi();
+		void setCid(jint arg0);
+		void setRssi(jint arg0);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -50,19 +50,22 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.NeighboringCellInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint NeighboringCellInfo::UNKNOWN_CID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.NeighboringCellInfo",
-			"UNKNOWN_CID");
+			"UNKNOWN_CID"
+		);
 	}
 	jint NeighboringCellInfo::UNKNOWN_RSSI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.NeighboringCellInfo",
-			"UNKNOWN_RSSI");
+			"UNKNOWN_RSSI"
+		);
 	}
 	
 	// Constructors
@@ -98,37 +101,47 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	QAndroidJniObject NeighboringCellInfo::toString()
+	jstring NeighboringCellInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	void NeighboringCellInfo::setCid(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCid",
-			"(I)V",
-			arg0);
-	}
-	void NeighboringCellInfo::setRssi(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRssi",
-			"(I)V",
-			arg0);
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint NeighboringCellInfo::getNetworkType()
 	{
 		return __thiz.callMethod<jint>(
 			"getNetworkType",
-			"()I");
+			"()I"
+		);
+	}
+	jint NeighboringCellInfo::getLac()
+	{
+		return __thiz.callMethod<jint>(
+			"getLac",
+			"()I"
+		);
+	}
+	jint NeighboringCellInfo::getCid()
+	{
+		return __thiz.callMethod<jint>(
+			"getCid",
+			"()I"
+		);
+	}
+	jint NeighboringCellInfo::getPsc()
+	{
+		return __thiz.callMethod<jint>(
+			"getPsc",
+			"()I"
+		);
 	}
 	jint NeighboringCellInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void NeighboringCellInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -136,31 +149,31 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jint NeighboringCellInfo::getLac()
-	{
-		return __thiz.callMethod<jint>(
-			"getLac",
-			"()I");
-	}
-	jint NeighboringCellInfo::getCid()
-	{
-		return __thiz.callMethod<jint>(
-			"getCid",
-			"()I");
-	}
-	jint NeighboringCellInfo::getPsc()
-	{
-		return __thiz.callMethod<jint>(
-			"getPsc",
-			"()I");
+			arg1
+		);
 	}
 	jint NeighboringCellInfo::getRssi()
 	{
 		return __thiz.callMethod<jint>(
 			"getRssi",
-			"()I");
+			"()I"
+		);
+	}
+	void NeighboringCellInfo::setCid(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCid",
+			"(I)V",
+			arg0
+		);
+	}
+	void NeighboringCellInfo::setRssi(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRssi",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

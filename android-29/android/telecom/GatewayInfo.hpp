@@ -27,11 +27,11 @@ namespace __jni_impl::android::telecom
 		
 		// Methods
 		jboolean isEmpty();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getGatewayProviderPackageName();
+		jstring getGatewayProviderPackageName();
 		QAndroidJniObject getGatewayAddress();
 		QAndroidJniObject getOriginalAddress();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -46,7 +46,8 @@ namespace __jni_impl::android::telecom
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.GatewayInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -65,13 +66,36 @@ namespace __jni_impl::android::telecom
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
+	}
+	jstring GatewayInfo::getGatewayProviderPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getGatewayProviderPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject GatewayInfo::getGatewayAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getGatewayAddress",
+			"()Landroid/net/Uri;"
+		);
+	}
+	QAndroidJniObject GatewayInfo::getOriginalAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getOriginalAddress",
+			"()Landroid/net/Uri;"
+		);
 	}
 	jint GatewayInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void GatewayInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -79,25 +103,8 @@ namespace __jni_impl::android::telecom
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject GatewayInfo::getGatewayProviderPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getGatewayProviderPackageName",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject GatewayInfo::getGatewayAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getGatewayAddress",
-			"()Landroid/net/Uri;");
-	}
-	QAndroidJniObject GatewayInfo::getOriginalAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getOriginalAddress",
-			"()Landroid/net/Uri;");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

@@ -19,7 +19,7 @@ namespace __jni_impl::java::util::concurrent::atomic
 		
 		// Methods
 		jboolean get();
-		QAndroidJniObject toString();
+		jstring toString();
 		void set(jboolean arg0);
 		jboolean getOpaque();
 		void setOpaque(jboolean arg0);
@@ -66,46 +66,53 @@ namespace __jni_impl::java::util::concurrent::atomic
 	{
 		return __thiz.callMethod<jboolean>(
 			"get",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject AtomicBoolean::toString()
+	jstring AtomicBoolean::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AtomicBoolean::set(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AtomicBoolean::getOpaque()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getOpaque",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AtomicBoolean::setOpaque(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOpaque",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AtomicBoolean::getAcquire()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAcquire",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AtomicBoolean::setRelease(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRelease",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AtomicBoolean::compareAndSet(jboolean arg0, jboolean arg1)
 	{
@@ -113,7 +120,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"compareAndSet",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicBoolean::compareAndExchange(jboolean arg0, jboolean arg1)
 	{
@@ -121,7 +129,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"compareAndExchange",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicBoolean::compareAndExchangeAcquire(jboolean arg0, jboolean arg1)
 	{
@@ -129,7 +138,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"compareAndExchangeAcquire",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicBoolean::compareAndExchangeRelease(jboolean arg0, jboolean arg1)
 	{
@@ -137,7 +147,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"compareAndExchangeRelease",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicBoolean::weakCompareAndSetPlain(jboolean arg0, jboolean arg1)
 	{
@@ -145,7 +156,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSetPlain",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicBoolean::weakCompareAndSet(jboolean arg0, jboolean arg1)
 	{
@@ -153,7 +165,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSet",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicBoolean::weakCompareAndSetAcquire(jboolean arg0, jboolean arg1)
 	{
@@ -161,7 +174,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSetAcquire",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicBoolean::weakCompareAndSetRelease(jboolean arg0, jboolean arg1)
 	{
@@ -169,21 +183,24 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSetRelease",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicBoolean::getAndSet(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAndSet",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicBoolean::lazySet(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"lazySet",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AtomicBoolean::weakCompareAndSetVolatile(jboolean arg0, jboolean arg1)
 	{
@@ -191,20 +208,23 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSetVolatile",
 			"(ZZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicBoolean::getPlain()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getPlain",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AtomicBoolean::setPlain(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPlain",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

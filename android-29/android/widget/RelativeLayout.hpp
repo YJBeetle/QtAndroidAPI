@@ -57,15 +57,15 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		void setIgnoreGravity(jint arg0);
+		jint getIgnoreGravity();
 		void setGravity(jint arg0);
 		jint getGravity();
-		QAndroidJniObject getAccessibilityClassName();
+		jstring getAccessibilityClassName();
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		jboolean shouldDelayChildPressedState();
 		void requestLayout();
 		jint getBaseline();
-		void setIgnoreGravity(jint arg0);
-		jint getIgnoreGravity();
 		void setHorizontalGravity(jint arg0);
 		void setVerticalGravity(jint arg0);
 	};
@@ -82,139 +82,162 @@ namespace __jni_impl::android::widget
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ABOVE");
+			"ABOVE"
+		);
 	}
 	jint RelativeLayout::ALIGN_BASELINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_BASELINE");
+			"ALIGN_BASELINE"
+		);
 	}
 	jint RelativeLayout::ALIGN_BOTTOM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_BOTTOM");
+			"ALIGN_BOTTOM"
+		);
 	}
 	jint RelativeLayout::ALIGN_END()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_END");
+			"ALIGN_END"
+		);
 	}
 	jint RelativeLayout::ALIGN_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_LEFT");
+			"ALIGN_LEFT"
+		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_BOTTOM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_PARENT_BOTTOM");
+			"ALIGN_PARENT_BOTTOM"
+		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_END()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_PARENT_END");
+			"ALIGN_PARENT_END"
+		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_PARENT_LEFT");
+			"ALIGN_PARENT_LEFT"
+		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_PARENT_RIGHT");
+			"ALIGN_PARENT_RIGHT"
+		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_START()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_PARENT_START");
+			"ALIGN_PARENT_START"
+		);
 	}
 	jint RelativeLayout::ALIGN_PARENT_TOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_PARENT_TOP");
+			"ALIGN_PARENT_TOP"
+		);
 	}
 	jint RelativeLayout::ALIGN_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_RIGHT");
+			"ALIGN_RIGHT"
+		);
 	}
 	jint RelativeLayout::ALIGN_START()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_START");
+			"ALIGN_START"
+		);
 	}
 	jint RelativeLayout::ALIGN_TOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"ALIGN_TOP");
+			"ALIGN_TOP"
+		);
 	}
 	jint RelativeLayout::BELOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"BELOW");
+			"BELOW"
+		);
 	}
 	jint RelativeLayout::CENTER_HORIZONTAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"CENTER_HORIZONTAL");
+			"CENTER_HORIZONTAL"
+		);
 	}
 	jint RelativeLayout::CENTER_IN_PARENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"CENTER_IN_PARENT");
+			"CENTER_IN_PARENT"
+		);
 	}
 	jint RelativeLayout::CENTER_VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"CENTER_VERTICAL");
+			"CENTER_VERTICAL"
+		);
 	}
 	jint RelativeLayout::END_OF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"END_OF");
+			"END_OF"
+		);
 	}
 	jint RelativeLayout::LEFT_OF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"LEFT_OF");
+			"LEFT_OF"
+		);
 	}
 	jint RelativeLayout::RIGHT_OF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"RIGHT_OF");
+			"RIGHT_OF"
+		);
 	}
 	jint RelativeLayout::START_OF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"START_OF");
+			"START_OF"
+		);
 	}
 	jint RelativeLayout::TRUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.RelativeLayout",
-			"TRUE");
+			"TRUE"
+		);
 	}
 	
 	// Constructors
@@ -254,76 +277,87 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
+	void RelativeLayout::setIgnoreGravity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIgnoreGravity",
+			"(I)V",
+			arg0
+		);
+	}
+	jint RelativeLayout::getIgnoreGravity()
+	{
+		return __thiz.callMethod<jint>(
+			"getIgnoreGravity",
+			"()I"
+		);
+	}
 	void RelativeLayout::setGravity(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setGravity",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint RelativeLayout::getGravity()
 	{
 		return __thiz.callMethod<jint>(
 			"getGravity",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject RelativeLayout::getAccessibilityClassName()
+	jstring RelativeLayout::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	QAndroidJniObject RelativeLayout::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/widget/RelativeLayout$LayoutParams;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RelativeLayout::shouldDelayChildPressedState()
 	{
 		return __thiz.callMethod<jboolean>(
 			"shouldDelayChildPressedState",
-			"()Z");
+			"()Z"
+		);
 	}
 	void RelativeLayout::requestLayout()
 	{
 		__thiz.callMethod<void>(
 			"requestLayout",
-			"()V");
+			"()V"
+		);
 	}
 	jint RelativeLayout::getBaseline()
 	{
 		return __thiz.callMethod<jint>(
 			"getBaseline",
-			"()I");
-	}
-	void RelativeLayout::setIgnoreGravity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIgnoreGravity",
-			"(I)V",
-			arg0);
-	}
-	jint RelativeLayout::getIgnoreGravity()
-	{
-		return __thiz.callMethod<jint>(
-			"getIgnoreGravity",
-			"()I");
+			"()I"
+		);
 	}
 	void RelativeLayout::setHorizontalGravity(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHorizontalGravity",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void RelativeLayout::setVerticalGravity(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVerticalGravity",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

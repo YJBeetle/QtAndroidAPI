@@ -22,7 +22,7 @@ namespace __jni_impl::java::nio::file::attribute
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::nio::file::attribute
@@ -36,28 +36,32 @@ namespace __jni_impl::java::nio::file::attribute
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
 			"ALLOW",
-			"Ljava/nio/file/attribute/AclEntryType;");
+			"Ljava/nio/file/attribute/AclEntryType;"
+		);
 	}
 	QAndroidJniObject AclEntryType::DENY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
 			"DENY",
-			"Ljava/nio/file/attribute/AclEntryType;");
+			"Ljava/nio/file/attribute/AclEntryType;"
+		);
 	}
 	QAndroidJniObject AclEntryType::AUDIT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
 			"AUDIT",
-			"Ljava/nio/file/attribute/AclEntryType;");
+			"Ljava/nio/file/attribute/AclEntryType;"
+		);
 	}
 	QAndroidJniObject AclEntryType::ALARM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
 			"ALARM",
-			"Ljava/nio/file/attribute/AclEntryType;");
+			"Ljava/nio/file/attribute/AclEntryType;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::java::nio::file::attribute
 	}
 	
 	// Methods
-	QAndroidJniObject AclEntryType::values()
+	jarray AclEntryType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntryType",
 			"values",
-			"()[Ljava/nio/file/attribute/AclEntryType;");
+			"()[Ljava/nio/file/attribute/AclEntryType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject AclEntryType::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::java::nio::file::attribute
 			"java.nio.file.attribute.AclEntryType",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::file::attribute
 

@@ -30,7 +30,7 @@ namespace __jni_impl::android::net::wifi::p2p
 		void __constructor(__jni_impl::android::net::wifi::p2p::WifiP2pInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -47,23 +47,27 @@ namespace __jni_impl::android::net::wifi::p2p
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jboolean WifiP2pInfo::groupFormed()
 	{
 		return __thiz.getField<jboolean>(
-			"groupFormed");
+			"groupFormed"
+		);
 	}
 	QAndroidJniObject WifiP2pInfo::groupOwnerAddress()
 	{
 		return __thiz.getObjectField(
 			"groupOwnerAddress",
-			"Ljava/net/InetAddress;");
+			"Ljava/net/InetAddress;"
+		);
 	}
 	jboolean WifiP2pInfo::isGroupOwner()
 	{
 		return __thiz.getField<jboolean>(
-			"isGroupOwner");
+			"isGroupOwner"
+		);
 	}
 	
 	// Constructors
@@ -82,17 +86,19 @@ namespace __jni_impl::android::net::wifi::p2p
 	}
 	
 	// Methods
-	QAndroidJniObject WifiP2pInfo::toString()
+	jstring WifiP2pInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiP2pInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void WifiP2pInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -100,7 +106,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p
 

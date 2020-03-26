@@ -12,23 +12,23 @@ namespace __jni_impl::org::xml::sax::helpers
 	{
 	public:
 		// Fields
-		static QAndroidJniObject XMLNS();
-		static QAndroidJniObject NSDECL();
+		static jstring XMLNS();
+		static jstring NSDECL();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
 		void reset();
-		QAndroidJniObject getURI(jstring arg0);
-		QAndroidJniObject getPrefix(jstring arg0);
-		QAndroidJniObject processName(jstring arg0, jarray arg1, jboolean arg2);
 		jboolean declarePrefix(jstring arg0, jstring arg1);
 		QAndroidJniObject getDeclaredPrefixes();
 		void pushContext();
 		void popContext();
 		void setNamespaceDeclUris(jboolean arg0);
 		jboolean isNamespaceDeclUris();
+		jstring getURI(jstring arg0);
+		jstring getPrefix(jstring arg0);
+		jarray processName(jstring arg0, jarray arg1, jboolean arg2);
 		QAndroidJniObject getPrefixes();
 		QAndroidJniObject getPrefixes(jstring arg0);
 	};
@@ -38,19 +38,21 @@ namespace __jni_impl::org::xml::sax::helpers
 namespace __jni_impl::org::xml::sax::helpers
 {
 	// Fields
-	QAndroidJniObject NamespaceSupport::XMLNS()
+	jstring NamespaceSupport::XMLNS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"org.xml.sax.helpers.NamespaceSupport",
 			"XMLNS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NamespaceSupport::NSDECL()
+	jstring NamespaceSupport::NSDECL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"org.xml.sax.helpers.NamespaceSupport",
 			"NSDECL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -66,30 +68,8 @@ namespace __jni_impl::org::xml::sax::helpers
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
-	}
-	QAndroidJniObject NamespaceSupport::getURI(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getURI",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject NamespaceSupport::getPrefix(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPrefix",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject NamespaceSupport::processName(jstring arg0, jarray arg1, jboolean arg2)
-	{
-		return __thiz.callObjectMethod(
-			"processName",
-			"(Ljava/lang/String;[Ljava/lang/String;Z)[Ljava/lang/String;",
-			arg0,
-			arg1,
-			arg2);
+			"()V"
+		);
 	}
 	jboolean NamespaceSupport::declarePrefix(jstring arg0, jstring arg1)
 	{
@@ -97,51 +77,85 @@ namespace __jni_impl::org::xml::sax::helpers
 			"declarePrefix",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject NamespaceSupport::getDeclaredPrefixes()
 	{
 		return __thiz.callObjectMethod(
 			"getDeclaredPrefixes",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	void NamespaceSupport::pushContext()
 	{
 		__thiz.callMethod<void>(
 			"pushContext",
-			"()V");
+			"()V"
+		);
 	}
 	void NamespaceSupport::popContext()
 	{
 		__thiz.callMethod<void>(
 			"popContext",
-			"()V");
+			"()V"
+		);
 	}
 	void NamespaceSupport::setNamespaceDeclUris(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNamespaceDeclUris",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean NamespaceSupport::isNamespaceDeclUris()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNamespaceDeclUris",
-			"()Z");
+			"()Z"
+		);
+	}
+	jstring NamespaceSupport::getURI(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getURI",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring NamespaceSupport::getPrefix(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPrefix",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jarray NamespaceSupport::processName(jstring arg0, jarray arg1, jboolean arg2)
+	{
+		return __thiz.callObjectMethod(
+			"processName",
+			"(Ljava/lang/String;[Ljava/lang/String;Z)[Ljava/lang/String;",
+			arg0,
+			arg1,
+			arg2
+		).object<jarray>();
 	}
 	QAndroidJniObject NamespaceSupport::getPrefixes()
 	{
 		return __thiz.callObjectMethod(
 			"getPrefixes",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	QAndroidJniObject NamespaceSupport::getPrefixes(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPrefixes",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::org::xml::sax::helpers
 

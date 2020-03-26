@@ -53,7 +53,8 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"onCompleteResult",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

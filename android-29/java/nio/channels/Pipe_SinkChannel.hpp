@@ -47,7 +47,8 @@ namespace __jni_impl::java::nio::channels
 	{
 		return __thiz.callMethod<jint>(
 			"validOps",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels
 

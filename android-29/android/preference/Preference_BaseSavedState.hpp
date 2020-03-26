@@ -37,7 +37,8 @@ namespace __jni_impl::android::preference
 		return QAndroidJniObject::getStaticObjectField(
 			"android.preference.Preference$BaseSavedState",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors

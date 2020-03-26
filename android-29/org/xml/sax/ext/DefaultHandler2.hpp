@@ -61,7 +61,8 @@ namespace __jni_impl::org::xml::sax::ext
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DefaultHandler2::attributeDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
@@ -72,7 +73,8 @@ namespace __jni_impl::org::xml::sax::ext
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void DefaultHandler2::elementDecl(jstring arg0, jstring arg1)
 	{
@@ -80,7 +82,8 @@ namespace __jni_impl::org::xml::sax::ext
 			"elementDecl",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void DefaultHandler2::externalEntityDecl(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -89,7 +92,8 @@ namespace __jni_impl::org::xml::sax::ext
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DefaultHandler2::internalEntityDecl(jstring arg0, jstring arg1)
 	{
@@ -97,7 +101,8 @@ namespace __jni_impl::org::xml::sax::ext
 			"internalEntityDecl",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DefaultHandler2::getExternalSubset(jstring arg0, jstring arg1)
 	{
@@ -105,7 +110,8 @@ namespace __jni_impl::org::xml::sax::ext
 			"getExternalSubset",
 			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void DefaultHandler2::startDTD(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -114,39 +120,45 @@ namespace __jni_impl::org::xml::sax::ext
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DefaultHandler2::endDTD()
 	{
 		__thiz.callMethod<void>(
 			"endDTD",
-			"()V");
+			"()V"
+		);
 	}
 	void DefaultHandler2::startEntity(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"startEntity",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void DefaultHandler2::endEntity(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"endEntity",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void DefaultHandler2::startCDATA()
 	{
 		__thiz.callMethod<void>(
 			"startCDATA",
-			"()V");
+			"()V"
+		);
 	}
 	void DefaultHandler2::endCDATA()
 	{
 		__thiz.callMethod<void>(
 			"endCDATA",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject DefaultHandler2::resolveEntity(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
@@ -156,7 +168,8 @@ namespace __jni_impl::org::xml::sax::ext
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject DefaultHandler2::resolveEntity(jstring arg0, jstring arg1)
 	{
@@ -164,7 +177,8 @@ namespace __jni_impl::org::xml::sax::ext
 			"resolveEntity",
 			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::org::xml::sax::ext
 

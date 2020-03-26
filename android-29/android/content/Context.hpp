@@ -65,13 +65,13 @@ namespace __jni_impl::android::database::sqlite
 {
 	class SQLiteDatabase;
 }
-namespace __jni_impl::android::graphics
-{
-	class Bitmap;
-}
 namespace __jni_impl::java::io
 {
 	class InputStream;
+}
+namespace __jni_impl::android::graphics
+{
+	class Bitmap;
 }
 namespace __jni_impl::android::content
 {
@@ -124,14 +124,14 @@ namespace __jni_impl::android::content
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACCESSIBILITY_SERVICE();
-		static QAndroidJniObject ACCOUNT_SERVICE();
-		static QAndroidJniObject ACTIVITY_SERVICE();
-		static QAndroidJniObject ALARM_SERVICE();
-		static QAndroidJniObject APPWIDGET_SERVICE();
-		static QAndroidJniObject APP_OPS_SERVICE();
-		static QAndroidJniObject AUDIO_SERVICE();
-		static QAndroidJniObject BATTERY_SERVICE();
+		static jstring ACCESSIBILITY_SERVICE();
+		static jstring ACCOUNT_SERVICE();
+		static jstring ACTIVITY_SERVICE();
+		static jstring ALARM_SERVICE();
+		static jstring APPWIDGET_SERVICE();
+		static jstring APP_OPS_SERVICE();
+		static jstring AUDIO_SERVICE();
+		static jstring BATTERY_SERVICE();
 		static jint BIND_ABOVE_CLIENT();
 		static jint BIND_ADJUST_WITH_ACTIVITY();
 		static jint BIND_ALLOW_OOM_MANAGEMENT();
@@ -143,38 +143,38 @@ namespace __jni_impl::android::content
 		static jint BIND_NOT_FOREGROUND();
 		static jint BIND_NOT_PERCEPTIBLE();
 		static jint BIND_WAIVE_PRIORITY();
-		static QAndroidJniObject BIOMETRIC_SERVICE();
-		static QAndroidJniObject BLUETOOTH_SERVICE();
-		static QAndroidJniObject CAMERA_SERVICE();
-		static QAndroidJniObject CAPTIONING_SERVICE();
-		static QAndroidJniObject CARRIER_CONFIG_SERVICE();
-		static QAndroidJniObject CLIPBOARD_SERVICE();
-		static QAndroidJniObject COMPANION_DEVICE_SERVICE();
-		static QAndroidJniObject CONNECTIVITY_SERVICE();
-		static QAndroidJniObject CONSUMER_IR_SERVICE();
+		static jstring BIOMETRIC_SERVICE();
+		static jstring BLUETOOTH_SERVICE();
+		static jstring CAMERA_SERVICE();
+		static jstring CAPTIONING_SERVICE();
+		static jstring CARRIER_CONFIG_SERVICE();
+		static jstring CLIPBOARD_SERVICE();
+		static jstring COMPANION_DEVICE_SERVICE();
+		static jstring CONNECTIVITY_SERVICE();
+		static jstring CONSUMER_IR_SERVICE();
 		static jint CONTEXT_IGNORE_SECURITY();
 		static jint CONTEXT_INCLUDE_CODE();
 		static jint CONTEXT_RESTRICTED();
-		static QAndroidJniObject CROSS_PROFILE_APPS_SERVICE();
-		static QAndroidJniObject DEVICE_POLICY_SERVICE();
-		static QAndroidJniObject DISPLAY_SERVICE();
-		static QAndroidJniObject DOWNLOAD_SERVICE();
-		static QAndroidJniObject DROPBOX_SERVICE();
-		static QAndroidJniObject EUICC_SERVICE();
-		static QAndroidJniObject FINGERPRINT_SERVICE();
-		static QAndroidJniObject HARDWARE_PROPERTIES_SERVICE();
-		static QAndroidJniObject INPUT_METHOD_SERVICE();
-		static QAndroidJniObject INPUT_SERVICE();
-		static QAndroidJniObject IPSEC_SERVICE();
-		static QAndroidJniObject JOB_SCHEDULER_SERVICE();
-		static QAndroidJniObject KEYGUARD_SERVICE();
-		static QAndroidJniObject LAUNCHER_APPS_SERVICE();
-		static QAndroidJniObject LAYOUT_INFLATER_SERVICE();
-		static QAndroidJniObject LOCATION_SERVICE();
-		static QAndroidJniObject MEDIA_PROJECTION_SERVICE();
-		static QAndroidJniObject MEDIA_ROUTER_SERVICE();
-		static QAndroidJniObject MEDIA_SESSION_SERVICE();
-		static QAndroidJniObject MIDI_SERVICE();
+		static jstring CROSS_PROFILE_APPS_SERVICE();
+		static jstring DEVICE_POLICY_SERVICE();
+		static jstring DISPLAY_SERVICE();
+		static jstring DOWNLOAD_SERVICE();
+		static jstring DROPBOX_SERVICE();
+		static jstring EUICC_SERVICE();
+		static jstring FINGERPRINT_SERVICE();
+		static jstring HARDWARE_PROPERTIES_SERVICE();
+		static jstring INPUT_METHOD_SERVICE();
+		static jstring INPUT_SERVICE();
+		static jstring IPSEC_SERVICE();
+		static jstring JOB_SCHEDULER_SERVICE();
+		static jstring KEYGUARD_SERVICE();
+		static jstring LAUNCHER_APPS_SERVICE();
+		static jstring LAYOUT_INFLATER_SERVICE();
+		static jstring LOCATION_SERVICE();
+		static jstring MEDIA_PROJECTION_SERVICE();
+		static jstring MEDIA_ROUTER_SERVICE();
+		static jstring MEDIA_SESSION_SERVICE();
+		static jstring MIDI_SERVICE();
 		static jint MODE_APPEND();
 		static jint MODE_ENABLE_WRITE_AHEAD_LOGGING();
 		static jint MODE_MULTI_PROCESS();
@@ -182,38 +182,38 @@ namespace __jni_impl::android::content
 		static jint MODE_PRIVATE();
 		static jint MODE_WORLD_READABLE();
 		static jint MODE_WORLD_WRITEABLE();
-		static QAndroidJniObject NETWORK_STATS_SERVICE();
-		static QAndroidJniObject NFC_SERVICE();
-		static QAndroidJniObject NOTIFICATION_SERVICE();
-		static QAndroidJniObject NSD_SERVICE();
-		static QAndroidJniObject POWER_SERVICE();
-		static QAndroidJniObject PRINT_SERVICE();
+		static jstring NETWORK_STATS_SERVICE();
+		static jstring NFC_SERVICE();
+		static jstring NOTIFICATION_SERVICE();
+		static jstring NSD_SERVICE();
+		static jstring POWER_SERVICE();
+		static jstring PRINT_SERVICE();
 		static jint RECEIVER_VISIBLE_TO_INSTANT_APPS();
-		static QAndroidJniObject RESTRICTIONS_SERVICE();
-		static QAndroidJniObject ROLE_SERVICE();
-		static QAndroidJniObject SEARCH_SERVICE();
-		static QAndroidJniObject SENSOR_SERVICE();
-		static QAndroidJniObject SHORTCUT_SERVICE();
-		static QAndroidJniObject STORAGE_SERVICE();
-		static QAndroidJniObject STORAGE_STATS_SERVICE();
-		static QAndroidJniObject SYSTEM_HEALTH_SERVICE();
-		static QAndroidJniObject TELECOM_SERVICE();
-		static QAndroidJniObject TELEPHONY_SERVICE();
-		static QAndroidJniObject TELEPHONY_SUBSCRIPTION_SERVICE();
-		static QAndroidJniObject TEXT_CLASSIFICATION_SERVICE();
-		static QAndroidJniObject TEXT_SERVICES_MANAGER_SERVICE();
-		static QAndroidJniObject TV_INPUT_SERVICE();
-		static QAndroidJniObject UI_MODE_SERVICE();
-		static QAndroidJniObject USAGE_STATS_SERVICE();
-		static QAndroidJniObject USB_SERVICE();
-		static QAndroidJniObject USER_SERVICE();
-		static QAndroidJniObject VIBRATOR_SERVICE();
-		static QAndroidJniObject WALLPAPER_SERVICE();
-		static QAndroidJniObject WIFI_AWARE_SERVICE();
-		static QAndroidJniObject WIFI_P2P_SERVICE();
-		static QAndroidJniObject WIFI_RTT_RANGING_SERVICE();
-		static QAndroidJniObject WIFI_SERVICE();
-		static QAndroidJniObject WINDOW_SERVICE();
+		static jstring RESTRICTIONS_SERVICE();
+		static jstring ROLE_SERVICE();
+		static jstring SEARCH_SERVICE();
+		static jstring SENSOR_SERVICE();
+		static jstring SHORTCUT_SERVICE();
+		static jstring STORAGE_SERVICE();
+		static jstring STORAGE_STATS_SERVICE();
+		static jstring SYSTEM_HEALTH_SERVICE();
+		static jstring TELECOM_SERVICE();
+		static jstring TELEPHONY_SERVICE();
+		static jstring TELEPHONY_SUBSCRIPTION_SERVICE();
+		static jstring TEXT_CLASSIFICATION_SERVICE();
+		static jstring TEXT_SERVICES_MANAGER_SERVICE();
+		static jstring TV_INPUT_SERVICE();
+		static jstring UI_MODE_SERVICE();
+		static jstring USAGE_STATS_SERVICE();
+		static jstring USB_SERVICE();
+		static jstring USER_SERVICE();
+		static jstring VIBRATOR_SERVICE();
+		static jstring WALLPAPER_SERVICE();
+		static jstring WIFI_AWARE_SERVICE();
+		static jstring WIFI_P2P_SERVICE();
+		static jstring WIFI_RTT_RANGING_SERVICE();
+		static jstring WIFI_SERVICE();
+		static jstring WINDOW_SERVICE();
 		
 		// Constructors
 		void __constructor();
@@ -221,12 +221,11 @@ namespace __jni_impl::android::content
 		// Methods
 		QAndroidJniObject getClassLoader();
 		jint checkPermission(jstring arg0, jint arg1, jint arg2);
-		QAndroidJniObject getPackageName();
+		jstring getPackageName();
 		QAndroidJniObject getResources();
-		QAndroidJniObject getString(jint arg0, jobjectArray arg1);
-		QAndroidJniObject getString(jint arg0);
-		QAndroidJniObject getText(jint arg0);
-		QAndroidJniObject fileList();
+		jstring getString(jint arg0, jobjectArray arg1);
+		jstring getString(jint arg0);
+		jstring getText(jint arg0);
 		QAndroidJniObject getAssets();
 		QAndroidJniObject getPackageManager();
 		QAndroidJniObject getContentResolver();
@@ -240,14 +239,14 @@ namespace __jni_impl::android::content
 		QAndroidJniObject getColorStateList(jint arg0);
 		void setTheme(jint arg0);
 		QAndroidJniObject getTheme();
-		QAndroidJniObject obtainStyledAttributes(jintArray arg0);
 		QAndroidJniObject obtainStyledAttributes(jint arg0, jintArray arg1);
+		QAndroidJniObject obtainStyledAttributes(jintArray arg0);
 		QAndroidJniObject obtainStyledAttributes(__jni_impl::__JniBaseClass arg0, jintArray arg1);
 		QAndroidJniObject obtainStyledAttributes(__jni_impl::__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3);
-		QAndroidJniObject getOpPackageName();
+		jstring getOpPackageName();
 		QAndroidJniObject getApplicationInfo();
-		QAndroidJniObject getPackageResourcePath();
-		QAndroidJniObject getPackageCodePath();
+		jstring getPackageResourcePath();
+		jstring getPackageCodePath();
 		QAndroidJniObject getSharedPreferences(jstring arg0, jint arg1);
 		jboolean moveSharedPreferencesFrom(__jni_impl::android::content::Context arg0, jstring arg1);
 		jboolean deleteSharedPreferences(jstring arg0);
@@ -259,40 +258,40 @@ namespace __jni_impl::android::content
 		QAndroidJniObject getFilesDir();
 		QAndroidJniObject getNoBackupFilesDir();
 		QAndroidJniObject getExternalFilesDir(jstring arg0);
-		QAndroidJniObject getExternalFilesDirs(jstring arg0);
+		jarray getExternalFilesDirs(jstring arg0);
 		QAndroidJniObject getObbDir();
-		QAndroidJniObject getObbDirs();
+		jarray getObbDirs();
 		QAndroidJniObject getCacheDir();
 		QAndroidJniObject getCodeCacheDir();
 		QAndroidJniObject getExternalCacheDir();
-		QAndroidJniObject getExternalCacheDirs();
-		QAndroidJniObject getExternalMediaDirs();
+		jarray getExternalCacheDirs();
+		jarray getExternalMediaDirs();
 		QAndroidJniObject getDir(jstring arg0, jint arg1);
-		QAndroidJniObject openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
 		QAndroidJniObject openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
+		QAndroidJniObject openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
 		jboolean moveDatabaseFrom(__jni_impl::android::content::Context arg0, jstring arg1);
 		jboolean deleteDatabase(jstring arg0);
 		QAndroidJniObject getDatabasePath(jstring arg0);
-		QAndroidJniObject databaseList();
+		jarray databaseList();
 		QAndroidJniObject getWallpaper();
 		QAndroidJniObject peekWallpaper();
 		jint getWallpaperDesiredMinimumWidth();
 		jint getWallpaperDesiredMinimumHeight();
-		void setWallpaper(__jni_impl::android::graphics::Bitmap arg0);
 		void setWallpaper(__jni_impl::java::io::InputStream arg0);
+		void setWallpaper(__jni_impl::android::graphics::Bitmap arg0);
 		void clearWallpaper();
 		void startActivity(__jni_impl::android::content::Intent arg0);
 		void startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1);
-		void startActivities(jarray arg0);
 		void startActivities(jarray arg0, __jni_impl::android::os::Bundle arg1);
+		void startActivities(jarray arg0);
 		void startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5);
 		void startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4);
 		void sendBroadcast(__jni_impl::android::content::Intent arg0, jstring arg1);
 		void sendBroadcast(__jni_impl::android::content::Intent arg0);
 		void sendOrderedBroadcast(__jni_impl::android::content::Intent arg0, jstring arg1, __jni_impl::android::content::BroadcastReceiver arg2, __jni_impl::android::os::Handler arg3, jint arg4, jstring arg5, __jni_impl::android::os::Bundle arg6);
 		void sendOrderedBroadcast(__jni_impl::android::content::Intent arg0, jstring arg1);
-		void sendBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1);
 		void sendBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1, jstring arg2);
+		void sendBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1);
 		void sendOrderedBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1, jstring arg2, __jni_impl::android::content::BroadcastReceiver arg3, __jni_impl::android::os::Handler arg4, jint arg5, jstring arg6, __jni_impl::android::os::Bundle arg7);
 		void sendStickyBroadcast(__jni_impl::android::content::Intent arg0);
 		void sendStickyOrderedBroadcast(__jni_impl::android::content::Intent arg0, __jni_impl::android::content::BroadcastReceiver arg1, __jni_impl::android::os::Handler arg2, jint arg3, jstring arg4, __jni_impl::android::os::Bundle arg5);
@@ -302,21 +301,21 @@ namespace __jni_impl::android::content
 		void removeStickyBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1);
 		QAndroidJniObject registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1, jstring arg2, __jni_impl::android::os::Handler arg3, jint arg4);
 		QAndroidJniObject registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1, jstring arg2, __jni_impl::android::os::Handler arg3);
-		QAndroidJniObject registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1);
 		QAndroidJniObject registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1, jint arg2);
+		QAndroidJniObject registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1);
 		void unregisterReceiver(__jni_impl::android::content::BroadcastReceiver arg0);
 		QAndroidJniObject startService(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject startForegroundService(__jni_impl::android::content::Intent arg0);
 		jboolean stopService(__jni_impl::android::content::Intent arg0);
-		jboolean bindService(__jni_impl::android::content::Intent arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		jboolean bindService(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
+		jboolean bindService(__jni_impl::android::content::Intent arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		jboolean bindIsolatedService(__jni_impl::android::content::Intent arg0, jint arg1, jstring arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4);
 		void updateServiceGroup(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		void unbindService(__jni_impl::__JniBaseClass arg0);
 		jboolean startInstrumentation(__jni_impl::android::content::ComponentName arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
-		QAndroidJniObject getSystemService(jclass arg0);
-		QAndroidJniObject getSystemService(jstring arg0);
-		QAndroidJniObject getSystemServiceName(jclass arg0);
+		jobject getSystemService(jclass arg0);
+		jobject getSystemService(jstring arg0);
+		jstring getSystemServiceName(jclass arg0);
 		jint checkCallingPermission(jstring arg0);
 		jint checkCallingOrSelfPermission(jstring arg0);
 		jint checkSelfPermission(jstring arg0);
@@ -326,8 +325,8 @@ namespace __jni_impl::android::content
 		void grantUriPermission(jstring arg0, __jni_impl::android::net::Uri arg1, jint arg2);
 		void revokeUriPermission(__jni_impl::android::net::Uri arg0, jint arg1);
 		void revokeUriPermission(jstring arg0, __jni_impl::android::net::Uri arg1, jint arg2);
-		jint checkUriPermission(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, jint arg5);
 		jint checkUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2, jint arg3);
+		jint checkUriPermission(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, jint arg5);
 		jint checkCallingUriPermission(__jni_impl::android::net::Uri arg0, jint arg1);
 		jint checkCallingOrSelfUriPermission(__jni_impl::android::net::Uri arg0, jint arg1);
 		void enforceUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2, jint arg3, jstring arg4);
@@ -341,6 +340,7 @@ namespace __jni_impl::android::content
 		QAndroidJniObject createDeviceProtectedStorageContext();
 		jboolean isRestricted();
 		jboolean isDeviceProtectedStorage();
+		jarray fileList();
 	};
 } // namespace __jni_impl::android::content
 
@@ -359,8 +359,8 @@ namespace __jni_impl::android::content
 #include "../../java/io/FileOutputStream.hpp"
 #include "../../java/io/File.hpp"
 #include "../database/sqlite/SQLiteDatabase.hpp"
-#include "../graphics/Bitmap.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "../graphics/Bitmap.hpp"
 #include "Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "IntentSender.hpp"
@@ -376,613 +376,703 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content
 {
 	// Fields
-	QAndroidJniObject Context::ACCESSIBILITY_SERVICE()
+	jstring Context::ACCESSIBILITY_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"ACCESSIBILITY_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::ACCOUNT_SERVICE()
+	jstring Context::ACCOUNT_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"ACCOUNT_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::ACTIVITY_SERVICE()
+	jstring Context::ACTIVITY_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"ACTIVITY_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::ALARM_SERVICE()
+	jstring Context::ALARM_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"ALARM_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::APPWIDGET_SERVICE()
+	jstring Context::APPWIDGET_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"APPWIDGET_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::APP_OPS_SERVICE()
+	jstring Context::APP_OPS_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"APP_OPS_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::AUDIO_SERVICE()
+	jstring Context::AUDIO_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"AUDIO_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::BATTERY_SERVICE()
+	jstring Context::BATTERY_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"BATTERY_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Context::BIND_ABOVE_CLIENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_ABOVE_CLIENT");
+			"BIND_ABOVE_CLIENT"
+		);
 	}
 	jint Context::BIND_ADJUST_WITH_ACTIVITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_ADJUST_WITH_ACTIVITY");
+			"BIND_ADJUST_WITH_ACTIVITY"
+		);
 	}
 	jint Context::BIND_ALLOW_OOM_MANAGEMENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_ALLOW_OOM_MANAGEMENT");
+			"BIND_ALLOW_OOM_MANAGEMENT"
+		);
 	}
 	jint Context::BIND_AUTO_CREATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_AUTO_CREATE");
+			"BIND_AUTO_CREATE"
+		);
 	}
 	jint Context::BIND_DEBUG_UNBIND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_DEBUG_UNBIND");
+			"BIND_DEBUG_UNBIND"
+		);
 	}
 	jint Context::BIND_EXTERNAL_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_EXTERNAL_SERVICE");
+			"BIND_EXTERNAL_SERVICE"
+		);
 	}
 	jint Context::BIND_IMPORTANT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_IMPORTANT");
+			"BIND_IMPORTANT"
+		);
 	}
 	jint Context::BIND_INCLUDE_CAPABILITIES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_INCLUDE_CAPABILITIES");
+			"BIND_INCLUDE_CAPABILITIES"
+		);
 	}
 	jint Context::BIND_NOT_FOREGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_NOT_FOREGROUND");
+			"BIND_NOT_FOREGROUND"
+		);
 	}
 	jint Context::BIND_NOT_PERCEPTIBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_NOT_PERCEPTIBLE");
+			"BIND_NOT_PERCEPTIBLE"
+		);
 	}
 	jint Context::BIND_WAIVE_PRIORITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"BIND_WAIVE_PRIORITY");
+			"BIND_WAIVE_PRIORITY"
+		);
 	}
-	QAndroidJniObject Context::BIOMETRIC_SERVICE()
+	jstring Context::BIOMETRIC_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"BIOMETRIC_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::BLUETOOTH_SERVICE()
+	jstring Context::BLUETOOTH_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"BLUETOOTH_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::CAMERA_SERVICE()
+	jstring Context::CAMERA_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"CAMERA_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::CAPTIONING_SERVICE()
+	jstring Context::CAPTIONING_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"CAPTIONING_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::CARRIER_CONFIG_SERVICE()
+	jstring Context::CARRIER_CONFIG_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"CARRIER_CONFIG_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::CLIPBOARD_SERVICE()
+	jstring Context::CLIPBOARD_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"CLIPBOARD_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::COMPANION_DEVICE_SERVICE()
+	jstring Context::COMPANION_DEVICE_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"COMPANION_DEVICE_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::CONNECTIVITY_SERVICE()
+	jstring Context::CONNECTIVITY_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"CONNECTIVITY_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::CONSUMER_IR_SERVICE()
+	jstring Context::CONSUMER_IR_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"CONSUMER_IR_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Context::CONTEXT_IGNORE_SECURITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"CONTEXT_IGNORE_SECURITY");
+			"CONTEXT_IGNORE_SECURITY"
+		);
 	}
 	jint Context::CONTEXT_INCLUDE_CODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"CONTEXT_INCLUDE_CODE");
+			"CONTEXT_INCLUDE_CODE"
+		);
 	}
 	jint Context::CONTEXT_RESTRICTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"CONTEXT_RESTRICTED");
+			"CONTEXT_RESTRICTED"
+		);
 	}
-	QAndroidJniObject Context::CROSS_PROFILE_APPS_SERVICE()
+	jstring Context::CROSS_PROFILE_APPS_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"CROSS_PROFILE_APPS_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::DEVICE_POLICY_SERVICE()
+	jstring Context::DEVICE_POLICY_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"DEVICE_POLICY_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::DISPLAY_SERVICE()
+	jstring Context::DISPLAY_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"DISPLAY_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::DOWNLOAD_SERVICE()
+	jstring Context::DOWNLOAD_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"DOWNLOAD_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::DROPBOX_SERVICE()
+	jstring Context::DROPBOX_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"DROPBOX_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::EUICC_SERVICE()
+	jstring Context::EUICC_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"EUICC_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::FINGERPRINT_SERVICE()
+	jstring Context::FINGERPRINT_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"FINGERPRINT_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::HARDWARE_PROPERTIES_SERVICE()
+	jstring Context::HARDWARE_PROPERTIES_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"HARDWARE_PROPERTIES_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::INPUT_METHOD_SERVICE()
+	jstring Context::INPUT_METHOD_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"INPUT_METHOD_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::INPUT_SERVICE()
+	jstring Context::INPUT_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"INPUT_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::IPSEC_SERVICE()
+	jstring Context::IPSEC_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"IPSEC_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::JOB_SCHEDULER_SERVICE()
+	jstring Context::JOB_SCHEDULER_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"JOB_SCHEDULER_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::KEYGUARD_SERVICE()
+	jstring Context::KEYGUARD_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"KEYGUARD_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::LAUNCHER_APPS_SERVICE()
+	jstring Context::LAUNCHER_APPS_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"LAUNCHER_APPS_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::LAYOUT_INFLATER_SERVICE()
+	jstring Context::LAYOUT_INFLATER_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"LAYOUT_INFLATER_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::LOCATION_SERVICE()
+	jstring Context::LOCATION_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"LOCATION_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::MEDIA_PROJECTION_SERVICE()
+	jstring Context::MEDIA_PROJECTION_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"MEDIA_PROJECTION_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::MEDIA_ROUTER_SERVICE()
+	jstring Context::MEDIA_ROUTER_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"MEDIA_ROUTER_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::MEDIA_SESSION_SERVICE()
+	jstring Context::MEDIA_SESSION_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"MEDIA_SESSION_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::MIDI_SERVICE()
+	jstring Context::MIDI_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"MIDI_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Context::MODE_APPEND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"MODE_APPEND");
+			"MODE_APPEND"
+		);
 	}
 	jint Context::MODE_ENABLE_WRITE_AHEAD_LOGGING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"MODE_ENABLE_WRITE_AHEAD_LOGGING");
+			"MODE_ENABLE_WRITE_AHEAD_LOGGING"
+		);
 	}
 	jint Context::MODE_MULTI_PROCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"MODE_MULTI_PROCESS");
+			"MODE_MULTI_PROCESS"
+		);
 	}
 	jint Context::MODE_NO_LOCALIZED_COLLATORS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"MODE_NO_LOCALIZED_COLLATORS");
+			"MODE_NO_LOCALIZED_COLLATORS"
+		);
 	}
 	jint Context::MODE_PRIVATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"MODE_PRIVATE");
+			"MODE_PRIVATE"
+		);
 	}
 	jint Context::MODE_WORLD_READABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"MODE_WORLD_READABLE");
+			"MODE_WORLD_READABLE"
+		);
 	}
 	jint Context::MODE_WORLD_WRITEABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"MODE_WORLD_WRITEABLE");
+			"MODE_WORLD_WRITEABLE"
+		);
 	}
-	QAndroidJniObject Context::NETWORK_STATS_SERVICE()
+	jstring Context::NETWORK_STATS_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"NETWORK_STATS_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::NFC_SERVICE()
+	jstring Context::NFC_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"NFC_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::NOTIFICATION_SERVICE()
+	jstring Context::NOTIFICATION_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"NOTIFICATION_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::NSD_SERVICE()
+	jstring Context::NSD_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"NSD_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::POWER_SERVICE()
+	jstring Context::POWER_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"POWER_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::PRINT_SERVICE()
+	jstring Context::PRINT_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"PRINT_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Context::RECEIVER_VISIBLE_TO_INSTANT_APPS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.Context",
-			"RECEIVER_VISIBLE_TO_INSTANT_APPS");
+			"RECEIVER_VISIBLE_TO_INSTANT_APPS"
+		);
 	}
-	QAndroidJniObject Context::RESTRICTIONS_SERVICE()
+	jstring Context::RESTRICTIONS_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"RESTRICTIONS_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::ROLE_SERVICE()
+	jstring Context::ROLE_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"ROLE_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::SEARCH_SERVICE()
+	jstring Context::SEARCH_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"SEARCH_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::SENSOR_SERVICE()
+	jstring Context::SENSOR_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"SENSOR_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::SHORTCUT_SERVICE()
+	jstring Context::SHORTCUT_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"SHORTCUT_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::STORAGE_SERVICE()
+	jstring Context::STORAGE_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"STORAGE_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::STORAGE_STATS_SERVICE()
+	jstring Context::STORAGE_STATS_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"STORAGE_STATS_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::SYSTEM_HEALTH_SERVICE()
+	jstring Context::SYSTEM_HEALTH_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"SYSTEM_HEALTH_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::TELECOM_SERVICE()
+	jstring Context::TELECOM_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"TELECOM_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::TELEPHONY_SERVICE()
+	jstring Context::TELEPHONY_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"TELEPHONY_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::TELEPHONY_SUBSCRIPTION_SERVICE()
+	jstring Context::TELEPHONY_SUBSCRIPTION_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"TELEPHONY_SUBSCRIPTION_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::TEXT_CLASSIFICATION_SERVICE()
+	jstring Context::TEXT_CLASSIFICATION_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"TEXT_CLASSIFICATION_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::TEXT_SERVICES_MANAGER_SERVICE()
+	jstring Context::TEXT_SERVICES_MANAGER_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"TEXT_SERVICES_MANAGER_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::TV_INPUT_SERVICE()
+	jstring Context::TV_INPUT_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"TV_INPUT_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::UI_MODE_SERVICE()
+	jstring Context::UI_MODE_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"UI_MODE_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::USAGE_STATS_SERVICE()
+	jstring Context::USAGE_STATS_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"USAGE_STATS_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::USB_SERVICE()
+	jstring Context::USB_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"USB_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::USER_SERVICE()
+	jstring Context::USER_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"USER_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::VIBRATOR_SERVICE()
+	jstring Context::VIBRATOR_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"VIBRATOR_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::WALLPAPER_SERVICE()
+	jstring Context::WALLPAPER_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"WALLPAPER_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::WIFI_AWARE_SERVICE()
+	jstring Context::WIFI_AWARE_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"WIFI_AWARE_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::WIFI_P2P_SERVICE()
+	jstring Context::WIFI_P2P_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"WIFI_P2P_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::WIFI_RTT_RANGING_SERVICE()
+	jstring Context::WIFI_RTT_RANGING_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"WIFI_RTT_RANGING_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::WIFI_SERVICE()
+	jstring Context::WIFI_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"WIFI_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::WINDOW_SERVICE()
+	jstring Context::WINDOW_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Context",
 			"WINDOW_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -998,7 +1088,8 @@ namespace __jni_impl::android::content
 	{
 		return __thiz.callObjectMethod(
 			"getClassLoader",
-			"()Ljava/lang/ClassLoader;");
+			"()Ljava/lang/ClassLoader;"
+		);
 	}
 	jint Context::checkPermission(jstring arg0, jint arg1, jint arg2)
 	{
@@ -1007,138 +1098,144 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;II)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject Context::getPackageName()
+	jstring Context::getPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Context::getResources()
 	{
 		return __thiz.callObjectMethod(
 			"getResources",
-			"()Landroid/content/res/Resources;");
+			"()Landroid/content/res/Resources;"
+		);
 	}
-	QAndroidJniObject Context::getString(jint arg0, jobjectArray arg1)
+	jstring Context::getString(jint arg0, jobjectArray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getString",
 			"(I[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::getString(jint arg0)
+	jstring Context::getString(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::getText(jint arg0)
+	jstring Context::getText(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getText",
 			"(I)Ljava/lang/CharSequence;",
-			arg0);
-	}
-	QAndroidJniObject Context::fileList()
-	{
-		return __thiz.callObjectMethod(
-			"fileList",
-			"()[Ljava/lang/String;");
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject Context::getAssets()
 	{
 		return __thiz.callObjectMethod(
 			"getAssets",
-			"()Landroid/content/res/AssetManager;");
+			"()Landroid/content/res/AssetManager;"
+		);
 	}
 	QAndroidJniObject Context::getPackageManager()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageManager",
-			"()Landroid/content/pm/PackageManager;");
+			"()Landroid/content/pm/PackageManager;"
+		);
 	}
 	QAndroidJniObject Context::getContentResolver()
 	{
 		return __thiz.callObjectMethod(
 			"getContentResolver",
-			"()Landroid/content/ContentResolver;");
+			"()Landroid/content/ContentResolver;"
+		);
 	}
 	QAndroidJniObject Context::getMainLooper()
 	{
 		return __thiz.callObjectMethod(
 			"getMainLooper",
-			"()Landroid/os/Looper;");
+			"()Landroid/os/Looper;"
+		);
 	}
 	QAndroidJniObject Context::getMainExecutor()
 	{
 		return __thiz.callObjectMethod(
 			"getMainExecutor",
-			"()Ljava/util/concurrent/Executor;");
+			"()Ljava/util/concurrent/Executor;"
+		);
 	}
 	QAndroidJniObject Context::getApplicationContext()
 	{
 		return __thiz.callObjectMethod(
 			"getApplicationContext",
-			"()Landroid/content/Context;");
+			"()Landroid/content/Context;"
+		);
 	}
 	void Context::registerComponentCallbacks(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerComponentCallbacks",
 			"(Landroid/content/ComponentCallbacks;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Context::unregisterComponentCallbacks(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterComponentCallbacks",
 			"(Landroid/content/ComponentCallbacks;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Context::getColor(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getColor",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Context::getDrawable(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDrawable",
 			"(I)Landroid/graphics/drawable/Drawable;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Context::getColorStateList(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getColorStateList",
 			"(I)Landroid/content/res/ColorStateList;",
-			arg0);
+			arg0
+		);
 	}
 	void Context::setTheme(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTheme",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Context::getTheme()
 	{
 		return __thiz.callObjectMethod(
 			"getTheme",
-			"()Landroid/content/res/Resources$Theme;");
-	}
-	QAndroidJniObject Context::obtainStyledAttributes(jintArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"obtainStyledAttributes",
-			"([I)Landroid/content/res/TypedArray;",
-			arg0);
+			"()Landroid/content/res/Resources$Theme;"
+		);
 	}
 	QAndroidJniObject Context::obtainStyledAttributes(jint arg0, jintArray arg1)
 	{
@@ -1146,7 +1243,16 @@ namespace __jni_impl::android::content
 			"obtainStyledAttributes",
 			"(I[I)Landroid/content/res/TypedArray;",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject Context::obtainStyledAttributes(jintArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"obtainStyledAttributes",
+			"([I)Landroid/content/res/TypedArray;",
+			arg0
+		);
 	}
 	QAndroidJniObject Context::obtainStyledAttributes(__jni_impl::__JniBaseClass arg0, jintArray arg1)
 	{
@@ -1154,7 +1260,8 @@ namespace __jni_impl::android::content
 			"obtainStyledAttributes",
 			"(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Context::obtainStyledAttributes(__jni_impl::__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
 	{
@@ -1164,31 +1271,36 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
-	QAndroidJniObject Context::getOpPackageName()
+	jstring Context::getOpPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getOpPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Context::getApplicationInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getApplicationInfo",
-			"()Landroid/content/pm/ApplicationInfo;");
+			"()Landroid/content/pm/ApplicationInfo;"
+		);
 	}
-	QAndroidJniObject Context::getPackageResourcePath()
+	jstring Context::getPackageResourcePath()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageResourcePath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Context::getPackageCodePath()
+	jstring Context::getPackageCodePath()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageCodePath",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Context::getSharedPreferences(jstring arg0, jint arg1)
 	{
@@ -1196,7 +1308,8 @@ namespace __jni_impl::android::content
 			"getSharedPreferences",
 			"(Ljava/lang/String;I)Landroid/content/SharedPreferences;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Context::moveSharedPreferencesFrom(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
@@ -1204,21 +1317,24 @@ namespace __jni_impl::android::content
 			"moveSharedPreferencesFrom",
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Context::deleteSharedPreferences(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"deleteSharedPreferences",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Context::openFileInput(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"openFileInput",
 			"(Ljava/lang/String;)Ljava/io/FileInputStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Context::openFileOutput(jstring arg0, jint arg1)
 	{
@@ -1226,95 +1342,110 @@ namespace __jni_impl::android::content
 			"openFileOutput",
 			"(Ljava/lang/String;I)Ljava/io/FileOutputStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Context::deleteFile(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"deleteFile",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Context::getFileStreamPath(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getFileStreamPath",
 			"(Ljava/lang/String;)Ljava/io/File;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Context::getDataDir()
 	{
 		return __thiz.callObjectMethod(
 			"getDataDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject Context::getFilesDir()
 	{
 		return __thiz.callObjectMethod(
 			"getFilesDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject Context::getNoBackupFilesDir()
 	{
 		return __thiz.callObjectMethod(
 			"getNoBackupFilesDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject Context::getExternalFilesDir(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getExternalFilesDir",
 			"(Ljava/lang/String;)Ljava/io/File;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Context::getExternalFilesDirs(jstring arg0)
+	jarray Context::getExternalFilesDirs(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getExternalFilesDirs",
 			"(Ljava/lang/String;)[Ljava/io/File;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
 	QAndroidJniObject Context::getObbDir()
 	{
 		return __thiz.callObjectMethod(
 			"getObbDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
-	QAndroidJniObject Context::getObbDirs()
+	jarray Context::getObbDirs()
 	{
 		return __thiz.callObjectMethod(
 			"getObbDirs",
-			"()[Ljava/io/File;");
+			"()[Ljava/io/File;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Context::getCacheDir()
 	{
 		return __thiz.callObjectMethod(
 			"getCacheDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject Context::getCodeCacheDir()
 	{
 		return __thiz.callObjectMethod(
 			"getCodeCacheDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject Context::getExternalCacheDir()
 	{
 		return __thiz.callObjectMethod(
 			"getExternalCacheDir",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
-	QAndroidJniObject Context::getExternalCacheDirs()
+	jarray Context::getExternalCacheDirs()
 	{
 		return __thiz.callObjectMethod(
 			"getExternalCacheDirs",
-			"()[Ljava/io/File;");
+			"()[Ljava/io/File;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Context::getExternalMediaDirs()
+	jarray Context::getExternalMediaDirs()
 	{
 		return __thiz.callObjectMethod(
 			"getExternalMediaDirs",
-			"()[Ljava/io/File;");
+			"()[Ljava/io/File;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Context::getDir(jstring arg0, jint arg1)
 	{
@@ -1322,7 +1453,18 @@ namespace __jni_impl::android::content
 			"getDir",
 			"(Ljava/lang/String;I)Ljava/io/File;",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject Context::openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		return __thiz.callObjectMethod(
+			"openOrCreateDatabase",
+			"(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Context::openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -1332,16 +1474,8 @@ namespace __jni_impl::android::content
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
-	}
-	QAndroidJniObject Context::openOrCreateDatabase(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"openOrCreateDatabase",
-			"(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jboolean Context::moveDatabaseFrom(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
@@ -1349,78 +1483,90 @@ namespace __jni_impl::android::content
 			"moveDatabaseFrom",
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Context::deleteDatabase(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"deleteDatabase",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Context::getDatabasePath(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDatabasePath",
 			"(Ljava/lang/String;)Ljava/io/File;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Context::databaseList()
+	jarray Context::databaseList()
 	{
 		return __thiz.callObjectMethod(
 			"databaseList",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Context::getWallpaper()
 	{
 		return __thiz.callObjectMethod(
 			"getWallpaper",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	QAndroidJniObject Context::peekWallpaper()
 	{
 		return __thiz.callObjectMethod(
 			"peekWallpaper",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	jint Context::getWallpaperDesiredMinimumWidth()
 	{
 		return __thiz.callMethod<jint>(
 			"getWallpaperDesiredMinimumWidth",
-			"()I");
+			"()I"
+		);
 	}
 	jint Context::getWallpaperDesiredMinimumHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getWallpaperDesiredMinimumHeight",
-			"()I");
-	}
-	void Context::setWallpaper(__jni_impl::android::graphics::Bitmap arg0)
-	{
-		__thiz.callMethod<void>(
-			"setWallpaper",
-			"(Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object());
+			"()I"
+		);
 	}
 	void Context::setWallpaper(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWallpaper",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void Context::setWallpaper(__jni_impl::android::graphics::Bitmap arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWallpaper",
+			"(Landroid/graphics/Bitmap;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void Context::clearWallpaper()
 	{
 		__thiz.callMethod<void>(
 			"clearWallpaper",
-			"()V");
+			"()V"
+		);
 	}
 	void Context::startActivity(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"startActivity",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Context::startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -1428,14 +1574,8 @@ namespace __jni_impl::android::content
 			"startActivity",
 			"(Landroid/content/Intent;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void Context::startActivities(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"startActivities",
-			"([Landroid/content/Intent;)V",
-			arg0);
+			arg1.__jniObject().object()
+		);
 	}
 	void Context::startActivities(jarray arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -1443,7 +1583,16 @@ namespace __jni_impl::android::content
 			"startActivities",
 			"([Landroid/content/Intent;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void Context::startActivities(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"startActivities",
+			"([Landroid/content/Intent;)V",
+			arg0
+		);
 	}
 	void Context::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5)
 	{
@@ -1455,7 +1604,8 @@ namespace __jni_impl::android::content
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void Context::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -1466,7 +1616,8 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Context::sendBroadcast(__jni_impl::android::content::Intent arg0, jstring arg1)
 	{
@@ -1474,14 +1625,16 @@ namespace __jni_impl::android::content
 			"sendBroadcast",
 			"(Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Context::sendBroadcast(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"sendBroadcast",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Context::sendOrderedBroadcast(__jni_impl::android::content::Intent arg0, jstring arg1, __jni_impl::android::content::BroadcastReceiver arg2, __jni_impl::android::os::Handler arg3, jint arg4, jstring arg5, __jni_impl::android::os::Bundle arg6)
 	{
@@ -1494,7 +1647,8 @@ namespace __jni_impl::android::content
 			arg3.__jniObject().object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void Context::sendOrderedBroadcast(__jni_impl::android::content::Intent arg0, jstring arg1)
 	{
@@ -1502,15 +1656,8 @@ namespace __jni_impl::android::content
 			"sendOrderedBroadcast",
 			"(Landroid/content/Intent;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	void Context::sendBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendBroadcastAsUser",
-			"(Landroid/content/Intent;Landroid/os/UserHandle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1
+		);
 	}
 	void Context::sendBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1, jstring arg2)
 	{
@@ -1519,7 +1666,17 @@ namespace __jni_impl::android::content
 			"(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void Context::sendBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1)
+	{
+		__thiz.callMethod<void>(
+			"sendBroadcastAsUser",
+			"(Landroid/content/Intent;Landroid/os/UserHandle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 	void Context::sendOrderedBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1, jstring arg2, __jni_impl::android::content::BroadcastReceiver arg3, __jni_impl::android::os::Handler arg4, jint arg5, jstring arg6, __jni_impl::android::os::Bundle arg7)
 	{
@@ -1533,14 +1690,16 @@ namespace __jni_impl::android::content
 			arg4.__jniObject().object(),
 			arg5,
 			arg6,
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 	void Context::sendStickyBroadcast(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"sendStickyBroadcast",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Context::sendStickyOrderedBroadcast(__jni_impl::android::content::Intent arg0, __jni_impl::android::content::BroadcastReceiver arg1, __jni_impl::android::os::Handler arg2, jint arg3, jstring arg4, __jni_impl::android::os::Bundle arg5)
 	{
@@ -1552,14 +1711,16 @@ namespace __jni_impl::android::content
 			arg2.__jniObject().object(),
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void Context::removeStickyBroadcast(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeStickyBroadcast",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Context::sendStickyBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -1567,7 +1728,8 @@ namespace __jni_impl::android::content
 			"sendStickyBroadcastAsUser",
 			"(Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Context::sendStickyOrderedBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::content::BroadcastReceiver arg2, __jni_impl::android::os::Handler arg3, jint arg4, jstring arg5, __jni_impl::android::os::Bundle arg6)
 	{
@@ -1580,7 +1742,8 @@ namespace __jni_impl::android::content
 			arg3.__jniObject().object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void Context::removeStickyBroadcastAsUser(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -1588,7 +1751,8 @@ namespace __jni_impl::android::content
 			"removeStickyBroadcastAsUser",
 			"(Landroid/content/Intent;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Context::registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1, jstring arg2, __jni_impl::android::os::Handler arg3, jint arg4)
 	{
@@ -1599,7 +1763,8 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject Context::registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1, jstring arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -1609,15 +1774,8 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
-	}
-	QAndroidJniObject Context::registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1)
-	{
-		return __thiz.callObjectMethod(
-			"registerReceiver",
-			"(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Context::registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1, jint arg2)
 	{
@@ -1626,44 +1784,49 @@ namespace __jni_impl::android::content
 			"(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	QAndroidJniObject Context::registerReceiver(__jni_impl::android::content::BroadcastReceiver arg0, __jni_impl::android::content::IntentFilter arg1)
+	{
+		return __thiz.callObjectMethod(
+			"registerReceiver",
+			"(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 	void Context::unregisterReceiver(__jni_impl::android::content::BroadcastReceiver arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterReceiver",
 			"(Landroid/content/BroadcastReceiver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Context::startService(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"startService",
 			"(Landroid/content/Intent;)Landroid/content/ComponentName;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Context::startForegroundService(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"startForegroundService",
 			"(Landroid/content/Intent;)Landroid/content/ComponentName;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Context::stopService(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"stopService",
 			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean Context::bindService(__jni_impl::android::content::Intent arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"bindService",
-			"(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2);
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Context::bindService(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -1673,7 +1836,18 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	jboolean Context::bindService(__jni_impl::android::content::Intent arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"bindService",
+			"(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
 	}
 	jboolean Context::bindIsolatedService(__jni_impl::android::content::Intent arg0, jint arg1, jstring arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4)
 	{
@@ -1684,7 +1858,8 @@ namespace __jni_impl::android::content
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void Context::updateServiceGroup(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
 	{
@@ -1693,14 +1868,16 @@ namespace __jni_impl::android::content
 			"(Landroid/content/ServiceConnection;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Context::unbindService(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"unbindService",
 			"(Landroid/content/ServiceConnection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Context::startInstrumentation(__jni_impl::android::content::ComponentName arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -1709,49 +1886,56 @@ namespace __jni_impl::android::content
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Context::getSystemService(jclass arg0)
+	jobject Context::getSystemService(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSystemService",
 			"(Ljava/lang/Class;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject Context::getSystemService(jstring arg0)
+	jobject Context::getSystemService(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject Context::getSystemServiceName(jclass arg0)
+	jstring Context::getSystemServiceName(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSystemServiceName",
 			"(Ljava/lang/Class;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint Context::checkCallingPermission(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"checkCallingPermission",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Context::checkCallingOrSelfPermission(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"checkCallingOrSelfPermission",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Context::checkSelfPermission(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"checkSelfPermission",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	void Context::enforcePermission(jstring arg0, jint arg1, jint arg2, jstring arg3)
 	{
@@ -1761,7 +1945,8 @@ namespace __jni_impl::android::content
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Context::enforceCallingPermission(jstring arg0, jstring arg1)
 	{
@@ -1769,7 +1954,8 @@ namespace __jni_impl::android::content
 			"enforceCallingPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Context::enforceCallingOrSelfPermission(jstring arg0, jstring arg1)
 	{
@@ -1777,7 +1963,8 @@ namespace __jni_impl::android::content
 			"enforceCallingOrSelfPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Context::grantUriPermission(jstring arg0, __jni_impl::android::net::Uri arg1, jint arg2)
 	{
@@ -1786,7 +1973,8 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;Landroid/net/Uri;I)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Context::revokeUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
 	{
@@ -1794,7 +1982,8 @@ namespace __jni_impl::android::content
 			"revokeUriPermission",
 			"(Landroid/net/Uri;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Context::revokeUriPermission(jstring arg0, __jni_impl::android::net::Uri arg1, jint arg2)
 	{
@@ -1803,7 +1992,19 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;Landroid/net/Uri;I)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	jint Context::checkUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callMethod<jint>(
+			"checkUriPermission",
+			"(Landroid/net/Uri;III)I",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3
+		);
 	}
 	jint Context::checkUriPermission(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -1815,17 +2016,8 @@ namespace __jni_impl::android::content
 			arg2,
 			arg3,
 			arg4,
-			arg5);
-	}
-	jint Context::checkUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"checkUriPermission",
-			"(Landroid/net/Uri;III)I",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3);
+			arg5
+		);
 	}
 	jint Context::checkCallingUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
 	{
@@ -1833,7 +2025,8 @@ namespace __jni_impl::android::content
 			"checkCallingUriPermission",
 			"(Landroid/net/Uri;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint Context::checkCallingOrSelfUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
 	{
@@ -1841,7 +2034,8 @@ namespace __jni_impl::android::content
 			"checkCallingOrSelfUriPermission",
 			"(Landroid/net/Uri;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Context::enforceUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2, jint arg3, jstring arg4)
 	{
@@ -1852,7 +2046,8 @@ namespace __jni_impl::android::content
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Context::enforceUriPermission(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, jint arg5, jstring arg6)
 	{
@@ -1865,7 +2060,8 @@ namespace __jni_impl::android::content
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void Context::enforceCallingUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jstring arg2)
 	{
@@ -1874,7 +2070,8 @@ namespace __jni_impl::android::content
 			"(Landroid/net/Uri;ILjava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Context::enforceCallingOrSelfUriPermission(__jni_impl::android::net::Uri arg0, jint arg1, jstring arg2)
 	{
@@ -1883,7 +2080,8 @@ namespace __jni_impl::android::content
 			"(Landroid/net/Uri;ILjava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Context::createPackageContext(jstring arg0, jint arg1)
 	{
@@ -1891,46 +2089,60 @@ namespace __jni_impl::android::content
 			"createPackageContext",
 			"(Ljava/lang/String;I)Landroid/content/Context;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Context::createContextForSplit(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createContextForSplit",
 			"(Ljava/lang/String;)Landroid/content/Context;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Context::createConfigurationContext(__jni_impl::android::content::res::Configuration arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createConfigurationContext",
 			"(Landroid/content/res/Configuration;)Landroid/content/Context;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Context::createDisplayContext(__jni_impl::android::view::Display arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createDisplayContext",
 			"(Landroid/view/Display;)Landroid/content/Context;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Context::createDeviceProtectedStorageContext()
 	{
 		return __thiz.callObjectMethod(
 			"createDeviceProtectedStorageContext",
-			"()Landroid/content/Context;");
+			"()Landroid/content/Context;"
+		);
 	}
 	jboolean Context::isRestricted()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRestricted",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Context::isDeviceProtectedStorage()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDeviceProtectedStorage",
-			"()Z");
+			"()Z"
+		);
+	}
+	jarray Context::fileList()
+	{
+		return __thiz.callObjectMethod(
+			"fileList",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::content
 

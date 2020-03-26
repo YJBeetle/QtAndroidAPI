@@ -41,14 +41,16 @@ namespace __jni_impl::android::media
 		__thiz.callMethod<void>(
 			"onAudioDevicesAdded",
 			"([Landroid/media/AudioDeviceInfo;)V",
-			arg0);
+			arg0
+		);
 	}
 	void AudioDeviceCallback::onAudioDevicesRemoved(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAudioDevicesRemoved",
 			"([Landroid/media/AudioDeviceInfo;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

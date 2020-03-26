@@ -33,28 +33,32 @@ namespace __jni_impl::java::nio::file
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardWatchEventKinds",
 			"OVERFLOW",
-			"Ljava/nio/file/WatchEvent$Kind;");
+			"Ljava/nio/file/WatchEvent$Kind;"
+		);
 	}
 	QAndroidJniObject StandardWatchEventKinds::ENTRY_CREATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardWatchEventKinds",
 			"ENTRY_CREATE",
-			"Ljava/nio/file/WatchEvent$Kind;");
+			"Ljava/nio/file/WatchEvent$Kind;"
+		);
 	}
 	QAndroidJniObject StandardWatchEventKinds::ENTRY_DELETE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardWatchEventKinds",
 			"ENTRY_DELETE",
-			"Ljava/nio/file/WatchEvent$Kind;");
+			"Ljava/nio/file/WatchEvent$Kind;"
+		);
 	}
 	QAndroidJniObject StandardWatchEventKinds::ENTRY_MODIFY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardWatchEventKinds",
 			"ENTRY_MODIFY",
-			"Ljava/nio/file/WatchEvent$Kind;");
+			"Ljava/nio/file/WatchEvent$Kind;"
+		);
 	}
 	
 	// Constructors

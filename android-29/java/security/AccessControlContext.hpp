@@ -63,26 +63,30 @@ namespace __jni_impl::java::security
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint AccessControlContext::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void AccessControlContext::checkPermission(__jni_impl::java::security::Permission arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkPermission",
 			"(Ljava/security/Permission;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccessControlContext::getDomainCombiner()
 	{
 		return __thiz.callObjectMethod(
 			"getDomainCombiner",
-			"()Ljava/security/DomainCombiner;");
+			"()Ljava/security/DomainCombiner;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

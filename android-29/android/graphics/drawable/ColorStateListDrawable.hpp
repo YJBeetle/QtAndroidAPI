@@ -10,6 +10,10 @@ namespace __jni_impl::android::content::res
 {
 	class ColorStateList;
 }
+namespace __jni_impl::android::graphics
+{
+	class ColorFilter;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -28,15 +32,11 @@ namespace __jni_impl::android::graphics::drawable
 }
 namespace __jni_impl::android::graphics
 {
-	class BlendMode;
-}
-namespace __jni_impl::android::graphics
-{
 	class Canvas;
 }
 namespace __jni_impl::android::graphics
 {
-	class ColorFilter;
+	class BlendMode;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -51,7 +51,12 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor(__jni_impl::android::content::res::ColorStateList arg0);
 		
 		// Methods
-		void setAlpha(jint arg0);
+		QAndroidJniObject getColorFilter();
+		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		jboolean hasFocusStateSpecified();
+		void clearAlpha();
+		void setColorStateList(__jni_impl::android::content::res::ColorStateList arg0);
+		jint getChangingConfigurations();
 		jboolean isStateful();
 		QAndroidJniObject getCurrent();
 		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
@@ -59,31 +64,26 @@ namespace __jni_impl::android::graphics::drawable
 		jint getOpacity();
 		QAndroidJniObject mutate();
 		QAndroidJniObject getConstantState();
-		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
-		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
+		QAndroidJniObject getColorStateList();
 		jint getAlpha();
 		void draw(__jni_impl::android::graphics::Canvas arg0);
 		void invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void scheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1, jlong arg2);
 		void unscheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1);
-		jboolean hasFocusStateSpecified();
-		void clearAlpha();
-		void setColorStateList(__jni_impl::android::content::res::ColorStateList arg0);
-		jint getChangingConfigurations();
-		QAndroidJniObject getColorStateList();
-		QAndroidJniObject getColorFilter();
-		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
+		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
+		void setAlpha(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
 #include "../../content/res/ColorStateList.hpp"
+#include "../ColorFilter.hpp"
 #include "Drawable.hpp"
 #include "../../content/res/Resources_Theme.hpp"
 #include "../Rect.hpp"
 #include "Drawable_ConstantState.hpp"
-#include "../BlendMode.hpp"
 #include "../Canvas.hpp"
-#include "../ColorFilter.hpp"
+#include "../BlendMode.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -105,89 +105,129 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
-	void ColorStateListDrawable::setAlpha(jint arg0)
+	QAndroidJniObject ColorStateListDrawable::getColorFilter()
+	{
+		return __thiz.callObjectMethod(
+			"getColorFilter",
+			"()Landroid/graphics/ColorFilter;"
+		);
+	}
+	void ColorStateListDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAlpha",
-			"(I)V",
-			arg0);
+			"setColorFilter",
+			"(Landroid/graphics/ColorFilter;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ColorStateListDrawable::hasFocusStateSpecified()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasFocusStateSpecified",
+			"()Z"
+		);
+	}
+	void ColorStateListDrawable::clearAlpha()
+	{
+		__thiz.callMethod<void>(
+			"clearAlpha",
+			"()V"
+		);
+	}
+	void ColorStateListDrawable::setColorStateList(__jni_impl::android::content::res::ColorStateList arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorStateList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint ColorStateListDrawable::getChangingConfigurations()
+	{
+		return __thiz.callMethod<jint>(
+			"getChangingConfigurations",
+			"()I"
+		);
 	}
 	jboolean ColorStateListDrawable::isStateful()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isStateful",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject ColorStateListDrawable::getCurrent()
 	{
 		return __thiz.callObjectMethod(
 			"getCurrent",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	void ColorStateListDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ColorStateListDrawable::canApplyTheme()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canApplyTheme",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ColorStateListDrawable::getOpacity()
 	{
 		return __thiz.callMethod<jint>(
 			"getOpacity",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ColorStateListDrawable::mutate()
 	{
 		return __thiz.callObjectMethod(
 			"mutate",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	QAndroidJniObject ColorStateListDrawable::getConstantState()
 	{
 		return __thiz.callObjectMethod(
 			"getConstantState",
-			"()Landroid/graphics/drawable/Drawable$ConstantState;");
+			"()Landroid/graphics/drawable/Drawable$ConstantState;"
+		);
 	}
-	void ColorStateListDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
+	QAndroidJniObject ColorStateListDrawable::getColorStateList()
 	{
-		__thiz.callMethod<void>(
-			"setTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object());
-	}
-	void ColorStateListDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object());
+		return __thiz.callObjectMethod(
+			"getColorStateList",
+			"()Landroid/content/res/ColorStateList;"
+		);
 	}
 	jint ColorStateListDrawable::getAlpha()
 	{
 		return __thiz.callMethod<jint>(
 			"getAlpha",
-			"()I");
+			"()I"
+		);
 	}
 	void ColorStateListDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
 		__thiz.callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ColorStateListDrawable::invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
 			"invalidateDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ColorStateListDrawable::scheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1, jlong arg2)
 	{
@@ -196,7 +236,8 @@ namespace __jni_impl::android::graphics::drawable
 			"(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ColorStateListDrawable::unscheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -204,51 +245,32 @@ namespace __jni_impl::android::graphics::drawable
 			"unscheduleDrawable",
 			"(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	jboolean ColorStateListDrawable::hasFocusStateSpecified()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasFocusStateSpecified",
-			"()Z");
-	}
-	void ColorStateListDrawable::clearAlpha()
+	void ColorStateListDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
 	{
 		__thiz.callMethod<void>(
-			"clearAlpha",
-			"()V");
-	}
-	void ColorStateListDrawable::setColorStateList(__jni_impl::android::content::res::ColorStateList arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColorStateList",
+			"setTintList",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	jint ColorStateListDrawable::getChangingConfigurations()
-	{
-		return __thiz.callMethod<jint>(
-			"getChangingConfigurations",
-			"()I");
-	}
-	QAndroidJniObject ColorStateListDrawable::getColorStateList()
-	{
-		return __thiz.callObjectMethod(
-			"getColorStateList",
-			"()Landroid/content/res/ColorStateList;");
-	}
-	QAndroidJniObject ColorStateListDrawable::getColorFilter()
-	{
-		return __thiz.callObjectMethod(
-			"getColorFilter",
-			"()Landroid/graphics/ColorFilter;");
-	}
-	void ColorStateListDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
+	void ColorStateListDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
 	{
 		__thiz.callMethod<void>(
-			"setColorFilter",
-			"(Landroid/graphics/ColorFilter;)V",
-			arg0.__jniObject().object());
+			"setTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ColorStateListDrawable::setAlpha(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

@@ -46,14 +46,16 @@ namespace __jni_impl::android::graphics::drawable
 		__thiz.callMethod<void>(
 			"onAnimationStart",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Animatable2_AnimationCallback::onAnimationEnd(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAnimationEnd",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

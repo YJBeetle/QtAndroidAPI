@@ -34,13 +34,13 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		void setResult(jint arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
-		jint getResultCode();
-		void setResultCode(jint arg0);
-		QAndroidJniObject peekService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
-		QAndroidJniObject goAsync();
 		void onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
+		QAndroidJniObject goAsync();
+		QAndroidJniObject peekService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
+		void setResultCode(jint arg0);
+		jint getResultCode();
 		void setResultData(jstring arg0);
-		QAndroidJniObject getResultData();
+		jstring getResultData();
 		void setResultExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject getResultExtras(jboolean arg0);
 		jboolean getAbortBroadcast();
@@ -79,34 +79,8 @@ namespace __jni_impl::android::content
 			"(ILjava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
-	}
-	jint BroadcastReceiver::getResultCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getResultCode",
-			"()I");
-	}
-	void BroadcastReceiver::setResultCode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setResultCode",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject BroadcastReceiver::peekService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
-	{
-		return __thiz.callObjectMethod(
-			"peekService",
-			"(Landroid/content/Context;Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject BroadcastReceiver::goAsync()
-	{
-		return __thiz.callObjectMethod(
-			"goAsync",
-			"()Landroid/content/BroadcastReceiver$PendingResult;");
+			arg2.__jniObject().object()
+		);
 	}
 	void BroadcastReceiver::onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -114,84 +88,128 @@ namespace __jni_impl::android::content
 			"onReceive",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BroadcastReceiver::goAsync()
+	{
+		return __thiz.callObjectMethod(
+			"goAsync",
+			"()Landroid/content/BroadcastReceiver$PendingResult;"
+		);
+	}
+	QAndroidJniObject BroadcastReceiver::peekService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
+	{
+		return __thiz.callObjectMethod(
+			"peekService",
+			"(Landroid/content/Context;Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void BroadcastReceiver::setResultCode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setResultCode",
+			"(I)V",
+			arg0
+		);
+	}
+	jint BroadcastReceiver::getResultCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getResultCode",
+			"()I"
+		);
 	}
 	void BroadcastReceiver::setResultData(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResultData",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject BroadcastReceiver::getResultData()
+	jstring BroadcastReceiver::getResultData()
 	{
 		return __thiz.callObjectMethod(
 			"getResultData",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void BroadcastReceiver::setResultExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResultExtras",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BroadcastReceiver::getResultExtras(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getResultExtras",
 			"(Z)Landroid/os/Bundle;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BroadcastReceiver::getAbortBroadcast()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAbortBroadcast",
-			"()Z");
+			"()Z"
+		);
 	}
 	void BroadcastReceiver::abortBroadcast()
 	{
 		__thiz.callMethod<void>(
 			"abortBroadcast",
-			"()V");
+			"()V"
+		);
 	}
 	void BroadcastReceiver::clearAbortBroadcast()
 	{
 		__thiz.callMethod<void>(
 			"clearAbortBroadcast",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean BroadcastReceiver::isOrderedBroadcast()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOrderedBroadcast",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BroadcastReceiver::isInitialStickyBroadcast()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInitialStickyBroadcast",
-			"()Z");
+			"()Z"
+		);
 	}
 	void BroadcastReceiver::setOrderedHint(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOrderedHint",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void BroadcastReceiver::setDebugUnregister(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDebugUnregister",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BroadcastReceiver::getDebugUnregister()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getDebugUnregister",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::content
 

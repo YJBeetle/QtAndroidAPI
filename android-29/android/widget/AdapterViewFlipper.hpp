@@ -29,10 +29,10 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void setAdapter(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getAccessibilityClassName();
 		void showNext();
 		void showPrevious();
 		void fyiWillBeAdvancedByHostKThx();
+		jstring getAccessibilityClassName();
 		void setFlipInterval(jint arg0);
 		jint getFlipInterval();
 		void startFlipping();
@@ -91,75 +91,87 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"setAdapter",
 			"(Landroid/widget/Adapter;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject AdapterViewFlipper::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			arg0.__jniObject().object()
+		);
 	}
 	void AdapterViewFlipper::showNext()
 	{
 		__thiz.callMethod<void>(
 			"showNext",
-			"()V");
+			"()V"
+		);
 	}
 	void AdapterViewFlipper::showPrevious()
 	{
 		__thiz.callMethod<void>(
 			"showPrevious",
-			"()V");
+			"()V"
+		);
 	}
 	void AdapterViewFlipper::fyiWillBeAdvancedByHostKThx()
 	{
 		__thiz.callMethod<void>(
 			"fyiWillBeAdvancedByHostKThx",
-			"()V");
+			"()V"
+		);
+	}
+	jstring AdapterViewFlipper::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void AdapterViewFlipper::setFlipInterval(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFlipInterval",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint AdapterViewFlipper::getFlipInterval()
 	{
 		return __thiz.callMethod<jint>(
 			"getFlipInterval",
-			"()I");
+			"()I"
+		);
 	}
 	void AdapterViewFlipper::startFlipping()
 	{
 		__thiz.callMethod<void>(
 			"startFlipping",
-			"()V");
+			"()V"
+		);
 	}
 	void AdapterViewFlipper::stopFlipping()
 	{
 		__thiz.callMethod<void>(
 			"stopFlipping",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean AdapterViewFlipper::isFlipping()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFlipping",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AdapterViewFlipper::setAutoStart(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAutoStart",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AdapterViewFlipper::isAutoStart()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAutoStart",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

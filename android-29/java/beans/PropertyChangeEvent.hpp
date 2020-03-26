@@ -22,11 +22,11 @@ namespace __jni_impl::java::beans
 		void __constructor(jobject arg0, jstring arg1, jobject arg2, jobject arg3);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getPropertyName();
-		QAndroidJniObject getOldValue();
-		QAndroidJniObject getNewValue();
-		QAndroidJniObject getPropagationId();
+		jstring toString();
+		jstring getPropertyName();
+		jobject getOldValue();
+		jobject getNewValue();
+		jobject getPropagationId();
 		void setPropagationId(jobject arg0);
 	};
 } // namespace __jni_impl::java::beans
@@ -50,42 +50,48 @@ namespace __jni_impl::java::beans
 	}
 	
 	// Methods
-	QAndroidJniObject PropertyChangeEvent::toString()
+	jstring PropertyChangeEvent::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PropertyChangeEvent::getPropertyName()
+	jstring PropertyChangeEvent::getPropertyName()
 	{
 		return __thiz.callObjectMethod(
 			"getPropertyName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PropertyChangeEvent::getOldValue()
+	jobject PropertyChangeEvent::getOldValue()
 	{
 		return __thiz.callObjectMethod(
 			"getOldValue",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject PropertyChangeEvent::getNewValue()
+	jobject PropertyChangeEvent::getNewValue()
 	{
 		return __thiz.callObjectMethod(
 			"getNewValue",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject PropertyChangeEvent::getPropagationId()
+	jobject PropertyChangeEvent::getPropagationId()
 	{
 		return __thiz.callObjectMethod(
 			"getPropagationId",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void PropertyChangeEvent::setPropagationId(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPropagationId",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::beans
 

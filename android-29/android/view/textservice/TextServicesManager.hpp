@@ -58,7 +58,8 @@ namespace __jni_impl::android::view::textservice
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::view::textservice
 

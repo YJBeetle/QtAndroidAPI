@@ -25,8 +25,8 @@ namespace __jni_impl::android::graphics::pdf
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getCanvas();
 		QAndroidJniObject getInfo();
+		QAndroidJniObject getCanvas();
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
@@ -46,17 +46,19 @@ namespace __jni_impl::android::graphics::pdf
 	}
 	
 	// Methods
-	QAndroidJniObject PdfDocument_Page::getCanvas()
-	{
-		return __thiz.callObjectMethod(
-			"getCanvas",
-			"()Landroid/graphics/Canvas;");
-	}
 	QAndroidJniObject PdfDocument_Page::getInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getInfo",
-			"()Landroid/graphics/pdf/PdfDocument$PageInfo;");
+			"()Landroid/graphics/pdf/PdfDocument$PageInfo;"
+		);
+	}
+	QAndroidJniObject PdfDocument_Page::getCanvas()
+	{
+		return __thiz.callObjectMethod(
+			"getCanvas",
+			"()Landroid/graphics/Canvas;"
+		);
 	}
 } // namespace __jni_impl::android::graphics::pdf
 

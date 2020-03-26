@@ -22,7 +22,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 		jint getLength();
 		jint next();
 		static QAndroidJniObject getInstance(__jni_impl::__JniBaseClass arg0);
@@ -36,7 +36,7 @@ namespace __jni_impl::android::icu::text
 		jint previous();
 		jint getText(jcharArray arg0, jint arg1);
 		jint getText(jcharArray arg0);
-		QAndroidJniObject getText();
+		jstring getText();
 		QAndroidJniObject getCharacterIterator();
 		jint currentCodePoint();
 		jint nextCodePoint();
@@ -57,7 +57,8 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.UCharacterIterator",
-			"DONE");
+			"DONE"
+		);
 	}
 	
 	// Constructors
@@ -69,23 +70,26 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject UCharacterIterator::clone()
+	jobject UCharacterIterator::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint UCharacterIterator::getLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getLength",
-			"()I");
+			"()I"
+		);
 	}
 	jint UCharacterIterator::next()
 	{
 		return __thiz.callMethod<jint>(
 			"next",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject UCharacterIterator::getInstance(__jni_impl::__JniBaseClass arg0)
 	{
@@ -93,7 +97,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"(Ljava/text/CharacterIterator;)Landroid/icu/text/UCharacterIterator;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject UCharacterIterator::getInstance(jstring arg0)
 	{
@@ -101,7 +106,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/text/UCharacterIterator;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject UCharacterIterator::getInstance(__jni_impl::java::lang::StringBuffer arg0)
 	{
@@ -109,7 +115,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"(Ljava/lang/StringBuffer;)Landroid/icu/text/UCharacterIterator;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject UCharacterIterator::getInstance(jcharArray arg0)
 	{
@@ -117,7 +124,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.UCharacterIterator",
 			"getInstance",
 			"([C)Landroid/icu/text/UCharacterIterator;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject UCharacterIterator::getInstance(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -127,32 +135,37 @@ namespace __jni_impl::android::icu::text
 			"([CII)Landroid/icu/text/UCharacterIterator;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint UCharacterIterator::current()
 	{
 		return __thiz.callMethod<jint>(
 			"current",
-			"()I");
+			"()I"
+		);
 	}
 	jint UCharacterIterator::getIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
 	void UCharacterIterator::setIndex(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIndex",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint UCharacterIterator::previous()
 	{
 		return __thiz.callMethod<jint>(
 			"previous",
-			"()I");
+			"()I"
+		);
 	}
 	jint UCharacterIterator::getText(jcharArray arg0, jint arg1)
 	{
@@ -160,70 +173,81 @@ namespace __jni_impl::android::icu::text
 			"getText",
 			"([CI)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint UCharacterIterator::getText(jcharArray arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getText",
 			"([C)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject UCharacterIterator::getText()
+	jstring UCharacterIterator::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject UCharacterIterator::getCharacterIterator()
 	{
 		return __thiz.callObjectMethod(
 			"getCharacterIterator",
-			"()Ljava/text/CharacterIterator;");
+			"()Ljava/text/CharacterIterator;"
+		);
 	}
 	jint UCharacterIterator::currentCodePoint()
 	{
 		return __thiz.callMethod<jint>(
 			"currentCodePoint",
-			"()I");
+			"()I"
+		);
 	}
 	jint UCharacterIterator::nextCodePoint()
 	{
 		return __thiz.callMethod<jint>(
 			"nextCodePoint",
-			"()I");
+			"()I"
+		);
 	}
 	jint UCharacterIterator::previousCodePoint()
 	{
 		return __thiz.callMethod<jint>(
 			"previousCodePoint",
-			"()I");
+			"()I"
+		);
 	}
 	void UCharacterIterator::setToLimit()
 	{
 		__thiz.callMethod<void>(
 			"setToLimit",
-			"()V");
+			"()V"
+		);
 	}
 	void UCharacterIterator::setToStart()
 	{
 		__thiz.callMethod<void>(
 			"setToStart",
-			"()V");
+			"()V"
+		);
 	}
 	jint UCharacterIterator::moveIndex(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"moveIndex",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint UCharacterIterator::moveCodePointIndex(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"moveCodePointIndex",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

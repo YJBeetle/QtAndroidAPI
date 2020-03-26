@@ -57,7 +57,8 @@ namespace __jni_impl::java::security
 	{
 		return __thiz.callObjectMethod(
 			"getPermission",
-			"()Ljava/security/Permission;");
+			"()Ljava/security/Permission;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

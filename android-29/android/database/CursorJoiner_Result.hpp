@@ -21,7 +21,7 @@ namespace __jni_impl::android::database
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::database
@@ -35,21 +35,24 @@ namespace __jni_impl::android::database
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorJoiner$Result",
 			"RIGHT",
-			"Landroid/database/CursorJoiner$Result;");
+			"Landroid/database/CursorJoiner$Result;"
+		);
 	}
 	QAndroidJniObject CursorJoiner_Result::LEFT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorJoiner$Result",
 			"LEFT",
-			"Landroid/database/CursorJoiner$Result;");
+			"Landroid/database/CursorJoiner$Result;"
+		);
 	}
 	QAndroidJniObject CursorJoiner_Result::BOTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorJoiner$Result",
 			"BOTH",
-			"Landroid/database/CursorJoiner$Result;");
+			"Landroid/database/CursorJoiner$Result;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
-	QAndroidJniObject CursorJoiner_Result::values()
+	jarray CursorJoiner_Result::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.CursorJoiner$Result",
 			"values",
-			"()[Landroid/database/CursorJoiner$Result;");
+			"()[Landroid/database/CursorJoiner$Result;"
+		).object<jarray>();
 	}
 	QAndroidJniObject CursorJoiner_Result::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::database
 			"android.database.CursorJoiner$Result",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/database/CursorJoiner$Result;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::database
 

@@ -16,13 +16,13 @@ namespace __jni_impl::android::app
 	{
 	public:
 		// Fields
-		QAndroidJniObject exceptionClassName();
-		QAndroidJniObject exceptionMessage();
-		QAndroidJniObject stackTrace();
-		QAndroidJniObject throwClassName();
-		QAndroidJniObject throwFileName();
+		jstring exceptionClassName();
+		jstring exceptionMessage();
+		jstring stackTrace();
+		jstring throwClassName();
+		jstring throwFileName();
 		jint throwLineNumber();
-		QAndroidJniObject throwMethodName();
+		jstring throwMethodName();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::os::Parcel arg0);
@@ -30,8 +30,8 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -40,46 +40,53 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	// Fields
-	QAndroidJniObject ApplicationErrorReport_CrashInfo::exceptionClassName()
+	jstring ApplicationErrorReport_CrashInfo::exceptionClassName()
 	{
 		return __thiz.getObjectField(
 			"exceptionClassName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ApplicationErrorReport_CrashInfo::exceptionMessage()
+	jstring ApplicationErrorReport_CrashInfo::exceptionMessage()
 	{
 		return __thiz.getObjectField(
 			"exceptionMessage",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ApplicationErrorReport_CrashInfo::stackTrace()
+	jstring ApplicationErrorReport_CrashInfo::stackTrace()
 	{
 		return __thiz.getObjectField(
 			"stackTrace",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ApplicationErrorReport_CrashInfo::throwClassName()
+	jstring ApplicationErrorReport_CrashInfo::throwClassName()
 	{
 		return __thiz.getObjectField(
 			"throwClassName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ApplicationErrorReport_CrashInfo::throwFileName()
+	jstring ApplicationErrorReport_CrashInfo::throwFileName()
 	{
 		return __thiz.getObjectField(
 			"throwFileName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ApplicationErrorReport_CrashInfo::throwLineNumber()
 	{
 		return __thiz.getField<jint>(
-			"throwLineNumber");
+			"throwLineNumber"
+		);
 	}
-	QAndroidJniObject ApplicationErrorReport_CrashInfo::throwMethodName()
+	jstring ApplicationErrorReport_CrashInfo::throwMethodName()
 	{
 		return __thiz.getObjectField(
 			"throwMethodName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -105,21 +112,23 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ApplicationErrorReport_CrashInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	void ApplicationErrorReport_CrashInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ApplicationErrorReport_CrashInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app
 

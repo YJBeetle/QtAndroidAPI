@@ -18,14 +18,14 @@ namespace __jni_impl::java::util
 		void __constructor(jlong arg0, jdouble arg1, jdouble arg2, jdouble arg3);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void accept(jdouble arg0);
 		void combine(__jni_impl::java::util::DoubleSummaryStatistics arg0);
 		jlong getCount();
 		jdouble getMin();
-		jdouble getMax();
 		jdouble getSum();
 		jdouble getAverage();
+		jdouble getMax();
 	};
 } // namespace __jni_impl::java::util
 
@@ -53,55 +53,63 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject DoubleSummaryStatistics::toString()
+	jstring DoubleSummaryStatistics::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void DoubleSummaryStatistics::accept(jdouble arg0)
 	{
 		__thiz.callMethod<void>(
 			"accept",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
 	void DoubleSummaryStatistics::combine(__jni_impl::java::util::DoubleSummaryStatistics arg0)
 	{
 		__thiz.callMethod<void>(
 			"combine",
 			"(Ljava/util/DoubleSummaryStatistics;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong DoubleSummaryStatistics::getCount()
 	{
 		return __thiz.callMethod<jlong>(
 			"getCount",
-			"()J");
+			"()J"
+		);
 	}
 	jdouble DoubleSummaryStatistics::getMin()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getMin",
-			"()D");
-	}
-	jdouble DoubleSummaryStatistics::getMax()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getMax",
-			"()D");
+			"()D"
+		);
 	}
 	jdouble DoubleSummaryStatistics::getSum()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getSum",
-			"()D");
+			"()D"
+		);
 	}
 	jdouble DoubleSummaryStatistics::getAverage()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getAverage",
-			"()D");
+			"()D"
+		);
+	}
+	jdouble DoubleSummaryStatistics::getMax()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getMax",
+			"()D"
+		);
 	}
 } // namespace __jni_impl::java::util
 

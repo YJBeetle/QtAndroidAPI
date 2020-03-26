@@ -12,14 +12,14 @@ namespace __jni_impl::android::gesture
 	{
 	public:
 		// Fields
-		QAndroidJniObject name();
+		jstring name();
 		jdouble score();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::gesture
 
@@ -27,16 +27,18 @@ namespace __jni_impl::android::gesture
 namespace __jni_impl::android::gesture
 {
 	// Fields
-	QAndroidJniObject Prediction::name()
+	jstring Prediction::name()
 	{
 		return __thiz.getObjectField(
 			"name",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jdouble Prediction::score()
 	{
 		return __thiz.getField<jdouble>(
-			"score");
+			"score"
+		);
 	}
 	
 	// Constructors
@@ -48,11 +50,12 @@ namespace __jni_impl::android::gesture
 	}
 	
 	// Methods
-	QAndroidJniObject Prediction::toString()
+	jstring Prediction::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::gesture
 

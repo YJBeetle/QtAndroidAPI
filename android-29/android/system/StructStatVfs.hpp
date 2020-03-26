@@ -28,7 +28,7 @@ namespace __jni_impl::android::system
 		void __constructor(jlong arg0, jlong arg1, jlong arg2, jlong arg3, jlong arg4, jlong arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::system
 
@@ -39,57 +39,68 @@ namespace __jni_impl::android::system
 	jlong StructStatVfs::f_bavail()
 	{
 		return __thiz.getField<jlong>(
-			"f_bavail");
+			"f_bavail"
+		);
 	}
 	jlong StructStatVfs::f_bfree()
 	{
 		return __thiz.getField<jlong>(
-			"f_bfree");
+			"f_bfree"
+		);
 	}
 	jlong StructStatVfs::f_blocks()
 	{
 		return __thiz.getField<jlong>(
-			"f_blocks");
+			"f_blocks"
+		);
 	}
 	jlong StructStatVfs::f_bsize()
 	{
 		return __thiz.getField<jlong>(
-			"f_bsize");
+			"f_bsize"
+		);
 	}
 	jlong StructStatVfs::f_favail()
 	{
 		return __thiz.getField<jlong>(
-			"f_favail");
+			"f_favail"
+		);
 	}
 	jlong StructStatVfs::f_ffree()
 	{
 		return __thiz.getField<jlong>(
-			"f_ffree");
+			"f_ffree"
+		);
 	}
 	jlong StructStatVfs::f_files()
 	{
 		return __thiz.getField<jlong>(
-			"f_files");
+			"f_files"
+		);
 	}
 	jlong StructStatVfs::f_flag()
 	{
 		return __thiz.getField<jlong>(
-			"f_flag");
+			"f_flag"
+		);
 	}
 	jlong StructStatVfs::f_frsize()
 	{
 		return __thiz.getField<jlong>(
-			"f_frsize");
+			"f_frsize"
+		);
 	}
 	jlong StructStatVfs::f_fsid()
 	{
 		return __thiz.getField<jlong>(
-			"f_fsid");
+			"f_fsid"
+		);
 	}
 	jlong StructStatVfs::f_namemax()
 	{
 		return __thiz.getField<jlong>(
-			"f_namemax");
+			"f_namemax"
+		);
 	}
 	
 	// Constructors
@@ -112,11 +123,12 @@ namespace __jni_impl::android::system
 	}
 	
 	// Methods
-	QAndroidJniObject StructStatVfs::toString()
+	jstring StructStatVfs::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::system
 

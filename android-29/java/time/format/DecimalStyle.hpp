@@ -23,7 +23,7 @@ namespace __jni_impl::java::time::format
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject of(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getAvailableLocales();
@@ -49,7 +49,8 @@ namespace __jni_impl::java::time::format
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.DecimalStyle",
 			"STANDARD",
-			"Ljava/time/format/DecimalStyle;");
+			"Ljava/time/format/DecimalStyle;"
+		);
 	}
 	
 	// Constructors
@@ -66,19 +67,22 @@ namespace __jni_impl::java::time::format
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DecimalStyle::toString()
+	jstring DecimalStyle::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DecimalStyle::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject DecimalStyle::of(__jni_impl::java::util::Locale arg0)
 	{
@@ -86,73 +90,84 @@ namespace __jni_impl::java::time::format
 			"java.time.format.DecimalStyle",
 			"of",
 			"(Ljava/util/Locale;)Ljava/time/format/DecimalStyle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DecimalStyle::getAvailableLocales()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.DecimalStyle",
 			"getAvailableLocales",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jchar DecimalStyle::getPositiveSign()
 	{
 		return __thiz.callMethod<jchar>(
 			"getPositiveSign",
-			"()C");
+			"()C"
+		);
 	}
 	jchar DecimalStyle::getNegativeSign()
 	{
 		return __thiz.callMethod<jchar>(
 			"getNegativeSign",
-			"()C");
+			"()C"
+		);
 	}
 	jchar DecimalStyle::getZeroDigit()
 	{
 		return __thiz.callMethod<jchar>(
 			"getZeroDigit",
-			"()C");
+			"()C"
+		);
 	}
 	jchar DecimalStyle::getDecimalSeparator()
 	{
 		return __thiz.callMethod<jchar>(
 			"getDecimalSeparator",
-			"()C");
+			"()C"
+		);
 	}
 	QAndroidJniObject DecimalStyle::ofDefaultLocale()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.DecimalStyle",
 			"ofDefaultLocale",
-			"()Ljava/time/format/DecimalStyle;");
+			"()Ljava/time/format/DecimalStyle;"
+		);
 	}
 	QAndroidJniObject DecimalStyle::withZeroDigit(jchar arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withZeroDigit",
 			"(C)Ljava/time/format/DecimalStyle;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DecimalStyle::withPositiveSign(jchar arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withPositiveSign",
 			"(C)Ljava/time/format/DecimalStyle;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DecimalStyle::withNegativeSign(jchar arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withNegativeSign",
 			"(C)Ljava/time/format/DecimalStyle;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DecimalStyle::withDecimalSeparator(jchar arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withDecimalSeparator",
 			"(C)Ljava/time/format/DecimalStyle;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::time::format
 

@@ -38,21 +38,21 @@ namespace __jni_impl::android::printservice
 		jboolean isQueued();
 		jboolean cancel();
 		jboolean isCancelled();
-		QAndroidJniObject getTag();
+		jstring getTag();
 		jboolean complete();
 		jboolean isCompleted();
+		void setProgress(jfloat arg0);
 		jboolean isBlocked();
 		jboolean setTag(jstring arg0);
-		jboolean isStarted();
 		QAndroidJniObject getDocument();
 		QAndroidJniObject getInfo();
 		jboolean isFailed();
 		void setStatus(jint arg0);
 		void setStatus(jstring arg0);
-		QAndroidJniObject getAdvancedStringOption(jstring arg0);
+		jstring getAdvancedStringOption(jstring arg0);
 		jboolean hasAdvancedOption(jstring arg0);
 		jint getAdvancedIntOption(jstring arg0);
-		void setProgress(jfloat arg0);
+		jboolean isStarted();
 	};
 } // namespace __jni_impl::android::printservice
 
@@ -78,154 +78,178 @@ namespace __jni_impl::android::printservice
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint PrintJob::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean PrintJob::start()
 	{
 		return __thiz.callMethod<jboolean>(
 			"start",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject PrintJob::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Landroid/print/PrintJobId;");
+			"()Landroid/print/PrintJobId;"
+		);
 	}
 	jboolean PrintJob::fail(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"fail",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PrintJob::block(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"block",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PrintJob::isQueued()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isQueued",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PrintJob::cancel()
 	{
 		return __thiz.callMethod<jboolean>(
 			"cancel",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PrintJob::isCancelled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCancelled",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject PrintJob::getTag()
+	jstring PrintJob::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean PrintJob::complete()
 	{
 		return __thiz.callMethod<jboolean>(
 			"complete",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PrintJob::isCompleted()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCompleted",
-			"()Z");
-	}
-	jboolean PrintJob::isBlocked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBlocked",
-			"()Z");
-	}
-	jboolean PrintJob::setTag(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setTag",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	jboolean PrintJob::isStarted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStarted",
-			"()Z");
-	}
-	QAndroidJniObject PrintJob::getDocument()
-	{
-		return __thiz.callObjectMethod(
-			"getDocument",
-			"()Landroid/printservice/PrintDocument;");
-	}
-	QAndroidJniObject PrintJob::getInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getInfo",
-			"()Landroid/print/PrintJobInfo;");
-	}
-	jboolean PrintJob::isFailed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFailed",
-			"()Z");
-	}
-	void PrintJob::setStatus(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStatus",
-			"(I)V",
-			arg0);
-	}
-	void PrintJob::setStatus(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStatus",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	QAndroidJniObject PrintJob::getAdvancedStringOption(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAdvancedStringOption",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
-	}
-	jboolean PrintJob::hasAdvancedOption(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAdvancedOption",
-			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	jint PrintJob::getAdvancedIntOption(jstring arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getAdvancedIntOption",
-			"(Ljava/lang/String;)I",
-			arg0);
+			"()Z"
+		);
 	}
 	void PrintJob::setProgress(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setProgress",
 			"(F)V",
-			arg0);
+			arg0
+		);
+	}
+	jboolean PrintJob::isBlocked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBlocked",
+			"()Z"
+		);
+	}
+	jboolean PrintJob::setTag(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setTag",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject PrintJob::getDocument()
+	{
+		return __thiz.callObjectMethod(
+			"getDocument",
+			"()Landroid/printservice/PrintDocument;"
+		);
+	}
+	QAndroidJniObject PrintJob::getInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getInfo",
+			"()Landroid/print/PrintJobInfo;"
+		);
+	}
+	jboolean PrintJob::isFailed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFailed",
+			"()Z"
+		);
+	}
+	void PrintJob::setStatus(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStatus",
+			"(I)V",
+			arg0
+		);
+	}
+	void PrintJob::setStatus(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStatus",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	jstring PrintJob::getAdvancedStringOption(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAdvancedStringOption",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jboolean PrintJob::hasAdvancedOption(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasAdvancedOption",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jint PrintJob::getAdvancedIntOption(jstring arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getAdvancedIntOption",
+			"(Ljava/lang/String;)I",
+			arg0
+		);
+	}
+	jboolean PrintJob::isStarted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStarted",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::printservice
 

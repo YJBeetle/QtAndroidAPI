@@ -25,7 +25,7 @@ namespace __jni_impl::javax::security::auth
 		void __constructor(__jni_impl::javax::security::auth::Subject arg0);
 		
 		// Methods
-		QAndroidJniObject combine(jarray arg0, jarray arg1);
+		jarray combine(jarray arg0, jarray arg1);
 		QAndroidJniObject getSubject();
 	};
 } // namespace __jni_impl::javax::security::auth
@@ -47,19 +47,21 @@ namespace __jni_impl::javax::security::auth
 	}
 	
 	// Methods
-	QAndroidJniObject SubjectDomainCombiner::combine(jarray arg0, jarray arg1)
+	jarray SubjectDomainCombiner::combine(jarray arg0, jarray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"combine",
 			"([Ljava/security/ProtectionDomain;[Ljava/security/ProtectionDomain;)[Ljava/security/ProtectionDomain;",
 			arg0,
-			arg1);
+			arg1
+		).object<jarray>();
 	}
 	QAndroidJniObject SubjectDomainCombiner::getSubject()
 	{
 		return __thiz.callObjectMethod(
 			"getSubject",
-			"()Ljavax/security/auth/Subject;");
+			"()Ljavax/security/auth/Subject;"
+		);
 	}
 } // namespace __jni_impl::javax::security::auth
 

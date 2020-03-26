@@ -26,9 +26,9 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getDeviceTemperatures(jint arg0, jint arg1);
-		QAndroidJniObject getCpuUsages();
-		QAndroidJniObject getFanSpeeds();
+		jfloatArray getDeviceTemperatures(jint arg0, jint arg1);
+		jarray getCpuUsages();
+		jfloatArray getFanSpeeds();
 	};
 } // namespace __jni_impl::android::os
 
@@ -40,55 +40,64 @@ namespace __jni_impl::android::os
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
-			"DEVICE_TEMPERATURE_BATTERY");
+			"DEVICE_TEMPERATURE_BATTERY"
+		);
 	}
 	jint HardwarePropertiesManager::DEVICE_TEMPERATURE_CPU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
-			"DEVICE_TEMPERATURE_CPU");
+			"DEVICE_TEMPERATURE_CPU"
+		);
 	}
 	jint HardwarePropertiesManager::DEVICE_TEMPERATURE_GPU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
-			"DEVICE_TEMPERATURE_GPU");
+			"DEVICE_TEMPERATURE_GPU"
+		);
 	}
 	jint HardwarePropertiesManager::DEVICE_TEMPERATURE_SKIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
-			"DEVICE_TEMPERATURE_SKIN");
+			"DEVICE_TEMPERATURE_SKIN"
+		);
 	}
 	jint HardwarePropertiesManager::TEMPERATURE_CURRENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
-			"TEMPERATURE_CURRENT");
+			"TEMPERATURE_CURRENT"
+		);
 	}
 	jint HardwarePropertiesManager::TEMPERATURE_SHUTDOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
-			"TEMPERATURE_SHUTDOWN");
+			"TEMPERATURE_SHUTDOWN"
+		);
 	}
 	jint HardwarePropertiesManager::TEMPERATURE_THROTTLING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
-			"TEMPERATURE_THROTTLING");
+			"TEMPERATURE_THROTTLING"
+		);
 	}
 	jint HardwarePropertiesManager::TEMPERATURE_THROTTLING_BELOW_VR_MIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.HardwarePropertiesManager",
-			"TEMPERATURE_THROTTLING_BELOW_VR_MIN");
+			"TEMPERATURE_THROTTLING_BELOW_VR_MIN"
+		);
 	}
 	jfloat HardwarePropertiesManager::UNDEFINED_TEMPERATURE()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"android.os.HardwarePropertiesManager",
-			"UNDEFINED_TEMPERATURE");
+			"UNDEFINED_TEMPERATURE"
+		);
 	}
 	
 	// Constructors
@@ -100,25 +109,28 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject HardwarePropertiesManager::getDeviceTemperatures(jint arg0, jint arg1)
+	jfloatArray HardwarePropertiesManager::getDeviceTemperatures(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getDeviceTemperatures",
 			"(II)[F",
 			arg0,
-			arg1);
+			arg1
+		).object<jfloatArray>();
 	}
-	QAndroidJniObject HardwarePropertiesManager::getCpuUsages()
+	jarray HardwarePropertiesManager::getCpuUsages()
 	{
 		return __thiz.callObjectMethod(
 			"getCpuUsages",
-			"()[Landroid/os/CpuUsageInfo;");
+			"()[Landroid/os/CpuUsageInfo;"
+		).object<jarray>();
 	}
-	QAndroidJniObject HardwarePropertiesManager::getFanSpeeds()
+	jfloatArray HardwarePropertiesManager::getFanSpeeds()
 	{
 		return __thiz.callObjectMethod(
 			"getFanSpeeds",
-			"()[F");
+			"()[F"
+		).object<jfloatArray>();
 	}
 } // namespace __jni_impl::android::os
 

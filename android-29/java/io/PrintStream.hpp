@@ -189,76 +189,87 @@ namespace __jni_impl::java::io
 		__thiz.callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::println(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"println",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::println(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"println",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::println(jdouble arg0)
 	{
 		__thiz.callMethod<void>(
 			"println",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::println(jcharArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"println",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::println(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"println",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::println()
 	{
 		__thiz.callMethod<void>(
 			"println",
-			"()V");
+			"()V"
+		);
 	}
 	void PrintStream::println(jchar arg0)
 	{
 		__thiz.callMethod<void>(
 			"println",
 			"(C)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::println(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"println",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::println(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"println",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PrintStream::append(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/PrintStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PrintStream::append(jstring arg0, jint arg1, jint arg2)
 	{
@@ -267,14 +278,16 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject PrintStream::append(jchar arg0)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(C)Ljava/io/PrintStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PrintStream::format(__jni_impl::java::util::Locale arg0, jstring arg1, jobjectArray arg2)
 	{
@@ -283,7 +296,8 @@ namespace __jni_impl::java::io
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject PrintStream::format(jstring arg0, jobjectArray arg1)
 	{
@@ -291,14 +305,16 @@ namespace __jni_impl::java::io
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void PrintStream::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -307,88 +323,101 @@ namespace __jni_impl::java::io
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void PrintStream::print(jchar arg0)
 	{
 		__thiz.callMethod<void>(
 			"print",
 			"(C)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::print(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"print",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::print(jdouble arg0)
 	{
 		__thiz.callMethod<void>(
 			"print",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::print(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"print",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::print(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"print",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::print(jcharArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"print",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::print(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"print",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::print(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"print",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::print(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"print",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintStream::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void PrintStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean PrintStream::checkError()
 	{
 		return __thiz.callMethod<jboolean>(
 			"checkError",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject PrintStream::printf(__jni_impl::java::util::Locale arg0, jstring arg1, jobjectArray arg2)
 	{
@@ -397,7 +426,8 @@ namespace __jni_impl::java::io
 			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject PrintStream::printf(jstring arg0, jobjectArray arg1)
 	{
@@ -405,7 +435,8 @@ namespace __jni_impl::java::io
 			"printf",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::io
 

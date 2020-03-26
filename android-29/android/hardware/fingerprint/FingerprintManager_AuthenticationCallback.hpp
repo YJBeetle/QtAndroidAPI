@@ -49,7 +49,8 @@ namespace __jni_impl::android::hardware::fingerprint
 			"onAuthenticationError",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, jstring arg1)
 	{
@@ -57,20 +58,23 @@ namespace __jni_impl::android::hardware::fingerprint
 			"onAuthenticationHelp",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationSucceeded(__jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAuthenticationSucceeded",
 			"(Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationFailed()
 	{
 		__thiz.callMethod<void>(
 			"onAuthenticationFailed",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::hardware::fingerprint
 

@@ -8,14 +8,6 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::service::wallpaper
-{
-	class WallpaperService_Engine;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::java::io
 {
 	class FileDescriptor;
@@ -24,6 +16,14 @@ namespace __jni_impl::java::io
 {
 	class PrintWriter;
 }
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
+namespace __jni_impl::android::service::wallpaper
+{
+	class WallpaperService_Engine;
+}
 
 namespace __jni_impl::android::service::wallpaper
 {
@@ -31,41 +31,43 @@ namespace __jni_impl::android::service::wallpaper
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERVICE_INTERFACE();
-		static QAndroidJniObject SERVICE_META_DATA();
+		static jstring SERVICE_INTERFACE();
+		static jstring SERVICE_META_DATA();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onCreateEngine();
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		QAndroidJniObject onCreateEngine();
 	};
 } // namespace __jni_impl::android::service::wallpaper
 
-#include "WallpaperService_Engine.hpp"
-#include "../../content/Intent.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
+#include "../../content/Intent.hpp"
+#include "WallpaperService_Engine.hpp"
 
 namespace __jni_impl::android::service::wallpaper
 {
 	// Fields
-	QAndroidJniObject WallpaperService::SERVICE_INTERFACE()
+	jstring WallpaperService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.wallpaper.WallpaperService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WallpaperService::SERVICE_META_DATA()
+	jstring WallpaperService::SERVICE_META_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.wallpaper.WallpaperService",
 			"SERVICE_META_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -77,30 +79,34 @@ namespace __jni_impl::android::service::wallpaper
 	}
 	
 	// Methods
-	QAndroidJniObject WallpaperService::onCreateEngine()
+	void WallpaperService::onCreate()
 	{
-		return __thiz.callObjectMethod(
-			"onCreateEngine",
-			"()Landroid/service/wallpaper/WallpaperService$Engine;");
+		__thiz.callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	void WallpaperService::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V"
+		);
 	}
 	QAndroidJniObject WallpaperService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	void WallpaperService::onCreate()
+	QAndroidJniObject WallpaperService::onCreateEngine()
 	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V");
-	}
-	void WallpaperService::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V");
+		return __thiz.callObjectMethod(
+			"onCreateEngine",
+			"()Landroid/service/wallpaper/WallpaperService$Engine;"
+		);
 	}
 } // namespace __jni_impl::android::service::wallpaper
 

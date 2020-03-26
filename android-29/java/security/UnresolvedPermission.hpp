@@ -35,15 +35,15 @@ namespace __jni_impl::java::security
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
-		QAndroidJniObject getActions();
+		jstring getActions();
 		QAndroidJniObject newPermissionCollection();
-		QAndroidJniObject getUnresolvedType();
-		QAndroidJniObject getUnresolvedName();
-		QAndroidJniObject getUnresolvedActions();
-		QAndroidJniObject getUnresolvedCerts();
+		jstring getUnresolvedType();
+		jstring getUnresolvedName();
+		jstring getUnresolvedActions();
+		jarray getUnresolvedCerts();
 	};
 } // namespace __jni_impl::java::security
 
@@ -74,62 +74,72 @@ namespace __jni_impl::java::security
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject UnresolvedPermission::toString()
+	jstring UnresolvedPermission::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UnresolvedPermission::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean UnresolvedPermission::implies(__jni_impl::java::security::Permission arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject UnresolvedPermission::getActions()
+	jstring UnresolvedPermission::getActions()
 	{
 		return __thiz.callObjectMethod(
 			"getActions",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject UnresolvedPermission::newPermissionCollection()
 	{
 		return __thiz.callObjectMethod(
 			"newPermissionCollection",
-			"()Ljava/security/PermissionCollection;");
+			"()Ljava/security/PermissionCollection;"
+		);
 	}
-	QAndroidJniObject UnresolvedPermission::getUnresolvedType()
+	jstring UnresolvedPermission::getUnresolvedType()
 	{
 		return __thiz.callObjectMethod(
 			"getUnresolvedType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UnresolvedPermission::getUnresolvedName()
+	jstring UnresolvedPermission::getUnresolvedName()
 	{
 		return __thiz.callObjectMethod(
 			"getUnresolvedName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UnresolvedPermission::getUnresolvedActions()
+	jstring UnresolvedPermission::getUnresolvedActions()
 	{
 		return __thiz.callObjectMethod(
 			"getUnresolvedActions",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UnresolvedPermission::getUnresolvedCerts()
+	jarray UnresolvedPermission::getUnresolvedCerts()
 	{
 		return __thiz.callObjectMethod(
 			"getUnresolvedCerts",
-			"()[Ljava/security/cert/Certificate;");
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::security
 

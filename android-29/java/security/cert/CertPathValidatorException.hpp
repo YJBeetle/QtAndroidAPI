@@ -33,8 +33,8 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		jint getIndex();
-		QAndroidJniObject getReason();
 		QAndroidJniObject getCertPath();
+		QAndroidJniObject getReason();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -101,19 +101,22 @@ namespace __jni_impl::java::security::cert
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
-	}
-	QAndroidJniObject CertPathValidatorException::getReason()
-	{
-		return __thiz.callObjectMethod(
-			"getReason",
-			"()Ljava/security/cert/CertPathValidatorException$Reason;");
+			"()I"
+		);
 	}
 	QAndroidJniObject CertPathValidatorException::getCertPath()
 	{
 		return __thiz.callObjectMethod(
 			"getCertPath",
-			"()Ljava/security/cert/CertPath;");
+			"()Ljava/security/cert/CertPath;"
+		);
+	}
+	QAndroidJniObject CertPathValidatorException::getReason()
+	{
+		return __thiz.callObjectMethod(
+			"getReason",
+			"()Ljava/security/cert/CertPathValidatorException$Reason;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

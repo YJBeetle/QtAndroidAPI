@@ -49,7 +49,8 @@ namespace __jni_impl::android::text
 		return __thiz.callMethod<jboolean>(
 			"isAllowed",
 			"(C)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text
 

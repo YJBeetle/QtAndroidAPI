@@ -158,55 +158,64 @@ namespace __jni_impl::android::renderscript
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
-			"CONJ_TRANSPOSE");
+			"CONJ_TRANSPOSE"
+		);
 	}
 	jint ScriptIntrinsicBLAS::LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
-			"LEFT");
+			"LEFT"
+		);
 	}
 	jint ScriptIntrinsicBLAS::LOWER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
-			"LOWER");
+			"LOWER"
+		);
 	}
 	jint ScriptIntrinsicBLAS::NON_UNIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
-			"NON_UNIT");
+			"NON_UNIT"
+		);
 	}
 	jint ScriptIntrinsicBLAS::NO_TRANSPOSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
-			"NO_TRANSPOSE");
+			"NO_TRANSPOSE"
+		);
 	}
 	jint ScriptIntrinsicBLAS::RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
-			"RIGHT");
+			"RIGHT"
+		);
 	}
 	jint ScriptIntrinsicBLAS::TRANSPOSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
-			"TRANSPOSE");
+			"TRANSPOSE"
+		);
 	}
 	jint ScriptIntrinsicBLAS::UNIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
-			"UNIT");
+			"UNIT"
+		);
 	}
 	jint ScriptIntrinsicBLAS::UPPER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.renderscript.ScriptIntrinsicBLAS",
-			"UPPER");
+			"UPPER"
+		);
 	}
 	
 	// Constructors
@@ -224,7 +233,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.ScriptIntrinsicBLAS",
 			"create",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/ScriptIntrinsicBLAS;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::SGEMV(jint arg0, jfloat arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, jfloat arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -238,7 +248,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::DGEMV(jint arg0, jdouble arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, jdouble arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -252,7 +263,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::CGEMV(jint arg0, __jni_impl::android::renderscript::Float2 arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Float2 arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -266,7 +278,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::ZGEMV(jint arg0, __jni_impl::android::renderscript::Double2 arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Double2 arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -280,7 +293,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::SGBMV(jint arg0, jint arg1, jint arg2, jfloat arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6, jfloat arg7, __jni_impl::android::renderscript::Allocation arg8, jint arg9)
 	{
@@ -296,7 +310,8 @@ namespace __jni_impl::android::renderscript
 			arg6,
 			arg7,
 			arg8.__jniObject().object(),
-			arg9);
+			arg9
+		);
 	}
 	void ScriptIntrinsicBLAS::DGBMV(jint arg0, jint arg1, jint arg2, jdouble arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6, jdouble arg7, __jni_impl::android::renderscript::Allocation arg8, jint arg9)
 	{
@@ -312,7 +327,8 @@ namespace __jni_impl::android::renderscript
 			arg6,
 			arg7,
 			arg8.__jniObject().object(),
-			arg9);
+			arg9
+		);
 	}
 	void ScriptIntrinsicBLAS::CGBMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Float2 arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6, __jni_impl::android::renderscript::Float2 arg7, __jni_impl::android::renderscript::Allocation arg8, jint arg9)
 	{
@@ -328,7 +344,8 @@ namespace __jni_impl::android::renderscript
 			arg6,
 			arg7.__jniObject().object(),
 			arg8.__jniObject().object(),
-			arg9);
+			arg9
+		);
 	}
 	void ScriptIntrinsicBLAS::ZGBMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Double2 arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6, __jni_impl::android::renderscript::Double2 arg7, __jni_impl::android::renderscript::Allocation arg8, jint arg9)
 	{
@@ -344,7 +361,8 @@ namespace __jni_impl::android::renderscript
 			arg6,
 			arg7.__jniObject().object(),
 			arg8.__jniObject().object(),
-			arg9);
+			arg9
+		);
 	}
 	void ScriptIntrinsicBLAS::STRMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -356,7 +374,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::DTRMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -368,7 +387,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::CTRMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -380,7 +400,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::ZTRMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -392,7 +413,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::STBMV(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6)
 	{
@@ -405,7 +427,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6);
+			arg6
+		);
 	}
 	void ScriptIntrinsicBLAS::DTBMV(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6)
 	{
@@ -418,7 +441,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6);
+			arg6
+		);
 	}
 	void ScriptIntrinsicBLAS::CTBMV(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6)
 	{
@@ -431,7 +455,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6);
+			arg6
+		);
 	}
 	void ScriptIntrinsicBLAS::ZTBMV(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6)
 	{
@@ -444,7 +469,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6);
+			arg6
+		);
 	}
 	void ScriptIntrinsicBLAS::STPMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -456,7 +482,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::DTPMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -468,7 +495,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::CTPMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -480,7 +508,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::ZTPMV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -492,7 +521,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::STRSV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -504,7 +534,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::DTRSV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -516,7 +547,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::CTRSV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -528,7 +560,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::ZTRSV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -540,7 +573,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::STBSV(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6)
 	{
@@ -553,7 +587,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6);
+			arg6
+		);
 	}
 	void ScriptIntrinsicBLAS::DTBSV(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6)
 	{
@@ -566,7 +601,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6);
+			arg6
+		);
 	}
 	void ScriptIntrinsicBLAS::CTBSV(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6)
 	{
@@ -579,7 +615,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6);
+			arg6
+		);
 	}
 	void ScriptIntrinsicBLAS::ZTBSV(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Allocation arg5, jint arg6)
 	{
@@ -592,7 +629,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6);
+			arg6
+		);
 	}
 	void ScriptIntrinsicBLAS::STPSV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -604,7 +642,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::DTPSV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -616,7 +655,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::CTPSV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -628,7 +668,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::ZTPSV(jint arg0, jint arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5)
 	{
@@ -640,7 +681,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void ScriptIntrinsicBLAS::SSYMV(jint arg0, jfloat arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, jfloat arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -654,7 +696,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::SSBMV(jint arg0, jint arg1, jfloat arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, jfloat arg6, __jni_impl::android::renderscript::Allocation arg7, jint arg8)
 	{
@@ -669,7 +712,8 @@ namespace __jni_impl::android::renderscript
 			arg5,
 			arg6,
 			arg7.__jniObject().object(),
-			arg8);
+			arg8
+		);
 	}
 	void ScriptIntrinsicBLAS::SSPMV(jint arg0, jfloat arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, jfloat arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -683,7 +727,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::SGER(jfloat arg0, __jni_impl::android::renderscript::Allocation arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -695,7 +740,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::SSYR(jint arg0, jfloat arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4)
 	{
@@ -706,7 +752,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::SSPR(jint arg0, jfloat arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4)
 	{
@@ -717,7 +764,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::SSYR2(jint arg0, jfloat arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -730,7 +778,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::SSPR2(jint arg0, jfloat arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -743,7 +792,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DSYMV(jint arg0, jdouble arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, jdouble arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -757,7 +807,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::DSBMV(jint arg0, jint arg1, jdouble arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, jdouble arg6, __jni_impl::android::renderscript::Allocation arg7, jint arg8)
 	{
@@ -772,7 +823,8 @@ namespace __jni_impl::android::renderscript
 			arg5,
 			arg6,
 			arg7.__jniObject().object(),
-			arg8);
+			arg8
+		);
 	}
 	void ScriptIntrinsicBLAS::DSPMV(jint arg0, jdouble arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, jdouble arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -786,7 +838,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::DGER(jdouble arg0, __jni_impl::android::renderscript::Allocation arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -798,7 +851,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DSYR(jint arg0, jdouble arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4)
 	{
@@ -809,7 +863,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DSPR(jint arg0, jdouble arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4)
 	{
@@ -820,7 +875,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DSYR2(jint arg0, jdouble arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -833,7 +889,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DSPR2(jint arg0, jdouble arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -846,7 +903,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CHEMV(jint arg0, __jni_impl::android::renderscript::Float2 arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Float2 arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -860,7 +918,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::CHBMV(jint arg0, jint arg1, __jni_impl::android::renderscript::Float2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Float2 arg6, __jni_impl::android::renderscript::Allocation arg7, jint arg8)
 	{
@@ -875,7 +934,8 @@ namespace __jni_impl::android::renderscript
 			arg5,
 			arg6.__jniObject().object(),
 			arg7.__jniObject().object(),
-			arg8);
+			arg8
+		);
 	}
 	void ScriptIntrinsicBLAS::CHPMV(jint arg0, __jni_impl::android::renderscript::Float2 arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Float2 arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -889,7 +949,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::CGERU(__jni_impl::android::renderscript::Float2 arg0, __jni_impl::android::renderscript::Allocation arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -901,7 +962,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CGERC(__jni_impl::android::renderscript::Float2 arg0, __jni_impl::android::renderscript::Allocation arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -913,7 +975,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CHER(jint arg0, jfloat arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4)
 	{
@@ -924,7 +987,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CHPR(jint arg0, jfloat arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4)
 	{
@@ -935,7 +999,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CHER2(jint arg0, __jni_impl::android::renderscript::Float2 arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -948,7 +1013,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CHPR2(jint arg0, __jni_impl::android::renderscript::Float2 arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -961,7 +1027,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHEMV(jint arg0, __jni_impl::android::renderscript::Double2 arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Double2 arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -975,7 +1042,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHBMV(jint arg0, jint arg1, __jni_impl::android::renderscript::Double2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Double2 arg6, __jni_impl::android::renderscript::Allocation arg7, jint arg8)
 	{
@@ -990,7 +1058,8 @@ namespace __jni_impl::android::renderscript
 			arg5,
 			arg6.__jniObject().object(),
 			arg7.__jniObject().object(),
-			arg8);
+			arg8
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHPMV(jint arg0, __jni_impl::android::renderscript::Double2 arg1, __jni_impl::android::renderscript::Allocation arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Double2 arg5, __jni_impl::android::renderscript::Allocation arg6, jint arg7)
 	{
@@ -1004,7 +1073,8 @@ namespace __jni_impl::android::renderscript
 			arg4,
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void ScriptIntrinsicBLAS::ZGERU(__jni_impl::android::renderscript::Double2 arg0, __jni_impl::android::renderscript::Allocation arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -1016,7 +1086,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZGERC(__jni_impl::android::renderscript::Double2 arg0, __jni_impl::android::renderscript::Allocation arg1, jint arg2, __jni_impl::android::renderscript::Allocation arg3, jint arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -1028,7 +1099,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHER(jint arg0, jdouble arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4)
 	{
@@ -1039,7 +1111,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHPR(jint arg0, jdouble arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4)
 	{
@@ -1050,7 +1123,8 @@ namespace __jni_impl::android::renderscript
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHER2(jint arg0, __jni_impl::android::renderscript::Double2 arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1063,7 +1137,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHPR2(jint arg0, __jni_impl::android::renderscript::Double2 arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1076,7 +1151,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::SGEMM(jint arg0, jint arg1, jfloat arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jfloat arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1089,7 +1165,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DGEMM(jint arg0, jint arg1, jdouble arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jdouble arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1102,7 +1179,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CGEMM(jint arg0, jint arg1, __jni_impl::android::renderscript::Float2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Float2 arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1115,7 +1193,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZGEMM(jint arg0, jint arg1, __jni_impl::android::renderscript::Double2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Double2 arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1128,7 +1207,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::SSYMM(jint arg0, jint arg1, jfloat arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jfloat arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1141,7 +1221,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DSYMM(jint arg0, jint arg1, jdouble arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jdouble arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1154,7 +1235,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CSYMM(jint arg0, jint arg1, __jni_impl::android::renderscript::Float2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Float2 arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1167,7 +1249,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZSYMM(jint arg0, jint arg1, __jni_impl::android::renderscript::Double2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Double2 arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1180,7 +1263,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::SSYRK(jint arg0, jint arg1, jfloat arg2, __jni_impl::android::renderscript::Allocation arg3, jfloat arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -1192,7 +1276,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DSYRK(jint arg0, jint arg1, jdouble arg2, __jni_impl::android::renderscript::Allocation arg3, jdouble arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -1204,7 +1289,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CSYRK(jint arg0, jint arg1, __jni_impl::android::renderscript::Float2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Float2 arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -1216,7 +1302,8 @@ namespace __jni_impl::android::renderscript
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZSYRK(jint arg0, jint arg1, __jni_impl::android::renderscript::Double2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Double2 arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -1228,7 +1315,8 @@ namespace __jni_impl::android::renderscript
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::SSYR2K(jint arg0, jint arg1, jfloat arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jfloat arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1241,7 +1329,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DSYR2K(jint arg0, jint arg1, jdouble arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jdouble arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1254,7 +1343,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CSYR2K(jint arg0, jint arg1, __jni_impl::android::renderscript::Float2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Float2 arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1267,7 +1357,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZSYR2K(jint arg0, jint arg1, __jni_impl::android::renderscript::Double2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Double2 arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1280,7 +1371,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::STRMM(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4, __jni_impl::android::renderscript::Allocation arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1293,7 +1385,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4,
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DTRMM(jint arg0, jint arg1, jint arg2, jint arg3, jdouble arg4, __jni_impl::android::renderscript::Allocation arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1306,7 +1399,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4,
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CTRMM(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Float2 arg4, __jni_impl::android::renderscript::Allocation arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1319,7 +1413,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZTRMM(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Double2 arg4, __jni_impl::android::renderscript::Allocation arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1332,7 +1427,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::STRSM(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4, __jni_impl::android::renderscript::Allocation arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1345,7 +1441,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4,
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::DTRSM(jint arg0, jint arg1, jint arg2, jint arg3, jdouble arg4, __jni_impl::android::renderscript::Allocation arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1358,7 +1455,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4,
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CTRSM(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Float2 arg4, __jni_impl::android::renderscript::Allocation arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1371,7 +1469,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZTRSM(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::renderscript::Double2 arg4, __jni_impl::android::renderscript::Allocation arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1384,7 +1483,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CHEMM(jint arg0, jint arg1, __jni_impl::android::renderscript::Float2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Float2 arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1397,7 +1497,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHEMM(jint arg0, jint arg1, __jni_impl::android::renderscript::Double2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, __jni_impl::android::renderscript::Double2 arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1410,7 +1511,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CHERK(jint arg0, jint arg1, jfloat arg2, __jni_impl::android::renderscript::Allocation arg3, jfloat arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -1422,7 +1524,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHERK(jint arg0, jint arg1, jdouble arg2, __jni_impl::android::renderscript::Allocation arg3, jdouble arg4, __jni_impl::android::renderscript::Allocation arg5)
 	{
@@ -1434,7 +1537,8 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::CHER2K(jint arg0, jint arg1, __jni_impl::android::renderscript::Float2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jfloat arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1447,7 +1551,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::ZHER2K(jint arg0, jint arg1, __jni_impl::android::renderscript::Double2 arg2, __jni_impl::android::renderscript::Allocation arg3, __jni_impl::android::renderscript::Allocation arg4, jdouble arg5, __jni_impl::android::renderscript::Allocation arg6)
 	{
@@ -1460,7 +1565,8 @@ namespace __jni_impl::android::renderscript
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicBLAS::BNNM(__jni_impl::android::renderscript::Allocation arg0, jint arg1, __jni_impl::android::renderscript::Allocation arg2, jint arg3, __jni_impl::android::renderscript::Allocation arg4, jint arg5, jint arg6)
 	{
@@ -1473,7 +1579,8 @@ namespace __jni_impl::android::renderscript
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::accessibility
-{
-	class AccessibilityNodeInfo;
-}
 namespace __jni_impl::android::accessibilityservice
 {
 	class AccessibilityServiceInfo;
+}
+namespace __jni_impl::android::view::accessibility
+{
+	class AccessibilityNodeInfo;
 }
 namespace __jni_impl::android::view::accessibility
 {
@@ -60,11 +60,10 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject findFocus(jint arg0);
-		jboolean setRotation(jint arg0);
+		QAndroidJniObject getServiceInfo();
 		void setOnAccessibilityEventListener(__jni_impl::__JniBaseClass arg0);
-		void adoptShellPermissionIdentity();
 		void adoptShellPermissionIdentity(jarray arg0);
+		void adoptShellPermissionIdentity();
 		void dropShellPermissionIdentity();
 		jboolean performGlobalAction(jint arg0);
 		void setServiceInfo(__jni_impl::android::accessibilityservice::AccessibilityServiceInfo arg0);
@@ -83,13 +82,14 @@ namespace __jni_impl::android::app
 		void revokeRuntimePermission(jstring arg0, jstring arg1);
 		void revokeRuntimePermissionAsUser(jstring arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2);
 		QAndroidJniObject executeShellCommand(jstring arg0);
+		QAndroidJniObject findFocus(jint arg0);
+		jboolean setRotation(jint arg0);
 		jboolean injectInputEvent(__jni_impl::android::view::InputEvent arg0, jboolean arg1);
-		QAndroidJniObject getServiceInfo();
 	};
 } // namespace __jni_impl::android::app
 
-#include "../view/accessibility/AccessibilityNodeInfo.hpp"
 #include "../accessibilityservice/AccessibilityServiceInfo.hpp"
+#include "../view/accessibility/AccessibilityNodeInfo.hpp"
 #include "../view/accessibility/AccessibilityEvent.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../view/WindowContentFrameStats.hpp"
@@ -105,43 +105,50 @@ namespace __jni_impl::android::app
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiAutomation",
-			"FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES");
+			"FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES"
+		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_0()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiAutomation",
-			"ROTATION_FREEZE_0");
+			"ROTATION_FREEZE_0"
+		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_180()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiAutomation",
-			"ROTATION_FREEZE_180");
+			"ROTATION_FREEZE_180"
+		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_270()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiAutomation",
-			"ROTATION_FREEZE_270");
+			"ROTATION_FREEZE_270"
+		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_90()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiAutomation",
-			"ROTATION_FREEZE_90");
+			"ROTATION_FREEZE_90"
+		);
 	}
 	jint UiAutomation::ROTATION_FREEZE_CURRENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiAutomation",
-			"ROTATION_FREEZE_CURRENT");
+			"ROTATION_FREEZE_CURRENT"
+		);
 	}
 	jint UiAutomation::ROTATION_UNFREEZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.UiAutomation",
-			"ROTATION_UNFREEZE");
+			"ROTATION_UNFREEZE"
+		);
 	}
 	
 	// Constructors
@@ -153,71 +160,72 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject UiAutomation::findFocus(jint arg0)
+	QAndroidJniObject UiAutomation::getServiceInfo()
 	{
 		return __thiz.callObjectMethod(
-			"findFocus",
-			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0);
-	}
-	jboolean UiAutomation::setRotation(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setRotation",
-			"(I)Z",
-			arg0);
+			"getServiceInfo",
+			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
+		);
 	}
 	void UiAutomation::setOnAccessibilityEventListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnAccessibilityEventListener",
 			"(Landroid/app/UiAutomation$OnAccessibilityEventListener;)V",
-			arg0.__jniObject().object());
-	}
-	void UiAutomation::adoptShellPermissionIdentity()
-	{
-		__thiz.callMethod<void>(
-			"adoptShellPermissionIdentity",
-			"()V");
+			arg0.__jniObject().object()
+		);
 	}
 	void UiAutomation::adoptShellPermissionIdentity(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"adoptShellPermissionIdentity",
 			"([Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void UiAutomation::adoptShellPermissionIdentity()
+	{
+		__thiz.callMethod<void>(
+			"adoptShellPermissionIdentity",
+			"()V"
+		);
 	}
 	void UiAutomation::dropShellPermissionIdentity()
 	{
 		__thiz.callMethod<void>(
 			"dropShellPermissionIdentity",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean UiAutomation::performGlobalAction(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"performGlobalAction",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void UiAutomation::setServiceInfo(__jni_impl::android::accessibilityservice::AccessibilityServiceInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"setServiceInfo",
 			"(Landroid/accessibilityservice/AccessibilityServiceInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject UiAutomation::getWindows()
 	{
 		return __thiz.callObjectMethod(
 			"getWindows",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject UiAutomation::getRootInActiveWindow()
 	{
 		return __thiz.callObjectMethod(
 			"getRootInActiveWindow",
-			"()Landroid/view/accessibility/AccessibilityNodeInfo;");
+			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
+		);
 	}
 	QAndroidJniObject UiAutomation::executeAndWaitForEvent(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jlong arg2)
 	{
@@ -226,7 +234,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/Runnable;Landroid/app/UiAutomation$AccessibilityEventFilter;J)Landroid/view/accessibility/AccessibilityEvent;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void UiAutomation::waitForIdle(jlong arg0, jlong arg1)
 	{
@@ -234,46 +243,53 @@ namespace __jni_impl::android::app
 			"waitForIdle",
 			"(JJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject UiAutomation::takeScreenshot()
 	{
 		return __thiz.callObjectMethod(
 			"takeScreenshot",
-			"()Landroid/graphics/Bitmap;");
+			"()Landroid/graphics/Bitmap;"
+		);
 	}
 	void UiAutomation::setRunAsMonkey(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRunAsMonkey",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean UiAutomation::clearWindowContentFrameStats(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"clearWindowContentFrameStats",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject UiAutomation::getWindowContentFrameStats(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getWindowContentFrameStats",
 			"(I)Landroid/view/WindowContentFrameStats;",
-			arg0);
+			arg0
+		);
 	}
 	void UiAutomation::clearWindowAnimationFrameStats()
 	{
 		__thiz.callMethod<void>(
 			"clearWindowAnimationFrameStats",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject UiAutomation::getWindowAnimationFrameStats()
 	{
 		return __thiz.callObjectMethod(
 			"getWindowAnimationFrameStats",
-			"()Landroid/view/WindowAnimationFrameStats;");
+			"()Landroid/view/WindowAnimationFrameStats;"
+		);
 	}
 	void UiAutomation::grantRuntimePermission(jstring arg0, jstring arg1)
 	{
@@ -281,7 +297,8 @@ namespace __jni_impl::android::app
 			"grantRuntimePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void UiAutomation::grantRuntimePermissionAsUser(jstring arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -290,7 +307,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void UiAutomation::revokeRuntimePermission(jstring arg0, jstring arg1)
 	{
@@ -298,7 +316,8 @@ namespace __jni_impl::android::app
 			"revokeRuntimePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void UiAutomation::revokeRuntimePermissionAsUser(jstring arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -307,14 +326,32 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject UiAutomation::executeShellCommand(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"executeShellCommand",
 			"(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject UiAutomation::findFocus(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findFocus",
+			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
+			arg0
+		);
+	}
+	jboolean UiAutomation::setRotation(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setRotation",
+			"(I)Z",
+			arg0
+		);
 	}
 	jboolean UiAutomation::injectInputEvent(__jni_impl::android::view::InputEvent arg0, jboolean arg1)
 	{
@@ -322,13 +359,8 @@ namespace __jni_impl::android::app
 			"injectInputEvent",
 			"(Landroid/view/InputEvent;Z)Z",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject UiAutomation::getServiceInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceInfo",
-			"()Landroid/accessibilityservice/AccessibilityServiceInfo;");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app
 

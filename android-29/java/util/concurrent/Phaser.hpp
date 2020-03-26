@@ -28,7 +28,7 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor(__jni_impl::java::util::concurrent::Phaser arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint _register();
 		QAndroidJniObject getParent();
 		QAndroidJniObject getRoot();
@@ -86,80 +86,92 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	QAndroidJniObject Phaser::toString()
+	jstring Phaser::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Phaser::_register()
 	{
 		return __thiz.callMethod<jint>(
 			"register",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Phaser::getParent()
 	{
 		return __thiz.callObjectMethod(
 			"getParent",
-			"()Ljava/util/concurrent/Phaser;");
+			"()Ljava/util/concurrent/Phaser;"
+		);
 	}
 	QAndroidJniObject Phaser::getRoot()
 	{
 		return __thiz.callObjectMethod(
 			"getRoot",
-			"()Ljava/util/concurrent/Phaser;");
+			"()Ljava/util/concurrent/Phaser;"
+		);
 	}
 	jboolean Phaser::isTerminated()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTerminated",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Phaser::getPhase()
 	{
 		return __thiz.callMethod<jint>(
 			"getPhase",
-			"()I");
+			"()I"
+		);
 	}
 	jint Phaser::arriveAndAwaitAdvance()
 	{
 		return __thiz.callMethod<jint>(
 			"arriveAndAwaitAdvance",
-			"()I");
+			"()I"
+		);
 	}
 	jint Phaser::bulkRegister(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"bulkRegister",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Phaser::arrive()
 	{
 		return __thiz.callMethod<jint>(
 			"arrive",
-			"()I");
+			"()I"
+		);
 	}
 	jint Phaser::arriveAndDeregister()
 	{
 		return __thiz.callMethod<jint>(
 			"arriveAndDeregister",
-			"()I");
+			"()I"
+		);
 	}
 	jint Phaser::awaitAdvance(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"awaitAdvance",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Phaser::awaitAdvanceInterruptibly(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"awaitAdvanceInterruptibly",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Phaser::awaitAdvanceInterruptibly(jint arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
 	{
@@ -168,31 +180,36 @@ namespace __jni_impl::java::util::concurrent
 			"(IJLjava/util/concurrent/TimeUnit;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void Phaser::forceTermination()
 	{
 		__thiz.callMethod<void>(
 			"forceTermination",
-			"()V");
+			"()V"
+		);
 	}
 	jint Phaser::getRegisteredParties()
 	{
 		return __thiz.callMethod<jint>(
 			"getRegisteredParties",
-			"()I");
+			"()I"
+		);
 	}
 	jint Phaser::getArrivedParties()
 	{
 		return __thiz.callMethod<jint>(
 			"getArrivedParties",
-			"()I");
+			"()I"
+		);
 	}
 	jint Phaser::getUnarrivedParties()
 	{
 		return __thiz.callMethod<jint>(
 			"getUnarrivedParties",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

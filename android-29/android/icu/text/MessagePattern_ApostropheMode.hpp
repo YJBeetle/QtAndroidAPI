@@ -20,7 +20,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -34,14 +34,16 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$ApostropheMode",
 			"DOUBLE_OPTIONAL",
-			"Landroid/icu/text/MessagePattern$ApostropheMode;");
+			"Landroid/icu/text/MessagePattern$ApostropheMode;"
+		);
 	}
 	QAndroidJniObject MessagePattern_ApostropheMode::DOUBLE_REQUIRED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessagePattern$ApostropheMode",
 			"DOUBLE_REQUIRED",
-			"Landroid/icu/text/MessagePattern$ApostropheMode;");
+			"Landroid/icu/text/MessagePattern$ApostropheMode;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject MessagePattern_ApostropheMode::values()
+	jarray MessagePattern_ApostropheMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MessagePattern$ApostropheMode",
 			"values",
-			"()[Landroid/icu/text/MessagePattern$ApostropheMode;");
+			"()[Landroid/icu/text/MessagePattern$ApostropheMode;"
+		).object<jarray>();
 	}
 	QAndroidJniObject MessagePattern_ApostropheMode::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.MessagePattern$ApostropheMode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$ApostropheMode;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

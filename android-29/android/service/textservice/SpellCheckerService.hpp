@@ -8,13 +8,13 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::service::textservice
-{
-	class SpellCheckerService_Session;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
+}
+namespace __jni_impl::android::service::textservice
+{
+	class SpellCheckerService_Session;
 }
 
 namespace __jni_impl::android::service::textservice
@@ -23,29 +23,30 @@ namespace __jni_impl::android::service::textservice
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERVICE_INTERFACE();
+		static jstring SERVICE_INTERFACE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject createSession();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		QAndroidJniObject createSession();
 	};
 } // namespace __jni_impl::android::service::textservice
 
-#include "SpellCheckerService_Session.hpp"
 #include "../../content/Intent.hpp"
+#include "SpellCheckerService_Session.hpp"
 
 namespace __jni_impl::android::service::textservice
 {
 	// Fields
-	QAndroidJniObject SpellCheckerService::SERVICE_INTERFACE()
+	jstring SpellCheckerService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.textservice.SpellCheckerService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -57,18 +58,20 @@ namespace __jni_impl::android::service::textservice
 	}
 	
 	// Methods
-	QAndroidJniObject SpellCheckerService::createSession()
-	{
-		return __thiz.callObjectMethod(
-			"createSession",
-			"()Landroid/service/textservice/SpellCheckerService$Session;");
-	}
 	QAndroidJniObject SpellCheckerService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SpellCheckerService::createSession()
+	{
+		return __thiz.callObjectMethod(
+			"createSession",
+			"()Landroid/service/textservice/SpellCheckerService$Session;"
+		);
 	}
 } // namespace __jni_impl::android::service::textservice
 

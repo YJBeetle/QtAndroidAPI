@@ -21,17 +21,16 @@ namespace __jni_impl::android::security::keystore
 		void __constructor();
 		
 		// Methods
-		jint getOrigin();
 		jint getKeySize();
-		QAndroidJniObject getKeystoreAlias();
+		jstring getKeystoreAlias();
 		QAndroidJniObject getKeyValidityStart();
 		QAndroidJniObject getKeyValidityForConsumptionEnd();
 		QAndroidJniObject getKeyValidityForOriginationEnd();
 		jint getPurposes();
-		QAndroidJniObject getDigests();
-		QAndroidJniObject getEncryptionPaddings();
-		QAndroidJniObject getSignaturePaddings();
-		QAndroidJniObject getBlockModes();
+		jarray getDigests();
+		jarray getEncryptionPaddings();
+		jarray getSignaturePaddings();
+		jarray getBlockModes();
 		jboolean isUserAuthenticationRequired();
 		jboolean isUserConfirmationRequired();
 		jint getUserAuthenticationValidityDurationSeconds();
@@ -40,6 +39,7 @@ namespace __jni_impl::android::security::keystore
 		jboolean isInsideSecureHardware();
 		jboolean isUserAuthenticationRequirementEnforcedBySecureHardware();
 		jboolean isTrustedUserPresenceRequired();
+		jint getOrigin();
 	};
 } // namespace __jni_impl::android::security::keystore
 
@@ -58,119 +58,138 @@ namespace __jni_impl::android::security::keystore
 	}
 	
 	// Methods
-	jint KeyInfo::getOrigin()
-	{
-		return __thiz.callMethod<jint>(
-			"getOrigin",
-			"()I");
-	}
 	jint KeyInfo::getKeySize()
 	{
 		return __thiz.callMethod<jint>(
 			"getKeySize",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject KeyInfo::getKeystoreAlias()
+	jstring KeyInfo::getKeystoreAlias()
 	{
 		return __thiz.callObjectMethod(
 			"getKeystoreAlias",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject KeyInfo::getKeyValidityStart()
 	{
 		return __thiz.callObjectMethod(
 			"getKeyValidityStart",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	QAndroidJniObject KeyInfo::getKeyValidityForConsumptionEnd()
 	{
 		return __thiz.callObjectMethod(
 			"getKeyValidityForConsumptionEnd",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	QAndroidJniObject KeyInfo::getKeyValidityForOriginationEnd()
 	{
 		return __thiz.callObjectMethod(
 			"getKeyValidityForOriginationEnd",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	jint KeyInfo::getPurposes()
 	{
 		return __thiz.callMethod<jint>(
 			"getPurposes",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject KeyInfo::getDigests()
+	jarray KeyInfo::getDigests()
 	{
 		return __thiz.callObjectMethod(
 			"getDigests",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject KeyInfo::getEncryptionPaddings()
+	jarray KeyInfo::getEncryptionPaddings()
 	{
 		return __thiz.callObjectMethod(
 			"getEncryptionPaddings",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject KeyInfo::getSignaturePaddings()
+	jarray KeyInfo::getSignaturePaddings()
 	{
 		return __thiz.callObjectMethod(
 			"getSignaturePaddings",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject KeyInfo::getBlockModes()
+	jarray KeyInfo::getBlockModes()
 	{
 		return __thiz.callObjectMethod(
 			"getBlockModes",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jboolean KeyInfo::isUserAuthenticationRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUserAuthenticationRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyInfo::isUserConfirmationRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUserConfirmationRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint KeyInfo::getUserAuthenticationValidityDurationSeconds()
 	{
 		return __thiz.callMethod<jint>(
 			"getUserAuthenticationValidityDurationSeconds",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean KeyInfo::isUserAuthenticationValidWhileOnBody()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUserAuthenticationValidWhileOnBody",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyInfo::isInvalidatedByBiometricEnrollment()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInvalidatedByBiometricEnrollment",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyInfo::isInsideSecureHardware()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInsideSecureHardware",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyInfo::isUserAuthenticationRequirementEnforcedBySecureHardware()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUserAuthenticationRequirementEnforcedBySecureHardware",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyInfo::isTrustedUserPresenceRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTrustedUserPresenceRequired",
-			"()Z");
+			"()Z"
+		);
+	}
+	jint KeyInfo::getOrigin()
+	{
+		return __thiz.callMethod<jint>(
+			"getOrigin",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::security::keystore
 

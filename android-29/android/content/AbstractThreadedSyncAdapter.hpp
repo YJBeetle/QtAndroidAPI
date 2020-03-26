@@ -67,7 +67,8 @@ namespace __jni_impl::android::content
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.AbstractThreadedSyncAdapter",
-			"LOG_SYNC_DETAILS");
+			"LOG_SYNC_DETAILS"
+		);
 	}
 	
 	// Constructors
@@ -94,19 +95,22 @@ namespace __jni_impl::android::content
 	{
 		return __thiz.callObjectMethod(
 			"getContext",
-			"()Landroid/content/Context;");
+			"()Landroid/content/Context;"
+		);
 	}
 	QAndroidJniObject AbstractThreadedSyncAdapter::getSyncAdapterBinder()
 	{
 		return __thiz.callObjectMethod(
 			"getSyncAdapterBinder",
-			"()Landroid/os/IBinder;");
+			"()Landroid/os/IBinder;"
+		);
 	}
 	jboolean AbstractThreadedSyncAdapter::onUnsyncableAccount()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onUnsyncableAccount",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AbstractThreadedSyncAdapter::onPerformSync(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, jstring arg2, __jni_impl::android::content::ContentProviderClient arg3, __jni_impl::android::content::SyncResult arg4)
 	{
@@ -117,7 +121,8 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void AbstractThreadedSyncAdapter::onSecurityException(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, jstring arg2, __jni_impl::android::content::SyncResult arg3)
 	{
@@ -127,20 +132,23 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void AbstractThreadedSyncAdapter::onSyncCanceled(__jni_impl::java::lang::Thread arg0)
 	{
 		__thiz.callMethod<void>(
 			"onSyncCanceled",
 			"(Ljava/lang/Thread;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbstractThreadedSyncAdapter::onSyncCanceled()
 	{
 		__thiz.callMethod<void>(
 			"onSyncCanceled",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::content
 

@@ -18,10 +18,10 @@ namespace __jni_impl::android::text::util
 		
 		// Methods
 		jint findTokenStart(jstring arg0, jint arg1);
-		static QAndroidJniObject tokenize(jstring arg0);
+		static jarray tokenize(jstring arg0);
 		static void tokenize(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		jint findTokenEnd(jstring arg0, jint arg1);
-		QAndroidJniObject terminateToken(jstring arg0);
+		jstring terminateToken(jstring arg0);
 	};
 } // namespace __jni_impl::android::text::util
 
@@ -45,15 +45,17 @@ namespace __jni_impl::android::text::util
 			"findTokenStart",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Rfc822Tokenizer::tokenize(jstring arg0)
+	jarray Rfc822Tokenizer::tokenize(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.util.Rfc822Tokenizer",
 			"tokenize",
 			"(Ljava/lang/CharSequence;)[Landroid/text/util/Rfc822Token;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
 	void Rfc822Tokenizer::tokenize(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -62,7 +64,8 @@ namespace __jni_impl::android::text::util
 			"tokenize",
 			"(Ljava/lang/CharSequence;Ljava/util/Collection;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint Rfc822Tokenizer::findTokenEnd(jstring arg0, jint arg1)
 	{
@@ -70,14 +73,16 @@ namespace __jni_impl::android::text::util
 			"findTokenEnd",
 			"(Ljava/lang/CharSequence;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Rfc822Tokenizer::terminateToken(jstring arg0)
+	jstring Rfc822Tokenizer::terminateToken(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"terminateToken",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::text::util
 

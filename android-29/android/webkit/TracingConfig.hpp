@@ -41,61 +41,71 @@ namespace __jni_impl::android::webkit
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"CATEGORIES_ALL");
+			"CATEGORIES_ALL"
+		);
 	}
 	jint TracingConfig::CATEGORIES_ANDROID_WEBVIEW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"CATEGORIES_ANDROID_WEBVIEW");
+			"CATEGORIES_ANDROID_WEBVIEW"
+		);
 	}
 	jint TracingConfig::CATEGORIES_FRAME_VIEWER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"CATEGORIES_FRAME_VIEWER");
+			"CATEGORIES_FRAME_VIEWER"
+		);
 	}
 	jint TracingConfig::CATEGORIES_INPUT_LATENCY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"CATEGORIES_INPUT_LATENCY");
+			"CATEGORIES_INPUT_LATENCY"
+		);
 	}
 	jint TracingConfig::CATEGORIES_JAVASCRIPT_AND_RENDERING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"CATEGORIES_JAVASCRIPT_AND_RENDERING");
+			"CATEGORIES_JAVASCRIPT_AND_RENDERING"
+		);
 	}
 	jint TracingConfig::CATEGORIES_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"CATEGORIES_NONE");
+			"CATEGORIES_NONE"
+		);
 	}
 	jint TracingConfig::CATEGORIES_RENDERING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"CATEGORIES_RENDERING");
+			"CATEGORIES_RENDERING"
+		);
 	}
 	jint TracingConfig::CATEGORIES_WEB_DEVELOPER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"CATEGORIES_WEB_DEVELOPER");
+			"CATEGORIES_WEB_DEVELOPER"
+		);
 	}
 	jint TracingConfig::RECORD_CONTINUOUSLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"RECORD_CONTINUOUSLY");
+			"RECORD_CONTINUOUSLY"
+		);
 	}
 	jint TracingConfig::RECORD_UNTIL_FULL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.webkit.TracingConfig",
-			"RECORD_UNTIL_FULL");
+			"RECORD_UNTIL_FULL"
+		);
 	}
 	
 	// Constructors
@@ -111,19 +121,22 @@ namespace __jni_impl::android::webkit
 	{
 		return __thiz.callMethod<jint>(
 			"getPredefinedCategories",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject TracingConfig::getCustomIncludedCategories()
 	{
 		return __thiz.callObjectMethod(
 			"getCustomIncludedCategories",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jint TracingConfig::getTracingMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getTracingMode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

@@ -93,9 +93,9 @@ namespace __jni_impl::android::icu::util
 		void add(jint arg0, jint arg1);
 		jint get(jint arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		jint compareTo(__jni_impl::android::icu::util::Calendar arg0);
 		jint compareTo(jobject arg0);
 		void clear();
@@ -111,14 +111,14 @@ namespace __jni_impl::android::icu::util
 		void set(jint arg0, jint arg1, jint arg2);
 		void set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		jboolean isSet(jint arg0);
-		QAndroidJniObject getType();
+		jstring getType();
 		jboolean before(jobject arg0);
 		jboolean after(jobject arg0);
-		static QAndroidJniObject getAvailableLocales();
+		static jarray getAvailableLocales();
 		QAndroidJniObject getTime();
 		void setTime(__jni_impl::java::util::Date arg0);
-		QAndroidJniObject getDisplayName(__jni_impl::android::icu::util::ULocale arg0);
-		QAndroidJniObject getDisplayName(__jni_impl::java::util::Locale arg0);
+		jstring getDisplayName(__jni_impl::android::icu::util::ULocale arg0);
+		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
 		void setTimeInMillis(jlong arg0);
 		jint getLeastMaximum(jint arg0);
 		jlong getTimeInMillis();
@@ -128,8 +128,8 @@ namespace __jni_impl::android::icu::util
 		jboolean isLenient();
 		jint getFirstDayOfWeek();
 		jint getMinimalDaysInFirstWeek();
-		void roll(jint arg0, jint arg1);
 		void roll(jint arg0, jboolean arg1);
+		void roll(jint arg0, jint arg1);
 		jint getGreatestMinimum(jint arg0);
 		void setFirstDayOfWeek(jint arg0);
 		void setMinimalDaysInFirstWeek(jint arg0);
@@ -137,9 +137,6 @@ namespace __jni_impl::android::icu::util
 		jint getActualMaximum(jint arg0);
 		jint getMinimum(jint arg0);
 		jint getMaximum(jint arg0);
-		static QAndroidJniObject getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
-		QAndroidJniObject getDateTimeFormat(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2);
-		QAndroidJniObject getDateTimeFormat(jint arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2);
 		jboolean isEquivalentTo(__jni_impl::android::icu::util::Calendar arg0);
 		jint fieldDifference(__jni_impl::java::util::Date arg0, jint arg1);
 		void setRepeatedWallTimeOption(jint arg0);
@@ -152,6 +149,9 @@ namespace __jni_impl::android::icu::util
 		QAndroidJniObject getWeekData();
 		QAndroidJniObject setWeekData(__jni_impl::android::icu::util::Calendar_WeekData arg0);
 		jint getFieldCount();
+		static jarray getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
+		QAndroidJniObject getDateTimeFormat(jint arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2);
+		QAndroidJniObject getDateTimeFormat(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2);
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -169,295 +169,344 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"AM");
+			"AM"
+		);
 	}
 	jint Calendar::AM_PM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"AM_PM");
+			"AM_PM"
+		);
 	}
 	jint Calendar::APRIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"APRIL");
+			"APRIL"
+		);
 	}
 	jint Calendar::AUGUST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"AUGUST");
+			"AUGUST"
+		);
 	}
 	jint Calendar::DATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"DATE");
+			"DATE"
+		);
 	}
 	jint Calendar::DAY_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"DAY_OF_MONTH");
+			"DAY_OF_MONTH"
+		);
 	}
 	jint Calendar::DAY_OF_WEEK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"DAY_OF_WEEK");
+			"DAY_OF_WEEK"
+		);
 	}
 	jint Calendar::DAY_OF_WEEK_IN_MONTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"DAY_OF_WEEK_IN_MONTH");
+			"DAY_OF_WEEK_IN_MONTH"
+		);
 	}
 	jint Calendar::DAY_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"DAY_OF_YEAR");
+			"DAY_OF_YEAR"
+		);
 	}
 	jint Calendar::DECEMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"DECEMBER");
+			"DECEMBER"
+		);
 	}
 	jint Calendar::DOW_LOCAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"DOW_LOCAL");
+			"DOW_LOCAL"
+		);
 	}
 	jint Calendar::DST_OFFSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"DST_OFFSET");
+			"DST_OFFSET"
+		);
 	}
 	jint Calendar::ERA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"ERA");
+			"ERA"
+		);
 	}
 	jint Calendar::EXTENDED_YEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"EXTENDED_YEAR");
+			"EXTENDED_YEAR"
+		);
 	}
 	jint Calendar::FEBRUARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"FEBRUARY");
+			"FEBRUARY"
+		);
 	}
 	jint Calendar::FRIDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"FRIDAY");
+			"FRIDAY"
+		);
 	}
 	jint Calendar::HOUR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"HOUR");
+			"HOUR"
+		);
 	}
 	jint Calendar::HOUR_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"HOUR_OF_DAY");
+			"HOUR_OF_DAY"
+		);
 	}
 	jint Calendar::IS_LEAP_MONTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"IS_LEAP_MONTH");
+			"IS_LEAP_MONTH"
+		);
 	}
 	jint Calendar::JANUARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"JANUARY");
+			"JANUARY"
+		);
 	}
 	jint Calendar::JULIAN_DAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"JULIAN_DAY");
+			"JULIAN_DAY"
+		);
 	}
 	jint Calendar::JULY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"JULY");
+			"JULY"
+		);
 	}
 	jint Calendar::JUNE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"JUNE");
+			"JUNE"
+		);
 	}
 	jint Calendar::MARCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"MARCH");
+			"MARCH"
+		);
 	}
 	jint Calendar::MAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"MAY");
+			"MAY"
+		);
 	}
 	jint Calendar::MILLISECOND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"MILLISECOND");
+			"MILLISECOND"
+		);
 	}
 	jint Calendar::MILLISECONDS_IN_DAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"MILLISECONDS_IN_DAY");
+			"MILLISECONDS_IN_DAY"
+		);
 	}
 	jint Calendar::MINUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"MINUTE");
+			"MINUTE"
+		);
 	}
 	jint Calendar::MONDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"MONDAY");
+			"MONDAY"
+		);
 	}
 	jint Calendar::MONTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"MONTH");
+			"MONTH"
+		);
 	}
 	jint Calendar::NOVEMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"NOVEMBER");
+			"NOVEMBER"
+		);
 	}
 	jint Calendar::OCTOBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"OCTOBER");
+			"OCTOBER"
+		);
 	}
 	jint Calendar::PM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"PM");
+			"PM"
+		);
 	}
 	jint Calendar::SATURDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"SATURDAY");
+			"SATURDAY"
+		);
 	}
 	jint Calendar::SECOND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"SECOND");
+			"SECOND"
+		);
 	}
 	jint Calendar::SEPTEMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"SEPTEMBER");
+			"SEPTEMBER"
+		);
 	}
 	jint Calendar::SUNDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"SUNDAY");
+			"SUNDAY"
+		);
 	}
 	jint Calendar::THURSDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"THURSDAY");
+			"THURSDAY"
+		);
 	}
 	jint Calendar::TUESDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"TUESDAY");
+			"TUESDAY"
+		);
 	}
 	jint Calendar::UNDECIMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"UNDECIMBER");
+			"UNDECIMBER"
+		);
 	}
 	jint Calendar::WALLTIME_FIRST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"WALLTIME_FIRST");
+			"WALLTIME_FIRST"
+		);
 	}
 	jint Calendar::WALLTIME_LAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"WALLTIME_LAST");
+			"WALLTIME_LAST"
+		);
 	}
 	jint Calendar::WALLTIME_NEXT_VALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"WALLTIME_NEXT_VALID");
+			"WALLTIME_NEXT_VALID"
+		);
 	}
 	jint Calendar::WEDNESDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"WEDNESDAY");
+			"WEDNESDAY"
+		);
 	}
 	jint Calendar::WEEK_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"WEEK_OF_MONTH");
+			"WEEK_OF_MONTH"
+		);
 	}
 	jint Calendar::WEEK_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"WEEK_OF_YEAR");
+			"WEEK_OF_YEAR"
+		);
 	}
 	jint Calendar::YEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"YEAR");
+			"YEAR"
+		);
 	}
 	jint Calendar::YEAR_WOY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"YEAR_WOY");
+			"YEAR_WOY"
+		);
 	}
 	jint Calendar::ZONE_OFFSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.Calendar",
-			"ZONE_OFFSET");
+			"ZONE_OFFSET"
+		);
 	}
 	
 	// Constructors
@@ -475,66 +524,76 @@ namespace __jni_impl::android::icu::util
 			"add",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Calendar::get(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"get",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Calendar::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Calendar::toString()
+	jstring Calendar::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Calendar::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Calendar::clone()
+	jobject Calendar::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint Calendar::compareTo(__jni_impl::android::icu::util::Calendar arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Landroid/icu/util/Calendar;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Calendar::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	void Calendar::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	void Calendar::clear(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"clear",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Calendar::getInstance(__jni_impl::java::util::Locale arg0)
 	{
@@ -542,7 +601,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.Calendar",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/util/Calendar;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Calendar::getInstance(__jni_impl::android::icu::util::ULocale arg0)
 	{
@@ -550,7 +610,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.Calendar",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/Calendar;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Calendar::getInstance(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -559,14 +620,16 @@ namespace __jni_impl::android::icu::util
 			"getInstance",
 			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)Landroid/icu/util/Calendar;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Calendar::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getInstance",
-			"()Landroid/icu/util/Calendar;");
+			"()Landroid/icu/util/Calendar;"
+		);
 	}
 	QAndroidJniObject Calendar::getInstance(__jni_impl::android::icu::util::TimeZone arg0)
 	{
@@ -574,7 +637,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.Calendar",
 			"getInstance",
 			"(Landroid/icu/util/TimeZone;)Landroid/icu/util/Calendar;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Calendar::getInstance(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
@@ -583,7 +647,8 @@ namespace __jni_impl::android::icu::util
 			"getInstance",
 			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)Landroid/icu/util/Calendar;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -595,7 +660,8 @@ namespace __jni_impl::android::icu::util
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Calendar::set(jint arg0, jint arg1)
 	{
@@ -603,7 +669,8 @@ namespace __jni_impl::android::icu::util
 			"set",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Calendar::set(jint arg0, jint arg1, jint arg2)
 	{
@@ -612,7 +679,8 @@ namespace __jni_impl::android::icu::util
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -623,134 +691,145 @@ namespace __jni_impl::android::icu::util
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean Calendar::isSet(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSet",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Calendar::getType()
+	jstring Calendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Calendar::before(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"before",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Calendar::after(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"after",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Calendar::getAvailableLocales()
+	jarray Calendar::getAvailableLocales()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
 			"getAvailableLocales",
-			"()[Ljava/util/Locale;");
+			"()[Ljava/util/Locale;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Calendar::getTime()
 	{
 		return __thiz.callObjectMethod(
 			"getTime",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	void Calendar::setTime(__jni_impl::java::util::Date arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTime",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Calendar::getDisplayName(__jni_impl::android::icu::util::ULocale arg0)
+	jstring Calendar::getDisplayName(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject Calendar::getDisplayName(__jni_impl::java::util::Locale arg0)
+	jstring Calendar::getDisplayName(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	void Calendar::setTimeInMillis(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimeInMillis",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Calendar::getLeastMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getLeastMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong Calendar::getTimeInMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTimeInMillis",
-			"()J");
+			"()J"
+		);
 	}
 	void Calendar::setTimeZone(__jni_impl::android::icu::util::TimeZone arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimeZone",
 			"(Landroid/icu/util/TimeZone;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Calendar::getTimeZone()
 	{
 		return __thiz.callObjectMethod(
 			"getTimeZone",
-			"()Landroid/icu/util/TimeZone;");
+			"()Landroid/icu/util/TimeZone;"
+		);
 	}
 	void Calendar::setLenient(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLenient",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Calendar::isLenient()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLenient",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Calendar::getFirstDayOfWeek()
 	{
 		return __thiz.callMethod<jint>(
 			"getFirstDayOfWeek",
-			"()I");
+			"()I"
+		);
 	}
 	jint Calendar::getMinimalDaysInFirstWeek()
 	{
 		return __thiz.callMethod<jint>(
 			"getMinimalDaysInFirstWeek",
-			"()I");
-	}
-	void Calendar::roll(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"roll",
-			"(II)V",
-			arg0,
-			arg1);
+			"()I"
+		);
 	}
 	void Calendar::roll(jint arg0, jboolean arg1)
 	{
@@ -758,58 +837,168 @@ namespace __jni_impl::android::icu::util
 			"roll",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void Calendar::roll(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"roll",
+			"(II)V",
+			arg0,
+			arg1
+		);
 	}
 	jint Calendar::getGreatestMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getGreatestMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	void Calendar::setFirstDayOfWeek(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFirstDayOfWeek",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Calendar::setMinimalDaysInFirstWeek(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMinimalDaysInFirstWeek",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Calendar::getActualMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getActualMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Calendar::getActualMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getActualMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Calendar::getMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Calendar::getMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Calendar::getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2)
+	jboolean Calendar::isEquivalentTo(__jni_impl::android::icu::util::Calendar arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEquivalentTo",
+			"(Landroid/icu/util/Calendar;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Calendar::fieldDifference(__jni_impl::java::util::Date arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"fieldDifference",
+			"(Ljava/util/Date;I)I",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void Calendar::setRepeatedWallTimeOption(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRepeatedWallTimeOption",
+			"(I)V",
+			arg0
+		);
+	}
+	jint Calendar::getRepeatedWallTimeOption()
+	{
+		return __thiz.callMethod<jint>(
+			"getRepeatedWallTimeOption",
+			"()I"
+		);
+	}
+	void Calendar::setSkippedWallTimeOption(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSkippedWallTimeOption",
+			"(I)V",
+			arg0
+		);
+	}
+	jint Calendar::getSkippedWallTimeOption()
+	{
+		return __thiz.callMethod<jint>(
+			"getSkippedWallTimeOption",
+			"()I"
+		);
+	}
+	jboolean Calendar::isWeekend()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWeekend",
+			"()Z"
+		);
+	}
+	jboolean Calendar::isWeekend(__jni_impl::java::util::Date arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWeekend",
+			"(Ljava/util/Date;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Calendar::getWeekDataForRegion(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Calendar",
+			"getWeekDataForRegion",
+			"(Ljava/lang/String;)Landroid/icu/util/Calendar$WeekData;",
+			arg0
+		);
+	}
+	QAndroidJniObject Calendar::getWeekData()
+	{
+		return __thiz.callObjectMethod(
+			"getWeekData",
+			"()Landroid/icu/util/Calendar$WeekData;"
+		);
+	}
+	QAndroidJniObject Calendar::setWeekData(__jni_impl::android::icu::util::Calendar_WeekData arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setWeekData",
+			"(Landroid/icu/util/Calendar$WeekData;)Landroid/icu/util/Calendar;",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Calendar::getFieldCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getFieldCount",
+			"()I"
+		);
+	}
+	jarray Calendar::getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Calendar",
@@ -817,16 +1006,8 @@ namespace __jni_impl::android::icu::util
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
-	}
-	QAndroidJniObject Calendar::getDateTimeFormat(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getDateTimeFormat",
-			"(IILjava/util/Locale;)Landroid/icu/text/DateFormat;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object());
+			arg2
+		).object<jarray>();
 	}
 	QAndroidJniObject Calendar::getDateTimeFormat(jint arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2)
 	{
@@ -835,88 +1016,18 @@ namespace __jni_impl::android::icu::util
 			"(IILandroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	jboolean Calendar::isEquivalentTo(__jni_impl::android::icu::util::Calendar arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEquivalentTo",
-			"(Landroid/icu/util/Calendar;)Z",
-			arg0.__jniObject().object());
-	}
-	jint Calendar::fieldDifference(__jni_impl::java::util::Date arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"fieldDifference",
-			"(Ljava/util/Date;I)I",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void Calendar::setRepeatedWallTimeOption(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRepeatedWallTimeOption",
-			"(I)V",
-			arg0);
-	}
-	jint Calendar::getRepeatedWallTimeOption()
-	{
-		return __thiz.callMethod<jint>(
-			"getRepeatedWallTimeOption",
-			"()I");
-	}
-	void Calendar::setSkippedWallTimeOption(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSkippedWallTimeOption",
-			"(I)V",
-			arg0);
-	}
-	jint Calendar::getSkippedWallTimeOption()
-	{
-		return __thiz.callMethod<jint>(
-			"getSkippedWallTimeOption",
-			"()I");
-	}
-	jboolean Calendar::isWeekend()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWeekend",
-			"()Z");
-	}
-	jboolean Calendar::isWeekend(__jni_impl::java::util::Date arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWeekend",
-			"(Ljava/util/Date;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Calendar::getWeekDataForRegion(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Calendar",
-			"getWeekDataForRegion",
-			"(Ljava/lang/String;)Landroid/icu/util/Calendar$WeekData;",
-			arg0);
-	}
-	QAndroidJniObject Calendar::getWeekData()
+	QAndroidJniObject Calendar::getDateTimeFormat(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2)
 	{
 		return __thiz.callObjectMethod(
-			"getWeekData",
-			"()Landroid/icu/util/Calendar$WeekData;");
-	}
-	QAndroidJniObject Calendar::setWeekData(__jni_impl::android::icu::util::Calendar_WeekData arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setWeekData",
-			"(Landroid/icu/util/Calendar$WeekData;)Landroid/icu/util/Calendar;",
-			arg0.__jniObject().object());
-	}
-	jint Calendar::getFieldCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getFieldCount",
-			"()I");
+			"getDateTimeFormat",
+			"(IILjava/util/Locale;)Landroid/icu/text/DateFormat;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

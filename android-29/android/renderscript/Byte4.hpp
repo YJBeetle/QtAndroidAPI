@@ -32,22 +32,26 @@ namespace __jni_impl::android::renderscript
 	jbyte Byte4::w()
 	{
 		return __thiz.getField<jbyte>(
-			"w");
+			"w"
+		);
 	}
 	jbyte Byte4::x()
 	{
 		return __thiz.getField<jbyte>(
-			"x");
+			"x"
+		);
 	}
 	jbyte Byte4::y()
 	{
 		return __thiz.getField<jbyte>(
-			"y");
+			"y"
+		);
 	}
 	jbyte Byte4::z()
 	{
 		return __thiz.getField<jbyte>(
-			"z");
+			"z"
+		);
 	}
 	
 	// Constructors

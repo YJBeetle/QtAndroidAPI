@@ -16,17 +16,17 @@ namespace __jni_impl::android::app
 	{
 	public:
 		// Fields
-		QAndroidJniObject activity();
-		QAndroidJniObject cause();
-		QAndroidJniObject info();
+		jstring activity();
+		jstring cause();
+		jstring info();
 		
 		// Constructors
 		void __constructor();
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -35,23 +35,26 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	// Fields
-	QAndroidJniObject ApplicationErrorReport_AnrInfo::activity()
+	jstring ApplicationErrorReport_AnrInfo::activity()
 	{
 		return __thiz.getObjectField(
 			"activity",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ApplicationErrorReport_AnrInfo::cause()
+	jstring ApplicationErrorReport_AnrInfo::cause()
 	{
 		return __thiz.getObjectField(
 			"cause",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ApplicationErrorReport_AnrInfo::info()
+	jstring ApplicationErrorReport_AnrInfo::info()
 	{
 		return __thiz.getObjectField(
 			"info",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -70,21 +73,23 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ApplicationErrorReport_AnrInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	void ApplicationErrorReport_AnrInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ApplicationErrorReport_AnrInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app
 

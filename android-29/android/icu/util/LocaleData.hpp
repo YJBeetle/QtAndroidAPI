@@ -41,7 +41,7 @@ namespace __jni_impl::android::icu::util
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
 		void setNoSubstitute(jboolean arg0);
 		jboolean getNoSubstitute();
-		QAndroidJniObject getDelimiter(jint arg0);
+		jstring getDelimiter(jint arg0);
 		static QAndroidJniObject getMeasurementSystem(__jni_impl::android::icu::util::ULocale arg0);
 		static QAndroidJniObject getPaperSize(__jni_impl::android::icu::util::ULocale arg0);
 		static QAndroidJniObject getCLDRVersion();
@@ -60,25 +60,29 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.LocaleData",
-			"ALT_QUOTATION_END");
+			"ALT_QUOTATION_END"
+		);
 	}
 	jint LocaleData::ALT_QUOTATION_START()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.LocaleData",
-			"ALT_QUOTATION_START");
+			"ALT_QUOTATION_START"
+		);
 	}
 	jint LocaleData::QUOTATION_END()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.LocaleData",
-			"QUOTATION_END");
+			"QUOTATION_END"
+		);
 	}
 	jint LocaleData::QUOTATION_START()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.LocaleData",
-			"QUOTATION_START");
+			"QUOTATION_START"
+		);
 	}
 	
 	// Constructors
@@ -95,7 +99,8 @@ namespace __jni_impl::android::icu::util
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.LocaleData",
 			"getInstance",
-			"()Landroid/icu/util/LocaleData;");
+			"()Landroid/icu/util/LocaleData;"
+		);
 	}
 	QAndroidJniObject LocaleData::getInstance(__jni_impl::android::icu::util::ULocale arg0)
 	{
@@ -103,27 +108,31 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.LocaleData",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LocaleData::setNoSubstitute(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNoSubstitute",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean LocaleData::getNoSubstitute()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getNoSubstitute",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject LocaleData::getDelimiter(jint arg0)
+	jstring LocaleData::getDelimiter(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDelimiter",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject LocaleData::getMeasurementSystem(__jni_impl::android::icu::util::ULocale arg0)
 	{
@@ -131,7 +140,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.LocaleData",
 			"getMeasurementSystem",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData$MeasurementSystem;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject LocaleData::getPaperSize(__jni_impl::android::icu::util::ULocale arg0)
 	{
@@ -139,14 +149,16 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.LocaleData",
 			"getPaperSize",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData$PaperSize;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject LocaleData::getCLDRVersion()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.LocaleData",
 			"getCLDRVersion",
-			"()Landroid/icu/util/VersionInfo;");
+			"()Landroid/icu/util/VersionInfo;"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

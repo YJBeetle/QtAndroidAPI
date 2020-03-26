@@ -19,7 +19,7 @@ namespace __jni_impl::javax::crypto::spec
 		
 		// Methods
 		jint getTLen();
-		QAndroidJniObject getIV();
+		jbyteArray getIV();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -53,13 +53,15 @@ namespace __jni_impl::javax::crypto::spec
 	{
 		return __thiz.callMethod<jint>(
 			"getTLen",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject GCMParameterSpec::getIV()
+	jbyteArray GCMParameterSpec::getIV()
 	{
 		return __thiz.callObjectMethod(
 			"getIV",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

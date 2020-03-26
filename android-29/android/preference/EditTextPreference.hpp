@@ -39,7 +39,7 @@ namespace __jni_impl::android::preference
 		
 		// Methods
 		void setText(jstring arg0);
-		QAndroidJniObject getText();
+		jstring getText();
 		QAndroidJniObject getEditText();
 		jboolean shouldDisableDependents();
 	};
@@ -96,25 +96,29 @@ namespace __jni_impl::android::preference
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject EditTextPreference::getText()
+	jstring EditTextPreference::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject EditTextPreference::getEditText()
 	{
 		return __thiz.callObjectMethod(
 			"getEditText",
-			"()Landroid/widget/EditText;");
+			"()Landroid/widget/EditText;"
+		);
 	}
 	jboolean EditTextPreference::shouldDisableDependents()
 	{
 		return __thiz.callMethod<jboolean>(
 			"shouldDisableDependents",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::preference
 

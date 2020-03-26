@@ -53,7 +53,8 @@ namespace __jni_impl::android::content::res
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint AssetManager_AssetInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -62,52 +63,60 @@ namespace __jni_impl::android::content::res
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AssetManager_AssetInputStream::read(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0);
+			arg0
+		);
 	}
 	void AssetManager_AssetInputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void AssetManager_AssetInputStream::mark(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"mark",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong AssetManager_AssetInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint AssetManager_AssetInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean AssetManager_AssetInputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AssetManager_AssetInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::content::res
 

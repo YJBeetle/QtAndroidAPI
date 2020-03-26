@@ -21,9 +21,9 @@ namespace __jni_impl::java::util
 		// Methods
 		jint countTokens();
 		jboolean hasMoreElements();
-		QAndroidJniObject nextToken(jstring arg0);
-		QAndroidJniObject nextToken();
-		QAndroidJniObject nextElement();
+		jstring nextToken(jstring arg0);
+		jstring nextToken();
+		jobject nextElement();
 		jboolean hasMoreTokens();
 	};
 } // namespace __jni_impl::java::util
@@ -64,38 +64,44 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callMethod<jint>(
 			"countTokens",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean StringTokenizer::hasMoreElements()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasMoreElements",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject StringTokenizer::nextToken(jstring arg0)
+	jstring StringTokenizer::nextToken(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"nextToken",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject StringTokenizer::nextToken()
+	jstring StringTokenizer::nextToken()
 	{
 		return __thiz.callObjectMethod(
 			"nextToken",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StringTokenizer::nextElement()
+	jobject StringTokenizer::nextElement()
 	{
 		return __thiz.callObjectMethod(
 			"nextElement",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean StringTokenizer::hasMoreTokens()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasMoreTokens",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::util
 

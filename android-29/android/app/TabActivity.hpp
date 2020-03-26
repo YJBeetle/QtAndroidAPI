@@ -68,33 +68,38 @@ namespace __jni_impl::android::app
 	{
 		__thiz.callMethod<void>(
 			"onContentChanged",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject TabActivity::getTabWidget()
 	{
 		return __thiz.callObjectMethod(
 			"getTabWidget",
-			"()Landroid/widget/TabWidget;");
+			"()Landroid/widget/TabWidget;"
+		);
 	}
 	QAndroidJniObject TabActivity::getTabHost()
 	{
 		return __thiz.callObjectMethod(
 			"getTabHost",
-			"()Landroid/widget/TabHost;");
+			"()Landroid/widget/TabHost;"
+		);
 	}
 	void TabActivity::setDefaultTab(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDefaultTab",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void TabActivity::setDefaultTab(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDefaultTab",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app
 

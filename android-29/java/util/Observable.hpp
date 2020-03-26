@@ -51,45 +51,52 @@ namespace __jni_impl::java::util
 		__thiz.callMethod<void>(
 			"notifyObservers",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Observable::notifyObservers()
 	{
 		__thiz.callMethod<void>(
 			"notifyObservers",
-			"()V");
+			"()V"
+		);
 	}
 	void Observable::addObserver(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addObserver",
 			"(Ljava/util/Observer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Observable::deleteObserver(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"deleteObserver",
 			"(Ljava/util/Observer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Observable::deleteObservers()
 	{
 		__thiz.callMethod<void>(
 			"deleteObservers",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Observable::hasChanged()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasChanged",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Observable::countObservers()
 	{
 		return __thiz.callMethod<jint>(
 			"countObservers",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::util
 

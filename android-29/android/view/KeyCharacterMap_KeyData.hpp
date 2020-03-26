@@ -14,7 +14,7 @@ namespace __jni_impl::android::view
 		// Fields
 		static jint META_LENGTH();
 		jchar displayLabel();
-		QAndroidJniObject meta();
+		jcharArray meta();
 		jchar number();
 		
 		// Constructors
@@ -32,23 +32,27 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyCharacterMap$KeyData",
-			"META_LENGTH");
+			"META_LENGTH"
+		);
 	}
 	jchar KeyCharacterMap_KeyData::displayLabel()
 	{
 		return __thiz.getField<jchar>(
-			"displayLabel");
+			"displayLabel"
+		);
 	}
-	QAndroidJniObject KeyCharacterMap_KeyData::meta()
+	jcharArray KeyCharacterMap_KeyData::meta()
 	{
 		return __thiz.getObjectField(
 			"meta",
-			"[C");
+			"[C"
+		).object<jcharArray>();
 	}
 	jchar KeyCharacterMap_KeyData::number()
 	{
 		return __thiz.getField<jchar>(
-			"number");
+			"number"
+		);
 	}
 	
 	// Constructors

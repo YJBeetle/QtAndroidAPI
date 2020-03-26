@@ -17,7 +17,7 @@ namespace __jni_impl::android::animation
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject evaluate(jfloat arg0, jobject arg1, jobject arg2);
+		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -35,14 +35,15 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	QAndroidJniObject ArgbEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
+	jobject ArgbEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
 	{
 		return __thiz.callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::animation
 

@@ -41,14 +41,16 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"setFilterById",
 			"([J)Landroid/app/DownloadManager$Query;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DownloadManager_Query::setFilterByStatus(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setFilterByStatus",
 			"(I)Landroid/app/DownloadManager$Query;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app
 

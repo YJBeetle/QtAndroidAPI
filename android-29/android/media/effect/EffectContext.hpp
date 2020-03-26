@@ -46,20 +46,23 @@ namespace __jni_impl::android::media::effect
 	{
 		return __thiz.callObjectMethod(
 			"getFactory",
-			"()Landroid/media/effect/EffectFactory;");
+			"()Landroid/media/effect/EffectFactory;"
+		);
 	}
 	void EffectContext::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject EffectContext::createWithCurrentGlContext()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.effect.EffectContext",
 			"createWithCurrentGlContext",
-			"()Landroid/media/effect/EffectContext;");
+			"()Landroid/media/effect/EffectContext;"
+		);
 	}
 } // namespace __jni_impl::android::media::effect
 

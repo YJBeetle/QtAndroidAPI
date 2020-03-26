@@ -29,10 +29,10 @@ namespace __jni_impl::android::drm
 		void __constructor(jstring arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getData();
-		QAndroidJniObject getMimeType();
-		QAndroidJniObject getAccountId();
-		QAndroidJniObject getSubscriptionId();
+		jbyteArray getData();
+		jstring getMimeType();
+		jstring getAccountId();
+		jstring getSubscriptionId();
 	};
 } // namespace __jni_impl::android::drm
 
@@ -89,29 +89,33 @@ namespace __jni_impl::android::drm
 	}
 	
 	// Methods
-	QAndroidJniObject DrmRights::getData()
+	jbyteArray DrmRights::getData()
 	{
 		return __thiz.callObjectMethod(
 			"getData",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject DrmRights::getMimeType()
+	jstring DrmRights::getMimeType()
 	{
 		return __thiz.callObjectMethod(
 			"getMimeType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DrmRights::getAccountId()
+	jstring DrmRights::getAccountId()
 	{
 		return __thiz.callObjectMethod(
 			"getAccountId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DrmRights::getSubscriptionId()
+	jstring DrmRights::getSubscriptionId()
 	{
 		return __thiz.callObjectMethod(
 			"getSubscriptionId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::drm
 

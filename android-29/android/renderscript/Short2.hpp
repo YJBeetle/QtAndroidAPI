@@ -30,12 +30,14 @@ namespace __jni_impl::android::renderscript
 	jshort Short2::x()
 	{
 		return __thiz.getField<jshort>(
-			"x");
+			"x"
+		);
 	}
 	jshort Short2::y()
 	{
 		return __thiz.getField<jshort>(
-			"y");
+			"y"
+		);
 	}
 	
 	// Constructors

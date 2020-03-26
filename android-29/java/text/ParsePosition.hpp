@@ -18,7 +18,7 @@ namespace __jni_impl::java::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getIndex();
 		jint getErrorIndex();
@@ -47,45 +47,52 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ParsePosition::toString()
+	jstring ParsePosition::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ParsePosition::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint ParsePosition::getIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jint ParsePosition::getErrorIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getErrorIndex",
-			"()I");
+			"()I"
+		);
 	}
 	void ParsePosition::setErrorIndex(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setErrorIndex",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ParsePosition::setIndex(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIndex",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::text
 

@@ -14,6 +14,14 @@ namespace __jni_impl::android::widget
 {
 	class Filter;
 }
+namespace __jni_impl::android::view
+{
+	class View;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup;
+}
 namespace __jni_impl::android::widget
 {
 	class ImageView;
@@ -25,14 +33,6 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::content::res
 {
 	class Resources_Theme;
-}
-namespace __jni_impl::android::view
-{
-	class View;
-}
-namespace __jni_impl::android::view
-{
-	class ViewGroup;
 }
 
 namespace __jni_impl::android::widget
@@ -48,28 +48,28 @@ namespace __jni_impl::android::widget
 		// Methods
 		jint getCount();
 		QAndroidJniObject getFilter();
-		QAndroidJniObject getItem(jint arg0);
-		void setDropDownViewResource(jint arg0);
+		jobject getItem(jint arg0);
+		QAndroidJniObject getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
 		QAndroidJniObject getViewBinder();
 		void setViewBinder(__jni_impl::__JniBaseClass arg0);
 		void setViewImage(__jni_impl::android::widget::ImageView arg0, jint arg1);
 		void setViewImage(__jni_impl::android::widget::ImageView arg0, jstring arg1);
 		void setViewText(__jni_impl::android::widget::TextView arg0, jstring arg1);
+		QAndroidJniObject getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
+		jlong getItemId(jint arg0);
 		void setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		QAndroidJniObject getDropDownViewTheme();
-		jlong getItemId(jint arg0);
-		QAndroidJniObject getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
-		QAndroidJniObject getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
+		void setDropDownViewResource(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "Filter.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "ImageView.hpp"
 #include "TextView.hpp"
 #include "../content/res/Resources_Theme.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -93,84 +93,23 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callMethod<jint>(
 			"getCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SimpleAdapter::getFilter()
 	{
 		return __thiz.callObjectMethod(
 			"getFilter",
-			"()Landroid/widget/Filter;");
+			"()Landroid/widget/Filter;"
+		);
 	}
-	QAndroidJniObject SimpleAdapter::getItem(jint arg0)
+	jobject SimpleAdapter::getItem(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getItem",
 			"(I)Ljava/lang/Object;",
-			arg0);
-	}
-	void SimpleAdapter::setDropDownViewResource(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDropDownViewResource",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject SimpleAdapter::getViewBinder()
-	{
-		return __thiz.callObjectMethod(
-			"getViewBinder",
-			"()Landroid/widget/SimpleAdapter$ViewBinder;");
-	}
-	void SimpleAdapter::setViewBinder(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setViewBinder",
-			"(Landroid/widget/SimpleAdapter$ViewBinder;)V",
-			arg0.__jniObject().object());
-	}
-	void SimpleAdapter::setViewImage(__jni_impl::android::widget::ImageView arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setViewImage",
-			"(Landroid/widget/ImageView;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void SimpleAdapter::setViewImage(__jni_impl::android::widget::ImageView arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setViewImage",
-			"(Landroid/widget/ImageView;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void SimpleAdapter::setViewText(__jni_impl::android::widget::TextView arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setViewText",
-			"(Landroid/widget/TextView;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	void SimpleAdapter::setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDropDownViewTheme",
-			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SimpleAdapter::getDropDownViewTheme()
-	{
-		return __thiz.callObjectMethod(
-			"getDropDownViewTheme",
-			"()Landroid/content/res/Resources$Theme;");
-	}
-	jlong SimpleAdapter::getItemId(jint arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getItemId",
-			"(I)J",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject SimpleAdapter::getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2)
 	{
@@ -179,7 +118,50 @@ namespace __jni_impl::android::widget
 			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SimpleAdapter::getViewBinder()
+	{
+		return __thiz.callObjectMethod(
+			"getViewBinder",
+			"()Landroid/widget/SimpleAdapter$ViewBinder;"
+		);
+	}
+	void SimpleAdapter::setViewBinder(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setViewBinder",
+			"(Landroid/widget/SimpleAdapter$ViewBinder;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SimpleAdapter::setViewImage(__jni_impl::android::widget::ImageView arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setViewImage",
+			"(Landroid/widget/ImageView;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void SimpleAdapter::setViewImage(__jni_impl::android::widget::ImageView arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setViewImage",
+			"(Landroid/widget/ImageView;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void SimpleAdapter::setViewText(__jni_impl::android::widget::TextView arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setViewText",
+			"(Landroid/widget/TextView;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	QAndroidJniObject SimpleAdapter::getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2)
 	{
@@ -188,7 +170,39 @@ namespace __jni_impl::android::widget
 			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	jlong SimpleAdapter::getItemId(jint arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getItemId",
+			"(I)J",
+			arg0
+		);
+	}
+	void SimpleAdapter::setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDropDownViewTheme",
+			"(Landroid/content/res/Resources$Theme;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SimpleAdapter::getDropDownViewTheme()
+	{
+		return __thiz.callObjectMethod(
+			"getDropDownViewTheme",
+			"()Landroid/content/res/Resources$Theme;"
+		);
+	}
+	void SimpleAdapter::setDropDownViewResource(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDropDownViewResource",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

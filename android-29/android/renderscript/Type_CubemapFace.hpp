@@ -27,7 +27,7 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::renderscript
@@ -41,63 +41,72 @@ namespace __jni_impl::android::renderscript
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
 			"POSITIVE_X",
-			"Landroid/renderscript/Type$CubemapFace;");
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
 	}
 	QAndroidJniObject Type_CubemapFace::NEGATIVE_X()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
 			"NEGATIVE_X",
-			"Landroid/renderscript/Type$CubemapFace;");
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
 	}
 	QAndroidJniObject Type_CubemapFace::POSITIVE_Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
 			"POSITIVE_Y",
-			"Landroid/renderscript/Type$CubemapFace;");
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
 	}
 	QAndroidJniObject Type_CubemapFace::NEGATIVE_Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
 			"NEGATIVE_Y",
-			"Landroid/renderscript/Type$CubemapFace;");
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
 	}
 	QAndroidJniObject Type_CubemapFace::POSITIVE_Z()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
 			"POSITIVE_Z",
-			"Landroid/renderscript/Type$CubemapFace;");
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
 	}
 	QAndroidJniObject Type_CubemapFace::NEGATIVE_Z()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
 			"NEGATIVE_Z",
-			"Landroid/renderscript/Type$CubemapFace;");
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
 	}
 	QAndroidJniObject Type_CubemapFace::POSITVE_X()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
 			"POSITVE_X",
-			"Landroid/renderscript/Type$CubemapFace;");
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
 	}
 	QAndroidJniObject Type_CubemapFace::POSITVE_Y()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
 			"POSITVE_Y",
-			"Landroid/renderscript/Type$CubemapFace;");
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
 	}
 	QAndroidJniObject Type_CubemapFace::POSITVE_Z()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Type$CubemapFace",
 			"POSITVE_Z",
-			"Landroid/renderscript/Type$CubemapFace;");
+			"Landroid/renderscript/Type$CubemapFace;"
+		);
 	}
 	
 	// Constructors
@@ -109,12 +118,13 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	QAndroidJniObject Type_CubemapFace::values()
+	jarray Type_CubemapFace::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Type$CubemapFace",
 			"values",
-			"()[Landroid/renderscript/Type$CubemapFace;");
+			"()[Landroid/renderscript/Type$CubemapFace;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Type_CubemapFace::valueOf(jstring arg0)
 	{
@@ -122,7 +132,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Type$CubemapFace",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Type$CubemapFace;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

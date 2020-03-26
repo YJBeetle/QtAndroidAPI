@@ -23,7 +23,7 @@ namespace __jni_impl::android::transition
 		
 		// Methods
 		void captureValues(__jni_impl::android::transition::TransitionValues arg0);
-		QAndroidJniObject getPropagationProperties();
+		jarray getPropagationProperties();
 		jint getViewVisibility(__jni_impl::android::transition::TransitionValues arg0);
 		jint getViewX(__jni_impl::android::transition::TransitionValues arg0);
 		jint getViewY(__jni_impl::android::transition::TransitionValues arg0);
@@ -50,34 +50,39 @@ namespace __jni_impl::android::transition
 		__thiz.callMethod<void>(
 			"captureValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject VisibilityPropagation::getPropagationProperties()
+	jarray VisibilityPropagation::getPropagationProperties()
 	{
 		return __thiz.callObjectMethod(
 			"getPropagationProperties",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jint VisibilityPropagation::getViewVisibility(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getViewVisibility",
 			"(Landroid/transition/TransitionValues;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint VisibilityPropagation::getViewX(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getViewX",
 			"(Landroid/transition/TransitionValues;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint VisibilityPropagation::getViewY(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getViewY",
 			"(Landroid/transition/TransitionValues;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::transition
 

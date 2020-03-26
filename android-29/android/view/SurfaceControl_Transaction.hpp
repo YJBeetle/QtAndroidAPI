@@ -28,12 +28,12 @@ namespace __jni_impl::android::view
 		void apply();
 		QAndroidJniObject merge(__jni_impl::android::view::SurfaceControl_Transaction arg0);
 		void close();
-		QAndroidJniObject setAlpha(__jni_impl::android::view::SurfaceControl arg0, jfloat arg1);
-		QAndroidJniObject reparent(__jni_impl::android::view::SurfaceControl arg0, __jni_impl::android::view::SurfaceControl arg1);
-		QAndroidJniObject setVisibility(__jni_impl::android::view::SurfaceControl arg0, jboolean arg1);
+		QAndroidJniObject setBufferSize(__jni_impl::android::view::SurfaceControl arg0, jint arg1, jint arg2);
 		QAndroidJniObject setLayer(__jni_impl::android::view::SurfaceControl arg0, jint arg1);
 		QAndroidJniObject setGeometry(__jni_impl::android::view::SurfaceControl arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, jint arg3);
-		QAndroidJniObject setBufferSize(__jni_impl::android::view::SurfaceControl arg0, jint arg1, jint arg2);
+		QAndroidJniObject setVisibility(__jni_impl::android::view::SurfaceControl arg0, jboolean arg1);
+		QAndroidJniObject reparent(__jni_impl::android::view::SurfaceControl arg0, __jni_impl::android::view::SurfaceControl arg1);
+		QAndroidJniObject setAlpha(__jni_impl::android::view::SurfaceControl arg0, jfloat arg1);
 	};
 } // namespace __jni_impl::android::view
 
@@ -57,44 +57,33 @@ namespace __jni_impl::android::view
 	{
 		__thiz.callMethod<void>(
 			"apply",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject SurfaceControl_Transaction::merge(__jni_impl::android::view::SurfaceControl_Transaction arg0)
 	{
 		return __thiz.callObjectMethod(
 			"merge",
 			"(Landroid/view/SurfaceControl$Transaction;)Landroid/view/SurfaceControl$Transaction;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SurfaceControl_Transaction::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject SurfaceControl_Transaction::setAlpha(__jni_impl::android::view::SurfaceControl arg0, jfloat arg1)
+	QAndroidJniObject SurfaceControl_Transaction::setBufferSize(__jni_impl::android::view::SurfaceControl arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
-			"setAlpha",
-			"(Landroid/view/SurfaceControl;F)Landroid/view/SurfaceControl$Transaction;",
+			"setBufferSize",
+			"(Landroid/view/SurfaceControl;II)Landroid/view/SurfaceControl$Transaction;",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject SurfaceControl_Transaction::reparent(__jni_impl::android::view::SurfaceControl arg0, __jni_impl::android::view::SurfaceControl arg1)
-	{
-		return __thiz.callObjectMethod(
-			"reparent",
-			"(Landroid/view/SurfaceControl;Landroid/view/SurfaceControl;)Landroid/view/SurfaceControl$Transaction;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject SurfaceControl_Transaction::setVisibility(__jni_impl::android::view::SurfaceControl arg0, jboolean arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setVisibility",
-			"(Landroid/view/SurfaceControl;Z)Landroid/view/SurfaceControl$Transaction;",
-			arg0.__jniObject().object(),
-			arg1);
+			arg1,
+			arg2
+		);
 	}
 	QAndroidJniObject SurfaceControl_Transaction::setLayer(__jni_impl::android::view::SurfaceControl arg0, jint arg1)
 	{
@@ -102,7 +91,8 @@ namespace __jni_impl::android::view
 			"setLayer",
 			"(Landroid/view/SurfaceControl;I)Landroid/view/SurfaceControl$Transaction;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SurfaceControl_Transaction::setGeometry(__jni_impl::android::view::SurfaceControl arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, jint arg3)
 	{
@@ -112,16 +102,35 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
-	QAndroidJniObject SurfaceControl_Transaction::setBufferSize(__jni_impl::android::view::SurfaceControl arg0, jint arg1, jint arg2)
+	QAndroidJniObject SurfaceControl_Transaction::setVisibility(__jni_impl::android::view::SurfaceControl arg0, jboolean arg1)
 	{
 		return __thiz.callObjectMethod(
-			"setBufferSize",
-			"(Landroid/view/SurfaceControl;II)Landroid/view/SurfaceControl$Transaction;",
+			"setVisibility",
+			"(Landroid/view/SurfaceControl;Z)Landroid/view/SurfaceControl$Transaction;",
 			arg0.__jniObject().object(),
-			arg1,
-			arg2);
+			arg1
+		);
+	}
+	QAndroidJniObject SurfaceControl_Transaction::reparent(__jni_impl::android::view::SurfaceControl arg0, __jni_impl::android::view::SurfaceControl arg1)
+	{
+		return __thiz.callObjectMethod(
+			"reparent",
+			"(Landroid/view/SurfaceControl;Landroid/view/SurfaceControl;)Landroid/view/SurfaceControl$Transaction;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SurfaceControl_Transaction::setAlpha(__jni_impl::android::view::SurfaceControl arg0, jfloat arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setAlpha",
+			"(Landroid/view/SurfaceControl;F)Landroid/view/SurfaceControl$Transaction;",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view
 

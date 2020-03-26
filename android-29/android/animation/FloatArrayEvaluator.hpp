@@ -18,8 +18,8 @@ namespace __jni_impl::android::animation
 		void __constructor(jfloatArray arg0);
 		
 		// Methods
-		QAndroidJniObject evaluate(jfloat arg0, jobject arg1, jobject arg2);
-		QAndroidJniObject evaluate(jfloat arg0, jfloatArray arg1, jfloatArray arg2);
+		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
+		jfloatArray evaluate(jfloat arg0, jfloatArray arg1, jfloatArray arg2);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -44,23 +44,25 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	QAndroidJniObject FloatArrayEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
+	jobject FloatArrayEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
 	{
 		return __thiz.callObjectMethod(
 			"evaluate",
 			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jobject>();
 	}
-	QAndroidJniObject FloatArrayEvaluator::evaluate(jfloat arg0, jfloatArray arg1, jfloatArray arg2)
+	jfloatArray FloatArrayEvaluator::evaluate(jfloat arg0, jfloatArray arg1, jfloatArray arg2)
 	{
 		return __thiz.callObjectMethod(
 			"evaluate",
 			"(F[F[F)[F",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jfloatArray>();
 	}
 } // namespace __jni_impl::android::animation
 

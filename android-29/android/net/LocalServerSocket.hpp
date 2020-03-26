@@ -66,25 +66,29 @@ namespace __jni_impl::android::net
 	{
 		return __thiz.callObjectMethod(
 			"accept",
-			"()Landroid/net/LocalSocket;");
+			"()Landroid/net/LocalSocket;"
+		);
 	}
 	void LocalServerSocket::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject LocalServerSocket::getFileDescriptor()
 	{
 		return __thiz.callObjectMethod(
 			"getFileDescriptor",
-			"()Ljava/io/FileDescriptor;");
+			"()Ljava/io/FileDescriptor;"
+		);
 	}
 	QAndroidJniObject LocalServerSocket::getLocalSocketAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalSocketAddress",
-			"()Landroid/net/LocalSocketAddress;");
+			"()Landroid/net/LocalSocketAddress;"
+		);
 	}
 } // namespace __jni_impl::android::net
 

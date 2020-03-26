@@ -36,7 +36,7 @@ namespace __jni_impl::java::io
 		jint read();
 		jint read(jcharArray arg0, jint arg1, jint arg2);
 		void close();
-		QAndroidJniObject getEncoding();
+		jstring getEncoding();
 		jboolean ready();
 	};
 } // namespace __jni_impl::java::io
@@ -87,7 +87,8 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint InputStreamReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -96,25 +97,29 @@ namespace __jni_impl::java::io
 			"([CII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void InputStreamReader::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject InputStreamReader::getEncoding()
+	jstring InputStreamReader::getEncoding()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoding",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean InputStreamReader::ready()
 	{
 		return __thiz.callMethod<jboolean>(
 			"ready",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::io
 

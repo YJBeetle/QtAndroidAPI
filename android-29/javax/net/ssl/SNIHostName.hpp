@@ -24,9 +24,9 @@ namespace __jni_impl::javax::net::ssl
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getAsciiName();
+		jstring getAsciiName();
 		static QAndroidJniObject createSNIMatcher(jstring arg0);
 	};
 } // namespace __jni_impl::javax::net::ssl
@@ -59,25 +59,29 @@ namespace __jni_impl::javax::net::ssl
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SNIHostName::toString()
+	jstring SNIHostName::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SNIHostName::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SNIHostName::getAsciiName()
+	jstring SNIHostName::getAsciiName()
 	{
 		return __thiz.callObjectMethod(
 			"getAsciiName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject SNIHostName::createSNIMatcher(jstring arg0)
 	{
@@ -85,7 +89,8 @@ namespace __jni_impl::javax::net::ssl
 			"javax.net.ssl.SNIHostName",
 			"createSNIMatcher",
 			"(Ljava/lang/String;)Ljavax/net/ssl/SNIMatcher;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

@@ -27,11 +27,9 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		
 		// Methods
-		jfloat getRating();
-		QAndroidJniObject getAccessibilityClassName();
-		void setMax(jint arg0);
 		jboolean isIndicator();
 		void setRating(jfloat arg0);
+		void setMax(jint arg0);
 		void setOnRatingBarChangeListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getOnRatingBarChangeListener();
 		void setIsIndicator(jboolean arg0);
@@ -39,6 +37,8 @@ namespace __jni_impl::android::widget
 		jint getNumStars();
 		void setStepSize(jfloat arg0);
 		jfloat getStepSize();
+		jstring getAccessibilityClassName();
+		jfloat getRating();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -85,83 +85,95 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	jfloat RatingBar::getRating()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRating",
-			"()F");
-	}
-	QAndroidJniObject RatingBar::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	void RatingBar::setMax(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMax",
-			"(I)V",
-			arg0);
-	}
 	jboolean RatingBar::isIndicator()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isIndicator",
-			"()Z");
+			"()Z"
+		);
 	}
 	void RatingBar::setRating(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRating",
 			"(F)V",
-			arg0);
+			arg0
+		);
+	}
+	void RatingBar::setMax(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMax",
+			"(I)V",
+			arg0
+		);
 	}
 	void RatingBar::setOnRatingBarChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnRatingBarChangeListener",
 			"(Landroid/widget/RatingBar$OnRatingBarChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RatingBar::getOnRatingBarChangeListener()
 	{
 		return __thiz.callObjectMethod(
 			"getOnRatingBarChangeListener",
-			"()Landroid/widget/RatingBar$OnRatingBarChangeListener;");
+			"()Landroid/widget/RatingBar$OnRatingBarChangeListener;"
+		);
 	}
 	void RatingBar::setIsIndicator(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIsIndicator",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void RatingBar::setNumStars(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNumStars",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint RatingBar::getNumStars()
 	{
 		return __thiz.callMethod<jint>(
 			"getNumStars",
-			"()I");
+			"()I"
+		);
 	}
 	void RatingBar::setStepSize(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setStepSize",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RatingBar::getStepSize()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getStepSize",
-			"()F");
+			"()F"
+		);
+	}
+	jstring RatingBar::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jfloat RatingBar::getRating()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRating",
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

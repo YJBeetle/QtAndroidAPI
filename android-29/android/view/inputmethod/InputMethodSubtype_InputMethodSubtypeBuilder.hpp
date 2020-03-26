@@ -54,77 +54,88 @@ namespace __jni_impl::android::view::inputmethod
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/inputmethod/InputMethodSubtype;");
+			"()Landroid/view/inputmethod/InputMethodSubtype;"
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setLanguageTag(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLanguageTag",
 			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setIsAuxiliary(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIsAuxiliary",
 			"(Z)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setOverridesImplicitlyEnabledSubtype(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setOverridesImplicitlyEnabledSubtype",
 			"(Z)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setIsAsciiCapable(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIsAsciiCapable",
 			"(Z)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeIconResId(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSubtypeIconResId",
 			"(I)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeNameResId(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSubtypeNameResId",
 			"(I)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeId(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSubtypeId",
 			"(I)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeLocale(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSubtypeLocale",
 			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeMode(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSubtypeMode",
 			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeExtraValue(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSubtypeExtraValue",
 			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

@@ -65,7 +65,8 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void MediaRouter_SimpleCallback::onRouteUnselected(__jni_impl::android::media::MediaRouter arg0, jint arg1, __jni_impl::android::media::MediaRouter_RouteInfo arg2)
 	{
@@ -74,7 +75,8 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void MediaRouter_SimpleCallback::onRouteAdded(__jni_impl::android::media::MediaRouter arg0, __jni_impl::android::media::MediaRouter_RouteInfo arg1)
 	{
@@ -82,7 +84,8 @@ namespace __jni_impl::android::media
 			"onRouteAdded",
 			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaRouter_SimpleCallback::onRouteRemoved(__jni_impl::android::media::MediaRouter arg0, __jni_impl::android::media::MediaRouter_RouteInfo arg1)
 	{
@@ -90,7 +93,8 @@ namespace __jni_impl::android::media
 			"onRouteRemoved",
 			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaRouter_SimpleCallback::onRouteChanged(__jni_impl::android::media::MediaRouter arg0, __jni_impl::android::media::MediaRouter_RouteInfo arg1)
 	{
@@ -98,7 +102,8 @@ namespace __jni_impl::android::media
 			"onRouteChanged",
 			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaRouter_SimpleCallback::onRouteGrouped(__jni_impl::android::media::MediaRouter arg0, __jni_impl::android::media::MediaRouter_RouteInfo arg1, __jni_impl::android::media::MediaRouter_RouteGroup arg2, jint arg3)
 	{
@@ -108,7 +113,8 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void MediaRouter_SimpleCallback::onRouteUngrouped(__jni_impl::android::media::MediaRouter arg0, __jni_impl::android::media::MediaRouter_RouteInfo arg1, __jni_impl::android::media::MediaRouter_RouteGroup arg2)
 	{
@@ -117,7 +123,8 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;Landroid/media/MediaRouter$RouteGroup;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void MediaRouter_SimpleCallback::onRouteVolumeChanged(__jni_impl::android::media::MediaRouter arg0, __jni_impl::android::media::MediaRouter_RouteInfo arg1)
 	{
@@ -125,7 +132,8 @@ namespace __jni_impl::android::media
 			"onRouteVolumeChanged",
 			"(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

@@ -63,28 +63,32 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/textclassifier/ConversationActions$Message;");
+			"()Landroid/view/textclassifier/ConversationActions$Message;"
+		);
 	}
 	QAndroidJniObject ConversationActions_Message_Builder::setText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setText",
 			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ConversationActions_Message_Builder::setReferenceTime(__jni_impl::java::time::ZonedDateTime arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setReferenceTime",
 			"(Ljava/time/ZonedDateTime;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConversationActions_Message_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

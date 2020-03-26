@@ -16,14 +16,14 @@ namespace __jni_impl::android::net::wifi
 	{
 	public:
 		// Fields
-		QAndroidJniObject BSSID();
+		jstring BSSID();
 		static QAndroidJniObject CREATOR();
 		static jint DISPLAY();
 		static jint INVALID();
 		static jint KEYPAD();
 		static jint LABEL();
 		static jint PBC();
-		QAndroidJniObject pin();
+		jstring pin();
 		jint setup();
 		
 		// Constructors
@@ -31,7 +31,7 @@ namespace __jni_impl::android::net::wifi
 		void __constructor(__jni_impl::android::net::wifi::WpsInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -42,59 +42,68 @@ namespace __jni_impl::android::net::wifi
 namespace __jni_impl::android::net::wifi
 {
 	// Fields
-	QAndroidJniObject WpsInfo::BSSID()
+	jstring WpsInfo::BSSID()
 	{
 		return __thiz.getObjectField(
 			"BSSID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject WpsInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WpsInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint WpsInfo::DISPLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
-			"DISPLAY");
+			"DISPLAY"
+		);
 	}
 	jint WpsInfo::INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
-			"INVALID");
+			"INVALID"
+		);
 	}
 	jint WpsInfo::KEYPAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
-			"KEYPAD");
+			"KEYPAD"
+		);
 	}
 	jint WpsInfo::LABEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
-			"LABEL");
+			"LABEL"
+		);
 	}
 	jint WpsInfo::PBC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WpsInfo",
-			"PBC");
+			"PBC"
+		);
 	}
-	QAndroidJniObject WpsInfo::pin()
+	jstring WpsInfo::pin()
 	{
 		return __thiz.getObjectField(
 			"pin",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WpsInfo::setup()
 	{
 		return __thiz.getField<jint>(
-			"setup");
+			"setup"
+		);
 	}
 	
 	// Constructors
@@ -113,17 +122,19 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	QAndroidJniObject WpsInfo::toString()
+	jstring WpsInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WpsInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void WpsInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -131,7 +142,8 @@ namespace __jni_impl::android::net::wifi
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi
 

@@ -72,7 +72,8 @@ namespace __jni_impl::android::app::usage
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject NetworkStatsManager::querySummaryForUser(jint arg0, jstring arg1, jlong arg2, jlong arg3)
 	{
@@ -82,7 +83,8 @@ namespace __jni_impl::android::app::usage
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject NetworkStatsManager::querySummary(jint arg0, jstring arg1, jlong arg2, jlong arg3)
 	{
@@ -92,7 +94,8 @@ namespace __jni_impl::android::app::usage
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject NetworkStatsManager::queryDetailsForUid(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4)
 	{
@@ -103,7 +106,8 @@ namespace __jni_impl::android::app::usage
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject NetworkStatsManager::queryDetailsForUidTag(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5)
 	{
@@ -115,7 +119,8 @@ namespace __jni_impl::android::app::usage
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	QAndroidJniObject NetworkStatsManager::queryDetailsForUidTagState(jint arg0, jstring arg1, jlong arg2, jlong arg3, jint arg4, jint arg5, jint arg6)
 	{
@@ -128,7 +133,8 @@ namespace __jni_impl::android::app::usage
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	QAndroidJniObject NetworkStatsManager::queryDetails(jint arg0, jstring arg1, jlong arg2, jlong arg3)
 	{
@@ -138,7 +144,8 @@ namespace __jni_impl::android::app::usage
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void NetworkStatsManager::registerUsageCallback(jint arg0, jstring arg1, jlong arg2, __jni_impl::android::app::usage::NetworkStatsManager_UsageCallback arg3, __jni_impl::android::os::Handler arg4)
 	{
@@ -149,7 +156,8 @@ namespace __jni_impl::android::app::usage
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void NetworkStatsManager::registerUsageCallback(jint arg0, jstring arg1, jlong arg2, __jni_impl::android::app::usage::NetworkStatsManager_UsageCallback arg3)
 	{
@@ -159,14 +167,16 @@ namespace __jni_impl::android::app::usage
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void NetworkStatsManager::unregisterUsageCallback(__jni_impl::android::app::usage::NetworkStatsManager_UsageCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterUsageCallback",
 			"(Landroid/app/usage/NetworkStatsManager$UsageCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

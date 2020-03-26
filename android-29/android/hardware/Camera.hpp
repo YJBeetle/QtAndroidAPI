@@ -24,8 +24,8 @@ namespace __jni_impl::android::hardware
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_NEW_PICTURE();
-		static QAndroidJniObject ACTION_NEW_VIDEO();
+		static jstring ACTION_NEW_PICTURE();
+		static jstring ACTION_NEW_VIDEO();
 		static jint CAMERA_ERROR_EVICTED();
 		static jint CAMERA_ERROR_SERVER_DIED();
 		static jint CAMERA_ERROR_UNKNOWN();
@@ -76,37 +76,42 @@ namespace __jni_impl::android::hardware
 namespace __jni_impl::android::hardware
 {
 	// Fields
-	QAndroidJniObject Camera::ACTION_NEW_PICTURE()
+	jstring Camera::ACTION_NEW_PICTURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.Camera",
 			"ACTION_NEW_PICTURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Camera::ACTION_NEW_VIDEO()
+	jstring Camera::ACTION_NEW_VIDEO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.Camera",
 			"ACTION_NEW_VIDEO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Camera::CAMERA_ERROR_EVICTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.Camera",
-			"CAMERA_ERROR_EVICTED");
+			"CAMERA_ERROR_EVICTED"
+		);
 	}
 	jint Camera::CAMERA_ERROR_SERVER_DIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.Camera",
-			"CAMERA_ERROR_SERVER_DIED");
+			"CAMERA_ERROR_SERVER_DIED"
+		);
 	}
 	jint Camera::CAMERA_ERROR_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.Camera",
-			"CAMERA_ERROR_UNKNOWN");
+			"CAMERA_ERROR_UNKNOWN"
+		);
 	}
 	
 	// Constructors
@@ -122,7 +127,8 @@ namespace __jni_impl::android::hardware
 	{
 		__thiz.callMethod<void>(
 			"lock",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Camera::open(jint arg0)
 	{
@@ -130,46 +136,53 @@ namespace __jni_impl::android::hardware
 			"android.hardware.Camera",
 			"open",
 			"(I)Landroid/hardware/Camera;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Camera::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.hardware.Camera",
 			"open",
-			"()Landroid/hardware/Camera;");
+			"()Landroid/hardware/Camera;"
+		);
 	}
 	QAndroidJniObject Camera::getParameters()
 	{
 		return __thiz.callObjectMethod(
 			"getParameters",
-			"()Landroid/hardware/Camera$Parameters;");
+			"()Landroid/hardware/Camera$Parameters;"
+		);
 	}
 	void Camera::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	void Camera::unlock()
 	{
 		__thiz.callMethod<void>(
 			"unlock",
-			"()V");
+			"()V"
+		);
 	}
 	void Camera::setParameters(__jni_impl::android::hardware::Camera_Parameters arg0)
 	{
 		__thiz.callMethod<void>(
 			"setParameters",
 			"(Landroid/hardware/Camera$Parameters;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Camera::getNumberOfCameras()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.hardware.Camera",
 			"getNumberOfCameras",
-			"()I");
+			"()I"
+		);
 	}
 	void Camera::getCameraInfo(jint arg0, __jni_impl::android::hardware::Camera_CameraInfo arg1)
 	{
@@ -178,87 +191,100 @@ namespace __jni_impl::android::hardware
 			"getCameraInfo",
 			"(ILandroid/hardware/Camera$CameraInfo;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Camera::reconnect()
 	{
 		__thiz.callMethod<void>(
 			"reconnect",
-			"()V");
+			"()V"
+		);
 	}
 	void Camera::setPreviewDisplay(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPreviewDisplay",
 			"(Landroid/view/SurfaceHolder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Camera::setPreviewTexture(__jni_impl::android::graphics::SurfaceTexture arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPreviewTexture",
 			"(Landroid/graphics/SurfaceTexture;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Camera::startPreview()
 	{
 		__thiz.callMethod<void>(
 			"startPreview",
-			"()V");
+			"()V"
+		);
 	}
 	void Camera::stopPreview()
 	{
 		__thiz.callMethod<void>(
 			"stopPreview",
-			"()V");
+			"()V"
+		);
 	}
 	void Camera::setPreviewCallback(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPreviewCallback",
 			"(Landroid/hardware/Camera$PreviewCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Camera::setOneShotPreviewCallback(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOneShotPreviewCallback",
 			"(Landroid/hardware/Camera$PreviewCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Camera::setPreviewCallbackWithBuffer(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPreviewCallbackWithBuffer",
 			"(Landroid/hardware/Camera$PreviewCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Camera::addCallbackBuffer(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"addCallbackBuffer",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Camera::autoFocus(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"autoFocus",
 			"(Landroid/hardware/Camera$AutoFocusCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Camera::cancelAutoFocus()
 	{
 		__thiz.callMethod<void>(
 			"cancelAutoFocus",
-			"()V");
+			"()V"
+		);
 	}
 	void Camera::setAutoFocusMoveCallback(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAutoFocusMoveCallback",
 			"(Landroid/hardware/Camera$AutoFocusMoveCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Camera::takePicture(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -267,7 +293,8 @@ namespace __jni_impl::android::hardware
 			"(Landroid/hardware/Camera$ShutterCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void Camera::takePicture(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -277,67 +304,77 @@ namespace __jni_impl::android::hardware
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void Camera::startSmoothZoom(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"startSmoothZoom",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Camera::stopSmoothZoom()
 	{
 		__thiz.callMethod<void>(
 			"stopSmoothZoom",
-			"()V");
+			"()V"
+		);
 	}
 	void Camera::setDisplayOrientation(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDisplayOrientation",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Camera::enableShutterSound(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"enableShutterSound",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	void Camera::setZoomChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setZoomChangeListener",
 			"(Landroid/hardware/Camera$OnZoomChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Camera::setFaceDetectionListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFaceDetectionListener",
 			"(Landroid/hardware/Camera$FaceDetectionListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Camera::startFaceDetection()
 	{
 		__thiz.callMethod<void>(
 			"startFaceDetection",
-			"()V");
+			"()V"
+		);
 	}
 	void Camera::stopFaceDetection()
 	{
 		__thiz.callMethod<void>(
 			"stopFaceDetection",
-			"()V");
+			"()V"
+		);
 	}
 	void Camera::setErrorCallback(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setErrorCallback",
 			"(Landroid/hardware/Camera$ErrorCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::hardware
 

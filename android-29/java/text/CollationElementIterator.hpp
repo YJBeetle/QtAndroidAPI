@@ -50,7 +50,8 @@ namespace __jni_impl::java::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.text.CollationElementIterator",
-			"NULLORDER");
+			"NULLORDER"
+		);
 	}
 	
 	// Constructors
@@ -66,46 +67,53 @@ namespace __jni_impl::java::text
 	{
 		return __thiz.callMethod<jint>(
 			"next",
-			"()I");
+			"()I"
+		);
 	}
 	void CollationElementIterator::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	jint CollationElementIterator::getOffset()
 	{
 		return __thiz.callMethod<jint>(
 			"getOffset",
-			"()I");
+			"()I"
+		);
 	}
 	void CollationElementIterator::setOffset(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOffset",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CollationElementIterator::setText(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/text/CharacterIterator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CollationElementIterator::setText(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CollationElementIterator::previous()
 	{
 		return __thiz.callMethod<jint>(
 			"previous",
-			"()I");
+			"()I"
+		);
 	}
 	jint CollationElementIterator::primaryOrder(jint arg0)
 	{
@@ -113,7 +121,8 @@ namespace __jni_impl::java::text
 			"java.text.CollationElementIterator",
 			"primaryOrder",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jshort CollationElementIterator::secondaryOrder(jint arg0)
 	{
@@ -121,7 +130,8 @@ namespace __jni_impl::java::text
 			"java.text.CollationElementIterator",
 			"secondaryOrder",
 			"(I)S",
-			arg0);
+			arg0
+		);
 	}
 	jshort CollationElementIterator::tertiaryOrder(jint arg0)
 	{
@@ -129,14 +139,16 @@ namespace __jni_impl::java::text
 			"java.text.CollationElementIterator",
 			"tertiaryOrder",
 			"(I)S",
-			arg0);
+			arg0
+		);
 	}
 	jint CollationElementIterator::getMaxExpansion(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxExpansion",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::text
 

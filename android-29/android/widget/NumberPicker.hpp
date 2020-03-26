@@ -16,6 +16,10 @@ namespace __jni_impl::android::view
 {
 	class MotionEvent;
 }
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
+}
 namespace __jni_impl::android::view::accessibility
 {
 	class AccessibilityNodeProvider;
@@ -23,10 +27,6 @@ namespace __jni_impl::android::view::accessibility
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
-}
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
 }
 
 namespace __jni_impl::android::widget
@@ -46,21 +46,26 @@ namespace __jni_impl::android::widget
 		jint getValue();
 		void setValue(jint arg0);
 		void setFormatter(__jni_impl::__JniBaseClass arg0);
-		void setTextColor(jint arg0);
-		jint getMinValue();
-		jint getMaxValue();
+		void setOnScrollListener(__jni_impl::__JniBaseClass arg0);
 		void setOnValueChangedListener(__jni_impl::__JniBaseClass arg0);
 		jboolean getWrapSelectorWheel();
 		void setWrapSelectorWheel(jboolean arg0);
 		void setOnLongPressUpdateInterval(jlong arg0);
 		void setMinValue(jint arg0);
 		void setMaxValue(jint arg0);
-		QAndroidJniObject getDisplayedValues();
+		jarray getDisplayedValues();
 		void setDisplayedValues(jarray arg0);
 		void setSelectionDividerHeight(jint arg0);
 		jint getSelectionDividerHeight();
-		jint getTextColor();
-		void setOnScrollListener(__jni_impl::__JniBaseClass arg0);
+		jfloat getTextSize();
+		void setTextSize(jfloat arg0);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
+		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
+		jint getMinValue();
+		jint getMaxValue();
+		void setTextColor(jint arg0);
 		jboolean onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		void jumpDrawablesToCurrentState();
 		jboolean performClick();
@@ -70,20 +75,15 @@ namespace __jni_impl::android::widget
 		void scrollBy(jint arg0, jint arg1);
 		void computeScroll();
 		jint getSolidColor();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
-		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
-		jfloat getTextSize();
-		void setTextSize(jfloat arg0);
+		jint getTextColor();
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../view/MotionEvent.hpp"
+#include "../view/KeyEvent.hpp"
 #include "../view/accessibility/AccessibilityNodeProvider.hpp"
 #include "../graphics/Canvas.hpp"
-#include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -130,158 +130,222 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callMethod<jint>(
 			"getValue",
-			"()I");
+			"()I"
+		);
 	}
 	void NumberPicker::setValue(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setValue",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void NumberPicker::setFormatter(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFormatter",
 			"(Landroid/widget/NumberPicker$Formatter;)V",
-			arg0.__jniObject().object());
-	}
-	void NumberPicker::setTextColor(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextColor",
-			"(I)V",
-			arg0);
-	}
-	jint NumberPicker::getMinValue()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinValue",
-			"()I");
-	}
-	jint NumberPicker::getMaxValue()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxValue",
-			"()I");
-	}
-	void NumberPicker::setOnValueChangedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnValueChangedListener",
-			"(Landroid/widget/NumberPicker$OnValueChangeListener;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean NumberPicker::getWrapSelectorWheel()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getWrapSelectorWheel",
-			"()Z");
-	}
-	void NumberPicker::setWrapSelectorWheel(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setWrapSelectorWheel",
-			"(Z)V",
-			arg0);
-	}
-	void NumberPicker::setOnLongPressUpdateInterval(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnLongPressUpdateInterval",
-			"(J)V",
-			arg0);
-	}
-	void NumberPicker::setMinValue(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinValue",
-			"(I)V",
-			arg0);
-	}
-	void NumberPicker::setMaxValue(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMaxValue",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject NumberPicker::getDisplayedValues()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayedValues",
-			"()[Ljava/lang/String;");
-	}
-	void NumberPicker::setDisplayedValues(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDisplayedValues",
-			"([Ljava/lang/String;)V",
-			arg0);
-	}
-	void NumberPicker::setSelectionDividerHeight(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSelectionDividerHeight",
-			"(I)V",
-			arg0);
-	}
-	jint NumberPicker::getSelectionDividerHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getSelectionDividerHeight",
-			"()I");
-	}
-	jint NumberPicker::getTextColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextColor",
-			"()I");
+			arg0.__jniObject().object()
+		);
 	}
 	void NumberPicker::setOnScrollListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnScrollListener",
 			"(Landroid/widget/NumberPicker$OnScrollListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void NumberPicker::setOnValueChangedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnValueChangedListener",
+			"(Landroid/widget/NumberPicker$OnValueChangeListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean NumberPicker::getWrapSelectorWheel()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getWrapSelectorWheel",
+			"()Z"
+		);
+	}
+	void NumberPicker::setWrapSelectorWheel(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWrapSelectorWheel",
+			"(Z)V",
+			arg0
+		);
+	}
+	void NumberPicker::setOnLongPressUpdateInterval(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnLongPressUpdateInterval",
+			"(J)V",
+			arg0
+		);
+	}
+	void NumberPicker::setMinValue(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinValue",
+			"(I)V",
+			arg0
+		);
+	}
+	void NumberPicker::setMaxValue(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMaxValue",
+			"(I)V",
+			arg0
+		);
+	}
+	jarray NumberPicker::getDisplayedValues()
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayedValues",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	void NumberPicker::setDisplayedValues(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDisplayedValues",
+			"([Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void NumberPicker::setSelectionDividerHeight(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSelectionDividerHeight",
+			"(I)V",
+			arg0
+		);
+	}
+	jint NumberPicker::getSelectionDividerHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getSelectionDividerHeight",
+			"()I"
+		);
+	}
+	jfloat NumberPicker::getTextSize()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getTextSize",
+			"()F"
+		);
+	}
+	void NumberPicker::setTextSize(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextSize",
+			"(F)V",
+			arg0
+		);
+	}
+	jboolean NumberPicker::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean NumberPicker::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean NumberPicker::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean NumberPicker::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jint NumberPicker::getMinValue()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinValue",
+			"()I"
+		);
+	}
+	jint NumberPicker::getMaxValue()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxValue",
+			"()I"
+		);
+	}
+	void NumberPicker::setTextColor(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextColor",
+			"(I)V",
+			arg0
+		);
 	}
 	jboolean NumberPicker::onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onInterceptTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void NumberPicker::jumpDrawablesToCurrentState()
 	{
 		__thiz.callMethod<void>(
 			"jumpDrawablesToCurrentState",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean NumberPicker::performClick()
 	{
 		return __thiz.callMethod<jboolean>(
 			"performClick",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean NumberPicker::performLongClick()
 	{
 		return __thiz.callMethod<jboolean>(
 			"performLongClick",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject NumberPicker::getAccessibilityNodeProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityNodeProvider",
-			"()Landroid/view/accessibility/AccessibilityNodeProvider;");
+			"()Landroid/view/accessibility/AccessibilityNodeProvider;"
+		);
 	}
 	void NumberPicker::setEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void NumberPicker::scrollBy(jint arg0, jint arg1)
 	{
@@ -289,60 +353,29 @@ namespace __jni_impl::android::widget
 			"scrollBy",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void NumberPicker::computeScroll()
 	{
 		__thiz.callMethod<void>(
 			"computeScroll",
-			"()V");
+			"()V"
+		);
 	}
 	jint NumberPicker::getSolidColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getSolidColor",
-			"()I");
+			"()I"
+		);
 	}
-	jboolean NumberPicker::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	jint NumberPicker::getTextColor()
 	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean NumberPicker::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean NumberPicker::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean NumberPicker::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
-	}
-	jfloat NumberPicker::getTextSize()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getTextSize",
-			"()F");
-	}
-	void NumberPicker::setTextSize(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextSize",
-			"(F)V",
-			arg0);
+		return __thiz.callMethod<jint>(
+			"getTextColor",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

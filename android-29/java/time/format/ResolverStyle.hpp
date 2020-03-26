@@ -21,7 +21,7 @@ namespace __jni_impl::java::time::format
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::time::format
@@ -35,21 +35,24 @@ namespace __jni_impl::java::time::format
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.ResolverStyle",
 			"STRICT",
-			"Ljava/time/format/ResolverStyle;");
+			"Ljava/time/format/ResolverStyle;"
+		);
 	}
 	QAndroidJniObject ResolverStyle::SMART()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.ResolverStyle",
 			"SMART",
-			"Ljava/time/format/ResolverStyle;");
+			"Ljava/time/format/ResolverStyle;"
+		);
 	}
 	QAndroidJniObject ResolverStyle::LENIENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.ResolverStyle",
 			"LENIENT",
-			"Ljava/time/format/ResolverStyle;");
+			"Ljava/time/format/ResolverStyle;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::java::time::format
 	}
 	
 	// Methods
-	QAndroidJniObject ResolverStyle::values()
+	jarray ResolverStyle::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.format.ResolverStyle",
 			"values",
-			"()[Ljava/time/format/ResolverStyle;");
+			"()[Ljava/time/format/ResolverStyle;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ResolverStyle::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::java::time::format
 			"java.time.format.ResolverStyle",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/format/ResolverStyle;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::time::format
 

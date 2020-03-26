@@ -12,9 +12,9 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
-		static QAndroidJniObject DATA_ID();
-		static QAndroidJniObject RAW_CONTACT_ID();
+		static jstring CONTENT_DIRECTORY();
+		static jstring DATA_ID();
+		static jstring RAW_CONTACT_ID();
 		
 		// Constructors
 		void __constructor();
@@ -27,26 +27,29 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_Contacts_Entity::CONTENT_DIRECTORY()
+	jstring ContactsContract_Contacts_Entity::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts$Entity",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts_Entity::DATA_ID()
+	jstring ContactsContract_Contacts_Entity::DATA_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts$Entity",
 			"DATA_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts_Entity::RAW_CONTACT_ID()
+	jstring ContactsContract_Contacts_Entity::RAW_CONTACT_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts$Entity",
 			"RAW_CONTACT_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

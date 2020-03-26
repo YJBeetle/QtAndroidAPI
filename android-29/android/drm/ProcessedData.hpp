@@ -17,9 +17,9 @@ namespace __jni_impl::android::drm
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getData();
-		QAndroidJniObject getAccountId();
-		QAndroidJniObject getSubscriptionId();
+		jbyteArray getData();
+		jstring getAccountId();
+		jstring getSubscriptionId();
 	};
 } // namespace __jni_impl::android::drm
 
@@ -37,23 +37,26 @@ namespace __jni_impl::android::drm
 	}
 	
 	// Methods
-	QAndroidJniObject ProcessedData::getData()
+	jbyteArray ProcessedData::getData()
 	{
 		return __thiz.callObjectMethod(
 			"getData",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject ProcessedData::getAccountId()
+	jstring ProcessedData::getAccountId()
 	{
 		return __thiz.callObjectMethod(
 			"getAccountId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ProcessedData::getSubscriptionId()
+	jstring ProcessedData::getSubscriptionId()
 	{
 		return __thiz.callObjectMethod(
 			"getSubscriptionId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::drm
 

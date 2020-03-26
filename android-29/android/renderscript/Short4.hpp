@@ -32,22 +32,26 @@ namespace __jni_impl::android::renderscript
 	jshort Short4::w()
 	{
 		return __thiz.getField<jshort>(
-			"w");
+			"w"
+		);
 	}
 	jshort Short4::x()
 	{
 		return __thiz.getField<jshort>(
-			"x");
+			"x"
+		);
 	}
 	jshort Short4::y()
 	{
 		return __thiz.getField<jshort>(
-			"y");
+			"y"
+		);
 	}
 	jshort Short4::z()
 	{
 		return __thiz.getField<jshort>(
-			"z");
+			"z"
+		);
 	}
 	
 	// Constructors

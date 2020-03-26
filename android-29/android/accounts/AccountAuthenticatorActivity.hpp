@@ -49,14 +49,16 @@ namespace __jni_impl::android::accounts
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
+			"()V"
+		);
 	}
 	void AccountAuthenticatorActivity::setAccountAuthenticatorResult(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAccountAuthenticatorResult",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::accounts
 

@@ -49,19 +49,22 @@ namespace __jni_impl::java::security::spec
 	{
 		return __thiz.callObjectMethod(
 			"getExponent",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject RSAOtherPrimeInfo::getPrime()
 	{
 		return __thiz.callObjectMethod(
 			"getPrime",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject RSAOtherPrimeInfo::getCrtCoefficient()
 	{
 		return __thiz.callObjectMethod(
 			"getCrtCoefficient",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

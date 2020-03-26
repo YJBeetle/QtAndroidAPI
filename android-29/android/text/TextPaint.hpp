@@ -20,7 +20,7 @@ namespace __jni_impl::android::text
 		jint baselineShift();
 		jint bgColor();
 		jfloat density();
-		QAndroidJniObject drawableState();
+		jintArray drawableState();
 		jint linkColor();
 		jint underlineColor();
 		jfloat underlineThickness();
@@ -44,38 +44,45 @@ namespace __jni_impl::android::text
 	jint TextPaint::baselineShift()
 	{
 		return __thiz.getField<jint>(
-			"baselineShift");
+			"baselineShift"
+		);
 	}
 	jint TextPaint::bgColor()
 	{
 		return __thiz.getField<jint>(
-			"bgColor");
+			"bgColor"
+		);
 	}
 	jfloat TextPaint::density()
 	{
 		return __thiz.getField<jfloat>(
-			"density");
+			"density"
+		);
 	}
-	QAndroidJniObject TextPaint::drawableState()
+	jintArray TextPaint::drawableState()
 	{
 		return __thiz.getObjectField(
 			"drawableState",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
 	jint TextPaint::linkColor()
 	{
 		return __thiz.getField<jint>(
-			"linkColor");
+			"linkColor"
+		);
 	}
 	jint TextPaint::underlineColor()
 	{
 		return __thiz.getField<jint>(
-			"underlineColor");
+			"underlineColor"
+		);
 	}
 	jfloat TextPaint::underlineThickness()
 	{
 		return __thiz.getField<jfloat>(
-			"underlineThickness");
+			"underlineThickness"
+		);
 	}
 	
 	// Constructors
@@ -106,13 +113,15 @@ namespace __jni_impl::android::text
 		__thiz.callMethod<void>(
 			"set",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jfloat TextPaint::getUnderlineThickness()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getUnderlineThickness",
-			"()F");
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::text
 

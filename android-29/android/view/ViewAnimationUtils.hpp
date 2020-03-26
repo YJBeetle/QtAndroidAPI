@@ -55,7 +55,8 @@ namespace __jni_impl::android::view
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 } // namespace __jni_impl::android::view
 

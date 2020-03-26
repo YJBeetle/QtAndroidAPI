@@ -39,18 +39,18 @@ namespace __jni_impl::java::time
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject of(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject of(jstring arg0);
 		static QAndroidJniObject from(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getId();
+		jstring getId();
 		static QAndroidJniObject systemDefault();
 		QAndroidJniObject getRules();
 		static QAndroidJniObject getAvailableZoneIds();
 		static QAndroidJniObject ofOffset(jstring arg0, __jni_impl::java::time::ZoneOffset arg1);
 		QAndroidJniObject normalized();
-		QAndroidJniObject getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
+		jstring getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
 	};
 } // namespace __jni_impl::java::time
 
@@ -68,7 +68,8 @@ namespace __jni_impl::java::time
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.ZoneId",
 			"SHORT_IDS",
-			"Ljava/util/Map;");
+			"Ljava/util/Map;"
+		);
 	}
 	
 	// Constructors
@@ -85,19 +86,22 @@ namespace __jni_impl::java::time
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ZoneId::toString()
+	jstring ZoneId::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ZoneId::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ZoneId::of(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -106,7 +110,8 @@ namespace __jni_impl::java::time
 			"of",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/time/ZoneId;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ZoneId::of(jstring arg0)
 	{
@@ -114,7 +119,8 @@ namespace __jni_impl::java::time
 			"java.time.ZoneId",
 			"of",
 			"(Ljava/lang/String;)Ljava/time/ZoneId;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ZoneId::from(__jni_impl::__JniBaseClass arg0)
 	{
@@ -122,33 +128,38 @@ namespace __jni_impl::java::time
 			"java.time.ZoneId",
 			"from",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/ZoneId;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ZoneId::getId()
+	jstring ZoneId::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ZoneId::systemDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneId",
 			"systemDefault",
-			"()Ljava/time/ZoneId;");
+			"()Ljava/time/ZoneId;"
+		);
 	}
 	QAndroidJniObject ZoneId::getRules()
 	{
 		return __thiz.callObjectMethod(
 			"getRules",
-			"()Ljava/time/zone/ZoneRules;");
+			"()Ljava/time/zone/ZoneRules;"
+		);
 	}
 	QAndroidJniObject ZoneId::getAvailableZoneIds()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.ZoneId",
 			"getAvailableZoneIds",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject ZoneId::ofOffset(jstring arg0, __jni_impl::java::time::ZoneOffset arg1)
 	{
@@ -157,21 +168,24 @@ namespace __jni_impl::java::time
 			"ofOffset",
 			"(Ljava/lang/String;Ljava/time/ZoneOffset;)Ljava/time/ZoneId;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ZoneId::normalized()
 	{
 		return __thiz.callObjectMethod(
 			"normalized",
-			"()Ljava/time/ZoneId;");
+			"()Ljava/time/ZoneId;"
+		);
 	}
-	QAndroidJniObject ZoneId::getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1)
+	jstring ZoneId::getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::time
 

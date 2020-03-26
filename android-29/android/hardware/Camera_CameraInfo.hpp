@@ -33,28 +33,33 @@ namespace __jni_impl::android::hardware
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.Camera$CameraInfo",
-			"CAMERA_FACING_BACK");
+			"CAMERA_FACING_BACK"
+		);
 	}
 	jint Camera_CameraInfo::CAMERA_FACING_FRONT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.Camera$CameraInfo",
-			"CAMERA_FACING_FRONT");
+			"CAMERA_FACING_FRONT"
+		);
 	}
 	jboolean Camera_CameraInfo::canDisableShutterSound()
 	{
 		return __thiz.getField<jboolean>(
-			"canDisableShutterSound");
+			"canDisableShutterSound"
+		);
 	}
 	jint Camera_CameraInfo::facing()
 	{
 		return __thiz.getField<jint>(
-			"facing");
+			"facing"
+		);
 	}
 	jint Camera_CameraInfo::orientation()
 	{
 		return __thiz.getField<jint>(
-			"orientation");
+			"orientation"
+		);
 	}
 	
 	// Constructors

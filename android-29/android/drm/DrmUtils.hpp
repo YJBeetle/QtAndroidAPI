@@ -46,7 +46,8 @@ namespace __jni_impl::android::drm
 			"android.drm.DrmUtils",
 			"getExtendedMetadataParser",
 			"([B)Landroid/drm/DrmUtils$ExtendedMetadataParser;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::drm
 

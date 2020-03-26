@@ -49,7 +49,7 @@ namespace __jni_impl::android::icu::util
 		
 		// Methods
 		void add(jint arg0, jint arg1);
-		QAndroidJniObject getType();
+		jstring getType();
 		void roll(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::icu::util
@@ -171,13 +171,15 @@ namespace __jni_impl::android::icu::util
 			"add",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject ChineseCalendar::getType()
+	jstring ChineseCalendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ChineseCalendar::roll(jint arg0, jint arg1)
 	{
@@ -185,7 +187,8 @@ namespace __jni_impl::android::icu::util
 			"roll",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

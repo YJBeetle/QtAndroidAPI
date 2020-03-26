@@ -21,8 +21,8 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
+		jarray getFonts();
 		jint getStatusCode();
-		QAndroidJniObject getFonts();
 	};
 } // namespace __jni_impl::android::provider
 
@@ -34,25 +34,29 @@ namespace __jni_impl::android::provider
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontFamilyResult",
-			"STATUS_OK");
+			"STATUS_OK"
+		);
 	}
 	jint FontsContract_FontFamilyResult::STATUS_REJECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontFamilyResult",
-			"STATUS_REJECTED");
+			"STATUS_REJECTED"
+		);
 	}
 	jint FontsContract_FontFamilyResult::STATUS_UNEXPECTED_DATA_PROVIDED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontFamilyResult",
-			"STATUS_UNEXPECTED_DATA_PROVIDED");
+			"STATUS_UNEXPECTED_DATA_PROVIDED"
+		);
 	}
 	jint FontsContract_FontFamilyResult::STATUS_WRONG_CERTIFICATES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontFamilyResult",
-			"STATUS_WRONG_CERTIFICATES");
+			"STATUS_WRONG_CERTIFICATES"
+		);
 	}
 	
 	// Constructors
@@ -64,17 +68,19 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
+	jarray FontsContract_FontFamilyResult::getFonts()
+	{
+		return __thiz.callObjectMethod(
+			"getFonts",
+			"()[Landroid/provider/FontsContract$FontInfo;"
+		).object<jarray>();
+	}
 	jint FontsContract_FontFamilyResult::getStatusCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getStatusCode",
-			"()I");
-	}
-	QAndroidJniObject FontsContract_FontFamilyResult::getFonts()
-	{
-		return __thiz.callObjectMethod(
-			"getFonts",
-			"()[Landroid/provider/FontsContract$FontInfo;");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::provider
 

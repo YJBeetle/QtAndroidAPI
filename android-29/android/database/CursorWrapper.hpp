@@ -50,12 +50,13 @@ namespace __jni_impl::android::database
 		jint getType(jint arg0);
 		jboolean isNull(jint arg0);
 		jint getCount();
-		QAndroidJniObject getString(jint arg0);
+		jstring getString(jint arg0);
 		jboolean move(jint arg0);
 		QAndroidJniObject getExtras();
+		jboolean isClosed();
 		jint getColumnIndex(jstring arg0);
-		QAndroidJniObject getColumnNames();
-		QAndroidJniObject getBlob(jint arg0);
+		jarray getColumnNames();
+		jbyteArray getBlob(jint arg0);
 		jint getColumnCount();
 		void deactivate();
 		jboolean requery();
@@ -71,7 +72,7 @@ namespace __jni_impl::android::database
 		jboolean isBeforeFirst();
 		jboolean isAfterLast();
 		jint getColumnIndexOrThrow(jstring arg0);
-		QAndroidJniObject getColumnName(jint arg0);
+		jstring getColumnName(jint arg0);
 		void registerContentObserver(__jni_impl::android::database::ContentObserver arg0);
 		void unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0);
 		void registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
@@ -82,9 +83,8 @@ namespace __jni_impl::android::database
 		QAndroidJniObject getNotificationUris();
 		jboolean getWantsAllOnMoveCalls();
 		QAndroidJniObject respond(__jni_impl::android::os::Bundle arg0);
-		jboolean isClosed();
-		void setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject getWrappedCursor();
+		void setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::database
 
@@ -114,119 +114,144 @@ namespace __jni_impl::android::database
 		return __thiz.callMethod<jshort>(
 			"getShort",
 			"(I)S",
-			arg0);
+			arg0
+		);
 	}
 	jint CursorWrapper::getInt(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getInt",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong CursorWrapper::getLong(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jfloat CursorWrapper::getFloat(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getFloat",
 			"(I)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble CursorWrapper::getDouble(jint arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getDouble",
 			"(I)D",
-			arg0);
+			arg0
+		);
 	}
 	void CursorWrapper::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint CursorWrapper::getType(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CursorWrapper::isNull(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNull",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint CursorWrapper::getCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getCount",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject CursorWrapper::getString(jint arg0)
+	jstring CursorWrapper::getString(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jboolean CursorWrapper::move(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"move",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CursorWrapper::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jboolean CursorWrapper::isClosed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClosed",
+			"()Z"
+		);
 	}
 	jint CursorWrapper::getColumnIndex(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CursorWrapper::getColumnNames()
+	jarray CursorWrapper::getColumnNames()
 	{
 		return __thiz.callObjectMethod(
 			"getColumnNames",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject CursorWrapper::getBlob(jint arg0)
+	jbyteArray CursorWrapper::getBlob(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getBlob",
 			"(I)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
 	jint CursorWrapper::getColumnCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnCount",
-			"()I");
+			"()I"
+		);
 	}
 	void CursorWrapper::deactivate()
 	{
 		__thiz.callMethod<void>(
 			"deactivate",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean CursorWrapper::requery()
 	{
 		return __thiz.callMethod<jboolean>(
 			"requery",
-			"()Z");
+			"()Z"
+		);
 	}
 	void CursorWrapper::copyStringToBuffer(jint arg0, __jni_impl::android::database::CharArrayBuffer arg1)
 	{
@@ -234,110 +259,127 @@ namespace __jni_impl::android::database
 			"copyStringToBuffer",
 			"(ILandroid/database/CharArrayBuffer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint CursorWrapper::getPosition()
 	{
 		return __thiz.callMethod<jint>(
 			"getPosition",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean CursorWrapper::moveToPosition(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"moveToPosition",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CursorWrapper::moveToFirst()
 	{
 		return __thiz.callMethod<jboolean>(
 			"moveToFirst",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CursorWrapper::moveToLast()
 	{
 		return __thiz.callMethod<jboolean>(
 			"moveToLast",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CursorWrapper::moveToNext()
 	{
 		return __thiz.callMethod<jboolean>(
 			"moveToNext",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CursorWrapper::moveToPrevious()
 	{
 		return __thiz.callMethod<jboolean>(
 			"moveToPrevious",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CursorWrapper::isFirst()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFirst",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CursorWrapper::isLast()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLast",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CursorWrapper::isBeforeFirst()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBeforeFirst",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CursorWrapper::isAfterLast()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAfterLast",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint CursorWrapper::getColumnIndexOrThrow(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnIndexOrThrow",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CursorWrapper::getColumnName(jint arg0)
+	jstring CursorWrapper::getColumnName(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getColumnName",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void CursorWrapper::registerContentObserver(__jni_impl::android::database::ContentObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerContentObserver",
 			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CursorWrapper::unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterContentObserver",
 			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CursorWrapper::registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CursorWrapper::unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CursorWrapper::setNotificationUri(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -345,7 +387,8 @@ namespace __jni_impl::android::database
 			"setNotificationUri",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void CursorWrapper::setNotificationUris(__jni_impl::android::content::ContentResolver arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -353,51 +396,52 @@ namespace __jni_impl::android::database
 			"setNotificationUris",
 			"(Landroid/content/ContentResolver;Ljava/util/List;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CursorWrapper::getNotificationUri()
 	{
 		return __thiz.callObjectMethod(
 			"getNotificationUri",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject CursorWrapper::getNotificationUris()
 	{
 		return __thiz.callObjectMethod(
 			"getNotificationUris",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean CursorWrapper::getWantsAllOnMoveCalls()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getWantsAllOnMoveCalls",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject CursorWrapper::respond(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"respond",
 			"(Landroid/os/Bundle;)Landroid/os/Bundle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	jboolean CursorWrapper::isClosed()
+	QAndroidJniObject CursorWrapper::getWrappedCursor()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isClosed",
-			"()Z");
+		return __thiz.callObjectMethod(
+			"getWrappedCursor",
+			"()Landroid/database/Cursor;"
+		);
 	}
 	void CursorWrapper::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"setExtras",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject CursorWrapper::getWrappedCursor()
-	{
-		return __thiz.callObjectMethod(
-			"getWrappedCursor",
-			"()Landroid/database/Cursor;");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::database
 

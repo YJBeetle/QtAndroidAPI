@@ -55,27 +55,31 @@ namespace __jni_impl::android::app::job
 			"jobFinished",
 			"(Landroid/app/job/JobParameters;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean JobServiceEngine::onStartJob(__jni_impl::android::app::job::JobParameters arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onStartJob",
 			"(Landroid/app/job/JobParameters;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean JobServiceEngine::onStopJob(__jni_impl::android::app::job::JobParameters arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onStopJob",
 			"(Landroid/app/job/JobParameters;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject JobServiceEngine::getBinder()
 	{
 		return __thiz.callObjectMethod(
 			"getBinder",
-			"()Landroid/os/IBinder;");
+			"()Landroid/os/IBinder;"
+		);
 	}
 } // namespace __jni_impl::android::app::job
 

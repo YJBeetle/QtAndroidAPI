@@ -101,7 +101,8 @@ namespace __jni_impl::android::renderscript
 		__thiz.callMethod<void>(
 			"setTimeZone",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Script::bindAllocation(__jni_impl::android::renderscript::Allocation arg0, jint arg1)
 	{
@@ -109,7 +110,8 @@ namespace __jni_impl::android::renderscript
 			"bindAllocation",
 			"(Landroid/renderscript/Allocation;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Script::setVar(jint arg0, __jni_impl::android::renderscript::BaseObj arg1)
 	{
@@ -117,7 +119,8 @@ namespace __jni_impl::android::renderscript
 			"setVar",
 			"(ILandroid/renderscript/BaseObj;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Script::setVar(jint arg0, jboolean arg1)
 	{
@@ -125,7 +128,8 @@ namespace __jni_impl::android::renderscript
 			"setVar",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Script::setVar(jint arg0, jlong arg1)
 	{
@@ -133,7 +137,8 @@ namespace __jni_impl::android::renderscript
 			"setVar",
 			"(IJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Script::setVar(jint arg0, __jni_impl::android::renderscript::FieldPacker arg1)
 	{
@@ -141,7 +146,8 @@ namespace __jni_impl::android::renderscript
 			"setVar",
 			"(ILandroid/renderscript/FieldPacker;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Script::setVar(jint arg0, __jni_impl::android::renderscript::FieldPacker arg1, __jni_impl::android::renderscript::Element arg2, jintArray arg3)
 	{
@@ -151,7 +157,8 @@ namespace __jni_impl::android::renderscript
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void Script::setVar(jint arg0, jint arg1)
 	{
@@ -159,7 +166,8 @@ namespace __jni_impl::android::renderscript
 			"setVar",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Script::setVar(jint arg0, jfloat arg1)
 	{
@@ -167,7 +175,8 @@ namespace __jni_impl::android::renderscript
 			"setVar",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Script::setVar(jint arg0, jdouble arg1)
 	{
@@ -175,42 +184,48 @@ namespace __jni_impl::android::renderscript
 			"setVar",
 			"(ID)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat Script::getVarF(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getVarF",
 			"(I)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Script::getVarD(jint arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getVarD",
 			"(I)D",
-			arg0);
+			arg0
+		);
 	}
 	jint Script::getVarI(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getVarI",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong Script::getVarJ(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getVarJ",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Script::getVarB(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getVarB",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void Script::getVarV(jint arg0, __jni_impl::android::renderscript::FieldPacker arg1)
 	{
@@ -218,7 +233,8 @@ namespace __jni_impl::android::renderscript
 			"getVarV",
 			"(ILandroid/renderscript/FieldPacker;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

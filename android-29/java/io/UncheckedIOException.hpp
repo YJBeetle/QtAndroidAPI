@@ -61,7 +61,8 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.callObjectMethod(
 			"getCause",
-			"()Ljava/io/IOException;");
+			"()Ljava/io/IOException;"
+		);
 	}
 } // namespace __jni_impl::java::io
 

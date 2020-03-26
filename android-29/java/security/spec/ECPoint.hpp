@@ -39,7 +39,8 @@ namespace __jni_impl::java::security::spec
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.ECPoint",
 			"POINT_INFINITY",
-			"Ljava/security/spec/ECPoint;");
+			"Ljava/security/spec/ECPoint;"
+		);
 	}
 	
 	// Constructors
@@ -58,25 +59,29 @@ namespace __jni_impl::java::security::spec
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ECPoint::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ECPoint::getAffineX()
 	{
 		return __thiz.callObjectMethod(
 			"getAffineX",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject ECPoint::getAffineY()
 	{
 		return __thiz.callObjectMethod(
 			"getAffineY",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

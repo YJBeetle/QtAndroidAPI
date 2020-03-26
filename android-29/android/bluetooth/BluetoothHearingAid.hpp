@@ -20,7 +20,7 @@ namespace __jni_impl::android::bluetooth
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_CONNECTION_STATE_CHANGED();
+		static jstring ACTION_CONNECTION_STATE_CHANGED();
 		
 		// Constructors
 		void __constructor();
@@ -38,12 +38,13 @@ namespace __jni_impl::android::bluetooth
 namespace __jni_impl::android::bluetooth
 {
 	// Fields
-	QAndroidJniObject BluetoothHearingAid::ACTION_CONNECTION_STATE_CHANGED()
+	jstring BluetoothHearingAid::ACTION_CONNECTION_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothHearingAid",
 			"ACTION_CONNECTION_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -60,20 +61,23 @@ namespace __jni_impl::android::bluetooth
 		return __thiz.callMethod<jint>(
 			"getConnectionState",
 			"(Landroid/bluetooth/BluetoothDevice;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothHearingAid::getConnectedDevices()
 	{
 		return __thiz.callObjectMethod(
 			"getConnectedDevices",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject BluetoothHearingAid::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

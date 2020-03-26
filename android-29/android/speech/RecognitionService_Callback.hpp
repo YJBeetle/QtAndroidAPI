@@ -58,60 +58,69 @@ namespace __jni_impl::android::speech
 		__thiz.callMethod<void>(
 			"error",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void RecognitionService_Callback::results(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"results",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RecognitionService_Callback::beginningOfSpeech()
 	{
 		__thiz.callMethod<void>(
 			"beginningOfSpeech",
-			"()V");
+			"()V"
+		);
 	}
 	void RecognitionService_Callback::bufferReceived(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"bufferReceived",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void RecognitionService_Callback::endOfSpeech()
 	{
 		__thiz.callMethod<void>(
 			"endOfSpeech",
-			"()V");
+			"()V"
+		);
 	}
 	void RecognitionService_Callback::partialResults(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"partialResults",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RecognitionService_Callback::readyForSpeech(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"readyForSpeech",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RecognitionService_Callback::rmsChanged(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"rmsChanged",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jint RecognitionService_Callback::getCallingUid()
 	{
 		return __thiz.callMethod<jint>(
 			"getCallingUid",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::speech
 

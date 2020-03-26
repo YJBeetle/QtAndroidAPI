@@ -19,7 +19,7 @@ namespace __jni_impl::android::icu::text
 		static jint IS_STRING();
 		jint codepoint();
 		jint codepointEnd();
-		QAndroidJniObject string();
+		jstring string();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::icu::text::UnicodeSet arg0);
@@ -29,7 +29,7 @@ namespace __jni_impl::android::icu::text
 		jboolean next();
 		void reset(__jni_impl::android::icu::text::UnicodeSet arg0);
 		void reset();
-		QAndroidJniObject getString();
+		jstring getString();
 		jboolean nextRange();
 	};
 } // namespace __jni_impl::android::icu::text
@@ -43,23 +43,27 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.UnicodeSetIterator",
-			"IS_STRING");
+			"IS_STRING"
+		);
 	}
 	jint UnicodeSetIterator::codepoint()
 	{
 		return __thiz.getField<jint>(
-			"codepoint");
+			"codepoint"
+		);
 	}
 	jint UnicodeSetIterator::codepointEnd()
 	{
 		return __thiz.getField<jint>(
-			"codepointEnd");
+			"codepointEnd"
+		);
 	}
-	QAndroidJniObject UnicodeSetIterator::string()
+	jstring UnicodeSetIterator::string()
 	{
 		return __thiz.getObjectField(
 			"string",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -82,32 +86,37 @@ namespace __jni_impl::android::icu::text
 	{
 		return __thiz.callMethod<jboolean>(
 			"next",
-			"()Z");
+			"()Z"
+		);
 	}
 	void UnicodeSetIterator::reset(__jni_impl::android::icu::text::UnicodeSet arg0)
 	{
 		__thiz.callMethod<void>(
 			"reset",
 			"(Landroid/icu/text/UnicodeSet;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void UnicodeSetIterator::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject UnicodeSetIterator::getString()
+	jstring UnicodeSetIterator::getString()
 	{
 		return __thiz.callObjectMethod(
 			"getString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean UnicodeSetIterator::nextRange()
 	{
 		return __thiz.callMethod<jboolean>(
 			"nextRange",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

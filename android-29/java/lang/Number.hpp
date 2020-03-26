@@ -44,37 +44,43 @@ namespace __jni_impl::java::lang
 	{
 		return __thiz.callMethod<jbyte>(
 			"byteValue",
-			"()B");
+			"()B"
+		);
 	}
 	jshort Number::shortValue()
 	{
 		return __thiz.callMethod<jshort>(
 			"shortValue",
-			"()S");
+			"()S"
+		);
 	}
 	jint Number::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Number::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat Number::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble Number::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 } // namespace __jni_impl::java::lang
 

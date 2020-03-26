@@ -18,12 +18,12 @@ namespace __jni_impl::android::graphics::fonts
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getTag();
+		jstring getTag();
 		jfloat getStyleValue();
-		static QAndroidJniObject fromFontVariationSettings(jstring arg0);
-		static QAndroidJniObject toFontVariationSettings(jarray arg0);
+		static jarray fromFontVariationSettings(jstring arg0);
+		static jstring toFontVariationSettings(jarray arg0);
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
@@ -48,47 +48,54 @@ namespace __jni_impl::android::graphics::fonts
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject FontVariationAxis::toString()
+	jstring FontVariationAxis::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint FontVariationAxis::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject FontVariationAxis::getTag()
+	jstring FontVariationAxis::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jfloat FontVariationAxis::getStyleValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getStyleValue",
-			"()F");
+			"()F"
+		);
 	}
-	QAndroidJniObject FontVariationAxis::fromFontVariationSettings(jstring arg0)
+	jarray FontVariationAxis::fromFontVariationSettings(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.fonts.FontVariationAxis",
 			"fromFontVariationSettings",
 			"(Ljava/lang/String;)[Landroid/graphics/fonts/FontVariationAxis;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
-	QAndroidJniObject FontVariationAxis::toFontVariationSettings(jarray arg0)
+	jstring FontVariationAxis::toFontVariationSettings(jarray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.fonts.FontVariationAxis",
 			"toFontVariationSettings",
 			"([Landroid/graphics/fonts/FontVariationAxis;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::graphics::fonts
 

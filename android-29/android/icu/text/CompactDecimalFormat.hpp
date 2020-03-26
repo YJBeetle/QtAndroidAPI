@@ -79,7 +79,8 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Ljava/util/Locale;Landroid/icu/text/CompactDecimalFormat$CompactStyle;)Landroid/icu/text/CompactDecimalFormat;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompactDecimalFormat::getInstance(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1)
 	{
@@ -88,7 +89,8 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/CompactDecimalFormat$CompactStyle;)Landroid/icu/text/CompactDecimalFormat;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompactDecimalFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
@@ -96,7 +98,8 @@ namespace __jni_impl::android::icu::text
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompactDecimalFormat::parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
@@ -104,7 +107,8 @@ namespace __jni_impl::android::icu::text
 			"parseCurrency",
 			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

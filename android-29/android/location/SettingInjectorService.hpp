@@ -23,10 +23,10 @@ namespace __jni_impl::android::location
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_INJECTED_SETTING_CHANGED();
-		static QAndroidJniObject ACTION_SERVICE_INTENT();
-		static QAndroidJniObject ATTRIBUTES_NAME();
-		static QAndroidJniObject META_DATA_NAME();
+		static jstring ACTION_INJECTED_SETTING_CHANGED();
+		static jstring ACTION_SERVICE_INTENT();
+		static jstring ATTRIBUTES_NAME();
+		static jstring META_DATA_NAME();
 		
 		// Constructors
 		void __constructor(jstring arg0);
@@ -45,33 +45,37 @@ namespace __jni_impl::android::location
 namespace __jni_impl::android::location
 {
 	// Fields
-	QAndroidJniObject SettingInjectorService::ACTION_INJECTED_SETTING_CHANGED()
+	jstring SettingInjectorService::ACTION_INJECTED_SETTING_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"ACTION_INJECTED_SETTING_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SettingInjectorService::ACTION_SERVICE_INTENT()
+	jstring SettingInjectorService::ACTION_SERVICE_INTENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"ACTION_SERVICE_INTENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SettingInjectorService::ATTRIBUTES_NAME()
+	jstring SettingInjectorService::ATTRIBUTES_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"ATTRIBUTES_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SettingInjectorService::META_DATA_NAME()
+	jstring SettingInjectorService::META_DATA_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.SettingInjectorService",
 			"META_DATA_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -90,14 +94,16 @@ namespace __jni_impl::android::location
 			"onStart",
 			"(Landroid/content/Intent;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SettingInjectorService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint SettingInjectorService::onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2)
 	{
@@ -106,7 +112,8 @@ namespace __jni_impl::android::location
 			"(Landroid/content/Intent;II)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void SettingInjectorService::refreshSettings(__jni_impl::android::content::Context arg0)
 	{
@@ -114,7 +121,8 @@ namespace __jni_impl::android::location
 			"android.location.SettingInjectorService",
 			"refreshSettings",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::location
 

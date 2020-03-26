@@ -31,7 +31,7 @@ namespace __jni_impl::java::lang
 		static jint MIN_EXPONENT();
 		static jint SIZE();
 		static jint BYTES();
-		static QAndroidJniObject TYPE();
+		static jclass TYPE();
 		
 		// Constructors
 		void __constructor(jstring arg0);
@@ -40,8 +40,8 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		static QAndroidJniObject toString(jfloat arg0);
-		QAndroidJniObject toString();
+		static jstring toString(jfloat arg0);
+		jstring toString();
 		jint hashCode();
 		static jint hashCode(jfloat arg0);
 		static jfloat min(jfloat arg0, jfloat arg1);
@@ -59,7 +59,7 @@ namespace __jni_impl::java::lang
 		jdouble doubleValue();
 		static QAndroidJniObject valueOf(jfloat arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
-		static QAndroidJniObject toHexString(jfloat arg0);
+		static jstring toHexString(jfloat arg0);
 		static jint compare(jfloat arg0, jfloat arg1);
 		QAndroidJniObject resolveConstantDesc(__jni_impl::java::lang::invoke::MethodHandles_Lookup arg0);
 		QAndroidJniObject describeConstable();
@@ -83,68 +83,79 @@ namespace __jni_impl::java::lang
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"java.lang.Float",
-			"POSITIVE_INFINITY");
+			"POSITIVE_INFINITY"
+		);
 	}
 	jfloat Float::NEGATIVE_INFINITY()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"java.lang.Float",
-			"NEGATIVE_INFINITY");
+			"NEGATIVE_INFINITY"
+		);
 	}
 	jfloat Float::NaN()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"java.lang.Float",
-			"NaN");
+			"NaN"
+		);
 	}
 	jfloat Float::MAX_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"java.lang.Float",
-			"MAX_VALUE");
+			"MAX_VALUE"
+		);
 	}
 	jfloat Float::MIN_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"java.lang.Float",
-			"MIN_NORMAL");
+			"MIN_NORMAL"
+		);
 	}
 	jfloat Float::MIN_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"java.lang.Float",
-			"MIN_VALUE");
+			"MIN_VALUE"
+		);
 	}
 	jint Float::MAX_EXPONENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Float",
-			"MAX_EXPONENT");
+			"MAX_EXPONENT"
+		);
 	}
 	jint Float::MIN_EXPONENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Float",
-			"MIN_EXPONENT");
+			"MIN_EXPONENT"
+		);
 	}
 	jint Float::SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Float",
-			"SIZE");
+			"SIZE"
+		);
 	}
 	jint Float::BYTES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Float",
-			"BYTES");
+			"BYTES"
+		);
 	}
-	QAndroidJniObject Float::TYPE()
+	jclass Float::TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Float",
 			"TYPE",
-			"Ljava/lang/Class;");
+			"Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	
 	// Constructors
@@ -176,27 +187,31 @@ namespace __jni_impl::java::lang
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Float::toString(jfloat arg0)
+	jstring Float::toString(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Float",
 			"toString",
 			"(F)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Float::toString()
+	jstring Float::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Float::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Float::hashCode(jfloat arg0)
 	{
@@ -204,7 +219,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"hashCode",
 			"(F)I",
-			arg0);
+			arg0
+		);
 	}
 	jfloat Float::min(jfloat arg0, jfloat arg1)
 	{
@@ -213,7 +229,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(FF)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat Float::max(jfloat arg0, jfloat arg1)
 	{
@@ -222,7 +239,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(FF)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Float::floatToRawIntBits(jfloat arg0)
 	{
@@ -230,7 +248,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"floatToRawIntBits",
 			"(F)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Float::floatToIntBits(jfloat arg0)
 	{
@@ -238,7 +257,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"floatToIntBits",
 			"(F)I",
-			arg0);
+			arg0
+		);
 	}
 	jfloat Float::intBitsToFloat(jint arg0)
 	{
@@ -246,57 +266,66 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"intBitsToFloat",
 			"(I)F",
-			arg0);
+			arg0
+		);
 	}
 	jint Float::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Float::compareTo(__jni_impl::java::lang::Float arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Float;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jbyte Float::byteValue()
 	{
 		return __thiz.callMethod<jbyte>(
 			"byteValue",
-			"()B");
+			"()B"
+		);
 	}
 	jshort Float::shortValue()
 	{
 		return __thiz.callMethod<jshort>(
 			"shortValue",
-			"()S");
+			"()S"
+		);
 	}
 	jint Float::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Float::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat Float::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble Float::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 	QAndroidJniObject Float::valueOf(jfloat arg0)
 	{
@@ -304,7 +333,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"valueOf",
 			"(F)Ljava/lang/Float;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Float::valueOf(jstring arg0)
 	{
@@ -312,15 +342,17 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Float;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Float::toHexString(jfloat arg0)
+	jstring Float::toHexString(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Float",
 			"toHexString",
 			"(F)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint Float::compare(jfloat arg0, jfloat arg1)
 	{
@@ -329,20 +361,23 @@ namespace __jni_impl::java::lang
 			"compare",
 			"(FF)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Float::resolveConstantDesc(__jni_impl::java::lang::invoke::MethodHandles_Lookup arg0)
 	{
 		return __thiz.callObjectMethod(
 			"resolveConstantDesc",
 			"(Ljava/lang/invoke/MethodHandles$Lookup;)Ljava/lang/Float;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Float::describeConstable()
 	{
 		return __thiz.callObjectMethod(
 			"describeConstable",
-			"()Ljava/util/Optional;");
+			"()Ljava/util/Optional;"
+		);
 	}
 	jboolean Float::isNaN(jfloat arg0)
 	{
@@ -350,13 +385,15 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"isNaN",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Float::isNaN()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNaN",
-			"()Z");
+			"()Z"
+		);
 	}
 	jfloat Float::parseFloat(jstring arg0)
 	{
@@ -364,13 +401,15 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"parseFloat",
 			"(Ljava/lang/String;)F",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Float::isInfinite()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInfinite",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Float::isInfinite(jfloat arg0)
 	{
@@ -378,7 +417,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"isInfinite",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Float::isFinite(jfloat arg0)
 	{
@@ -386,7 +426,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Float",
 			"isFinite",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat Float::sum(jfloat arg0, jfloat arg1)
 	{
@@ -395,7 +436,8 @@ namespace __jni_impl::java::lang
 			"sum",
 			"(FF)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::lang
 

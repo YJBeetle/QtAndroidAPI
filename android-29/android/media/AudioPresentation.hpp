@@ -31,7 +31,7 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getLocale();
 		jint getPresentationId();
@@ -54,31 +54,36 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioPresentation",
-			"MASTERED_FOR_3D");
+			"MASTERED_FOR_3D"
+		);
 	}
 	jint AudioPresentation::MASTERED_FOR_HEADPHONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioPresentation",
-			"MASTERED_FOR_HEADPHONE");
+			"MASTERED_FOR_HEADPHONE"
+		);
 	}
 	jint AudioPresentation::MASTERED_FOR_STEREO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioPresentation",
-			"MASTERED_FOR_STEREO");
+			"MASTERED_FOR_STEREO"
+		);
 	}
 	jint AudioPresentation::MASTERED_FOR_SURROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioPresentation",
-			"MASTERED_FOR_SURROUND");
+			"MASTERED_FOR_SURROUND"
+		);
 	}
 	jint AudioPresentation::MASTERING_NOT_INDICATED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioPresentation",
-			"MASTERING_NOT_INDICATED");
+			"MASTERING_NOT_INDICATED"
+		);
 	}
 	
 	// Constructors
@@ -95,67 +100,78 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AudioPresentation::toString()
+	jstring AudioPresentation::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AudioPresentation::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject AudioPresentation::getLocale()
 	{
 		return __thiz.callObjectMethod(
 			"getLocale",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
 	}
 	jint AudioPresentation::getPresentationId()
 	{
 		return __thiz.callMethod<jint>(
 			"getPresentationId",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioPresentation::getProgramId()
 	{
 		return __thiz.callMethod<jint>(
 			"getProgramId",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject AudioPresentation::getLabels()
 	{
 		return __thiz.callObjectMethod(
 			"getLabels",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 	jint AudioPresentation::getMasteringIndication()
 	{
 		return __thiz.callMethod<jint>(
 			"getMasteringIndication",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean AudioPresentation::hasAudioDescription()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasAudioDescription",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AudioPresentation::hasSpokenSubtitles()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasSpokenSubtitles",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AudioPresentation::hasDialogueEnhancement()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasDialogueEnhancement",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::media
 

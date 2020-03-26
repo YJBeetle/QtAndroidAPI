@@ -47,7 +47,8 @@ namespace __jni_impl::android::net::wifi::hotspot2
 			"parsePasspointConfig",
 			"(Ljava/lang/String;[B)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::hotspot2
 

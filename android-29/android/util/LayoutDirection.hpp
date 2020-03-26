@@ -32,25 +32,29 @@ namespace __jni_impl::android::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.LayoutDirection",
-			"INHERIT");
+			"INHERIT"
+		);
 	}
 	jint LayoutDirection::LOCALE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.LayoutDirection",
-			"LOCALE");
+			"LOCALE"
+		);
 	}
 	jint LayoutDirection::LTR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.LayoutDirection",
-			"LTR");
+			"LTR"
+		);
 	}
 	jint LayoutDirection::RTL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.LayoutDirection",
-			"RTL");
+			"RTL"
+		);
 	}
 	
 	// Constructors

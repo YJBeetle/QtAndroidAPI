@@ -21,7 +21,7 @@ namespace __jni_impl::java::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject normalize(jstring arg0, __jni_impl::java::text::Normalizer_Form arg1);
+		static jstring normalize(jstring arg0, __jni_impl::java::text::Normalizer_Form arg1);
 		static jboolean isNormalized(jstring arg0, __jni_impl::java::text::Normalizer_Form arg1);
 	};
 } // namespace __jni_impl::java::text
@@ -41,14 +41,15 @@ namespace __jni_impl::java::text
 	}
 	
 	// Methods
-	QAndroidJniObject Normalizer::normalize(jstring arg0, __jni_impl::java::text::Normalizer_Form arg1)
+	jstring Normalizer::normalize(jstring arg0, __jni_impl::java::text::Normalizer_Form arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.Normalizer",
 			"normalize",
 			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
 	jboolean Normalizer::isNormalized(jstring arg0, __jni_impl::java::text::Normalizer_Form arg1)
 	{
@@ -57,7 +58,8 @@ namespace __jni_impl::java::text
 			"isNormalized",
 			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::text
 

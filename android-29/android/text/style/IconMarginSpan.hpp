@@ -77,7 +77,8 @@ namespace __jni_impl::android::text::style
 		return __thiz.callMethod<jint>(
 			"getLeadingMargin",
 			"(Z)I",
-			arg0);
+			arg0
+		);
 	}
 	void IconMarginSpan::drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11)
 	{
@@ -95,7 +96,8 @@ namespace __jni_impl::android::text::style
 			arg8,
 			arg9,
 			arg10,
-			arg11.__jniObject().object());
+			arg11.__jniObject().object()
+		);
 	}
 	void IconMarginSpan::chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5)
 	{
@@ -107,7 +109,8 @@ namespace __jni_impl::android::text::style
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

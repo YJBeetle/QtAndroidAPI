@@ -50,13 +50,15 @@ namespace __jni_impl::android::net::wifi
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject WifiManager_LocalOnlyHotspotReservation::getWifiConfiguration()
 	{
 		return __thiz.callObjectMethod(
 			"getWifiConfiguration",
-			"()Landroid/net/wifi/WifiConfiguration;");
+			"()Landroid/net/wifi/WifiConfiguration;"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi
 

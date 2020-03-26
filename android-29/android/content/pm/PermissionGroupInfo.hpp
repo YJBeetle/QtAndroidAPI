@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "PackageItemInfo.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content::pm
 {
 	class PackageManager;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content::pm
@@ -25,7 +25,7 @@ namespace __jni_impl::android::content::pm
 		static jint FLAG_PERSONAL_INFO();
 		jint descriptionRes();
 		jint flags();
-		QAndroidJniObject nonLocalizedDescription();
+		jstring nonLocalizedDescription();
 		jint priority();
 		
 		// Constructors
@@ -33,15 +33,15 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::PermissionGroupInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
+		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "../../os/Parcel.hpp"
 #include "PackageManager.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -51,34 +51,40 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.PermissionGroupInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint PermissionGroupInfo::FLAG_PERSONAL_INFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.PermissionGroupInfo",
-			"FLAG_PERSONAL_INFO");
+			"FLAG_PERSONAL_INFO"
+		);
 	}
 	jint PermissionGroupInfo::descriptionRes()
 	{
 		return __thiz.getField<jint>(
-			"descriptionRes");
+			"descriptionRes"
+		);
 	}
 	jint PermissionGroupInfo::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
-	QAndroidJniObject PermissionGroupInfo::nonLocalizedDescription()
+	jstring PermissionGroupInfo::nonLocalizedDescription()
 	{
 		return __thiz.getObjectField(
 			"nonLocalizedDescription",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint PermissionGroupInfo::priority()
 	{
 		return __thiz.getField<jint>(
-			"priority");
+			"priority"
+		);
 	}
 	
 	// Constructors
@@ -97,17 +103,27 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject PermissionGroupInfo::toString()
+	jstring PermissionGroupInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring PermissionGroupInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadDescription",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	jint PermissionGroupInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PermissionGroupInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -115,14 +131,8 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject PermissionGroupInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadDescription",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

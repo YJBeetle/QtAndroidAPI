@@ -47,19 +47,22 @@ namespace __jni_impl::java::lang::ref
 		return __thiz.callObjectMethod(
 			"remove",
 			"(J)Ljava/lang/ref/Reference;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ReferenceQueue::remove()
 	{
 		return __thiz.callObjectMethod(
 			"remove",
-			"()Ljava/lang/ref/Reference;");
+			"()Ljava/lang/ref/Reference;"
+		);
 	}
 	QAndroidJniObject ReferenceQueue::poll()
 	{
 		return __thiz.callObjectMethod(
 			"poll",
-			"()Ljava/lang/ref/Reference;");
+			"()Ljava/lang/ref/Reference;"
+		);
 	}
 } // namespace __jni_impl::java::lang::ref
 

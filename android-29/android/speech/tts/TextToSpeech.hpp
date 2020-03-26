@@ -44,7 +44,7 @@ namespace __jni_impl::android::speech::tts
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_TTS_QUEUE_PROCESSING_COMPLETED();
+		static jstring ACTION_TTS_QUEUE_PROCESSING_COMPLETED();
 		static jint ERROR();
 		static jint ERROR_INVALID_REQUEST();
 		static jint ERROR_NETWORK();
@@ -101,7 +101,7 @@ namespace __jni_impl::android::speech::tts
 		jint setOnUtteranceCompletedListener(__jni_impl::__JniBaseClass arg0);
 		jint setOnUtteranceProgressListener(__jni_impl::android::speech::tts::UtteranceProgressListener arg0);
 		jint setEngineByPackageName(jstring arg0);
-		QAndroidJniObject getDefaultEngine();
+		jstring getDefaultEngine();
 		jboolean areDefaultsEnforced();
 		QAndroidJniObject getEngines();
 		static jint getMaxSpeechInputLength();
@@ -120,114 +120,132 @@ namespace __jni_impl::android::speech::tts
 namespace __jni_impl::android::speech::tts
 {
 	// Fields
-	QAndroidJniObject TextToSpeech::ACTION_TTS_QUEUE_PROCESSING_COMPLETED()
+	jstring TextToSpeech::ACTION_TTS_QUEUE_PROCESSING_COMPLETED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.tts.TextToSpeech",
 			"ACTION_TTS_QUEUE_PROCESSING_COMPLETED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TextToSpeech::ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"ERROR");
+			"ERROR"
+		);
 	}
 	jint TextToSpeech::ERROR_INVALID_REQUEST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"ERROR_INVALID_REQUEST");
+			"ERROR_INVALID_REQUEST"
+		);
 	}
 	jint TextToSpeech::ERROR_NETWORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"ERROR_NETWORK");
+			"ERROR_NETWORK"
+		);
 	}
 	jint TextToSpeech::ERROR_NETWORK_TIMEOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"ERROR_NETWORK_TIMEOUT");
+			"ERROR_NETWORK_TIMEOUT"
+		);
 	}
 	jint TextToSpeech::ERROR_NOT_INSTALLED_YET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"ERROR_NOT_INSTALLED_YET");
+			"ERROR_NOT_INSTALLED_YET"
+		);
 	}
 	jint TextToSpeech::ERROR_OUTPUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"ERROR_OUTPUT");
+			"ERROR_OUTPUT"
+		);
 	}
 	jint TextToSpeech::ERROR_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"ERROR_SERVICE");
+			"ERROR_SERVICE"
+		);
 	}
 	jint TextToSpeech::ERROR_SYNTHESIS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"ERROR_SYNTHESIS");
+			"ERROR_SYNTHESIS"
+		);
 	}
 	jint TextToSpeech::LANG_AVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"LANG_AVAILABLE");
+			"LANG_AVAILABLE"
+		);
 	}
 	jint TextToSpeech::LANG_COUNTRY_AVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"LANG_COUNTRY_AVAILABLE");
+			"LANG_COUNTRY_AVAILABLE"
+		);
 	}
 	jint TextToSpeech::LANG_COUNTRY_VAR_AVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"LANG_COUNTRY_VAR_AVAILABLE");
+			"LANG_COUNTRY_VAR_AVAILABLE"
+		);
 	}
 	jint TextToSpeech::LANG_MISSING_DATA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"LANG_MISSING_DATA");
+			"LANG_MISSING_DATA"
+		);
 	}
 	jint TextToSpeech::LANG_NOT_SUPPORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"LANG_NOT_SUPPORTED");
+			"LANG_NOT_SUPPORTED"
+		);
 	}
 	jint TextToSpeech::QUEUE_ADD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"QUEUE_ADD");
+			"QUEUE_ADD"
+		);
 	}
 	jint TextToSpeech::QUEUE_FLUSH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"QUEUE_FLUSH");
+			"QUEUE_FLUSH"
+		);
 	}
 	jint TextToSpeech::STOPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"STOPPED");
+			"STOPPED"
+		);
 	}
 	jint TextToSpeech::SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.TextToSpeech",
-			"SUCCESS");
+			"SUCCESS"
+		);
 	}
 	
 	// Constructors
@@ -254,26 +272,30 @@ namespace __jni_impl::android::speech::tts
 	{
 		__thiz.callMethod<void>(
 			"shutdown",
-			"()V");
+			"()V"
+		);
 	}
 	jint TextToSpeech::stop()
 	{
 		return __thiz.callMethod<jint>(
 			"stop",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject TextToSpeech::getLanguage()
 	{
 		return __thiz.callObjectMethod(
 			"getLanguage",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
 	}
 	jint TextToSpeech::setLanguage(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setLanguage",
 			"(Ljava/util/Locale;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint TextToSpeech::addSpeech(jstring arg0, jstring arg1, jint arg2)
 	{
@@ -282,7 +304,8 @@ namespace __jni_impl::android::speech::tts
 			"(Ljava/lang/CharSequence;Ljava/lang/String;I)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint TextToSpeech::addSpeech(jstring arg0, jstring arg1)
 	{
@@ -290,7 +313,8 @@ namespace __jni_impl::android::speech::tts
 			"addSpeech",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint TextToSpeech::addSpeech(jstring arg0, __jni_impl::java::io::File arg1)
 	{
@@ -298,7 +322,8 @@ namespace __jni_impl::android::speech::tts
 			"addSpeech",
 			"(Ljava/lang/CharSequence;Ljava/io/File;)I",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint TextToSpeech::addEarcon(jstring arg0, jstring arg1, jint arg2)
 	{
@@ -307,7 +332,8 @@ namespace __jni_impl::android::speech::tts
 			"(Ljava/lang/String;Ljava/lang/String;I)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint TextToSpeech::addEarcon(jstring arg0, jstring arg1)
 	{
@@ -315,7 +341,8 @@ namespace __jni_impl::android::speech::tts
 			"addEarcon",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint TextToSpeech::addEarcon(jstring arg0, __jni_impl::java::io::File arg1)
 	{
@@ -323,7 +350,8 @@ namespace __jni_impl::android::speech::tts
 			"addEarcon",
 			"(Ljava/lang/String;Ljava/io/File;)I",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint TextToSpeech::speak(jstring arg0, jint arg1, __jni_impl::java::util::HashMap arg2)
 	{
@@ -332,7 +360,8 @@ namespace __jni_impl::android::speech::tts
 			"(Ljava/lang/String;ILjava/util/HashMap;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jint TextToSpeech::speak(jstring arg0, jint arg1, __jni_impl::android::os::Bundle arg2, jstring arg3)
 	{
@@ -342,7 +371,8 @@ namespace __jni_impl::android::speech::tts
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	jint TextToSpeech::playEarcon(jstring arg0, jint arg1, __jni_impl::android::os::Bundle arg2, jstring arg3)
 	{
@@ -352,7 +382,8 @@ namespace __jni_impl::android::speech::tts
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	jint TextToSpeech::playEarcon(jstring arg0, jint arg1, __jni_impl::java::util::HashMap arg2)
 	{
@@ -361,7 +392,8 @@ namespace __jni_impl::android::speech::tts
 			"(Ljava/lang/String;ILjava/util/HashMap;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jint TextToSpeech::playSilentUtterance(jlong arg0, jint arg1, jstring arg2)
 	{
@@ -370,7 +402,8 @@ namespace __jni_impl::android::speech::tts
 			"(JILjava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint TextToSpeech::playSilence(jlong arg0, jint arg1, __jni_impl::java::util::HashMap arg2)
 	{
@@ -379,85 +412,98 @@ namespace __jni_impl::android::speech::tts
 			"(JILjava/util/HashMap;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TextToSpeech::getFeatures(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getFeatures",
 			"(Ljava/util/Locale;)Ljava/util/Set;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean TextToSpeech::isSpeaking()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSpeaking",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint TextToSpeech::setSpeechRate(jfloat arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setSpeechRate",
 			"(F)I",
-			arg0);
+			arg0
+		);
 	}
 	jint TextToSpeech::setPitch(jfloat arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setPitch",
 			"(F)I",
-			arg0);
+			arg0
+		);
 	}
 	jint TextToSpeech::setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setAudioAttributes",
 			"(Landroid/media/AudioAttributes;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TextToSpeech::getDefaultLanguage()
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultLanguage",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
 	}
 	QAndroidJniObject TextToSpeech::getAvailableLanguages()
 	{
 		return __thiz.callObjectMethod(
 			"getAvailableLanguages",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject TextToSpeech::getVoices()
 	{
 		return __thiz.callObjectMethod(
 			"getVoices",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jint TextToSpeech::setVoice(__jni_impl::android::speech::tts::Voice arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setVoice",
 			"(Landroid/speech/tts/Voice;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TextToSpeech::getVoice()
 	{
 		return __thiz.callObjectMethod(
 			"getVoice",
-			"()Landroid/speech/tts/Voice;");
+			"()Landroid/speech/tts/Voice;"
+		);
 	}
 	QAndroidJniObject TextToSpeech::getDefaultVoice()
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultVoice",
-			"()Landroid/speech/tts/Voice;");
+			"()Landroid/speech/tts/Voice;"
+		);
 	}
 	jint TextToSpeech::isLanguageAvailable(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"isLanguageAvailable",
 			"(Ljava/util/Locale;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint TextToSpeech::synthesizeToFile(jstring arg0, __jni_impl::java::util::HashMap arg1, jstring arg2)
 	{
@@ -466,7 +512,8 @@ namespace __jni_impl::android::speech::tts
 			"(Ljava/lang/String;Ljava/util/HashMap;Ljava/lang/String;)I",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jint TextToSpeech::synthesizeToFile(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::java::io::File arg2, jstring arg3)
 	{
@@ -476,53 +523,61 @@ namespace __jni_impl::android::speech::tts
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	jint TextToSpeech::setOnUtteranceCompletedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setOnUtteranceCompletedListener",
 			"(Landroid/speech/tts/TextToSpeech$OnUtteranceCompletedListener;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint TextToSpeech::setOnUtteranceProgressListener(__jni_impl::android::speech::tts::UtteranceProgressListener arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setOnUtteranceProgressListener",
 			"(Landroid/speech/tts/UtteranceProgressListener;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint TextToSpeech::setEngineByPackageName(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"setEngineByPackageName",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TextToSpeech::getDefaultEngine()
+	jstring TextToSpeech::getDefaultEngine()
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultEngine",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean TextToSpeech::areDefaultsEnforced()
 	{
 		return __thiz.callMethod<jboolean>(
 			"areDefaultsEnforced",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject TextToSpeech::getEngines()
 	{
 		return __thiz.callObjectMethod(
 			"getEngines",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jint TextToSpeech::getMaxSpeechInputLength()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.speech.tts.TextToSpeech",
 			"getMaxSpeechInputLength",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::speech::tts
 

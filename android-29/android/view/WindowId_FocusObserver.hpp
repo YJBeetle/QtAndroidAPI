@@ -46,14 +46,16 @@ namespace __jni_impl::android::view
 		__thiz.callMethod<void>(
 			"onFocusGained",
 			"(Landroid/view/WindowId;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WindowId_FocusObserver::onFocusLost(__jni_impl::android::view::WindowId arg0)
 	{
 		__thiz.callMethod<void>(
 			"onFocusLost",
 			"(Landroid/view/WindowId;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

@@ -23,7 +23,7 @@ namespace __jni_impl::android::telephony
 		static QAndroidJniObject CREATOR();
 		static jint DESTINATION_PORT_ANY();
 		static jint DESTINATION_PORT_DATA_SMS();
-		QAndroidJniObject clientPrefix();
+		jstring clientPrefix();
 		jint destinationPort();
 		QAndroidJniObject originatingNumbers();
 		
@@ -31,7 +31,7 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -48,36 +48,42 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.VisualVoicemailSmsFilterSettings",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint VisualVoicemailSmsFilterSettings::DESTINATION_PORT_ANY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.VisualVoicemailSmsFilterSettings",
-			"DESTINATION_PORT_ANY");
+			"DESTINATION_PORT_ANY"
+		);
 	}
 	jint VisualVoicemailSmsFilterSettings::DESTINATION_PORT_DATA_SMS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.VisualVoicemailSmsFilterSettings",
-			"DESTINATION_PORT_DATA_SMS");
+			"DESTINATION_PORT_DATA_SMS"
+		);
 	}
-	QAndroidJniObject VisualVoicemailSmsFilterSettings::clientPrefix()
+	jstring VisualVoicemailSmsFilterSettings::clientPrefix()
 	{
 		return __thiz.getObjectField(
 			"clientPrefix",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint VisualVoicemailSmsFilterSettings::destinationPort()
 	{
 		return __thiz.getField<jint>(
-			"destinationPort");
+			"destinationPort"
+		);
 	}
 	QAndroidJniObject VisualVoicemailSmsFilterSettings::originatingNumbers()
 	{
 		return __thiz.getObjectField(
 			"originatingNumbers",
-			"Ljava/util/List;");
+			"Ljava/util/List;"
+		);
 	}
 	
 	// Constructors
@@ -89,17 +95,19 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	QAndroidJniObject VisualVoicemailSmsFilterSettings::toString()
+	jstring VisualVoicemailSmsFilterSettings::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint VisualVoicemailSmsFilterSettings::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void VisualVoicemailSmsFilterSettings::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -107,7 +115,8 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

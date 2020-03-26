@@ -37,7 +37,7 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -54,73 +54,85 @@ namespace __jni_impl::android::service::autofill
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.SaveInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SaveInfo::FLAG_DELAY_SAVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"FLAG_DELAY_SAVE");
+			"FLAG_DELAY_SAVE"
+		);
 	}
 	jint SaveInfo::FLAG_DONT_SAVE_ON_FINISH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"FLAG_DONT_SAVE_ON_FINISH");
+			"FLAG_DONT_SAVE_ON_FINISH"
+		);
 	}
 	jint SaveInfo::FLAG_SAVE_ON_ALL_VIEWS_INVISIBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"FLAG_SAVE_ON_ALL_VIEWS_INVISIBLE");
+			"FLAG_SAVE_ON_ALL_VIEWS_INVISIBLE"
+		);
 	}
 	jint SaveInfo::NEGATIVE_BUTTON_STYLE_CANCEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"NEGATIVE_BUTTON_STYLE_CANCEL");
+			"NEGATIVE_BUTTON_STYLE_CANCEL"
+		);
 	}
 	jint SaveInfo::NEGATIVE_BUTTON_STYLE_REJECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"NEGATIVE_BUTTON_STYLE_REJECT");
+			"NEGATIVE_BUTTON_STYLE_REJECT"
+		);
 	}
 	jint SaveInfo::SAVE_DATA_TYPE_ADDRESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"SAVE_DATA_TYPE_ADDRESS");
+			"SAVE_DATA_TYPE_ADDRESS"
+		);
 	}
 	jint SaveInfo::SAVE_DATA_TYPE_CREDIT_CARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"SAVE_DATA_TYPE_CREDIT_CARD");
+			"SAVE_DATA_TYPE_CREDIT_CARD"
+		);
 	}
 	jint SaveInfo::SAVE_DATA_TYPE_EMAIL_ADDRESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"SAVE_DATA_TYPE_EMAIL_ADDRESS");
+			"SAVE_DATA_TYPE_EMAIL_ADDRESS"
+		);
 	}
 	jint SaveInfo::SAVE_DATA_TYPE_GENERIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"SAVE_DATA_TYPE_GENERIC");
+			"SAVE_DATA_TYPE_GENERIC"
+		);
 	}
 	jint SaveInfo::SAVE_DATA_TYPE_PASSWORD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"SAVE_DATA_TYPE_PASSWORD");
+			"SAVE_DATA_TYPE_PASSWORD"
+		);
 	}
 	jint SaveInfo::SAVE_DATA_TYPE_USERNAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.SaveInfo",
-			"SAVE_DATA_TYPE_USERNAME");
+			"SAVE_DATA_TYPE_USERNAME"
+		);
 	}
 	
 	// Constructors
@@ -132,17 +144,19 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject SaveInfo::toString()
+	jstring SaveInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SaveInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SaveInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -150,7 +164,8 @@ namespace __jni_impl::android::service::autofill
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

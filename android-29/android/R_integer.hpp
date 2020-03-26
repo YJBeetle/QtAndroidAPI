@@ -32,25 +32,29 @@ namespace __jni_impl::android
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$integer",
-			"config_longAnimTime");
+			"config_longAnimTime"
+		);
 	}
 	jint R_integer::config_mediumAnimTime()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$integer",
-			"config_mediumAnimTime");
+			"config_mediumAnimTime"
+		);
 	}
 	jint R_integer::config_shortAnimTime()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$integer",
-			"config_shortAnimTime");
+			"config_shortAnimTime"
+		);
 	}
 	jint R_integer::status_bar_notification_info_maxnum()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$integer",
-			"status_bar_notification_info_maxnum");
+			"status_bar_notification_info_maxnum"
+		);
 	}
 	
 	// Constructors

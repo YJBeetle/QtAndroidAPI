@@ -24,16 +24,16 @@ namespace __jni_impl::android::provider
 		static jint AGGREGATION_MODE_DISABLED();
 		static jint AGGREGATION_MODE_IMMEDIATE();
 		static jint AGGREGATION_MODE_SUSPENDED();
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject newEntityIterator(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject getContactLookupUri(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
+		static QAndroidJniObject newEntityIterator(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -47,46 +47,53 @@ namespace __jni_impl::android::provider
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$RawContacts",
-			"AGGREGATION_MODE_DEFAULT");
+			"AGGREGATION_MODE_DEFAULT"
+		);
 	}
 	jint ContactsContract_RawContacts::AGGREGATION_MODE_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$RawContacts",
-			"AGGREGATION_MODE_DISABLED");
+			"AGGREGATION_MODE_DISABLED"
+		);
 	}
 	jint ContactsContract_RawContacts::AGGREGATION_MODE_IMMEDIATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$RawContacts",
-			"AGGREGATION_MODE_IMMEDIATE");
+			"AGGREGATION_MODE_IMMEDIATE"
+		);
 	}
 	jint ContactsContract_RawContacts::AGGREGATION_MODE_SUSPENDED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$RawContacts",
-			"AGGREGATION_MODE_SUSPENDED");
+			"AGGREGATION_MODE_SUSPENDED"
+		);
 	}
-	QAndroidJniObject ContactsContract_RawContacts::CONTENT_ITEM_TYPE()
+	jstring ContactsContract_RawContacts::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_RawContacts::CONTENT_TYPE()
+	jstring ContactsContract_RawContacts::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract_RawContacts::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors
@@ -98,14 +105,6 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject ContactsContract_RawContacts::newEntityIterator(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.ContactsContract$RawContacts",
-			"newEntityIterator",
-			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",
-			arg0.__jniObject().object());
-	}
 	QAndroidJniObject ContactsContract_RawContacts::getContactLookupUri(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -113,7 +112,17 @@ namespace __jni_impl::android::provider
 			"getContactLookupUri",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ContactsContract_RawContacts::newEntityIterator(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.ContactsContract$RawContacts",
+			"newEntityIterator",
+			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::provider
 

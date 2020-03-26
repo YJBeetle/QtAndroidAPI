@@ -29,9 +29,9 @@ namespace __jni_impl::java::text
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getIterator(jarray arg0, jint arg1, jint arg2);
 		QAndroidJniObject getIterator();
 		QAndroidJniObject getIterator(jarray arg0);
+		QAndroidJniObject getIterator(jarray arg0, jint arg1, jint arg2);
 		void addAttributes(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		void addAttribute(__jni_impl::java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1);
 		void addAttribute(__jni_impl::java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1, jint arg2, jint arg3);
@@ -89,6 +89,21 @@ namespace __jni_impl::java::text
 	}
 	
 	// Methods
+	QAndroidJniObject AttributedString::getIterator()
+	{
+		return __thiz.callObjectMethod(
+			"getIterator",
+			"()Ljava/text/AttributedCharacterIterator;"
+		);
+	}
+	QAndroidJniObject AttributedString::getIterator(jarray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getIterator",
+			"([Ljava/text/AttributedCharacterIterator$Attribute;)Ljava/text/AttributedCharacterIterator;",
+			arg0
+		);
+	}
 	QAndroidJniObject AttributedString::getIterator(jarray arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -96,20 +111,8 @@ namespace __jni_impl::java::text
 			"([Ljava/text/AttributedCharacterIterator$Attribute;II)Ljava/text/AttributedCharacterIterator;",
 			arg0,
 			arg1,
-			arg2);
-	}
-	QAndroidJniObject AttributedString::getIterator()
-	{
-		return __thiz.callObjectMethod(
-			"getIterator",
-			"()Ljava/text/AttributedCharacterIterator;");
-	}
-	QAndroidJniObject AttributedString::getIterator(jarray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getIterator",
-			"([Ljava/text/AttributedCharacterIterator$Attribute;)Ljava/text/AttributedCharacterIterator;",
-			arg0);
+			arg2
+		);
 	}
 	void AttributedString::addAttributes(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
 	{
@@ -118,7 +121,8 @@ namespace __jni_impl::java::text
 			"(Ljava/util/Map;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AttributedString::addAttribute(__jni_impl::java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1)
 	{
@@ -126,7 +130,8 @@ namespace __jni_impl::java::text
 			"addAttribute",
 			"(Ljava/text/AttributedCharacterIterator$Attribute;Ljava/lang/Object;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void AttributedString::addAttribute(__jni_impl::java::text::AttributedCharacterIterator_Attribute arg0, jobject arg1, jint arg2, jint arg3)
 	{
@@ -136,7 +141,8 @@ namespace __jni_impl::java::text
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::java::text
 

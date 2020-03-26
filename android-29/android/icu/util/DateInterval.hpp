@@ -18,7 +18,7 @@ namespace __jni_impl::android::icu::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jlong getFromDate();
 		jlong getToDate();
@@ -46,31 +46,36 @@ namespace __jni_impl::android::icu::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DateInterval::toString()
+	jstring DateInterval::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateInterval::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jlong DateInterval::getFromDate()
 	{
 		return __thiz.callMethod<jlong>(
 			"getFromDate",
-			"()J");
+			"()J"
+		);
 	}
 	jlong DateInterval::getToDate()
 	{
 		return __thiz.callMethod<jlong>(
 			"getToDate",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

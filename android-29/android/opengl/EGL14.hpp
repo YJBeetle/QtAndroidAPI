@@ -151,7 +151,7 @@ namespace __jni_impl::android::opengl
 		static QAndroidJniObject eglGetDisplay(jint arg0);
 		static jboolean eglInitialize(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4);
 		static jboolean eglTerminate(__jni_impl::android::opengl::EGLDisplay arg0);
-		static QAndroidJniObject eglQueryString(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1);
+		static jstring eglQueryString(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1);
 		static jboolean eglGetConfigs(__jni_impl::android::opengl::EGLDisplay arg0, jarray arg1, jint arg2, jint arg3, jintArray arg4, jint arg5);
 		static jboolean eglChooseConfig(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jarray arg3, jint arg4, jint arg5, jintArray arg6, jint arg7);
 		static jboolean eglGetConfigAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4);
@@ -195,688 +195,802 @@ namespace __jni_impl::android::opengl
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_ALPHA_MASK_SIZE");
+			"EGL_ALPHA_MASK_SIZE"
+		);
 	}
 	jint EGL14::EGL_ALPHA_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_ALPHA_SIZE");
+			"EGL_ALPHA_SIZE"
+		);
 	}
 	jint EGL14::EGL_BACK_BUFFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BACK_BUFFER");
+			"EGL_BACK_BUFFER"
+		);
 	}
 	jint EGL14::EGL_BAD_ACCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_ACCESS");
+			"EGL_BAD_ACCESS"
+		);
 	}
 	jint EGL14::EGL_BAD_ALLOC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_ALLOC");
+			"EGL_BAD_ALLOC"
+		);
 	}
 	jint EGL14::EGL_BAD_ATTRIBUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_ATTRIBUTE");
+			"EGL_BAD_ATTRIBUTE"
+		);
 	}
 	jint EGL14::EGL_BAD_CONFIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_CONFIG");
+			"EGL_BAD_CONFIG"
+		);
 	}
 	jint EGL14::EGL_BAD_CONTEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_CONTEXT");
+			"EGL_BAD_CONTEXT"
+		);
 	}
 	jint EGL14::EGL_BAD_CURRENT_SURFACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_CURRENT_SURFACE");
+			"EGL_BAD_CURRENT_SURFACE"
+		);
 	}
 	jint EGL14::EGL_BAD_DISPLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_DISPLAY");
+			"EGL_BAD_DISPLAY"
+		);
 	}
 	jint EGL14::EGL_BAD_MATCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_MATCH");
+			"EGL_BAD_MATCH"
+		);
 	}
 	jint EGL14::EGL_BAD_NATIVE_PIXMAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_NATIVE_PIXMAP");
+			"EGL_BAD_NATIVE_PIXMAP"
+		);
 	}
 	jint EGL14::EGL_BAD_NATIVE_WINDOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_NATIVE_WINDOW");
+			"EGL_BAD_NATIVE_WINDOW"
+		);
 	}
 	jint EGL14::EGL_BAD_PARAMETER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_PARAMETER");
+			"EGL_BAD_PARAMETER"
+		);
 	}
 	jint EGL14::EGL_BAD_SURFACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BAD_SURFACE");
+			"EGL_BAD_SURFACE"
+		);
 	}
 	jint EGL14::EGL_BIND_TO_TEXTURE_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BIND_TO_TEXTURE_RGB");
+			"EGL_BIND_TO_TEXTURE_RGB"
+		);
 	}
 	jint EGL14::EGL_BIND_TO_TEXTURE_RGBA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BIND_TO_TEXTURE_RGBA");
+			"EGL_BIND_TO_TEXTURE_RGBA"
+		);
 	}
 	jint EGL14::EGL_BLUE_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BLUE_SIZE");
+			"EGL_BLUE_SIZE"
+		);
 	}
 	jint EGL14::EGL_BUFFER_DESTROYED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BUFFER_DESTROYED");
+			"EGL_BUFFER_DESTROYED"
+		);
 	}
 	jint EGL14::EGL_BUFFER_PRESERVED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BUFFER_PRESERVED");
+			"EGL_BUFFER_PRESERVED"
+		);
 	}
 	jint EGL14::EGL_BUFFER_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_BUFFER_SIZE");
+			"EGL_BUFFER_SIZE"
+		);
 	}
 	jint EGL14::EGL_CLIENT_APIS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_CLIENT_APIS");
+			"EGL_CLIENT_APIS"
+		);
 	}
 	jint EGL14::EGL_COLOR_BUFFER_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_COLOR_BUFFER_TYPE");
+			"EGL_COLOR_BUFFER_TYPE"
+		);
 	}
 	jint EGL14::EGL_CONFIG_CAVEAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_CONFIG_CAVEAT");
+			"EGL_CONFIG_CAVEAT"
+		);
 	}
 	jint EGL14::EGL_CONFIG_ID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_CONFIG_ID");
+			"EGL_CONFIG_ID"
+		);
 	}
 	jint EGL14::EGL_CONFORMANT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_CONFORMANT");
+			"EGL_CONFORMANT"
+		);
 	}
 	jint EGL14::EGL_CONTEXT_CLIENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_CONTEXT_CLIENT_TYPE");
+			"EGL_CONTEXT_CLIENT_TYPE"
+		);
 	}
 	jint EGL14::EGL_CONTEXT_CLIENT_VERSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_CONTEXT_CLIENT_VERSION");
+			"EGL_CONTEXT_CLIENT_VERSION"
+		);
 	}
 	jint EGL14::EGL_CONTEXT_LOST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_CONTEXT_LOST");
+			"EGL_CONTEXT_LOST"
+		);
 	}
 	jint EGL14::EGL_CORE_NATIVE_ENGINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_CORE_NATIVE_ENGINE");
+			"EGL_CORE_NATIVE_ENGINE"
+		);
 	}
 	jint EGL14::EGL_DEFAULT_DISPLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_DEFAULT_DISPLAY");
+			"EGL_DEFAULT_DISPLAY"
+		);
 	}
 	jint EGL14::EGL_DEPTH_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_DEPTH_SIZE");
+			"EGL_DEPTH_SIZE"
+		);
 	}
 	jint EGL14::EGL_DISPLAY_SCALING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_DISPLAY_SCALING");
+			"EGL_DISPLAY_SCALING"
+		);
 	}
 	jint EGL14::EGL_DRAW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_DRAW");
+			"EGL_DRAW"
+		);
 	}
 	jint EGL14::EGL_EXTENSIONS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_EXTENSIONS");
+			"EGL_EXTENSIONS"
+		);
 	}
 	jint EGL14::EGL_FALSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_FALSE");
+			"EGL_FALSE"
+		);
 	}
 	jint EGL14::EGL_GREEN_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_GREEN_SIZE");
+			"EGL_GREEN_SIZE"
+		);
 	}
 	jint EGL14::EGL_HEIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_HEIGHT");
+			"EGL_HEIGHT"
+		);
 	}
 	jint EGL14::EGL_HORIZONTAL_RESOLUTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_HORIZONTAL_RESOLUTION");
+			"EGL_HORIZONTAL_RESOLUTION"
+		);
 	}
 	jint EGL14::EGL_LARGEST_PBUFFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_LARGEST_PBUFFER");
+			"EGL_LARGEST_PBUFFER"
+		);
 	}
 	jint EGL14::EGL_LEVEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_LEVEL");
+			"EGL_LEVEL"
+		);
 	}
 	jint EGL14::EGL_LUMINANCE_BUFFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_LUMINANCE_BUFFER");
+			"EGL_LUMINANCE_BUFFER"
+		);
 	}
 	jint EGL14::EGL_LUMINANCE_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_LUMINANCE_SIZE");
+			"EGL_LUMINANCE_SIZE"
+		);
 	}
 	jint EGL14::EGL_MATCH_NATIVE_PIXMAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MATCH_NATIVE_PIXMAP");
+			"EGL_MATCH_NATIVE_PIXMAP"
+		);
 	}
 	jint EGL14::EGL_MAX_PBUFFER_HEIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MAX_PBUFFER_HEIGHT");
+			"EGL_MAX_PBUFFER_HEIGHT"
+		);
 	}
 	jint EGL14::EGL_MAX_PBUFFER_PIXELS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MAX_PBUFFER_PIXELS");
+			"EGL_MAX_PBUFFER_PIXELS"
+		);
 	}
 	jint EGL14::EGL_MAX_PBUFFER_WIDTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MAX_PBUFFER_WIDTH");
+			"EGL_MAX_PBUFFER_WIDTH"
+		);
 	}
 	jint EGL14::EGL_MAX_SWAP_INTERVAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MAX_SWAP_INTERVAL");
+			"EGL_MAX_SWAP_INTERVAL"
+		);
 	}
 	jint EGL14::EGL_MIN_SWAP_INTERVAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MIN_SWAP_INTERVAL");
+			"EGL_MIN_SWAP_INTERVAL"
+		);
 	}
 	jint EGL14::EGL_MIPMAP_LEVEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MIPMAP_LEVEL");
+			"EGL_MIPMAP_LEVEL"
+		);
 	}
 	jint EGL14::EGL_MIPMAP_TEXTURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MIPMAP_TEXTURE");
+			"EGL_MIPMAP_TEXTURE"
+		);
 	}
 	jint EGL14::EGL_MULTISAMPLE_RESOLVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MULTISAMPLE_RESOLVE");
+			"EGL_MULTISAMPLE_RESOLVE"
+		);
 	}
 	jint EGL14::EGL_MULTISAMPLE_RESOLVE_BOX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MULTISAMPLE_RESOLVE_BOX");
+			"EGL_MULTISAMPLE_RESOLVE_BOX"
+		);
 	}
 	jint EGL14::EGL_MULTISAMPLE_RESOLVE_BOX_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MULTISAMPLE_RESOLVE_BOX_BIT");
+			"EGL_MULTISAMPLE_RESOLVE_BOX_BIT"
+		);
 	}
 	jint EGL14::EGL_MULTISAMPLE_RESOLVE_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_MULTISAMPLE_RESOLVE_DEFAULT");
+			"EGL_MULTISAMPLE_RESOLVE_DEFAULT"
+		);
 	}
 	jint EGL14::EGL_NATIVE_RENDERABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_NATIVE_RENDERABLE");
+			"EGL_NATIVE_RENDERABLE"
+		);
 	}
 	jint EGL14::EGL_NATIVE_VISUAL_ID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_NATIVE_VISUAL_ID");
+			"EGL_NATIVE_VISUAL_ID"
+		);
 	}
 	jint EGL14::EGL_NATIVE_VISUAL_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_NATIVE_VISUAL_TYPE");
+			"EGL_NATIVE_VISUAL_TYPE"
+		);
 	}
 	jint EGL14::EGL_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_NONE");
+			"EGL_NONE"
+		);
 	}
 	jint EGL14::EGL_NON_CONFORMANT_CONFIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_NON_CONFORMANT_CONFIG");
+			"EGL_NON_CONFORMANT_CONFIG"
+		);
 	}
 	jint EGL14::EGL_NOT_INITIALIZED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_NOT_INITIALIZED");
+			"EGL_NOT_INITIALIZED"
+		);
 	}
 	QAndroidJniObject EGL14::EGL_NO_CONTEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL14",
 			"EGL_NO_CONTEXT",
-			"Landroid/opengl/EGLContext;");
+			"Landroid/opengl/EGLContext;"
+		);
 	}
 	QAndroidJniObject EGL14::EGL_NO_DISPLAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL14",
 			"EGL_NO_DISPLAY",
-			"Landroid/opengl/EGLDisplay;");
+			"Landroid/opengl/EGLDisplay;"
+		);
 	}
 	QAndroidJniObject EGL14::EGL_NO_SURFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.opengl.EGL14",
 			"EGL_NO_SURFACE",
-			"Landroid/opengl/EGLSurface;");
+			"Landroid/opengl/EGLSurface;"
+		);
 	}
 	jint EGL14::EGL_NO_TEXTURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_NO_TEXTURE");
+			"EGL_NO_TEXTURE"
+		);
 	}
 	jint EGL14::EGL_OPENGL_API()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_OPENGL_API");
+			"EGL_OPENGL_API"
+		);
 	}
 	jint EGL14::EGL_OPENGL_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_OPENGL_BIT");
+			"EGL_OPENGL_BIT"
+		);
 	}
 	jint EGL14::EGL_OPENGL_ES2_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_OPENGL_ES2_BIT");
+			"EGL_OPENGL_ES2_BIT"
+		);
 	}
 	jint EGL14::EGL_OPENGL_ES_API()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_OPENGL_ES_API");
+			"EGL_OPENGL_ES_API"
+		);
 	}
 	jint EGL14::EGL_OPENGL_ES_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_OPENGL_ES_BIT");
+			"EGL_OPENGL_ES_BIT"
+		);
 	}
 	jint EGL14::EGL_OPENVG_API()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_OPENVG_API");
+			"EGL_OPENVG_API"
+		);
 	}
 	jint EGL14::EGL_OPENVG_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_OPENVG_BIT");
+			"EGL_OPENVG_BIT"
+		);
 	}
 	jint EGL14::EGL_OPENVG_IMAGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_OPENVG_IMAGE");
+			"EGL_OPENVG_IMAGE"
+		);
 	}
 	jint EGL14::EGL_PBUFFER_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_PBUFFER_BIT");
+			"EGL_PBUFFER_BIT"
+		);
 	}
 	jint EGL14::EGL_PIXEL_ASPECT_RATIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_PIXEL_ASPECT_RATIO");
+			"EGL_PIXEL_ASPECT_RATIO"
+		);
 	}
 	jint EGL14::EGL_PIXMAP_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_PIXMAP_BIT");
+			"EGL_PIXMAP_BIT"
+		);
 	}
 	jint EGL14::EGL_READ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_READ");
+			"EGL_READ"
+		);
 	}
 	jint EGL14::EGL_RED_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_RED_SIZE");
+			"EGL_RED_SIZE"
+		);
 	}
 	jint EGL14::EGL_RENDERABLE_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_RENDERABLE_TYPE");
+			"EGL_RENDERABLE_TYPE"
+		);
 	}
 	jint EGL14::EGL_RENDER_BUFFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_RENDER_BUFFER");
+			"EGL_RENDER_BUFFER"
+		);
 	}
 	jint EGL14::EGL_RGB_BUFFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_RGB_BUFFER");
+			"EGL_RGB_BUFFER"
+		);
 	}
 	jint EGL14::EGL_SAMPLES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_SAMPLES");
+			"EGL_SAMPLES"
+		);
 	}
 	jint EGL14::EGL_SAMPLE_BUFFERS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_SAMPLE_BUFFERS");
+			"EGL_SAMPLE_BUFFERS"
+		);
 	}
 	jint EGL14::EGL_SINGLE_BUFFER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_SINGLE_BUFFER");
+			"EGL_SINGLE_BUFFER"
+		);
 	}
 	jint EGL14::EGL_SLOW_CONFIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_SLOW_CONFIG");
+			"EGL_SLOW_CONFIG"
+		);
 	}
 	jint EGL14::EGL_STENCIL_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_STENCIL_SIZE");
+			"EGL_STENCIL_SIZE"
+		);
 	}
 	jint EGL14::EGL_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_SUCCESS");
+			"EGL_SUCCESS"
+		);
 	}
 	jint EGL14::EGL_SURFACE_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_SURFACE_TYPE");
+			"EGL_SURFACE_TYPE"
+		);
 	}
 	jint EGL14::EGL_SWAP_BEHAVIOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_SWAP_BEHAVIOR");
+			"EGL_SWAP_BEHAVIOR"
+		);
 	}
 	jint EGL14::EGL_SWAP_BEHAVIOR_PRESERVED_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_SWAP_BEHAVIOR_PRESERVED_BIT");
+			"EGL_SWAP_BEHAVIOR_PRESERVED_BIT"
+		);
 	}
 	jint EGL14::EGL_TEXTURE_2D()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TEXTURE_2D");
+			"EGL_TEXTURE_2D"
+		);
 	}
 	jint EGL14::EGL_TEXTURE_FORMAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TEXTURE_FORMAT");
+			"EGL_TEXTURE_FORMAT"
+		);
 	}
 	jint EGL14::EGL_TEXTURE_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TEXTURE_RGB");
+			"EGL_TEXTURE_RGB"
+		);
 	}
 	jint EGL14::EGL_TEXTURE_RGBA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TEXTURE_RGBA");
+			"EGL_TEXTURE_RGBA"
+		);
 	}
 	jint EGL14::EGL_TEXTURE_TARGET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TEXTURE_TARGET");
+			"EGL_TEXTURE_TARGET"
+		);
 	}
 	jint EGL14::EGL_TRANSPARENT_BLUE_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TRANSPARENT_BLUE_VALUE");
+			"EGL_TRANSPARENT_BLUE_VALUE"
+		);
 	}
 	jint EGL14::EGL_TRANSPARENT_GREEN_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TRANSPARENT_GREEN_VALUE");
+			"EGL_TRANSPARENT_GREEN_VALUE"
+		);
 	}
 	jint EGL14::EGL_TRANSPARENT_RED_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TRANSPARENT_RED_VALUE");
+			"EGL_TRANSPARENT_RED_VALUE"
+		);
 	}
 	jint EGL14::EGL_TRANSPARENT_RGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TRANSPARENT_RGB");
+			"EGL_TRANSPARENT_RGB"
+		);
 	}
 	jint EGL14::EGL_TRANSPARENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TRANSPARENT_TYPE");
+			"EGL_TRANSPARENT_TYPE"
+		);
 	}
 	jint EGL14::EGL_TRUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_TRUE");
+			"EGL_TRUE"
+		);
 	}
 	jint EGL14::EGL_VENDOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VENDOR");
+			"EGL_VENDOR"
+		);
 	}
 	jint EGL14::EGL_VERSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VERSION");
+			"EGL_VERSION"
+		);
 	}
 	jint EGL14::EGL_VERTICAL_RESOLUTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VERTICAL_RESOLUTION");
+			"EGL_VERTICAL_RESOLUTION"
+		);
 	}
 	jint EGL14::EGL_VG_ALPHA_FORMAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VG_ALPHA_FORMAT");
+			"EGL_VG_ALPHA_FORMAT"
+		);
 	}
 	jint EGL14::EGL_VG_ALPHA_FORMAT_NONPRE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VG_ALPHA_FORMAT_NONPRE");
+			"EGL_VG_ALPHA_FORMAT_NONPRE"
+		);
 	}
 	jint EGL14::EGL_VG_ALPHA_FORMAT_PRE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VG_ALPHA_FORMAT_PRE");
+			"EGL_VG_ALPHA_FORMAT_PRE"
+		);
 	}
 	jint EGL14::EGL_VG_ALPHA_FORMAT_PRE_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VG_ALPHA_FORMAT_PRE_BIT");
+			"EGL_VG_ALPHA_FORMAT_PRE_BIT"
+		);
 	}
 	jint EGL14::EGL_VG_COLORSPACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VG_COLORSPACE");
+			"EGL_VG_COLORSPACE"
+		);
 	}
 	jint EGL14::EGL_VG_COLORSPACE_LINEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VG_COLORSPACE_LINEAR");
+			"EGL_VG_COLORSPACE_LINEAR"
+		);
 	}
 	jint EGL14::EGL_VG_COLORSPACE_LINEAR_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VG_COLORSPACE_LINEAR_BIT");
+			"EGL_VG_COLORSPACE_LINEAR_BIT"
+		);
 	}
 	jint EGL14::EGL_VG_COLORSPACE_sRGB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_VG_COLORSPACE_sRGB");
+			"EGL_VG_COLORSPACE_sRGB"
+		);
 	}
 	jint EGL14::EGL_WIDTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_WIDTH");
+			"EGL_WIDTH"
+		);
 	}
 	jint EGL14::EGL_WINDOW_BIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGL14",
-			"EGL_WINDOW_BIT");
+			"EGL_WINDOW_BIT"
+		);
 	}
 	
 	// Constructors
@@ -893,7 +1007,8 @@ namespace __jni_impl::android::opengl
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.opengl.EGL14",
 			"eglGetError",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject EGL14::eglGetDisplay(jint arg0)
 	{
@@ -901,7 +1016,8 @@ namespace __jni_impl::android::opengl
 			"android.opengl.EGL14",
 			"eglGetDisplay",
 			"(I)Landroid/opengl/EGLDisplay;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean EGL14::eglInitialize(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4)
 	{
@@ -913,7 +1029,8 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean EGL14::eglTerminate(__jni_impl::android::opengl::EGLDisplay arg0)
 	{
@@ -921,16 +1038,18 @@ namespace __jni_impl::android::opengl
 			"android.opengl.EGL14",
 			"eglTerminate",
 			"(Landroid/opengl/EGLDisplay;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject EGL14::eglQueryString(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1)
+	jstring EGL14::eglQueryString(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
 			"eglQueryString",
 			"(Landroid/opengl/EGLDisplay;I)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	jboolean EGL14::eglGetConfigs(__jni_impl::android::opengl::EGLDisplay arg0, jarray arg1, jint arg2, jint arg3, jintArray arg4, jint arg5)
 	{
@@ -943,7 +1062,8 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	jboolean EGL14::eglChooseConfig(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jarray arg3, jint arg4, jint arg5, jintArray arg6, jint arg7)
 	{
@@ -958,7 +1078,8 @@ namespace __jni_impl::android::opengl
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	jboolean EGL14::eglGetConfigAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4)
 	{
@@ -970,7 +1091,8 @@ namespace __jni_impl::android::opengl
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject EGL14::eglCreateWindowSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jobject arg2, jintArray arg3, jint arg4)
 	{
@@ -982,7 +1104,8 @@ namespace __jni_impl::android::opengl
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject EGL14::eglCreatePbufferSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jintArray arg2, jint arg3)
 	{
@@ -993,7 +1116,8 @@ namespace __jni_impl::android::opengl
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject EGL14::eglCreatePixmapSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4)
 	{
@@ -1005,7 +1129,8 @@ namespace __jni_impl::android::opengl
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean EGL14::eglDestroySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1)
 	{
@@ -1014,7 +1139,8 @@ namespace __jni_impl::android::opengl
 			"eglDestroySurface",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean EGL14::eglQuerySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jintArray arg3, jint arg4)
 	{
@@ -1026,7 +1152,8 @@ namespace __jni_impl::android::opengl
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean EGL14::eglBindAPI(jint arg0)
 	{
@@ -1034,28 +1161,32 @@ namespace __jni_impl::android::opengl
 			"android.opengl.EGL14",
 			"eglBindAPI",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint EGL14::eglQueryAPI()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.opengl.EGL14",
 			"eglQueryAPI",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean EGL14::eglWaitClient()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
 			"eglWaitClient",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean EGL14::eglReleaseThread()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
 			"eglReleaseThread",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject EGL14::eglCreatePbufferFromClientBuffer(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1, jint arg2, __jni_impl::android::opengl::EGLConfig arg3, jintArray arg4, jint arg5)
 	{
@@ -1068,7 +1199,8 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	jboolean EGL14::eglSurfaceAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jint arg3)
 	{
@@ -1079,7 +1211,8 @@ namespace __jni_impl::android::opengl
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean EGL14::eglBindTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2)
 	{
@@ -1089,7 +1222,8 @@ namespace __jni_impl::android::opengl
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jboolean EGL14::eglReleaseTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2)
 	{
@@ -1099,7 +1233,8 @@ namespace __jni_impl::android::opengl
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jboolean EGL14::eglSwapInterval(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1)
 	{
@@ -1108,7 +1243,8 @@ namespace __jni_impl::android::opengl
 			"eglSwapInterval",
 			"(Landroid/opengl/EGLDisplay;I)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject EGL14::eglCreateContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::android::opengl::EGLContext arg2, jintArray arg3, jint arg4)
 	{
@@ -1120,7 +1256,8 @@ namespace __jni_impl::android::opengl
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean EGL14::eglDestroyContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLContext arg1)
 	{
@@ -1129,7 +1266,8 @@ namespace __jni_impl::android::opengl
 			"eglDestroyContext",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean EGL14::eglMakeCurrent(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, __jni_impl::android::opengl::EGLSurface arg2, __jni_impl::android::opengl::EGLContext arg3)
 	{
@@ -1140,14 +1278,16 @@ namespace __jni_impl::android::opengl
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EGL14::eglGetCurrentContext()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
 			"eglGetCurrentContext",
-			"()Landroid/opengl/EGLContext;");
+			"()Landroid/opengl/EGLContext;"
+		);
 	}
 	QAndroidJniObject EGL14::eglGetCurrentSurface(jint arg0)
 	{
@@ -1155,14 +1295,16 @@ namespace __jni_impl::android::opengl
 			"android.opengl.EGL14",
 			"eglGetCurrentSurface",
 			"(I)Landroid/opengl/EGLSurface;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject EGL14::eglGetCurrentDisplay()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
 			"eglGetCurrentDisplay",
-			"()Landroid/opengl/EGLDisplay;");
+			"()Landroid/opengl/EGLDisplay;"
+		);
 	}
 	jboolean EGL14::eglQueryContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLContext arg1, jint arg2, jintArray arg3, jint arg4)
 	{
@@ -1174,14 +1316,16 @@ namespace __jni_impl::android::opengl
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean EGL14::eglWaitGL()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
 			"eglWaitGL",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean EGL14::eglWaitNative(jint arg0)
 	{
@@ -1189,7 +1333,8 @@ namespace __jni_impl::android::opengl
 			"android.opengl.EGL14",
 			"eglWaitNative",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean EGL14::eglSwapBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1)
 	{
@@ -1198,7 +1343,8 @@ namespace __jni_impl::android::opengl
 			"eglSwapBuffers",
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean EGL14::eglCopyBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2)
 	{
@@ -1208,7 +1354,8 @@ namespace __jni_impl::android::opengl
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

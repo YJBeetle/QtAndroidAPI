@@ -28,31 +28,31 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DATA();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static jstring DATA();
+		static jstring DEFAULT_SORT_ORDER();
 		static QAndroidJniObject EXTERNAL_CONTENT_URI();
 		static jint FULL_SCREEN_KIND();
-		static QAndroidJniObject HEIGHT();
-		static QAndroidJniObject IMAGE_ID();
+		static jstring HEIGHT();
+		static jstring IMAGE_ID();
 		static QAndroidJniObject INTERNAL_CONTENT_URI();
-		static QAndroidJniObject KIND();
+		static jstring KIND();
 		static jint MICRO_KIND();
 		static jint MINI_KIND();
-		static QAndroidJniObject THUMB_DATA();
-		static QAndroidJniObject WIDTH();
+		static jstring THUMB_DATA();
+		static jstring WIDTH();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
 		static QAndroidJniObject query(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jarray arg2);
-		static QAndroidJniObject getContentUri(jstring arg0);
-		static void cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
-		static void cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2);
-		static QAndroidJniObject getThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, __jni_impl::android::graphics::BitmapFactory_Options arg4);
-		static QAndroidJniObject getThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2, __jni_impl::android::graphics::BitmapFactory_Options arg3);
 		static QAndroidJniObject queryMiniThumbnails(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jint arg2, jarray arg3);
 		static QAndroidJniObject queryMiniThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2, jarray arg3);
+		static QAndroidJniObject getContentUri(jstring arg0);
+		static void cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2);
+		static void cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
+		static QAndroidJniObject getThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, __jni_impl::android::graphics::BitmapFactory_Options arg4);
+		static QAndroidJniObject getThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2, __jni_impl::android::graphics::BitmapFactory_Options arg3);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -64,86 +64,98 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject MediaStore_Images_Thumbnails::DATA()
+	jstring MediaStore_Images_Thumbnails::DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Images_Thumbnails::DEFAULT_SORT_ORDER()
+	jstring MediaStore_Images_Thumbnails::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject MediaStore_Images_Thumbnails::EXTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"EXTERNAL_CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	jint MediaStore_Images_Thumbnails::FULL_SCREEN_KIND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.MediaStore$Images$Thumbnails",
-			"FULL_SCREEN_KIND");
+			"FULL_SCREEN_KIND"
+		);
 	}
-	QAndroidJniObject MediaStore_Images_Thumbnails::HEIGHT()
+	jstring MediaStore_Images_Thumbnails::HEIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"HEIGHT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Images_Thumbnails::IMAGE_ID()
+	jstring MediaStore_Images_Thumbnails::IMAGE_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"IMAGE_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject MediaStore_Images_Thumbnails::INTERNAL_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"INTERNAL_CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject MediaStore_Images_Thumbnails::KIND()
+	jstring MediaStore_Images_Thumbnails::KIND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"KIND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MediaStore_Images_Thumbnails::MICRO_KIND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.MediaStore$Images$Thumbnails",
-			"MICRO_KIND");
+			"MICRO_KIND"
+		);
 	}
 	jint MediaStore_Images_Thumbnails::MINI_KIND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.MediaStore$Images$Thumbnails",
-			"MINI_KIND");
+			"MINI_KIND"
+		);
 	}
-	QAndroidJniObject MediaStore_Images_Thumbnails::THUMB_DATA()
+	jstring MediaStore_Images_Thumbnails::THUMB_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"THUMB_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Images_Thumbnails::WIDTH()
+	jstring MediaStore_Images_Thumbnails::WIDTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"WIDTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -163,7 +175,32 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	QAndroidJniObject MediaStore_Images_Thumbnails::queryMiniThumbnails(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jint arg2, jarray arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.MediaStore$Images$Thumbnails",
+			"queryMiniThumbnails",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;I[Ljava/lang/String;)Landroid/database/Cursor;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	QAndroidJniObject MediaStore_Images_Thumbnails::queryMiniThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2, jarray arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.MediaStore$Images$Thumbnails",
+			"queryMiniThumbnail",
+			"(Landroid/content/ContentResolver;JI[Ljava/lang/String;)Landroid/database/Cursor;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3
+		);
 	}
 	QAndroidJniObject MediaStore_Images_Thumbnails::getContentUri(jstring arg0)
 	{
@@ -171,16 +208,8 @@ namespace __jni_impl::android::provider
 			"android.provider.MediaStore$Images$Thumbnails",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0);
-	}
-	void MediaStore_Images_Thumbnails::cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.MediaStore$Images$Thumbnails",
-			"cancelThumbnailRequest",
-			"(Landroid/content/ContentResolver;J)V",
-			arg0.__jniObject().object(),
-			arg1);
+			arg0
+		);
 	}
 	void MediaStore_Images_Thumbnails::cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2)
 	{
@@ -190,7 +219,18 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;JJ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void MediaStore_Images_Thumbnails::cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.provider.MediaStore$Images$Thumbnails",
+			"cancelThumbnailRequest",
+			"(Landroid/content/ContentResolver;J)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	QAndroidJniObject MediaStore_Images_Thumbnails::getThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, __jni_impl::android::graphics::BitmapFactory_Options arg4)
 	{
@@ -202,7 +242,8 @@ namespace __jni_impl::android::provider
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaStore_Images_Thumbnails::getThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2, __jni_impl::android::graphics::BitmapFactory_Options arg3)
 	{
@@ -213,29 +254,8 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
-	}
-	QAndroidJniObject MediaStore_Images_Thumbnails::queryMiniThumbnails(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jint arg2, jarray arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Images$Thumbnails",
-			"queryMiniThumbnails",
-			"(Landroid/content/ContentResolver;Landroid/net/Uri;I[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3);
-	}
-	QAndroidJniObject MediaStore_Images_Thumbnails::queryMiniThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2, jarray arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Images$Thumbnails",
-			"queryMiniThumbnail",
-			"(Landroid/content/ContentResolver;JI[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3);
+			arg3.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::provider
 

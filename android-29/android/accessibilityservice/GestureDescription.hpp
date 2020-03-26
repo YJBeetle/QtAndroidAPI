@@ -48,27 +48,31 @@ namespace __jni_impl::android::accessibilityservice
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.accessibilityservice.GestureDescription",
 			"getMaxStrokeCount",
-			"()I");
+			"()I"
+		);
 	}
 	jlong GestureDescription::getMaxGestureDuration()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.accessibilityservice.GestureDescription",
 			"getMaxGestureDuration",
-			"()J");
+			"()J"
+		);
 	}
 	jint GestureDescription::getStrokeCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getStrokeCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject GestureDescription::getStroke(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getStroke",
 			"(I)Landroid/accessibilityservice/GestureDescription$StrokeDescription;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::accessibilityservice
 

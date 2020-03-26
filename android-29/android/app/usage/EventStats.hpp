@@ -44,7 +44,8 @@ namespace __jni_impl::android::app::usage
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.usage.EventStats",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -62,19 +63,22 @@ namespace __jni_impl::android::app::usage
 		__thiz.callMethod<void>(
 			"add",
 			"(Landroid/app/usage/EventStats;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint EventStats::getCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint EventStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void EventStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -82,37 +86,43 @@ namespace __jni_impl::android::app::usage
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jlong EventStats::getFirstTimeStamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getFirstTimeStamp",
-			"()J");
+			"()J"
+		);
 	}
 	jlong EventStats::getLastTimeStamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastTimeStamp",
-			"()J");
+			"()J"
+		);
 	}
 	jint EventStats::getEventType()
 	{
 		return __thiz.callMethod<jint>(
 			"getEventType",
-			"()I");
+			"()I"
+		);
 	}
 	jlong EventStats::getLastEventTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastEventTime",
-			"()J");
+			"()J"
+		);
 	}
 	jlong EventStats::getTotalTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTotalTime",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

@@ -23,7 +23,7 @@ namespace __jni_impl::android::util
 		static jint writeEvent(jint arg0, jlong arg1);
 		static jint writeEvent(jint arg0, jint arg1);
 		static void readEvents(jintArray arg0, __jni_impl::__JniBaseClass arg1);
-		static QAndroidJniObject getTagName(jint arg0);
+		static jstring getTagName(jint arg0);
 		static jint getTagCode(jstring arg0);
 	};
 } // namespace __jni_impl::android::util
@@ -49,7 +49,8 @@ namespace __jni_impl::android::util
 			"writeEvent",
 			"(IF)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint EventLog::writeEvent(jint arg0, jstring arg1)
 	{
@@ -58,7 +59,8 @@ namespace __jni_impl::android::util
 			"writeEvent",
 			"(ILjava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint EventLog::writeEvent(jint arg0, jobjectArray arg1)
 	{
@@ -67,7 +69,8 @@ namespace __jni_impl::android::util
 			"writeEvent",
 			"(I[Ljava/lang/Object;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint EventLog::writeEvent(jint arg0, jlong arg1)
 	{
@@ -76,7 +79,8 @@ namespace __jni_impl::android::util
 			"writeEvent",
 			"(IJ)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint EventLog::writeEvent(jint arg0, jint arg1)
 	{
@@ -85,7 +89,8 @@ namespace __jni_impl::android::util
 			"writeEvent",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void EventLog::readEvents(jintArray arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -94,15 +99,17 @@ namespace __jni_impl::android::util
 			"readEvents",
 			"([ILjava/util/Collection;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject EventLog::getTagName(jint arg0)
+	jstring EventLog::getTagName(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.EventLog",
 			"getTagName",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint EventLog::getTagCode(jstring arg0)
 	{
@@ -110,7 +117,8 @@ namespace __jni_impl::android::util
 			"android.util.EventLog",
 			"getTagCode",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

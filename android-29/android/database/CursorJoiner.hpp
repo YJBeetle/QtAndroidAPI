@@ -51,25 +51,29 @@ namespace __jni_impl::android::database
 	{
 		__thiz.callMethod<void>(
 			"remove",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject CursorJoiner::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jboolean CursorJoiner::hasNext()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNext",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject CursorJoiner::next()
 	{
 		return __thiz.callObjectMethod(
 			"next",
-			"()Landroid/database/CursorJoiner$Result;");
+			"()Landroid/database/CursorJoiner$Result;"
+		);
 	}
 } // namespace __jni_impl::android::database
 

@@ -41,19 +41,22 @@ namespace __jni_impl::android::opengl
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint EGLObjectHandle::getHandle()
 	{
 		return __thiz.callMethod<jint>(
 			"getHandle",
-			"()I");
+			"()I"
+		);
 	}
 	jlong EGLObjectHandle::getNativeHandle()
 	{
 		return __thiz.callMethod<jlong>(
 			"getNativeHandle",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

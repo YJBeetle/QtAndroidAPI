@@ -45,28 +45,32 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"setGender",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setAnimacy(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAnimacy",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setMultiplicity(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMultiplicity",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setCase(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setCase",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

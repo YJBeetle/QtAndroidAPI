@@ -9,13 +9,13 @@ namespace __jni_impl::java::util
 {
 	class UUID;
 }
-namespace __jni_impl::android::bluetooth
-{
-	class BluetoothGattCharacteristic;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::bluetooth
+{
+	class BluetoothGattCharacteristic;
 }
 
 namespace __jni_impl::android::bluetooth
@@ -25,9 +25,9 @@ namespace __jni_impl::android::bluetooth
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject DISABLE_NOTIFICATION_VALUE();
-		static QAndroidJniObject ENABLE_INDICATION_VALUE();
-		static QAndroidJniObject ENABLE_NOTIFICATION_VALUE();
+		static jbyteArray DISABLE_NOTIFICATION_VALUE();
+		static jbyteArray ENABLE_INDICATION_VALUE();
+		static jbyteArray ENABLE_NOTIFICATION_VALUE();
 		static jint PERMISSION_READ();
 		static jint PERMISSION_READ_ENCRYPTED();
 		static jint PERMISSION_READ_ENCRYPTED_MITM();
@@ -41,19 +41,19 @@ namespace __jni_impl::android::bluetooth
 		void __constructor(__jni_impl::java::util::UUID arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject getValue();
+		jbyteArray getValue();
 		jint getPermissions();
 		jboolean setValue(jbyteArray arg0);
-		QAndroidJniObject getCharacteristic();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getCharacteristic();
 		QAndroidJniObject getUuid();
 	};
 } // namespace __jni_impl::android::bluetooth
 
 #include "../../java/util/UUID.hpp"
-#include "BluetoothGattCharacteristic.hpp"
 #include "../os/Parcel.hpp"
+#include "BluetoothGattCharacteristic.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -63,76 +63,88 @@ namespace __jni_impl::android::bluetooth
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject BluetoothGattDescriptor::DISABLE_NOTIFICATION_VALUE()
+	jbyteArray BluetoothGattDescriptor::DISABLE_NOTIFICATION_VALUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"DISABLE_NOTIFICATION_VALUE",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject BluetoothGattDescriptor::ENABLE_INDICATION_VALUE()
+	jbyteArray BluetoothGattDescriptor::ENABLE_INDICATION_VALUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"ENABLE_INDICATION_VALUE",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject BluetoothGattDescriptor::ENABLE_NOTIFICATION_VALUE()
+	jbyteArray BluetoothGattDescriptor::ENABLE_NOTIFICATION_VALUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"ENABLE_NOTIFICATION_VALUE",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
 	jint BluetoothGattDescriptor::PERMISSION_READ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
-			"PERMISSION_READ");
+			"PERMISSION_READ"
+		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_READ_ENCRYPTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
-			"PERMISSION_READ_ENCRYPTED");
+			"PERMISSION_READ_ENCRYPTED"
+		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_READ_ENCRYPTED_MITM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
-			"PERMISSION_READ_ENCRYPTED_MITM");
+			"PERMISSION_READ_ENCRYPTED_MITM"
+		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
-			"PERMISSION_WRITE");
+			"PERMISSION_WRITE"
+		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE_ENCRYPTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
-			"PERMISSION_WRITE_ENCRYPTED");
+			"PERMISSION_WRITE_ENCRYPTED"
+		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE_ENCRYPTED_MITM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
-			"PERMISSION_WRITE_ENCRYPTED_MITM");
+			"PERMISSION_WRITE_ENCRYPTED_MITM"
+		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE_SIGNED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
-			"PERMISSION_WRITE_SIGNED");
+			"PERMISSION_WRITE_SIGNED"
+		);
 	}
 	jint BluetoothGattDescriptor::PERMISSION_WRITE_SIGNED_MITM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattDescriptor",
-			"PERMISSION_WRITE_SIGNED_MITM");
+			"PERMISSION_WRITE_SIGNED_MITM"
+		);
 	}
 	
 	// Constructors
@@ -146,36 +158,34 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
-	QAndroidJniObject BluetoothGattDescriptor::getValue()
+	jbyteArray BluetoothGattDescriptor::getValue()
 	{
 		return __thiz.callObjectMethod(
 			"getValue",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jint BluetoothGattDescriptor::getPermissions()
 	{
 		return __thiz.callMethod<jint>(
 			"getPermissions",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean BluetoothGattDescriptor::setValue(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setValue",
 			"([B)Z",
-			arg0);
-	}
-	QAndroidJniObject BluetoothGattDescriptor::getCharacteristic()
-	{
-		return __thiz.callObjectMethod(
-			"getCharacteristic",
-			"()Landroid/bluetooth/BluetoothGattCharacteristic;");
+			arg0
+		);
 	}
 	jint BluetoothGattDescriptor::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void BluetoothGattDescriptor::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -183,13 +193,22 @@ namespace __jni_impl::android::bluetooth
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject BluetoothGattDescriptor::getCharacteristic()
+	{
+		return __thiz.callObjectMethod(
+			"getCharacteristic",
+			"()Landroid/bluetooth/BluetoothGattCharacteristic;"
+		);
 	}
 	QAndroidJniObject BluetoothGattDescriptor::getUuid()
 	{
 		return __thiz.callObjectMethod(
 			"getUuid",
-			"()Ljava/util/UUID;");
+			"()Ljava/util/UUID;"
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

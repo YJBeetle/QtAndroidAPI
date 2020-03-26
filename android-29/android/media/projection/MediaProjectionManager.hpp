@@ -55,7 +55,8 @@ namespace __jni_impl::android::media::projection
 	{
 		return __thiz.callObjectMethod(
 			"createScreenCaptureIntent",
-			"()Landroid/content/Intent;");
+			"()Landroid/content/Intent;"
+		);
 	}
 	QAndroidJniObject MediaProjectionManager::getMediaProjection(jint arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -63,7 +64,8 @@ namespace __jni_impl::android::media::projection
 			"getMediaProjection",
 			"(ILandroid/content/Intent;)Landroid/media/projection/MediaProjection;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::projection
 

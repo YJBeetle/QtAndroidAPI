@@ -80,38 +80,44 @@ namespace __jni_impl::java::util::zip
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ZipInputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jlong ZipInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint ZipInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
 			"available",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ZipInputStream::getNextEntry()
 	{
 		return __thiz.callObjectMethod(
 			"getNextEntry",
-			"()Ljava/util/zip/ZipEntry;");
+			"()Ljava/util/zip/ZipEntry;"
+		);
 	}
 	void ZipInputStream::closeEntry()
 	{
 		__thiz.callMethod<void>(
 			"closeEntry",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

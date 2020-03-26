@@ -62,25 +62,29 @@ namespace __jni_impl::android::accessibilityservice
 	{
 		return __thiz.callObjectMethod(
 			"getPath",
-			"()Landroid/graphics/Path;");
+			"()Landroid/graphics/Path;"
+		);
 	}
 	jlong GestureDescription_StrokeDescription::getDuration()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDuration",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean GestureDescription_StrokeDescription::willContinue()
 	{
 		return __thiz.callMethod<jboolean>(
 			"willContinue",
-			"()Z");
+			"()Z"
+		);
 	}
 	jlong GestureDescription_StrokeDescription::getStartTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getStartTime",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject GestureDescription_StrokeDescription::continueStroke(__jni_impl::android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
 	{
@@ -90,7 +94,8 @@ namespace __jni_impl::android::accessibilityservice
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::accessibilityservice
 

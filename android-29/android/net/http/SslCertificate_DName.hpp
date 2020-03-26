@@ -21,10 +21,10 @@ namespace __jni_impl::android::net::http
 		void __constructor(__jni_impl::android::net::http::SslCertificate arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getDName();
-		QAndroidJniObject getCName();
-		QAndroidJniObject getOName();
-		QAndroidJniObject getUName();
+		jstring getDName();
+		jstring getCName();
+		jstring getOName();
+		jstring getUName();
 	};
 } // namespace __jni_impl::android::net::http
 
@@ -45,29 +45,33 @@ namespace __jni_impl::android::net::http
 	}
 	
 	// Methods
-	QAndroidJniObject SslCertificate_DName::getDName()
+	jstring SslCertificate_DName::getDName()
 	{
 		return __thiz.callObjectMethod(
 			"getDName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SslCertificate_DName::getCName()
+	jstring SslCertificate_DName::getCName()
 	{
 		return __thiz.callObjectMethod(
 			"getCName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SslCertificate_DName::getOName()
+	jstring SslCertificate_DName::getOName()
 	{
 		return __thiz.callObjectMethod(
 			"getOName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SslCertificate_DName::getUName()
+	jstring SslCertificate_DName::getUName()
 	{
 		return __thiz.callObjectMethod(
 			"getUName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net::http
 

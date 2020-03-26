@@ -27,15 +27,15 @@ namespace __jni_impl::java::io
 		void __constructor(jint arg0);
 		
 		// Methods
-		QAndroidJniObject toString(jstring arg0);
-		QAndroidJniObject toString(__jni_impl::java::nio::charset::Charset arg0);
-		QAndroidJniObject toString();
-		QAndroidJniObject toString(jint arg0);
+		jstring toString(jstring arg0);
+		jstring toString(__jni_impl::java::nio::charset::Charset arg0);
+		jstring toString();
+		jstring toString(jint arg0);
 		jint size();
 		void write(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);
 		void close();
-		QAndroidJniObject toByteArray();
+		jbyteArray toByteArray();
 		void reset();
 		void writeBytes(jbyteArray arg0);
 		void writeTo(__jni_impl::java::io::OutputStream arg0);
@@ -65,45 +65,51 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	QAndroidJniObject ByteArrayOutputStream::toString(jstring arg0)
+	jstring ByteArrayOutputStream::toString(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"toString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject ByteArrayOutputStream::toString(__jni_impl::java::nio::charset::Charset arg0)
+	jstring ByteArrayOutputStream::toString(__jni_impl::java::nio::charset::Charset arg0)
 	{
 		return __thiz.callObjectMethod(
 			"toString",
 			"(Ljava/nio/charset/Charset;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject ByteArrayOutputStream::toString()
+	jstring ByteArrayOutputStream::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ByteArrayOutputStream::toString(jint arg0)
+	jstring ByteArrayOutputStream::toString(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"toString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint ByteArrayOutputStream::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	void ByteArrayOutputStream::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ByteArrayOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -112,39 +118,45 @@ namespace __jni_impl::java::io
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ByteArrayOutputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject ByteArrayOutputStream::toByteArray()
+	jbyteArray ByteArrayOutputStream::toByteArray()
 	{
 		return __thiz.callObjectMethod(
 			"toByteArray",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	void ByteArrayOutputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void ByteArrayOutputStream::writeBytes(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"writeBytes",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void ByteArrayOutputStream::writeTo(__jni_impl::java::io::OutputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"writeTo",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::io
 

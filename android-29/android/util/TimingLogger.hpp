@@ -44,7 +44,8 @@ namespace __jni_impl::android::util
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void TimingLogger::reset(jstring arg0, jstring arg1)
 	{
@@ -52,20 +53,23 @@ namespace __jni_impl::android::util
 			"reset",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void TimingLogger::addSplit(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"addSplit",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void TimingLogger::dumpToLog()
 	{
 		__thiz.callMethod<void>(
 			"dumpToLog",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::util
 

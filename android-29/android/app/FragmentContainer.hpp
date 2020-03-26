@@ -46,13 +46,15 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"onFindViewById",
 			"(I)Landroid/view/View;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean FragmentContainer::onHasView()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onHasView",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::app
 

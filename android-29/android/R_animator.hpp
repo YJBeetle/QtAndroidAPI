@@ -30,13 +30,15 @@ namespace __jni_impl::android
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$animator",
-			"fade_in");
+			"fade_in"
+		);
 	}
 	jint R_animator::fade_out()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$animator",
-			"fade_out");
+			"fade_out"
+		);
 	}
 	
 	// Constructors

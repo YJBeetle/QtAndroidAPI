@@ -26,11 +26,11 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		QAndroidJniObject encode(__jni_impl::java::nio::ByteBuffer arg0);
-		QAndroidJniObject encode(jbyteArray arg0);
 		jint encode(jbyteArray arg0, jbyteArray arg1);
+		jbyteArray encode(jbyteArray arg0);
 		QAndroidJniObject wrap(__jni_impl::java::io::OutputStream arg0);
+		jstring encodeToString(jbyteArray arg0);
 		QAndroidJniObject withoutPadding();
-		QAndroidJniObject encodeToString(jbyteArray arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -55,14 +55,8 @@ namespace __jni_impl::java::util
 		return __thiz.callObjectMethod(
 			"encode",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Base64_Encoder::encode(jbyteArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"encode",
-			"([B)[B",
-			arg0);
+			arg0.__jniObject().object()
+		);
 	}
 	jint Base64_Encoder::encode(jbyteArray arg0, jbyteArray arg1)
 	{
@@ -70,27 +64,39 @@ namespace __jni_impl::java::util
 			"encode",
 			"([B[B)I",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	jbyteArray Base64_Encoder::encode(jbyteArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"encode",
+			"([B)[B",
+			arg0
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject Base64_Encoder::wrap(__jni_impl::java::io::OutputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"wrap",
 			"(Ljava/io/OutputStream;)Ljava/io/OutputStream;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jstring Base64_Encoder::encodeToString(jbyteArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"encodeToString",
+			"([B)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject Base64_Encoder::withoutPadding()
 	{
 		return __thiz.callObjectMethod(
 			"withoutPadding",
-			"()Ljava/util/Base64$Encoder;");
-	}
-	QAndroidJniObject Base64_Encoder::encodeToString(jbyteArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"encodeToString",
-			"([B)Ljava/lang/String;",
-			arg0);
+			"()Ljava/util/Base64$Encoder;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

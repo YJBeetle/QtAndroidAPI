@@ -62,18 +62,18 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ABBR_GENERIC_TZ();
-		static QAndroidJniObject ABBR_MONTH();
-		static QAndroidJniObject ABBR_MONTH_DAY();
-		static QAndroidJniObject ABBR_MONTH_WEEKDAY_DAY();
-		static QAndroidJniObject ABBR_QUARTER();
-		static QAndroidJniObject ABBR_SPECIFIC_TZ();
-		static QAndroidJniObject ABBR_UTC_TZ();
-		static QAndroidJniObject ABBR_WEEKDAY();
+		static jstring ABBR_GENERIC_TZ();
+		static jstring ABBR_MONTH();
+		static jstring ABBR_MONTH_DAY();
+		static jstring ABBR_MONTH_WEEKDAY_DAY();
+		static jstring ABBR_QUARTER();
+		static jstring ABBR_SPECIFIC_TZ();
+		static jstring ABBR_UTC_TZ();
+		static jstring ABBR_WEEKDAY();
 		static jint AM_PM_FIELD();
 		static jint AM_PM_MIDNIGHT_NOON_FIELD();
 		static jint DATE_FIELD();
-		static QAndroidJniObject DAY();
+		static jstring DAY();
 		static jint DAY_OF_WEEK_FIELD();
 		static jint DAY_OF_WEEK_IN_MONTH_FIELD();
 		static jint DAY_OF_YEAR_FIELD();
@@ -84,35 +84,35 @@ namespace __jni_impl::android::icu::text
 		static jint FLEXIBLE_DAY_PERIOD_FIELD();
 		static jint FRACTIONAL_SECOND_FIELD();
 		static jint FULL();
-		static QAndroidJniObject GENERIC_TZ();
-		static QAndroidJniObject HOUR();
+		static jstring GENERIC_TZ();
+		static jstring HOUR();
 		static jint HOUR0_FIELD();
 		static jint HOUR1_FIELD();
-		static QAndroidJniObject HOUR24();
-		static QAndroidJniObject HOUR24_MINUTE();
-		static QAndroidJniObject HOUR24_MINUTE_SECOND();
-		static QAndroidJniObject HOUR_MINUTE();
-		static QAndroidJniObject HOUR_MINUTE_SECOND();
+		static jstring HOUR24();
+		static jstring HOUR24_MINUTE();
+		static jstring HOUR24_MINUTE_SECOND();
+		static jstring HOUR_MINUTE();
+		static jstring HOUR_MINUTE_SECOND();
 		static jint HOUR_OF_DAY0_FIELD();
 		static jint HOUR_OF_DAY1_FIELD();
 		static jint JULIAN_DAY_FIELD();
-		static QAndroidJniObject LOCATION_TZ();
+		static jstring LOCATION_TZ();
 		static jint LONG();
 		static jint MEDIUM();
 		static jint MILLISECONDS_IN_DAY_FIELD();
 		static jint MILLISECOND_FIELD();
-		static QAndroidJniObject MINUTE();
+		static jstring MINUTE();
 		static jint MINUTE_FIELD();
-		static QAndroidJniObject MINUTE_SECOND();
-		static QAndroidJniObject MONTH();
-		static QAndroidJniObject MONTH_DAY();
+		static jstring MINUTE_SECOND();
+		static jstring MONTH();
+		static jstring MONTH_DAY();
 		static jint MONTH_FIELD();
-		static QAndroidJniObject MONTH_WEEKDAY_DAY();
+		static jstring MONTH_WEEKDAY_DAY();
 		static jint NONE();
-		static QAndroidJniObject NUM_MONTH();
-		static QAndroidJniObject NUM_MONTH_DAY();
-		static QAndroidJniObject NUM_MONTH_WEEKDAY_DAY();
-		static QAndroidJniObject QUARTER();
+		static jstring NUM_MONTH();
+		static jstring NUM_MONTH_DAY();
+		static jstring NUM_MONTH_WEEKDAY_DAY();
+		static jstring QUARTER();
 		static jint QUARTER_FIELD();
 		static jint RELATIVE();
 		static jint RELATIVE_DEFAULT();
@@ -120,10 +120,10 @@ namespace __jni_impl::android::icu::text
 		static jint RELATIVE_LONG();
 		static jint RELATIVE_MEDIUM();
 		static jint RELATIVE_SHORT();
-		static QAndroidJniObject SECOND();
+		static jstring SECOND();
 		static jint SECOND_FIELD();
 		static jint SHORT();
-		static QAndroidJniObject SPECIFIC_TZ();
+		static jstring SPECIFIC_TZ();
 		static jint STANDALONE_DAY_FIELD();
 		static jint STANDALONE_MONTH_FIELD();
 		static jint STANDALONE_QUARTER_FIELD();
@@ -134,23 +134,23 @@ namespace __jni_impl::android::icu::text
 		static jint TIMEZONE_LOCALIZED_GMT_OFFSET_FIELD();
 		static jint TIMEZONE_RFC_FIELD();
 		static jint TIMEZONE_SPECIAL_FIELD();
-		static QAndroidJniObject WEEKDAY();
+		static jstring WEEKDAY();
 		static jint WEEK_OF_MONTH_FIELD();
 		static jint WEEK_OF_YEAR_FIELD();
-		static QAndroidJniObject YEAR();
-		static QAndroidJniObject YEAR_ABBR_MONTH();
-		static QAndroidJniObject YEAR_ABBR_MONTH_DAY();
-		static QAndroidJniObject YEAR_ABBR_MONTH_WEEKDAY_DAY();
-		static QAndroidJniObject YEAR_ABBR_QUARTER();
+		static jstring YEAR();
+		static jstring YEAR_ABBR_MONTH();
+		static jstring YEAR_ABBR_MONTH_DAY();
+		static jstring YEAR_ABBR_MONTH_WEEKDAY_DAY();
+		static jstring YEAR_ABBR_QUARTER();
 		static jint YEAR_FIELD();
-		static QAndroidJniObject YEAR_MONTH();
-		static QAndroidJniObject YEAR_MONTH_DAY();
-		static QAndroidJniObject YEAR_MONTH_WEEKDAY_DAY();
+		static jstring YEAR_MONTH();
+		static jstring YEAR_MONTH_DAY();
+		static jstring YEAR_MONTH_WEEKDAY_DAY();
 		static jint YEAR_NAME_FIELD();
-		static QAndroidJniObject YEAR_NUM_MONTH();
-		static QAndroidJniObject YEAR_NUM_MONTH_DAY();
-		static QAndroidJniObject YEAR_NUM_MONTH_WEEKDAY_DAY();
-		static QAndroidJniObject YEAR_QUARTER();
+		static jstring YEAR_NUM_MONTH();
+		static jstring YEAR_NUM_MONTH_DAY();
+		static jstring YEAR_NUM_MONTH_WEEKDAY_DAY();
+		static jstring YEAR_QUARTER();
 		static jint YEAR_WOY_FIELD();
 		
 		// Constructors
@@ -159,11 +159,11 @@ namespace __jni_impl::android::icu::text
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		QAndroidJniObject format(__jni_impl::android::icu::util::Calendar arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		QAndroidJniObject format(__jni_impl::java::util::Date arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
-		QAndroidJniObject format(__jni_impl::java::util::Date arg0);
+		jstring format(__jni_impl::java::util::Date arg0);
 		static QAndroidJniObject getInstance();
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::Calendar arg0);
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::Calendar arg0, __jni_impl::java::util::Locale arg1);
@@ -171,7 +171,7 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject parse(jstring arg0);
 		void parse(jstring arg0, __jni_impl::android::icu::util::Calendar arg1, __jni_impl::java::text::ParsePosition arg2);
 		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
-		static QAndroidJniObject getAvailableLocales();
+		static jarray getAvailableLocales();
 		static QAndroidJniObject getDateTimeInstance(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2);
 		static QAndroidJniObject getDateTimeInstance(jint arg0, jint arg1);
 		static QAndroidJniObject getDateTimeInstance(jint arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2);
@@ -197,7 +197,7 @@ namespace __jni_impl::android::icu::text
 		static QAndroidJniObject getTimeInstance();
 		static QAndroidJniObject getTimeInstance(jint arg0);
 		static QAndroidJniObject getTimeInstance(jint arg0, __jni_impl::android::icu::util::ULocale arg1);
-		QAndroidJniObject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 		void setCalendar(__jni_impl::android::icu::util::Calendar arg0);
 		QAndroidJniObject getCalendar();
 		void setNumberFormat(__jni_impl::android::icu::text::NumberFormat arg0);
@@ -236,586 +236,676 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject DateFormat::ABBR_GENERIC_TZ()
+	jstring DateFormat::ABBR_GENERIC_TZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_GENERIC_TZ",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::ABBR_MONTH()
+	jstring DateFormat::ABBR_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_MONTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::ABBR_MONTH_DAY()
+	jstring DateFormat::ABBR_MONTH_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_MONTH_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::ABBR_MONTH_WEEKDAY_DAY()
+	jstring DateFormat::ABBR_MONTH_WEEKDAY_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_MONTH_WEEKDAY_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::ABBR_QUARTER()
+	jstring DateFormat::ABBR_QUARTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_QUARTER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::ABBR_SPECIFIC_TZ()
+	jstring DateFormat::ABBR_SPECIFIC_TZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_SPECIFIC_TZ",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::ABBR_UTC_TZ()
+	jstring DateFormat::ABBR_UTC_TZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_UTC_TZ",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::ABBR_WEEKDAY()
+	jstring DateFormat::ABBR_WEEKDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"ABBR_WEEKDAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::AM_PM_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"AM_PM_FIELD");
+			"AM_PM_FIELD"
+		);
 	}
 	jint DateFormat::AM_PM_MIDNIGHT_NOON_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"AM_PM_MIDNIGHT_NOON_FIELD");
+			"AM_PM_MIDNIGHT_NOON_FIELD"
+		);
 	}
 	jint DateFormat::DATE_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"DATE_FIELD");
+			"DATE_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::DAY()
+	jstring DateFormat::DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::DAY_OF_WEEK_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"DAY_OF_WEEK_FIELD");
+			"DAY_OF_WEEK_FIELD"
+		);
 	}
 	jint DateFormat::DAY_OF_WEEK_IN_MONTH_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"DAY_OF_WEEK_IN_MONTH_FIELD");
+			"DAY_OF_WEEK_IN_MONTH_FIELD"
+		);
 	}
 	jint DateFormat::DAY_OF_YEAR_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"DAY_OF_YEAR_FIELD");
+			"DAY_OF_YEAR_FIELD"
+		);
 	}
 	jint DateFormat::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"DEFAULT");
+			"DEFAULT"
+		);
 	}
 	jint DateFormat::DOW_LOCAL_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"DOW_LOCAL_FIELD");
+			"DOW_LOCAL_FIELD"
+		);
 	}
 	jint DateFormat::ERA_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"ERA_FIELD");
+			"ERA_FIELD"
+		);
 	}
 	jint DateFormat::EXTENDED_YEAR_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"EXTENDED_YEAR_FIELD");
+			"EXTENDED_YEAR_FIELD"
+		);
 	}
 	jint DateFormat::FLEXIBLE_DAY_PERIOD_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"FLEXIBLE_DAY_PERIOD_FIELD");
+			"FLEXIBLE_DAY_PERIOD_FIELD"
+		);
 	}
 	jint DateFormat::FRACTIONAL_SECOND_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"FRACTIONAL_SECOND_FIELD");
+			"FRACTIONAL_SECOND_FIELD"
+		);
 	}
 	jint DateFormat::FULL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"FULL");
+			"FULL"
+		);
 	}
-	QAndroidJniObject DateFormat::GENERIC_TZ()
+	jstring DateFormat::GENERIC_TZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"GENERIC_TZ",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::HOUR()
+	jstring DateFormat::HOUR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::HOUR0_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"HOUR0_FIELD");
+			"HOUR0_FIELD"
+		);
 	}
 	jint DateFormat::HOUR1_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"HOUR1_FIELD");
+			"HOUR1_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::HOUR24()
+	jstring DateFormat::HOUR24()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR24",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::HOUR24_MINUTE()
+	jstring DateFormat::HOUR24_MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR24_MINUTE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::HOUR24_MINUTE_SECOND()
+	jstring DateFormat::HOUR24_MINUTE_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR24_MINUTE_SECOND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::HOUR_MINUTE()
+	jstring DateFormat::HOUR_MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR_MINUTE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::HOUR_MINUTE_SECOND()
+	jstring DateFormat::HOUR_MINUTE_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"HOUR_MINUTE_SECOND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::HOUR_OF_DAY0_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"HOUR_OF_DAY0_FIELD");
+			"HOUR_OF_DAY0_FIELD"
+		);
 	}
 	jint DateFormat::HOUR_OF_DAY1_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"HOUR_OF_DAY1_FIELD");
+			"HOUR_OF_DAY1_FIELD"
+		);
 	}
 	jint DateFormat::JULIAN_DAY_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"JULIAN_DAY_FIELD");
+			"JULIAN_DAY_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::LOCATION_TZ()
+	jstring DateFormat::LOCATION_TZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"LOCATION_TZ",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::LONG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"LONG");
+			"LONG"
+		);
 	}
 	jint DateFormat::MEDIUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"MEDIUM");
+			"MEDIUM"
+		);
 	}
 	jint DateFormat::MILLISECONDS_IN_DAY_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"MILLISECONDS_IN_DAY_FIELD");
+			"MILLISECONDS_IN_DAY_FIELD"
+		);
 	}
 	jint DateFormat::MILLISECOND_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"MILLISECOND_FIELD");
+			"MILLISECOND_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::MINUTE()
+	jstring DateFormat::MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MINUTE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::MINUTE_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"MINUTE_FIELD");
+			"MINUTE_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::MINUTE_SECOND()
+	jstring DateFormat::MINUTE_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MINUTE_SECOND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::MONTH()
+	jstring DateFormat::MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MONTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::MONTH_DAY()
+	jstring DateFormat::MONTH_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MONTH_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::MONTH_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"MONTH_FIELD");
+			"MONTH_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::MONTH_WEEKDAY_DAY()
+	jstring DateFormat::MONTH_WEEKDAY_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"MONTH_WEEKDAY_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"NONE");
+			"NONE"
+		);
 	}
-	QAndroidJniObject DateFormat::NUM_MONTH()
+	jstring DateFormat::NUM_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"NUM_MONTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::NUM_MONTH_DAY()
+	jstring DateFormat::NUM_MONTH_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"NUM_MONTH_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::NUM_MONTH_WEEKDAY_DAY()
+	jstring DateFormat::NUM_MONTH_WEEKDAY_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"NUM_MONTH_WEEKDAY_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::QUARTER()
+	jstring DateFormat::QUARTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"QUARTER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::QUARTER_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"QUARTER_FIELD");
+			"QUARTER_FIELD"
+		);
 	}
 	jint DateFormat::RELATIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"RELATIVE");
+			"RELATIVE"
+		);
 	}
 	jint DateFormat::RELATIVE_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"RELATIVE_DEFAULT");
+			"RELATIVE_DEFAULT"
+		);
 	}
 	jint DateFormat::RELATIVE_FULL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"RELATIVE_FULL");
+			"RELATIVE_FULL"
+		);
 	}
 	jint DateFormat::RELATIVE_LONG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"RELATIVE_LONG");
+			"RELATIVE_LONG"
+		);
 	}
 	jint DateFormat::RELATIVE_MEDIUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"RELATIVE_MEDIUM");
+			"RELATIVE_MEDIUM"
+		);
 	}
 	jint DateFormat::RELATIVE_SHORT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"RELATIVE_SHORT");
+			"RELATIVE_SHORT"
+		);
 	}
-	QAndroidJniObject DateFormat::SECOND()
+	jstring DateFormat::SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"SECOND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::SECOND_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"SECOND_FIELD");
+			"SECOND_FIELD"
+		);
 	}
 	jint DateFormat::SHORT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"SHORT");
+			"SHORT"
+		);
 	}
-	QAndroidJniObject DateFormat::SPECIFIC_TZ()
+	jstring DateFormat::SPECIFIC_TZ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"SPECIFIC_TZ",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::STANDALONE_DAY_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"STANDALONE_DAY_FIELD");
+			"STANDALONE_DAY_FIELD"
+		);
 	}
 	jint DateFormat::STANDALONE_MONTH_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"STANDALONE_MONTH_FIELD");
+			"STANDALONE_MONTH_FIELD"
+		);
 	}
 	jint DateFormat::STANDALONE_QUARTER_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"STANDALONE_QUARTER_FIELD");
+			"STANDALONE_QUARTER_FIELD"
+		);
 	}
 	jint DateFormat::TIMEZONE_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"TIMEZONE_FIELD");
+			"TIMEZONE_FIELD"
+		);
 	}
 	jint DateFormat::TIMEZONE_GENERIC_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"TIMEZONE_GENERIC_FIELD");
+			"TIMEZONE_GENERIC_FIELD"
+		);
 	}
 	jint DateFormat::TIMEZONE_ISO_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"TIMEZONE_ISO_FIELD");
+			"TIMEZONE_ISO_FIELD"
+		);
 	}
 	jint DateFormat::TIMEZONE_ISO_LOCAL_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"TIMEZONE_ISO_LOCAL_FIELD");
+			"TIMEZONE_ISO_LOCAL_FIELD"
+		);
 	}
 	jint DateFormat::TIMEZONE_LOCALIZED_GMT_OFFSET_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"TIMEZONE_LOCALIZED_GMT_OFFSET_FIELD");
+			"TIMEZONE_LOCALIZED_GMT_OFFSET_FIELD"
+		);
 	}
 	jint DateFormat::TIMEZONE_RFC_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"TIMEZONE_RFC_FIELD");
+			"TIMEZONE_RFC_FIELD"
+		);
 	}
 	jint DateFormat::TIMEZONE_SPECIAL_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"TIMEZONE_SPECIAL_FIELD");
+			"TIMEZONE_SPECIAL_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::WEEKDAY()
+	jstring DateFormat::WEEKDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"WEEKDAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::WEEK_OF_MONTH_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"WEEK_OF_MONTH_FIELD");
+			"WEEK_OF_MONTH_FIELD"
+		);
 	}
 	jint DateFormat::WEEK_OF_YEAR_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"WEEK_OF_YEAR_FIELD");
+			"WEEK_OF_YEAR_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::YEAR()
+	jstring DateFormat::YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::YEAR_ABBR_MONTH()
+	jstring DateFormat::YEAR_ABBR_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_ABBR_MONTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::YEAR_ABBR_MONTH_DAY()
+	jstring DateFormat::YEAR_ABBR_MONTH_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_ABBR_MONTH_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::YEAR_ABBR_MONTH_WEEKDAY_DAY()
+	jstring DateFormat::YEAR_ABBR_MONTH_WEEKDAY_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_ABBR_MONTH_WEEKDAY_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::YEAR_ABBR_QUARTER()
+	jstring DateFormat::YEAR_ABBR_QUARTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_ABBR_QUARTER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::YEAR_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"YEAR_FIELD");
+			"YEAR_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::YEAR_MONTH()
+	jstring DateFormat::YEAR_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_MONTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::YEAR_MONTH_DAY()
+	jstring DateFormat::YEAR_MONTH_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_MONTH_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::YEAR_MONTH_WEEKDAY_DAY()
+	jstring DateFormat::YEAR_MONTH_WEEKDAY_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_MONTH_WEEKDAY_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::YEAR_NAME_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"YEAR_NAME_FIELD");
+			"YEAR_NAME_FIELD"
+		);
 	}
-	QAndroidJniObject DateFormat::YEAR_NUM_MONTH()
+	jstring DateFormat::YEAR_NUM_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_NUM_MONTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::YEAR_NUM_MONTH_DAY()
+	jstring DateFormat::YEAR_NUM_MONTH_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_NUM_MONTH_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::YEAR_NUM_MONTH_WEEKDAY_DAY()
+	jstring DateFormat::YEAR_NUM_MONTH_WEEKDAY_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_NUM_MONTH_WEEKDAY_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DateFormat::YEAR_QUARTER()
+	jstring DateFormat::YEAR_QUARTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat",
 			"YEAR_QUARTER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateFormat::YEAR_WOY_FIELD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateFormat",
-			"YEAR_WOY_FIELD");
+			"YEAR_WOY_FIELD"
+		);
 	}
 	
 	// Constructors
@@ -832,19 +922,22 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint DateFormat::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject DateFormat::clone()
+	jobject DateFormat::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject DateFormat::format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
@@ -853,7 +946,8 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::format(__jni_impl::android::icu::util::Calendar arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
@@ -862,7 +956,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::format(__jni_impl::java::util::Date arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
@@ -871,21 +966,24 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/util/Date;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DateFormat::format(__jni_impl::java::util::Date arg0)
+	jstring DateFormat::format(__jni_impl::java::util::Date arg0)
 	{
 		return __thiz.callObjectMethod(
 			"format",
 			"(Ljava/util/Date;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject DateFormat::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getInstance",
-			"()Landroid/icu/text/DateFormat;");
+			"()Landroid/icu/text/DateFormat;"
+		);
 	}
 	QAndroidJniObject DateFormat::getInstance(__jni_impl::android::icu::util::Calendar arg0)
 	{
@@ -893,7 +991,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.DateFormat",
 			"getInstance",
 			"(Landroid/icu/util/Calendar;)Landroid/icu/text/DateFormat;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getInstance(__jni_impl::android::icu::util::Calendar arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -902,21 +1001,24 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Landroid/icu/util/Calendar;Ljava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getContext(__jni_impl::android::icu::text::DisplayContext_Type arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getContext",
 			"(Landroid/icu/text/DisplayContext$Type;)Landroid/icu/text/DisplayContext;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::parse(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/Date;",
-			arg0);
+			arg0
+		);
 	}
 	void DateFormat::parse(jstring arg0, __jni_impl::android::icu::util::Calendar arg1, __jni_impl::java::text::ParsePosition arg2)
 	{
@@ -925,7 +1027,8 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;Landroid/icu/util/Calendar;Ljava/text/ParsePosition;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
@@ -933,14 +1036,16 @@ namespace __jni_impl::android::icu::text
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DateFormat::getAvailableLocales()
+	jarray DateFormat::getAvailableLocales()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getAvailableLocales",
-			"()[Ljava/util/Locale;");
+			"()[Ljava/util/Locale;"
+		).object<jarray>();
 	}
 	QAndroidJniObject DateFormat::getDateTimeInstance(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2)
 	{
@@ -950,7 +1055,8 @@ namespace __jni_impl::android::icu::text
 			"(IILjava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getDateTimeInstance(jint arg0, jint arg1)
 	{
@@ -959,7 +1065,8 @@ namespace __jni_impl::android::icu::text
 			"getDateTimeInstance",
 			"(II)Landroid/icu/text/DateFormat;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DateFormat::getDateTimeInstance(jint arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2)
 	{
@@ -969,7 +1076,8 @@ namespace __jni_impl::android::icu::text
 			"(IILandroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getDateTimeInstance(__jni_impl::android::icu::util::Calendar arg0, jint arg1, jint arg2)
 	{
@@ -979,7 +1087,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;II)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject DateFormat::getDateTimeInstance(__jni_impl::android::icu::util::Calendar arg0, jint arg1, jint arg2, __jni_impl::android::icu::util::ULocale arg3)
 	{
@@ -990,7 +1099,8 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getDateTimeInstance(__jni_impl::android::icu::util::Calendar arg0, jint arg1, jint arg2, __jni_impl::java::util::Locale arg3)
 	{
@@ -1001,40 +1111,46 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getDateTimeInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getDateTimeInstance",
-			"()Landroid/icu/text/DateFormat;");
+			"()Landroid/icu/text/DateFormat;"
+		);
 	}
 	void DateFormat::setTimeZone(__jni_impl::android::icu::util::TimeZone arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimeZone",
 			"(Landroid/icu/util/TimeZone;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getTimeZone()
 	{
 		return __thiz.callObjectMethod(
 			"getTimeZone",
-			"()Landroid/icu/util/TimeZone;");
+			"()Landroid/icu/util/TimeZone;"
+		);
 	}
 	void DateFormat::setLenient(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLenient",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DateFormat::isLenient()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLenient",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject DateFormat::getDateInstance(__jni_impl::android::icu::util::Calendar arg0, jint arg1, __jni_impl::java::util::Locale arg2)
 	{
@@ -1044,7 +1160,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;ILjava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getDateInstance(__jni_impl::android::icu::util::Calendar arg0, jint arg1)
 	{
@@ -1053,14 +1170,16 @@ namespace __jni_impl::android::icu::text
 			"getDateInstance",
 			"(Landroid/icu/util/Calendar;I)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DateFormat::getDateInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getDateInstance",
-			"()Landroid/icu/text/DateFormat;");
+			"()Landroid/icu/text/DateFormat;"
+		);
 	}
 	QAndroidJniObject DateFormat::getDateInstance(jint arg0)
 	{
@@ -1068,7 +1187,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.DateFormat",
 			"getDateInstance",
 			"(I)Landroid/icu/text/DateFormat;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DateFormat::getDateInstance(jint arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -1077,7 +1197,8 @@ namespace __jni_impl::android::icu::text
 			"getDateInstance",
 			"(ILjava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getDateInstance(jint arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
@@ -1086,7 +1207,8 @@ namespace __jni_impl::android::icu::text
 			"getDateInstance",
 			"(ILandroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getDateInstance(__jni_impl::android::icu::util::Calendar arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2)
 	{
@@ -1096,7 +1218,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;ILandroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getTimeInstance(__jni_impl::android::icu::util::Calendar arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2)
 	{
@@ -1106,7 +1229,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;ILandroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getTimeInstance(jint arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -1115,7 +1239,8 @@ namespace __jni_impl::android::icu::text
 			"getTimeInstance",
 			"(ILjava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getTimeInstance(__jni_impl::android::icu::util::Calendar arg0, jint arg1, __jni_impl::java::util::Locale arg2)
 	{
@@ -1125,7 +1250,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;ILjava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getTimeInstance(__jni_impl::android::icu::util::Calendar arg0, jint arg1)
 	{
@@ -1134,14 +1260,16 @@ namespace __jni_impl::android::icu::text
 			"getTimeInstance",
 			"(Landroid/icu/util/Calendar;I)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DateFormat::getTimeInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DateFormat",
 			"getTimeInstance",
-			"()Landroid/icu/text/DateFormat;");
+			"()Landroid/icu/text/DateFormat;"
+		);
 	}
 	QAndroidJniObject DateFormat::getTimeInstance(jint arg0)
 	{
@@ -1149,7 +1277,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.DateFormat",
 			"getTimeInstance",
 			"(I)Landroid/icu/text/DateFormat;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DateFormat::getTimeInstance(jint arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
@@ -1158,54 +1287,62 @@ namespace __jni_impl::android::icu::text
 			"getTimeInstance",
 			"(ILandroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DateFormat::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
+	jobject DateFormat::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	void DateFormat::setCalendar(__jni_impl::android::icu::util::Calendar arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCalendar",
 			"(Landroid/icu/util/Calendar;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getCalendar()
 	{
 		return __thiz.callObjectMethod(
 			"getCalendar",
-			"()Landroid/icu/util/Calendar;");
+			"()Landroid/icu/util/Calendar;"
+		);
 	}
 	void DateFormat::setNumberFormat(__jni_impl::android::icu::text::NumberFormat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNumberFormat",
 			"(Landroid/icu/text/NumberFormat;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getNumberFormat()
 	{
 		return __thiz.callObjectMethod(
 			"getNumberFormat",
-			"()Landroid/icu/text/NumberFormat;");
+			"()Landroid/icu/text/NumberFormat;"
+		);
 	}
 	void DateFormat::setCalendarLenient(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCalendarLenient",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DateFormat::isCalendarLenient()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCalendarLenient",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject DateFormat::setBooleanAttribute(__jni_impl::android::icu::text::DateFormat_BooleanAttribute arg0, jboolean arg1)
 	{
@@ -1213,21 +1350,24 @@ namespace __jni_impl::android::icu::text
 			"setBooleanAttribute",
 			"(Landroid/icu/text/DateFormat$BooleanAttribute;Z)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean DateFormat::getBooleanAttribute(__jni_impl::android::icu::text::DateFormat_BooleanAttribute arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getBooleanAttribute",
 			"(Landroid/icu/text/DateFormat$BooleanAttribute;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DateFormat::setContext(__jni_impl::android::icu::text::DisplayContext arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContext",
 			"(Landroid/icu/text/DisplayContext;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getInstanceForSkeleton(jstring arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
@@ -1236,7 +1376,8 @@ namespace __jni_impl::android::icu::text
 			"getInstanceForSkeleton",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getInstanceForSkeleton(__jni_impl::android::icu::util::Calendar arg0, jstring arg1, __jni_impl::java::util::Locale arg2)
 	{
@@ -1246,7 +1387,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getInstanceForSkeleton(__jni_impl::android::icu::util::Calendar arg0, jstring arg1, __jni_impl::android::icu::util::ULocale arg2)
 	{
@@ -1256,7 +1398,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getInstanceForSkeleton(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -1265,7 +1408,8 @@ namespace __jni_impl::android::icu::text
 			"getInstanceForSkeleton",
 			"(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getInstanceForSkeleton(jstring arg0)
 	{
@@ -1273,7 +1417,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.DateFormat",
 			"getInstanceForSkeleton",
 			"(Ljava/lang/String;)Landroid/icu/text/DateFormat;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DateFormat::getPatternInstance(__jni_impl::android::icu::util::Calendar arg0, jstring arg1, __jni_impl::java::util::Locale arg2)
 	{
@@ -1283,7 +1428,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getPatternInstance(jstring arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
@@ -1292,7 +1438,8 @@ namespace __jni_impl::android::icu::text
 			"getPatternInstance",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getPatternInstance(__jni_impl::android::icu::util::Calendar arg0, jstring arg1, __jni_impl::android::icu::util::ULocale arg2)
 	{
@@ -1302,7 +1449,8 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/Calendar;Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateFormat;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getPatternInstance(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -1311,7 +1459,8 @@ namespace __jni_impl::android::icu::text
 			"getPatternInstance",
 			"(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DateFormat::getPatternInstance(jstring arg0)
 	{
@@ -1319,7 +1468,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.DateFormat",
 			"getPatternInstance",
 			"(Ljava/lang/String;)Landroid/icu/text/DateFormat;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

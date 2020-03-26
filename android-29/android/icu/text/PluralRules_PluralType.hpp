@@ -20,7 +20,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -34,14 +34,16 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.PluralRules$PluralType",
 			"CARDINAL",
-			"Landroid/icu/text/PluralRules$PluralType;");
+			"Landroid/icu/text/PluralRules$PluralType;"
+		);
 	}
 	QAndroidJniObject PluralRules_PluralType::ORDINAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.PluralRules$PluralType",
 			"ORDINAL",
-			"Landroid/icu/text/PluralRules$PluralType;");
+			"Landroid/icu/text/PluralRules$PluralType;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject PluralRules_PluralType::values()
+	jarray PluralRules_PluralType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.PluralRules$PluralType",
 			"values",
-			"()[Landroid/icu/text/PluralRules$PluralType;");
+			"()[Landroid/icu/text/PluralRules$PluralType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject PluralRules_PluralType::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.PluralRules$PluralType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/PluralRules$PluralType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

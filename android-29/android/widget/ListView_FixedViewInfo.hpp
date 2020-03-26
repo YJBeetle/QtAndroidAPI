@@ -20,7 +20,7 @@ namespace __jni_impl::android::widget
 	{
 	public:
 		// Fields
-		QAndroidJniObject data();
+		jobject data();
 		jboolean isSelectable();
 		QAndroidJniObject view();
 		
@@ -37,22 +37,25 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::widget
 {
 	// Fields
-	QAndroidJniObject ListView_FixedViewInfo::data()
+	jobject ListView_FixedViewInfo::data()
 	{
 		return __thiz.getObjectField(
 			"data",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean ListView_FixedViewInfo::isSelectable()
 	{
 		return __thiz.getField<jboolean>(
-			"isSelectable");
+			"isSelectable"
+		);
 	}
 	QAndroidJniObject ListView_FixedViewInfo::view()
 	{
 		return __thiz.getObjectField(
 			"view",
-			"Landroid/view/View;");
+			"Landroid/view/View;"
+		);
 	}
 	
 	// Constructors

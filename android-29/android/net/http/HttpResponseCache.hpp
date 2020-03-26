@@ -79,7 +79,8 @@ namespace __jni_impl::android::net::http
 			"(Ljava/net/URI;Ljava/lang/String;Ljava/util/Map;)Ljava/net/CacheResponse;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject HttpResponseCache::put(__jni_impl::java::net::URI arg0, __jni_impl::java::net::URLConnection arg1)
 	{
@@ -87,44 +88,51 @@ namespace __jni_impl::android::net::http
 			"put",
 			"(Ljava/net/URI;Ljava/net/URLConnection;)Ljava/net/CacheRequest;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong HttpResponseCache::size()
 	{
 		return __thiz.callMethod<jlong>(
 			"size",
-			"()J");
+			"()J"
+		);
 	}
 	void HttpResponseCache::_delete()
 	{
 		__thiz.callMethod<void>(
 			"delete",
-			"()V");
+			"()V"
+		);
 	}
 	void HttpResponseCache::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void HttpResponseCache::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jlong HttpResponseCache::maxSize()
 	{
 		return __thiz.callMethod<jlong>(
 			"maxSize",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject HttpResponseCache::getInstalled()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.http.HttpResponseCache",
 			"getInstalled",
-			"()Landroid/net/http/HttpResponseCache;");
+			"()Landroid/net/http/HttpResponseCache;"
+		);
 	}
 	QAndroidJniObject HttpResponseCache::install(__jni_impl::java::io::File arg0, jlong arg1)
 	{
@@ -133,25 +141,29 @@ namespace __jni_impl::android::net::http
 			"install",
 			"(Ljava/io/File;J)Landroid/net/http/HttpResponseCache;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint HttpResponseCache::getNetworkCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getNetworkCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint HttpResponseCache::getHitCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getHitCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint HttpResponseCache::getRequestCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getRequestCount",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net::http
 

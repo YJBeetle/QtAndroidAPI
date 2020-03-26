@@ -23,9 +23,9 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean isTransient();
-		QAndroidJniObject getDiagnosticInfo();
-		jint getErrorCode();
+		jstring getDiagnosticInfo();
 		jboolean isRecoverable();
+		jint getErrorCode();
 	};
 } // namespace __jni_impl::android::media
 
@@ -37,13 +37,15 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec$CodecException",
-			"ERROR_INSUFFICIENT_RESOURCE");
+			"ERROR_INSUFFICIENT_RESOURCE"
+		);
 	}
 	jint MediaCodec_CodecException::ERROR_RECLAIMED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec$CodecException",
-			"ERROR_RECLAIMED");
+			"ERROR_RECLAIMED"
+		);
 	}
 	
 	// Constructors
@@ -59,25 +61,29 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTransient",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject MediaCodec_CodecException::getDiagnosticInfo()
+	jstring MediaCodec_CodecException::getDiagnosticInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getDiagnosticInfo",
-			"()Ljava/lang/String;");
-	}
-	jint MediaCodec_CodecException::getErrorCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getErrorCode",
-			"()I");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean MediaCodec_CodecException::isRecoverable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRecoverable",
-			"()Z");
+			"()Z"
+		);
+	}
+	jint MediaCodec_CodecException::getErrorCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getErrorCode",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

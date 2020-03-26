@@ -17,16 +17,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject get(jobject arg0);
+		jobject get(jobject arg0);
 		void set(jobject arg0, jobject arg1);
 		jboolean compareAndSet(jobject arg0, jobject arg1, jobject arg2);
 		jboolean weakCompareAndSet(jobject arg0, jobject arg1, jobject arg2);
-		QAndroidJniObject getAndSet(jobject arg0, jobject arg1);
+		jobject getAndSet(jobject arg0, jobject arg1);
 		void lazySet(jobject arg0, jobject arg1);
-		QAndroidJniObject getAndUpdate(jobject arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject updateAndGet(jobject arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject getAndAccumulate(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject accumulateAndGet(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
+		jobject getAndUpdate(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject updateAndGet(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject getAndAccumulate(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
+		jobject accumulateAndGet(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject newUpdater(jclass arg0, jclass arg1, jstring arg2);
 	};
 } // namespace __jni_impl::java::util::concurrent::atomic
@@ -45,12 +45,13 @@ namespace __jni_impl::java::util::concurrent::atomic
 	}
 	
 	// Methods
-	QAndroidJniObject AtomicReferenceFieldUpdater::get(jobject arg0)
+	jobject AtomicReferenceFieldUpdater::get(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void AtomicReferenceFieldUpdater::set(jobject arg0, jobject arg1)
 	{
@@ -58,7 +59,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicReferenceFieldUpdater::compareAndSet(jobject arg0, jobject arg1, jobject arg2)
 	{
@@ -67,7 +69,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicReferenceFieldUpdater::weakCompareAndSet(jobject arg0, jobject arg1, jobject arg2)
 	{
@@ -76,15 +79,17 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject AtomicReferenceFieldUpdater::getAndSet(jobject arg0, jobject arg1)
+	jobject AtomicReferenceFieldUpdater::getAndSet(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getAndSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	void AtomicReferenceFieldUpdater::lazySet(jobject arg0, jobject arg1)
 	{
@@ -92,41 +97,46 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"lazySet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject AtomicReferenceFieldUpdater::getAndUpdate(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	jobject AtomicReferenceFieldUpdater::getAndUpdate(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getAndUpdate",
 			"(Ljava/lang/Object;Ljava/util/function/UnaryOperator;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicReferenceFieldUpdater::updateAndGet(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	jobject AtomicReferenceFieldUpdater::updateAndGet(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"updateAndGet",
 			"(Ljava/lang/Object;Ljava/util/function/UnaryOperator;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicReferenceFieldUpdater::getAndAccumulate(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
+	jobject AtomicReferenceFieldUpdater::getAndAccumulate(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"getAndAccumulate",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject AtomicReferenceFieldUpdater::accumulateAndGet(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
+	jobject AtomicReferenceFieldUpdater::accumulateAndGet(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"accumulateAndGet",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BinaryOperator;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject AtomicReferenceFieldUpdater::newUpdater(jclass arg0, jclass arg1, jstring arg2)
 	{
@@ -136,7 +146,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

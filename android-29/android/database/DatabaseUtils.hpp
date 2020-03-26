@@ -77,19 +77,19 @@ namespace __jni_impl::android::database
 		static void readExceptionWithOperationApplicationExceptionFromParcel(__jni_impl::android::os::Parcel arg0);
 		static void bindObjectToProgram(__jni_impl::android::database::sqlite::SQLiteProgram arg0, jint arg1, jobject arg2);
 		static void appendEscapedSQLString(__jni_impl::java::lang::StringBuilder arg0, jstring arg1);
-		static QAndroidJniObject sqlEscapeString(jstring arg0);
+		static jstring sqlEscapeString(jstring arg0);
 		static void appendValueToSql(__jni_impl::java::lang::StringBuilder arg0, jobject arg1);
-		static QAndroidJniObject concatenateWhere(jstring arg0, jstring arg1);
-		static QAndroidJniObject getCollationKey(jstring arg0);
-		static QAndroidJniObject getHexCollationKey(jstring arg0);
+		static jstring concatenateWhere(jstring arg0, jstring arg1);
+		static jstring getCollationKey(jstring arg0);
+		static jstring getHexCollationKey(jstring arg0);
 		static void dumpCursor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::lang::StringBuilder arg1);
 		static void dumpCursor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::io::PrintStream arg1);
 		static void dumpCursor(__jni_impl::__JniBaseClass arg0);
-		static QAndroidJniObject dumpCursorToString(__jni_impl::__JniBaseClass arg0);
+		static jstring dumpCursorToString(__jni_impl::__JniBaseClass arg0);
 		static void dumpCurrentRow(__jni_impl::__JniBaseClass arg0, __jni_impl::java::io::PrintStream arg1);
 		static void dumpCurrentRow(__jni_impl::__JniBaseClass arg0, __jni_impl::java::lang::StringBuilder arg1);
 		static void dumpCurrentRow(__jni_impl::__JniBaseClass arg0);
-		static QAndroidJniObject dumpCurrentRowToString(__jni_impl::__JniBaseClass arg0);
+		static jstring dumpCurrentRowToString(__jni_impl::__JniBaseClass arg0);
 		static void cursorStringToContentValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2, jstring arg3);
 		static void cursorStringToContentValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2);
 		static void cursorStringToInsertHelper(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::database::DatabaseUtils_InsertHelper arg2, jint arg3);
@@ -105,8 +105,8 @@ namespace __jni_impl::android::database
 		static jlong queryNumEntries(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1);
 		static jlong longForQuery(__jni_impl::android::database::sqlite::SQLiteStatement arg0, jarray arg1);
 		static jlong longForQuery(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2);
-		static QAndroidJniObject stringForQuery(__jni_impl::android::database::sqlite::SQLiteStatement arg0, jarray arg1);
-		static QAndroidJniObject stringForQuery(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2);
+		static jstring stringForQuery(__jni_impl::android::database::sqlite::SQLiteStatement arg0, jarray arg1);
+		static jstring stringForQuery(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2);
 		static QAndroidJniObject blobFileDescriptorForQuery(__jni_impl::android::database::sqlite::SQLiteStatement arg0, jarray arg1);
 		static QAndroidJniObject blobFileDescriptorForQuery(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2);
 		static void cursorStringToContentValuesIfPresent(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2);
@@ -117,7 +117,7 @@ namespace __jni_impl::android::database
 		static void cursorDoubleToContentValuesIfPresent(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2);
 		static void createDbFromSqlStatements(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2, jstring arg3);
 		static jint getSqlStatementType(jstring arg0);
-		static QAndroidJniObject appendSelectionArgs(jarray arg0, jarray arg1);
+		static jarray appendSelectionArgs(jarray arg0, jarray arg1);
 	};
 } // namespace __jni_impl::android::database
 
@@ -140,61 +140,71 @@ namespace __jni_impl::android::database
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_ABORT");
+			"STATEMENT_ABORT"
+		);
 	}
 	jint DatabaseUtils::STATEMENT_ATTACH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_ATTACH");
+			"STATEMENT_ATTACH"
+		);
 	}
 	jint DatabaseUtils::STATEMENT_BEGIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_BEGIN");
+			"STATEMENT_BEGIN"
+		);
 	}
 	jint DatabaseUtils::STATEMENT_COMMIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_COMMIT");
+			"STATEMENT_COMMIT"
+		);
 	}
 	jint DatabaseUtils::STATEMENT_DDL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_DDL");
+			"STATEMENT_DDL"
+		);
 	}
 	jint DatabaseUtils::STATEMENT_OTHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_OTHER");
+			"STATEMENT_OTHER"
+		);
 	}
 	jint DatabaseUtils::STATEMENT_PRAGMA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_PRAGMA");
+			"STATEMENT_PRAGMA"
+		);
 	}
 	jint DatabaseUtils::STATEMENT_SELECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_SELECT");
+			"STATEMENT_SELECT"
+		);
 	}
 	jint DatabaseUtils::STATEMENT_UNPREPARED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_UNPREPARED");
+			"STATEMENT_UNPREPARED"
+		);
 	}
 	jint DatabaseUtils::STATEMENT_UPDATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.database.DatabaseUtils",
-			"STATEMENT_UPDATE");
+			"STATEMENT_UPDATE"
+		);
 	}
 	
 	// Constructors
@@ -213,7 +223,8 @@ namespace __jni_impl::android::database
 			"writeExceptionToParcel",
 			"(Landroid/os/Parcel;Ljava/lang/Exception;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::readExceptionFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
@@ -221,7 +232,8 @@ namespace __jni_impl::android::database
 			"android.database.DatabaseUtils",
 			"readExceptionFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::readExceptionWithFileNotFoundExceptionFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
@@ -229,7 +241,8 @@ namespace __jni_impl::android::database
 			"android.database.DatabaseUtils",
 			"readExceptionWithFileNotFoundExceptionFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::readExceptionWithOperationApplicationExceptionFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
@@ -237,7 +250,8 @@ namespace __jni_impl::android::database
 			"android.database.DatabaseUtils",
 			"readExceptionWithOperationApplicationExceptionFromParcel",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::bindObjectToProgram(__jni_impl::android::database::sqlite::SQLiteProgram arg0, jint arg1, jobject arg2)
 	{
@@ -247,7 +261,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/sqlite/SQLiteProgram;ILjava/lang/Object;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DatabaseUtils::appendEscapedSQLString(__jni_impl::java::lang::StringBuilder arg0, jstring arg1)
 	{
@@ -256,15 +271,17 @@ namespace __jni_impl::android::database
 			"appendEscapedSQLString",
 			"(Ljava/lang/StringBuilder;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject DatabaseUtils::sqlEscapeString(jstring arg0)
+	jstring DatabaseUtils::sqlEscapeString(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"sqlEscapeString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void DatabaseUtils::appendValueToSql(__jni_impl::java::lang::StringBuilder arg0, jobject arg1)
 	{
@@ -273,32 +290,36 @@ namespace __jni_impl::android::database
 			"appendValueToSql",
 			"(Ljava/lang/StringBuilder;Ljava/lang/Object;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject DatabaseUtils::concatenateWhere(jstring arg0, jstring arg1)
+	jstring DatabaseUtils::concatenateWhere(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"concatenateWhere",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject DatabaseUtils::getCollationKey(jstring arg0)
+	jstring DatabaseUtils::getCollationKey(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"getCollationKey",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject DatabaseUtils::getHexCollationKey(jstring arg0)
+	jstring DatabaseUtils::getHexCollationKey(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"getHexCollationKey",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void DatabaseUtils::dumpCursor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::lang::StringBuilder arg1)
 	{
@@ -307,7 +328,8 @@ namespace __jni_impl::android::database
 			"dumpCursor",
 			"(Landroid/database/Cursor;Ljava/lang/StringBuilder;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::dumpCursor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::io::PrintStream arg1)
 	{
@@ -316,7 +338,8 @@ namespace __jni_impl::android::database
 			"dumpCursor",
 			"(Landroid/database/Cursor;Ljava/io/PrintStream;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::dumpCursor(__jni_impl::__JniBaseClass arg0)
 	{
@@ -324,15 +347,17 @@ namespace __jni_impl::android::database
 			"android.database.DatabaseUtils",
 			"dumpCursor",
 			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DatabaseUtils::dumpCursorToString(__jni_impl::__JniBaseClass arg0)
+	jstring DatabaseUtils::dumpCursorToString(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"dumpCursorToString",
 			"(Landroid/database/Cursor;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	void DatabaseUtils::dumpCurrentRow(__jni_impl::__JniBaseClass arg0, __jni_impl::java::io::PrintStream arg1)
 	{
@@ -341,7 +366,8 @@ namespace __jni_impl::android::database
 			"dumpCurrentRow",
 			"(Landroid/database/Cursor;Ljava/io/PrintStream;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::dumpCurrentRow(__jni_impl::__JniBaseClass arg0, __jni_impl::java::lang::StringBuilder arg1)
 	{
@@ -350,7 +376,8 @@ namespace __jni_impl::android::database
 			"dumpCurrentRow",
 			"(Landroid/database/Cursor;Ljava/lang/StringBuilder;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::dumpCurrentRow(__jni_impl::__JniBaseClass arg0)
 	{
@@ -358,15 +385,17 @@ namespace __jni_impl::android::database
 			"android.database.DatabaseUtils",
 			"dumpCurrentRow",
 			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DatabaseUtils::dumpCurrentRowToString(__jni_impl::__JniBaseClass arg0)
+	jstring DatabaseUtils::dumpCurrentRowToString(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"dumpCurrentRowToString",
 			"(Landroid/database/Cursor;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	void DatabaseUtils::cursorStringToContentValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2, jstring arg3)
 	{
@@ -377,7 +406,8 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void DatabaseUtils::cursorStringToContentValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
@@ -387,7 +417,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::cursorStringToInsertHelper(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::database::DatabaseUtils_InsertHelper arg2, jint arg3)
 	{
@@ -398,7 +429,8 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void DatabaseUtils::cursorIntToContentValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2, jstring arg3)
 	{
@@ -409,7 +441,8 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void DatabaseUtils::cursorIntToContentValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
@@ -419,7 +452,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::cursorLongToContentValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2, jstring arg3)
 	{
@@ -430,7 +464,8 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void DatabaseUtils::cursorLongToContentValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
@@ -440,7 +475,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::cursorDoubleToCursorValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
@@ -450,7 +486,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void DatabaseUtils::cursorDoubleToContentValues(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2, jstring arg3)
 	{
@@ -461,7 +498,8 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void DatabaseUtils::cursorRowToContentValues(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ContentValues arg1)
 	{
@@ -470,7 +508,8 @@ namespace __jni_impl::android::database
 			"cursorRowToContentValues",
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong DatabaseUtils::queryNumEntries(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jstring arg2, jarray arg3)
 	{
@@ -481,7 +520,8 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jlong DatabaseUtils::queryNumEntries(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jstring arg2)
 	{
@@ -491,7 +531,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;)J",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong DatabaseUtils::queryNumEntries(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1)
 	{
@@ -500,7 +541,8 @@ namespace __jni_impl::android::database
 			"queryNumEntries",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)J",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jlong DatabaseUtils::longForQuery(__jni_impl::android::database::sqlite::SQLiteStatement arg0, jarray arg1)
 	{
@@ -509,7 +551,8 @@ namespace __jni_impl::android::database
 			"longForQuery",
 			"(Landroid/database/sqlite/SQLiteStatement;[Ljava/lang/String;)J",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jlong DatabaseUtils::longForQuery(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
 	{
@@ -519,18 +562,20 @@ namespace __jni_impl::android::database
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)J",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject DatabaseUtils::stringForQuery(__jni_impl::android::database::sqlite::SQLiteStatement arg0, jarray arg1)
+	jstring DatabaseUtils::stringForQuery(__jni_impl::android::database::sqlite::SQLiteStatement arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"stringForQuery",
 			"(Landroid/database/sqlite/SQLiteStatement;[Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject DatabaseUtils::stringForQuery(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
+	jstring DatabaseUtils::stringForQuery(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
@@ -538,7 +583,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 	QAndroidJniObject DatabaseUtils::blobFileDescriptorForQuery(__jni_impl::android::database::sqlite::SQLiteStatement arg0, jarray arg1)
 	{
@@ -547,7 +593,8 @@ namespace __jni_impl::android::database
 			"blobFileDescriptorForQuery",
 			"(Landroid/database/sqlite/SQLiteStatement;[Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DatabaseUtils::blobFileDescriptorForQuery(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2)
 	{
@@ -557,7 +604,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DatabaseUtils::cursorStringToContentValuesIfPresent(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2)
 	{
@@ -567,7 +615,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DatabaseUtils::cursorLongToContentValuesIfPresent(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2)
 	{
@@ -577,7 +626,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DatabaseUtils::cursorShortToContentValuesIfPresent(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2)
 	{
@@ -587,7 +637,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DatabaseUtils::cursorIntToContentValuesIfPresent(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2)
 	{
@@ -597,7 +648,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DatabaseUtils::cursorFloatToContentValuesIfPresent(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2)
 	{
@@ -607,7 +659,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DatabaseUtils::cursorDoubleToContentValuesIfPresent(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2)
 	{
@@ -617,7 +670,8 @@ namespace __jni_impl::android::database
 			"(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DatabaseUtils::createDbFromSqlStatements(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2, jstring arg3)
 	{
@@ -628,7 +682,8 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint DatabaseUtils::getSqlStatementType(jstring arg0)
 	{
@@ -636,16 +691,18 @@ namespace __jni_impl::android::database
 			"android.database.DatabaseUtils",
 			"getSqlStatementType",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DatabaseUtils::appendSelectionArgs(jarray arg0, jarray arg1)
+	jarray DatabaseUtils::appendSelectionArgs(jarray arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.DatabaseUtils",
 			"appendSelectionArgs",
 			"([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::database
 

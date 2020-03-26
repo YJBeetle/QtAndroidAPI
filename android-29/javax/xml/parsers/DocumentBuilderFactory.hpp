@@ -31,12 +31,12 @@ namespace __jni_impl::javax::xml::parsers
 		// Methods
 		static QAndroidJniObject newInstance(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
 		static QAndroidJniObject newInstance();
-		QAndroidJniObject getAttribute(jstring arg0);
+		jobject getAttribute(jstring arg0);
 		void setAttribute(jstring arg0, jobject arg1);
-		void setFeature(jstring arg0, jboolean arg1);
-		jboolean getFeature(jstring arg0);
 		void setSchema(__jni_impl::javax::xml::validation::Schema arg0);
 		QAndroidJniObject getSchema();
+		void setFeature(jstring arg0, jboolean arg1);
+		jboolean getFeature(jstring arg0);
 		static QAndroidJniObject newDefaultInstance();
 		void setNamespaceAware(jboolean arg0);
 		static QAndroidJniObject newDefaultNSInstance();
@@ -83,21 +83,24 @@ namespace __jni_impl::javax::xml::parsers
 			"newInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/DocumentBuilderFactory;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DocumentBuilderFactory::newInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
 			"newInstance",
-			"()Ljavax/xml/parsers/DocumentBuilderFactory;");
+			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
+		);
 	}
-	QAndroidJniObject DocumentBuilderFactory::getAttribute(jstring arg0)
+	jobject DocumentBuilderFactory::getAttribute(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void DocumentBuilderFactory::setAttribute(jstring arg0, jobject arg1)
 	{
@@ -105,7 +108,23 @@ namespace __jni_impl::javax::xml::parsers
 			"setAttribute",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void DocumentBuilderFactory::setSchema(__jni_impl::javax::xml::validation::Schema arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSchema",
+			"(Ljavax/xml/validation/Schema;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject DocumentBuilderFactory::getSchema()
+	{
+		return __thiz.callObjectMethod(
+			"getSchema",
+			"()Ljavax/xml/validation/Schema;"
+		);
 	}
 	void DocumentBuilderFactory::setFeature(jstring arg0, jboolean arg1)
 	{
@@ -113,48 +132,40 @@ namespace __jni_impl::javax::xml::parsers
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean DocumentBuilderFactory::getFeature(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	void DocumentBuilderFactory::setSchema(__jni_impl::javax::xml::validation::Schema arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSchema",
-			"(Ljavax/xml/validation/Schema;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject DocumentBuilderFactory::getSchema()
-	{
-		return __thiz.callObjectMethod(
-			"getSchema",
-			"()Ljavax/xml/validation/Schema;");
+			arg0
+		);
 	}
 	QAndroidJniObject DocumentBuilderFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
 			"newDefaultInstance",
-			"()Ljavax/xml/parsers/DocumentBuilderFactory;");
+			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
+		);
 	}
 	void DocumentBuilderFactory::setNamespaceAware(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNamespaceAware",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DocumentBuilderFactory::newDefaultNSInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
 			"newDefaultNSInstance",
-			"()Ljavax/xml/parsers/DocumentBuilderFactory;");
+			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
+		);
 	}
 	QAndroidJniObject DocumentBuilderFactory::newNSInstance(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
@@ -163,104 +174,120 @@ namespace __jni_impl::javax::xml::parsers
 			"newNSInstance",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/parsers/DocumentBuilderFactory;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DocumentBuilderFactory::newNSInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.parsers.DocumentBuilderFactory",
 			"newNSInstance",
-			"()Ljavax/xml/parsers/DocumentBuilderFactory;");
+			"()Ljavax/xml/parsers/DocumentBuilderFactory;"
+		);
 	}
 	void DocumentBuilderFactory::setValidating(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setValidating",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DocumentBuilderFactory::isNamespaceAware()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNamespaceAware",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean DocumentBuilderFactory::isValidating()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValidating",
-			"()Z");
+			"()Z"
+		);
 	}
 	void DocumentBuilderFactory::setXIncludeAware(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setXIncludeAware",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DocumentBuilderFactory::isXIncludeAware()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isXIncludeAware",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject DocumentBuilderFactory::newDocumentBuilder()
 	{
 		return __thiz.callObjectMethod(
 			"newDocumentBuilder",
-			"()Ljavax/xml/parsers/DocumentBuilder;");
+			"()Ljavax/xml/parsers/DocumentBuilder;"
+		);
 	}
 	void DocumentBuilderFactory::setIgnoringElementContentWhitespace(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIgnoringElementContentWhitespace",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void DocumentBuilderFactory::setExpandEntityReferences(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setExpandEntityReferences",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void DocumentBuilderFactory::setIgnoringComments(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIgnoringComments",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void DocumentBuilderFactory::setCoalescing(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCoalescing",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DocumentBuilderFactory::isIgnoringElementContentWhitespace()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isIgnoringElementContentWhitespace",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean DocumentBuilderFactory::isExpandEntityReferences()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isExpandEntityReferences",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean DocumentBuilderFactory::isIgnoringComments()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isIgnoringComments",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean DocumentBuilderFactory::isCoalescing()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCoalescing",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::javax::xml::parsers
 

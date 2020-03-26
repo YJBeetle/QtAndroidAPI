@@ -33,11 +33,11 @@ namespace __jni_impl::android::telecom
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jint getReason();
-		jboolean shouldAutoSelect();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean shouldAutoSelect();
 		QAndroidJniObject getPhoneAccountHandle();
+		jint getReason();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -52,37 +52,43 @@ namespace __jni_impl::android::telecom
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.PhoneAccountSuggestion",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint PhoneAccountSuggestion::REASON_FREQUENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
-			"REASON_FREQUENT");
+			"REASON_FREQUENT"
+		);
 	}
 	jint PhoneAccountSuggestion::REASON_INTRA_CARRIER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
-			"REASON_INTRA_CARRIER");
+			"REASON_INTRA_CARRIER"
+		);
 	}
 	jint PhoneAccountSuggestion::REASON_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
-			"REASON_NONE");
+			"REASON_NONE"
+		);
 	}
 	jint PhoneAccountSuggestion::REASON_OTHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
-			"REASON_OTHER");
+			"REASON_OTHER"
+		);
 	}
 	jint PhoneAccountSuggestion::REASON_USER_SET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.PhoneAccountSuggestion",
-			"REASON_USER_SET");
+			"REASON_USER_SET"
+		);
 	}
 	
 	// Constructors
@@ -102,31 +108,22 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint PhoneAccountSuggestion::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jint PhoneAccountSuggestion::getReason()
-	{
-		return __thiz.callMethod<jint>(
-			"getReason",
-			"()I");
-	}
-	jboolean PhoneAccountSuggestion::shouldAutoSelect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldAutoSelect",
-			"()Z");
+			"()I"
+		);
 	}
 	jint PhoneAccountSuggestion::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PhoneAccountSuggestion::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -134,13 +131,29 @@ namespace __jni_impl::android::telecom
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jboolean PhoneAccountSuggestion::shouldAutoSelect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldAutoSelect",
+			"()Z"
+		);
 	}
 	QAndroidJniObject PhoneAccountSuggestion::getPhoneAccountHandle()
 	{
 		return __thiz.callObjectMethod(
 			"getPhoneAccountHandle",
-			"()Landroid/telecom/PhoneAccountHandle;");
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
+	}
+	jint PhoneAccountSuggestion::getReason()
+	{
+		return __thiz.callMethod<jint>(
+			"getReason",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

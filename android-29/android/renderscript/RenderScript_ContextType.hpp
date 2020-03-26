@@ -21,7 +21,7 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::renderscript
@@ -35,21 +35,24 @@ namespace __jni_impl::android::renderscript
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$ContextType",
 			"NORMAL",
-			"Landroid/renderscript/RenderScript$ContextType;");
+			"Landroid/renderscript/RenderScript$ContextType;"
+		);
 	}
 	QAndroidJniObject RenderScript_ContextType::DEBUG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$ContextType",
 			"DEBUG",
-			"Landroid/renderscript/RenderScript$ContextType;");
+			"Landroid/renderscript/RenderScript$ContextType;"
+		);
 	}
 	QAndroidJniObject RenderScript_ContextType::PROFILE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$ContextType",
 			"PROFILE",
-			"Landroid/renderscript/RenderScript$ContextType;");
+			"Landroid/renderscript/RenderScript$ContextType;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	QAndroidJniObject RenderScript_ContextType::values()
+	jarray RenderScript_ContextType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.RenderScript$ContextType",
 			"values",
-			"()[Landroid/renderscript/RenderScript$ContextType;");
+			"()[Landroid/renderscript/RenderScript$ContextType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject RenderScript_ContextType::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.RenderScript$ContextType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$ContextType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

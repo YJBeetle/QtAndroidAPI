@@ -41,19 +41,22 @@ namespace __jni_impl::android::hardware::display
 	{
 		__thiz.callMethod<void>(
 			"onPaused",
-			"()V");
+			"()V"
+		);
 	}
 	void VirtualDisplay_Callback::onResumed()
 	{
 		__thiz.callMethod<void>(
 			"onResumed",
-			"()V");
+			"()V"
+		);
 	}
 	void VirtualDisplay_Callback::onStopped()
 	{
 		__thiz.callMethod<void>(
 			"onStopped",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::hardware::display
 

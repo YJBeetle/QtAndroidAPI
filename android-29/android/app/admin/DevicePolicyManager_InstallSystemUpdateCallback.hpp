@@ -34,31 +34,36 @@ namespace __jni_impl::android::app::admin
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
-			"UPDATE_ERROR_BATTERY_LOW");
+			"UPDATE_ERROR_BATTERY_LOW"
+		);
 	}
 	jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_FILE_NOT_FOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
-			"UPDATE_ERROR_FILE_NOT_FOUND");
+			"UPDATE_ERROR_FILE_NOT_FOUND"
+		);
 	}
 	jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_INCORRECT_OS_VERSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
-			"UPDATE_ERROR_INCORRECT_OS_VERSION");
+			"UPDATE_ERROR_INCORRECT_OS_VERSION"
+		);
 	}
 	jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
-			"UPDATE_ERROR_UNKNOWN");
+			"UPDATE_ERROR_UNKNOWN"
+		);
 	}
 	jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_UPDATE_FILE_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
-			"UPDATE_ERROR_UPDATE_FILE_INVALID");
+			"UPDATE_ERROR_UPDATE_FILE_INVALID"
+		);
 	}
 	
 	// Constructors
@@ -76,7 +81,8 @@ namespace __jni_impl::android::app::admin
 			"onInstallUpdateError",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app::admin
 

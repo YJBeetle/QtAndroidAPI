@@ -19,7 +19,7 @@ namespace __jni_impl::android::text::method
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CHARACTERS();
+		static jcharArray CHARACTERS();
 		
 		// Constructors
 		void __constructor();
@@ -35,12 +35,13 @@ namespace __jni_impl::android::text::method
 namespace __jni_impl::android::text::method
 {
 	// Fields
-	QAndroidJniObject DialerKeyListener::CHARACTERS()
+	jcharArray DialerKeyListener::CHARACTERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.DialerKeyListener",
 			"CHARACTERS",
-			"[C");
+			"[C"
+		).object<jcharArray>();
 	}
 	
 	// Constructors
@@ -57,13 +58,15 @@ namespace __jni_impl::android::text::method
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.DialerKeyListener",
 			"getInstance",
-			"()Landroid/text/method/DialerKeyListener;");
+			"()Landroid/text/method/DialerKeyListener;"
+		);
 	}
 	jint DialerKeyListener::getInputType()
 	{
 		return __thiz.callMethod<jint>(
 			"getInputType",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::method
 

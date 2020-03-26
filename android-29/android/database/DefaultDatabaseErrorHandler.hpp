@@ -45,7 +45,8 @@ namespace __jni_impl::android::database
 		__thiz.callMethod<void>(
 			"onCorruption",
 			"(Landroid/database/sqlite/SQLiteDatabase;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::database
 

@@ -25,7 +25,7 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void release();
 		void release(jint arg0);
 		void acquire();
@@ -52,57 +52,65 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject PowerManager_WakeLock::toString()
+	jstring PowerManager_WakeLock::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PowerManager_WakeLock::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	void PowerManager_WakeLock::release(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"release",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PowerManager_WakeLock::acquire()
 	{
 		__thiz.callMethod<void>(
 			"acquire",
-			"()V");
+			"()V"
+		);
 	}
 	void PowerManager_WakeLock::acquire(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"acquire",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void PowerManager_WakeLock::setReferenceCounted(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setReferenceCounted",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PowerManager_WakeLock::isHeld()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isHeld",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PowerManager_WakeLock::setWorkSource(__jni_impl::android::os::WorkSource arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWorkSource",
 			"(Landroid/os/WorkSource;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::os
 

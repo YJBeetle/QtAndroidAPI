@@ -19,11 +19,11 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getValue();
-		QAndroidJniObject getKey();
-		QAndroidJniObject setValue(jobject arg0);
+		jobject getValue();
+		jobject getKey();
+		jobject setValue(jobject arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -55,38 +55,44 @@ namespace __jni_impl::java::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AbstractMap_SimpleEntry::toString()
+	jstring AbstractMap_SimpleEntry::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AbstractMap_SimpleEntry::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject AbstractMap_SimpleEntry::getValue()
+	jobject AbstractMap_SimpleEntry::getValue()
 	{
 		return __thiz.callObjectMethod(
 			"getValue",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject AbstractMap_SimpleEntry::getKey()
+	jobject AbstractMap_SimpleEntry::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject AbstractMap_SimpleEntry::setValue(jobject arg0)
+	jobject AbstractMap_SimpleEntry::setValue(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setValue",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util
 

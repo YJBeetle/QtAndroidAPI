@@ -59,7 +59,8 @@ namespace __jni_impl::android::net::wifi::p2p
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p
 

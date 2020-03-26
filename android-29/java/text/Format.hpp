@@ -33,11 +33,11 @@ namespace __jni_impl::java::text
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
-		QAndroidJniObject format(jobject arg0);
-		QAndroidJniObject parseObject(jstring arg0);
-		QAndroidJniObject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jstring format(jobject arg0);
+		jobject parseObject(jstring arg0);
+		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 		QAndroidJniObject formatToCharacterIterator(jobject arg0);
 	};
 } // namespace __jni_impl::java::text
@@ -60,11 +60,12 @@ namespace __jni_impl::java::text
 	}
 	
 	// Methods
-	QAndroidJniObject Format::clone()
+	jobject Format::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject Format::format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
@@ -73,36 +74,41 @@ namespace __jni_impl::java::text
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Format::format(jobject arg0)
+	jstring Format::format(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"format",
 			"(Ljava/lang/Object;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Format::parseObject(jstring arg0)
+	jobject Format::parseObject(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject Format::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
+	jobject Format::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject Format::formatToCharacterIterator(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::text
 

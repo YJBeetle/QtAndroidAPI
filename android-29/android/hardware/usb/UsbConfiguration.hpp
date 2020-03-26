@@ -26,8 +26,8 @@ namespace __jni_impl::android::hardware::usb
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
+		jstring getName();
+		jstring toString();
 		jint getId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -50,7 +50,8 @@ namespace __jni_impl::android::hardware::usb
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.usb.UsbConfiguration",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -62,29 +63,33 @@ namespace __jni_impl::android::hardware::usb
 	}
 	
 	// Methods
-	QAndroidJniObject UsbConfiguration::getName()
+	jstring UsbConfiguration::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UsbConfiguration::toString()
+	jstring UsbConfiguration::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsbConfiguration::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbConfiguration::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UsbConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -92,38 +97,44 @@ namespace __jni_impl::android::hardware::usb
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint UsbConfiguration::getInterfaceCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getInterfaceCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject UsbConfiguration::getInterface(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getInterface",
 			"(I)Landroid/hardware/usb/UsbInterface;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean UsbConfiguration::isSelfPowered()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSelfPowered",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean UsbConfiguration::isRemoteWakeup()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRemoteWakeup",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint UsbConfiguration::getMaxPower()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxPower",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::hardware::usb
 

@@ -21,7 +21,7 @@ namespace __jni_impl::android::widget
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::widget
@@ -35,21 +35,24 @@ namespace __jni_impl::android::widget
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.TextView$BufferType",
 			"NORMAL",
-			"Landroid/widget/TextView$BufferType;");
+			"Landroid/widget/TextView$BufferType;"
+		);
 	}
 	QAndroidJniObject TextView_BufferType::SPANNABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.TextView$BufferType",
 			"SPANNABLE",
-			"Landroid/widget/TextView$BufferType;");
+			"Landroid/widget/TextView$BufferType;"
+		);
 	}
 	QAndroidJniObject TextView_BufferType::EDITABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.TextView$BufferType",
 			"EDITABLE",
-			"Landroid/widget/TextView$BufferType;");
+			"Landroid/widget/TextView$BufferType;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject TextView_BufferType::values()
+	jarray TextView_BufferType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.widget.TextView$BufferType",
 			"values",
-			"()[Landroid/widget/TextView$BufferType;");
+			"()[Landroid/widget/TextView$BufferType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject TextView_BufferType::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::widget
 			"android.widget.TextView$BufferType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/widget/TextView$BufferType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

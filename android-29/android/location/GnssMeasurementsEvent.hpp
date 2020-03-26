@@ -26,11 +26,11 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
+		QAndroidJniObject getMeasurements();
+		QAndroidJniObject getClock();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getClock();
-		QAndroidJniObject getMeasurements();
 	};
 } // namespace __jni_impl::android::location
 
@@ -45,7 +45,8 @@ namespace __jni_impl::android::location
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.GnssMeasurementsEvent",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -57,17 +58,33 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	QAndroidJniObject GnssMeasurementsEvent::toString()
+	jstring GnssMeasurementsEvent::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject GnssMeasurementsEvent::getMeasurements()
+	{
+		return __thiz.callObjectMethod(
+			"getMeasurements",
+			"()Ljava/util/Collection;"
+		);
+	}
+	QAndroidJniObject GnssMeasurementsEvent::getClock()
+	{
+		return __thiz.callObjectMethod(
+			"getClock",
+			"()Landroid/location/GnssClock;"
+		);
 	}
 	jint GnssMeasurementsEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void GnssMeasurementsEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -75,19 +92,8 @@ namespace __jni_impl::android::location
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject GnssMeasurementsEvent::getClock()
-	{
-		return __thiz.callObjectMethod(
-			"getClock",
-			"()Landroid/location/GnssClock;");
-	}
-	QAndroidJniObject GnssMeasurementsEvent::getMeasurements()
-	{
-		return __thiz.callObjectMethod(
-			"getMeasurements",
-			"()Ljava/util/Collection;");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::location
 

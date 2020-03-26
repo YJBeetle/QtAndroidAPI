@@ -43,31 +43,36 @@ namespace __jni_impl::android::telecom
 	{
 		return __thiz.callMethod<jboolean>(
 			"getDisallowCall",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CallScreeningService_CallResponse::getRejectCall()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getRejectCall",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CallScreeningService_CallResponse::getSilenceCall()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getSilenceCall",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CallScreeningService_CallResponse::getSkipCallLog()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getSkipCallLog",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CallScreeningService_CallResponse::getSkipNotification()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getSkipNotification",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

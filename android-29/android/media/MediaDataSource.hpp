@@ -40,7 +40,8 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jlong>(
 			"getSize",
-			"()J");
+			"()J"
+		);
 	}
 	jint MediaDataSource::readAt(jlong arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::media
 

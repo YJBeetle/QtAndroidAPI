@@ -25,8 +25,8 @@ namespace __jni_impl::javax::xml::parsers
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getCause();
-		QAndroidJniObject getMessage();
+		jthrowable getCause();
+		jstring getMessage();
 		QAndroidJniObject getException();
 	};
 } // namespace __jni_impl::javax::xml::parsers
@@ -68,23 +68,26 @@ namespace __jni_impl::javax::xml::parsers
 	}
 	
 	// Methods
-	QAndroidJniObject FactoryConfigurationError::getCause()
+	jthrowable FactoryConfigurationError::getCause()
 	{
 		return __thiz.callObjectMethod(
 			"getCause",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
-	QAndroidJniObject FactoryConfigurationError::getMessage()
+	jstring FactoryConfigurationError::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject FactoryConfigurationError::getException()
 	{
 		return __thiz.callObjectMethod(
 			"getException",
-			"()Ljava/lang/Exception;");
+			"()Ljava/lang/Exception;"
+		);
 	}
 } // namespace __jni_impl::javax::xml::parsers
 

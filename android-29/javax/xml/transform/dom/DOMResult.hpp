@@ -12,7 +12,7 @@ namespace __jni_impl::javax::xml::transform::dom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FEATURE();
+		static jstring FEATURE();
 		
 		// Constructors
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
@@ -24,7 +24,7 @@ namespace __jni_impl::javax::xml::transform::dom
 		// Methods
 		QAndroidJniObject getNode();
 		void setNode(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getSystemId();
+		jstring getSystemId();
 		void setSystemId(jstring arg0);
 		QAndroidJniObject getNextSibling();
 		void setNextSibling(__jni_impl::__JniBaseClass arg0);
@@ -35,12 +35,13 @@ namespace __jni_impl::javax::xml::transform::dom
 namespace __jni_impl::javax::xml::transform::dom
 {
 	// Fields
-	QAndroidJniObject DOMResult::FEATURE()
+	jstring DOMResult::FEATURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.dom.DOMResult",
 			"FEATURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -88,40 +89,46 @@ namespace __jni_impl::javax::xml::transform::dom
 	{
 		return __thiz.callObjectMethod(
 			"getNode",
-			"()Lorg/w3c/dom/Node;");
+			"()Lorg/w3c/dom/Node;"
+		);
 	}
 	void DOMResult::setNode(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNode",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DOMResult::getSystemId()
+	jstring DOMResult::getSystemId()
 	{
 		return __thiz.callObjectMethod(
 			"getSystemId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void DOMResult::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DOMResult::getNextSibling()
 	{
 		return __thiz.callObjectMethod(
 			"getNextSibling",
-			"()Lorg/w3c/dom/Node;");
+			"()Lorg/w3c/dom/Node;"
+		);
 	}
 	void DOMResult::setNextSibling(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNextSibling",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::javax::xml::transform::dom
 

@@ -40,10 +40,10 @@ namespace __jni_impl::android::accounts
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_ACCOUNT_REMOVED();
-		static QAndroidJniObject ACTION_AUTHENTICATOR_INTENT();
-		static QAndroidJniObject AUTHENTICATOR_ATTRIBUTES_NAME();
-		static QAndroidJniObject AUTHENTICATOR_META_DATA_NAME();
+		static jstring ACTION_ACCOUNT_REMOVED();
+		static jstring ACTION_AUTHENTICATOR_INTENT();
+		static jstring AUTHENTICATOR_ATTRIBUTES_NAME();
+		static jstring AUTHENTICATOR_META_DATA_NAME();
 		static jint ERROR_CODE_BAD_ARGUMENTS();
 		static jint ERROR_CODE_BAD_AUTHENTICATION();
 		static jint ERROR_CODE_BAD_REQUEST();
@@ -52,30 +52,30 @@ namespace __jni_impl::android::accounts
 		static jint ERROR_CODE_NETWORK_ERROR();
 		static jint ERROR_CODE_REMOTE_EXCEPTION();
 		static jint ERROR_CODE_UNSUPPORTED_OPERATION();
-		static QAndroidJniObject KEY_ACCOUNTS();
-		static QAndroidJniObject KEY_ACCOUNT_AUTHENTICATOR_RESPONSE();
-		static QAndroidJniObject KEY_ACCOUNT_MANAGER_RESPONSE();
-		static QAndroidJniObject KEY_ACCOUNT_NAME();
-		static QAndroidJniObject KEY_ACCOUNT_SESSION_BUNDLE();
-		static QAndroidJniObject KEY_ACCOUNT_STATUS_TOKEN();
-		static QAndroidJniObject KEY_ACCOUNT_TYPE();
-		static QAndroidJniObject KEY_ANDROID_PACKAGE_NAME();
-		static QAndroidJniObject KEY_AUTHENTICATOR_TYPES();
-		static QAndroidJniObject KEY_AUTHTOKEN();
-		static QAndroidJniObject KEY_AUTH_FAILED_MESSAGE();
-		static QAndroidJniObject KEY_AUTH_TOKEN_LABEL();
-		static QAndroidJniObject KEY_BOOLEAN_RESULT();
-		static QAndroidJniObject KEY_CALLER_PID();
-		static QAndroidJniObject KEY_CALLER_UID();
-		static QAndroidJniObject KEY_ERROR_CODE();
-		static QAndroidJniObject KEY_ERROR_MESSAGE();
-		static QAndroidJniObject KEY_INTENT();
-		static QAndroidJniObject KEY_LAST_AUTHENTICATED_TIME();
-		static QAndroidJniObject KEY_PASSWORD();
-		static QAndroidJniObject KEY_USERDATA();
-		static QAndroidJniObject LOGIN_ACCOUNTS_CHANGED_ACTION();
-		static QAndroidJniObject PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE();
-		static QAndroidJniObject PACKAGE_NAME_KEY_LEGACY_VISIBLE();
+		static jstring KEY_ACCOUNTS();
+		static jstring KEY_ACCOUNT_AUTHENTICATOR_RESPONSE();
+		static jstring KEY_ACCOUNT_MANAGER_RESPONSE();
+		static jstring KEY_ACCOUNT_NAME();
+		static jstring KEY_ACCOUNT_SESSION_BUNDLE();
+		static jstring KEY_ACCOUNT_STATUS_TOKEN();
+		static jstring KEY_ACCOUNT_TYPE();
+		static jstring KEY_ANDROID_PACKAGE_NAME();
+		static jstring KEY_AUTHENTICATOR_TYPES();
+		static jstring KEY_AUTHTOKEN();
+		static jstring KEY_AUTH_FAILED_MESSAGE();
+		static jstring KEY_AUTH_TOKEN_LABEL();
+		static jstring KEY_BOOLEAN_RESULT();
+		static jstring KEY_CALLER_PID();
+		static jstring KEY_CALLER_UID();
+		static jstring KEY_ERROR_CODE();
+		static jstring KEY_ERROR_MESSAGE();
+		static jstring KEY_INTENT();
+		static jstring KEY_LAST_AUTHENTICATED_TIME();
+		static jstring KEY_PASSWORD();
+		static jstring KEY_USERDATA();
+		static jstring LOGIN_ACCOUNTS_CHANGED_ACTION();
+		static jstring PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE();
+		static jstring PACKAGE_NAME_KEY_LEGACY_VISIBLE();
 		static jint VISIBILITY_NOT_VISIBLE();
 		static jint VISIBILITY_UNDEFINED();
 		static jint VISIBILITY_USER_MANAGED_NOT_VISIBLE();
@@ -87,14 +87,14 @@ namespace __jni_impl::android::accounts
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::content::Context arg0);
-		void setPassword(__jni_impl::android::accounts::Account arg0, jstring arg1);
 		void setUserData(__jni_impl::android::accounts::Account arg0, jstring arg1, jstring arg2);
-		QAndroidJniObject getPassword(__jni_impl::android::accounts::Account arg0);
-		QAndroidJniObject getUserData(__jni_impl::android::accounts::Account arg0, jstring arg1);
-		QAndroidJniObject getAuthenticatorTypes();
-		QAndroidJniObject getAccounts();
-		QAndroidJniObject getAccountsByTypeForPackage(jstring arg0, jstring arg1);
-		QAndroidJniObject getAccountsByType(jstring arg0);
+		void setPassword(__jni_impl::android::accounts::Account arg0, jstring arg1);
+		jstring getPassword(__jni_impl::android::accounts::Account arg0);
+		jstring getUserData(__jni_impl::android::accounts::Account arg0, jstring arg1);
+		jarray getAuthenticatorTypes();
+		jarray getAccounts();
+		jarray getAccountsByTypeForPackage(jstring arg0, jstring arg1);
+		jarray getAccountsByType(jstring arg0);
 		QAndroidJniObject hasFeatures(__jni_impl::android::accounts::Account arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3);
 		QAndroidJniObject getAccountsByTypeAndFeatures(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3);
 		jboolean addAccountExplicitly(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::__JniBaseClass arg3);
@@ -105,15 +105,15 @@ namespace __jni_impl::android::accounts
 		jint getAccountVisibility(__jni_impl::android::accounts::Account arg0, jstring arg1);
 		jboolean notifyAccountAuthenticated(__jni_impl::android::accounts::Account arg0);
 		QAndroidJniObject renameAccount(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3);
-		QAndroidJniObject getPreviousName(__jni_impl::android::accounts::Account arg0);
+		jstring getPreviousName(__jni_impl::android::accounts::Account arg0);
 		QAndroidJniObject removeAccount(__jni_impl::android::accounts::Account arg0, __jni_impl::android::app::Activity arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3);
 		QAndroidJniObject removeAccount(__jni_impl::android::accounts::Account arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2);
 		jboolean removeAccountExplicitly(__jni_impl::android::accounts::Account arg0);
 		void invalidateAuthToken(jstring arg0, jstring arg1);
-		QAndroidJniObject peekAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1);
+		jstring peekAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1);
 		void clearPassword(__jni_impl::android::accounts::Account arg0);
 		void setAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, jstring arg2);
-		QAndroidJniObject blockingGetAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2);
+		jstring blockingGetAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2);
 		QAndroidJniObject getAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, jboolean arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5);
 		QAndroidJniObject getAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4);
 		QAndroidJniObject getAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::app::Activity arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5);
@@ -145,279 +145,320 @@ namespace __jni_impl::android::accounts
 namespace __jni_impl::android::accounts
 {
 	// Fields
-	QAndroidJniObject AccountManager::ACTION_ACCOUNT_REMOVED()
+	jstring AccountManager::ACTION_ACCOUNT_REMOVED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"ACTION_ACCOUNT_REMOVED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::ACTION_AUTHENTICATOR_INTENT()
+	jstring AccountManager::ACTION_AUTHENTICATOR_INTENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"ACTION_AUTHENTICATOR_INTENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::AUTHENTICATOR_ATTRIBUTES_NAME()
+	jstring AccountManager::AUTHENTICATOR_ATTRIBUTES_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"AUTHENTICATOR_ATTRIBUTES_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::AUTHENTICATOR_META_DATA_NAME()
+	jstring AccountManager::AUTHENTICATOR_META_DATA_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"AUTHENTICATOR_META_DATA_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AccountManager::ERROR_CODE_BAD_ARGUMENTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"ERROR_CODE_BAD_ARGUMENTS");
+			"ERROR_CODE_BAD_ARGUMENTS"
+		);
 	}
 	jint AccountManager::ERROR_CODE_BAD_AUTHENTICATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"ERROR_CODE_BAD_AUTHENTICATION");
+			"ERROR_CODE_BAD_AUTHENTICATION"
+		);
 	}
 	jint AccountManager::ERROR_CODE_BAD_REQUEST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"ERROR_CODE_BAD_REQUEST");
+			"ERROR_CODE_BAD_REQUEST"
+		);
 	}
 	jint AccountManager::ERROR_CODE_CANCELED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"ERROR_CODE_CANCELED");
+			"ERROR_CODE_CANCELED"
+		);
 	}
 	jint AccountManager::ERROR_CODE_INVALID_RESPONSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"ERROR_CODE_INVALID_RESPONSE");
+			"ERROR_CODE_INVALID_RESPONSE"
+		);
 	}
 	jint AccountManager::ERROR_CODE_NETWORK_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"ERROR_CODE_NETWORK_ERROR");
+			"ERROR_CODE_NETWORK_ERROR"
+		);
 	}
 	jint AccountManager::ERROR_CODE_REMOTE_EXCEPTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"ERROR_CODE_REMOTE_EXCEPTION");
+			"ERROR_CODE_REMOTE_EXCEPTION"
+		);
 	}
 	jint AccountManager::ERROR_CODE_UNSUPPORTED_OPERATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"ERROR_CODE_UNSUPPORTED_OPERATION");
+			"ERROR_CODE_UNSUPPORTED_OPERATION"
+		);
 	}
-	QAndroidJniObject AccountManager::KEY_ACCOUNTS()
+	jstring AccountManager::KEY_ACCOUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_ACCOUNT_AUTHENTICATOR_RESPONSE()
+	jstring AccountManager::KEY_ACCOUNT_AUTHENTICATOR_RESPONSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_AUTHENTICATOR_RESPONSE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_ACCOUNT_MANAGER_RESPONSE()
+	jstring AccountManager::KEY_ACCOUNT_MANAGER_RESPONSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_MANAGER_RESPONSE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_ACCOUNT_NAME()
+	jstring AccountManager::KEY_ACCOUNT_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_ACCOUNT_SESSION_BUNDLE()
+	jstring AccountManager::KEY_ACCOUNT_SESSION_BUNDLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_SESSION_BUNDLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_ACCOUNT_STATUS_TOKEN()
+	jstring AccountManager::KEY_ACCOUNT_STATUS_TOKEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_STATUS_TOKEN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_ACCOUNT_TYPE()
+	jstring AccountManager::KEY_ACCOUNT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ACCOUNT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_ANDROID_PACKAGE_NAME()
+	jstring AccountManager::KEY_ANDROID_PACKAGE_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ANDROID_PACKAGE_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_AUTHENTICATOR_TYPES()
+	jstring AccountManager::KEY_AUTHENTICATOR_TYPES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTHENTICATOR_TYPES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_AUTHTOKEN()
+	jstring AccountManager::KEY_AUTHTOKEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTHTOKEN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_AUTH_FAILED_MESSAGE()
+	jstring AccountManager::KEY_AUTH_FAILED_MESSAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTH_FAILED_MESSAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_AUTH_TOKEN_LABEL()
+	jstring AccountManager::KEY_AUTH_TOKEN_LABEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_AUTH_TOKEN_LABEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_BOOLEAN_RESULT()
+	jstring AccountManager::KEY_BOOLEAN_RESULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_BOOLEAN_RESULT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_CALLER_PID()
+	jstring AccountManager::KEY_CALLER_PID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_CALLER_PID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_CALLER_UID()
+	jstring AccountManager::KEY_CALLER_UID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_CALLER_UID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_ERROR_CODE()
+	jstring AccountManager::KEY_ERROR_CODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ERROR_CODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_ERROR_MESSAGE()
+	jstring AccountManager::KEY_ERROR_MESSAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_ERROR_MESSAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_INTENT()
+	jstring AccountManager::KEY_INTENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_INTENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_LAST_AUTHENTICATED_TIME()
+	jstring AccountManager::KEY_LAST_AUTHENTICATED_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_LAST_AUTHENTICATED_TIME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_PASSWORD()
+	jstring AccountManager::KEY_PASSWORD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_PASSWORD",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::KEY_USERDATA()
+	jstring AccountManager::KEY_USERDATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"KEY_USERDATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::LOGIN_ACCOUNTS_CHANGED_ACTION()
+	jstring AccountManager::LOGIN_ACCOUNTS_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"LOGIN_ACCOUNTS_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE()
+	jstring AccountManager::PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"PACKAGE_NAME_KEY_LEGACY_NOT_VISIBLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::PACKAGE_NAME_KEY_LEGACY_VISIBLE()
+	jstring AccountManager::PACKAGE_NAME_KEY_LEGACY_VISIBLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AccountManager",
 			"PACKAGE_NAME_KEY_LEGACY_VISIBLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AccountManager::VISIBILITY_NOT_VISIBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"VISIBILITY_NOT_VISIBLE");
+			"VISIBILITY_NOT_VISIBLE"
+		);
 	}
 	jint AccountManager::VISIBILITY_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"VISIBILITY_UNDEFINED");
+			"VISIBILITY_UNDEFINED"
+		);
 	}
 	jint AccountManager::VISIBILITY_USER_MANAGED_NOT_VISIBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"VISIBILITY_USER_MANAGED_NOT_VISIBLE");
+			"VISIBILITY_USER_MANAGED_NOT_VISIBLE"
+		);
 	}
 	jint AccountManager::VISIBILITY_USER_MANAGED_VISIBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"VISIBILITY_USER_MANAGED_VISIBLE");
+			"VISIBILITY_USER_MANAGED_VISIBLE"
+		);
 	}
 	jint AccountManager::VISIBILITY_VISIBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accounts.AccountManager",
-			"VISIBILITY_VISIBLE");
+			"VISIBILITY_VISIBLE"
+		);
 	}
 	
 	// Constructors
@@ -435,15 +476,8 @@ namespace __jni_impl::android::accounts
 			"android.accounts.AccountManager",
 			"get",
 			"(Landroid/content/Context;)Landroid/accounts/AccountManager;",
-			arg0.__jniObject().object());
-	}
-	void AccountManager::setPassword(__jni_impl::android::accounts::Account arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setPassword",
-			"(Landroid/accounts/Account;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
+			arg0.__jniObject().object()
+		);
 	}
 	void AccountManager::setUserData(__jni_impl::android::accounts::Account arg0, jstring arg1, jstring arg2)
 	{
@@ -452,49 +486,65 @@ namespace __jni_impl::android::accounts
 			"(Landroid/accounts/Account;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject AccountManager::getPassword(__jni_impl::android::accounts::Account arg0)
+	void AccountManager::setPassword(__jni_impl::android::accounts::Account arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setPassword",
+			"(Landroid/accounts/Account;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jstring AccountManager::getPassword(__jni_impl::android::accounts::Account arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPassword",
 			"(Landroid/accounts/Account;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::getUserData(__jni_impl::android::accounts::Account arg0, jstring arg1)
+	jstring AccountManager::getUserData(__jni_impl::android::accounts::Account arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getUserData",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject AccountManager::getAuthenticatorTypes()
+	jarray AccountManager::getAuthenticatorTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getAuthenticatorTypes",
-			"()[Landroid/accounts/AuthenticatorDescription;");
+			"()[Landroid/accounts/AuthenticatorDescription;"
+		).object<jarray>();
 	}
-	QAndroidJniObject AccountManager::getAccounts()
+	jarray AccountManager::getAccounts()
 	{
 		return __thiz.callObjectMethod(
 			"getAccounts",
-			"()[Landroid/accounts/Account;");
+			"()[Landroid/accounts/Account;"
+		).object<jarray>();
 	}
-	QAndroidJniObject AccountManager::getAccountsByTypeForPackage(jstring arg0, jstring arg1)
+	jarray AccountManager::getAccountsByTypeForPackage(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getAccountsByTypeForPackage",
 			"(Ljava/lang/String;Ljava/lang/String;)[Landroid/accounts/Account;",
 			arg0,
-			arg1);
+			arg1
+		).object<jarray>();
 	}
-	QAndroidJniObject AccountManager::getAccountsByType(jstring arg0)
+	jarray AccountManager::getAccountsByType(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAccountsByType",
 			"(Ljava/lang/String;)[Landroid/accounts/Account;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
 	QAndroidJniObject AccountManager::hasFeatures(__jni_impl::android::accounts::Account arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -504,7 +554,8 @@ namespace __jni_impl::android::accounts
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::getAccountsByTypeAndFeatures(jstring arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -514,7 +565,8 @@ namespace __jni_impl::android::accounts
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jboolean AccountManager::addAccountExplicitly(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -524,7 +576,8 @@ namespace __jni_impl::android::accounts
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jboolean AccountManager::addAccountExplicitly(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -533,14 +586,16 @@ namespace __jni_impl::android::accounts
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::getPackagesAndVisibilityForAccount(__jni_impl::android::accounts::Account arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPackagesAndVisibilityForAccount",
 			"(Landroid/accounts/Account;)Ljava/util/Map;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::getAccountsAndVisibilityForPackage(jstring arg0, jstring arg1)
 	{
@@ -548,7 +603,8 @@ namespace __jni_impl::android::accounts
 			"getAccountsAndVisibilityForPackage",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AccountManager::setAccountVisibility(__jni_impl::android::accounts::Account arg0, jstring arg1, jint arg2)
 	{
@@ -557,7 +613,8 @@ namespace __jni_impl::android::accounts
 			"(Landroid/accounts/Account;Ljava/lang/String;I)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AccountManager::getAccountVisibility(__jni_impl::android::accounts::Account arg0, jstring arg1)
 	{
@@ -565,14 +622,16 @@ namespace __jni_impl::android::accounts
 			"getAccountVisibility",
 			"(Landroid/accounts/Account;Ljava/lang/String;)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean AccountManager::notifyAccountAuthenticated(__jni_impl::android::accounts::Account arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"notifyAccountAuthenticated",
 			"(Landroid/accounts/Account;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::renameAccount(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -582,14 +641,16 @@ namespace __jni_impl::android::accounts
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
-	QAndroidJniObject AccountManager::getPreviousName(__jni_impl::android::accounts::Account arg0)
+	jstring AccountManager::getPreviousName(__jni_impl::android::accounts::Account arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPreviousName",
 			"(Landroid/accounts/Account;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject AccountManager::removeAccount(__jni_impl::android::accounts::Account arg0, __jni_impl::android::app::Activity arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -599,7 +660,8 @@ namespace __jni_impl::android::accounts
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::removeAccount(__jni_impl::android::accounts::Account arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2)
 	{
@@ -608,14 +670,16 @@ namespace __jni_impl::android::accounts
 			"(Landroid/accounts/Account;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean AccountManager::removeAccountExplicitly(__jni_impl::android::accounts::Account arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeAccountExplicitly",
 			"(Landroid/accounts/Account;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AccountManager::invalidateAuthToken(jstring arg0, jstring arg1)
 	{
@@ -623,22 +687,25 @@ namespace __jni_impl::android::accounts
 			"invalidateAuthToken",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject AccountManager::peekAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1)
+	jstring AccountManager::peekAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
 			"peekAuthToken",
 			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	void AccountManager::clearPassword(__jni_impl::android::accounts::Account arg0)
 	{
 		__thiz.callMethod<void>(
 			"clearPassword",
 			"(Landroid/accounts/Account;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AccountManager::setAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, jstring arg2)
 	{
@@ -647,16 +714,18 @@ namespace __jni_impl::android::accounts
 			"(Landroid/accounts/Account;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject AccountManager::blockingGetAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2)
+	jstring AccountManager::blockingGetAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2)
 	{
 		return __thiz.callObjectMethod(
 			"blockingGetAuthToken",
 			"(Landroid/accounts/Account;Ljava/lang/String;Z)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jstring>();
 	}
 	QAndroidJniObject AccountManager::getAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, jboolean arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5)
 	{
@@ -668,7 +737,8 @@ namespace __jni_impl::android::accounts
 			arg2.__jniObject().object(),
 			arg3,
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::getAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4)
 	{
@@ -679,7 +749,8 @@ namespace __jni_impl::android::accounts
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::getAuthToken(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::app::Activity arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5)
 	{
@@ -691,7 +762,8 @@ namespace __jni_impl::android::accounts
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::addAccount(jstring arg0, jstring arg1, jarray arg2, __jni_impl::android::os::Bundle arg3, __jni_impl::android::app::Activity arg4, __jni_impl::__JniBaseClass arg5, __jni_impl::android::os::Handler arg6)
 	{
@@ -704,7 +776,8 @@ namespace __jni_impl::android::accounts
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::confirmCredentials(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::app::Activity arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4)
 	{
@@ -715,7 +788,8 @@ namespace __jni_impl::android::accounts
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::updateCredentials(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::app::Activity arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5)
 	{
@@ -727,7 +801,8 @@ namespace __jni_impl::android::accounts
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::editProperties(jstring arg0, __jni_impl::android::app::Activity arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -737,7 +812,8 @@ namespace __jni_impl::android::accounts
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::getAuthTokenByFeatures(jstring arg0, jstring arg1, jarray arg2, __jni_impl::android::app::Activity arg3, __jni_impl::android::os::Bundle arg4, __jni_impl::android::os::Bundle arg5, __jni_impl::__JniBaseClass arg6, __jni_impl::android::os::Handler arg7)
 	{
@@ -751,7 +827,8 @@ namespace __jni_impl::android::accounts
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::newChooseAccountIntent(__jni_impl::android::accounts::Account arg0, __jni_impl::__JniBaseClass arg1, jarray arg2, jstring arg3, jstring arg4, jarray arg5, __jni_impl::android::os::Bundle arg6)
 	{
@@ -765,7 +842,8 @@ namespace __jni_impl::android::accounts
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::newChooseAccountIntent(__jni_impl::android::accounts::Account arg0, __jni_impl::java::util::ArrayList arg1, jarray arg2, jboolean arg3, jstring arg4, jstring arg5, jarray arg6, __jni_impl::android::os::Bundle arg7)
 	{
@@ -780,7 +858,8 @@ namespace __jni_impl::android::accounts
 			arg4,
 			arg5,
 			arg6,
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 	void AccountManager::addOnAccountsUpdatedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1, jboolean arg2, jarray arg3)
 	{
@@ -790,7 +869,8 @@ namespace __jni_impl::android::accounts
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void AccountManager::addOnAccountsUpdatedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1, jboolean arg2)
 	{
@@ -799,14 +879,16 @@ namespace __jni_impl::android::accounts
 			"(Landroid/accounts/OnAccountsUpdateListener;Landroid/os/Handler;Z)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void AccountManager::removeOnAccountsUpdatedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeOnAccountsUpdatedListener",
 			"(Landroid/accounts/OnAccountsUpdateListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::startAddAccountSession(jstring arg0, jstring arg1, jarray arg2, __jni_impl::android::os::Bundle arg3, __jni_impl::android::app::Activity arg4, __jni_impl::__JniBaseClass arg5, __jni_impl::android::os::Handler arg6)
 	{
@@ -819,7 +901,8 @@ namespace __jni_impl::android::accounts
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::startUpdateCredentialsSession(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::app::Activity arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::android::os::Handler arg5)
 	{
@@ -831,7 +914,8 @@ namespace __jni_impl::android::accounts
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::finishSession(__jni_impl::android::os::Bundle arg0, __jni_impl::android::app::Activity arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -841,7 +925,8 @@ namespace __jni_impl::android::accounts
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccountManager::isCredentialsUpdateSuggested(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
@@ -851,7 +936,8 @@ namespace __jni_impl::android::accounts
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::accounts
 

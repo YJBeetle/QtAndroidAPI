@@ -84,7 +84,8 @@ namespace __jni_impl::android::icu::util
 	{
 		return __thiz.callObjectMethod(
 			"getCurrency",
-			"()Landroid/icu/util/Currency;");
+			"()Landroid/icu/util/Currency;"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

@@ -24,19 +24,19 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getMobileNetworkOperator();
-		jint getArfcn();
-		jint getBsic();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getMcc();
-		jint getMnc();
-		QAndroidJniObject getMccString();
-		QAndroidJniObject getMncString();
 		jint getLac();
 		jint getCid();
 		jint getPsc();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getMobileNetworkOperator();
+		jint getArfcn();
+		jint getBsic();
+		jint getMcc();
+		jint getMnc();
+		jstring getMccString();
+		jstring getMncString();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -50,7 +50,8 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellIdentityGsm",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -67,37 +68,43 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CellIdentityGsm::toString()
+	jstring CellIdentityGsm::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CellIdentityGsm::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject CellIdentityGsm::getMobileNetworkOperator()
-	{
-		return __thiz.callObjectMethod(
-			"getMobileNetworkOperator",
-			"()Ljava/lang/String;");
-	}
-	jint CellIdentityGsm::getArfcn()
+	jint CellIdentityGsm::getLac()
 	{
 		return __thiz.callMethod<jint>(
-			"getArfcn",
-			"()I");
+			"getLac",
+			"()I"
+		);
 	}
-	jint CellIdentityGsm::getBsic()
+	jint CellIdentityGsm::getCid()
 	{
 		return __thiz.callMethod<jint>(
-			"getBsic",
-			"()I");
+			"getCid",
+			"()I"
+		);
+	}
+	jint CellIdentityGsm::getPsc()
+	{
+		return __thiz.callMethod<jint>(
+			"getPsc",
+			"()I"
+		);
 	}
 	void CellIdentityGsm::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -105,49 +112,57 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring CellIdentityGsm::getMobileNetworkOperator()
+	{
+		return __thiz.callObjectMethod(
+			"getMobileNetworkOperator",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint CellIdentityGsm::getArfcn()
+	{
+		return __thiz.callMethod<jint>(
+			"getArfcn",
+			"()I"
+		);
+	}
+	jint CellIdentityGsm::getBsic()
+	{
+		return __thiz.callMethod<jint>(
+			"getBsic",
+			"()I"
+		);
 	}
 	jint CellIdentityGsm::getMcc()
 	{
 		return __thiz.callMethod<jint>(
 			"getMcc",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellIdentityGsm::getMnc()
 	{
 		return __thiz.callMethod<jint>(
 			"getMnc",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject CellIdentityGsm::getMccString()
+	jstring CellIdentityGsm::getMccString()
 	{
 		return __thiz.callObjectMethod(
 			"getMccString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CellIdentityGsm::getMncString()
+	jstring CellIdentityGsm::getMncString()
 	{
 		return __thiz.callObjectMethod(
 			"getMncString",
-			"()Ljava/lang/String;");
-	}
-	jint CellIdentityGsm::getLac()
-	{
-		return __thiz.callMethod<jint>(
-			"getLac",
-			"()I");
-	}
-	jint CellIdentityGsm::getCid()
-	{
-		return __thiz.callMethod<jint>(
-			"getCid",
-			"()I");
-	}
-	jint CellIdentityGsm::getPsc()
-	{
-		return __thiz.callMethod<jint>(
-			"getPsc",
-			"()I");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony
 

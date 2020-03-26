@@ -39,7 +39,8 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz.callMethod<void>(
 			"onSubscriptionsChanged",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

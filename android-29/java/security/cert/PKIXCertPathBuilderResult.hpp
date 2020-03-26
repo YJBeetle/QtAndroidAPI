@@ -26,7 +26,7 @@ namespace __jni_impl::java::security::cert
 		void __constructor(__jni_impl::java::security::cert::CertPath arg0, __jni_impl::java::security::cert::TrustAnchor arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getCertPath();
 	};
 } // namespace __jni_impl::java::security::cert
@@ -51,17 +51,19 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject PKIXCertPathBuilderResult::toString()
+	jstring PKIXCertPathBuilderResult::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject PKIXCertPathBuilderResult::getCertPath()
 	{
 		return __thiz.callObjectMethod(
 			"getCertPath",
-			"()Ljava/security/cert/CertPath;");
+			"()Ljava/security/cert/CertPath;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

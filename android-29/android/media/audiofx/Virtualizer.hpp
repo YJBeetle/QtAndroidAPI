@@ -30,14 +30,14 @@ namespace __jni_impl::android::media::audiofx
 		// Methods
 		QAndroidJniObject getProperties();
 		void setProperties(__jni_impl::android::media::audiofx::Virtualizer_Settings arg0);
-		jboolean getStrengthSupported();
-		void setStrength(jshort arg0);
-		jshort getRoundedStrength();
-		void setParameterListener(__jni_impl::__JniBaseClass arg0);
 		jboolean canVirtualize(jint arg0, jint arg1);
 		jboolean getSpeakerAngles(jint arg0, jint arg1, jintArray arg2);
 		jboolean forceVirtualizationMode(jint arg0);
 		jint getVirtualizationMode();
+		jboolean getStrengthSupported();
+		void setStrength(jshort arg0);
+		jshort getRoundedStrength();
+		void setParameterListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -50,37 +50,43 @@ namespace __jni_impl::android::media::audiofx
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
-			"PARAM_STRENGTH");
+			"PARAM_STRENGTH"
+		);
 	}
 	jint Virtualizer::PARAM_STRENGTH_SUPPORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
-			"PARAM_STRENGTH_SUPPORTED");
+			"PARAM_STRENGTH_SUPPORTED"
+		);
 	}
 	jint Virtualizer::VIRTUALIZATION_MODE_AUTO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
-			"VIRTUALIZATION_MODE_AUTO");
+			"VIRTUALIZATION_MODE_AUTO"
+		);
 	}
 	jint Virtualizer::VIRTUALIZATION_MODE_BINAURAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
-			"VIRTUALIZATION_MODE_BINAURAL");
+			"VIRTUALIZATION_MODE_BINAURAL"
+		);
 	}
 	jint Virtualizer::VIRTUALIZATION_MODE_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
-			"VIRTUALIZATION_MODE_OFF");
+			"VIRTUALIZATION_MODE_OFF"
+		);
 	}
 	jint Virtualizer::VIRTUALIZATION_MODE_TRANSAURAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.audiofx.Virtualizer",
-			"VIRTUALIZATION_MODE_TRANSAURAL");
+			"VIRTUALIZATION_MODE_TRANSAURAL"
+		);
 	}
 	
 	// Constructors
@@ -98,40 +104,16 @@ namespace __jni_impl::android::media::audiofx
 	{
 		return __thiz.callObjectMethod(
 			"getProperties",
-			"()Landroid/media/audiofx/Virtualizer$Settings;");
+			"()Landroid/media/audiofx/Virtualizer$Settings;"
+		);
 	}
 	void Virtualizer::setProperties(__jni_impl::android::media::audiofx::Virtualizer_Settings arg0)
 	{
 		__thiz.callMethod<void>(
 			"setProperties",
 			"(Landroid/media/audiofx/Virtualizer$Settings;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean Virtualizer::getStrengthSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getStrengthSupported",
-			"()Z");
-	}
-	void Virtualizer::setStrength(jshort arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStrength",
-			"(S)V",
-			arg0);
-	}
-	jshort Virtualizer::getRoundedStrength()
-	{
-		return __thiz.callMethod<jshort>(
-			"getRoundedStrength",
-			"()S");
-	}
-	void Virtualizer::setParameterListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setParameterListener",
-			"(Landroid/media/audiofx/Virtualizer$OnParameterChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Virtualizer::canVirtualize(jint arg0, jint arg1)
 	{
@@ -139,7 +121,8 @@ namespace __jni_impl::android::media::audiofx
 			"canVirtualize",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Virtualizer::getSpeakerAngles(jint arg0, jint arg1, jintArray arg2)
 	{
@@ -148,20 +131,53 @@ namespace __jni_impl::android::media::audiofx
 			"(II[I)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean Virtualizer::forceVirtualizationMode(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"forceVirtualizationMode",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Virtualizer::getVirtualizationMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getVirtualizationMode",
-			"()I");
+			"()I"
+		);
+	}
+	jboolean Virtualizer::getStrengthSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getStrengthSupported",
+			"()Z"
+		);
+	}
+	void Virtualizer::setStrength(jshort arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStrength",
+			"(S)V",
+			arg0
+		);
+	}
+	jshort Virtualizer::getRoundedStrength()
+	{
+		return __thiz.callMethod<jshort>(
+			"getRoundedStrength",
+			"()S"
+		);
+	}
+	void Virtualizer::setParameterListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setParameterListener",
+			"(Landroid/media/audiofx/Virtualizer$OnParameterChangeListener;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

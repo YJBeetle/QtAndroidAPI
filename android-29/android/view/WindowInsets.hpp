@@ -30,8 +30,9 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
+		QAndroidJniObject inset(jint arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject getSystemWindowInsets();
 		jint getSystemWindowInsetLeft();
 		jint getSystemWindowInsetTop();
@@ -44,8 +45,8 @@ namespace __jni_impl::android::view
 		jboolean isConsumed();
 		jboolean isRound();
 		QAndroidJniObject consumeSystemWindowInsets();
-		QAndroidJniObject replaceSystemWindowInsets(__jni_impl::android::graphics::Rect arg0);
 		QAndroidJniObject replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3);
+		QAndroidJniObject replaceSystemWindowInsets(__jni_impl::android::graphics::Rect arg0);
 		QAndroidJniObject getStableInsets();
 		jint getStableInsetTop();
 		jint getStableInsetLeft();
@@ -56,7 +57,6 @@ namespace __jni_impl::android::view
 		QAndroidJniObject getMandatorySystemGestureInsets();
 		QAndroidJniObject getTappableElementInsets();
 		QAndroidJniObject consumeStableInsets();
-		QAndroidJniObject inset(jint arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::view
 
@@ -83,168 +83,22 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WindowInsets::toString()
+	jstring WindowInsets::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WindowInsets::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	QAndroidJniObject WindowInsets::getSystemWindowInsets()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemWindowInsets",
-			"()Landroid/graphics/Insets;");
-	}
-	jint WindowInsets::getSystemWindowInsetLeft()
-	{
-		return __thiz.callMethod<jint>(
-			"getSystemWindowInsetLeft",
-			"()I");
-	}
-	jint WindowInsets::getSystemWindowInsetTop()
-	{
-		return __thiz.callMethod<jint>(
-			"getSystemWindowInsetTop",
-			"()I");
-	}
-	jint WindowInsets::getSystemWindowInsetRight()
-	{
-		return __thiz.callMethod<jint>(
-			"getSystemWindowInsetRight",
-			"()I");
-	}
-	jint WindowInsets::getSystemWindowInsetBottom()
-	{
-		return __thiz.callMethod<jint>(
-			"getSystemWindowInsetBottom",
-			"()I");
-	}
-	jboolean WindowInsets::hasSystemWindowInsets()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasSystemWindowInsets",
-			"()Z");
-	}
-	jboolean WindowInsets::hasInsets()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasInsets",
-			"()Z");
-	}
-	QAndroidJniObject WindowInsets::getDisplayCutout()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayCutout",
-			"()Landroid/view/DisplayCutout;");
-	}
-	QAndroidJniObject WindowInsets::consumeDisplayCutout()
-	{
-		return __thiz.callObjectMethod(
-			"consumeDisplayCutout",
-			"()Landroid/view/WindowInsets;");
-	}
-	jboolean WindowInsets::isConsumed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConsumed",
-			"()Z");
-	}
-	jboolean WindowInsets::isRound()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRound",
-			"()Z");
-	}
-	QAndroidJniObject WindowInsets::consumeSystemWindowInsets()
-	{
-		return __thiz.callObjectMethod(
-			"consumeSystemWindowInsets",
-			"()Landroid/view/WindowInsets;");
-	}
-	QAndroidJniObject WindowInsets::replaceSystemWindowInsets(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callObjectMethod(
-			"replaceSystemWindowInsets",
-			"(Landroid/graphics/Rect;)Landroid/view/WindowInsets;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject WindowInsets::replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"replaceSystemWindowInsets",
-			"(IIII)Landroid/view/WindowInsets;",
-			arg0,
-			arg1,
-			arg2,
-			arg3);
-	}
-	QAndroidJniObject WindowInsets::getStableInsets()
-	{
-		return __thiz.callObjectMethod(
-			"getStableInsets",
-			"()Landroid/graphics/Insets;");
-	}
-	jint WindowInsets::getStableInsetTop()
-	{
-		return __thiz.callMethod<jint>(
-			"getStableInsetTop",
-			"()I");
-	}
-	jint WindowInsets::getStableInsetLeft()
-	{
-		return __thiz.callMethod<jint>(
-			"getStableInsetLeft",
-			"()I");
-	}
-	jint WindowInsets::getStableInsetRight()
-	{
-		return __thiz.callMethod<jint>(
-			"getStableInsetRight",
-			"()I");
-	}
-	jint WindowInsets::getStableInsetBottom()
-	{
-		return __thiz.callMethod<jint>(
-			"getStableInsetBottom",
-			"()I");
-	}
-	jboolean WindowInsets::hasStableInsets()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasStableInsets",
-			"()Z");
-	}
-	QAndroidJniObject WindowInsets::getSystemGestureInsets()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemGestureInsets",
-			"()Landroid/graphics/Insets;");
-	}
-	QAndroidJniObject WindowInsets::getMandatorySystemGestureInsets()
-	{
-		return __thiz.callObjectMethod(
-			"getMandatorySystemGestureInsets",
-			"()Landroid/graphics/Insets;");
-	}
-	QAndroidJniObject WindowInsets::getTappableElementInsets()
-	{
-		return __thiz.callObjectMethod(
-			"getTappableElementInsets",
-			"()Landroid/graphics/Insets;");
-	}
-	QAndroidJniObject WindowInsets::consumeStableInsets()
-	{
-		return __thiz.callObjectMethod(
-			"consumeStableInsets",
-			"()Landroid/view/WindowInsets;");
+			"()I"
+		);
 	}
 	QAndroidJniObject WindowInsets::inset(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -254,7 +108,181 @@ namespace __jni_impl::android::view
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	QAndroidJniObject WindowInsets::getSystemWindowInsets()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemWindowInsets",
+			"()Landroid/graphics/Insets;"
+		);
+	}
+	jint WindowInsets::getSystemWindowInsetLeft()
+	{
+		return __thiz.callMethod<jint>(
+			"getSystemWindowInsetLeft",
+			"()I"
+		);
+	}
+	jint WindowInsets::getSystemWindowInsetTop()
+	{
+		return __thiz.callMethod<jint>(
+			"getSystemWindowInsetTop",
+			"()I"
+		);
+	}
+	jint WindowInsets::getSystemWindowInsetRight()
+	{
+		return __thiz.callMethod<jint>(
+			"getSystemWindowInsetRight",
+			"()I"
+		);
+	}
+	jint WindowInsets::getSystemWindowInsetBottom()
+	{
+		return __thiz.callMethod<jint>(
+			"getSystemWindowInsetBottom",
+			"()I"
+		);
+	}
+	jboolean WindowInsets::hasSystemWindowInsets()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasSystemWindowInsets",
+			"()Z"
+		);
+	}
+	jboolean WindowInsets::hasInsets()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasInsets",
+			"()Z"
+		);
+	}
+	QAndroidJniObject WindowInsets::getDisplayCutout()
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayCutout",
+			"()Landroid/view/DisplayCutout;"
+		);
+	}
+	QAndroidJniObject WindowInsets::consumeDisplayCutout()
+	{
+		return __thiz.callObjectMethod(
+			"consumeDisplayCutout",
+			"()Landroid/view/WindowInsets;"
+		);
+	}
+	jboolean WindowInsets::isConsumed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConsumed",
+			"()Z"
+		);
+	}
+	jboolean WindowInsets::isRound()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRound",
+			"()Z"
+		);
+	}
+	QAndroidJniObject WindowInsets::consumeSystemWindowInsets()
+	{
+		return __thiz.callObjectMethod(
+			"consumeSystemWindowInsets",
+			"()Landroid/view/WindowInsets;"
+		);
+	}
+	QAndroidJniObject WindowInsets::replaceSystemWindowInsets(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"replaceSystemWindowInsets",
+			"(IIII)Landroid/view/WindowInsets;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	QAndroidJniObject WindowInsets::replaceSystemWindowInsets(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callObjectMethod(
+			"replaceSystemWindowInsets",
+			"(Landroid/graphics/Rect;)Landroid/view/WindowInsets;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject WindowInsets::getStableInsets()
+	{
+		return __thiz.callObjectMethod(
+			"getStableInsets",
+			"()Landroid/graphics/Insets;"
+		);
+	}
+	jint WindowInsets::getStableInsetTop()
+	{
+		return __thiz.callMethod<jint>(
+			"getStableInsetTop",
+			"()I"
+		);
+	}
+	jint WindowInsets::getStableInsetLeft()
+	{
+		return __thiz.callMethod<jint>(
+			"getStableInsetLeft",
+			"()I"
+		);
+	}
+	jint WindowInsets::getStableInsetRight()
+	{
+		return __thiz.callMethod<jint>(
+			"getStableInsetRight",
+			"()I"
+		);
+	}
+	jint WindowInsets::getStableInsetBottom()
+	{
+		return __thiz.callMethod<jint>(
+			"getStableInsetBottom",
+			"()I"
+		);
+	}
+	jboolean WindowInsets::hasStableInsets()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasStableInsets",
+			"()Z"
+		);
+	}
+	QAndroidJniObject WindowInsets::getSystemGestureInsets()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemGestureInsets",
+			"()Landroid/graphics/Insets;"
+		);
+	}
+	QAndroidJniObject WindowInsets::getMandatorySystemGestureInsets()
+	{
+		return __thiz.callObjectMethod(
+			"getMandatorySystemGestureInsets",
+			"()Landroid/graphics/Insets;"
+		);
+	}
+	QAndroidJniObject WindowInsets::getTappableElementInsets()
+	{
+		return __thiz.callObjectMethod(
+			"getTappableElementInsets",
+			"()Landroid/graphics/Insets;"
+		);
+	}
+	QAndroidJniObject WindowInsets::consumeStableInsets()
+	{
+		return __thiz.callObjectMethod(
+			"consumeStableInsets",
+			"()Landroid/view/WindowInsets;"
+		);
 	}
 } // namespace __jni_impl::android::view
 

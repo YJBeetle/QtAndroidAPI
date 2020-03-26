@@ -23,7 +23,7 @@ namespace __jni_impl::android::content
 		// Methods
 		jboolean equals(jobject arg0);
 		jint match(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject getHost();
+		jstring getHost();
 		jint getPort();
 	};
 } // namespace __jni_impl::android::content
@@ -50,26 +50,30 @@ namespace __jni_impl::android::content
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint IntentFilter_AuthorityEntry::match(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"match",
 			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject IntentFilter_AuthorityEntry::getHost()
+	jstring IntentFilter_AuthorityEntry::getHost()
 	{
 		return __thiz.callObjectMethod(
 			"getHost",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint IntentFilter_AuthorityEntry::getPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getPort",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::content
 

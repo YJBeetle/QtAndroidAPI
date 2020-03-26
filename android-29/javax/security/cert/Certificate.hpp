@@ -18,9 +18,9 @@ namespace __jni_impl::javax::security::cert
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getEncoded();
+		jbyteArray getEncoded();
 		void verify(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void verify(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getPublicKey();
@@ -46,25 +46,29 @@ namespace __jni_impl::javax::security::cert
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Certificate::toString()
+	jstring Certificate::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Certificate::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Certificate::getEncoded()
+	jbyteArray Certificate::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	void Certificate::verify(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -72,20 +76,23 @@ namespace __jni_impl::javax::security::cert
 			"verify",
 			"(Ljava/security/PublicKey;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Certificate::verify(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"verify",
 			"(Ljava/security/PublicKey;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Certificate::getPublicKey()
 	{
 		return __thiz.callObjectMethod(
 			"getPublicKey",
-			"()Ljava/security/PublicKey;");
+			"()Ljava/security/PublicKey;"
+		);
 	}
 } // namespace __jni_impl::javax::security::cert
 

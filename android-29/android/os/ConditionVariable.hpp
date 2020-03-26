@@ -50,26 +50,30 @@ namespace __jni_impl::android::os
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void ConditionVariable::open()
 	{
 		__thiz.callMethod<void>(
 			"open",
-			"()V");
+			"()V"
+		);
 	}
 	void ConditionVariable::block()
 	{
 		__thiz.callMethod<void>(
 			"block",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ConditionVariable::block(jlong arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"block",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::os
 

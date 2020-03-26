@@ -30,6 +30,7 @@ namespace __jni_impl::android::printservice
 		
 		// Methods
 		jboolean isDestroyed();
+		void onDestroy();
 		QAndroidJniObject getPrinters();
 		void addPrinters(__jni_impl::__JniBaseClass arg0);
 		void removePrinters(__jni_impl::__JniBaseClass arg0);
@@ -41,7 +42,6 @@ namespace __jni_impl::android::printservice
 		void onStopPrinterStateTracking(__jni_impl::android::print::PrinterId arg0);
 		QAndroidJniObject getTrackedPrinters();
 		jboolean isPrinterDiscoveryStarted();
-		void onDestroy();
 	};
 } // namespace __jni_impl::android::printservice
 
@@ -66,54 +66,69 @@ namespace __jni_impl::android::printservice
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDestroyed",
-			"()Z");
+			"()Z"
+		);
+	}
+	void PrinterDiscoverySession::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V"
+		);
 	}
 	QAndroidJniObject PrinterDiscoverySession::getPrinters()
 	{
 		return __thiz.callObjectMethod(
 			"getPrinters",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	void PrinterDiscoverySession::addPrinters(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addPrinters",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PrinterDiscoverySession::removePrinters(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removePrinters",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PrinterDiscoverySession::onStartPrinterDiscovery(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onStartPrinterDiscovery",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PrinterDiscoverySession::onStopPrinterDiscovery()
 	{
 		__thiz.callMethod<void>(
 			"onStopPrinterDiscovery",
-			"()V");
+			"()V"
+		);
 	}
 	void PrinterDiscoverySession::onValidatePrinters(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onValidatePrinters",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PrinterDiscoverySession::onStartPrinterStateTracking(__jni_impl::android::print::PrinterId arg0)
 	{
 		__thiz.callMethod<void>(
 			"onStartPrinterStateTracking",
 			"(Landroid/print/PrinterId;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PrinterDiscoverySession::onRequestCustomPrinterIcon(__jni_impl::android::print::PrinterId arg0, __jni_impl::android::os::CancellationSignal arg1, __jni_impl::android::printservice::CustomPrinterIconCallback arg2)
 	{
@@ -122,32 +137,30 @@ namespace __jni_impl::android::printservice
 			"(Landroid/print/PrinterId;Landroid/os/CancellationSignal;Landroid/printservice/CustomPrinterIconCallback;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void PrinterDiscoverySession::onStopPrinterStateTracking(__jni_impl::android::print::PrinterId arg0)
 	{
 		__thiz.callMethod<void>(
 			"onStopPrinterStateTracking",
 			"(Landroid/print/PrinterId;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PrinterDiscoverySession::getTrackedPrinters()
 	{
 		return __thiz.callObjectMethod(
 			"getTrackedPrinters",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean PrinterDiscoverySession::isPrinterDiscoveryStarted()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPrinterDiscoveryStarted",
-			"()Z");
-	}
-	void PrinterDiscoverySession::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::printservice
 

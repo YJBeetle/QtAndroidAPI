@@ -21,7 +21,7 @@ namespace __jni_impl::java::lang::ref
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject get();
+		jobject get();
 		void clear();
 		static void reachabilityFence(jobject arg0);
 		jboolean enqueue();
@@ -44,17 +44,19 @@ namespace __jni_impl::java::lang::ref
 	}
 	
 	// Methods
-	QAndroidJniObject Reference::get()
+	jobject Reference::get()
 	{
 		return __thiz.callObjectMethod(
 			"get",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void Reference::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	void Reference::reachabilityFence(jobject arg0)
 	{
@@ -62,19 +64,22 @@ namespace __jni_impl::java::lang::ref
 			"java.lang.ref.Reference",
 			"reachabilityFence",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Reference::enqueue()
 	{
 		return __thiz.callMethod<jboolean>(
 			"enqueue",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Reference::isEnqueued()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnqueued",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::lang::ref
 

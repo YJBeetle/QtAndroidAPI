@@ -47,13 +47,13 @@ namespace __jni_impl::android::inputmethodservice
 		
 		// Methods
 		QAndroidJniObject getKeys();
-		jint getMinWidth();
-		jint getHeight();
 		QAndroidJniObject getModifierKeys();
 		jboolean setShifted(jboolean arg0);
 		jboolean isShifted();
 		jint getShiftKeyIndex();
-		QAndroidJniObject getNearestKeys(jint arg0, jint arg1);
+		jintArray getNearestKeys(jint arg0, jint arg1);
+		jint getMinWidth();
+		jint getHeight();
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
@@ -69,61 +69,71 @@ namespace __jni_impl::android::inputmethodservice
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"EDGE_BOTTOM");
+			"EDGE_BOTTOM"
+		);
 	}
 	jint Keyboard::EDGE_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"EDGE_LEFT");
+			"EDGE_LEFT"
+		);
 	}
 	jint Keyboard::EDGE_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"EDGE_RIGHT");
+			"EDGE_RIGHT"
+		);
 	}
 	jint Keyboard::EDGE_TOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"EDGE_TOP");
+			"EDGE_TOP"
+		);
 	}
 	jint Keyboard::KEYCODE_ALT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"KEYCODE_ALT");
+			"KEYCODE_ALT"
+		);
 	}
 	jint Keyboard::KEYCODE_CANCEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"KEYCODE_CANCEL");
+			"KEYCODE_CANCEL"
+		);
 	}
 	jint Keyboard::KEYCODE_DELETE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"KEYCODE_DELETE");
+			"KEYCODE_DELETE"
+		);
 	}
 	jint Keyboard::KEYCODE_DONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"KEYCODE_DONE");
+			"KEYCODE_DONE"
+		);
 	}
 	jint Keyboard::KEYCODE_MODE_CHANGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"KEYCODE_MODE_CHANGE");
+			"KEYCODE_MODE_CHANGE"
+		);
 	}
 	jint Keyboard::KEYCODE_SHIFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.inputmethodservice.Keyboard",
-			"KEYCODE_SHIFT");
+			"KEYCODE_SHIFT"
+		);
 	}
 	
 	// Constructors
@@ -172,52 +182,60 @@ namespace __jni_impl::android::inputmethodservice
 	{
 		return __thiz.callObjectMethod(
 			"getKeys",
-			"()Ljava/util/List;");
-	}
-	jint Keyboard::getMinWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinWidth",
-			"()I");
-	}
-	jint Keyboard::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject Keyboard::getModifierKeys()
 	{
 		return __thiz.callObjectMethod(
 			"getModifierKeys",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean Keyboard::setShifted(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setShifted",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Keyboard::isShifted()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isShifted",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Keyboard::getShiftKeyIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getShiftKeyIndex",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Keyboard::getNearestKeys(jint arg0, jint arg1)
+	jintArray Keyboard::getNearestKeys(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getNearestKeys",
 			"(II)[I",
 			arg0,
-			arg1);
+			arg1
+		).object<jintArray>();
+	}
+	jint Keyboard::getMinWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinWidth",
+			"()I"
+		);
+	}
+	jint Keyboard::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::inputmethodservice
 

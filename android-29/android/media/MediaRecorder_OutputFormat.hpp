@@ -43,61 +43,71 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"AAC_ADTS");
+			"AAC_ADTS"
+		);
 	}
 	jint MediaRecorder_OutputFormat::AMR_NB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"AMR_NB");
+			"AMR_NB"
+		);
 	}
 	jint MediaRecorder_OutputFormat::AMR_WB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"AMR_WB");
+			"AMR_WB"
+		);
 	}
 	jint MediaRecorder_OutputFormat::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"DEFAULT");
+			"DEFAULT"
+		);
 	}
 	jint MediaRecorder_OutputFormat::MPEG_2_TS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"MPEG_2_TS");
+			"MPEG_2_TS"
+		);
 	}
 	jint MediaRecorder_OutputFormat::MPEG_4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"MPEG_4");
+			"MPEG_4"
+		);
 	}
 	jint MediaRecorder_OutputFormat::OGG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"OGG");
+			"OGG"
+		);
 	}
 	jint MediaRecorder_OutputFormat::RAW_AMR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"RAW_AMR");
+			"RAW_AMR"
+		);
 	}
 	jint MediaRecorder_OutputFormat::THREE_GPP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"THREE_GPP");
+			"THREE_GPP"
+		);
 	}
 	jint MediaRecorder_OutputFormat::WEBM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaRecorder$OutputFormat",
-			"WEBM");
+			"WEBM"
+		);
 	}
 	
 	// Constructors

@@ -24,7 +24,7 @@ namespace __jni_impl::android::net::wifi::p2p
 		static jint GROUP_OWNER_BAND_2GHZ();
 		static jint GROUP_OWNER_BAND_5GHZ();
 		static jint GROUP_OWNER_BAND_AUTO();
-		QAndroidJniObject deviceAddress();
+		jstring deviceAddress();
 		jint groupOwnerIntent();
 		QAndroidJniObject wps();
 		
@@ -33,7 +33,7 @@ namespace __jni_impl::android::net::wifi::p2p
 		void __constructor(__jni_impl::android::net::wifi::p2p::WifiP2pConfig arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -50,42 +50,49 @@ namespace __jni_impl::android::net::wifi::p2p
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pConfig",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint WifiP2pConfig::GROUP_OWNER_BAND_2GHZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pConfig",
-			"GROUP_OWNER_BAND_2GHZ");
+			"GROUP_OWNER_BAND_2GHZ"
+		);
 	}
 	jint WifiP2pConfig::GROUP_OWNER_BAND_5GHZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pConfig",
-			"GROUP_OWNER_BAND_5GHZ");
+			"GROUP_OWNER_BAND_5GHZ"
+		);
 	}
 	jint WifiP2pConfig::GROUP_OWNER_BAND_AUTO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pConfig",
-			"GROUP_OWNER_BAND_AUTO");
+			"GROUP_OWNER_BAND_AUTO"
+		);
 	}
-	QAndroidJniObject WifiP2pConfig::deviceAddress()
+	jstring WifiP2pConfig::deviceAddress()
 	{
 		return __thiz.getObjectField(
 			"deviceAddress",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiP2pConfig::groupOwnerIntent()
 	{
 		return __thiz.getField<jint>(
-			"groupOwnerIntent");
+			"groupOwnerIntent"
+		);
 	}
 	QAndroidJniObject WifiP2pConfig::wps()
 	{
 		return __thiz.getObjectField(
 			"wps",
-			"Landroid/net/wifi/WpsInfo;");
+			"Landroid/net/wifi/WpsInfo;"
+		);
 	}
 	
 	// Constructors
@@ -104,17 +111,19 @@ namespace __jni_impl::android::net::wifi::p2p
 	}
 	
 	// Methods
-	QAndroidJniObject WifiP2pConfig::toString()
+	jstring WifiP2pConfig::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiP2pConfig::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void WifiP2pConfig::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -122,7 +131,8 @@ namespace __jni_impl::android::net::wifi::p2p
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p
 

@@ -18,10 +18,10 @@ namespace __jni_impl::android::provider
 		// Fields
 		static QAndroidJniObject DELETE_USAGE_URI();
 		static QAndroidJniObject FEEDBACK_URI();
-		static QAndroidJniObject USAGE_TYPE();
-		static QAndroidJniObject USAGE_TYPE_CALL();
-		static QAndroidJniObject USAGE_TYPE_LONG_TEXT();
-		static QAndroidJniObject USAGE_TYPE_SHORT_TEXT();
+		static jstring USAGE_TYPE();
+		static jstring USAGE_TYPE_CALL();
+		static jstring USAGE_TYPE_LONG_TEXT();
+		static jstring USAGE_TYPE_SHORT_TEXT();
 		
 		// Constructors
 		void __constructor();
@@ -40,42 +40,48 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"DELETE_USAGE_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_DataUsageFeedback::FEEDBACK_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"FEEDBACK_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_DataUsageFeedback::USAGE_TYPE()
+	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_DataUsageFeedback::USAGE_TYPE_CALL()
+	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_CALL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE_CALL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_DataUsageFeedback::USAGE_TYPE_LONG_TEXT()
+	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_LONG_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE_LONG_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_DataUsageFeedback::USAGE_TYPE_SHORT_TEXT()
+	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_SHORT_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$DataUsageFeedback",
 			"USAGE_TYPE_SHORT_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

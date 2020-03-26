@@ -40,19 +40,19 @@ namespace __jni_impl::android::nfc
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_ADAPTER_STATE_CHANGED();
-		static QAndroidJniObject ACTION_NDEF_DISCOVERED();
-		static QAndroidJniObject ACTION_TAG_DISCOVERED();
-		static QAndroidJniObject ACTION_TECH_DISCOVERED();
-		static QAndroidJniObject ACTION_TRANSACTION_DETECTED();
-		static QAndroidJniObject EXTRA_ADAPTER_STATE();
-		static QAndroidJniObject EXTRA_AID();
-		static QAndroidJniObject EXTRA_DATA();
-		static QAndroidJniObject EXTRA_ID();
-		static QAndroidJniObject EXTRA_NDEF_MESSAGES();
-		static QAndroidJniObject EXTRA_READER_PRESENCE_CHECK_DELAY();
-		static QAndroidJniObject EXTRA_SECURE_ELEMENT_NAME();
-		static QAndroidJniObject EXTRA_TAG();
+		static jstring ACTION_ADAPTER_STATE_CHANGED();
+		static jstring ACTION_NDEF_DISCOVERED();
+		static jstring ACTION_TAG_DISCOVERED();
+		static jstring ACTION_TECH_DISCOVERED();
+		static jstring ACTION_TRANSACTION_DETECTED();
+		static jstring EXTRA_ADAPTER_STATE();
+		static jstring EXTRA_AID();
+		static jstring EXTRA_DATA();
+		static jstring EXTRA_ID();
+		static jstring EXTRA_NDEF_MESSAGES();
+		static jstring EXTRA_READER_PRESENCE_CHECK_DELAY();
+		static jstring EXTRA_SECURE_ELEMENT_NAME();
+		static jstring EXTRA_TAG();
 		static jint FLAG_READER_NFC_A();
 		static jint FLAG_READER_NFC_B();
 		static jint FLAG_READER_NFC_BARCODE();
@@ -101,162 +101,186 @@ namespace __jni_impl::android::nfc
 namespace __jni_impl::android::nfc
 {
 	// Fields
-	QAndroidJniObject NfcAdapter::ACTION_ADAPTER_STATE_CHANGED()
+	jstring NfcAdapter::ACTION_ADAPTER_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_ADAPTER_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::ACTION_NDEF_DISCOVERED()
+	jstring NfcAdapter::ACTION_NDEF_DISCOVERED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_NDEF_DISCOVERED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::ACTION_TAG_DISCOVERED()
+	jstring NfcAdapter::ACTION_TAG_DISCOVERED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_TAG_DISCOVERED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::ACTION_TECH_DISCOVERED()
+	jstring NfcAdapter::ACTION_TECH_DISCOVERED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_TECH_DISCOVERED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::ACTION_TRANSACTION_DETECTED()
+	jstring NfcAdapter::ACTION_TRANSACTION_DETECTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"ACTION_TRANSACTION_DETECTED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::EXTRA_ADAPTER_STATE()
+	jstring NfcAdapter::EXTRA_ADAPTER_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_ADAPTER_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::EXTRA_AID()
+	jstring NfcAdapter::EXTRA_AID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_AID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::EXTRA_DATA()
+	jstring NfcAdapter::EXTRA_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::EXTRA_ID()
+	jstring NfcAdapter::EXTRA_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::EXTRA_NDEF_MESSAGES()
+	jstring NfcAdapter::EXTRA_NDEF_MESSAGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_NDEF_MESSAGES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::EXTRA_READER_PRESENCE_CHECK_DELAY()
+	jstring NfcAdapter::EXTRA_READER_PRESENCE_CHECK_DELAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_READER_PRESENCE_CHECK_DELAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::EXTRA_SECURE_ELEMENT_NAME()
+	jstring NfcAdapter::EXTRA_SECURE_ELEMENT_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_SECURE_ELEMENT_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject NfcAdapter::EXTRA_TAG()
+	jstring NfcAdapter::EXTRA_TAG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.NfcAdapter",
 			"EXTRA_TAG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint NfcAdapter::FLAG_READER_NFC_A()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"FLAG_READER_NFC_A");
+			"FLAG_READER_NFC_A"
+		);
 	}
 	jint NfcAdapter::FLAG_READER_NFC_B()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"FLAG_READER_NFC_B");
+			"FLAG_READER_NFC_B"
+		);
 	}
 	jint NfcAdapter::FLAG_READER_NFC_BARCODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"FLAG_READER_NFC_BARCODE");
+			"FLAG_READER_NFC_BARCODE"
+		);
 	}
 	jint NfcAdapter::FLAG_READER_NFC_F()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"FLAG_READER_NFC_F");
+			"FLAG_READER_NFC_F"
+		);
 	}
 	jint NfcAdapter::FLAG_READER_NFC_V()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"FLAG_READER_NFC_V");
+			"FLAG_READER_NFC_V"
+		);
 	}
 	jint NfcAdapter::FLAG_READER_NO_PLATFORM_SOUNDS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"FLAG_READER_NO_PLATFORM_SOUNDS");
+			"FLAG_READER_NO_PLATFORM_SOUNDS"
+		);
 	}
 	jint NfcAdapter::FLAG_READER_SKIP_NDEF_CHECK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"FLAG_READER_SKIP_NDEF_CHECK");
+			"FLAG_READER_SKIP_NDEF_CHECK"
+		);
 	}
 	jint NfcAdapter::STATE_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"STATE_OFF");
+			"STATE_OFF"
+		);
 	}
 	jint NfcAdapter::STATE_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"STATE_ON");
+			"STATE_ON"
+		);
 	}
 	jint NfcAdapter::STATE_TURNING_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"STATE_TURNING_OFF");
+			"STATE_TURNING_OFF"
+		);
 	}
 	jint NfcAdapter::STATE_TURNING_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.NfcAdapter",
-			"STATE_TURNING_ON");
+			"STATE_TURNING_ON"
+		);
 	}
 	
 	// Constructors
@@ -276,13 +300,15 @@ namespace __jni_impl::android::nfc
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jboolean NfcAdapter::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject NfcAdapter::getDefaultAdapter(__jni_impl::android::content::Context arg0)
 	{
@@ -290,7 +316,8 @@ namespace __jni_impl::android::nfc
 			"android.nfc.NfcAdapter",
 			"getDefaultAdapter",
 			"(Landroid/content/Context;)Landroid/nfc/NfcAdapter;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void NfcAdapter::setBeamPushUris(jarray arg0, __jni_impl::android::app::Activity arg1)
 	{
@@ -298,7 +325,8 @@ namespace __jni_impl::android::nfc
 			"setBeamPushUris",
 			"([Landroid/net/Uri;Landroid/app/Activity;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void NfcAdapter::setBeamPushUrisCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::Activity arg1)
 	{
@@ -306,7 +334,8 @@ namespace __jni_impl::android::nfc
 			"setBeamPushUrisCallback",
 			"(Landroid/nfc/NfcAdapter$CreateBeamUrisCallback;Landroid/app/Activity;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void NfcAdapter::setNdefPushMessage(__jni_impl::android::nfc::NdefMessage arg0, __jni_impl::android::app::Activity arg1, jarray arg2)
 	{
@@ -315,7 +344,8 @@ namespace __jni_impl::android::nfc
 			"(Landroid/nfc/NdefMessage;Landroid/app/Activity;[Landroid/app/Activity;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void NfcAdapter::setNdefPushMessageCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::Activity arg1, jarray arg2)
 	{
@@ -324,7 +354,8 @@ namespace __jni_impl::android::nfc
 			"(Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;Landroid/app/Activity;[Landroid/app/Activity;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void NfcAdapter::setOnNdefPushCompleteCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::Activity arg1, jarray arg2)
 	{
@@ -333,7 +364,8 @@ namespace __jni_impl::android::nfc
 			"(Landroid/nfc/NfcAdapter$OnNdefPushCompleteCallback;Landroid/app/Activity;[Landroid/app/Activity;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void NfcAdapter::enableForegroundDispatch(__jni_impl::android::app::Activity arg0, __jni_impl::android::app::PendingIntent arg1, jarray arg2, jarray arg3)
 	{
@@ -343,14 +375,16 @@ namespace __jni_impl::android::nfc
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void NfcAdapter::disableForegroundDispatch(__jni_impl::android::app::Activity arg0)
 	{
 		__thiz.callMethod<void>(
 			"disableForegroundDispatch",
 			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void NfcAdapter::enableReaderMode(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::os::Bundle arg3)
 	{
@@ -360,21 +394,24 @@ namespace __jni_impl::android::nfc
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void NfcAdapter::disableReaderMode(__jni_impl::android::app::Activity arg0)
 	{
 		__thiz.callMethod<void>(
 			"disableReaderMode",
 			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean NfcAdapter::invokeBeam(__jni_impl::android::app::Activity arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"invokeBeam",
 			"(Landroid/app/Activity;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void NfcAdapter::enableForegroundNdefPush(__jni_impl::android::app::Activity arg0, __jni_impl::android::nfc::NdefMessage arg1)
 	{
@@ -382,32 +419,37 @@ namespace __jni_impl::android::nfc
 			"enableForegroundNdefPush",
 			"(Landroid/app/Activity;Landroid/nfc/NdefMessage;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void NfcAdapter::disableForegroundNdefPush(__jni_impl::android::app::Activity arg0)
 	{
 		__thiz.callMethod<void>(
 			"disableForegroundNdefPush",
 			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean NfcAdapter::isSecureNfcSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSecureNfcSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean NfcAdapter::isSecureNfcEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSecureNfcEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean NfcAdapter::isNdefPushEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNdefPushEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::nfc
 

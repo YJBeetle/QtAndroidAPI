@@ -18,7 +18,7 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getRawResult();
+		jobject getRawResult();
 	};
 } // namespace __jni_impl::java::util::concurrent
 
@@ -36,11 +36,12 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	QAndroidJniObject RecursiveTask::getRawResult()
+	jobject RecursiveTask::getRawResult()
 	{
 		return __thiz.callObjectMethod(
 			"getRawResult",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util::concurrent
 

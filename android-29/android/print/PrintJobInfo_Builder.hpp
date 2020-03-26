@@ -55,21 +55,24 @@ namespace __jni_impl::android::print
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/print/PrintJobInfo;");
+			"()Landroid/print/PrintJobInfo;"
+		);
 	}
 	void PrintJobInfo_Builder::setCopies(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCopies",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintJobInfo_Builder::setPages(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPages",
 			"([Landroid/print/PageRange;)V",
-			arg0);
+			arg0
+		);
 	}
 	void PrintJobInfo_Builder::putAdvancedOption(jstring arg0, jint arg1)
 	{
@@ -77,7 +80,8 @@ namespace __jni_impl::android::print
 			"putAdvancedOption",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void PrintJobInfo_Builder::putAdvancedOption(jstring arg0, jstring arg1)
 	{
@@ -85,14 +89,16 @@ namespace __jni_impl::android::print
 			"putAdvancedOption",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void PrintJobInfo_Builder::setAttributes(__jni_impl::android::print::PrintAttributes arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAttributes",
 			"(Landroid/print/PrintAttributes;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::print
 

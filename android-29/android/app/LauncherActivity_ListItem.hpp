@@ -24,11 +24,11 @@ namespace __jni_impl::android::app
 	{
 	public:
 		// Fields
-		QAndroidJniObject className();
+		jstring className();
 		QAndroidJniObject extras();
 		QAndroidJniObject icon();
-		QAndroidJniObject label();
-		QAndroidJniObject packageName();
+		jstring label();
+		jstring packageName();
 		QAndroidJniObject resolveInfo();
 		
 		// Constructors
@@ -45,41 +45,47 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	// Fields
-	QAndroidJniObject LauncherActivity_ListItem::className()
+	jstring LauncherActivity_ListItem::className()
 	{
 		return __thiz.getObjectField(
 			"className",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject LauncherActivity_ListItem::extras()
 	{
 		return __thiz.getObjectField(
 			"extras",
-			"Landroid/os/Bundle;");
+			"Landroid/os/Bundle;"
+		);
 	}
 	QAndroidJniObject LauncherActivity_ListItem::icon()
 	{
 		return __thiz.getObjectField(
 			"icon",
-			"Landroid/graphics/drawable/Drawable;");
+			"Landroid/graphics/drawable/Drawable;"
+		);
 	}
-	QAndroidJniObject LauncherActivity_ListItem::label()
+	jstring LauncherActivity_ListItem::label()
 	{
 		return __thiz.getObjectField(
 			"label",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LauncherActivity_ListItem::packageName()
+	jstring LauncherActivity_ListItem::packageName()
 	{
 		return __thiz.getObjectField(
 			"packageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject LauncherActivity_ListItem::resolveInfo()
 	{
 		return __thiz.getObjectField(
 			"resolveInfo",
-			"Landroid/content/pm/ResolveInfo;");
+			"Landroid/content/pm/ResolveInfo;"
+		);
 	}
 	
 	// Constructors

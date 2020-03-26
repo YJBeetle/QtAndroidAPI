@@ -52,35 +52,40 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/CharSequence;II)Ljava/io/Writer;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Writer::append(jchar arg0)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(C)Ljava/io/Writer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Writer::append(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/io/Writer;",
-			arg0);
+			arg0
+		);
 	}
 	void Writer::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Writer::write(jcharArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	void Writer::write(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -89,14 +94,16 @@ namespace __jni_impl::java::io
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Writer::write(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Writer::write(jstring arg0, jint arg1, jint arg2)
 	{
@@ -105,26 +112,30 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/String;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Writer::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void Writer::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Writer::nullWriter()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.io.Writer",
 			"nullWriter",
-			"()Ljava/io/Writer;");
+			"()Ljava/io/Writer;"
+		);
 	}
 } // namespace __jni_impl::java::io
 

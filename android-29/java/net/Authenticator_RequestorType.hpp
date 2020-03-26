@@ -20,7 +20,7 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::net
@@ -34,14 +34,16 @@ namespace __jni_impl::java::net
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Authenticator$RequestorType",
 			"PROXY",
-			"Ljava/net/Authenticator$RequestorType;");
+			"Ljava/net/Authenticator$RequestorType;"
+		);
 	}
 	QAndroidJniObject Authenticator_RequestorType::SERVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.net.Authenticator$RequestorType",
 			"SERVER",
-			"Ljava/net/Authenticator$RequestorType;");
+			"Ljava/net/Authenticator$RequestorType;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject Authenticator_RequestorType::values()
+	jarray Authenticator_RequestorType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.Authenticator$RequestorType",
 			"values",
-			"()[Ljava/net/Authenticator$RequestorType;");
+			"()[Ljava/net/Authenticator$RequestorType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Authenticator_RequestorType::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::java::net
 			"java.net.Authenticator$RequestorType",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/net/Authenticator$RequestorType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::net
 

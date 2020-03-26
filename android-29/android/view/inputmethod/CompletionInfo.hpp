@@ -23,13 +23,13 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor(jlong arg0, jint arg1, jstring arg2, jstring arg3);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jlong getId();
-		QAndroidJniObject getText();
-		jint getPosition();
-		QAndroidJniObject getLabel();
+		jstring getText();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getPosition();
+		jstring getLabel();
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -43,7 +43,8 @@ namespace __jni_impl::android::view::inputmethod
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.CompletionInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -68,41 +69,33 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
-	QAndroidJniObject CompletionInfo::toString()
+	jstring CompletionInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong CompletionInfo::getId()
 	{
 		return __thiz.callMethod<jlong>(
 			"getId",
-			"()J");
+			"()J"
+		);
 	}
-	QAndroidJniObject CompletionInfo::getText()
+	jstring CompletionInfo::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/CharSequence;");
-	}
-	jint CompletionInfo::getPosition()
-	{
-		return __thiz.callMethod<jint>(
-			"getPosition",
-			"()I");
-	}
-	QAndroidJniObject CompletionInfo::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint CompletionInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CompletionInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -110,7 +103,22 @@ namespace __jni_impl::android::view::inputmethod
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint CompletionInfo::getPosition()
+	{
+		return __thiz.callMethod<jint>(
+			"getPosition",
+			"()I"
+		);
+	}
+	jstring CompletionInfo::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

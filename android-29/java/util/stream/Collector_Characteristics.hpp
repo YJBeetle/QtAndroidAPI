@@ -21,7 +21,7 @@ namespace __jni_impl::java::util::stream
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::util::stream
@@ -35,21 +35,24 @@ namespace __jni_impl::java::util::stream
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.stream.Collector$Characteristics",
 			"CONCURRENT",
-			"Ljava/util/stream/Collector$Characteristics;");
+			"Ljava/util/stream/Collector$Characteristics;"
+		);
 	}
 	QAndroidJniObject Collector_Characteristics::UNORDERED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.stream.Collector$Characteristics",
 			"UNORDERED",
-			"Ljava/util/stream/Collector$Characteristics;");
+			"Ljava/util/stream/Collector$Characteristics;"
+		);
 	}
 	QAndroidJniObject Collector_Characteristics::IDENTITY_FINISH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.stream.Collector$Characteristics",
 			"IDENTITY_FINISH",
-			"Ljava/util/stream/Collector$Characteristics;");
+			"Ljava/util/stream/Collector$Characteristics;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::java::util::stream
 	}
 	
 	// Methods
-	QAndroidJniObject Collector_Characteristics::values()
+	jarray Collector_Characteristics::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.stream.Collector$Characteristics",
 			"values",
-			"()[Ljava/util/stream/Collector$Characteristics;");
+			"()[Ljava/util/stream/Collector$Characteristics;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Collector_Characteristics::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::java::util::stream
 			"java.util.stream.Collector$Characteristics",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/stream/Collector$Characteristics;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util::stream
 

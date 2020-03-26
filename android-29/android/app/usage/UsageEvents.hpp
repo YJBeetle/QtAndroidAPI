@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::app::usage
-{
-	class UsageEvents_Event;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::app::usage
+{
+	class UsageEvents_Event;
 }
 
 namespace __jni_impl::android::app::usage
@@ -26,15 +26,15 @@ namespace __jni_impl::android::app::usage
 		void __constructor();
 		
 		// Methods
-		jboolean hasNextEvent();
-		jboolean getNextEvent(__jni_impl::android::app::usage::UsageEvents_Event arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean hasNextEvent();
+		jboolean getNextEvent(__jni_impl::android::app::usage::UsageEvents_Event arg0);
 	};
 } // namespace __jni_impl::android::app::usage
 
-#include "UsageEvents_Event.hpp"
 #include "../../os/Parcel.hpp"
+#include "UsageEvents_Event.hpp"
 
 namespace __jni_impl::android::app::usage
 {
@@ -44,7 +44,8 @@ namespace __jni_impl::android::app::usage
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.usage.UsageEvents",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -56,24 +57,12 @@ namespace __jni_impl::android::app::usage
 	}
 	
 	// Methods
-	jboolean UsageEvents::hasNextEvent()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasNextEvent",
-			"()Z");
-	}
-	jboolean UsageEvents::getNextEvent(__jni_impl::android::app::usage::UsageEvents_Event arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getNextEvent",
-			"(Landroid/app/usage/UsageEvents$Event;)Z",
-			arg0.__jniObject().object());
-	}
 	jint UsageEvents::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UsageEvents::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -81,7 +70,23 @@ namespace __jni_impl::android::app::usage
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jboolean UsageEvents::hasNextEvent()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasNextEvent",
+			"()Z"
+		);
+	}
+	jboolean UsageEvents::getNextEvent(__jni_impl::android::app::usage::UsageEvents_Event arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getNextEvent",
+			"(Landroid/app/usage/UsageEvents$Event;)Z",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

@@ -50,35 +50,40 @@ namespace __jni_impl::android::media::tv
 			"onInputStateChanged",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void TvInputManager_TvInputCallback::onInputAdded(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onInputAdded",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void TvInputManager_TvInputCallback::onInputRemoved(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onInputRemoved",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void TvInputManager_TvInputCallback::onInputUpdated(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onInputUpdated",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void TvInputManager_TvInputCallback::onTvInputInfoUpdated(__jni_impl::android::media::tv::TvInputInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"onTvInputInfoUpdated",
 			"(Landroid/media/tv/TvInputInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

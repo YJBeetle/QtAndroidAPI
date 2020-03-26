@@ -46,13 +46,15 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint GridLayout_Spec::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

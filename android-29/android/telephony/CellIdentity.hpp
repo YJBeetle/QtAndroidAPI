@@ -26,8 +26,8 @@ namespace __jni_impl::android::telephony
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getOperatorAlphaLong();
-		QAndroidJniObject getOperatorAlphaShort();
+		jstring getOperatorAlphaLong();
+		jstring getOperatorAlphaShort();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -41,7 +41,8 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellIdentity",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -58,19 +59,22 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint CellIdentity::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellIdentity::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CellIdentity::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -78,19 +82,22 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject CellIdentity::getOperatorAlphaLong()
+	jstring CellIdentity::getOperatorAlphaLong()
 	{
 		return __thiz.callObjectMethod(
 			"getOperatorAlphaLong",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CellIdentity::getOperatorAlphaShort()
+	jstring CellIdentity::getOperatorAlphaShort()
 	{
 		return __thiz.callObjectMethod(
 			"getOperatorAlphaShort",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony
 

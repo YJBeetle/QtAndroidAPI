@@ -40,37 +40,43 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.VibrationEffect",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint VibrationEffect::DEFAULT_AMPLITUDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.VibrationEffect",
-			"DEFAULT_AMPLITUDE");
+			"DEFAULT_AMPLITUDE"
+		);
 	}
 	jint VibrationEffect::EFFECT_CLICK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.VibrationEffect",
-			"EFFECT_CLICK");
+			"EFFECT_CLICK"
+		);
 	}
 	jint VibrationEffect::EFFECT_DOUBLE_CLICK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.VibrationEffect",
-			"EFFECT_DOUBLE_CLICK");
+			"EFFECT_DOUBLE_CLICK"
+		);
 	}
 	jint VibrationEffect::EFFECT_HEAVY_CLICK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.VibrationEffect",
-			"EFFECT_HEAVY_CLICK");
+			"EFFECT_HEAVY_CLICK"
+		);
 	}
 	jint VibrationEffect::EFFECT_TICK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.VibrationEffect",
-			"EFFECT_TICK");
+			"EFFECT_TICK"
+		);
 	}
 	
 	// Constructors
@@ -89,7 +95,8 @@ namespace __jni_impl::android::os
 			"createOneShot",
 			"(JI)Landroid/os/VibrationEffect;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject VibrationEffect::createWaveform(jlongArray arg0, jintArray arg1, jint arg2)
 	{
@@ -99,7 +106,8 @@ namespace __jni_impl::android::os
 			"([J[II)Landroid/os/VibrationEffect;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject VibrationEffect::createWaveform(jlongArray arg0, jint arg1)
 	{
@@ -108,7 +116,8 @@ namespace __jni_impl::android::os
 			"createWaveform",
 			"([JI)Landroid/os/VibrationEffect;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject VibrationEffect::createPredefined(jint arg0)
 	{
@@ -116,13 +125,15 @@ namespace __jni_impl::android::os
 			"android.os.VibrationEffect",
 			"createPredefined",
 			"(I)Landroid/os/VibrationEffect;",
-			arg0);
+			arg0
+		);
 	}
 	jint VibrationEffect::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::os
 

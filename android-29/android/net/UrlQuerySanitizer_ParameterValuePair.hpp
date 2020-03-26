@@ -16,8 +16,8 @@ namespace __jni_impl::android::net
 	{
 	public:
 		// Fields
-		QAndroidJniObject mParameter();
-		QAndroidJniObject mValue();
+		jstring mParameter();
+		jstring mValue();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::net::UrlQuerySanitizer arg0, jstring arg1, jstring arg2);
@@ -31,17 +31,19 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::net
 {
 	// Fields
-	QAndroidJniObject UrlQuerySanitizer_ParameterValuePair::mParameter()
+	jstring UrlQuerySanitizer_ParameterValuePair::mParameter()
 	{
 		return __thiz.getObjectField(
 			"mParameter",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UrlQuerySanitizer_ParameterValuePair::mValue()
+	jstring UrlQuerySanitizer_ParameterValuePair::mValue()
 	{
 		return __thiz.getObjectField(
 			"mValue",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

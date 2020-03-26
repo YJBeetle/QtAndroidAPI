@@ -38,6 +38,8 @@ namespace __jni_impl::java::lang
 		void destroy();
 		QAndroidJniObject getInputStream();
 		QAndroidJniObject children();
+		jlong pid();
+		QAndroidJniObject toHandle();
 		QAndroidJniObject getOutputStream();
 		jint waitFor();
 		jboolean waitFor(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
@@ -47,8 +49,6 @@ namespace __jni_impl::java::lang
 		QAndroidJniObject getErrorStream();
 		jboolean supportsNormalTermination();
 		QAndroidJniObject onExit();
-		jlong pid();
-		QAndroidJniObject toHandle();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -74,43 +74,64 @@ namespace __jni_impl::java::lang
 	{
 		return __thiz.callObjectMethod(
 			"info",
-			"()Ljava/lang/ProcessHandle$Info;");
+			"()Ljava/lang/ProcessHandle$Info;"
+		);
 	}
 	jboolean Process::isAlive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAlive",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Process::destroy()
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Process::getInputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getInputStream",
-			"()Ljava/io/InputStream;");
+			"()Ljava/io/InputStream;"
+		);
 	}
 	QAndroidJniObject Process::children()
 	{
 		return __thiz.callObjectMethod(
 			"children",
-			"()Ljava/util/stream/Stream;");
+			"()Ljava/util/stream/Stream;"
+		);
+	}
+	jlong Process::pid()
+	{
+		return __thiz.callMethod<jlong>(
+			"pid",
+			"()J"
+		);
+	}
+	QAndroidJniObject Process::toHandle()
+	{
+		return __thiz.callObjectMethod(
+			"toHandle",
+			"()Ljava/lang/ProcessHandle;"
+		);
 	}
 	QAndroidJniObject Process::getOutputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getOutputStream",
-			"()Ljava/io/OutputStream;");
+			"()Ljava/io/OutputStream;"
+		);
 	}
 	jint Process::waitFor()
 	{
 		return __thiz.callMethod<jint>(
 			"waitFor",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Process::waitFor(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -118,55 +139,50 @@ namespace __jni_impl::java::lang
 			"waitFor",
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Process::destroyForcibly()
 	{
 		return __thiz.callObjectMethod(
 			"destroyForcibly",
-			"()Ljava/lang/Process;");
+			"()Ljava/lang/Process;"
+		);
 	}
 	jint Process::exitValue()
 	{
 		return __thiz.callMethod<jint>(
 			"exitValue",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Process::descendants()
 	{
 		return __thiz.callObjectMethod(
 			"descendants",
-			"()Ljava/util/stream/Stream;");
+			"()Ljava/util/stream/Stream;"
+		);
 	}
 	QAndroidJniObject Process::getErrorStream()
 	{
 		return __thiz.callObjectMethod(
 			"getErrorStream",
-			"()Ljava/io/InputStream;");
+			"()Ljava/io/InputStream;"
+		);
 	}
 	jboolean Process::supportsNormalTermination()
 	{
 		return __thiz.callMethod<jboolean>(
 			"supportsNormalTermination",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Process::onExit()
 	{
 		return __thiz.callObjectMethod(
 			"onExit",
-			"()Ljava/util/concurrent/CompletableFuture;");
-	}
-	jlong Process::pid()
-	{
-		return __thiz.callMethod<jlong>(
-			"pid",
-			"()J");
-	}
-	QAndroidJniObject Process::toHandle()
-	{
-		return __thiz.callObjectMethod(
-			"toHandle",
-			"()Ljava/lang/ProcessHandle;");
+			"()Ljava/util/concurrent/CompletableFuture;"
+		);
 	}
 } // namespace __jni_impl::java::lang
 

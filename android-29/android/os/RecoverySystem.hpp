@@ -56,7 +56,8 @@ namespace __jni_impl::android::os
 			"(Ljava/io/File;Landroid/os/RecoverySystem$ProgressListener;Ljava/io/File;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void RecoverySystem::installPackage(__jni_impl::android::content::Context arg0, __jni_impl::java::io::File arg1)
 	{
@@ -65,7 +66,8 @@ namespace __jni_impl::android::os
 			"installPackage",
 			"(Landroid/content/Context;Ljava/io/File;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RecoverySystem::rebootWipeUserData(__jni_impl::android::content::Context arg0)
 	{
@@ -73,7 +75,8 @@ namespace __jni_impl::android::os
 			"android.os.RecoverySystem",
 			"rebootWipeUserData",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RecoverySystem::rebootWipeCache(__jni_impl::android::content::Context arg0)
 	{
@@ -81,7 +84,8 @@ namespace __jni_impl::android::os
 			"android.os.RecoverySystem",
 			"rebootWipeCache",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::os
 

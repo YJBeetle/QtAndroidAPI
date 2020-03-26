@@ -29,7 +29,8 @@ namespace __jni_impl::javax::net::ssl
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"javax.net.ssl.StandardConstants",
-			"SNI_HOST_NAME");
+			"SNI_HOST_NAME"
+		);
 	}
 	
 	// Constructors

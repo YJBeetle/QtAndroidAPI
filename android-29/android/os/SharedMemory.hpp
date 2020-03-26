@@ -34,12 +34,12 @@ namespace __jni_impl::android::os
 		void close();
 		jint getSize();
 		static QAndroidJniObject create(jstring arg0, jint arg1);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject mapReadWrite();
 		QAndroidJniObject mapReadOnly();
 		static void unmap(__jni_impl::java::nio::ByteBuffer arg0);
 		jboolean setProtect(jint arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -55,7 +55,8 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.SharedMemory",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -74,19 +75,22 @@ namespace __jni_impl::android::os
 			"(III)Ljava/nio/ByteBuffer;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void SharedMemory::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint SharedMemory::getSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getSize",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SharedMemory::create(jstring arg0, jint arg1)
 	{
@@ -95,33 +99,22 @@ namespace __jni_impl::android::os
 			"create",
 			"(Ljava/lang/String;I)Landroid/os/SharedMemory;",
 			arg0,
-			arg1);
-	}
-	jint SharedMemory::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void SharedMemory::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SharedMemory::mapReadWrite()
 	{
 		return __thiz.callObjectMethod(
 			"mapReadWrite",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	QAndroidJniObject SharedMemory::mapReadOnly()
 	{
 		return __thiz.callObjectMethod(
 			"mapReadOnly",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	void SharedMemory::unmap(__jni_impl::java::nio::ByteBuffer arg0)
 	{
@@ -129,14 +122,32 @@ namespace __jni_impl::android::os
 			"android.os.SharedMemory",
 			"unmap",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean SharedMemory::setProtect(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setProtect",
 			"(I)Z",
-			arg0);
+			arg0
+		);
+	}
+	jint SharedMemory::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void SharedMemory::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::os
 

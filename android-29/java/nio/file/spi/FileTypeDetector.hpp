@@ -21,7 +21,7 @@ namespace __jni_impl::java::nio::file::spi
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject probeContentType(__jni_impl::__JniBaseClass arg0);
+		jstring probeContentType(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::java::nio::file::spi
 
@@ -40,12 +40,13 @@ namespace __jni_impl::java::nio::file::spi
 	}
 	
 	// Methods
-	QAndroidJniObject FileTypeDetector::probeContentType(__jni_impl::__JniBaseClass arg0)
+	jstring FileTypeDetector::probeContentType(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"probeContentType",
 			"(Ljava/nio/file/Path;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::file::spi
 

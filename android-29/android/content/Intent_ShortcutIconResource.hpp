@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 
 namespace __jni_impl::android::content
@@ -21,22 +21,22 @@ namespace __jni_impl::android::content
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		QAndroidJniObject packageName();
-		QAndroidJniObject resourceName();
+		jstring packageName();
+		jstring resourceName();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		static QAndroidJniObject fromContext(__jni_impl::android::content::Context arg0, jint arg1);
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static QAndroidJniObject fromContext(__jni_impl::android::content::Context arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
-#include "Context.hpp"
 #include "../os/Parcel.hpp"
+#include "Context.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -46,19 +46,22 @@ namespace __jni_impl::android::content
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.Intent$ShortcutIconResource",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject Intent_ShortcutIconResource::packageName()
+	jstring Intent_ShortcutIconResource::packageName()
 	{
 		return __thiz.getObjectField(
 			"packageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Intent_ShortcutIconResource::resourceName()
+	jstring Intent_ShortcutIconResource::resourceName()
 	{
 		return __thiz.getObjectField(
 			"resourceName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -70,11 +73,28 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	QAndroidJniObject Intent_ShortcutIconResource::toString()
+	jstring Intent_ShortcutIconResource::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Intent_ShortcutIconResource::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Intent_ShortcutIconResource::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	QAndroidJniObject Intent_ShortcutIconResource::fromContext(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -83,21 +103,8 @@ namespace __jni_impl::android::content
 			"fromContext",
 			"(Landroid/content/Context;I)Landroid/content/Intent$ShortcutIconResource;",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jint Intent_ShortcutIconResource::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Intent_ShortcutIconResource::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content
 

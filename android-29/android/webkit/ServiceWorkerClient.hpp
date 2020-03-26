@@ -45,7 +45,8 @@ namespace __jni_impl::android::webkit
 		return __thiz.callObjectMethod(
 			"shouldInterceptRequest",
 			"(Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

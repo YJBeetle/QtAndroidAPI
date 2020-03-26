@@ -64,39 +64,45 @@ namespace __jni_impl::android::view::accessibility
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject CaptioningManager::getLocale()
 	{
 		return __thiz.callObjectMethod(
 			"getLocale",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
 	}
 	jfloat CaptioningManager::getFontScale()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getFontScale",
-			"()F");
+			"()F"
+		);
 	}
 	QAndroidJniObject CaptioningManager::getUserStyle()
 	{
 		return __thiz.callObjectMethod(
 			"getUserStyle",
-			"()Landroid/view/accessibility/CaptioningManager$CaptionStyle;");
+			"()Landroid/view/accessibility/CaptioningManager$CaptionStyle;"
+		);
 	}
 	void CaptioningManager::addCaptioningChangeListener(__jni_impl::android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0)
 	{
 		__thiz.callMethod<void>(
 			"addCaptioningChangeListener",
 			"(Landroid/view/accessibility/CaptioningManager$CaptioningChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CaptioningManager::removeCaptioningChangeListener(__jni_impl::android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeCaptioningChangeListener",
 			"(Landroid/view/accessibility/CaptioningManager$CaptioningChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view::accessibility
 

@@ -23,16 +23,16 @@ namespace __jni_impl::android::hardware::usb
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getVersion();
-		QAndroidJniObject getManufacturer();
-		QAndroidJniObject getUri();
-		QAndroidJniObject getDescription();
+		jstring getVersion();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getModel();
-		QAndroidJniObject getSerial();
+		jstring getManufacturer();
+		jstring getModel();
+		jstring getSerial();
+		jstring getDescription();
+		jstring getUri();
 	};
 } // namespace __jni_impl::android::hardware::usb
 
@@ -46,7 +46,8 @@ namespace __jni_impl::android::hardware::usb
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.usb.UsbAccessory",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -63,49 +64,36 @@ namespace __jni_impl::android::hardware::usb
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject UsbAccessory::toString()
+	jstring UsbAccessory::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsbAccessory::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject UsbAccessory::getVersion()
+	jstring UsbAccessory::getVersion()
 	{
 		return __thiz.callObjectMethod(
 			"getVersion",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject UsbAccessory::getManufacturer()
-	{
-		return __thiz.callObjectMethod(
-			"getManufacturer",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject UsbAccessory::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject UsbAccessory::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsbAccessory::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UsbAccessory::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -113,19 +101,43 @@ namespace __jni_impl::android::hardware::usb
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject UsbAccessory::getModel()
+	jstring UsbAccessory::getManufacturer()
+	{
+		return __thiz.callObjectMethod(
+			"getManufacturer",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UsbAccessory::getModel()
 	{
 		return __thiz.callObjectMethod(
 			"getModel",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UsbAccessory::getSerial()
+	jstring UsbAccessory::getSerial()
 	{
 		return __thiz.callObjectMethod(
 			"getSerial",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UsbAccessory::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UsbAccessory::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::usb
 

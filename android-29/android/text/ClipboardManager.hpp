@@ -18,7 +18,7 @@ namespace __jni_impl::android::text
 		
 		// Methods
 		void setText(jstring arg0);
-		QAndroidJniObject getText();
+		jstring getText();
 		jboolean hasText();
 	};
 } // namespace __jni_impl::android::text
@@ -42,19 +42,22 @@ namespace __jni_impl::android::text
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ClipboardManager::getText()
+	jstring ClipboardManager::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jboolean ClipboardManager::hasText()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasText",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::text
 

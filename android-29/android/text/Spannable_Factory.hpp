@@ -41,14 +41,16 @@ namespace __jni_impl::android::text
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.Spannable$Factory",
 			"getInstance",
-			"()Landroid/text/Spannable$Factory;");
+			"()Landroid/text/Spannable$Factory;"
+		);
 	}
 	QAndroidJniObject Spannable_Factory::newSpannable(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newSpannable",
 			"(Ljava/lang/CharSequence;)Landroid/text/Spannable;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text
 

@@ -30,13 +30,13 @@ namespace __jni_impl::android::gesture
 		// Fields
 		QAndroidJniObject boundingBox();
 		jfloat length();
-		QAndroidJniObject points();
+		jfloatArray points();
 		
 		// Constructors
 		void __constructor(__jni_impl::java::util::ArrayList arg0);
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 		QAndroidJniObject getPath();
 		QAndroidJniObject toPath(jfloat arg0, jfloat arg1, jint arg2);
 		void clearPath();
@@ -56,18 +56,21 @@ namespace __jni_impl::android::gesture
 	{
 		return __thiz.getObjectField(
 			"boundingBox",
-			"Landroid/graphics/RectF;");
+			"Landroid/graphics/RectF;"
+		);
 	}
 	jfloat GestureStroke::length()
 	{
 		return __thiz.getField<jfloat>(
-			"length");
+			"length"
+		);
 	}
-	QAndroidJniObject GestureStroke::points()
+	jfloatArray GestureStroke::points()
 	{
 		return __thiz.getObjectField(
 			"points",
-			"[F");
+			"[F"
+		).object<jfloatArray>();
 	}
 	
 	// Constructors
@@ -80,17 +83,19 @@ namespace __jni_impl::android::gesture
 	}
 	
 	// Methods
-	QAndroidJniObject GestureStroke::clone()
+	jobject GestureStroke::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject GestureStroke::getPath()
 	{
 		return __thiz.callObjectMethod(
 			"getPath",
-			"()Landroid/graphics/Path;");
+			"()Landroid/graphics/Path;"
+		);
 	}
 	QAndroidJniObject GestureStroke::toPath(jfloat arg0, jfloat arg1, jint arg2)
 	{
@@ -99,19 +104,22 @@ namespace __jni_impl::android::gesture
 			"(FFI)Landroid/graphics/Path;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GestureStroke::clearPath()
 	{
 		__thiz.callMethod<void>(
 			"clearPath",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject GestureStroke::computeOrientedBoundingBox()
 	{
 		return __thiz.callObjectMethod(
 			"computeOrientedBoundingBox",
-			"()Landroid/gesture/OrientedBoundingBox;");
+			"()Landroid/gesture/OrientedBoundingBox;"
+		);
 	}
 } // namespace __jni_impl::android::gesture
 

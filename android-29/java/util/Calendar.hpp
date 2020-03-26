@@ -102,9 +102,9 @@ namespace __jni_impl::java::util
 		void add(jint arg0, jint arg1);
 		jint get(jint arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		jint compareTo(__jni_impl::java::util::Calendar arg0);
 		jint compareTo(jobject arg0);
 		void clear();
@@ -120,12 +120,12 @@ namespace __jni_impl::java::util
 		jboolean isSet(jint arg0);
 		jboolean before(jobject arg0);
 		jboolean after(jobject arg0);
-		static QAndroidJniObject getAvailableLocales();
+		static jarray getAvailableLocales();
 		QAndroidJniObject toInstant();
 		QAndroidJniObject getTime();
 		void setTime(__jni_impl::java::util::Date arg0);
-		QAndroidJniObject getCalendarType();
-		QAndroidJniObject getDisplayName(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2);
+		jstring getCalendarType();
+		jstring getDisplayName(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2);
 		void setTimeInMillis(jlong arg0);
 		jboolean isWeekDateSupported();
 		jint getWeekYear();
@@ -169,301 +169,351 @@ namespace __jni_impl::java::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"ERA");
+			"ERA"
+		);
 	}
 	jint Calendar::YEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"YEAR");
+			"YEAR"
+		);
 	}
 	jint Calendar::MONTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"MONTH");
+			"MONTH"
+		);
 	}
 	jint Calendar::WEEK_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"WEEK_OF_YEAR");
+			"WEEK_OF_YEAR"
+		);
 	}
 	jint Calendar::WEEK_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"WEEK_OF_MONTH");
+			"WEEK_OF_MONTH"
+		);
 	}
 	jint Calendar::DATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"DATE");
+			"DATE"
+		);
 	}
 	jint Calendar::DAY_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"DAY_OF_MONTH");
+			"DAY_OF_MONTH"
+		);
 	}
 	jint Calendar::DAY_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"DAY_OF_YEAR");
+			"DAY_OF_YEAR"
+		);
 	}
 	jint Calendar::DAY_OF_WEEK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"DAY_OF_WEEK");
+			"DAY_OF_WEEK"
+		);
 	}
 	jint Calendar::DAY_OF_WEEK_IN_MONTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"DAY_OF_WEEK_IN_MONTH");
+			"DAY_OF_WEEK_IN_MONTH"
+		);
 	}
 	jint Calendar::AM_PM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"AM_PM");
+			"AM_PM"
+		);
 	}
 	jint Calendar::HOUR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"HOUR");
+			"HOUR"
+		);
 	}
 	jint Calendar::HOUR_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"HOUR_OF_DAY");
+			"HOUR_OF_DAY"
+		);
 	}
 	jint Calendar::MINUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"MINUTE");
+			"MINUTE"
+		);
 	}
 	jint Calendar::SECOND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"SECOND");
+			"SECOND"
+		);
 	}
 	jint Calendar::MILLISECOND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"MILLISECOND");
+			"MILLISECOND"
+		);
 	}
 	jint Calendar::ZONE_OFFSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"ZONE_OFFSET");
+			"ZONE_OFFSET"
+		);
 	}
 	jint Calendar::DST_OFFSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"DST_OFFSET");
+			"DST_OFFSET"
+		);
 	}
 	jint Calendar::FIELD_COUNT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"FIELD_COUNT");
+			"FIELD_COUNT"
+		);
 	}
 	jint Calendar::SUNDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"SUNDAY");
+			"SUNDAY"
+		);
 	}
 	jint Calendar::MONDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"MONDAY");
+			"MONDAY"
+		);
 	}
 	jint Calendar::TUESDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"TUESDAY");
+			"TUESDAY"
+		);
 	}
 	jint Calendar::WEDNESDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"WEDNESDAY");
+			"WEDNESDAY"
+		);
 	}
 	jint Calendar::THURSDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"THURSDAY");
+			"THURSDAY"
+		);
 	}
 	jint Calendar::FRIDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"FRIDAY");
+			"FRIDAY"
+		);
 	}
 	jint Calendar::SATURDAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"SATURDAY");
+			"SATURDAY"
+		);
 	}
 	jint Calendar::JANUARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"JANUARY");
+			"JANUARY"
+		);
 	}
 	jint Calendar::FEBRUARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"FEBRUARY");
+			"FEBRUARY"
+		);
 	}
 	jint Calendar::MARCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"MARCH");
+			"MARCH"
+		);
 	}
 	jint Calendar::APRIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"APRIL");
+			"APRIL"
+		);
 	}
 	jint Calendar::MAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"MAY");
+			"MAY"
+		);
 	}
 	jint Calendar::JUNE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"JUNE");
+			"JUNE"
+		);
 	}
 	jint Calendar::JULY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"JULY");
+			"JULY"
+		);
 	}
 	jint Calendar::AUGUST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"AUGUST");
+			"AUGUST"
+		);
 	}
 	jint Calendar::SEPTEMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"SEPTEMBER");
+			"SEPTEMBER"
+		);
 	}
 	jint Calendar::OCTOBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"OCTOBER");
+			"OCTOBER"
+		);
 	}
 	jint Calendar::NOVEMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"NOVEMBER");
+			"NOVEMBER"
+		);
 	}
 	jint Calendar::DECEMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"DECEMBER");
+			"DECEMBER"
+		);
 	}
 	jint Calendar::UNDECIMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"UNDECIMBER");
+			"UNDECIMBER"
+		);
 	}
 	jint Calendar::AM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"AM");
+			"AM"
+		);
 	}
 	jint Calendar::PM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"PM");
+			"PM"
+		);
 	}
 	jint Calendar::ALL_STYLES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"ALL_STYLES");
+			"ALL_STYLES"
+		);
 	}
 	jint Calendar::SHORT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"SHORT");
+			"SHORT"
+		);
 	}
 	jint Calendar::LONG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"LONG");
+			"LONG"
+		);
 	}
 	jint Calendar::NARROW_FORMAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"NARROW_FORMAT");
+			"NARROW_FORMAT"
+		);
 	}
 	jint Calendar::NARROW_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"NARROW_STANDALONE");
+			"NARROW_STANDALONE"
+		);
 	}
 	jint Calendar::SHORT_FORMAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"SHORT_FORMAT");
+			"SHORT_FORMAT"
+		);
 	}
 	jint Calendar::LONG_FORMAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"LONG_FORMAT");
+			"LONG_FORMAT"
+		);
 	}
 	jint Calendar::SHORT_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"SHORT_STANDALONE");
+			"SHORT_STANDALONE"
+		);
 	}
 	jint Calendar::LONG_STANDALONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.Calendar",
-			"LONG_STANDALONE");
+			"LONG_STANDALONE"
+		);
 	}
 	
 	// Constructors
@@ -481,73 +531,84 @@ namespace __jni_impl::java::util
 			"add",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Calendar::get(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"get",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Calendar::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Calendar::toString()
+	jstring Calendar::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Calendar::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Calendar::clone()
+	jobject Calendar::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint Calendar::compareTo(__jni_impl::java::util::Calendar arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/util/Calendar;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Calendar::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	void Calendar::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	void Calendar::clear(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"clear",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Calendar::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Calendar",
 			"getInstance",
-			"()Ljava/util/Calendar;");
+			"()Ljava/util/Calendar;"
+		);
 	}
 	QAndroidJniObject Calendar::getInstance(__jni_impl::java::util::Locale arg0)
 	{
@@ -555,7 +616,8 @@ namespace __jni_impl::java::util
 			"java.util.Calendar",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/util/Calendar;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Calendar::getInstance(__jni_impl::java::util::TimeZone arg0)
 	{
@@ -563,7 +625,8 @@ namespace __jni_impl::java::util
 			"java.util.Calendar",
 			"getInstance",
 			"(Ljava/util/TimeZone;)Ljava/util/Calendar;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Calendar::getInstance(__jni_impl::java::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -572,7 +635,8 @@ namespace __jni_impl::java::util
 			"getInstance",
 			"(Ljava/util/TimeZone;Ljava/util/Locale;)Ljava/util/Calendar;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -584,7 +648,8 @@ namespace __jni_impl::java::util
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -595,7 +660,8 @@ namespace __jni_impl::java::util
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Calendar::set(jint arg0, jint arg1, jint arg2)
 	{
@@ -604,7 +670,8 @@ namespace __jni_impl::java::util
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Calendar::set(jint arg0, jint arg1)
 	{
@@ -612,95 +679,109 @@ namespace __jni_impl::java::util
 			"set",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Calendar::isSet(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSet",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Calendar::before(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"before",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Calendar::after(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"after",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Calendar::getAvailableLocales()
+	jarray Calendar::getAvailableLocales()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Calendar",
 			"getAvailableLocales",
-			"()[Ljava/util/Locale;");
+			"()[Ljava/util/Locale;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Calendar::toInstant()
 	{
 		return __thiz.callObjectMethod(
 			"toInstant",
-			"()Ljava/time/Instant;");
+			"()Ljava/time/Instant;"
+		);
 	}
 	QAndroidJniObject Calendar::getTime()
 	{
 		return __thiz.callObjectMethod(
 			"getTime",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	void Calendar::setTime(__jni_impl::java::util::Date arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTime",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Calendar::getCalendarType()
+	jstring Calendar::getCalendarType()
 	{
 		return __thiz.callObjectMethod(
 			"getCalendarType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Calendar::getDisplayName(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2)
+	jstring Calendar::getDisplayName(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(IILjava/util/Locale;)Ljava/lang/String;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jstring>();
 	}
 	void Calendar::setTimeInMillis(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimeInMillis",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Calendar::isWeekDateSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWeekDateSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Calendar::getWeekYear()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeekYear",
-			"()I");
+			"()I"
+		);
 	}
 	jint Calendar::getLeastMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getLeastMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Calendar::getDisplayNames(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2)
 	{
@@ -709,51 +790,59 @@ namespace __jni_impl::java::util
 			"(IILjava/util/Locale;)Ljava/util/Map;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jlong Calendar::getTimeInMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTimeInMillis",
-			"()J");
+			"()J"
+		);
 	}
 	void Calendar::setTimeZone(__jni_impl::java::util::TimeZone arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimeZone",
 			"(Ljava/util/TimeZone;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Calendar::getTimeZone()
 	{
 		return __thiz.callObjectMethod(
 			"getTimeZone",
-			"()Ljava/util/TimeZone;");
+			"()Ljava/util/TimeZone;"
+		);
 	}
 	void Calendar::setLenient(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLenient",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Calendar::isLenient()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLenient",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Calendar::getFirstDayOfWeek()
 	{
 		return __thiz.callMethod<jint>(
 			"getFirstDayOfWeek",
-			"()I");
+			"()I"
+		);
 	}
 	jint Calendar::getMinimalDaysInFirstWeek()
 	{
 		return __thiz.callMethod<jint>(
 			"getMinimalDaysInFirstWeek",
-			"()I");
+			"()I"
+		);
 	}
 	void Calendar::roll(jint arg0, jboolean arg1)
 	{
@@ -761,7 +850,8 @@ namespace __jni_impl::java::util
 			"roll",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Calendar::roll(jint arg0, jint arg1)
 	{
@@ -769,35 +859,40 @@ namespace __jni_impl::java::util
 			"roll",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Calendar::getGreatestMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getGreatestMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Calendar::getAvailableCalendarTypes()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Calendar",
 			"getAvailableCalendarTypes",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	void Calendar::setFirstDayOfWeek(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFirstDayOfWeek",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Calendar::setMinimalDaysInFirstWeek(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMinimalDaysInFirstWeek",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Calendar::setWeekDate(jint arg0, jint arg1, jint arg2)
 	{
@@ -806,41 +901,47 @@ namespace __jni_impl::java::util
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Calendar::getWeeksInWeekYear()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeeksInWeekYear",
-			"()I");
+			"()I"
+		);
 	}
 	jint Calendar::getActualMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getActualMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Calendar::getActualMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getActualMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Calendar::getMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Calendar::getMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util
 

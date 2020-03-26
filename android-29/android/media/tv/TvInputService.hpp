@@ -27,8 +27,8 @@ namespace __jni_impl::android::media::tv
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERVICE_INTERFACE();
-		static QAndroidJniObject SERVICE_META_DATA();
+		static jstring SERVICE_INTERFACE();
+		static jstring SERVICE_META_DATA();
 		
 		// Constructors
 		void __constructor();
@@ -47,19 +47,21 @@ namespace __jni_impl::android::media::tv
 namespace __jni_impl::android::media::tv
 {
 	// Fields
-	QAndroidJniObject TvInputService::SERVICE_INTERFACE()
+	jstring TvInputService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvInputService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvInputService::SERVICE_META_DATA()
+	jstring TvInputService::SERVICE_META_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvInputService",
 			"SERVICE_META_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -76,21 +78,24 @@ namespace __jni_impl::android::media::tv
 		return __thiz.callObjectMethod(
 			"onCreateSession",
 			"(Ljava/lang/String;)Landroid/media/tv/TvInputService$Session;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TvInputService::onCreateRecordingSession(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onCreateRecordingSession",
 			"(Ljava/lang/String;)Landroid/media/tv/TvInputService$RecordingSession;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TvInputService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

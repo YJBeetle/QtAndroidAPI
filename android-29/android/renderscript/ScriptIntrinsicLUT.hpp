@@ -40,15 +40,15 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2);
 		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1);
+		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2);
 		void destroy();
 		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1);
+		QAndroidJniObject getKernelID();
 		void setRed(jint arg0, jint arg1);
 		void setGreen(jint arg0, jint arg1);
 		void setBlue(jint arg0, jint arg1);
 		void setAlpha(jint arg0, jint arg1);
-		QAndroidJniObject getKernelID();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -71,6 +71,15 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
+	void ScriptIntrinsicLUT::forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
+	{
+		__thiz.callMethod<void>(
+			"forEach",
+			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
 	void ScriptIntrinsicLUT::forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
 		__thiz.callMethod<void>(
@@ -78,21 +87,15 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	void ScriptIntrinsicLUT::forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
-	{
-		__thiz.callMethod<void>(
-			"forEach",
-			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicLUT::destroy()
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicLUT::create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1)
 	{
@@ -101,7 +104,15 @@ namespace __jni_impl::android::renderscript
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicLUT;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ScriptIntrinsicLUT::getKernelID()
+	{
+		return __thiz.callObjectMethod(
+			"getKernelID",
+			"()Landroid/renderscript/Script$KernelID;"
+		);
 	}
 	void ScriptIntrinsicLUT::setRed(jint arg0, jint arg1)
 	{
@@ -109,7 +120,8 @@ namespace __jni_impl::android::renderscript
 			"setRed",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ScriptIntrinsicLUT::setGreen(jint arg0, jint arg1)
 	{
@@ -117,7 +129,8 @@ namespace __jni_impl::android::renderscript
 			"setGreen",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ScriptIntrinsicLUT::setBlue(jint arg0, jint arg1)
 	{
@@ -125,7 +138,8 @@ namespace __jni_impl::android::renderscript
 			"setBlue",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ScriptIntrinsicLUT::setAlpha(jint arg0, jint arg1)
 	{
@@ -133,13 +147,8 @@ namespace __jni_impl::android::renderscript
 			"setAlpha",
 			"(II)V",
 			arg0,
-			arg1);
-	}
-	QAndroidJniObject ScriptIntrinsicLUT::getKernelID()
-	{
-		return __thiz.callObjectMethod(
-			"getKernelID",
-			"()Landroid/renderscript/Script$KernelID;");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

@@ -28,7 +28,8 @@ namespace __jni_impl::android::util
 	jint MutableInt::value()
 	{
 		return __thiz.getField<jint>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

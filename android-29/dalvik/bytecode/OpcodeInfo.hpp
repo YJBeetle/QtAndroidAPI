@@ -30,13 +30,15 @@ namespace __jni_impl::dalvik::bytecode
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"dalvik.bytecode.OpcodeInfo",
-			"MAXIMUM_PACKED_VALUE");
+			"MAXIMUM_PACKED_VALUE"
+		);
 	}
 	jint OpcodeInfo::MAXIMUM_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"dalvik.bytecode.OpcodeInfo",
-			"MAXIMUM_VALUE");
+			"MAXIMUM_VALUE"
+		);
 	}
 	
 	// Constructors

@@ -39,13 +39,13 @@ namespace __jni_impl::android::app::usage
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getPackageName();
-		QAndroidJniObject getClassName();
-		QAndroidJniObject getConfiguration();
+		jstring getPackageName();
+		jstring getClassName();
+		jstring getShortcutId();
 		jint getAppStandbyBucket();
 		jlong getTimeStamp();
-		QAndroidJniObject getShortcutId();
 		jint getEventType();
+		QAndroidJniObject getConfiguration();
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -58,109 +58,127 @@ namespace __jni_impl::android::app::usage
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"ACTIVITY_PAUSED");
+			"ACTIVITY_PAUSED"
+		);
 	}
 	jint UsageEvents_Event::ACTIVITY_RESUMED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"ACTIVITY_RESUMED");
+			"ACTIVITY_RESUMED"
+		);
 	}
 	jint UsageEvents_Event::ACTIVITY_STOPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"ACTIVITY_STOPPED");
+			"ACTIVITY_STOPPED"
+		);
 	}
 	jint UsageEvents_Event::CONFIGURATION_CHANGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"CONFIGURATION_CHANGE");
+			"CONFIGURATION_CHANGE"
+		);
 	}
 	jint UsageEvents_Event::DEVICE_SHUTDOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"DEVICE_SHUTDOWN");
+			"DEVICE_SHUTDOWN"
+		);
 	}
 	jint UsageEvents_Event::DEVICE_STARTUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"DEVICE_STARTUP");
+			"DEVICE_STARTUP"
+		);
 	}
 	jint UsageEvents_Event::FOREGROUND_SERVICE_START()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"FOREGROUND_SERVICE_START");
+			"FOREGROUND_SERVICE_START"
+		);
 	}
 	jint UsageEvents_Event::FOREGROUND_SERVICE_STOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"FOREGROUND_SERVICE_STOP");
+			"FOREGROUND_SERVICE_STOP"
+		);
 	}
 	jint UsageEvents_Event::KEYGUARD_HIDDEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"KEYGUARD_HIDDEN");
+			"KEYGUARD_HIDDEN"
+		);
 	}
 	jint UsageEvents_Event::KEYGUARD_SHOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"KEYGUARD_SHOWN");
+			"KEYGUARD_SHOWN"
+		);
 	}
 	jint UsageEvents_Event::MOVE_TO_BACKGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"MOVE_TO_BACKGROUND");
+			"MOVE_TO_BACKGROUND"
+		);
 	}
 	jint UsageEvents_Event::MOVE_TO_FOREGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"MOVE_TO_FOREGROUND");
+			"MOVE_TO_FOREGROUND"
+		);
 	}
 	jint UsageEvents_Event::NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"NONE");
+			"NONE"
+		);
 	}
 	jint UsageEvents_Event::SCREEN_INTERACTIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"SCREEN_INTERACTIVE");
+			"SCREEN_INTERACTIVE"
+		);
 	}
 	jint UsageEvents_Event::SCREEN_NON_INTERACTIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"SCREEN_NON_INTERACTIVE");
+			"SCREEN_NON_INTERACTIVE"
+		);
 	}
 	jint UsageEvents_Event::SHORTCUT_INVOCATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"SHORTCUT_INVOCATION");
+			"SHORTCUT_INVOCATION"
+		);
 	}
 	jint UsageEvents_Event::STANDBY_BUCKET_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"STANDBY_BUCKET_CHANGED");
+			"STANDBY_BUCKET_CHANGED"
+		);
 	}
 	jint UsageEvents_Event::USER_INTERACTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageEvents$Event",
-			"USER_INTERACTION");
+			"USER_INTERACTION"
+		);
 	}
 	
 	// Constructors
@@ -172,47 +190,54 @@ namespace __jni_impl::android::app::usage
 	}
 	
 	// Methods
-	QAndroidJniObject UsageEvents_Event::getPackageName()
+	jstring UsageEvents_Event::getPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UsageEvents_Event::getClassName()
+	jstring UsageEvents_Event::getClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getClassName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UsageEvents_Event::getConfiguration()
+	jstring UsageEvents_Event::getShortcutId()
 	{
 		return __thiz.callObjectMethod(
-			"getConfiguration",
-			"()Landroid/content/res/Configuration;");
+			"getShortcutId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsageEvents_Event::getAppStandbyBucket()
 	{
 		return __thiz.callMethod<jint>(
 			"getAppStandbyBucket",
-			"()I");
+			"()I"
+		);
 	}
 	jlong UsageEvents_Event::getTimeStamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTimeStamp",
-			"()J");
-	}
-	QAndroidJniObject UsageEvents_Event::getShortcutId()
-	{
-		return __thiz.callObjectMethod(
-			"getShortcutId",
-			"()Ljava/lang/String;");
+			"()J"
+		);
 	}
 	jint UsageEvents_Event::getEventType()
 	{
 		return __thiz.callMethod<jint>(
 			"getEventType",
-			"()I");
+			"()I"
+		);
+	}
+	QAndroidJniObject UsageEvents_Event::getConfiguration()
+	{
+		return __thiz.callObjectMethod(
+			"getConfiguration",
+			"()Landroid/content/res/Configuration;"
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

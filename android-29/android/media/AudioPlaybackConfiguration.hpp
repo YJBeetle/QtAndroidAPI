@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::media
-{
-	class AudioAttributes;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::media
+{
+	class AudioAttributes;
 }
 
 namespace __jni_impl::android::media
@@ -28,14 +28,14 @@ namespace __jni_impl::android::media
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getAudioAttributes();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getAudioAttributes();
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioAttributes.hpp"
 #include "../os/Parcel.hpp"
+#include "AudioAttributes.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -45,7 +45,8 @@ namespace __jni_impl::android::media
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioPlaybackConfiguration",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -62,25 +63,22 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint AudioPlaybackConfiguration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	QAndroidJniObject AudioPlaybackConfiguration::getAudioAttributes()
-	{
-		return __thiz.callObjectMethod(
-			"getAudioAttributes",
-			"()Landroid/media/AudioAttributes;");
+			"()I"
+		);
 	}
 	jint AudioPlaybackConfiguration::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void AudioPlaybackConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -88,7 +86,15 @@ namespace __jni_impl::android::media
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject AudioPlaybackConfiguration::getAudioAttributes()
+	{
+		return __thiz.callObjectMethod(
+			"getAudioAttributes",
+			"()Landroid/media/AudioAttributes;"
+		);
 	}
 } // namespace __jni_impl::android::media
 

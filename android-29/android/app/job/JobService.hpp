@@ -23,7 +23,7 @@ namespace __jni_impl::android::app::job
 	{
 	public:
 		// Fields
-		static QAndroidJniObject PERMISSION_BIND();
+		static jstring PERMISSION_BIND();
 		
 		// Constructors
 		void __constructor();
@@ -42,12 +42,13 @@ namespace __jni_impl::android::app::job
 namespace __jni_impl::android::app::job
 {
 	// Fields
-	QAndroidJniObject JobService::PERMISSION_BIND()
+	jstring JobService::PERMISSION_BIND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.job.JobService",
 			"PERMISSION_BIND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -64,7 +65,8 @@ namespace __jni_impl::android::app::job
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void JobService::jobFinished(__jni_impl::android::app::job::JobParameters arg0, jboolean arg1)
 	{
@@ -72,21 +74,24 @@ namespace __jni_impl::android::app::job
 			"jobFinished",
 			"(Landroid/app/job/JobParameters;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean JobService::onStartJob(__jni_impl::android::app::job::JobParameters arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onStartJob",
 			"(Landroid/app/job/JobParameters;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean JobService::onStopJob(__jni_impl::android::app::job::JobParameters arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onStopJob",
 			"(Landroid/app/job/JobParameters;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app::job
 

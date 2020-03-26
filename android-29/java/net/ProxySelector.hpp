@@ -64,7 +64,8 @@ namespace __jni_impl::java::net
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.ProxySelector",
 			"getDefault",
-			"()Ljava/net/ProxySelector;");
+			"()Ljava/net/ProxySelector;"
+		);
 	}
 	QAndroidJniObject ProxySelector::of(__jni_impl::java::net::InetSocketAddress arg0)
 	{
@@ -72,7 +73,8 @@ namespace __jni_impl::java::net
 			"java.net.ProxySelector",
 			"of",
 			"(Ljava/net/InetSocketAddress;)Ljava/net/ProxySelector;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ProxySelector::setDefault(__jni_impl::java::net::ProxySelector arg0)
 	{
@@ -80,7 +82,8 @@ namespace __jni_impl::java::net
 			"java.net.ProxySelector",
 			"setDefault",
 			"(Ljava/net/ProxySelector;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ProxySelector::connectFailed(__jni_impl::java::net::URI arg0, __jni_impl::java::net::SocketAddress arg1, __jni_impl::java::io::IOException arg2)
 	{
@@ -89,14 +92,16 @@ namespace __jni_impl::java::net
 			"(Ljava/net/URI;Ljava/net/SocketAddress;Ljava/io/IOException;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ProxySelector::select(__jni_impl::java::net::URI arg0)
 	{
 		return __thiz.callObjectMethod(
 			"select",
 			"(Ljava/net/URI;)Ljava/util/List;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::net
 

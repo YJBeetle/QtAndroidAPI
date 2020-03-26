@@ -28,7 +28,7 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		QAndroidJniObject getKeys();
-		QAndroidJniObject handleGetObject(jstring arg0);
+		jobject handleGetObject(jstring arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -60,14 +60,16 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callObjectMethod(
 			"getKeys",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
-	QAndroidJniObject PropertyResourceBundle::handleGetObject(jstring arg0)
+	jobject PropertyResourceBundle::handleGetObject(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"handleGetObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util
 

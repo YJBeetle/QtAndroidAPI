@@ -49,9 +49,9 @@ namespace __jni_impl::java::util
 		void add(jint arg0, jint arg1);
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		static QAndroidJniObject from(__jni_impl::java::time::ZonedDateTime arg0);
-		QAndroidJniObject getCalendarType();
+		jstring getCalendarType();
 		jboolean isWeekDateSupported();
 		jint getWeekYear();
 		jint getLeastMaximum(jint arg0);
@@ -86,13 +86,15 @@ namespace __jni_impl::java::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.GregorianCalendar",
-			"BC");
+			"BC"
+		);
 	}
 	jint GregorianCalendar::AD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.GregorianCalendar",
-			"AD");
+			"AD"
+		);
 	}
 	
 	// Constructors
@@ -164,26 +166,30 @@ namespace __jni_impl::java::util
 			"add",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean GregorianCalendar::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint GregorianCalendar::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject GregorianCalendar::clone()
+	jobject GregorianCalendar::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject GregorianCalendar::from(__jni_impl::java::time::ZonedDateTime arg0)
 	{
@@ -191,45 +197,52 @@ namespace __jni_impl::java::util
 			"java.util.GregorianCalendar",
 			"from",
 			"(Ljava/time/ZonedDateTime;)Ljava/util/GregorianCalendar;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject GregorianCalendar::getCalendarType()
+	jstring GregorianCalendar::getCalendarType()
 	{
 		return __thiz.callObjectMethod(
 			"getCalendarType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean GregorianCalendar::isWeekDateSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWeekDateSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint GregorianCalendar::getWeekYear()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeekYear",
-			"()I");
+			"()I"
+		);
 	}
 	jint GregorianCalendar::getLeastMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getLeastMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	void GregorianCalendar::setTimeZone(__jni_impl::java::util::TimeZone arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimeZone",
 			"(Ljava/util/TimeZone;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject GregorianCalendar::getTimeZone()
 	{
 		return __thiz.callObjectMethod(
 			"getTimeZone",
-			"()Ljava/util/TimeZone;");
+			"()Ljava/util/TimeZone;"
+		);
 	}
 	void GregorianCalendar::roll(jint arg0, jboolean arg1)
 	{
@@ -237,7 +250,8 @@ namespace __jni_impl::java::util
 			"roll",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void GregorianCalendar::roll(jint arg0, jint arg1)
 	{
@@ -245,14 +259,16 @@ namespace __jni_impl::java::util
 			"roll",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint GregorianCalendar::getGreatestMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getGreatestMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	void GregorianCalendar::setWeekDate(jint arg0, jint arg1, jint arg2)
 	{
@@ -261,67 +277,77 @@ namespace __jni_impl::java::util
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint GregorianCalendar::getWeeksInWeekYear()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeeksInWeekYear",
-			"()I");
+			"()I"
+		);
 	}
 	jint GregorianCalendar::getActualMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getActualMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint GregorianCalendar::getActualMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getActualMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	void GregorianCalendar::setGregorianChange(__jni_impl::java::util::Date arg0)
 	{
 		__thiz.callMethod<void>(
 			"setGregorianChange",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject GregorianCalendar::getGregorianChange()
 	{
 		return __thiz.callObjectMethod(
 			"getGregorianChange",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	QAndroidJniObject GregorianCalendar::toZonedDateTime()
 	{
 		return __thiz.callObjectMethod(
 			"toZonedDateTime",
-			"()Ljava/time/ZonedDateTime;");
+			"()Ljava/time/ZonedDateTime;"
+		);
 	}
 	jint GregorianCalendar::getMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint GregorianCalendar::getMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean GregorianCalendar::isLeapYear(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLeapYear",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util
 

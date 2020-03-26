@@ -19,10 +19,10 @@ namespace __jni_impl::java::security::cert
 		void __constructor(jstring arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject clone();
+		jstring toString();
+		jobject clone();
 		jint getPort();
-		QAndroidJniObject getServerName();
+		jstring getServerName();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -55,29 +55,33 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject LDAPCertStoreParameters::toString()
+	jstring LDAPCertStoreParameters::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject LDAPCertStoreParameters::clone()
+	jobject LDAPCertStoreParameters::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint LDAPCertStoreParameters::getPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getPort",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject LDAPCertStoreParameters::getServerName()
+	jstring LDAPCertStoreParameters::getServerName()
 	{
 		return __thiz.callObjectMethod(
 			"getServerName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 

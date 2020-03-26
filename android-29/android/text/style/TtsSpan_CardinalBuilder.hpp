@@ -59,14 +59,16 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"setNumber",
 			"(J)Landroid/text/style/TtsSpan$CardinalBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_CardinalBuilder::setNumber(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setNumber",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$CardinalBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

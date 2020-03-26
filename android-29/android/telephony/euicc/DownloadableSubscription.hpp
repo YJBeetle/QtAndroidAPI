@@ -22,9 +22,9 @@ namespace __jni_impl::android::telephony::euicc
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getEncodedActivationCode();
+		jstring getEncodedActivationCode();
 		static QAndroidJniObject forActivationCode(jstring arg0);
-		QAndroidJniObject getConfirmationCode();
+		jstring getConfirmationCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -40,7 +40,8 @@ namespace __jni_impl::android::telephony::euicc
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.euicc.DownloadableSubscription",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -52,11 +53,12 @@ namespace __jni_impl::android::telephony::euicc
 	}
 	
 	// Methods
-	QAndroidJniObject DownloadableSubscription::getEncodedActivationCode()
+	jstring DownloadableSubscription::getEncodedActivationCode()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodedActivationCode",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject DownloadableSubscription::forActivationCode(jstring arg0)
 	{
@@ -64,19 +66,22 @@ namespace __jni_impl::android::telephony::euicc
 			"android.telephony.euicc.DownloadableSubscription",
 			"forActivationCode",
 			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DownloadableSubscription::getConfirmationCode()
+	jstring DownloadableSubscription::getConfirmationCode()
 	{
 		return __thiz.callObjectMethod(
 			"getConfirmationCode",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DownloadableSubscription::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void DownloadableSubscription::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -84,7 +89,8 @@ namespace __jni_impl::android::telephony::euicc
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telephony::euicc
 

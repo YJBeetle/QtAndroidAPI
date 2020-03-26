@@ -12,17 +12,17 @@ namespace __jni_impl::android::system
 	{
 	public:
 		// Fields
-		QAndroidJniObject machine();
-		QAndroidJniObject nodename();
-		QAndroidJniObject release();
-		QAndroidJniObject sysname();
-		QAndroidJniObject version();
+		jstring machine();
+		jstring nodename();
+		jstring release();
+		jstring sysname();
+		jstring version();
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::system
 
@@ -30,35 +30,40 @@ namespace __jni_impl::android::system
 namespace __jni_impl::android::system
 {
 	// Fields
-	QAndroidJniObject StructUtsname::machine()
+	jstring StructUtsname::machine()
 	{
 		return __thiz.getObjectField(
 			"machine",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StructUtsname::nodename()
+	jstring StructUtsname::nodename()
 	{
 		return __thiz.getObjectField(
 			"nodename",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StructUtsname::release()
+	jstring StructUtsname::release()
 	{
 		return __thiz.getObjectField(
 			"release",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StructUtsname::sysname()
+	jstring StructUtsname::sysname()
 	{
 		return __thiz.getObjectField(
 			"sysname",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StructUtsname::version()
+	jstring StructUtsname::version()
 	{
 		return __thiz.getObjectField(
 			"version",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -75,11 +80,12 @@ namespace __jni_impl::android::system
 	}
 	
 	// Methods
-	QAndroidJniObject StructUtsname::toString()
+	jstring StructUtsname::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::system
 

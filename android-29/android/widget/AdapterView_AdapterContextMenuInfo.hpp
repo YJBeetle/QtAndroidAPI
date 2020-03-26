@@ -35,18 +35,21 @@ namespace __jni_impl::android::widget
 	jlong AdapterView_AdapterContextMenuInfo::id()
 	{
 		return __thiz.getField<jlong>(
-			"id");
+			"id"
+		);
 	}
 	jint AdapterView_AdapterContextMenuInfo::position()
 	{
 		return __thiz.getField<jint>(
-			"position");
+			"position"
+		);
 	}
 	QAndroidJniObject AdapterView_AdapterContextMenuInfo::targetView()
 	{
 		return __thiz.getObjectField(
 			"targetView",
-			"Landroid/view/View;");
+			"Landroid/view/View;"
+		);
 	}
 	
 	// Constructors

@@ -22,20 +22,20 @@ namespace __jni_impl::android::util
 		// Fields
 		static QAndroidJniObject DOMAIN_NAME();
 		static QAndroidJniObject EMAIL_ADDRESS();
-		static QAndroidJniObject GOOD_IRI_CHAR();
+		static jstring GOOD_IRI_CHAR();
 		static QAndroidJniObject IP_ADDRESS();
 		static QAndroidJniObject PHONE();
 		static QAndroidJniObject TOP_LEVEL_DOMAIN();
-		static QAndroidJniObject TOP_LEVEL_DOMAIN_STR();
-		static QAndroidJniObject TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL();
+		static jstring TOP_LEVEL_DOMAIN_STR();
+		static jstring TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL();
 		static QAndroidJniObject WEB_URL();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject concatGroups(__jni_impl::java::util::regex::Matcher arg0);
-		static QAndroidJniObject digitsAndPlusOnly(__jni_impl::java::util::regex::Matcher arg0);
+		static jstring concatGroups(__jni_impl::java::util::regex::Matcher arg0);
+		static jstring digitsAndPlusOnly(__jni_impl::java::util::regex::Matcher arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -50,63 +50,72 @@ namespace __jni_impl::android::util
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Patterns",
 			"DOMAIN_NAME",
-			"Ljava/util/regex/Pattern;");
+			"Ljava/util/regex/Pattern;"
+		);
 	}
 	QAndroidJniObject Patterns::EMAIL_ADDRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Patterns",
 			"EMAIL_ADDRESS",
-			"Ljava/util/regex/Pattern;");
+			"Ljava/util/regex/Pattern;"
+		);
 	}
-	QAndroidJniObject Patterns::GOOD_IRI_CHAR()
+	jstring Patterns::GOOD_IRI_CHAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Patterns",
 			"GOOD_IRI_CHAR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Patterns::IP_ADDRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Patterns",
 			"IP_ADDRESS",
-			"Ljava/util/regex/Pattern;");
+			"Ljava/util/regex/Pattern;"
+		);
 	}
 	QAndroidJniObject Patterns::PHONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Patterns",
 			"PHONE",
-			"Ljava/util/regex/Pattern;");
+			"Ljava/util/regex/Pattern;"
+		);
 	}
 	QAndroidJniObject Patterns::TOP_LEVEL_DOMAIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Patterns",
 			"TOP_LEVEL_DOMAIN",
-			"Ljava/util/regex/Pattern;");
+			"Ljava/util/regex/Pattern;"
+		);
 	}
-	QAndroidJniObject Patterns::TOP_LEVEL_DOMAIN_STR()
+	jstring Patterns::TOP_LEVEL_DOMAIN_STR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Patterns",
 			"TOP_LEVEL_DOMAIN_STR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Patterns::TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL()
+	jstring Patterns::TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Patterns",
 			"TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Patterns::WEB_URL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Patterns",
 			"WEB_URL",
-			"Ljava/util/regex/Pattern;");
+			"Ljava/util/regex/Pattern;"
+		);
 	}
 	
 	// Constructors
@@ -118,21 +127,23 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	QAndroidJniObject Patterns::concatGroups(__jni_impl::java::util::regex::Matcher arg0)
+	jstring Patterns::concatGroups(__jni_impl::java::util::regex::Matcher arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Patterns",
 			"concatGroups",
 			"(Ljava/util/regex/Matcher;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject Patterns::digitsAndPlusOnly(__jni_impl::java::util::regex::Matcher arg0)
+	jstring Patterns::digitsAndPlusOnly(__jni_impl::java::util::regex::Matcher arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Patterns",
 			"digitsAndPlusOnly",
 			"(Ljava/util/regex/Matcher;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::util
 

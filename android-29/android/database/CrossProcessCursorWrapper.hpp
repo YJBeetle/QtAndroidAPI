@@ -22,9 +22,9 @@ namespace __jni_impl::android::database
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
+		QAndroidJniObject getWindow();
 		jboolean onMove(jint arg0, jint arg1);
 		void fillWindow(jint arg0, __jni_impl::android::database::CursorWindow arg1);
-		QAndroidJniObject getWindow();
 	};
 } // namespace __jni_impl::android::database
 
@@ -44,13 +44,21 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
+	QAndroidJniObject CrossProcessCursorWrapper::getWindow()
+	{
+		return __thiz.callObjectMethod(
+			"getWindow",
+			"()Landroid/database/CursorWindow;"
+		);
+	}
 	jboolean CrossProcessCursorWrapper::onMove(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onMove",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void CrossProcessCursorWrapper::fillWindow(jint arg0, __jni_impl::android::database::CursorWindow arg1)
 	{
@@ -58,13 +66,8 @@ namespace __jni_impl::android::database
 			"fillWindow",
 			"(ILandroid/database/CursorWindow;)V",
 			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject CrossProcessCursorWrapper::getWindow()
-	{
-		return __thiz.callObjectMethod(
-			"getWindow",
-			"()Landroid/database/CursorWindow;");
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::database
 

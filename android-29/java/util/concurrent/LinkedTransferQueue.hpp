@@ -35,24 +35,24 @@ namespace __jni_impl::java::util::concurrent
 		jboolean add(jobject arg0);
 		jboolean remove(jobject arg0);
 		void put(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		void clear();
 		jboolean isEmpty();
 		jint size();
-		QAndroidJniObject toArray();
-		QAndroidJniObject toArray(jobjectArray arg0);
+		jobjectArray toArray();
+		jobjectArray toArray(jobjectArray arg0);
 		QAndroidJniObject iterator();
 		jboolean contains(jobject arg0);
 		QAndroidJniObject spliterator();
 		void forEach(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
-		QAndroidJniObject poll();
-		QAndroidJniObject peek();
+		jobject poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
+		jobject poll();
+		jobject peek();
 		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
 		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
 		jboolean removeIf(__jni_impl::__JniBaseClass arg0);
 		void transfer(jobject arg0);
-		QAndroidJniObject take();
+		jobject take();
 		jboolean offer(jobject arg0);
 		jboolean offer(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
 		jboolean tryTransfer(jobject arg0);
@@ -94,145 +94,167 @@ namespace __jni_impl::java::util::concurrent
 		return __thiz.callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean LinkedTransferQueue::remove(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	void LinkedTransferQueue::put(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject LinkedTransferQueue::toString()
+	jstring LinkedTransferQueue::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void LinkedTransferQueue::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean LinkedTransferQueue::isEmpty()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint LinkedTransferQueue::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject LinkedTransferQueue::toArray()
+	jobjectArray LinkedTransferQueue::toArray()
 	{
 		return __thiz.callObjectMethod(
 			"toArray",
-			"()[Ljava/lang/Object;");
+			"()[Ljava/lang/Object;"
+		).object<jobjectArray>();
 	}
-	QAndroidJniObject LinkedTransferQueue::toArray(jobjectArray arg0)
+	jobjectArray LinkedTransferQueue::toArray(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"toArray",
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobjectArray>();
 	}
 	QAndroidJniObject LinkedTransferQueue::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jboolean LinkedTransferQueue::contains(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LinkedTransferQueue::spliterator()
 	{
 		return __thiz.callObjectMethod(
 			"spliterator",
-			"()Ljava/util/Spliterator;");
+			"()Ljava/util/Spliterator;"
+		);
 	}
 	void LinkedTransferQueue::forEach(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject LinkedTransferQueue::poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
+	jobject LinkedTransferQueue::poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
 		return __thiz.callObjectMethod(
 			"poll",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject LinkedTransferQueue::poll()
+	jobject LinkedTransferQueue::poll()
 	{
 		return __thiz.callObjectMethod(
 			"poll",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject LinkedTransferQueue::peek()
+	jobject LinkedTransferQueue::peek()
 	{
 		return __thiz.callObjectMethod(
 			"peek",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean LinkedTransferQueue::retainAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LinkedTransferQueue::removeAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LinkedTransferQueue::removeIf(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LinkedTransferQueue::transfer(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"transfer",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject LinkedTransferQueue::take()
+	jobject LinkedTransferQueue::take()
 	{
 		return __thiz.callObjectMethod(
 			"take",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean LinkedTransferQueue::offer(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"offer",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean LinkedTransferQueue::offer(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
 	{
@@ -241,14 +263,16 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean LinkedTransferQueue::tryTransfer(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"tryTransfer",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean LinkedTransferQueue::tryTransfer(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
 	{
@@ -257,25 +281,29 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean LinkedTransferQueue::hasWaitingConsumer()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasWaitingConsumer",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint LinkedTransferQueue::getWaitingConsumerCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getWaitingConsumerCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint LinkedTransferQueue::remainingCapacity()
 	{
 		return __thiz.callMethod<jint>(
 			"remainingCapacity",
-			"()I");
+			"()I"
+		);
 	}
 	jint LinkedTransferQueue::drainTo(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -283,14 +311,16 @@ namespace __jni_impl::java::util::concurrent
 			"drainTo",
 			"(Ljava/util/Collection;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint LinkedTransferQueue::drainTo(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"drainTo",
 			"(Ljava/util/Collection;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

@@ -31,19 +31,22 @@ namespace __jni_impl::android::os::health
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.health.PidHealthStats",
-			"MEASUREMENT_WAKE_NESTING_COUNT");
+			"MEASUREMENT_WAKE_NESTING_COUNT"
+		);
 	}
 	jint PidHealthStats::MEASUREMENT_WAKE_START_MS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.health.PidHealthStats",
-			"MEASUREMENT_WAKE_START_MS");
+			"MEASUREMENT_WAKE_START_MS"
+		);
 	}
 	jint PidHealthStats::MEASUREMENT_WAKE_SUM_MS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.health.PidHealthStats",
-			"MEASUREMENT_WAKE_SUM_MS");
+			"MEASUREMENT_WAKE_SUM_MS"
+		);
 	}
 	
 	// Constructors

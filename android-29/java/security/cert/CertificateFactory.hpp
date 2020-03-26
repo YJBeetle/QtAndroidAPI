@@ -44,7 +44,7 @@ namespace __jni_impl::java::security::cert
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
 		static QAndroidJniObject getInstance(jstring arg0);
-		QAndroidJniObject getType();
+		jstring getType();
 		QAndroidJniObject generateCertificate(__jni_impl::java::io::InputStream arg0);
 		QAndroidJniObject generateCertPath(__jni_impl::java::io::InputStream arg0);
 		QAndroidJniObject generateCertPath(__jni_impl::java::io::InputStream arg0, jstring arg1);
@@ -84,7 +84,8 @@ namespace __jni_impl::java::security::cert
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertificateFactory;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactory::getInstance(jstring arg0, jstring arg1)
 	{
@@ -93,7 +94,8 @@ namespace __jni_impl::java::security::cert
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertificateFactory;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject CertificateFactory::getInstance(jstring arg0)
 	{
@@ -101,27 +103,31 @@ namespace __jni_impl::java::security::cert
 			"java.security.cert.CertificateFactory",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/cert/CertificateFactory;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CertificateFactory::getType()
+	jstring CertificateFactory::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject CertificateFactory::generateCertificate(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateCertificate",
 			"(Ljava/io/InputStream;)Ljava/security/cert/Certificate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactory::generateCertPath(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateCertPath",
 			"(Ljava/io/InputStream;)Ljava/security/cert/CertPath;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactory::generateCertPath(__jni_impl::java::io::InputStream arg0, jstring arg1)
 	{
@@ -129,47 +135,54 @@ namespace __jni_impl::java::security::cert
 			"generateCertPath",
 			"(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject CertificateFactory::generateCertPath(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateCertPath",
 			"(Ljava/util/List;)Ljava/security/cert/CertPath;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactory::getProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
-			"()Ljava/security/Provider;");
+			"()Ljava/security/Provider;"
+		);
 	}
 	QAndroidJniObject CertificateFactory::getCertPathEncodings()
 	{
 		return __thiz.callObjectMethod(
 			"getCertPathEncodings",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	QAndroidJniObject CertificateFactory::generateCertificates(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateCertificates",
 			"(Ljava/io/InputStream;)Ljava/util/Collection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactory::generateCRL(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateCRL",
 			"(Ljava/io/InputStream;)Ljava/security/cert/CRL;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CertificateFactory::generateCRLs(__jni_impl::java::io::InputStream arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateCRLs",
 			"(Ljava/io/InputStream;)Ljava/util/Collection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

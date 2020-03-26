@@ -76,7 +76,8 @@ namespace __jni_impl::java::util::zip
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void InflaterOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -85,25 +86,29 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void InflaterOutputStream::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void InflaterOutputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void InflaterOutputStream::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

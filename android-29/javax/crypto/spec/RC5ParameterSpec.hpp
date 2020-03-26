@@ -24,7 +24,7 @@ namespace __jni_impl::javax::crypto::spec
 		jint getVersion();
 		jint getRounds();
 		jint getWordSize();
-		QAndroidJniObject getIV();
+		jbyteArray getIV();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -71,37 +71,43 @@ namespace __jni_impl::javax::crypto::spec
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint RC5ParameterSpec::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint RC5ParameterSpec::getVersion()
 	{
 		return __thiz.callMethod<jint>(
 			"getVersion",
-			"()I");
+			"()I"
+		);
 	}
 	jint RC5ParameterSpec::getRounds()
 	{
 		return __thiz.callMethod<jint>(
 			"getRounds",
-			"()I");
+			"()I"
+		);
 	}
 	jint RC5ParameterSpec::getWordSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getWordSize",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject RC5ParameterSpec::getIV()
+	jbyteArray RC5ParameterSpec::getIV()
 	{
 		return __thiz.callObjectMethod(
 			"getIV",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

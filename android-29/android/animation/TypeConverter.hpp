@@ -17,7 +17,7 @@ namespace __jni_impl::android::animation
 		void __constructor(jclass arg0, jclass arg1);
 		
 		// Methods
-		QAndroidJniObject convert(jobject arg0);
+		jobject convert(jobject arg0);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -37,12 +37,13 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	QAndroidJniObject TypeConverter::convert(jobject arg0)
+	jobject TypeConverter::convert(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"convert",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::animation
 

@@ -21,7 +21,7 @@ namespace __jni_impl::java::util
 		void __constructor(jint arg0);
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 		jint getPrecision();
 	};
 } // namespace __jni_impl::java::util
@@ -41,17 +41,19 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject IllegalFormatPrecisionException::getMessage()
+	jstring IllegalFormatPrecisionException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint IllegalFormatPrecisionException::getPrecision()
 	{
 		return __thiz.callMethod<jint>(
 			"getPrecision",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::util
 

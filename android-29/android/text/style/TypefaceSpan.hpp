@@ -33,13 +33,13 @@ namespace __jni_impl::android::text::style
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getFamily();
-		jint getSpanTypeId();
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
-		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
+		jstring getFamily();
+		QAndroidJniObject getTypeface();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getTypeface();
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
+		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
+		jint getSpanTypeId();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -75,37 +75,26 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	QAndroidJniObject TypefaceSpan::getFamily()
+	jstring TypefaceSpan::getFamily()
 	{
 		return __thiz.callObjectMethod(
 			"getFamily",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	jint TypefaceSpan::getSpanTypeId()
+	QAndroidJniObject TypefaceSpan::getTypeface()
 	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I");
-	}
-	void TypefaceSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
-	}
-	void TypefaceSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateMeasureState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
+		return __thiz.callObjectMethod(
+			"getTypeface",
+			"()Landroid/graphics/Typeface;"
+		);
 	}
 	jint TypefaceSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void TypefaceSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -113,13 +102,31 @@ namespace __jni_impl::android::text::style
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject TypefaceSpan::getTypeface()
+	void TypefaceSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getTypeface",
-			"()Landroid/graphics/Typeface;");
+		__thiz.callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TypefaceSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
+	{
+		__thiz.callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint TypefaceSpan::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

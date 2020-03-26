@@ -23,11 +23,11 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		jlong getFramePostedTimeNano(jint arg0);
-		jlong getFrameReadyTimeNano(jint arg0);
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getFramePostedTimeNano(jint arg0);
+		jlong getFrameReadyTimeNano(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -41,7 +41,8 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.WindowContentFrameStats",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -53,31 +54,19 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	QAndroidJniObject WindowContentFrameStats::toString()
+	jstring WindowContentFrameStats::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	jlong WindowContentFrameStats::getFramePostedTimeNano(jint arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getFramePostedTimeNano",
-			"(I)J",
-			arg0);
-	}
-	jlong WindowContentFrameStats::getFrameReadyTimeNano(jint arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getFrameReadyTimeNano",
-			"(I)J",
-			arg0);
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WindowContentFrameStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void WindowContentFrameStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -85,7 +74,24 @@ namespace __jni_impl::android::view
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jlong WindowContentFrameStats::getFramePostedTimeNano(jint arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getFramePostedTimeNano",
+			"(I)J",
+			arg0
+		);
+	}
+	jlong WindowContentFrameStats::getFrameReadyTimeNano(jint arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getFrameReadyTimeNano",
+			"(I)J",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

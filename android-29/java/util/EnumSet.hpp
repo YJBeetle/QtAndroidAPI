@@ -63,7 +63,8 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/util/EnumSet;");
+			"()Ljava/util/EnumSet;"
+		);
 	}
 	QAndroidJniObject EnumSet::copyOf(__jni_impl::__JniBaseClass arg0)
 	{
@@ -71,7 +72,8 @@ namespace __jni_impl::java::util
 			"java.util.EnumSet",
 			"copyOf",
 			"(Ljava/util/Collection;)Ljava/util/EnumSet;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EnumSet::copyOf(__jni_impl::java::util::EnumSet arg0)
 	{
@@ -79,7 +81,8 @@ namespace __jni_impl::java::util
 			"java.util.EnumSet",
 			"copyOf",
 			"(Ljava/util/EnumSet;)Ljava/util/EnumSet;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EnumSet::of(__jni_impl::java::lang::Enum arg0, __jni_impl::java::lang::Enum arg1, __jni_impl::java::lang::Enum arg2)
 	{
@@ -89,7 +92,8 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EnumSet::of(__jni_impl::java::lang::Enum arg0, __jni_impl::java::lang::Enum arg1)
 	{
@@ -98,7 +102,8 @@ namespace __jni_impl::java::util
 			"of",
 			"(Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EnumSet::of(__jni_impl::java::lang::Enum arg0, __jni_impl::java::lang::Enum arg1, __jni_impl::java::lang::Enum arg2, __jni_impl::java::lang::Enum arg3)
 	{
@@ -109,7 +114,8 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EnumSet::of(__jni_impl::java::lang::Enum arg0, __jni_impl::java::lang::Enum arg1, __jni_impl::java::lang::Enum arg2, __jni_impl::java::lang::Enum arg3, __jni_impl::java::lang::Enum arg4)
 	{
@@ -121,7 +127,8 @@ namespace __jni_impl::java::util
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EnumSet::of(__jni_impl::java::lang::Enum arg0)
 	{
@@ -129,7 +136,8 @@ namespace __jni_impl::java::util
 			"java.util.EnumSet",
 			"of",
 			"(Ljava/lang/Enum;)Ljava/util/EnumSet;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EnumSet::of(__jni_impl::java::lang::Enum arg0, jarray arg1)
 	{
@@ -138,7 +146,8 @@ namespace __jni_impl::java::util
 			"of",
 			"(Ljava/lang/Enum;[Ljava/lang/Enum;)Ljava/util/EnumSet;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject EnumSet::noneOf(jclass arg0)
 	{
@@ -146,7 +155,8 @@ namespace __jni_impl::java::util
 			"java.util.EnumSet",
 			"noneOf",
 			"(Ljava/lang/Class;)Ljava/util/EnumSet;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject EnumSet::range(__jni_impl::java::lang::Enum arg0, __jni_impl::java::lang::Enum arg1)
 	{
@@ -155,7 +165,8 @@ namespace __jni_impl::java::util
 			"range",
 			"(Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EnumSet::allOf(jclass arg0)
 	{
@@ -163,7 +174,8 @@ namespace __jni_impl::java::util
 			"java.util.EnumSet",
 			"allOf",
 			"(Ljava/lang/Class;)Ljava/util/EnumSet;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject EnumSet::complementOf(__jni_impl::java::util::EnumSet arg0)
 	{
@@ -171,7 +183,8 @@ namespace __jni_impl::java::util
 			"java.util.EnumSet",
 			"complementOf",
 			"(Ljava/util/EnumSet;)Ljava/util/EnumSet;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::util
 

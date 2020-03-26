@@ -12,16 +12,16 @@ namespace __jni_impl::javax::xml::transform
 	{
 	public:
 		// Fields
-		static QAndroidJniObject METHOD();
-		static QAndroidJniObject VERSION();
-		static QAndroidJniObject ENCODING();
-		static QAndroidJniObject OMIT_XML_DECLARATION();
-		static QAndroidJniObject STANDALONE();
-		static QAndroidJniObject DOCTYPE_PUBLIC();
-		static QAndroidJniObject DOCTYPE_SYSTEM();
-		static QAndroidJniObject CDATA_SECTION_ELEMENTS();
-		static QAndroidJniObject INDENT();
-		static QAndroidJniObject MEDIA_TYPE();
+		static jstring METHOD();
+		static jstring VERSION();
+		static jstring ENCODING();
+		static jstring OMIT_XML_DECLARATION();
+		static jstring STANDALONE();
+		static jstring DOCTYPE_PUBLIC();
+		static jstring DOCTYPE_SYSTEM();
+		static jstring CDATA_SECTION_ELEMENTS();
+		static jstring INDENT();
+		static jstring MEDIA_TYPE();
 		
 		// Constructors
 		void __constructor();
@@ -34,75 +34,85 @@ namespace __jni_impl::javax::xml::transform
 namespace __jni_impl::javax::xml::transform
 {
 	// Fields
-	QAndroidJniObject OutputKeys::METHOD()
+	jstring OutputKeys::METHOD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"METHOD",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OutputKeys::VERSION()
+	jstring OutputKeys::VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"VERSION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OutputKeys::ENCODING()
+	jstring OutputKeys::ENCODING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"ENCODING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OutputKeys::OMIT_XML_DECLARATION()
+	jstring OutputKeys::OMIT_XML_DECLARATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"OMIT_XML_DECLARATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OutputKeys::STANDALONE()
+	jstring OutputKeys::STANDALONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"STANDALONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OutputKeys::DOCTYPE_PUBLIC()
+	jstring OutputKeys::DOCTYPE_PUBLIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"DOCTYPE_PUBLIC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OutputKeys::DOCTYPE_SYSTEM()
+	jstring OutputKeys::DOCTYPE_SYSTEM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"DOCTYPE_SYSTEM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OutputKeys::CDATA_SECTION_ELEMENTS()
+	jstring OutputKeys::CDATA_SECTION_ELEMENTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"CDATA_SECTION_ELEMENTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OutputKeys::INDENT()
+	jstring OutputKeys::INDENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"INDENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OutputKeys::MEDIA_TYPE()
+	jstring OutputKeys::MEDIA_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"MEDIA_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

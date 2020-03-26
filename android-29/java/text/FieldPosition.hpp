@@ -24,7 +24,7 @@ namespace __jni_impl::java::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getField();
 		void setBeginIndex(jint arg0);
@@ -71,57 +71,66 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject FieldPosition::toString()
+	jstring FieldPosition::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint FieldPosition::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint FieldPosition::getField()
 	{
 		return __thiz.callMethod<jint>(
 			"getField",
-			"()I");
+			"()I"
+		);
 	}
 	void FieldPosition::setBeginIndex(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBeginIndex",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void FieldPosition::setEndIndex(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEndIndex",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject FieldPosition::getFieldAttribute()
 	{
 		return __thiz.callObjectMethod(
 			"getFieldAttribute",
-			"()Ljava/text/Format$Field;");
+			"()Ljava/text/Format$Field;"
+		);
 	}
 	jint FieldPosition::getBeginIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getBeginIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jint FieldPosition::getEndIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getEndIndex",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::text
 

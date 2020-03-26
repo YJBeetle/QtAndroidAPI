@@ -39,7 +39,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz.callMethod<void>(
 			"run",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

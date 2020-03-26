@@ -80,7 +80,8 @@ namespace __jni_impl::android::app
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;Landroid/content/Context;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentAttached(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1, __jni_impl::android::content::Context arg2)
 	{
@@ -89,7 +90,8 @@ namespace __jni_impl::android::app
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;Landroid/content/Context;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentPreCreated(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -98,7 +100,8 @@ namespace __jni_impl::android::app
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentCreated(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -107,7 +110,8 @@ namespace __jni_impl::android::app
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentActivityCreated(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -116,7 +120,8 @@ namespace __jni_impl::android::app
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentViewCreated(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1, __jni_impl::android::view::View arg2, __jni_impl::android::os::Bundle arg3)
 	{
@@ -126,7 +131,8 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentStarted(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1)
 	{
@@ -134,7 +140,8 @@ namespace __jni_impl::android::app
 			"onFragmentStarted",
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentResumed(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1)
 	{
@@ -142,7 +149,8 @@ namespace __jni_impl::android::app
 			"onFragmentResumed",
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentPaused(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1)
 	{
@@ -150,7 +158,8 @@ namespace __jni_impl::android::app
 			"onFragmentPaused",
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentStopped(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1)
 	{
@@ -158,7 +167,8 @@ namespace __jni_impl::android::app
 			"onFragmentStopped",
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentSaveInstanceState(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -167,7 +177,8 @@ namespace __jni_impl::android::app
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentViewDestroyed(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1)
 	{
@@ -175,7 +186,8 @@ namespace __jni_impl::android::app
 			"onFragmentViewDestroyed",
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentDestroyed(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1)
 	{
@@ -183,7 +195,8 @@ namespace __jni_impl::android::app
 			"onFragmentDestroyed",
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void FragmentManager_FragmentLifecycleCallbacks::onFragmentDetached(__jni_impl::android::app::FragmentManager arg0, __jni_impl::android::app::Fragment arg1)
 	{
@@ -191,7 +204,8 @@ namespace __jni_impl::android::app
 			"onFragmentDetached",
 			"(Landroid/app/FragmentManager;Landroid/app/Fragment;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

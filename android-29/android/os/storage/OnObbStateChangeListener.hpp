@@ -37,49 +37,57 @@ namespace __jni_impl::android::os::storage
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
-			"ERROR_ALREADY_MOUNTED");
+			"ERROR_ALREADY_MOUNTED"
+		);
 	}
 	jint OnObbStateChangeListener::ERROR_COULD_NOT_MOUNT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
-			"ERROR_COULD_NOT_MOUNT");
+			"ERROR_COULD_NOT_MOUNT"
+		);
 	}
 	jint OnObbStateChangeListener::ERROR_COULD_NOT_UNMOUNT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
-			"ERROR_COULD_NOT_UNMOUNT");
+			"ERROR_COULD_NOT_UNMOUNT"
+		);
 	}
 	jint OnObbStateChangeListener::ERROR_INTERNAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
-			"ERROR_INTERNAL");
+			"ERROR_INTERNAL"
+		);
 	}
 	jint OnObbStateChangeListener::ERROR_NOT_MOUNTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
-			"ERROR_NOT_MOUNTED");
+			"ERROR_NOT_MOUNTED"
+		);
 	}
 	jint OnObbStateChangeListener::ERROR_PERMISSION_DENIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
-			"ERROR_PERMISSION_DENIED");
+			"ERROR_PERMISSION_DENIED"
+		);
 	}
 	jint OnObbStateChangeListener::MOUNTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
-			"MOUNTED");
+			"MOUNTED"
+		);
 	}
 	jint OnObbStateChangeListener::UNMOUNTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.storage.OnObbStateChangeListener",
-			"UNMOUNTED");
+			"UNMOUNTED"
+		);
 	}
 	
 	// Constructors
@@ -97,7 +105,8 @@ namespace __jni_impl::android::os::storage
 			"onObbStateChange",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::os::storage
 

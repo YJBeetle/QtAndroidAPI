@@ -53,13 +53,15 @@ namespace __jni_impl::android::security
 			"android.security.ConfirmationPrompt",
 			"isSupported",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConfirmationPrompt::cancelPrompt()
 	{
 		__thiz.callMethod<void>(
 			"cancelPrompt",
-			"()V");
+			"()V"
+		);
 	}
 	void ConfirmationPrompt::presentPrompt(__jni_impl::__JniBaseClass arg0, __jni_impl::android::security::ConfirmationCallback arg1)
 	{
@@ -67,7 +69,8 @@ namespace __jni_impl::android::security
 			"presentPrompt",
 			"(Ljava/util/concurrent/Executor;Landroid/security/ConfirmationCallback;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::security
 

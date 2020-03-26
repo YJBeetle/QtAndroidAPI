@@ -30,7 +30,7 @@ namespace __jni_impl::java::sql
 		
 		// Methods
 		QAndroidJniObject iterator();
-		QAndroidJniObject getSQLState();
+		jstring getSQLState();
 		QAndroidJniObject getNextException();
 		void setNextException(__jni_impl::java::sql::SQLException arg0);
 		jint getErrorCode();
@@ -114,32 +114,37 @@ namespace __jni_impl::java::sql
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
-	QAndroidJniObject SQLException::getSQLState()
+	jstring SQLException::getSQLState()
 	{
 		return __thiz.callObjectMethod(
 			"getSQLState",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject SQLException::getNextException()
 	{
 		return __thiz.callObjectMethod(
 			"getNextException",
-			"()Ljava/sql/SQLException;");
+			"()Ljava/sql/SQLException;"
+		);
 	}
 	void SQLException::setNextException(__jni_impl::java::sql::SQLException arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNextException",
 			"(Ljava/sql/SQLException;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint SQLException::getErrorCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getErrorCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::sql
 

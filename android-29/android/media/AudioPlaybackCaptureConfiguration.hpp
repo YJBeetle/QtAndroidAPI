@@ -21,10 +21,10 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getMatchingUsages();
-		QAndroidJniObject getMatchingUids();
-		QAndroidJniObject getExcludeUsages();
-		QAndroidJniObject getExcludeUids();
+		jintArray getMatchingUsages();
+		jintArray getMatchingUids();
+		jintArray getExcludeUsages();
+		jintArray getExcludeUids();
 		QAndroidJniObject getMediaProjection();
 	};
 } // namespace __jni_impl::android::media
@@ -44,35 +44,40 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject AudioPlaybackCaptureConfiguration::getMatchingUsages()
+	jintArray AudioPlaybackCaptureConfiguration::getMatchingUsages()
 	{
 		return __thiz.callObjectMethod(
 			"getMatchingUsages",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AudioPlaybackCaptureConfiguration::getMatchingUids()
+	jintArray AudioPlaybackCaptureConfiguration::getMatchingUids()
 	{
 		return __thiz.callObjectMethod(
 			"getMatchingUids",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AudioPlaybackCaptureConfiguration::getExcludeUsages()
+	jintArray AudioPlaybackCaptureConfiguration::getExcludeUsages()
 	{
 		return __thiz.callObjectMethod(
 			"getExcludeUsages",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AudioPlaybackCaptureConfiguration::getExcludeUids()
+	jintArray AudioPlaybackCaptureConfiguration::getExcludeUids()
 	{
 		return __thiz.callObjectMethod(
 			"getExcludeUids",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration::getMediaProjection()
 	{
 		return __thiz.callObjectMethod(
 			"getMediaProjection",
-			"()Landroid/media/projection/MediaProjection;");
+			"()Landroid/media/projection/MediaProjection;"
+		);
 	}
 } // namespace __jni_impl::android::media
 

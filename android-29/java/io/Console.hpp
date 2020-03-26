@@ -38,14 +38,14 @@ namespace __jni_impl::java::io
 		
 		// Methods
 		QAndroidJniObject format(jstring arg0, jobjectArray arg1);
-		QAndroidJniObject readLine();
-		QAndroidJniObject readLine(jstring arg0, jobjectArray arg1);
+		jstring readLine();
+		jstring readLine(jstring arg0, jobjectArray arg1);
 		void flush();
 		QAndroidJniObject reader();
 		QAndroidJniObject writer();
 		QAndroidJniObject printf(jstring arg0, jobjectArray arg1);
-		QAndroidJniObject readPassword();
-		QAndroidJniObject readPassword(jstring arg0, jobjectArray arg1);
+		jcharArray readPassword();
+		jcharArray readPassword(jstring arg0, jobjectArray arg1);
 	};
 } // namespace __jni_impl::java::io
 
@@ -74,39 +74,45 @@ namespace __jni_impl::java::io
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Console::readLine()
+	jstring Console::readLine()
 	{
 		return __thiz.callObjectMethod(
 			"readLine",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Console::readLine(jstring arg0, jobjectArray arg1)
+	jstring Console::readLine(jstring arg0, jobjectArray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"readLine",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	void Console::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Console::reader()
 	{
 		return __thiz.callObjectMethod(
 			"reader",
-			"()Ljava/io/Reader;");
+			"()Ljava/io/Reader;"
+		);
 	}
 	QAndroidJniObject Console::writer()
 	{
 		return __thiz.callObjectMethod(
 			"writer",
-			"()Ljava/io/PrintWriter;");
+			"()Ljava/io/PrintWriter;"
+		);
 	}
 	QAndroidJniObject Console::printf(jstring arg0, jobjectArray arg1)
 	{
@@ -114,21 +120,24 @@ namespace __jni_impl::java::io
 			"printf",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Console::readPassword()
+	jcharArray Console::readPassword()
 	{
 		return __thiz.callObjectMethod(
 			"readPassword",
-			"()[C");
+			"()[C"
+		).object<jcharArray>();
 	}
-	QAndroidJniObject Console::readPassword(jstring arg0, jobjectArray arg1)
+	jcharArray Console::readPassword(jstring arg0, jobjectArray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"readPassword",
 			"(Ljava/lang/String;[Ljava/lang/Object;)[C",
 			arg0,
-			arg1);
+			arg1
+		).object<jcharArray>();
 	}
 } // namespace __jni_impl::java::io
 

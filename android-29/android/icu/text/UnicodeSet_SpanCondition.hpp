@@ -22,7 +22,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -36,28 +36,32 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"NOT_CONTAINED",
-			"Landroid/icu/text/UnicodeSet$SpanCondition;");
+			"Landroid/icu/text/UnicodeSet$SpanCondition;"
+		);
 	}
 	QAndroidJniObject UnicodeSet_SpanCondition::CONTAINED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"CONTAINED",
-			"Landroid/icu/text/UnicodeSet$SpanCondition;");
+			"Landroid/icu/text/UnicodeSet$SpanCondition;"
+		);
 	}
 	QAndroidJniObject UnicodeSet_SpanCondition::SIMPLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"SIMPLE",
-			"Landroid/icu/text/UnicodeSet$SpanCondition;");
+			"Landroid/icu/text/UnicodeSet$SpanCondition;"
+		);
 	}
 	QAndroidJniObject UnicodeSet_SpanCondition::CONDITION_COUNT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"CONDITION_COUNT",
-			"Landroid/icu/text/UnicodeSet$SpanCondition;");
+			"Landroid/icu/text/UnicodeSet$SpanCondition;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject UnicodeSet_SpanCondition::values()
+	jarray UnicodeSet_SpanCondition::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"values",
-			"()[Landroid/icu/text/UnicodeSet$SpanCondition;");
+			"()[Landroid/icu/text/UnicodeSet$SpanCondition;"
+		).object<jarray>();
 	}
 	QAndroidJniObject UnicodeSet_SpanCondition::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$SpanCondition;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

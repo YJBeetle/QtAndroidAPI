@@ -63,31 +63,36 @@ namespace __jni_impl::android::renderscript
 	{
 		return __thiz.callObjectMethod(
 			"getMinification",
-			"()Landroid/renderscript/Sampler$Value;");
+			"()Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	QAndroidJniObject Sampler::getMagnification()
 	{
 		return __thiz.callObjectMethod(
 			"getMagnification",
-			"()Landroid/renderscript/Sampler$Value;");
+			"()Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	QAndroidJniObject Sampler::getWrapS()
 	{
 		return __thiz.callObjectMethod(
 			"getWrapS",
-			"()Landroid/renderscript/Sampler$Value;");
+			"()Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	QAndroidJniObject Sampler::getWrapT()
 	{
 		return __thiz.callObjectMethod(
 			"getWrapT",
-			"()Landroid/renderscript/Sampler$Value;");
+			"()Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	jfloat Sampler::getAnisotropy()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getAnisotropy",
-			"()F");
+			"()F"
+		);
 	}
 	QAndroidJniObject Sampler::CLAMP_NEAREST(__jni_impl::android::renderscript::RenderScript arg0)
 	{
@@ -95,7 +100,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler",
 			"CLAMP_NEAREST",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Sampler::CLAMP_LINEAR(__jni_impl::android::renderscript::RenderScript arg0)
 	{
@@ -103,7 +109,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler",
 			"CLAMP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Sampler::CLAMP_LINEAR_MIP_LINEAR(__jni_impl::android::renderscript::RenderScript arg0)
 	{
@@ -111,7 +118,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler",
 			"CLAMP_LINEAR_MIP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Sampler::WRAP_NEAREST(__jni_impl::android::renderscript::RenderScript arg0)
 	{
@@ -119,7 +127,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler",
 			"WRAP_NEAREST",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Sampler::WRAP_LINEAR(__jni_impl::android::renderscript::RenderScript arg0)
 	{
@@ -127,7 +136,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler",
 			"WRAP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Sampler::WRAP_LINEAR_MIP_LINEAR(__jni_impl::android::renderscript::RenderScript arg0)
 	{
@@ -135,7 +145,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler",
 			"WRAP_LINEAR_MIP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Sampler::MIRRORED_REPEAT_NEAREST(__jni_impl::android::renderscript::RenderScript arg0)
 	{
@@ -143,7 +154,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler",
 			"MIRRORED_REPEAT_NEAREST",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Sampler::MIRRORED_REPEAT_LINEAR(__jni_impl::android::renderscript::RenderScript arg0)
 	{
@@ -151,7 +163,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler",
 			"MIRRORED_REPEAT_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Sampler::MIRRORED_REPEAT_LINEAR_MIP_LINEAR(__jni_impl::android::renderscript::RenderScript arg0)
 	{
@@ -159,7 +172,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler",
 			"MIRRORED_REPEAT_LINEAR_MIP_LINEAR",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Sampler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

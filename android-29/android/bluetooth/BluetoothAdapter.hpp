@@ -36,23 +36,23 @@ namespace __jni_impl::android::bluetooth
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_CONNECTION_STATE_CHANGED();
-		static QAndroidJniObject ACTION_DISCOVERY_FINISHED();
-		static QAndroidJniObject ACTION_DISCOVERY_STARTED();
-		static QAndroidJniObject ACTION_LOCAL_NAME_CHANGED();
-		static QAndroidJniObject ACTION_REQUEST_DISCOVERABLE();
-		static QAndroidJniObject ACTION_REQUEST_ENABLE();
-		static QAndroidJniObject ACTION_SCAN_MODE_CHANGED();
-		static QAndroidJniObject ACTION_STATE_CHANGED();
+		static jstring ACTION_CONNECTION_STATE_CHANGED();
+		static jstring ACTION_DISCOVERY_FINISHED();
+		static jstring ACTION_DISCOVERY_STARTED();
+		static jstring ACTION_LOCAL_NAME_CHANGED();
+		static jstring ACTION_REQUEST_DISCOVERABLE();
+		static jstring ACTION_REQUEST_ENABLE();
+		static jstring ACTION_SCAN_MODE_CHANGED();
+		static jstring ACTION_STATE_CHANGED();
 		static jint ERROR();
-		static QAndroidJniObject EXTRA_CONNECTION_STATE();
-		static QAndroidJniObject EXTRA_DISCOVERABLE_DURATION();
-		static QAndroidJniObject EXTRA_LOCAL_NAME();
-		static QAndroidJniObject EXTRA_PREVIOUS_CONNECTION_STATE();
-		static QAndroidJniObject EXTRA_PREVIOUS_SCAN_MODE();
-		static QAndroidJniObject EXTRA_PREVIOUS_STATE();
-		static QAndroidJniObject EXTRA_SCAN_MODE();
-		static QAndroidJniObject EXTRA_STATE();
+		static jstring EXTRA_CONNECTION_STATE();
+		static jstring EXTRA_DISCOVERABLE_DURATION();
+		static jstring EXTRA_LOCAL_NAME();
+		static jstring EXTRA_PREVIOUS_CONNECTION_STATE();
+		static jstring EXTRA_PREVIOUS_SCAN_MODE();
+		static jstring EXTRA_PREVIOUS_STATE();
+		static jstring EXTRA_SCAN_MODE();
+		static jstring EXTRA_STATE();
 		static jint SCAN_MODE_CONNECTABLE();
 		static jint SCAN_MODE_CONNECTABLE_DISCOVERABLE();
 		static jint SCAN_MODE_NONE();
@@ -69,10 +69,10 @@ namespace __jni_impl::android::bluetooth
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean setName(jstring arg0);
 		jint getState();
-		QAndroidJniObject getAddress();
+		jstring getAddress();
 		jboolean isEnabled();
 		jboolean enable();
 		jint getScanMode();
@@ -118,189 +118,217 @@ namespace __jni_impl::android::bluetooth
 namespace __jni_impl::android::bluetooth
 {
 	// Fields
-	QAndroidJniObject BluetoothAdapter::ACTION_CONNECTION_STATE_CHANGED()
+	jstring BluetoothAdapter::ACTION_CONNECTION_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_CONNECTION_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::ACTION_DISCOVERY_FINISHED()
+	jstring BluetoothAdapter::ACTION_DISCOVERY_FINISHED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_DISCOVERY_FINISHED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::ACTION_DISCOVERY_STARTED()
+	jstring BluetoothAdapter::ACTION_DISCOVERY_STARTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_DISCOVERY_STARTED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::ACTION_LOCAL_NAME_CHANGED()
+	jstring BluetoothAdapter::ACTION_LOCAL_NAME_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_LOCAL_NAME_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::ACTION_REQUEST_DISCOVERABLE()
+	jstring BluetoothAdapter::ACTION_REQUEST_DISCOVERABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_REQUEST_DISCOVERABLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::ACTION_REQUEST_ENABLE()
+	jstring BluetoothAdapter::ACTION_REQUEST_ENABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_REQUEST_ENABLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::ACTION_SCAN_MODE_CHANGED()
+	jstring BluetoothAdapter::ACTION_SCAN_MODE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_SCAN_MODE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::ACTION_STATE_CHANGED()
+	jstring BluetoothAdapter::ACTION_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"ACTION_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint BluetoothAdapter::ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"ERROR");
+			"ERROR"
+		);
 	}
-	QAndroidJniObject BluetoothAdapter::EXTRA_CONNECTION_STATE()
+	jstring BluetoothAdapter::EXTRA_CONNECTION_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_CONNECTION_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::EXTRA_DISCOVERABLE_DURATION()
+	jstring BluetoothAdapter::EXTRA_DISCOVERABLE_DURATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_DISCOVERABLE_DURATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::EXTRA_LOCAL_NAME()
+	jstring BluetoothAdapter::EXTRA_LOCAL_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_LOCAL_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::EXTRA_PREVIOUS_CONNECTION_STATE()
+	jstring BluetoothAdapter::EXTRA_PREVIOUS_CONNECTION_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_PREVIOUS_CONNECTION_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::EXTRA_PREVIOUS_SCAN_MODE()
+	jstring BluetoothAdapter::EXTRA_PREVIOUS_SCAN_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_PREVIOUS_SCAN_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::EXTRA_PREVIOUS_STATE()
+	jstring BluetoothAdapter::EXTRA_PREVIOUS_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_PREVIOUS_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::EXTRA_SCAN_MODE()
+	jstring BluetoothAdapter::EXTRA_SCAN_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_SCAN_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothAdapter::EXTRA_STATE()
+	jstring BluetoothAdapter::EXTRA_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothAdapter",
 			"EXTRA_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint BluetoothAdapter::SCAN_MODE_CONNECTABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"SCAN_MODE_CONNECTABLE");
+			"SCAN_MODE_CONNECTABLE"
+		);
 	}
 	jint BluetoothAdapter::SCAN_MODE_CONNECTABLE_DISCOVERABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"SCAN_MODE_CONNECTABLE_DISCOVERABLE");
+			"SCAN_MODE_CONNECTABLE_DISCOVERABLE"
+		);
 	}
 	jint BluetoothAdapter::SCAN_MODE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"SCAN_MODE_NONE");
+			"SCAN_MODE_NONE"
+		);
 	}
 	jint BluetoothAdapter::STATE_CONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"STATE_CONNECTED");
+			"STATE_CONNECTED"
+		);
 	}
 	jint BluetoothAdapter::STATE_CONNECTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"STATE_CONNECTING");
+			"STATE_CONNECTING"
+		);
 	}
 	jint BluetoothAdapter::STATE_DISCONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"STATE_DISCONNECTED");
+			"STATE_DISCONNECTED"
+		);
 	}
 	jint BluetoothAdapter::STATE_DISCONNECTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"STATE_DISCONNECTING");
+			"STATE_DISCONNECTING"
+		);
 	}
 	jint BluetoothAdapter::STATE_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"STATE_OFF");
+			"STATE_OFF"
+		);
 	}
 	jint BluetoothAdapter::STATE_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"STATE_ON");
+			"STATE_ON"
+		);
 	}
 	jint BluetoothAdapter::STATE_TURNING_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"STATE_TURNING_OFF");
+			"STATE_TURNING_OFF"
+		);
 	}
 	jint BluetoothAdapter::STATE_TURNING_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothAdapter",
-			"STATE_TURNING_ON");
+			"STATE_TURNING_ON"
+		);
 	}
 	
 	// Constructors
@@ -312,166 +340,192 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
-	QAndroidJniObject BluetoothAdapter::getName()
+	jstring BluetoothAdapter::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean BluetoothAdapter::setName(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setName",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint BluetoothAdapter::getState()
 	{
 		return __thiz.callMethod<jint>(
 			"getState",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject BluetoothAdapter::getAddress()
+	jstring BluetoothAdapter::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean BluetoothAdapter::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::enable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"enable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint BluetoothAdapter::getScanMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getScanMode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::getDefaultAdapter()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.bluetooth.BluetoothAdapter",
 			"getDefaultAdapter",
-			"()Landroid/bluetooth/BluetoothAdapter;");
+			"()Landroid/bluetooth/BluetoothAdapter;"
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::getRemoteDevice(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getRemoteDevice",
 			"([B)Landroid/bluetooth/BluetoothDevice;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::getRemoteDevice(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getRemoteDevice",
 			"(Ljava/lang/String;)Landroid/bluetooth/BluetoothDevice;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::getBluetoothLeAdvertiser()
 	{
 		return __thiz.callObjectMethod(
 			"getBluetoothLeAdvertiser",
-			"()Landroid/bluetooth/le/BluetoothLeAdvertiser;");
+			"()Landroid/bluetooth/le/BluetoothLeAdvertiser;"
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::getBluetoothLeScanner()
 	{
 		return __thiz.callObjectMethod(
 			"getBluetoothLeScanner",
-			"()Landroid/bluetooth/le/BluetoothLeScanner;");
+			"()Landroid/bluetooth/le/BluetoothLeScanner;"
+		);
 	}
 	jboolean BluetoothAdapter::disable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"disable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::startDiscovery()
 	{
 		return __thiz.callMethod<jboolean>(
 			"startDiscovery",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::cancelDiscovery()
 	{
 		return __thiz.callMethod<jboolean>(
 			"cancelDiscovery",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::isDiscovering()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDiscovering",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::isMultipleAdvertisementSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMultipleAdvertisementSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::isOffloadedFilteringSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOffloadedFilteringSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::isOffloadedScanBatchingSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOffloadedScanBatchingSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::isLe2MPhySupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLe2MPhySupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::isLeCodedPhySupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLeCodedPhySupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::isLeExtendedAdvertisingSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLeExtendedAdvertisingSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothAdapter::isLePeriodicAdvertisingSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLePeriodicAdvertisingSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint BluetoothAdapter::getLeMaximumAdvertisingDataLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getLeMaximumAdvertisingDataLength",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::getBondedDevices()
 	{
 		return __thiz.callObjectMethod(
 			"getBondedDevices",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jint BluetoothAdapter::getProfileConnectionState(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getProfileConnectionState",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::listenUsingRfcommWithServiceRecord(jstring arg0, __jni_impl::java::util::UUID arg1)
 	{
@@ -479,7 +533,8 @@ namespace __jni_impl::android::bluetooth
 			"listenUsingRfcommWithServiceRecord",
 			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::listenUsingInsecureRfcommWithServiceRecord(jstring arg0, __jni_impl::java::util::UUID arg1)
 	{
@@ -487,7 +542,8 @@ namespace __jni_impl::android::bluetooth
 			"listenUsingInsecureRfcommWithServiceRecord",
 			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean BluetoothAdapter::getProfileProxy(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -496,7 +552,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void BluetoothAdapter::closeProfileProxy(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -504,7 +561,8 @@ namespace __jni_impl::android::bluetooth
 			"closeProfileProxy",
 			"(ILandroid/bluetooth/BluetoothProfile;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean BluetoothAdapter::checkBluetoothAddress(jstring arg0)
 	{
@@ -512,7 +570,8 @@ namespace __jni_impl::android::bluetooth
 			"android.bluetooth.BluetoothAdapter",
 			"checkBluetoothAddress",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BluetoothAdapter::startLeScan(jarray arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -520,33 +579,38 @@ namespace __jni_impl::android::bluetooth
 			"startLeScan",
 			"([Ljava/util/UUID;Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean BluetoothAdapter::startLeScan(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"startLeScan",
 			"(Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BluetoothAdapter::stopLeScan(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"stopLeScan",
 			"(Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::listenUsingL2capChannel()
 	{
 		return __thiz.callObjectMethod(
 			"listenUsingL2capChannel",
-			"()Landroid/bluetooth/BluetoothServerSocket;");
+			"()Landroid/bluetooth/BluetoothServerSocket;"
+		);
 	}
 	QAndroidJniObject BluetoothAdapter::listenUsingInsecureL2capChannel()
 	{
 		return __thiz.callObjectMethod(
 			"listenUsingInsecureL2capChannel",
-			"()Landroid/bluetooth/BluetoothServerSocket;");
+			"()Landroid/bluetooth/BluetoothServerSocket;"
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

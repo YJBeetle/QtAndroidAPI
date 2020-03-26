@@ -33,11 +33,11 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		jint hashCode();
 		QAndroidJniObject clone();
 		void resize(jfloat arg0, jfloat arg1);
+		void getOutline(__jni_impl::android::graphics::Outline arg0);
+		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1);
 		jboolean hasAlpha();
 		jfloat getWidth();
 		jfloat getHeight();
-		void getOutline(__jni_impl::android::graphics::Outline arg0);
-		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1);
 	};
 } // namespace __jni_impl::android::graphics::drawable::shapes
 
@@ -63,19 +63,22 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Shape::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Shape::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/graphics/drawable/shapes/Shape;");
+			"()Landroid/graphics/drawable/shapes/Shape;"
+		);
 	}
 	void Shape::resize(jfloat arg0, jfloat arg1)
 	{
@@ -83,32 +86,16 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			"resize",
 			"(FF)V",
 			arg0,
-			arg1);
-	}
-	jboolean Shape::hasAlpha()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAlpha",
-			"()Z");
-	}
-	jfloat Shape::getWidth()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getWidth",
-			"()F");
-	}
-	jfloat Shape::getHeight()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getHeight",
-			"()F");
+			arg1
+		);
 	}
 	void Shape::getOutline(__jni_impl::android::graphics::Outline arg0)
 	{
 		__thiz.callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Shape::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1)
 	{
@@ -116,7 +103,29 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			"draw",
 			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean Shape::hasAlpha()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasAlpha",
+			"()Z"
+		);
+	}
+	jfloat Shape::getWidth()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getWidth",
+			"()F"
+		);
+	}
+	jfloat Shape::getHeight()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getHeight",
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable::shapes
 

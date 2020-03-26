@@ -29,12 +29,12 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void onBackStackChanged();
-		void setTitle(jstring arg0, jstring arg1);
 		void setOnBreadCrumbClickListener(__jni_impl::__JniBaseClass arg0);
 		void setActivity(__jni_impl::android::app::Activity arg0);
 		void setMaxVisible(jint arg0);
 		void setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
+		void setTitle(jstring arg0, jstring arg1);
+		void onBackStackChanged();
 	};
 } // namespace __jni_impl::android::app
 
@@ -72,40 +72,29 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void FragmentBreadCrumbs::onBackStackChanged()
-	{
-		__thiz.callMethod<void>(
-			"onBackStackChanged",
-			"()V");
-	}
-	void FragmentBreadCrumbs::setTitle(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
-			arg0,
-			arg1);
-	}
 	void FragmentBreadCrumbs::setOnBreadCrumbClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnBreadCrumbClickListener",
 			"(Landroid/app/FragmentBreadCrumbs$OnBreadCrumbClickListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FragmentBreadCrumbs::setActivity(__jni_impl::android::app::Activity arg0)
 	{
 		__thiz.callMethod<void>(
 			"setActivity",
 			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FragmentBreadCrumbs::setMaxVisible(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMaxVisible",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void FragmentBreadCrumbs::setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -114,7 +103,24 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void FragmentBreadCrumbs::setTitle(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
+			arg0,
+			arg1
+		);
+	}
+	void FragmentBreadCrumbs::onBackStackChanged()
+	{
+		__thiz.callMethod<void>(
+			"onBackStackChanged",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::app
 

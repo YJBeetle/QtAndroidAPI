@@ -66,57 +66,66 @@ namespace __jni_impl::java::nio
 	{
 		return __thiz.callObjectMethod(
 			"clear",
-			"()Ljava/nio/MappedByteBuffer;");
+			"()Ljava/nio/MappedByteBuffer;"
+		);
 	}
 	QAndroidJniObject MappedByteBuffer::limit(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"limit",
 			"(I)Ljava/nio/MappedByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MappedByteBuffer::position(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"position",
 			"(I)Ljava/nio/MappedByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MappedByteBuffer::load()
 	{
 		return __thiz.callObjectMethod(
 			"load",
-			"()Ljava/nio/MappedByteBuffer;");
+			"()Ljava/nio/MappedByteBuffer;"
+		);
 	}
 	QAndroidJniObject MappedByteBuffer::mark()
 	{
 		return __thiz.callObjectMethod(
 			"mark",
-			"()Ljava/nio/MappedByteBuffer;");
+			"()Ljava/nio/MappedByteBuffer;"
+		);
 	}
 	QAndroidJniObject MappedByteBuffer::reset()
 	{
 		return __thiz.callObjectMethod(
 			"reset",
-			"()Ljava/nio/MappedByteBuffer;");
+			"()Ljava/nio/MappedByteBuffer;"
+		);
 	}
 	QAndroidJniObject MappedByteBuffer::flip()
 	{
 		return __thiz.callObjectMethod(
 			"flip",
-			"()Ljava/nio/MappedByteBuffer;");
+			"()Ljava/nio/MappedByteBuffer;"
+		);
 	}
 	QAndroidJniObject MappedByteBuffer::rewind()
 	{
 		return __thiz.callObjectMethod(
 			"rewind",
-			"()Ljava/nio/MappedByteBuffer;");
+			"()Ljava/nio/MappedByteBuffer;"
+		);
 	}
 	jboolean MappedByteBuffer::isLoaded()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLoaded",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject MappedByteBuffer::force(jint arg0, jint arg1)
 	{
@@ -124,13 +133,15 @@ namespace __jni_impl::java::nio
 			"force",
 			"(II)Ljava/nio/MappedByteBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject MappedByteBuffer::force()
 	{
 		return __thiz.callObjectMethod(
 			"force",
-			"()Ljava/nio/MappedByteBuffer;");
+			"()Ljava/nio/MappedByteBuffer;"
+		);
 	}
 } // namespace __jni_impl::java::nio
 

@@ -83,13 +83,15 @@ namespace __jni_impl::android::preference
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PreferenceCategory::shouldDisableDependents()
 	{
 		return __thiz.callMethod<jboolean>(
 			"shouldDisableDependents",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::preference
 

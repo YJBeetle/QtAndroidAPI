@@ -19,7 +19,7 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -30,7 +30,8 @@ namespace __jni_impl::android::media::audiofx
 	jshort Virtualizer_Settings::strength()
 	{
 		return __thiz.getField<jshort>(
-			"strength");
+			"strength"
+		);
 	}
 	
 	// Constructors
@@ -49,11 +50,12 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject Virtualizer_Settings::toString()
+	jstring Virtualizer_Settings::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media::audiofx
 

@@ -12,7 +12,7 @@ namespace __jni_impl::android::media::tv
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
+		static jstring CONTENT_DIRECTORY();
 		
 		// Constructors
 		void __constructor();
@@ -25,12 +25,13 @@ namespace __jni_impl::android::media::tv
 namespace __jni_impl::android::media::tv
 {
 	// Fields
-	QAndroidJniObject TvContract_Channels_Logo::CONTENT_DIRECTORY()
+	jstring TvContract_Channels_Logo::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContract$Channels$Logo",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

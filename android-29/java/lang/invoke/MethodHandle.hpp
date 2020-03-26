@@ -25,14 +25,14 @@ namespace __jni_impl::java::lang::invoke
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject invoke(jobjectArray arg0);
-		QAndroidJniObject invokeExact(jobjectArray arg0);
+		jobject invoke(jobjectArray arg0);
+		jobject invokeExact(jobjectArray arg0);
 		QAndroidJniObject type();
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject describeConstable();
 		QAndroidJniObject asType(__jni_impl::java::lang::invoke::MethodType arg0);
-		QAndroidJniObject invokeWithArguments(jobjectArray arg0);
-		QAndroidJniObject invokeWithArguments(__jni_impl::__JniBaseClass arg0);
+		jobject invokeWithArguments(jobjectArray arg0);
+		jobject invokeWithArguments(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject asSpreader(jint arg0, jclass arg1, jint arg2);
 		QAndroidJniObject asSpreader(jclass arg0, jint arg1);
 		jboolean isVarargsCollector();
@@ -61,58 +61,66 @@ namespace __jni_impl::java::lang::invoke
 	}
 	
 	// Methods
-	QAndroidJniObject MethodHandle::invoke(jobjectArray arg0)
+	jobject MethodHandle::invoke(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"invoke",
 			"([Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject MethodHandle::invokeExact(jobjectArray arg0)
+	jobject MethodHandle::invokeExact(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"invokeExact",
 			"([Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject MethodHandle::type()
 	{
 		return __thiz.callObjectMethod(
 			"type",
-			"()Ljava/lang/invoke/MethodType;");
+			"()Ljava/lang/invoke/MethodType;"
+		);
 	}
-	QAndroidJniObject MethodHandle::toString()
+	jstring MethodHandle::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject MethodHandle::describeConstable()
 	{
 		return __thiz.callObjectMethod(
 			"describeConstable",
-			"()Ljava/util/Optional;");
+			"()Ljava/util/Optional;"
+		);
 	}
 	QAndroidJniObject MethodHandle::asType(__jni_impl::java::lang::invoke::MethodType arg0)
 	{
 		return __thiz.callObjectMethod(
 			"asType",
 			"(Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MethodHandle::invokeWithArguments(jobjectArray arg0)
+	jobject MethodHandle::invokeWithArguments(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"invokeWithArguments",
 			"([Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject MethodHandle::invokeWithArguments(__jni_impl::__JniBaseClass arg0)
+	jobject MethodHandle::invokeWithArguments(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"invokeWithArguments",
 			"(Ljava/util/List;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject MethodHandle::asSpreader(jint arg0, jclass arg1, jint arg2)
 	{
@@ -121,7 +129,8 @@ namespace __jni_impl::java::lang::invoke
 			"(ILjava/lang/Class;I)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MethodHandle::asSpreader(jclass arg0, jint arg1)
 	{
@@ -129,20 +138,23 @@ namespace __jni_impl::java::lang::invoke
 			"asSpreader",
 			"(Ljava/lang/Class;I)Ljava/lang/invoke/MethodHandle;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean MethodHandle::isVarargsCollector()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isVarargsCollector",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject MethodHandle::asVarargsCollector(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"asVarargsCollector",
 			"(Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MethodHandle::asCollector(jclass arg0, jint arg1)
 	{
@@ -150,7 +162,8 @@ namespace __jni_impl::java::lang::invoke
 			"asCollector",
 			"(Ljava/lang/Class;I)Ljava/lang/invoke/MethodHandle;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject MethodHandle::asCollector(jint arg0, jclass arg1, jint arg2)
 	{
@@ -159,27 +172,31 @@ namespace __jni_impl::java::lang::invoke
 			"(ILjava/lang/Class;I)Ljava/lang/invoke/MethodHandle;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject MethodHandle::withVarargs(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withVarargs",
 			"(Z)Ljava/lang/invoke/MethodHandle;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MethodHandle::asFixedArity()
 	{
 		return __thiz.callObjectMethod(
 			"asFixedArity",
-			"()Ljava/lang/invoke/MethodHandle;");
+			"()Ljava/lang/invoke/MethodHandle;"
+		);
 	}
 	QAndroidJniObject MethodHandle::bindTo(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"bindTo",
 			"(Ljava/lang/Object;)Ljava/lang/invoke/MethodHandle;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang::invoke
 

@@ -21,13 +21,13 @@ namespace __jni_impl::android::media
 {
 	class AudioFocusRequest;
 }
-namespace __jni_impl::android::app
-{
-	class PendingIntent;
-}
 namespace __jni_impl::android::content
 {
 	class ComponentName;
+}
+namespace __jni_impl::android::app
+{
+	class PendingIntent;
 }
 namespace __jni_impl::android::media
 {
@@ -60,13 +60,13 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_AUDIO_BECOMING_NOISY();
-		static QAndroidJniObject ACTION_HDMI_AUDIO_PLUG();
-		static QAndroidJniObject ACTION_HEADSET_PLUG();
-		static QAndroidJniObject ACTION_MICROPHONE_MUTE_CHANGED();
-		static QAndroidJniObject ACTION_SCO_AUDIO_STATE_CHANGED();
-		static QAndroidJniObject ACTION_SCO_AUDIO_STATE_UPDATED();
-		static QAndroidJniObject ACTION_SPEAKERPHONE_STATE_CHANGED();
+		static jstring ACTION_AUDIO_BECOMING_NOISY();
+		static jstring ACTION_HDMI_AUDIO_PLUG();
+		static jstring ACTION_HEADSET_PLUG();
+		static jstring ACTION_MICROPHONE_MUTE_CHANGED();
+		static jstring ACTION_SCO_AUDIO_STATE_CHANGED();
+		static jstring ACTION_SCO_AUDIO_STATE_UPDATED();
+		static jstring ACTION_SPEAKERPHONE_STATE_CHANGED();
 		static jint ADJUST_LOWER();
 		static jint ADJUST_MUTE();
 		static jint ADJUST_RAISE();
@@ -87,14 +87,14 @@ namespace __jni_impl::android::media
 		static jint AUDIO_SESSION_ID_GENERATE();
 		static jint ERROR();
 		static jint ERROR_DEAD_OBJECT();
-		static QAndroidJniObject EXTRA_AUDIO_PLUG_STATE();
-		static QAndroidJniObject EXTRA_ENCODINGS();
-		static QAndroidJniObject EXTRA_MAX_CHANNEL_COUNT();
-		static QAndroidJniObject EXTRA_RINGER_MODE();
-		static QAndroidJniObject EXTRA_SCO_AUDIO_PREVIOUS_STATE();
-		static QAndroidJniObject EXTRA_SCO_AUDIO_STATE();
-		static QAndroidJniObject EXTRA_VIBRATE_SETTING();
-		static QAndroidJniObject EXTRA_VIBRATE_TYPE();
+		static jstring EXTRA_AUDIO_PLUG_STATE();
+		static jstring EXTRA_ENCODINGS();
+		static jstring EXTRA_MAX_CHANNEL_COUNT();
+		static jstring EXTRA_RINGER_MODE();
+		static jstring EXTRA_SCO_AUDIO_PREVIOUS_STATE();
+		static jstring EXTRA_SCO_AUDIO_STATE();
+		static jstring EXTRA_VIBRATE_SETTING();
+		static jstring EXTRA_VIBRATE_TYPE();
 		static jint FLAG_ALLOW_RINGER_MODES();
 		static jint FLAG_PLAY_SOUND();
 		static jint FLAG_REMOVE_SOUND_AND_VIBRATE();
@@ -120,12 +120,12 @@ namespace __jni_impl::android::media
 		static jint MODE_NORMAL();
 		static jint MODE_RINGTONE();
 		static jint NUM_STREAMS();
-		static QAndroidJniObject PROPERTY_OUTPUT_FRAMES_PER_BUFFER();
-		static QAndroidJniObject PROPERTY_OUTPUT_SAMPLE_RATE();
-		static QAndroidJniObject PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED();
-		static QAndroidJniObject PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND();
-		static QAndroidJniObject PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND();
-		static QAndroidJniObject RINGER_MODE_CHANGED_ACTION();
+		static jstring PROPERTY_OUTPUT_FRAMES_PER_BUFFER();
+		static jstring PROPERTY_OUTPUT_SAMPLE_RATE();
+		static jstring PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED();
+		static jstring PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND();
+		static jstring PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND();
+		static jstring RINGER_MODE_CHANGED_ACTION();
 		static jint RINGER_MODE_NORMAL();
 		static jint RINGER_MODE_SILENT();
 		static jint RINGER_MODE_VIBRATE();
@@ -149,7 +149,7 @@ namespace __jni_impl::android::media
 		static jint STREAM_SYSTEM();
 		static jint STREAM_VOICE_CALL();
 		static jint USE_DEFAULT_STREAM_TYPE();
-		static QAndroidJniObject VIBRATE_SETTING_CHANGED_ACTION();
+		static jstring VIBRATE_SETTING_CHANGED_ACTION();
 		static jint VIBRATE_SETTING_OFF();
 		static jint VIBRATE_SETTING_ON();
 		static jint VIBRATE_SETTING_ONLY_SILENT();
@@ -160,13 +160,11 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getProperty(jstring arg0);
-		QAndroidJniObject getParameters(jstring arg0);
+		jstring getProperty(jstring arg0);
+		jstring getParameters(jstring arg0);
 		void setParameters(jstring arg0);
-		jboolean shouldVibrate(jint arg0);
-		void playSoundEffect(jint arg0, jfloat arg1);
-		void playSoundEffect(jint arg0);
-		void setMode(jint arg0);
+		void adjustVolume(jint arg0, jint arg1);
+		jint getAllowedCapturePolicy();
 		void dispatchMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		jboolean isVolumeFixed();
 		void adjustStreamVolume(jint arg0, jint arg1, jint arg2);
@@ -208,8 +206,8 @@ namespace __jni_impl::android::media
 		jint requestAudioFocus(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		jint abandonAudioFocusRequest(__jni_impl::android::media::AudioFocusRequest arg0);
 		jint abandonAudioFocus(__jni_impl::__JniBaseClass arg0);
-		void registerMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0);
 		void registerMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0);
+		void registerMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0);
 		void unregisterMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0);
 		void unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0);
 		void registerRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0);
@@ -222,14 +220,16 @@ namespace __jni_impl::android::media
 		void registerAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0, __jni_impl::android::os::Handler arg1);
 		void unregisterAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0);
 		QAndroidJniObject getActiveRecordingConfigurations();
-		QAndroidJniObject getDevices(jint arg0);
+		jarray getDevices(jint arg0);
 		void registerAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0, __jni_impl::android::os::Handler arg1);
 		void unregisterAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0);
 		QAndroidJniObject getMicrophones();
 		static jboolean isHapticPlaybackSupported();
-		jint getAllowedCapturePolicy();
-		void adjustVolume(jint arg0, jint arg1);
+		jboolean shouldVibrate(jint arg0);
+		void playSoundEffect(jint arg0, jfloat arg1);
+		void playSoundEffect(jint arg0);
 		jint getMode();
+		void setMode(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -237,8 +237,8 @@ namespace __jni_impl::android::media
 #include "AudioFormat.hpp"
 #include "AudioAttributes.hpp"
 #include "AudioFocusRequest.hpp"
-#include "../app/PendingIntent.hpp"
 #include "../content/ComponentName.hpp"
+#include "../app/PendingIntent.hpp"
 #include "RemoteControlClient.hpp"
 #include "RemoteController.hpp"
 #include "AudioManager_AudioPlaybackCallback.hpp"
@@ -249,597 +249,692 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject AudioManager::ACTION_AUDIO_BECOMING_NOISY()
+	jstring AudioManager::ACTION_AUDIO_BECOMING_NOISY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_AUDIO_BECOMING_NOISY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::ACTION_HDMI_AUDIO_PLUG()
+	jstring AudioManager::ACTION_HDMI_AUDIO_PLUG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_HDMI_AUDIO_PLUG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::ACTION_HEADSET_PLUG()
+	jstring AudioManager::ACTION_HEADSET_PLUG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_HEADSET_PLUG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::ACTION_MICROPHONE_MUTE_CHANGED()
+	jstring AudioManager::ACTION_MICROPHONE_MUTE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_MICROPHONE_MUTE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::ACTION_SCO_AUDIO_STATE_CHANGED()
+	jstring AudioManager::ACTION_SCO_AUDIO_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_SCO_AUDIO_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::ACTION_SCO_AUDIO_STATE_UPDATED()
+	jstring AudioManager::ACTION_SCO_AUDIO_STATE_UPDATED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_SCO_AUDIO_STATE_UPDATED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::ACTION_SPEAKERPHONE_STATE_CHANGED()
+	jstring AudioManager::ACTION_SPEAKERPHONE_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"ACTION_SPEAKERPHONE_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AudioManager::ADJUST_LOWER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ADJUST_LOWER");
+			"ADJUST_LOWER"
+		);
 	}
 	jint AudioManager::ADJUST_MUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ADJUST_MUTE");
+			"ADJUST_MUTE"
+		);
 	}
 	jint AudioManager::ADJUST_RAISE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ADJUST_RAISE");
+			"ADJUST_RAISE"
+		);
 	}
 	jint AudioManager::ADJUST_SAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ADJUST_SAME");
+			"ADJUST_SAME"
+		);
 	}
 	jint AudioManager::ADJUST_TOGGLE_MUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ADJUST_TOGGLE_MUTE");
+			"ADJUST_TOGGLE_MUTE"
+		);
 	}
 	jint AudioManager::ADJUST_UNMUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ADJUST_UNMUTE");
+			"ADJUST_UNMUTE"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_GAIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_GAIN");
+			"AUDIOFOCUS_GAIN"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_GAIN_TRANSIENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_GAIN_TRANSIENT");
+			"AUDIOFOCUS_GAIN_TRANSIENT"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE");
+			"AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK");
+			"AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_LOSS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_LOSS");
+			"AUDIOFOCUS_LOSS"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_LOSS_TRANSIENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_LOSS_TRANSIENT");
+			"AUDIOFOCUS_LOSS_TRANSIENT"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK");
+			"AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_NONE");
+			"AUDIOFOCUS_NONE"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_REQUEST_DELAYED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_REQUEST_DELAYED");
+			"AUDIOFOCUS_REQUEST_DELAYED"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_REQUEST_FAILED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_REQUEST_FAILED");
+			"AUDIOFOCUS_REQUEST_FAILED"
+		);
 	}
 	jint AudioManager::AUDIOFOCUS_REQUEST_GRANTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIOFOCUS_REQUEST_GRANTED");
+			"AUDIOFOCUS_REQUEST_GRANTED"
+		);
 	}
 	jint AudioManager::AUDIO_SESSION_ID_GENERATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"AUDIO_SESSION_ID_GENERATE");
+			"AUDIO_SESSION_ID_GENERATE"
+		);
 	}
 	jint AudioManager::ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ERROR");
+			"ERROR"
+		);
 	}
 	jint AudioManager::ERROR_DEAD_OBJECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ERROR_DEAD_OBJECT");
+			"ERROR_DEAD_OBJECT"
+		);
 	}
-	QAndroidJniObject AudioManager::EXTRA_AUDIO_PLUG_STATE()
+	jstring AudioManager::EXTRA_AUDIO_PLUG_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_AUDIO_PLUG_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::EXTRA_ENCODINGS()
+	jstring AudioManager::EXTRA_ENCODINGS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_ENCODINGS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::EXTRA_MAX_CHANNEL_COUNT()
+	jstring AudioManager::EXTRA_MAX_CHANNEL_COUNT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_MAX_CHANNEL_COUNT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::EXTRA_RINGER_MODE()
+	jstring AudioManager::EXTRA_RINGER_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_RINGER_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::EXTRA_SCO_AUDIO_PREVIOUS_STATE()
+	jstring AudioManager::EXTRA_SCO_AUDIO_PREVIOUS_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_SCO_AUDIO_PREVIOUS_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::EXTRA_SCO_AUDIO_STATE()
+	jstring AudioManager::EXTRA_SCO_AUDIO_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_SCO_AUDIO_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::EXTRA_VIBRATE_SETTING()
+	jstring AudioManager::EXTRA_VIBRATE_SETTING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_VIBRATE_SETTING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::EXTRA_VIBRATE_TYPE()
+	jstring AudioManager::EXTRA_VIBRATE_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"EXTRA_VIBRATE_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AudioManager::FLAG_ALLOW_RINGER_MODES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FLAG_ALLOW_RINGER_MODES");
+			"FLAG_ALLOW_RINGER_MODES"
+		);
 	}
 	jint AudioManager::FLAG_PLAY_SOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FLAG_PLAY_SOUND");
+			"FLAG_PLAY_SOUND"
+		);
 	}
 	jint AudioManager::FLAG_REMOVE_SOUND_AND_VIBRATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FLAG_REMOVE_SOUND_AND_VIBRATE");
+			"FLAG_REMOVE_SOUND_AND_VIBRATE"
+		);
 	}
 	jint AudioManager::FLAG_SHOW_UI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FLAG_SHOW_UI");
+			"FLAG_SHOW_UI"
+		);
 	}
 	jint AudioManager::FLAG_VIBRATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FLAG_VIBRATE");
+			"FLAG_VIBRATE"
+		);
 	}
 	jint AudioManager::FX_FOCUS_NAVIGATION_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_FOCUS_NAVIGATION_DOWN");
+			"FX_FOCUS_NAVIGATION_DOWN"
+		);
 	}
 	jint AudioManager::FX_FOCUS_NAVIGATION_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_FOCUS_NAVIGATION_LEFT");
+			"FX_FOCUS_NAVIGATION_LEFT"
+		);
 	}
 	jint AudioManager::FX_FOCUS_NAVIGATION_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_FOCUS_NAVIGATION_RIGHT");
+			"FX_FOCUS_NAVIGATION_RIGHT"
+		);
 	}
 	jint AudioManager::FX_FOCUS_NAVIGATION_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_FOCUS_NAVIGATION_UP");
+			"FX_FOCUS_NAVIGATION_UP"
+		);
 	}
 	jint AudioManager::FX_KEYPRESS_DELETE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_KEYPRESS_DELETE");
+			"FX_KEYPRESS_DELETE"
+		);
 	}
 	jint AudioManager::FX_KEYPRESS_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_KEYPRESS_INVALID");
+			"FX_KEYPRESS_INVALID"
+		);
 	}
 	jint AudioManager::FX_KEYPRESS_RETURN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_KEYPRESS_RETURN");
+			"FX_KEYPRESS_RETURN"
+		);
 	}
 	jint AudioManager::FX_KEYPRESS_SPACEBAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_KEYPRESS_SPACEBAR");
+			"FX_KEYPRESS_SPACEBAR"
+		);
 	}
 	jint AudioManager::FX_KEYPRESS_STANDARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_KEYPRESS_STANDARD");
+			"FX_KEYPRESS_STANDARD"
+		);
 	}
 	jint AudioManager::FX_KEY_CLICK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"FX_KEY_CLICK");
+			"FX_KEY_CLICK"
+		);
 	}
 	jint AudioManager::GET_DEVICES_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"GET_DEVICES_ALL");
+			"GET_DEVICES_ALL"
+		);
 	}
 	jint AudioManager::GET_DEVICES_INPUTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"GET_DEVICES_INPUTS");
+			"GET_DEVICES_INPUTS"
+		);
 	}
 	jint AudioManager::GET_DEVICES_OUTPUTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"GET_DEVICES_OUTPUTS");
+			"GET_DEVICES_OUTPUTS"
+		);
 	}
 	jint AudioManager::MODE_CURRENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"MODE_CURRENT");
+			"MODE_CURRENT"
+		);
 	}
 	jint AudioManager::MODE_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"MODE_INVALID");
+			"MODE_INVALID"
+		);
 	}
 	jint AudioManager::MODE_IN_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"MODE_IN_CALL");
+			"MODE_IN_CALL"
+		);
 	}
 	jint AudioManager::MODE_IN_COMMUNICATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"MODE_IN_COMMUNICATION");
+			"MODE_IN_COMMUNICATION"
+		);
 	}
 	jint AudioManager::MODE_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"MODE_NORMAL");
+			"MODE_NORMAL"
+		);
 	}
 	jint AudioManager::MODE_RINGTONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"MODE_RINGTONE");
+			"MODE_RINGTONE"
+		);
 	}
 	jint AudioManager::NUM_STREAMS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"NUM_STREAMS");
+			"NUM_STREAMS"
+		);
 	}
-	QAndroidJniObject AudioManager::PROPERTY_OUTPUT_FRAMES_PER_BUFFER()
+	jstring AudioManager::PROPERTY_OUTPUT_FRAMES_PER_BUFFER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_OUTPUT_FRAMES_PER_BUFFER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::PROPERTY_OUTPUT_SAMPLE_RATE()
+	jstring AudioManager::PROPERTY_OUTPUT_SAMPLE_RATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_OUTPUT_SAMPLE_RATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED()
+	jstring AudioManager::PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_SUPPORT_AUDIO_SOURCE_UNPROCESSED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND()
+	jstring AudioManager::PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND()
+	jstring AudioManager::PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::RINGER_MODE_CHANGED_ACTION()
+	jstring AudioManager::RINGER_MODE_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"RINGER_MODE_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AudioManager::RINGER_MODE_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"RINGER_MODE_NORMAL");
+			"RINGER_MODE_NORMAL"
+		);
 	}
 	jint AudioManager::RINGER_MODE_SILENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"RINGER_MODE_SILENT");
+			"RINGER_MODE_SILENT"
+		);
 	}
 	jint AudioManager::RINGER_MODE_VIBRATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"RINGER_MODE_VIBRATE");
+			"RINGER_MODE_VIBRATE"
+		);
 	}
 	jint AudioManager::ROUTE_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ROUTE_ALL");
+			"ROUTE_ALL"
+		);
 	}
 	jint AudioManager::ROUTE_BLUETOOTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ROUTE_BLUETOOTH");
+			"ROUTE_BLUETOOTH"
+		);
 	}
 	jint AudioManager::ROUTE_BLUETOOTH_A2DP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ROUTE_BLUETOOTH_A2DP");
+			"ROUTE_BLUETOOTH_A2DP"
+		);
 	}
 	jint AudioManager::ROUTE_BLUETOOTH_SCO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ROUTE_BLUETOOTH_SCO");
+			"ROUTE_BLUETOOTH_SCO"
+		);
 	}
 	jint AudioManager::ROUTE_EARPIECE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ROUTE_EARPIECE");
+			"ROUTE_EARPIECE"
+		);
 	}
 	jint AudioManager::ROUTE_HEADSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ROUTE_HEADSET");
+			"ROUTE_HEADSET"
+		);
 	}
 	jint AudioManager::ROUTE_SPEAKER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"ROUTE_SPEAKER");
+			"ROUTE_SPEAKER"
+		);
 	}
 	jint AudioManager::SCO_AUDIO_STATE_CONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"SCO_AUDIO_STATE_CONNECTED");
+			"SCO_AUDIO_STATE_CONNECTED"
+		);
 	}
 	jint AudioManager::SCO_AUDIO_STATE_CONNECTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"SCO_AUDIO_STATE_CONNECTING");
+			"SCO_AUDIO_STATE_CONNECTING"
+		);
 	}
 	jint AudioManager::SCO_AUDIO_STATE_DISCONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"SCO_AUDIO_STATE_DISCONNECTED");
+			"SCO_AUDIO_STATE_DISCONNECTED"
+		);
 	}
 	jint AudioManager::SCO_AUDIO_STATE_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"SCO_AUDIO_STATE_ERROR");
+			"SCO_AUDIO_STATE_ERROR"
+		);
 	}
 	jint AudioManager::STREAM_ACCESSIBILITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"STREAM_ACCESSIBILITY");
+			"STREAM_ACCESSIBILITY"
+		);
 	}
 	jint AudioManager::STREAM_ALARM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"STREAM_ALARM");
+			"STREAM_ALARM"
+		);
 	}
 	jint AudioManager::STREAM_DTMF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"STREAM_DTMF");
+			"STREAM_DTMF"
+		);
 	}
 	jint AudioManager::STREAM_MUSIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"STREAM_MUSIC");
+			"STREAM_MUSIC"
+		);
 	}
 	jint AudioManager::STREAM_NOTIFICATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"STREAM_NOTIFICATION");
+			"STREAM_NOTIFICATION"
+		);
 	}
 	jint AudioManager::STREAM_RING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"STREAM_RING");
+			"STREAM_RING"
+		);
 	}
 	jint AudioManager::STREAM_SYSTEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"STREAM_SYSTEM");
+			"STREAM_SYSTEM"
+		);
 	}
 	jint AudioManager::STREAM_VOICE_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"STREAM_VOICE_CALL");
+			"STREAM_VOICE_CALL"
+		);
 	}
 	jint AudioManager::USE_DEFAULT_STREAM_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"USE_DEFAULT_STREAM_TYPE");
+			"USE_DEFAULT_STREAM_TYPE"
+		);
 	}
-	QAndroidJniObject AudioManager::VIBRATE_SETTING_CHANGED_ACTION()
+	jstring AudioManager::VIBRATE_SETTING_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioManager",
 			"VIBRATE_SETTING_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AudioManager::VIBRATE_SETTING_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"VIBRATE_SETTING_OFF");
+			"VIBRATE_SETTING_OFF"
+		);
 	}
 	jint AudioManager::VIBRATE_SETTING_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"VIBRATE_SETTING_ON");
+			"VIBRATE_SETTING_ON"
+		);
 	}
 	jint AudioManager::VIBRATE_SETTING_ONLY_SILENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"VIBRATE_SETTING_ONLY_SILENT");
+			"VIBRATE_SETTING_ONLY_SILENT"
+		);
 	}
 	jint AudioManager::VIBRATE_TYPE_NOTIFICATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"VIBRATE_TYPE_NOTIFICATION");
+			"VIBRATE_TYPE_NOTIFICATION"
+		);
 	}
 	jint AudioManager::VIBRATE_TYPE_RINGER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioManager",
-			"VIBRATE_TYPE_RINGER");
+			"VIBRATE_TYPE_RINGER"
+		);
 	}
 	
 	// Constructors
@@ -851,68 +946,60 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject AudioManager::getProperty(jstring arg0)
+	jstring AudioManager::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioManager::getParameters(jstring arg0)
+	jstring AudioManager::getParameters(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getParameters",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void AudioManager::setParameters(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setParameters",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	jboolean AudioManager::shouldVibrate(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldVibrate",
-			"(I)Z",
-			arg0);
-	}
-	void AudioManager::playSoundEffect(jint arg0, jfloat arg1)
+	void AudioManager::adjustVolume(jint arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
-			"playSoundEffect",
-			"(IF)V",
+			"adjustVolume",
+			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	void AudioManager::playSoundEffect(jint arg0)
+	jint AudioManager::getAllowedCapturePolicy()
 	{
-		__thiz.callMethod<void>(
-			"playSoundEffect",
-			"(I)V",
-			arg0);
-	}
-	void AudioManager::setMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMode",
-			"(I)V",
-			arg0);
+		return __thiz.callMethod<jint>(
+			"getAllowedCapturePolicy",
+			"()I"
+		);
 	}
 	void AudioManager::dispatchMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0)
 	{
 		__thiz.callMethod<void>(
 			"dispatchMediaKeyEvent",
 			"(Landroid/view/KeyEvent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean AudioManager::isVolumeFixed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isVolumeFixed",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AudioManager::adjustStreamVolume(jint arg0, jint arg1, jint arg2)
 	{
@@ -921,7 +1008,8 @@ namespace __jni_impl::android::media
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AudioManager::adjustSuggestedStreamVolume(jint arg0, jint arg1, jint arg2)
 	{
@@ -930,34 +1018,39 @@ namespace __jni_impl::android::media
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AudioManager::getRingerMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getRingerMode",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioManager::getStreamMaxVolume(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getStreamMaxVolume",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint AudioManager::getStreamMinVolume(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getStreamMinVolume",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint AudioManager::getStreamVolume(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getStreamVolume",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jfloat AudioManager::getStreamVolumeDb(jint arg0, jint arg1, jint arg2)
 	{
@@ -966,14 +1059,16 @@ namespace __jni_impl::android::media
 			"(III)F",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AudioManager::setRingerMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRingerMode",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AudioManager::setStreamVolume(jint arg0, jint arg1, jint arg2)
 	{
@@ -982,7 +1077,8 @@ namespace __jni_impl::android::media
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AudioManager::setStreamSolo(jint arg0, jboolean arg1)
 	{
@@ -990,7 +1086,8 @@ namespace __jni_impl::android::media
 			"setStreamSolo",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AudioManager::setStreamMute(jint arg0, jboolean arg1)
 	{
@@ -998,21 +1095,24 @@ namespace __jni_impl::android::media
 			"setStreamMute",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AudioManager::isStreamMute(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isStreamMute",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint AudioManager::getVibrateSetting(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getVibrateSetting",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	void AudioManager::setVibrateSetting(jint arg0, jint arg1)
 	{
@@ -1020,27 +1120,31 @@ namespace __jni_impl::android::media
 			"setVibrateSetting",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AudioManager::setSpeakerphoneOn(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSpeakerphoneOn",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AudioManager::isSpeakerphoneOn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSpeakerphoneOn",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AudioManager::setAllowedCapturePolicy(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAllowedCapturePolicy",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AudioManager::isOffloadedPlaybackSupported(__jni_impl::android::media::AudioFormat arg0, __jni_impl::android::media::AudioAttributes arg1)
 	{
@@ -1049,77 +1153,89 @@ namespace __jni_impl::android::media
 			"isOffloadedPlaybackSupported",
 			"(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean AudioManager::isBluetoothScoAvailableOffCall()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBluetoothScoAvailableOffCall",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AudioManager::startBluetoothSco()
 	{
 		__thiz.callMethod<void>(
 			"startBluetoothSco",
-			"()V");
+			"()V"
+		);
 	}
 	void AudioManager::stopBluetoothSco()
 	{
 		__thiz.callMethod<void>(
 			"stopBluetoothSco",
-			"()V");
+			"()V"
+		);
 	}
 	void AudioManager::setBluetoothScoOn(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBluetoothScoOn",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AudioManager::isBluetoothScoOn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBluetoothScoOn",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AudioManager::setBluetoothA2dpOn(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBluetoothA2dpOn",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AudioManager::isBluetoothA2dpOn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBluetoothA2dpOn",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AudioManager::setWiredHeadsetOn(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWiredHeadsetOn",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AudioManager::isWiredHeadsetOn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWiredHeadsetOn",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AudioManager::setMicrophoneMute(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMicrophoneMute",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AudioManager::isMicrophoneMute()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMicrophoneMute",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AudioManager::setRouting(jint arg0, jint arg1, jint arg2)
 	{
@@ -1128,45 +1244,52 @@ namespace __jni_impl::android::media
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AudioManager::getRouting(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getRouting",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AudioManager::isMusicActive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMusicActive",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint AudioManager::generateAudioSessionId()
 	{
 		return __thiz.callMethod<jint>(
 			"generateAudioSessionId",
-			"()I");
+			"()I"
+		);
 	}
 	void AudioManager::loadSoundEffects()
 	{
 		__thiz.callMethod<void>(
 			"loadSoundEffects",
-			"()V");
+			"()V"
+		);
 	}
 	void AudioManager::unloadSoundEffects()
 	{
 		__thiz.callMethod<void>(
 			"unloadSoundEffects",
-			"()V");
+			"()V"
+		);
 	}
 	jint AudioManager::requestAudioFocus(__jni_impl::android::media::AudioFocusRequest arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"requestAudioFocus",
 			"(Landroid/media/AudioFocusRequest;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint AudioManager::requestAudioFocus(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
 	{
@@ -1175,77 +1298,88 @@ namespace __jni_impl::android::media
 			"(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AudioManager::abandonAudioFocusRequest(__jni_impl::android::media::AudioFocusRequest arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"abandonAudioFocusRequest",
 			"(Landroid/media/AudioFocusRequest;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint AudioManager::abandonAudioFocus(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"abandonAudioFocus",
 			"(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I",
-			arg0.__jniObject().object());
-	}
-	void AudioManager::registerMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerMediaButtonEventReceiver",
-			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AudioManager::registerMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerMediaButtonEventReceiver",
 			"(Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void AudioManager::registerMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerMediaButtonEventReceiver",
+			"(Landroid/app/PendingIntent;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void AudioManager::unregisterMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterMediaButtonEventReceiver",
 			"(Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AudioManager::unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterMediaButtonEventReceiver",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AudioManager::registerRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerRemoteControlClient",
 			"(Landroid/media/RemoteControlClient;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AudioManager::unregisterRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterRemoteControlClient",
 			"(Landroid/media/RemoteControlClient;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean AudioManager::registerRemoteController(__jni_impl::android::media::RemoteController arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"registerRemoteController",
 			"(Landroid/media/RemoteController;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AudioManager::unregisterRemoteController(__jni_impl::android::media::RemoteController arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterRemoteController",
 			"(Landroid/media/RemoteController;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AudioManager::registerAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -1253,20 +1387,23 @@ namespace __jni_impl::android::media
 			"registerAudioPlaybackCallback",
 			"(Landroid/media/AudioManager$AudioPlaybackCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AudioManager::unregisterAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterAudioPlaybackCallback",
 			"(Landroid/media/AudioManager$AudioPlaybackCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AudioManager::getActivePlaybackConfigurations()
 	{
 		return __thiz.callObjectMethod(
 			"getActivePlaybackConfigurations",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	void AudioManager::registerAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -1274,27 +1411,31 @@ namespace __jni_impl::android::media
 			"registerAudioRecordingCallback",
 			"(Landroid/media/AudioManager$AudioRecordingCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AudioManager::unregisterAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterAudioRecordingCallback",
 			"(Landroid/media/AudioManager$AudioRecordingCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AudioManager::getActiveRecordingConfigurations()
 	{
 		return __thiz.callObjectMethod(
 			"getActiveRecordingConfigurations",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
-	QAndroidJniObject AudioManager::getDevices(jint arg0)
+	jarray AudioManager::getDevices(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDevices",
 			"(I)[Landroid/media/AudioDeviceInfo;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
 	void AudioManager::registerAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -1302,47 +1443,71 @@ namespace __jni_impl::android::media
 			"registerAudioDeviceCallback",
 			"(Landroid/media/AudioDeviceCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AudioManager::unregisterAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterAudioDeviceCallback",
 			"(Landroid/media/AudioDeviceCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AudioManager::getMicrophones()
 	{
 		return __thiz.callObjectMethod(
 			"getMicrophones",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean AudioManager::isHapticPlaybackSupported()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.media.AudioManager",
 			"isHapticPlaybackSupported",
-			"()Z");
+			"()Z"
+		);
 	}
-	jint AudioManager::getAllowedCapturePolicy()
+	jboolean AudioManager::shouldVibrate(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getAllowedCapturePolicy",
-			"()I");
+		return __thiz.callMethod<jboolean>(
+			"shouldVibrate",
+			"(I)Z",
+			arg0
+		);
 	}
-	void AudioManager::adjustVolume(jint arg0, jint arg1)
+	void AudioManager::playSoundEffect(jint arg0, jfloat arg1)
 	{
 		__thiz.callMethod<void>(
-			"adjustVolume",
-			"(II)V",
+			"playSoundEffect",
+			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void AudioManager::playSoundEffect(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"playSoundEffect",
+			"(I)V",
+			arg0
+		);
 	}
 	jint AudioManager::getMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getMode",
-			"()I");
+			"()I"
+		);
+	}
+	void AudioManager::setMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMode",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

@@ -25,13 +25,13 @@ namespace __jni_impl::android::nfc::tech
 		void connect();
 		void close();
 		QAndroidJniObject getTag();
-		QAndroidJniObject transceive(jbyteArray arg0);
+		jbyteArray transceive(jbyteArray arg0);
 		jint getMaxTransceiveLength();
 		void setTimeout(jint arg0);
 		jint getTimeout();
 		jboolean isConnected();
-		QAndroidJniObject getSystemCode();
-		QAndroidJniObject getManufacturer();
+		jbyteArray getSystemCode();
+		jbyteArray getManufacturer();
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -56,69 +56,80 @@ namespace __jni_impl::android::nfc::tech
 			"android.nfc.tech.NfcF",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NfcF;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void NfcF::connect()
 	{
 		__thiz.callMethod<void>(
 			"connect",
-			"()V");
+			"()V"
+		);
 	}
 	void NfcF::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject NfcF::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Landroid/nfc/Tag;");
+			"()Landroid/nfc/Tag;"
+		);
 	}
-	QAndroidJniObject NfcF::transceive(jbyteArray arg0)
+	jbyteArray NfcF::transceive(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"transceive",
 			"([B)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
 	jint NfcF::getMaxTransceiveLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxTransceiveLength",
-			"()I");
+			"()I"
+		);
 	}
 	void NfcF::setTimeout(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimeout",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint NfcF::getTimeout()
 	{
 		return __thiz.callMethod<jint>(
 			"getTimeout",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean NfcF::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject NfcF::getSystemCode()
+	jbyteArray NfcF::getSystemCode()
 	{
 		return __thiz.callObjectMethod(
 			"getSystemCode",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject NfcF::getManufacturer()
+	jbyteArray NfcF::getManufacturer()
 	{
 		return __thiz.callObjectMethod(
 			"getManufacturer",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::nfc::tech
 

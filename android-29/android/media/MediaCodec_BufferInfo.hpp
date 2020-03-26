@@ -32,22 +32,26 @@ namespace __jni_impl::android::media
 	jint MediaCodec_BufferInfo::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
 	jint MediaCodec_BufferInfo::offset()
 	{
 		return __thiz.getField<jint>(
-			"offset");
+			"offset"
+		);
 	}
 	jlong MediaCodec_BufferInfo::presentationTimeUs()
 	{
 		return __thiz.getField<jlong>(
-			"presentationTimeUs");
+			"presentationTimeUs"
+		);
 	}
 	jint MediaCodec_BufferInfo::size()
 	{
 		return __thiz.getField<jint>(
-			"size");
+			"size"
+		);
 	}
 	
 	// Constructors
@@ -67,7 +71,8 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::media
 

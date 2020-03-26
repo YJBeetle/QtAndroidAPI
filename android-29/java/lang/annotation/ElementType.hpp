@@ -29,7 +29,7 @@ namespace __jni_impl::java::lang::annotation
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::lang::annotation
@@ -43,77 +43,88 @@ namespace __jni_impl::java::lang::annotation
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"TYPE",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::FIELD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"FIELD",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::METHOD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"METHOD",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::PARAMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"PARAMETER",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::CONSTRUCTOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"CONSTRUCTOR",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::LOCAL_VARIABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"LOCAL_VARIABLE",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::ANNOTATION_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"ANNOTATION_TYPE",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::PACKAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"PACKAGE",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::TYPE_PARAMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"TYPE_PARAMETER",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::TYPE_USE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"TYPE_USE",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	QAndroidJniObject ElementType::MODULE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.ElementType",
 			"MODULE",
-			"Ljava/lang/annotation/ElementType;");
+			"Ljava/lang/annotation/ElementType;"
+		);
 	}
 	
 	// Constructors
@@ -125,12 +136,13 @@ namespace __jni_impl::java::lang::annotation
 	}
 	
 	// Methods
-	QAndroidJniObject ElementType::values()
+	jarray ElementType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.annotation.ElementType",
 			"values",
-			"()[Ljava/lang/annotation/ElementType;");
+			"()[Ljava/lang/annotation/ElementType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ElementType::valueOf(jstring arg0)
 	{
@@ -138,7 +150,8 @@ namespace __jni_impl::java::lang::annotation
 			"java.lang.annotation.ElementType",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/annotation/ElementType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang::annotation
 

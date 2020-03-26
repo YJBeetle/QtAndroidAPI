@@ -19,7 +19,7 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_MbcBand arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void setThreshold(jfloat arg0);
 		jfloat getAttackTime();
 		void setAttackTime(jfloat arg0);
@@ -73,128 +73,147 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject DynamicsProcessing_MbcBand::toString()
+	jstring DynamicsProcessing_MbcBand::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void DynamicsProcessing_MbcBand::setThreshold(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setThreshold",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat DynamicsProcessing_MbcBand::getAttackTime()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getAttackTime",
-			"()F");
+			"()F"
+		);
 	}
 	void DynamicsProcessing_MbcBand::setAttackTime(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAttackTime",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat DynamicsProcessing_MbcBand::getReleaseTime()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getReleaseTime",
-			"()F");
+			"()F"
+		);
 	}
 	void DynamicsProcessing_MbcBand::setReleaseTime(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setReleaseTime",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat DynamicsProcessing_MbcBand::getRatio()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getRatio",
-			"()F");
+			"()F"
+		);
 	}
 	void DynamicsProcessing_MbcBand::setRatio(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRatio",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat DynamicsProcessing_MbcBand::getThreshold()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getThreshold",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat DynamicsProcessing_MbcBand::getKneeWidth()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getKneeWidth",
-			"()F");
+			"()F"
+		);
 	}
 	void DynamicsProcessing_MbcBand::setKneeWidth(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setKneeWidth",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat DynamicsProcessing_MbcBand::getNoiseGateThreshold()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getNoiseGateThreshold",
-			"()F");
+			"()F"
+		);
 	}
 	void DynamicsProcessing_MbcBand::setNoiseGateThreshold(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNoiseGateThreshold",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat DynamicsProcessing_MbcBand::getExpanderRatio()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getExpanderRatio",
-			"()F");
+			"()F"
+		);
 	}
 	void DynamicsProcessing_MbcBand::setExpanderRatio(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setExpanderRatio",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat DynamicsProcessing_MbcBand::getPreGain()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getPreGain",
-			"()F");
+			"()F"
+		);
 	}
 	void DynamicsProcessing_MbcBand::setPreGain(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPreGain",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat DynamicsProcessing_MbcBand::getPostGain()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getPostGain",
-			"()F");
+			"()F"
+		);
 	}
 	void DynamicsProcessing_MbcBand::setPostGain(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPostGain",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

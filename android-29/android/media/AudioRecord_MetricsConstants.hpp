@@ -12,11 +12,11 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CHANNELS();
-		static QAndroidJniObject ENCODING();
-		static QAndroidJniObject LATENCY();
-		static QAndroidJniObject SAMPLERATE();
-		static QAndroidJniObject SOURCE();
+		static jstring CHANNELS();
+		static jstring ENCODING();
+		static jstring LATENCY();
+		static jstring SAMPLERATE();
+		static jstring SOURCE();
 		
 		// Constructors
 		void __constructor();
@@ -29,40 +29,45 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject AudioRecord_MetricsConstants::CHANNELS()
+	jstring AudioRecord_MetricsConstants::CHANNELS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"CHANNELS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioRecord_MetricsConstants::ENCODING()
+	jstring AudioRecord_MetricsConstants::ENCODING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"ENCODING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioRecord_MetricsConstants::LATENCY()
+	jstring AudioRecord_MetricsConstants::LATENCY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"LATENCY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioRecord_MetricsConstants::SAMPLERATE()
+	jstring AudioRecord_MetricsConstants::SAMPLERATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"SAMPLERATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioRecord_MetricsConstants::SOURCE()
+	jstring AudioRecord_MetricsConstants::SOURCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.AudioRecord$MetricsConstants",
 			"SOURCE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

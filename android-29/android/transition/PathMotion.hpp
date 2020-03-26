@@ -62,7 +62,8 @@ namespace __jni_impl::android::transition
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::transition
 

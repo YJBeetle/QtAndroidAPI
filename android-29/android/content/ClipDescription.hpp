@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class PersistableBundle;
+	class Parcel;
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class PersistableBundle;
 }
 
 namespace __jni_impl::android::content
@@ -21,33 +21,33 @@ namespace __jni_impl::android::content
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject MIMETYPE_TEXT_HTML();
-		static QAndroidJniObject MIMETYPE_TEXT_INTENT();
-		static QAndroidJniObject MIMETYPE_TEXT_PLAIN();
-		static QAndroidJniObject MIMETYPE_TEXT_URILIST();
+		static jstring MIMETYPE_TEXT_HTML();
+		static jstring MIMETYPE_TEXT_INTENT();
+		static jstring MIMETYPE_TEXT_PLAIN();
+		static jstring MIMETYPE_TEXT_URILIST();
 		
 		// Constructors
 		void __constructor(jstring arg0, jarray arg1);
 		void __constructor(__jni_impl::android::content::ClipDescription arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getMimeType(jint arg0);
-		QAndroidJniObject getLabel();
-		jlong getTimestamp();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void setExtras(__jni_impl::android::os::PersistableBundle arg0);
-		jboolean hasMimeType(jstring arg0);
+		QAndroidJniObject getExtras();
 		static jboolean compareMimeTypes(jstring arg0, jstring arg1);
-		QAndroidJniObject filterMimeTypes(jstring arg0);
+		jarray filterMimeTypes(jstring arg0);
 		jint getMimeTypeCount();
+		void setExtras(__jni_impl::android::os::PersistableBundle arg0);
+		jstring getLabel();
+		jstring getMimeType(jint arg0);
+		jboolean hasMimeType(jstring arg0);
+		jlong getTimestamp();
 	};
 } // namespace __jni_impl::android::content
 
-#include "../os/PersistableBundle.hpp"
 #include "../os/Parcel.hpp"
+#include "../os/PersistableBundle.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -57,35 +57,40 @@ namespace __jni_impl::android::content
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ClipDescription",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject ClipDescription::MIMETYPE_TEXT_HTML()
+	jstring ClipDescription::MIMETYPE_TEXT_HTML()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_HTML",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ClipDescription::MIMETYPE_TEXT_INTENT()
+	jstring ClipDescription::MIMETYPE_TEXT_INTENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_INTENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ClipDescription::MIMETYPE_TEXT_PLAIN()
+	jstring ClipDescription::MIMETYPE_TEXT_PLAIN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_PLAIN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ClipDescription::MIMETYPE_TEXT_URILIST()
+	jstring ClipDescription::MIMETYPE_TEXT_URILIST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ClipDescription",
 			"MIMETYPE_TEXT_URILIST",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -106,42 +111,19 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	QAndroidJniObject ClipDescription::toString()
+	jstring ClipDescription::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject ClipDescription::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/PersistableBundle;");
-	}
-	QAndroidJniObject ClipDescription::getMimeType(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getMimeType",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject ClipDescription::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;");
-	}
-	jlong ClipDescription::getTimestamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimestamp",
-			"()J");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ClipDescription::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ClipDescription::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -149,21 +131,15 @@ namespace __jni_impl::android::content
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	void ClipDescription::setExtras(__jni_impl::android::os::PersistableBundle arg0)
+	QAndroidJniObject ClipDescription::getExtras()
 	{
-		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/PersistableBundle;)V",
-			arg0.__jniObject().object());
-	}
-	jboolean ClipDescription::hasMimeType(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasMimeType",
-			"(Ljava/lang/String;)Z",
-			arg0);
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/PersistableBundle;"
+		);
 	}
 	jboolean ClipDescription::compareMimeTypes(jstring arg0, jstring arg1)
 	{
@@ -172,20 +148,61 @@ namespace __jni_impl::android::content
 			"compareMimeTypes",
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject ClipDescription::filterMimeTypes(jstring arg0)
+	jarray ClipDescription::filterMimeTypes(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"filterMimeTypes",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jarray>();
 	}
 	jint ClipDescription::getMimeTypeCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getMimeTypeCount",
-			"()I");
+			"()I"
+		);
+	}
+	void ClipDescription::setExtras(__jni_impl::android::os::PersistableBundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtras",
+			"(Landroid/os/PersistableBundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring ClipDescription::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring ClipDescription::getMimeType(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getMimeType",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jboolean ClipDescription::hasMimeType(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasMimeType",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jlong ClipDescription::getTimestamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimestamp",
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::content
 

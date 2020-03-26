@@ -19,7 +19,7 @@ namespace __jni_impl::android::hardware
 		// Methods
 		void transmit(jint arg0, jintArray arg1);
 		jboolean hasIrEmitter();
-		QAndroidJniObject getCarrierFrequencies();
+		jarray getCarrierFrequencies();
 	};
 } // namespace __jni_impl::android::hardware
 
@@ -43,19 +43,22 @@ namespace __jni_impl::android::hardware
 			"transmit",
 			"(I[I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean ConsumerIrManager::hasIrEmitter()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasIrEmitter",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject ConsumerIrManager::getCarrierFrequencies()
+	jarray ConsumerIrManager::getCarrierFrequencies()
 	{
 		return __thiz.callObjectMethod(
 			"getCarrierFrequencies",
-			"()[Landroid/hardware/ConsumerIrManager$CarrierFrequencyRange;");
+			"()[Landroid/hardware/ConsumerIrManager$CarrierFrequencyRange;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::hardware
 

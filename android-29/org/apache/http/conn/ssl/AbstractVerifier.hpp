@@ -30,8 +30,8 @@ namespace __jni_impl::org::apache::http::conn::ssl
 		jboolean verify(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		void verify(jstring arg0, __jni_impl::javax::net::ssl::SSLSocket arg1);
 		static jboolean acceptableCountryWildcard(jstring arg0);
-		static QAndroidJniObject getCNs(__jni_impl::java::security::cert::X509Certificate arg0);
-		static QAndroidJniObject getDNSSubjectAlts(__jni_impl::java::security::cert::X509Certificate arg0);
+		static jarray getCNs(__jni_impl::java::security::cert::X509Certificate arg0);
+		static jarray getDNSSubjectAlts(__jni_impl::java::security::cert::X509Certificate arg0);
 		static jint countDots(jstring arg0);
 	};
 } // namespace __jni_impl::org::apache::http::conn::ssl
@@ -60,7 +60,8 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void AbstractVerifier::verify(jstring arg0, __jni_impl::java::security::cert::X509Certificate arg1)
 	{
@@ -68,7 +69,8 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			"verify",
 			"(Ljava/lang/String;Ljava/security/cert/X509Certificate;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean AbstractVerifier::verify(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -76,7 +78,8 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			"verify",
 			"(Ljava/lang/String;Ljavax/net/ssl/SSLSession;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AbstractVerifier::verify(jstring arg0, __jni_impl::javax::net::ssl::SSLSocket arg1)
 	{
@@ -84,7 +87,8 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			"verify",
 			"(Ljava/lang/String;Ljavax/net/ssl/SSLSocket;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean AbstractVerifier::acceptableCountryWildcard(jstring arg0)
 	{
@@ -92,23 +96,26 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"acceptableCountryWildcard",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AbstractVerifier::getCNs(__jni_impl::java::security::cert::X509Certificate arg0)
+	jarray AbstractVerifier::getCNs(__jni_impl::java::security::cert::X509Certificate arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"getCNs",
 			"(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jarray>();
 	}
-	QAndroidJniObject AbstractVerifier::getDNSSubjectAlts(__jni_impl::java::security::cert::X509Certificate arg0)
+	jarray AbstractVerifier::getDNSSubjectAlts(__jni_impl::java::security::cert::X509Certificate arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"getDNSSubjectAlts",
 			"(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jarray>();
 	}
 	jint AbstractVerifier::countDots(jstring arg0)
 	{
@@ -116,7 +123,8 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"countDots",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::org::apache::http::conn::ssl
 

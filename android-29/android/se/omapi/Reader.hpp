@@ -25,7 +25,7 @@ namespace __jni_impl::android::se::omapi
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		QAndroidJniObject openSession();
 		jboolean isSecureElementPresent();
 		QAndroidJniObject getSEService();
@@ -49,35 +49,40 @@ namespace __jni_impl::android::se::omapi
 	}
 	
 	// Methods
-	QAndroidJniObject Reader::getName()
+	jstring Reader::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Reader::openSession()
 	{
 		return __thiz.callObjectMethod(
 			"openSession",
-			"()Landroid/se/omapi/Session;");
+			"()Landroid/se/omapi/Session;"
+		);
 	}
 	jboolean Reader::isSecureElementPresent()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSecureElementPresent",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Reader::getSEService()
 	{
 		return __thiz.callObjectMethod(
 			"getSEService",
-			"()Landroid/se/omapi/SEService;");
+			"()Landroid/se/omapi/SEService;"
+		);
 	}
 	void Reader::closeSessions()
 	{
 		__thiz.callMethod<void>(
 			"closeSessions",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::se::omapi
 

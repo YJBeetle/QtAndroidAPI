@@ -18,11 +18,11 @@ namespace __jni_impl::android::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
+		static QAndroidJniObject parseSizeF(jstring arg0);
 		jfloat getWidth();
 		jfloat getHeight();
-		static QAndroidJniObject parseSizeF(jstring arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -47,31 +47,22 @@ namespace __jni_impl::android::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SizeF::toString()
+	jstring SizeF::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SizeF::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jfloat SizeF::getWidth()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getWidth",
-			"()F");
-	}
-	jfloat SizeF::getHeight()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getHeight",
-			"()F");
+			"()I"
+		);
 	}
 	QAndroidJniObject SizeF::parseSizeF(jstring arg0)
 	{
@@ -79,7 +70,22 @@ namespace __jni_impl::android::util
 			"android.util.SizeF",
 			"parseSizeF",
 			"(Ljava/lang/String;)Landroid/util/SizeF;",
-			arg0);
+			arg0
+		);
+	}
+	jfloat SizeF::getWidth()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getWidth",
+			"()F"
+		);
+	}
+	jfloat SizeF::getHeight()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getHeight",
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::util
 

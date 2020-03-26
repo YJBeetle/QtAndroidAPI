@@ -19,7 +19,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -30,12 +30,14 @@ namespace __jni_impl::android::icu::text
 	jint UnicodeSet_EntryRange::codepoint()
 	{
 		return __thiz.getField<jint>(
-			"codepoint");
+			"codepoint"
+		);
 	}
 	jint UnicodeSet_EntryRange::codepointEnd()
 	{
 		return __thiz.getField<jint>(
-			"codepointEnd");
+			"codepointEnd"
+		);
 	}
 	
 	// Constructors
@@ -47,11 +49,12 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject UnicodeSet_EntryRange::toString()
+	jstring UnicodeSet_EntryRange::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text
 

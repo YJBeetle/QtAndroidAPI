@@ -32,22 +32,26 @@ namespace __jni_impl::android::renderscript
 	jint Int4::w()
 	{
 		return __thiz.getField<jint>(
-			"w");
+			"w"
+		);
 	}
 	jint Int4::x()
 	{
 		return __thiz.getField<jint>(
-			"x");
+			"x"
+		);
 	}
 	jint Int4::y()
 	{
 		return __thiz.getField<jint>(
-			"y");
+			"y"
+		);
 	}
 	jint Int4::z()
 	{
 		return __thiz.getField<jint>(
-			"z");
+			"z"
+		);
 	}
 	
 	// Constructors

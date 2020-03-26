@@ -20,11 +20,11 @@ namespace __jni_impl::android::nfc::tech
 	{
 	public:
 		// Fields
-		static QAndroidJniObject MIFARE_CLASSIC();
-		static QAndroidJniObject NFC_FORUM_TYPE_1();
-		static QAndroidJniObject NFC_FORUM_TYPE_2();
-		static QAndroidJniObject NFC_FORUM_TYPE_3();
-		static QAndroidJniObject NFC_FORUM_TYPE_4();
+		static jstring MIFARE_CLASSIC();
+		static jstring NFC_FORUM_TYPE_1();
+		static jstring NFC_FORUM_TYPE_2();
+		static jstring NFC_FORUM_TYPE_3();
+		static jstring NFC_FORUM_TYPE_4();
 		
 		// Constructors
 		void __constructor();
@@ -33,7 +33,7 @@ namespace __jni_impl::android::nfc::tech
 		static QAndroidJniObject get(__jni_impl::android::nfc::Tag arg0);
 		void connect();
 		void close();
-		QAndroidJniObject getType();
+		jstring getType();
 		jboolean isWritable();
 		QAndroidJniObject getTag();
 		jboolean isConnected();
@@ -52,40 +52,45 @@ namespace __jni_impl::android::nfc::tech
 namespace __jni_impl::android::nfc::tech
 {
 	// Fields
-	QAndroidJniObject Ndef::MIFARE_CLASSIC()
+	jstring Ndef::MIFARE_CLASSIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"MIFARE_CLASSIC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Ndef::NFC_FORUM_TYPE_1()
+	jstring Ndef::NFC_FORUM_TYPE_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_1",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Ndef::NFC_FORUM_TYPE_2()
+	jstring Ndef::NFC_FORUM_TYPE_2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_2",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Ndef::NFC_FORUM_TYPE_3()
+	jstring Ndef::NFC_FORUM_TYPE_3()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_3",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Ndef::NFC_FORUM_TYPE_4()
+	jstring Ndef::NFC_FORUM_TYPE_4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.tech.Ndef",
 			"NFC_FORUM_TYPE_4",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -103,80 +108,93 @@ namespace __jni_impl::android::nfc::tech
 			"android.nfc.tech.Ndef",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/Ndef;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Ndef::connect()
 	{
 		__thiz.callMethod<void>(
 			"connect",
-			"()V");
+			"()V"
+		);
 	}
 	void Ndef::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject Ndef::getType()
+	jstring Ndef::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Ndef::isWritable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWritable",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Ndef::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Landroid/nfc/Tag;");
+			"()Landroid/nfc/Tag;"
+		);
 	}
 	jboolean Ndef::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Ndef::getCachedNdefMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getCachedNdefMessage",
-			"()Landroid/nfc/NdefMessage;");
+			"()Landroid/nfc/NdefMessage;"
+		);
 	}
 	jint Ndef::getMaxSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxSize",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Ndef::getNdefMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getNdefMessage",
-			"()Landroid/nfc/NdefMessage;");
+			"()Landroid/nfc/NdefMessage;"
+		);
 	}
 	void Ndef::writeNdefMessage(__jni_impl::android::nfc::NdefMessage arg0)
 	{
 		__thiz.callMethod<void>(
 			"writeNdefMessage",
 			"(Landroid/nfc/NdefMessage;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Ndef::canMakeReadOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canMakeReadOnly",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Ndef::makeReadOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"makeReadOnly",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::nfc::tech
 

@@ -24,11 +24,11 @@ namespace __jni_impl::android::nfc::cardemulation
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_CHANGE_DEFAULT();
-		static QAndroidJniObject CATEGORY_OTHER();
-		static QAndroidJniObject CATEGORY_PAYMENT();
-		static QAndroidJniObject EXTRA_CATEGORY();
-		static QAndroidJniObject EXTRA_SERVICE_COMPONENT();
+		static jstring ACTION_CHANGE_DEFAULT();
+		static jstring CATEGORY_OTHER();
+		static jstring CATEGORY_PAYMENT();
+		static jstring EXTRA_CATEGORY();
+		static jstring EXTRA_SERVICE_COMPONENT();
 		static jint SELECTION_MODE_ALWAYS_ASK();
 		static jint SELECTION_MODE_ASK_IF_CONFLICT();
 		static jint SELECTION_MODE_PREFER_DEFAULT();
@@ -60,58 +60,66 @@ namespace __jni_impl::android::nfc::cardemulation
 namespace __jni_impl::android::nfc::cardemulation
 {
 	// Fields
-	QAndroidJniObject CardEmulation::ACTION_CHANGE_DEFAULT()
+	jstring CardEmulation::ACTION_CHANGE_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"ACTION_CHANGE_DEFAULT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CardEmulation::CATEGORY_OTHER()
+	jstring CardEmulation::CATEGORY_OTHER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"CATEGORY_OTHER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CardEmulation::CATEGORY_PAYMENT()
+	jstring CardEmulation::CATEGORY_PAYMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"CATEGORY_PAYMENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CardEmulation::EXTRA_CATEGORY()
+	jstring CardEmulation::EXTRA_CATEGORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"EXTRA_CATEGORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CardEmulation::EXTRA_SERVICE_COMPONENT()
+	jstring CardEmulation::EXTRA_SERVICE_COMPONENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.cardemulation.CardEmulation",
 			"EXTRA_SERVICE_COMPONENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CardEmulation::SELECTION_MODE_ALWAYS_ASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.cardemulation.CardEmulation",
-			"SELECTION_MODE_ALWAYS_ASK");
+			"SELECTION_MODE_ALWAYS_ASK"
+		);
 	}
 	jint CardEmulation::SELECTION_MODE_ASK_IF_CONFLICT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.cardemulation.CardEmulation",
-			"SELECTION_MODE_ASK_IF_CONFLICT");
+			"SELECTION_MODE_ASK_IF_CONFLICT"
+		);
 	}
 	jint CardEmulation::SELECTION_MODE_PREFER_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.nfc.cardemulation.CardEmulation",
-			"SELECTION_MODE_PREFER_DEFAULT");
+			"SELECTION_MODE_PREFER_DEFAULT"
+		);
 	}
 	
 	// Constructors
@@ -129,7 +137,8 @@ namespace __jni_impl::android::nfc::cardemulation
 			"android.nfc.cardemulation.CardEmulation",
 			"getInstance",
 			"(Landroid/nfc/NfcAdapter;)Landroid/nfc/cardemulation/CardEmulation;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean CardEmulation::isDefaultServiceForCategory(__jni_impl::android::content::ComponentName arg0, jstring arg1)
 	{
@@ -137,7 +146,8 @@ namespace __jni_impl::android::nfc::cardemulation
 			"isDefaultServiceForCategory",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean CardEmulation::isDefaultServiceForAid(__jni_impl::android::content::ComponentName arg0, jstring arg1)
 	{
@@ -145,21 +155,24 @@ namespace __jni_impl::android::nfc::cardemulation
 			"isDefaultServiceForAid",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean CardEmulation::categoryAllowsForegroundPreference(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"categoryAllowsForegroundPreference",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint CardEmulation::getSelectionModeForCategory(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getSelectionModeForCategory",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CardEmulation::registerAidsForService(__jni_impl::android::content::ComponentName arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -168,14 +181,16 @@ namespace __jni_impl::android::nfc::cardemulation
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean CardEmulation::unsetOffHostForService(__jni_impl::android::content::ComponentName arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"unsetOffHostForService",
 			"(Landroid/content/ComponentName;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean CardEmulation::setOffHostForService(__jni_impl::android::content::ComponentName arg0, jstring arg1)
 	{
@@ -183,7 +198,8 @@ namespace __jni_impl::android::nfc::cardemulation
 			"setOffHostForService",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject CardEmulation::getAidsForService(__jni_impl::android::content::ComponentName arg0, jstring arg1)
 	{
@@ -191,7 +207,8 @@ namespace __jni_impl::android::nfc::cardemulation
 			"getAidsForService",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Ljava/util/List;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean CardEmulation::removeAidsForService(__jni_impl::android::content::ComponentName arg0, jstring arg1)
 	{
@@ -199,7 +216,8 @@ namespace __jni_impl::android::nfc::cardemulation
 			"removeAidsForService",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean CardEmulation::setPreferredService(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::ComponentName arg1)
 	{
@@ -207,20 +225,23 @@ namespace __jni_impl::android::nfc::cardemulation
 			"setPreferredService",
 			"(Landroid/app/Activity;Landroid/content/ComponentName;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean CardEmulation::unsetPreferredService(__jni_impl::android::app::Activity arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"unsetPreferredService",
 			"(Landroid/app/Activity;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean CardEmulation::supportsAidPrefixRegistration()
 	{
 		return __thiz.callMethod<jboolean>(
 			"supportsAidPrefixRegistration",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::nfc::cardemulation
 

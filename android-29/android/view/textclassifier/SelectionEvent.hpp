@@ -11,15 +11,15 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::view::textclassifier
 {
-	class TextClassificationSessionId;
-}
-namespace __jni_impl::android::view::textclassifier
-{
 	class TextClassification;
 }
 namespace __jni_impl::android::view::textclassifier
 {
 	class TextSelection;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextClassificationSessionId;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -54,40 +54,40 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getPackageName();
-		jlong getEventTime();
-		QAndroidJniObject getSessionId();
-		jint getStart();
+		jstring getPackageName();
 		jint getEnd();
+		jstring getResultId();
+		jint getEventIndex();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject createSelectionStartedEvent(jint arg0, jint arg1);
 		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextClassification arg2);
-		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1);
 		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextSelection arg2);
-		static QAndroidJniObject createSelectionActionEvent(jint arg0, jint arg1, jint arg2);
+		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1);
 		static QAndroidJniObject createSelectionActionEvent(jint arg0, jint arg1, jint arg2, __jni_impl::android::view::textclassifier::TextClassification arg3);
-		QAndroidJniObject getEntityType();
-		QAndroidJniObject getWidgetType();
-		QAndroidJniObject getWidgetVersion();
+		static QAndroidJniObject createSelectionActionEvent(jint arg0, jint arg1, jint arg2);
+		jstring getEntityType();
+		jstring getWidgetType();
+		jstring getWidgetVersion();
 		jint getInvocationMethod();
 		jlong getDurationSinceSessionStart();
 		jlong getDurationSincePreviousEvent();
 		jint getSmartStart();
 		jint getSmartEnd();
 		static jboolean isTerminal(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getEventType();
-		QAndroidJniObject getResultId();
-		jint getEventIndex();
+		jlong getEventTime();
+		QAndroidJniObject getSessionId();
+		jint getStart();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Parcel.hpp"
-#include "TextClassificationSessionId.hpp"
 #include "TextClassification.hpp"
 #include "TextSelection.hpp"
+#include "TextClassificationSessionId.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -96,122 +96,142 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_ABANDON");
+			"ACTION_ABANDON"
+		);
 	}
 	jint SelectionEvent::ACTION_COPY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_COPY");
+			"ACTION_COPY"
+		);
 	}
 	jint SelectionEvent::ACTION_CUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_CUT");
+			"ACTION_CUT"
+		);
 	}
 	jint SelectionEvent::ACTION_DRAG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_DRAG");
+			"ACTION_DRAG"
+		);
 	}
 	jint SelectionEvent::ACTION_OTHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_OTHER");
+			"ACTION_OTHER"
+		);
 	}
 	jint SelectionEvent::ACTION_OVERTYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_OVERTYPE");
+			"ACTION_OVERTYPE"
+		);
 	}
 	jint SelectionEvent::ACTION_PASTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_PASTE");
+			"ACTION_PASTE"
+		);
 	}
 	jint SelectionEvent::ACTION_RESET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_RESET");
+			"ACTION_RESET"
+		);
 	}
 	jint SelectionEvent::ACTION_SELECT_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_SELECT_ALL");
+			"ACTION_SELECT_ALL"
+		);
 	}
 	jint SelectionEvent::ACTION_SHARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_SHARE");
+			"ACTION_SHARE"
+		);
 	}
 	jint SelectionEvent::ACTION_SMART_SHARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"ACTION_SMART_SHARE");
+			"ACTION_SMART_SHARE"
+		);
 	}
 	QAndroidJniObject SelectionEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.SelectionEvent",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SelectionEvent::EVENT_AUTO_SELECTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"EVENT_AUTO_SELECTION");
+			"EVENT_AUTO_SELECTION"
+		);
 	}
 	jint SelectionEvent::EVENT_SELECTION_MODIFIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"EVENT_SELECTION_MODIFIED");
+			"EVENT_SELECTION_MODIFIED"
+		);
 	}
 	jint SelectionEvent::EVENT_SELECTION_STARTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"EVENT_SELECTION_STARTED");
+			"EVENT_SELECTION_STARTED"
+		);
 	}
 	jint SelectionEvent::EVENT_SMART_SELECTION_MULTI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"EVENT_SMART_SELECTION_MULTI");
+			"EVENT_SMART_SELECTION_MULTI"
+		);
 	}
 	jint SelectionEvent::EVENT_SMART_SELECTION_SINGLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"EVENT_SMART_SELECTION_SINGLE");
+			"EVENT_SMART_SELECTION_SINGLE"
+		);
 	}
 	jint SelectionEvent::INVOCATION_LINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"INVOCATION_LINK");
+			"INVOCATION_LINK"
+		);
 	}
 	jint SelectionEvent::INVOCATION_MANUAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"INVOCATION_MANUAL");
+			"INVOCATION_MANUAL"
+		);
 	}
 	jint SelectionEvent::INVOCATION_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.textclassifier.SelectionEvent",
-			"INVOCATION_UNKNOWN");
+			"INVOCATION_UNKNOWN"
+		);
 	}
 	
 	// Constructors
@@ -228,49 +248,66 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SelectionEvent::toString()
+	jstring SelectionEvent::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SelectionEvent::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SelectionEvent::getPackageName()
+	jstring SelectionEvent::getPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageName",
-			"()Ljava/lang/String;");
-	}
-	jlong SelectionEvent::getEventTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getEventTime",
-			"()J");
-	}
-	QAndroidJniObject SelectionEvent::getSessionId()
-	{
-		return __thiz.callObjectMethod(
-			"getSessionId",
-			"()Landroid/view/textclassifier/TextClassificationSessionId;");
-	}
-	jint SelectionEvent::getStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getStart",
-			"()I");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SelectionEvent::getEnd()
 	{
 		return __thiz.callMethod<jint>(
 			"getEnd",
-			"()I");
+			"()I"
+		);
+	}
+	jstring SelectionEvent::getResultId()
+	{
+		return __thiz.callObjectMethod(
+			"getResultId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint SelectionEvent::getEventIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getEventIndex",
+			"()I"
+		);
+	}
+	jint SelectionEvent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void SelectionEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	QAndroidJniObject SelectionEvent::createSelectionStartedEvent(jint arg0, jint arg1)
 	{
@@ -279,7 +316,8 @@ namespace __jni_impl::android::view::textclassifier
 			"createSelectionStartedEvent",
 			"(II)Landroid/view/textclassifier/SelectionEvent;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextClassification arg2)
 	{
@@ -289,16 +327,8 @@ namespace __jni_impl::android::view::textclassifier
 			"(IILandroid/view/textclassifier/TextClassification;)Landroid/view/textclassifier/SelectionEvent;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.textclassifier.SelectionEvent",
-			"createSelectionModifiedEvent",
-			"(II)Landroid/view/textclassifier/SelectionEvent;",
-			arg0,
-			arg1);
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextSelection arg2)
 	{
@@ -308,17 +338,18 @@ namespace __jni_impl::android::view::textclassifier
 			"(IILandroid/view/textclassifier/TextSelection;)Landroid/view/textclassifier/SelectionEvent;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject SelectionEvent::createSelectionActionEvent(jint arg0, jint arg1, jint arg2)
+	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.textclassifier.SelectionEvent",
-			"createSelectionActionEvent",
-			"(III)Landroid/view/textclassifier/SelectionEvent;",
+			"createSelectionModifiedEvent",
+			"(II)Landroid/view/textclassifier/SelectionEvent;",
 			arg0,
-			arg1,
-			arg2);
+			arg1
+		);
 	}
 	QAndroidJniObject SelectionEvent::createSelectionActionEvent(jint arg0, jint arg1, jint arg2, __jni_impl::android::view::textclassifier::TextClassification arg3)
 	{
@@ -329,55 +360,75 @@ namespace __jni_impl::android::view::textclassifier
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
-	QAndroidJniObject SelectionEvent::getEntityType()
+	QAndroidJniObject SelectionEvent::createSelectionActionEvent(jint arg0, jint arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.textclassifier.SelectionEvent",
+			"createSelectionActionEvent",
+			"(III)Landroid/view/textclassifier/SelectionEvent;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jstring SelectionEvent::getEntityType()
 	{
 		return __thiz.callObjectMethod(
 			"getEntityType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SelectionEvent::getWidgetType()
+	jstring SelectionEvent::getWidgetType()
 	{
 		return __thiz.callObjectMethod(
 			"getWidgetType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SelectionEvent::getWidgetVersion()
+	jstring SelectionEvent::getWidgetVersion()
 	{
 		return __thiz.callObjectMethod(
 			"getWidgetVersion",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SelectionEvent::getInvocationMethod()
 	{
 		return __thiz.callMethod<jint>(
 			"getInvocationMethod",
-			"()I");
+			"()I"
+		);
 	}
 	jlong SelectionEvent::getDurationSinceSessionStart()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDurationSinceSessionStart",
-			"()J");
+			"()J"
+		);
 	}
 	jlong SelectionEvent::getDurationSincePreviousEvent()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDurationSincePreviousEvent",
-			"()J");
+			"()J"
+		);
 	}
 	jint SelectionEvent::getSmartStart()
 	{
 		return __thiz.callMethod<jint>(
 			"getSmartStart",
-			"()I");
+			"()I"
+		);
 	}
 	jint SelectionEvent::getSmartEnd()
 	{
 		return __thiz.callMethod<jint>(
 			"getSmartEnd",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean SelectionEvent::isTerminal(jint arg0)
 	{
@@ -385,39 +436,36 @@ namespace __jni_impl::android::view::textclassifier
 			"android.view.textclassifier.SelectionEvent",
 			"isTerminal",
 			"(I)Z",
-			arg0);
-	}
-	jint SelectionEvent::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void SelectionEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			arg0
+		);
 	}
 	jint SelectionEvent::getEventType()
 	{
 		return __thiz.callMethod<jint>(
 			"getEventType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SelectionEvent::getResultId()
+	jlong SelectionEvent::getEventTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getEventTime",
+			"()J"
+		);
+	}
+	QAndroidJniObject SelectionEvent::getSessionId()
 	{
 		return __thiz.callObjectMethod(
-			"getResultId",
-			"()Ljava/lang/String;");
+			"getSessionId",
+			"()Landroid/view/textclassifier/TextClassificationSessionId;"
+		);
 	}
-	jint SelectionEvent::getEventIndex()
+	jint SelectionEvent::getStart()
 	{
 		return __thiz.callMethod<jint>(
-			"getEventIndex",
-			"()I");
+			"getStart",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

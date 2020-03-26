@@ -117,52 +117,60 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void InsetDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint InsetDrawable::getOpacity()
 	{
 		return __thiz.callMethod<jint>(
 			"getOpacity",
-			"()I");
+			"()I"
+		);
 	}
 	jint InsetDrawable::getIntrinsicWidth()
 	{
 		return __thiz.callMethod<jint>(
 			"getIntrinsicWidth",
-			"()I");
+			"()I"
+		);
 	}
 	jint InsetDrawable::getIntrinsicHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getIntrinsicHeight",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean InsetDrawable::getPadding(__jni_impl::android::graphics::Rect arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getPadding",
 			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject InsetDrawable::getOpticalInsets()
 	{
 		return __thiz.callObjectMethod(
 			"getOpticalInsets",
-			"()Landroid/graphics/Insets;");
+			"()Landroid/graphics/Insets;"
+		);
 	}
 	void InsetDrawable::getOutline(__jni_impl::android::graphics::Outline arg0)
 	{
 		__thiz.callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

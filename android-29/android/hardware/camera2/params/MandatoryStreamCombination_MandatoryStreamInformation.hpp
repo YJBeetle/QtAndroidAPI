@@ -44,31 +44,36 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint MandatoryStreamCombination_MandatoryStreamInformation::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint MandatoryStreamCombination_MandatoryStreamInformation::getFormat()
 	{
 		return __thiz.callMethod<jint>(
 			"getFormat",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean MandatoryStreamCombination_MandatoryStreamInformation::isInput()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInput",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject MandatoryStreamCombination_MandatoryStreamInformation::getAvailableSizes()
 	{
 		return __thiz.callObjectMethod(
 			"getAvailableSizes",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

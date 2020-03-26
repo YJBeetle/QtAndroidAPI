@@ -58,28 +58,32 @@ namespace __jni_impl::android::os
 			"android.os.StrictMode",
 			"setThreadPolicy",
 			"(Landroid/os/StrictMode$ThreadPolicy;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject StrictMode::getThreadPolicy()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.StrictMode",
 			"getThreadPolicy",
-			"()Landroid/os/StrictMode$ThreadPolicy;");
+			"()Landroid/os/StrictMode$ThreadPolicy;"
+		);
 	}
 	QAndroidJniObject StrictMode::allowThreadDiskWrites()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.StrictMode",
 			"allowThreadDiskWrites",
-			"()Landroid/os/StrictMode$ThreadPolicy;");
+			"()Landroid/os/StrictMode$ThreadPolicy;"
+		);
 	}
 	QAndroidJniObject StrictMode::allowThreadDiskReads()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.StrictMode",
 			"allowThreadDiskReads",
-			"()Landroid/os/StrictMode$ThreadPolicy;");
+			"()Landroid/os/StrictMode$ThreadPolicy;"
+		);
 	}
 	void StrictMode::setVmPolicy(__jni_impl::android::os::StrictMode_VmPolicy arg0)
 	{
@@ -87,21 +91,24 @@ namespace __jni_impl::android::os
 			"android.os.StrictMode",
 			"setVmPolicy",
 			"(Landroid/os/StrictMode$VmPolicy;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject StrictMode::getVmPolicy()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.StrictMode",
 			"getVmPolicy",
-			"()Landroid/os/StrictMode$VmPolicy;");
+			"()Landroid/os/StrictMode$VmPolicy;"
+		);
 	}
 	void StrictMode::enableDefaults()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.StrictMode",
 			"enableDefaults",
-			"()V");
+			"()V"
+		);
 	}
 	void StrictMode::noteSlowCall(jstring arg0)
 	{
@@ -109,7 +116,8 @@ namespace __jni_impl::android::os
 			"android.os.StrictMode",
 			"noteSlowCall",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::os
 

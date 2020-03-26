@@ -52,14 +52,16 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"setHours",
 			"(I)Landroid/text/style/TtsSpan$TimeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_TimeBuilder::setMinutes(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMinutes",
 			"(I)Landroid/text/style/TtsSpan$TimeBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

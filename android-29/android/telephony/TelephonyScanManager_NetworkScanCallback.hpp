@@ -17,9 +17,9 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		void onComplete();
 		void onError(jint arg0);
 		void onResults(__jni_impl::__JniBaseClass arg0);
+		void onComplete();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -37,25 +37,28 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	void TelephonyScanManager_NetworkScanCallback::onComplete()
-	{
-		__thiz.callMethod<void>(
-			"onComplete",
-			"()V");
-	}
 	void TelephonyScanManager_NetworkScanCallback::onError(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onError",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void TelephonyScanManager_NetworkScanCallback::onResults(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onResults",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void TelephonyScanManager_NetworkScanCallback::onComplete()
+	{
+		__thiz.callMethod<void>(
+			"onComplete",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

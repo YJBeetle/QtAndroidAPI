@@ -32,12 +32,12 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject getTypeface();
 		jboolean hasBackgroundColor();
 		jboolean hasForegroundColor();
 		jboolean hasEdgeType();
 		jboolean hasEdgeColor();
 		jboolean hasWindowColor();
-		QAndroidJniObject getTypeface();
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -50,62 +50,73 @@ namespace __jni_impl::android::view::accessibility
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
-			"EDGE_TYPE_DEPRESSED");
+			"EDGE_TYPE_DEPRESSED"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_DROP_SHADOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
-			"EDGE_TYPE_DROP_SHADOW");
+			"EDGE_TYPE_DROP_SHADOW"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
-			"EDGE_TYPE_NONE");
+			"EDGE_TYPE_NONE"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_OUTLINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
-			"EDGE_TYPE_OUTLINE");
+			"EDGE_TYPE_OUTLINE"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_RAISED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
-			"EDGE_TYPE_RAISED");
+			"EDGE_TYPE_RAISED"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::EDGE_TYPE_UNSPECIFIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.CaptioningManager$CaptionStyle",
-			"EDGE_TYPE_UNSPECIFIED");
+			"EDGE_TYPE_UNSPECIFIED"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::backgroundColor()
 	{
 		return __thiz.getField<jint>(
-			"backgroundColor");
+			"backgroundColor"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::edgeColor()
 	{
 		return __thiz.getField<jint>(
-			"edgeColor");
+			"edgeColor"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::edgeType()
 	{
 		return __thiz.getField<jint>(
-			"edgeType");
+			"edgeType"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::foregroundColor()
 	{
 		return __thiz.getField<jint>(
-			"foregroundColor");
+			"foregroundColor"
+		);
 	}
 	jint CaptioningManager_CaptionStyle::windowColor()
 	{
 		return __thiz.getField<jint>(
-			"windowColor");
+			"windowColor"
+		);
 	}
 	
 	// Constructors
@@ -117,41 +128,47 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
+	QAndroidJniObject CaptioningManager_CaptionStyle::getTypeface()
+	{
+		return __thiz.callObjectMethod(
+			"getTypeface",
+			"()Landroid/graphics/Typeface;"
+		);
+	}
 	jboolean CaptioningManager_CaptionStyle::hasBackgroundColor()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasBackgroundColor",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CaptioningManager_CaptionStyle::hasForegroundColor()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasForegroundColor",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CaptioningManager_CaptionStyle::hasEdgeType()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasEdgeType",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CaptioningManager_CaptionStyle::hasEdgeColor()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasEdgeColor",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CaptioningManager_CaptionStyle::hasWindowColor()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasWindowColor",
-			"()Z");
-	}
-	QAndroidJniObject CaptioningManager_CaptionStyle::getTypeface()
-	{
-		return __thiz.callObjectMethod(
-			"getTypeface",
-			"()Landroid/graphics/Typeface;");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::view::accessibility
 

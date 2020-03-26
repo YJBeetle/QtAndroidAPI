@@ -25,7 +25,7 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::renderscript
@@ -39,49 +39,56 @@ namespace __jni_impl::android::renderscript
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
 			"NEAREST",
-			"Landroid/renderscript/Sampler$Value;");
+			"Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	QAndroidJniObject Sampler_Value::LINEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
 			"LINEAR",
-			"Landroid/renderscript/Sampler$Value;");
+			"Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	QAndroidJniObject Sampler_Value::LINEAR_MIP_LINEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
 			"LINEAR_MIP_LINEAR",
-			"Landroid/renderscript/Sampler$Value;");
+			"Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	QAndroidJniObject Sampler_Value::LINEAR_MIP_NEAREST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
 			"LINEAR_MIP_NEAREST",
-			"Landroid/renderscript/Sampler$Value;");
+			"Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	QAndroidJniObject Sampler_Value::WRAP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
 			"WRAP",
-			"Landroid/renderscript/Sampler$Value;");
+			"Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	QAndroidJniObject Sampler_Value::CLAMP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
 			"CLAMP",
-			"Landroid/renderscript/Sampler$Value;");
+			"Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	QAndroidJniObject Sampler_Value::MIRRORED_REPEAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Sampler$Value",
 			"MIRRORED_REPEAT",
-			"Landroid/renderscript/Sampler$Value;");
+			"Landroid/renderscript/Sampler$Value;"
+		);
 	}
 	
 	// Constructors
@@ -93,12 +100,13 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	QAndroidJniObject Sampler_Value::values()
+	jarray Sampler_Value::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Sampler$Value",
 			"values",
-			"()[Landroid/renderscript/Sampler$Value;");
+			"()[Landroid/renderscript/Sampler$Value;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Sampler_Value::valueOf(jstring arg0)
 	{
@@ -106,7 +114,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Sampler$Value",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Sampler$Value;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

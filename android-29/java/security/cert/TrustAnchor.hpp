@@ -27,12 +27,12 @@ namespace __jni_impl::java::security::cert
 		void __constructor(__jni_impl::java::security::cert::X509Certificate arg0, jbyteArray arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getTrustedCert();
 		QAndroidJniObject getCA();
-		QAndroidJniObject getCAName();
+		jstring getCAName();
 		QAndroidJniObject getCAPublicKey();
-		QAndroidJniObject getNameConstraints();
+		jbyteArray getNameConstraints();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -72,41 +72,47 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject TrustAnchor::toString()
+	jstring TrustAnchor::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject TrustAnchor::getTrustedCert()
 	{
 		return __thiz.callObjectMethod(
 			"getTrustedCert",
-			"()Ljava/security/cert/X509Certificate;");
+			"()Ljava/security/cert/X509Certificate;"
+		);
 	}
 	QAndroidJniObject TrustAnchor::getCA()
 	{
 		return __thiz.callObjectMethod(
 			"getCA",
-			"()Ljavax/security/auth/x500/X500Principal;");
+			"()Ljavax/security/auth/x500/X500Principal;"
+		);
 	}
-	QAndroidJniObject TrustAnchor::getCAName()
+	jstring TrustAnchor::getCAName()
 	{
 		return __thiz.callObjectMethod(
 			"getCAName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject TrustAnchor::getCAPublicKey()
 	{
 		return __thiz.callObjectMethod(
 			"getCAPublicKey",
-			"()Ljava/security/PublicKey;");
+			"()Ljava/security/PublicKey;"
+		);
 	}
-	QAndroidJniObject TrustAnchor::getNameConstraints()
+	jbyteArray TrustAnchor::getNameConstraints()
 	{
 		return __thiz.callObjectMethod(
 			"getNameConstraints",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::java::security::cert
 

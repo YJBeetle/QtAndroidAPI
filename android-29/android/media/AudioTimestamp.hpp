@@ -32,23 +32,27 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioTimestamp",
-			"TIMEBASE_BOOTTIME");
+			"TIMEBASE_BOOTTIME"
+		);
 	}
 	jint AudioTimestamp::TIMEBASE_MONOTONIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioTimestamp",
-			"TIMEBASE_MONOTONIC");
+			"TIMEBASE_MONOTONIC"
+		);
 	}
 	jlong AudioTimestamp::framePosition()
 	{
 		return __thiz.getField<jlong>(
-			"framePosition");
+			"framePosition"
+		);
 	}
 	jlong AudioTimestamp::nanoTime()
 	{
 		return __thiz.getField<jlong>(
-			"nanoTime");
+			"nanoTime"
+		);
 	}
 	
 	// Constructors

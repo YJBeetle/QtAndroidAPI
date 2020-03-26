@@ -16,18 +16,18 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		QAndroidJniObject iv();
-		QAndroidJniObject key();
+		jbyteArray iv();
+		jbyteArray key();
 		jint mode();
-		QAndroidJniObject numBytesOfClearData();
-		QAndroidJniObject numBytesOfEncryptedData();
+		jintArray numBytesOfClearData();
+		jintArray numBytesOfEncryptedData();
 		jint numSubSamples();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void set(jint arg0, jintArray arg1, jintArray arg2, jbyteArray arg3, jbyteArray arg4, jint arg5);
 		void setPattern(__jni_impl::android::media::MediaCodec_CryptoInfo_Pattern arg0);
 	};
@@ -38,39 +38,45 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject MediaCodec_CryptoInfo::iv()
+	jbyteArray MediaCodec_CryptoInfo::iv()
 	{
 		return __thiz.getObjectField(
 			"iv",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject MediaCodec_CryptoInfo::key()
+	jbyteArray MediaCodec_CryptoInfo::key()
 	{
 		return __thiz.getObjectField(
 			"key",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
 	jint MediaCodec_CryptoInfo::mode()
 	{
 		return __thiz.getField<jint>(
-			"mode");
+			"mode"
+		);
 	}
-	QAndroidJniObject MediaCodec_CryptoInfo::numBytesOfClearData()
+	jintArray MediaCodec_CryptoInfo::numBytesOfClearData()
 	{
 		return __thiz.getObjectField(
 			"numBytesOfClearData",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject MediaCodec_CryptoInfo::numBytesOfEncryptedData()
+	jintArray MediaCodec_CryptoInfo::numBytesOfEncryptedData()
 	{
 		return __thiz.getObjectField(
 			"numBytesOfEncryptedData",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
 	jint MediaCodec_CryptoInfo::numSubSamples()
 	{
 		return __thiz.getField<jint>(
-			"numSubSamples");
+			"numSubSamples"
+		);
 	}
 	
 	// Constructors
@@ -82,11 +88,12 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaCodec_CryptoInfo::toString()
+	jstring MediaCodec_CryptoInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void MediaCodec_CryptoInfo::set(jint arg0, jintArray arg1, jintArray arg2, jbyteArray arg3, jbyteArray arg4, jint arg5)
 	{
@@ -98,14 +105,16 @@ namespace __jni_impl::android::media
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void MediaCodec_CryptoInfo::setPattern(__jni_impl::android::media::MediaCodec_CryptoInfo_Pattern arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPattern",
 			"(Landroid/media/MediaCodec$CryptoInfo$Pattern;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

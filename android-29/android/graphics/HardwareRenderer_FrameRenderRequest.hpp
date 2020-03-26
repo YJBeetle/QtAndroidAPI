@@ -48,7 +48,8 @@ namespace __jni_impl::android::graphics
 		return __thiz.callObjectMethod(
 			"setVsyncTime",
 			"(J)Landroid/graphics/HardwareRenderer$FrameRenderRequest;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject HardwareRenderer_FrameRenderRequest::setFrameCommitCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -56,20 +57,23 @@ namespace __jni_impl::android::graphics
 			"setFrameCommitCallback",
 			"(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Landroid/graphics/HardwareRenderer$FrameRenderRequest;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject HardwareRenderer_FrameRenderRequest::setWaitForPresent(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setWaitForPresent",
 			"(Z)Landroid/graphics/HardwareRenderer$FrameRenderRequest;",
-			arg0);
+			arg0
+		);
 	}
 	jint HardwareRenderer_FrameRenderRequest::syncAndDraw()
 	{
 		return __thiz.callMethod<jint>(
 			"syncAndDraw",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

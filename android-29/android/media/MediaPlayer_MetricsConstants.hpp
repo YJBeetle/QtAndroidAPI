@@ -12,18 +12,18 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CODEC_AUDIO();
-		static QAndroidJniObject CODEC_VIDEO();
-		static QAndroidJniObject DURATION();
-		static QAndroidJniObject ERRORS();
-		static QAndroidJniObject ERROR_CODE();
-		static QAndroidJniObject FRAMES();
-		static QAndroidJniObject FRAMES_DROPPED();
-		static QAndroidJniObject HEIGHT();
-		static QAndroidJniObject MIME_TYPE_AUDIO();
-		static QAndroidJniObject MIME_TYPE_VIDEO();
-		static QAndroidJniObject PLAYING();
-		static QAndroidJniObject WIDTH();
+		static jstring CODEC_AUDIO();
+		static jstring CODEC_VIDEO();
+		static jstring DURATION();
+		static jstring ERRORS();
+		static jstring ERROR_CODE();
+		static jstring FRAMES();
+		static jstring FRAMES_DROPPED();
+		static jstring HEIGHT();
+		static jstring MIME_TYPE_AUDIO();
+		static jstring MIME_TYPE_VIDEO();
+		static jstring PLAYING();
+		static jstring WIDTH();
 		
 		// Constructors
 		void __constructor();
@@ -36,89 +36,101 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject MediaPlayer_MetricsConstants::CODEC_AUDIO()
+	jstring MediaPlayer_MetricsConstants::CODEC_AUDIO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"CODEC_AUDIO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::CODEC_VIDEO()
+	jstring MediaPlayer_MetricsConstants::CODEC_VIDEO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"CODEC_VIDEO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::DURATION()
+	jstring MediaPlayer_MetricsConstants::DURATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"DURATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::ERRORS()
+	jstring MediaPlayer_MetricsConstants::ERRORS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"ERRORS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::ERROR_CODE()
+	jstring MediaPlayer_MetricsConstants::ERROR_CODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"ERROR_CODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::FRAMES()
+	jstring MediaPlayer_MetricsConstants::FRAMES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"FRAMES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::FRAMES_DROPPED()
+	jstring MediaPlayer_MetricsConstants::FRAMES_DROPPED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"FRAMES_DROPPED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::HEIGHT()
+	jstring MediaPlayer_MetricsConstants::HEIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"HEIGHT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::MIME_TYPE_AUDIO()
+	jstring MediaPlayer_MetricsConstants::MIME_TYPE_AUDIO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"MIME_TYPE_AUDIO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::MIME_TYPE_VIDEO()
+	jstring MediaPlayer_MetricsConstants::MIME_TYPE_VIDEO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"MIME_TYPE_VIDEO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::PLAYING()
+	jstring MediaPlayer_MetricsConstants::PLAYING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"PLAYING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaPlayer_MetricsConstants::WIDTH()
+	jstring MediaPlayer_MetricsConstants::WIDTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaPlayer$MetricsConstants",
 			"WIDTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

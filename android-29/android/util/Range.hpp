@@ -18,17 +18,17 @@ namespace __jni_impl::android::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jboolean contains(__jni_impl::__JniBaseClass arg0);
 		jboolean contains(__jni_impl::android::util::Range arg0);
 		static QAndroidJniObject create(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject getLower();
 		QAndroidJniObject getUpper();
-		QAndroidJniObject clamp(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject extend(__jni_impl::android::util::Range arg0);
+		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject clamp(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject intersect(__jni_impl::android::util::Range arg0);
 		QAndroidJniObject intersect(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 	};
@@ -55,33 +55,38 @@ namespace __jni_impl::android::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Range::toString()
+	jstring Range::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Range::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Range::contains(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Comparable;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Range::contains(__jni_impl::android::util::Range arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Landroid/util/Range;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Range::create(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -90,33 +95,30 @@ namespace __jni_impl::android::util
 			"create",
 			"(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Range::getLower()
 	{
 		return __thiz.callObjectMethod(
 			"getLower",
-			"()Ljava/lang/Comparable;");
+			"()Ljava/lang/Comparable;"
+		);
 	}
 	QAndroidJniObject Range::getUpper()
 	{
 		return __thiz.callObjectMethod(
 			"getUpper",
-			"()Ljava/lang/Comparable;");
+			"()Ljava/lang/Comparable;"
+		);
 	}
-	QAndroidJniObject Range::clamp(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"clamp",
-			"(Ljava/lang/Comparable;)Ljava/lang/Comparable;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Range::extend(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject Range::extend(__jni_impl::android::util::Range arg0)
 	{
 		return __thiz.callObjectMethod(
 			"extend",
-			"(Ljava/lang/Comparable;)Landroid/util/Range;",
-			arg0.__jniObject().object());
+			"(Landroid/util/Range;)Landroid/util/Range;",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Range::extend(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -124,21 +126,32 @@ namespace __jni_impl::android::util
 			"extend",
 			"(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Range::extend(__jni_impl::android::util::Range arg0)
+	QAndroidJniObject Range::extend(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"extend",
-			"(Landroid/util/Range;)Landroid/util/Range;",
-			arg0.__jniObject().object());
+			"(Ljava/lang/Comparable;)Landroid/util/Range;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Range::clamp(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"clamp",
+			"(Ljava/lang/Comparable;)Ljava/lang/Comparable;",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Range::intersect(__jni_impl::android::util::Range arg0)
 	{
 		return __thiz.callObjectMethod(
 			"intersect",
 			"(Landroid/util/Range;)Landroid/util/Range;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Range::intersect(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -146,7 +159,8 @@ namespace __jni_impl::android::util
 			"intersect",
 			"(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::util
 

@@ -19,7 +19,7 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_EqBand arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jfloat getGain();
 		void setGain(jfloat arg0);
 	};
@@ -49,24 +49,27 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject DynamicsProcessing_EqBand::toString()
+	jstring DynamicsProcessing_EqBand::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jfloat DynamicsProcessing_EqBand::getGain()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getGain",
-			"()F");
+			"()F"
+		);
 	}
 	void DynamicsProcessing_EqBand::setGain(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setGain",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

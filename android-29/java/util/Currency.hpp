@@ -41,18 +41,18 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		static QAndroidJniObject getInstance(jstring arg0);
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
-		QAndroidJniObject getDisplayName();
-		QAndroidJniObject getDisplayName(__jni_impl::java::util::Locale arg0);
+		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
+		jstring getDisplayName();
 		jint getDefaultFractionDigits();
-		QAndroidJniObject getCurrencyCode();
-		QAndroidJniObject getSymbol();
-		QAndroidJniObject getSymbol(__jni_impl::java::util::Locale arg0);
-		QAndroidJniObject getNumericCodeAsString();
+		jstring getCurrencyCode();
+		jstring getSymbol();
+		jstring getSymbol(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getAvailableCurrencies();
 		jint getNumericCode();
+		jstring getNumericCodeAsString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -76,11 +76,12 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject Currency::toString()
+	jstring Currency::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Currency::getInstance(jstring arg0)
 	{
@@ -88,7 +89,8 @@ namespace __jni_impl::java::util
 			"java.util.Currency",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/util/Currency;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Currency::getInstance(__jni_impl::java::util::Locale arg0)
 	{
@@ -96,64 +98,74 @@ namespace __jni_impl::java::util
 			"java.util.Currency",
 			"getInstance",
 			"(Ljava/util/Locale;)Ljava/util/Currency;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Currency::getDisplayName()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject Currency::getDisplayName(__jni_impl::java::util::Locale arg0)
+	jstring Currency::getDisplayName(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring Currency::getDisplayName()
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Currency::getDefaultFractionDigits()
 	{
 		return __thiz.callMethod<jint>(
 			"getDefaultFractionDigits",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Currency::getCurrencyCode()
+	jstring Currency::getCurrencyCode()
 	{
 		return __thiz.callObjectMethod(
 			"getCurrencyCode",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Currency::getSymbol()
+	jstring Currency::getSymbol()
 	{
 		return __thiz.callObjectMethod(
 			"getSymbol",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Currency::getSymbol(__jni_impl::java::util::Locale arg0)
+	jstring Currency::getSymbol(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSymbol",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Currency::getNumericCodeAsString()
-	{
-		return __thiz.callObjectMethod(
-			"getNumericCodeAsString",
-			"()Ljava/lang/String;");
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject Currency::getAvailableCurrencies()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Currency",
 			"getAvailableCurrencies",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jint Currency::getNumericCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getNumericCode",
-			"()I");
+			"()I"
+		);
+	}
+	jstring Currency::getNumericCodeAsString()
+	{
+		return __thiz.callObjectMethod(
+			"getNumericCodeAsString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

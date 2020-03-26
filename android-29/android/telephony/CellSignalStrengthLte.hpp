@@ -24,7 +24,7 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getLevel();
 		jint getAsuLevel();
@@ -50,7 +50,8 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.CellSignalStrengthLte",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -67,73 +68,85 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CellSignalStrengthLte::toString()
+	jstring CellSignalStrengthLte::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CellSignalStrengthLte::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthLte::getLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getLevel",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthLte::getAsuLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getAsuLevel",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthLte::getRsrq()
 	{
 		return __thiz.callMethod<jint>(
 			"getRsrq",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthLte::getRssnr()
 	{
 		return __thiz.callMethod<jint>(
 			"getRssnr",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthLte::getRsrp()
 	{
 		return __thiz.callMethod<jint>(
 			"getRsrp",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthLte::getCqi()
 	{
 		return __thiz.callMethod<jint>(
 			"getCqi",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthLte::getDbm()
 	{
 		return __thiz.callMethod<jint>(
 			"getDbm",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthLte::getTimingAdvance()
 	{
 		return __thiz.callMethod<jint>(
 			"getTimingAdvance",
-			"()I");
+			"()I"
+		);
 	}
 	jint CellSignalStrengthLte::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CellSignalStrengthLte::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -141,13 +154,15 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint CellSignalStrengthLte::getRssi()
 	{
 		return __thiz.callMethod<jint>(
 			"getRssi",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

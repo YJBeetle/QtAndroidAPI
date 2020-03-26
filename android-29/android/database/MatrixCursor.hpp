@@ -31,12 +31,12 @@ namespace __jni_impl::android::database
 		jint getType(jint arg0);
 		jboolean isNull(jint arg0);
 		jint getCount();
-		QAndroidJniObject getString(jint arg0);
+		jstring getString(jint arg0);
 		QAndroidJniObject newRow();
 		void addRow(jobjectArray arg0);
 		void addRow(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getColumnNames();
-		QAndroidJniObject getBlob(jint arg0);
+		jarray getColumnNames();
+		jbyteArray getBlob(jint arg0);
 	};
 } // namespace __jni_impl::android::database
 
@@ -69,95 +69,109 @@ namespace __jni_impl::android::database
 		return __thiz.callMethod<jshort>(
 			"getShort",
 			"(I)S",
-			arg0);
+			arg0
+		);
 	}
 	jint MatrixCursor::getInt(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getInt",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong MatrixCursor::getLong(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jfloat MatrixCursor::getFloat(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getFloat",
 			"(I)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble MatrixCursor::getDouble(jint arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getDouble",
 			"(I)D",
-			arg0);
+			arg0
+		);
 	}
 	jint MatrixCursor::getType(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean MatrixCursor::isNull(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNull",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint MatrixCursor::getCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getCount",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MatrixCursor::getString(jint arg0)
+	jstring MatrixCursor::getString(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject MatrixCursor::newRow()
 	{
 		return __thiz.callObjectMethod(
 			"newRow",
-			"()Landroid/database/MatrixCursor$RowBuilder;");
+			"()Landroid/database/MatrixCursor$RowBuilder;"
+		);
 	}
 	void MatrixCursor::addRow(jobjectArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"addRow",
 			"([Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void MatrixCursor::addRow(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addRow",
 			"(Ljava/lang/Iterable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MatrixCursor::getColumnNames()
+	jarray MatrixCursor::getColumnNames()
 	{
 		return __thiz.callObjectMethod(
 			"getColumnNames",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject MatrixCursor::getBlob(jint arg0)
+	jbyteArray MatrixCursor::getBlob(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getBlob",
 			"(I)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::database
 

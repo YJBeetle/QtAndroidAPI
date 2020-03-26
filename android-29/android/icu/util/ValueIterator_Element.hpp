@@ -13,7 +13,7 @@ namespace __jni_impl::android::icu::util
 	public:
 		// Fields
 		jint integer();
-		QAndroidJniObject value();
+		jobject value();
 		
 		// Constructors
 		void __constructor();
@@ -29,13 +29,15 @@ namespace __jni_impl::android::icu::util
 	jint ValueIterator_Element::integer()
 	{
 		return __thiz.getField<jint>(
-			"integer");
+			"integer"
+		);
 	}
-	QAndroidJniObject ValueIterator_Element::value()
+	jobject ValueIterator_Element::value()
 	{
 		return __thiz.getObjectField(
 			"value",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	
 	// Constructors

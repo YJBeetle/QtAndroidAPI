@@ -12,7 +12,7 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ENTRY_CONTENT_TYPE();
+		static jstring ENTRY_CONTENT_TYPE();
 		
 		// Constructors
 		void __constructor();
@@ -25,12 +25,13 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject MediaStore_Audio_Radio::ENTRY_CONTENT_TYPE()
+	jstring MediaStore_Audio_Radio::ENTRY_CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Radio",
 			"ENTRY_CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

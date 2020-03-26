@@ -36,9 +36,9 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void setText(jstring arg0);
-		QAndroidJniObject getAccessibilityClassName();
-		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
 		void setCurrentText(jstring arg0);
+		jstring getAccessibilityClassName();
+		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -73,13 +73,23 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TextSwitcher::getAccessibilityClassName()
+	void TextSwitcher::setCurrentText(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCurrentText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	jstring TextSwitcher::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void TextSwitcher::addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2)
 	{
@@ -88,14 +98,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
-	}
-	void TextSwitcher::setCurrentText(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCurrentText",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::widget
 

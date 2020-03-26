@@ -24,7 +24,7 @@ namespace __jni_impl::android::util
 		jint getWeekStartDay();
 		jint getFirstDayOfMonth();
 		jint getNumberOfDaysInMonth();
-		QAndroidJniObject getDigitsForRow(jint arg0);
+		jintArray getDigitsForRow(jint arg0);
 		jint getDayAt(jint arg0, jint arg1);
 		jint getRowOf(jint arg0);
 		jint getColumnOf(jint arg0);
@@ -63,44 +63,51 @@ namespace __jni_impl::android::util
 	{
 		return __thiz.callMethod<jint>(
 			"getOffset",
-			"()I");
+			"()I"
+		);
 	}
 	jint MonthDisplayHelper::getYear()
 	{
 		return __thiz.callMethod<jint>(
 			"getYear",
-			"()I");
+			"()I"
+		);
 	}
 	jint MonthDisplayHelper::getMonth()
 	{
 		return __thiz.callMethod<jint>(
 			"getMonth",
-			"()I");
+			"()I"
+		);
 	}
 	jint MonthDisplayHelper::getWeekStartDay()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeekStartDay",
-			"()I");
+			"()I"
+		);
 	}
 	jint MonthDisplayHelper::getFirstDayOfMonth()
 	{
 		return __thiz.callMethod<jint>(
 			"getFirstDayOfMonth",
-			"()I");
+			"()I"
+		);
 	}
 	jint MonthDisplayHelper::getNumberOfDaysInMonth()
 	{
 		return __thiz.callMethod<jint>(
 			"getNumberOfDaysInMonth",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MonthDisplayHelper::getDigitsForRow(jint arg0)
+	jintArray MonthDisplayHelper::getDigitsForRow(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDigitsForRow",
 			"(I)[I",
-			arg0);
+			arg0
+		).object<jintArray>();
 	}
 	jint MonthDisplayHelper::getDayAt(jint arg0, jint arg1)
 	{
@@ -108,33 +115,38 @@ namespace __jni_impl::android::util
 			"getDayAt",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint MonthDisplayHelper::getRowOf(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getRowOf",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint MonthDisplayHelper::getColumnOf(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnOf",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	void MonthDisplayHelper::previousMonth()
 	{
 		__thiz.callMethod<void>(
 			"previousMonth",
-			"()V");
+			"()V"
+		);
 	}
 	void MonthDisplayHelper::nextMonth()
 	{
 		__thiz.callMethod<void>(
 			"nextMonth",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean MonthDisplayHelper::isWithinCurrentMonth(jint arg0, jint arg1)
 	{
@@ -142,7 +154,8 @@ namespace __jni_impl::android::util
 			"isWithinCurrentMonth",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::util
 

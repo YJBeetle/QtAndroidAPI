@@ -82,7 +82,8 @@ namespace __jni_impl::android::provider
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject FontsContract::fetchFonts(__jni_impl::android::content::Context arg0, __jni_impl::android::os::CancellationSignal arg1, __jni_impl::android::provider::FontRequest arg2)
 	{
@@ -92,7 +93,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/provider/FontRequest;)Landroid/provider/FontsContract$FontFamilyResult;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject FontsContract::buildTypeface(__jni_impl::android::content::Context arg0, __jni_impl::android::os::CancellationSignal arg1, jarray arg2)
 	{
@@ -102,7 +104,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/Context;Landroid/os/CancellationSignal;[Landroid/provider/FontsContract$FontInfo;)Landroid/graphics/Typeface;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::provider
 

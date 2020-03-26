@@ -47,13 +47,15 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callMethod<jint>(
 			"getResultCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Instrumentation_ActivityResult::getResultData()
 	{
 		return __thiz.callObjectMethod(
 			"getResultData",
-			"()Landroid/content/Intent;");
+			"()Landroid/content/Intent;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

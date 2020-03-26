@@ -31,7 +31,7 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getAddress();
 		jint getPrefixLength();
@@ -54,7 +54,8 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.LinkAddress",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -71,43 +72,50 @@ namespace __jni_impl::android::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject LinkAddress::toString()
+	jstring LinkAddress::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint LinkAddress::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject LinkAddress::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
-			"()Ljava/net/InetAddress;");
+			"()Ljava/net/InetAddress;"
+		);
 	}
 	jint LinkAddress::getPrefixLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getPrefixLength",
-			"()I");
+			"()I"
+		);
 	}
 	jint LinkAddress::getFlags()
 	{
 		return __thiz.callMethod<jint>(
 			"getFlags",
-			"()I");
+			"()I"
+		);
 	}
 	jint LinkAddress::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void LinkAddress::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -115,13 +123,15 @@ namespace __jni_impl::android::net
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint LinkAddress::getScope()
 	{
 		return __thiz.callMethod<jint>(
 			"getScope",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net
 

@@ -43,14 +43,16 @@ namespace __jni_impl::android::view::inspector
 			"(IILjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject IntFlagMapping::get(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(I)Ljava/util/Set;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::inspector
 

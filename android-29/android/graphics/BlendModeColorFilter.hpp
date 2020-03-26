@@ -51,25 +51,29 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint BlendModeColorFilter::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint BlendModeColorFilter::getColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getColor",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject BlendModeColorFilter::getMode()
 	{
 		return __thiz.callObjectMethod(
 			"getMode",
-			"()Landroid/graphics/BlendMode;");
+			"()Landroid/graphics/BlendMode;"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

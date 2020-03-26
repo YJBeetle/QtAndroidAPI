@@ -48,13 +48,15 @@ namespace __jni_impl::android::content
 		__thiz.callMethod<void>(
 			"onChange",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Loader_ForceLoadContentObserver::deliverSelfNotifications()
 	{
 		return __thiz.callMethod<jboolean>(
 			"deliverSelfNotifications",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::content
 

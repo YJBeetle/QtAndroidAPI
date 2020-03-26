@@ -22,7 +22,7 @@ namespace __jni_impl::java::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::text
@@ -36,28 +36,32 @@ namespace __jni_impl::java::text
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.Normalizer$Form",
 			"NFD",
-			"Ljava/text/Normalizer$Form;");
+			"Ljava/text/Normalizer$Form;"
+		);
 	}
 	QAndroidJniObject Normalizer_Form::NFC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.Normalizer$Form",
 			"NFC",
-			"Ljava/text/Normalizer$Form;");
+			"Ljava/text/Normalizer$Form;"
+		);
 	}
 	QAndroidJniObject Normalizer_Form::NFKD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.Normalizer$Form",
 			"NFKD",
-			"Ljava/text/Normalizer$Form;");
+			"Ljava/text/Normalizer$Form;"
+		);
 	}
 	QAndroidJniObject Normalizer_Form::NFKC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.Normalizer$Form",
 			"NFKC",
-			"Ljava/text/Normalizer$Form;");
+			"Ljava/text/Normalizer$Form;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::java::text
 	}
 	
 	// Methods
-	QAndroidJniObject Normalizer_Form::values()
+	jarray Normalizer_Form::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.text.Normalizer$Form",
 			"values",
-			"()[Ljava/text/Normalizer$Form;");
+			"()[Ljava/text/Normalizer$Form;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Normalizer_Form::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::java::text
 			"java.text.Normalizer$Form",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/text/Normalizer$Form;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::text
 

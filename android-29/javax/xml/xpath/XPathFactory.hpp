@@ -16,8 +16,8 @@ namespace __jni_impl::javax::xml::xpath
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEFAULT_PROPERTY_NAME();
-		static QAndroidJniObject DEFAULT_OBJECT_MODEL_URI();
+		static jstring DEFAULT_PROPERTY_NAME();
+		static jstring DEFAULT_OBJECT_MODEL_URI();
 		
 		// Constructors
 		void __constructor();
@@ -41,19 +41,21 @@ namespace __jni_impl::javax::xml::xpath
 namespace __jni_impl::javax::xml::xpath
 {
 	// Fields
-	QAndroidJniObject XPathFactory::DEFAULT_PROPERTY_NAME()
+	jstring XPathFactory::DEFAULT_PROPERTY_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.xpath.XPathFactory",
 			"DEFAULT_PROPERTY_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject XPathFactory::DEFAULT_OBJECT_MODEL_URI()
+	jstring XPathFactory::DEFAULT_OBJECT_MODEL_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.xpath.XPathFactory",
 			"DEFAULT_OBJECT_MODEL_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -73,7 +75,8 @@ namespace __jni_impl::javax::xml::xpath
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/xpath/XPathFactory;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject XPathFactory::newInstance(jstring arg0)
 	{
@@ -81,14 +84,16 @@ namespace __jni_impl::javax::xml::xpath
 			"javax.xml.xpath.XPathFactory",
 			"newInstance",
 			"(Ljava/lang/String;)Ljavax/xml/xpath/XPathFactory;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject XPathFactory::newInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
 			"newInstance",
-			"()Ljavax/xml/xpath/XPathFactory;");
+			"()Ljavax/xml/xpath/XPathFactory;"
+		);
 	}
 	void XPathFactory::setFeature(jstring arg0, jboolean arg1)
 	{
@@ -96,48 +101,55 @@ namespace __jni_impl::javax::xml::xpath
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean XPathFactory::getFeature(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject XPathFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
 			"newDefaultInstance",
-			"()Ljavax/xml/xpath/XPathFactory;");
+			"()Ljavax/xml/xpath/XPathFactory;"
+		);
 	}
 	void XPathFactory::setXPathVariableResolver(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setXPathVariableResolver",
 			"(Ljavax/xml/xpath/XPathVariableResolver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void XPathFactory::setXPathFunctionResolver(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setXPathFunctionResolver",
 			"(Ljavax/xml/xpath/XPathFunctionResolver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean XPathFactory::isObjectModelSupported(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isObjectModelSupported",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject XPathFactory::newXPath()
 	{
 		return __thiz.callObjectMethod(
 			"newXPath",
-			"()Ljavax/xml/xpath/XPath;");
+			"()Ljavax/xml/xpath/XPath;"
+		);
 	}
 } // namespace __jni_impl::javax::xml::xpath
 

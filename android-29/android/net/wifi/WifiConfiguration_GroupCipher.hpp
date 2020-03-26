@@ -17,8 +17,8 @@ namespace __jni_impl::android::net::wifi
 		static jint TKIP();
 		static jint WEP104();
 		static jint WEP40();
-		static QAndroidJniObject strings();
-		static QAndroidJniObject varName();
+		static jarray strings();
+		static jstring varName();
 		
 		// Constructors
 		void __constructor();
@@ -35,45 +35,52 @@ namespace __jni_impl::android::net::wifi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$GroupCipher",
-			"CCMP");
+			"CCMP"
+		);
 	}
 	jint WifiConfiguration_GroupCipher::GCMP_256()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$GroupCipher",
-			"GCMP_256");
+			"GCMP_256"
+		);
 	}
 	jint WifiConfiguration_GroupCipher::TKIP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$GroupCipher",
-			"TKIP");
+			"TKIP"
+		);
 	}
 	jint WifiConfiguration_GroupCipher::WEP104()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$GroupCipher",
-			"WEP104");
+			"WEP104"
+		);
 	}
 	jint WifiConfiguration_GroupCipher::WEP40()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiConfiguration$GroupCipher",
-			"WEP40");
+			"WEP40"
+		);
 	}
-	QAndroidJniObject WifiConfiguration_GroupCipher::strings()
+	jarray WifiConfiguration_GroupCipher::strings()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$GroupCipher",
 			"strings",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject WifiConfiguration_GroupCipher::varName()
+	jstring WifiConfiguration_GroupCipher::varName()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiConfiguration$GroupCipher",
 			"varName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

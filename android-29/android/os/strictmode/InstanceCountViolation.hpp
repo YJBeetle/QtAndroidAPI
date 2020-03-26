@@ -40,7 +40,8 @@ namespace __jni_impl::android::os::strictmode
 	{
 		return __thiz.callMethod<jlong>(
 			"getNumberOfInstances",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::os::strictmode
 

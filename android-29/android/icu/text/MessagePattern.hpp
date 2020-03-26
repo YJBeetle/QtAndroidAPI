@@ -35,33 +35,33 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		void clear();
 		jboolean isFrozen();
 		QAndroidJniObject freeze();
 		jdouble getNumericValue(__jni_impl::android::icu::text::MessagePattern_Part arg0);
 		QAndroidJniObject parse(jstring arg0);
-		QAndroidJniObject cloneAsThawed();
 		QAndroidJniObject parseChoiceStyle(jstring arg0);
 		QAndroidJniObject parsePluralStyle(jstring arg0);
 		QAndroidJniObject parseSelectStyle(jstring arg0);
 		void clearPatternAndSetApostropheMode(__jni_impl::android::icu::text::MessagePattern_ApostropheMode arg0);
 		QAndroidJniObject getApostropheMode();
-		QAndroidJniObject getPatternString();
+		jstring getPatternString();
 		jboolean hasNamedArguments();
 		jboolean hasNumberedArguments();
 		static jint validateArgumentName(jstring arg0);
-		QAndroidJniObject autoQuoteApostropheDeep();
+		jstring autoQuoteApostropheDeep();
 		jint countParts();
 		QAndroidJniObject getPart(jint arg0);
 		QAndroidJniObject getPartType(jint arg0);
 		jint getPatternIndex(jint arg0);
-		QAndroidJniObject getSubstring(__jni_impl::android::icu::text::MessagePattern_Part arg0);
+		jstring getSubstring(__jni_impl::android::icu::text::MessagePattern_Part arg0);
 		jboolean partSubstringMatches(__jni_impl::android::icu::text::MessagePattern_Part arg0, jstring arg1);
 		jdouble getPluralOffset(jint arg0);
 		jint getLimitPartIndex(jint arg0);
+		QAndroidJniObject cloneAsThawed();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -76,19 +76,22 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.MessagePattern",
-			"ARG_NAME_NOT_NUMBER");
+			"ARG_NAME_NOT_NUMBER"
+		);
 	}
 	jint MessagePattern::ARG_NAME_NOT_VALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.MessagePattern",
-			"ARG_NAME_NOT_VALID");
+			"ARG_NAME_NOT_VALID"
+		);
 	}
 	jdouble MessagePattern::NO_NUMERIC_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"android.icu.text.MessagePattern",
-			"NO_NUMERIC_VALUE");
+			"NO_NUMERIC_VALUE"
+		);
 	}
 	
 	// Constructors
@@ -119,115 +122,126 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MessagePattern::toString()
+	jstring MessagePattern::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MessagePattern::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MessagePattern::clone()
+	jobject MessagePattern::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void MessagePattern::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean MessagePattern::isFrozen()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFrozen",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject MessagePattern::freeze()
 	{
 		return __thiz.callObjectMethod(
 			"freeze",
-			"()Landroid/icu/text/MessagePattern;");
+			"()Landroid/icu/text/MessagePattern;"
+		);
 	}
 	jdouble MessagePattern::getNumericValue(__jni_impl::android::icu::text::MessagePattern_Part arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getNumericValue",
 			"(Landroid/icu/text/MessagePattern$Part;)D",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MessagePattern::parse(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			arg0);
-	}
-	QAndroidJniObject MessagePattern::cloneAsThawed()
-	{
-		return __thiz.callObjectMethod(
-			"cloneAsThawed",
-			"()Landroid/icu/text/MessagePattern;");
+			arg0
+		);
 	}
 	QAndroidJniObject MessagePattern::parseChoiceStyle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parseChoiceStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MessagePattern::parsePluralStyle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parsePluralStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MessagePattern::parseSelectStyle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parseSelectStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
-			arg0);
+			arg0
+		);
 	}
 	void MessagePattern::clearPatternAndSetApostropheMode(__jni_impl::android::icu::text::MessagePattern_ApostropheMode arg0)
 	{
 		__thiz.callMethod<void>(
 			"clearPatternAndSetApostropheMode",
 			"(Landroid/icu/text/MessagePattern$ApostropheMode;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MessagePattern::getApostropheMode()
 	{
 		return __thiz.callObjectMethod(
 			"getApostropheMode",
-			"()Landroid/icu/text/MessagePattern$ApostropheMode;");
+			"()Landroid/icu/text/MessagePattern$ApostropheMode;"
+		);
 	}
-	QAndroidJniObject MessagePattern::getPatternString()
+	jstring MessagePattern::getPatternString()
 	{
 		return __thiz.callObjectMethod(
 			"getPatternString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean MessagePattern::hasNamedArguments()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNamedArguments",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean MessagePattern::hasNumberedArguments()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNumberedArguments",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint MessagePattern::validateArgumentName(jstring arg0)
 	{
@@ -235,47 +249,54 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.MessagePattern",
 			"validateArgumentName",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MessagePattern::autoQuoteApostropheDeep()
+	jstring MessagePattern::autoQuoteApostropheDeep()
 	{
 		return __thiz.callObjectMethod(
 			"autoQuoteApostropheDeep",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MessagePattern::countParts()
 	{
 		return __thiz.callMethod<jint>(
 			"countParts",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MessagePattern::getPart(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPart",
 			"(I)Landroid/icu/text/MessagePattern$Part;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MessagePattern::getPartType(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPartType",
 			"(I)Landroid/icu/text/MessagePattern$Part$Type;",
-			arg0);
+			arg0
+		);
 	}
 	jint MessagePattern::getPatternIndex(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getPatternIndex",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MessagePattern::getSubstring(__jni_impl::android::icu::text::MessagePattern_Part arg0)
+	jstring MessagePattern::getSubstring(__jni_impl::android::icu::text::MessagePattern_Part arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSubstring",
 			"(Landroid/icu/text/MessagePattern$Part;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	jboolean MessagePattern::partSubstringMatches(__jni_impl::android::icu::text::MessagePattern_Part arg0, jstring arg1)
 	{
@@ -283,21 +304,31 @@ namespace __jni_impl::android::icu::text
 			"partSubstringMatches",
 			"(Landroid/icu/text/MessagePattern$Part;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jdouble MessagePattern::getPluralOffset(jint arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"getPluralOffset",
 			"(I)D",
-			arg0);
+			arg0
+		);
 	}
 	jint MessagePattern::getLimitPartIndex(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getLimitPartIndex",
 			"(I)I",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject MessagePattern::cloneAsThawed()
+	{
+		return __thiz.callObjectMethod(
+			"cloneAsThawed",
+			"()Landroid/icu/text/MessagePattern;"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

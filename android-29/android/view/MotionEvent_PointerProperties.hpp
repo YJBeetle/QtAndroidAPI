@@ -34,12 +34,14 @@ namespace __jni_impl::android::view
 	jint MotionEvent_PointerProperties::id()
 	{
 		return __thiz.getField<jint>(
-			"id");
+			"id"
+		);
 	}
 	jint MotionEvent_PointerProperties::toolType()
 	{
 		return __thiz.getField<jint>(
-			"toolType");
+			"toolType"
+		);
 	}
 	
 	// Constructors
@@ -63,26 +65,30 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint MotionEvent_PointerProperties::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void MotionEvent_PointerProperties::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	void MotionEvent_PointerProperties::copyFrom(__jni_impl::android::view::MotionEvent_PointerProperties arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"(Landroid/view/MotionEvent$PointerProperties;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

@@ -47,21 +47,24 @@ namespace __jni_impl::android::print
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/print/PrintDocumentInfo;");
+			"()Landroid/print/PrintDocumentInfo;"
+		);
 	}
 	QAndroidJniObject PrintDocumentInfo_Builder::setPageCount(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPageCount",
 			"(I)Landroid/print/PrintDocumentInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PrintDocumentInfo_Builder::setContentType(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setContentType",
 			"(I)Landroid/print/PrintDocumentInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::print
 

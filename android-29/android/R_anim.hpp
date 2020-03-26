@@ -41,79 +41,92 @@ namespace __jni_impl::android
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"accelerate_decelerate_interpolator");
+			"accelerate_decelerate_interpolator"
+		);
 	}
 	jint R_anim::accelerate_interpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"accelerate_interpolator");
+			"accelerate_interpolator"
+		);
 	}
 	jint R_anim::anticipate_interpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"anticipate_interpolator");
+			"anticipate_interpolator"
+		);
 	}
 	jint R_anim::anticipate_overshoot_interpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"anticipate_overshoot_interpolator");
+			"anticipate_overshoot_interpolator"
+		);
 	}
 	jint R_anim::bounce_interpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"bounce_interpolator");
+			"bounce_interpolator"
+		);
 	}
 	jint R_anim::cycle_interpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"cycle_interpolator");
+			"cycle_interpolator"
+		);
 	}
 	jint R_anim::decelerate_interpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"decelerate_interpolator");
+			"decelerate_interpolator"
+		);
 	}
 	jint R_anim::fade_in()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"fade_in");
+			"fade_in"
+		);
 	}
 	jint R_anim::fade_out()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"fade_out");
+			"fade_out"
+		);
 	}
 	jint R_anim::linear_interpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"linear_interpolator");
+			"linear_interpolator"
+		);
 	}
 	jint R_anim::overshoot_interpolator()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"overshoot_interpolator");
+			"overshoot_interpolator"
+		);
 	}
 	jint R_anim::slide_in_left()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"slide_in_left");
+			"slide_in_left"
+		);
 	}
 	jint R_anim::slide_out_right()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$anim",
-			"slide_out_right");
+			"slide_out_right"
+		);
 	}
 	
 	// Constructors

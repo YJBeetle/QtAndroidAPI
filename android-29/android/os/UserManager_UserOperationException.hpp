@@ -41,7 +41,8 @@ namespace __jni_impl::android::os
 	{
 		return __thiz.callMethod<jint>(
 			"getUserOperationResult",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::os
 

@@ -65,26 +65,30 @@ namespace __jni_impl::java::util::concurrent
 			"poll",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/Future;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ExecutorCompletionService::poll()
 	{
 		return __thiz.callObjectMethod(
 			"poll",
-			"()Ljava/util/concurrent/Future;");
+			"()Ljava/util/concurrent/Future;"
+		);
 	}
 	QAndroidJniObject ExecutorCompletionService::take()
 	{
 		return __thiz.callObjectMethod(
 			"take",
-			"()Ljava/util/concurrent/Future;");
+			"()Ljava/util/concurrent/Future;"
+		);
 	}
 	QAndroidJniObject ExecutorCompletionService::submit(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"submit",
 			"(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ExecutorCompletionService::submit(__jni_impl::__JniBaseClass arg0, jobject arg1)
 	{
@@ -92,7 +96,8 @@ namespace __jni_impl::java::util::concurrent
 			"submit",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

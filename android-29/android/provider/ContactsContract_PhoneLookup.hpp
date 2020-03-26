@@ -18,7 +18,7 @@ namespace __jni_impl::android::provider
 		// Fields
 		static QAndroidJniObject CONTENT_FILTER_URI();
 		static QAndroidJniObject ENTERPRISE_CONTENT_FILTER_URI();
-		static QAndroidJniObject QUERY_PARAMETER_SIP_ADDRESS();
+		static jstring QUERY_PARAMETER_SIP_ADDRESS();
 		
 		// Constructors
 		void __constructor();
@@ -37,21 +37,24 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$PhoneLookup",
 			"CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject ContactsContract_PhoneLookup::ENTERPRISE_CONTENT_FILTER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$PhoneLookup",
 			"ENTERPRISE_CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract_PhoneLookup::QUERY_PARAMETER_SIP_ADDRESS()
+	jstring ContactsContract_PhoneLookup::QUERY_PARAMETER_SIP_ADDRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$PhoneLookup",
 			"QUERY_PARAMETER_SIP_ADDRESS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

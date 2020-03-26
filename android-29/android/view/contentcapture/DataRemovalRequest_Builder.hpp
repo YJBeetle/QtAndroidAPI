@@ -51,7 +51,8 @@ namespace __jni_impl::android::view::contentcapture
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/contentcapture/DataRemovalRequest;");
+			"()Landroid/view/contentcapture/DataRemovalRequest;"
+		);
 	}
 	QAndroidJniObject DataRemovalRequest_Builder::addLocusId(__jni_impl::android::content::LocusId arg0, jint arg1)
 	{
@@ -59,13 +60,15 @@ namespace __jni_impl::android::view::contentcapture
 			"addLocusId",
 			"(Landroid/content/LocusId;I)Landroid/view/contentcapture/DataRemovalRequest$Builder;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DataRemovalRequest_Builder::forEverything()
 	{
 		return __thiz.callObjectMethod(
 			"forEverything",
-			"()Landroid/view/contentcapture/DataRemovalRequest$Builder;");
+			"()Landroid/view/contentcapture/DataRemovalRequest$Builder;"
+		);
 	}
 } // namespace __jni_impl::android::view::contentcapture
 

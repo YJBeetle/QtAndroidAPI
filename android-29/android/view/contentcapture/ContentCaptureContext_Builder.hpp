@@ -56,14 +56,16 @@ namespace __jni_impl::android::view::contentcapture
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/contentcapture/ContentCaptureContext;");
+			"()Landroid/view/contentcapture/ContentCaptureContext;"
+		);
 	}
 	QAndroidJniObject ContentCaptureContext_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setExtras",
 			"(Landroid/os/Bundle;)Landroid/view/contentcapture/ContentCaptureContext$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view::contentcapture
 

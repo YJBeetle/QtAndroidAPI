@@ -25,8 +25,8 @@ namespace __jni_impl::java::io
 		void __constructor(jstring arg0, __jni_impl::java::lang::Exception arg1);
 		
 		// Methods
-		QAndroidJniObject getCause();
-		QAndroidJniObject getMessage();
+		jthrowable getCause();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::java::io
 
@@ -39,7 +39,8 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.getObjectField(
 			"detail",
-			"Ljava/lang/Exception;");
+			"Ljava/lang/Exception;"
+		);
 	}
 	
 	// Constructors
@@ -53,17 +54,19 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	QAndroidJniObject WriteAbortedException::getCause()
+	jthrowable WriteAbortedException::getCause()
 	{
 		return __thiz.callObjectMethod(
 			"getCause",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
-	QAndroidJniObject WriteAbortedException::getMessage()
+	jstring WriteAbortedException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::io
 

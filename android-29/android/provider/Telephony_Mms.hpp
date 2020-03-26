@@ -17,7 +17,7 @@ namespace __jni_impl::android::provider
 	public:
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static jstring DEFAULT_SORT_ORDER();
 		static QAndroidJniObject REPORT_REQUEST_URI();
 		static QAndroidJniObject REPORT_STATUS_URI();
 		
@@ -38,28 +38,32 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Telephony_Mms::DEFAULT_SORT_ORDER()
+	jstring Telephony_Mms::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Telephony_Mms::REPORT_REQUEST_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms",
 			"REPORT_REQUEST_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject Telephony_Mms::REPORT_STATUS_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms",
 			"REPORT_STATUS_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors

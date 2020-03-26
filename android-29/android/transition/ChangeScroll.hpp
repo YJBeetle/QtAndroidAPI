@@ -35,7 +35,7 @@ namespace __jni_impl::android::transition
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getTransitionProperties();
+		jarray getTransitionProperties();
 		QAndroidJniObject createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2);
 		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
 		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
@@ -68,11 +68,12 @@ namespace __jni_impl::android::transition
 	}
 	
 	// Methods
-	QAndroidJniObject ChangeScroll::getTransitionProperties()
+	jarray ChangeScroll::getTransitionProperties()
 	{
 		return __thiz.callObjectMethod(
 			"getTransitionProperties",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ChangeScroll::createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2)
 	{
@@ -81,21 +82,24 @@ namespace __jni_impl::android::transition
 			"(Landroid/view/ViewGroup;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ChangeScroll::captureStartValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		__thiz.callMethod<void>(
 			"captureStartValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ChangeScroll::captureEndValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		__thiz.callMethod<void>(
 			"captureEndValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::transition
 

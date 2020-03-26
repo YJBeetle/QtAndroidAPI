@@ -40,13 +40,15 @@ namespace __jni_impl::android::icu::util
 	{
 		return __thiz.callMethod<jint>(
 			"getWidth",
-			"()I");
+			"()I"
+		);
 	}
 	jint LocaleData_PaperSize::getHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getHeight",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

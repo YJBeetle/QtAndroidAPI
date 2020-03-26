@@ -41,7 +41,8 @@ namespace __jni_impl::android::text::method
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.HideReturnsTransformationMethod",
 			"getInstance",
-			"()Landroid/text/method/HideReturnsTransformationMethod;");
+			"()Landroid/text/method/HideReturnsTransformationMethod;"
+		);
 	}
 } // namespace __jni_impl::android::text::method
 

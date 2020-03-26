@@ -25,9 +25,9 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		void onStopped();
-		void onStarted(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0);
 		void onFailed(jint arg0);
+		void onStarted(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0);
+		void onStopped();
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -40,25 +40,29 @@ namespace __jni_impl::android::net::wifi
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
-			"ERROR_GENERIC");
+			"ERROR_GENERIC"
+		);
 	}
 	jint WifiManager_LocalOnlyHotspotCallback::ERROR_INCOMPATIBLE_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
-			"ERROR_INCOMPATIBLE_MODE");
+			"ERROR_INCOMPATIBLE_MODE"
+		);
 	}
 	jint WifiManager_LocalOnlyHotspotCallback::ERROR_NO_CHANNEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
-			"ERROR_NO_CHANNEL");
+			"ERROR_NO_CHANNEL"
+		);
 	}
 	jint WifiManager_LocalOnlyHotspotCallback::ERROR_TETHERING_DISALLOWED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
-			"ERROR_TETHERING_DISALLOWED");
+			"ERROR_TETHERING_DISALLOWED"
+		);
 	}
 	
 	// Constructors
@@ -70,25 +74,28 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	void WifiManager_LocalOnlyHotspotCallback::onStopped()
+	void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"onStopped",
-			"()V");
+			"onFailed",
+			"(I)V",
+			arg0
+		);
 	}
 	void WifiManager_LocalOnlyHotspotCallback::onStarted(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0)
 	{
 		__thiz.callMethod<void>(
 			"onStarted",
 			"(Landroid/net/wifi/WifiManager$LocalOnlyHotspotReservation;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0)
+	void WifiManager_LocalOnlyHotspotCallback::onStopped()
 	{
 		__thiz.callMethod<void>(
-			"onFailed",
-			"(I)V",
-			arg0);
+			"onStopped",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi
 

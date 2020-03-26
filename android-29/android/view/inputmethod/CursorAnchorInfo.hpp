@@ -34,15 +34,15 @@ namespace __jni_impl::android::view::inputmethod
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getSelectionStart();
 		jint getSelectionEnd();
 		QAndroidJniObject getMatrix();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getComposingTextStart();
-		QAndroidJniObject getComposingText();
+		jstring getComposingText();
 		jint getInsertionMarkerFlags();
 		jfloat getInsertionMarkerHorizontal();
 		jfloat getInsertionMarkerTop();
@@ -65,25 +65,29 @@ namespace __jni_impl::android::view::inputmethod
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.CursorAnchorInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint CursorAnchorInfo::FLAG_HAS_INVISIBLE_REGION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.inputmethod.CursorAnchorInfo",
-			"FLAG_HAS_INVISIBLE_REGION");
+			"FLAG_HAS_INVISIBLE_REGION"
+		);
 	}
 	jint CursorAnchorInfo::FLAG_HAS_VISIBLE_REGION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.inputmethod.CursorAnchorInfo",
-			"FLAG_HAS_VISIBLE_REGION");
+			"FLAG_HAS_VISIBLE_REGION"
+		);
 	}
 	jint CursorAnchorInfo::FLAG_IS_RTL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.inputmethod.CursorAnchorInfo",
-			"FLAG_IS_RTL");
+			"FLAG_IS_RTL"
+		);
 	}
 	
 	// Constructors
@@ -101,43 +105,29 @@ namespace __jni_impl::android::view::inputmethod
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CursorAnchorInfo::toString()
+	jstring CursorAnchorInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint CursorAnchorInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jint CursorAnchorInfo::getSelectionStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getSelectionStart",
-			"()I");
-	}
-	jint CursorAnchorInfo::getSelectionEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getSelectionEnd",
-			"()I");
-	}
-	QAndroidJniObject CursorAnchorInfo::getMatrix()
-	{
-		return __thiz.callObjectMethod(
-			"getMatrix",
-			"()Landroid/graphics/Matrix;");
+			"()I"
+		);
 	}
 	jint CursorAnchorInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CursorAnchorInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -145,63 +135,94 @@ namespace __jni_impl::android::view::inputmethod
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint CursorAnchorInfo::getSelectionStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getSelectionStart",
+			"()I"
+		);
+	}
+	jint CursorAnchorInfo::getSelectionEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getSelectionEnd",
+			"()I"
+		);
+	}
+	QAndroidJniObject CursorAnchorInfo::getMatrix()
+	{
+		return __thiz.callObjectMethod(
+			"getMatrix",
+			"()Landroid/graphics/Matrix;"
+		);
 	}
 	jint CursorAnchorInfo::getComposingTextStart()
 	{
 		return __thiz.callMethod<jint>(
 			"getComposingTextStart",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject CursorAnchorInfo::getComposingText()
+	jstring CursorAnchorInfo::getComposingText()
 	{
 		return __thiz.callObjectMethod(
 			"getComposingText",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint CursorAnchorInfo::getInsertionMarkerFlags()
 	{
 		return __thiz.callMethod<jint>(
 			"getInsertionMarkerFlags",
-			"()I");
+			"()I"
+		);
 	}
 	jfloat CursorAnchorInfo::getInsertionMarkerHorizontal()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getInsertionMarkerHorizontal",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat CursorAnchorInfo::getInsertionMarkerTop()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getInsertionMarkerTop",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat CursorAnchorInfo::getInsertionMarkerBaseline()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getInsertionMarkerBaseline",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat CursorAnchorInfo::getInsertionMarkerBottom()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getInsertionMarkerBottom",
-			"()F");
+			"()F"
+		);
 	}
 	QAndroidJniObject CursorAnchorInfo::getCharacterBounds(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getCharacterBounds",
 			"(I)Landroid/graphics/RectF;",
-			arg0);
+			arg0
+		);
 	}
 	jint CursorAnchorInfo::getCharacterBoundsFlags(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getCharacterBoundsFlags",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

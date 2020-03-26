@@ -18,7 +18,7 @@ namespace __jni_impl::android::service::carrier
 		
 		// Methods
 		jint getSendStatus();
-		QAndroidJniObject getSendConfPdu();
+		jbyteArray getSendConfPdu();
 	};
 } // namespace __jni_impl::android::service::carrier
 
@@ -42,13 +42,15 @@ namespace __jni_impl::android::service::carrier
 	{
 		return __thiz.callMethod<jint>(
 			"getSendStatus",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject CarrierMessagingService_SendMmsResult::getSendConfPdu()
+	jbyteArray CarrierMessagingService_SendMmsResult::getSendConfPdu()
 	{
 		return __thiz.callObjectMethod(
 			"getSendConfPdu",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::service::carrier
 

@@ -77,50 +77,58 @@ namespace __jni_impl::java::nio::channels::spi
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.spi.SelectorProvider",
 			"provider",
-			"()Ljava/nio/channels/spi/SelectorProvider;");
+			"()Ljava/nio/channels/spi/SelectorProvider;"
+		);
 	}
 	QAndroidJniObject SelectorProvider::inheritedChannel()
 	{
 		return __thiz.callObjectMethod(
 			"inheritedChannel",
-			"()Ljava/nio/channels/Channel;");
+			"()Ljava/nio/channels/Channel;"
+		);
 	}
 	QAndroidJniObject SelectorProvider::openDatagramChannel(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"openDatagramChannel",
 			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/DatagramChannel;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SelectorProvider::openDatagramChannel()
 	{
 		return __thiz.callObjectMethod(
 			"openDatagramChannel",
-			"()Ljava/nio/channels/DatagramChannel;");
+			"()Ljava/nio/channels/DatagramChannel;"
+		);
 	}
 	QAndroidJniObject SelectorProvider::openPipe()
 	{
 		return __thiz.callObjectMethod(
 			"openPipe",
-			"()Ljava/nio/channels/Pipe;");
+			"()Ljava/nio/channels/Pipe;"
+		);
 	}
 	QAndroidJniObject SelectorProvider::openSelector()
 	{
 		return __thiz.callObjectMethod(
 			"openSelector",
-			"()Ljava/nio/channels/spi/AbstractSelector;");
+			"()Ljava/nio/channels/spi/AbstractSelector;"
+		);
 	}
 	QAndroidJniObject SelectorProvider::openServerSocketChannel()
 	{
 		return __thiz.callObjectMethod(
 			"openServerSocketChannel",
-			"()Ljava/nio/channels/ServerSocketChannel;");
+			"()Ljava/nio/channels/ServerSocketChannel;"
+		);
 	}
 	QAndroidJniObject SelectorProvider::openSocketChannel()
 	{
 		return __thiz.callObjectMethod(
 			"openSocketChannel",
-			"()Ljava/nio/channels/SocketChannel;");
+			"()Ljava/nio/channels/SocketChannel;"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels::spi
 

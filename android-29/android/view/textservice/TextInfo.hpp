@@ -25,12 +25,12 @@ namespace __jni_impl::android::view::textservice
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getText();
-		jint getSequence();
-		jint getCookie();
-		QAndroidJniObject getCharSequence();
+		jstring getText();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getCharSequence();
+		jint getSequence();
+		jint getCookie();
 	};
 } // namespace __jni_impl::android::view::textservice
 
@@ -44,7 +44,8 @@ namespace __jni_impl::android::view::textservice
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textservice.TextInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -84,35 +85,19 @@ namespace __jni_impl::android::view::textservice
 	}
 	
 	// Methods
-	QAndroidJniObject TextInfo::getText()
+	jstring TextInfo::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/String;");
-	}
-	jint TextInfo::getSequence()
-	{
-		return __thiz.callMethod<jint>(
-			"getSequence",
-			"()I");
-	}
-	jint TextInfo::getCookie()
-	{
-		return __thiz.callMethod<jint>(
-			"getCookie",
-			"()I");
-	}
-	QAndroidJniObject TextInfo::getCharSequence()
-	{
-		return __thiz.callObjectMethod(
-			"getCharSequence",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TextInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void TextInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -120,7 +105,29 @@ namespace __jni_impl::android::view::textservice
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring TextInfo::getCharSequence()
+	{
+		return __thiz.callObjectMethod(
+			"getCharSequence",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jint TextInfo::getSequence()
+	{
+		return __thiz.callMethod<jint>(
+			"getSequence",
+			"()I"
+		);
+	}
+	jint TextInfo::getCookie()
+	{
+		return __thiz.callMethod<jint>(
+			"getCookie",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::view::textservice
 

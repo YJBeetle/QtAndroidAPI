@@ -68,205 +68,241 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_1080P");
+			"QUALITY_1080P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_2160P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_2160P");
+			"QUALITY_2160P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_480P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_480P");
+			"QUALITY_480P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_720P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_720P");
+			"QUALITY_720P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_CIF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_CIF");
+			"QUALITY_CIF"
+		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_HIGH");
+			"QUALITY_HIGH"
+		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_1080P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_HIGH_SPEED_1080P");
+			"QUALITY_HIGH_SPEED_1080P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_2160P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_HIGH_SPEED_2160P");
+			"QUALITY_HIGH_SPEED_2160P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_480P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_HIGH_SPEED_480P");
+			"QUALITY_HIGH_SPEED_480P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_720P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_HIGH_SPEED_720P");
+			"QUALITY_HIGH_SPEED_720P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_HIGH_SPEED_HIGH");
+			"QUALITY_HIGH_SPEED_HIGH"
+		);
 	}
 	jint CamcorderProfile::QUALITY_HIGH_SPEED_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_HIGH_SPEED_LOW");
+			"QUALITY_HIGH_SPEED_LOW"
+		);
 	}
 	jint CamcorderProfile::QUALITY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_LOW");
+			"QUALITY_LOW"
+		);
 	}
 	jint CamcorderProfile::QUALITY_QCIF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_QCIF");
+			"QUALITY_QCIF"
+		);
 	}
 	jint CamcorderProfile::QUALITY_QVGA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_QVGA");
+			"QUALITY_QVGA"
+		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_1080P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_TIME_LAPSE_1080P");
+			"QUALITY_TIME_LAPSE_1080P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_2160P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_TIME_LAPSE_2160P");
+			"QUALITY_TIME_LAPSE_2160P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_480P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_TIME_LAPSE_480P");
+			"QUALITY_TIME_LAPSE_480P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_720P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_TIME_LAPSE_720P");
+			"QUALITY_TIME_LAPSE_720P"
+		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_CIF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_TIME_LAPSE_CIF");
+			"QUALITY_TIME_LAPSE_CIF"
+		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_TIME_LAPSE_HIGH");
+			"QUALITY_TIME_LAPSE_HIGH"
+		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_TIME_LAPSE_LOW");
+			"QUALITY_TIME_LAPSE_LOW"
+		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_QCIF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_TIME_LAPSE_QCIF");
+			"QUALITY_TIME_LAPSE_QCIF"
+		);
 	}
 	jint CamcorderProfile::QUALITY_TIME_LAPSE_QVGA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CamcorderProfile",
-			"QUALITY_TIME_LAPSE_QVGA");
+			"QUALITY_TIME_LAPSE_QVGA"
+		);
 	}
 	jint CamcorderProfile::audioBitRate()
 	{
 		return __thiz.getField<jint>(
-			"audioBitRate");
+			"audioBitRate"
+		);
 	}
 	jint CamcorderProfile::audioChannels()
 	{
 		return __thiz.getField<jint>(
-			"audioChannels");
+			"audioChannels"
+		);
 	}
 	jint CamcorderProfile::audioCodec()
 	{
 		return __thiz.getField<jint>(
-			"audioCodec");
+			"audioCodec"
+		);
 	}
 	jint CamcorderProfile::audioSampleRate()
 	{
 		return __thiz.getField<jint>(
-			"audioSampleRate");
+			"audioSampleRate"
+		);
 	}
 	jint CamcorderProfile::duration()
 	{
 		return __thiz.getField<jint>(
-			"duration");
+			"duration"
+		);
 	}
 	jint CamcorderProfile::fileFormat()
 	{
 		return __thiz.getField<jint>(
-			"fileFormat");
+			"fileFormat"
+		);
 	}
 	jint CamcorderProfile::quality()
 	{
 		return __thiz.getField<jint>(
-			"quality");
+			"quality"
+		);
 	}
 	jint CamcorderProfile::videoBitRate()
 	{
 		return __thiz.getField<jint>(
-			"videoBitRate");
+			"videoBitRate"
+		);
 	}
 	jint CamcorderProfile::videoCodec()
 	{
 		return __thiz.getField<jint>(
-			"videoCodec");
+			"videoCodec"
+		);
 	}
 	jint CamcorderProfile::videoFrameHeight()
 	{
 		return __thiz.getField<jint>(
-			"videoFrameHeight");
+			"videoFrameHeight"
+		);
 	}
 	jint CamcorderProfile::videoFrameRate()
 	{
 		return __thiz.getField<jint>(
-			"videoFrameRate");
+			"videoFrameRate"
+		);
 	}
 	jint CamcorderProfile::videoFrameWidth()
 	{
 		return __thiz.getField<jint>(
-			"videoFrameWidth");
+			"videoFrameWidth"
+		);
 	}
 	
 	// Constructors
@@ -285,7 +321,8 @@ namespace __jni_impl::android::media
 			"get",
 			"(II)Landroid/media/CamcorderProfile;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject CamcorderProfile::get(jint arg0)
 	{
@@ -293,7 +330,8 @@ namespace __jni_impl::android::media
 			"android.media.CamcorderProfile",
 			"get",
 			"(I)Landroid/media/CamcorderProfile;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CamcorderProfile::hasProfile(jint arg0)
 	{
@@ -301,7 +339,8 @@ namespace __jni_impl::android::media
 			"android.media.CamcorderProfile",
 			"hasProfile",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CamcorderProfile::hasProfile(jint arg0, jint arg1)
 	{
@@ -310,7 +349,8 @@ namespace __jni_impl::android::media
 			"hasProfile",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

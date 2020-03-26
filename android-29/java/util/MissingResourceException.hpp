@@ -19,8 +19,8 @@ namespace __jni_impl::java::util
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
 		
 		// Methods
-		QAndroidJniObject getKey();
-		QAndroidJniObject getClassName();
+		jstring getKey();
+		jstring getClassName();
 	};
 } // namespace __jni_impl::java::util
 
@@ -41,17 +41,19 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject MissingResourceException::getKey()
+	jstring MissingResourceException::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MissingResourceException::getClassName()
+	jstring MissingResourceException::getClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getClassName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

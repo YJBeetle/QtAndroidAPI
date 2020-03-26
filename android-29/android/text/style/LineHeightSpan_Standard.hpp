@@ -26,11 +26,11 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		jint getSpanTypeId();
-		jint getHeight();
-		void chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getSpanTypeId();
+		void chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5);
+		jint getHeight();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -58,17 +58,28 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
+	jint LineHeightSpan_Standard::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void LineHeightSpan_Standard::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 	jint LineHeightSpan_Standard::getSpanTypeId()
 	{
 		return __thiz.callMethod<jint>(
 			"getSpanTypeId",
-			"()I");
-	}
-	jint LineHeightSpan_Standard::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
+			"()I"
+		);
 	}
 	void LineHeightSpan_Standard::chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5)
 	{
@@ -80,21 +91,15 @@ namespace __jni_impl::android::text::style
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
-	jint LineHeightSpan_Standard::describeContents()
+	jint LineHeightSpan_Standard::getHeight()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void LineHeightSpan_Standard::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			"getHeight",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

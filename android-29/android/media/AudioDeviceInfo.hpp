@@ -45,15 +45,15 @@ namespace __jni_impl::android::media
 		jint hashCode();
 		jint getId();
 		jint getType();
-		QAndroidJniObject getAddress();
+		jstring getAddress();
 		jboolean isSource();
 		jboolean isSink();
-		QAndroidJniObject getSampleRates();
-		QAndroidJniObject getChannelMasks();
-		QAndroidJniObject getChannelIndexMasks();
-		QAndroidJniObject getChannelCounts();
-		QAndroidJniObject getEncodings();
-		QAndroidJniObject getProductName();
+		jintArray getSampleRates();
+		jintArray getChannelMasks();
+		jintArray getChannelIndexMasks();
+		jintArray getChannelCounts();
+		jintArray getEncodings();
+		jstring getProductName();
 	};
 } // namespace __jni_impl::android::media
 
@@ -65,145 +65,169 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_AUX_LINE");
+			"TYPE_AUX_LINE"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_BLUETOOTH_A2DP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_BLUETOOTH_A2DP");
+			"TYPE_BLUETOOTH_A2DP"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_BLUETOOTH_SCO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_BLUETOOTH_SCO");
+			"TYPE_BLUETOOTH_SCO"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_BUILTIN_EARPIECE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_BUILTIN_EARPIECE");
+			"TYPE_BUILTIN_EARPIECE"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_BUILTIN_MIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_BUILTIN_MIC");
+			"TYPE_BUILTIN_MIC"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_BUILTIN_SPEAKER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_BUILTIN_SPEAKER");
+			"TYPE_BUILTIN_SPEAKER"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_BUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_BUS");
+			"TYPE_BUS"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_DOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_DOCK");
+			"TYPE_DOCK"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_FM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_FM");
+			"TYPE_FM"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_FM_TUNER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_FM_TUNER");
+			"TYPE_FM_TUNER"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_HDMI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_HDMI");
+			"TYPE_HDMI"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_HDMI_ARC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_HDMI_ARC");
+			"TYPE_HDMI_ARC"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_HEARING_AID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_HEARING_AID");
+			"TYPE_HEARING_AID"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_IP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_IP");
+			"TYPE_IP"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_LINE_ANALOG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_LINE_ANALOG");
+			"TYPE_LINE_ANALOG"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_LINE_DIGITAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_LINE_DIGITAL");
+			"TYPE_LINE_DIGITAL"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_TELEPHONY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_TELEPHONY");
+			"TYPE_TELEPHONY"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_TV_TUNER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_TV_TUNER");
+			"TYPE_TV_TUNER"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_UNKNOWN");
+			"TYPE_UNKNOWN"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_USB_ACCESSORY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_USB_ACCESSORY");
+			"TYPE_USB_ACCESSORY"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_USB_DEVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_USB_DEVICE");
+			"TYPE_USB_DEVICE"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_USB_HEADSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_USB_HEADSET");
+			"TYPE_USB_HEADSET"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_WIRED_HEADPHONES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_WIRED_HEADPHONES");
+			"TYPE_WIRED_HEADPHONES"
+		);
 	}
 	jint AudioDeviceInfo::TYPE_WIRED_HEADSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.AudioDeviceInfo",
-			"TYPE_WIRED_HEADSET");
+			"TYPE_WIRED_HEADSET"
+		);
 	}
 	
 	// Constructors
@@ -220,79 +244,92 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint AudioDeviceInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioDeviceInfo::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
+			"()I"
+		);
 	}
 	jint AudioDeviceInfo::getType()
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject AudioDeviceInfo::getAddress()
+	jstring AudioDeviceInfo::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean AudioDeviceInfo::isSource()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSource",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AudioDeviceInfo::isSink()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSink",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject AudioDeviceInfo::getSampleRates()
+	jintArray AudioDeviceInfo::getSampleRates()
 	{
 		return __thiz.callObjectMethod(
 			"getSampleRates",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AudioDeviceInfo::getChannelMasks()
+	jintArray AudioDeviceInfo::getChannelMasks()
 	{
 		return __thiz.callObjectMethod(
 			"getChannelMasks",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AudioDeviceInfo::getChannelIndexMasks()
+	jintArray AudioDeviceInfo::getChannelIndexMasks()
 	{
 		return __thiz.callObjectMethod(
 			"getChannelIndexMasks",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AudioDeviceInfo::getChannelCounts()
+	jintArray AudioDeviceInfo::getChannelCounts()
 	{
 		return __thiz.callObjectMethod(
 			"getChannelCounts",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AudioDeviceInfo::getEncodings()
+	jintArray AudioDeviceInfo::getEncodings()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodings",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject AudioDeviceInfo::getProductName()
+	jstring AudioDeviceInfo::getProductName()
 	{
 		return __thiz.callObjectMethod(
 			"getProductName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

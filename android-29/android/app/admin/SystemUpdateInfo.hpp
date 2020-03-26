@@ -26,7 +26,7 @@ namespace __jni_impl::android::app::admin
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -45,25 +45,29 @@ namespace __jni_impl::android::app::admin
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.SystemUpdateInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SystemUpdateInfo::SECURITY_PATCH_STATE_FALSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.SystemUpdateInfo",
-			"SECURITY_PATCH_STATE_FALSE");
+			"SECURITY_PATCH_STATE_FALSE"
+		);
 	}
 	jint SystemUpdateInfo::SECURITY_PATCH_STATE_TRUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.SystemUpdateInfo",
-			"SECURITY_PATCH_STATE_TRUE");
+			"SECURITY_PATCH_STATE_TRUE"
+		);
 	}
 	jint SystemUpdateInfo::SECURITY_PATCH_STATE_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.admin.SystemUpdateInfo",
-			"SECURITY_PATCH_STATE_UNKNOWN");
+			"SECURITY_PATCH_STATE_UNKNOWN"
+		);
 	}
 	
 	// Constructors
@@ -80,25 +84,29 @@ namespace __jni_impl::android::app::admin
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SystemUpdateInfo::toString()
+	jstring SystemUpdateInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SystemUpdateInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint SystemUpdateInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SystemUpdateInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -106,19 +114,22 @@ namespace __jni_impl::android::app::admin
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jlong SystemUpdateInfo::getReceivedTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getReceivedTime",
-			"()J");
+			"()J"
+		);
 	}
 	jint SystemUpdateInfo::getSecurityPatchState()
 	{
 		return __thiz.callMethod<jint>(
 			"getSecurityPatchState",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::app::admin
 

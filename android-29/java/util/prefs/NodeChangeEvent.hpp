@@ -58,13 +58,15 @@ namespace __jni_impl::java::util::prefs
 	{
 		return __thiz.callObjectMethod(
 			"getParent",
-			"()Ljava/util/prefs/Preferences;");
+			"()Ljava/util/prefs/Preferences;"
+		);
 	}
 	QAndroidJniObject NodeChangeEvent::getChild()
 	{
 		return __thiz.callObjectMethod(
 			"getChild",
-			"()Ljava/util/prefs/Preferences;");
+			"()Ljava/util/prefs/Preferences;"
+		);
 	}
 } // namespace __jni_impl::java::util::prefs
 

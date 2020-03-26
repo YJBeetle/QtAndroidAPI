@@ -64,19 +64,22 @@ namespace __jni_impl::android::hardware::camera2::params
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.camera2.params.SessionConfiguration",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SessionConfiguration::SESSION_HIGH_SPEED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.SessionConfiguration",
-			"SESSION_HIGH_SPEED");
+			"SESSION_HIGH_SPEED"
+		);
 	}
 	jint SessionConfiguration::SESSION_REGULAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.SessionConfiguration",
-			"SESSION_REGULAR");
+			"SESSION_REGULAR"
+		);
 	}
 	
 	// Constructors
@@ -97,25 +100,29 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint SessionConfiguration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SessionConfiguration::getExecutor()
 	{
 		return __thiz.callObjectMethod(
 			"getExecutor",
-			"()Ljava/util/concurrent/Executor;");
+			"()Ljava/util/concurrent/Executor;"
+		);
 	}
 	jint SessionConfiguration::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SessionConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -123,51 +130,59 @@ namespace __jni_impl::android::hardware::camera2::params
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint SessionConfiguration::getSessionType()
 	{
 		return __thiz.callMethod<jint>(
 			"getSessionType",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject SessionConfiguration::getOutputConfigurations()
 	{
 		return __thiz.callObjectMethod(
 			"getOutputConfigurations",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject SessionConfiguration::getStateCallback()
 	{
 		return __thiz.callObjectMethod(
 			"getStateCallback",
-			"()Landroid/hardware/camera2/CameraCaptureSession$StateCallback;");
+			"()Landroid/hardware/camera2/CameraCaptureSession$StateCallback;"
+		);
 	}
 	void SessionConfiguration::setInputConfiguration(__jni_impl::android::hardware::camera2::params::InputConfiguration arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInputConfiguration",
 			"(Landroid/hardware/camera2/params/InputConfiguration;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SessionConfiguration::getInputConfiguration()
 	{
 		return __thiz.callObjectMethod(
 			"getInputConfiguration",
-			"()Landroid/hardware/camera2/params/InputConfiguration;");
+			"()Landroid/hardware/camera2/params/InputConfiguration;"
+		);
 	}
 	void SessionConfiguration::setSessionParameters(__jni_impl::android::hardware::camera2::CaptureRequest arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSessionParameters",
 			"(Landroid/hardware/camera2/CaptureRequest;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SessionConfiguration::getSessionParameters()
 	{
 		return __thiz.callObjectMethod(
 			"getSessionParameters",
-			"()Landroid/hardware/camera2/CaptureRequest;");
+			"()Landroid/hardware/camera2/CaptureRequest;"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

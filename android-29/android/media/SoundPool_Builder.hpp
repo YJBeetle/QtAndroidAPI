@@ -51,21 +51,24 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/media/SoundPool;");
+			"()Landroid/media/SoundPool;"
+		);
 	}
 	QAndroidJniObject SoundPool_Builder::setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAudioAttributes",
 			"(Landroid/media/AudioAttributes;)Landroid/media/SoundPool$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SoundPool_Builder::setMaxStreams(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMaxStreams",
 			"(I)Landroid/media/SoundPool$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

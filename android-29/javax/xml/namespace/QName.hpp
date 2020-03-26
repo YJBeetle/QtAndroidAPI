@@ -20,12 +20,12 @@ namespace __jni_impl::javax::xml::namespace
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject valueOf(jstring arg0);
-		QAndroidJniObject getPrefix();
-		QAndroidJniObject getNamespaceURI();
-		QAndroidJniObject getLocalPart();
+		jstring getPrefix();
+		jstring getNamespaceURI();
+		jstring getLocalPart();
 	};
 } // namespace __jni_impl::javax::xml::namespace
 
@@ -66,19 +66,22 @@ namespace __jni_impl::javax::xml::namespace
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject QName::toString()
+	jstring QName::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint QName::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject QName::valueOf(jstring arg0)
 	{
@@ -86,25 +89,29 @@ namespace __jni_impl::javax::xml::namespace
 			"javax.xml.namespace.QName",
 			"valueOf",
 			"(Ljava/lang/String;)Ljavax/xml/namespace/QName;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject QName::getPrefix()
+	jstring QName::getPrefix()
 	{
 		return __thiz.callObjectMethod(
 			"getPrefix",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject QName::getNamespaceURI()
+	jstring QName::getNamespaceURI()
 	{
 		return __thiz.callObjectMethod(
 			"getNamespaceURI",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject QName::getLocalPart()
+	jstring QName::getLocalPart()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalPart",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::xml::namespace
 

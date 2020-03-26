@@ -23,12 +23,12 @@ namespace __jni_impl::android::opengl
 		// Methods
 		static jint getType(__jni_impl::android::graphics::Bitmap arg0);
 		static jint getInternalFormat(__jni_impl::android::graphics::Bitmap arg0);
-		static void texSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap arg4, jint arg5, jint arg6);
-		static void texSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap arg4);
-		static QAndroidJniObject getEGLErrorString(jint arg0);
+		static void texImage2D(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap arg2, jint arg3);
 		static void texImage2D(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap arg3, jint arg4, jint arg5);
 		static void texImage2D(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap arg3, jint arg4);
-		static void texImage2D(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap arg2, jint arg3);
+		static void texSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap arg4, jint arg5, jint arg6);
+		static void texSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap arg4);
+		static jstring getEGLErrorString(jint arg0);
 	};
 } // namespace __jni_impl::android::opengl
 
@@ -53,7 +53,8 @@ namespace __jni_impl::android::opengl
 			"android.opengl.GLUtils",
 			"getType",
 			"(Landroid/graphics/Bitmap;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint GLUtils::getInternalFormat(__jni_impl::android::graphics::Bitmap arg0)
 	{
@@ -61,7 +62,47 @@ namespace __jni_impl::android::opengl
 			"android.opengl.GLUtils",
 			"getInternalFormat",
 			"(Landroid/graphics/Bitmap;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void GLUtils::texImage2D(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLUtils",
+			"texImage2D",
+			"(IILandroid/graphics/Bitmap;I)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void GLUtils::texImage2D(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap arg3, jint arg4, jint arg5)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLUtils",
+			"texImage2D",
+			"(IIILandroid/graphics/Bitmap;II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5
+		);
+	}
+	void GLUtils::texImage2D(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLUtils",
+			"texImage2D",
+			"(IIILandroid/graphics/Bitmap;I)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4
+		);
 	}
 	void GLUtils::texSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap arg4, jint arg5, jint arg6)
 	{
@@ -75,7 +116,8 @@ namespace __jni_impl::android::opengl
 			arg3,
 			arg4.__jniObject().object(),
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void GLUtils::texSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap arg4)
 	{
@@ -87,51 +129,17 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
-	QAndroidJniObject GLUtils::getEGLErrorString(jint arg0)
+	jstring GLUtils::getEGLErrorString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.GLUtils",
 			"getEGLErrorString",
 			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	void GLUtils::texImage2D(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap arg3, jint arg4, jint arg5)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLUtils",
-			"texImage2D",
-			"(IIILandroid/graphics/Bitmap;II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5);
-	}
-	void GLUtils::texImage2D(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLUtils",
-			"texImage2D",
-			"(IIILandroid/graphics/Bitmap;I)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4);
-	}
-	void GLUtils::texImage2D(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLUtils",
-			"texImage2D",
-			"(IILandroid/graphics/Bitmap;I)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::opengl
 

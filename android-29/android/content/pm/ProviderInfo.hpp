@@ -20,27 +20,27 @@ namespace __jni_impl::android::content::pm
 		// Fields
 		static QAndroidJniObject CREATOR();
 		static jint FLAG_SINGLE_USER();
-		QAndroidJniObject authority();
+		jstring authority();
 		jint flags();
 		jboolean forceUriPermissions();
 		jboolean grantUriPermissions();
 		jint initOrder();
 		jboolean isSyncable();
 		jboolean multiprocess();
-		QAndroidJniObject pathPermissions();
-		QAndroidJniObject readPermission();
-		QAndroidJniObject uriPermissionPatterns();
-		QAndroidJniObject writePermission();
+		jarray pathPermissions();
+		jstring readPermission();
+		jarray uriPermissionPatterns();
+		jstring writePermission();
 		
 		// Constructors
 		void __constructor();
 		void __constructor(__jni_impl::android::content::pm::ProviderInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -54,73 +54,86 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ProviderInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ProviderInfo::FLAG_SINGLE_USER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ProviderInfo",
-			"FLAG_SINGLE_USER");
+			"FLAG_SINGLE_USER"
+		);
 	}
-	QAndroidJniObject ProviderInfo::authority()
+	jstring ProviderInfo::authority()
 	{
 		return __thiz.getObjectField(
 			"authority",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ProviderInfo::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
 	jboolean ProviderInfo::forceUriPermissions()
 	{
 		return __thiz.getField<jboolean>(
-			"forceUriPermissions");
+			"forceUriPermissions"
+		);
 	}
 	jboolean ProviderInfo::grantUriPermissions()
 	{
 		return __thiz.getField<jboolean>(
-			"grantUriPermissions");
+			"grantUriPermissions"
+		);
 	}
 	jint ProviderInfo::initOrder()
 	{
 		return __thiz.getField<jint>(
-			"initOrder");
+			"initOrder"
+		);
 	}
 	jboolean ProviderInfo::isSyncable()
 	{
 		return __thiz.getField<jboolean>(
-			"isSyncable");
+			"isSyncable"
+		);
 	}
 	jboolean ProviderInfo::multiprocess()
 	{
 		return __thiz.getField<jboolean>(
-			"multiprocess");
+			"multiprocess"
+		);
 	}
-	QAndroidJniObject ProviderInfo::pathPermissions()
+	jarray ProviderInfo::pathPermissions()
 	{
 		return __thiz.getObjectField(
 			"pathPermissions",
-			"[Landroid/content/pm/PathPermission;");
+			"[Landroid/content/pm/PathPermission;"
+		).object<jarray>();
 	}
-	QAndroidJniObject ProviderInfo::readPermission()
+	jstring ProviderInfo::readPermission()
 	{
 		return __thiz.getObjectField(
 			"readPermission",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ProviderInfo::uriPermissionPatterns()
+	jarray ProviderInfo::uriPermissionPatterns()
 	{
 		return __thiz.getObjectField(
 			"uriPermissionPatterns",
-			"[Landroid/os/PatternMatcher;");
+			"[Landroid/os/PatternMatcher;"
+		).object<jarray>();
 	}
-	QAndroidJniObject ProviderInfo::writePermission()
+	jstring ProviderInfo::writePermission()
 	{
 		return __thiz.getObjectField(
 			"writePermission",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -139,25 +152,19 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject ProviderInfo::toString()
+	jstring ProviderInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	void ProviderInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ProviderInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ProviderInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -165,7 +172,17 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ProviderInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

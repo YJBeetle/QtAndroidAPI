@@ -32,12 +32,14 @@ namespace __jni_impl::java::io
 	jint OptionalDataException::length()
 	{
 		return __thiz.getField<jint>(
-			"length");
+			"length"
+		);
 	}
 	jboolean OptionalDataException::eof()
 	{
 		return __thiz.getField<jboolean>(
-			"eof");
+			"eof"
+		);
 	}
 	
 	// Constructors

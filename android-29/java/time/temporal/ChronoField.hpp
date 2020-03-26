@@ -56,8 +56,8 @@ namespace __jni_impl::java::time::temporal
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		static QAndroidJniObject values();
+		jstring toString();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		QAndroidJniObject range();
 		jlong checkValidValue(jlong arg0);
@@ -70,7 +70,7 @@ namespace __jni_impl::java::time::temporal
 		jlong getFrom(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject adjustInto(__jni_impl::__JniBaseClass arg0, jlong arg1);
 		QAndroidJniObject rangeRefinedBy(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getDisplayName(__jni_impl::java::util::Locale arg0);
+		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
 	};
 } // namespace __jni_impl::java::time::temporal
 
@@ -85,210 +85,240 @@ namespace __jni_impl::java::time::temporal
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"NANO_OF_SECOND",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::NANO_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"NANO_OF_DAY",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::MICRO_OF_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"MICRO_OF_SECOND",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::MICRO_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"MICRO_OF_DAY",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::MILLI_OF_SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"MILLI_OF_SECOND",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::MILLI_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"MILLI_OF_DAY",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::SECOND_OF_MINUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"SECOND_OF_MINUTE",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::SECOND_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"SECOND_OF_DAY",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::MINUTE_OF_HOUR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"MINUTE_OF_HOUR",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::MINUTE_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"MINUTE_OF_DAY",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::HOUR_OF_AMPM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"HOUR_OF_AMPM",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::CLOCK_HOUR_OF_AMPM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"CLOCK_HOUR_OF_AMPM",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::HOUR_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"HOUR_OF_DAY",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::CLOCK_HOUR_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"CLOCK_HOUR_OF_DAY",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::AMPM_OF_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"AMPM_OF_DAY",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::DAY_OF_WEEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"DAY_OF_WEEK",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::ALIGNED_DAY_OF_WEEK_IN_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"ALIGNED_DAY_OF_WEEK_IN_MONTH",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::ALIGNED_DAY_OF_WEEK_IN_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"ALIGNED_DAY_OF_WEEK_IN_YEAR",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::DAY_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"DAY_OF_MONTH",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::DAY_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"DAY_OF_YEAR",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::EPOCH_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"EPOCH_DAY",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::ALIGNED_WEEK_OF_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"ALIGNED_WEEK_OF_MONTH",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::ALIGNED_WEEK_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"ALIGNED_WEEK_OF_YEAR",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::MONTH_OF_YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"MONTH_OF_YEAR",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::PROLEPTIC_MONTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"PROLEPTIC_MONTH",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::YEAR_OF_ERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"YEAR_OF_ERA",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"YEAR",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::ERA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"ERA",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::INSTANT_SECONDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"INSTANT_SECONDS",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	QAndroidJniObject ChronoField::OFFSET_SECONDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoField",
 			"OFFSET_SECONDS",
-			"Ljava/time/temporal/ChronoField;");
+			"Ljava/time/temporal/ChronoField;"
+		);
 	}
 	
 	// Constructors
@@ -300,18 +330,20 @@ namespace __jni_impl::java::time::temporal
 	}
 	
 	// Methods
-	QAndroidJniObject ChronoField::toString()
+	jstring ChronoField::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ChronoField::values()
+	jarray ChronoField::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.ChronoField",
 			"values",
-			"()[Ljava/time/temporal/ChronoField;");
+			"()[Ljava/time/temporal/ChronoField;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ChronoField::valueOf(jstring arg0)
 	{
@@ -319,65 +351,75 @@ namespace __jni_impl::java::time::temporal
 			"java.time.temporal.ChronoField",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/temporal/ChronoField;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ChronoField::range()
 	{
 		return __thiz.callObjectMethod(
 			"range",
-			"()Ljava/time/temporal/ValueRange;");
+			"()Ljava/time/temporal/ValueRange;"
+		);
 	}
 	jlong ChronoField::checkValidValue(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"checkValidValue",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint ChronoField::checkValidIntValue(jlong arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"checkValidIntValue",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ChronoField::getBaseUnit()
 	{
 		return __thiz.callObjectMethod(
 			"getBaseUnit",
-			"()Ljava/time/temporal/TemporalUnit;");
+			"()Ljava/time/temporal/TemporalUnit;"
+		);
 	}
 	QAndroidJniObject ChronoField::getRangeUnit()
 	{
 		return __thiz.callObjectMethod(
 			"getRangeUnit",
-			"()Ljava/time/temporal/TemporalUnit;");
+			"()Ljava/time/temporal/TemporalUnit;"
+		);
 	}
 	jboolean ChronoField::isDateBased()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDateBased",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ChronoField::isTimeBased()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTimeBased",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ChronoField::isSupportedBy(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSupportedBy",
 			"(Ljava/time/temporal/TemporalAccessor;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong ChronoField::getFrom(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getFrom",
 			"(Ljava/time/temporal/TemporalAccessor;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ChronoField::adjustInto(__jni_impl::__JniBaseClass arg0, jlong arg1)
 	{
@@ -385,21 +427,24 @@ namespace __jni_impl::java::time::temporal
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;J)Ljava/time/temporal/Temporal;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ChronoField::rangeRefinedBy(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"rangeRefinedBy",
 			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject ChronoField::getDisplayName(__jni_impl::java::util::Locale arg0)
+	jstring ChronoField::getDisplayName(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::time::temporal
 

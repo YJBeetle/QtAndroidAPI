@@ -24,9 +24,9 @@ namespace __jni_impl::android::se::omapi
 		jboolean isOpen();
 		void close();
 		jboolean isBasicChannel();
-		QAndroidJniObject transmit(jbyteArray arg0);
+		jbyteArray transmit(jbyteArray arg0);
 		QAndroidJniObject getSession();
-		QAndroidJniObject getSelectResponse();
+		jbyteArray getSelectResponse();
 		jboolean selectNext();
 	};
 } // namespace __jni_impl::android::se::omapi
@@ -50,44 +50,51 @@ namespace __jni_impl::android::se::omapi
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpen",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Channel::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Channel::isBasicChannel()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBasicChannel",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Channel::transmit(jbyteArray arg0)
+	jbyteArray Channel::transmit(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"transmit",
 			"([B)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject Channel::getSession()
 	{
 		return __thiz.callObjectMethod(
 			"getSession",
-			"()Landroid/se/omapi/Session;");
+			"()Landroid/se/omapi/Session;"
+		);
 	}
-	QAndroidJniObject Channel::getSelectResponse()
+	jbyteArray Channel::getSelectResponse()
 	{
 		return __thiz.callObjectMethod(
 			"getSelectResponse",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jboolean Channel::selectNext()
 	{
 		return __thiz.callMethod<jboolean>(
 			"selectNext",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::se::omapi
 

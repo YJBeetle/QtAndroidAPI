@@ -18,10 +18,10 @@ namespace __jni_impl::android::text
 		
 		// Methods
 		jint length();
-		QAndroidJniObject toString();
+		jstring toString();
 		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);
 		jchar charAt(jint arg0);
-		QAndroidJniObject subSequence(jint arg0, jint arg1);
+		jstring subSequence(jint arg0, jint arg1);
 		static QAndroidJniObject make(jstring arg0, jcharArray arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::text
@@ -44,13 +44,15 @@ namespace __jni_impl::android::text
 	{
 		return __thiz.callMethod<jint>(
 			"length",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject AlteredCharSequence::toString()
+	jstring AlteredCharSequence::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AlteredCharSequence::getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3)
 	{
@@ -60,22 +62,25 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jchar AlteredCharSequence::charAt(jint arg0)
 	{
 		return __thiz.callMethod<jchar>(
 			"charAt",
 			"(I)C",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AlteredCharSequence::subSequence(jint arg0, jint arg1)
+	jstring AlteredCharSequence::subSequence(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	QAndroidJniObject AlteredCharSequence::make(jstring arg0, jcharArray arg1, jint arg2, jint arg3)
 	{
@@ -86,7 +91,8 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::text
 

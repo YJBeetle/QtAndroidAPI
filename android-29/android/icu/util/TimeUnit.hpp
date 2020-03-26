@@ -18,7 +18,7 @@ namespace __jni_impl::android::icu::util
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -36,12 +36,13 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject TimeUnit::values()
+	jarray TimeUnit::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.TimeUnit",
 			"values",
-			"()[Landroid/icu/util/TimeUnit;");
+			"()[Landroid/icu/util/TimeUnit;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::util
 

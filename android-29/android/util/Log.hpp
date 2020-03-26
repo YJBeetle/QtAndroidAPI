@@ -39,7 +39,7 @@ namespace __jni_impl::android::util
 		static jint wtf(jstring arg0, jthrowable arg1);
 		static jint wtf(jstring arg0, jstring arg1, jthrowable arg2);
 		static jint wtf(jstring arg0, jstring arg1);
-		static QAndroidJniObject getStackTraceString(jthrowable arg0);
+		static jstring getStackTraceString(jthrowable arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -51,37 +51,43 @@ namespace __jni_impl::android::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Log",
-			"ASSERT");
+			"ASSERT"
+		);
 	}
 	jint Log::DEBUG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Log",
-			"DEBUG");
+			"DEBUG"
+		);
 	}
 	jint Log::ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Log",
-			"ERROR");
+			"ERROR"
+		);
 	}
 	jint Log::INFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Log",
-			"INFO");
+			"INFO"
+		);
 	}
 	jint Log::VERBOSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Log",
-			"VERBOSE");
+			"VERBOSE"
+		);
 	}
 	jint Log::WARN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.util.Log",
-			"WARN");
+			"WARN"
+		);
 	}
 	
 	// Constructors
@@ -101,7 +107,8 @@ namespace __jni_impl::android::util
 			"(ILjava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Log::i(jstring arg0, jstring arg1)
 	{
@@ -110,7 +117,8 @@ namespace __jni_impl::android::util
 			"i",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Log::i(jstring arg0, jstring arg1, jthrowable arg2)
 	{
@@ -120,7 +128,8 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Log::d(jstring arg0, jstring arg1)
 	{
@@ -129,7 +138,8 @@ namespace __jni_impl::android::util
 			"d",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Log::d(jstring arg0, jstring arg1, jthrowable arg2)
 	{
@@ -139,7 +149,8 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Log::e(jstring arg0, jstring arg1, jthrowable arg2)
 	{
@@ -149,7 +160,8 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Log::e(jstring arg0, jstring arg1)
 	{
@@ -158,7 +170,8 @@ namespace __jni_impl::android::util
 			"e",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Log::v(jstring arg0, jstring arg1)
 	{
@@ -167,7 +180,8 @@ namespace __jni_impl::android::util
 			"v",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Log::v(jstring arg0, jstring arg1, jthrowable arg2)
 	{
@@ -177,7 +191,8 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Log::w(jstring arg0, jthrowable arg1)
 	{
@@ -186,7 +201,8 @@ namespace __jni_impl::android::util
 			"w",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Log::w(jstring arg0, jstring arg1, jthrowable arg2)
 	{
@@ -196,7 +212,8 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Log::w(jstring arg0, jstring arg1)
 	{
@@ -205,7 +222,8 @@ namespace __jni_impl::android::util
 			"w",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Log::isLoggable(jstring arg0, jint arg1)
 	{
@@ -214,7 +232,8 @@ namespace __jni_impl::android::util
 			"isLoggable",
 			"(Ljava/lang/String;I)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Log::wtf(jstring arg0, jthrowable arg1)
 	{
@@ -223,7 +242,8 @@ namespace __jni_impl::android::util
 			"wtf",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Log::wtf(jstring arg0, jstring arg1, jthrowable arg2)
 	{
@@ -233,7 +253,8 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Log::wtf(jstring arg0, jstring arg1)
 	{
@@ -242,15 +263,17 @@ namespace __jni_impl::android::util
 			"wtf",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Log::getStackTraceString(jthrowable arg0)
+	jstring Log::getStackTraceString(jthrowable arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.Log",
 			"getStackTraceString",
 			"(Ljava/lang/Throwable;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::util
 

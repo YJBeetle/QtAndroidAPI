@@ -10,13 +10,13 @@ namespace __jni_impl::java::io
 {
 	class InputStream;
 }
-namespace __jni_impl::java::util
-{
-	class Date;
-}
 namespace __jni_impl::java::math
 {
 	class BigInteger;
+}
+namespace __jni_impl::java::util
+{
+	class Date;
 }
 
 namespace __jni_impl::javax::security::cert
@@ -35,20 +35,20 @@ namespace __jni_impl::javax::security::cert
 		QAndroidJniObject getIssuerDN();
 		QAndroidJniObject getSubjectDN();
 		jint getVersion();
-		QAndroidJniObject getSigAlgName();
-		QAndroidJniObject getSigAlgParams();
+		QAndroidJniObject getSerialNumber();
+		jstring getSigAlgName();
+		jbyteArray getSigAlgParams();
 		void checkValidity(__jni_impl::java::util::Date arg0);
 		void checkValidity();
 		QAndroidJniObject getNotBefore();
 		QAndroidJniObject getNotAfter();
-		QAndroidJniObject getSigAlgOID();
-		QAndroidJniObject getSerialNumber();
+		jstring getSigAlgOID();
 	};
 } // namespace __jni_impl::javax::security::cert
 
 #include "../../../java/io/InputStream.hpp"
-#include "../../../java/util/Date.hpp"
 #include "../../../java/math/BigInteger.hpp"
+#include "../../../java/util/Date.hpp"
 
 namespace __jni_impl::javax::security::cert
 {
@@ -69,7 +69,8 @@ namespace __jni_impl::javax::security::cert
 			"javax.security.cert.X509Certificate",
 			"getInstance",
 			"([B)Ljavax/security/cert/X509Certificate;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject X509Certificate::getInstance(__jni_impl::java::io::InputStream arg0)
 	{
@@ -77,74 +78,86 @@ namespace __jni_impl::javax::security::cert
 			"javax.security.cert.X509Certificate",
 			"getInstance",
 			"(Ljava/io/InputStream;)Ljavax/security/cert/X509Certificate;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject X509Certificate::getIssuerDN()
 	{
 		return __thiz.callObjectMethod(
 			"getIssuerDN",
-			"()Ljava/security/Principal;");
+			"()Ljava/security/Principal;"
+		);
 	}
 	QAndroidJniObject X509Certificate::getSubjectDN()
 	{
 		return __thiz.callObjectMethod(
 			"getSubjectDN",
-			"()Ljava/security/Principal;");
+			"()Ljava/security/Principal;"
+		);
 	}
 	jint X509Certificate::getVersion()
 	{
 		return __thiz.callMethod<jint>(
 			"getVersion",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject X509Certificate::getSigAlgName()
+	QAndroidJniObject X509Certificate::getSerialNumber()
+	{
+		return __thiz.callObjectMethod(
+			"getSerialNumber",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	jstring X509Certificate::getSigAlgName()
 	{
 		return __thiz.callObjectMethod(
 			"getSigAlgName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject X509Certificate::getSigAlgParams()
+	jbyteArray X509Certificate::getSigAlgParams()
 	{
 		return __thiz.callObjectMethod(
 			"getSigAlgParams",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	void X509Certificate::checkValidity(__jni_impl::java::util::Date arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkValidity",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void X509Certificate::checkValidity()
 	{
 		__thiz.callMethod<void>(
 			"checkValidity",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject X509Certificate::getNotBefore()
 	{
 		return __thiz.callObjectMethod(
 			"getNotBefore",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	QAndroidJniObject X509Certificate::getNotAfter()
 	{
 		return __thiz.callObjectMethod(
 			"getNotAfter",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
-	QAndroidJniObject X509Certificate::getSigAlgOID()
+	jstring X509Certificate::getSigAlgOID()
 	{
 		return __thiz.callObjectMethod(
 			"getSigAlgOID",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject X509Certificate::getSerialNumber()
-	{
-		return __thiz.callObjectMethod(
-			"getSerialNumber",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::security::cert
 

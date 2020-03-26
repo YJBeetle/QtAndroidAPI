@@ -41,7 +41,8 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Reminders",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors
@@ -61,7 +62,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;J[Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::provider
 

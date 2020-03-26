@@ -22,7 +22,7 @@ namespace __jni_impl::java::util::concurrent::atomic
 		
 		// Methods
 		void add(jdouble arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint intValue();
 		jlong longValue();
 		jfloat floatValue();
@@ -53,55 +53,64 @@ namespace __jni_impl::java::util::concurrent::atomic
 		__thiz.callMethod<void>(
 			"add",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DoubleAdder::toString()
+	jstring DoubleAdder::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DoubleAdder::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong DoubleAdder::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat DoubleAdder::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble DoubleAdder::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 	void DoubleAdder::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	jdouble DoubleAdder::sum()
 	{
 		return __thiz.callMethod<jdouble>(
 			"sum",
-			"()D");
+			"()D"
+		);
 	}
 	jdouble DoubleAdder::sumThenReset()
 	{
 		return __thiz.callMethod<jdouble>(
 			"sumThenReset",
-			"()D");
+			"()D"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

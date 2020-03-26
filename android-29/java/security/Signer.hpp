@@ -27,9 +27,9 @@ namespace __jni_impl::java::security
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		void setKeyPair(__jni_impl::java::security::KeyPair arg0);
+		jstring toString();
 		QAndroidJniObject getPrivateKey();
+		void setKeyPair(__jni_impl::java::security::KeyPair arg0);
 	};
 } // namespace __jni_impl::java::security
 
@@ -58,24 +58,27 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject Signer::toString()
+	jstring Signer::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Signer::getPrivateKey()
+	{
+		return __thiz.callObjectMethod(
+			"getPrivateKey",
+			"()Ljava/security/PrivateKey;"
+		);
 	}
 	void Signer::setKeyPair(__jni_impl::java::security::KeyPair arg0)
 	{
 		__thiz.callMethod<void>(
 			"setKeyPair",
 			"(Ljava/security/KeyPair;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Signer::getPrivateKey()
-	{
-		return __thiz.callObjectMethod(
-			"getPrivateKey",
-			"()Ljava/security/PrivateKey;");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security
 

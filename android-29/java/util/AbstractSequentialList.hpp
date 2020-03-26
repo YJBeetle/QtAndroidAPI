@@ -20,11 +20,11 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		void add(jint arg0, jobject arg1);
-		QAndroidJniObject remove(jint arg0);
-		QAndroidJniObject get(jint arg0);
+		jobject remove(jint arg0);
+		jobject get(jint arg0);
 		QAndroidJniObject iterator();
 		jboolean addAll(jint arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject set(jint arg0, jobject arg1);
+		jobject set(jint arg0, jobject arg1);
 		QAndroidJniObject listIterator(jint arg0);
 	};
 } // namespace __jni_impl::java::util
@@ -49,27 +49,31 @@ namespace __jni_impl::java::util
 			"add",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject AbstractSequentialList::remove(jint arg0)
+	jobject AbstractSequentialList::remove(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"remove",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject AbstractSequentialList::get(jint arg0)
+	jobject AbstractSequentialList::get(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject AbstractSequentialList::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jboolean AbstractSequentialList::addAll(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -77,22 +81,25 @@ namespace __jni_impl::java::util
 			"addAll",
 			"(ILjava/util/Collection;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject AbstractSequentialList::set(jint arg0, jobject arg1)
+	jobject AbstractSequentialList::set(jint arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"set",
 			"(ILjava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	QAndroidJniObject AbstractSequentialList::listIterator(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"listIterator",
 			"(I)Ljava/util/ListIterator;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util
 

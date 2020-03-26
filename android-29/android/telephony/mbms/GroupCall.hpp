@@ -40,55 +40,64 @@ namespace __jni_impl::android::telephony::mbms
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
-			"REASON_BY_USER_REQUEST");
+			"REASON_BY_USER_REQUEST"
+		);
 	}
 	jint GroupCall::REASON_FREQUENCY_CONFLICT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
-			"REASON_FREQUENCY_CONFLICT");
+			"REASON_FREQUENCY_CONFLICT"
+		);
 	}
 	jint GroupCall::REASON_LEFT_MBMS_BROADCAST_AREA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
-			"REASON_LEFT_MBMS_BROADCAST_AREA");
+			"REASON_LEFT_MBMS_BROADCAST_AREA"
+		);
 	}
 	jint GroupCall::REASON_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
-			"REASON_NONE");
+			"REASON_NONE"
+		);
 	}
 	jint GroupCall::REASON_NOT_CONNECTED_TO_HOMECARRIER_LTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
-			"REASON_NOT_CONNECTED_TO_HOMECARRIER_LTE");
+			"REASON_NOT_CONNECTED_TO_HOMECARRIER_LTE"
+		);
 	}
 	jint GroupCall::REASON_OUT_OF_MEMORY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
-			"REASON_OUT_OF_MEMORY");
+			"REASON_OUT_OF_MEMORY"
+		);
 	}
 	jint GroupCall::STATE_STALLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
-			"STATE_STALLED");
+			"STATE_STALLED"
+		);
 	}
 	jint GroupCall::STATE_STARTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
-			"STATE_STARTED");
+			"STATE_STARTED"
+		);
 	}
 	jint GroupCall::STATE_STOPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.GroupCall",
-			"STATE_STOPPED");
+			"STATE_STOPPED"
+		);
 	}
 	
 	// Constructors
@@ -104,13 +113,15 @@ namespace __jni_impl::android::telephony::mbms
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jlong GroupCall::getTmgi()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTmgi",
-			"()J");
+			"()J"
+		);
 	}
 	void GroupCall::updateGroupCall(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -118,7 +129,8 @@ namespace __jni_impl::android::telephony::mbms
 			"updateGroupCall",
 			"(Ljava/util/List;Ljava/util/List;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

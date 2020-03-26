@@ -67,20 +67,23 @@ namespace __jni_impl::java::lang::invoke
 	{
 		return __thiz.callObjectMethod(
 			"dynamicInvoker",
-			"()Ljava/lang/invoke/MethodHandle;");
+			"()Ljava/lang/invoke/MethodHandle;"
+		);
 	}
 	QAndroidJniObject MutableCallSite::getTarget()
 	{
 		return __thiz.callObjectMethod(
 			"getTarget",
-			"()Ljava/lang/invoke/MethodHandle;");
+			"()Ljava/lang/invoke/MethodHandle;"
+		);
 	}
 	void MutableCallSite::setTarget(__jni_impl::java::lang::invoke::MethodHandle arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTarget",
 			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MutableCallSite::syncAll(jarray arg0)
 	{
@@ -88,7 +91,8 @@ namespace __jni_impl::java::lang::invoke
 			"java.lang.invoke.MutableCallSite",
 			"syncAll",
 			"([Ljava/lang/invoke/MutableCallSite;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang::invoke
 

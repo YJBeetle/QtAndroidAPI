@@ -10,6 +10,10 @@ namespace __jni_impl::android::view
 {
 	class KeyEvent_DispatcherState;
 }
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 namespace __jni_impl::android::view
 {
 	class KeyCharacterMap;
@@ -17,10 +21,6 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class KeyCharacterMap_KeyData;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::view
@@ -368,14 +368,17 @@ namespace __jni_impl::android::view
 		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
 		
 		// Methods
-		jboolean dispatch(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::KeyEvent_DispatcherState arg1, jobject arg2);
 		jboolean dispatch(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject toString();
+		jboolean dispatch(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::KeyEvent_DispatcherState arg1, jobject arg2);
+		jstring toString();
 		jint getModifiers();
 		jboolean isSystem();
 		jint getSource();
 		jint getFlags();
 		jchar getNumber();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getAction();
+		jboolean isCanceled();
 		static jint getMaxKeyCode();
 		static jint getDeadChar(jint arg0, jint arg1);
 		static QAndroidJniObject changeTimeRepeat(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2);
@@ -406,7 +409,7 @@ namespace __jni_impl::android::view
 		jboolean isTracking();
 		jboolean isLongPress();
 		jint getKeyCode();
-		QAndroidJniObject getCharacters();
+		jstring getCharacters();
 		jint getScanCode();
 		jint getRepeatCount();
 		jlong getDownTime();
@@ -416,21 +419,18 @@ namespace __jni_impl::android::view
 		jint getUnicodeChar(jint arg0);
 		jint getUnicodeChar();
 		jboolean getKeyData(__jni_impl::android::view::KeyCharacterMap_KeyData arg0);
-		jchar getMatch(jcharArray arg0);
 		jchar getMatch(jcharArray arg0, jint arg1);
+		jchar getMatch(jcharArray arg0);
 		jboolean isPrintingKey();
-		static QAndroidJniObject keyCodeToString(jint arg0);
+		static jstring keyCodeToString(jint arg0);
 		static jint keyCodeFromString(jstring arg0);
-		jboolean isCanceled();
-		jint getAction();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
 #include "KeyEvent_DispatcherState.hpp"
+#include "../os/Parcel.hpp"
 #include "KeyCharacterMap.hpp"
 #include "KeyCharacterMap_KeyData.hpp"
-#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -439,1958 +439,2284 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"ACTION_DOWN");
+			"ACTION_DOWN"
+		);
 	}
 	jint KeyEvent::ACTION_MULTIPLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"ACTION_MULTIPLE");
+			"ACTION_MULTIPLE"
+		);
 	}
 	jint KeyEvent::ACTION_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"ACTION_UP");
+			"ACTION_UP"
+		);
 	}
 	QAndroidJniObject KeyEvent::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.KeyEvent",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint KeyEvent::FLAG_CANCELED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_CANCELED");
+			"FLAG_CANCELED"
+		);
 	}
 	jint KeyEvent::FLAG_CANCELED_LONG_PRESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_CANCELED_LONG_PRESS");
+			"FLAG_CANCELED_LONG_PRESS"
+		);
 	}
 	jint KeyEvent::FLAG_EDITOR_ACTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_EDITOR_ACTION");
+			"FLAG_EDITOR_ACTION"
+		);
 	}
 	jint KeyEvent::FLAG_FALLBACK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_FALLBACK");
+			"FLAG_FALLBACK"
+		);
 	}
 	jint KeyEvent::FLAG_FROM_SYSTEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_FROM_SYSTEM");
+			"FLAG_FROM_SYSTEM"
+		);
 	}
 	jint KeyEvent::FLAG_KEEP_TOUCH_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_KEEP_TOUCH_MODE");
+			"FLAG_KEEP_TOUCH_MODE"
+		);
 	}
 	jint KeyEvent::FLAG_LONG_PRESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_LONG_PRESS");
+			"FLAG_LONG_PRESS"
+		);
 	}
 	jint KeyEvent::FLAG_SOFT_KEYBOARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_SOFT_KEYBOARD");
+			"FLAG_SOFT_KEYBOARD"
+		);
 	}
 	jint KeyEvent::FLAG_TRACKING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_TRACKING");
+			"FLAG_TRACKING"
+		);
 	}
 	jint KeyEvent::FLAG_VIRTUAL_HARD_KEY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_VIRTUAL_HARD_KEY");
+			"FLAG_VIRTUAL_HARD_KEY"
+		);
 	}
 	jint KeyEvent::FLAG_WOKE_HERE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"FLAG_WOKE_HERE");
+			"FLAG_WOKE_HERE"
+		);
 	}
 	jint KeyEvent::KEYCODE_0()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_0");
+			"KEYCODE_0"
+		);
 	}
 	jint KeyEvent::KEYCODE_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_1");
+			"KEYCODE_1"
+		);
 	}
 	jint KeyEvent::KEYCODE_11()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_11");
+			"KEYCODE_11"
+		);
 	}
 	jint KeyEvent::KEYCODE_12()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_12");
+			"KEYCODE_12"
+		);
 	}
 	jint KeyEvent::KEYCODE_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_2");
+			"KEYCODE_2"
+		);
 	}
 	jint KeyEvent::KEYCODE_3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_3");
+			"KEYCODE_3"
+		);
 	}
 	jint KeyEvent::KEYCODE_3D_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_3D_MODE");
+			"KEYCODE_3D_MODE"
+		);
 	}
 	jint KeyEvent::KEYCODE_4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_4");
+			"KEYCODE_4"
+		);
 	}
 	jint KeyEvent::KEYCODE_5()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_5");
+			"KEYCODE_5"
+		);
 	}
 	jint KeyEvent::KEYCODE_6()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_6");
+			"KEYCODE_6"
+		);
 	}
 	jint KeyEvent::KEYCODE_7()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_7");
+			"KEYCODE_7"
+		);
 	}
 	jint KeyEvent::KEYCODE_8()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_8");
+			"KEYCODE_8"
+		);
 	}
 	jint KeyEvent::KEYCODE_9()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_9");
+			"KEYCODE_9"
+		);
 	}
 	jint KeyEvent::KEYCODE_A()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_A");
+			"KEYCODE_A"
+		);
 	}
 	jint KeyEvent::KEYCODE_ALL_APPS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ALL_APPS");
+			"KEYCODE_ALL_APPS"
+		);
 	}
 	jint KeyEvent::KEYCODE_ALT_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ALT_LEFT");
+			"KEYCODE_ALT_LEFT"
+		);
 	}
 	jint KeyEvent::KEYCODE_ALT_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ALT_RIGHT");
+			"KEYCODE_ALT_RIGHT"
+		);
 	}
 	jint KeyEvent::KEYCODE_APOSTROPHE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_APOSTROPHE");
+			"KEYCODE_APOSTROPHE"
+		);
 	}
 	jint KeyEvent::KEYCODE_APP_SWITCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_APP_SWITCH");
+			"KEYCODE_APP_SWITCH"
+		);
 	}
 	jint KeyEvent::KEYCODE_ASSIST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ASSIST");
+			"KEYCODE_ASSIST"
+		);
 	}
 	jint KeyEvent::KEYCODE_AT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_AT");
+			"KEYCODE_AT"
+		);
 	}
 	jint KeyEvent::KEYCODE_AVR_INPUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_AVR_INPUT");
+			"KEYCODE_AVR_INPUT"
+		);
 	}
 	jint KeyEvent::KEYCODE_AVR_POWER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_AVR_POWER");
+			"KEYCODE_AVR_POWER"
+		);
 	}
 	jint KeyEvent::KEYCODE_B()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_B");
+			"KEYCODE_B"
+		);
 	}
 	jint KeyEvent::KEYCODE_BACK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BACK");
+			"KEYCODE_BACK"
+		);
 	}
 	jint KeyEvent::KEYCODE_BACKSLASH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BACKSLASH");
+			"KEYCODE_BACKSLASH"
+		);
 	}
 	jint KeyEvent::KEYCODE_BOOKMARK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BOOKMARK");
+			"KEYCODE_BOOKMARK"
+		);
 	}
 	jint KeyEvent::KEYCODE_BREAK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BREAK");
+			"KEYCODE_BREAK"
+		);
 	}
 	jint KeyEvent::KEYCODE_BRIGHTNESS_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BRIGHTNESS_DOWN");
+			"KEYCODE_BRIGHTNESS_DOWN"
+		);
 	}
 	jint KeyEvent::KEYCODE_BRIGHTNESS_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BRIGHTNESS_UP");
+			"KEYCODE_BRIGHTNESS_UP"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_1");
+			"KEYCODE_BUTTON_1"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_10()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_10");
+			"KEYCODE_BUTTON_10"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_11()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_11");
+			"KEYCODE_BUTTON_11"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_12()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_12");
+			"KEYCODE_BUTTON_12"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_13()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_13");
+			"KEYCODE_BUTTON_13"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_14()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_14");
+			"KEYCODE_BUTTON_14"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_15()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_15");
+			"KEYCODE_BUTTON_15"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_16()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_16");
+			"KEYCODE_BUTTON_16"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_2");
+			"KEYCODE_BUTTON_2"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_3");
+			"KEYCODE_BUTTON_3"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_4");
+			"KEYCODE_BUTTON_4"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_5()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_5");
+			"KEYCODE_BUTTON_5"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_6()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_6");
+			"KEYCODE_BUTTON_6"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_7()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_7");
+			"KEYCODE_BUTTON_7"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_8()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_8");
+			"KEYCODE_BUTTON_8"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_9()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_9");
+			"KEYCODE_BUTTON_9"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_A()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_A");
+			"KEYCODE_BUTTON_A"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_B()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_B");
+			"KEYCODE_BUTTON_B"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_C()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_C");
+			"KEYCODE_BUTTON_C"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_L1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_L1");
+			"KEYCODE_BUTTON_L1"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_L2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_L2");
+			"KEYCODE_BUTTON_L2"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_MODE");
+			"KEYCODE_BUTTON_MODE"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_R1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_R1");
+			"KEYCODE_BUTTON_R1"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_R2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_R2");
+			"KEYCODE_BUTTON_R2"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_SELECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_SELECT");
+			"KEYCODE_BUTTON_SELECT"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_START()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_START");
+			"KEYCODE_BUTTON_START"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_THUMBL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_THUMBL");
+			"KEYCODE_BUTTON_THUMBL"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_THUMBR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_THUMBR");
+			"KEYCODE_BUTTON_THUMBR"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_X()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_X");
+			"KEYCODE_BUTTON_X"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_Y()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_Y");
+			"KEYCODE_BUTTON_Y"
+		);
 	}
 	jint KeyEvent::KEYCODE_BUTTON_Z()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_BUTTON_Z");
+			"KEYCODE_BUTTON_Z"
+		);
 	}
 	jint KeyEvent::KEYCODE_C()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_C");
+			"KEYCODE_C"
+		);
 	}
 	jint KeyEvent::KEYCODE_CALCULATOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CALCULATOR");
+			"KEYCODE_CALCULATOR"
+		);
 	}
 	jint KeyEvent::KEYCODE_CALENDAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CALENDAR");
+			"KEYCODE_CALENDAR"
+		);
 	}
 	jint KeyEvent::KEYCODE_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CALL");
+			"KEYCODE_CALL"
+		);
 	}
 	jint KeyEvent::KEYCODE_CAMERA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CAMERA");
+			"KEYCODE_CAMERA"
+		);
 	}
 	jint KeyEvent::KEYCODE_CAPS_LOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CAPS_LOCK");
+			"KEYCODE_CAPS_LOCK"
+		);
 	}
 	jint KeyEvent::KEYCODE_CAPTIONS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CAPTIONS");
+			"KEYCODE_CAPTIONS"
+		);
 	}
 	jint KeyEvent::KEYCODE_CHANNEL_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CHANNEL_DOWN");
+			"KEYCODE_CHANNEL_DOWN"
+		);
 	}
 	jint KeyEvent::KEYCODE_CHANNEL_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CHANNEL_UP");
+			"KEYCODE_CHANNEL_UP"
+		);
 	}
 	jint KeyEvent::KEYCODE_CLEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CLEAR");
+			"KEYCODE_CLEAR"
+		);
 	}
 	jint KeyEvent::KEYCODE_COMMA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_COMMA");
+			"KEYCODE_COMMA"
+		);
 	}
 	jint KeyEvent::KEYCODE_CONTACTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CONTACTS");
+			"KEYCODE_CONTACTS"
+		);
 	}
 	jint KeyEvent::KEYCODE_COPY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_COPY");
+			"KEYCODE_COPY"
+		);
 	}
 	jint KeyEvent::KEYCODE_CTRL_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CTRL_LEFT");
+			"KEYCODE_CTRL_LEFT"
+		);
 	}
 	jint KeyEvent::KEYCODE_CTRL_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CTRL_RIGHT");
+			"KEYCODE_CTRL_RIGHT"
+		);
 	}
 	jint KeyEvent::KEYCODE_CUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_CUT");
+			"KEYCODE_CUT"
+		);
 	}
 	jint KeyEvent::KEYCODE_D()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_D");
+			"KEYCODE_D"
+		);
 	}
 	jint KeyEvent::KEYCODE_DEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DEL");
+			"KEYCODE_DEL"
+		);
 	}
 	jint KeyEvent::KEYCODE_DPAD_CENTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DPAD_CENTER");
+			"KEYCODE_DPAD_CENTER"
+		);
 	}
 	jint KeyEvent::KEYCODE_DPAD_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DPAD_DOWN");
+			"KEYCODE_DPAD_DOWN"
+		);
 	}
 	jint KeyEvent::KEYCODE_DPAD_DOWN_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DPAD_DOWN_LEFT");
+			"KEYCODE_DPAD_DOWN_LEFT"
+		);
 	}
 	jint KeyEvent::KEYCODE_DPAD_DOWN_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DPAD_DOWN_RIGHT");
+			"KEYCODE_DPAD_DOWN_RIGHT"
+		);
 	}
 	jint KeyEvent::KEYCODE_DPAD_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DPAD_LEFT");
+			"KEYCODE_DPAD_LEFT"
+		);
 	}
 	jint KeyEvent::KEYCODE_DPAD_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DPAD_RIGHT");
+			"KEYCODE_DPAD_RIGHT"
+		);
 	}
 	jint KeyEvent::KEYCODE_DPAD_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DPAD_UP");
+			"KEYCODE_DPAD_UP"
+		);
 	}
 	jint KeyEvent::KEYCODE_DPAD_UP_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DPAD_UP_LEFT");
+			"KEYCODE_DPAD_UP_LEFT"
+		);
 	}
 	jint KeyEvent::KEYCODE_DPAD_UP_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DPAD_UP_RIGHT");
+			"KEYCODE_DPAD_UP_RIGHT"
+		);
 	}
 	jint KeyEvent::KEYCODE_DVR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_DVR");
+			"KEYCODE_DVR"
+		);
 	}
 	jint KeyEvent::KEYCODE_E()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_E");
+			"KEYCODE_E"
+		);
 	}
 	jint KeyEvent::KEYCODE_EISU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_EISU");
+			"KEYCODE_EISU"
+		);
 	}
 	jint KeyEvent::KEYCODE_ENDCALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ENDCALL");
+			"KEYCODE_ENDCALL"
+		);
 	}
 	jint KeyEvent::KEYCODE_ENTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ENTER");
+			"KEYCODE_ENTER"
+		);
 	}
 	jint KeyEvent::KEYCODE_ENVELOPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ENVELOPE");
+			"KEYCODE_ENVELOPE"
+		);
 	}
 	jint KeyEvent::KEYCODE_EQUALS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_EQUALS");
+			"KEYCODE_EQUALS"
+		);
 	}
 	jint KeyEvent::KEYCODE_ESCAPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ESCAPE");
+			"KEYCODE_ESCAPE"
+		);
 	}
 	jint KeyEvent::KEYCODE_EXPLORER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_EXPLORER");
+			"KEYCODE_EXPLORER"
+		);
 	}
 	jint KeyEvent::KEYCODE_F()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F");
+			"KEYCODE_F"
+		);
 	}
 	jint KeyEvent::KEYCODE_F1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F1");
+			"KEYCODE_F1"
+		);
 	}
 	jint KeyEvent::KEYCODE_F10()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F10");
+			"KEYCODE_F10"
+		);
 	}
 	jint KeyEvent::KEYCODE_F11()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F11");
+			"KEYCODE_F11"
+		);
 	}
 	jint KeyEvent::KEYCODE_F12()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F12");
+			"KEYCODE_F12"
+		);
 	}
 	jint KeyEvent::KEYCODE_F2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F2");
+			"KEYCODE_F2"
+		);
 	}
 	jint KeyEvent::KEYCODE_F3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F3");
+			"KEYCODE_F3"
+		);
 	}
 	jint KeyEvent::KEYCODE_F4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F4");
+			"KEYCODE_F4"
+		);
 	}
 	jint KeyEvent::KEYCODE_F5()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F5");
+			"KEYCODE_F5"
+		);
 	}
 	jint KeyEvent::KEYCODE_F6()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F6");
+			"KEYCODE_F6"
+		);
 	}
 	jint KeyEvent::KEYCODE_F7()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F7");
+			"KEYCODE_F7"
+		);
 	}
 	jint KeyEvent::KEYCODE_F8()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F8");
+			"KEYCODE_F8"
+		);
 	}
 	jint KeyEvent::KEYCODE_F9()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_F9");
+			"KEYCODE_F9"
+		);
 	}
 	jint KeyEvent::KEYCODE_FOCUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_FOCUS");
+			"KEYCODE_FOCUS"
+		);
 	}
 	jint KeyEvent::KEYCODE_FORWARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_FORWARD");
+			"KEYCODE_FORWARD"
+		);
 	}
 	jint KeyEvent::KEYCODE_FORWARD_DEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_FORWARD_DEL");
+			"KEYCODE_FORWARD_DEL"
+		);
 	}
 	jint KeyEvent::KEYCODE_FUNCTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_FUNCTION");
+			"KEYCODE_FUNCTION"
+		);
 	}
 	jint KeyEvent::KEYCODE_G()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_G");
+			"KEYCODE_G"
+		);
 	}
 	jint KeyEvent::KEYCODE_GRAVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_GRAVE");
+			"KEYCODE_GRAVE"
+		);
 	}
 	jint KeyEvent::KEYCODE_GUIDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_GUIDE");
+			"KEYCODE_GUIDE"
+		);
 	}
 	jint KeyEvent::KEYCODE_H()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_H");
+			"KEYCODE_H"
+		);
 	}
 	jint KeyEvent::KEYCODE_HEADSETHOOK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_HEADSETHOOK");
+			"KEYCODE_HEADSETHOOK"
+		);
 	}
 	jint KeyEvent::KEYCODE_HELP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_HELP");
+			"KEYCODE_HELP"
+		);
 	}
 	jint KeyEvent::KEYCODE_HENKAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_HENKAN");
+			"KEYCODE_HENKAN"
+		);
 	}
 	jint KeyEvent::KEYCODE_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_HOME");
+			"KEYCODE_HOME"
+		);
 	}
 	jint KeyEvent::KEYCODE_I()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_I");
+			"KEYCODE_I"
+		);
 	}
 	jint KeyEvent::KEYCODE_INFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_INFO");
+			"KEYCODE_INFO"
+		);
 	}
 	jint KeyEvent::KEYCODE_INSERT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_INSERT");
+			"KEYCODE_INSERT"
+		);
 	}
 	jint KeyEvent::KEYCODE_J()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_J");
+			"KEYCODE_J"
+		);
 	}
 	jint KeyEvent::KEYCODE_K()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_K");
+			"KEYCODE_K"
+		);
 	}
 	jint KeyEvent::KEYCODE_KANA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_KANA");
+			"KEYCODE_KANA"
+		);
 	}
 	jint KeyEvent::KEYCODE_KATAKANA_HIRAGANA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_KATAKANA_HIRAGANA");
+			"KEYCODE_KATAKANA_HIRAGANA"
+		);
 	}
 	jint KeyEvent::KEYCODE_L()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_L");
+			"KEYCODE_L"
+		);
 	}
 	jint KeyEvent::KEYCODE_LANGUAGE_SWITCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_LANGUAGE_SWITCH");
+			"KEYCODE_LANGUAGE_SWITCH"
+		);
 	}
 	jint KeyEvent::KEYCODE_LAST_CHANNEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_LAST_CHANNEL");
+			"KEYCODE_LAST_CHANNEL"
+		);
 	}
 	jint KeyEvent::KEYCODE_LEFT_BRACKET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_LEFT_BRACKET");
+			"KEYCODE_LEFT_BRACKET"
+		);
 	}
 	jint KeyEvent::KEYCODE_M()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_M");
+			"KEYCODE_M"
+		);
 	}
 	jint KeyEvent::KEYCODE_MANNER_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MANNER_MODE");
+			"KEYCODE_MANNER_MODE"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_AUDIO_TRACK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_AUDIO_TRACK");
+			"KEYCODE_MEDIA_AUDIO_TRACK"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_CLOSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_CLOSE");
+			"KEYCODE_MEDIA_CLOSE"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_EJECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_EJECT");
+			"KEYCODE_MEDIA_EJECT"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_FAST_FORWARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_FAST_FORWARD");
+			"KEYCODE_MEDIA_FAST_FORWARD"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_NEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_NEXT");
+			"KEYCODE_MEDIA_NEXT"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_PAUSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_PAUSE");
+			"KEYCODE_MEDIA_PAUSE"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_PLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_PLAY");
+			"KEYCODE_MEDIA_PLAY"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_PLAY_PAUSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_PLAY_PAUSE");
+			"KEYCODE_MEDIA_PLAY_PAUSE"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_PREVIOUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_PREVIOUS");
+			"KEYCODE_MEDIA_PREVIOUS"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_RECORD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_RECORD");
+			"KEYCODE_MEDIA_RECORD"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_REWIND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_REWIND");
+			"KEYCODE_MEDIA_REWIND"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_SKIP_BACKWARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_SKIP_BACKWARD");
+			"KEYCODE_MEDIA_SKIP_BACKWARD"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_SKIP_FORWARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_SKIP_FORWARD");
+			"KEYCODE_MEDIA_SKIP_FORWARD"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_STEP_BACKWARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_STEP_BACKWARD");
+			"KEYCODE_MEDIA_STEP_BACKWARD"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_STEP_FORWARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_STEP_FORWARD");
+			"KEYCODE_MEDIA_STEP_FORWARD"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_STOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_STOP");
+			"KEYCODE_MEDIA_STOP"
+		);
 	}
 	jint KeyEvent::KEYCODE_MEDIA_TOP_MENU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MEDIA_TOP_MENU");
+			"KEYCODE_MEDIA_TOP_MENU"
+		);
 	}
 	jint KeyEvent::KEYCODE_MENU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MENU");
+			"KEYCODE_MENU"
+		);
 	}
 	jint KeyEvent::KEYCODE_META_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_META_LEFT");
+			"KEYCODE_META_LEFT"
+		);
 	}
 	jint KeyEvent::KEYCODE_META_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_META_RIGHT");
+			"KEYCODE_META_RIGHT"
+		);
 	}
 	jint KeyEvent::KEYCODE_MINUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MINUS");
+			"KEYCODE_MINUS"
+		);
 	}
 	jint KeyEvent::KEYCODE_MOVE_END()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MOVE_END");
+			"KEYCODE_MOVE_END"
+		);
 	}
 	jint KeyEvent::KEYCODE_MOVE_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MOVE_HOME");
+			"KEYCODE_MOVE_HOME"
+		);
 	}
 	jint KeyEvent::KEYCODE_MUHENKAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MUHENKAN");
+			"KEYCODE_MUHENKAN"
+		);
 	}
 	jint KeyEvent::KEYCODE_MUSIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MUSIC");
+			"KEYCODE_MUSIC"
+		);
 	}
 	jint KeyEvent::KEYCODE_MUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_MUTE");
+			"KEYCODE_MUTE"
+		);
 	}
 	jint KeyEvent::KEYCODE_N()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_N");
+			"KEYCODE_N"
+		);
 	}
 	jint KeyEvent::KEYCODE_NAVIGATE_IN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NAVIGATE_IN");
+			"KEYCODE_NAVIGATE_IN"
+		);
 	}
 	jint KeyEvent::KEYCODE_NAVIGATE_NEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NAVIGATE_NEXT");
+			"KEYCODE_NAVIGATE_NEXT"
+		);
 	}
 	jint KeyEvent::KEYCODE_NAVIGATE_OUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NAVIGATE_OUT");
+			"KEYCODE_NAVIGATE_OUT"
+		);
 	}
 	jint KeyEvent::KEYCODE_NAVIGATE_PREVIOUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NAVIGATE_PREVIOUS");
+			"KEYCODE_NAVIGATE_PREVIOUS"
+		);
 	}
 	jint KeyEvent::KEYCODE_NOTIFICATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NOTIFICATION");
+			"KEYCODE_NOTIFICATION"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUM");
+			"KEYCODE_NUM"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_0()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_0");
+			"KEYCODE_NUMPAD_0"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_1");
+			"KEYCODE_NUMPAD_1"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_2");
+			"KEYCODE_NUMPAD_2"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_3");
+			"KEYCODE_NUMPAD_3"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_4");
+			"KEYCODE_NUMPAD_4"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_5()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_5");
+			"KEYCODE_NUMPAD_5"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_6()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_6");
+			"KEYCODE_NUMPAD_6"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_7()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_7");
+			"KEYCODE_NUMPAD_7"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_8()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_8");
+			"KEYCODE_NUMPAD_8"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_9()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_9");
+			"KEYCODE_NUMPAD_9"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_ADD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_ADD");
+			"KEYCODE_NUMPAD_ADD"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_COMMA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_COMMA");
+			"KEYCODE_NUMPAD_COMMA"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_DIVIDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_DIVIDE");
+			"KEYCODE_NUMPAD_DIVIDE"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_DOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_DOT");
+			"KEYCODE_NUMPAD_DOT"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_ENTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_ENTER");
+			"KEYCODE_NUMPAD_ENTER"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_EQUALS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_EQUALS");
+			"KEYCODE_NUMPAD_EQUALS"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_LEFT_PAREN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_LEFT_PAREN");
+			"KEYCODE_NUMPAD_LEFT_PAREN"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_MULTIPLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_MULTIPLY");
+			"KEYCODE_NUMPAD_MULTIPLY"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_RIGHT_PAREN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_RIGHT_PAREN");
+			"KEYCODE_NUMPAD_RIGHT_PAREN"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUMPAD_SUBTRACT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUMPAD_SUBTRACT");
+			"KEYCODE_NUMPAD_SUBTRACT"
+		);
 	}
 	jint KeyEvent::KEYCODE_NUM_LOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_NUM_LOCK");
+			"KEYCODE_NUM_LOCK"
+		);
 	}
 	jint KeyEvent::KEYCODE_O()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_O");
+			"KEYCODE_O"
+		);
 	}
 	jint KeyEvent::KEYCODE_P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_P");
+			"KEYCODE_P"
+		);
 	}
 	jint KeyEvent::KEYCODE_PAGE_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PAGE_DOWN");
+			"KEYCODE_PAGE_DOWN"
+		);
 	}
 	jint KeyEvent::KEYCODE_PAGE_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PAGE_UP");
+			"KEYCODE_PAGE_UP"
+		);
 	}
 	jint KeyEvent::KEYCODE_PAIRING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PAIRING");
+			"KEYCODE_PAIRING"
+		);
 	}
 	jint KeyEvent::KEYCODE_PASTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PASTE");
+			"KEYCODE_PASTE"
+		);
 	}
 	jint KeyEvent::KEYCODE_PERIOD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PERIOD");
+			"KEYCODE_PERIOD"
+		);
 	}
 	jint KeyEvent::KEYCODE_PICTSYMBOLS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PICTSYMBOLS");
+			"KEYCODE_PICTSYMBOLS"
+		);
 	}
 	jint KeyEvent::KEYCODE_PLUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PLUS");
+			"KEYCODE_PLUS"
+		);
 	}
 	jint KeyEvent::KEYCODE_POUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_POUND");
+			"KEYCODE_POUND"
+		);
 	}
 	jint KeyEvent::KEYCODE_POWER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_POWER");
+			"KEYCODE_POWER"
+		);
 	}
 	jint KeyEvent::KEYCODE_PROFILE_SWITCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PROFILE_SWITCH");
+			"KEYCODE_PROFILE_SWITCH"
+		);
 	}
 	jint KeyEvent::KEYCODE_PROG_BLUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PROG_BLUE");
+			"KEYCODE_PROG_BLUE"
+		);
 	}
 	jint KeyEvent::KEYCODE_PROG_GREEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PROG_GREEN");
+			"KEYCODE_PROG_GREEN"
+		);
 	}
 	jint KeyEvent::KEYCODE_PROG_RED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PROG_RED");
+			"KEYCODE_PROG_RED"
+		);
 	}
 	jint KeyEvent::KEYCODE_PROG_YELLOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_PROG_YELLOW");
+			"KEYCODE_PROG_YELLOW"
+		);
 	}
 	jint KeyEvent::KEYCODE_Q()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_Q");
+			"KEYCODE_Q"
+		);
 	}
 	jint KeyEvent::KEYCODE_R()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_R");
+			"KEYCODE_R"
+		);
 	}
 	jint KeyEvent::KEYCODE_REFRESH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_REFRESH");
+			"KEYCODE_REFRESH"
+		);
 	}
 	jint KeyEvent::KEYCODE_RIGHT_BRACKET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_RIGHT_BRACKET");
+			"KEYCODE_RIGHT_BRACKET"
+		);
 	}
 	jint KeyEvent::KEYCODE_RO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_RO");
+			"KEYCODE_RO"
+		);
 	}
 	jint KeyEvent::KEYCODE_S()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_S");
+			"KEYCODE_S"
+		);
 	}
 	jint KeyEvent::KEYCODE_SCROLL_LOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SCROLL_LOCK");
+			"KEYCODE_SCROLL_LOCK"
+		);
 	}
 	jint KeyEvent::KEYCODE_SEARCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SEARCH");
+			"KEYCODE_SEARCH"
+		);
 	}
 	jint KeyEvent::KEYCODE_SEMICOLON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SEMICOLON");
+			"KEYCODE_SEMICOLON"
+		);
 	}
 	jint KeyEvent::KEYCODE_SETTINGS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SETTINGS");
+			"KEYCODE_SETTINGS"
+		);
 	}
 	jint KeyEvent::KEYCODE_SHIFT_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SHIFT_LEFT");
+			"KEYCODE_SHIFT_LEFT"
+		);
 	}
 	jint KeyEvent::KEYCODE_SHIFT_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SHIFT_RIGHT");
+			"KEYCODE_SHIFT_RIGHT"
+		);
 	}
 	jint KeyEvent::KEYCODE_SLASH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SLASH");
+			"KEYCODE_SLASH"
+		);
 	}
 	jint KeyEvent::KEYCODE_SLEEP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SLEEP");
+			"KEYCODE_SLEEP"
+		);
 	}
 	jint KeyEvent::KEYCODE_SOFT_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SOFT_LEFT");
+			"KEYCODE_SOFT_LEFT"
+		);
 	}
 	jint KeyEvent::KEYCODE_SOFT_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SOFT_RIGHT");
+			"KEYCODE_SOFT_RIGHT"
+		);
 	}
 	jint KeyEvent::KEYCODE_SOFT_SLEEP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SOFT_SLEEP");
+			"KEYCODE_SOFT_SLEEP"
+		);
 	}
 	jint KeyEvent::KEYCODE_SPACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SPACE");
+			"KEYCODE_SPACE"
+		);
 	}
 	jint KeyEvent::KEYCODE_STAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_STAR");
+			"KEYCODE_STAR"
+		);
 	}
 	jint KeyEvent::KEYCODE_STB_INPUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_STB_INPUT");
+			"KEYCODE_STB_INPUT"
+		);
 	}
 	jint KeyEvent::KEYCODE_STB_POWER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_STB_POWER");
+			"KEYCODE_STB_POWER"
+		);
 	}
 	jint KeyEvent::KEYCODE_STEM_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_STEM_1");
+			"KEYCODE_STEM_1"
+		);
 	}
 	jint KeyEvent::KEYCODE_STEM_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_STEM_2");
+			"KEYCODE_STEM_2"
+		);
 	}
 	jint KeyEvent::KEYCODE_STEM_3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_STEM_3");
+			"KEYCODE_STEM_3"
+		);
 	}
 	jint KeyEvent::KEYCODE_STEM_PRIMARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_STEM_PRIMARY");
+			"KEYCODE_STEM_PRIMARY"
+		);
 	}
 	jint KeyEvent::KEYCODE_SWITCH_CHARSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SWITCH_CHARSET");
+			"KEYCODE_SWITCH_CHARSET"
+		);
 	}
 	jint KeyEvent::KEYCODE_SYM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SYM");
+			"KEYCODE_SYM"
+		);
 	}
 	jint KeyEvent::KEYCODE_SYSRQ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SYSRQ");
+			"KEYCODE_SYSRQ"
+		);
 	}
 	jint KeyEvent::KEYCODE_SYSTEM_NAVIGATION_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SYSTEM_NAVIGATION_DOWN");
+			"KEYCODE_SYSTEM_NAVIGATION_DOWN"
+		);
 	}
 	jint KeyEvent::KEYCODE_SYSTEM_NAVIGATION_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SYSTEM_NAVIGATION_LEFT");
+			"KEYCODE_SYSTEM_NAVIGATION_LEFT"
+		);
 	}
 	jint KeyEvent::KEYCODE_SYSTEM_NAVIGATION_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SYSTEM_NAVIGATION_RIGHT");
+			"KEYCODE_SYSTEM_NAVIGATION_RIGHT"
+		);
 	}
 	jint KeyEvent::KEYCODE_SYSTEM_NAVIGATION_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_SYSTEM_NAVIGATION_UP");
+			"KEYCODE_SYSTEM_NAVIGATION_UP"
+		);
 	}
 	jint KeyEvent::KEYCODE_T()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_T");
+			"KEYCODE_T"
+		);
 	}
 	jint KeyEvent::KEYCODE_TAB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TAB");
+			"KEYCODE_TAB"
+		);
 	}
 	jint KeyEvent::KEYCODE_THUMBS_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_THUMBS_DOWN");
+			"KEYCODE_THUMBS_DOWN"
+		);
 	}
 	jint KeyEvent::KEYCODE_THUMBS_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_THUMBS_UP");
+			"KEYCODE_THUMBS_UP"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV");
+			"KEYCODE_TV"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_ANTENNA_CABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_ANTENNA_CABLE");
+			"KEYCODE_TV_ANTENNA_CABLE"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_AUDIO_DESCRIPTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_AUDIO_DESCRIPTION");
+			"KEYCODE_TV_AUDIO_DESCRIPTION"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_AUDIO_DESCRIPTION_MIX_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_AUDIO_DESCRIPTION_MIX_DOWN");
+			"KEYCODE_TV_AUDIO_DESCRIPTION_MIX_DOWN"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP");
+			"KEYCODE_TV_AUDIO_DESCRIPTION_MIX_UP"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_CONTENTS_MENU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_CONTENTS_MENU");
+			"KEYCODE_TV_CONTENTS_MENU"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_DATA_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_DATA_SERVICE");
+			"KEYCODE_TV_DATA_SERVICE"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT");
+			"KEYCODE_TV_INPUT"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT_COMPONENT_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT_COMPONENT_1");
+			"KEYCODE_TV_INPUT_COMPONENT_1"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT_COMPONENT_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT_COMPONENT_2");
+			"KEYCODE_TV_INPUT_COMPONENT_2"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT_COMPOSITE_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT_COMPOSITE_1");
+			"KEYCODE_TV_INPUT_COMPOSITE_1"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT_COMPOSITE_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT_COMPOSITE_2");
+			"KEYCODE_TV_INPUT_COMPOSITE_2"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT_HDMI_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT_HDMI_1");
+			"KEYCODE_TV_INPUT_HDMI_1"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT_HDMI_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT_HDMI_2");
+			"KEYCODE_TV_INPUT_HDMI_2"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT_HDMI_3()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT_HDMI_3");
+			"KEYCODE_TV_INPUT_HDMI_3"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT_HDMI_4()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT_HDMI_4");
+			"KEYCODE_TV_INPUT_HDMI_4"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_INPUT_VGA_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_INPUT_VGA_1");
+			"KEYCODE_TV_INPUT_VGA_1"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_MEDIA_CONTEXT_MENU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_MEDIA_CONTEXT_MENU");
+			"KEYCODE_TV_MEDIA_CONTEXT_MENU"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_NETWORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_NETWORK");
+			"KEYCODE_TV_NETWORK"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_NUMBER_ENTRY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_NUMBER_ENTRY");
+			"KEYCODE_TV_NUMBER_ENTRY"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_POWER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_POWER");
+			"KEYCODE_TV_POWER"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_RADIO_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_RADIO_SERVICE");
+			"KEYCODE_TV_RADIO_SERVICE"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_SATELLITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_SATELLITE");
+			"KEYCODE_TV_SATELLITE"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_SATELLITE_BS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_SATELLITE_BS");
+			"KEYCODE_TV_SATELLITE_BS"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_SATELLITE_CS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_SATELLITE_CS");
+			"KEYCODE_TV_SATELLITE_CS"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_SATELLITE_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_SATELLITE_SERVICE");
+			"KEYCODE_TV_SATELLITE_SERVICE"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_TELETEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_TELETEXT");
+			"KEYCODE_TV_TELETEXT"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_TERRESTRIAL_ANALOG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_TERRESTRIAL_ANALOG");
+			"KEYCODE_TV_TERRESTRIAL_ANALOG"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_TERRESTRIAL_DIGITAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_TERRESTRIAL_DIGITAL");
+			"KEYCODE_TV_TERRESTRIAL_DIGITAL"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_TIMER_PROGRAMMING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_TIMER_PROGRAMMING");
+			"KEYCODE_TV_TIMER_PROGRAMMING"
+		);
 	}
 	jint KeyEvent::KEYCODE_TV_ZOOM_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_TV_ZOOM_MODE");
+			"KEYCODE_TV_ZOOM_MODE"
+		);
 	}
 	jint KeyEvent::KEYCODE_U()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_U");
+			"KEYCODE_U"
+		);
 	}
 	jint KeyEvent::KEYCODE_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_UNKNOWN");
+			"KEYCODE_UNKNOWN"
+		);
 	}
 	jint KeyEvent::KEYCODE_V()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_V");
+			"KEYCODE_V"
+		);
 	}
 	jint KeyEvent::KEYCODE_VOICE_ASSIST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_VOICE_ASSIST");
+			"KEYCODE_VOICE_ASSIST"
+		);
 	}
 	jint KeyEvent::KEYCODE_VOLUME_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_VOLUME_DOWN");
+			"KEYCODE_VOLUME_DOWN"
+		);
 	}
 	jint KeyEvent::KEYCODE_VOLUME_MUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_VOLUME_MUTE");
+			"KEYCODE_VOLUME_MUTE"
+		);
 	}
 	jint KeyEvent::KEYCODE_VOLUME_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_VOLUME_UP");
+			"KEYCODE_VOLUME_UP"
+		);
 	}
 	jint KeyEvent::KEYCODE_W()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_W");
+			"KEYCODE_W"
+		);
 	}
 	jint KeyEvent::KEYCODE_WAKEUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_WAKEUP");
+			"KEYCODE_WAKEUP"
+		);
 	}
 	jint KeyEvent::KEYCODE_WINDOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_WINDOW");
+			"KEYCODE_WINDOW"
+		);
 	}
 	jint KeyEvent::KEYCODE_X()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_X");
+			"KEYCODE_X"
+		);
 	}
 	jint KeyEvent::KEYCODE_Y()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_Y");
+			"KEYCODE_Y"
+		);
 	}
 	jint KeyEvent::KEYCODE_YEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_YEN");
+			"KEYCODE_YEN"
+		);
 	}
 	jint KeyEvent::KEYCODE_Z()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_Z");
+			"KEYCODE_Z"
+		);
 	}
 	jint KeyEvent::KEYCODE_ZENKAKU_HANKAKU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ZENKAKU_HANKAKU");
+			"KEYCODE_ZENKAKU_HANKAKU"
+		);
 	}
 	jint KeyEvent::KEYCODE_ZOOM_IN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ZOOM_IN");
+			"KEYCODE_ZOOM_IN"
+		);
 	}
 	jint KeyEvent::KEYCODE_ZOOM_OUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"KEYCODE_ZOOM_OUT");
+			"KEYCODE_ZOOM_OUT"
+		);
 	}
 	jint KeyEvent::MAX_KEYCODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"MAX_KEYCODE");
+			"MAX_KEYCODE"
+		);
 	}
 	jint KeyEvent::META_ALT_LEFT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_ALT_LEFT_ON");
+			"META_ALT_LEFT_ON"
+		);
 	}
 	jint KeyEvent::META_ALT_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_ALT_MASK");
+			"META_ALT_MASK"
+		);
 	}
 	jint KeyEvent::META_ALT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_ALT_ON");
+			"META_ALT_ON"
+		);
 	}
 	jint KeyEvent::META_ALT_RIGHT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_ALT_RIGHT_ON");
+			"META_ALT_RIGHT_ON"
+		);
 	}
 	jint KeyEvent::META_CAPS_LOCK_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_CAPS_LOCK_ON");
+			"META_CAPS_LOCK_ON"
+		);
 	}
 	jint KeyEvent::META_CTRL_LEFT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_CTRL_LEFT_ON");
+			"META_CTRL_LEFT_ON"
+		);
 	}
 	jint KeyEvent::META_CTRL_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_CTRL_MASK");
+			"META_CTRL_MASK"
+		);
 	}
 	jint KeyEvent::META_CTRL_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_CTRL_ON");
+			"META_CTRL_ON"
+		);
 	}
 	jint KeyEvent::META_CTRL_RIGHT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_CTRL_RIGHT_ON");
+			"META_CTRL_RIGHT_ON"
+		);
 	}
 	jint KeyEvent::META_FUNCTION_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_FUNCTION_ON");
+			"META_FUNCTION_ON"
+		);
 	}
 	jint KeyEvent::META_META_LEFT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_META_LEFT_ON");
+			"META_META_LEFT_ON"
+		);
 	}
 	jint KeyEvent::META_META_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_META_MASK");
+			"META_META_MASK"
+		);
 	}
 	jint KeyEvent::META_META_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_META_ON");
+			"META_META_ON"
+		);
 	}
 	jint KeyEvent::META_META_RIGHT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_META_RIGHT_ON");
+			"META_META_RIGHT_ON"
+		);
 	}
 	jint KeyEvent::META_NUM_LOCK_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_NUM_LOCK_ON");
+			"META_NUM_LOCK_ON"
+		);
 	}
 	jint KeyEvent::META_SCROLL_LOCK_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_SCROLL_LOCK_ON");
+			"META_SCROLL_LOCK_ON"
+		);
 	}
 	jint KeyEvent::META_SHIFT_LEFT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_SHIFT_LEFT_ON");
+			"META_SHIFT_LEFT_ON"
+		);
 	}
 	jint KeyEvent::META_SHIFT_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_SHIFT_MASK");
+			"META_SHIFT_MASK"
+		);
 	}
 	jint KeyEvent::META_SHIFT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_SHIFT_ON");
+			"META_SHIFT_ON"
+		);
 	}
 	jint KeyEvent::META_SHIFT_RIGHT_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_SHIFT_RIGHT_ON");
+			"META_SHIFT_RIGHT_ON"
+		);
 	}
 	jint KeyEvent::META_SYM_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.KeyEvent",
-			"META_SYM_ON");
+			"META_SYM_ON"
+		);
 	}
 	
 	// Constructors
@@ -2498,6 +2824,14 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
+	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatch",
+			"(Landroid/view/KeyEvent$Callback;)Z",
+			arg0.__jniObject().object()
+		);
+	}
 	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::KeyEvent_DispatcherState arg1, jobject arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2505,57 +2839,81 @@ namespace __jni_impl::android::view
 			"(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
-	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatch",
-			"(Landroid/view/KeyEvent$Callback;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject KeyEvent::toString()
+	jstring KeyEvent::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint KeyEvent::getModifiers()
 	{
 		return __thiz.callMethod<jint>(
 			"getModifiers",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean KeyEvent::isSystem()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSystem",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint KeyEvent::getSource()
 	{
 		return __thiz.callMethod<jint>(
 			"getSource",
-			"()I");
+			"()I"
+		);
 	}
 	jint KeyEvent::getFlags()
 	{
 		return __thiz.callMethod<jint>(
 			"getFlags",
-			"()I");
+			"()I"
+		);
 	}
 	jchar KeyEvent::getNumber()
 	{
 		return __thiz.callMethod<jchar>(
 			"getNumber",
-			"()C");
+			"()C"
+		);
+	}
+	void KeyEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jint KeyEvent::getAction()
+	{
+		return __thiz.callMethod<jint>(
+			"getAction",
+			"()I"
+		);
+	}
+	jboolean KeyEvent::isCanceled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCanceled",
+			"()Z"
+		);
 	}
 	jint KeyEvent::getMaxKeyCode()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.KeyEvent",
 			"getMaxKeyCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint KeyEvent::getDeadChar(jint arg0, jint arg1)
 	{
@@ -2564,7 +2922,8 @@ namespace __jni_impl::android::view
 			"getDeadChar",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyEvent::changeTimeRepeat(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2)
 	{
@@ -2574,7 +2933,8 @@ namespace __jni_impl::android::view
 			"(Landroid/view/KeyEvent;JI)Landroid/view/KeyEvent;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject KeyEvent::changeTimeRepeat(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2, jint arg3)
 	{
@@ -2585,7 +2945,8 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject KeyEvent::changeAction(__jni_impl::android::view::KeyEvent arg0, jint arg1)
 	{
@@ -2594,7 +2955,8 @@ namespace __jni_impl::android::view
 			"changeAction",
 			"(Landroid/view/KeyEvent;I)Landroid/view/KeyEvent;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyEvent::changeFlags(__jni_impl::android::view::KeyEvent arg0, jint arg1)
 	{
@@ -2603,7 +2965,8 @@ namespace __jni_impl::android::view
 			"changeFlags",
 			"(Landroid/view/KeyEvent;I)Landroid/view/KeyEvent;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean KeyEvent::isGamepadButton(jint arg0)
 	{
@@ -2611,33 +2974,38 @@ namespace __jni_impl::android::view
 			"android.view.KeyEvent",
 			"isGamepadButton",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint KeyEvent::getDeviceId()
 	{
 		return __thiz.callMethod<jint>(
 			"getDeviceId",
-			"()I");
+			"()I"
+		);
 	}
 	void KeyEvent::setSource(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSource",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint KeyEvent::getMetaState()
 	{
 		return __thiz.callMethod<jint>(
 			"getMetaState",
-			"()I");
+			"()I"
+		);
 	}
 	jint KeyEvent::getModifierMetaStateMask()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.KeyEvent",
 			"getModifierMetaStateMask",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean KeyEvent::isModifierKey(jint arg0)
 	{
@@ -2645,7 +3013,8 @@ namespace __jni_impl::android::view
 			"android.view.KeyEvent",
 			"isModifierKey",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint KeyEvent::normalizeMetaState(jint arg0)
 	{
@@ -2653,7 +3022,8 @@ namespace __jni_impl::android::view
 			"android.view.KeyEvent",
 			"normalizeMetaState",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean KeyEvent::metaStateHasNoModifiers(jint arg0)
 	{
@@ -2661,7 +3031,8 @@ namespace __jni_impl::android::view
 			"android.view.KeyEvent",
 			"metaStateHasNoModifiers",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean KeyEvent::metaStateHasModifiers(jint arg0, jint arg1)
 	{
@@ -2670,167 +3041,186 @@ namespace __jni_impl::android::view
 			"metaStateHasModifiers",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean KeyEvent::hasNoModifiers()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNoModifiers",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::hasModifiers(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasModifiers",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean KeyEvent::isAltPressed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAltPressed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::isShiftPressed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isShiftPressed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::isSymPressed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSymPressed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::isCtrlPressed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCtrlPressed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::isMetaPressed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMetaPressed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::isFunctionPressed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFunctionPressed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::isCapsLockOn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCapsLockOn",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::isNumLockOn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNumLockOn",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::isScrollLockOn()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isScrollLockOn",
-			"()Z");
+			"()Z"
+		);
 	}
 	void KeyEvent::startTracking()
 	{
 		__thiz.callMethod<void>(
 			"startTracking",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean KeyEvent::isTracking()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTracking",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean KeyEvent::isLongPress()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLongPress",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint KeyEvent::getKeyCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getKeyCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject KeyEvent::getCharacters()
+	jstring KeyEvent::getCharacters()
 	{
 		return __thiz.callObjectMethod(
 			"getCharacters",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint KeyEvent::getScanCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getScanCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint KeyEvent::getRepeatCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getRepeatCount",
-			"()I");
+			"()I"
+		);
 	}
 	jlong KeyEvent::getDownTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDownTime",
-			"()J");
+			"()J"
+		);
 	}
 	jlong KeyEvent::getEventTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getEventTime",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject KeyEvent::getKeyCharacterMap()
 	{
 		return __thiz.callObjectMethod(
 			"getKeyCharacterMap",
-			"()Landroid/view/KeyCharacterMap;");
+			"()Landroid/view/KeyCharacterMap;"
+		);
 	}
 	jchar KeyEvent::getDisplayLabel()
 	{
 		return __thiz.callMethod<jchar>(
 			"getDisplayLabel",
-			"()C");
+			"()C"
+		);
 	}
 	jint KeyEvent::getUnicodeChar(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getUnicodeChar",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint KeyEvent::getUnicodeChar()
 	{
 		return __thiz.callMethod<jint>(
 			"getUnicodeChar",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean KeyEvent::getKeyData(__jni_impl::android::view::KeyCharacterMap_KeyData arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getKeyData",
 			"(Landroid/view/KeyCharacterMap$KeyData;)Z",
-			arg0.__jniObject().object());
-	}
-	jchar KeyEvent::getMatch(jcharArray arg0)
-	{
-		return __thiz.callMethod<jchar>(
-			"getMatch",
-			"([C)C",
-			arg0);
+			arg0.__jniObject().object()
+		);
 	}
 	jchar KeyEvent::getMatch(jcharArray arg0, jint arg1)
 	{
@@ -2838,21 +3228,32 @@ namespace __jni_impl::android::view
 			"getMatch",
 			"([CI)C",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	jchar KeyEvent::getMatch(jcharArray arg0)
+	{
+		return __thiz.callMethod<jchar>(
+			"getMatch",
+			"([C)C",
+			arg0
+		);
 	}
 	jboolean KeyEvent::isPrintingKey()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPrintingKey",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject KeyEvent::keyCodeToString(jint arg0)
+	jstring KeyEvent::keyCodeToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.KeyEvent",
 			"keyCodeToString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint KeyEvent::keyCodeFromString(jstring arg0)
 	{
@@ -2860,27 +3261,8 @@ namespace __jni_impl::android::view
 			"android.view.KeyEvent",
 			"keyCodeFromString",
 			"(Ljava/lang/String;)I",
-			arg0);
-	}
-	jboolean KeyEvent::isCanceled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCanceled",
-			"()Z");
-	}
-	jint KeyEvent::getAction()
-	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I");
-	}
-	void KeyEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

@@ -50,7 +50,8 @@ namespace __jni_impl::android::transition
 		return __thiz.callObjectMethod(
 			"onGetEpicenter",
 			"(Landroid/transition/Transition;)Landroid/graphics/Rect;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::transition
 

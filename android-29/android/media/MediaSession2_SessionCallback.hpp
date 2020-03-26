@@ -15,11 +15,11 @@ namespace __jni_impl::android::media
 }
 namespace __jni_impl::android::media
 {
-	class Session2Command_Result;
+	class Session2Command;
 }
 namespace __jni_impl::android::media
 {
-	class Session2Command;
+	class Session2Command_Result;
 }
 namespace __jni_impl::android::os
 {
@@ -41,18 +41,18 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
+		void onDisconnected(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1);
+		void onCommandResult(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1, jobject arg2, __jni_impl::android::media::Session2Command arg3, __jni_impl::android::media::Session2Command_Result arg4);
 		void onPostConnect(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1);
 		QAndroidJniObject onSessionCommand(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1, __jni_impl::android::media::Session2Command arg2, __jni_impl::android::os::Bundle arg3);
 		QAndroidJniObject onConnect(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1);
-		void onDisconnected(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1);
-		void onCommandResult(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1, jobject arg2, __jni_impl::android::media::Session2Command arg3, __jni_impl::android::media::Session2Command_Result arg4);
 	};
 } // namespace __jni_impl::android::media
 
 #include "MediaSession2.hpp"
 #include "MediaSession2_ControllerInfo.hpp"
-#include "Session2Command_Result.hpp"
 #include "Session2Command.hpp"
+#include "Session2Command_Result.hpp"
 #include "../os/Bundle.hpp"
 #include "Session2CommandGroup.hpp"
 
@@ -69,39 +69,14 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	void MediaSession2_SessionCallback::onPostConnect(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPostConnect",
-			"(Landroid/media/MediaSession2;Landroid/media/MediaSession2$ControllerInfo;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject MediaSession2_SessionCallback::onSessionCommand(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1, __jni_impl::android::media::Session2Command arg2, __jni_impl::android::os::Bundle arg3)
-	{
-		return __thiz.callObjectMethod(
-			"onSessionCommand",
-			"(Landroid/media/MediaSession2;Landroid/media/MediaSession2$ControllerInfo;Landroid/media/Session2Command;Landroid/os/Bundle;)Landroid/media/Session2Command$Result;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
-	}
-	QAndroidJniObject MediaSession2_SessionCallback::onConnect(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1)
-	{
-		return __thiz.callObjectMethod(
-			"onConnect",
-			"(Landroid/media/MediaSession2;Landroid/media/MediaSession2$ControllerInfo;)Landroid/media/Session2CommandGroup;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
 	void MediaSession2_SessionCallback::onDisconnected(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1)
 	{
 		__thiz.callMethod<void>(
 			"onDisconnected",
 			"(Landroid/media/MediaSession2;Landroid/media/MediaSession2$ControllerInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaSession2_SessionCallback::onCommandResult(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1, jobject arg2, __jni_impl::android::media::Session2Command arg3, __jni_impl::android::media::Session2Command_Result arg4)
 	{
@@ -112,7 +87,37 @@ namespace __jni_impl::android::media
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
+	}
+	void MediaSession2_SessionCallback::onPostConnect(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPostConnect",
+			"(Landroid/media/MediaSession2;Landroid/media/MediaSession2$ControllerInfo;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaSession2_SessionCallback::onSessionCommand(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1, __jni_impl::android::media::Session2Command arg2, __jni_impl::android::os::Bundle arg3)
+	{
+		return __thiz.callObjectMethod(
+			"onSessionCommand",
+			"(Landroid/media/MediaSession2;Landroid/media/MediaSession2$ControllerInfo;Landroid/media/Session2Command;Landroid/os/Bundle;)Landroid/media/Session2Command$Result;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaSession2_SessionCallback::onConnect(__jni_impl::android::media::MediaSession2 arg0, __jni_impl::android::media::MediaSession2_ControllerInfo arg1)
+	{
+		return __thiz.callObjectMethod(
+			"onConnect",
+			"(Landroid/media/MediaSession2;Landroid/media/MediaSession2$ControllerInfo;)Landroid/media/Session2CommandGroup;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

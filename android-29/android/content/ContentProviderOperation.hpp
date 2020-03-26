@@ -17,6 +17,10 @@ namespace __jni_impl::android::content
 {
 	class ContentProvider;
 }
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -24,10 +28,6 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::content
 {
 	class ContentValues;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::content
@@ -42,8 +42,11 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject apply(__jni_impl::android::content::ContentProvider arg0, jarray arg1, jint arg2);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getUri();
 		static QAndroidJniObject newAssertQuery(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject newInsert(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject newUpdate(__jni_impl::android::net::Uri arg0);
@@ -56,19 +59,16 @@ namespace __jni_impl::android::content
 		jboolean isWriteOperation();
 		jboolean isReadOperation();
 		QAndroidJniObject resolveValueBackReferences(jarray arg0, jint arg1);
-		QAndroidJniObject resolveSelectionArgsBackReferences(jarray arg0, jint arg1);
-		QAndroidJniObject getUri();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jarray resolveSelectionArgsBackReferences(jarray arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
 #include "ContentProviderOperation_Builder.hpp"
 #include "ContentProviderResult.hpp"
 #include "ContentProvider.hpp"
+#include "../os/Parcel.hpp"
 #include "../net/Uri.hpp"
 #include "ContentValues.hpp"
-#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -78,7 +78,8 @@ namespace __jni_impl::android::content
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.ContentProviderOperation",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -90,11 +91,12 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	QAndroidJniObject ContentProviderOperation::toString()
+	jstring ContentProviderOperation::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContentProviderOperation::apply(__jni_impl::android::content::ContentProvider arg0, jarray arg1, jint arg2)
 	{
@@ -103,109 +105,15 @@ namespace __jni_impl::android::content
 			"(Landroid/content/ContentProvider;[Landroid/content/ContentProviderResult;I)Landroid/content/ContentProviderResult;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
-	}
-	QAndroidJniObject ContentProviderOperation::newAssertQuery(__jni_impl::android::net::Uri arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentProviderOperation",
-			"newAssertQuery",
-			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ContentProviderOperation::newInsert(__jni_impl::android::net::Uri arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentProviderOperation",
-			"newInsert",
-			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ContentProviderOperation::newUpdate(__jni_impl::android::net::Uri arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentProviderOperation",
-			"newUpdate",
-			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ContentProviderOperation::newDelete(__jni_impl::android::net::Uri arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentProviderOperation",
-			"newDelete",
-			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
-			arg0.__jniObject().object());
-	}
-	jboolean ContentProviderOperation::isYieldAllowed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isYieldAllowed",
-			"()Z");
-	}
-	jboolean ContentProviderOperation::isInsert()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInsert",
-			"()Z");
-	}
-	jboolean ContentProviderOperation::isDelete()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDelete",
-			"()Z");
-	}
-	jboolean ContentProviderOperation::isUpdate()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUpdate",
-			"()Z");
-	}
-	jboolean ContentProviderOperation::isAssertQuery()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAssertQuery",
-			"()Z");
-	}
-	jboolean ContentProviderOperation::isWriteOperation()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWriteOperation",
-			"()Z");
-	}
-	jboolean ContentProviderOperation::isReadOperation()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isReadOperation",
-			"()Z");
-	}
-	QAndroidJniObject ContentProviderOperation::resolveValueBackReferences(jarray arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"resolveValueBackReferences",
-			"([Landroid/content/ContentProviderResult;I)Landroid/content/ContentValues;",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject ContentProviderOperation::resolveSelectionArgsBackReferences(jarray arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"resolveSelectionArgsBackReferences",
-			"([Landroid/content/ContentProviderResult;I)[Ljava/lang/String;",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject ContentProviderOperation::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;");
+			arg2
+		);
 	}
 	jint ContentProviderOperation::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ContentProviderOperation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -213,7 +121,118 @@ namespace __jni_impl::android::content
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject ContentProviderOperation::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	QAndroidJniObject ContentProviderOperation::newAssertQuery(__jni_impl::android::net::Uri arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentProviderOperation",
+			"newAssertQuery",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ContentProviderOperation::newInsert(__jni_impl::android::net::Uri arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentProviderOperation",
+			"newInsert",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ContentProviderOperation::newUpdate(__jni_impl::android::net::Uri arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentProviderOperation",
+			"newUpdate",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ContentProviderOperation::newDelete(__jni_impl::android::net::Uri arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentProviderOperation",
+			"newDelete",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ContentProviderOperation::isYieldAllowed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isYieldAllowed",
+			"()Z"
+		);
+	}
+	jboolean ContentProviderOperation::isInsert()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInsert",
+			"()Z"
+		);
+	}
+	jboolean ContentProviderOperation::isDelete()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDelete",
+			"()Z"
+		);
+	}
+	jboolean ContentProviderOperation::isUpdate()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUpdate",
+			"()Z"
+		);
+	}
+	jboolean ContentProviderOperation::isAssertQuery()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAssertQuery",
+			"()Z"
+		);
+	}
+	jboolean ContentProviderOperation::isWriteOperation()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWriteOperation",
+			"()Z"
+		);
+	}
+	jboolean ContentProviderOperation::isReadOperation()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isReadOperation",
+			"()Z"
+		);
+	}
+	QAndroidJniObject ContentProviderOperation::resolveValueBackReferences(jarray arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"resolveValueBackReferences",
+			"([Landroid/content/ContentProviderResult;I)Landroid/content/ContentValues;",
+			arg0,
+			arg1
+		);
+	}
+	jarray ContentProviderOperation::resolveSelectionArgsBackReferences(jarray arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"resolveSelectionArgsBackReferences",
+			"([Landroid/content/ContentProviderResult;I)[Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::content
 

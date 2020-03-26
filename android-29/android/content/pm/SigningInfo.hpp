@@ -23,12 +23,12 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::SigningInfo arg0);
 		
 		// Methods
-		jboolean hasMultipleSigners();
-		jboolean hasPastSigningCertificates();
-		QAndroidJniObject getSigningCertificateHistory();
-		QAndroidJniObject getApkContentsSigners();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean hasMultipleSigners();
+		jboolean hasPastSigningCertificates();
+		jarray getSigningCertificateHistory();
+		jarray getApkContentsSigners();
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -42,7 +42,8 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.SigningInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -61,35 +62,12 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jboolean SigningInfo::hasMultipleSigners()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasMultipleSigners",
-			"()Z");
-	}
-	jboolean SigningInfo::hasPastSigningCertificates()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasPastSigningCertificates",
-			"()Z");
-	}
-	QAndroidJniObject SigningInfo::getSigningCertificateHistory()
-	{
-		return __thiz.callObjectMethod(
-			"getSigningCertificateHistory",
-			"()[Landroid/content/pm/Signature;");
-	}
-	QAndroidJniObject SigningInfo::getApkContentsSigners()
-	{
-		return __thiz.callObjectMethod(
-			"getApkContentsSigners",
-			"()[Landroid/content/pm/Signature;");
-	}
 	jint SigningInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SigningInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -97,7 +75,36 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jboolean SigningInfo::hasMultipleSigners()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasMultipleSigners",
+			"()Z"
+		);
+	}
+	jboolean SigningInfo::hasPastSigningCertificates()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasPastSigningCertificates",
+			"()Z"
+		);
+	}
+	jarray SigningInfo::getSigningCertificateHistory()
+	{
+		return __thiz.callObjectMethod(
+			"getSigningCertificateHistory",
+			"()[Landroid/content/pm/Signature;"
+		).object<jarray>();
+	}
+	jarray SigningInfo::getApkContentsSigners()
+	{
+		return __thiz.callObjectMethod(
+			"getApkContentsSigners",
+			"()[Landroid/content/pm/Signature;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::content::pm
 

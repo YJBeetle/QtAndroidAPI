@@ -38,7 +38,7 @@ namespace __jni_impl::android::system
 		void __constructor(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, __jni_impl::android::system::StructTimespec arg8, __jni_impl::android::system::StructTimespec arg9, __jni_impl::android::system::StructTimespec arg10, jlong arg11, jlong arg12);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::system
 
@@ -51,84 +51,100 @@ namespace __jni_impl::android::system
 	{
 		return __thiz.getObjectField(
 			"st_atim",
-			"Landroid/system/StructTimespec;");
+			"Landroid/system/StructTimespec;"
+		);
 	}
 	jlong StructStat::st_atime()
 	{
 		return __thiz.getField<jlong>(
-			"st_atime");
+			"st_atime"
+		);
 	}
 	jlong StructStat::st_blksize()
 	{
 		return __thiz.getField<jlong>(
-			"st_blksize");
+			"st_blksize"
+		);
 	}
 	jlong StructStat::st_blocks()
 	{
 		return __thiz.getField<jlong>(
-			"st_blocks");
+			"st_blocks"
+		);
 	}
 	QAndroidJniObject StructStat::st_ctim()
 	{
 		return __thiz.getObjectField(
 			"st_ctim",
-			"Landroid/system/StructTimespec;");
+			"Landroid/system/StructTimespec;"
+		);
 	}
 	jlong StructStat::st_ctime()
 	{
 		return __thiz.getField<jlong>(
-			"st_ctime");
+			"st_ctime"
+		);
 	}
 	jlong StructStat::st_dev()
 	{
 		return __thiz.getField<jlong>(
-			"st_dev");
+			"st_dev"
+		);
 	}
 	jint StructStat::st_gid()
 	{
 		return __thiz.getField<jint>(
-			"st_gid");
+			"st_gid"
+		);
 	}
 	jlong StructStat::st_ino()
 	{
 		return __thiz.getField<jlong>(
-			"st_ino");
+			"st_ino"
+		);
 	}
 	jint StructStat::st_mode()
 	{
 		return __thiz.getField<jint>(
-			"st_mode");
+			"st_mode"
+		);
 	}
 	QAndroidJniObject StructStat::st_mtim()
 	{
 		return __thiz.getObjectField(
 			"st_mtim",
-			"Landroid/system/StructTimespec;");
+			"Landroid/system/StructTimespec;"
+		);
 	}
 	jlong StructStat::st_mtime()
 	{
 		return __thiz.getField<jlong>(
-			"st_mtime");
+			"st_mtime"
+		);
 	}
 	jlong StructStat::st_nlink()
 	{
 		return __thiz.getField<jlong>(
-			"st_nlink");
+			"st_nlink"
+		);
 	}
 	jlong StructStat::st_rdev()
 	{
 		return __thiz.getField<jlong>(
-			"st_rdev");
+			"st_rdev"
+		);
 	}
 	jlong StructStat::st_size()
 	{
 		return __thiz.getField<jlong>(
-			"st_size");
+			"st_size"
+		);
 	}
 	jint StructStat::st_uid()
 	{
 		return __thiz.getField<jint>(
-			"st_uid");
+			"st_uid"
+		);
 	}
 	
 	// Constructors
@@ -172,11 +188,12 @@ namespace __jni_impl::android::system
 	}
 	
 	// Methods
-	QAndroidJniObject StructStat::toString()
+	jstring StructStat::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::system
 

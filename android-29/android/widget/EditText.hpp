@@ -36,11 +36,11 @@ namespace __jni_impl::android::widget
 		// Methods
 		void setText(jstring arg0, __jni_impl::android::widget::TextView_BufferType arg1);
 		QAndroidJniObject getText();
-		jboolean getFreezesText();
-		void setEllipsize(__jni_impl::android::text::TextUtils_TruncateAt arg0);
 		void setSelection(jint arg0);
 		void setSelection(jint arg0, jint arg1);
-		QAndroidJniObject getAccessibilityClassName();
+		jboolean getFreezesText();
+		void setEllipsize(__jni_impl::android::text::TextUtils_TruncateAt arg0);
+		jstring getAccessibilityClassName();
 		void selectAll();
 		void extendSelection(jint arg0);
 	};
@@ -97,33 +97,23 @@ namespace __jni_impl::android::widget
 			"setText",
 			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject EditText::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Landroid/text/Editable;");
-	}
-	jboolean EditText::getFreezesText()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFreezesText",
-			"()Z");
-	}
-	void EditText::setEllipsize(__jni_impl::android::text::TextUtils_TruncateAt arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEllipsize",
-			"(Landroid/text/TextUtils$TruncateAt;)V",
-			arg0.__jniObject().object());
+			"()Landroid/text/Editable;"
+		);
 	}
 	void EditText::setSelection(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSelection",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void EditText::setSelection(jint arg0, jint arg1)
 	{
@@ -131,26 +121,45 @@ namespace __jni_impl::android::widget
 			"setSelection",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject EditText::getAccessibilityClassName()
+	jboolean EditText::getFreezesText()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFreezesText",
+			"()Z"
+		);
+	}
+	void EditText::setEllipsize(__jni_impl::android::text::TextUtils_TruncateAt arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEllipsize",
+			"(Landroid/text/TextUtils$TruncateAt;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring EditText::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void EditText::selectAll()
 	{
 		__thiz.callMethod<void>(
 			"selectAll",
-			"()V");
+			"()V"
+		);
 	}
 	void EditText::extendSelection(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"extendSelection",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

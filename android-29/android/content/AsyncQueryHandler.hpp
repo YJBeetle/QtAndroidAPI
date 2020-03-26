@@ -10,6 +10,10 @@ namespace __jni_impl::android::content
 {
 	class ContentResolver;
 }
+namespace __jni_impl::android::os
+{
+	class Message;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -26,10 +30,6 @@ namespace __jni_impl::android::os
 {
 	class Looper;
 }
-namespace __jni_impl::android::os
-{
-	class Message;
-}
 
 namespace __jni_impl::android::content
 {
@@ -42,21 +42,21 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::content::ContentResolver arg0);
 		
 		// Methods
+		void handleMessage(__jni_impl::android::os::Message arg0);
 		void startQuery(jint arg0, jobject arg1, __jni_impl::android::net::Uri arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6);
 		void cancelOperation(jint arg0);
 		void startInsert(jint arg0, jobject arg1, __jni_impl::android::net::Uri arg2, __jni_impl::android::content::ContentValues arg3);
 		void startUpdate(jint arg0, jobject arg1, __jni_impl::android::net::Uri arg2, __jni_impl::android::content::ContentValues arg3, jstring arg4, jarray arg5);
 		void startDelete(jint arg0, jobject arg1, __jni_impl::android::net::Uri arg2, jstring arg3, jarray arg4);
-		void handleMessage(__jni_impl::android::os::Message arg0);
 	};
 } // namespace __jni_impl::android::content
 
 #include "ContentResolver.hpp"
+#include "../os/Message.hpp"
 #include "../net/Uri.hpp"
 #include "ContentValues.hpp"
 #include "../os/Handler.hpp"
 #include "../os/Looper.hpp"
-#include "../os/Message.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -72,6 +72,14 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
+	void AsyncQueryHandler::handleMessage(__jni_impl::android::os::Message arg0)
+	{
+		__thiz.callMethod<void>(
+			"handleMessage",
+			"(Landroid/os/Message;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void AsyncQueryHandler::startQuery(jint arg0, jobject arg1, __jni_impl::android::net::Uri arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6)
 	{
 		__thiz.callMethod<void>(
@@ -83,14 +91,16 @@ namespace __jni_impl::android::content
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void AsyncQueryHandler::cancelOperation(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"cancelOperation",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AsyncQueryHandler::startInsert(jint arg0, jobject arg1, __jni_impl::android::net::Uri arg2, __jni_impl::android::content::ContentValues arg3)
 	{
@@ -100,7 +110,8 @@ namespace __jni_impl::android::content
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void AsyncQueryHandler::startUpdate(jint arg0, jobject arg1, __jni_impl::android::net::Uri arg2, __jni_impl::android::content::ContentValues arg3, jstring arg4, jarray arg5)
 	{
@@ -112,7 +123,8 @@ namespace __jni_impl::android::content
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void AsyncQueryHandler::startDelete(jint arg0, jobject arg1, __jni_impl::android::net::Uri arg2, jstring arg3, jarray arg4)
 	{
@@ -123,14 +135,8 @@ namespace __jni_impl::android::content
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4);
-	}
-	void AsyncQueryHandler::handleMessage(__jni_impl::android::os::Message arg0)
-	{
-		__thiz.callMethod<void>(
-			"handleMessage",
-			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
+			arg4
+		);
 	}
 } // namespace __jni_impl::android::content
 

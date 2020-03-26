@@ -21,7 +21,7 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 		void init(jboolean arg0);
 		void check(__jni_impl::java::security::cert::Certificate arg0, __jni_impl::__JniBaseClass arg1);
 		void check(__jni_impl::java::security::cert::Certificate arg0);
@@ -45,18 +45,20 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject PKIXCertPathChecker::clone()
+	jobject PKIXCertPathChecker::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void PKIXCertPathChecker::init(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"init",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void PKIXCertPathChecker::check(__jni_impl::java::security::cert::Certificate arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -64,26 +66,30 @@ namespace __jni_impl::java::security::cert
 			"check",
 			"(Ljava/security/cert/Certificate;Ljava/util/Collection;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PKIXCertPathChecker::check(__jni_impl::java::security::cert::Certificate arg0)
 	{
 		__thiz.callMethod<void>(
 			"check",
 			"(Ljava/security/cert/Certificate;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean PKIXCertPathChecker::isForwardCheckingSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isForwardCheckingSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject PKIXCertPathChecker::getSupportedExtensions()
 	{
 		return __thiz.callObjectMethod(
 			"getSupportedExtensions",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

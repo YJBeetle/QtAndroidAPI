@@ -12,11 +12,11 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ADDRESS();
-		static QAndroidJniObject CHARSET();
-		static QAndroidJniObject CONTACT_ID();
-		static QAndroidJniObject MSG_ID();
-		static QAndroidJniObject TYPE();
+		static jstring ADDRESS();
+		static jstring CHARSET();
+		static jstring CONTACT_ID();
+		static jstring MSG_ID();
+		static jstring TYPE();
 		
 		// Constructors
 		void __constructor();
@@ -29,40 +29,45 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_Mms_Addr::ADDRESS()
+	jstring Telephony_Mms_Addr::ADDRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Addr",
 			"ADDRESS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Addr::CHARSET()
+	jstring Telephony_Mms_Addr::CHARSET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Addr",
 			"CHARSET",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Addr::CONTACT_ID()
+	jstring Telephony_Mms_Addr::CONTACT_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Addr",
 			"CONTACT_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Addr::MSG_ID()
+	jstring Telephony_Mms_Addr::MSG_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Addr",
 			"MSG_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Addr::TYPE()
+	jstring Telephony_Mms_Addr::TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Addr",
 			"TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

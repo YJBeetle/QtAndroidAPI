@@ -34,8 +34,8 @@ namespace __jni_impl::java::security::cert
 		void __constructor(__jni_impl::java::security::KeyStore arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject clone();
+		jstring toString();
+		jobject clone();
 		QAndroidJniObject getDate();
 		void setDate(__jni_impl::java::util::Date arg0);
 		void setTrustAnchors(__jni_impl::__JniBaseClass arg0);
@@ -58,7 +58,7 @@ namespace __jni_impl::java::security::cert
 		void setCertPathCheckers(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getCertPathCheckers();
 		void addCertPathChecker(__jni_impl::java::security::cert::PKIXCertPathChecker arg0);
-		QAndroidJniObject getSigProvider();
+		jstring getSigProvider();
 		void setSigProvider(jstring arg0);
 		QAndroidJniObject getTargetCertConstraints();
 		void setTargetCertConstraints(__jni_impl::__JniBaseClass arg0);
@@ -91,187 +91,215 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject PKIXParameters::toString()
+	jstring PKIXParameters::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PKIXParameters::clone()
+	jobject PKIXParameters::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject PKIXParameters::getDate()
 	{
 		return __thiz.callObjectMethod(
 			"getDate",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	void PKIXParameters::setDate(__jni_impl::java::util::Date arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDate",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PKIXParameters::setTrustAnchors(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTrustAnchors",
 			"(Ljava/util/Set;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PKIXParameters::getTrustAnchors()
 	{
 		return __thiz.callObjectMethod(
 			"getTrustAnchors",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject PKIXParameters::getInitialPolicies()
 	{
 		return __thiz.callObjectMethod(
 			"getInitialPolicies",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	void PKIXParameters::setInitialPolicies(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInitialPolicies",
 			"(Ljava/util/Set;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PKIXParameters::setCertStores(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCertStores",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PKIXParameters::addCertStore(__jni_impl::java::security::cert::CertStore arg0)
 	{
 		__thiz.callMethod<void>(
 			"addCertStore",
 			"(Ljava/security/cert/CertStore;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PKIXParameters::getCertStores()
 	{
 		return __thiz.callObjectMethod(
 			"getCertStores",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	void PKIXParameters::setRevocationEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRevocationEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PKIXParameters::isRevocationEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRevocationEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PKIXParameters::setExplicitPolicyRequired(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setExplicitPolicyRequired",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PKIXParameters::isExplicitPolicyRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isExplicitPolicyRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PKIXParameters::setPolicyMappingInhibited(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPolicyMappingInhibited",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PKIXParameters::isPolicyMappingInhibited()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPolicyMappingInhibited",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PKIXParameters::setAnyPolicyInhibited(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAnyPolicyInhibited",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PKIXParameters::isAnyPolicyInhibited()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAnyPolicyInhibited",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PKIXParameters::setPolicyQualifiersRejected(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPolicyQualifiersRejected",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PKIXParameters::getPolicyQualifiersRejected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getPolicyQualifiersRejected",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PKIXParameters::setCertPathCheckers(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCertPathCheckers",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PKIXParameters::getCertPathCheckers()
 	{
 		return __thiz.callObjectMethod(
 			"getCertPathCheckers",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	void PKIXParameters::addCertPathChecker(__jni_impl::java::security::cert::PKIXCertPathChecker arg0)
 	{
 		__thiz.callMethod<void>(
 			"addCertPathChecker",
 			"(Ljava/security/cert/PKIXCertPathChecker;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject PKIXParameters::getSigProvider()
+	jstring PKIXParameters::getSigProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getSigProvider",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PKIXParameters::setSigProvider(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSigProvider",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PKIXParameters::getTargetCertConstraints()
 	{
 		return __thiz.callObjectMethod(
 			"getTargetCertConstraints",
-			"()Ljava/security/cert/CertSelector;");
+			"()Ljava/security/cert/CertSelector;"
+		);
 	}
 	void PKIXParameters::setTargetCertConstraints(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTargetCertConstraints",
 			"(Ljava/security/cert/CertSelector;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

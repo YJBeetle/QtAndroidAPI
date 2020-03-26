@@ -20,7 +20,7 @@ namespace __jni_impl::android::opengl
 		static void gluOrtho2D(__jni_impl::__JniBaseClass arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4);
 		static void gluPerspective(__jni_impl::__JniBaseClass arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4);
 		static jint gluProject(jfloat arg0, jfloat arg1, jfloat arg2, jfloatArray arg3, jint arg4, jfloatArray arg5, jint arg6, jintArray arg7, jint arg8, jfloatArray arg9, jint arg10);
-		static QAndroidJniObject gluErrorString(jint arg0);
+		static jstring gluErrorString(jint arg0);
 		static void gluLookAt(__jni_impl::__JniBaseClass arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jfloat arg8, jfloat arg9);
 		static jint gluUnProject(jfloat arg0, jfloat arg1, jfloat arg2, jfloatArray arg3, jint arg4, jfloatArray arg5, jint arg6, jintArray arg7, jint arg8, jfloatArray arg9, jint arg10);
 	};
@@ -50,7 +50,8 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void GLU::gluPerspective(__jni_impl::__JniBaseClass arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4)
 	{
@@ -62,7 +63,8 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jint GLU::gluProject(jfloat arg0, jfloat arg1, jfloat arg2, jfloatArray arg3, jint arg4, jfloatArray arg5, jint arg6, jintArray arg7, jint arg8, jfloatArray arg9, jint arg10)
 	{
@@ -80,15 +82,17 @@ namespace __jni_impl::android::opengl
 			arg7,
 			arg8,
 			arg9,
-			arg10);
+			arg10
+		);
 	}
-	QAndroidJniObject GLU::gluErrorString(jint arg0)
+	jstring GLU::gluErrorString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.GLU",
 			"gluErrorString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void GLU::gluLookAt(__jni_impl::__JniBaseClass arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jfloat arg8, jfloat arg9)
 	{
@@ -105,7 +109,8 @@ namespace __jni_impl::android::opengl
 			arg6,
 			arg7,
 			arg8,
-			arg9);
+			arg9
+		);
 	}
 	jint GLU::gluUnProject(jfloat arg0, jfloat arg1, jfloat arg2, jfloatArray arg3, jint arg4, jfloatArray arg5, jint arg6, jintArray arg7, jint arg8, jfloatArray arg9, jint arg10)
 	{
@@ -123,7 +128,8 @@ namespace __jni_impl::android::opengl
 			arg7,
 			arg8,
 			arg9,
-			arg10);
+			arg10
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

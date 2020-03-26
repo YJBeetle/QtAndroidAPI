@@ -26,13 +26,13 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		jboolean isVisible();
 		void setRouteTypes(jint arg0);
 		void setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject onCreateActionView(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject onCreateActionView();
 		jboolean onPerformDefaultAction();
 		jboolean overridesItemVisibility();
+		jboolean isVisible();
 	};
 } // namespace __jni_impl::android::app
 
@@ -53,50 +53,57 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	jboolean MediaRouteActionProvider::isVisible()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVisible",
-			"()Z");
-	}
 	void MediaRouteActionProvider::setRouteTypes(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRouteTypes",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaRouteActionProvider::setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setExtendedSettingsClickListener",
 			"(Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaRouteActionProvider::onCreateActionView(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onCreateActionView",
 			"(Landroid/view/MenuItem;)Landroid/view/View;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaRouteActionProvider::onCreateActionView()
 	{
 		return __thiz.callObjectMethod(
 			"onCreateActionView",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
 	jboolean MediaRouteActionProvider::onPerformDefaultAction()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onPerformDefaultAction",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean MediaRouteActionProvider::overridesItemVisibility()
 	{
 		return __thiz.callMethod<jboolean>(
 			"overridesItemVisibility",
-			"()Z");
+			"()Z"
+		);
+	}
+	jboolean MediaRouteActionProvider::isVisible()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVisible",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::app
 

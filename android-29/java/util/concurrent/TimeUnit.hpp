@@ -37,7 +37,7 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject of(__jni_impl::java::time::temporal::ChronoUnit arg0);
 		void sleep(jlong arg0);
@@ -68,49 +68,56 @@ namespace __jni_impl::java::util::concurrent
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"NANOSECONDS",
-			"Ljava/util/concurrent/TimeUnit;");
+			"Ljava/util/concurrent/TimeUnit;"
+		);
 	}
 	QAndroidJniObject TimeUnit::MICROSECONDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"MICROSECONDS",
-			"Ljava/util/concurrent/TimeUnit;");
+			"Ljava/util/concurrent/TimeUnit;"
+		);
 	}
 	QAndroidJniObject TimeUnit::MILLISECONDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"MILLISECONDS",
-			"Ljava/util/concurrent/TimeUnit;");
+			"Ljava/util/concurrent/TimeUnit;"
+		);
 	}
 	QAndroidJniObject TimeUnit::SECONDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"SECONDS",
-			"Ljava/util/concurrent/TimeUnit;");
+			"Ljava/util/concurrent/TimeUnit;"
+		);
 	}
 	QAndroidJniObject TimeUnit::MINUTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"MINUTES",
-			"Ljava/util/concurrent/TimeUnit;");
+			"Ljava/util/concurrent/TimeUnit;"
+		);
 	}
 	QAndroidJniObject TimeUnit::HOURS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"HOURS",
-			"Ljava/util/concurrent/TimeUnit;");
+			"Ljava/util/concurrent/TimeUnit;"
+		);
 	}
 	QAndroidJniObject TimeUnit::DAYS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.concurrent.TimeUnit",
 			"DAYS",
-			"Ljava/util/concurrent/TimeUnit;");
+			"Ljava/util/concurrent/TimeUnit;"
+		);
 	}
 	
 	// Constructors
@@ -122,12 +129,13 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	QAndroidJniObject TimeUnit::values()
+	jarray TimeUnit::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.TimeUnit",
 			"values",
-			"()[Ljava/util/concurrent/TimeUnit;");
+			"()[Ljava/util/concurrent/TimeUnit;"
+		).object<jarray>();
 	}
 	QAndroidJniObject TimeUnit::valueOf(jstring arg0)
 	{
@@ -135,7 +143,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.TimeUnit",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/concurrent/TimeUnit;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TimeUnit::of(__jni_impl::java::time::temporal::ChronoUnit arg0)
 	{
@@ -143,49 +152,56 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.TimeUnit",
 			"of",
 			"(Ljava/time/temporal/ChronoUnit;)Ljava/util/concurrent/TimeUnit;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TimeUnit::sleep(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"sleep",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong TimeUnit::toMillis(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"toMillis",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TimeUnit::toNanos(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"toNanos",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TimeUnit::toMicros(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"toMicros",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TimeUnit::toSeconds(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"toSeconds",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TimeUnit::convert(__jni_impl::java::time::Duration arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"convert",
 			"(Ljava/time/Duration;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong TimeUnit::convert(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -193,28 +209,32 @@ namespace __jni_impl::java::util::concurrent
 			"convert",
 			"(JLjava/util/concurrent/TimeUnit;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong TimeUnit::toMinutes(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"toMinutes",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TimeUnit::toHours(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"toHours",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TimeUnit::toDays(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"toDays",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	void TimeUnit::timedWait(jobject arg0, jlong arg1)
 	{
@@ -222,7 +242,8 @@ namespace __jni_impl::java::util::concurrent
 			"timedWait",
 			"(Ljava/lang/Object;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void TimeUnit::timedJoin(__jni_impl::java::lang::Thread arg0, jlong arg1)
 	{
@@ -230,13 +251,15 @@ namespace __jni_impl::java::util::concurrent
 			"timedJoin",
 			"(Ljava/lang/Thread;J)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject TimeUnit::toChronoUnit()
 	{
 		return __thiz.callObjectMethod(
 			"toChronoUnit",
-			"()Ljava/time/temporal/ChronoUnit;");
+			"()Ljava/time/temporal/ChronoUnit;"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

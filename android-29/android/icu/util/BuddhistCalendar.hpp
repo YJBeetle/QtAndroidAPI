@@ -44,7 +44,7 @@ namespace __jni_impl::android::icu::util
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
 		
 		// Methods
-		QAndroidJniObject getType();
+		jstring getType();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -60,7 +60,8 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.BuddhistCalendar",
-			"BE");
+			"BE"
+		);
 	}
 	
 	// Constructors
@@ -137,11 +138,12 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject BuddhistCalendar::getType()
+	jstring BuddhistCalendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

@@ -48,13 +48,13 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		static QAndroidJniObject suppressedEffectsToString(jint arg0);
-		static QAndroidJniObject priorityCategoriesToString(jint arg0);
-		static QAndroidJniObject prioritySendersToString(jint arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static jstring suppressedEffectsToString(jint arg0);
+		static jstring priorityCategoriesToString(jint arg0);
+		static jstring prioritySendersToString(jint arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -68,147 +68,172 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.NotificationManager$Policy",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_ALARMS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_CATEGORY_ALARMS");
+			"PRIORITY_CATEGORY_ALARMS"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_CALLS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_CATEGORY_CALLS");
+			"PRIORITY_CATEGORY_CALLS"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_EVENTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_CATEGORY_EVENTS");
+			"PRIORITY_CATEGORY_EVENTS"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_MEDIA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_CATEGORY_MEDIA");
+			"PRIORITY_CATEGORY_MEDIA"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_MESSAGES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_CATEGORY_MESSAGES");
+			"PRIORITY_CATEGORY_MESSAGES"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_REMINDERS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_CATEGORY_REMINDERS");
+			"PRIORITY_CATEGORY_REMINDERS"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_REPEAT_CALLERS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_CATEGORY_REPEAT_CALLERS");
+			"PRIORITY_CATEGORY_REPEAT_CALLERS"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_CATEGORY_SYSTEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_CATEGORY_SYSTEM");
+			"PRIORITY_CATEGORY_SYSTEM"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_SENDERS_ANY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_SENDERS_ANY");
+			"PRIORITY_SENDERS_ANY"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_SENDERS_CONTACTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_SENDERS_CONTACTS");
+			"PRIORITY_SENDERS_CONTACTS"
+		);
 	}
 	jint NotificationManager_Policy::PRIORITY_SENDERS_STARRED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"PRIORITY_SENDERS_STARRED");
+			"PRIORITY_SENDERS_STARRED"
+		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_AMBIENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"SUPPRESSED_EFFECT_AMBIENT");
+			"SUPPRESSED_EFFECT_AMBIENT"
+		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_BADGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"SUPPRESSED_EFFECT_BADGE");
+			"SUPPRESSED_EFFECT_BADGE"
+		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_FULL_SCREEN_INTENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"SUPPRESSED_EFFECT_FULL_SCREEN_INTENT");
+			"SUPPRESSED_EFFECT_FULL_SCREEN_INTENT"
+		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_LIGHTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"SUPPRESSED_EFFECT_LIGHTS");
+			"SUPPRESSED_EFFECT_LIGHTS"
+		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_NOTIFICATION_LIST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"SUPPRESSED_EFFECT_NOTIFICATION_LIST");
+			"SUPPRESSED_EFFECT_NOTIFICATION_LIST"
+		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_PEEK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"SUPPRESSED_EFFECT_PEEK");
+			"SUPPRESSED_EFFECT_PEEK"
+		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_SCREEN_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"SUPPRESSED_EFFECT_SCREEN_OFF");
+			"SUPPRESSED_EFFECT_SCREEN_OFF"
+		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_SCREEN_ON()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"SUPPRESSED_EFFECT_SCREEN_ON");
+			"SUPPRESSED_EFFECT_SCREEN_ON"
+		);
 	}
 	jint NotificationManager_Policy::SUPPRESSED_EFFECT_STATUS_BAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.NotificationManager$Policy",
-			"SUPPRESSED_EFFECT_STATUS_BAR");
+			"SUPPRESSED_EFFECT_STATUS_BAR"
+		);
 	}
 	jint NotificationManager_Policy::priorityCallSenders()
 	{
 		return __thiz.getField<jint>(
-			"priorityCallSenders");
+			"priorityCallSenders"
+		);
 	}
 	jint NotificationManager_Policy::priorityCategories()
 	{
 		return __thiz.getField<jint>(
-			"priorityCategories");
+			"priorityCategories"
+		);
 	}
 	jint NotificationManager_Policy::priorityMessageSenders()
 	{
 		return __thiz.getField<jint>(
-			"priorityMessageSenders");
+			"priorityMessageSenders"
+		);
 	}
 	jint NotificationManager_Policy::suppressedVisualEffects()
 	{
 		return __thiz.getField<jint>(
-			"suppressedVisualEffects");
+			"suppressedVisualEffects"
+		);
 	}
 	
 	// Constructors
@@ -238,49 +263,29 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject NotificationManager_Policy::toString()
+	jstring NotificationManager_Policy::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint NotificationManager_Policy::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	QAndroidJniObject NotificationManager_Policy::suppressedEffectsToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.NotificationManager$Policy",
-			"suppressedEffectsToString",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject NotificationManager_Policy::priorityCategoriesToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.NotificationManager$Policy",
-			"priorityCategoriesToString",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject NotificationManager_Policy::prioritySendersToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.NotificationManager$Policy",
-			"prioritySendersToString",
-			"(I)Ljava/lang/String;",
-			arg0);
+			"()I"
+		);
 	}
 	jint NotificationManager_Policy::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void NotificationManager_Policy::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -288,7 +293,35 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring NotificationManager_Policy::suppressedEffectsToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.NotificationManager$Policy",
+			"suppressedEffectsToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring NotificationManager_Policy::priorityCategoriesToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.NotificationManager$Policy",
+			"priorityCategoriesToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring NotificationManager_Policy::prioritySendersToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.NotificationManager$Policy",
+			"prioritySendersToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::app
 

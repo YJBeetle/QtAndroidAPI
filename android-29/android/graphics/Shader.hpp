@@ -46,14 +46,16 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"getLocalMatrix",
 			"(Landroid/graphics/Matrix;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Shader::setLocalMatrix(__jni_impl::android::graphics::Matrix arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLocalMatrix",
 			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

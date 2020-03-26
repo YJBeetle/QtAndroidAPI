@@ -68,73 +68,85 @@ namespace __jni_impl::android::bluetooth
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"APP_CONFIG_REGISTRATION_FAILURE");
+			"APP_CONFIG_REGISTRATION_FAILURE"
+		);
 	}
 	jint BluetoothHealth::APP_CONFIG_REGISTRATION_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"APP_CONFIG_REGISTRATION_SUCCESS");
+			"APP_CONFIG_REGISTRATION_SUCCESS"
+		);
 	}
 	jint BluetoothHealth::APP_CONFIG_UNREGISTRATION_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"APP_CONFIG_UNREGISTRATION_FAILURE");
+			"APP_CONFIG_UNREGISTRATION_FAILURE"
+		);
 	}
 	jint BluetoothHealth::APP_CONFIG_UNREGISTRATION_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"APP_CONFIG_UNREGISTRATION_SUCCESS");
+			"APP_CONFIG_UNREGISTRATION_SUCCESS"
+		);
 	}
 	jint BluetoothHealth::CHANNEL_TYPE_RELIABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"CHANNEL_TYPE_RELIABLE");
+			"CHANNEL_TYPE_RELIABLE"
+		);
 	}
 	jint BluetoothHealth::CHANNEL_TYPE_STREAMING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"CHANNEL_TYPE_STREAMING");
+			"CHANNEL_TYPE_STREAMING"
+		);
 	}
 	jint BluetoothHealth::SINK_ROLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"SINK_ROLE");
+			"SINK_ROLE"
+		);
 	}
 	jint BluetoothHealth::SOURCE_ROLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"SOURCE_ROLE");
+			"SOURCE_ROLE"
+		);
 	}
 	jint BluetoothHealth::STATE_CHANNEL_CONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"STATE_CHANNEL_CONNECTED");
+			"STATE_CHANNEL_CONNECTED"
+		);
 	}
 	jint BluetoothHealth::STATE_CHANNEL_CONNECTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"STATE_CHANNEL_CONNECTING");
+			"STATE_CHANNEL_CONNECTING"
+		);
 	}
 	jint BluetoothHealth::STATE_CHANNEL_DISCONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"STATE_CHANNEL_DISCONNECTED");
+			"STATE_CHANNEL_DISCONNECTED"
+		);
 	}
 	jint BluetoothHealth::STATE_CHANNEL_DISCONNECTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothHealth",
-			"STATE_CHANNEL_DISCONNECTING");
+			"STATE_CHANNEL_DISCONNECTING"
+		);
 	}
 	
 	// Constructors
@@ -153,14 +165,16 @@ namespace __jni_impl::android::bluetooth
 			"(Ljava/lang/String;ILandroid/bluetooth/BluetoothHealthCallback;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean BluetoothHealth::unregisterAppConfiguration(__jni_impl::android::bluetooth::BluetoothHealthAppConfiguration arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"unregisterAppConfiguration",
 			"(Landroid/bluetooth/BluetoothHealthAppConfiguration;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean BluetoothHealth::connectChannelToSource(__jni_impl::android::bluetooth::BluetoothDevice arg0, __jni_impl::android::bluetooth::BluetoothHealthAppConfiguration arg1)
 	{
@@ -168,7 +182,8 @@ namespace __jni_impl::android::bluetooth
 			"connectChannelToSource",
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothHealthAppConfiguration;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean BluetoothHealth::disconnectChannel(__jni_impl::android::bluetooth::BluetoothDevice arg0, __jni_impl::android::bluetooth::BluetoothHealthAppConfiguration arg1, jint arg2)
 	{
@@ -177,7 +192,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothHealthAppConfiguration;I)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject BluetoothHealth::getMainChannelFd(__jni_impl::android::bluetooth::BluetoothDevice arg0, __jni_impl::android::bluetooth::BluetoothHealthAppConfiguration arg1)
 	{
@@ -185,27 +201,31 @@ namespace __jni_impl::android::bluetooth
 			"getMainChannelFd",
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothHealthAppConfiguration;)Landroid/os/ParcelFileDescriptor;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint BluetoothHealth::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getConnectionState",
 			"(Landroid/bluetooth/BluetoothDevice;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothHealth::getConnectedDevices()
 	{
 		return __thiz.callObjectMethod(
 			"getConnectedDevices",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject BluetoothHealth::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

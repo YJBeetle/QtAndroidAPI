@@ -32,12 +32,12 @@ namespace __jni_impl::android::telecom
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getVideoState();
 		jint getQuality();
-		static QAndroidJniObject videoStateToString(jint arg0);
+		static jstring videoStateToString(jint arg0);
 		static jboolean isAudioOnly(jint arg0);
 		static jboolean isVideo(jint arg0);
 		static jboolean isTransmissionEnabled(jint arg0);
@@ -57,61 +57,71 @@ namespace __jni_impl::android::telecom
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.VideoProfile",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint VideoProfile::QUALITY_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.VideoProfile",
-			"QUALITY_DEFAULT");
+			"QUALITY_DEFAULT"
+		);
 	}
 	jint VideoProfile::QUALITY_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.VideoProfile",
-			"QUALITY_HIGH");
+			"QUALITY_HIGH"
+		);
 	}
 	jint VideoProfile::QUALITY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.VideoProfile",
-			"QUALITY_LOW");
+			"QUALITY_LOW"
+		);
 	}
 	jint VideoProfile::QUALITY_MEDIUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.VideoProfile",
-			"QUALITY_MEDIUM");
+			"QUALITY_MEDIUM"
+		);
 	}
 	jint VideoProfile::STATE_AUDIO_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.VideoProfile",
-			"STATE_AUDIO_ONLY");
+			"STATE_AUDIO_ONLY"
+		);
 	}
 	jint VideoProfile::STATE_BIDIRECTIONAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.VideoProfile",
-			"STATE_BIDIRECTIONAL");
+			"STATE_BIDIRECTIONAL"
+		);
 	}
 	jint VideoProfile::STATE_PAUSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.VideoProfile",
-			"STATE_PAUSED");
+			"STATE_PAUSED"
+		);
 	}
 	jint VideoProfile::STATE_RX_ENABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.VideoProfile",
-			"STATE_RX_ENABLED");
+			"STATE_RX_ENABLED"
+		);
 	}
 	jint VideoProfile::STATE_TX_ENABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.VideoProfile",
-			"STATE_TX_ENABLED");
+			"STATE_TX_ENABLED"
+		);
 	}
 	
 	// Constructors
@@ -132,17 +142,19 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	QAndroidJniObject VideoProfile::toString()
+	jstring VideoProfile::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint VideoProfile::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void VideoProfile::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -150,27 +162,31 @@ namespace __jni_impl::android::telecom
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint VideoProfile::getVideoState()
 	{
 		return __thiz.callMethod<jint>(
 			"getVideoState",
-			"()I");
+			"()I"
+		);
 	}
 	jint VideoProfile::getQuality()
 	{
 		return __thiz.callMethod<jint>(
 			"getQuality",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject VideoProfile::videoStateToString(jint arg0)
+	jstring VideoProfile::videoStateToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telecom.VideoProfile",
 			"videoStateToString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jboolean VideoProfile::isAudioOnly(jint arg0)
 	{
@@ -178,7 +194,8 @@ namespace __jni_impl::android::telecom
 			"android.telecom.VideoProfile",
 			"isAudioOnly",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean VideoProfile::isVideo(jint arg0)
 	{
@@ -186,7 +203,8 @@ namespace __jni_impl::android::telecom
 			"android.telecom.VideoProfile",
 			"isVideo",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean VideoProfile::isTransmissionEnabled(jint arg0)
 	{
@@ -194,7 +212,8 @@ namespace __jni_impl::android::telecom
 			"android.telecom.VideoProfile",
 			"isTransmissionEnabled",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean VideoProfile::isReceptionEnabled(jint arg0)
 	{
@@ -202,7 +221,8 @@ namespace __jni_impl::android::telecom
 			"android.telecom.VideoProfile",
 			"isReceptionEnabled",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean VideoProfile::isBidirectional(jint arg0)
 	{
@@ -210,7 +230,8 @@ namespace __jni_impl::android::telecom
 			"android.telecom.VideoProfile",
 			"isBidirectional",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean VideoProfile::isPaused(jint arg0)
 	{
@@ -218,7 +239,8 @@ namespace __jni_impl::android::telecom
 			"android.telecom.VideoProfile",
 			"isPaused",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

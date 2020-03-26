@@ -60,13 +60,13 @@ namespace __jni_impl::java::util::logging
 	{
 	public:
 		// Fields
-		static QAndroidJniObject LOGGING_MXBEAN_NAME();
+		static jstring LOGGING_MXBEAN_NAME();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getProperty(jstring arg0);
+		jstring getProperty(jstring arg0);
 		QAndroidJniObject getLogger(jstring arg0);
 		void checkAccess();
 		void reset();
@@ -99,12 +99,13 @@ namespace __jni_impl::java::util::logging
 namespace __jni_impl::java::util::logging
 {
 	// Fields
-	QAndroidJniObject LogManager::LOGGING_MXBEAN_NAME()
+	jstring LogManager::LOGGING_MXBEAN_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.logging.LogManager",
 			"LOGGING_MXBEAN_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -116,57 +117,65 @@ namespace __jni_impl::java::util::logging
 	}
 	
 	// Methods
-	QAndroidJniObject LogManager::getProperty(jstring arg0)
+	jstring LogManager::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject LogManager::getLogger(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getLogger",
 			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
-			arg0);
+			arg0
+		);
 	}
 	void LogManager::checkAccess()
 	{
 		__thiz.callMethod<void>(
 			"checkAccess",
-			"()V");
+			"()V"
+		);
 	}
 	void LogManager::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void LogManager::readConfiguration()
 	{
 		__thiz.callMethod<void>(
 			"readConfiguration",
-			"()V");
+			"()V"
+		);
 	}
 	void LogManager::readConfiguration(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"readConfiguration",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean LogManager::addLogger(__jni_impl::java::util::logging::Logger arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"addLogger",
 			"(Ljava/util/logging/Logger;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject LogManager::getLoggerNames()
 	{
 		return __thiz.callObjectMethod(
 			"getLoggerNames",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	void LogManager::updateConfiguration(__jni_impl::java::io::InputStream arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -174,42 +183,48 @@ namespace __jni_impl::java::util::logging
 			"updateConfiguration",
 			"(Ljava/io/InputStream;Ljava/util/function/Function;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LogManager::updateConfiguration(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateConfiguration",
 			"(Ljava/util/function/Function;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject LogManager::getLoggingMXBean()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.LogManager",
 			"getLoggingMXBean",
-			"()Ljava/util/logging/LoggingMXBean;");
+			"()Ljava/util/logging/LoggingMXBean;"
+		);
 	}
 	QAndroidJniObject LogManager::addConfigurationListener(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addConfigurationListener",
 			"(Ljava/lang/Runnable;)Ljava/util/logging/LogManager;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LogManager::removeConfigurationListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeConfigurationListener",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject LogManager::getLogManager()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.logging.LogManager",
 			"getLogManager",
-			"()Ljava/util/logging/LogManager;");
+			"()Ljava/util/logging/LogManager;"
+		);
 	}
 } // namespace __jni_impl::java::util::logging
 

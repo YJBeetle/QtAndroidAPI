@@ -50,55 +50,64 @@ namespace __jni_impl::android::app::usage
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
-			"INTERVAL_BEST");
+			"INTERVAL_BEST"
+		);
 	}
 	jint UsageStatsManager::INTERVAL_DAILY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
-			"INTERVAL_DAILY");
+			"INTERVAL_DAILY"
+		);
 	}
 	jint UsageStatsManager::INTERVAL_MONTHLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
-			"INTERVAL_MONTHLY");
+			"INTERVAL_MONTHLY"
+		);
 	}
 	jint UsageStatsManager::INTERVAL_WEEKLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
-			"INTERVAL_WEEKLY");
+			"INTERVAL_WEEKLY"
+		);
 	}
 	jint UsageStatsManager::INTERVAL_YEARLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
-			"INTERVAL_YEARLY");
+			"INTERVAL_YEARLY"
+		);
 	}
 	jint UsageStatsManager::STANDBY_BUCKET_ACTIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
-			"STANDBY_BUCKET_ACTIVE");
+			"STANDBY_BUCKET_ACTIVE"
+		);
 	}
 	jint UsageStatsManager::STANDBY_BUCKET_FREQUENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
-			"STANDBY_BUCKET_FREQUENT");
+			"STANDBY_BUCKET_FREQUENT"
+		);
 	}
 	jint UsageStatsManager::STANDBY_BUCKET_RARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
-			"STANDBY_BUCKET_RARE");
+			"STANDBY_BUCKET_RARE"
+		);
 	}
 	jint UsageStatsManager::STANDBY_BUCKET_WORKING_SET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.usage.UsageStatsManager",
-			"STANDBY_BUCKET_WORKING_SET");
+			"STANDBY_BUCKET_WORKING_SET"
+		);
 	}
 	
 	// Constructors
@@ -117,7 +126,8 @@ namespace __jni_impl::android::app::usage
 			"(IJJ)Ljava/util/List;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject UsageStatsManager::queryConfigurations(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -126,7 +136,8 @@ namespace __jni_impl::android::app::usage
 			"(IJJ)Ljava/util/List;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject UsageStatsManager::queryEventStats(jint arg0, jlong arg1, jlong arg2)
 	{
@@ -135,7 +146,8 @@ namespace __jni_impl::android::app::usage
 			"(IJJ)Ljava/util/List;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject UsageStatsManager::queryEvents(jlong arg0, jlong arg1)
 	{
@@ -143,7 +155,8 @@ namespace __jni_impl::android::app::usage
 			"queryEvents",
 			"(JJ)Landroid/app/usage/UsageEvents;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject UsageStatsManager::queryEventsForSelf(jlong arg0, jlong arg1)
 	{
@@ -151,7 +164,8 @@ namespace __jni_impl::android::app::usage
 			"queryEventsForSelf",
 			"(JJ)Landroid/app/usage/UsageEvents;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1)
 	{
@@ -159,20 +173,23 @@ namespace __jni_impl::android::app::usage
 			"queryAndAggregateUsageStats",
 			"(JJ)Ljava/util/Map;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean UsageStatsManager::isAppInactive(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAppInactive",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint UsageStatsManager::getAppStandbyBucket()
 	{
 		return __thiz.callMethod<jint>(
 			"getAppStandbyBucket",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

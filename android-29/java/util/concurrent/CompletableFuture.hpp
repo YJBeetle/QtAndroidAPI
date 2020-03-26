@@ -21,10 +21,10 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject get();
-		QAndroidJniObject get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
-		QAndroidJniObject toString();
-		QAndroidJniObject join();
+		jobject get();
+		jobject get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
+		jstring toString();
+		jobject join();
 		QAndroidJniObject copy();
 		QAndroidJniObject handle(__jni_impl::__JniBaseClass arg0);
 		jboolean cancel(jboolean arg0);
@@ -84,7 +84,7 @@ namespace __jni_impl::java::util::concurrent
 		static QAndroidJniObject runAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject runAsync(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject completedFuture(jobject arg0);
-		QAndroidJniObject getNow(jobject arg0);
+		jobject getNow(jobject arg0);
 		static QAndroidJniObject anyOf(jarray arg0);
 		jboolean isCompletedExceptionally();
 		void obtrudeValue(jobject arg0);
@@ -116,77 +116,88 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	QAndroidJniObject CompletableFuture::get()
+	jobject CompletableFuture::get()
 	{
 		return __thiz.callObjectMethod(
 			"get",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject CompletableFuture::get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
+	jobject CompletableFuture::get(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject CompletableFuture::toString()
+	jstring CompletableFuture::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CompletableFuture::join()
+	jobject CompletableFuture::join()
 	{
 		return __thiz.callObjectMethod(
 			"join",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject CompletableFuture::copy()
 	{
 		return __thiz.callObjectMethod(
 			"copy",
-			"()Ljava/util/concurrent/CompletableFuture;");
+			"()Ljava/util/concurrent/CompletableFuture;"
+		);
 	}
 	QAndroidJniObject CompletableFuture::handle(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"handle",
 			"(Ljava/util/function/BiFunction;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean CompletableFuture::cancel(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"cancel",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CompletableFuture::isDone()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDone",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CompletableFuture::isCancelled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCancelled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CompletableFuture::completeExceptionally(jthrowable arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"completeExceptionally",
 			"(Ljava/lang/Throwable;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CompletableFuture::complete(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"complete",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CompletableFuture::allOf(jarray arg0)
 	{
@@ -194,7 +205,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.CompletableFuture",
 			"allOf",
 			"([Ljava/util/concurrent/CompletableFuture;)Ljava/util/concurrent/CompletableFuture;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CompletableFuture::supplyAsync(__jni_impl::__JniBaseClass arg0)
 	{
@@ -202,7 +214,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.CompletableFuture",
 			"supplyAsync",
 			"(Ljava/util/function/Supplier;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::supplyAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -211,32 +224,37 @@ namespace __jni_impl::java::util::concurrent
 			"supplyAsync",
 			"(Ljava/util/function/Supplier;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::newIncompleteFuture()
 	{
 		return __thiz.callObjectMethod(
 			"newIncompleteFuture",
-			"()Ljava/util/concurrent/CompletableFuture;");
+			"()Ljava/util/concurrent/CompletableFuture;"
+		);
 	}
 	QAndroidJniObject CompletableFuture::toCompletableFuture()
 	{
 		return __thiz.callObjectMethod(
 			"toCompletableFuture",
-			"()Ljava/util/concurrent/CompletableFuture;");
+			"()Ljava/util/concurrent/CompletableFuture;"
+		);
 	}
 	QAndroidJniObject CompletableFuture::defaultExecutor()
 	{
 		return __thiz.callObjectMethod(
 			"defaultExecutor",
-			"()Ljava/util/concurrent/Executor;");
+			"()Ljava/util/concurrent/Executor;"
+		);
 	}
 	QAndroidJniObject CompletableFuture::completeAsync(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"completeAsync",
 			"(Ljava/util/function/Supplier;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::completeAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -244,14 +262,16 @@ namespace __jni_impl::java::util::concurrent
 			"completeAsync",
 			"(Ljava/util/function/Supplier;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::whenComplete(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"whenComplete",
 			"(Ljava/util/function/BiConsumer;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::exceptionallyComposeAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -259,21 +279,24 @@ namespace __jni_impl::java::util::concurrent
 			"exceptionallyComposeAsync",
 			"(Ljava/util/function/Function;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::exceptionallyComposeAsync(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"exceptionallyComposeAsync",
 			"(Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::exceptionallyCompose(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"exceptionallyCompose",
 			"(Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::exceptionallyAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -281,21 +304,24 @@ namespace __jni_impl::java::util::concurrent
 			"exceptionallyAsync",
 			"(Ljava/util/function/Function;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::exceptionallyAsync(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"exceptionallyAsync",
 			"(Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::exceptionally(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"exceptionally",
 			"(Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::whenCompleteAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -303,21 +329,24 @@ namespace __jni_impl::java::util::concurrent
 			"whenCompleteAsync",
 			"(Ljava/util/function/BiConsumer;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::whenCompleteAsync(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"whenCompleteAsync",
 			"(Ljava/util/function/BiConsumer;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::handleAsync(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"handleAsync",
 			"(Ljava/util/function/BiFunction;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::handleAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -325,14 +354,16 @@ namespace __jni_impl::java::util::concurrent
 			"handleAsync",
 			"(Ljava/util/function/BiFunction;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenComposeAsync(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"thenComposeAsync",
 			"(Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenComposeAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -340,14 +371,16 @@ namespace __jni_impl::java::util::concurrent
 			"thenComposeAsync",
 			"(Ljava/util/function/Function;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenCompose(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"thenCompose",
 			"(Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::runAfterEitherAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -356,7 +389,8 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/util/concurrent/CompletionStage;Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::runAfterEitherAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -364,7 +398,8 @@ namespace __jni_impl::java::util::concurrent
 			"runAfterEitherAsync",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::runAfterEither(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -372,7 +407,8 @@ namespace __jni_impl::java::util::concurrent
 			"runAfterEither",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::acceptEitherAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -380,7 +416,8 @@ namespace __jni_impl::java::util::concurrent
 			"acceptEitherAsync",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/Consumer;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::acceptEitherAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -389,7 +426,8 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/Consumer;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::acceptEither(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -397,7 +435,8 @@ namespace __jni_impl::java::util::concurrent
 			"acceptEither",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/Consumer;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::applyToEitherAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -405,7 +444,8 @@ namespace __jni_impl::java::util::concurrent
 			"applyToEitherAsync",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::applyToEitherAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -414,7 +454,8 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/Function;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::applyToEither(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -422,7 +463,8 @@ namespace __jni_impl::java::util::concurrent
 			"applyToEither",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::runAfterBothAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -431,7 +473,8 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/util/concurrent/CompletionStage;Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::runAfterBothAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -439,7 +482,8 @@ namespace __jni_impl::java::util::concurrent
 			"runAfterBothAsync",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::runAfterBoth(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -447,7 +491,8 @@ namespace __jni_impl::java::util::concurrent
 			"runAfterBoth",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenAcceptBothAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -455,7 +500,8 @@ namespace __jni_impl::java::util::concurrent
 			"thenAcceptBothAsync",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/BiConsumer;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenAcceptBothAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -464,7 +510,8 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/BiConsumer;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenAcceptBoth(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -472,7 +519,8 @@ namespace __jni_impl::java::util::concurrent
 			"thenAcceptBoth",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/BiConsumer;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenCombineAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -480,7 +528,8 @@ namespace __jni_impl::java::util::concurrent
 			"thenCombineAsync",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/BiFunction;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenCombineAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -489,7 +538,8 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/BiFunction;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenCombine(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -497,7 +547,8 @@ namespace __jni_impl::java::util::concurrent
 			"thenCombine",
 			"(Ljava/util/concurrent/CompletionStage;Ljava/util/function/BiFunction;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenRunAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -505,28 +556,32 @@ namespace __jni_impl::java::util::concurrent
 			"thenRunAsync",
 			"(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenRunAsync(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"thenRunAsync",
 			"(Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenRun(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"thenRun",
 			"(Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenAcceptAsync(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"thenAcceptAsync",
 			"(Ljava/util/function/Consumer;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenAcceptAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -534,21 +589,24 @@ namespace __jni_impl::java::util::concurrent
 			"thenAcceptAsync",
 			"(Ljava/util/function/Consumer;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenAccept(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"thenAccept",
 			"(Ljava/util/function/Consumer;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenApplyAsync(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"thenApplyAsync",
 			"(Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenApplyAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -556,14 +614,16 @@ namespace __jni_impl::java::util::concurrent
 			"thenApplyAsync",
 			"(Ljava/util/function/Function;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::thenApply(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"thenApply",
 			"(Ljava/util/function/Function;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::runAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -572,7 +632,8 @@ namespace __jni_impl::java::util::concurrent
 			"runAsync",
 			"(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::runAsync(__jni_impl::__JniBaseClass arg0)
 	{
@@ -580,7 +641,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.CompletableFuture",
 			"runAsync",
 			"(Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::completedFuture(jobject arg0)
 	{
@@ -588,14 +650,16 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.CompletableFuture",
 			"completedFuture",
 			"(Ljava/lang/Object;)Ljava/util/concurrent/CompletableFuture;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject CompletableFuture::getNow(jobject arg0)
+	jobject CompletableFuture::getNow(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getNow",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject CompletableFuture::anyOf(jarray arg0)
 	{
@@ -603,39 +667,45 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.CompletableFuture",
 			"anyOf",
 			"([Ljava/util/concurrent/CompletableFuture;)Ljava/util/concurrent/CompletableFuture;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CompletableFuture::isCompletedExceptionally()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCompletedExceptionally",
-			"()Z");
+			"()Z"
+		);
 	}
 	void CompletableFuture::obtrudeValue(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"obtrudeValue",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void CompletableFuture::obtrudeException(jthrowable arg0)
 	{
 		__thiz.callMethod<void>(
 			"obtrudeException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CompletableFuture::getNumberOfDependents()
 	{
 		return __thiz.callMethod<jint>(
 			"getNumberOfDependents",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject CompletableFuture::minimalCompletionStage()
 	{
 		return __thiz.callObjectMethod(
 			"minimalCompletionStage",
-			"()Ljava/util/concurrent/CompletionStage;");
+			"()Ljava/util/concurrent/CompletionStage;"
+		);
 	}
 	QAndroidJniObject CompletableFuture::orTimeout(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -643,7 +713,8 @@ namespace __jni_impl::java::util::concurrent
 			"orTimeout",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/CompletableFuture;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::completeOnTimeout(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
 	{
@@ -652,7 +723,8 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/CompletableFuture;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::delayedExecutor(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
@@ -661,7 +733,8 @@ namespace __jni_impl::java::util::concurrent
 			"delayedExecutor",
 			"(JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/Executor;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::delayedExecutor(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -671,7 +744,8 @@ namespace __jni_impl::java::util::concurrent
 			"(JLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CompletableFuture::completedStage(jobject arg0)
 	{
@@ -679,7 +753,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.CompletableFuture",
 			"completedStage",
 			"(Ljava/lang/Object;)Ljava/util/concurrent/CompletionStage;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CompletableFuture::failedFuture(jthrowable arg0)
 	{
@@ -687,7 +762,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.CompletableFuture",
 			"failedFuture",
 			"(Ljava/lang/Throwable;)Ljava/util/concurrent/CompletableFuture;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CompletableFuture::failedStage(jthrowable arg0)
 	{
@@ -695,7 +771,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.CompletableFuture",
 			"failedStage",
 			"(Ljava/lang/Throwable;)Ljava/util/concurrent/CompletionStage;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

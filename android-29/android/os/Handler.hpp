@@ -28,12 +28,12 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void handleMessage(__jni_impl::android::os::Message arg0);
 		void dispatchMessage(__jni_impl::android::os::Message arg0);
 		static QAndroidJniObject createAsync(__jni_impl::android::os::Looper arg0);
 		static QAndroidJniObject createAsync(__jni_impl::android::os::Looper arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject getMessageName(__jni_impl::android::os::Message arg0);
+		jstring getMessageName(__jni_impl::android::os::Message arg0);
 		QAndroidJniObject obtainMessage(jint arg0, jint arg1, jint arg2, jobject arg3);
 		QAndroidJniObject obtainMessage(jint arg0, jint arg1, jint arg2);
 		QAndroidJniObject obtainMessage(jint arg0, jobject arg1);
@@ -103,25 +103,28 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject Handler::toString()
+	jstring Handler::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Handler::handleMessage(__jni_impl::android::os::Message arg0)
 	{
 		__thiz.callMethod<void>(
 			"handleMessage",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Handler::dispatchMessage(__jni_impl::android::os::Message arg0)
 	{
 		__thiz.callMethod<void>(
 			"dispatchMessage",
 			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Handler::createAsync(__jni_impl::android::os::Looper arg0)
 	{
@@ -129,7 +132,8 @@ namespace __jni_impl::android::os
 			"android.os.Handler",
 			"createAsync",
 			"(Landroid/os/Looper;)Landroid/os/Handler;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Handler::createAsync(__jni_impl::android::os::Looper arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -138,14 +142,16 @@ namespace __jni_impl::android::os
 			"createAsync",
 			"(Landroid/os/Looper;Landroid/os/Handler$Callback;)Landroid/os/Handler;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Handler::getMessageName(__jni_impl::android::os::Message arg0)
+	jstring Handler::getMessageName(__jni_impl::android::os::Message arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getMessageName",
 			"(Landroid/os/Message;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject Handler::obtainMessage(jint arg0, jint arg1, jint arg2, jobject arg3)
 	{
@@ -155,7 +161,8 @@ namespace __jni_impl::android::os
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Handler::obtainMessage(jint arg0, jint arg1, jint arg2)
 	{
@@ -164,7 +171,8 @@ namespace __jni_impl::android::os
 			"(III)Landroid/os/Message;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Handler::obtainMessage(jint arg0, jobject arg1)
 	{
@@ -172,27 +180,31 @@ namespace __jni_impl::android::os
 			"obtainMessage",
 			"(ILjava/lang/Object;)Landroid/os/Message;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Handler::obtainMessage(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"obtainMessage",
 			"(I)Landroid/os/Message;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Handler::obtainMessage()
 	{
 		return __thiz.callObjectMethod(
 			"obtainMessage",
-			"()Landroid/os/Message;");
+			"()Landroid/os/Message;"
+		);
 	}
 	jboolean Handler::post(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"post",
 			"(Ljava/lang/Runnable;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Handler::postAtTime(__jni_impl::__JniBaseClass arg0, jobject arg1, jlong arg2)
 	{
@@ -201,7 +213,8 @@ namespace __jni_impl::android::os
 			"(Ljava/lang/Runnable;Ljava/lang/Object;J)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean Handler::postAtTime(__jni_impl::__JniBaseClass arg0, jlong arg1)
 	{
@@ -209,7 +222,8 @@ namespace __jni_impl::android::os
 			"postAtTime",
 			"(Ljava/lang/Runnable;J)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Handler::postDelayed(__jni_impl::__JniBaseClass arg0, jlong arg1)
 	{
@@ -217,7 +231,8 @@ namespace __jni_impl::android::os
 			"postDelayed",
 			"(Ljava/lang/Runnable;J)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Handler::postDelayed(__jni_impl::__JniBaseClass arg0, jobject arg1, jlong arg2)
 	{
@@ -226,14 +241,16 @@ namespace __jni_impl::android::os
 			"(Ljava/lang/Runnable;Ljava/lang/Object;J)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean Handler::postAtFrontOfQueue(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"postAtFrontOfQueue",
 			"(Ljava/lang/Runnable;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Handler::removeCallbacks(__jni_impl::__JniBaseClass arg0, jobject arg1)
 	{
@@ -241,28 +258,32 @@ namespace __jni_impl::android::os
 			"removeCallbacks",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Handler::removeCallbacks(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeCallbacks",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Handler::sendMessage(__jni_impl::android::os::Message arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"sendMessage",
 			"(Landroid/os/Message;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Handler::sendEmptyMessage(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"sendEmptyMessage",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Handler::sendEmptyMessageDelayed(jint arg0, jlong arg1)
 	{
@@ -270,7 +291,8 @@ namespace __jni_impl::android::os
 			"sendEmptyMessageDelayed",
 			"(IJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Handler::sendEmptyMessageAtTime(jint arg0, jlong arg1)
 	{
@@ -278,7 +300,8 @@ namespace __jni_impl::android::os
 			"sendEmptyMessageAtTime",
 			"(IJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Handler::sendMessageDelayed(__jni_impl::android::os::Message arg0, jlong arg1)
 	{
@@ -286,7 +309,8 @@ namespace __jni_impl::android::os
 			"sendMessageDelayed",
 			"(Landroid/os/Message;J)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Handler::sendMessageAtTime(__jni_impl::android::os::Message arg0, jlong arg1)
 	{
@@ -294,21 +318,24 @@ namespace __jni_impl::android::os
 			"sendMessageAtTime",
 			"(Landroid/os/Message;J)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Handler::sendMessageAtFrontOfQueue(__jni_impl::android::os::Message arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"sendMessageAtFrontOfQueue",
 			"(Landroid/os/Message;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Handler::removeMessages(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeMessages",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Handler::removeMessages(jint arg0, jobject arg1)
 	{
@@ -316,14 +343,16 @@ namespace __jni_impl::android::os
 			"removeMessages",
 			"(ILjava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Handler::removeCallbacksAndMessages(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeCallbacksAndMessages",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Handler::hasMessages(jint arg0, jobject arg1)
 	{
@@ -331,27 +360,31 @@ namespace __jni_impl::android::os
 			"hasMessages",
 			"(ILjava/lang/Object;)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Handler::hasMessages(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasMessages",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Handler::hasCallbacks(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasCallbacks",
 			"(Ljava/lang/Runnable;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Handler::getLooper()
 	{
 		return __thiz.callObjectMethod(
 			"getLooper",
-			"()Landroid/os/Looper;");
+			"()Landroid/os/Looper;"
+		);
 	}
 	void Handler::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -359,7 +392,8 @@ namespace __jni_impl::android::os
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::os
 

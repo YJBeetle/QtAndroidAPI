@@ -36,10 +36,10 @@ namespace __jni_impl::android::graphics
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		void set(__jni_impl::android::graphics::Matrix arg0);
-		QAndroidJniObject toShortString();
+		jstring toShortString();
 		jboolean isIdentity();
 		void reset();
 		void setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
@@ -97,55 +97,64 @@ namespace __jni_impl::android::graphics
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Matrix",
-			"MPERSP_0");
+			"MPERSP_0"
+		);
 	}
 	jint Matrix::MPERSP_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Matrix",
-			"MPERSP_1");
+			"MPERSP_1"
+		);
 	}
 	jint Matrix::MPERSP_2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Matrix",
-			"MPERSP_2");
+			"MPERSP_2"
+		);
 	}
 	jint Matrix::MSCALE_X()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Matrix",
-			"MSCALE_X");
+			"MSCALE_X"
+		);
 	}
 	jint Matrix::MSCALE_Y()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Matrix",
-			"MSCALE_Y");
+			"MSCALE_Y"
+		);
 	}
 	jint Matrix::MSKEW_X()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Matrix",
-			"MSKEW_X");
+			"MSKEW_X"
+		);
 	}
 	jint Matrix::MSKEW_Y()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Matrix",
-			"MSKEW_Y");
+			"MSKEW_Y"
+		);
 	}
 	jint Matrix::MTRANS_X()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Matrix",
-			"MTRANS_X");
+			"MTRANS_X"
+		);
 	}
 	jint Matrix::MTRANS_Y()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Matrix",
-			"MTRANS_Y");
+			"MTRANS_Y"
+		);
 	}
 	
 	// Constructors
@@ -169,44 +178,51 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Matrix::toString()
+	jstring Matrix::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Matrix::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void Matrix::set(__jni_impl::android::graphics::Matrix arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Matrix::toShortString()
+	jstring Matrix::toShortString()
 	{
 		return __thiz.callObjectMethod(
 			"toShortString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Matrix::isIdentity()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isIdentity",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Matrix::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void Matrix::setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -216,7 +232,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Matrix::setScale(jfloat arg0, jfloat arg1)
 	{
@@ -224,19 +241,22 @@ namespace __jni_impl::android::graphics
 			"setScale",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Matrix::rectStaysRect()
 	{
 		return __thiz.callMethod<jboolean>(
 			"rectStaysRect",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Matrix::isAffine()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAffine",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Matrix::setTranslate(jfloat arg0, jfloat arg1)
 	{
@@ -244,7 +264,8 @@ namespace __jni_impl::android::graphics
 			"setTranslate",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Matrix::setRotate(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
@@ -253,14 +274,16 @@ namespace __jni_impl::android::graphics
 			"(FFF)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Matrix::setRotate(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRotate",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void Matrix::setSinCos(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -270,7 +293,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Matrix::setSinCos(jfloat arg0, jfloat arg1)
 	{
@@ -278,7 +302,8 @@ namespace __jni_impl::android::graphics
 			"setSinCos",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Matrix::setSkew(jfloat arg0, jfloat arg1)
 	{
@@ -286,7 +311,8 @@ namespace __jni_impl::android::graphics
 			"setSkew",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Matrix::setSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -296,7 +322,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean Matrix::setConcat(__jni_impl::android::graphics::Matrix arg0, __jni_impl::android::graphics::Matrix arg1)
 	{
@@ -304,7 +331,8 @@ namespace __jni_impl::android::graphics
 			"setConcat",
 			"(Landroid/graphics/Matrix;Landroid/graphics/Matrix;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Matrix::preTranslate(jfloat arg0, jfloat arg1)
 	{
@@ -312,7 +340,8 @@ namespace __jni_impl::android::graphics
 			"preTranslate",
 			"(FF)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Matrix::preScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -322,7 +351,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean Matrix::preScale(jfloat arg0, jfloat arg1)
 	{
@@ -330,14 +360,16 @@ namespace __jni_impl::android::graphics
 			"preScale",
 			"(FF)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Matrix::preRotate(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"preRotate",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Matrix::preRotate(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
@@ -346,7 +378,8 @@ namespace __jni_impl::android::graphics
 			"(FFF)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean Matrix::preSkew(jfloat arg0, jfloat arg1)
 	{
@@ -354,7 +387,8 @@ namespace __jni_impl::android::graphics
 			"preSkew",
 			"(FF)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Matrix::preSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -364,14 +398,16 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean Matrix::preConcat(__jni_impl::android::graphics::Matrix arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"preConcat",
 			"(Landroid/graphics/Matrix;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Matrix::postTranslate(jfloat arg0, jfloat arg1)
 	{
@@ -379,7 +415,8 @@ namespace __jni_impl::android::graphics
 			"postTranslate",
 			"(FF)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Matrix::postScale(jfloat arg0, jfloat arg1)
 	{
@@ -387,7 +424,8 @@ namespace __jni_impl::android::graphics
 			"postScale",
 			"(FF)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Matrix::postScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -397,7 +435,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean Matrix::postRotate(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
@@ -406,14 +445,16 @@ namespace __jni_impl::android::graphics
 			"(FFF)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean Matrix::postRotate(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"postRotate",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Matrix::postSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -423,7 +464,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean Matrix::postSkew(jfloat arg0, jfloat arg1)
 	{
@@ -431,14 +473,16 @@ namespace __jni_impl::android::graphics
 			"postSkew",
 			"(FF)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Matrix::postConcat(__jni_impl::android::graphics::Matrix arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"postConcat",
 			"(Landroid/graphics/Matrix;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Matrix::setRectToRect(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::RectF arg1, __jni_impl::android::graphics::Matrix_ScaleToFit arg2)
 	{
@@ -447,7 +491,8 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/Matrix$ScaleToFit;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean Matrix::setPolyToPoly(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4)
 	{
@@ -458,14 +503,16 @@ namespace __jni_impl::android::graphics
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean Matrix::invert(__jni_impl::android::graphics::Matrix arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"invert",
 			"(Landroid/graphics/Matrix;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Matrix::mapPoints(jfloatArray arg0, jfloatArray arg1)
 	{
@@ -473,14 +520,16 @@ namespace __jni_impl::android::graphics
 			"mapPoints",
 			"([F[F)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Matrix::mapPoints(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"mapPoints",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	void Matrix::mapPoints(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4)
 	{
@@ -491,7 +540,8 @@ namespace __jni_impl::android::graphics
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Matrix::mapVectors(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4)
 	{
@@ -502,7 +552,8 @@ namespace __jni_impl::android::graphics
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Matrix::mapVectors(jfloatArray arg0, jfloatArray arg1)
 	{
@@ -510,14 +561,16 @@ namespace __jni_impl::android::graphics
 			"mapVectors",
 			"([F[F)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Matrix::mapVectors(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"mapVectors",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Matrix::mapRect(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::RectF arg1)
 	{
@@ -525,35 +578,40 @@ namespace __jni_impl::android::graphics
 			"mapRect",
 			"(Landroid/graphics/RectF;Landroid/graphics/RectF;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Matrix::mapRect(__jni_impl::android::graphics::RectF arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"mapRect",
 			"(Landroid/graphics/RectF;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jfloat Matrix::mapRadius(jfloat arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"mapRadius",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	void Matrix::getValues(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"getValues",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	void Matrix::setValues(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setValues",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

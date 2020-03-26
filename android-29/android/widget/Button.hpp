@@ -35,7 +35,7 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		QAndroidJniObject onResolvePointerIcon(__jni_impl::android::view::MotionEvent arg0, jint arg1);
-		QAndroidJniObject getAccessibilityClassName();
+		jstring getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -90,13 +90,15 @@ namespace __jni_impl::android::widget
 			"onResolvePointerIcon",
 			"(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Button::getAccessibilityClassName()
+	jstring Button::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

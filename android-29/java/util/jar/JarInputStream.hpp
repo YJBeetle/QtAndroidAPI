@@ -40,8 +40,8 @@ namespace __jni_impl::java::util::jar
 		// Methods
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		QAndroidJniObject getManifest();
-		QAndroidJniObject getNextJarEntry();
 		QAndroidJniObject getNextEntry();
+		QAndroidJniObject getNextJarEntry();
 	};
 } // namespace __jni_impl::java::util::jar
 
@@ -79,25 +79,29 @@ namespace __jni_impl::java::util::jar
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject JarInputStream::getManifest()
 	{
 		return __thiz.callObjectMethod(
 			"getManifest",
-			"()Ljava/util/jar/Manifest;");
-	}
-	QAndroidJniObject JarInputStream::getNextJarEntry()
-	{
-		return __thiz.callObjectMethod(
-			"getNextJarEntry",
-			"()Ljava/util/jar/JarEntry;");
+			"()Ljava/util/jar/Manifest;"
+		);
 	}
 	QAndroidJniObject JarInputStream::getNextEntry()
 	{
 		return __thiz.callObjectMethod(
 			"getNextEntry",
-			"()Ljava/util/zip/ZipEntry;");
+			"()Ljava/util/zip/ZipEntry;"
+		);
+	}
+	QAndroidJniObject JarInputStream::getNextJarEntry()
+	{
+		return __thiz.callObjectMethod(
+			"getNextJarEntry",
+			"()Ljava/util/jar/JarEntry;"
+		);
 	}
 } // namespace __jni_impl::java::util::jar
 

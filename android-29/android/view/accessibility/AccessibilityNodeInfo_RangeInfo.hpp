@@ -21,9 +21,9 @@ namespace __jni_impl::android::view::accessibility
 		
 		// Methods
 		jint getType();
+		jfloat getCurrent();
 		jfloat getMin();
 		jfloat getMax();
-		jfloat getCurrent();
 		static QAndroidJniObject obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 	};
 } // namespace __jni_impl::android::view::accessibility
@@ -36,19 +36,22 @@ namespace __jni_impl::android::view::accessibility
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$RangeInfo",
-			"RANGE_TYPE_FLOAT");
+			"RANGE_TYPE_FLOAT"
+		);
 	}
 	jint AccessibilityNodeInfo_RangeInfo::RANGE_TYPE_INT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$RangeInfo",
-			"RANGE_TYPE_INT");
+			"RANGE_TYPE_INT"
+		);
 	}
 	jint AccessibilityNodeInfo_RangeInfo::RANGE_TYPE_PERCENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.accessibility.AccessibilityNodeInfo$RangeInfo",
-			"RANGE_TYPE_PERCENT");
+			"RANGE_TYPE_PERCENT"
+		);
 	}
 	
 	// Constructors
@@ -64,25 +67,29 @@ namespace __jni_impl::android::view::accessibility
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
-	}
-	jfloat AccessibilityNodeInfo_RangeInfo::getMin()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMin",
-			"()F");
-	}
-	jfloat AccessibilityNodeInfo_RangeInfo::getMax()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMax",
-			"()F");
+			"()I"
+		);
 	}
 	jfloat AccessibilityNodeInfo_RangeInfo::getCurrent()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getCurrent",
-			"()F");
+			"()F"
+		);
+	}
+	jfloat AccessibilityNodeInfo_RangeInfo::getMin()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMin",
+			"()F"
+		);
+	}
+	jfloat AccessibilityNodeInfo_RangeInfo::getMax()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMax",
+			"()F"
+		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo_RangeInfo::obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -93,7 +100,8 @@ namespace __jni_impl::android::view::accessibility
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::view::accessibility
 

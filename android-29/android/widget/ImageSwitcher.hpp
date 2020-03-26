@@ -35,10 +35,10 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getAccessibilityClassName();
 		void setImageResource(jint arg0);
 		void setImageURI(__jni_impl::android::net::Uri arg0);
 		void setImageDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		jstring getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -68,32 +68,36 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject ImageSwitcher::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
 	void ImageSwitcher::setImageResource(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setImageResource",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ImageSwitcher::setImageURI(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"setImageURI",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ImageSwitcher::setImageDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
 			"setImageDrawable",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jstring ImageSwitcher::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

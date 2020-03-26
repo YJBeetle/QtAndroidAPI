@@ -53,7 +53,8 @@ namespace __jni_impl::java::security
 			"initialize",
 			"(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void KeyPairGeneratorSpi::initialize(jint arg0, __jni_impl::java::security::SecureRandom arg1)
 	{
@@ -61,13 +62,15 @@ namespace __jni_impl::java::security
 			"initialize",
 			"(ILjava/security/SecureRandom;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpi::generateKeyPair()
 	{
 		return __thiz.callObjectMethod(
 			"generateKeyPair",
-			"()Ljava/security/KeyPair;");
+			"()Ljava/security/KeyPair;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

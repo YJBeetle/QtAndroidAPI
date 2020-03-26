@@ -45,13 +45,13 @@ namespace __jni_impl::android::media
 {
 	class MediaCodecInfo;
 }
+namespace __jni_impl::android::media
+{
+	class MediaCodec_Callback;
+}
 namespace __jni_impl::android::os
 {
 	class PersistableBundle;
-}
-namespace __jni_impl::android::media
-{
-	class MediaCrypto;
 }
 namespace __jni_impl::android::media
 {
@@ -59,7 +59,7 @@ namespace __jni_impl::android::media
 }
 namespace __jni_impl::android::media
 {
-	class MediaCodec_Callback;
+	class MediaCrypto;
 }
 
 namespace __jni_impl::android::media
@@ -80,12 +80,12 @@ namespace __jni_impl::android::media
 		static jint INFO_OUTPUT_BUFFERS_CHANGED();
 		static jint INFO_OUTPUT_FORMAT_CHANGED();
 		static jint INFO_TRY_AGAIN_LATER();
-		static QAndroidJniObject PARAMETER_KEY_HDR10_PLUS_INFO();
-		static QAndroidJniObject PARAMETER_KEY_OFFSET_TIME();
-		static QAndroidJniObject PARAMETER_KEY_REQUEST_SYNC_FRAME();
-		static QAndroidJniObject PARAMETER_KEY_SUSPEND();
-		static QAndroidJniObject PARAMETER_KEY_SUSPEND_TIME();
-		static QAndroidJniObject PARAMETER_KEY_VIDEO_BITRATE();
+		static jstring PARAMETER_KEY_HDR10_PLUS_INFO();
+		static jstring PARAMETER_KEY_OFFSET_TIME();
+		static jstring PARAMETER_KEY_REQUEST_SYNC_FRAME();
+		static jstring PARAMETER_KEY_SUSPEND();
+		static jstring PARAMETER_KEY_SUSPEND_TIME();
+		static jstring PARAMETER_KEY_VIDEO_BITRATE();
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT();
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING();
 		
@@ -93,14 +93,15 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject getCanonicalName();
+		jstring getName();
+		jstring getCanonicalName();
 		void start();
 		void stop();
 		void flush();
 		void reset();
 		void release();
 		void setParameters(__jni_impl::android::os::Bundle arg0);
+		void setVideoScalingMode(jint arg0);
 		static QAndroidJniObject createDecoderByType(jstring arg0);
 		static QAndroidJniObject createEncoderByType(jstring arg0);
 		static QAndroidJniObject createByCodecName(jstring arg0);
@@ -114,11 +115,11 @@ namespace __jni_impl::android::media
 		void releaseOutputBuffer(jint arg0, jlong arg1);
 		void releaseOutputBuffer(jint arg0, jboolean arg1);
 		void signalEndOfInputStream();
-		QAndroidJniObject getOutputFormat(jint arg0);
 		QAndroidJniObject getOutputFormat();
+		QAndroidJniObject getOutputFormat(jint arg0);
 		QAndroidJniObject getInputFormat();
-		QAndroidJniObject getInputBuffers();
-		QAndroidJniObject getOutputBuffers();
+		jarray getInputBuffers();
+		jarray getOutputBuffers();
 		QAndroidJniObject getInputBuffer(jint arg0);
 		QAndroidJniObject getInputImage(jint arg0);
 		QAndroidJniObject getOutputBuffer(jint arg0);
@@ -126,13 +127,12 @@ namespace __jni_impl::android::media
 		void setAudioPresentation(__jni_impl::android::media::AudioPresentation arg0);
 		void setOnFrameRenderedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		QAndroidJniObject getCodecInfo();
-		void setVideoScalingMode(jint arg0);
-		QAndroidJniObject getMetrics();
-		void configure(__jni_impl::android::media::MediaFormat arg0, __jni_impl::android::view::Surface arg1, __jni_impl::android::media::MediaCrypto arg2, jint arg3);
-		void configure(__jni_impl::android::media::MediaFormat arg0, __jni_impl::android::view::Surface arg1, jint arg2, __jni_impl::android::media::MediaDescrambler arg3);
-		void setInputSurface(__jni_impl::android::view::Surface arg0);
-		void setCallback(__jni_impl::android::media::MediaCodec_Callback arg0);
 		void setCallback(__jni_impl::android::media::MediaCodec_Callback arg0, __jni_impl::android::os::Handler arg1);
+		void setCallback(__jni_impl::android::media::MediaCodec_Callback arg0);
+		QAndroidJniObject getMetrics();
+		void configure(__jni_impl::android::media::MediaFormat arg0, __jni_impl::android::view::Surface arg1, jint arg2, __jni_impl::android::media::MediaDescrambler arg3);
+		void configure(__jni_impl::android::media::MediaFormat arg0, __jni_impl::android::view::Surface arg1, __jni_impl::android::media::MediaCrypto arg2, jint arg3);
+		void setInputSurface(__jni_impl::android::view::Surface arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -146,10 +146,10 @@ namespace __jni_impl::android::media
 #include "AudioPresentation.hpp"
 #include "../os/Handler.hpp"
 #include "MediaCodecInfo.hpp"
-#include "../os/PersistableBundle.hpp"
-#include "MediaCrypto.hpp"
-#include "MediaDescrambler.hpp"
 #include "MediaCodec_Callback.hpp"
+#include "../os/PersistableBundle.hpp"
+#include "MediaDescrambler.hpp"
+#include "MediaCrypto.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -158,127 +158,147 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"BUFFER_FLAG_CODEC_CONFIG");
+			"BUFFER_FLAG_CODEC_CONFIG"
+		);
 	}
 	jint MediaCodec::BUFFER_FLAG_END_OF_STREAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"BUFFER_FLAG_END_OF_STREAM");
+			"BUFFER_FLAG_END_OF_STREAM"
+		);
 	}
 	jint MediaCodec::BUFFER_FLAG_KEY_FRAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"BUFFER_FLAG_KEY_FRAME");
+			"BUFFER_FLAG_KEY_FRAME"
+		);
 	}
 	jint MediaCodec::BUFFER_FLAG_PARTIAL_FRAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"BUFFER_FLAG_PARTIAL_FRAME");
+			"BUFFER_FLAG_PARTIAL_FRAME"
+		);
 	}
 	jint MediaCodec::BUFFER_FLAG_SYNC_FRAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"BUFFER_FLAG_SYNC_FRAME");
+			"BUFFER_FLAG_SYNC_FRAME"
+		);
 	}
 	jint MediaCodec::CONFIGURE_FLAG_ENCODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"CONFIGURE_FLAG_ENCODE");
+			"CONFIGURE_FLAG_ENCODE"
+		);
 	}
 	jint MediaCodec::CRYPTO_MODE_AES_CBC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"CRYPTO_MODE_AES_CBC");
+			"CRYPTO_MODE_AES_CBC"
+		);
 	}
 	jint MediaCodec::CRYPTO_MODE_AES_CTR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"CRYPTO_MODE_AES_CTR");
+			"CRYPTO_MODE_AES_CTR"
+		);
 	}
 	jint MediaCodec::CRYPTO_MODE_UNENCRYPTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"CRYPTO_MODE_UNENCRYPTED");
+			"CRYPTO_MODE_UNENCRYPTED"
+		);
 	}
 	jint MediaCodec::INFO_OUTPUT_BUFFERS_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"INFO_OUTPUT_BUFFERS_CHANGED");
+			"INFO_OUTPUT_BUFFERS_CHANGED"
+		);
 	}
 	jint MediaCodec::INFO_OUTPUT_FORMAT_CHANGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"INFO_OUTPUT_FORMAT_CHANGED");
+			"INFO_OUTPUT_FORMAT_CHANGED"
+		);
 	}
 	jint MediaCodec::INFO_TRY_AGAIN_LATER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"INFO_TRY_AGAIN_LATER");
+			"INFO_TRY_AGAIN_LATER"
+		);
 	}
-	QAndroidJniObject MediaCodec::PARAMETER_KEY_HDR10_PLUS_INFO()
+	jstring MediaCodec::PARAMETER_KEY_HDR10_PLUS_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_HDR10_PLUS_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec::PARAMETER_KEY_OFFSET_TIME()
+	jstring MediaCodec::PARAMETER_KEY_OFFSET_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_OFFSET_TIME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec::PARAMETER_KEY_REQUEST_SYNC_FRAME()
+	jstring MediaCodec::PARAMETER_KEY_REQUEST_SYNC_FRAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_REQUEST_SYNC_FRAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec::PARAMETER_KEY_SUSPEND()
+	jstring MediaCodec::PARAMETER_KEY_SUSPEND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_SUSPEND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec::PARAMETER_KEY_SUSPEND_TIME()
+	jstring MediaCodec::PARAMETER_KEY_SUSPEND_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_SUSPEND_TIME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec::PARAMETER_KEY_VIDEO_BITRATE()
+	jstring MediaCodec::PARAMETER_KEY_VIDEO_BITRATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaCodec",
 			"PARAMETER_KEY_VIDEO_BITRATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MediaCodec::VIDEO_SCALING_MODE_SCALE_TO_FIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"VIDEO_SCALING_MODE_SCALE_TO_FIT");
+			"VIDEO_SCALING_MODE_SCALE_TO_FIT"
+		);
 	}
 	jint MediaCodec::VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaCodec",
-			"VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING");
+			"VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING"
+		);
 	}
 	
 	// Constructors
@@ -290,54 +310,70 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaCodec::getName()
+	jstring MediaCodec::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodec::getCanonicalName()
+	jstring MediaCodec::getCanonicalName()
 	{
 		return __thiz.callObjectMethod(
 			"getCanonicalName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void MediaCodec::start()
 	{
 		__thiz.callMethod<void>(
 			"start",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaCodec::stop()
 	{
 		__thiz.callMethod<void>(
 			"stop",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaCodec::flush()
 	{
 		__thiz.callMethod<void>(
 			"flush",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaCodec::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaCodec::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaCodec::setParameters(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"setParameters",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void MediaCodec::setVideoScalingMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVideoScalingMode",
+			"(I)V",
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodec::createDecoderByType(jstring arg0)
 	{
@@ -345,7 +381,8 @@ namespace __jni_impl::android::media
 			"android.media.MediaCodec",
 			"createDecoderByType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodec::createEncoderByType(jstring arg0)
 	{
@@ -353,7 +390,8 @@ namespace __jni_impl::android::media
 			"android.media.MediaCodec",
 			"createEncoderByType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodec::createByCodecName(jstring arg0)
 	{
@@ -361,27 +399,31 @@ namespace __jni_impl::android::media
 			"android.media.MediaCodec",
 			"createByCodecName",
 			"(Ljava/lang/String;)Landroid/media/MediaCodec;",
-			arg0);
+			arg0
+		);
 	}
 	void MediaCodec::setOutputSurface(__jni_impl::android::view::Surface arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOutputSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaCodec::createPersistentInputSurface()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.MediaCodec",
 			"createPersistentInputSurface",
-			"()Landroid/view/Surface;");
+			"()Landroid/view/Surface;"
+		);
 	}
 	QAndroidJniObject MediaCodec::createInputSurface()
 	{
 		return __thiz.callObjectMethod(
 			"createInputSurface",
-			"()Landroid/view/Surface;");
+			"()Landroid/view/Surface;"
+		);
 	}
 	void MediaCodec::queueInputBuffer(jint arg0, jint arg1, jint arg2, jlong arg3, jint arg4)
 	{
@@ -392,7 +434,8 @@ namespace __jni_impl::android::media
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void MediaCodec::queueSecureInputBuffer(jint arg0, jint arg1, __jni_impl::android::media::MediaCodec_CryptoInfo arg2, jlong arg3, jint arg4)
 	{
@@ -403,14 +446,16 @@ namespace __jni_impl::android::media
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jint MediaCodec::dequeueInputBuffer(jlong arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"dequeueInputBuffer",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jint MediaCodec::dequeueOutputBuffer(__jni_impl::android::media::MediaCodec_BufferInfo arg0, jlong arg1)
 	{
@@ -418,7 +463,8 @@ namespace __jni_impl::android::media
 			"dequeueOutputBuffer",
 			"(Landroid/media/MediaCodec$BufferInfo;J)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void MediaCodec::releaseOutputBuffer(jint arg0, jlong arg1)
 	{
@@ -426,7 +472,8 @@ namespace __jni_impl::android::media
 			"releaseOutputBuffer",
 			"(IJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void MediaCodec::releaseOutputBuffer(jint arg0, jboolean arg1)
 	{
@@ -434,79 +481,91 @@ namespace __jni_impl::android::media
 			"releaseOutputBuffer",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void MediaCodec::signalEndOfInputStream()
 	{
 		__thiz.callMethod<void>(
 			"signalEndOfInputStream",
-			"()V");
+			"()V"
+		);
+	}
+	QAndroidJniObject MediaCodec::getOutputFormat()
+	{
+		return __thiz.callObjectMethod(
+			"getOutputFormat",
+			"()Landroid/media/MediaFormat;"
+		);
 	}
 	QAndroidJniObject MediaCodec::getOutputFormat(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getOutputFormat",
 			"(I)Landroid/media/MediaFormat;",
-			arg0);
-	}
-	QAndroidJniObject MediaCodec::getOutputFormat()
-	{
-		return __thiz.callObjectMethod(
-			"getOutputFormat",
-			"()Landroid/media/MediaFormat;");
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodec::getInputFormat()
 	{
 		return __thiz.callObjectMethod(
 			"getInputFormat",
-			"()Landroid/media/MediaFormat;");
+			"()Landroid/media/MediaFormat;"
+		);
 	}
-	QAndroidJniObject MediaCodec::getInputBuffers()
+	jarray MediaCodec::getInputBuffers()
 	{
 		return __thiz.callObjectMethod(
 			"getInputBuffers",
-			"()[Ljava/nio/ByteBuffer;");
+			"()[Ljava/nio/ByteBuffer;"
+		).object<jarray>();
 	}
-	QAndroidJniObject MediaCodec::getOutputBuffers()
+	jarray MediaCodec::getOutputBuffers()
 	{
 		return __thiz.callObjectMethod(
 			"getOutputBuffers",
-			"()[Ljava/nio/ByteBuffer;");
+			"()[Ljava/nio/ByteBuffer;"
+		).object<jarray>();
 	}
 	QAndroidJniObject MediaCodec::getInputBuffer(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getInputBuffer",
 			"(I)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodec::getInputImage(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getInputImage",
 			"(I)Landroid/media/Image;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodec::getOutputBuffer(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getOutputBuffer",
 			"(I)Ljava/nio/ByteBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaCodec::getOutputImage(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getOutputImage",
 			"(I)Landroid/media/Image;",
-			arg0);
+			arg0
+		);
 	}
 	void MediaCodec::setAudioPresentation(__jni_impl::android::media::AudioPresentation arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAudioPresentation",
 			"(Landroid/media/AudioPresentation;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaCodec::setOnFrameRenderedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -514,36 +573,39 @@ namespace __jni_impl::android::media
 			"setOnFrameRenderedListener",
 			"(Landroid/media/MediaCodec$OnFrameRenderedListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaCodec::getCodecInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getCodecInfo",
-			"()Landroid/media/MediaCodecInfo;");
+			"()Landroid/media/MediaCodecInfo;"
+		);
 	}
-	void MediaCodec::setVideoScalingMode(jint arg0)
+	void MediaCodec::setCallback(__jni_impl::android::media::MediaCodec_Callback arg0, __jni_impl::android::os::Handler arg1)
 	{
 		__thiz.callMethod<void>(
-			"setVideoScalingMode",
-			"(I)V",
-			arg0);
+			"setCallback",
+			"(Landroid/media/MediaCodec$Callback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaCodec::setCallback(__jni_impl::android::media::MediaCodec_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCallback",
+			"(Landroid/media/MediaCodec$Callback;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaCodec::getMetrics()
 	{
 		return __thiz.callObjectMethod(
 			"getMetrics",
-			"()Landroid/os/PersistableBundle;");
-	}
-	void MediaCodec::configure(__jni_impl::android::media::MediaFormat arg0, __jni_impl::android::view::Surface arg1, __jni_impl::android::media::MediaCrypto arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"configure",
-			"(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3);
+			"()Landroid/os/PersistableBundle;"
+		);
 	}
 	void MediaCodec::configure(__jni_impl::android::media::MediaFormat arg0, __jni_impl::android::view::Surface arg1, jint arg2, __jni_impl::android::media::MediaDescrambler arg3)
 	{
@@ -553,29 +615,27 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	void MediaCodec::configure(__jni_impl::android::media::MediaFormat arg0, __jni_impl::android::view::Surface arg1, __jni_impl::android::media::MediaCrypto arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"configure",
+			"(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
 	}
 	void MediaCodec::setInputSurface(__jni_impl::android::view::Surface arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInputSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
-	}
-	void MediaCodec::setCallback(__jni_impl::android::media::MediaCodec_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCallback",
-			"(Landroid/media/MediaCodec$Callback;)V",
-			arg0.__jniObject().object());
-	}
-	void MediaCodec::setCallback(__jni_impl::android::media::MediaCodec_Callback arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setCallback",
-			"(Landroid/media/MediaCodec$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

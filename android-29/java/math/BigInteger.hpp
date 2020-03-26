@@ -48,8 +48,8 @@ namespace __jni_impl::java::math
 		QAndroidJniObject add(__jni_impl::java::math::BigInteger arg0);
 		jint bitCount();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
-		QAndroidJniObject toString(jint arg0);
+		jstring toString();
+		jstring toString(jint arg0);
 		jint hashCode();
 		QAndroidJniObject abs();
 		QAndroidJniObject sqrt();
@@ -63,7 +63,7 @@ namespace __jni_impl::java::math
 		jfloat floatValue();
 		jdouble doubleValue();
 		static QAndroidJniObject valueOf(jlong arg0);
-		QAndroidJniObject toByteArray();
+		jbyteArray toByteArray();
 		QAndroidJniObject mod(__jni_impl::java::math::BigInteger arg0);
 		jint signum();
 		QAndroidJniObject shiftLeft(jint arg0);
@@ -73,7 +73,7 @@ namespace __jni_impl::java::math
 		QAndroidJniObject setBit(jint arg0);
 		QAndroidJniObject _or(__jni_impl::java::math::BigInteger arg0);
 		jlong longValueExact();
-		QAndroidJniObject divideAndRemainder(__jni_impl::java::math::BigInteger arg0);
+		jarray divideAndRemainder(__jni_impl::java::math::BigInteger arg0);
 		jint bitLength();
 		jboolean testBit(jint arg0);
 		QAndroidJniObject subtract(__jni_impl::java::math::BigInteger arg0);
@@ -86,7 +86,7 @@ namespace __jni_impl::java::math
 		QAndroidJniObject modInverse(__jni_impl::java::math::BigInteger arg0);
 		static QAndroidJniObject probablePrime(jint arg0, __jni_impl::java::util::Random arg1);
 		QAndroidJniObject nextProbablePrime();
-		QAndroidJniObject sqrtAndRemainder();
+		jarray sqrtAndRemainder();
 		QAndroidJniObject gcd(__jni_impl::java::math::BigInteger arg0);
 		QAndroidJniObject _xor(__jni_impl::java::math::BigInteger arg0);
 		QAndroidJniObject andNot(__jni_impl::java::math::BigInteger arg0);
@@ -112,28 +112,32 @@ namespace __jni_impl::java::math
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.BigInteger",
 			"ZERO",
-			"Ljava/math/BigInteger;");
+			"Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject BigInteger::ONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.BigInteger",
 			"ONE",
-			"Ljava/math/BigInteger;");
+			"Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject BigInteger::TWO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.BigInteger",
 			"TWO",
-			"Ljava/math/BigInteger;");
+			"Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject BigInteger::TEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.BigInteger",
 			"TEN",
-			"Ljava/math/BigInteger;");
+			"Ljava/math/BigInteger;"
+		);
 	}
 	
 	// Constructors
@@ -210,110 +214,127 @@ namespace __jni_impl::java::math
 		return __thiz.callObjectMethod(
 			"add",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint BigInteger::bitCount()
 	{
 		return __thiz.callMethod<jint>(
 			"bitCount",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean BigInteger::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject BigInteger::toString()
+	jstring BigInteger::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BigInteger::toString(jint arg0)
+	jstring BigInteger::toString(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"toString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jint BigInteger::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject BigInteger::abs()
 	{
 		return __thiz.callObjectMethod(
 			"abs",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject BigInteger::sqrt()
 	{
 		return __thiz.callObjectMethod(
 			"sqrt",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject BigInteger::pow(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"pow",
 			"(I)Ljava/math/BigInteger;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BigInteger::min(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"min",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::max(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"max",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint BigInteger::compareTo(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/math/BigInteger;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint BigInteger::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint BigInteger::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong BigInteger::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat BigInteger::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble BigInteger::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 	QAndroidJniObject BigInteger::valueOf(jlong arg0)
 	{
@@ -321,114 +342,131 @@ namespace __jni_impl::java::math
 			"java.math.BigInteger",
 			"valueOf",
 			"(J)Ljava/math/BigInteger;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject BigInteger::toByteArray()
+	jbyteArray BigInteger::toByteArray()
 	{
 		return __thiz.callObjectMethod(
 			"toByteArray",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject BigInteger::mod(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"mod",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint BigInteger::signum()
 	{
 		return __thiz.callMethod<jint>(
 			"signum",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject BigInteger::shiftLeft(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"shiftLeft",
 			"(I)Ljava/math/BigInteger;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BigInteger::divide(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"divide",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::remainder(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"remainder",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::multiply(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"multiply",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::setBit(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setBit",
 			"(I)Ljava/math/BigInteger;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BigInteger::_or(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"or",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong BigInteger::longValueExact()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValueExact",
-			"()J");
+			"()J"
+		);
 	}
-	QAndroidJniObject BigInteger::divideAndRemainder(__jni_impl::java::math::BigInteger arg0)
+	jarray BigInteger::divideAndRemainder(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"divideAndRemainder",
 			"(Ljava/math/BigInteger;)[Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jarray>();
 	}
 	jint BigInteger::bitLength()
 	{
 		return __thiz.callMethod<jint>(
 			"bitLength",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean BigInteger::testBit(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"testBit",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BigInteger::subtract(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"subtract",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::shiftRight(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"shiftRight",
 			"(I)Ljava/math/BigInteger;",
-			arg0);
+			arg0
+		);
 	}
 	jint BigInteger::getLowestSetBit()
 	{
 		return __thiz.callMethod<jint>(
 			"getLowestSetBit",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject BigInteger::modPow(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::BigInteger arg1)
 	{
@@ -436,33 +474,38 @@ namespace __jni_impl::java::math
 			"modPow",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::negate()
 	{
 		return __thiz.callObjectMethod(
 			"negate",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject BigInteger::_and(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"and",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::_not()
 	{
 		return __thiz.callObjectMethod(
 			"not",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject BigInteger::modInverse(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"modInverse",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::probablePrime(jint arg0, __jni_impl::java::util::Random arg1)
 	{
@@ -471,79 +514,91 @@ namespace __jni_impl::java::math
 			"probablePrime",
 			"(ILjava/util/Random;)Ljava/math/BigInteger;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::nextProbablePrime()
 	{
 		return __thiz.callObjectMethod(
 			"nextProbablePrime",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
-	QAndroidJniObject BigInteger::sqrtAndRemainder()
+	jarray BigInteger::sqrtAndRemainder()
 	{
 		return __thiz.callObjectMethod(
 			"sqrtAndRemainder",
-			"()[Ljava/math/BigInteger;");
+			"()[Ljava/math/BigInteger;"
+		).object<jarray>();
 	}
 	QAndroidJniObject BigInteger::gcd(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"gcd",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::_xor(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"xor",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::andNot(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"andNot",
 			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BigInteger::clearBit(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"clearBit",
 			"(I)Ljava/math/BigInteger;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BigInteger::flipBit(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"flipBit",
 			"(I)Ljava/math/BigInteger;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BigInteger::isProbablePrime(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isProbablePrime",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint BigInteger::intValueExact()
 	{
 		return __thiz.callMethod<jint>(
 			"intValueExact",
-			"()I");
+			"()I"
+		);
 	}
 	jshort BigInteger::shortValueExact()
 	{
 		return __thiz.callMethod<jshort>(
 			"shortValueExact",
-			"()S");
+			"()S"
+		);
 	}
 	jbyte BigInteger::byteValueExact()
 	{
 		return __thiz.callMethod<jbyte>(
 			"byteValueExact",
-			"()B");
+			"()B"
+		);
 	}
 } // namespace __jni_impl::java::math
 

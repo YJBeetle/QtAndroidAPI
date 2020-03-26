@@ -47,7 +47,8 @@ namespace __jni_impl::android::provider
 			"android.provider.MediaStore$Files",
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaStore_Files::getContentUri(jstring arg0, jlong arg1)
 	{
@@ -56,7 +57,8 @@ namespace __jni_impl::android::provider
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::provider
 

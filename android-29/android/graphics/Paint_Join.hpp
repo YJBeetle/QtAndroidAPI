@@ -21,7 +21,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -35,21 +35,24 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Join",
 			"MITER",
-			"Landroid/graphics/Paint$Join;");
+			"Landroid/graphics/Paint$Join;"
+		);
 	}
 	QAndroidJniObject Paint_Join::ROUND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Join",
 			"ROUND",
-			"Landroid/graphics/Paint$Join;");
+			"Landroid/graphics/Paint$Join;"
+		);
 	}
 	QAndroidJniObject Paint_Join::BEVEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Paint$Join",
 			"BEVEL",
-			"Landroid/graphics/Paint$Join;");
+			"Landroid/graphics/Paint$Join;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Paint_Join::values()
+	jarray Paint_Join::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Paint$Join",
 			"values",
-			"()[Landroid/graphics/Paint$Join;");
+			"()[Landroid/graphics/Paint$Join;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Paint_Join::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Paint$Join",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Join;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -30,15 +30,15 @@ namespace __jni_impl::android::telephony
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getScanType();
 		jint getSearchPeriodicity();
 		jint getMaxSearchTime();
 		jboolean getIncrementalResults();
 		jint getIncrementalResultsPeriodicity();
-		QAndroidJniObject getSpecifiers();
+		jarray getSpecifiers();
 		QAndroidJniObject getPlmns();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -53,19 +53,22 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.NetworkScanRequest",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint NetworkScanRequest::SCAN_TYPE_ONE_SHOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.NetworkScanRequest",
-			"SCAN_TYPE_ONE_SHOT");
+			"SCAN_TYPE_ONE_SHOT"
+		);
 	}
 	jint NetworkScanRequest::SCAN_TYPE_PERIODIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.NetworkScanRequest",
-			"SCAN_TYPE_PERIODIC");
+			"SCAN_TYPE_PERIODIC"
+		);
 	}
 	
 	// Constructors
@@ -89,61 +92,22 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint NetworkScanRequest::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jint NetworkScanRequest::getScanType()
-	{
-		return __thiz.callMethod<jint>(
-			"getScanType",
-			"()I");
-	}
-	jint NetworkScanRequest::getSearchPeriodicity()
-	{
-		return __thiz.callMethod<jint>(
-			"getSearchPeriodicity",
-			"()I");
-	}
-	jint NetworkScanRequest::getMaxSearchTime()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxSearchTime",
-			"()I");
-	}
-	jboolean NetworkScanRequest::getIncrementalResults()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getIncrementalResults",
-			"()Z");
-	}
-	jint NetworkScanRequest::getIncrementalResultsPeriodicity()
-	{
-		return __thiz.callMethod<jint>(
-			"getIncrementalResultsPeriodicity",
-			"()I");
-	}
-	QAndroidJniObject NetworkScanRequest::getSpecifiers()
-	{
-		return __thiz.callObjectMethod(
-			"getSpecifiers",
-			"()[Landroid/telephony/RadioAccessSpecifier;");
-	}
-	QAndroidJniObject NetworkScanRequest::getPlmns()
-	{
-		return __thiz.callObjectMethod(
-			"getPlmns",
-			"()Ljava/util/ArrayList;");
+			"()I"
+		);
 	}
 	jint NetworkScanRequest::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void NetworkScanRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -151,7 +115,57 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint NetworkScanRequest::getScanType()
+	{
+		return __thiz.callMethod<jint>(
+			"getScanType",
+			"()I"
+		);
+	}
+	jint NetworkScanRequest::getSearchPeriodicity()
+	{
+		return __thiz.callMethod<jint>(
+			"getSearchPeriodicity",
+			"()I"
+		);
+	}
+	jint NetworkScanRequest::getMaxSearchTime()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxSearchTime",
+			"()I"
+		);
+	}
+	jboolean NetworkScanRequest::getIncrementalResults()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getIncrementalResults",
+			"()Z"
+		);
+	}
+	jint NetworkScanRequest::getIncrementalResultsPeriodicity()
+	{
+		return __thiz.callMethod<jint>(
+			"getIncrementalResultsPeriodicity",
+			"()I"
+		);
+	}
+	jarray NetworkScanRequest::getSpecifiers()
+	{
+		return __thiz.callObjectMethod(
+			"getSpecifiers",
+			"()[Landroid/telephony/RadioAccessSpecifier;"
+		).object<jarray>();
+	}
+	QAndroidJniObject NetworkScanRequest::getPlmns()
+	{
+		return __thiz.callObjectMethod(
+			"getPlmns",
+			"()Ljava/util/ArrayList;"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

@@ -42,25 +42,29 @@ namespace __jni_impl::android::database::sqlite
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void SQLiteClosable::acquireReference()
 	{
 		__thiz.callMethod<void>(
 			"acquireReference",
-			"()V");
+			"()V"
+		);
 	}
 	void SQLiteClosable::releaseReference()
 	{
 		__thiz.callMethod<void>(
 			"releaseReference",
-			"()V");
+			"()V"
+		);
 	}
 	void SQLiteClosable::releaseReferenceFromContainer()
 	{
 		__thiz.callMethod<void>(
 			"releaseReferenceFromContainer",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::database::sqlite
 

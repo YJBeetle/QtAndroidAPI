@@ -21,13 +21,13 @@ namespace __jni_impl::android::provider
 	public:
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static jstring DEFAULT_SORT_ORDER();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getDefaultSmsPackage(__jni_impl::android::content::Context arg0);
+		static jstring getDefaultSmsPackage(__jni_impl::android::content::Context arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -42,14 +42,16 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Sms",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Telephony_Sms::DEFAULT_SORT_ORDER()
+	jstring Telephony_Sms::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Sms",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -61,13 +63,14 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	QAndroidJniObject Telephony_Sms::getDefaultSmsPackage(__jni_impl::android::content::Context arg0)
+	jstring Telephony_Sms::getDefaultSmsPackage(__jni_impl::android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.provider.Telephony$Sms",
 			"getDefaultSmsPackage",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

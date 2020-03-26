@@ -16,15 +16,15 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUTHORITY();
+		static jstring AUTHORITY();
 		static QAndroidJniObject BASE_URI();
-		static QAndroidJniObject KEY_AIRPLANE_MODE();
-		static QAndroidJniObject KEY_BATTERY_SAVER();
-		static QAndroidJniObject KEY_BLUETOOTH();
-		static QAndroidJniObject KEY_LOCATION();
-		static QAndroidJniObject KEY_WIFI();
-		static QAndroidJniObject PATH_SETTING_ACTION();
-		static QAndroidJniObject PATH_SETTING_INTENT();
+		static jstring KEY_AIRPLANE_MODE();
+		static jstring KEY_BATTERY_SAVER();
+		static jstring KEY_BLUETOOTH();
+		static jstring KEY_LOCATION();
+		static jstring KEY_WIFI();
+		static jstring PATH_SETTING_ACTION();
+		static jstring PATH_SETTING_INTENT();
 		
 		// Constructors
 		void __constructor();
@@ -38,68 +38,77 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject SettingsSlicesContract::AUTHORITY()
+	jstring SettingsSlicesContract::AUTHORITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",
 			"AUTHORITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject SettingsSlicesContract::BASE_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",
 			"BASE_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject SettingsSlicesContract::KEY_AIRPLANE_MODE()
+	jstring SettingsSlicesContract::KEY_AIRPLANE_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",
 			"KEY_AIRPLANE_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SettingsSlicesContract::KEY_BATTERY_SAVER()
+	jstring SettingsSlicesContract::KEY_BATTERY_SAVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",
 			"KEY_BATTERY_SAVER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SettingsSlicesContract::KEY_BLUETOOTH()
+	jstring SettingsSlicesContract::KEY_BLUETOOTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",
 			"KEY_BLUETOOTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SettingsSlicesContract::KEY_LOCATION()
+	jstring SettingsSlicesContract::KEY_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",
 			"KEY_LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SettingsSlicesContract::KEY_WIFI()
+	jstring SettingsSlicesContract::KEY_WIFI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",
 			"KEY_WIFI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SettingsSlicesContract::PATH_SETTING_ACTION()
+	jstring SettingsSlicesContract::PATH_SETTING_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",
 			"PATH_SETTING_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SettingsSlicesContract::PATH_SETTING_INTENT()
+	jstring SettingsSlicesContract::PATH_SETTING_INTENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.SettingsSlicesContract",
 			"PATH_SETTING_INTENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

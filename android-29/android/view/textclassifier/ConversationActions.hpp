@@ -22,10 +22,10 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getId();
-		QAndroidJniObject getConversationActions();
+		jstring getId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getConversationActions();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -39,7 +39,8 @@ namespace __jni_impl::android::view::textclassifier
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.ConversationActions",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -53,23 +54,19 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	QAndroidJniObject ConversationActions::getId()
+	jstring ConversationActions::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject ConversationActions::getConversationActions()
-	{
-		return __thiz.callObjectMethod(
-			"getConversationActions",
-			"()Ljava/util/List;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ConversationActions::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ConversationActions::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -77,7 +74,15 @@ namespace __jni_impl::android::view::textclassifier
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject ConversationActions::getConversationActions()
+	{
+		return __thiz.callObjectMethod(
+			"getConversationActions",
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

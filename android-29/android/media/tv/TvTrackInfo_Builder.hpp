@@ -30,11 +30,11 @@ namespace __jni_impl::android::media::tv
 		QAndroidJniObject setLanguage(jstring arg0);
 		QAndroidJniObject setDescription(jstring arg0);
 		QAndroidJniObject setVideoFrameRate(jfloat arg0);
+		QAndroidJniObject setAudioChannelCount(jint arg0);
 		QAndroidJniObject setAudioSampleRate(jint arg0);
 		QAndroidJniObject setVideoWidth(jint arg0);
 		QAndroidJniObject setVideoHeight(jint arg0);
 		QAndroidJniObject setVideoPixelAspectRatio(jfloat arg0);
-		QAndroidJniObject setAudioChannelCount(jint arg0);
 		QAndroidJniObject setVideoActiveFormatDescription(jbyte arg0);
 	};
 } // namespace __jni_impl::android::media::tv
@@ -61,77 +61,88 @@ namespace __jni_impl::android::media::tv
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/media/tv/TvTrackInfo;");
+			"()Landroid/media/tv/TvTrackInfo;"
+		);
 	}
 	QAndroidJniObject TvTrackInfo_Builder::setExtra(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setExtra",
 			"(Landroid/os/Bundle;)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TvTrackInfo_Builder::setLanguage(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLanguage",
 			"(Ljava/lang/String;)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TvTrackInfo_Builder::setDescription(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDescription",
 			"(Ljava/lang/CharSequence;)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TvTrackInfo_Builder::setVideoFrameRate(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setVideoFrameRate",
 			"(F)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
-	}
-	QAndroidJniObject TvTrackInfo_Builder::setAudioSampleRate(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAudioSampleRate",
-			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
-	}
-	QAndroidJniObject TvTrackInfo_Builder::setVideoWidth(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setVideoWidth",
-			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
-	}
-	QAndroidJniObject TvTrackInfo_Builder::setVideoHeight(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setVideoHeight",
-			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
-	}
-	QAndroidJniObject TvTrackInfo_Builder::setVideoPixelAspectRatio(jfloat arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setVideoPixelAspectRatio",
-			"(F)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TvTrackInfo_Builder::setAudioChannelCount(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAudioChannelCount",
 			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject TvTrackInfo_Builder::setAudioSampleRate(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAudioSampleRate",
+			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TvTrackInfo_Builder::setVideoWidth(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setVideoWidth",
+			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TvTrackInfo_Builder::setVideoHeight(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setVideoHeight",
+			"(I)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TvTrackInfo_Builder::setVideoPixelAspectRatio(jfloat arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setVideoPixelAspectRatio",
+			"(F)Landroid/media/tv/TvTrackInfo$Builder;",
+			arg0
+		);
 	}
 	QAndroidJniObject TvTrackInfo_Builder::setVideoActiveFormatDescription(jbyte arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setVideoActiveFormatDescription",
 			"(B)Landroid/media/tv/TvTrackInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

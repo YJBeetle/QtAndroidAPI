@@ -9,14 +9,6 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::content
-{
-	class ClipData;
-}
-namespace __jni_impl::android::os
-{
-	class PersistableBundle;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -28,6 +20,14 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::content
 {
 	class ComponentName;
+}
+namespace __jni_impl::android::content
+{
+	class ClipData;
+}
+namespace __jni_impl::android::os
+{
+	class PersistableBundle;
 }
 
 namespace __jni_impl::android::app::job
@@ -54,11 +54,9 @@ namespace __jni_impl::android::app::job
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getId();
-		QAndroidJniObject getClipData();
-		QAndroidJniObject getExtras();
 		static jlong getMinPeriodMillis();
 		static jlong getMinFlexMillis();
 		QAndroidJniObject getTransientExtras();
@@ -67,7 +65,7 @@ namespace __jni_impl::android::app::job
 		jboolean isRequireBatteryNotLow();
 		jboolean isRequireDeviceIdle();
 		jboolean isRequireStorageNotLow();
-		QAndroidJniObject getTriggerContentUris();
+		jarray getTriggerContentUris();
 		jlong getTriggerContentUpdateDelay();
 		jlong getTriggerContentMaxDelay();
 		jint getNetworkType();
@@ -84,18 +82,20 @@ namespace __jni_impl::android::app::job
 		jint getBackoffPolicy();
 		jboolean isImportantWhileForeground();
 		jboolean isPrefetch();
-		QAndroidJniObject getService();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getService();
+		QAndroidJniObject getClipData();
+		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::app::job
 
 #include "../../os/Parcel.hpp"
-#include "../../content/ClipData.hpp"
-#include "../../os/PersistableBundle.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../net/NetworkRequest.hpp"
 #include "../../content/ComponentName.hpp"
+#include "../../content/ClipData.hpp"
+#include "../../os/PersistableBundle.hpp"
 
 namespace __jni_impl::android::app::job
 {
@@ -104,74 +104,86 @@ namespace __jni_impl::android::app::job
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo",
-			"BACKOFF_POLICY_EXPONENTIAL");
+			"BACKOFF_POLICY_EXPONENTIAL"
+		);
 	}
 	jint JobInfo::BACKOFF_POLICY_LINEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo",
-			"BACKOFF_POLICY_LINEAR");
+			"BACKOFF_POLICY_LINEAR"
+		);
 	}
 	QAndroidJniObject JobInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.job.JobInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jlong JobInfo::DEFAULT_INITIAL_BACKOFF_MILLIS()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.app.job.JobInfo",
-			"DEFAULT_INITIAL_BACKOFF_MILLIS");
+			"DEFAULT_INITIAL_BACKOFF_MILLIS"
+		);
 	}
 	jlong JobInfo::MAX_BACKOFF_DELAY_MILLIS()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.app.job.JobInfo",
-			"MAX_BACKOFF_DELAY_MILLIS");
+			"MAX_BACKOFF_DELAY_MILLIS"
+		);
 	}
 	jint JobInfo::NETWORK_BYTES_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo",
-			"NETWORK_BYTES_UNKNOWN");
+			"NETWORK_BYTES_UNKNOWN"
+		);
 	}
 	jint JobInfo::NETWORK_TYPE_ANY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo",
-			"NETWORK_TYPE_ANY");
+			"NETWORK_TYPE_ANY"
+		);
 	}
 	jint JobInfo::NETWORK_TYPE_CELLULAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo",
-			"NETWORK_TYPE_CELLULAR");
+			"NETWORK_TYPE_CELLULAR"
+		);
 	}
 	jint JobInfo::NETWORK_TYPE_METERED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo",
-			"NETWORK_TYPE_METERED");
+			"NETWORK_TYPE_METERED"
+		);
 	}
 	jint JobInfo::NETWORK_TYPE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo",
-			"NETWORK_TYPE_NONE");
+			"NETWORK_TYPE_NONE"
+		);
 	}
 	jint JobInfo::NETWORK_TYPE_NOT_ROAMING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo",
-			"NETWORK_TYPE_NOT_ROAMING");
+			"NETWORK_TYPE_NOT_ROAMING"
+		);
 	}
 	jint JobInfo::NETWORK_TYPE_UNMETERED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo",
-			"NETWORK_TYPE_UNMETERED");
+			"NETWORK_TYPE_UNMETERED"
+		);
 	}
 	
 	// Constructors
@@ -188,201 +200,213 @@ namespace __jni_impl::android::app::job
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject JobInfo::toString()
+	jstring JobInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint JobInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint JobInfo::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
-			"()I");
-	}
-	QAndroidJniObject JobInfo::getClipData()
-	{
-		return __thiz.callObjectMethod(
-			"getClipData",
-			"()Landroid/content/ClipData;");
-	}
-	QAndroidJniObject JobInfo::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/PersistableBundle;");
+			"()I"
+		);
 	}
 	jlong JobInfo::getMinPeriodMillis()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.app.job.JobInfo",
 			"getMinPeriodMillis",
-			"()J");
+			"()J"
+		);
 	}
 	jlong JobInfo::getMinFlexMillis()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.app.job.JobInfo",
 			"getMinFlexMillis",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject JobInfo::getTransientExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getTransientExtras",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
 	jint JobInfo::getClipGrantFlags()
 	{
 		return __thiz.callMethod<jint>(
 			"getClipGrantFlags",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean JobInfo::isRequireCharging()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRequireCharging",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean JobInfo::isRequireBatteryNotLow()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRequireBatteryNotLow",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean JobInfo::isRequireDeviceIdle()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRequireDeviceIdle",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean JobInfo::isRequireStorageNotLow()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRequireStorageNotLow",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject JobInfo::getTriggerContentUris()
+	jarray JobInfo::getTriggerContentUris()
 	{
 		return __thiz.callObjectMethod(
 			"getTriggerContentUris",
-			"()[Landroid/app/job/JobInfo$TriggerContentUri;");
+			"()[Landroid/app/job/JobInfo$TriggerContentUri;"
+		).object<jarray>();
 	}
 	jlong JobInfo::getTriggerContentUpdateDelay()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTriggerContentUpdateDelay",
-			"()J");
+			"()J"
+		);
 	}
 	jlong JobInfo::getTriggerContentMaxDelay()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTriggerContentMaxDelay",
-			"()J");
+			"()J"
+		);
 	}
 	jint JobInfo::getNetworkType()
 	{
 		return __thiz.callMethod<jint>(
 			"getNetworkType",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject JobInfo::getRequiredNetwork()
 	{
 		return __thiz.callObjectMethod(
 			"getRequiredNetwork",
-			"()Landroid/net/NetworkRequest;");
+			"()Landroid/net/NetworkRequest;"
+		);
 	}
 	jlong JobInfo::getEstimatedNetworkDownloadBytes()
 	{
 		return __thiz.callMethod<jlong>(
 			"getEstimatedNetworkDownloadBytes",
-			"()J");
+			"()J"
+		);
 	}
 	jlong JobInfo::getEstimatedNetworkUploadBytes()
 	{
 		return __thiz.callMethod<jlong>(
 			"getEstimatedNetworkUploadBytes",
-			"()J");
+			"()J"
+		);
 	}
 	jlong JobInfo::getMinLatencyMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMinLatencyMillis",
-			"()J");
+			"()J"
+		);
 	}
 	jlong JobInfo::getMaxExecutionDelayMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMaxExecutionDelayMillis",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean JobInfo::isPeriodic()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPeriodic",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean JobInfo::isPersisted()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPersisted",
-			"()Z");
+			"()Z"
+		);
 	}
 	jlong JobInfo::getIntervalMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getIntervalMillis",
-			"()J");
+			"()J"
+		);
 	}
 	jlong JobInfo::getFlexMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getFlexMillis",
-			"()J");
+			"()J"
+		);
 	}
 	jlong JobInfo::getInitialBackoffMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getInitialBackoffMillis",
-			"()J");
+			"()J"
+		);
 	}
 	jint JobInfo::getBackoffPolicy()
 	{
 		return __thiz.callMethod<jint>(
 			"getBackoffPolicy",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean JobInfo::isImportantWhileForeground()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isImportantWhileForeground",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean JobInfo::isPrefetch()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPrefetch",
-			"()Z");
-	}
-	QAndroidJniObject JobInfo::getService()
-	{
-		return __thiz.callObjectMethod(
-			"getService",
-			"()Landroid/content/ComponentName;");
+			"()Z"
+		);
 	}
 	jint JobInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void JobInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -390,7 +414,29 @@ namespace __jni_impl::android::app::job
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject JobInfo::getService()
+	{
+		return __thiz.callObjectMethod(
+			"getService",
+			"()Landroid/content/ComponentName;"
+		);
+	}
+	QAndroidJniObject JobInfo::getClipData()
+	{
+		return __thiz.callObjectMethod(
+			"getClipData",
+			"()Landroid/content/ClipData;"
+		);
+	}
+	QAndroidJniObject JobInfo::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/PersistableBundle;"
+		);
 	}
 } // namespace __jni_impl::android::app::job
 

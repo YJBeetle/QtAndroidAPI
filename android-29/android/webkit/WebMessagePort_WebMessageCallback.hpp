@@ -51,7 +51,8 @@ namespace __jni_impl::android::webkit
 			"onMessage",
 			"(Landroid/webkit/WebMessagePort;Landroid/webkit/WebMessage;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

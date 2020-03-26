@@ -47,52 +47,60 @@ namespace __jni_impl::android::webkit
 		__thiz.callMethod<void>(
 			"setCacheMode",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ServiceWorkerWebSettings::setBlockNetworkLoads(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBlockNetworkLoads",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ServiceWorkerWebSettings::getBlockNetworkLoads()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getBlockNetworkLoads",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ServiceWorkerWebSettings::getCacheMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getCacheMode",
-			"()I");
+			"()I"
+		);
 	}
 	void ServiceWorkerWebSettings::setAllowContentAccess(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAllowContentAccess",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ServiceWorkerWebSettings::getAllowContentAccess()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAllowContentAccess",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ServiceWorkerWebSettings::setAllowFileAccess(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAllowFileAccess",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ServiceWorkerWebSettings::getAllowFileAccess()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAllowFileAccess",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

@@ -21,10 +21,10 @@ namespace __jni_impl::android::text::style
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject setIntegerPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(jlong arg0);
-		QAndroidJniObject setFractionalPart(jstring arg0);
 		QAndroidJniObject setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2);
+		QAndroidJniObject setIntegerPart(jlong arg0);
+		QAndroidJniObject setIntegerPart(jstring arg0);
+		QAndroidJniObject setFractionalPart(jstring arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -59,27 +59,6 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_DecimalBuilder::setIntegerPart(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIntegerPart",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DecimalBuilder;",
-			arg0);
-	}
-	QAndroidJniObject TtsSpan_DecimalBuilder::setIntegerPart(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIntegerPart",
-			"(J)Landroid/text/style/TtsSpan$DecimalBuilder;",
-			arg0);
-	}
-	QAndroidJniObject TtsSpan_DecimalBuilder::setFractionalPart(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFractionalPart",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DecimalBuilder;",
-			arg0);
-	}
 	QAndroidJniObject TtsSpan_DecimalBuilder::setArgumentsFromDouble(jdouble arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -87,7 +66,32 @@ namespace __jni_impl::android::text::style
 			"(DII)Landroid/text/style/TtsSpan$DecimalBuilder;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	QAndroidJniObject TtsSpan_DecimalBuilder::setIntegerPart(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setIntegerPart",
+			"(J)Landroid/text/style/TtsSpan$DecimalBuilder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_DecimalBuilder::setIntegerPart(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setIntegerPart",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DecimalBuilder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_DecimalBuilder::setFractionalPart(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFractionalPart",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$DecimalBuilder;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

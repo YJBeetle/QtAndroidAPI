@@ -52,21 +52,24 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"setExtension",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_TelephoneBuilder::setCountryCode(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setCountryCode",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_TelephoneBuilder::setNumberParts(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setNumberParts",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

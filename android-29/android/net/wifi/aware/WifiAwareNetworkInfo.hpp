@@ -27,13 +27,13 @@ namespace __jni_impl::android::net::wifi::aware
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getPort();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getPeerIpv6Addr();
 		jint getTransportProtocol();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
@@ -48,7 +48,8 @@ namespace __jni_impl::android::net::wifi::aware
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.aware.WifiAwareNetworkInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -65,31 +66,50 @@ namespace __jni_impl::android::net::wifi::aware
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiAwareNetworkInfo::toString()
+	jstring WifiAwareNetworkInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiAwareNetworkInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint WifiAwareNetworkInfo::getPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getPort",
-			"()I");
+			"()I"
+		);
+	}
+	QAndroidJniObject WifiAwareNetworkInfo::getPeerIpv6Addr()
+	{
+		return __thiz.callObjectMethod(
+			"getPeerIpv6Addr",
+			"()Ljava/net/Inet6Address;"
+		);
+	}
+	jint WifiAwareNetworkInfo::getTransportProtocol()
+	{
+		return __thiz.callMethod<jint>(
+			"getTransportProtocol",
+			"()I"
+		);
 	}
 	jint WifiAwareNetworkInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void WifiAwareNetworkInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -97,19 +117,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject WifiAwareNetworkInfo::getPeerIpv6Addr()
-	{
-		return __thiz.callObjectMethod(
-			"getPeerIpv6Addr",
-			"()Ljava/net/Inet6Address;");
-	}
-	jint WifiAwareNetworkInfo::getTransportProtocol()
-	{
-		return __thiz.callMethod<jint>(
-			"getTransportProtocol",
-			"()I");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

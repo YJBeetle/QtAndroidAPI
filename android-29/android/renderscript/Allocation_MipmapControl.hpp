@@ -21,7 +21,7 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::renderscript
@@ -35,21 +35,24 @@ namespace __jni_impl::android::renderscript
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Allocation$MipmapControl",
 			"MIPMAP_NONE",
-			"Landroid/renderscript/Allocation$MipmapControl;");
+			"Landroid/renderscript/Allocation$MipmapControl;"
+		);
 	}
 	QAndroidJniObject Allocation_MipmapControl::MIPMAP_FULL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Allocation$MipmapControl",
 			"MIPMAP_FULL",
-			"Landroid/renderscript/Allocation$MipmapControl;");
+			"Landroid/renderscript/Allocation$MipmapControl;"
+		);
 	}
 	QAndroidJniObject Allocation_MipmapControl::MIPMAP_ON_SYNC_TO_TEXTURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Allocation$MipmapControl",
 			"MIPMAP_ON_SYNC_TO_TEXTURE",
-			"Landroid/renderscript/Allocation$MipmapControl;");
+			"Landroid/renderscript/Allocation$MipmapControl;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	QAndroidJniObject Allocation_MipmapControl::values()
+	jarray Allocation_MipmapControl::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Allocation$MipmapControl",
 			"values",
-			"()[Landroid/renderscript/Allocation$MipmapControl;");
+			"()[Landroid/renderscript/Allocation$MipmapControl;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Allocation_MipmapControl::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Allocation$MipmapControl",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Allocation$MipmapControl;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

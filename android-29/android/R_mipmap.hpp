@@ -29,7 +29,8 @@ namespace __jni_impl::android
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.R$mipmap",
-			"sym_def_app_icon");
+			"sym_def_app_icon"
+		);
 	}
 	
 	// Constructors

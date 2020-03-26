@@ -59,20 +59,20 @@ namespace __jni_impl::android::widget
 		jint getSelectedItemPosition();
 		jlong getSelectedItemId();
 		QAndroidJniObject getSelectedView();
-		QAndroidJniObject getSelectedItem();
+		jobject getSelectedItem();
 		jint getPositionForView(__jni_impl::android::view::View arg0);
 		jint getFirstVisiblePosition();
 		jint getLastVisiblePosition();
 		void setSelection(jint arg0);
 		void setEmptyView(__jni_impl::android::view::View arg0);
 		QAndroidJniObject getEmptyView();
-		QAndroidJniObject getItemAtPosition(jint arg0);
+		jobject getItemAtPosition(jint arg0);
 		jlong getItemIdAtPosition(jint arg0);
-		QAndroidJniObject getAccessibilityClassName();
-		void addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
-		void addView(__jni_impl::android::view::View arg0);
+		jstring getAccessibilityClassName();
 		void addView(__jni_impl::android::view::View arg0, jint arg1);
 		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
+		void addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
+		void addView(__jni_impl::android::view::View arg0);
 		void removeView(__jni_impl::android::view::View arg0);
 		void removeViewAt(jint arg0);
 		void removeAllViews();
@@ -96,25 +96,29 @@ namespace __jni_impl::android::widget
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.AdapterView",
-			"INVALID_POSITION");
+			"INVALID_POSITION"
+		);
 	}
 	jlong AdapterView::INVALID_ROW_ID()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.widget.AdapterView",
-			"INVALID_ROW_ID");
+			"INVALID_ROW_ID"
+		);
 	}
 	jint AdapterView::ITEM_VIEW_TYPE_HEADER_OR_FOOTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.AdapterView",
-			"ITEM_VIEW_TYPE_HEADER_OR_FOOTER");
+			"ITEM_VIEW_TYPE_HEADER_OR_FOOTER"
+		);
 	}
 	jint AdapterView::ITEM_VIEW_TYPE_IGNORE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.AdapterView",
-			"ITEM_VIEW_TYPE_IGNORE");
+			"ITEM_VIEW_TYPE_IGNORE"
+		);
 	}
 	
 	// Constructors
@@ -158,26 +162,30 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callMethod<jint>(
 			"getCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject AdapterView::getAdapter()
 	{
 		return __thiz.callObjectMethod(
 			"getAdapter",
-			"()Landroid/widget/Adapter;");
+			"()Landroid/widget/Adapter;"
+		);
 	}
 	void AdapterView::setOnItemClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnItemClickListener",
 			"(Landroid/widget/AdapterView$OnItemClickListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AdapterView::getOnItemClickListener()
 	{
 		return __thiz.callObjectMethod(
 			"getOnItemClickListener",
-			"()Landroid/widget/AdapterView$OnItemClickListener;");
+			"()Landroid/widget/AdapterView$OnItemClickListener;"
+		);
 	}
 	jboolean AdapterView::performItemClick(__jni_impl::android::view::View arg0, jint arg1, jlong arg2)
 	{
@@ -186,138 +194,142 @@ namespace __jni_impl::android::widget
 			"(Landroid/view/View;IJ)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AdapterView::setOnItemLongClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnItemLongClickListener",
 			"(Landroid/widget/AdapterView$OnItemLongClickListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AdapterView::getOnItemLongClickListener()
 	{
 		return __thiz.callObjectMethod(
 			"getOnItemLongClickListener",
-			"()Landroid/widget/AdapterView$OnItemLongClickListener;");
+			"()Landroid/widget/AdapterView$OnItemLongClickListener;"
+		);
 	}
 	void AdapterView::setOnItemSelectedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnItemSelectedListener",
 			"(Landroid/widget/AdapterView$OnItemSelectedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AdapterView::getOnItemSelectedListener()
 	{
 		return __thiz.callObjectMethod(
 			"getOnItemSelectedListener",
-			"()Landroid/widget/AdapterView$OnItemSelectedListener;");
+			"()Landroid/widget/AdapterView$OnItemSelectedListener;"
+		);
 	}
 	void AdapterView::setAdapter(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAdapter",
 			"(Landroid/widget/Adapter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint AdapterView::getSelectedItemPosition()
 	{
 		return __thiz.callMethod<jint>(
 			"getSelectedItemPosition",
-			"()I");
+			"()I"
+		);
 	}
 	jlong AdapterView::getSelectedItemId()
 	{
 		return __thiz.callMethod<jlong>(
 			"getSelectedItemId",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject AdapterView::getSelectedView()
 	{
 		return __thiz.callObjectMethod(
 			"getSelectedView",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
-	QAndroidJniObject AdapterView::getSelectedItem()
+	jobject AdapterView::getSelectedItem()
 	{
 		return __thiz.callObjectMethod(
 			"getSelectedItem",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint AdapterView::getPositionForView(__jni_impl::android::view::View arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getPositionForView",
 			"(Landroid/view/View;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint AdapterView::getFirstVisiblePosition()
 	{
 		return __thiz.callMethod<jint>(
 			"getFirstVisiblePosition",
-			"()I");
+			"()I"
+		);
 	}
 	jint AdapterView::getLastVisiblePosition()
 	{
 		return __thiz.callMethod<jint>(
 			"getLastVisiblePosition",
-			"()I");
+			"()I"
+		);
 	}
 	void AdapterView::setSelection(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSelection",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AdapterView::setEmptyView(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEmptyView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AdapterView::getEmptyView()
 	{
 		return __thiz.callObjectMethod(
 			"getEmptyView",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
-	QAndroidJniObject AdapterView::getItemAtPosition(jint arg0)
+	jobject AdapterView::getItemAtPosition(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getItemAtPosition",
 			"(I)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	jlong AdapterView::getItemIdAtPosition(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getItemIdAtPosition",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AdapterView::getAccessibilityClassName()
+	jstring AdapterView::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
-	void AdapterView::addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void AdapterView::addView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void AdapterView::addView(__jni_impl::android::view::View arg0, jint arg1)
 	{
@@ -325,7 +337,8 @@ namespace __jni_impl::android::widget
 			"addView",
 			"(Landroid/view/View;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void AdapterView::addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2)
 	{
@@ -334,34 +347,56 @@ namespace __jni_impl::android::widget
 			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void AdapterView::addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void AdapterView::addView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void AdapterView::removeView(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AdapterView::removeViewAt(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeViewAt",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AdapterView::removeAllViews()
 	{
 		__thiz.callMethod<void>(
 			"removeAllViews",
-			"()V");
+			"()V"
+		);
 	}
 	void AdapterView::setOnClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnClickListener",
 			"(Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AdapterView::onProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
 	{
@@ -369,21 +404,24 @@ namespace __jni_impl::android::widget
 			"onProvideAutofillStructure",
 			"(Landroid/view/ViewStructure;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void AdapterView::setFocusable(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFocusable",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AdapterView::setFocusableInTouchMode(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFocusableInTouchMode",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

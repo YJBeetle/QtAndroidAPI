@@ -67,19 +67,22 @@ namespace __jni_impl::java::nio::channels::spi
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpen",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject AbstractSelector::provider()
 	{
 		return __thiz.callObjectMethod(
 			"provider",
-			"()Ljava/nio/channels/spi/SelectorProvider;");
+			"()Ljava/nio/channels/spi/SelectorProvider;"
+		);
 	}
 	void AbstractSelector::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels::spi
 

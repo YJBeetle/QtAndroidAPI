@@ -46,20 +46,23 @@ namespace __jni_impl::android::app::usage
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean NetworkStats::getNextBucket(__jni_impl::android::app::usage::NetworkStats_Bucket arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getNextBucket",
 			"(Landroid/app/usage/NetworkStats$Bucket;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean NetworkStats::hasNextBucket()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasNextBucket",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

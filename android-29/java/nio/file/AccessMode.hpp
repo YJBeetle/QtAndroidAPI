@@ -21,7 +21,7 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::nio::file
@@ -35,21 +35,24 @@ namespace __jni_impl::java::nio::file
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.AccessMode",
 			"READ",
-			"Ljava/nio/file/AccessMode;");
+			"Ljava/nio/file/AccessMode;"
+		);
 	}
 	QAndroidJniObject AccessMode::WRITE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.AccessMode",
 			"WRITE",
-			"Ljava/nio/file/AccessMode;");
+			"Ljava/nio/file/AccessMode;"
+		);
 	}
 	QAndroidJniObject AccessMode::EXECUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.AccessMode",
 			"EXECUTE",
-			"Ljava/nio/file/AccessMode;");
+			"Ljava/nio/file/AccessMode;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	QAndroidJniObject AccessMode::values()
+	jarray AccessMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.AccessMode",
 			"values",
-			"()[Ljava/nio/file/AccessMode;");
+			"()[Ljava/nio/file/AccessMode;"
+		).object<jarray>();
 	}
 	QAndroidJniObject AccessMode::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.AccessMode",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/AccessMode;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

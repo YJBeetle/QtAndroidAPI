@@ -44,8 +44,8 @@ namespace __jni_impl::android::app
 		jint lastTrimLevel();
 		jint lru();
 		jint pid();
-		QAndroidJniObject pkgList();
-		QAndroidJniObject processName();
+		jarray pkgList();
+		jstring processName();
 		jint uid();
 		
 		// Constructors
@@ -53,9 +53,9 @@ namespace __jni_impl::android::app
 		void __constructor(jstring arg0, jint arg1, jarray arg2);
 		
 		// Methods
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -70,156 +70,183 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_BACKGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_BACKGROUND");
+			"IMPORTANCE_BACKGROUND"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_CACHED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_CACHED");
+			"IMPORTANCE_CACHED"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_CANT_SAVE_STATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_CANT_SAVE_STATE");
+			"IMPORTANCE_CANT_SAVE_STATE"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_EMPTY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_EMPTY");
+			"IMPORTANCE_EMPTY"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_FOREGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_FOREGROUND");
+			"IMPORTANCE_FOREGROUND"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_FOREGROUND_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_FOREGROUND_SERVICE");
+			"IMPORTANCE_FOREGROUND_SERVICE"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_GONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_GONE");
+			"IMPORTANCE_GONE"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_PERCEPTIBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_PERCEPTIBLE");
+			"IMPORTANCE_PERCEPTIBLE"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_PERCEPTIBLE_PRE_26()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_PERCEPTIBLE_PRE_26");
+			"IMPORTANCE_PERCEPTIBLE_PRE_26"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_SERVICE");
+			"IMPORTANCE_SERVICE"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_TOP_SLEEPING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_TOP_SLEEPING");
+			"IMPORTANCE_TOP_SLEEPING"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_TOP_SLEEPING_PRE_28()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_TOP_SLEEPING_PRE_28");
+			"IMPORTANCE_TOP_SLEEPING_PRE_28"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::IMPORTANCE_VISIBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"IMPORTANCE_VISIBLE");
+			"IMPORTANCE_VISIBLE"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::REASON_PROVIDER_IN_USE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"REASON_PROVIDER_IN_USE");
+			"REASON_PROVIDER_IN_USE"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::REASON_SERVICE_IN_USE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"REASON_SERVICE_IN_USE");
+			"REASON_SERVICE_IN_USE"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::REASON_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"REASON_UNKNOWN");
+			"REASON_UNKNOWN"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::importance()
 	{
 		return __thiz.getField<jint>(
-			"importance");
+			"importance"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::importanceReasonCode()
 	{
 		return __thiz.getField<jint>(
-			"importanceReasonCode");
+			"importanceReasonCode"
+		);
 	}
 	QAndroidJniObject ActivityManager_RunningAppProcessInfo::importanceReasonComponent()
 	{
 		return __thiz.getObjectField(
 			"importanceReasonComponent",
-			"Landroid/content/ComponentName;");
+			"Landroid/content/ComponentName;"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::importanceReasonPid()
 	{
 		return __thiz.getField<jint>(
-			"importanceReasonPid");
+			"importanceReasonPid"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::lastTrimLevel()
 	{
 		return __thiz.getField<jint>(
-			"lastTrimLevel");
+			"lastTrimLevel"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::lru()
 	{
 		return __thiz.getField<jint>(
-			"lru");
+			"lru"
+		);
 	}
 	jint ActivityManager_RunningAppProcessInfo::pid()
 	{
 		return __thiz.getField<jint>(
-			"pid");
+			"pid"
+		);
 	}
-	QAndroidJniObject ActivityManager_RunningAppProcessInfo::pkgList()
+	jarray ActivityManager_RunningAppProcessInfo::pkgList()
 	{
 		return __thiz.getObjectField(
 			"pkgList",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject ActivityManager_RunningAppProcessInfo::processName()
+	jstring ActivityManager_RunningAppProcessInfo::processName()
 	{
 		return __thiz.getObjectField(
 			"processName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ActivityManager_RunningAppProcessInfo::uid()
 	{
 		return __thiz.getField<jint>(
-			"uid");
+			"uid"
+		);
 	}
 	
 	// Constructors
@@ -240,18 +267,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ActivityManager_RunningAppProcessInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
 	jint ActivityManager_RunningAppProcessInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ActivityManager_RunningAppProcessInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -259,7 +280,16 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ActivityManager_RunningAppProcessInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

@@ -52,7 +52,8 @@ namespace __jni_impl::android::bluetooth
 			"onAppStatusChanged",
 			"(Landroid/bluetooth/BluetoothDevice;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void BluetoothHidDevice_Callback::onConnectionStateChanged(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1)
 	{
@@ -60,7 +61,8 @@ namespace __jni_impl::android::bluetooth
 			"onConnectionStateChanged",
 			"(Landroid/bluetooth/BluetoothDevice;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void BluetoothHidDevice_Callback::onGetReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jint arg3)
 	{
@@ -70,7 +72,8 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void BluetoothHidDevice_Callback::onSetReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3)
 	{
@@ -80,7 +83,8 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void BluetoothHidDevice_Callback::onSetProtocol(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1)
 	{
@@ -88,7 +92,8 @@ namespace __jni_impl::android::bluetooth
 			"onSetProtocol",
 			"(Landroid/bluetooth/BluetoothDevice;B)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void BluetoothHidDevice_Callback::onInterruptData(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyteArray arg2)
 	{
@@ -97,14 +102,16 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothDevice;B[B)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void BluetoothHidDevice_Callback::onVirtualCableUnplug(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		__thiz.callMethod<void>(
 			"onVirtualCableUnplug",
 			"(Landroid/bluetooth/BluetoothDevice;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

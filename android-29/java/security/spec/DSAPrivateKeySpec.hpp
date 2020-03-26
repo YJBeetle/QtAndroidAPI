@@ -51,25 +51,29 @@ namespace __jni_impl::java::security::spec
 	{
 		return __thiz.callObjectMethod(
 			"getP",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject DSAPrivateKeySpec::getQ()
 	{
 		return __thiz.callObjectMethod(
 			"getQ",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject DSAPrivateKeySpec::getG()
 	{
 		return __thiz.callObjectMethod(
 			"getG",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject DSAPrivateKeySpec::getX()
 	{
 		return __thiz.callObjectMethod(
 			"getX",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

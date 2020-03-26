@@ -32,13 +32,15 @@ namespace __jni_impl::android::net::wifi::rtt
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResultCallback",
-			"STATUS_CODE_FAIL");
+			"STATUS_CODE_FAIL"
+		);
 	}
 	jint RangingResultCallback::STATUS_CODE_FAIL_RTT_NOT_AVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.rtt.RangingResultCallback",
-			"STATUS_CODE_FAIL_RTT_NOT_AVAILABLE");
+			"STATUS_CODE_FAIL_RTT_NOT_AVAILABLE"
+		);
 	}
 	
 	// Constructors
@@ -55,14 +57,16 @@ namespace __jni_impl::android::net::wifi::rtt
 		__thiz.callMethod<void>(
 			"onRangingFailure",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void RangingResultCallback::onRangingResults(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onRangingResults",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt
 

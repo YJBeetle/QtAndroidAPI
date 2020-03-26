@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::hardware::usb
-{
-	class UsbConfiguration;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::hardware::usb
 {
 	class UsbInterface;
+}
+namespace __jni_impl::android::hardware::usb
+{
+	class UsbConfiguration;
 }
 
 namespace __jni_impl::android::hardware::usb
@@ -31,20 +31,14 @@ namespace __jni_impl::android::hardware::usb
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getVersion();
-		jint getDeviceId();
-		static jint getDeviceId(jstring arg0);
-		QAndroidJniObject getConfiguration(jint arg0);
+		jstring getVersion();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getDeviceName();
-		static QAndroidJniObject getDeviceName(jint arg0);
-		jint getDeviceClass();
-		QAndroidJniObject getManufacturerName();
-		QAndroidJniObject getProductName();
-		QAndroidJniObject getSerialNumber();
+		jstring getManufacturerName();
+		jstring getProductName();
+		jstring getSerialNumber();
 		jint getVendorId();
 		jint getProductId();
 		jint getDeviceSubclass();
@@ -52,12 +46,18 @@ namespace __jni_impl::android::hardware::usb
 		jint getConfigurationCount();
 		jint getInterfaceCount();
 		QAndroidJniObject getInterface(jint arg0);
+		jint getDeviceClass();
+		jstring getDeviceName();
+		static jstring getDeviceName(jint arg0);
+		static jint getDeviceId(jstring arg0);
+		jint getDeviceId();
+		QAndroidJniObject getConfiguration(jint arg0);
 	};
 } // namespace __jni_impl::android::hardware::usb
 
-#include "UsbConfiguration.hpp"
 #include "../../os/Parcel.hpp"
 #include "UsbInterface.hpp"
+#include "UsbConfiguration.hpp"
 
 namespace __jni_impl::android::hardware::usb
 {
@@ -67,7 +67,8 @@ namespace __jni_impl::android::hardware::usb
 		return QAndroidJniObject::getStaticObjectField(
 			"android.hardware.usb.UsbDevice",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -84,52 +85,36 @@ namespace __jni_impl::android::hardware::usb
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject UsbDevice::toString()
+	jstring UsbDevice::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsbDevice::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject UsbDevice::getVersion()
+	jstring UsbDevice::getVersion()
 	{
 		return __thiz.callObjectMethod(
 			"getVersion",
-			"()Ljava/lang/String;");
-	}
-	jint UsbDevice::getDeviceId()
-	{
-		return __thiz.callMethod<jint>(
-			"getDeviceId",
-			"()I");
-	}
-	jint UsbDevice::getDeviceId(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.hardware.usb.UsbDevice",
-			"getDeviceId",
-			"(Ljava/lang/String;)I",
-			arg0);
-	}
-	QAndroidJniObject UsbDevice::getConfiguration(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getConfiguration",
-			"(I)Landroid/hardware/usb/UsbConfiguration;",
-			arg0);
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsbDevice::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UsbDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -137,88 +122,126 @@ namespace __jni_impl::android::hardware::usb
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject UsbDevice::getDeviceName()
-	{
-		return __thiz.callObjectMethod(
-			"getDeviceName",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject UsbDevice::getDeviceName(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.hardware.usb.UsbDevice",
-			"getDeviceName",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	jint UsbDevice::getDeviceClass()
-	{
-		return __thiz.callMethod<jint>(
-			"getDeviceClass",
-			"()I");
-	}
-	QAndroidJniObject UsbDevice::getManufacturerName()
+	jstring UsbDevice::getManufacturerName()
 	{
 		return __thiz.callObjectMethod(
 			"getManufacturerName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UsbDevice::getProductName()
+	jstring UsbDevice::getProductName()
 	{
 		return __thiz.callObjectMethod(
 			"getProductName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UsbDevice::getSerialNumber()
+	jstring UsbDevice::getSerialNumber()
 	{
 		return __thiz.callObjectMethod(
 			"getSerialNumber",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsbDevice::getVendorId()
 	{
 		return __thiz.callMethod<jint>(
 			"getVendorId",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbDevice::getProductId()
 	{
 		return __thiz.callMethod<jint>(
 			"getProductId",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbDevice::getDeviceSubclass()
 	{
 		return __thiz.callMethod<jint>(
 			"getDeviceSubclass",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbDevice::getDeviceProtocol()
 	{
 		return __thiz.callMethod<jint>(
 			"getDeviceProtocol",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbDevice::getConfigurationCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getConfigurationCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint UsbDevice::getInterfaceCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getInterfaceCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject UsbDevice::getInterface(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getInterface",
 			"(I)Landroid/hardware/usb/UsbInterface;",
-			arg0);
+			arg0
+		);
+	}
+	jint UsbDevice::getDeviceClass()
+	{
+		return __thiz.callMethod<jint>(
+			"getDeviceClass",
+			"()I"
+		);
+	}
+	jstring UsbDevice::getDeviceName()
+	{
+		return __thiz.callObjectMethod(
+			"getDeviceName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UsbDevice::getDeviceName(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.hardware.usb.UsbDevice",
+			"getDeviceName",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jint UsbDevice::getDeviceId(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.hardware.usb.UsbDevice",
+			"getDeviceId",
+			"(Ljava/lang/String;)I",
+			arg0
+		);
+	}
+	jint UsbDevice::getDeviceId()
+	{
+		return __thiz.callMethod<jint>(
+			"getDeviceId",
+			"()I"
+		);
+	}
+	QAndroidJniObject UsbDevice::getConfiguration(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getConfiguration",
+			"(I)Landroid/hardware/usb/UsbConfiguration;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::hardware::usb
 

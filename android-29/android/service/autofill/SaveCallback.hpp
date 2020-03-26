@@ -21,9 +21,9 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		void onFailure(jstring arg0);
-		void onSuccess();
 		void onSuccess(__jni_impl::android::content::IntentSender arg0);
+		void onSuccess();
+		void onFailure(jstring arg0);
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -42,25 +42,28 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	void SaveCallback::onFailure(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"onFailure",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	void SaveCallback::onSuccess()
-	{
-		__thiz.callMethod<void>(
-			"onSuccess",
-			"()V");
-	}
 	void SaveCallback::onSuccess(__jni_impl::android::content::IntentSender arg0)
 	{
 		__thiz.callMethod<void>(
 			"onSuccess",
 			"(Landroid/content/IntentSender;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void SaveCallback::onSuccess()
+	{
+		__thiz.callMethod<void>(
+			"onSuccess",
+			"()V"
+		);
+	}
+	void SaveCallback::onFailure(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"onFailure",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

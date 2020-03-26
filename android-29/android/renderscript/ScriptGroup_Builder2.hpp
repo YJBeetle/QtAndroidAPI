@@ -80,7 +80,8 @@ namespace __jni_impl::android::renderscript
 			"create",
 			"(Ljava/lang/String;[Landroid/renderscript/ScriptGroup$Future;)Landroid/renderscript/ScriptGroup;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ScriptGroup_Builder2::addKernel(__jni_impl::android::renderscript::Script_KernelID arg0, __jni_impl::android::renderscript::Type arg1, jobjectArray arg2)
 	{
@@ -89,13 +90,15 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Script$KernelID;Landroid/renderscript/Type;[Ljava/lang/Object;)Landroid/renderscript/ScriptGroup$Closure;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ScriptGroup_Builder2::addInput()
 	{
 		return __thiz.callObjectMethod(
 			"addInput",
-			"()Landroid/renderscript/ScriptGroup$Input;");
+			"()Landroid/renderscript/ScriptGroup$Input;"
+		);
 	}
 	QAndroidJniObject ScriptGroup_Builder2::addInvoke(__jni_impl::android::renderscript::Script_InvokeID arg0, jobjectArray arg1)
 	{
@@ -103,7 +106,8 @@ namespace __jni_impl::android::renderscript
 			"addInvoke",
 			"(Landroid/renderscript/Script$InvokeID;[Ljava/lang/Object;)Landroid/renderscript/ScriptGroup$Closure;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

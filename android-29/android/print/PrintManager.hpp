@@ -58,13 +58,15 @@ namespace __jni_impl::android::print
 			"(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PrintManager::getPrintJobs()
 	{
 		return __thiz.callObjectMethod(
 			"getPrintJobs",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::print
 

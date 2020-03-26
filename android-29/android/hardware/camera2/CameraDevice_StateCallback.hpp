@@ -26,9 +26,9 @@ namespace __jni_impl::android::hardware::camera2
 		void __constructor();
 		
 		// Methods
-		void onDisconnected(__jni_impl::android::hardware::camera2::CameraDevice arg0);
 		void onOpened(__jni_impl::android::hardware::camera2::CameraDevice arg0);
 		void onClosed(__jni_impl::android::hardware::camera2::CameraDevice arg0);
+		void onDisconnected(__jni_impl::android::hardware::camera2::CameraDevice arg0);
 		void onError(__jni_impl::android::hardware::camera2::CameraDevice arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::camera2
@@ -42,31 +42,36 @@ namespace __jni_impl::android::hardware::camera2
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
-			"ERROR_CAMERA_DEVICE");
+			"ERROR_CAMERA_DEVICE"
+		);
 	}
 	jint CameraDevice_StateCallback::ERROR_CAMERA_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
-			"ERROR_CAMERA_DISABLED");
+			"ERROR_CAMERA_DISABLED"
+		);
 	}
 	jint CameraDevice_StateCallback::ERROR_CAMERA_IN_USE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
-			"ERROR_CAMERA_IN_USE");
+			"ERROR_CAMERA_IN_USE"
+		);
 	}
 	jint CameraDevice_StateCallback::ERROR_CAMERA_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
-			"ERROR_CAMERA_SERVICE");
+			"ERROR_CAMERA_SERVICE"
+		);
 	}
 	jint CameraDevice_StateCallback::ERROR_MAX_CAMERAS_IN_USE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.CameraDevice$StateCallback",
-			"ERROR_MAX_CAMERAS_IN_USE");
+			"ERROR_MAX_CAMERAS_IN_USE"
+		);
 	}
 	
 	// Constructors
@@ -78,26 +83,29 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Methods
-	void CameraDevice_StateCallback::onDisconnected(__jni_impl::android::hardware::camera2::CameraDevice arg0)
-	{
-		__thiz.callMethod<void>(
-			"onDisconnected",
-			"(Landroid/hardware/camera2/CameraDevice;)V",
-			arg0.__jniObject().object());
-	}
 	void CameraDevice_StateCallback::onOpened(__jni_impl::android::hardware::camera2::CameraDevice arg0)
 	{
 		__thiz.callMethod<void>(
 			"onOpened",
 			"(Landroid/hardware/camera2/CameraDevice;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CameraDevice_StateCallback::onClosed(__jni_impl::android::hardware::camera2::CameraDevice arg0)
 	{
 		__thiz.callMethod<void>(
 			"onClosed",
 			"(Landroid/hardware/camera2/CameraDevice;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void CameraDevice_StateCallback::onDisconnected(__jni_impl::android::hardware::camera2::CameraDevice arg0)
+	{
+		__thiz.callMethod<void>(
+			"onDisconnected",
+			"(Landroid/hardware/camera2/CameraDevice;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void CameraDevice_StateCallback::onError(__jni_impl::android::hardware::camera2::CameraDevice arg0, jint arg1)
 	{
@@ -105,7 +113,8 @@ namespace __jni_impl::android::hardware::camera2
 			"onError",
 			"(Landroid/hardware/camera2/CameraDevice;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

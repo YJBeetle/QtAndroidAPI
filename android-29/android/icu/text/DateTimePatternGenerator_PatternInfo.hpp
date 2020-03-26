@@ -15,7 +15,7 @@ namespace __jni_impl::android::icu::text
 		static jint BASE_CONFLICT();
 		static jint CONFLICT();
 		static jint OK();
-		QAndroidJniObject conflictingPattern();
+		jstring conflictingPattern();
 		jint status();
 		
 		// Constructors
@@ -33,30 +33,35 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator$PatternInfo",
-			"BASE_CONFLICT");
+			"BASE_CONFLICT"
+		);
 	}
 	jint DateTimePatternGenerator_PatternInfo::CONFLICT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator$PatternInfo",
-			"CONFLICT");
+			"CONFLICT"
+		);
 	}
 	jint DateTimePatternGenerator_PatternInfo::OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.DateTimePatternGenerator$PatternInfo",
-			"OK");
+			"OK"
+		);
 	}
-	QAndroidJniObject DateTimePatternGenerator_PatternInfo::conflictingPattern()
+	jstring DateTimePatternGenerator_PatternInfo::conflictingPattern()
 	{
 		return __thiz.getObjectField(
 			"conflictingPattern",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DateTimePatternGenerator_PatternInfo::status()
 	{
 		return __thiz.getField<jint>(
-			"status");
+			"status"
+		);
 	}
 	
 	// Constructors

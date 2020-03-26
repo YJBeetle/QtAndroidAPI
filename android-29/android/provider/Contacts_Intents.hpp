@@ -12,13 +12,13 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ATTACH_IMAGE();
-		static QAndroidJniObject EXTRA_CREATE_DESCRIPTION();
-		static QAndroidJniObject EXTRA_FORCE_CREATE();
-		static QAndroidJniObject SEARCH_SUGGESTION_CLICKED();
-		static QAndroidJniObject SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED();
-		static QAndroidJniObject SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED();
-		static QAndroidJniObject SHOW_OR_CREATE_CONTACT();
+		static jstring ATTACH_IMAGE();
+		static jstring EXTRA_CREATE_DESCRIPTION();
+		static jstring EXTRA_FORCE_CREATE();
+		static jstring SEARCH_SUGGESTION_CLICKED();
+		static jstring SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED();
+		static jstring SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED();
+		static jstring SHOW_OR_CREATE_CONTACT();
 		
 		// Constructors
 		void __constructor();
@@ -31,54 +31,61 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_Intents::ATTACH_IMAGE()
+	jstring Contacts_Intents::ATTACH_IMAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents",
 			"ATTACH_IMAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents::EXTRA_CREATE_DESCRIPTION()
+	jstring Contacts_Intents::EXTRA_CREATE_DESCRIPTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents",
 			"EXTRA_CREATE_DESCRIPTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents::EXTRA_FORCE_CREATE()
+	jstring Contacts_Intents::EXTRA_FORCE_CREATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents",
 			"EXTRA_FORCE_CREATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents::SEARCH_SUGGESTION_CLICKED()
+	jstring Contacts_Intents::SEARCH_SUGGESTION_CLICKED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents",
 			"SEARCH_SUGGESTION_CLICKED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents::SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED()
+	jstring Contacts_Intents::SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents",
 			"SEARCH_SUGGESTION_CREATE_CONTACT_CLICKED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents::SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED()
+	jstring Contacts_Intents::SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents",
 			"SEARCH_SUGGESTION_DIAL_NUMBER_CLICKED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents::SHOW_OR_CREATE_CONTACT()
+	jstring Contacts_Intents::SHOW_OR_CREATE_CONTACT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents",
 			"SHOW_OR_CREATE_CONTACT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

@@ -24,7 +24,7 @@ namespace __jni_impl::android::speech
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONFIDENCE_SCORES();
+		static jstring CONFIDENCE_SCORES();
 		static jint ERROR_AUDIO();
 		static jint ERROR_CLIENT();
 		static jint ERROR_INSUFFICIENT_PERMISSIONS();
@@ -34,7 +34,7 @@ namespace __jni_impl::android::speech
 		static jint ERROR_RECOGNIZER_BUSY();
 		static jint ERROR_SERVER();
 		static jint ERROR_SPEECH_TIMEOUT();
-		static QAndroidJniObject RESULTS_RECOGNITION();
+		static jstring RESULTS_RECOGNITION();
 		
 		// Constructors
 		void __constructor();
@@ -58,73 +58,84 @@ namespace __jni_impl::android::speech
 namespace __jni_impl::android::speech
 {
 	// Fields
-	QAndroidJniObject SpeechRecognizer::CONFIDENCE_SCORES()
+	jstring SpeechRecognizer::CONFIDENCE_SCORES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.SpeechRecognizer",
 			"CONFIDENCE_SCORES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SpeechRecognizer::ERROR_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.SpeechRecognizer",
-			"ERROR_AUDIO");
+			"ERROR_AUDIO"
+		);
 	}
 	jint SpeechRecognizer::ERROR_CLIENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.SpeechRecognizer",
-			"ERROR_CLIENT");
+			"ERROR_CLIENT"
+		);
 	}
 	jint SpeechRecognizer::ERROR_INSUFFICIENT_PERMISSIONS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.SpeechRecognizer",
-			"ERROR_INSUFFICIENT_PERMISSIONS");
+			"ERROR_INSUFFICIENT_PERMISSIONS"
+		);
 	}
 	jint SpeechRecognizer::ERROR_NETWORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.SpeechRecognizer",
-			"ERROR_NETWORK");
+			"ERROR_NETWORK"
+		);
 	}
 	jint SpeechRecognizer::ERROR_NETWORK_TIMEOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.SpeechRecognizer",
-			"ERROR_NETWORK_TIMEOUT");
+			"ERROR_NETWORK_TIMEOUT"
+		);
 	}
 	jint SpeechRecognizer::ERROR_NO_MATCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.SpeechRecognizer",
-			"ERROR_NO_MATCH");
+			"ERROR_NO_MATCH"
+		);
 	}
 	jint SpeechRecognizer::ERROR_RECOGNIZER_BUSY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.SpeechRecognizer",
-			"ERROR_RECOGNIZER_BUSY");
+			"ERROR_RECOGNIZER_BUSY"
+		);
 	}
 	jint SpeechRecognizer::ERROR_SERVER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.SpeechRecognizer",
-			"ERROR_SERVER");
+			"ERROR_SERVER"
+		);
 	}
 	jint SpeechRecognizer::ERROR_SPEECH_TIMEOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.SpeechRecognizer",
-			"ERROR_SPEECH_TIMEOUT");
+			"ERROR_SPEECH_TIMEOUT"
+		);
 	}
-	QAndroidJniObject SpeechRecognizer::RESULTS_RECOGNITION()
+	jstring SpeechRecognizer::RESULTS_RECOGNITION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.SpeechRecognizer",
 			"RESULTS_RECOGNITION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -140,13 +151,15 @@ namespace __jni_impl::android::speech
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	void SpeechRecognizer::cancel()
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean SpeechRecognizer::isRecognitionAvailable(__jni_impl::android::content::Context arg0)
 	{
@@ -154,7 +167,8 @@ namespace __jni_impl::android::speech
 			"android.speech.SpeechRecognizer",
 			"isRecognitionAvailable",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SpeechRecognizer::createSpeechRecognizer(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1)
 	{
@@ -163,7 +177,8 @@ namespace __jni_impl::android::speech
 			"createSpeechRecognizer",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)Landroid/speech/SpeechRecognizer;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SpeechRecognizer::createSpeechRecognizer(__jni_impl::android::content::Context arg0)
 	{
@@ -171,27 +186,31 @@ namespace __jni_impl::android::speech
 			"android.speech.SpeechRecognizer",
 			"createSpeechRecognizer",
 			"(Landroid/content/Context;)Landroid/speech/SpeechRecognizer;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SpeechRecognizer::setRecognitionListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRecognitionListener",
 			"(Landroid/speech/RecognitionListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SpeechRecognizer::startListening(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"startListening",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SpeechRecognizer::stopListening()
 	{
 		__thiz.callMethod<void>(
 			"stopListening",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::speech
 

@@ -20,7 +20,7 @@ namespace __jni_impl::java::util::concurrent::atomic
 		
 		// Methods
 		jlong get();
-		QAndroidJniObject toString();
+		jstring toString();
 		jint intValue();
 		jlong longValue();
 		jfloat floatValue();
@@ -81,70 +81,81 @@ namespace __jni_impl::java::util::concurrent::atomic
 	{
 		return __thiz.callMethod<jlong>(
 			"get",
-			"()J");
+			"()J"
+		);
 	}
-	QAndroidJniObject AtomicLong::toString()
+	jstring AtomicLong::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AtomicLong::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong AtomicLong::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat AtomicLong::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble AtomicLong::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 	void AtomicLong::set(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLong::getOpaque()
 	{
 		return __thiz.callMethod<jlong>(
 			"getOpaque",
-			"()J");
+			"()J"
+		);
 	}
 	void AtomicLong::setOpaque(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOpaque",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLong::getAcquire()
 	{
 		return __thiz.callMethod<jlong>(
 			"getAcquire",
-			"()J");
+			"()J"
+		);
 	}
 	void AtomicLong::setRelease(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRelease",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AtomicLong::compareAndSet(jlong arg0, jlong arg1)
 	{
@@ -152,7 +163,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"compareAndSet",
 			"(JJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLong::compareAndExchange(jlong arg0, jlong arg1)
 	{
@@ -160,7 +172,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"compareAndExchange",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLong::compareAndExchangeAcquire(jlong arg0, jlong arg1)
 	{
@@ -168,7 +181,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"compareAndExchangeAcquire",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLong::compareAndExchangeRelease(jlong arg0, jlong arg1)
 	{
@@ -176,7 +190,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"compareAndExchangeRelease",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicLong::weakCompareAndSetPlain(jlong arg0, jlong arg1)
 	{
@@ -184,7 +199,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSetPlain",
 			"(JJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicLong::weakCompareAndSet(jlong arg0, jlong arg1)
 	{
@@ -192,7 +208,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSet",
 			"(JJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicLong::weakCompareAndSetAcquire(jlong arg0, jlong arg1)
 	{
@@ -200,7 +217,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSetAcquire",
 			"(JJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicLong::weakCompareAndSetRelease(jlong arg0, jlong arg1)
 	{
@@ -208,28 +226,32 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSetRelease",
 			"(JJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLong::getAndSet(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getAndSet",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLong::getAndAdd(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getAndAdd",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicLong::lazySet(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"lazySet",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AtomicLong::weakCompareAndSetVolatile(jlong arg0, jlong arg1)
 	{
@@ -237,52 +259,60 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"weakCompareAndSetVolatile",
 			"(JJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLong::getAndIncrement()
 	{
 		return __thiz.callMethod<jlong>(
 			"getAndIncrement",
-			"()J");
+			"()J"
+		);
 	}
 	jlong AtomicLong::getAndDecrement()
 	{
 		return __thiz.callMethod<jlong>(
 			"getAndDecrement",
-			"()J");
+			"()J"
+		);
 	}
 	jlong AtomicLong::incrementAndGet()
 	{
 		return __thiz.callMethod<jlong>(
 			"incrementAndGet",
-			"()J");
+			"()J"
+		);
 	}
 	jlong AtomicLong::decrementAndGet()
 	{
 		return __thiz.callMethod<jlong>(
 			"decrementAndGet",
-			"()J");
+			"()J"
+		);
 	}
 	jlong AtomicLong::addAndGet(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"addAndGet",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLong::getAndUpdate(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getAndUpdate",
 			"(Ljava/util/function/LongUnaryOperator;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong AtomicLong::updateAndGet(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"updateAndGet",
 			"(Ljava/util/function/LongUnaryOperator;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong AtomicLong::getAndAccumulate(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -290,7 +320,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndAccumulate",
 			"(JLjava/util/function/LongBinaryOperator;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong AtomicLong::accumulateAndGet(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -298,20 +329,23 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"accumulateAndGet",
 			"(JLjava/util/function/LongBinaryOperator;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong AtomicLong::getPlain()
 	{
 		return __thiz.callMethod<jlong>(
 			"getPlain",
-			"()J");
+			"()J"
+		);
 	}
 	void AtomicLong::setPlain(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPlain",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

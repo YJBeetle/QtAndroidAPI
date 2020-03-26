@@ -29,20 +29,20 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		jint getType();
-		QAndroidJniObject getTag();
+		jobject getTag();
 		void finish();
-		void setSubtitle(jstring arg0);
-		void setSubtitle(jint arg0);
-		QAndroidJniObject getSubtitle();
-		void setType(jint arg0);
 		void hide(jlong arg0);
-		void invalidate();
-		void setTag(jobject arg0);
 		void onWindowFocusChanged(jboolean arg0);
 		QAndroidJniObject getMenuInflater();
-		void setTitle(jstring arg0);
 		void setTitle(jint arg0);
-		QAndroidJniObject getTitle();
+		void setTitle(jstring arg0);
+		jstring getTitle();
+		void setType(jint arg0);
+		void invalidate();
+		void setTag(jobject arg0);
+		jstring getSubtitle();
+		void setSubtitle(jint arg0);
+		void setSubtitle(jstring arg0);
 		jboolean getTitleOptionalHint();
 		jboolean isTitleOptional();
 		void setCustomView(__jni_impl::android::view::View arg0);
@@ -63,19 +63,22 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.ActionMode",
-			"DEFAULT_HIDE_DURATION");
+			"DEFAULT_HIDE_DURATION"
+		);
 	}
 	jint ActionMode::TYPE_FLOATING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.ActionMode",
-			"TYPE_FLOATING");
+			"TYPE_FLOATING"
+		);
 	}
 	jint ActionMode::TYPE_PRIMARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.ActionMode",
-			"TYPE_PRIMARY");
+			"TYPE_PRIMARY"
+		);
 	}
 	
 	// Constructors
@@ -91,143 +94,165 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject ActionMode::getTag()
+	jobject ActionMode::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void ActionMode::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
-	}
-	void ActionMode::setSubtitle(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	void ActionMode::setSubtitle(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject ActionMode::getSubtitle()
-	{
-		return __thiz.callObjectMethod(
-			"getSubtitle",
-			"()Ljava/lang/CharSequence;");
-	}
-	void ActionMode::setType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setType",
-			"(I)V",
-			arg0);
+			"()V"
+		);
 	}
 	void ActionMode::hide(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"hide",
 			"(J)V",
-			arg0);
-	}
-	void ActionMode::invalidate()
-	{
-		__thiz.callMethod<void>(
-			"invalidate",
-			"()V");
-	}
-	void ActionMode::setTag(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTag",
-			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ActionMode::onWindowFocusChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onWindowFocusChanged",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ActionMode::getMenuInflater()
 	{
 		return __thiz.callObjectMethod(
 			"getMenuInflater",
-			"()Landroid/view/MenuInflater;");
-	}
-	void ActionMode::setTitle(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			"()Landroid/view/MenuInflater;"
+		);
 	}
 	void ActionMode::setTitle(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTitle",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ActionMode::getTitle()
+	void ActionMode::setTitle(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	jstring ActionMode::getTitle()
 	{
 		return __thiz.callObjectMethod(
 			"getTitle",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void ActionMode::setType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setType",
+			"(I)V",
+			arg0
+		);
+	}
+	void ActionMode::invalidate()
+	{
+		__thiz.callMethod<void>(
+			"invalidate",
+			"()V"
+		);
+	}
+	void ActionMode::setTag(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTag",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
+	jstring ActionMode::getSubtitle()
+	{
+		return __thiz.callObjectMethod(
+			"getSubtitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void ActionMode::setSubtitle(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubtitle",
+			"(I)V",
+			arg0
+		);
+	}
+	void ActionMode::setSubtitle(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubtitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
 	}
 	jboolean ActionMode::getTitleOptionalHint()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getTitleOptionalHint",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ActionMode::isTitleOptional()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTitleOptional",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ActionMode::setCustomView(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCustomView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ActionMode::invalidateContentRect()
 	{
 		__thiz.callMethod<void>(
 			"invalidateContentRect",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject ActionMode::getMenu()
 	{
 		return __thiz.callObjectMethod(
 			"getMenu",
-			"()Landroid/view/Menu;");
+			"()Landroid/view/Menu;"
+		);
 	}
 	QAndroidJniObject ActionMode::getCustomView()
 	{
 		return __thiz.callObjectMethod(
 			"getCustomView",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
 	void ActionMode::setTitleOptionalHint(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTitleOptionalHint",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

@@ -41,14 +41,14 @@ namespace __jni_impl::android::provider
 	public:
 		// Fields
 		static QAndroidJniObject CONTENT_FILTER_URI();
-		static QAndroidJniObject CONTENT_ITEM_TYPE();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CONTENT_ITEM_TYPE();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static jstring DEFAULT_SORT_ORDER();
 		static QAndroidJniObject DELETED_CONTENT_URI();
-		static QAndroidJniObject PRIMARY_EMAIL_ID();
-		static QAndroidJniObject PRIMARY_ORGANIZATION_ID();
-		static QAndroidJniObject PRIMARY_PHONE_ID();
+		static jstring PRIMARY_EMAIL_ID();
+		static jstring PRIMARY_ORGANIZATION_ID();
+		static jstring PRIMARY_PHONE_ID();
 		
 		// Constructors
 		void __constructor();
@@ -82,63 +82,72 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
 			"CONTENT_FILTER_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_People::CONTENT_ITEM_TYPE()
+	jstring Contacts_People::CONTENT_ITEM_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
 			"CONTENT_ITEM_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_People::CONTENT_TYPE()
+	jstring Contacts_People::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Contacts_People::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_People::DEFAULT_SORT_ORDER()
+	jstring Contacts_People::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Contacts_People::DELETED_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
 			"DELETED_CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Contacts_People::PRIMARY_EMAIL_ID()
+	jstring Contacts_People::PRIMARY_EMAIL_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
 			"PRIMARY_EMAIL_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_People::PRIMARY_ORGANIZATION_ID()
+	jstring Contacts_People::PRIMARY_ORGANIZATION_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
 			"PRIMARY_ORGANIZATION_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_People::PRIMARY_PHONE_ID()
+	jstring Contacts_People::PRIMARY_PHONE_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$People",
 			"PRIMARY_PHONE_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -157,7 +166,8 @@ namespace __jni_impl::android::provider
 			"addToMyContactsGroup",
 			"(Landroid/content/ContentResolver;J)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Contacts_People::addToGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2)
 	{
@@ -167,7 +177,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;JJ)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Contacts_People::addToGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jstring arg2)
 	{
@@ -177,7 +188,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;JLjava/lang/String;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Contacts_People::createPersonInMyContactsGroup(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::ContentValues arg1)
 	{
@@ -186,7 +198,8 @@ namespace __jni_impl::android::provider
 			"createPersonInMyContactsGroup",
 			"(Landroid/content/ContentResolver;Landroid/content/ContentValues;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Contacts_People::queryGroups(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
 	{
@@ -195,7 +208,8 @@ namespace __jni_impl::android::provider
 			"queryGroups",
 			"(Landroid/content/ContentResolver;J)Landroid/database/Cursor;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Contacts_People::setPhotoData(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jbyteArray arg2)
 	{
@@ -205,7 +219,8 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;[B)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Contacts_People::loadContactPhoto(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jint arg2, __jni_impl::android::graphics::BitmapFactory_Options arg3)
 	{
@@ -216,7 +231,8 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void Contacts_People::markAsContacted(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
 	{
@@ -225,7 +241,8 @@ namespace __jni_impl::android::provider
 			"markAsContacted",
 			"(Landroid/content/ContentResolver;J)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Contacts_People::openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -234,7 +251,8 @@ namespace __jni_impl::android::provider
 			"openContactPhotoInputStream",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Ljava/io/InputStream;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::provider
 

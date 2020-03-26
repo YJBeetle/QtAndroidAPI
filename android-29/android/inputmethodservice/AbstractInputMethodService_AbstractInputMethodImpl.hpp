@@ -48,7 +48,8 @@ namespace __jni_impl::android::inputmethodservice
 		__thiz.callMethod<void>(
 			"createSession",
 			"(Landroid/view/inputmethod/InputMethod$SessionCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbstractInputMethodService_AbstractInputMethodImpl::setSessionEnabled(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
@@ -56,14 +57,16 @@ namespace __jni_impl::android::inputmethodservice
 			"setSessionEnabled",
 			"(Landroid/view/inputmethod/InputMethodSession;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void AbstractInputMethodService_AbstractInputMethodImpl::revokeSession(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"revokeSession",
 			"(Landroid/view/inputmethod/InputMethodSession;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::inputmethodservice
 

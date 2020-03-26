@@ -24,7 +24,7 @@ namespace __jni_impl::android::view::textservice
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERVICE_META_DATA();
+		static jstring SERVICE_META_DATA();
 		
 		// Constructors
 		void __constructor();
@@ -47,12 +47,13 @@ namespace __jni_impl::android::view::textservice
 namespace __jni_impl::android::view::textservice
 {
 	// Fields
-	QAndroidJniObject SpellCheckerSession::SERVICE_META_DATA()
+	jstring SpellCheckerSession::SERVICE_META_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textservice.SpellCheckerSession",
 			"SERVICE_META_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -68,13 +69,15 @@ namespace __jni_impl::android::view::textservice
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void SpellCheckerSession::cancel()
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
 	}
 	void SpellCheckerSession::getSuggestions(jarray arg0, jint arg1, jboolean arg2)
 	{
@@ -83,7 +86,8 @@ namespace __jni_impl::android::view::textservice
 			"([Landroid/view/textservice/TextInfo;IZ)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void SpellCheckerSession::getSuggestions(__jni_impl::android::view::textservice::TextInfo arg0, jint arg1)
 	{
@@ -91,19 +95,22 @@ namespace __jni_impl::android::view::textservice
 			"getSuggestions",
 			"(Landroid/view/textservice/TextInfo;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean SpellCheckerSession::isSessionDisconnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSessionDisconnected",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject SpellCheckerSession::getSpellChecker()
 	{
 		return __thiz.callObjectMethod(
 			"getSpellChecker",
-			"()Landroid/view/textservice/SpellCheckerInfo;");
+			"()Landroid/view/textservice/SpellCheckerInfo;"
+		);
 	}
 	void SpellCheckerSession::getSentenceSuggestions(jarray arg0, jint arg1)
 	{
@@ -111,7 +118,8 @@ namespace __jni_impl::android::view::textservice
 			"getSentenceSuggestions",
 			"([Landroid/view/textservice/TextInfo;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view::textservice
 

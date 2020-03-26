@@ -48,19 +48,22 @@ namespace __jni_impl::android::content
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Intent_FilterComparison::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Intent_FilterComparison::getIntent()
 	{
 		return __thiz.callObjectMethod(
 			"getIntent",
-			"()Landroid/content/Intent;");
+			"()Landroid/content/Intent;"
+		);
 	}
 } // namespace __jni_impl::android::content
 

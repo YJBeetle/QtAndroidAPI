@@ -21,9 +21,9 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject decode(jstring arg0);
-		static QAndroidJniObject decode(jstring arg0, __jni_impl::java::nio::charset::Charset arg1);
-		static QAndroidJniObject decode(jstring arg0, jstring arg1);
+		static jstring decode(jstring arg0);
+		static jstring decode(jstring arg0, __jni_impl::java::nio::charset::Charset arg1);
+		static jstring decode(jstring arg0, jstring arg1);
 	};
 } // namespace __jni_impl::java::net
 
@@ -42,31 +42,34 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject URLDecoder::decode(jstring arg0)
+	jstring URLDecoder::decode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLDecoder",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject URLDecoder::decode(jstring arg0, __jni_impl::java::nio::charset::Charset arg1)
+	jstring URLDecoder::decode(jstring arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLDecoder",
 			"decode",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject URLDecoder::decode(jstring arg0, jstring arg1)
+	jstring URLDecoder::decode(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLDecoder",
 			"decode",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

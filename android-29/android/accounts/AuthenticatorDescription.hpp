@@ -21,9 +21,9 @@ namespace __jni_impl::android::accounts
 		jboolean customTokens();
 		jint iconId();
 		jint labelId();
-		QAndroidJniObject packageName();
+		jstring packageName();
 		jint smallIconId();
-		QAndroidJniObject type();
+		jstring type();
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6);
@@ -31,7 +31,7 @@ namespace __jni_impl::android::accounts
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -49,44 +49,52 @@ namespace __jni_impl::android::accounts
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accounts.AuthenticatorDescription",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint AuthenticatorDescription::accountPreferencesId()
 	{
 		return __thiz.getField<jint>(
-			"accountPreferencesId");
+			"accountPreferencesId"
+		);
 	}
 	jboolean AuthenticatorDescription::customTokens()
 	{
 		return __thiz.getField<jboolean>(
-			"customTokens");
+			"customTokens"
+		);
 	}
 	jint AuthenticatorDescription::iconId()
 	{
 		return __thiz.getField<jint>(
-			"iconId");
+			"iconId"
+		);
 	}
 	jint AuthenticatorDescription::labelId()
 	{
 		return __thiz.getField<jint>(
-			"labelId");
+			"labelId"
+		);
 	}
-	QAndroidJniObject AuthenticatorDescription::packageName()
+	jstring AuthenticatorDescription::packageName()
 	{
 		return __thiz.getObjectField(
 			"packageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AuthenticatorDescription::smallIconId()
 	{
 		return __thiz.getField<jint>(
-			"smallIconId");
+			"smallIconId"
+		);
 	}
-	QAndroidJniObject AuthenticatorDescription::type()
+	jstring AuthenticatorDescription::type()
 	{
 		return __thiz.getObjectField(
 			"type",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -122,25 +130,29 @@ namespace __jni_impl::android::accounts
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AuthenticatorDescription::toString()
+	jstring AuthenticatorDescription::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AuthenticatorDescription::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint AuthenticatorDescription::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void AuthenticatorDescription::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -148,7 +160,8 @@ namespace __jni_impl::android::accounts
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject AuthenticatorDescription::newKey(jstring arg0)
 	{
@@ -156,7 +169,8 @@ namespace __jni_impl::android::accounts
 			"android.accounts.AuthenticatorDescription",
 			"newKey",
 			"(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::accounts
 

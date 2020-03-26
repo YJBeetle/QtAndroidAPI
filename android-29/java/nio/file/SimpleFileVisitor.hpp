@@ -54,7 +54,8 @@ namespace __jni_impl::java::nio::file
 			"visitFile",
 			"(Ljava/lang/Object;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SimpleFileVisitor::visitFileFailed(jobject arg0, __jni_impl::java::io::IOException arg1)
 	{
@@ -62,7 +63,8 @@ namespace __jni_impl::java::nio::file
 			"visitFileFailed",
 			"(Ljava/lang/Object;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SimpleFileVisitor::preVisitDirectory(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -70,7 +72,8 @@ namespace __jni_impl::java::nio::file
 			"preVisitDirectory",
 			"(Ljava/lang/Object;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SimpleFileVisitor::postVisitDirectory(jobject arg0, __jni_impl::java::io::IOException arg1)
 	{
@@ -78,7 +81,8 @@ namespace __jni_impl::java::nio::file
 			"postVisitDirectory",
 			"(Ljava/lang/Object;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

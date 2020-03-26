@@ -15,14 +15,14 @@ namespace __jni_impl::java::io
 	{
 	public:
 		// Fields
-		QAndroidJniObject classname();
+		jstring classname();
 		
 		// Constructors
 		void __constructor(jstring arg0);
 		void __constructor(jstring arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::java::io
 
@@ -30,11 +30,12 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	// Fields
-	QAndroidJniObject InvalidClassException::classname()
+	jstring InvalidClassException::classname()
 	{
 		return __thiz.getObjectField(
 			"classname",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -55,11 +56,12 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	QAndroidJniObject InvalidClassException::getMessage()
+	jstring InvalidClassException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::io
 

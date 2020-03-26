@@ -18,7 +18,7 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		QAndroidJniObject getSession();
 	};
 } // namespace __jni_impl::javax::net::ssl
@@ -39,17 +39,19 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	QAndroidJniObject SSLSessionBindingEvent::getName()
+	jstring SSLSessionBindingEvent::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject SSLSessionBindingEvent::getSession()
 	{
 		return __thiz.callObjectMethod(
 			"getSession",
-			"()Ljavax/net/ssl/SSLSession;");
+			"()Ljavax/net/ssl/SSLSession;"
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

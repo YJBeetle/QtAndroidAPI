@@ -30,9 +30,9 @@ namespace __jni_impl::android::net::wifi::aware
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setPort(jint arg0);
 		QAndroidJniObject setPskPassphrase(jstring arg0);
 		QAndroidJniObject setTransportProtocol(jint arg0);
+		QAndroidJniObject setPort(jint arg0);
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
@@ -59,28 +59,32 @@ namespace __jni_impl::android::net::wifi::aware
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;");
-	}
-	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setPort(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPort",
-			"(I)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
-			arg0);
+			"()Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;"
+		);
 	}
 	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setPskPassphrase(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPskPassphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setTransportProtocol(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTransportProtocol",
 			"(I)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setPort(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPort",
+			"(I)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

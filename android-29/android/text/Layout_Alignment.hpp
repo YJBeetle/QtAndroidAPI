@@ -21,7 +21,7 @@ namespace __jni_impl::android::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::text
@@ -35,21 +35,24 @@ namespace __jni_impl::android::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.Layout$Alignment",
 			"ALIGN_NORMAL",
-			"Landroid/text/Layout$Alignment;");
+			"Landroid/text/Layout$Alignment;"
+		);
 	}
 	QAndroidJniObject Layout_Alignment::ALIGN_OPPOSITE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.Layout$Alignment",
 			"ALIGN_OPPOSITE",
-			"Landroid/text/Layout$Alignment;");
+			"Landroid/text/Layout$Alignment;"
+		);
 	}
 	QAndroidJniObject Layout_Alignment::ALIGN_CENTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.Layout$Alignment",
 			"ALIGN_CENTER",
-			"Landroid/text/Layout$Alignment;");
+			"Landroid/text/Layout$Alignment;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
-	QAndroidJniObject Layout_Alignment::values()
+	jarray Layout_Alignment::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.Layout$Alignment",
 			"values",
-			"()[Landroid/text/Layout$Alignment;");
+			"()[Landroid/text/Layout$Alignment;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Layout_Alignment::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::text
 			"android.text.Layout$Alignment",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text
 

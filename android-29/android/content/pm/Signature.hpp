@@ -25,12 +25,12 @@ namespace __jni_impl::android::content::pm
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject toChars(jcharArray arg0, jintArray arg1);
-		QAndroidJniObject toChars();
-		QAndroidJniObject toByteArray();
-		QAndroidJniObject toCharsString();
+		jcharArray toChars(jcharArray arg0, jintArray arg1);
+		jcharArray toChars();
+		jbyteArray toByteArray();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring toCharsString();
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -44,7 +44,8 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.Signature",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -69,45 +70,45 @@ namespace __jni_impl::android::content::pm
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Signature::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Signature::toChars(jcharArray arg0, jintArray arg1)
+	jcharArray Signature::toChars(jcharArray arg0, jintArray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"toChars",
 			"([C[I)[C",
 			arg0,
-			arg1);
+			arg1
+		).object<jcharArray>();
 	}
-	QAndroidJniObject Signature::toChars()
+	jcharArray Signature::toChars()
 	{
 		return __thiz.callObjectMethod(
 			"toChars",
-			"()[C");
+			"()[C"
+		).object<jcharArray>();
 	}
-	QAndroidJniObject Signature::toByteArray()
+	jbyteArray Signature::toByteArray()
 	{
 		return __thiz.callObjectMethod(
 			"toByteArray",
-			"()[B");
-	}
-	QAndroidJniObject Signature::toCharsString()
-	{
-		return __thiz.callObjectMethod(
-			"toCharsString",
-			"()Ljava/lang/String;");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jint Signature::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Signature::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -115,7 +116,15 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring Signature::toCharsString()
+	{
+		return __thiz.callObjectMethod(
+			"toCharsString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::content::pm
 

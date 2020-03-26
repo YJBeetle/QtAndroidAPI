@@ -19,7 +19,7 @@ namespace __jni_impl::java::lang
 		void __constructor(jstring arg0, jthrowable arg1);
 		
 		// Methods
-		QAndroidJniObject typeName();
+		jstring typeName();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -39,11 +39,12 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	QAndroidJniObject TypeNotPresentException::typeName()
+	jstring TypeNotPresentException::typeName()
 	{
 		return __thiz.callObjectMethod(
 			"typeName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::lang
 

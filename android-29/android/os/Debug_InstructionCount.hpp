@@ -42,25 +42,29 @@ namespace __jni_impl::android::os
 	{
 		return __thiz.callMethod<jboolean>(
 			"collect",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Debug_InstructionCount::resetAndStart()
 	{
 		return __thiz.callMethod<jboolean>(
 			"resetAndStart",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Debug_InstructionCount::globalTotal()
 	{
 		return __thiz.callMethod<jint>(
 			"globalTotal",
-			"()I");
+			"()I"
+		);
 	}
 	jint Debug_InstructionCount::globalMethodInvocations()
 	{
 		return __thiz.callMethod<jint>(
 			"globalMethodInvocations",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::os
 

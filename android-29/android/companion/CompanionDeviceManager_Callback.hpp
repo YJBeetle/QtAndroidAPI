@@ -46,14 +46,16 @@ namespace __jni_impl::android::companion
 		__thiz.callMethod<void>(
 			"onDeviceFound",
 			"(Landroid/content/IntentSender;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CompanionDeviceManager_Callback::onFailure(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::companion
 

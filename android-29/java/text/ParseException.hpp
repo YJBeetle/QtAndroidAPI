@@ -42,7 +42,8 @@ namespace __jni_impl::java::text
 	{
 		return __thiz.callMethod<jint>(
 			"getErrorOffset",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::text
 

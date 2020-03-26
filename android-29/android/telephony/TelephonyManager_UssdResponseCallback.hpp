@@ -48,7 +48,8 @@ namespace __jni_impl::android::telephony
 			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;Ljava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(__jni_impl::android::telephony::TelephonyManager arg0, jstring arg1, jint arg2)
 	{
@@ -57,7 +58,8 @@ namespace __jni_impl::android::telephony
 			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

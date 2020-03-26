@@ -22,12 +22,12 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void release();
 		jboolean isValid();
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -41,7 +41,8 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.SurfaceControl",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -53,36 +54,33 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	QAndroidJniObject SurfaceControl::toString()
+	jstring SurfaceControl::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SurfaceControl::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean SurfaceControl::isValid()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValid",
-			"()Z");
-	}
-	void SurfaceControl::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			"()Z"
+		);
 	}
 	jint SurfaceControl::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SurfaceControl::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -90,7 +88,16 @@ namespace __jni_impl::android::view
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void SurfaceControl::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

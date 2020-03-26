@@ -32,27 +32,32 @@ namespace __jni_impl::android::graphics
 	jfloat Paint_FontMetrics::ascent()
 	{
 		return __thiz.getField<jfloat>(
-			"ascent");
+			"ascent"
+		);
 	}
 	jfloat Paint_FontMetrics::bottom()
 	{
 		return __thiz.getField<jfloat>(
-			"bottom");
+			"bottom"
+		);
 	}
 	jfloat Paint_FontMetrics::descent()
 	{
 		return __thiz.getField<jfloat>(
-			"descent");
+			"descent"
+		);
 	}
 	jfloat Paint_FontMetrics::leading()
 	{
 		return __thiz.getField<jfloat>(
-			"leading");
+			"leading"
+		);
 	}
 	jfloat Paint_FontMetrics::top()
 	{
 		return __thiz.getField<jfloat>(
-			"top");
+			"top"
+		);
 	}
 	
 	// Constructors

@@ -57,21 +57,21 @@ namespace __jni_impl::android::preference
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EXTRA_NO_HEADERS();
-		static QAndroidJniObject EXTRA_SHOW_FRAGMENT();
-		static QAndroidJniObject EXTRA_SHOW_FRAGMENT_ARGUMENTS();
-		static QAndroidJniObject EXTRA_SHOW_FRAGMENT_SHORT_TITLE();
-		static QAndroidJniObject EXTRA_SHOW_FRAGMENT_TITLE();
+		static jstring EXTRA_NO_HEADERS();
+		static jstring EXTRA_SHOW_FRAGMENT();
+		static jstring EXTRA_SHOW_FRAGMENT_ARGUMENTS();
+		static jstring EXTRA_SHOW_FRAGMENT_SHORT_TITLE();
+		static jstring EXTRA_SHOW_FRAGMENT_TITLE();
 		static jlong HEADER_ID_UNDEFINED();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
+		void setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
 		void onBackPressed();
 		void onContentChanged();
 		jboolean onOptionsItemSelected(__jni_impl::__JniBaseClass arg0);
-		void setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
 		jboolean hasHeaders();
 		jboolean isMultiPane();
 		jboolean onIsMultiPane();
@@ -117,46 +117,52 @@ namespace __jni_impl::android::preference
 namespace __jni_impl::android::preference
 {
 	// Fields
-	QAndroidJniObject PreferenceActivity::EXTRA_NO_HEADERS()
+	jstring PreferenceActivity::EXTRA_NO_HEADERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_NO_HEADERS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PreferenceActivity::EXTRA_SHOW_FRAGMENT()
+	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PreferenceActivity::EXTRA_SHOW_FRAGMENT_ARGUMENTS()
+	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT_ARGUMENTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT_ARGUMENTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PreferenceActivity::EXTRA_SHOW_FRAGMENT_SHORT_TITLE()
+	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT_SHORT_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT_SHORT_TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PreferenceActivity::EXTRA_SHOW_FRAGMENT_TITLE()
+	jstring PreferenceActivity::EXTRA_SHOW_FRAGMENT_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.preference.PreferenceActivity",
 			"EXTRA_SHOW_FRAGMENT_TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong PreferenceActivity::HEADER_ID_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.preference.PreferenceActivity",
-			"HEADER_ID_UNDEFINED");
+			"HEADER_ID_UNDEFINED"
+		);
 	}
 	
 	// Constructors
@@ -168,25 +174,6 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
-	void PreferenceActivity::onBackPressed()
-	{
-		__thiz.callMethod<void>(
-			"onBackPressed",
-			"()V");
-	}
-	void PreferenceActivity::onContentChanged()
-	{
-		__thiz.callMethod<void>(
-			"onContentChanged",
-			"()V");
-	}
-	jboolean PreferenceActivity::onOptionsItemSelected(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onOptionsItemSelected",
-			"(Landroid/view/MenuItem;)Z",
-			arg0.__jniObject().object());
-	}
 	void PreferenceActivity::setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		__thiz.callMethod<void>(
@@ -194,56 +181,87 @@ namespace __jni_impl::android::preference
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void PreferenceActivity::onBackPressed()
+	{
+		__thiz.callMethod<void>(
+			"onBackPressed",
+			"()V"
+		);
+	}
+	void PreferenceActivity::onContentChanged()
+	{
+		__thiz.callMethod<void>(
+			"onContentChanged",
+			"()V"
+		);
+	}
+	jboolean PreferenceActivity::onOptionsItemSelected(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onOptionsItemSelected",
+			"(Landroid/view/MenuItem;)Z",
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean PreferenceActivity::hasHeaders()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasHeaders",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PreferenceActivity::isMultiPane()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMultiPane",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PreferenceActivity::onIsMultiPane()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onIsMultiPane",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PreferenceActivity::onIsHidingHeaders()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onIsHidingHeaders",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject PreferenceActivity::onGetInitialHeader()
 	{
 		return __thiz.callObjectMethod(
 			"onGetInitialHeader",
-			"()Landroid/preference/PreferenceActivity$Header;");
+			"()Landroid/preference/PreferenceActivity$Header;"
+		);
 	}
 	QAndroidJniObject PreferenceActivity::onGetNewHeader()
 	{
 		return __thiz.callObjectMethod(
 			"onGetNewHeader",
-			"()Landroid/preference/PreferenceActivity$Header;");
+			"()Landroid/preference/PreferenceActivity$Header;"
+		);
 	}
 	void PreferenceActivity::onBuildHeaders(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onBuildHeaders",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PreferenceActivity::invalidateHeaders()
 	{
 		__thiz.callMethod<void>(
 			"invalidateHeaders",
-			"()V");
+			"()V"
+		);
 	}
 	void PreferenceActivity::loadHeadersFromResource(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -251,14 +269,16 @@ namespace __jni_impl::android::preference
 			"loadHeadersFromResource",
 			"(ILjava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PreferenceActivity::setListFooter(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"setListFooter",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PreferenceActivity::onHeaderClick(__jni_impl::android::preference::PreferenceActivity_Header arg0, jint arg1)
 	{
@@ -266,7 +286,8 @@ namespace __jni_impl::android::preference
 			"onHeaderClick",
 			"(Landroid/preference/PreferenceActivity$Header;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject PreferenceActivity::onBuildStartFragmentIntent(jstring arg0, __jni_impl::android::os::Bundle arg1, jint arg2, jint arg3)
 	{
@@ -276,7 +297,8 @@ namespace __jni_impl::android::preference
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void PreferenceActivity::startWithFragment(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::app::Fragment arg2, jint arg3)
 	{
@@ -286,7 +308,8 @@ namespace __jni_impl::android::preference
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void PreferenceActivity::startWithFragment(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::app::Fragment arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -298,7 +321,8 @@ namespace __jni_impl::android::preference
 			arg2.__jniObject().object(),
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void PreferenceActivity::showBreadCrumbs(jstring arg0, jstring arg1)
 	{
@@ -306,7 +330,8 @@ namespace __jni_impl::android::preference
 			"showBreadCrumbs",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void PreferenceActivity::switchToHeader(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -314,14 +339,16 @@ namespace __jni_impl::android::preference
 			"switchToHeader",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PreferenceActivity::switchToHeader(__jni_impl::android::preference::PreferenceActivity_Header arg0)
 	{
 		__thiz.callMethod<void>(
 			"switchToHeader",
 			"(Landroid/preference/PreferenceActivity$Header;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PreferenceActivity::startPreferenceFragment(__jni_impl::android::app::Fragment arg0, jboolean arg1)
 	{
@@ -329,7 +356,8 @@ namespace __jni_impl::android::preference
 			"startPreferenceFragment",
 			"(Landroid/app/Fragment;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void PreferenceActivity::startPreferencePanel(jstring arg0, __jni_impl::android::os::Bundle arg1, jint arg2, jstring arg3, __jni_impl::android::app::Fragment arg4, jint arg5)
 	{
@@ -341,7 +369,8 @@ namespace __jni_impl::android::preference
 			arg2,
 			arg3,
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void PreferenceActivity::finishPreferencePanel(__jni_impl::android::app::Fragment arg0, jint arg1, __jni_impl::android::content::Intent arg2)
 	{
@@ -350,7 +379,8 @@ namespace __jni_impl::android::preference
 			"(Landroid/app/Fragment;ILandroid/content/Intent;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean PreferenceActivity::onPreferenceStartFragment(__jni_impl::android::preference::PreferenceFragment arg0, __jni_impl::android::preference::Preference arg1)
 	{
@@ -358,40 +388,46 @@ namespace __jni_impl::android::preference
 			"onPreferenceStartFragment",
 			"(Landroid/preference/PreferenceFragment;Landroid/preference/Preference;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PreferenceActivity::getPreferenceManager()
 	{
 		return __thiz.callObjectMethod(
 			"getPreferenceManager",
-			"()Landroid/preference/PreferenceManager;");
+			"()Landroid/preference/PreferenceManager;"
+		);
 	}
 	void PreferenceActivity::setPreferenceScreen(__jni_impl::android::preference::PreferenceScreen arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPreferenceScreen",
 			"(Landroid/preference/PreferenceScreen;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PreferenceActivity::getPreferenceScreen()
 	{
 		return __thiz.callObjectMethod(
 			"getPreferenceScreen",
-			"()Landroid/preference/PreferenceScreen;");
+			"()Landroid/preference/PreferenceScreen;"
+		);
 	}
 	void PreferenceActivity::addPreferencesFromIntent(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"addPreferencesFromIntent",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PreferenceActivity::addPreferencesFromResource(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"addPreferencesFromResource",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PreferenceActivity::onPreferenceTreeClick(__jni_impl::android::preference::PreferenceScreen arg0, __jni_impl::android::preference::Preference arg1)
 	{
@@ -399,14 +435,16 @@ namespace __jni_impl::android::preference
 			"onPreferenceTreeClick",
 			"(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PreferenceActivity::findPreference(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::preference
 

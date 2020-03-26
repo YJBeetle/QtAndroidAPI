@@ -62,13 +62,15 @@ namespace __jni_impl::android::view::animation
 	{
 		return __thiz.callMethod<jboolean>(
 			"willChangeTransformationMatrix",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AlphaAnimation::willChangeBounds()
 	{
 		return __thiz.callMethod<jboolean>(
 			"willChangeBounds",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::view::animation
 

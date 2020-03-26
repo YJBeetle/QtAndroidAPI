@@ -31,17 +31,20 @@ namespace __jni_impl::android::media
 	jfloat MicrophoneInfo_Coordinate3F::x()
 	{
 		return __thiz.getField<jfloat>(
-			"x");
+			"x"
+		);
 	}
 	jfloat MicrophoneInfo_Coordinate3F::y()
 	{
 		return __thiz.getField<jfloat>(
-			"y");
+			"y"
+		);
 	}
 	jfloat MicrophoneInfo_Coordinate3F::z()
 	{
 		return __thiz.getField<jfloat>(
-			"z");
+			"z"
+		);
 	}
 	
 	// Constructors
@@ -58,7 +61,8 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

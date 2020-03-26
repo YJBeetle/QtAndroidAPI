@@ -92,13 +92,13 @@ namespace __jni_impl::android::content::pm
 		jint flags();
 		jint launchMode();
 		jint maxRecents();
-		QAndroidJniObject parentActivityName();
-		QAndroidJniObject permission();
+		jstring parentActivityName();
+		jstring permission();
 		jint persistableMode();
 		jint screenOrientation();
 		jint softInputMode();
-		QAndroidJniObject targetActivity();
-		QAndroidJniObject taskAffinity();
+		jstring targetActivity();
+		jstring taskAffinity();
 		jint theme();
 		jint uiOptions();
 		QAndroidJniObject windowLayout();
@@ -108,11 +108,11 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::ActivityInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		jint getThemeResource();
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		jint getThemeResource();
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -126,471 +126,551 @@ namespace __jni_impl::android::content::pm
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"COLOR_MODE_DEFAULT");
+			"COLOR_MODE_DEFAULT"
+		);
 	}
 	jint ActivityInfo::COLOR_MODE_HDR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"COLOR_MODE_HDR");
+			"COLOR_MODE_HDR"
+		);
 	}
 	jint ActivityInfo::COLOR_MODE_WIDE_COLOR_GAMUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"COLOR_MODE_WIDE_COLOR_GAMUT");
+			"COLOR_MODE_WIDE_COLOR_GAMUT"
+		);
 	}
 	jint ActivityInfo::CONFIG_COLOR_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_COLOR_MODE");
+			"CONFIG_COLOR_MODE"
+		);
 	}
 	jint ActivityInfo::CONFIG_DENSITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_DENSITY");
+			"CONFIG_DENSITY"
+		);
 	}
 	jint ActivityInfo::CONFIG_FONT_SCALE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_FONT_SCALE");
+			"CONFIG_FONT_SCALE"
+		);
 	}
 	jint ActivityInfo::CONFIG_KEYBOARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_KEYBOARD");
+			"CONFIG_KEYBOARD"
+		);
 	}
 	jint ActivityInfo::CONFIG_KEYBOARD_HIDDEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_KEYBOARD_HIDDEN");
+			"CONFIG_KEYBOARD_HIDDEN"
+		);
 	}
 	jint ActivityInfo::CONFIG_LAYOUT_DIRECTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_LAYOUT_DIRECTION");
+			"CONFIG_LAYOUT_DIRECTION"
+		);
 	}
 	jint ActivityInfo::CONFIG_LOCALE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_LOCALE");
+			"CONFIG_LOCALE"
+		);
 	}
 	jint ActivityInfo::CONFIG_MCC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_MCC");
+			"CONFIG_MCC"
+		);
 	}
 	jint ActivityInfo::CONFIG_MNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_MNC");
+			"CONFIG_MNC"
+		);
 	}
 	jint ActivityInfo::CONFIG_NAVIGATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_NAVIGATION");
+			"CONFIG_NAVIGATION"
+		);
 	}
 	jint ActivityInfo::CONFIG_ORIENTATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_ORIENTATION");
+			"CONFIG_ORIENTATION"
+		);
 	}
 	jint ActivityInfo::CONFIG_SCREEN_LAYOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_SCREEN_LAYOUT");
+			"CONFIG_SCREEN_LAYOUT"
+		);
 	}
 	jint ActivityInfo::CONFIG_SCREEN_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_SCREEN_SIZE");
+			"CONFIG_SCREEN_SIZE"
+		);
 	}
 	jint ActivityInfo::CONFIG_SMALLEST_SCREEN_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_SMALLEST_SCREEN_SIZE");
+			"CONFIG_SMALLEST_SCREEN_SIZE"
+		);
 	}
 	jint ActivityInfo::CONFIG_TOUCHSCREEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_TOUCHSCREEN");
+			"CONFIG_TOUCHSCREEN"
+		);
 	}
 	jint ActivityInfo::CONFIG_UI_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"CONFIG_UI_MODE");
+			"CONFIG_UI_MODE"
+		);
 	}
 	QAndroidJniObject ActivityInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.ActivityInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ActivityInfo::DOCUMENT_LAUNCH_ALWAYS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"DOCUMENT_LAUNCH_ALWAYS");
+			"DOCUMENT_LAUNCH_ALWAYS"
+		);
 	}
 	jint ActivityInfo::DOCUMENT_LAUNCH_INTO_EXISTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"DOCUMENT_LAUNCH_INTO_EXISTING");
+			"DOCUMENT_LAUNCH_INTO_EXISTING"
+		);
 	}
 	jint ActivityInfo::DOCUMENT_LAUNCH_NEVER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"DOCUMENT_LAUNCH_NEVER");
+			"DOCUMENT_LAUNCH_NEVER"
+		);
 	}
 	jint ActivityInfo::DOCUMENT_LAUNCH_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"DOCUMENT_LAUNCH_NONE");
+			"DOCUMENT_LAUNCH_NONE"
+		);
 	}
 	jint ActivityInfo::FLAG_ALLOW_TASK_REPARENTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_ALLOW_TASK_REPARENTING");
+			"FLAG_ALLOW_TASK_REPARENTING"
+		);
 	}
 	jint ActivityInfo::FLAG_ALWAYS_RETAIN_TASK_STATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_ALWAYS_RETAIN_TASK_STATE");
+			"FLAG_ALWAYS_RETAIN_TASK_STATE"
+		);
 	}
 	jint ActivityInfo::FLAG_AUTO_REMOVE_FROM_RECENTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_AUTO_REMOVE_FROM_RECENTS");
+			"FLAG_AUTO_REMOVE_FROM_RECENTS"
+		);
 	}
 	jint ActivityInfo::FLAG_CLEAR_TASK_ON_LAUNCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_CLEAR_TASK_ON_LAUNCH");
+			"FLAG_CLEAR_TASK_ON_LAUNCH"
+		);
 	}
 	jint ActivityInfo::FLAG_ENABLE_VR_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_ENABLE_VR_MODE");
+			"FLAG_ENABLE_VR_MODE"
+		);
 	}
 	jint ActivityInfo::FLAG_EXCLUDE_FROM_RECENTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_EXCLUDE_FROM_RECENTS");
+			"FLAG_EXCLUDE_FROM_RECENTS"
+		);
 	}
 	jint ActivityInfo::FLAG_FINISH_ON_CLOSE_SYSTEM_DIALOGS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_FINISH_ON_CLOSE_SYSTEM_DIALOGS");
+			"FLAG_FINISH_ON_CLOSE_SYSTEM_DIALOGS"
+		);
 	}
 	jint ActivityInfo::FLAG_FINISH_ON_TASK_LAUNCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_FINISH_ON_TASK_LAUNCH");
+			"FLAG_FINISH_ON_TASK_LAUNCH"
+		);
 	}
 	jint ActivityInfo::FLAG_HARDWARE_ACCELERATED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_HARDWARE_ACCELERATED");
+			"FLAG_HARDWARE_ACCELERATED"
+		);
 	}
 	jint ActivityInfo::FLAG_IMMERSIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_IMMERSIVE");
+			"FLAG_IMMERSIVE"
+		);
 	}
 	jint ActivityInfo::FLAG_MULTIPROCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_MULTIPROCESS");
+			"FLAG_MULTIPROCESS"
+		);
 	}
 	jint ActivityInfo::FLAG_NO_HISTORY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_NO_HISTORY");
+			"FLAG_NO_HISTORY"
+		);
 	}
 	jint ActivityInfo::FLAG_RELINQUISH_TASK_IDENTITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_RELINQUISH_TASK_IDENTITY");
+			"FLAG_RELINQUISH_TASK_IDENTITY"
+		);
 	}
 	jint ActivityInfo::FLAG_RESUME_WHILE_PAUSING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_RESUME_WHILE_PAUSING");
+			"FLAG_RESUME_WHILE_PAUSING"
+		);
 	}
 	jint ActivityInfo::FLAG_SINGLE_USER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_SINGLE_USER");
+			"FLAG_SINGLE_USER"
+		);
 	}
 	jint ActivityInfo::FLAG_STATE_NOT_NEEDED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"FLAG_STATE_NOT_NEEDED");
+			"FLAG_STATE_NOT_NEEDED"
+		);
 	}
 	jint ActivityInfo::LAUNCH_MULTIPLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"LAUNCH_MULTIPLE");
+			"LAUNCH_MULTIPLE"
+		);
 	}
 	jint ActivityInfo::LAUNCH_SINGLE_INSTANCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"LAUNCH_SINGLE_INSTANCE");
+			"LAUNCH_SINGLE_INSTANCE"
+		);
 	}
 	jint ActivityInfo::LAUNCH_SINGLE_TASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"LAUNCH_SINGLE_TASK");
+			"LAUNCH_SINGLE_TASK"
+		);
 	}
 	jint ActivityInfo::LAUNCH_SINGLE_TOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"LAUNCH_SINGLE_TOP");
+			"LAUNCH_SINGLE_TOP"
+		);
 	}
 	jint ActivityInfo::PERSIST_ACROSS_REBOOTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"PERSIST_ACROSS_REBOOTS");
+			"PERSIST_ACROSS_REBOOTS"
+		);
 	}
 	jint ActivityInfo::PERSIST_NEVER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"PERSIST_NEVER");
+			"PERSIST_NEVER"
+		);
 	}
 	jint ActivityInfo::PERSIST_ROOT_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"PERSIST_ROOT_ONLY");
+			"PERSIST_ROOT_ONLY"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_BEHIND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_BEHIND");
+			"SCREEN_ORIENTATION_BEHIND"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_FULL_SENSOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_FULL_SENSOR");
+			"SCREEN_ORIENTATION_FULL_SENSOR"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_FULL_USER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_FULL_USER");
+			"SCREEN_ORIENTATION_FULL_USER"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_LANDSCAPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_LANDSCAPE");
+			"SCREEN_ORIENTATION_LANDSCAPE"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_LOCKED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_LOCKED");
+			"SCREEN_ORIENTATION_LOCKED"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_NOSENSOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_NOSENSOR");
+			"SCREEN_ORIENTATION_NOSENSOR"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_PORTRAIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_PORTRAIT");
+			"SCREEN_ORIENTATION_PORTRAIT"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_REVERSE_LANDSCAPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_REVERSE_LANDSCAPE");
+			"SCREEN_ORIENTATION_REVERSE_LANDSCAPE"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_REVERSE_PORTRAIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_REVERSE_PORTRAIT");
+			"SCREEN_ORIENTATION_REVERSE_PORTRAIT"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_SENSOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_SENSOR");
+			"SCREEN_ORIENTATION_SENSOR"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_SENSOR_LANDSCAPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_SENSOR_LANDSCAPE");
+			"SCREEN_ORIENTATION_SENSOR_LANDSCAPE"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_SENSOR_PORTRAIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_SENSOR_PORTRAIT");
+			"SCREEN_ORIENTATION_SENSOR_PORTRAIT"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_UNSPECIFIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_UNSPECIFIED");
+			"SCREEN_ORIENTATION_UNSPECIFIED"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_USER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_USER");
+			"SCREEN_ORIENTATION_USER"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_USER_LANDSCAPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_USER_LANDSCAPE");
+			"SCREEN_ORIENTATION_USER_LANDSCAPE"
+		);
 	}
 	jint ActivityInfo::SCREEN_ORIENTATION_USER_PORTRAIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"SCREEN_ORIENTATION_USER_PORTRAIT");
+			"SCREEN_ORIENTATION_USER_PORTRAIT"
+		);
 	}
 	jint ActivityInfo::UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.ActivityInfo",
-			"UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW");
+			"UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW"
+		);
 	}
 	jint ActivityInfo::colorMode()
 	{
 		return __thiz.getField<jint>(
-			"colorMode");
+			"colorMode"
+		);
 	}
 	jint ActivityInfo::configChanges()
 	{
 		return __thiz.getField<jint>(
-			"configChanges");
+			"configChanges"
+		);
 	}
 	jint ActivityInfo::documentLaunchMode()
 	{
 		return __thiz.getField<jint>(
-			"documentLaunchMode");
+			"documentLaunchMode"
+		);
 	}
 	jint ActivityInfo::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
 	jint ActivityInfo::launchMode()
 	{
 		return __thiz.getField<jint>(
-			"launchMode");
+			"launchMode"
+		);
 	}
 	jint ActivityInfo::maxRecents()
 	{
 		return __thiz.getField<jint>(
-			"maxRecents");
+			"maxRecents"
+		);
 	}
-	QAndroidJniObject ActivityInfo::parentActivityName()
+	jstring ActivityInfo::parentActivityName()
 	{
 		return __thiz.getObjectField(
 			"parentActivityName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ActivityInfo::permission()
+	jstring ActivityInfo::permission()
 	{
 		return __thiz.getObjectField(
 			"permission",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ActivityInfo::persistableMode()
 	{
 		return __thiz.getField<jint>(
-			"persistableMode");
+			"persistableMode"
+		);
 	}
 	jint ActivityInfo::screenOrientation()
 	{
 		return __thiz.getField<jint>(
-			"screenOrientation");
+			"screenOrientation"
+		);
 	}
 	jint ActivityInfo::softInputMode()
 	{
 		return __thiz.getField<jint>(
-			"softInputMode");
+			"softInputMode"
+		);
 	}
-	QAndroidJniObject ActivityInfo::targetActivity()
+	jstring ActivityInfo::targetActivity()
 	{
 		return __thiz.getObjectField(
 			"targetActivity",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ActivityInfo::taskAffinity()
+	jstring ActivityInfo::taskAffinity()
 	{
 		return __thiz.getObjectField(
 			"taskAffinity",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ActivityInfo::theme()
 	{
 		return __thiz.getField<jint>(
-			"theme");
+			"theme"
+		);
 	}
 	jint ActivityInfo::uiOptions()
 	{
 		return __thiz.getField<jint>(
-			"uiOptions");
+			"uiOptions"
+		);
 	}
 	QAndroidJniObject ActivityInfo::windowLayout()
 	{
 		return __thiz.getObjectField(
 			"windowLayout",
-			"Landroid/content/pm/ActivityInfo$WindowLayout;");
+			"Landroid/content/pm/ActivityInfo$WindowLayout;"
+		);
 	}
 	
 	// Constructors
@@ -609,31 +689,19 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject ActivityInfo::toString()
+	jstring ActivityInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	jint ActivityInfo::getThemeResource()
-	{
-		return __thiz.callMethod<jint>(
-			"getThemeResource",
-			"()I");
-	}
-	void ActivityInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ActivityInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ActivityInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -641,7 +709,24 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ActivityInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jint ActivityInfo::getThemeResource()
+	{
+		return __thiz.callMethod<jint>(
+			"getThemeResource",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

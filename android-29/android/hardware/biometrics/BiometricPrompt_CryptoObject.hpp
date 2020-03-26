@@ -73,19 +73,22 @@ namespace __jni_impl::android::hardware::biometrics
 	{
 		return __thiz.callObjectMethod(
 			"getSignature",
-			"()Ljava/security/Signature;");
+			"()Ljava/security/Signature;"
+		);
 	}
 	QAndroidJniObject BiometricPrompt_CryptoObject::getCipher()
 	{
 		return __thiz.callObjectMethod(
 			"getCipher",
-			"()Ljavax/crypto/Cipher;");
+			"()Ljavax/crypto/Cipher;"
+		);
 	}
 	QAndroidJniObject BiometricPrompt_CryptoObject::getMac()
 	{
 		return __thiz.callObjectMethod(
 			"getMac",
-			"()Ljavax/crypto/Mac;");
+			"()Ljavax/crypto/Mac;"
+		);
 	}
 } // namespace __jni_impl::android::hardware::biometrics
 

@@ -25,8 +25,8 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject transform(jfloat arg0, jfloat arg1, jfloat arg2);
-		QAndroidJniObject transform(jfloatArray arg0);
+		jfloatArray transform(jfloat arg0, jfloat arg1, jfloat arg2);
+		jfloatArray transform(jfloatArray arg0);
 		QAndroidJniObject getSource();
 		QAndroidJniObject getRenderIntent();
 		QAndroidJniObject getDestination();
@@ -49,39 +49,44 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2)
+	jfloatArray ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
 		return __thiz.callObjectMethod(
 			"transform",
 			"(FFF)[F",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		).object<jfloatArray>();
 	}
-	QAndroidJniObject ColorSpace_Connector::transform(jfloatArray arg0)
+	jfloatArray ColorSpace_Connector::transform(jfloatArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"transform",
 			"([F)[F",
-			arg0);
+			arg0
+		).object<jfloatArray>();
 	}
 	QAndroidJniObject ColorSpace_Connector::getSource()
 	{
 		return __thiz.callObjectMethod(
 			"getSource",
-			"()Landroid/graphics/ColorSpace;");
+			"()Landroid/graphics/ColorSpace;"
+		);
 	}
 	QAndroidJniObject ColorSpace_Connector::getRenderIntent()
 	{
 		return __thiz.callObjectMethod(
 			"getRenderIntent",
-			"()Landroid/graphics/ColorSpace$RenderIntent;");
+			"()Landroid/graphics/ColorSpace$RenderIntent;"
+		);
 	}
 	QAndroidJniObject ColorSpace_Connector::getDestination()
 	{
 		return __thiz.callObjectMethod(
 			"getDestination",
-			"()Landroid/graphics/ColorSpace;");
+			"()Landroid/graphics/ColorSpace;"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

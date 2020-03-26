@@ -34,9 +34,9 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getEncoded();
+		jbyteArray getEncoded();
 		jboolean hasExtensions();
 		QAndroidJniObject getSerialNumber();
 		QAndroidJniObject getRevocationReason();
@@ -68,55 +68,64 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject X509CRLEntry::toString()
+	jstring X509CRLEntry::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint X509CRLEntry::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject X509CRLEntry::getEncoded()
+	jbyteArray X509CRLEntry::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jboolean X509CRLEntry::hasExtensions()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasExtensions",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject X509CRLEntry::getSerialNumber()
 	{
 		return __thiz.callObjectMethod(
 			"getSerialNumber",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject X509CRLEntry::getRevocationReason()
 	{
 		return __thiz.callObjectMethod(
 			"getRevocationReason",
-			"()Ljava/security/cert/CRLReason;");
+			"()Ljava/security/cert/CRLReason;"
+		);
 	}
 	QAndroidJniObject X509CRLEntry::getCertificateIssuer()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificateIssuer",
-			"()Ljavax/security/auth/x500/X500Principal;");
+			"()Ljavax/security/auth/x500/X500Principal;"
+		);
 	}
 	QAndroidJniObject X509CRLEntry::getRevocationDate()
 	{
 		return __thiz.callObjectMethod(
 			"getRevocationDate",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

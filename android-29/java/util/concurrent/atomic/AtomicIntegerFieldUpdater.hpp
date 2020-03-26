@@ -56,7 +56,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 		return __thiz.callMethod<jint>(
 			"get",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicIntegerFieldUpdater::set(jobject arg0, jint arg1)
 	{
@@ -64,7 +65,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"set",
 			"(Ljava/lang/Object;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicIntegerFieldUpdater::compareAndSet(jobject arg0, jint arg1, jint arg2)
 	{
@@ -73,7 +75,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;II)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicIntegerFieldUpdater::weakCompareAndSet(jobject arg0, jint arg1, jint arg2)
 	{
@@ -82,7 +85,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;II)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint AtomicIntegerFieldUpdater::getAndSet(jobject arg0, jint arg1)
 	{
@@ -90,7 +94,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndSet",
 			"(Ljava/lang/Object;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint AtomicIntegerFieldUpdater::getAndAdd(jobject arg0, jint arg1)
 	{
@@ -98,7 +103,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndAdd",
 			"(Ljava/lang/Object;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AtomicIntegerFieldUpdater::lazySet(jobject arg0, jint arg1)
 	{
@@ -106,35 +112,40 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"lazySet",
 			"(Ljava/lang/Object;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint AtomicIntegerFieldUpdater::getAndIncrement(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getAndIncrement",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint AtomicIntegerFieldUpdater::getAndDecrement(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getAndDecrement",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint AtomicIntegerFieldUpdater::incrementAndGet(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"incrementAndGet",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint AtomicIntegerFieldUpdater::decrementAndGet(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"decrementAndGet",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint AtomicIntegerFieldUpdater::addAndGet(jobject arg0, jint arg1)
 	{
@@ -142,7 +153,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"addAndGet",
 			"(Ljava/lang/Object;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint AtomicIntegerFieldUpdater::getAndUpdate(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -150,7 +162,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndUpdate",
 			"(Ljava/lang/Object;Ljava/util/function/IntUnaryOperator;)I",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint AtomicIntegerFieldUpdater::updateAndGet(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -158,7 +171,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"updateAndGet",
 			"(Ljava/lang/Object;Ljava/util/function/IntUnaryOperator;)I",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint AtomicIntegerFieldUpdater::getAndAccumulate(jobject arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -167,7 +181,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;ILjava/util/function/IntBinaryOperator;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jint AtomicIntegerFieldUpdater::accumulateAndGet(jobject arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -176,7 +191,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;ILjava/util/function/IntBinaryOperator;)I",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AtomicIntegerFieldUpdater::newUpdater(jclass arg0, jstring arg1)
 	{
@@ -185,7 +201,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"newUpdater",
 			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

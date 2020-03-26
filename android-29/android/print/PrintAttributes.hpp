@@ -7,11 +7,7 @@
 
 namespace __jni_impl::android::print
 {
-	class PrintAttributes_MediaSize;
-}
-namespace __jni_impl::android::print
-{
-	class PrintAttributes_Margins;
+	class PrintAttributes_Resolution;
 }
 namespace __jni_impl::android::os
 {
@@ -19,7 +15,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::print
 {
-	class PrintAttributes_Resolution;
+	class PrintAttributes_MediaSize;
+}
+namespace __jni_impl::android::print
+{
+	class PrintAttributes_Margins;
 }
 
 namespace __jni_impl::android::print
@@ -40,22 +40,22 @@ namespace __jni_impl::android::print
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
+		QAndroidJniObject getResolution();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getMediaSize();
 		QAndroidJniObject getMinMargins();
 		jint getDuplexMode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getResolution();
 		jint getColorMode();
 	};
 } // namespace __jni_impl::android::print
 
+#include "PrintAttributes_Resolution.hpp"
+#include "../os/Parcel.hpp"
 #include "PrintAttributes_MediaSize.hpp"
 #include "PrintAttributes_Margins.hpp"
-#include "../os/Parcel.hpp"
-#include "PrintAttributes_Resolution.hpp"
 
 namespace __jni_impl::android::print
 {
@@ -64,38 +64,44 @@ namespace __jni_impl::android::print
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrintAttributes",
-			"COLOR_MODE_COLOR");
+			"COLOR_MODE_COLOR"
+		);
 	}
 	jint PrintAttributes::COLOR_MODE_MONOCHROME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrintAttributes",
-			"COLOR_MODE_MONOCHROME");
+			"COLOR_MODE_MONOCHROME"
+		);
 	}
 	QAndroidJniObject PrintAttributes::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintAttributes",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint PrintAttributes::DUPLEX_MODE_LONG_EDGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrintAttributes",
-			"DUPLEX_MODE_LONG_EDGE");
+			"DUPLEX_MODE_LONG_EDGE"
+		);
 	}
 	jint PrintAttributes::DUPLEX_MODE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrintAttributes",
-			"DUPLEX_MODE_NONE");
+			"DUPLEX_MODE_NONE"
+		);
 	}
 	jint PrintAttributes::DUPLEX_MODE_SHORT_EDGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrintAttributes",
-			"DUPLEX_MODE_SHORT_EDGE");
+			"DUPLEX_MODE_SHORT_EDGE"
+		);
 	}
 	
 	// Constructors
@@ -112,43 +118,36 @@ namespace __jni_impl::android::print
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PrintAttributes::toString()
+	jstring PrintAttributes::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PrintAttributes::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject PrintAttributes::getMediaSize()
+	QAndroidJniObject PrintAttributes::getResolution()
 	{
 		return __thiz.callObjectMethod(
-			"getMediaSize",
-			"()Landroid/print/PrintAttributes$MediaSize;");
-	}
-	QAndroidJniObject PrintAttributes::getMinMargins()
-	{
-		return __thiz.callObjectMethod(
-			"getMinMargins",
-			"()Landroid/print/PrintAttributes$Margins;");
-	}
-	jint PrintAttributes::getDuplexMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getDuplexMode",
-			"()I");
+			"getResolution",
+			"()Landroid/print/PrintAttributes$Resolution;"
+		);
 	}
 	jint PrintAttributes::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PrintAttributes::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -156,19 +155,36 @@ namespace __jni_impl::android::print
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject PrintAttributes::getResolution()
+	QAndroidJniObject PrintAttributes::getMediaSize()
 	{
 		return __thiz.callObjectMethod(
-			"getResolution",
-			"()Landroid/print/PrintAttributes$Resolution;");
+			"getMediaSize",
+			"()Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	QAndroidJniObject PrintAttributes::getMinMargins()
+	{
+		return __thiz.callObjectMethod(
+			"getMinMargins",
+			"()Landroid/print/PrintAttributes$Margins;"
+		);
+	}
+	jint PrintAttributes::getDuplexMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getDuplexMode",
+			"()I"
+		);
 	}
 	jint PrintAttributes::getColorMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getColorMode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::print
 

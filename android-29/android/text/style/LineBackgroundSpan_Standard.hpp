@@ -30,11 +30,11 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		jint getSpanTypeId();
-		void drawBackground(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jint arg10);
-		jint getColor();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getColor();
+		jint getSpanTypeId();
+		void drawBackground(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jint arg10);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -63,11 +63,35 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
+	jint LineBackgroundSpan_Standard::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void LineBackgroundSpan_Standard::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jint LineBackgroundSpan_Standard::getColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getColor",
+			"()I"
+		);
+	}
 	jint LineBackgroundSpan_Standard::getSpanTypeId()
 	{
 		return __thiz.callMethod<jint>(
 			"getSpanTypeId",
-			"()I");
+			"()I"
+		);
 	}
 	void LineBackgroundSpan_Standard::drawBackground(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jint arg10)
 	{
@@ -84,27 +108,8 @@ namespace __jni_impl::android::text::style
 			arg7,
 			arg8,
 			arg9,
-			arg10);
-	}
-	jint LineBackgroundSpan_Standard::getColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getColor",
-			"()I");
-	}
-	jint LineBackgroundSpan_Standard::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void LineBackgroundSpan_Standard::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			arg10
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

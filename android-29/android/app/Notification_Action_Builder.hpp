@@ -41,12 +41,12 @@ namespace __jni_impl::android::app
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject getExtras();
-		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject addRemoteInput(__jni_impl::android::app::RemoteInput arg0);
 		QAndroidJniObject setAllowGeneratedReplies(jboolean arg0);
 		QAndroidJniObject setSemanticAction(jint arg0);
-		QAndroidJniObject addRemoteInput(__jni_impl::android::app::RemoteInput arg0);
 		QAndroidJniObject setContextual(jboolean arg0);
 		QAndroidJniObject addExtras(__jni_impl::android::os::Bundle arg0);
+		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -92,55 +92,63 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/app/Notification$Action;");
+			"()Landroid/app/Notification$Action;"
+		);
 	}
 	QAndroidJniObject Notification_Action_Builder::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject Notification_Action_Builder::extend(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"extend",
-			"(Landroid/app/Notification$Action$Extender;)Landroid/app/Notification$Action$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Notification_Action_Builder::setAllowGeneratedReplies(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAllowGeneratedReplies",
-			"(Z)Landroid/app/Notification$Action$Builder;",
-			arg0);
-	}
-	QAndroidJniObject Notification_Action_Builder::setSemanticAction(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSemanticAction",
-			"(I)Landroid/app/Notification$Action$Builder;",
-			arg0);
+			"()Landroid/os/Bundle;"
+		);
 	}
 	QAndroidJniObject Notification_Action_Builder::addRemoteInput(__jni_impl::android::app::RemoteInput arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addRemoteInput",
 			"(Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Notification_Action_Builder::setAllowGeneratedReplies(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAllowGeneratedReplies",
+			"(Z)Landroid/app/Notification$Action$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_Action_Builder::setSemanticAction(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSemanticAction",
+			"(I)Landroid/app/Notification$Action$Builder;",
+			arg0
+		);
 	}
 	QAndroidJniObject Notification_Action_Builder::setContextual(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setContextual",
 			"(Z)Landroid/app/Notification$Action$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Notification_Action_Builder::addExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addExtras",
 			"(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Notification_Action_Builder::extend(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"extend",
+			"(Landroid/app/Notification$Action$Extender;)Landroid/app/Notification$Action$Builder;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

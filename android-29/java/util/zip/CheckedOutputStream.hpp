@@ -53,20 +53,23 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void CheckedOutputStream::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CheckedOutputStream::getChecksum()
 	{
 		return __thiz.callObjectMethod(
 			"getChecksum",
-			"()Ljava/util/zip/Checksum;");
+			"()Ljava/util/zip/Checksum;"
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

@@ -55,14 +55,16 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/app/Notification;");
+			"()Landroid/app/Notification;"
+		);
 	}
 	void Notification_Style::setBuilder(__jni_impl::android::app::Notification_Builder arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBuilder",
 			"(Landroid/app/Notification$Builder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

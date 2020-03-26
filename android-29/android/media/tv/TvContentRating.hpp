@@ -21,13 +21,13 @@ namespace __jni_impl::android::media::tv
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jboolean contains(__jni_impl::android::media::tv::TvContentRating arg0);
-		static QAndroidJniObject createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3);
-		QAndroidJniObject getDomain();
-		QAndroidJniObject getRatingSystem();
-		QAndroidJniObject getMainRating();
-		QAndroidJniObject getSubRatings();
-		QAndroidJniObject flattenToString();
+		jstring flattenToString();
 		static QAndroidJniObject unflattenFromString(jstring arg0);
+		static QAndroidJniObject createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3);
+		jstring getDomain();
+		jstring getRatingSystem();
+		jstring getMainRating();
+		QAndroidJniObject getSubRatings();
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -40,7 +40,8 @@ namespace __jni_impl::android::media::tv
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.tv.TvContentRating",
 			"UNRATED",
-			"Landroid/media/tv/TvContentRating;");
+			"Landroid/media/tv/TvContentRating;"
+		);
 	}
 	
 	// Constructors
@@ -57,20 +58,39 @@ namespace __jni_impl::android::media::tv
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint TvContentRating::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean TvContentRating::contains(__jni_impl::android::media::tv::TvContentRating arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Landroid/media/tv/TvContentRating;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jstring TvContentRating::flattenToString()
+	{
+		return __thiz.callObjectMethod(
+			"flattenToString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject TvContentRating::unflattenFromString(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.tv.TvContentRating",
+			"unflattenFromString",
+			"(Ljava/lang/String;)Landroid/media/tv/TvContentRating;",
+			arg0
+		);
 	}
 	QAndroidJniObject TvContentRating::createRating(jstring arg0, jstring arg1, jstring arg2, jarray arg3)
 	{
@@ -81,45 +101,36 @@ namespace __jni_impl::android::media::tv
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
-	QAndroidJniObject TvContentRating::getDomain()
+	jstring TvContentRating::getDomain()
 	{
 		return __thiz.callObjectMethod(
 			"getDomain",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContentRating::getRatingSystem()
+	jstring TvContentRating::getRatingSystem()
 	{
 		return __thiz.callObjectMethod(
 			"getRatingSystem",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TvContentRating::getMainRating()
+	jstring TvContentRating::getMainRating()
 	{
 		return __thiz.callObjectMethod(
 			"getMainRating",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject TvContentRating::getSubRatings()
 	{
 		return __thiz.callObjectMethod(
 			"getSubRatings",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject TvContentRating::flattenToString()
-	{
-		return __thiz.callObjectMethod(
-			"flattenToString",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject TvContentRating::unflattenFromString(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.tv.TvContentRating",
-			"unflattenFromString",
-			"(Ljava/lang/String;)Landroid/media/tv/TvContentRating;",
-			arg0);
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

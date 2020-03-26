@@ -40,7 +40,8 @@ namespace __jni_impl::android::view::inspector
 		return __thiz.callObjectMethod(
 			"provide",
 			"(Ljava/lang/Class;)Landroid/view/inspector/InspectionCompanion;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::inspector
 

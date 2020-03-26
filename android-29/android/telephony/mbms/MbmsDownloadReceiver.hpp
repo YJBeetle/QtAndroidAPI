@@ -52,7 +52,8 @@ namespace __jni_impl::android::telephony::mbms
 			"onReceive",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

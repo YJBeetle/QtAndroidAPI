@@ -26,15 +26,15 @@ namespace __jni_impl::android::print
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		jlong getDataSize();
-		jint getPageCount();
-		jint getContentType();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getPageCount();
+		jlong getDataSize();
+		jint getContentType();
 	};
 } // namespace __jni_impl::android::print
 
@@ -47,32 +47,37 @@ namespace __jni_impl::android::print
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrintDocumentInfo",
-			"CONTENT_TYPE_DOCUMENT");
+			"CONTENT_TYPE_DOCUMENT"
+		);
 	}
 	jint PrintDocumentInfo::CONTENT_TYPE_PHOTO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrintDocumentInfo",
-			"CONTENT_TYPE_PHOTO");
+			"CONTENT_TYPE_PHOTO"
+		);
 	}
 	jint PrintDocumentInfo::CONTENT_TYPE_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrintDocumentInfo",
-			"CONTENT_TYPE_UNKNOWN");
+			"CONTENT_TYPE_UNKNOWN"
+		);
 	}
 	QAndroidJniObject PrintDocumentInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrintDocumentInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint PrintDocumentInfo::PAGE_COUNT_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrintDocumentInfo",
-			"PAGE_COUNT_UNKNOWN");
+			"PAGE_COUNT_UNKNOWN"
+		);
 	}
 	
 	// Constructors
@@ -84,54 +89,41 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
-	QAndroidJniObject PrintDocumentInfo::getName()
+	jstring PrintDocumentInfo::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean PrintDocumentInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PrintDocumentInfo::toString()
+	jstring PrintDocumentInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PrintDocumentInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jlong PrintDocumentInfo::getDataSize()
-	{
-		return __thiz.callMethod<jlong>(
-			"getDataSize",
-			"()J");
-	}
-	jint PrintDocumentInfo::getPageCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getPageCount",
-			"()I");
-	}
-	jint PrintDocumentInfo::getContentType()
-	{
-		return __thiz.callMethod<jint>(
-			"getContentType",
-			"()I");
+			"()I"
+		);
 	}
 	jint PrintDocumentInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PrintDocumentInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -139,7 +131,29 @@ namespace __jni_impl::android::print
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint PrintDocumentInfo::getPageCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getPageCount",
+			"()I"
+		);
+	}
+	jlong PrintDocumentInfo::getDataSize()
+	{
+		return __thiz.callMethod<jlong>(
+			"getDataSize",
+			"()J"
+		);
+	}
+	jint PrintDocumentInfo::getContentType()
+	{
+		return __thiz.callMethod<jint>(
+			"getContentType",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::print
 

@@ -69,14 +69,14 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject getLocale();
 		QAndroidJniObject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 		QAndroidJniObject getNumberFormat();
-		QAndroidJniObject getWidth();
 		QAndroidJniObject formatMeasures(__jni_impl::java::lang::StringBuilder arg0, __jni_impl::java::text::FieldPosition arg1, jarray arg2);
-		QAndroidJniObject formatMeasures(jarray arg0);
+		jstring formatMeasures(jarray arg0);
 		QAndroidJniObject formatMeasurePerUnit(__jni_impl::android::icu::util::Measure arg0, __jni_impl::android::icu::util::MeasureUnit arg1, __jni_impl::java::lang::StringBuilder arg2, __jni_impl::java::text::FieldPosition arg3);
-		QAndroidJniObject getUnitDisplayName(__jni_impl::android::icu::util::MeasureUnit arg0);
-		static QAndroidJniObject getCurrencyFormat(__jni_impl::android::icu::util::ULocale arg0);
+		jstring getUnitDisplayName(__jni_impl::android::icu::util::MeasureUnit arg0);
 		static QAndroidJniObject getCurrencyFormat();
 		static QAndroidJniObject getCurrencyFormat(__jni_impl::java::util::Locale arg0);
+		static QAndroidJniObject getCurrencyFormat(__jni_impl::android::icu::util::ULocale arg0);
+		QAndroidJniObject getWidth();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -109,13 +109,15 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint MeasureFormat::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MeasureFormat::format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
@@ -124,7 +126,8 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MeasureFormat::getInstance(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::MeasureFormat_FormatWidth arg1)
 	{
@@ -133,7 +136,8 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/MeasureFormat$FormatWidth;)Landroid/icu/text/MeasureFormat;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MeasureFormat::getInstance(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::MeasureFormat_FormatWidth arg1)
 	{
@@ -142,7 +146,8 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Ljava/util/Locale;Landroid/icu/text/MeasureFormat$FormatWidth;)Landroid/icu/text/MeasureFormat;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MeasureFormat::getInstance(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::MeasureFormat_FormatWidth arg1, __jni_impl::android::icu::text::NumberFormat arg2)
 	{
@@ -152,7 +157,8 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/util/Locale;Landroid/icu/text/MeasureFormat$FormatWidth;Landroid/icu/text/NumberFormat;)Landroid/icu/text/MeasureFormat;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MeasureFormat::getInstance(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::MeasureFormat_FormatWidth arg1, __jni_impl::android::icu::text::NumberFormat arg2)
 	{
@@ -162,13 +168,15 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/MeasureFormat$FormatWidth;Landroid/icu/text/NumberFormat;)Landroid/icu/text/MeasureFormat;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MeasureFormat::getLocale()
 	{
 		return __thiz.callObjectMethod(
 			"getLocale",
-			"()Landroid/icu/util/ULocale;");
+			"()Landroid/icu/util/ULocale;"
+		);
 	}
 	QAndroidJniObject MeasureFormat::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
@@ -176,19 +184,15 @@ namespace __jni_impl::android::icu::text
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Landroid/icu/util/Measure;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MeasureFormat::getNumberFormat()
 	{
 		return __thiz.callObjectMethod(
 			"getNumberFormat",
-			"()Landroid/icu/text/NumberFormat;");
-	}
-	QAndroidJniObject MeasureFormat::getWidth()
-	{
-		return __thiz.callObjectMethod(
-			"getWidth",
-			"()Landroid/icu/text/MeasureFormat$FormatWidth;");
+			"()Landroid/icu/text/NumberFormat;"
+		);
 	}
 	QAndroidJniObject MeasureFormat::formatMeasures(__jni_impl::java::lang::StringBuilder arg0, __jni_impl::java::text::FieldPosition arg1, jarray arg2)
 	{
@@ -197,14 +201,16 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/StringBuilder;Ljava/text/FieldPosition;[Landroid/icu/util/Measure;)Ljava/lang/StringBuilder;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject MeasureFormat::formatMeasures(jarray arg0)
+	jstring MeasureFormat::formatMeasures(jarray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"formatMeasures",
 			"([Landroid/icu/util/Measure;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject MeasureFormat::formatMeasurePerUnit(__jni_impl::android::icu::util::Measure arg0, __jni_impl::android::icu::util::MeasureUnit arg1, __jni_impl::java::lang::StringBuilder arg2, __jni_impl::java::text::FieldPosition arg3)
 	{
@@ -214,29 +220,24 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MeasureFormat::getUnitDisplayName(__jni_impl::android::icu::util::MeasureUnit arg0)
+	jstring MeasureFormat::getUnitDisplayName(__jni_impl::android::icu::util::MeasureUnit arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getUnitDisplayName",
 			"(Landroid/icu/util/MeasureUnit;)Ljava/lang/String;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject MeasureFormat::getCurrencyFormat(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MeasureFormat",
-			"getCurrencyFormat",
-			"(Landroid/icu/util/ULocale;)Landroid/icu/text/MeasureFormat;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject MeasureFormat::getCurrencyFormat()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.MeasureFormat",
 			"getCurrencyFormat",
-			"()Landroid/icu/text/MeasureFormat;");
+			"()Landroid/icu/text/MeasureFormat;"
+		);
 	}
 	QAndroidJniObject MeasureFormat::getCurrencyFormat(__jni_impl::java::util::Locale arg0)
 	{
@@ -244,7 +245,24 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.MeasureFormat",
 			"getCurrencyFormat",
 			"(Ljava/util/Locale;)Landroid/icu/text/MeasureFormat;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MeasureFormat::getCurrencyFormat(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.MeasureFormat",
+			"getCurrencyFormat",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/text/MeasureFormat;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MeasureFormat::getWidth()
+	{
+		return __thiz.callObjectMethod(
+			"getWidth",
+			"()Landroid/icu/text/MeasureFormat$FormatWidth;"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

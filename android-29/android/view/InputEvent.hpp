@@ -23,11 +23,11 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		jint getSource();
+		jint describeContents();
+		QAndroidJniObject getDevice();
 		jint getDeviceId();
 		jlong getEventTime();
 		jboolean isFromSource(jint arg0);
-		jint describeContents();
-		QAndroidJniObject getDevice();
 	};
 } // namespace __jni_impl::android::view
 
@@ -41,7 +41,8 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.InputEvent",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -57,38 +58,44 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callMethod<jint>(
 			"getSource",
-			"()I");
+			"()I"
+		);
+	}
+	jint InputEvent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject InputEvent::getDevice()
+	{
+		return __thiz.callObjectMethod(
+			"getDevice",
+			"()Landroid/view/InputDevice;"
+		);
 	}
 	jint InputEvent::getDeviceId()
 	{
 		return __thiz.callMethod<jint>(
 			"getDeviceId",
-			"()I");
+			"()I"
+		);
 	}
 	jlong InputEvent::getEventTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getEventTime",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean InputEvent::isFromSource(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFromSource",
 			"(I)Z",
-			arg0);
-	}
-	jint InputEvent::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	QAndroidJniObject InputEvent::getDevice()
-	{
-		return __thiz.callObjectMethod(
-			"getDevice",
-			"()Landroid/view/InputDevice;");
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

@@ -34,37 +34,44 @@ namespace __jni_impl::android::content::pm
 	jint ActivityInfo_WindowLayout::gravity()
 	{
 		return __thiz.getField<jint>(
-			"gravity");
+			"gravity"
+		);
 	}
 	jint ActivityInfo_WindowLayout::height()
 	{
 		return __thiz.getField<jint>(
-			"height");
+			"height"
+		);
 	}
 	jfloat ActivityInfo_WindowLayout::heightFraction()
 	{
 		return __thiz.getField<jfloat>(
-			"heightFraction");
+			"heightFraction"
+		);
 	}
 	jint ActivityInfo_WindowLayout::minHeight()
 	{
 		return __thiz.getField<jint>(
-			"minHeight");
+			"minHeight"
+		);
 	}
 	jint ActivityInfo_WindowLayout::minWidth()
 	{
 		return __thiz.getField<jint>(
-			"minWidth");
+			"minWidth"
+		);
 	}
 	jint ActivityInfo_WindowLayout::width()
 	{
 		return __thiz.getField<jint>(
-			"width");
+			"width"
+		);
 	}
 	jfloat ActivityInfo_WindowLayout::widthFraction()
 	{
 		return __thiz.getField<jfloat>(
-			"widthFraction");
+			"widthFraction"
+		);
 	}
 	
 	// Constructors

@@ -43,7 +43,8 @@ namespace __jni_impl::android::net::wifi::aware
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.aware.ParcelablePeerHandle",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -60,7 +61,8 @@ namespace __jni_impl::android::net::wifi::aware
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ParcelablePeerHandle::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -68,7 +70,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

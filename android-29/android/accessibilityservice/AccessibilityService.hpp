@@ -8,9 +8,9 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
-namespace __jni_impl::android::view::accessibility
+namespace __jni_impl::android::accessibilityservice
 {
-	class AccessibilityEvent;
+	class AccessibilityServiceInfo;
 }
 namespace __jni_impl::android::content
 {
@@ -20,9 +20,9 @@ namespace __jni_impl::android::view::accessibility
 {
 	class AccessibilityNodeInfo;
 }
-namespace __jni_impl::android::accessibilityservice
+namespace __jni_impl::android::view::accessibility
 {
-	class AccessibilityServiceInfo;
+	class AccessibilityEvent;
 }
 namespace __jni_impl::android::view
 {
@@ -88,8 +88,8 @@ namespace __jni_impl::android::accessibilityservice
 		static jint GLOBAL_ACTION_RECENTS();
 		static jint GLOBAL_ACTION_TAKE_SCREENSHOT();
 		static jint GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN();
-		static QAndroidJniObject SERVICE_INTERFACE();
-		static QAndroidJniObject SERVICE_META_DATA();
+		static jstring SERVICE_INTERFACE();
+		static jstring SERVICE_META_DATA();
 		static jint SHOW_MODE_AUTO();
 		static jint SHOW_MODE_HIDDEN();
 		static jint SHOW_MODE_IGNORE_HARD_KEYBOARD();
@@ -98,13 +98,15 @@ namespace __jni_impl::android::accessibilityservice
 		void __constructor();
 		
 		// Methods
-		void onAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
+		QAndroidJniObject getServiceInfo();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		QAndroidJniObject findFocus(jint arg0);
+		jobject getSystemService(jstring arg0);
 		jboolean performGlobalAction(jint arg0);
 		void setServiceInfo(__jni_impl::android::accessibilityservice::AccessibilityServiceInfo arg0);
 		QAndroidJniObject getWindows();
 		QAndroidJniObject getRootInActiveWindow();
+		void onAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
+		QAndroidJniObject findFocus(jint arg0);
 		void onInterrupt();
 		void disableSelf();
 		QAndroidJniObject getMagnificationController();
@@ -112,15 +114,13 @@ namespace __jni_impl::android::accessibilityservice
 		jboolean dispatchGesture(__jni_impl::android::accessibilityservice::GestureDescription arg0, __jni_impl::android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, __jni_impl::android::os::Handler arg2);
 		QAndroidJniObject getSoftKeyboardController();
 		QAndroidJniObject getAccessibilityButtonController();
-		QAndroidJniObject getSystemService(jstring arg0);
-		QAndroidJniObject getServiceInfo();
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
-#include "../view/accessibility/AccessibilityEvent.hpp"
+#include "AccessibilityServiceInfo.hpp"
 #include "../content/Intent.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
-#include "AccessibilityServiceInfo.hpp"
+#include "../view/accessibility/AccessibilityEvent.hpp"
 #include "../view/KeyEvent.hpp"
 #include "AccessibilityService_MagnificationController.hpp"
 #include "FingerprintGestureController.hpp"
@@ -137,183 +137,213 @@ namespace __jni_impl::android::accessibilityservice
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_DOWN");
+			"GESTURE_SWIPE_DOWN"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_DOWN_AND_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_DOWN_AND_LEFT");
+			"GESTURE_SWIPE_DOWN_AND_LEFT"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_DOWN_AND_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_DOWN_AND_RIGHT");
+			"GESTURE_SWIPE_DOWN_AND_RIGHT"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_DOWN_AND_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_DOWN_AND_UP");
+			"GESTURE_SWIPE_DOWN_AND_UP"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_LEFT");
+			"GESTURE_SWIPE_LEFT"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_LEFT_AND_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_LEFT_AND_DOWN");
+			"GESTURE_SWIPE_LEFT_AND_DOWN"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_LEFT_AND_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_LEFT_AND_RIGHT");
+			"GESTURE_SWIPE_LEFT_AND_RIGHT"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_LEFT_AND_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_LEFT_AND_UP");
+			"GESTURE_SWIPE_LEFT_AND_UP"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_RIGHT");
+			"GESTURE_SWIPE_RIGHT"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_RIGHT_AND_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_RIGHT_AND_DOWN");
+			"GESTURE_SWIPE_RIGHT_AND_DOWN"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_RIGHT_AND_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_RIGHT_AND_LEFT");
+			"GESTURE_SWIPE_RIGHT_AND_LEFT"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_RIGHT_AND_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_RIGHT_AND_UP");
+			"GESTURE_SWIPE_RIGHT_AND_UP"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_UP");
+			"GESTURE_SWIPE_UP"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_UP_AND_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_UP_AND_DOWN");
+			"GESTURE_SWIPE_UP_AND_DOWN"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_UP_AND_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_UP_AND_LEFT");
+			"GESTURE_SWIPE_UP_AND_LEFT"
+		);
 	}
 	jint AccessibilityService::GESTURE_SWIPE_UP_AND_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GESTURE_SWIPE_UP_AND_RIGHT");
+			"GESTURE_SWIPE_UP_AND_RIGHT"
+		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_BACK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GLOBAL_ACTION_BACK");
+			"GLOBAL_ACTION_BACK"
+		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_HOME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GLOBAL_ACTION_HOME");
+			"GLOBAL_ACTION_HOME"
+		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_LOCK_SCREEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GLOBAL_ACTION_LOCK_SCREEN");
+			"GLOBAL_ACTION_LOCK_SCREEN"
+		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_NOTIFICATIONS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GLOBAL_ACTION_NOTIFICATIONS");
+			"GLOBAL_ACTION_NOTIFICATIONS"
+		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_POWER_DIALOG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GLOBAL_ACTION_POWER_DIALOG");
+			"GLOBAL_ACTION_POWER_DIALOG"
+		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_QUICK_SETTINGS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GLOBAL_ACTION_QUICK_SETTINGS");
+			"GLOBAL_ACTION_QUICK_SETTINGS"
+		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_RECENTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GLOBAL_ACTION_RECENTS");
+			"GLOBAL_ACTION_RECENTS"
+		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_TAKE_SCREENSHOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GLOBAL_ACTION_TAKE_SCREENSHOT");
+			"GLOBAL_ACTION_TAKE_SCREENSHOT"
+		);
 	}
 	jint AccessibilityService::GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN");
+			"GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN"
+		);
 	}
-	QAndroidJniObject AccessibilityService::SERVICE_INTERFACE()
+	jstring AccessibilityService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accessibilityservice.AccessibilityService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AccessibilityService::SERVICE_META_DATA()
+	jstring AccessibilityService::SERVICE_META_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.accessibilityservice.AccessibilityService",
 			"SERVICE_META_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AccessibilityService::SHOW_MODE_AUTO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"SHOW_MODE_AUTO");
+			"SHOW_MODE_AUTO"
+		);
 	}
 	jint AccessibilityService::SHOW_MODE_HIDDEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"SHOW_MODE_HIDDEN");
+			"SHOW_MODE_HIDDEN"
+		);
 	}
 	jint AccessibilityService::SHOW_MODE_IGNORE_HARD_KEYBOARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.accessibilityservice.AccessibilityService",
-			"SHOW_MODE_IGNORE_HARD_KEYBOARD");
+			"SHOW_MODE_IGNORE_HARD_KEYBOARD"
+		);
 	}
 	
 	// Constructors
@@ -325,76 +355,102 @@ namespace __jni_impl::android::accessibilityservice
 	}
 	
 	// Methods
-	void AccessibilityService::onAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
+	QAndroidJniObject AccessibilityService::getServiceInfo()
 	{
-		__thiz.callMethod<void>(
-			"onAccessibilityEvent",
-			"(Landroid/view/accessibility/AccessibilityEvent;)V",
-			arg0.__jniObject().object());
+		return __thiz.callObjectMethod(
+			"getServiceInfo",
+			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
+		);
 	}
 	QAndroidJniObject AccessibilityService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject AccessibilityService::findFocus(jint arg0)
+	jobject AccessibilityService::getSystemService(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"findFocus",
-			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0);
+			"getSystemService",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
 	}
 	jboolean AccessibilityService::performGlobalAction(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"performGlobalAction",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void AccessibilityService::setServiceInfo(__jni_impl::android::accessibilityservice::AccessibilityServiceInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"setServiceInfo",
 			"(Landroid/accessibilityservice/AccessibilityServiceInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccessibilityService::getWindows()
 	{
 		return __thiz.callObjectMethod(
 			"getWindows",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject AccessibilityService::getRootInActiveWindow()
 	{
 		return __thiz.callObjectMethod(
 			"getRootInActiveWindow",
-			"()Landroid/view/accessibility/AccessibilityNodeInfo;");
+			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
+		);
+	}
+	void AccessibilityService::onAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"onAccessibilityEvent",
+			"(Landroid/view/accessibility/AccessibilityEvent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AccessibilityService::findFocus(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findFocus",
+			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
+			arg0
+		);
 	}
 	void AccessibilityService::onInterrupt()
 	{
 		__thiz.callMethod<void>(
 			"onInterrupt",
-			"()V");
+			"()V"
+		);
 	}
 	void AccessibilityService::disableSelf()
 	{
 		__thiz.callMethod<void>(
 			"disableSelf",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject AccessibilityService::getMagnificationController()
 	{
 		return __thiz.callObjectMethod(
 			"getMagnificationController",
-			"()Landroid/accessibilityservice/AccessibilityService$MagnificationController;");
+			"()Landroid/accessibilityservice/AccessibilityService$MagnificationController;"
+		);
 	}
 	QAndroidJniObject AccessibilityService::getFingerprintGestureController()
 	{
 		return __thiz.callObjectMethod(
 			"getFingerprintGestureController",
-			"()Landroid/accessibilityservice/FingerprintGestureController;");
+			"()Landroid/accessibilityservice/FingerprintGestureController;"
+		);
 	}
 	jboolean AccessibilityService::dispatchGesture(__jni_impl::android::accessibilityservice::GestureDescription arg0, __jni_impl::android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, __jni_impl::android::os::Handler arg2)
 	{
@@ -403,32 +459,22 @@ namespace __jni_impl::android::accessibilityservice
 			"(Landroid/accessibilityservice/GestureDescription;Landroid/accessibilityservice/AccessibilityService$GestureResultCallback;Landroid/os/Handler;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AccessibilityService::getSoftKeyboardController()
 	{
 		return __thiz.callObjectMethod(
 			"getSoftKeyboardController",
-			"()Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;");
+			"()Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;"
+		);
 	}
 	QAndroidJniObject AccessibilityService::getAccessibilityButtonController()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityButtonController",
-			"()Landroid/accessibilityservice/AccessibilityButtonController;");
-	}
-	QAndroidJniObject AccessibilityService::getSystemService(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSystemService",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
-	}
-	QAndroidJniObject AccessibilityService::getServiceInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceInfo",
-			"()Landroid/accessibilityservice/AccessibilityServiceInfo;");
+			"()Landroid/accessibilityservice/AccessibilityButtonController;"
+		);
 	}
 } // namespace __jni_impl::android::accessibilityservice
 

@@ -73,43 +73,50 @@ namespace __jni_impl::android::hardware::camera2::params
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
-			"USECASE_LOW_LATENCY_SNAPSHOT");
+			"USECASE_LOW_LATENCY_SNAPSHOT"
+		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_PREVIEW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
-			"USECASE_PREVIEW");
+			"USECASE_PREVIEW"
+		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_RAW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
-			"USECASE_RAW");
+			"USECASE_RAW"
+		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_RECORD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
-			"USECASE_RECORD");
+			"USECASE_RECORD"
+		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_SNAPSHOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
-			"USECASE_SNAPSHOT");
+			"USECASE_SNAPSHOT"
+		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_VIDEO_SNAPSHOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
-			"USECASE_VIDEO_SNAPSHOT");
+			"USECASE_VIDEO_SNAPSHOT"
+		);
 	}
 	jint RecommendedStreamConfigurationMap::USECASE_ZSL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.RecommendedStreamConfigurationMap",
-			"USECASE_ZSL");
+			"USECASE_ZSL"
+		);
 	}
 	
 	// Constructors
@@ -125,94 +132,108 @@ namespace __jni_impl::android::hardware::camera2::params
 	{
 		return __thiz.callMethod<jint>(
 			"getRecommendedUseCase",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getOutputFormats()
 	{
 		return __thiz.callObjectMethod(
 			"getOutputFormats",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getValidOutputFormatsForInput(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getValidOutputFormatsForInput",
 			"(I)Ljava/util/Set;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getInputFormats()
 	{
 		return __thiz.callObjectMethod(
 			"getInputFormats",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getInputSizes(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getInputSizes",
 			"(I)Ljava/util/Set;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(__jni_impl::android::view::Surface arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOutputSupportedFor",
 			"(Landroid/view/Surface;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOutputSupportedFor",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getOutputSizes(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getOutputSizes",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getOutputSizes(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getOutputSizes",
 			"(I)Ljava/util/Set;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizes()
 	{
 		return __thiz.callObjectMethod(
 			"getHighSpeedVideoSizes",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRangesFor(__jni_impl::android::util::Size arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getHighSpeedVideoFpsRangesFor",
 			"(Landroid/util/Size;)Ljava/util/Set;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRanges()
 	{
 		return __thiz.callObjectMethod(
 			"getHighSpeedVideoFpsRanges",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizesFor(__jni_impl::android::util::Range arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getHighSpeedVideoSizesFor",
 			"(Landroid/util/Range;)Ljava/util/Set;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getHighResolutionOutputSizes(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getHighResolutionOutputSizes",
 			"(I)Ljava/util/Set;",
-			arg0);
+			arg0
+		);
 	}
 	jlong RecommendedStreamConfigurationMap::getOutputMinFrameDuration(jint arg0, __jni_impl::android::util::Size arg1)
 	{
@@ -220,7 +241,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"getOutputMinFrameDuration",
 			"(ILandroid/util/Size;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong RecommendedStreamConfigurationMap::getOutputMinFrameDuration(jclass arg0, __jni_impl::android::util::Size arg1)
 	{
@@ -228,7 +250,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"getOutputMinFrameDuration",
 			"(Ljava/lang/Class;Landroid/util/Size;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(jint arg0, __jni_impl::android::util::Size arg1)
 	{
@@ -236,7 +259,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"getOutputStallDuration",
 			"(ILandroid/util/Size;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(jclass arg0, __jni_impl::android::util::Size arg1)
 	{
@@ -244,7 +268,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"getOutputStallDuration",
 			"(Ljava/lang/Class;Landroid/util/Size;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

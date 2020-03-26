@@ -53,26 +53,30 @@ namespace __jni_impl::android::os
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint ParcelFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"read",
 			"([B)I",
-			arg0);
+			arg0
+		);
 	}
 	jint ParcelFileDescriptor_AutoCloseInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	void ParcelFileDescriptor_AutoCloseInputStream::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::os
 

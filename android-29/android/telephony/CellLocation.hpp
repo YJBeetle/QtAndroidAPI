@@ -41,14 +41,16 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.telephony.CellLocation",
 			"requestLocationUpdate",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject CellLocation::getEmpty()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.CellLocation",
 			"getEmpty",
-			"()Landroid/telephony/CellLocation;");
+			"()Landroid/telephony/CellLocation;"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

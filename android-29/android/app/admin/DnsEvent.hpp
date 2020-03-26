@@ -23,12 +23,12 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getInetAddresses();
-		QAndroidJniObject getHostname();
-		jint getTotalResolvedAddressCount();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getHostname();
+		jint getTotalResolvedAddressCount();
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -42,7 +42,8 @@ namespace __jni_impl::android::app::admin
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.DnsEvent",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -54,35 +55,26 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	QAndroidJniObject DnsEvent::toString()
+	jstring DnsEvent::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject DnsEvent::getInetAddresses()
 	{
 		return __thiz.callObjectMethod(
 			"getInetAddresses",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject DnsEvent::getHostname()
-	{
-		return __thiz.callObjectMethod(
-			"getHostname",
-			"()Ljava/lang/String;");
-	}
-	jint DnsEvent::getTotalResolvedAddressCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getTotalResolvedAddressCount",
-			"()I");
+			"()Ljava/util/List;"
+		);
 	}
 	jint DnsEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void DnsEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -90,7 +82,22 @@ namespace __jni_impl::android::app::admin
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring DnsEvent::getHostname()
+	{
+		return __thiz.callObjectMethod(
+			"getHostname",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint DnsEvent::getTotalResolvedAddressCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getTotalResolvedAddressCount",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::app::admin
 

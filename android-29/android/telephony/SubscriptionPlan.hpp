@@ -30,17 +30,17 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getTitle();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getTitle();
+		jstring getSummary();
 		jlong getDataLimitBytes();
 		jint getDataLimitBehavior();
 		jlong getDataUsageBytes();
 		jlong getDataUsageTime();
 		QAndroidJniObject cycleIterator();
-		QAndroidJniObject getSummary();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -53,50 +53,58 @@ namespace __jni_impl::android::telephony
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.telephony.SubscriptionPlan",
-			"BYTES_UNKNOWN");
+			"BYTES_UNKNOWN"
+		);
 	}
 	jlong SubscriptionPlan::BYTES_UNLIMITED()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.telephony.SubscriptionPlan",
-			"BYTES_UNLIMITED");
+			"BYTES_UNLIMITED"
+		);
 	}
 	QAndroidJniObject SubscriptionPlan::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.SubscriptionPlan",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SubscriptionPlan::LIMIT_BEHAVIOR_BILLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.SubscriptionPlan",
-			"LIMIT_BEHAVIOR_BILLED");
+			"LIMIT_BEHAVIOR_BILLED"
+		);
 	}
 	jint SubscriptionPlan::LIMIT_BEHAVIOR_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.SubscriptionPlan",
-			"LIMIT_BEHAVIOR_DISABLED");
+			"LIMIT_BEHAVIOR_DISABLED"
+		);
 	}
 	jint SubscriptionPlan::LIMIT_BEHAVIOR_THROTTLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.SubscriptionPlan",
-			"LIMIT_BEHAVIOR_THROTTLED");
+			"LIMIT_BEHAVIOR_THROTTLED"
+		);
 	}
 	jint SubscriptionPlan::LIMIT_BEHAVIOR_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.SubscriptionPlan",
-			"LIMIT_BEHAVIOR_UNKNOWN");
+			"LIMIT_BEHAVIOR_UNKNOWN"
+		);
 	}
 	jlong SubscriptionPlan::TIME_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.telephony.SubscriptionPlan",
-			"TIME_UNKNOWN");
+			"TIME_UNKNOWN"
+		);
 	}
 	
 	// Constructors
@@ -113,31 +121,29 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SubscriptionPlan::toString()
+	jstring SubscriptionPlan::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SubscriptionPlan::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	QAndroidJniObject SubscriptionPlan::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
+			"()I"
+		);
 	}
 	jint SubscriptionPlan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SubscriptionPlan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -145,43 +151,57 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring SubscriptionPlan::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring SubscriptionPlan::getSummary()
+	{
+		return __thiz.callObjectMethod(
+			"getSummary",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jlong SubscriptionPlan::getDataLimitBytes()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDataLimitBytes",
-			"()J");
+			"()J"
+		);
 	}
 	jint SubscriptionPlan::getDataLimitBehavior()
 	{
 		return __thiz.callMethod<jint>(
 			"getDataLimitBehavior",
-			"()I");
+			"()I"
+		);
 	}
 	jlong SubscriptionPlan::getDataUsageBytes()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDataUsageBytes",
-			"()J");
+			"()J"
+		);
 	}
 	jlong SubscriptionPlan::getDataUsageTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDataUsageTime",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject SubscriptionPlan::cycleIterator()
 	{
 		return __thiz.callObjectMethod(
 			"cycleIterator",
-			"()Ljava/util/Iterator;");
-	}
-	QAndroidJniObject SubscriptionPlan::getSummary()
-	{
-		return __thiz.callObjectMethod(
-			"getSummary",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

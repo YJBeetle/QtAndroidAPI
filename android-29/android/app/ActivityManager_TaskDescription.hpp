@@ -32,13 +32,13 @@ namespace __jni_impl::android::app
 		void __constructor(jstring arg0, __jni_impl::android::graphics::Bitmap arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
-		jint getPrimaryColor();
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		QAndroidJniObject getLabel();
-		QAndroidJniObject getIcon();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		jint getPrimaryColor();
+		jstring getLabel();
+		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::app
 
@@ -53,7 +53,8 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$TaskDescription",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -113,42 +114,19 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject ActivityManager_TaskDescription::toString()
+	jstring ActivityManager_TaskDescription::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	jint ActivityManager_TaskDescription::getPrimaryColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getPrimaryColor",
-			"()I");
-	}
-	void ActivityManager_TaskDescription::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ActivityManager_TaskDescription::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject ActivityManager_TaskDescription::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/Bitmap;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ActivityManager_TaskDescription::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ActivityManager_TaskDescription::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -156,7 +134,37 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ActivityManager_TaskDescription::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint ActivityManager_TaskDescription::getPrimaryColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getPrimaryColor",
+			"()I"
+		);
+	}
+	jstring ActivityManager_TaskDescription::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject ActivityManager_TaskDescription::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/Bitmap;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

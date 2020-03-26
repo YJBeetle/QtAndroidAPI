@@ -46,14 +46,16 @@ namespace __jni_impl::android::media::browse
 		__thiz.callMethod<void>(
 			"onError",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaBrowser_ItemCallback::onItemLoaded(__jni_impl::android::media::browse::MediaBrowser_MediaItem arg0)
 	{
 		__thiz.callMethod<void>(
 			"onItemLoaded",
 			"(Landroid/media/browse/MediaBrowser$MediaItem;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::browse
 

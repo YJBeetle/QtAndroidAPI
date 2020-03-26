@@ -12,10 +12,10 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
-		static QAndroidJniObject DISPLAY_PHOTO();
-		static QAndroidJniObject PHOTO();
-		static QAndroidJniObject PHOTO_FILE_ID();
+		static jstring CONTENT_DIRECTORY();
+		static jstring DISPLAY_PHOTO();
+		static jstring PHOTO();
+		static jstring PHOTO_FILE_ID();
 		
 		// Constructors
 		void __constructor();
@@ -28,33 +28,37 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_Contacts_Photo::CONTENT_DIRECTORY()
+	jstring ContactsContract_Contacts_Photo::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts$Photo",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts_Photo::DISPLAY_PHOTO()
+	jstring ContactsContract_Contacts_Photo::DISPLAY_PHOTO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts$Photo",
 			"DISPLAY_PHOTO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts_Photo::PHOTO()
+	jstring ContactsContract_Contacts_Photo::PHOTO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts$Photo",
 			"PHOTO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_Contacts_Photo::PHOTO_FILE_ID()
+	jstring ContactsContract_Contacts_Photo::PHOTO_FILE_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$Contacts$Photo",
 			"PHOTO_FILE_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

@@ -30,13 +30,15 @@ namespace __jni_impl::android::os::health
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.health.PackageHealthStats",
-			"MEASUREMENTS_WAKEUP_ALARMS_COUNT");
+			"MEASUREMENTS_WAKEUP_ALARMS_COUNT"
+		);
 	}
 	jint PackageHealthStats::STATS_SERVICES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.health.PackageHealthStats",
-			"STATS_SERVICES");
+			"STATS_SERVICES"
+		);
 	}
 	
 	// Constructors

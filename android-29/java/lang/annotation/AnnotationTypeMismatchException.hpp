@@ -24,7 +24,7 @@ namespace __jni_impl::java::lang::annotation
 		
 		// Methods
 		QAndroidJniObject element();
-		QAndroidJniObject foundType();
+		jstring foundType();
 	};
 } // namespace __jni_impl::java::lang::annotation
 
@@ -49,13 +49,15 @@ namespace __jni_impl::java::lang::annotation
 	{
 		return __thiz.callObjectMethod(
 			"element",
-			"()Ljava/lang/reflect/Method;");
+			"()Ljava/lang/reflect/Method;"
+		);
 	}
-	QAndroidJniObject AnnotationTypeMismatchException::foundType()
+	jstring AnnotationTypeMismatchException::foundType()
 	{
 		return __thiz.callObjectMethod(
 			"foundType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::lang::annotation
 

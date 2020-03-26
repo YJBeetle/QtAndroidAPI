@@ -12,14 +12,14 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject COLUMN_DISPLAY_NAME();
-		static QAndroidJniObject COLUMN_DOCUMENT_ID();
-		static QAndroidJniObject COLUMN_FLAGS();
-		static QAndroidJniObject COLUMN_ICON();
-		static QAndroidJniObject COLUMN_LAST_MODIFIED();
-		static QAndroidJniObject COLUMN_MIME_TYPE();
-		static QAndroidJniObject COLUMN_SIZE();
-		static QAndroidJniObject COLUMN_SUMMARY();
+		static jstring COLUMN_DISPLAY_NAME();
+		static jstring COLUMN_DOCUMENT_ID();
+		static jstring COLUMN_FLAGS();
+		static jstring COLUMN_ICON();
+		static jstring COLUMN_LAST_MODIFIED();
+		static jstring COLUMN_MIME_TYPE();
+		static jstring COLUMN_SIZE();
+		static jstring COLUMN_SUMMARY();
 		static jint FLAG_DIR_PREFERS_GRID();
 		static jint FLAG_DIR_PREFERS_LAST_MODIFIED();
 		static jint FLAG_DIR_SUPPORTS_CREATE();
@@ -35,7 +35,7 @@ namespace __jni_impl::android::provider
 		static jint FLAG_SUPPORTS_WRITE();
 		static jint FLAG_VIRTUAL_DOCUMENT();
 		static jint FLAG_WEB_LINKABLE();
-		static QAndroidJniObject MIME_TYPE_DIR();
+		static jstring MIME_TYPE_DIR();
 		
 		// Constructors
 		void __constructor();
@@ -48,158 +48,182 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject DocumentsContract_Document::COLUMN_DISPLAY_NAME()
+	jstring DocumentsContract_Document::COLUMN_DISPLAY_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_DISPLAY_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsContract_Document::COLUMN_DOCUMENT_ID()
+	jstring DocumentsContract_Document::COLUMN_DOCUMENT_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_DOCUMENT_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsContract_Document::COLUMN_FLAGS()
+	jstring DocumentsContract_Document::COLUMN_FLAGS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_FLAGS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsContract_Document::COLUMN_ICON()
+	jstring DocumentsContract_Document::COLUMN_ICON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_ICON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsContract_Document::COLUMN_LAST_MODIFIED()
+	jstring DocumentsContract_Document::COLUMN_LAST_MODIFIED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_LAST_MODIFIED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsContract_Document::COLUMN_MIME_TYPE()
+	jstring DocumentsContract_Document::COLUMN_MIME_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_MIME_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsContract_Document::COLUMN_SIZE()
+	jstring DocumentsContract_Document::COLUMN_SIZE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_SIZE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DocumentsContract_Document::COLUMN_SUMMARY()
+	jstring DocumentsContract_Document::COLUMN_SUMMARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"COLUMN_SUMMARY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DocumentsContract_Document::FLAG_DIR_PREFERS_GRID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_DIR_PREFERS_GRID");
+			"FLAG_DIR_PREFERS_GRID"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_DIR_PREFERS_LAST_MODIFIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_DIR_PREFERS_LAST_MODIFIED");
+			"FLAG_DIR_PREFERS_LAST_MODIFIED"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_DIR_SUPPORTS_CREATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_DIR_SUPPORTS_CREATE");
+			"FLAG_DIR_SUPPORTS_CREATE"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_PARTIAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_PARTIAL");
+			"FLAG_PARTIAL"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_SUPPORTS_COPY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_SUPPORTS_COPY");
+			"FLAG_SUPPORTS_COPY"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_SUPPORTS_DELETE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_SUPPORTS_DELETE");
+			"FLAG_SUPPORTS_DELETE"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_SUPPORTS_METADATA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_SUPPORTS_METADATA");
+			"FLAG_SUPPORTS_METADATA"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_SUPPORTS_MOVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_SUPPORTS_MOVE");
+			"FLAG_SUPPORTS_MOVE"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_SUPPORTS_REMOVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_SUPPORTS_REMOVE");
+			"FLAG_SUPPORTS_REMOVE"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_SUPPORTS_RENAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_SUPPORTS_RENAME");
+			"FLAG_SUPPORTS_RENAME"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_SUPPORTS_SETTINGS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_SUPPORTS_SETTINGS");
+			"FLAG_SUPPORTS_SETTINGS"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_SUPPORTS_THUMBNAIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_SUPPORTS_THUMBNAIL");
+			"FLAG_SUPPORTS_THUMBNAIL"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_SUPPORTS_WRITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_SUPPORTS_WRITE");
+			"FLAG_SUPPORTS_WRITE"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_VIRTUAL_DOCUMENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_VIRTUAL_DOCUMENT");
+			"FLAG_VIRTUAL_DOCUMENT"
+		);
 	}
 	jint DocumentsContract_Document::FLAG_WEB_LINKABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.DocumentsContract$Document",
-			"FLAG_WEB_LINKABLE");
+			"FLAG_WEB_LINKABLE"
+		);
 	}
-	QAndroidJniObject DocumentsContract_Document::MIME_TYPE_DIR()
+	jstring DocumentsContract_Document::MIME_TYPE_DIR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.DocumentsContract$Document",
 			"MIME_TYPE_DIR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

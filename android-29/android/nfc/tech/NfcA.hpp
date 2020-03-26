@@ -25,12 +25,12 @@ namespace __jni_impl::android::nfc::tech
 		void connect();
 		void close();
 		QAndroidJniObject getTag();
-		QAndroidJniObject transceive(jbyteArray arg0);
+		jbyteArray transceive(jbyteArray arg0);
 		jint getMaxTransceiveLength();
 		void setTimeout(jint arg0);
 		jint getTimeout();
 		jboolean isConnected();
-		QAndroidJniObject getAtqa();
+		jbyteArray getAtqa();
 		jshort getSak();
 	};
 } // namespace __jni_impl::android::nfc::tech
@@ -56,69 +56,80 @@ namespace __jni_impl::android::nfc::tech
 			"android.nfc.tech.NfcA",
 			"get",
 			"(Landroid/nfc/Tag;)Landroid/nfc/tech/NfcA;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void NfcA::connect()
 	{
 		__thiz.callMethod<void>(
 			"connect",
-			"()V");
+			"()V"
+		);
 	}
 	void NfcA::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject NfcA::getTag()
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
-			"()Landroid/nfc/Tag;");
+			"()Landroid/nfc/Tag;"
+		);
 	}
-	QAndroidJniObject NfcA::transceive(jbyteArray arg0)
+	jbyteArray NfcA::transceive(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"transceive",
 			"([B)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
 	jint NfcA::getMaxTransceiveLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxTransceiveLength",
-			"()I");
+			"()I"
+		);
 	}
 	void NfcA::setTimeout(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimeout",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint NfcA::getTimeout()
 	{
 		return __thiz.callMethod<jint>(
 			"getTimeout",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean NfcA::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject NfcA::getAtqa()
+	jbyteArray NfcA::getAtqa()
 	{
 		return __thiz.callObjectMethod(
 			"getAtqa",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jshort NfcA::getSak()
 	{
 		return __thiz.callMethod<jshort>(
 			"getSak",
-			"()S");
+			"()S"
+		);
 	}
 } // namespace __jni_impl::android::nfc::tech
 

@@ -64,7 +64,8 @@ namespace __jni_impl::android::media
 			"onInputBufferAvailable",
 			"(Landroid/media/MediaCodec;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void MediaCodec_Callback::onOutputBufferAvailable(__jni_impl::android::media::MediaCodec arg0, jint arg1, __jni_impl::android::media::MediaCodec_BufferInfo arg2)
 	{
@@ -73,7 +74,8 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaCodec;ILandroid/media/MediaCodec$BufferInfo;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void MediaCodec_Callback::onOutputFormatChanged(__jni_impl::android::media::MediaCodec arg0, __jni_impl::android::media::MediaFormat arg1)
 	{
@@ -81,7 +83,8 @@ namespace __jni_impl::android::media
 			"onOutputFormatChanged",
 			"(Landroid/media/MediaCodec;Landroid/media/MediaFormat;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaCodec_Callback::onError(__jni_impl::android::media::MediaCodec arg0, __jni_impl::android::media::MediaCodec_CodecException arg1)
 	{
@@ -89,7 +92,8 @@ namespace __jni_impl::android::media
 			"onError",
 			"(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

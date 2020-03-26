@@ -20,8 +20,8 @@ namespace __jni_impl::android::bluetooth
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_CONNECTION_STATE_CHANGED();
-		static QAndroidJniObject ACTION_PLAYING_STATE_CHANGED();
+		static jstring ACTION_CONNECTION_STATE_CHANGED();
+		static jstring ACTION_PLAYING_STATE_CHANGED();
 		static jint STATE_NOT_PLAYING();
 		static jint STATE_PLAYING();
 		
@@ -43,31 +43,35 @@ namespace __jni_impl::android::bluetooth
 namespace __jni_impl::android::bluetooth
 {
 	// Fields
-	QAndroidJniObject BluetoothA2dp::ACTION_CONNECTION_STATE_CHANGED()
+	jstring BluetoothA2dp::ACTION_CONNECTION_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothA2dp",
 			"ACTION_CONNECTION_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BluetoothA2dp::ACTION_PLAYING_STATE_CHANGED()
+	jstring BluetoothA2dp::ACTION_PLAYING_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothA2dp",
 			"ACTION_PLAYING_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint BluetoothA2dp::STATE_NOT_PLAYING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothA2dp",
-			"STATE_NOT_PLAYING");
+			"STATE_NOT_PLAYING"
+		);
 	}
 	jint BluetoothA2dp::STATE_PLAYING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothA2dp",
-			"STATE_PLAYING");
+			"STATE_PLAYING"
+		);
 	}
 	
 	// Constructors
@@ -83,34 +87,39 @@ namespace __jni_impl::android::bluetooth
 	{
 		__thiz.callMethod<void>(
 			"finalize",
-			"()V");
+			"()V"
+		);
 	}
 	jint BluetoothA2dp::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getConnectionState",
 			"(Landroid/bluetooth/BluetoothDevice;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothA2dp::getConnectedDevices()
 	{
 		return __thiz.callObjectMethod(
 			"getConnectedDevices",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject BluetoothA2dp::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BluetoothA2dp::isA2dpPlaying(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isA2dpPlaying",
 			"(Landroid/bluetooth/BluetoothDevice;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

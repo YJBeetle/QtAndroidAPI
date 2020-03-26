@@ -61,7 +61,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 		return __thiz.callMethod<jlong>(
 			"get",
 			"(Ljava/lang/Object;)J",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicLongFieldUpdater::set(jobject arg0, jlong arg1)
 	{
@@ -69,7 +70,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"set",
 			"(Ljava/lang/Object;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AtomicLongFieldUpdater::compareAndSet(jobject arg0, jlong arg1, jlong arg2)
 	{
@@ -78,7 +80,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;JJ)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean AtomicLongFieldUpdater::weakCompareAndSet(jobject arg0, jlong arg1, jlong arg2)
 	{
@@ -87,7 +90,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;JJ)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong AtomicLongFieldUpdater::getAndSet(jobject arg0, jlong arg1)
 	{
@@ -95,7 +99,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndSet",
 			"(Ljava/lang/Object;J)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLongFieldUpdater::getAndAdd(jobject arg0, jlong arg1)
 	{
@@ -103,7 +108,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndAdd",
 			"(Ljava/lang/Object;J)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AtomicLongFieldUpdater::lazySet(jobject arg0, jlong arg1)
 	{
@@ -111,35 +117,40 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"lazySet",
 			"(Ljava/lang/Object;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLongFieldUpdater::getAndIncrement(jobject arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getAndIncrement",
 			"(Ljava/lang/Object;)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLongFieldUpdater::getAndDecrement(jobject arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getAndDecrement",
 			"(Ljava/lang/Object;)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLongFieldUpdater::incrementAndGet(jobject arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"incrementAndGet",
 			"(Ljava/lang/Object;)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLongFieldUpdater::decrementAndGet(jobject arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"decrementAndGet",
 			"(Ljava/lang/Object;)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong AtomicLongFieldUpdater::addAndGet(jobject arg0, jlong arg1)
 	{
@@ -147,7 +158,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"addAndGet",
 			"(Ljava/lang/Object;J)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong AtomicLongFieldUpdater::getAndUpdate(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -155,7 +167,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"getAndUpdate",
 			"(Ljava/lang/Object;Ljava/util/function/LongUnaryOperator;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong AtomicLongFieldUpdater::updateAndGet(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -163,7 +176,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"updateAndGet",
 			"(Ljava/lang/Object;Ljava/util/function/LongUnaryOperator;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong AtomicLongFieldUpdater::getAndAccumulate(jobject arg0, jlong arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -172,7 +186,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;JLjava/util/function/LongBinaryOperator;)J",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jlong AtomicLongFieldUpdater::accumulateAndGet(jobject arg0, jlong arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -181,7 +196,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;JLjava/util/function/LongBinaryOperator;)J",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AtomicLongFieldUpdater::newUpdater(jclass arg0, jstring arg1)
 	{
@@ -190,7 +206,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"newUpdater",
 			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

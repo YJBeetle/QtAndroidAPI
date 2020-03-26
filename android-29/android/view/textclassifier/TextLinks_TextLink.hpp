@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -26,20 +26,20 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		jint getEntityCount();
-		QAndroidJniObject getEntity(jint arg0);
-		QAndroidJniObject getExtras();
-		jint getStart();
+		jstring toString();
 		jint getEnd();
+		jfloat getConfidenceScore(jstring arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jfloat getConfidenceScore(jstring arg0);
+		QAndroidJniObject getExtras();
+		jint getEntityCount();
+		jstring getEntity(jint arg0);
+		jint getStart();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -49,7 +49,8 @@ namespace __jni_impl::android::view::textclassifier
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextLinks$TextLink",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -61,48 +62,34 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	QAndroidJniObject TextLinks_TextLink::toString()
+	jstring TextLinks_TextLink::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	jint TextLinks_TextLink::getEntityCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getEntityCount",
-			"()I");
-	}
-	QAndroidJniObject TextLinks_TextLink::getEntity(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getEntity",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject TextLinks_TextLink::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	jint TextLinks_TextLink::getStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getStart",
-			"()I");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TextLinks_TextLink::getEnd()
 	{
 		return __thiz.callMethod<jint>(
 			"getEnd",
-			"()I");
+			"()I"
+		);
+	}
+	jfloat TextLinks_TextLink::getConfidenceScore(jstring arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"(Ljava/lang/String;)F",
+			arg0
+		);
 	}
 	jint TextLinks_TextLink::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void TextLinks_TextLink::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -110,14 +97,37 @@ namespace __jni_impl::android::view::textclassifier
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	jfloat TextLinks_TextLink::getConfidenceScore(jstring arg0)
+	QAndroidJniObject TextLinks_TextLink::getExtras()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getConfidenceScore",
-			"(Ljava/lang/String;)F",
-			arg0);
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jint TextLinks_TextLink::getEntityCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getEntityCount",
+			"()I"
+		);
+	}
+	jstring TextLinks_TextLink::getEntity(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEntity",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jint TextLinks_TextLink::getStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getStart",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

@@ -26,11 +26,11 @@ namespace __jni_impl::org::xml::sax
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getLineNumber();
-		QAndroidJniObject getSystemId();
 		jint getColumnNumber();
-		QAndroidJniObject getPublicId();
+		jstring getSystemId();
+		jstring getPublicId();
 	};
 } // namespace __jni_impl::org::xml::sax
 
@@ -83,35 +83,40 @@ namespace __jni_impl::org::xml::sax
 	}
 	
 	// Methods
-	QAndroidJniObject SAXParseException::toString()
+	jstring SAXParseException::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SAXParseException::getLineNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getLineNumber",
-			"()I");
-	}
-	QAndroidJniObject SAXParseException::getSystemId()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemId",
-			"()Ljava/lang/String;");
+			"()I"
+		);
 	}
 	jint SAXParseException::getColumnNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnNumber",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SAXParseException::getPublicId()
+	jstring SAXParseException::getSystemId()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SAXParseException::getPublicId()
 	{
 		return __thiz.callObjectMethod(
 			"getPublicId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::org::xml::sax
 

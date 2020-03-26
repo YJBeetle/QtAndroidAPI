@@ -47,21 +47,24 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"onScaleBegin",
 			"(Landroid/view/ScaleGestureDetector;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ScaleGestureDetector_SimpleOnScaleGestureListener::onScale(__jni_impl::android::view::ScaleGestureDetector arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onScale",
 			"(Landroid/view/ScaleGestureDetector;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ScaleGestureDetector_SimpleOnScaleGestureListener::onScaleEnd(__jni_impl::android::view::ScaleGestureDetector arg0)
 	{
 		__thiz.callMethod<void>(
 			"onScaleEnd",
 			"(Landroid/view/ScaleGestureDetector;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

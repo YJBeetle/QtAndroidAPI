@@ -41,19 +41,22 @@ namespace __jni_impl::java::util
 	{
 		__thiz.callMethod<void>(
 			"run",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean TimerTask::cancel()
 	{
 		return __thiz.callMethod<jboolean>(
 			"cancel",
-			"()Z");
+			"()Z"
+		);
 	}
 	jlong TimerTask::scheduledExecutionTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"scheduledExecutionTime",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::java::util
 

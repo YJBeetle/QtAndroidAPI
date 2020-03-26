@@ -19,19 +19,19 @@ namespace __jni_impl::android::text
 		// Methods
 		jboolean equals(jobject arg0);
 		jint length();
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);
 		static QAndroidJniObject valueOf(jstring arg0);
 		jchar charAt(jint arg0);
-		QAndroidJniObject subSequence(jint arg0, jint arg1);
-		void setSpan(jobject arg0, jint arg1, jint arg2, jint arg3);
-		void removeSpan(jobject arg0);
-		QAndroidJniObject getSpans(jint arg0, jint arg1, jclass arg2);
+		jstring subSequence(jint arg0, jint arg1);
+		jobjectArray getSpans(jint arg0, jint arg1, jclass arg2);
 		jint getSpanStart(jobject arg0);
 		jint getSpanEnd(jobject arg0);
 		jint getSpanFlags(jobject arg0);
 		jint nextSpanTransition(jint arg0, jint arg1, jclass arg2);
+		void setSpan(jobject arg0, jint arg1, jint arg2, jint arg3);
+		void removeSpan(jobject arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -55,25 +55,29 @@ namespace __jni_impl::android::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint SpannableString::length()
 	{
 		return __thiz.callMethod<jint>(
 			"length",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SpannableString::toString()
+	jstring SpannableString::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SpannableString::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void SpannableString::getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3)
 	{
@@ -83,7 +87,8 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject SpannableString::valueOf(jstring arg0)
 	{
@@ -91,22 +96,69 @@ namespace __jni_impl::android::text
 			"android.text.SpannableString",
 			"valueOf",
 			"(Ljava/lang/CharSequence;)Landroid/text/SpannableString;",
-			arg0);
+			arg0
+		);
 	}
 	jchar SpannableString::charAt(jint arg0)
 	{
 		return __thiz.callMethod<jchar>(
 			"charAt",
 			"(I)C",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SpannableString::subSequence(jint arg0, jint arg1)
+	jstring SpannableString::subSequence(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"subSequence",
 			"(II)Ljava/lang/CharSequence;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
+	}
+	jobjectArray SpannableString::getSpans(jint arg0, jint arg1, jclass arg2)
+	{
+		return __thiz.callObjectMethod(
+			"getSpans",
+			"(IILjava/lang/Class;)[Ljava/lang/Object;",
+			arg0,
+			arg1,
+			arg2
+		).object<jobjectArray>();
+	}
+	jint SpannableString::getSpanStart(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanStart",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
+	}
+	jint SpannableString::getSpanEnd(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanEnd",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
+	}
+	jint SpannableString::getSpanFlags(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanFlags",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
+	}
+	jint SpannableString::nextSpanTransition(jint arg0, jint arg1, jclass arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"nextSpanTransition",
+			"(IILjava/lang/Class;)I",
+			arg0,
+			arg1,
+			arg2
+		);
 	}
 	void SpannableString::setSpan(jobject arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -116,53 +168,16 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void SpannableString::removeSpan(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeSpan",
 			"(Ljava/lang/Object;)V",
-			arg0);
-	}
-	QAndroidJniObject SpannableString::getSpans(jint arg0, jint arg1, jclass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getSpans",
-			"(IILjava/lang/Class;)[Ljava/lang/Object;",
-			arg0,
-			arg1,
-			arg2);
-	}
-	jint SpannableString::getSpanStart(jobject arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanStart",
-			"(Ljava/lang/Object;)I",
-			arg0);
-	}
-	jint SpannableString::getSpanEnd(jobject arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanEnd",
-			"(Ljava/lang/Object;)I",
-			arg0);
-	}
-	jint SpannableString::getSpanFlags(jobject arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanFlags",
-			"(Ljava/lang/Object;)I",
-			arg0);
-	}
-	jint SpannableString::nextSpanTransition(jint arg0, jint arg1, jclass arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"nextSpanTransition",
-			"(IILjava/lang/Class;)I",
-			arg0,
-			arg1,
-			arg2);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text
 

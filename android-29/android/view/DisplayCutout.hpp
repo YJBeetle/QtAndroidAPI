@@ -27,7 +27,7 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getSafeInsetTop();
 		jint getSafeInsetBottom();
@@ -75,73 +75,85 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DisplayCutout::toString()
+	jstring DisplayCutout::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DisplayCutout::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint DisplayCutout::getSafeInsetTop()
 	{
 		return __thiz.callMethod<jint>(
 			"getSafeInsetTop",
-			"()I");
+			"()I"
+		);
 	}
 	jint DisplayCutout::getSafeInsetBottom()
 	{
 		return __thiz.callMethod<jint>(
 			"getSafeInsetBottom",
-			"()I");
+			"()I"
+		);
 	}
 	jint DisplayCutout::getSafeInsetLeft()
 	{
 		return __thiz.callMethod<jint>(
 			"getSafeInsetLeft",
-			"()I");
+			"()I"
+		);
 	}
 	jint DisplayCutout::getSafeInsetRight()
 	{
 		return __thiz.callMethod<jint>(
 			"getSafeInsetRight",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject DisplayCutout::getBoundingRects()
 	{
 		return __thiz.callObjectMethod(
 			"getBoundingRects",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject DisplayCutout::getBoundingRectLeft()
 	{
 		return __thiz.callObjectMethod(
 			"getBoundingRectLeft",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 	QAndroidJniObject DisplayCutout::getBoundingRectTop()
 	{
 		return __thiz.callObjectMethod(
 			"getBoundingRectTop",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 	QAndroidJniObject DisplayCutout::getBoundingRectRight()
 	{
 		return __thiz.callObjectMethod(
 			"getBoundingRectRight",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 	QAndroidJniObject DisplayCutout::getBoundingRectBottom()
 	{
 		return __thiz.callObjectMethod(
 			"getBoundingRectBottom",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 } // namespace __jni_impl::android::view
 

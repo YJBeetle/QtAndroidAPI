@@ -46,20 +46,20 @@ namespace __jni_impl::java::awt::font
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		void shape(jcharArray arg0, jint arg1, jint arg2, jint arg3);
 		void shape(jcharArray arg0, jint arg1, jint arg2);
 		void shape(jcharArray arg0, jint arg1, jint arg2, __jni_impl::java::awt::font::NumericShaper_Range arg3);
+		jboolean isContextual();
 		static QAndroidJniObject getShaper(jint arg0);
 		static QAndroidJniObject getShaper(__jni_impl::java::awt::font::NumericShaper_Range arg0);
 		static QAndroidJniObject getContextualShaper(jint arg0, jint arg1);
-		static QAndroidJniObject getContextualShaper(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject getContextualShaper(__jni_impl::__JniBaseClass arg0, __jni_impl::java::awt::font::NumericShaper_Range arg1);
+		static QAndroidJniObject getContextualShaper(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject getContextualShaper(jint arg0);
 		jint getRanges();
 		QAndroidJniObject getRangeSet();
-		jboolean isContextual();
 	};
 } // namespace __jni_impl::java::awt::font
 
@@ -73,121 +73,141 @@ namespace __jni_impl::java::awt::font
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"EUROPEAN");
+			"EUROPEAN"
+		);
 	}
 	jint NumericShaper::ARABIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"ARABIC");
+			"ARABIC"
+		);
 	}
 	jint NumericShaper::EASTERN_ARABIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"EASTERN_ARABIC");
+			"EASTERN_ARABIC"
+		);
 	}
 	jint NumericShaper::DEVANAGARI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"DEVANAGARI");
+			"DEVANAGARI"
+		);
 	}
 	jint NumericShaper::BENGALI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"BENGALI");
+			"BENGALI"
+		);
 	}
 	jint NumericShaper::GURMUKHI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"GURMUKHI");
+			"GURMUKHI"
+		);
 	}
 	jint NumericShaper::GUJARATI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"GUJARATI");
+			"GUJARATI"
+		);
 	}
 	jint NumericShaper::ORIYA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"ORIYA");
+			"ORIYA"
+		);
 	}
 	jint NumericShaper::TAMIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"TAMIL");
+			"TAMIL"
+		);
 	}
 	jint NumericShaper::TELUGU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"TELUGU");
+			"TELUGU"
+		);
 	}
 	jint NumericShaper::KANNADA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"KANNADA");
+			"KANNADA"
+		);
 	}
 	jint NumericShaper::MALAYALAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"MALAYALAM");
+			"MALAYALAM"
+		);
 	}
 	jint NumericShaper::THAI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"THAI");
+			"THAI"
+		);
 	}
 	jint NumericShaper::LAO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"LAO");
+			"LAO"
+		);
 	}
 	jint NumericShaper::TIBETAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"TIBETAN");
+			"TIBETAN"
+		);
 	}
 	jint NumericShaper::MYANMAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"MYANMAR");
+			"MYANMAR"
+		);
 	}
 	jint NumericShaper::ETHIOPIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"ETHIOPIC");
+			"ETHIOPIC"
+		);
 	}
 	jint NumericShaper::KHMER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"KHMER");
+			"KHMER"
+		);
 	}
 	jint NumericShaper::MONGOLIAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"MONGOLIAN");
+			"MONGOLIAN"
+		);
 	}
 	jint NumericShaper::ALL_RANGES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.awt.font.NumericShaper",
-			"ALL_RANGES");
+			"ALL_RANGES"
+		);
 	}
 	
 	// Constructors
@@ -204,19 +224,22 @@ namespace __jni_impl::java::awt::font
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject NumericShaper::toString()
+	jstring NumericShaper::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint NumericShaper::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void NumericShaper::shape(jcharArray arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -226,7 +249,8 @@ namespace __jni_impl::java::awt::font
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void NumericShaper::shape(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -235,7 +259,8 @@ namespace __jni_impl::java::awt::font
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void NumericShaper::shape(jcharArray arg0, jint arg1, jint arg2, __jni_impl::java::awt::font::NumericShaper_Range arg3)
 	{
@@ -245,7 +270,15 @@ namespace __jni_impl::java::awt::font
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	jboolean NumericShaper::isContextual()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isContextual",
+			"()Z"
+		);
 	}
 	QAndroidJniObject NumericShaper::getShaper(jint arg0)
 	{
@@ -253,7 +286,8 @@ namespace __jni_impl::java::awt::font
 			"java.awt.font.NumericShaper",
 			"getShaper",
 			"(I)Ljava/awt/font/NumericShaper;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject NumericShaper::getShaper(__jni_impl::java::awt::font::NumericShaper_Range arg0)
 	{
@@ -261,7 +295,8 @@ namespace __jni_impl::java::awt::font
 			"java.awt.font.NumericShaper",
 			"getShaper",
 			"(Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject NumericShaper::getContextualShaper(jint arg0, jint arg1)
 	{
@@ -270,15 +305,8 @@ namespace __jni_impl::java::awt::font
 			"getContextualShaper",
 			"(II)Ljava/awt/font/NumericShaper;",
 			arg0,
-			arg1);
-	}
-	QAndroidJniObject NumericShaper::getContextualShaper(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.awt.font.NumericShaper",
-			"getContextualShaper",
-			"(Ljava/util/Set;)Ljava/awt/font/NumericShaper;",
-			arg0.__jniObject().object());
+			arg1
+		);
 	}
 	QAndroidJniObject NumericShaper::getContextualShaper(__jni_impl::__JniBaseClass arg0, __jni_impl::java::awt::font::NumericShaper_Range arg1)
 	{
@@ -287,7 +315,17 @@ namespace __jni_impl::java::awt::font
 			"getContextualShaper",
 			"(Ljava/util/Set;Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject NumericShaper::getContextualShaper(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.awt.font.NumericShaper",
+			"getContextualShaper",
+			"(Ljava/util/Set;)Ljava/awt/font/NumericShaper;",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject NumericShaper::getContextualShaper(jint arg0)
 	{
@@ -295,25 +333,22 @@ namespace __jni_impl::java::awt::font
 			"java.awt.font.NumericShaper",
 			"getContextualShaper",
 			"(I)Ljava/awt/font/NumericShaper;",
-			arg0);
+			arg0
+		);
 	}
 	jint NumericShaper::getRanges()
 	{
 		return __thiz.callMethod<jint>(
 			"getRanges",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject NumericShaper::getRangeSet()
 	{
 		return __thiz.callObjectMethod(
 			"getRangeSet",
-			"()Ljava/util/Set;");
-	}
-	jboolean NumericShaper::isContextual()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isContextual",
-			"()Z");
+			"()Ljava/util/Set;"
+		);
 	}
 } // namespace __jni_impl::java::awt::font
 

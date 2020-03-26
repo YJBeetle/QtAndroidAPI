@@ -17,8 +17,8 @@ namespace __jni_impl::android::content
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		QAndroidJniObject accountType();
-		QAndroidJniObject authority();
+		jstring accountType();
+		jstring authority();
 		jboolean isKey();
 		
 		// Constructors
@@ -27,16 +27,16 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		jboolean isUserVisible();
-		jboolean allowParallelSyncs();
+		jstring getSettingsActivity();
 		jboolean isAlwaysSyncable();
 		jboolean supportsUploading();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject newKey(jstring arg0, jstring arg1);
-		QAndroidJniObject getSettingsActivity();
+		jboolean isUserVisible();
+		jboolean allowParallelSyncs();
 	};
 } // namespace __jni_impl::android::content
 
@@ -50,24 +50,28 @@ namespace __jni_impl::android::content
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.SyncAdapterType",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject SyncAdapterType::accountType()
+	jstring SyncAdapterType::accountType()
 	{
 		return __thiz.getObjectField(
 			"accountType",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SyncAdapterType::authority()
+	jstring SyncAdapterType::authority()
 	{
 		return __thiz.getObjectField(
 			"authority",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean SyncAdapterType::isKey()
 	{
 		return __thiz.getField<jboolean>(
-			"isKey");
+			"isKey"
+		);
 	}
 	
 	// Constructors
@@ -95,49 +99,50 @@ namespace __jni_impl::android::content
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SyncAdapterType::toString()
+	jstring SyncAdapterType::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SyncAdapterType::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	jboolean SyncAdapterType::isUserVisible()
+	jstring SyncAdapterType::getSettingsActivity()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isUserVisible",
-			"()Z");
-	}
-	jboolean SyncAdapterType::allowParallelSyncs()
-	{
-		return __thiz.callMethod<jboolean>(
-			"allowParallelSyncs",
-			"()Z");
+		return __thiz.callObjectMethod(
+			"getSettingsActivity",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean SyncAdapterType::isAlwaysSyncable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAlwaysSyncable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SyncAdapterType::supportsUploading()
 	{
 		return __thiz.callMethod<jboolean>(
 			"supportsUploading",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint SyncAdapterType::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SyncAdapterType::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -145,7 +150,8 @@ namespace __jni_impl::android::content
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SyncAdapterType::newKey(jstring arg0, jstring arg1)
 	{
@@ -154,13 +160,22 @@ namespace __jni_impl::android::content
 			"newKey",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SyncAdapterType;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject SyncAdapterType::getSettingsActivity()
+	jboolean SyncAdapterType::isUserVisible()
 	{
-		return __thiz.callObjectMethod(
-			"getSettingsActivity",
-			"()Ljava/lang/String;");
+		return __thiz.callMethod<jboolean>(
+			"isUserVisible",
+			"()Z"
+		);
+	}
+	jboolean SyncAdapterType::allowParallelSyncs()
+	{
+		return __thiz.callMethod<jboolean>(
+			"allowParallelSyncs",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::content
 

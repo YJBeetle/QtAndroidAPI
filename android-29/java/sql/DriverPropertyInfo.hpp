@@ -12,11 +12,11 @@ namespace __jni_impl::java::sql
 	{
 	public:
 		// Fields
-		QAndroidJniObject name();
-		QAndroidJniObject description();
+		jstring name();
+		jstring description();
 		jboolean required();
-		QAndroidJniObject value();
-		QAndroidJniObject choices();
+		jstring value();
+		jarray choices();
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1);
@@ -29,34 +29,39 @@ namespace __jni_impl::java::sql
 namespace __jni_impl::java::sql
 {
 	// Fields
-	QAndroidJniObject DriverPropertyInfo::name()
+	jstring DriverPropertyInfo::name()
 	{
 		return __thiz.getObjectField(
 			"name",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DriverPropertyInfo::description()
+	jstring DriverPropertyInfo::description()
 	{
 		return __thiz.getObjectField(
 			"description",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean DriverPropertyInfo::required()
 	{
 		return __thiz.getField<jboolean>(
-			"required");
+			"required"
+		);
 	}
-	QAndroidJniObject DriverPropertyInfo::value()
+	jstring DriverPropertyInfo::value()
 	{
 		return __thiz.getObjectField(
 			"value",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DriverPropertyInfo::choices()
+	jarray DriverPropertyInfo::choices()
 	{
 		return __thiz.getObjectField(
 			"choices",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	
 	// Constructors

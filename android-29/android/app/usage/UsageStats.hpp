@@ -23,7 +23,7 @@ namespace __jni_impl::android::app::usage
 		
 		// Methods
 		void add(__jni_impl::android::app::usage::UsageStats arg0);
-		QAndroidJniObject getPackageName();
+		jstring getPackageName();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jlong getFirstTimeStamp();
@@ -47,7 +47,8 @@ namespace __jni_impl::android::app::usage
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.usage.UsageStats",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -65,19 +66,22 @@ namespace __jni_impl::android::app::usage
 		__thiz.callMethod<void>(
 			"add",
 			"(Landroid/app/usage/UsageStats;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject UsageStats::getPackageName()
+	jstring UsageStats::getPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UsageStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UsageStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -85,55 +89,64 @@ namespace __jni_impl::android::app::usage
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jlong UsageStats::getFirstTimeStamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getFirstTimeStamp",
-			"()J");
+			"()J"
+		);
 	}
 	jlong UsageStats::getLastTimeStamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastTimeStamp",
-			"()J");
+			"()J"
+		);
 	}
 	jlong UsageStats::getLastTimeUsed()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastTimeUsed",
-			"()J");
+			"()J"
+		);
 	}
 	jlong UsageStats::getLastTimeVisible()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastTimeVisible",
-			"()J");
+			"()J"
+		);
 	}
 	jlong UsageStats::getTotalTimeInForeground()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTotalTimeInForeground",
-			"()J");
+			"()J"
+		);
 	}
 	jlong UsageStats::getTotalTimeVisible()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTotalTimeVisible",
-			"()J");
+			"()J"
+		);
 	}
 	jlong UsageStats::getLastTimeForegroundServiceUsed()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastTimeForegroundServiceUsed",
-			"()J");
+			"()J"
+		);
 	}
 	jlong UsageStats::getTotalTimeForegroundServiceUsed()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTotalTimeForegroundServiceUsed",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::app::usage
 

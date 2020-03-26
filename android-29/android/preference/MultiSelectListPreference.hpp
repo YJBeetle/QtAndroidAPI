@@ -11,13 +11,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::app
-{
-	class AlertDialog_Builder;
-}
 namespace __jni_impl::android::content::res
 {
 	class TypedArray;
+}
+namespace __jni_impl::android::app
+{
+	class AlertDialog_Builder;
 }
 
 namespace __jni_impl::android::preference
@@ -34,21 +34,21 @@ namespace __jni_impl::android::preference
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject getEntries();
-		QAndroidJniObject getValues();
-		void setValues(__jni_impl::__JniBaseClass arg0);
+		jarray getEntries();
 		void setEntries(jint arg0);
 		void setEntries(jarray arg0);
 		void setEntryValues(jint arg0);
 		void setEntryValues(jarray arg0);
-		QAndroidJniObject getEntryValues();
+		jarray getEntryValues();
 		jint findIndexOfValue(jstring arg0);
+		QAndroidJniObject getValues();
+		void setValues(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
-#include "../app/AlertDialog_Builder.hpp"
 #include "../content/res/TypedArray.hpp"
+#include "../app/AlertDialog_Builder.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -91,65 +91,74 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
-	QAndroidJniObject MultiSelectListPreference::getEntries()
+	jarray MultiSelectListPreference::getEntries()
 	{
 		return __thiz.callObjectMethod(
 			"getEntries",
-			"()[Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject MultiSelectListPreference::getValues()
-	{
-		return __thiz.callObjectMethod(
-			"getValues",
-			"()Ljava/util/Set;");
-	}
-	void MultiSelectListPreference::setValues(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setValues",
-			"(Ljava/util/Set;)V",
-			arg0.__jniObject().object());
+			"()[Ljava/lang/CharSequence;"
+		).object<jarray>();
 	}
 	void MultiSelectListPreference::setEntries(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEntries",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void MultiSelectListPreference::setEntries(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEntries",
 			"([Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	void MultiSelectListPreference::setEntryValues(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEntryValues",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void MultiSelectListPreference::setEntryValues(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEntryValues",
 			"([Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MultiSelectListPreference::getEntryValues()
+	jarray MultiSelectListPreference::getEntryValues()
 	{
 		return __thiz.callObjectMethod(
 			"getEntryValues",
-			"()[Ljava/lang/CharSequence;");
+			"()[Ljava/lang/CharSequence;"
+		).object<jarray>();
 	}
 	jint MultiSelectListPreference::findIndexOfValue(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"findIndexOfValue",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject MultiSelectListPreference::getValues()
+	{
+		return __thiz.callObjectMethod(
+			"getValues",
+			"()Ljava/util/Set;"
+		);
+	}
+	void MultiSelectListPreference::setValues(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setValues",
+			"(Ljava/util/Set;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::preference
 

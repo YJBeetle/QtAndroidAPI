@@ -50,7 +50,8 @@ namespace __jni_impl::javax::security::auth::callback
 	{
 		return __thiz.callObjectMethod(
 			"getCallback",
-			"()Ljavax/security/auth/callback/Callback;");
+			"()Ljavax/security/auth/callback/Callback;"
+		);
 	}
 } // namespace __jni_impl::javax::security::auth::callback
 

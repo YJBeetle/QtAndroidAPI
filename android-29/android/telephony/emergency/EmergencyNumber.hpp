@@ -39,21 +39,21 @@ namespace __jni_impl::android::telephony::emergency
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::android::telephony::emergency::EmergencyNumber arg0);
-		QAndroidJniObject getNumber();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getMnc();
-		QAndroidJniObject getCountryIso();
+		jstring getNumber();
+		jstring getCountryIso();
 		QAndroidJniObject getEmergencyServiceCategories();
 		QAndroidJniObject getEmergencyUrns();
 		jboolean isInEmergencyServiceCategories(jint arg0);
 		QAndroidJniObject getEmergencyNumberSources();
 		jboolean isFromSources(jint arg0);
 		jint getEmergencyCallRouting();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getMnc();
 	};
 } // namespace __jni_impl::android::telephony::emergency
 
@@ -67,103 +67,120 @@ namespace __jni_impl::android::telephony::emergency
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.emergency.EmergencyNumber",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_CALL_ROUTING_EMERGENCY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_CALL_ROUTING_EMERGENCY");
+			"EMERGENCY_CALL_ROUTING_EMERGENCY"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_CALL_ROUTING_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_CALL_ROUTING_NORMAL");
+			"EMERGENCY_CALL_ROUTING_NORMAL"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_CALL_ROUTING_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_CALL_ROUTING_UNKNOWN");
+			"EMERGENCY_CALL_ROUTING_UNKNOWN"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_DATABASE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_NUMBER_SOURCE_DATABASE");
+			"EMERGENCY_NUMBER_SOURCE_DATABASE"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_NUMBER_SOURCE_DEFAULT");
+			"EMERGENCY_NUMBER_SOURCE_DEFAULT"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_MODEM_CONFIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_NUMBER_SOURCE_MODEM_CONFIG");
+			"EMERGENCY_NUMBER_SOURCE_MODEM_CONFIG"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_NETWORK_SIGNALING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_NUMBER_SOURCE_NETWORK_SIGNALING");
+			"EMERGENCY_NUMBER_SOURCE_NETWORK_SIGNALING"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_NUMBER_SOURCE_SIM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_NUMBER_SOURCE_SIM");
+			"EMERGENCY_NUMBER_SOURCE_SIM"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_AIEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_SERVICE_CATEGORY_AIEC");
+			"EMERGENCY_SERVICE_CATEGORY_AIEC"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_AMBULANCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_SERVICE_CATEGORY_AMBULANCE");
+			"EMERGENCY_SERVICE_CATEGORY_AMBULANCE"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_FIRE_BRIGADE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_SERVICE_CATEGORY_FIRE_BRIGADE");
+			"EMERGENCY_SERVICE_CATEGORY_FIRE_BRIGADE"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_MARINE_GUARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_SERVICE_CATEGORY_MARINE_GUARD");
+			"EMERGENCY_SERVICE_CATEGORY_MARINE_GUARD"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_MIEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_SERVICE_CATEGORY_MIEC");
+			"EMERGENCY_SERVICE_CATEGORY_MIEC"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_MOUNTAIN_RESCUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_SERVICE_CATEGORY_MOUNTAIN_RESCUE");
+			"EMERGENCY_SERVICE_CATEGORY_MOUNTAIN_RESCUE"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_POLICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_SERVICE_CATEGORY_POLICE");
+			"EMERGENCY_SERVICE_CATEGORY_POLICE"
+		);
 	}
 	jint EmergencyNumber::EMERGENCY_SERVICE_CATEGORY_UNSPECIFIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.emergency.EmergencyNumber",
-			"EMERGENCY_SERVICE_CATEGORY_UNSPECIFIED");
+			"EMERGENCY_SERVICE_CATEGORY_UNSPECIFIED"
+		);
 	}
 	
 	// Constructors
@@ -180,45 +197,103 @@ namespace __jni_impl::android::telephony::emergency
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject EmergencyNumber::toString()
+	jstring EmergencyNumber::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint EmergencyNumber::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint EmergencyNumber::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint EmergencyNumber::compareTo(__jni_impl::android::telephony::emergency::EmergencyNumber arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Landroid/telephony/emergency/EmergencyNumber;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject EmergencyNumber::getNumber()
+	jstring EmergencyNumber::getNumber()
 	{
 		return __thiz.callObjectMethod(
 			"getNumber",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring EmergencyNumber::getCountryIso()
+	{
+		return __thiz.callObjectMethod(
+			"getCountryIso",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject EmergencyNumber::getEmergencyServiceCategories()
+	{
+		return __thiz.callObjectMethod(
+			"getEmergencyServiceCategories",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject EmergencyNumber::getEmergencyUrns()
+	{
+		return __thiz.callObjectMethod(
+			"getEmergencyUrns",
+			"()Ljava/util/List;"
+		);
+	}
+	jboolean EmergencyNumber::isInEmergencyServiceCategories(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInEmergencyServiceCategories",
+			"(I)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject EmergencyNumber::getEmergencyNumberSources()
+	{
+		return __thiz.callObjectMethod(
+			"getEmergencyNumberSources",
+			"()Ljava/util/List;"
+		);
+	}
+	jboolean EmergencyNumber::isFromSources(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFromSources",
+			"(I)Z",
+			arg0
+		);
+	}
+	jint EmergencyNumber::getEmergencyCallRouting()
+	{
+		return __thiz.callMethod<jint>(
+			"getEmergencyCallRouting",
+			"()I"
+		);
 	}
 	jint EmergencyNumber::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void EmergencyNumber::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -226,57 +301,15 @@ namespace __jni_impl::android::telephony::emergency
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject EmergencyNumber::getMnc()
+	jstring EmergencyNumber::getMnc()
 	{
 		return __thiz.callObjectMethod(
 			"getMnc",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject EmergencyNumber::getCountryIso()
-	{
-		return __thiz.callObjectMethod(
-			"getCountryIso",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject EmergencyNumber::getEmergencyServiceCategories()
-	{
-		return __thiz.callObjectMethod(
-			"getEmergencyServiceCategories",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject EmergencyNumber::getEmergencyUrns()
-	{
-		return __thiz.callObjectMethod(
-			"getEmergencyUrns",
-			"()Ljava/util/List;");
-	}
-	jboolean EmergencyNumber::isInEmergencyServiceCategories(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInEmergencyServiceCategories",
-			"(I)Z",
-			arg0);
-	}
-	QAndroidJniObject EmergencyNumber::getEmergencyNumberSources()
-	{
-		return __thiz.callObjectMethod(
-			"getEmergencyNumberSources",
-			"()Ljava/util/List;");
-	}
-	jboolean EmergencyNumber::isFromSources(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFromSources",
-			"(I)Z",
-			arg0);
-	}
-	jint EmergencyNumber::getEmergencyCallRouting()
-	{
-		return __thiz.callMethod<jint>(
-			"getEmergencyCallRouting",
-			"()I");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony::emergency
 

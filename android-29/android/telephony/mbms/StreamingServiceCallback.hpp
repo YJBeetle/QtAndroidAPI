@@ -18,10 +18,10 @@ namespace __jni_impl::android::telephony::mbms
 		void __constructor();
 		
 		// Methods
-		void onError(jint arg0, jstring arg1);
 		void onMediaDescriptionUpdated();
 		void onStreamStateUpdated(jint arg0, jint arg1);
 		void onStreamMethodUpdated(jint arg0);
+		void onError(jint arg0, jstring arg1);
 		void onBroadcastSignalStrengthUpdated(jint arg0);
 	};
 } // namespace __jni_impl::android::telephony::mbms
@@ -34,7 +34,8 @@ namespace __jni_impl::android::telephony::mbms
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.mbms.StreamingServiceCallback",
-			"SIGNAL_STRENGTH_UNAVAILABLE");
+			"SIGNAL_STRENGTH_UNAVAILABLE"
+		);
 	}
 	
 	// Constructors
@@ -46,19 +47,12 @@ namespace __jni_impl::android::telephony::mbms
 	}
 	
 	// Methods
-	void StreamingServiceCallback::onError(jint arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1);
-	}
 	void StreamingServiceCallback::onMediaDescriptionUpdated()
 	{
 		__thiz.callMethod<void>(
 			"onMediaDescriptionUpdated",
-			"()V");
+			"()V"
+		);
 	}
 	void StreamingServiceCallback::onStreamStateUpdated(jint arg0, jint arg1)
 	{
@@ -66,21 +60,33 @@ namespace __jni_impl::android::telephony::mbms
 			"onStreamStateUpdated",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void StreamingServiceCallback::onStreamMethodUpdated(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onStreamMethodUpdated",
 			"(I)V",
-			arg0);
+			arg0
+		);
+	}
+	void StreamingServiceCallback::onError(jint arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1
+		);
 	}
 	void StreamingServiceCallback::onBroadcastSignalStrengthUpdated(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onBroadcastSignalStrengthUpdated",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

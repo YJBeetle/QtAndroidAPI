@@ -30,12 +30,12 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void onCanceled(jobject arg0);
-		QAndroidJniObject loadInBackground();
+		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		jobject loadInBackground();
 		void cancelLoadInBackground();
+		void onCanceled(jobject arg0);
 		void setUpdateThrottle(jlong arg0);
 		jboolean isLoadInBackgroundCanceled();
-		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 	};
 } // namespace __jni_impl::android::content
 
@@ -57,38 +57,6 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	void AsyncTaskLoader::onCanceled(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCanceled",
-			"(Ljava/lang/Object;)V",
-			arg0);
-	}
-	QAndroidJniObject AsyncTaskLoader::loadInBackground()
-	{
-		return __thiz.callObjectMethod(
-			"loadInBackground",
-			"()Ljava/lang/Object;");
-	}
-	void AsyncTaskLoader::cancelLoadInBackground()
-	{
-		__thiz.callMethod<void>(
-			"cancelLoadInBackground",
-			"()V");
-	}
-	void AsyncTaskLoader::setUpdateThrottle(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUpdateThrottle",
-			"(J)V",
-			arg0);
-	}
-	jboolean AsyncTaskLoader::isLoadInBackgroundCanceled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLoadInBackgroundCanceled",
-			"()Z");
-	}
 	void AsyncTaskLoader::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
 	{
 		__thiz.callMethod<void>(
@@ -97,7 +65,45 @@ namespace __jni_impl::android::content
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
+	}
+	jobject AsyncTaskLoader::loadInBackground()
+	{
+		return __thiz.callObjectMethod(
+			"loadInBackground",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	void AsyncTaskLoader::cancelLoadInBackground()
+	{
+		__thiz.callMethod<void>(
+			"cancelLoadInBackground",
+			"()V"
+		);
+	}
+	void AsyncTaskLoader::onCanceled(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCanceled",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
+	void AsyncTaskLoader::setUpdateThrottle(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUpdateThrottle",
+			"(J)V",
+			arg0
+		);
+	}
+	jboolean AsyncTaskLoader::isLoadInBackgroundCanceled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLoadInBackgroundCanceled",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::content
 

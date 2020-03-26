@@ -21,8 +21,8 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject exchange(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
-		QAndroidJniObject exchange(jobject arg0);
+		jobject exchange(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
+		jobject exchange(jobject arg0);
 	};
 } // namespace __jni_impl::java::util::concurrent
 
@@ -41,21 +41,23 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	QAndroidJniObject Exchanger::exchange(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
+	jobject Exchanger::exchange(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
 	{
 		return __thiz.callObjectMethod(
 			"exchange",
 			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject Exchanger::exchange(jobject arg0)
+	jobject Exchanger::exchange(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"exchange",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util::concurrent
 

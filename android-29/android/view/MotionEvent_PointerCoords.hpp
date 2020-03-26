@@ -29,8 +29,8 @@ namespace __jni_impl::android::view
 		// Methods
 		void clear();
 		void copyFrom(__jni_impl::android::view::MotionEvent_PointerCoords arg0);
-		void setAxisValue(jint arg0, jfloat arg1);
 		jfloat getAxisValue(jint arg0);
+		void setAxisValue(jint arg0, jfloat arg1);
 	};
 } // namespace __jni_impl::android::view
 
@@ -41,47 +41,56 @@ namespace __jni_impl::android::view
 	jfloat MotionEvent_PointerCoords::orientation()
 	{
 		return __thiz.getField<jfloat>(
-			"orientation");
+			"orientation"
+		);
 	}
 	jfloat MotionEvent_PointerCoords::pressure()
 	{
 		return __thiz.getField<jfloat>(
-			"pressure");
+			"pressure"
+		);
 	}
 	jfloat MotionEvent_PointerCoords::size()
 	{
 		return __thiz.getField<jfloat>(
-			"size");
+			"size"
+		);
 	}
 	jfloat MotionEvent_PointerCoords::toolMajor()
 	{
 		return __thiz.getField<jfloat>(
-			"toolMajor");
+			"toolMajor"
+		);
 	}
 	jfloat MotionEvent_PointerCoords::toolMinor()
 	{
 		return __thiz.getField<jfloat>(
-			"toolMinor");
+			"toolMinor"
+		);
 	}
 	jfloat MotionEvent_PointerCoords::touchMajor()
 	{
 		return __thiz.getField<jfloat>(
-			"touchMajor");
+			"touchMajor"
+		);
 	}
 	jfloat MotionEvent_PointerCoords::touchMinor()
 	{
 		return __thiz.getField<jfloat>(
-			"touchMinor");
+			"touchMinor"
+		);
 	}
 	jfloat MotionEvent_PointerCoords::x()
 	{
 		return __thiz.getField<jfloat>(
-			"x");
+			"x"
+		);
 	}
 	jfloat MotionEvent_PointerCoords::y()
 	{
 		return __thiz.getField<jfloat>(
-			"y");
+			"y"
+		);
 	}
 	
 	// Constructors
@@ -104,14 +113,24 @@ namespace __jni_impl::android::view
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	void MotionEvent_PointerCoords::copyFrom(__jni_impl::android::view::MotionEvent_PointerCoords arg0)
 	{
 		__thiz.callMethod<void>(
 			"copyFrom",
 			"(Landroid/view/MotionEvent$PointerCoords;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jfloat MotionEvent_PointerCoords::getAxisValue(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getAxisValue",
+			"(I)F",
+			arg0
+		);
 	}
 	void MotionEvent_PointerCoords::setAxisValue(jint arg0, jfloat arg1)
 	{
@@ -119,14 +138,8 @@ namespace __jni_impl::android::view
 			"setAxisValue",
 			"(IF)V",
 			arg0,
-			arg1);
-	}
-	jfloat MotionEvent_PointerCoords::getAxisValue(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getAxisValue",
-			"(I)F",
-			arg0);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view
 

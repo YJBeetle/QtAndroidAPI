@@ -49,7 +49,8 @@ namespace __jni_impl::android::renderscript
 			"setX",
 			"(II)Landroid/renderscript/Script$LaunchOptions;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Script_LaunchOptions::setY(jint arg0, jint arg1)
 	{
@@ -57,7 +58,8 @@ namespace __jni_impl::android::renderscript
 			"setY",
 			"(II)Landroid/renderscript/Script$LaunchOptions;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Script_LaunchOptions::setZ(jint arg0, jint arg1)
 	{
@@ -65,43 +67,50 @@ namespace __jni_impl::android::renderscript
 			"setZ",
 			"(II)Landroid/renderscript/Script$LaunchOptions;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Script_LaunchOptions::getXStart()
 	{
 		return __thiz.callMethod<jint>(
 			"getXStart",
-			"()I");
+			"()I"
+		);
 	}
 	jint Script_LaunchOptions::getXEnd()
 	{
 		return __thiz.callMethod<jint>(
 			"getXEnd",
-			"()I");
+			"()I"
+		);
 	}
 	jint Script_LaunchOptions::getYStart()
 	{
 		return __thiz.callMethod<jint>(
 			"getYStart",
-			"()I");
+			"()I"
+		);
 	}
 	jint Script_LaunchOptions::getYEnd()
 	{
 		return __thiz.callMethod<jint>(
 			"getYEnd",
-			"()I");
+			"()I"
+		);
 	}
 	jint Script_LaunchOptions::getZStart()
 	{
 		return __thiz.callMethod<jint>(
 			"getZStart",
-			"()I");
+			"()I"
+		);
 	}
 	jint Script_LaunchOptions::getZEnd()
 	{
 		return __thiz.callMethod<jint>(
 			"getZEnd",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

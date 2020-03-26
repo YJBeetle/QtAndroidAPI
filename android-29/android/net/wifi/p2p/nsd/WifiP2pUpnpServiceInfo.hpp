@@ -44,7 +44,8 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceInfo;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p::nsd
 

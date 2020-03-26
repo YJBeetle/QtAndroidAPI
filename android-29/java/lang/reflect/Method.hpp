@@ -27,31 +27,31 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject invoke(jobject arg0, jobjectArray arg1);
-		QAndroidJniObject getName();
+		jobject invoke(jobject arg0, jobjectArray arg1);
+		jstring getName();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getModifiers();
-		QAndroidJniObject getTypeParameters();
-		QAndroidJniObject getReturnType();
-		QAndroidJniObject getParameterTypes();
-		QAndroidJniObject toGenericString();
+		jarray getTypeParameters();
+		jclass getReturnType();
+		jarray getParameterTypes();
+		jstring toGenericString();
 		jboolean isSynthetic();
-		QAndroidJniObject getDeclaringClass();
+		jclass getDeclaringClass();
 		QAndroidJniObject getAnnotation(jclass arg0);
-		QAndroidJniObject getDeclaredAnnotations();
+		jarray getDeclaredAnnotations();
 		void setAccessible(jboolean arg0);
 		jboolean isVarArgs();
 		jint getParameterCount();
-		QAndroidJniObject getParameterAnnotations();
-		QAndroidJniObject getGenericParameterTypes();
-		QAndroidJniObject getGenericExceptionTypes();
+		jarray getParameterAnnotations();
+		jarray getGenericParameterTypes();
+		jarray getGenericExceptionTypes();
 		jboolean isDefault();
 		QAndroidJniObject getGenericReturnType();
-		QAndroidJniObject getExceptionTypes();
+		jarray getExceptionTypes();
 		jboolean isBridge();
-		QAndroidJniObject getDefaultValue();
+		jobject getDefaultValue();
 		QAndroidJniObject getAnnotatedReturnType();
 	};
 } // namespace __jni_impl::java::lang::reflect
@@ -72,166 +72,192 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	QAndroidJniObject Method::invoke(jobject arg0, jobjectArray arg1)
+	jobject Method::invoke(jobject arg0, jobjectArray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"invoke",
 			"(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject Method::getName()
+	jstring Method::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Method::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Method::toString()
+	jstring Method::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Method::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Method::getModifiers()
 	{
 		return __thiz.callMethod<jint>(
 			"getModifiers",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Method::getTypeParameters()
+	jarray Method::getTypeParameters()
 	{
 		return __thiz.callObjectMethod(
 			"getTypeParameters",
-			"()[Ljava/lang/reflect/TypeVariable;");
+			"()[Ljava/lang/reflect/TypeVariable;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Method::getReturnType()
+	jclass Method::getReturnType()
 	{
 		return __thiz.callObjectMethod(
 			"getReturnType",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
-	QAndroidJniObject Method::getParameterTypes()
+	jarray Method::getParameterTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getParameterTypes",
-			"()[Ljava/lang/Class;");
+			"()[Ljava/lang/Class;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Method::toGenericString()
+	jstring Method::toGenericString()
 	{
 		return __thiz.callObjectMethod(
 			"toGenericString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Method::isSynthetic()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSynthetic",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Method::getDeclaringClass()
+	jclass Method::getDeclaringClass()
 	{
 		return __thiz.callObjectMethod(
 			"getDeclaringClass",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	QAndroidJniObject Method::getAnnotation(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAnnotation",
 			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Method::getDeclaredAnnotations()
+	jarray Method::getDeclaredAnnotations()
 	{
 		return __thiz.callObjectMethod(
 			"getDeclaredAnnotations",
-			"()[Ljava/lang/annotation/Annotation;");
+			"()[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
 	}
 	void Method::setAccessible(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAccessible",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Method::isVarArgs()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isVarArgs",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Method::getParameterCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getParameterCount",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Method::getParameterAnnotations()
+	jarray Method::getParameterAnnotations()
 	{
 		return __thiz.callObjectMethod(
 			"getParameterAnnotations",
-			"()[[Ljava/lang/annotation/Annotation;");
+			"()[[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Method::getGenericParameterTypes()
+	jarray Method::getGenericParameterTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getGenericParameterTypes",
-			"()[Ljava/lang/reflect/Type;");
+			"()[Ljava/lang/reflect/Type;"
+		).object<jarray>();
 	}
-	QAndroidJniObject Method::getGenericExceptionTypes()
+	jarray Method::getGenericExceptionTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getGenericExceptionTypes",
-			"()[Ljava/lang/reflect/Type;");
+			"()[Ljava/lang/reflect/Type;"
+		).object<jarray>();
 	}
 	jboolean Method::isDefault()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDefault",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Method::getGenericReturnType()
 	{
 		return __thiz.callObjectMethod(
 			"getGenericReturnType",
-			"()Ljava/lang/reflect/Type;");
+			"()Ljava/lang/reflect/Type;"
+		);
 	}
-	QAndroidJniObject Method::getExceptionTypes()
+	jarray Method::getExceptionTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getExceptionTypes",
-			"()[Ljava/lang/Class;");
+			"()[Ljava/lang/Class;"
+		).object<jarray>();
 	}
 	jboolean Method::isBridge()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBridge",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Method::getDefaultValue()
+	jobject Method::getDefaultValue()
 	{
 		return __thiz.callObjectMethod(
 			"getDefaultValue",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject Method::getAnnotatedReturnType()
 	{
 		return __thiz.callObjectMethod(
 			"getAnnotatedReturnType",
-			"()Ljava/lang/reflect/AnnotatedType;");
+			"()Ljava/lang/reflect/AnnotatedType;"
+		);
 	}
 } // namespace __jni_impl::java::lang::reflect
 

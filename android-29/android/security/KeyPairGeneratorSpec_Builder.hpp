@@ -38,6 +38,7 @@ namespace __jni_impl::android::security
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setEncryptionRequired();
 		QAndroidJniObject setAlgorithmParameterSpec(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setAlias(jstring arg0);
 		QAndroidJniObject setKeyType(jstring arg0);
@@ -46,7 +47,6 @@ namespace __jni_impl::android::security
 		QAndroidJniObject setSerialNumber(__jni_impl::java::math::BigInteger arg0);
 		QAndroidJniObject setStartDate(__jni_impl::java::util::Date arg0);
 		QAndroidJniObject setEndDate(__jni_impl::java::util::Date arg0);
-		QAndroidJniObject setEncryptionRequired();
 	};
 } // namespace __jni_impl::android::security
 
@@ -74,69 +74,79 @@ namespace __jni_impl::android::security
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/security/KeyPairGeneratorSpec;");
+			"()Landroid/security/KeyPairGeneratorSpec;"
+		);
+	}
+	QAndroidJniObject KeyPairGeneratorSpec_Builder::setEncryptionRequired()
+	{
+		return __thiz.callObjectMethod(
+			"setEncryptionRequired",
+			"()Landroid/security/KeyPairGeneratorSpec$Builder;"
+		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setAlgorithmParameterSpec(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAlgorithmParameterSpec",
 			"(Ljava/security/spec/AlgorithmParameterSpec;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setAlias(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAlias",
 			"(Ljava/lang/String;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setKeyType(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setKeyType",
 			"(Ljava/lang/String;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setKeySize(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setKeySize",
 			"(I)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSubject",
 			"(Ljavax/security/auth/x500/X500Principal;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setSerialNumber(__jni_impl::java::math::BigInteger arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSerialNumber",
 			"(Ljava/math/BigInteger;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setStartDate(__jni_impl::java::util::Date arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setStartDate",
 			"(Ljava/util/Date;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setEndDate(__jni_impl::java::util::Date arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setEndDate",
 			"(Ljava/util/Date;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject KeyPairGeneratorSpec_Builder::setEncryptionRequired()
-	{
-		return __thiz.callObjectMethod(
-			"setEncryptionRequired",
-			"()Landroid/security/KeyPairGeneratorSpec$Builder;");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::security
 

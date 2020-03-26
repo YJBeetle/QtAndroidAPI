@@ -47,7 +47,8 @@ namespace __jni_impl::android::provider
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::provider
 

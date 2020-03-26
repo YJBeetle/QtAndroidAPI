@@ -21,8 +21,8 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getContent(__jni_impl::java::net::URLConnection arg0);
-		QAndroidJniObject getContent(__jni_impl::java::net::URLConnection arg0, jarray arg1);
+		jobject getContent(__jni_impl::java::net::URLConnection arg0);
+		jobject getContent(__jni_impl::java::net::URLConnection arg0, jarray arg1);
 	};
 } // namespace __jni_impl::java::net
 
@@ -41,20 +41,22 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject ContentHandler::getContent(__jni_impl::java::net::URLConnection arg0)
+	jobject ContentHandler::getContent(__jni_impl::java::net::URLConnection arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getContent",
 			"(Ljava/net/URLConnection;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject ContentHandler::getContent(__jni_impl::java::net::URLConnection arg0, jarray arg1)
+	jobject ContentHandler::getContent(__jni_impl::java::net::URLConnection arg0, jarray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getContent",
 			"(Ljava/net/URLConnection;[Ljava/lang/Class;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::net
 

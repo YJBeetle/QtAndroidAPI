@@ -84,13 +84,15 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"generateLayoutParams",
 			"(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean AbsoluteLayout::shouldDelayChildPressedState()
 	{
 		return __thiz.callMethod<jboolean>(
 			"shouldDelayChildPressedState",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

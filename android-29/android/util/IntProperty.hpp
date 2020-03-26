@@ -50,7 +50,8 @@ namespace __jni_impl::android::util
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void IntProperty::set(jobject arg0, __jni_impl::java::lang::Integer arg1)
 	{
@@ -58,7 +59,8 @@ namespace __jni_impl::android::util
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Integer;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void IntProperty::setValue(jobject arg0, jint arg1)
 	{
@@ -66,7 +68,8 @@ namespace __jni_impl::android::util
 			"setValue",
 			"(Ljava/lang/Object;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::util
 

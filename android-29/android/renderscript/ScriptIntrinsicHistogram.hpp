@@ -47,12 +47,12 @@ namespace __jni_impl::android::renderscript
 		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1);
 		void forEach(__jni_impl::android::renderscript::Allocation arg0);
 		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1);
-		void setOutput(__jni_impl::android::renderscript::Allocation arg0);
 		QAndroidJniObject getFieldID_Input();
 		void setDotCoefficients(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void forEach_Dot(__jni_impl::android::renderscript::Allocation arg0);
 		void forEach_Dot(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1);
+		void forEach_Dot(__jni_impl::android::renderscript::Allocation arg0);
 		QAndroidJniObject getKernelID_Separate();
+		void setOutput(__jni_impl::android::renderscript::Allocation arg0);
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -82,14 +82,16 @@ namespace __jni_impl::android::renderscript
 			"forEach",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ScriptIntrinsicHistogram::forEach(__jni_impl::android::renderscript::Allocation arg0)
 	{
 		__thiz.callMethod<void>(
 			"forEach",
 			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicHistogram::create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1)
 	{
@@ -98,20 +100,15 @@ namespace __jni_impl::android::renderscript
 			"create",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicHistogram;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void ScriptIntrinsicHistogram::setOutput(__jni_impl::android::renderscript::Allocation arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOutput",
-			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicHistogram::getFieldID_Input()
 	{
 		return __thiz.callObjectMethod(
 			"getFieldID_Input",
-			"()Landroid/renderscript/Script$FieldID;");
+			"()Landroid/renderscript/Script$FieldID;"
+		);
 	}
 	void ScriptIntrinsicHistogram::setDotCoefficients(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -121,14 +118,8 @@ namespace __jni_impl::android::renderscript
 			arg0,
 			arg1,
 			arg2,
-			arg3);
-	}
-	void ScriptIntrinsicHistogram::forEach_Dot(__jni_impl::android::renderscript::Allocation arg0)
-	{
-		__thiz.callMethod<void>(
-			"forEach_Dot",
-			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object());
+			arg3
+		);
 	}
 	void ScriptIntrinsicHistogram::forEach_Dot(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1)
 	{
@@ -136,13 +127,31 @@ namespace __jni_impl::android::renderscript
 			"forEach_Dot",
 			"(Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void ScriptIntrinsicHistogram::forEach_Dot(__jni_impl::android::renderscript::Allocation arg0)
+	{
+		__thiz.callMethod<void>(
+			"forEach_Dot",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptIntrinsicHistogram::getKernelID_Separate()
 	{
 		return __thiz.callObjectMethod(
 			"getKernelID_Separate",
-			"()Landroid/renderscript/Script$KernelID;");
+			"()Landroid/renderscript/Script$KernelID;"
+		);
+	}
+	void ScriptIntrinsicHistogram::setOutput(__jni_impl::android::renderscript::Allocation arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOutput",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

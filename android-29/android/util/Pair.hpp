@@ -12,15 +12,15 @@ namespace __jni_impl::android::util
 	{
 	public:
 		// Fields
-		QAndroidJniObject first();
-		QAndroidJniObject second();
+		jobject first();
+		jobject second();
 		
 		// Constructors
 		void __constructor(jobject arg0, jobject arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject create(jobject arg0, jobject arg1);
 	};
@@ -30,17 +30,19 @@ namespace __jni_impl::android::util
 namespace __jni_impl::android::util
 {
 	// Fields
-	QAndroidJniObject Pair::first()
+	jobject Pair::first()
 	{
 		return __thiz.getObjectField(
 			"first",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject Pair::second()
+	jobject Pair::second()
 	{
 		return __thiz.getObjectField(
 			"second",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	
 	// Constructors
@@ -59,19 +61,22 @@ namespace __jni_impl::android::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Pair::toString()
+	jstring Pair::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Pair::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Pair::create(jobject arg0, jobject arg1)
 	{
@@ -80,7 +85,8 @@ namespace __jni_impl::android::util
 			"create",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::util
 

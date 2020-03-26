@@ -21,10 +21,10 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
-		void onStopped();
 		void onSatelliteStatusChanged(__jni_impl::android::location::GnssStatus arg0);
 		void onStarted();
 		void onFirstFix(jint arg0);
+		void onStopped();
 	};
 } // namespace __jni_impl::android::location
 
@@ -43,31 +43,35 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	void GnssStatus_Callback::onStopped()
-	{
-		__thiz.callMethod<void>(
-			"onStopped",
-			"()V");
-	}
 	void GnssStatus_Callback::onSatelliteStatusChanged(__jni_impl::android::location::GnssStatus arg0)
 	{
 		__thiz.callMethod<void>(
 			"onSatelliteStatusChanged",
 			"(Landroid/location/GnssStatus;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void GnssStatus_Callback::onStarted()
 	{
 		__thiz.callMethod<void>(
 			"onStarted",
-			"()V");
+			"()V"
+		);
 	}
 	void GnssStatus_Callback::onFirstFix(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onFirstFix",
 			"(I)V",
-			arg0);
+			arg0
+		);
+	}
+	void GnssStatus_Callback::onStopped()
+	{
+		__thiz.callMethod<void>(
+			"onStopped",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::location
 

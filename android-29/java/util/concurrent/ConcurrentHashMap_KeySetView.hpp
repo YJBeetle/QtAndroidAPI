@@ -32,7 +32,7 @@ namespace __jni_impl::java::util::concurrent
 		void forEach(__jni_impl::__JniBaseClass arg0);
 		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getMap();
-		QAndroidJniObject getMappedValue();
+		jobject getMappedValue();
 	};
 } // namespace __jni_impl::java::util::concurrent
 
@@ -56,79 +56,91 @@ namespace __jni_impl::java::util::concurrent
 		return __thiz.callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ConcurrentHashMap_KeySetView::remove(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ConcurrentHashMap_KeySetView::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint ConcurrentHashMap_KeySetView::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ConcurrentHashMap_KeySetView::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jboolean ConcurrentHashMap_KeySetView::contains(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ConcurrentHashMap_KeySetView::spliterator()
 	{
 		return __thiz.callObjectMethod(
 			"spliterator",
-			"()Ljava/util/Spliterator;");
+			"()Ljava/util/Spliterator;"
+		);
 	}
 	jboolean ConcurrentHashMap_KeySetView::addAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConcurrentHashMap_KeySetView::forEach(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ConcurrentHashMap_KeySetView::removeAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConcurrentHashMap_KeySetView::getMap()
 	{
 		return __thiz.callObjectMethod(
 			"getMap",
-			"()Ljava/util/concurrent/ConcurrentHashMap;");
+			"()Ljava/util/concurrent/ConcurrentHashMap;"
+		);
 	}
-	QAndroidJniObject ConcurrentHashMap_KeySetView::getMappedValue()
+	jobject ConcurrentHashMap_KeySetView::getMappedValue()
 	{
 		return __thiz.callObjectMethod(
 			"getMappedValue",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util::concurrent
 

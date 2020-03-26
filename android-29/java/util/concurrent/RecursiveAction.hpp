@@ -45,7 +45,8 @@ namespace __jni_impl::java::util::concurrent
 	{
 		return __thiz.callObjectMethod(
 			"getRawResult",
-			"()Ljava/lang/Void;");
+			"()Ljava/lang/Void;"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent
 

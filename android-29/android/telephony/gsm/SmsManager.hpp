@@ -52,55 +52,64 @@ namespace __jni_impl::android::telephony::gsm
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
-			"RESULT_ERROR_GENERIC_FAILURE");
+			"RESULT_ERROR_GENERIC_FAILURE"
+		);
 	}
 	jint SmsManager::RESULT_ERROR_NO_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
-			"RESULT_ERROR_NO_SERVICE");
+			"RESULT_ERROR_NO_SERVICE"
+		);
 	}
 	jint SmsManager::RESULT_ERROR_NULL_PDU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
-			"RESULT_ERROR_NULL_PDU");
+			"RESULT_ERROR_NULL_PDU"
+		);
 	}
 	jint SmsManager::RESULT_ERROR_RADIO_OFF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
-			"RESULT_ERROR_RADIO_OFF");
+			"RESULT_ERROR_RADIO_OFF"
+		);
 	}
 	jint SmsManager::STATUS_ON_SIM_FREE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
-			"STATUS_ON_SIM_FREE");
+			"STATUS_ON_SIM_FREE"
+		);
 	}
 	jint SmsManager::STATUS_ON_SIM_READ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
-			"STATUS_ON_SIM_READ");
+			"STATUS_ON_SIM_READ"
+		);
 	}
 	jint SmsManager::STATUS_ON_SIM_SENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
-			"STATUS_ON_SIM_SENT");
+			"STATUS_ON_SIM_SENT"
+		);
 	}
 	jint SmsManager::STATUS_ON_SIM_UNREAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
-			"STATUS_ON_SIM_UNREAD");
+			"STATUS_ON_SIM_UNREAD"
+		);
 	}
 	jint SmsManager::STATUS_ON_SIM_UNSENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.gsm.SmsManager",
-			"STATUS_ON_SIM_UNSENT");
+			"STATUS_ON_SIM_UNSENT"
+		);
 	}
 	
 	// Constructors
@@ -117,7 +126,8 @@ namespace __jni_impl::android::telephony::gsm
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.gsm.SmsManager",
 			"getDefault",
-			"()Landroid/telephony/gsm/SmsManager;");
+			"()Landroid/telephony/gsm/SmsManager;"
+		);
 	}
 	void SmsManager::sendTextMessage(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::app::PendingIntent arg3, __jni_impl::android::app::PendingIntent arg4)
 	{
@@ -128,14 +138,16 @@ namespace __jni_impl::android::telephony::gsm
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SmsManager::divideMessage(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"divideMessage",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
-			arg0);
+			arg0
+		);
 	}
 	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, __jni_impl::java::util::ArrayList arg2, __jni_impl::java::util::ArrayList arg3, __jni_impl::java::util::ArrayList arg4)
 	{
@@ -146,7 +158,8 @@ namespace __jni_impl::android::telephony::gsm
 			arg1,
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void SmsManager::sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, __jni_impl::android::app::PendingIntent arg4, __jni_impl::android::app::PendingIntent arg5)
 	{
@@ -158,7 +171,8 @@ namespace __jni_impl::android::telephony::gsm
 			arg2,
 			arg3,
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::telephony::gsm
 

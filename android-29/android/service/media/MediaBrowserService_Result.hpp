@@ -45,14 +45,16 @@ namespace __jni_impl::android::service::media
 	{
 		__thiz.callMethod<void>(
 			"detach",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaBrowserService_Result::sendResult(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"sendResult",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::service::media
 

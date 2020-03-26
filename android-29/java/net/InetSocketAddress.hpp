@@ -33,13 +33,13 @@ namespace __jni_impl::java::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getAddress();
 		jint getPort();
 		jboolean isUnresolved();
-		QAndroidJniObject getHostName();
-		QAndroidJniObject getHostString();
+		jstring getHostName();
+		jstring getHostString();
 		static QAndroidJniObject createUnresolved(jstring arg0, jint arg1);
 	};
 } // namespace __jni_impl::java::net
@@ -83,49 +83,57 @@ namespace __jni_impl::java::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject InetSocketAddress::toString()
+	jstring InetSocketAddress::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint InetSocketAddress::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject InetSocketAddress::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
-			"()Ljava/net/InetAddress;");
+			"()Ljava/net/InetAddress;"
+		);
 	}
 	jint InetSocketAddress::getPort()
 	{
 		return __thiz.callMethod<jint>(
 			"getPort",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean InetSocketAddress::isUnresolved()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUnresolved",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject InetSocketAddress::getHostName()
+	jstring InetSocketAddress::getHostName()
 	{
 		return __thiz.callObjectMethod(
 			"getHostName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InetSocketAddress::getHostString()
+	jstring InetSocketAddress::getHostString()
 	{
 		return __thiz.callObjectMethod(
 			"getHostString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject InetSocketAddress::createUnresolved(jstring arg0, jint arg1)
 	{
@@ -134,7 +142,8 @@ namespace __jni_impl::java::net
 			"createUnresolved",
 			"(Ljava/lang/String;I)Ljava/net/InetSocketAddress;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::net
 

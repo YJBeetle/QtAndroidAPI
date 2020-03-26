@@ -12,7 +12,7 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONTENT_DIRECTORY();
+		static jstring CONTENT_DIRECTORY();
 		
 		// Constructors
 		void __constructor();
@@ -25,12 +25,13 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_RawContacts_Data::CONTENT_DIRECTORY()
+	jstring ContactsContract_RawContacts_Data::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$RawContacts$Data",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

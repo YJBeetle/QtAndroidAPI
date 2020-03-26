@@ -42,26 +42,30 @@ namespace __jni_impl::android::os
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean CancellationSignal::isCanceled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCanceled",
-			"()Z");
+			"()Z"
+		);
 	}
 	void CancellationSignal::throwIfCanceled()
 	{
 		__thiz.callMethod<void>(
 			"throwIfCanceled",
-			"()V");
+			"()V"
+		);
 	}
 	void CancellationSignal::setOnCancelListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnCancelListener",
 			"(Landroid/os/CancellationSignal$OnCancelListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::os
 

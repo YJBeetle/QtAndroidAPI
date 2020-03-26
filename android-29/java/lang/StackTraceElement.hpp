@@ -19,16 +19,16 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jboolean isNativeMethod();
-		QAndroidJniObject getFileName();
+		jstring getFileName();
 		jint getLineNumber();
-		QAndroidJniObject getModuleName();
-		QAndroidJniObject getModuleVersion();
-		QAndroidJniObject getClassLoaderName();
-		QAndroidJniObject getClassName();
-		QAndroidJniObject getMethodName();
+		jstring getModuleName();
+		jstring getModuleVersion();
+		jstring getClassLoaderName();
+		jstring getClassName();
+		jstring getMethodName();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -68,67 +68,78 @@ namespace __jni_impl::java::lang
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject StackTraceElement::toString()
+	jstring StackTraceElement::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint StackTraceElement::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean StackTraceElement::isNativeMethod()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNativeMethod",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject StackTraceElement::getFileName()
+	jstring StackTraceElement::getFileName()
 	{
 		return __thiz.callObjectMethod(
 			"getFileName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint StackTraceElement::getLineNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getLineNumber",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject StackTraceElement::getModuleName()
+	jstring StackTraceElement::getModuleName()
 	{
 		return __thiz.callObjectMethod(
 			"getModuleName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StackTraceElement::getModuleVersion()
+	jstring StackTraceElement::getModuleVersion()
 	{
 		return __thiz.callObjectMethod(
 			"getModuleVersion",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StackTraceElement::getClassLoaderName()
+	jstring StackTraceElement::getClassLoaderName()
 	{
 		return __thiz.callObjectMethod(
 			"getClassLoaderName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StackTraceElement::getClassName()
+	jstring StackTraceElement::getClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getClassName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject StackTraceElement::getMethodName()
+	jstring StackTraceElement::getMethodName()
 	{
 		return __thiz.callObjectMethod(
 			"getMethodName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::lang
 

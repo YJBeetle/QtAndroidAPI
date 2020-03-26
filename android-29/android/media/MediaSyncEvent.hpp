@@ -34,13 +34,15 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaSyncEvent",
-			"SYNC_EVENT_NONE");
+			"SYNC_EVENT_NONE"
+		);
 	}
 	jint MediaSyncEvent::SYNC_EVENT_PRESENTATION_COMPLETE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaSyncEvent",
-			"SYNC_EVENT_PRESENTATION_COMPLETE");
+			"SYNC_EVENT_PRESENTATION_COMPLETE"
+		);
 	}
 	
 	// Constructors
@@ -56,7 +58,8 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MediaSyncEvent::createEvent(jint arg0)
 	{
@@ -64,20 +67,23 @@ namespace __jni_impl::android::media
 			"android.media.MediaSyncEvent",
 			"createEvent",
 			"(I)Landroid/media/MediaSyncEvent;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaSyncEvent::setAudioSessionId(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAudioSessionId",
 			"(I)Landroid/media/MediaSyncEvent;",
-			arg0);
+			arg0
+		);
 	}
 	jint MediaSyncEvent::getAudioSessionId()
 	{
 		return __thiz.callMethod<jint>(
 			"getAudioSessionId",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

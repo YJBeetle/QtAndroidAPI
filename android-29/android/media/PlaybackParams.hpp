@@ -30,10 +30,10 @@ namespace __jni_impl::android::media
 		QAndroidJniObject allowDefaults();
 		QAndroidJniObject setAudioFallbackMode(jint arg0);
 		jint getAudioFallbackMode();
-		jfloat getPitch();
 		QAndroidJniObject setPitch(jfloat arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jfloat getPitch();
 	};
 } // namespace __jni_impl::android::media
 
@@ -46,26 +46,30 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.PlaybackParams",
-			"AUDIO_FALLBACK_MODE_DEFAULT");
+			"AUDIO_FALLBACK_MODE_DEFAULT"
+		);
 	}
 	jint PlaybackParams::AUDIO_FALLBACK_MODE_FAIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.PlaybackParams",
-			"AUDIO_FALLBACK_MODE_FAIL");
+			"AUDIO_FALLBACK_MODE_FAIL"
+		);
 	}
 	jint PlaybackParams::AUDIO_FALLBACK_MODE_MUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.PlaybackParams",
-			"AUDIO_FALLBACK_MODE_MUTE");
+			"AUDIO_FALLBACK_MODE_MUTE"
+		);
 	}
 	QAndroidJniObject PlaybackParams::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.PlaybackParams",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -81,52 +85,53 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jfloat>(
 			"getSpeed",
-			"()F");
+			"()F"
+		);
 	}
 	QAndroidJniObject PlaybackParams::setSpeed(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSpeed",
 			"(F)Landroid/media/PlaybackParams;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PlaybackParams::allowDefaults()
 	{
 		return __thiz.callObjectMethod(
 			"allowDefaults",
-			"()Landroid/media/PlaybackParams;");
+			"()Landroid/media/PlaybackParams;"
+		);
 	}
 	QAndroidJniObject PlaybackParams::setAudioFallbackMode(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAudioFallbackMode",
 			"(I)Landroid/media/PlaybackParams;",
-			arg0);
+			arg0
+		);
 	}
 	jint PlaybackParams::getAudioFallbackMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getAudioFallbackMode",
-			"()I");
-	}
-	jfloat PlaybackParams::getPitch()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getPitch",
-			"()F");
+			"()I"
+		);
 	}
 	QAndroidJniObject PlaybackParams::setPitch(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPitch",
 			"(F)Landroid/media/PlaybackParams;",
-			arg0);
+			arg0
+		);
 	}
 	jint PlaybackParams::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PlaybackParams::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -134,7 +139,15 @@ namespace __jni_impl::android::media
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jfloat PlaybackParams::getPitch()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getPitch",
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::media
 

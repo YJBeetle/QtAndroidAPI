@@ -29,12 +29,14 @@ namespace __jni_impl::android::media::audiofx
 	jint Visualizer_MeasurementPeakRms::mPeak()
 	{
 		return __thiz.getField<jint>(
-			"mPeak");
+			"mPeak"
+		);
 	}
 	jint Visualizer_MeasurementPeakRms::mRms()
 	{
 		return __thiz.getField<jint>(
-			"mRms");
+			"mRms"
+		);
 	}
 	
 	// Constructors

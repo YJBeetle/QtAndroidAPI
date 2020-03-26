@@ -27,7 +27,7 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::security::MessageDigest arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void write(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);
 		void on(jboolean arg0);
@@ -54,18 +54,20 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject DigestOutputStream::toString()
+	jstring DigestOutputStream::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void DigestOutputStream::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void DigestOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -74,27 +76,31 @@ namespace __jni_impl::java::security
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DigestOutputStream::on(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"on",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void DigestOutputStream::setMessageDigest(__jni_impl::java::security::MessageDigest arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMessageDigest",
 			"(Ljava/security/MessageDigest;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DigestOutputStream::getMessageDigest()
 	{
 		return __thiz.callObjectMethod(
 			"getMessageDigest",
-			"()Ljava/security/MessageDigest;");
+			"()Ljava/security/MessageDigest;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

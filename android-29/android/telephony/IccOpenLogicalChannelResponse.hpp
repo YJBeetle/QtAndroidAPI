@@ -27,11 +27,11 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getChannel();
-		QAndroidJniObject getSelectResponse();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jbyteArray getSelectResponse();
 		jint getStatus();
 	};
 } // namespace __jni_impl::android::telephony
@@ -46,37 +46,43 @@ namespace __jni_impl::android::telephony
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.IccOpenLogicalChannelResponse",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint IccOpenLogicalChannelResponse::INVALID_CHANNEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
-			"INVALID_CHANNEL");
+			"INVALID_CHANNEL"
+		);
 	}
 	jint IccOpenLogicalChannelResponse::STATUS_MISSING_RESOURCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
-			"STATUS_MISSING_RESOURCE");
+			"STATUS_MISSING_RESOURCE"
+		);
 	}
 	jint IccOpenLogicalChannelResponse::STATUS_NO_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
-			"STATUS_NO_ERROR");
+			"STATUS_NO_ERROR"
+		);
 	}
 	jint IccOpenLogicalChannelResponse::STATUS_NO_SUCH_ELEMENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
-			"STATUS_NO_SUCH_ELEMENT");
+			"STATUS_NO_SUCH_ELEMENT"
+		);
 	}
 	jint IccOpenLogicalChannelResponse::STATUS_UNKNOWN_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telephony.IccOpenLogicalChannelResponse",
-			"STATUS_UNKNOWN_ERROR");
+			"STATUS_UNKNOWN_ERROR"
+		);
 	}
 	
 	// Constructors
@@ -88,29 +94,26 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	QAndroidJniObject IccOpenLogicalChannelResponse::toString()
+	jstring IccOpenLogicalChannelResponse::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint IccOpenLogicalChannelResponse::getChannel()
 	{
 		return __thiz.callMethod<jint>(
 			"getChannel",
-			"()I");
-	}
-	QAndroidJniObject IccOpenLogicalChannelResponse::getSelectResponse()
-	{
-		return __thiz.callObjectMethod(
-			"getSelectResponse",
-			"()[B");
+			"()I"
+		);
 	}
 	jint IccOpenLogicalChannelResponse::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void IccOpenLogicalChannelResponse::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -118,13 +121,22 @@ namespace __jni_impl::android::telephony
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jbyteArray IccOpenLogicalChannelResponse::getSelectResponse()
+	{
+		return __thiz.callObjectMethod(
+			"getSelectResponse",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jint IccOpenLogicalChannelResponse::getStatus()
 	{
 		return __thiz.callMethod<jint>(
 			"getStatus",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

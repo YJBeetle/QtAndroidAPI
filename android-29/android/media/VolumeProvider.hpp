@@ -20,12 +20,12 @@ namespace __jni_impl::android::media
 		void __constructor(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint getVolumeControl();
-		jint getMaxVolume();
-		jint getCurrentVolume();
 		void setCurrentVolume(jint arg0);
 		void onSetVolumeTo(jint arg0);
 		void onAdjustVolume(jint arg0);
+		jint getVolumeControl();
+		jint getMaxVolume();
+		jint getCurrentVolume();
 	};
 } // namespace __jni_impl::android::media
 
@@ -37,19 +37,22 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.VolumeProvider",
-			"VOLUME_CONTROL_ABSOLUTE");
+			"VOLUME_CONTROL_ABSOLUTE"
+		);
 	}
 	jint VolumeProvider::VOLUME_CONTROL_FIXED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.VolumeProvider",
-			"VOLUME_CONTROL_FIXED");
+			"VOLUME_CONTROL_FIXED"
+		);
 	}
 	jint VolumeProvider::VOLUME_CONTROL_RELATIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.VolumeProvider",
-			"VOLUME_CONTROL_RELATIVE");
+			"VOLUME_CONTROL_RELATIVE"
+		);
 	}
 	
 	// Constructors
@@ -64,44 +67,50 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jint VolumeProvider::getVolumeControl()
-	{
-		return __thiz.callMethod<jint>(
-			"getVolumeControl",
-			"()I");
-	}
-	jint VolumeProvider::getMaxVolume()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxVolume",
-			"()I");
-	}
-	jint VolumeProvider::getCurrentVolume()
-	{
-		return __thiz.callMethod<jint>(
-			"getCurrentVolume",
-			"()I");
-	}
 	void VolumeProvider::setCurrentVolume(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCurrentVolume",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void VolumeProvider::onSetVolumeTo(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onSetVolumeTo",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void VolumeProvider::onAdjustVolume(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAdjustVolume",
 			"(I)V",
-			arg0);
+			arg0
+		);
+	}
+	jint VolumeProvider::getVolumeControl()
+	{
+		return __thiz.callMethod<jint>(
+			"getVolumeControl",
+			"()I"
+		);
+	}
+	jint VolumeProvider::getMaxVolume()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxVolume",
+			"()I"
+		);
+	}
+	jint VolumeProvider::getCurrentVolume()
+	{
+		return __thiz.callMethod<jint>(
+			"getCurrentVolume",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

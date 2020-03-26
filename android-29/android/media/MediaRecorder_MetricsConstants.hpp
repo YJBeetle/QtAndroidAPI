@@ -12,22 +12,22 @@ namespace __jni_impl::android::media
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUDIO_BITRATE();
-		static QAndroidJniObject AUDIO_CHANNELS();
-		static QAndroidJniObject AUDIO_SAMPLERATE();
-		static QAndroidJniObject AUDIO_TIMESCALE();
-		static QAndroidJniObject CAPTURE_FPS();
-		static QAndroidJniObject CAPTURE_FPS_ENABLE();
-		static QAndroidJniObject FRAMERATE();
-		static QAndroidJniObject HEIGHT();
-		static QAndroidJniObject MOVIE_TIMESCALE();
-		static QAndroidJniObject ROTATION();
-		static QAndroidJniObject VIDEO_BITRATE();
-		static QAndroidJniObject VIDEO_IFRAME_INTERVAL();
-		static QAndroidJniObject VIDEO_LEVEL();
-		static QAndroidJniObject VIDEO_PROFILE();
-		static QAndroidJniObject VIDEO_TIMESCALE();
-		static QAndroidJniObject WIDTH();
+		static jstring AUDIO_BITRATE();
+		static jstring AUDIO_CHANNELS();
+		static jstring AUDIO_SAMPLERATE();
+		static jstring AUDIO_TIMESCALE();
+		static jstring CAPTURE_FPS();
+		static jstring CAPTURE_FPS_ENABLE();
+		static jstring FRAMERATE();
+		static jstring HEIGHT();
+		static jstring MOVIE_TIMESCALE();
+		static jstring ROTATION();
+		static jstring VIDEO_BITRATE();
+		static jstring VIDEO_IFRAME_INTERVAL();
+		static jstring VIDEO_LEVEL();
+		static jstring VIDEO_PROFILE();
+		static jstring VIDEO_TIMESCALE();
+		static jstring WIDTH();
 		
 		// Constructors
 		void __constructor();
@@ -40,117 +40,133 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	// Fields
-	QAndroidJniObject MediaRecorder_MetricsConstants::AUDIO_BITRATE()
+	jstring MediaRecorder_MetricsConstants::AUDIO_BITRATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"AUDIO_BITRATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::AUDIO_CHANNELS()
+	jstring MediaRecorder_MetricsConstants::AUDIO_CHANNELS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"AUDIO_CHANNELS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::AUDIO_SAMPLERATE()
+	jstring MediaRecorder_MetricsConstants::AUDIO_SAMPLERATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"AUDIO_SAMPLERATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::AUDIO_TIMESCALE()
+	jstring MediaRecorder_MetricsConstants::AUDIO_TIMESCALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"AUDIO_TIMESCALE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::CAPTURE_FPS()
+	jstring MediaRecorder_MetricsConstants::CAPTURE_FPS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"CAPTURE_FPS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::CAPTURE_FPS_ENABLE()
+	jstring MediaRecorder_MetricsConstants::CAPTURE_FPS_ENABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"CAPTURE_FPS_ENABLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::FRAMERATE()
+	jstring MediaRecorder_MetricsConstants::FRAMERATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"FRAMERATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::HEIGHT()
+	jstring MediaRecorder_MetricsConstants::HEIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"HEIGHT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::MOVIE_TIMESCALE()
+	jstring MediaRecorder_MetricsConstants::MOVIE_TIMESCALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"MOVIE_TIMESCALE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::ROTATION()
+	jstring MediaRecorder_MetricsConstants::ROTATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"ROTATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::VIDEO_BITRATE()
+	jstring MediaRecorder_MetricsConstants::VIDEO_BITRATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"VIDEO_BITRATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::VIDEO_IFRAME_INTERVAL()
+	jstring MediaRecorder_MetricsConstants::VIDEO_IFRAME_INTERVAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"VIDEO_IFRAME_INTERVAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::VIDEO_LEVEL()
+	jstring MediaRecorder_MetricsConstants::VIDEO_LEVEL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"VIDEO_LEVEL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::VIDEO_PROFILE()
+	jstring MediaRecorder_MetricsConstants::VIDEO_PROFILE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"VIDEO_PROFILE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::VIDEO_TIMESCALE()
+	jstring MediaRecorder_MetricsConstants::VIDEO_TIMESCALE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"VIDEO_TIMESCALE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaRecorder_MetricsConstants::WIDTH()
+	jstring MediaRecorder_MetricsConstants::WIDTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaRecorder$MetricsConstants",
 			"WIDTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

@@ -39,7 +39,8 @@ namespace __jni_impl::android::bluetooth::le
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.le.PeriodicAdvertisingParameters",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -55,7 +56,8 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PeriodicAdvertisingParameters::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -63,19 +65,22 @@ namespace __jni_impl::android::bluetooth::le
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean PeriodicAdvertisingParameters::getIncludeTxPower()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getIncludeTxPower",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint PeriodicAdvertisingParameters::getInterval()
 	{
 		return __thiz.callMethod<jint>(
 			"getInterval",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::bluetooth::le
 

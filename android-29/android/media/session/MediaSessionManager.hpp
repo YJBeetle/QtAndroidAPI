@@ -74,20 +74,23 @@ namespace __jni_impl::android::media::session
 		__thiz.callMethod<void>(
 			"notifySession2Created",
 			"(Landroid/media/Session2Token;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaSessionManager::getActiveSessions(__jni_impl::android::content::ComponentName arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getActiveSessions",
 			"(Landroid/content/ComponentName;)Ljava/util/List;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaSessionManager::getSession2Tokens()
 	{
 		return __thiz.callObjectMethod(
 			"getSession2Tokens",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	void MediaSessionManager::addOnActiveSessionsChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::os::Handler arg2)
 	{
@@ -96,7 +99,8 @@ namespace __jni_impl::android::media::session
 			"(Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;Landroid/content/ComponentName;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void MediaSessionManager::addOnActiveSessionsChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::content::ComponentName arg1)
 	{
@@ -104,14 +108,16 @@ namespace __jni_impl::android::media::session
 			"addOnActiveSessionsChangedListener",
 			"(Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;Landroid/content/ComponentName;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaSessionManager::removeOnActiveSessionsChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeOnActiveSessionsChangedListener",
 			"(Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaSessionManager::addOnSession2TokensChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -119,28 +125,32 @@ namespace __jni_impl::android::media::session
 			"addOnSession2TokensChangedListener",
 			"(Landroid/media/session/MediaSessionManager$OnSession2TokensChangedListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaSessionManager::addOnSession2TokensChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addOnSession2TokensChangedListener",
 			"(Landroid/media/session/MediaSessionManager$OnSession2TokensChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaSessionManager::removeOnSession2TokensChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeOnSession2TokensChangedListener",
 			"(Landroid/media/session/MediaSessionManager$OnSession2TokensChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean MediaSessionManager::isTrustedForMediaControl(__jni_impl::android::media::session::MediaSessionManager_RemoteUserInfo arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTrustedForMediaControl",
 			"(Landroid/media/session/MediaSessionManager$RemoteUserInfo;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::session
 

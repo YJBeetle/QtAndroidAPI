@@ -58,7 +58,8 @@ namespace __jni_impl::android::animation
 			"loadAnimator",
 			"(Landroid/content/Context;I)Landroid/animation/Animator;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject AnimatorInflater::loadStateListAnimator(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -67,7 +68,8 @@ namespace __jni_impl::android::animation
 			"loadStateListAnimator",
 			"(Landroid/content/Context;I)Landroid/animation/StateListAnimator;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::animation
 

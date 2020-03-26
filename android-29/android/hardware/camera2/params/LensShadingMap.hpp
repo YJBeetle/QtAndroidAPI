@@ -23,14 +23,14 @@ namespace __jni_impl::android::hardware::camera2::params
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		jint getColumnCount();
 		jint getRowCount();
 		jint getGainFactorCount();
 		jfloat getGainFactor(jint arg0, jint arg1, jint arg2);
 		QAndroidJniObject getGainFactorVector(jint arg0, jint arg1);
 		void copyGainFactors(jfloatArray arg0, jint arg1);
+		jint getColumnCount();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -43,7 +43,8 @@ namespace __jni_impl::android::hardware::camera2::params
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"android.hardware.camera2.params.LensShadingMap",
-			"MINIMUM_GAIN_FACTOR");
+			"MINIMUM_GAIN_FACTOR"
+		);
 	}
 	
 	// Constructors
@@ -60,37 +61,36 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject LensShadingMap::toString()
+	jstring LensShadingMap::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint LensShadingMap::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jint LensShadingMap::getColumnCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint LensShadingMap::getRowCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getRowCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint LensShadingMap::getGainFactorCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getGainFactorCount",
-			"()I");
+			"()I"
+		);
 	}
 	jfloat LensShadingMap::getGainFactor(jint arg0, jint arg1, jint arg2)
 	{
@@ -99,7 +99,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"(III)F",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject LensShadingMap::getGainFactorVector(jint arg0, jint arg1)
 	{
@@ -107,7 +108,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"getGainFactorVector",
 			"(II)Landroid/hardware/camera2/params/RggbChannelVector;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void LensShadingMap::copyGainFactors(jfloatArray arg0, jint arg1)
 	{
@@ -115,7 +117,15 @@ namespace __jni_impl::android::hardware::camera2::params
 			"copyGainFactors",
 			"([FI)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	jint LensShadingMap::getColumnCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnCount",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

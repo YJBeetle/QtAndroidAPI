@@ -44,31 +44,36 @@ namespace __jni_impl::android::opengl
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGLExt",
-			"EGL_CONTEXT_FLAGS_KHR");
+			"EGL_CONTEXT_FLAGS_KHR"
+		);
 	}
 	jint EGLExt::EGL_CONTEXT_MAJOR_VERSION_KHR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGLExt",
-			"EGL_CONTEXT_MAJOR_VERSION_KHR");
+			"EGL_CONTEXT_MAJOR_VERSION_KHR"
+		);
 	}
 	jint EGLExt::EGL_CONTEXT_MINOR_VERSION_KHR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGLExt",
-			"EGL_CONTEXT_MINOR_VERSION_KHR");
+			"EGL_CONTEXT_MINOR_VERSION_KHR"
+		);
 	}
 	jint EGLExt::EGL_OPENGL_ES3_BIT_KHR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGLExt",
-			"EGL_OPENGL_ES3_BIT_KHR");
+			"EGL_OPENGL_ES3_BIT_KHR"
+		);
 	}
 	jint EGLExt::EGL_RECORDABLE_ANDROID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.EGLExt",
-			"EGL_RECORDABLE_ANDROID");
+			"EGL_RECORDABLE_ANDROID"
+		);
 	}
 	
 	// Constructors
@@ -88,7 +93,8 @@ namespace __jni_impl::android::opengl
 			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

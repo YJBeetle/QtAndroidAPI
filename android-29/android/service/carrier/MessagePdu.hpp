@@ -38,7 +38,8 @@ namespace __jni_impl::android::service::carrier
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.carrier.MessagePdu",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -55,7 +56,8 @@ namespace __jni_impl::android::service::carrier
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void MessagePdu::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -63,13 +65,15 @@ namespace __jni_impl::android::service::carrier
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject MessagePdu::getPdus()
 	{
 		return __thiz.callObjectMethod(
 			"getPdus",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::service::carrier
 

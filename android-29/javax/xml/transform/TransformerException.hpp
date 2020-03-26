@@ -37,13 +37,13 @@ namespace __jni_impl::javax::xml::transform
 		void printStackTrace();
 		void printStackTrace(__jni_impl::java::io::PrintStream arg0);
 		void printStackTrace(__jni_impl::java::io::PrintWriter arg0);
-		QAndroidJniObject getCause();
-		QAndroidJniObject initCause(jthrowable arg0);
-		QAndroidJniObject getException();
-		QAndroidJniObject getLocationAsString();
+		jthrowable getCause();
+		jthrowable initCause(jthrowable arg0);
+		jthrowable getException();
+		jstring getLocationAsString();
 		QAndroidJniObject getLocator();
 		void setLocator(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getMessageAndLocation();
+		jstring getMessageAndLocation();
 	};
 } // namespace __jni_impl::javax::xml::transform
 
@@ -101,65 +101,75 @@ namespace __jni_impl::javax::xml::transform
 	{
 		__thiz.callMethod<void>(
 			"printStackTrace",
-			"()V");
+			"()V"
+		);
 	}
 	void TransformerException::printStackTrace(__jni_impl::java::io::PrintStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"printStackTrace",
 			"(Ljava/io/PrintStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TransformerException::printStackTrace(__jni_impl::java::io::PrintWriter arg0)
 	{
 		__thiz.callMethod<void>(
 			"printStackTrace",
 			"(Ljava/io/PrintWriter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject TransformerException::getCause()
+	jthrowable TransformerException::getCause()
 	{
 		return __thiz.callObjectMethod(
 			"getCause",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
-	QAndroidJniObject TransformerException::initCause(jthrowable arg0)
+	jthrowable TransformerException::initCause(jthrowable arg0)
 	{
 		return __thiz.callObjectMethod(
 			"initCause",
 			"(Ljava/lang/Throwable;)Ljava/lang/Throwable;",
-			arg0);
+			arg0
+		).object<jthrowable>();
 	}
-	QAndroidJniObject TransformerException::getException()
+	jthrowable TransformerException::getException()
 	{
 		return __thiz.callObjectMethod(
 			"getException",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
-	QAndroidJniObject TransformerException::getLocationAsString()
+	jstring TransformerException::getLocationAsString()
 	{
 		return __thiz.callObjectMethod(
 			"getLocationAsString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject TransformerException::getLocator()
 	{
 		return __thiz.callObjectMethod(
 			"getLocator",
-			"()Ljavax/xml/transform/SourceLocator;");
+			"()Ljavax/xml/transform/SourceLocator;"
+		);
 	}
 	void TransformerException::setLocator(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLocator",
 			"(Ljavax/xml/transform/SourceLocator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject TransformerException::getMessageAndLocation()
+	jstring TransformerException::getMessageAndLocation()
 	{
 		return __thiz.callObjectMethod(
 			"getMessageAndLocation",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::xml::transform
 

@@ -21,7 +21,7 @@ namespace __jni_impl::java::lang::annotation
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::lang::annotation
@@ -35,21 +35,24 @@ namespace __jni_impl::java::lang::annotation
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.RetentionPolicy",
 			"SOURCE",
-			"Ljava/lang/annotation/RetentionPolicy;");
+			"Ljava/lang/annotation/RetentionPolicy;"
+		);
 	}
 	QAndroidJniObject RetentionPolicy::CLASS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.RetentionPolicy",
 			"CLASS",
-			"Ljava/lang/annotation/RetentionPolicy;");
+			"Ljava/lang/annotation/RetentionPolicy;"
+		);
 	}
 	QAndroidJniObject RetentionPolicy::RUNTIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.annotation.RetentionPolicy",
 			"RUNTIME",
-			"Ljava/lang/annotation/RetentionPolicy;");
+			"Ljava/lang/annotation/RetentionPolicy;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::java::lang::annotation
 	}
 	
 	// Methods
-	QAndroidJniObject RetentionPolicy::values()
+	jarray RetentionPolicy::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.annotation.RetentionPolicy",
 			"values",
-			"()[Ljava/lang/annotation/RetentionPolicy;");
+			"()[Ljava/lang/annotation/RetentionPolicy;"
+		).object<jarray>();
 	}
 	QAndroidJniObject RetentionPolicy::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::java::lang::annotation
 			"java.lang.annotation.RetentionPolicy",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/annotation/RetentionPolicy;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang::annotation
 

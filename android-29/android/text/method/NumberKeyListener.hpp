@@ -27,7 +27,7 @@ namespace __jni_impl::android::text::method
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
+		jstring filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
 		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 	};
 } // namespace __jni_impl::android::text::method
@@ -48,7 +48,7 @@ namespace __jni_impl::android::text::method
 	}
 	
 	// Methods
-	QAndroidJniObject NumberKeyListener::filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
+	jstring NumberKeyListener::filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
 	{
 		return __thiz.callObjectMethod(
 			"filter",
@@ -58,7 +58,8 @@ namespace __jni_impl::android::text::method
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5);
+			arg5
+		).object<jstring>();
 	}
 	jboolean NumberKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
 	{
@@ -68,7 +69,8 @@ namespace __jni_impl::android::text::method
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text::method
 

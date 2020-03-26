@@ -120,37 +120,43 @@ namespace __jni_impl::android::graphics
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.ImageDecoder",
-			"ALLOCATOR_DEFAULT");
+			"ALLOCATOR_DEFAULT"
+		);
 	}
 	jint ImageDecoder::ALLOCATOR_HARDWARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.ImageDecoder",
-			"ALLOCATOR_HARDWARE");
+			"ALLOCATOR_HARDWARE"
+		);
 	}
 	jint ImageDecoder::ALLOCATOR_SHARED_MEMORY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.ImageDecoder",
-			"ALLOCATOR_SHARED_MEMORY");
+			"ALLOCATOR_SHARED_MEMORY"
+		);
 	}
 	jint ImageDecoder::ALLOCATOR_SOFTWARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.ImageDecoder",
-			"ALLOCATOR_SOFTWARE");
+			"ALLOCATOR_SOFTWARE"
+		);
 	}
 	jint ImageDecoder::MEMORY_POLICY_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.ImageDecoder",
-			"MEMORY_POLICY_DEFAULT");
+			"MEMORY_POLICY_DEFAULT"
+		);
 	}
 	jint ImageDecoder::MEMORY_POLICY_LOW_RAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.ImageDecoder",
-			"MEMORY_POLICY_LOW_RAM");
+			"MEMORY_POLICY_LOW_RAM"
+		);
 	}
 	
 	// Constructors
@@ -166,7 +172,8 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean ImageDecoder::isMimeTypeSupported(jstring arg0)
 	{
@@ -174,7 +181,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.ImageDecoder",
 			"isMimeTypeSupported",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ImageDecoder::createSource(__jni_impl::java::nio::ByteBuffer arg0)
 	{
@@ -182,7 +190,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Ljava/nio/ByteBuffer;)Landroid/graphics/ImageDecoder$Source;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::createSource(__jni_impl::java::io::File arg0)
 	{
@@ -190,7 +199,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Ljava/io/File;)Landroid/graphics/ImageDecoder$Source;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::createSource(__jni_impl::__JniBaseClass arg0)
 	{
@@ -198,7 +208,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.ImageDecoder",
 			"createSource",
 			"(Ljava/util/concurrent/Callable;)Landroid/graphics/ImageDecoder$Source;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::createSource(__jni_impl::android::content::res::AssetManager arg0, jstring arg1)
 	{
@@ -207,7 +218,8 @@ namespace __jni_impl::android::graphics
 			"createSource",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/ImageDecoder$Source;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ImageDecoder::createSource(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -216,7 +228,8 @@ namespace __jni_impl::android::graphics
 			"createSource",
 			"(Landroid/content/ContentResolver;Landroid/net/Uri;)Landroid/graphics/ImageDecoder$Source;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::createSource(__jni_impl::android::content::res::Resources arg0, jint arg1)
 	{
@@ -225,7 +238,8 @@ namespace __jni_impl::android::graphics
 			"createSource",
 			"(Landroid/content/res/Resources;I)Landroid/graphics/ImageDecoder$Source;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ImageDecoder::setTargetSize(jint arg0, jint arg1)
 	{
@@ -233,125 +247,144 @@ namespace __jni_impl::android::graphics
 			"setTargetSize",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ImageDecoder::setTargetSampleSize(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTargetSampleSize",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ImageDecoder::setAllocator(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAllocator",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint ImageDecoder::getAllocator()
 	{
 		return __thiz.callMethod<jint>(
 			"getAllocator",
-			"()I");
+			"()I"
+		);
 	}
 	void ImageDecoder::setUnpremultipliedRequired(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setUnpremultipliedRequired",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ImageDecoder::isUnpremultipliedRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUnpremultipliedRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ImageDecoder::setPostProcessor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPostProcessor",
 			"(Landroid/graphics/PostProcessor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::getPostProcessor()
 	{
 		return __thiz.callObjectMethod(
 			"getPostProcessor",
-			"()Landroid/graphics/PostProcessor;");
+			"()Landroid/graphics/PostProcessor;"
+		);
 	}
 	void ImageDecoder::setOnPartialImageListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnPartialImageListener",
 			"(Landroid/graphics/ImageDecoder$OnPartialImageListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::getOnPartialImageListener()
 	{
 		return __thiz.callObjectMethod(
 			"getOnPartialImageListener",
-			"()Landroid/graphics/ImageDecoder$OnPartialImageListener;");
+			"()Landroid/graphics/ImageDecoder$OnPartialImageListener;"
+		);
 	}
 	void ImageDecoder::setCrop(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCrop",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::getCrop()
 	{
 		return __thiz.callObjectMethod(
 			"getCrop",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 	void ImageDecoder::setMutableRequired(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMutableRequired",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ImageDecoder::isMutableRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMutableRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ImageDecoder::setMemorySizePolicy(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMemorySizePolicy",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint ImageDecoder::getMemorySizePolicy()
 	{
 		return __thiz.callMethod<jint>(
 			"getMemorySizePolicy",
-			"()I");
+			"()I"
+		);
 	}
 	void ImageDecoder::setDecodeAsAlphaMaskEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDecodeAsAlphaMaskEnabled",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ImageDecoder::isDecodeAsAlphaMaskEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDecodeAsAlphaMaskEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ImageDecoder::setTargetColorSpace(__jni_impl::android::graphics::ColorSpace arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTargetColorSpace",
 			"(Landroid/graphics/ColorSpace;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::decodeDrawable(__jni_impl::android::graphics::ImageDecoder_Source arg0)
 	{
@@ -359,7 +392,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.ImageDecoder",
 			"decodeDrawable",
 			"(Landroid/graphics/ImageDecoder$Source;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::decodeDrawable(__jni_impl::android::graphics::ImageDecoder_Source arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -368,7 +402,8 @@ namespace __jni_impl::android::graphics
 			"decodeDrawable",
 			"(Landroid/graphics/ImageDecoder$Source;Landroid/graphics/ImageDecoder$OnHeaderDecodedListener;)Landroid/graphics/drawable/Drawable;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::decodeBitmap(__jni_impl::android::graphics::ImageDecoder_Source arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -377,7 +412,8 @@ namespace __jni_impl::android::graphics
 			"decodeBitmap",
 			"(Landroid/graphics/ImageDecoder$Source;Landroid/graphics/ImageDecoder$OnHeaderDecodedListener;)Landroid/graphics/Bitmap;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ImageDecoder::decodeBitmap(__jni_impl::android::graphics::ImageDecoder_Source arg0)
 	{
@@ -385,7 +421,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.ImageDecoder",
 			"decodeBitmap",
 			"(Landroid/graphics/ImageDecoder$Source;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

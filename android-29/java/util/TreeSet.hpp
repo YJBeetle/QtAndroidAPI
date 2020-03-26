@@ -30,21 +30,21 @@ namespace __jni_impl::java::util
 		// Methods
 		jboolean add(jobject arg0);
 		jboolean remove(jobject arg0);
-		QAndroidJniObject clone();
+		jobject clone();
 		void clear();
 		jboolean isEmpty();
 		jint size();
 		QAndroidJniObject iterator();
 		jboolean contains(jobject arg0);
-		QAndroidJniObject last();
+		jobject last();
 		QAndroidJniObject spliterator();
 		jboolean addAll(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject first();
-		QAndroidJniObject lower(jobject arg0);
+		jobject first();
+		jobject lower(jobject arg0);
 		QAndroidJniObject comparator();
-		QAndroidJniObject floor(jobject arg0);
-		QAndroidJniObject pollFirst();
-		QAndroidJniObject pollLast();
+		jobject floor(jobject arg0);
+		jobject pollFirst();
+		jobject pollLast();
 		QAndroidJniObject descendingIterator();
 		QAndroidJniObject subSet(jobject arg0, jobject arg1);
 		QAndroidJniObject subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
@@ -52,8 +52,8 @@ namespace __jni_impl::java::util
 		QAndroidJniObject headSet(jobject arg0, jboolean arg1);
 		QAndroidJniObject tailSet(jobject arg0, jboolean arg1);
 		QAndroidJniObject tailSet(jobject arg0);
-		QAndroidJniObject ceiling(jobject arg0);
-		QAndroidJniObject higher(jobject arg0);
+		jobject ceiling(jobject arg0);
+		jobject higher(jobject arg0);
 		QAndroidJniObject descendingSet();
 	};
 } // namespace __jni_impl::java::util
@@ -86,114 +86,132 @@ namespace __jni_impl::java::util
 		return __thiz.callMethod<jboolean>(
 			"add",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean TreeSet::remove(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"remove",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TreeSet::clone()
+	jobject TreeSet::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void TreeSet::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean TreeSet::isEmpty()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint TreeSet::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject TreeSet::iterator()
 	{
 		return __thiz.callObjectMethod(
 			"iterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jboolean TreeSet::contains(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TreeSet::last()
+	jobject TreeSet::last()
 	{
 		return __thiz.callObjectMethod(
 			"last",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject TreeSet::spliterator()
 	{
 		return __thiz.callObjectMethod(
 			"spliterator",
-			"()Ljava/util/Spliterator;");
+			"()Ljava/util/Spliterator;"
+		);
 	}
 	jboolean TreeSet::addAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"addAll",
 			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject TreeSet::first()
+	jobject TreeSet::first()
 	{
 		return __thiz.callObjectMethod(
 			"first",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject TreeSet::lower(jobject arg0)
+	jobject TreeSet::lower(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"lower",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject TreeSet::comparator()
 	{
 		return __thiz.callObjectMethod(
 			"comparator",
-			"()Ljava/util/Comparator;");
+			"()Ljava/util/Comparator;"
+		);
 	}
-	QAndroidJniObject TreeSet::floor(jobject arg0)
+	jobject TreeSet::floor(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"floor",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject TreeSet::pollFirst()
+	jobject TreeSet::pollFirst()
 	{
 		return __thiz.callObjectMethod(
 			"pollFirst",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject TreeSet::pollLast()
+	jobject TreeSet::pollLast()
 	{
 		return __thiz.callObjectMethod(
 			"pollLast",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject TreeSet::descendingIterator()
 	{
 		return __thiz.callObjectMethod(
 			"descendingIterator",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 	QAndroidJniObject TreeSet::subSet(jobject arg0, jobject arg1)
 	{
@@ -201,7 +219,8 @@ namespace __jni_impl::java::util
 			"subSet",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject TreeSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
@@ -211,14 +230,16 @@ namespace __jni_impl::java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject TreeSet::headSet(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"headSet",
 			"(Ljava/lang/Object;)Ljava/util/SortedSet;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TreeSet::headSet(jobject arg0, jboolean arg1)
 	{
@@ -226,7 +247,8 @@ namespace __jni_impl::java::util
 			"headSet",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableSet;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject TreeSet::tailSet(jobject arg0, jboolean arg1)
 	{
@@ -234,34 +256,39 @@ namespace __jni_impl::java::util
 			"tailSet",
 			"(Ljava/lang/Object;Z)Ljava/util/NavigableSet;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject TreeSet::tailSet(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"tailSet",
 			"(Ljava/lang/Object;)Ljava/util/SortedSet;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TreeSet::ceiling(jobject arg0)
+	jobject TreeSet::ceiling(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"ceiling",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject TreeSet::higher(jobject arg0)
+	jobject TreeSet::higher(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"higher",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	QAndroidJniObject TreeSet::descendingSet()
 	{
 		return __thiz.callObjectMethod(
 			"descendingSet",
-			"()Ljava/util/NavigableSet;");
+			"()Ljava/util/NavigableSet;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

@@ -33,20 +33,20 @@ namespace __jni_impl::android::view::inputmethod
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getLocale();
-		QAndroidJniObject getDisplayName(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::content::pm::ApplicationInfo arg2);
+		jstring getLocale();
+		jstring getDisplayName(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::content::pm::ApplicationInfo arg2);
 		jboolean isAsciiCapable();
 		jboolean isAuxiliary();
 		jboolean overridesImplicitlyEnabledSubtype();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getIconResId();
-		QAndroidJniObject getMode();
 		jint getNameResId();
-		QAndroidJniObject getLanguageTag();
-		QAndroidJniObject getExtraValue();
+		jstring getLanguageTag();
+		jstring getExtraValue();
 		jboolean containsExtraValueKey(jstring arg0);
-		QAndroidJniObject getExtraValueOf(jstring arg0);
+		jstring getExtraValueOf(jstring arg0);
+		jint getIconResId();
+		jstring getMode();
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -62,7 +62,8 @@ namespace __jni_impl::android::view::inputmethod
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.InputMethodSubtype",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -100,52 +101,60 @@ namespace __jni_impl::android::view::inputmethod
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint InputMethodSubtype::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject InputMethodSubtype::getLocale()
+	jstring InputMethodSubtype::getLocale()
 	{
 		return __thiz.callObjectMethod(
 			"getLocale",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InputMethodSubtype::getDisplayName(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::content::pm::ApplicationInfo arg2)
+	jstring InputMethodSubtype::getDisplayName(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::content::pm::ApplicationInfo arg2)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jstring>();
 	}
 	jboolean InputMethodSubtype::isAsciiCapable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAsciiCapable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InputMethodSubtype::isAuxiliary()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAuxiliary",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean InputMethodSubtype::overridesImplicitlyEnabledSubtype()
 	{
 		return __thiz.callMethod<jboolean>(
 			"overridesImplicitlyEnabledSubtype",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint InputMethodSubtype::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void InputMethodSubtype::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -153,51 +162,59 @@ namespace __jni_impl::android::view::inputmethod
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jint InputMethodSubtype::getIconResId()
-	{
-		return __thiz.callMethod<jint>(
-			"getIconResId",
-			"()I");
-	}
-	QAndroidJniObject InputMethodSubtype::getMode()
-	{
-		return __thiz.callObjectMethod(
-			"getMode",
-			"()Ljava/lang/String;");
+			arg1
+		);
 	}
 	jint InputMethodSubtype::getNameResId()
 	{
 		return __thiz.callMethod<jint>(
 			"getNameResId",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject InputMethodSubtype::getLanguageTag()
+	jstring InputMethodSubtype::getLanguageTag()
 	{
 		return __thiz.callObjectMethod(
 			"getLanguageTag",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject InputMethodSubtype::getExtraValue()
+	jstring InputMethodSubtype::getExtraValue()
 	{
 		return __thiz.callObjectMethod(
 			"getExtraValue",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean InputMethodSubtype::containsExtraValueKey(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsExtraValueKey",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject InputMethodSubtype::getExtraValueOf(jstring arg0)
+	jstring InputMethodSubtype::getExtraValueOf(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getExtraValueOf",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
+	}
+	jint InputMethodSubtype::getIconResId()
+	{
+		return __thiz.callMethod<jint>(
+			"getIconResId",
+			"()I"
+		);
+	}
+	jstring InputMethodSubtype::getMode()
+	{
+		return __thiz.callObjectMethod(
+			"getMode",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

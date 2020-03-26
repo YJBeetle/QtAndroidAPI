@@ -24,7 +24,7 @@ namespace __jni_impl::java::nio::charset
 		
 		// Methods
 		jint length();
-		QAndroidJniObject toString();
+		jstring toString();
 		void throwException();
 		jboolean isUnderflow();
 		jboolean isOverflow();
@@ -46,14 +46,16 @@ namespace __jni_impl::java::nio::charset
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CoderResult",
 			"UNDERFLOW",
-			"Ljava/nio/charset/CoderResult;");
+			"Ljava/nio/charset/CoderResult;"
+		);
 	}
 	QAndroidJniObject CoderResult::OVERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CoderResult",
 			"OVERFLOW",
-			"Ljava/nio/charset/CoderResult;");
+			"Ljava/nio/charset/CoderResult;"
+		);
 	}
 	
 	// Constructors
@@ -69,37 +71,43 @@ namespace __jni_impl::java::nio::charset
 	{
 		return __thiz.callMethod<jint>(
 			"length",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject CoderResult::toString()
+	jstring CoderResult::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void CoderResult::throwException()
 	{
 		__thiz.callMethod<void>(
 			"throwException",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean CoderResult::isUnderflow()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUnderflow",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CoderResult::isOverflow()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOverflow",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CoderResult::isError()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isError",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject CoderResult::malformedForLength(jint arg0)
 	{
@@ -107,19 +115,22 @@ namespace __jni_impl::java::nio::charset
 			"java.nio.charset.CoderResult",
 			"malformedForLength",
 			"(I)Ljava/nio/charset/CoderResult;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CoderResult::isMalformed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMalformed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean CoderResult::isUnmappable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUnmappable",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject CoderResult::unmappableForLength(jint arg0)
 	{
@@ -127,7 +138,8 @@ namespace __jni_impl::java::nio::charset
 			"java.nio.charset.CoderResult",
 			"unmappableForLength",
 			"(I)Ljava/nio/charset/CoderResult;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::charset
 

@@ -65,7 +65,8 @@ namespace __jni_impl::java::net
 			"(Ljava/net/URI;Ljava/lang/String;Ljava/util/Map;)Ljava/net/CacheResponse;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ResponseCache::put(__jni_impl::java::net::URI arg0, __jni_impl::java::net::URLConnection arg1)
 	{
@@ -73,14 +74,16 @@ namespace __jni_impl::java::net
 			"put",
 			"(Ljava/net/URI;Ljava/net/URLConnection;)Ljava/net/CacheRequest;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ResponseCache::getDefault()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.ResponseCache",
 			"getDefault",
-			"()Ljava/net/ResponseCache;");
+			"()Ljava/net/ResponseCache;"
+		);
 	}
 	void ResponseCache::setDefault(__jni_impl::java::net::ResponseCache arg0)
 	{
@@ -88,7 +91,8 @@ namespace __jni_impl::java::net
 			"java.net.ResponseCache",
 			"setDefault",
 			"(Ljava/net/ResponseCache;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::net
 

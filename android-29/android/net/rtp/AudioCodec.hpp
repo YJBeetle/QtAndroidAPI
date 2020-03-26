@@ -17,8 +17,8 @@ namespace __jni_impl::android::net::rtp
 		static QAndroidJniObject GSM_EFR();
 		static QAndroidJniObject PCMA();
 		static QAndroidJniObject PCMU();
-		QAndroidJniObject fmtp();
-		QAndroidJniObject rtpmap();
+		jstring fmtp();
+		jstring rtpmap();
 		jint type();
 		
 		// Constructors
@@ -26,7 +26,7 @@ namespace __jni_impl::android::net::rtp
 		
 		// Methods
 		static QAndroidJniObject getCodec(jint arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject getCodecs();
+		static jarray getCodecs();
 	};
 } // namespace __jni_impl::android::net::rtp
 
@@ -39,52 +39,60 @@ namespace __jni_impl::android::net::rtp
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
 			"AMR",
-			"Landroid/net/rtp/AudioCodec;");
+			"Landroid/net/rtp/AudioCodec;"
+		);
 	}
 	QAndroidJniObject AudioCodec::GSM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
 			"GSM",
-			"Landroid/net/rtp/AudioCodec;");
+			"Landroid/net/rtp/AudioCodec;"
+		);
 	}
 	QAndroidJniObject AudioCodec::GSM_EFR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
 			"GSM_EFR",
-			"Landroid/net/rtp/AudioCodec;");
+			"Landroid/net/rtp/AudioCodec;"
+		);
 	}
 	QAndroidJniObject AudioCodec::PCMA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
 			"PCMA",
-			"Landroid/net/rtp/AudioCodec;");
+			"Landroid/net/rtp/AudioCodec;"
+		);
 	}
 	QAndroidJniObject AudioCodec::PCMU()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.rtp.AudioCodec",
 			"PCMU",
-			"Landroid/net/rtp/AudioCodec;");
+			"Landroid/net/rtp/AudioCodec;"
+		);
 	}
-	QAndroidJniObject AudioCodec::fmtp()
+	jstring AudioCodec::fmtp()
 	{
 		return __thiz.getObjectField(
 			"fmtp",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioCodec::rtpmap()
+	jstring AudioCodec::rtpmap()
 	{
 		return __thiz.getObjectField(
 			"rtpmap",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AudioCodec::type()
 	{
 		return __thiz.getField<jint>(
-			"type");
+			"type"
+		);
 	}
 	
 	// Constructors
@@ -104,14 +112,16 @@ namespace __jni_impl::android::net::rtp
 			"(ILjava/lang/String;Ljava/lang/String;)Landroid/net/rtp/AudioCodec;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject AudioCodec::getCodecs()
+	jarray AudioCodec::getCodecs()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.rtp.AudioCodec",
 			"getCodecs",
-			"()[Landroid/net/rtp/AudioCodec;");
+			"()[Landroid/net/rtp/AudioCodec;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::net::rtp
 

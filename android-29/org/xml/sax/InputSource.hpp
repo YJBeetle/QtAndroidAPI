@@ -29,16 +29,16 @@ namespace __jni_impl::org::xml::sax
 		
 		// Methods
 		jboolean isEmpty();
-		QAndroidJniObject getEncoding();
+		jstring getEncoding();
 		void setEncoding(jstring arg0);
-		QAndroidJniObject getSystemId();
-		QAndroidJniObject getCharacterStream();
-		void setCharacterStream(__jni_impl::java::io::Reader arg0);
+		jstring getSystemId();
 		void setSystemId(jstring arg0);
 		void setPublicId(jstring arg0);
-		QAndroidJniObject getPublicId();
+		jstring getPublicId();
 		void setByteStream(__jni_impl::java::io::InputStream arg0);
 		QAndroidJniObject getByteStream();
+		QAndroidJniObject getCharacterStream();
+		void setCharacterStream(__jni_impl::java::io::Reader arg0);
 	};
 } // namespace __jni_impl::org::xml::sax
 
@@ -83,72 +83,83 @@ namespace __jni_impl::org::xml::sax
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject InputSource::getEncoding()
+	jstring InputSource::getEncoding()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoding",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void InputSource::setEncoding(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEncoding",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject InputSource::getSystemId()
+	jstring InputSource::getSystemId()
 	{
 		return __thiz.callObjectMethod(
 			"getSystemId",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject InputSource::getCharacterStream()
-	{
-		return __thiz.callObjectMethod(
-			"getCharacterStream",
-			"()Ljava/io/Reader;");
-	}
-	void InputSource::setCharacterStream(__jni_impl::java::io::Reader arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCharacterStream",
-			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object());
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void InputSource::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSystemId",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void InputSource::setPublicId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPublicId",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject InputSource::getPublicId()
+	jstring InputSource::getPublicId()
 	{
 		return __thiz.callObjectMethod(
 			"getPublicId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void InputSource::setByteStream(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"setByteStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject InputSource::getByteStream()
 	{
 		return __thiz.callObjectMethod(
 			"getByteStream",
-			"()Ljava/io/InputStream;");
+			"()Ljava/io/InputStream;"
+		);
+	}
+	QAndroidJniObject InputSource::getCharacterStream()
+	{
+		return __thiz.callObjectMethod(
+			"getCharacterStream",
+			"()Ljava/io/Reader;"
+		);
+	}
+	void InputSource::setCharacterStream(__jni_impl::java::io::Reader arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCharacterStream",
+			"(Ljava/io/Reader;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::org::xml::sax
 

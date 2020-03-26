@@ -22,7 +22,7 @@ namespace __jni_impl::java::time::temporal
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject of(jlong arg0, jlong arg1);
 		static QAndroidJniObject of(jlong arg0, jlong arg1, jlong arg2, jlong arg3);
@@ -60,19 +60,22 @@ namespace __jni_impl::java::time::temporal
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ValueRange::toString()
+	jstring ValueRange::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ValueRange::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1)
 	{
@@ -81,7 +84,8 @@ namespace __jni_impl::java::time::temporal
 			"of",
 			"(JJ)Ljava/time/temporal/ValueRange;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1, jlong arg2, jlong arg3)
 	{
@@ -92,7 +96,8 @@ namespace __jni_impl::java::time::temporal
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1, jlong arg2)
 	{
@@ -102,7 +107,8 @@ namespace __jni_impl::java::time::temporal
 			"(JJJ)Ljava/time/temporal/ValueRange;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jlong ValueRange::checkValidValue(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -110,7 +116,8 @@ namespace __jni_impl::java::time::temporal
 			"checkValidValue",
 			"(JLjava/time/temporal/TemporalField;)J",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint ValueRange::checkValidIntValue(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -118,57 +125,66 @@ namespace __jni_impl::java::time::temporal
 			"checkValidIntValue",
 			"(JLjava/time/temporal/TemporalField;)I",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean ValueRange::isIntValue()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isIntValue",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean ValueRange::isValidValue(jlong arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValidValue",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	jlong ValueRange::getMinimum()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMinimum",
-			"()J");
+			"()J"
+		);
 	}
 	jlong ValueRange::getMaximum()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMaximum",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean ValueRange::isValidIntValue(jlong arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValidIntValue",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ValueRange::isFixed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFixed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jlong ValueRange::getLargestMinimum()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLargestMinimum",
-			"()J");
+			"()J"
+		);
 	}
 	jlong ValueRange::getSmallestMaximum()
 	{
 		return __thiz.callMethod<jlong>(
 			"getSmallestMaximum",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::java::time::temporal
 

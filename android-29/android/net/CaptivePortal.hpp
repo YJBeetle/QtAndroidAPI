@@ -39,7 +39,8 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.CaptivePortal",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -55,19 +56,22 @@ namespace __jni_impl::android::net
 	{
 		__thiz.callMethod<void>(
 			"ignoreNetwork",
-			"()V");
+			"()V"
+		);
 	}
 	void CaptivePortal::reportCaptivePortalDismissed()
 	{
 		__thiz.callMethod<void>(
 			"reportCaptivePortalDismissed",
-			"()V");
+			"()V"
+		);
 	}
 	jint CaptivePortal::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void CaptivePortal::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -75,7 +79,8 @@ namespace __jni_impl::android::net
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net
 

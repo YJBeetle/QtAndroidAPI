@@ -33,14 +33,14 @@ namespace __jni_impl::android::icu::text
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		static QAndroidJniObject getInstance();
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
 		QAndroidJniObject getLocale();
 		void setLocale(__jni_impl::android::icu::util::ULocale arg0);
 		QAndroidJniObject getPluralRules();
-		QAndroidJniObject getCurrencyPluralPattern(jstring arg0);
+		jstring getCurrencyPluralPattern(jstring arg0);
 		void setPluralRules(jstring arg0);
 		void setCurrencyPluralPattern(jstring arg0, jstring arg1);
 	};
@@ -82,26 +82,30 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint CurrencyPluralInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject CurrencyPluralInfo::clone()
+	jobject CurrencyPluralInfo::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject CurrencyPluralInfo::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CurrencyPluralInfo",
 			"getInstance",
-			"()Landroid/icu/text/CurrencyPluralInfo;");
+			"()Landroid/icu/text/CurrencyPluralInfo;"
+		);
 	}
 	QAndroidJniObject CurrencyPluralInfo::getInstance(__jni_impl::java::util::Locale arg0)
 	{
@@ -109,7 +113,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.CurrencyPluralInfo",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/icu/text/CurrencyPluralInfo;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CurrencyPluralInfo::getInstance(__jni_impl::android::icu::util::ULocale arg0)
 	{
@@ -117,40 +122,46 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.CurrencyPluralInfo",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;)Landroid/icu/text/CurrencyPluralInfo;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CurrencyPluralInfo::getLocale()
 	{
 		return __thiz.callObjectMethod(
 			"getLocale",
-			"()Landroid/icu/util/ULocale;");
+			"()Landroid/icu/util/ULocale;"
+		);
 	}
 	void CurrencyPluralInfo::setLocale(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLocale",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CurrencyPluralInfo::getPluralRules()
 	{
 		return __thiz.callObjectMethod(
 			"getPluralRules",
-			"()Landroid/icu/text/PluralRules;");
+			"()Landroid/icu/text/PluralRules;"
+		);
 	}
-	QAndroidJniObject CurrencyPluralInfo::getCurrencyPluralPattern(jstring arg0)
+	jstring CurrencyPluralInfo::getCurrencyPluralPattern(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getCurrencyPluralPattern",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void CurrencyPluralInfo::setPluralRules(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPluralRules",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void CurrencyPluralInfo::setCurrencyPluralPattern(jstring arg0, jstring arg1)
 	{
@@ -158,7 +169,8 @@ namespace __jni_impl::android::icu::text
 			"setCurrencyPluralPattern",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

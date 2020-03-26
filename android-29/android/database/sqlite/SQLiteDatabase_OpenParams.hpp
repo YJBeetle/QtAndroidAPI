@@ -18,12 +18,12 @@ namespace __jni_impl::android::database::sqlite
 		
 		// Methods
 		QAndroidJniObject getCursorFactory();
-		QAndroidJniObject getSynchronousMode();
+		jstring getSynchronousMode();
 		jint getLookasideSlotSize();
 		jint getLookasideSlotCount();
 		jint getOpenFlags();
 		jlong getIdleConnectionTimeout();
-		QAndroidJniObject getJournalMode();
+		jstring getJournalMode();
 		QAndroidJniObject getErrorHandler();
 	};
 } // namespace __jni_impl::android::database::sqlite
@@ -46,49 +46,57 @@ namespace __jni_impl::android::database::sqlite
 	{
 		return __thiz.callObjectMethod(
 			"getCursorFactory",
-			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;");
+			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;"
+		);
 	}
-	QAndroidJniObject SQLiteDatabase_OpenParams::getSynchronousMode()
+	jstring SQLiteDatabase_OpenParams::getSynchronousMode()
 	{
 		return __thiz.callObjectMethod(
 			"getSynchronousMode",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SQLiteDatabase_OpenParams::getLookasideSlotSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getLookasideSlotSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint SQLiteDatabase_OpenParams::getLookasideSlotCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getLookasideSlotCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint SQLiteDatabase_OpenParams::getOpenFlags()
 	{
 		return __thiz.callMethod<jint>(
 			"getOpenFlags",
-			"()I");
+			"()I"
+		);
 	}
 	jlong SQLiteDatabase_OpenParams::getIdleConnectionTimeout()
 	{
 		return __thiz.callMethod<jlong>(
 			"getIdleConnectionTimeout",
-			"()J");
+			"()J"
+		);
 	}
-	QAndroidJniObject SQLiteDatabase_OpenParams::getJournalMode()
+	jstring SQLiteDatabase_OpenParams::getJournalMode()
 	{
 		return __thiz.callObjectMethod(
 			"getJournalMode",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject SQLiteDatabase_OpenParams::getErrorHandler()
 	{
 		return __thiz.callObjectMethod(
 			"getErrorHandler",
-			"()Landroid/database/DatabaseErrorHandler;");
+			"()Landroid/database/DatabaseErrorHandler;"
+		);
 	}
 } // namespace __jni_impl::android::database::sqlite
 

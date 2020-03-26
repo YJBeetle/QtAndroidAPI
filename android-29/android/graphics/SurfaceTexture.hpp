@@ -72,14 +72,16 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	void SurfaceTexture::setOnFrameAvailableListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnFrameAvailableListener",
 			"(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SurfaceTexture::setOnFrameAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -87,7 +89,8 @@ namespace __jni_impl::android::graphics
 			"setOnFrameAvailableListener",
 			"(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SurfaceTexture::setDefaultBufferSize(jint arg0, jint arg1)
 	{
@@ -95,51 +98,59 @@ namespace __jni_impl::android::graphics
 			"setDefaultBufferSize",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SurfaceTexture::updateTexImage()
 	{
 		__thiz.callMethod<void>(
 			"updateTexImage",
-			"()V");
+			"()V"
+		);
 	}
 	void SurfaceTexture::releaseTexImage()
 	{
 		__thiz.callMethod<void>(
 			"releaseTexImage",
-			"()V");
+			"()V"
+		);
 	}
 	void SurfaceTexture::detachFromGLContext()
 	{
 		__thiz.callMethod<void>(
 			"detachFromGLContext",
-			"()V");
+			"()V"
+		);
 	}
 	void SurfaceTexture::attachToGLContext(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"attachToGLContext",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void SurfaceTexture::getTransformMatrix(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"getTransformMatrix",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean SurfaceTexture::isReleased()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReleased",
-			"()Z");
+			"()Z"
+		);
 	}
 	jlong SurfaceTexture::getTimestamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTimestamp",
-			"()J");
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -36,12 +36,14 @@ namespace __jni_impl::android::hardware
 	jint Camera_Size::height()
 	{
 		return __thiz.getField<jint>(
-			"height");
+			"height"
+		);
 	}
 	jint Camera_Size::width()
 	{
 		return __thiz.getField<jint>(
-			"width");
+			"width"
+		);
 	}
 	
 	// Constructors
@@ -61,13 +63,15 @@ namespace __jni_impl::android::hardware
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Camera_Size::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::hardware
 

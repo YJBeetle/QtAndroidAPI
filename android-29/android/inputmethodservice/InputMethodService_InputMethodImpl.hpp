@@ -75,7 +75,8 @@ namespace __jni_impl::android::inputmethodservice
 			"showSoftInput",
 			"(ILandroid/os/ResultReceiver;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void InputMethodService_InputMethodImpl::restartInput(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::EditorInfo arg1)
 	{
@@ -83,27 +84,31 @@ namespace __jni_impl::android::inputmethodservice
 			"restartInput",
 			"(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void InputMethodService_InputMethodImpl::attachToken(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"attachToken",
 			"(Landroid/os/IBinder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void InputMethodService_InputMethodImpl::bindInput(__jni_impl::android::view::inputmethod::InputBinding arg0)
 	{
 		__thiz.callMethod<void>(
 			"bindInput",
 			"(Landroid/view/inputmethod/InputBinding;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void InputMethodService_InputMethodImpl::unbindInput()
 	{
 		__thiz.callMethod<void>(
 			"unbindInput",
-			"()V");
+			"()V"
+		);
 	}
 	void InputMethodService_InputMethodImpl::startInput(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::EditorInfo arg1)
 	{
@@ -111,7 +116,8 @@ namespace __jni_impl::android::inputmethodservice
 			"startInput",
 			"(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void InputMethodService_InputMethodImpl::hideSoftInput(jint arg0, __jni_impl::android::os::ResultReceiver arg1)
 	{
@@ -119,14 +125,16 @@ namespace __jni_impl::android::inputmethodservice
 			"hideSoftInput",
 			"(ILandroid/os/ResultReceiver;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void InputMethodService_InputMethodImpl::changeInputMethodSubtype(__jni_impl::android::view::inputmethod::InputMethodSubtype arg0)
 	{
 		__thiz.callMethod<void>(
 			"changeInputMethodSubtype",
 			"(Landroid/view/inputmethod/InputMethodSubtype;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::inputmethodservice
 

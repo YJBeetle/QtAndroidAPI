@@ -37,8 +37,8 @@ namespace __jni_impl::android::print
 		QAndroidJniObject setMediaSize(__jni_impl::android::print::PrintAttributes_MediaSize arg0);
 		QAndroidJniObject setResolution(__jni_impl::android::print::PrintAttributes_Resolution arg0);
 		QAndroidJniObject setDuplexMode(jint arg0);
-		QAndroidJniObject setMinMargins(__jni_impl::android::print::PrintAttributes_Margins arg0);
 		QAndroidJniObject setColorMode(jint arg0);
+		QAndroidJniObject setMinMargins(__jni_impl::android::print::PrintAttributes_Margins arg0);
 	};
 } // namespace __jni_impl::android::print
 
@@ -64,42 +64,48 @@ namespace __jni_impl::android::print
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/print/PrintAttributes;");
+			"()Landroid/print/PrintAttributes;"
+		);
 	}
 	QAndroidJniObject PrintAttributes_Builder::setMediaSize(__jni_impl::android::print::PrintAttributes_MediaSize arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMediaSize",
 			"(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PrintAttributes_Builder::setResolution(__jni_impl::android::print::PrintAttributes_Resolution arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setResolution",
 			"(Landroid/print/PrintAttributes$Resolution;)Landroid/print/PrintAttributes$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PrintAttributes_Builder::setDuplexMode(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDuplexMode",
 			"(I)Landroid/print/PrintAttributes$Builder;",
-			arg0);
-	}
-	QAndroidJniObject PrintAttributes_Builder::setMinMargins(__jni_impl::android::print::PrintAttributes_Margins arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setMinMargins",
-			"(Landroid/print/PrintAttributes$Margins;)Landroid/print/PrintAttributes$Builder;",
-			arg0.__jniObject().object());
+			arg0
+		);
 	}
 	QAndroidJniObject PrintAttributes_Builder::setColorMode(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setColorMode",
 			"(I)Landroid/print/PrintAttributes$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject PrintAttributes_Builder::setMinMargins(__jni_impl::android::print::PrintAttributes_Margins arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMinMargins",
+			"(Landroid/print/PrintAttributes$Margins;)Landroid/print/PrintAttributes$Builder;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::print
 

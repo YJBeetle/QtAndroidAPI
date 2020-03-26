@@ -30,8 +30,8 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setSummary(jstring arg0);
 		QAndroidJniObject setTitle(jstring arg0);
+		QAndroidJniObject setSummary(jstring arg0);
 		static QAndroidJniObject createNonrecurring(__jni_impl::java::time::ZonedDateTime arg0, __jni_impl::java::time::ZonedDateTime arg1);
 		static QAndroidJniObject createRecurring(__jni_impl::java::time::ZonedDateTime arg0, __jni_impl::java::time::Period arg1);
 		QAndroidJniObject setDataLimit(jlong arg0, jint arg1);
@@ -60,21 +60,24 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/telephony/SubscriptionPlan;");
-	}
-	QAndroidJniObject SubscriptionPlan_Builder::setSummary(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSummary",
-			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
-			arg0);
+			"()Landroid/telephony/SubscriptionPlan;"
+		);
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::setTitle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject SubscriptionPlan_Builder::setSummary(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSummary",
+			"(Ljava/lang/CharSequence;)Landroid/telephony/SubscriptionPlan$Builder;",
+			arg0
+		);
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::createNonrecurring(__jni_impl::java::time::ZonedDateTime arg0, __jni_impl::java::time::ZonedDateTime arg1)
 	{
@@ -83,7 +86,8 @@ namespace __jni_impl::android::telephony
 			"createNonrecurring",
 			"(Ljava/time/ZonedDateTime;Ljava/time/ZonedDateTime;)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::createRecurring(__jni_impl::java::time::ZonedDateTime arg0, __jni_impl::java::time::Period arg1)
 	{
@@ -92,7 +96,8 @@ namespace __jni_impl::android::telephony
 			"createRecurring",
 			"(Ljava/time/ZonedDateTime;Ljava/time/Period;)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::setDataLimit(jlong arg0, jint arg1)
 	{
@@ -100,7 +105,8 @@ namespace __jni_impl::android::telephony
 			"setDataLimit",
 			"(JI)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::setDataUsage(jlong arg0, jlong arg1)
 	{
@@ -108,7 +114,8 @@ namespace __jni_impl::android::telephony
 			"setDataUsage",
 			"(JJ)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

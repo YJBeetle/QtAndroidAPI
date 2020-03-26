@@ -41,19 +41,22 @@ namespace __jni_impl::android::app
 	{
 		__thiz.callMethod<void>(
 			"onDismissError",
-			"()V");
+			"()V"
+		);
 	}
 	void KeyguardManager_KeyguardDismissCallback::onDismissSucceeded()
 	{
 		__thiz.callMethod<void>(
 			"onDismissSucceeded",
-			"()V");
+			"()V"
+		);
 	}
 	void KeyguardManager_KeyguardDismissCallback::onDismissCancelled()
 	{
 		__thiz.callMethod<void>(
 			"onDismissCancelled",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::app
 

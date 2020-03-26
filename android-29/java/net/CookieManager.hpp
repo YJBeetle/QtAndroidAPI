@@ -64,7 +64,8 @@ namespace __jni_impl::java::net
 			"get",
 			"(Ljava/net/URI;Ljava/util/Map;)Ljava/util/Map;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void CookieManager::put(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -72,20 +73,23 @@ namespace __jni_impl::java::net
 			"put",
 			"(Ljava/net/URI;Ljava/util/Map;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void CookieManager::setCookiePolicy(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCookiePolicy",
 			"(Ljava/net/CookiePolicy;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CookieManager::getCookieStore()
 	{
 		return __thiz.callObjectMethod(
 			"getCookieStore",
-			"()Ljava/net/CookieStore;");
+			"()Ljava/net/CookieStore;"
+		);
 	}
 } // namespace __jni_impl::java::net
 

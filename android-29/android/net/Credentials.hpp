@@ -17,9 +17,9 @@ namespace __jni_impl::android::net
 		void __constructor(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint getGid();
 		jint getUid();
 		jint getPid();
+		jint getGid();
 	};
 } // namespace __jni_impl::android::net
 
@@ -40,23 +40,26 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	jint Credentials::getGid()
-	{
-		return __thiz.callMethod<jint>(
-			"getGid",
-			"()I");
-	}
 	jint Credentials::getUid()
 	{
 		return __thiz.callMethod<jint>(
 			"getUid",
-			"()I");
+			"()I"
+		);
 	}
 	jint Credentials::getPid()
 	{
 		return __thiz.callMethod<jint>(
 			"getPid",
-			"()I");
+			"()I"
+		);
+	}
+	jint Credentials::getGid()
+	{
+		return __thiz.callMethod<jint>(
+			"getGid",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net
 

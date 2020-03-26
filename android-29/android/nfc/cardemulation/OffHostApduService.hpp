@@ -19,8 +19,8 @@ namespace __jni_impl::android::nfc::cardemulation
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERVICE_INTERFACE();
-		static QAndroidJniObject SERVICE_META_DATA();
+		static jstring SERVICE_INTERFACE();
+		static jstring SERVICE_META_DATA();
 		
 		// Constructors
 		void __constructor();
@@ -35,19 +35,21 @@ namespace __jni_impl::android::nfc::cardemulation
 namespace __jni_impl::android::nfc::cardemulation
 {
 	// Fields
-	QAndroidJniObject OffHostApduService::SERVICE_INTERFACE()
+	jstring OffHostApduService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.cardemulation.OffHostApduService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject OffHostApduService::SERVICE_META_DATA()
+	jstring OffHostApduService::SERVICE_META_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.nfc.cardemulation.OffHostApduService",
 			"SERVICE_META_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -64,7 +66,8 @@ namespace __jni_impl::android::nfc::cardemulation
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::nfc::cardemulation
 

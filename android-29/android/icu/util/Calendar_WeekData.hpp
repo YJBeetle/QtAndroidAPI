@@ -24,7 +24,7 @@ namespace __jni_impl::android::icu::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 	};
 } // namespace __jni_impl::android::icu::util
@@ -36,32 +36,38 @@ namespace __jni_impl::android::icu::util
 	jint Calendar_WeekData::firstDayOfWeek()
 	{
 		return __thiz.getField<jint>(
-			"firstDayOfWeek");
+			"firstDayOfWeek"
+		);
 	}
 	jint Calendar_WeekData::minimalDaysInFirstWeek()
 	{
 		return __thiz.getField<jint>(
-			"minimalDaysInFirstWeek");
+			"minimalDaysInFirstWeek"
+		);
 	}
 	jint Calendar_WeekData::weekendCease()
 	{
 		return __thiz.getField<jint>(
-			"weekendCease");
+			"weekendCease"
+		);
 	}
 	jint Calendar_WeekData::weekendCeaseMillis()
 	{
 		return __thiz.getField<jint>(
-			"weekendCeaseMillis");
+			"weekendCeaseMillis"
+		);
 	}
 	jint Calendar_WeekData::weekendOnset()
 	{
 		return __thiz.getField<jint>(
-			"weekendOnset");
+			"weekendOnset"
+		);
 	}
 	jint Calendar_WeekData::weekendOnsetMillis()
 	{
 		return __thiz.getField<jint>(
-			"weekendOnsetMillis");
+			"weekendOnsetMillis"
+		);
 	}
 	
 	// Constructors
@@ -84,19 +90,22 @@ namespace __jni_impl::android::icu::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Calendar_WeekData::toString()
+	jstring Calendar_WeekData::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Calendar_WeekData::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

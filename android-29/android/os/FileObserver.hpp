@@ -39,9 +39,9 @@ namespace __jni_impl::android::os
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		void onEvent(jint arg0, jstring arg1);
 		void startWatching();
 		void stopWatching();
+		void onEvent(jint arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -54,79 +54,92 @@ namespace __jni_impl::android::os
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"ACCESS");
+			"ACCESS"
+		);
 	}
 	jint FileObserver::ALL_EVENTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"ALL_EVENTS");
+			"ALL_EVENTS"
+		);
 	}
 	jint FileObserver::ATTRIB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"ATTRIB");
+			"ATTRIB"
+		);
 	}
 	jint FileObserver::CLOSE_NOWRITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"CLOSE_NOWRITE");
+			"CLOSE_NOWRITE"
+		);
 	}
 	jint FileObserver::CLOSE_WRITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"CLOSE_WRITE");
+			"CLOSE_WRITE"
+		);
 	}
 	jint FileObserver::CREATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"CREATE");
+			"CREATE"
+		);
 	}
 	jint FileObserver::DELETE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"DELETE");
+			"DELETE"
+		);
 	}
 	jint FileObserver::DELETE_SELF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"DELETE_SELF");
+			"DELETE_SELF"
+		);
 	}
 	jint FileObserver::MODIFY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"MODIFY");
+			"MODIFY"
+		);
 	}
 	jint FileObserver::MOVED_FROM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"MOVED_FROM");
+			"MOVED_FROM"
+		);
 	}
 	jint FileObserver::MOVED_TO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"MOVED_TO");
+			"MOVED_TO"
+		);
 	}
 	jint FileObserver::MOVE_SELF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"MOVE_SELF");
+			"MOVE_SELF"
+		);
 	}
 	jint FileObserver::OPEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.os.FileObserver",
-			"OPEN");
+			"OPEN"
+		);
 	}
 	
 	// Constructors
@@ -177,25 +190,28 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
+	void FileObserver::startWatching()
+	{
+		__thiz.callMethod<void>(
+			"startWatching",
+			"()V"
+		);
+	}
+	void FileObserver::stopWatching()
+	{
+		__thiz.callMethod<void>(
+			"stopWatching",
+			"()V"
+		);
+	}
 	void FileObserver::onEvent(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
 			"onEvent",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
-	}
-	void FileObserver::startWatching()
-	{
-		__thiz.callMethod<void>(
-			"startWatching",
-			"()V");
-	}
-	void FileObserver::stopWatching()
-	{
-		__thiz.callMethod<void>(
-			"stopWatching",
-			"()V");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::os
 

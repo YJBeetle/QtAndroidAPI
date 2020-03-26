@@ -45,7 +45,8 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callObjectMethod(
 			"getInputDevice",
-			"()Landroid/view/InputDevice;");
+			"()Landroid/view/InputDevice;"
+		);
 	}
 } // namespace __jni_impl::android::view
 

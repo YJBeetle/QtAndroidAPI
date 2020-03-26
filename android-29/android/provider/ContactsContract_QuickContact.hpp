@@ -28,10 +28,10 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_QUICK_CONTACT();
-		static QAndroidJniObject EXTRA_EXCLUDE_MIMES();
-		static QAndroidJniObject EXTRA_MODE();
-		static QAndroidJniObject EXTRA_PRIORITIZED_MIMETYPE();
+		static jstring ACTION_QUICK_CONTACT();
+		static jstring EXTRA_EXCLUDE_MIMES();
+		static jstring EXTRA_MODE();
+		static jstring EXTRA_PRIORITIZED_MIMETYPE();
 		static jint MODE_LARGE();
 		static jint MODE_MEDIUM();
 		static jint MODE_SMALL();
@@ -55,51 +55,58 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_QuickContact::ACTION_QUICK_CONTACT()
+	jstring ContactsContract_QuickContact::ACTION_QUICK_CONTACT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$QuickContact",
 			"ACTION_QUICK_CONTACT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_QuickContact::EXTRA_EXCLUDE_MIMES()
+	jstring ContactsContract_QuickContact::EXTRA_EXCLUDE_MIMES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$QuickContact",
 			"EXTRA_EXCLUDE_MIMES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_QuickContact::EXTRA_MODE()
+	jstring ContactsContract_QuickContact::EXTRA_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$QuickContact",
 			"EXTRA_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_QuickContact::EXTRA_PRIORITIZED_MIMETYPE()
+	jstring ContactsContract_QuickContact::EXTRA_PRIORITIZED_MIMETYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$QuickContact",
 			"EXTRA_PRIORITIZED_MIMETYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ContactsContract_QuickContact::MODE_LARGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$QuickContact",
-			"MODE_LARGE");
+			"MODE_LARGE"
+		);
 	}
 	jint ContactsContract_QuickContact::MODE_MEDIUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$QuickContact",
-			"MODE_MEDIUM");
+			"MODE_MEDIUM"
+		);
 	}
 	jint ContactsContract_QuickContact::MODE_SMALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.ContactsContract$QuickContact",
-			"MODE_SMALL");
+			"MODE_SMALL"
+		);
 	}
 	
 	// Constructors
@@ -121,7 +128,8 @@ namespace __jni_impl::android::provider
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void ContactsContract_QuickContact::showQuickContact(__jni_impl::android::content::Context arg0, __jni_impl::android::view::View arg1, __jni_impl::android::net::Uri arg2, jarray arg3, jstring arg4)
 	{
@@ -133,7 +141,8 @@ namespace __jni_impl::android::provider
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void ContactsContract_QuickContact::showQuickContact(__jni_impl::android::content::Context arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::net::Uri arg2, jint arg3, jarray arg4)
 	{
@@ -145,7 +154,8 @@ namespace __jni_impl::android::provider
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void ContactsContract_QuickContact::showQuickContact(__jni_impl::android::content::Context arg0, __jni_impl::android::view::View arg1, __jni_impl::android::net::Uri arg2, jint arg3, jarray arg4)
 	{
@@ -157,7 +167,8 @@ namespace __jni_impl::android::provider
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 } // namespace __jni_impl::android::provider
 

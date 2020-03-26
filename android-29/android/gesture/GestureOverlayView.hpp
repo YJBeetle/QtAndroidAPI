@@ -12,6 +12,10 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
+}
 namespace __jni_impl::java::util
 {
 	class ArrayList;
@@ -27,10 +31,6 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
 }
 
 namespace __jni_impl::android::gesture
@@ -52,7 +52,8 @@ namespace __jni_impl::android::gesture
 		
 		// Methods
 		void clear(jboolean arg0);
-		void setOrientation(jint arg0);
+		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jint getOrientation();
 		QAndroidJniObject getCurrentStroke();
 		void setGestureColor(jint arg0);
 		void setUncertainGestureColor(jint arg0);
@@ -93,17 +94,16 @@ namespace __jni_impl::android::gesture
 		void cancelClearAnimation();
 		void cancelGesture();
 		void draw(__jni_impl::android::graphics::Canvas arg0);
-		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jint getOrientation();
+		void setOrientation(jint arg0);
 	};
 } // namespace __jni_impl::android::gesture
 
 #include "../content/Context.hpp"
+#include "../view/MotionEvent.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "Gesture.hpp"
 #include "../graphics/Path.hpp"
 #include "../graphics/Canvas.hpp"
-#include "../view/MotionEvent.hpp"
 
 namespace __jni_impl::android::gesture
 {
@@ -112,25 +112,29 @@ namespace __jni_impl::android::gesture
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.gesture.GestureOverlayView",
-			"GESTURE_STROKE_TYPE_MULTIPLE");
+			"GESTURE_STROKE_TYPE_MULTIPLE"
+		);
 	}
 	jint GestureOverlayView::GESTURE_STROKE_TYPE_SINGLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.gesture.GestureOverlayView",
-			"GESTURE_STROKE_TYPE_SINGLE");
+			"GESTURE_STROKE_TYPE_SINGLE"
+		);
 	}
 	jint GestureOverlayView::ORIENTATION_HORIZONTAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.gesture.GestureOverlayView",
-			"ORIENTATION_HORIZONTAL");
+			"ORIENTATION_HORIZONTAL"
+		);
 	}
 	jint GestureOverlayView::ORIENTATION_VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.gesture.GestureOverlayView",
-			"ORIENTATION_VERTICAL");
+			"ORIENTATION_VERTICAL"
+		);
 	}
 	
 	// Constructors
@@ -175,287 +179,331 @@ namespace __jni_impl::android::gesture
 		__thiz.callMethod<void>(
 			"clear",
 			"(Z)V",
-			arg0);
-	}
-	void GestureOverlayView::setOrientation(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOrientation",
-			"(I)V",
-			arg0);
-	}
-	QAndroidJniObject GestureOverlayView::getCurrentStroke()
-	{
-		return __thiz.callObjectMethod(
-			"getCurrentStroke",
-			"()Ljava/util/ArrayList;");
-	}
-	void GestureOverlayView::setGestureColor(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGestureColor",
-			"(I)V",
-			arg0);
-	}
-	void GestureOverlayView::setUncertainGestureColor(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUncertainGestureColor",
-			"(I)V",
-			arg0);
-	}
-	jint GestureOverlayView::getUncertainGestureColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getUncertainGestureColor",
-			"()I");
-	}
-	jint GestureOverlayView::getGestureColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getGestureColor",
-			"()I");
-	}
-	jfloat GestureOverlayView::getGestureStrokeWidth()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getGestureStrokeWidth",
-			"()F");
-	}
-	void GestureOverlayView::setGestureStrokeWidth(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGestureStrokeWidth",
-			"(F)V",
-			arg0);
-	}
-	jint GestureOverlayView::getGestureStrokeType()
-	{
-		return __thiz.callMethod<jint>(
-			"getGestureStrokeType",
-			"()I");
-	}
-	void GestureOverlayView::setGestureStrokeType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGestureStrokeType",
-			"(I)V",
-			arg0);
-	}
-	jfloat GestureOverlayView::getGestureStrokeLengthThreshold()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getGestureStrokeLengthThreshold",
-			"()F");
-	}
-	void GestureOverlayView::setGestureStrokeLengthThreshold(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGestureStrokeLengthThreshold",
-			"(F)V",
-			arg0);
-	}
-	jfloat GestureOverlayView::getGestureStrokeSquarenessTreshold()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getGestureStrokeSquarenessTreshold",
-			"()F");
-	}
-	void GestureOverlayView::setGestureStrokeSquarenessTreshold(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGestureStrokeSquarenessTreshold",
-			"(F)V",
-			arg0);
-	}
-	jfloat GestureOverlayView::getGestureStrokeAngleThreshold()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getGestureStrokeAngleThreshold",
-			"()F");
-	}
-	void GestureOverlayView::setGestureStrokeAngleThreshold(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGestureStrokeAngleThreshold",
-			"(F)V",
-			arg0);
-	}
-	jboolean GestureOverlayView::isEventsInterceptionEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEventsInterceptionEnabled",
-			"()Z");
-	}
-	void GestureOverlayView::setEventsInterceptionEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEventsInterceptionEnabled",
-			"(Z)V",
-			arg0);
-	}
-	jboolean GestureOverlayView::isFadeEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFadeEnabled",
-			"()Z");
-	}
-	void GestureOverlayView::setFadeEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFadeEnabled",
-			"(Z)V",
-			arg0);
-	}
-	QAndroidJniObject GestureOverlayView::getGesture()
-	{
-		return __thiz.callObjectMethod(
-			"getGesture",
-			"()Landroid/gesture/Gesture;");
-	}
-	void GestureOverlayView::setGesture(__jni_impl::android::gesture::Gesture arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGesture",
-			"(Landroid/gesture/Gesture;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject GestureOverlayView::getGesturePath(__jni_impl::android::graphics::Path arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getGesturePath",
-			"(Landroid/graphics/Path;)Landroid/graphics/Path;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject GestureOverlayView::getGesturePath()
-	{
-		return __thiz.callObjectMethod(
-			"getGesturePath",
-			"()Landroid/graphics/Path;");
-	}
-	jboolean GestureOverlayView::isGestureVisible()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isGestureVisible",
-			"()Z");
-	}
-	void GestureOverlayView::setGestureVisible(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGestureVisible",
-			"(Z)V",
-			arg0);
-	}
-	jlong GestureOverlayView::getFadeOffset()
-	{
-		return __thiz.callMethod<jlong>(
-			"getFadeOffset",
-			"()J");
-	}
-	void GestureOverlayView::setFadeOffset(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFadeOffset",
-			"(J)V",
-			arg0);
-	}
-	void GestureOverlayView::addOnGestureListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"addOnGestureListener",
-			"(Landroid/gesture/GestureOverlayView$OnGestureListener;)V",
-			arg0.__jniObject().object());
-	}
-	void GestureOverlayView::removeOnGestureListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnGestureListener",
-			"(Landroid/gesture/GestureOverlayView$OnGestureListener;)V",
-			arg0.__jniObject().object());
-	}
-	void GestureOverlayView::removeAllOnGestureListeners()
-	{
-		__thiz.callMethod<void>(
-			"removeAllOnGestureListeners",
-			"()V");
-	}
-	void GestureOverlayView::addOnGesturePerformedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"addOnGesturePerformedListener",
-			"(Landroid/gesture/GestureOverlayView$OnGesturePerformedListener;)V",
-			arg0.__jniObject().object());
-	}
-	void GestureOverlayView::removeOnGesturePerformedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnGesturePerformedListener",
-			"(Landroid/gesture/GestureOverlayView$OnGesturePerformedListener;)V",
-			arg0.__jniObject().object());
-	}
-	void GestureOverlayView::removeAllOnGesturePerformedListeners()
-	{
-		__thiz.callMethod<void>(
-			"removeAllOnGesturePerformedListeners",
-			"()V");
-	}
-	void GestureOverlayView::addOnGesturingListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"addOnGesturingListener",
-			"(Landroid/gesture/GestureOverlayView$OnGesturingListener;)V",
-			arg0.__jniObject().object());
-	}
-	void GestureOverlayView::removeOnGesturingListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnGesturingListener",
-			"(Landroid/gesture/GestureOverlayView$OnGesturingListener;)V",
-			arg0.__jniObject().object());
-	}
-	void GestureOverlayView::removeAllOnGesturingListeners()
-	{
-		__thiz.callMethod<void>(
-			"removeAllOnGesturingListeners",
-			"()V");
-	}
-	jboolean GestureOverlayView::isGesturing()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isGesturing",
-			"()Z");
-	}
-	void GestureOverlayView::cancelClearAnimation()
-	{
-		__thiz.callMethod<void>(
-			"cancelClearAnimation",
-			"()V");
-	}
-	void GestureOverlayView::cancelGesture()
-	{
-		__thiz.callMethod<void>(
-			"cancelGesture",
-			"()V");
-	}
-	void GestureOverlayView::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
+			arg0
+		);
 	}
 	jboolean GestureOverlayView::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint GestureOverlayView::getOrientation()
 	{
 		return __thiz.callMethod<jint>(
 			"getOrientation",
-			"()I");
+			"()I"
+		);
+	}
+	QAndroidJniObject GestureOverlayView::getCurrentStroke()
+	{
+		return __thiz.callObjectMethod(
+			"getCurrentStroke",
+			"()Ljava/util/ArrayList;"
+		);
+	}
+	void GestureOverlayView::setGestureColor(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGestureColor",
+			"(I)V",
+			arg0
+		);
+	}
+	void GestureOverlayView::setUncertainGestureColor(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUncertainGestureColor",
+			"(I)V",
+			arg0
+		);
+	}
+	jint GestureOverlayView::getUncertainGestureColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getUncertainGestureColor",
+			"()I"
+		);
+	}
+	jint GestureOverlayView::getGestureColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getGestureColor",
+			"()I"
+		);
+	}
+	jfloat GestureOverlayView::getGestureStrokeWidth()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getGestureStrokeWidth",
+			"()F"
+		);
+	}
+	void GestureOverlayView::setGestureStrokeWidth(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGestureStrokeWidth",
+			"(F)V",
+			arg0
+		);
+	}
+	jint GestureOverlayView::getGestureStrokeType()
+	{
+		return __thiz.callMethod<jint>(
+			"getGestureStrokeType",
+			"()I"
+		);
+	}
+	void GestureOverlayView::setGestureStrokeType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGestureStrokeType",
+			"(I)V",
+			arg0
+		);
+	}
+	jfloat GestureOverlayView::getGestureStrokeLengthThreshold()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getGestureStrokeLengthThreshold",
+			"()F"
+		);
+	}
+	void GestureOverlayView::setGestureStrokeLengthThreshold(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGestureStrokeLengthThreshold",
+			"(F)V",
+			arg0
+		);
+	}
+	jfloat GestureOverlayView::getGestureStrokeSquarenessTreshold()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getGestureStrokeSquarenessTreshold",
+			"()F"
+		);
+	}
+	void GestureOverlayView::setGestureStrokeSquarenessTreshold(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGestureStrokeSquarenessTreshold",
+			"(F)V",
+			arg0
+		);
+	}
+	jfloat GestureOverlayView::getGestureStrokeAngleThreshold()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getGestureStrokeAngleThreshold",
+			"()F"
+		);
+	}
+	void GestureOverlayView::setGestureStrokeAngleThreshold(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGestureStrokeAngleThreshold",
+			"(F)V",
+			arg0
+		);
+	}
+	jboolean GestureOverlayView::isEventsInterceptionEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEventsInterceptionEnabled",
+			"()Z"
+		);
+	}
+	void GestureOverlayView::setEventsInterceptionEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEventsInterceptionEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean GestureOverlayView::isFadeEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFadeEnabled",
+			"()Z"
+		);
+	}
+	void GestureOverlayView::setFadeEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFadeEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	QAndroidJniObject GestureOverlayView::getGesture()
+	{
+		return __thiz.callObjectMethod(
+			"getGesture",
+			"()Landroid/gesture/Gesture;"
+		);
+	}
+	void GestureOverlayView::setGesture(__jni_impl::android::gesture::Gesture arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGesture",
+			"(Landroid/gesture/Gesture;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject GestureOverlayView::getGesturePath(__jni_impl::android::graphics::Path arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getGesturePath",
+			"(Landroid/graphics/Path;)Landroid/graphics/Path;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject GestureOverlayView::getGesturePath()
+	{
+		return __thiz.callObjectMethod(
+			"getGesturePath",
+			"()Landroid/graphics/Path;"
+		);
+	}
+	jboolean GestureOverlayView::isGestureVisible()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isGestureVisible",
+			"()Z"
+		);
+	}
+	void GestureOverlayView::setGestureVisible(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGestureVisible",
+			"(Z)V",
+			arg0
+		);
+	}
+	jlong GestureOverlayView::getFadeOffset()
+	{
+		return __thiz.callMethod<jlong>(
+			"getFadeOffset",
+			"()J"
+		);
+	}
+	void GestureOverlayView::setFadeOffset(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFadeOffset",
+			"(J)V",
+			arg0
+		);
+	}
+	void GestureOverlayView::addOnGestureListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"addOnGestureListener",
+			"(Landroid/gesture/GestureOverlayView$OnGestureListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureOverlayView::removeOnGestureListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnGestureListener",
+			"(Landroid/gesture/GestureOverlayView$OnGestureListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureOverlayView::removeAllOnGestureListeners()
+	{
+		__thiz.callMethod<void>(
+			"removeAllOnGestureListeners",
+			"()V"
+		);
+	}
+	void GestureOverlayView::addOnGesturePerformedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"addOnGesturePerformedListener",
+			"(Landroid/gesture/GestureOverlayView$OnGesturePerformedListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureOverlayView::removeOnGesturePerformedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnGesturePerformedListener",
+			"(Landroid/gesture/GestureOverlayView$OnGesturePerformedListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureOverlayView::removeAllOnGesturePerformedListeners()
+	{
+		__thiz.callMethod<void>(
+			"removeAllOnGesturePerformedListeners",
+			"()V"
+		);
+	}
+	void GestureOverlayView::addOnGesturingListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"addOnGesturingListener",
+			"(Landroid/gesture/GestureOverlayView$OnGesturingListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureOverlayView::removeOnGesturingListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnGesturingListener",
+			"(Landroid/gesture/GestureOverlayView$OnGesturingListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureOverlayView::removeAllOnGesturingListeners()
+	{
+		__thiz.callMethod<void>(
+			"removeAllOnGesturingListeners",
+			"()V"
+		);
+	}
+	jboolean GestureOverlayView::isGesturing()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isGesturing",
+			"()Z"
+		);
+	}
+	void GestureOverlayView::cancelClearAnimation()
+	{
+		__thiz.callMethod<void>(
+			"cancelClearAnimation",
+			"()V"
+		);
+	}
+	void GestureOverlayView::cancelGesture()
+	{
+		__thiz.callMethod<void>(
+			"cancelGesture",
+			"()V"
+		);
+	}
+	void GestureOverlayView::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GestureOverlayView::setOrientation(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOrientation",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::gesture
 

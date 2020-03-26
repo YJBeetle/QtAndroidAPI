@@ -39,8 +39,8 @@ namespace __jni_impl::android::hardware::usb
 		// Methods
 		void close();
 		jint getFileDescriptor();
-		QAndroidJniObject getSerial();
-		QAndroidJniObject getRawDescriptors();
+		jstring getSerial();
+		jbyteArray getRawDescriptors();
 		jboolean claimInterface(__jni_impl::android::hardware::usb::UsbInterface arg0, jboolean arg1);
 		jboolean releaseInterface(__jni_impl::android::hardware::usb::UsbInterface arg0);
 		jboolean setInterface(__jni_impl::android::hardware::usb::UsbInterface arg0);
@@ -77,25 +77,29 @@ namespace __jni_impl::android::hardware::usb
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint UsbDeviceConnection::getFileDescriptor()
 	{
 		return __thiz.callMethod<jint>(
 			"getFileDescriptor",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject UsbDeviceConnection::getSerial()
+	jstring UsbDeviceConnection::getSerial()
 	{
 		return __thiz.callObjectMethod(
 			"getSerial",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UsbDeviceConnection::getRawDescriptors()
+	jbyteArray UsbDeviceConnection::getRawDescriptors()
 	{
 		return __thiz.callObjectMethod(
 			"getRawDescriptors",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jboolean UsbDeviceConnection::claimInterface(__jni_impl::android::hardware::usb::UsbInterface arg0, jboolean arg1)
 	{
@@ -103,28 +107,32 @@ namespace __jni_impl::android::hardware::usb
 			"claimInterface",
 			"(Landroid/hardware/usb/UsbInterface;Z)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean UsbDeviceConnection::releaseInterface(__jni_impl::android::hardware::usb::UsbInterface arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"releaseInterface",
 			"(Landroid/hardware/usb/UsbInterface;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean UsbDeviceConnection::setInterface(__jni_impl::android::hardware::usb::UsbInterface arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setInterface",
 			"(Landroid/hardware/usb/UsbInterface;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean UsbDeviceConnection::setConfiguration(__jni_impl::android::hardware::usb::UsbConfiguration arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setConfiguration",
 			"(Landroid/hardware/usb/UsbConfiguration;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint UsbDeviceConnection::controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4, jint arg5, jint arg6)
 	{
@@ -137,7 +145,8 @@ namespace __jni_impl::android::hardware::usb
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	jint UsbDeviceConnection::controlTransfer(jint arg0, jint arg1, jint arg2, jint arg3, jbyteArray arg4, jint arg5, jint arg6, jint arg7)
 	{
@@ -151,7 +160,8 @@ namespace __jni_impl::android::hardware::usb
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	jint UsbDeviceConnection::bulkTransfer(__jni_impl::android::hardware::usb::UsbEndpoint arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
@@ -161,7 +171,8 @@ namespace __jni_impl::android::hardware::usb
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint UsbDeviceConnection::bulkTransfer(__jni_impl::android::hardware::usb::UsbEndpoint arg0, jbyteArray arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -172,20 +183,23 @@ namespace __jni_impl::android::hardware::usb
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject UsbDeviceConnection::requestWait()
 	{
 		return __thiz.callObjectMethod(
 			"requestWait",
-			"()Landroid/hardware/usb/UsbRequest;");
+			"()Landroid/hardware/usb/UsbRequest;"
+		);
 	}
 	QAndroidJniObject UsbDeviceConnection::requestWait(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"requestWait",
 			"(J)Landroid/hardware/usb/UsbRequest;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::hardware::usb
 

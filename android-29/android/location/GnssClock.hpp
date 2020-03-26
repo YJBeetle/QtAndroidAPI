@@ -22,12 +22,10 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jlong getElapsedRealtimeNanos();
 		jdouble getElapsedRealtimeUncertaintyNanos();
 		jboolean hasElapsedRealtimeUncertaintyNanos();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jlong getTimeNanos();
 		jboolean hasLeapSecond();
 		jint getLeapSecond();
@@ -45,6 +43,8 @@ namespace __jni_impl::android::location
 		jdouble getDriftUncertaintyNanosPerSecond();
 		jboolean hasElapsedRealtimeNanos();
 		jint getHardwareClockDiscontinuityCount();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::location
 
@@ -58,7 +58,8 @@ namespace __jni_impl::android::location
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.GnssClock",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -70,35 +71,159 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	QAndroidJniObject GnssClock::toString()
+	jstring GnssClock::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong GnssClock::getElapsedRealtimeNanos()
 	{
 		return __thiz.callMethod<jlong>(
 			"getElapsedRealtimeNanos",
-			"()J");
+			"()J"
+		);
 	}
 	jdouble GnssClock::getElapsedRealtimeUncertaintyNanos()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getElapsedRealtimeUncertaintyNanos",
-			"()D");
+			"()D"
+		);
 	}
 	jboolean GnssClock::hasElapsedRealtimeUncertaintyNanos()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasElapsedRealtimeUncertaintyNanos",
-			"()Z");
+			"()Z"
+		);
+	}
+	jlong GnssClock::getTimeNanos()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeNanos",
+			"()J"
+		);
+	}
+	jboolean GnssClock::hasLeapSecond()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasLeapSecond",
+			"()Z"
+		);
+	}
+	jint GnssClock::getLeapSecond()
+	{
+		return __thiz.callMethod<jint>(
+			"getLeapSecond",
+			"()I"
+		);
+	}
+	jboolean GnssClock::hasTimeUncertaintyNanos()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasTimeUncertaintyNanos",
+			"()Z"
+		);
+	}
+	jdouble GnssClock::getTimeUncertaintyNanos()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getTimeUncertaintyNanos",
+			"()D"
+		);
+	}
+	jboolean GnssClock::hasFullBiasNanos()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasFullBiasNanos",
+			"()Z"
+		);
+	}
+	jlong GnssClock::getFullBiasNanos()
+	{
+		return __thiz.callMethod<jlong>(
+			"getFullBiasNanos",
+			"()J"
+		);
+	}
+	jboolean GnssClock::hasBiasNanos()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasBiasNanos",
+			"()Z"
+		);
+	}
+	jdouble GnssClock::getBiasNanos()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getBiasNanos",
+			"()D"
+		);
+	}
+	jboolean GnssClock::hasBiasUncertaintyNanos()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasBiasUncertaintyNanos",
+			"()Z"
+		);
+	}
+	jdouble GnssClock::getBiasUncertaintyNanos()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getBiasUncertaintyNanos",
+			"()D"
+		);
+	}
+	jboolean GnssClock::hasDriftNanosPerSecond()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDriftNanosPerSecond",
+			"()Z"
+		);
+	}
+	jdouble GnssClock::getDriftNanosPerSecond()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getDriftNanosPerSecond",
+			"()D"
+		);
+	}
+	jboolean GnssClock::hasDriftUncertaintyNanosPerSecond()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDriftUncertaintyNanosPerSecond",
+			"()Z"
+		);
+	}
+	jdouble GnssClock::getDriftUncertaintyNanosPerSecond()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getDriftUncertaintyNanosPerSecond",
+			"()D"
+		);
+	}
+	jboolean GnssClock::hasElapsedRealtimeNanos()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasElapsedRealtimeNanos",
+			"()Z"
+		);
+	}
+	jint GnssClock::getHardwareClockDiscontinuityCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getHardwareClockDiscontinuityCount",
+			"()I"
+		);
 	}
 	jint GnssClock::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void GnssClock::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -106,109 +231,8 @@ namespace __jni_impl::android::location
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jlong GnssClock::getTimeNanos()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeNanos",
-			"()J");
-	}
-	jboolean GnssClock::hasLeapSecond()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasLeapSecond",
-			"()Z");
-	}
-	jint GnssClock::getLeapSecond()
-	{
-		return __thiz.callMethod<jint>(
-			"getLeapSecond",
-			"()I");
-	}
-	jboolean GnssClock::hasTimeUncertaintyNanos()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasTimeUncertaintyNanos",
-			"()Z");
-	}
-	jdouble GnssClock::getTimeUncertaintyNanos()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getTimeUncertaintyNanos",
-			"()D");
-	}
-	jboolean GnssClock::hasFullBiasNanos()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasFullBiasNanos",
-			"()Z");
-	}
-	jlong GnssClock::getFullBiasNanos()
-	{
-		return __thiz.callMethod<jlong>(
-			"getFullBiasNanos",
-			"()J");
-	}
-	jboolean GnssClock::hasBiasNanos()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasBiasNanos",
-			"()Z");
-	}
-	jdouble GnssClock::getBiasNanos()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getBiasNanos",
-			"()D");
-	}
-	jboolean GnssClock::hasBiasUncertaintyNanos()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasBiasUncertaintyNanos",
-			"()Z");
-	}
-	jdouble GnssClock::getBiasUncertaintyNanos()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getBiasUncertaintyNanos",
-			"()D");
-	}
-	jboolean GnssClock::hasDriftNanosPerSecond()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDriftNanosPerSecond",
-			"()Z");
-	}
-	jdouble GnssClock::getDriftNanosPerSecond()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getDriftNanosPerSecond",
-			"()D");
-	}
-	jboolean GnssClock::hasDriftUncertaintyNanosPerSecond()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDriftUncertaintyNanosPerSecond",
-			"()Z");
-	}
-	jdouble GnssClock::getDriftUncertaintyNanosPerSecond()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getDriftUncertaintyNanosPerSecond",
-			"()D");
-	}
-	jboolean GnssClock::hasElapsedRealtimeNanos()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasElapsedRealtimeNanos",
-			"()Z");
-	}
-	jint GnssClock::getHardwareClockDiscontinuityCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getHardwareClockDiscontinuityCount",
-			"()I");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::location
 

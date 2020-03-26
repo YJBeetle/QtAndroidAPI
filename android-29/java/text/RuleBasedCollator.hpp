@@ -32,12 +32,12 @@ namespace __jni_impl::java::text
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		jint compare(jstring arg0, jstring arg1);
-		QAndroidJniObject getRules();
-		QAndroidJniObject getCollationElementIterator(jstring arg0);
-		QAndroidJniObject getCollationElementIterator(__jni_impl::__JniBaseClass arg0);
+		jstring getRules();
 		QAndroidJniObject getCollationKey(jstring arg0);
+		QAndroidJniObject getCollationElementIterator(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getCollationElementIterator(jstring arg0);
 	};
 } // namespace __jni_impl::java::text
 
@@ -64,19 +64,22 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint RuleBasedCollator::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject RuleBasedCollator::clone()
+	jobject RuleBasedCollator::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint RuleBasedCollator::compare(jstring arg0, jstring arg1)
 	{
@@ -84,34 +87,39 @@ namespace __jni_impl::java::text
 			"compare",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject RuleBasedCollator::getRules()
+	jstring RuleBasedCollator::getRules()
 	{
 		return __thiz.callObjectMethod(
 			"getRules",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationElementIterator",
-			"(Ljava/lang/String;)Ljava/text/CollationElementIterator;",
-			arg0);
-	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationElementIterator",
-			"(Ljava/text/CharacterIterator;)Ljava/text/CollationElementIterator;",
-			arg0.__jniObject().object());
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject RuleBasedCollator::getCollationKey(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getCollationKey",
 			"(Ljava/lang/String;)Ljava/text/CollationKey;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCollationElementIterator",
+			"(Ljava/text/CharacterIterator;)Ljava/text/CollationElementIterator;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCollationElementIterator",
+			"(Ljava/lang/String;)Ljava/text/CollationElementIterator;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::text
 

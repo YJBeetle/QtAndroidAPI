@@ -58,7 +58,8 @@ namespace __jni_impl::android::service::autofill
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/service/autofill/CustomDescription;");
+			"()Landroid/service/autofill/CustomDescription;"
+		);
 	}
 	QAndroidJniObject CustomDescription_Builder::addChild(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -66,7 +67,8 @@ namespace __jni_impl::android::service::autofill
 			"addChild",
 			"(ILandroid/service/autofill/Transformation;)Landroid/service/autofill/CustomDescription$Builder;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CustomDescription_Builder::batchUpdate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::service::autofill::BatchUpdates arg1)
 	{
@@ -74,7 +76,8 @@ namespace __jni_impl::android::service::autofill
 			"batchUpdate",
 			"(Landroid/service/autofill/Validator;Landroid/service/autofill/BatchUpdates;)Landroid/service/autofill/CustomDescription$Builder;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject CustomDescription_Builder::addOnClickAction(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -82,7 +85,8 @@ namespace __jni_impl::android::service::autofill
 			"addOnClickAction",
 			"(ILandroid/service/autofill/OnClickAction;)Landroid/service/autofill/CustomDescription$Builder;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

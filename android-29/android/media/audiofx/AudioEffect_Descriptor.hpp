@@ -16,9 +16,9 @@ namespace __jni_impl::android::media::audiofx
 	{
 	public:
 		// Fields
-		QAndroidJniObject connectMode();
-		QAndroidJniObject implementor();
-		QAndroidJniObject name();
+		jstring connectMode();
+		jstring implementor();
+		jstring name();
 		QAndroidJniObject type();
 		QAndroidJniObject uuid();
 		
@@ -37,35 +37,40 @@ namespace __jni_impl::android::media::audiofx
 namespace __jni_impl::android::media::audiofx
 {
 	// Fields
-	QAndroidJniObject AudioEffect_Descriptor::connectMode()
+	jstring AudioEffect_Descriptor::connectMode()
 	{
 		return __thiz.getObjectField(
 			"connectMode",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioEffect_Descriptor::implementor()
+	jstring AudioEffect_Descriptor::implementor()
 	{
 		return __thiz.getObjectField(
 			"implementor",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AudioEffect_Descriptor::name()
+	jstring AudioEffect_Descriptor::name()
 	{
 		return __thiz.getObjectField(
 			"name",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject AudioEffect_Descriptor::type()
 	{
 		return __thiz.getObjectField(
 			"type",
-			"Ljava/util/UUID;");
+			"Ljava/util/UUID;"
+		);
 	}
 	QAndroidJniObject AudioEffect_Descriptor::uuid()
 	{
 		return __thiz.getObjectField(
 			"uuid",
-			"Ljava/util/UUID;");
+			"Ljava/util/UUID;"
+		);
 	}
 	
 	// Constructors
@@ -93,13 +98,15 @@ namespace __jni_impl::android::media::audiofx
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint AudioEffect_Descriptor::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

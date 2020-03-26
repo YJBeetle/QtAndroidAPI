@@ -36,7 +36,7 @@ namespace __jni_impl::java::time
 		// Methods
 		jlong get(__jni_impl::__JniBaseClass arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject of(jint arg0, jint arg1, jint arg2);
 		static QAndroidJniObject from(__jni_impl::__JniBaseClass arg0);
@@ -86,7 +86,8 @@ namespace __jni_impl::java::time
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.Period",
 			"ZERO",
-			"Ljava/time/Period;");
+			"Ljava/time/Period;"
+		);
 	}
 	
 	// Constructors
@@ -103,26 +104,30 @@ namespace __jni_impl::java::time
 		return __thiz.callMethod<jlong>(
 			"get",
 			"(Ljava/time/temporal/TemporalUnit;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Period::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Period::toString()
+	jstring Period::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Period::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Period::of(jint arg0, jint arg1, jint arg2)
 	{
@@ -132,7 +137,8 @@ namespace __jni_impl::java::time
 			"(III)Ljava/time/Period;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Period::from(__jni_impl::__JniBaseClass arg0)
 	{
@@ -140,7 +146,8 @@ namespace __jni_impl::java::time
 			"java.time.Period",
 			"from",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Period;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Period::parse(jstring arg0)
 	{
@@ -148,33 +155,38 @@ namespace __jni_impl::java::time
 			"java.time.Period",
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::getChronology()
 	{
 		return __thiz.callObjectMethod(
 			"getChronology",
-			"()Ljava/time/chrono/IsoChronology;");
+			"()Ljava/time/chrono/IsoChronology;"
+		);
 	}
 	QAndroidJniObject Period::normalized()
 	{
 		return __thiz.callObjectMethod(
 			"normalized",
-			"()Ljava/time/Period;");
+			"()Ljava/time/Period;"
+		);
 	}
 	QAndroidJniObject Period::plus(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"plus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Period;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Period::addTo(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addTo",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Period::between(__jni_impl::java::time::LocalDate arg0, __jni_impl::java::time::LocalDate arg1)
 	{
@@ -183,46 +195,53 @@ namespace __jni_impl::java::time
 			"between",
 			"(Ljava/time/LocalDate;Ljava/time/LocalDate;)Ljava/time/Period;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Period::getUnits()
 	{
 		return __thiz.callObjectMethod(
 			"getUnits",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject Period::negated()
 	{
 		return __thiz.callObjectMethod(
 			"negated",
-			"()Ljava/time/Period;");
+			"()Ljava/time/Period;"
+		);
 	}
 	QAndroidJniObject Period::multipliedBy(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"multipliedBy",
 			"(I)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::plusDays(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"plusDays",
 			"(J)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Period::isNegative()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNegative",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Period::minus(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"minus",
 			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Period;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Period::ofDays(jint arg0)
 	{
@@ -230,58 +249,67 @@ namespace __jni_impl::java::time
 			"java.time.Period",
 			"ofDays",
 			"(I)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Period::isZero()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isZero",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Period::minusDays(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"minusDays",
 			"(J)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::subtractFrom(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"subtractFrom",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Period::getYears()
 	{
 		return __thiz.callMethod<jint>(
 			"getYears",
-			"()I");
+			"()I"
+		);
 	}
 	jint Period::getMonths()
 	{
 		return __thiz.callMethod<jint>(
 			"getMonths",
-			"()I");
+			"()I"
+		);
 	}
 	jint Period::getDays()
 	{
 		return __thiz.callMethod<jint>(
 			"getDays",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Period::plusYears(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"plusYears",
 			"(J)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	jlong Period::toTotalMonths()
 	{
 		return __thiz.callMethod<jlong>(
 			"toTotalMonths",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject Period::ofYears(jint arg0)
 	{
@@ -289,7 +317,8 @@ namespace __jni_impl::java::time
 			"java.time.Period",
 			"ofYears",
 			"(I)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::ofMonths(jint arg0)
 	{
@@ -297,7 +326,8 @@ namespace __jni_impl::java::time
 			"java.time.Period",
 			"ofMonths",
 			"(I)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::ofWeeks(jint arg0)
 	{
@@ -305,49 +335,56 @@ namespace __jni_impl::java::time
 			"java.time.Period",
 			"ofWeeks",
 			"(I)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::withYears(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withYears",
 			"(I)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::withMonths(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withMonths",
 			"(I)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::withDays(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"withDays",
 			"(I)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::minusMonths(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"minusMonths",
 			"(J)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::minusYears(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"minusYears",
 			"(J)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Period::plusMonths(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"plusMonths",
 			"(J)Ljava/time/Period;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::time
 

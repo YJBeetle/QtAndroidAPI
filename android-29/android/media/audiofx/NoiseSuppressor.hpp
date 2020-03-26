@@ -43,14 +43,16 @@ namespace __jni_impl::android::media::audiofx
 			"android.media.audiofx.NoiseSuppressor",
 			"create",
 			"(I)Landroid/media/audiofx/NoiseSuppressor;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean NoiseSuppressor::isAvailable()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.media.audiofx.NoiseSuppressor",
 			"isAvailable",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

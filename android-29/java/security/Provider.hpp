@@ -32,38 +32,38 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject remove(jobject arg0);
+		jstring getName();
+		jobject remove(jobject arg0);
 		jboolean remove(jobject arg0, jobject arg1);
-		QAndroidJniObject get(jobject arg0);
-		QAndroidJniObject put(jobject arg0, jobject arg1);
-		QAndroidJniObject getProperty(jstring arg0);
-		QAndroidJniObject toString();
+		jobject get(jobject arg0);
+		jobject put(jobject arg0, jobject arg1);
+		jstring getProperty(jstring arg0);
+		jstring toString();
 		QAndroidJniObject values();
 		void clear();
 		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
-		QAndroidJniObject replace(jobject arg0, jobject arg1);
+		jobject replace(jobject arg0, jobject arg1);
 		void replaceAll(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject elements();
-		QAndroidJniObject merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
+		jobject merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject entrySet();
 		void putAll(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject putIfAbsent(jobject arg0, jobject arg1);
-		QAndroidJniObject compute(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject putIfAbsent(jobject arg0, jobject arg1);
+		jobject compute(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		void load(__jni_impl::java::io::InputStream arg0);
 		void forEach(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject keys();
 		QAndroidJniObject keySet();
-		QAndroidJniObject getOrDefault(jobject arg0, jobject arg1);
-		QAndroidJniObject computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject getOrDefault(jobject arg0, jobject arg1);
+		jobject computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		jdouble getVersion();
-		QAndroidJniObject configure(jstring arg0);
 		QAndroidJniObject getService(jstring arg0, jstring arg1);
-		QAndroidJniObject getInfo();
 		QAndroidJniObject getServices();
+		jstring getInfo();
 		jboolean isConfigured();
-		QAndroidJniObject getVersionStr();
+		jstring getVersionStr();
+		QAndroidJniObject configure(jstring arg0);
 	};
 } // namespace __jni_impl::java::security
 
@@ -84,18 +84,20 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject Provider::getName()
+	jstring Provider::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Provider::remove(jobject arg0)
+	jobject Provider::remove(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	jboolean Provider::remove(jobject arg0, jobject arg1)
 	{
@@ -103,47 +105,54 @@ namespace __jni_impl::java::security
 			"remove",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Provider::get(jobject arg0)
+	jobject Provider::get(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
-	QAndroidJniObject Provider::put(jobject arg0, jobject arg1)
+	jobject Provider::put(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject Provider::getProperty(jstring arg0)
+	jstring Provider::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Provider::toString()
+	jstring Provider::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Provider::values()
 	{
 		return __thiz.callObjectMethod(
 			"values",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 	void Provider::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Provider::replace(jobject arg0, jobject arg1, jobject arg2)
 	{
@@ -152,129 +161,139 @@ namespace __jni_impl::java::security
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject Provider::replace(jobject arg0, jobject arg1)
+	jobject Provider::replace(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"replace",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
 	void Provider::replaceAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Provider::elements()
 	{
 		return __thiz.callObjectMethod(
 			"elements",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
-	QAndroidJniObject Provider::merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
+	jobject Provider::merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
 			"merge",
 			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject Provider::entrySet()
 	{
 		return __thiz.callObjectMethod(
 			"entrySet",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	void Provider::putAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"putAll",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Provider::putIfAbsent(jobject arg0, jobject arg1)
+	jobject Provider::putIfAbsent(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"putIfAbsent",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject Provider::compute(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	jobject Provider::compute(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"compute",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	void Provider::load(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"load",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Provider::forEach(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"forEach",
 			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Provider::computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	jobject Provider::computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"computeIfAbsent",
 			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	QAndroidJniObject Provider::keys()
 	{
 		return __thiz.callObjectMethod(
 			"keys",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	QAndroidJniObject Provider::keySet()
 	{
 		return __thiz.callObjectMethod(
 			"keySet",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
-	QAndroidJniObject Provider::getOrDefault(jobject arg0, jobject arg1)
+	jobject Provider::getOrDefault(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject Provider::computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	jobject Provider::computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"computeIfPresent",
 			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
 	jdouble Provider::getVersion()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getVersion",
-			"()D");
-	}
-	QAndroidJniObject Provider::configure(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"configure",
-			"(Ljava/lang/String;)Ljava/security/Provider;",
-			arg0);
+			"()D"
+		);
 	}
 	QAndroidJniObject Provider::getService(jstring arg0, jstring arg1)
 	{
@@ -282,31 +301,44 @@ namespace __jni_impl::java::security
 			"getService",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Provider$Service;",
 			arg0,
-			arg1);
-	}
-	QAndroidJniObject Provider::getInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getInfo",
-			"()Ljava/lang/String;");
+			arg1
+		);
 	}
 	QAndroidJniObject Provider::getServices()
 	{
 		return __thiz.callObjectMethod(
 			"getServices",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
+	}
+	jstring Provider::getInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getInfo",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Provider::isConfigured()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isConfigured",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject Provider::getVersionStr()
+	jstring Provider::getVersionStr()
 	{
 		return __thiz.callObjectMethod(
 			"getVersionStr",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Provider::configure(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"configure",
+			"(Ljava/lang/String;)Ljava/security/Provider;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::security
 

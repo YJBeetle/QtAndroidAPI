@@ -27,21 +27,21 @@ namespace __jni_impl::org::xml::sax::helpers
 		// Methods
 		void error(__jni_impl::org::xml::sax::SAXParseException arg0);
 		void warning(__jni_impl::org::xml::sax::SAXParseException arg0);
-		void characters(jcharArray arg0, jint arg1, jint arg2);
 		void startDocument();
 		void endDocument();
 		void processingInstruction(jstring arg0, jstring arg1);
 		void ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2);
+		void fatalError(__jni_impl::org::xml::sax::SAXParseException arg0);
+		void notationDecl(jstring arg0, jstring arg1, jstring arg2);
+		void unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		QAndroidJniObject resolveEntity(jstring arg0, jstring arg1);
+		void characters(jcharArray arg0, jint arg1, jint arg2);
 		void setDocumentLocator(__jni_impl::__JniBaseClass arg0);
 		void startPrefixMapping(jstring arg0, jstring arg1);
 		void endPrefixMapping(jstring arg0);
 		void startElement(jstring arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3);
 		void endElement(jstring arg0, jstring arg1, jstring arg2);
 		void skippedEntity(jstring arg0);
-		void fatalError(__jni_impl::org::xml::sax::SAXParseException arg0);
-		void notationDecl(jstring arg0, jstring arg1, jstring arg2);
-		void unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
-		QAndroidJniObject resolveEntity(jstring arg0, jstring arg1);
 	};
 } // namespace __jni_impl::org::xml::sax::helpers
 
@@ -66,35 +66,30 @@ namespace __jni_impl::org::xml::sax::helpers
 		__thiz.callMethod<void>(
 			"error",
 			"(Lorg/xml/sax/SAXParseException;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DefaultHandler::warning(__jni_impl::org::xml::sax::SAXParseException arg0)
 	{
 		__thiz.callMethod<void>(
 			"warning",
 			"(Lorg/xml/sax/SAXParseException;)V",
-			arg0.__jniObject().object());
-	}
-	void DefaultHandler::characters(jcharArray arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"characters",
-			"([CII)V",
-			arg0,
-			arg1,
-			arg2);
+			arg0.__jniObject().object()
+		);
 	}
 	void DefaultHandler::startDocument()
 	{
 		__thiz.callMethod<void>(
 			"startDocument",
-			"()V");
+			"()V"
+		);
 	}
 	void DefaultHandler::endDocument()
 	{
 		__thiz.callMethod<void>(
 			"endDocument",
-			"()V");
+			"()V"
+		);
 	}
 	void DefaultHandler::processingInstruction(jstring arg0, jstring arg1)
 	{
@@ -102,7 +97,8 @@ namespace __jni_impl::org::xml::sax::helpers
 			"processingInstruction",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void DefaultHandler::ignorableWhitespace(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -111,62 +107,16 @@ namespace __jni_impl::org::xml::sax::helpers
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
-	}
-	void DefaultHandler::setDocumentLocator(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDocumentLocator",
-			"(Lorg/xml/sax/Locator;)V",
-			arg0.__jniObject().object());
-	}
-	void DefaultHandler::startPrefixMapping(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"startPrefixMapping",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1);
-	}
-	void DefaultHandler::endPrefixMapping(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"endPrefixMapping",
-			"(Ljava/lang/String;)V",
-			arg0);
-	}
-	void DefaultHandler::startElement(jstring arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"startElement",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object());
-	}
-	void DefaultHandler::endElement(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz.callMethod<void>(
-			"endElement",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2);
-	}
-	void DefaultHandler::skippedEntity(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"skippedEntity",
-			"(Ljava/lang/String;)V",
-			arg0);
+			arg2
+		);
 	}
 	void DefaultHandler::fatalError(__jni_impl::org::xml::sax::SAXParseException arg0)
 	{
 		__thiz.callMethod<void>(
 			"fatalError",
 			"(Lorg/xml/sax/SAXParseException;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DefaultHandler::notationDecl(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -175,7 +125,8 @@ namespace __jni_impl::org::xml::sax::helpers
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DefaultHandler::unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
@@ -185,7 +136,8 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject DefaultHandler::resolveEntity(jstring arg0, jstring arg1)
 	{
@@ -193,7 +145,72 @@ namespace __jni_impl::org::xml::sax::helpers
 			"resolveEntity",
 			"(Ljava/lang/String;Ljava/lang/String;)Lorg/xml/sax/InputSource;",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void DefaultHandler::characters(jcharArray arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"characters",
+			"([CII)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void DefaultHandler::setDocumentLocator(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDocumentLocator",
+			"(Lorg/xml/sax/Locator;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void DefaultHandler::startPrefixMapping(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"startPrefixMapping",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void DefaultHandler::endPrefixMapping(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"endPrefixMapping",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DefaultHandler::startElement(jstring arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3)
+	{
+		__thiz.callMethod<void>(
+			"startElement",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void DefaultHandler::endElement(jstring arg0, jstring arg1, jstring arg2)
+	{
+		__thiz.callMethod<void>(
+			"endElement",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void DefaultHandler::skippedEntity(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"skippedEntity",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::org::xml::sax::helpers
 

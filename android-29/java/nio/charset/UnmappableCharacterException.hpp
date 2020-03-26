@@ -20,7 +20,7 @@ namespace __jni_impl::java::nio::charset
 		void __constructor(jint arg0);
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 		jint getInputLength();
 	};
 } // namespace __jni_impl::java::nio::charset
@@ -40,17 +40,19 @@ namespace __jni_impl::java::nio::charset
 	}
 	
 	// Methods
-	QAndroidJniObject UnmappableCharacterException::getMessage()
+	jstring UnmappableCharacterException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UnmappableCharacterException::getInputLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getInputLength",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::nio::charset
 

@@ -55,7 +55,8 @@ namespace __jni_impl::android::view::animation
 		return __thiz.callMethod<jfloat>(
 			"getInterpolation",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::animation
 

@@ -35,7 +35,7 @@ namespace __jni_impl::android::hardware::usb
 		void close();
 		jboolean cancel();
 		QAndroidJniObject getEndpoint();
-		QAndroidJniObject getClientData();
+		jobject getClientData();
 		void setClientData(jobject arg0);
 	};
 } // namespace __jni_impl::android::hardware::usb
@@ -63,7 +63,8 @@ namespace __jni_impl::android::hardware::usb
 			"initialize",
 			"(Landroid/hardware/usb/UsbDeviceConnection;Landroid/hardware/usb/UsbEndpoint;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean UsbRequest::queue(__jni_impl::java::nio::ByteBuffer arg0, jint arg1)
 	{
@@ -71,45 +72,52 @@ namespace __jni_impl::android::hardware::usb
 			"queue",
 			"(Ljava/nio/ByteBuffer;I)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean UsbRequest::queue(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"queue",
 			"(Ljava/nio/ByteBuffer;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void UsbRequest::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean UsbRequest::cancel()
 	{
 		return __thiz.callMethod<jboolean>(
 			"cancel",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject UsbRequest::getEndpoint()
 	{
 		return __thiz.callObjectMethod(
 			"getEndpoint",
-			"()Landroid/hardware/usb/UsbEndpoint;");
+			"()Landroid/hardware/usb/UsbEndpoint;"
+		);
 	}
-	QAndroidJniObject UsbRequest::getClientData()
+	jobject UsbRequest::getClientData()
 	{
 		return __thiz.callObjectMethod(
 			"getClientData",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void UsbRequest::setClientData(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"setClientData",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::hardware::usb
 

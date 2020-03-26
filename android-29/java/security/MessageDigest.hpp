@@ -26,8 +26,8 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject clone();
+		jstring toString();
+		jobject clone();
 		void update(jbyteArray arg0);
 		void update(jbyteArray arg0, jint arg1, jint arg2);
 		void update(__jni_impl::java::nio::ByteBuffer arg0);
@@ -38,11 +38,11 @@ namespace __jni_impl::java::security
 		void reset();
 		QAndroidJniObject getProvider();
 		jint digest(jbyteArray arg0, jint arg1, jint arg2);
-		QAndroidJniObject digest();
-		QAndroidJniObject digest(jbyteArray arg0);
+		jbyteArray digest();
+		jbyteArray digest(jbyteArray arg0);
 		static jboolean isEqual(jbyteArray arg0, jbyteArray arg1);
 		jint getDigestLength();
-		QAndroidJniObject getAlgorithm();
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::java::security
 
@@ -62,24 +62,27 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject MessageDigest::toString()
+	jstring MessageDigest::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MessageDigest::clone()
+	jobject MessageDigest::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void MessageDigest::update(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"update",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void MessageDigest::update(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -88,21 +91,24 @@ namespace __jni_impl::java::security
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void MessageDigest::update(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		__thiz.callMethod<void>(
 			"update",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MessageDigest::update(jbyte arg0)
 	{
 		__thiz.callMethod<void>(
 			"update",
 			"(B)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MessageDigest::getInstance(jstring arg0)
 	{
@@ -110,7 +116,8 @@ namespace __jni_impl::java::security
 			"java.security.MessageDigest",
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/MessageDigest;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MessageDigest::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
@@ -119,7 +126,8 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/MessageDigest;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MessageDigest::getInstance(jstring arg0, jstring arg1)
 	{
@@ -128,19 +136,22 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/MessageDigest;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void MessageDigest::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject MessageDigest::getProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
-			"()Ljava/security/Provider;");
+			"()Ljava/security/Provider;"
+		);
 	}
 	jint MessageDigest::digest(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -149,20 +160,23 @@ namespace __jni_impl::java::security
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject MessageDigest::digest()
+	jbyteArray MessageDigest::digest()
 	{
 		return __thiz.callObjectMethod(
 			"digest",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject MessageDigest::digest(jbyteArray arg0)
+	jbyteArray MessageDigest::digest(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"digest",
 			"([B)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
 	jboolean MessageDigest::isEqual(jbyteArray arg0, jbyteArray arg1)
 	{
@@ -171,19 +185,22 @@ namespace __jni_impl::java::security
 			"isEqual",
 			"([B[B)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint MessageDigest::getDigestLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getDigestLength",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MessageDigest::getAlgorithm()
+	jstring MessageDigest::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

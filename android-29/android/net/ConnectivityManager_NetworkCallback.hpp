@@ -61,7 +61,8 @@ namespace __jni_impl::android::net
 		__thiz.callMethod<void>(
 			"onAvailable",
 			"(Landroid/net/Network;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectivityManager_NetworkCallback::onLosing(__jni_impl::android::net::Network arg0, jint arg1)
 	{
@@ -69,20 +70,23 @@ namespace __jni_impl::android::net
 			"onLosing",
 			"(Landroid/net/Network;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ConnectivityManager_NetworkCallback::onLost(__jni_impl::android::net::Network arg0)
 	{
 		__thiz.callMethod<void>(
 			"onLost",
 			"(Landroid/net/Network;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectivityManager_NetworkCallback::onUnavailable()
 	{
 		__thiz.callMethod<void>(
 			"onUnavailable",
-			"()V");
+			"()V"
+		);
 	}
 	void ConnectivityManager_NetworkCallback::onCapabilitiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::NetworkCapabilities arg1)
 	{
@@ -90,7 +94,8 @@ namespace __jni_impl::android::net
 			"onCapabilitiesChanged",
 			"(Landroid/net/Network;Landroid/net/NetworkCapabilities;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectivityManager_NetworkCallback::onLinkPropertiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::LinkProperties arg1)
 	{
@@ -98,7 +103,8 @@ namespace __jni_impl::android::net
 			"onLinkPropertiesChanged",
 			"(Landroid/net/Network;Landroid/net/LinkProperties;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectivityManager_NetworkCallback::onBlockedStatusChanged(__jni_impl::android::net::Network arg0, jboolean arg1)
 	{
@@ -106,7 +112,8 @@ namespace __jni_impl::android::net
 			"onBlockedStatusChanged",
 			"(Landroid/net/Network;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net
 

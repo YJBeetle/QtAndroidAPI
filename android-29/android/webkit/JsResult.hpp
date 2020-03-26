@@ -40,13 +40,15 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
 	}
 	void JsResult::confirm()
 	{
 		__thiz.callMethod<void>(
 			"confirm",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

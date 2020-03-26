@@ -27,7 +27,7 @@ namespace __jni_impl::android::telecom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERVICE_INTERFACE();
+		static jstring SERVICE_INTERFACE();
 		
 		// Constructors
 		void __constructor();
@@ -47,12 +47,13 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::telecom
 {
 	// Fields
-	QAndroidJniObject CallScreeningService::SERVICE_INTERFACE()
+	jstring CallScreeningService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.CallScreeningService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -69,21 +70,24 @@ namespace __jni_impl::android::telecom
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean CallScreeningService::onUnbind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onUnbind",
 			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CallScreeningService::onScreenCall(__jni_impl::android::telecom::Call_Details arg0)
 	{
 		__thiz.callMethod<void>(
 			"onScreenCall",
 			"(Landroid/telecom/Call$Details;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CallScreeningService::respondToCall(__jni_impl::android::telecom::Call_Details arg0, __jni_impl::android::telecom::CallScreeningService_CallResponse arg1)
 	{
@@ -91,7 +95,8 @@ namespace __jni_impl::android::telecom
 			"respondToCall",
 			"(Landroid/telecom/Call$Details;Landroid/telecom/CallScreeningService$CallResponse;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

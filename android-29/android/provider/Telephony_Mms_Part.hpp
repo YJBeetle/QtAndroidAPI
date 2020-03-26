@@ -16,20 +16,20 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CHARSET();
-		static QAndroidJniObject CONTENT_DISPOSITION();
-		static QAndroidJniObject CONTENT_ID();
-		static QAndroidJniObject CONTENT_LOCATION();
-		static QAndroidJniObject CONTENT_TYPE();
+		static jstring CHARSET();
+		static jstring CONTENT_DISPOSITION();
+		static jstring CONTENT_ID();
+		static jstring CONTENT_LOCATION();
+		static jstring CONTENT_TYPE();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject CT_START();
-		static QAndroidJniObject CT_TYPE();
-		static QAndroidJniObject FILENAME();
-		static QAndroidJniObject MSG_ID();
-		static QAndroidJniObject NAME();
-		static QAndroidJniObject SEQ();
-		static QAndroidJniObject TEXT();
-		static QAndroidJniObject _DATA();
+		static jstring CT_START();
+		static jstring CT_TYPE();
+		static jstring FILENAME();
+		static jstring MSG_ID();
+		static jstring NAME();
+		static jstring SEQ();
+		static jstring TEXT();
+		static jstring _DATA();
 		
 		// Constructors
 		void __constructor();
@@ -43,103 +43,117 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_Mms_Part::CHARSET()
+	jstring Telephony_Mms_Part::CHARSET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"CHARSET",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::CONTENT_DISPOSITION()
+	jstring Telephony_Mms_Part::CONTENT_DISPOSITION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"CONTENT_DISPOSITION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::CONTENT_ID()
+	jstring Telephony_Mms_Part::CONTENT_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"CONTENT_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::CONTENT_LOCATION()
+	jstring Telephony_Mms_Part::CONTENT_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"CONTENT_LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::CONTENT_TYPE()
+	jstring Telephony_Mms_Part::CONTENT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"CONTENT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Telephony_Mms_Part::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Telephony_Mms_Part::CT_START()
+	jstring Telephony_Mms_Part::CT_START()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"CT_START",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::CT_TYPE()
+	jstring Telephony_Mms_Part::CT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"CT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::FILENAME()
+	jstring Telephony_Mms_Part::FILENAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"FILENAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::MSG_ID()
+	jstring Telephony_Mms_Part::MSG_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"MSG_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::NAME()
+	jstring Telephony_Mms_Part::NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::SEQ()
+	jstring Telephony_Mms_Part::SEQ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"SEQ",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::TEXT()
+	jstring Telephony_Mms_Part::TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Mms_Part::_DATA()
+	jstring Telephony_Mms_Part::_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Mms$Part",
 			"_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

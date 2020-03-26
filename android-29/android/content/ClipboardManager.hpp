@@ -27,8 +27,7 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		void setText(jstring arg0);
-		QAndroidJniObject getText();
-		jboolean hasText();
+		jstring getText();
 		void setPrimaryClip(__jni_impl::android::content::ClipData arg0);
 		void clearPrimaryClip();
 		QAndroidJniObject getPrimaryClip();
@@ -36,6 +35,7 @@ namespace __jni_impl::android::content
 		jboolean hasPrimaryClip();
 		void addPrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0);
 		void removePrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0);
+		jboolean hasText();
 	};
 } // namespace __jni_impl::android::content
 
@@ -60,64 +60,74 @@ namespace __jni_impl::android::content
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ClipboardManager::getText()
+	jstring ClipboardManager::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/CharSequence;");
-	}
-	jboolean ClipboardManager::hasText()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasText",
-			"()Z");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void ClipboardManager::setPrimaryClip(__jni_impl::android::content::ClipData arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPrimaryClip",
 			"(Landroid/content/ClipData;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ClipboardManager::clearPrimaryClip()
 	{
 		__thiz.callMethod<void>(
 			"clearPrimaryClip",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject ClipboardManager::getPrimaryClip()
 	{
 		return __thiz.callObjectMethod(
 			"getPrimaryClip",
-			"()Landroid/content/ClipData;");
+			"()Landroid/content/ClipData;"
+		);
 	}
 	QAndroidJniObject ClipboardManager::getPrimaryClipDescription()
 	{
 		return __thiz.callObjectMethod(
 			"getPrimaryClipDescription",
-			"()Landroid/content/ClipDescription;");
+			"()Landroid/content/ClipDescription;"
+		);
 	}
 	jboolean ClipboardManager::hasPrimaryClip()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasPrimaryClip",
-			"()Z");
+			"()Z"
+		);
 	}
 	void ClipboardManager::addPrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addPrimaryClipChangedListener",
 			"(Landroid/content/ClipboardManager$OnPrimaryClipChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ClipboardManager::removePrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removePrimaryClipChangedListener",
 			"(Landroid/content/ClipboardManager$OnPrimaryClipChangedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ClipboardManager::hasText()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasText",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::content
 

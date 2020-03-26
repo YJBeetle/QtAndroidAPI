@@ -20,7 +20,7 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::util
@@ -34,14 +34,16 @@ namespace __jni_impl::java::util
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$Category",
 			"DISPLAY",
-			"Ljava/util/Locale$Category;");
+			"Ljava/util/Locale$Category;"
+		);
 	}
 	QAndroidJniObject Locale_Category::FORMAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$Category",
 			"FORMAT",
-			"Ljava/util/Locale$Category;");
+			"Ljava/util/Locale$Category;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject Locale_Category::values()
+	jarray Locale_Category::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale$Category",
 			"values",
-			"()[Ljava/util/Locale$Category;");
+			"()[Ljava/util/Locale$Category;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Locale_Category::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::java::util
 			"java.util.Locale$Category",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Locale$Category;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util
 

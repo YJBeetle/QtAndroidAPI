@@ -58,7 +58,8 @@ namespace __jni_impl::android::icu::util
 	{
 		return __thiz.callMethod<jint>(
 			"getErrorIndex",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

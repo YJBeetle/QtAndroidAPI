@@ -36,24 +36,24 @@ namespace __jni_impl::android::media
 		static jlong BT_FOLDER_TYPE_TITLES();
 		static jlong BT_FOLDER_TYPE_YEARS();
 		static QAndroidJniObject CREATOR();
-		static QAndroidJniObject EXTRA_BT_FOLDER_TYPE();
+		static jstring EXTRA_BT_FOLDER_TYPE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
-		QAndroidJniObject getSubtitle();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getMediaUri();
-		QAndroidJniObject getTitle();
-		QAndroidJniObject getDescription();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getMediaId();
+		jstring getTitle();
+		QAndroidJniObject getExtras();
+		QAndroidJniObject getMediaUri();
+		jstring getSubtitle();
+		jstring getMediaId();
 		QAndroidJniObject getIconBitmap();
 		QAndroidJniObject getIconUri();
+		jstring getDescription();
 	};
 } // namespace __jni_impl::android::media
 
@@ -69,57 +69,66 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.MediaDescription",
-			"BT_FOLDER_TYPE_ALBUMS");
+			"BT_FOLDER_TYPE_ALBUMS"
+		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_ARTISTS()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.MediaDescription",
-			"BT_FOLDER_TYPE_ARTISTS");
+			"BT_FOLDER_TYPE_ARTISTS"
+		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_GENRES()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.MediaDescription",
-			"BT_FOLDER_TYPE_GENRES");
+			"BT_FOLDER_TYPE_GENRES"
+		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_MIXED()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.MediaDescription",
-			"BT_FOLDER_TYPE_MIXED");
+			"BT_FOLDER_TYPE_MIXED"
+		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_PLAYLISTS()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.MediaDescription",
-			"BT_FOLDER_TYPE_PLAYLISTS");
+			"BT_FOLDER_TYPE_PLAYLISTS"
+		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_TITLES()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.MediaDescription",
-			"BT_FOLDER_TYPE_TITLES");
+			"BT_FOLDER_TYPE_TITLES"
+		);
 	}
 	jlong MediaDescription::BT_FOLDER_TYPE_YEARS()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"android.media.MediaDescription",
-			"BT_FOLDER_TYPE_YEARS");
+			"BT_FOLDER_TYPE_YEARS"
+		);
 	}
 	QAndroidJniObject MediaDescription::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaDescription",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject MediaDescription::EXTRA_BT_FOLDER_TYPE()
+	jstring MediaDescription::EXTRA_BT_FOLDER_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.MediaDescription",
 			"EXTRA_BT_FOLDER_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -136,49 +145,22 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MediaDescription::toString()
+	jstring MediaDescription::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject MediaDescription::getSubtitle()
-	{
-		return __thiz.callObjectMethod(
-			"getSubtitle",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject MediaDescription::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject MediaDescription::getMediaUri()
-	{
-		return __thiz.callObjectMethod(
-			"getMediaUri",
-			"()Landroid/net/Uri;");
-	}
-	QAndroidJniObject MediaDescription::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject MediaDescription::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MediaDescription::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void MediaDescription::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -186,25 +168,64 @@ namespace __jni_impl::android::media
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject MediaDescription::getMediaId()
+	jstring MediaDescription::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject MediaDescription::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject MediaDescription::getMediaUri()
+	{
+		return __thiz.callObjectMethod(
+			"getMediaUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jstring MediaDescription::getSubtitle()
+	{
+		return __thiz.callObjectMethod(
+			"getSubtitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring MediaDescription::getMediaId()
 	{
 		return __thiz.callObjectMethod(
 			"getMediaId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject MediaDescription::getIconBitmap()
 	{
 		return __thiz.callObjectMethod(
 			"getIconBitmap",
-			"()Landroid/graphics/Bitmap;");
+			"()Landroid/graphics/Bitmap;"
+		);
 	}
 	QAndroidJniObject MediaDescription::getIconUri()
 	{
 		return __thiz.callObjectMethod(
 			"getIconUri",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
+	}
+	jstring MediaDescription::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

@@ -20,7 +20,7 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUTHORITY();
+		static jstring AUTHORITY();
 		static QAndroidJniObject AUTHORITY_URI();
 		
 		// Constructors
@@ -39,19 +39,21 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject BlockedNumberContract::AUTHORITY()
+	jstring BlockedNumberContract::AUTHORITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.BlockedNumberContract",
 			"AUTHORITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject BlockedNumberContract::AUTHORITY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.BlockedNumberContract",
 			"AUTHORITY_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	
 	// Constructors
@@ -70,7 +72,8 @@ namespace __jni_impl::android::provider
 			"isBlocked",
 			"(Landroid/content/Context;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean BlockedNumberContract::canCurrentUserBlockNumbers(__jni_impl::android::content::Context arg0)
 	{
@@ -78,7 +81,8 @@ namespace __jni_impl::android::provider
 			"android.provider.BlockedNumberContract",
 			"canCurrentUserBlockNumbers",
 			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint BlockedNumberContract::unblock(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
@@ -87,7 +91,8 @@ namespace __jni_impl::android::provider
 			"unblock",
 			"(Landroid/content/Context;Ljava/lang/String;)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::provider
 

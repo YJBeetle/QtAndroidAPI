@@ -17,15 +17,15 @@ namespace __jni_impl::android::provider
 	public:
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DUE_TIME();
-		static QAndroidJniObject ERROR_CODE();
-		static QAndroidJniObject ERROR_TYPE();
-		static QAndroidJniObject LAST_TRY();
-		static QAndroidJniObject MSG_ID();
-		static QAndroidJniObject MSG_TYPE();
-		static QAndroidJniObject PROTO_TYPE();
-		static QAndroidJniObject RETRY_INDEX();
-		static QAndroidJniObject SUBSCRIPTION_ID();
+		static jstring DUE_TIME();
+		static jstring ERROR_CODE();
+		static jstring ERROR_TYPE();
+		static jstring LAST_TRY();
+		static jstring MSG_ID();
+		static jstring MSG_TYPE();
+		static jstring PROTO_TYPE();
+		static jstring RETRY_INDEX();
+		static jstring SUBSCRIPTION_ID();
 		
 		// Constructors
 		void __constructor();
@@ -44,70 +44,80 @@ namespace __jni_impl::android::provider
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::DUE_TIME()
+	jstring Telephony_MmsSms_PendingMessages::DUE_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"DUE_TIME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::ERROR_CODE()
+	jstring Telephony_MmsSms_PendingMessages::ERROR_CODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"ERROR_CODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::ERROR_TYPE()
+	jstring Telephony_MmsSms_PendingMessages::ERROR_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"ERROR_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::LAST_TRY()
+	jstring Telephony_MmsSms_PendingMessages::LAST_TRY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"LAST_TRY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::MSG_ID()
+	jstring Telephony_MmsSms_PendingMessages::MSG_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"MSG_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::MSG_TYPE()
+	jstring Telephony_MmsSms_PendingMessages::MSG_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"MSG_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::PROTO_TYPE()
+	jstring Telephony_MmsSms_PendingMessages::PROTO_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"PROTO_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::RETRY_INDEX()
+	jstring Telephony_MmsSms_PendingMessages::RETRY_INDEX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"RETRY_INDEX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_MmsSms_PendingMessages::SUBSCRIPTION_ID()
+	jstring Telephony_MmsSms_PendingMessages::SUBSCRIPTION_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$MmsSms$PendingMessages",
 			"SUBSCRIPTION_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

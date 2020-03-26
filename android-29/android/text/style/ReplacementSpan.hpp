@@ -69,21 +69,24 @@ namespace __jni_impl::android::text::style
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ReplacementSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateDrawState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ReplacementSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateMeasureState",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ReplacementSpan::draw(__jni_impl::android::graphics::Canvas arg0, jstring arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, __jni_impl::android::graphics::Paint arg8)
 	{
@@ -98,7 +101,8 @@ namespace __jni_impl::android::text::style
 			arg5,
 			arg6,
 			arg7,
-			arg8.__jniObject().object());
+			arg8.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

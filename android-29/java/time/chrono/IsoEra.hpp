@@ -20,7 +20,7 @@ namespace __jni_impl::java::time::chrono
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		jint getValue();
 		static QAndroidJniObject of(jint arg0);
@@ -36,14 +36,16 @@ namespace __jni_impl::java::time::chrono
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.IsoEra",
 			"BCE",
-			"Ljava/time/chrono/IsoEra;");
+			"Ljava/time/chrono/IsoEra;"
+		);
 	}
 	QAndroidJniObject IsoEra::CE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.IsoEra",
 			"CE",
-			"Ljava/time/chrono/IsoEra;");
+			"Ljava/time/chrono/IsoEra;"
+		);
 	}
 	
 	// Constructors
@@ -55,12 +57,13 @@ namespace __jni_impl::java::time::chrono
 	}
 	
 	// Methods
-	QAndroidJniObject IsoEra::values()
+	jarray IsoEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.IsoEra",
 			"values",
-			"()[Ljava/time/chrono/IsoEra;");
+			"()[Ljava/time/chrono/IsoEra;"
+		).object<jarray>();
 	}
 	QAndroidJniObject IsoEra::valueOf(jstring arg0)
 	{
@@ -68,13 +71,15 @@ namespace __jni_impl::java::time::chrono
 			"java.time.chrono.IsoEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/IsoEra;",
-			arg0);
+			arg0
+		);
 	}
 	jint IsoEra::getValue()
 	{
 		return __thiz.callMethod<jint>(
 			"getValue",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject IsoEra::of(jint arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::java::time::chrono
 			"java.time.chrono.IsoEra",
 			"of",
 			"(I)Ljava/time/chrono/IsoEra;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::time::chrono
 

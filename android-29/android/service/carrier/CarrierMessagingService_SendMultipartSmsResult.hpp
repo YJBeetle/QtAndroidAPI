@@ -17,8 +17,8 @@ namespace __jni_impl::android::service::carrier
 		void __constructor(jint arg0, jintArray arg1);
 		
 		// Methods
-		QAndroidJniObject getMessageRefs();
 		jint getSendStatus();
+		jintArray getMessageRefs();
 	};
 } // namespace __jni_impl::android::service::carrier
 
@@ -38,17 +38,19 @@ namespace __jni_impl::android::service::carrier
 	}
 	
 	// Methods
-	QAndroidJniObject CarrierMessagingService_SendMultipartSmsResult::getMessageRefs()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageRefs",
-			"()[I");
-	}
 	jint CarrierMessagingService_SendMultipartSmsResult::getSendStatus()
 	{
 		return __thiz.callMethod<jint>(
 			"getSendStatus",
-			"()I");
+			"()I"
+		);
+	}
+	jintArray CarrierMessagingService_SendMultipartSmsResult::getMessageRefs()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageRefs",
+			"()[I"
+		).object<jintArray>();
 	}
 } // namespace __jni_impl::android::service::carrier
 

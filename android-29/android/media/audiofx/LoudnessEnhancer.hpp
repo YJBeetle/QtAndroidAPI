@@ -32,7 +32,8 @@ namespace __jni_impl::android::media::audiofx
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.audiofx.LoudnessEnhancer",
-			"PARAM_TARGET_GAIN_MB");
+			"PARAM_TARGET_GAIN_MB"
+		);
 	}
 	
 	// Constructors
@@ -50,13 +51,15 @@ namespace __jni_impl::android::media::audiofx
 		__thiz.callMethod<void>(
 			"setTargetGain",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat LoudnessEnhancer::getTargetGain()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getTargetGain",
-			"()F");
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

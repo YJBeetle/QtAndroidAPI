@@ -26,7 +26,7 @@ namespace __jni_impl::java::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getAddress();
 		QAndroidJniObject getBroadcast();
@@ -55,37 +55,43 @@ namespace __jni_impl::java::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject InterfaceAddress::toString()
+	jstring InterfaceAddress::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint InterfaceAddress::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject InterfaceAddress::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
-			"()Ljava/net/InetAddress;");
+			"()Ljava/net/InetAddress;"
+		);
 	}
 	QAndroidJniObject InterfaceAddress::getBroadcast()
 	{
 		return __thiz.callObjectMethod(
 			"getBroadcast",
-			"()Ljava/net/InetAddress;");
+			"()Ljava/net/InetAddress;"
+		);
 	}
 	jshort InterfaceAddress::getNetworkPrefixLength()
 	{
 		return __thiz.callMethod<jshort>(
 			"getNetworkPrefixLength",
-			"()S");
+			"()S"
+		);
 	}
 } // namespace __jni_impl::java::net
 

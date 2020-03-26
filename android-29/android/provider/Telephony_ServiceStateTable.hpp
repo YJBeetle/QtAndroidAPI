@@ -16,11 +16,11 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUTHORITY();
+		static jstring AUTHORITY();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject IS_MANUAL_NETWORK_SELECTION();
-		static QAndroidJniObject VOICE_OPERATOR_NUMERIC();
-		static QAndroidJniObject VOICE_REG_STATE();
+		static jstring IS_MANUAL_NETWORK_SELECTION();
+		static jstring VOICE_OPERATOR_NUMERIC();
+		static jstring VOICE_REG_STATE();
 		
 		// Constructors
 		void __constructor();
@@ -36,40 +36,45 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_ServiceStateTable::AUTHORITY()
+	jstring Telephony_ServiceStateTable::AUTHORITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$ServiceStateTable",
 			"AUTHORITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Telephony_ServiceStateTable::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$ServiceStateTable",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Telephony_ServiceStateTable::IS_MANUAL_NETWORK_SELECTION()
+	jstring Telephony_ServiceStateTable::IS_MANUAL_NETWORK_SELECTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$ServiceStateTable",
 			"IS_MANUAL_NETWORK_SELECTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_ServiceStateTable::VOICE_OPERATOR_NUMERIC()
+	jstring Telephony_ServiceStateTable::VOICE_OPERATOR_NUMERIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$ServiceStateTable",
 			"VOICE_OPERATOR_NUMERIC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_ServiceStateTable::VOICE_REG_STATE()
+	jstring Telephony_ServiceStateTable::VOICE_REG_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$ServiceStateTable",
 			"VOICE_REG_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -88,7 +93,8 @@ namespace __jni_impl::android::provider
 			"getUriForSubscriptionIdAndField",
 			"(ILjava/lang/String;)Landroid/net/Uri;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Telephony_ServiceStateTable::getUriForSubscriptionId(jint arg0)
 	{
@@ -96,7 +102,8 @@ namespace __jni_impl::android::provider
 			"android.provider.Telephony$ServiceStateTable",
 			"getUriForSubscriptionId",
 			"(I)Landroid/net/Uri;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::provider
 

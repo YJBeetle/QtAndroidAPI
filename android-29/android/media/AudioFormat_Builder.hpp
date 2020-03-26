@@ -56,35 +56,40 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/media/AudioFormat;");
+			"()Landroid/media/AudioFormat;"
+		);
 	}
 	QAndroidJniObject AudioFormat_Builder::setEncoding(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setEncoding",
 			"(I)Landroid/media/AudioFormat$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AudioFormat_Builder::setChannelMask(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setChannelMask",
 			"(I)Landroid/media/AudioFormat$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AudioFormat_Builder::setChannelIndexMask(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setChannelIndexMask",
 			"(I)Landroid/media/AudioFormat$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject AudioFormat_Builder::setSampleRate(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSampleRate",
 			"(I)Landroid/media/AudioFormat$Builder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

@@ -21,7 +21,7 @@ namespace __jni_impl::java::security
 		void __constructor(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getObject();
+		jobject getObject();
 	};
 } // namespace __jni_impl::java::security
 
@@ -42,11 +42,12 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject GuardedObject::getObject()
+	jobject GuardedObject::getObject()
 	{
 		return __thiz.callObjectMethod(
 			"getObject",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::security
 

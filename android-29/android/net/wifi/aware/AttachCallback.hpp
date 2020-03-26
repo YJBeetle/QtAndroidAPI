@@ -45,14 +45,16 @@ namespace __jni_impl::android::net::wifi::aware
 	{
 		__thiz.callMethod<void>(
 			"onAttachFailed",
-			"()V");
+			"()V"
+		);
 	}
 	void AttachCallback::onAttached(__jni_impl::android::net::wifi::aware::WifiAwareSession arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAttached",
 			"(Landroid/net/wifi/aware/WifiAwareSession;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

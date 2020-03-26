@@ -48,7 +48,8 @@ namespace __jni_impl::java::nio::file
 			"get",
 			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Paths::get(__jni_impl::java::net::URI arg0)
 	{
@@ -56,7 +57,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Paths",
 			"get",
 			"(Ljava/net/URI;)Ljava/nio/file/Path;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

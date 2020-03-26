@@ -52,131 +52,153 @@ namespace __jni_impl::android::graphics
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"A_8");
+			"A_8"
+		);
 	}
 	jint PixelFormat::JPEG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"JPEG");
+			"JPEG"
+		);
 	}
 	jint PixelFormat::LA_88()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"LA_88");
+			"LA_88"
+		);
 	}
 	jint PixelFormat::L_8()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"L_8");
+			"L_8"
+		);
 	}
 	jint PixelFormat::OPAQUE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"OPAQUE");
+			"OPAQUE"
+		);
 	}
 	jint PixelFormat::RGBA_1010102()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"RGBA_1010102");
+			"RGBA_1010102"
+		);
 	}
 	jint PixelFormat::RGBA_4444()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"RGBA_4444");
+			"RGBA_4444"
+		);
 	}
 	jint PixelFormat::RGBA_5551()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"RGBA_5551");
+			"RGBA_5551"
+		);
 	}
 	jint PixelFormat::RGBA_8888()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"RGBA_8888");
+			"RGBA_8888"
+		);
 	}
 	jint PixelFormat::RGBA_F16()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"RGBA_F16");
+			"RGBA_F16"
+		);
 	}
 	jint PixelFormat::RGBX_8888()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"RGBX_8888");
+			"RGBX_8888"
+		);
 	}
 	jint PixelFormat::RGB_332()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"RGB_332");
+			"RGB_332"
+		);
 	}
 	jint PixelFormat::RGB_565()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"RGB_565");
+			"RGB_565"
+		);
 	}
 	jint PixelFormat::RGB_888()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"RGB_888");
+			"RGB_888"
+		);
 	}
 	jint PixelFormat::TRANSLUCENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"TRANSLUCENT");
+			"TRANSLUCENT"
+		);
 	}
 	jint PixelFormat::TRANSPARENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"TRANSPARENT");
+			"TRANSPARENT"
+		);
 	}
 	jint PixelFormat::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"UNKNOWN");
+			"UNKNOWN"
+		);
 	}
 	jint PixelFormat::YCbCr_420_SP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"YCbCr_420_SP");
+			"YCbCr_420_SP"
+		);
 	}
 	jint PixelFormat::YCbCr_422_I()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"YCbCr_422_I");
+			"YCbCr_422_I"
+		);
 	}
 	jint PixelFormat::YCbCr_422_SP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.PixelFormat",
-			"YCbCr_422_SP");
+			"YCbCr_422_SP"
+		);
 	}
 	jint PixelFormat::bitsPerPixel()
 	{
 		return __thiz.getField<jint>(
-			"bitsPerPixel");
+			"bitsPerPixel"
+		);
 	}
 	jint PixelFormat::bytesPerPixel()
 	{
 		return __thiz.getField<jint>(
-			"bytesPerPixel");
+			"bytesPerPixel"
+		);
 	}
 	
 	// Constructors
@@ -195,7 +217,8 @@ namespace __jni_impl::android::graphics
 			"getPixelFormatInfo",
 			"(ILandroid/graphics/PixelFormat;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean PixelFormat::formatHasAlpha(jint arg0)
 	{
@@ -203,7 +226,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.PixelFormat",
 			"formatHasAlpha",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

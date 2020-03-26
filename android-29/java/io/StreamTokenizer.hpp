@@ -25,7 +25,7 @@ namespace __jni_impl::java::io
 		static jint TT_EOL();
 		static jint TT_NUMBER();
 		static jint TT_WORD();
-		QAndroidJniObject sval();
+		jstring sval();
 		jdouble nval();
 		
 		// Constructors
@@ -33,7 +33,7 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::InputStream arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint nextToken();
 		void wordChars(jint arg0, jint arg1);
 		void whitespaceChars(jint arg0, jint arg1);
@@ -61,42 +61,49 @@ namespace __jni_impl::java::io
 	jint StreamTokenizer::ttype()
 	{
 		return __thiz.getField<jint>(
-			"ttype");
+			"ttype"
+		);
 	}
 	jint StreamTokenizer::TT_EOF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.io.StreamTokenizer",
-			"TT_EOF");
+			"TT_EOF"
+		);
 	}
 	jint StreamTokenizer::TT_EOL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.io.StreamTokenizer",
-			"TT_EOL");
+			"TT_EOL"
+		);
 	}
 	jint StreamTokenizer::TT_NUMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.io.StreamTokenizer",
-			"TT_NUMBER");
+			"TT_NUMBER"
+		);
 	}
 	jint StreamTokenizer::TT_WORD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.io.StreamTokenizer",
-			"TT_WORD");
+			"TT_WORD"
+		);
 	}
-	QAndroidJniObject StreamTokenizer::sval()
+	jstring StreamTokenizer::sval()
 	{
 		return __thiz.getObjectField(
 			"sval",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jdouble StreamTokenizer::nval()
 	{
 		return __thiz.getField<jdouble>(
-			"nval");
+			"nval"
+		);
 	}
 	
 	// Constructors
@@ -116,17 +123,19 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	QAndroidJniObject StreamTokenizer::toString()
+	jstring StreamTokenizer::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint StreamTokenizer::nextToken()
 	{
 		return __thiz.callMethod<jint>(
 			"nextToken",
-			"()I");
+			"()I"
+		);
 	}
 	void StreamTokenizer::wordChars(jint arg0, jint arg1)
 	{
@@ -134,7 +143,8 @@ namespace __jni_impl::java::io
 			"wordChars",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void StreamTokenizer::whitespaceChars(jint arg0, jint arg1)
 	{
@@ -142,33 +152,38 @@ namespace __jni_impl::java::io
 			"whitespaceChars",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void StreamTokenizer::commentChar(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"commentChar",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void StreamTokenizer::quoteChar(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"quoteChar",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void StreamTokenizer::parseNumbers()
 	{
 		__thiz.callMethod<void>(
 			"parseNumbers",
-			"()V");
+			"()V"
+		);
 	}
 	void StreamTokenizer::resetSyntax()
 	{
 		__thiz.callMethod<void>(
 			"resetSyntax",
-			"()V");
+			"()V"
+		);
 	}
 	void StreamTokenizer::ordinaryChars(jint arg0, jint arg1)
 	{
@@ -176,54 +191,62 @@ namespace __jni_impl::java::io
 			"ordinaryChars",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void StreamTokenizer::ordinaryChar(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"ordinaryChar",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void StreamTokenizer::eolIsSignificant(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"eolIsSignificant",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void StreamTokenizer::slashStarComments(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"slashStarComments",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void StreamTokenizer::slashSlashComments(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"slashSlashComments",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void StreamTokenizer::lowerCaseMode(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"lowerCaseMode",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void StreamTokenizer::pushBack()
 	{
 		__thiz.callMethod<void>(
 			"pushBack",
-			"()V");
+			"()V"
+		);
 	}
 	jint StreamTokenizer::lineno()
 	{
 		return __thiz.callMethod<jint>(
 			"lineno",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::io
 

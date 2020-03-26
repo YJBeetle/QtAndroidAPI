@@ -33,7 +33,7 @@ namespace __jni_impl::javax::crypto
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 		void update(jbyteArray arg0);
 		void update(jbyteArray arg0, jint arg1, jint arg2);
 		void update(__jni_impl::java::nio::ByteBuffer arg0);
@@ -47,9 +47,9 @@ namespace __jni_impl::javax::crypto
 		QAndroidJniObject getProvider();
 		jint getMacLength();
 		void doFinal(jbyteArray arg0, jint arg1);
-		QAndroidJniObject doFinal();
-		QAndroidJniObject doFinal(jbyteArray arg0);
-		QAndroidJniObject getAlgorithm();
+		jbyteArray doFinal();
+		jbyteArray doFinal(jbyteArray arg0);
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::javax::crypto
 
@@ -71,18 +71,20 @@ namespace __jni_impl::javax::crypto
 	}
 	
 	// Methods
-	QAndroidJniObject Mac::clone()
+	jobject Mac::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void Mac::update(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"update",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Mac::update(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -91,21 +93,24 @@ namespace __jni_impl::javax::crypto
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Mac::update(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		__thiz.callMethod<void>(
 			"update",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Mac::update(jbyte arg0)
 	{
 		__thiz.callMethod<void>(
 			"update",
 			"(B)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Mac::getInstance(jstring arg0)
 	{
@@ -113,7 +118,8 @@ namespace __jni_impl::javax::crypto
 			"javax.crypto.Mac",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/Mac;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Mac::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
@@ -122,7 +128,8 @@ namespace __jni_impl::javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Mac;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Mac::getInstance(jstring arg0, jstring arg1)
 	{
@@ -131,7 +138,8 @@ namespace __jni_impl::javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/Mac;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Mac::init(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -139,32 +147,37 @@ namespace __jni_impl::javax::crypto
 			"init",
 			"(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Mac::init(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"init",
 			"(Ljava/security/Key;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Mac::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Mac::getProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
-			"()Ljava/security/Provider;");
+			"()Ljava/security/Provider;"
+		);
 	}
 	jint Mac::getMacLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getMacLength",
-			"()I");
+			"()I"
+		);
 	}
 	void Mac::doFinal(jbyteArray arg0, jint arg1)
 	{
@@ -172,26 +185,30 @@ namespace __jni_impl::javax::crypto
 			"doFinal",
 			"([BI)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Mac::doFinal()
+	jbyteArray Mac::doFinal()
 	{
 		return __thiz.callObjectMethod(
 			"doFinal",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject Mac::doFinal(jbyteArray arg0)
+	jbyteArray Mac::doFinal(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"doFinal",
 			"([B)[B",
-			arg0);
+			arg0
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject Mac::getAlgorithm()
+	jstring Mac::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::crypto
 

@@ -17,9 +17,9 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
+		void proceed(jboolean arg0);
 		void showInterstitial(jboolean arg0);
 		void backToSafety(jboolean arg0);
-		void proceed(jboolean arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -37,26 +37,29 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
+	void SafeBrowsingResponse::proceed(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"proceed",
+			"(Z)V",
+			arg0
+		);
+	}
 	void SafeBrowsingResponse::showInterstitial(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"showInterstitial",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void SafeBrowsingResponse::backToSafety(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"backToSafety",
 			"(Z)V",
-			arg0);
-	}
-	void SafeBrowsingResponse::proceed(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"proceed",
-			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

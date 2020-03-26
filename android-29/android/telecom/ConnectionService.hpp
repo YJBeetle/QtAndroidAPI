@@ -43,7 +43,7 @@ namespace __jni_impl::android::telecom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERVICE_INTERFACE();
+		static jstring SERVICE_INTERFACE();
 		
 		// Constructors
 		void __constructor();
@@ -85,12 +85,13 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::telecom
 {
 	// Fields
-	QAndroidJniObject ConnectionService::SERVICE_INTERFACE()
+	jstring ConnectionService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.ConnectionService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -107,14 +108,16 @@ namespace __jni_impl::android::telecom
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ConnectionService::onUnbind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onUnbind",
 			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConnectionService::createRemoteIncomingConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1)
 	{
@@ -122,7 +125,8 @@ namespace __jni_impl::android::telecom
 			"createRemoteIncomingConnection",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/RemoteConnection;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConnectionService::createRemoteOutgoingConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1)
 	{
@@ -130,7 +134,8 @@ namespace __jni_impl::android::telecom
 			"createRemoteOutgoingConnection",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/RemoteConnection;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectionService::conferenceRemoteConnections(__jni_impl::android::telecom::RemoteConnection arg0, __jni_impl::android::telecom::RemoteConnection arg1)
 	{
@@ -138,14 +143,16 @@ namespace __jni_impl::android::telecom
 			"conferenceRemoteConnections",
 			"(Landroid/telecom/RemoteConnection;Landroid/telecom/RemoteConnection;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectionService::addConference(__jni_impl::android::telecom::Conference arg0)
 	{
 		__thiz.callMethod<void>(
 			"addConference",
 			"(Landroid/telecom/Conference;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectionService::addExistingConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::Connection arg1)
 	{
@@ -153,25 +160,29 @@ namespace __jni_impl::android::telecom
 			"addExistingConnection",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/Connection;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectionService::connectionServiceFocusReleased()
 	{
 		__thiz.callMethod<void>(
 			"connectionServiceFocusReleased",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject ConnectionService::getAllConnections()
 	{
 		return __thiz.callObjectMethod(
 			"getAllConnections",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 	QAndroidJniObject ConnectionService::getAllConferences()
 	{
 		return __thiz.callObjectMethod(
 			"getAllConferences",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 	QAndroidJniObject ConnectionService::onCreateIncomingConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1)
 	{
@@ -179,7 +190,8 @@ namespace __jni_impl::android::telecom
 			"onCreateIncomingConnection",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/Connection;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectionService::onCreateIncomingConnectionFailed(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1)
 	{
@@ -187,7 +199,8 @@ namespace __jni_impl::android::telecom
 			"onCreateIncomingConnectionFailed",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectionService::onCreateOutgoingConnectionFailed(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1)
 	{
@@ -195,7 +208,8 @@ namespace __jni_impl::android::telecom
 			"onCreateOutgoingConnectionFailed",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConnectionService::onCreateOutgoingConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1)
 	{
@@ -203,7 +217,8 @@ namespace __jni_impl::android::telecom
 			"onCreateOutgoingConnection",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/Connection;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConnectionService::onCreateOutgoingHandoverConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1)
 	{
@@ -211,7 +226,8 @@ namespace __jni_impl::android::telecom
 			"onCreateOutgoingHandoverConnection",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/Connection;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ConnectionService::onCreateIncomingHandoverConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1)
 	{
@@ -219,7 +235,8 @@ namespace __jni_impl::android::telecom
 			"onCreateIncomingHandoverConnection",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/telecom/ConnectionRequest;)Landroid/telecom/Connection;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectionService::onHandoverFailed(__jni_impl::android::telecom::ConnectionRequest arg0, jint arg1)
 	{
@@ -227,7 +244,8 @@ namespace __jni_impl::android::telecom
 			"onHandoverFailed",
 			"(Landroid/telecom/ConnectionRequest;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ConnectionService::onConference(__jni_impl::android::telecom::Connection arg0, __jni_impl::android::telecom::Connection arg1)
 	{
@@ -235,33 +253,38 @@ namespace __jni_impl::android::telecom
 			"onConference",
 			"(Landroid/telecom/Connection;Landroid/telecom/Connection;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ConnectionService::onRemoteConferenceAdded(__jni_impl::android::telecom::RemoteConference arg0)
 	{
 		__thiz.callMethod<void>(
 			"onRemoteConferenceAdded",
 			"(Landroid/telecom/RemoteConference;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectionService::onRemoteExistingConnectionAdded(__jni_impl::android::telecom::RemoteConnection arg0)
 	{
 		__thiz.callMethod<void>(
 			"onRemoteExistingConnectionAdded",
 			"(Landroid/telecom/RemoteConnection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectionService::onConnectionServiceFocusLost()
 	{
 		__thiz.callMethod<void>(
 			"onConnectionServiceFocusLost",
-			"()V");
+			"()V"
+		);
 	}
 	void ConnectionService::onConnectionServiceFocusGained()
 	{
 		__thiz.callMethod<void>(
 			"onConnectionServiceFocusGained",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

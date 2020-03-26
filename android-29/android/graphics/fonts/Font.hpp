@@ -34,14 +34,14 @@ namespace __jni_impl::android::graphics::fonts
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getFile();
 		QAndroidJniObject getBuffer();
 		jint getTtcIndex();
-		QAndroidJniObject getAxes();
-		QAndroidJniObject getLocaleList();
+		jarray getAxes();
 		QAndroidJniObject getStyle();
+		QAndroidJniObject getLocaleList();
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
@@ -68,55 +68,64 @@ namespace __jni_impl::android::graphics::fonts
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Font::toString()
+	jstring Font::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Font::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Font::getFile()
 	{
 		return __thiz.callObjectMethod(
 			"getFile",
-			"()Ljava/io/File;");
+			"()Ljava/io/File;"
+		);
 	}
 	QAndroidJniObject Font::getBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"getBuffer",
-			"()Ljava/nio/ByteBuffer;");
+			"()Ljava/nio/ByteBuffer;"
+		);
 	}
 	jint Font::getTtcIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getTtcIndex",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Font::getAxes()
+	jarray Font::getAxes()
 	{
 		return __thiz.callObjectMethod(
 			"getAxes",
-			"()[Landroid/graphics/fonts/FontVariationAxis;");
-	}
-	QAndroidJniObject Font::getLocaleList()
-	{
-		return __thiz.callObjectMethod(
-			"getLocaleList",
-			"()Landroid/os/LocaleList;");
+			"()[Landroid/graphics/fonts/FontVariationAxis;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Font::getStyle()
 	{
 		return __thiz.callObjectMethod(
 			"getStyle",
-			"()Landroid/graphics/fonts/FontStyle;");
+			"()Landroid/graphics/fonts/FontStyle;"
+		);
+	}
+	QAndroidJniObject Font::getLocaleList()
+	{
+		return __thiz.callObjectMethod(
+			"getLocaleList",
+			"()Landroid/os/LocaleList;"
+		);
 	}
 } // namespace __jni_impl::android::graphics::fonts
 

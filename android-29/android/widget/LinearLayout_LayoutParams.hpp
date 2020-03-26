@@ -38,7 +38,7 @@ namespace __jni_impl::android::widget
 		void __constructor(jint arg0, jint arg1, jfloat arg2);
 		
 		// Methods
-		QAndroidJniObject debug(jstring arg0);
+		jstring debug(jstring arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -52,12 +52,14 @@ namespace __jni_impl::android::widget
 	jint LinearLayout_LayoutParams::gravity()
 	{
 		return __thiz.getField<jint>(
-			"gravity");
+			"gravity"
+		);
 	}
 	jfloat LinearLayout_LayoutParams::weight()
 	{
 		return __thiz.getField<jfloat>(
-			"weight");
+			"weight"
+		);
 	}
 	
 	// Constructors
@@ -109,12 +111,13 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject LinearLayout_LayoutParams::debug(jstring arg0)
+	jstring LinearLayout_LayoutParams::debug(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

@@ -64,26 +64,30 @@ namespace __jni_impl::android::graphics
 			"reset",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Interpolator::reset(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"reset",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Interpolator::getKeyFrameCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getKeyFrameCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint Interpolator::getValueCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getValueCount",
-			"()I");
+			"()I"
+		);
 	}
 	void Interpolator::setKeyFrame(jint arg0, jint arg1, jfloatArray arg2)
 	{
@@ -92,7 +96,8 @@ namespace __jni_impl::android::graphics
 			"(II[F)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Interpolator::setKeyFrame(jint arg0, jint arg1, jfloatArray arg2, jfloatArray arg3)
 	{
@@ -102,7 +107,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Interpolator::setRepeatMirror(jfloat arg0, jboolean arg1)
 	{
@@ -110,14 +116,16 @@ namespace __jni_impl::android::graphics
 			"setRepeatMirror",
 			"(FZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Interpolator::timeToValues(jfloatArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"timeToValues",
 			"([F)Landroid/graphics/Interpolator$Result;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Interpolator::timeToValues(jint arg0, jfloatArray arg1)
 	{
@@ -125,7 +133,8 @@ namespace __jni_impl::android::graphics
 			"timeToValues",
 			"(I[F)Landroid/graphics/Interpolator$Result;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

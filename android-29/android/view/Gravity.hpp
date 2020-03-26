@@ -69,163 +69,190 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"AXIS_CLIP");
+			"AXIS_CLIP"
+		);
 	}
 	jint Gravity::AXIS_PULL_AFTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"AXIS_PULL_AFTER");
+			"AXIS_PULL_AFTER"
+		);
 	}
 	jint Gravity::AXIS_PULL_BEFORE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"AXIS_PULL_BEFORE");
+			"AXIS_PULL_BEFORE"
+		);
 	}
 	jint Gravity::AXIS_SPECIFIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"AXIS_SPECIFIED");
+			"AXIS_SPECIFIED"
+		);
 	}
 	jint Gravity::AXIS_X_SHIFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"AXIS_X_SHIFT");
+			"AXIS_X_SHIFT"
+		);
 	}
 	jint Gravity::AXIS_Y_SHIFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"AXIS_Y_SHIFT");
+			"AXIS_Y_SHIFT"
+		);
 	}
 	jint Gravity::BOTTOM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"BOTTOM");
+			"BOTTOM"
+		);
 	}
 	jint Gravity::CENTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"CENTER");
+			"CENTER"
+		);
 	}
 	jint Gravity::CENTER_HORIZONTAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"CENTER_HORIZONTAL");
+			"CENTER_HORIZONTAL"
+		);
 	}
 	jint Gravity::CENTER_VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"CENTER_VERTICAL");
+			"CENTER_VERTICAL"
+		);
 	}
 	jint Gravity::CLIP_HORIZONTAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"CLIP_HORIZONTAL");
+			"CLIP_HORIZONTAL"
+		);
 	}
 	jint Gravity::CLIP_VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"CLIP_VERTICAL");
+			"CLIP_VERTICAL"
+		);
 	}
 	jint Gravity::DISPLAY_CLIP_HORIZONTAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"DISPLAY_CLIP_HORIZONTAL");
+			"DISPLAY_CLIP_HORIZONTAL"
+		);
 	}
 	jint Gravity::DISPLAY_CLIP_VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"DISPLAY_CLIP_VERTICAL");
+			"DISPLAY_CLIP_VERTICAL"
+		);
 	}
 	jint Gravity::END()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"END");
+			"END"
+		);
 	}
 	jint Gravity::FILL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"FILL");
+			"FILL"
+		);
 	}
 	jint Gravity::FILL_HORIZONTAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"FILL_HORIZONTAL");
+			"FILL_HORIZONTAL"
+		);
 	}
 	jint Gravity::FILL_VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"FILL_VERTICAL");
+			"FILL_VERTICAL"
+		);
 	}
 	jint Gravity::HORIZONTAL_GRAVITY_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"HORIZONTAL_GRAVITY_MASK");
+			"HORIZONTAL_GRAVITY_MASK"
+		);
 	}
 	jint Gravity::LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"LEFT");
+			"LEFT"
+		);
 	}
 	jint Gravity::NO_GRAVITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"NO_GRAVITY");
+			"NO_GRAVITY"
+		);
 	}
 	jint Gravity::RELATIVE_HORIZONTAL_GRAVITY_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"RELATIVE_HORIZONTAL_GRAVITY_MASK");
+			"RELATIVE_HORIZONTAL_GRAVITY_MASK"
+		);
 	}
 	jint Gravity::RELATIVE_LAYOUT_DIRECTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"RELATIVE_LAYOUT_DIRECTION");
+			"RELATIVE_LAYOUT_DIRECTION"
+		);
 	}
 	jint Gravity::RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"RIGHT");
+			"RIGHT"
+		);
 	}
 	jint Gravity::START()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"START");
+			"START"
+		);
 	}
 	jint Gravity::TOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"TOP");
+			"TOP"
+		);
 	}
 	jint Gravity::VERTICAL_GRAVITY_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.Gravity",
-			"VERTICAL_GRAVITY_MASK");
+			"VERTICAL_GRAVITY_MASK"
+		);
 	}
 	
 	// Constructors
@@ -250,7 +277,8 @@ namespace __jni_impl::android::view
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
 	}
 	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Rect arg6)
 	{
@@ -264,7 +292,8 @@ namespace __jni_impl::android::view
 			arg3.__jniObject().object(),
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, __jni_impl::android::graphics::Rect arg4, jint arg5)
 	{
@@ -277,7 +306,8 @@ namespace __jni_impl::android::view
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5);
+			arg5
+		);
 	}
 	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, __jni_impl::android::graphics::Rect arg4)
 	{
@@ -289,7 +319,8 @@ namespace __jni_impl::android::view
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void Gravity::applyDisplay(jint arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, jint arg3)
 	{
@@ -300,7 +331,8 @@ namespace __jni_impl::android::view
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void Gravity::applyDisplay(jint arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2)
 	{
@@ -310,7 +342,8 @@ namespace __jni_impl::android::view
 			"(ILandroid/graphics/Rect;Landroid/graphics/Rect;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean Gravity::isVertical(jint arg0)
 	{
@@ -318,7 +351,8 @@ namespace __jni_impl::android::view
 			"android.view.Gravity",
 			"isVertical",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Gravity::isHorizontal(jint arg0)
 	{
@@ -326,7 +360,8 @@ namespace __jni_impl::android::view
 			"android.view.Gravity",
 			"isHorizontal",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Gravity::getAbsoluteGravity(jint arg0, jint arg1)
 	{
@@ -335,7 +370,8 @@ namespace __jni_impl::android::view
 			"getAbsoluteGravity",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view
 

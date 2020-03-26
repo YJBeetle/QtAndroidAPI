@@ -64,7 +64,8 @@ namespace __jni_impl::java::nio::channels::spi
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.spi.AsynchronousChannelProvider",
 			"provider",
-			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;");
+			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
+		);
 	}
 	QAndroidJniObject AsynchronousChannelProvider::openAsynchronousChannelGroup(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -72,7 +73,8 @@ namespace __jni_impl::java::nio::channels::spi
 			"openAsynchronousChannelGroup",
 			"(Ljava/util/concurrent/ExecutorService;I)Ljava/nio/channels/AsynchronousChannelGroup;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject AsynchronousChannelProvider::openAsynchronousChannelGroup(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -80,21 +82,24 @@ namespace __jni_impl::java::nio::channels::spi
 			"openAsynchronousChannelGroup",
 			"(ILjava/util/concurrent/ThreadFactory;)Ljava/nio/channels/AsynchronousChannelGroup;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousChannelProvider::openAsynchronousServerSocketChannel(__jni_impl::java::nio::channels::AsynchronousChannelGroup arg0)
 	{
 		return __thiz.callObjectMethod(
 			"openAsynchronousServerSocketChannel",
 			"(Ljava/nio/channels/AsynchronousChannelGroup;)Ljava/nio/channels/AsynchronousServerSocketChannel;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AsynchronousChannelProvider::openAsynchronousSocketChannel(__jni_impl::java::nio::channels::AsynchronousChannelGroup arg0)
 	{
 		return __thiz.callObjectMethod(
 			"openAsynchronousSocketChannel",
 			"(Ljava/nio/channels/AsynchronousChannelGroup;)Ljava/nio/channels/AsynchronousSocketChannel;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::nio::channels::spi
 

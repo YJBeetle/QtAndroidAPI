@@ -36,16 +36,16 @@ namespace __jni_impl::android::hardware::camera2::params
 		// Methods
 		jboolean equals(jobject arg0);
 		jboolean equals(__jni_impl::android::hardware::camera2::params::MeteringRectangle arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getSize();
+		QAndroidJniObject getUpperLeftPoint();
+		QAndroidJniObject getRect();
+		jint getMeteringWeight();
 		jint getX();
 		jint getY();
 		jint getWidth();
 		jint getHeight();
-		jint getMeteringWeight();
-		QAndroidJniObject getUpperLeftPoint();
-		QAndroidJniObject getRect();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -60,19 +60,22 @@ namespace __jni_impl::android::hardware::camera2::params
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.MeteringRectangle",
-			"METERING_WEIGHT_DONT_CARE");
+			"METERING_WEIGHT_DONT_CARE"
+		);
 	}
 	jint MeteringRectangle::METERING_WEIGHT_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.MeteringRectangle",
-			"METERING_WEIGHT_MAX");
+			"METERING_WEIGHT_MAX"
+		);
 	}
 	jint MeteringRectangle::METERING_WEIGHT_MIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.camera2.params.MeteringRectangle",
-			"METERING_WEIGHT_MIN");
+			"METERING_WEIGHT_MIN"
+		);
 	}
 	
 	// Constructors
@@ -111,74 +114,86 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean MeteringRectangle::equals(__jni_impl::android::hardware::camera2::params::MeteringRectangle arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Landroid/hardware/camera2/params/MeteringRectangle;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MeteringRectangle::toString()
+	jstring MeteringRectangle::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MeteringRectangle::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MeteringRectangle::getSize()
 	{
 		return __thiz.callObjectMethod(
 			"getSize",
-			"()Landroid/util/Size;");
-	}
-	jint MeteringRectangle::getX()
-	{
-		return __thiz.callMethod<jint>(
-			"getX",
-			"()I");
-	}
-	jint MeteringRectangle::getY()
-	{
-		return __thiz.callMethod<jint>(
-			"getY",
-			"()I");
-	}
-	jint MeteringRectangle::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I");
-	}
-	jint MeteringRectangle::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
-	}
-	jint MeteringRectangle::getMeteringWeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getMeteringWeight",
-			"()I");
+			"()Landroid/util/Size;"
+		);
 	}
 	QAndroidJniObject MeteringRectangle::getUpperLeftPoint()
 	{
 		return __thiz.callObjectMethod(
 			"getUpperLeftPoint",
-			"()Landroid/graphics/Point;");
+			"()Landroid/graphics/Point;"
+		);
 	}
 	QAndroidJniObject MeteringRectangle::getRect()
 	{
 		return __thiz.callObjectMethod(
 			"getRect",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
+	}
+	jint MeteringRectangle::getMeteringWeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getMeteringWeight",
+			"()I"
+		);
+	}
+	jint MeteringRectangle::getX()
+	{
+		return __thiz.callMethod<jint>(
+			"getX",
+			"()I"
+		);
+	}
+	jint MeteringRectangle::getY()
+	{
+		return __thiz.callMethod<jint>(
+			"getY",
+			"()I"
+		);
+	}
+	jint MeteringRectangle::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint MeteringRectangle::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

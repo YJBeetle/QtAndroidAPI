@@ -26,11 +26,11 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getText();
-		QAndroidJniObject getCallingPackageName();
-		QAndroidJniObject getExtras();
+		jstring getText();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
+		jstring getCallingPackageName();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -45,7 +45,8 @@ namespace __jni_impl::android::view::textclassifier
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textclassifier.TextLanguage$Request",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -57,29 +58,19 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	QAndroidJniObject TextLanguage_Request::getText()
+	jstring TextLanguage_Request::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject TextLanguage_Request::getCallingPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getCallingPackageName",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject TextLanguage_Request::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint TextLanguage_Request::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void TextLanguage_Request::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -87,7 +78,22 @@ namespace __jni_impl::android::view::textclassifier
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject TextLanguage_Request::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jstring TextLanguage_Request::getCallingPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getCallingPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

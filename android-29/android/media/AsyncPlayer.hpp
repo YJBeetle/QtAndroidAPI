@@ -57,7 +57,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz.callMethod<void>(
 			"stop",
-			"()V");
+			"()V"
+		);
 	}
 	void AsyncPlayer::play(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jboolean arg2, jint arg3)
 	{
@@ -67,7 +68,8 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void AsyncPlayer::play(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jboolean arg2, __jni_impl::android::media::AudioAttributes arg3)
 	{
@@ -77,7 +79,8 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

@@ -16,11 +16,11 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CALENDAR_LOCATION();
+		static jstring CALENDAR_LOCATION();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
+		static jstring DEFAULT_SORT_ORDER();
 		static QAndroidJniObject ENTERPRISE_CONTENT_URI();
-		static QAndroidJniObject NAME();
+		static jstring NAME();
 		
 		// Constructors
 		void __constructor();
@@ -34,40 +34,45 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject CalendarContract_Calendars::CALENDAR_LOCATION()
+	jstring CalendarContract_Calendars::CALENDAR_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"CALENDAR_LOCATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject CalendarContract_Calendars::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject CalendarContract_Calendars::DEFAULT_SORT_ORDER()
+	jstring CalendarContract_Calendars::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject CalendarContract_Calendars::ENTERPRISE_CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"ENTERPRISE_CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject CalendarContract_Calendars::NAME()
+	jstring CalendarContract_Calendars::NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract$Calendars",
 			"NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

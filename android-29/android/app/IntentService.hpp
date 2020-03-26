@@ -25,11 +25,11 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		void onStart(__jni_impl::android::content::Intent arg0, jint arg1);
+		void onCreate();
+		void onDestroy();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		jint onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2);
 		void setIntentRedelivery(jboolean arg0);
-		void onCreate();
-		void onDestroy();
 	};
 } // namespace __jni_impl::android::app
 
@@ -55,14 +55,30 @@ namespace __jni_impl::android::app
 			"onStart",
 			"(Landroid/content/Intent;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void IntentService::onCreate()
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	void IntentService::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V"
+		);
 	}
 	QAndroidJniObject IntentService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint IntentService::onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2)
 	{
@@ -71,26 +87,16 @@ namespace __jni_impl::android::app
 			"(Landroid/content/Intent;II)I",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void IntentService::setIntentRedelivery(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIntentRedelivery",
 			"(Z)V",
-			arg0);
-	}
-	void IntentService::onCreate()
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V");
-	}
-	void IntentService::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V");
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app
 

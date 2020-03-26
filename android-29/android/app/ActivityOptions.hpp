@@ -40,14 +40,14 @@ namespace __jni_impl::android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EXTRA_USAGE_TIME_REPORT();
-		static QAndroidJniObject EXTRA_USAGE_TIME_REPORT_PACKAGES();
+		static jstring EXTRA_USAGE_TIME_REPORT();
+		static jstring EXTRA_USAGE_TIME_REPORT_PACKAGES();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void update(__jni_impl::android::app::ActivityOptions arg0);
 		static QAndroidJniObject makeCustomAnimation(__jni_impl::android::content::Context arg0, jint arg1, jint arg2);
 		static QAndroidJniObject makeScaleUpAnimation(__jni_impl::android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
@@ -80,19 +80,21 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	// Fields
-	QAndroidJniObject ActivityOptions::EXTRA_USAGE_TIME_REPORT()
+	jstring ActivityOptions::EXTRA_USAGE_TIME_REPORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityOptions",
 			"EXTRA_USAGE_TIME_REPORT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ActivityOptions::EXTRA_USAGE_TIME_REPORT_PACKAGES()
+	jstring ActivityOptions::EXTRA_USAGE_TIME_REPORT_PACKAGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityOptions",
 			"EXTRA_USAGE_TIME_REPORT_PACKAGES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -104,18 +106,20 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject ActivityOptions::toString()
+	jstring ActivityOptions::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ActivityOptions::update(__jni_impl::android::app::ActivityOptions arg0)
 	{
 		__thiz.callMethod<void>(
 			"update",
 			"(Landroid/app/ActivityOptions;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ActivityOptions::makeCustomAnimation(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
 	{
@@ -125,7 +129,8 @@ namespace __jni_impl::android::app
 			"(Landroid/content/Context;II)Landroid/app/ActivityOptions;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ActivityOptions::makeScaleUpAnimation(__jni_impl::android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -137,7 +142,8 @@ namespace __jni_impl::android::app
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject ActivityOptions::makeClipRevealAnimation(__jni_impl::android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -149,7 +155,8 @@ namespace __jni_impl::android::app
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	QAndroidJniObject ActivityOptions::makeThumbnailScaleUpAnimation(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Bitmap arg1, jint arg2, jint arg3)
 	{
@@ -160,7 +167,8 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject ActivityOptions::makeSceneTransitionAnimation(__jni_impl::android::app::Activity arg0, jarray arg1)
 	{
@@ -169,7 +177,8 @@ namespace __jni_impl::android::app
 			"makeSceneTransitionAnimation",
 			"(Landroid/app/Activity;[Landroid/util/Pair;)Landroid/app/ActivityOptions;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ActivityOptions::makeSceneTransitionAnimation(__jni_impl::android::app::Activity arg0, __jni_impl::android::view::View arg1, jstring arg2)
 	{
@@ -179,80 +188,92 @@ namespace __jni_impl::android::app
 			"(Landroid/app/Activity;Landroid/view/View;Ljava/lang/String;)Landroid/app/ActivityOptions;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ActivityOptions::makeTaskLaunchBehind()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeTaskLaunchBehind",
-			"()Landroid/app/ActivityOptions;");
+			"()Landroid/app/ActivityOptions;"
+		);
 	}
 	QAndroidJniObject ActivityOptions::makeBasic()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.ActivityOptions",
 			"makeBasic",
-			"()Landroid/app/ActivityOptions;");
+			"()Landroid/app/ActivityOptions;"
+		);
 	}
 	QAndroidJniObject ActivityOptions::setLaunchBounds(__jni_impl::android::graphics::Rect arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLaunchBounds",
 			"(Landroid/graphics/Rect;)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ActivityOptions::getLaunchBounds()
 	{
 		return __thiz.callObjectMethod(
 			"getLaunchBounds",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 	jboolean ActivityOptions::getLockTaskMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getLockTaskMode",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject ActivityOptions::setLockTaskEnabled(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLockTaskEnabled",
 			"(Z)Landroid/app/ActivityOptions;",
-			arg0);
+			arg0
+		);
 	}
 	jint ActivityOptions::getLaunchDisplayId()
 	{
 		return __thiz.callMethod<jint>(
 			"getLaunchDisplayId",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject ActivityOptions::setLaunchDisplayId(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setLaunchDisplayId",
 			"(I)Landroid/app/ActivityOptions;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ActivityOptions::toBundle()
 	{
 		return __thiz.callObjectMethod(
 			"toBundle",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
 	void ActivityOptions::requestUsageTimeReport(__jni_impl::android::app::PendingIntent arg0)
 	{
 		__thiz.callMethod<void>(
 			"requestUsageTimeReport",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ActivityOptions::setAppVerificationBundle(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAppVerificationBundle",
 			"(Landroid/os/Bundle;)Landroid/app/ActivityOptions;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

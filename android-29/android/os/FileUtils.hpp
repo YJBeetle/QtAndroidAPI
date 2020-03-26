@@ -70,7 +70,8 @@ namespace __jni_impl::android::os
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	jlong FileUtils::copy(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::io::FileDescriptor arg1)
 	{
@@ -79,7 +80,8 @@ namespace __jni_impl::android::os
 			"copy",
 			"(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;)J",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong FileUtils::copy(__jni_impl::java::io::InputStream arg0, __jni_impl::java::io::OutputStream arg1, __jni_impl::android::os::CancellationSignal arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4)
 	{
@@ -91,7 +93,8 @@ namespace __jni_impl::android::os
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	jlong FileUtils::copy(__jni_impl::java::io::InputStream arg0, __jni_impl::java::io::OutputStream arg1)
 	{
@@ -100,7 +103,8 @@ namespace __jni_impl::android::os
 			"copy",
 			"(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void FileUtils::closeQuietly(__jni_impl::java::io::FileDescriptor arg0)
 	{
@@ -108,7 +112,8 @@ namespace __jni_impl::android::os
 			"android.os.FileUtils",
 			"closeQuietly",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FileUtils::closeQuietly(__jni_impl::__JniBaseClass arg0)
 	{
@@ -116,7 +121,8 @@ namespace __jni_impl::android::os
 			"android.os.FileUtils",
 			"closeQuietly",
 			"(Ljava/lang/AutoCloseable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::os
 

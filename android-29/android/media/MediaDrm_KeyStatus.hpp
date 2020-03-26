@@ -23,8 +23,8 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
+		jbyteArray getKeyId();
 		jint getStatusCode();
-		QAndroidJniObject getKeyId();
 	};
 } // namespace __jni_impl::android::media
 
@@ -36,37 +36,43 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyStatus",
-			"STATUS_EXPIRED");
+			"STATUS_EXPIRED"
+		);
 	}
 	jint MediaDrm_KeyStatus::STATUS_INTERNAL_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyStatus",
-			"STATUS_INTERNAL_ERROR");
+			"STATUS_INTERNAL_ERROR"
+		);
 	}
 	jint MediaDrm_KeyStatus::STATUS_OUTPUT_NOT_ALLOWED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyStatus",
-			"STATUS_OUTPUT_NOT_ALLOWED");
+			"STATUS_OUTPUT_NOT_ALLOWED"
+		);
 	}
 	jint MediaDrm_KeyStatus::STATUS_PENDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyStatus",
-			"STATUS_PENDING");
+			"STATUS_PENDING"
+		);
 	}
 	jint MediaDrm_KeyStatus::STATUS_USABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyStatus",
-			"STATUS_USABLE");
+			"STATUS_USABLE"
+		);
 	}
 	jint MediaDrm_KeyStatus::STATUS_USABLE_IN_FUTURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaDrm$KeyStatus",
-			"STATUS_USABLE_IN_FUTURE");
+			"STATUS_USABLE_IN_FUTURE"
+		);
 	}
 	
 	// Constructors
@@ -78,17 +84,19 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jbyteArray MediaDrm_KeyStatus::getKeyId()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyId",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	jint MediaDrm_KeyStatus::getStatusCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getStatusCode",
-			"()I");
-	}
-	QAndroidJniObject MediaDrm_KeyStatus::getKeyId()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyId",
-			"()[B");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

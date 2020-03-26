@@ -35,13 +35,13 @@ namespace __jni_impl::android::transition
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void setResizeClip(jboolean arg0);
-		jboolean getResizeClip();
-		void setReparent(jboolean arg0);
-		QAndroidJniObject getTransitionProperties();
+		jarray getTransitionProperties();
 		QAndroidJniObject createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2);
 		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
 		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
+		void setResizeClip(jboolean arg0);
+		jboolean getResizeClip();
+		void setReparent(jboolean arg0);
 	};
 } // namespace __jni_impl::android::transition
 
@@ -71,31 +71,12 @@ namespace __jni_impl::android::transition
 	}
 	
 	// Methods
-	void ChangeBounds::setResizeClip(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setResizeClip",
-			"(Z)V",
-			arg0);
-	}
-	jboolean ChangeBounds::getResizeClip()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getResizeClip",
-			"()Z");
-	}
-	void ChangeBounds::setReparent(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReparent",
-			"(Z)V",
-			arg0);
-	}
-	QAndroidJniObject ChangeBounds::getTransitionProperties()
+	jarray ChangeBounds::getTransitionProperties()
 	{
 		return __thiz.callObjectMethod(
 			"getTransitionProperties",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ChangeBounds::createAnimator(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::TransitionValues arg1, __jni_impl::android::transition::TransitionValues arg2)
 	{
@@ -104,21 +85,47 @@ namespace __jni_impl::android::transition
 			"(Landroid/view/ViewGroup;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ChangeBounds::captureStartValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		__thiz.callMethod<void>(
 			"captureStartValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ChangeBounds::captureEndValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		__thiz.callMethod<void>(
 			"captureEndValues",
 			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void ChangeBounds::setResizeClip(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setResizeClip",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean ChangeBounds::getResizeClip()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getResizeClip",
+			"()Z"
+		);
+	}
+	void ChangeBounds::setReparent(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setReparent",
+			"(Z)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::transition
 

@@ -32,7 +32,7 @@ namespace __jni_impl::android::location
 		void __constructor(__jni_impl::android::location::Criteria arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getAccuracy();
 		void setAccuracy(jint arg0);
 		jint describeContents();
@@ -67,62 +67,72 @@ namespace __jni_impl::android::location
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.Criteria",
-			"ACCURACY_COARSE");
+			"ACCURACY_COARSE"
+		);
 	}
 	jint Criteria::ACCURACY_FINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.Criteria",
-			"ACCURACY_FINE");
+			"ACCURACY_FINE"
+		);
 	}
 	jint Criteria::ACCURACY_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.Criteria",
-			"ACCURACY_HIGH");
+			"ACCURACY_HIGH"
+		);
 	}
 	jint Criteria::ACCURACY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.Criteria",
-			"ACCURACY_LOW");
+			"ACCURACY_LOW"
+		);
 	}
 	jint Criteria::ACCURACY_MEDIUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.Criteria",
-			"ACCURACY_MEDIUM");
+			"ACCURACY_MEDIUM"
+		);
 	}
 	QAndroidJniObject Criteria::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.location.Criteria",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Criteria::NO_REQUIREMENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.Criteria",
-			"NO_REQUIREMENT");
+			"NO_REQUIREMENT"
+		);
 	}
 	jint Criteria::POWER_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.Criteria",
-			"POWER_HIGH");
+			"POWER_HIGH"
+		);
 	}
 	jint Criteria::POWER_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.Criteria",
-			"POWER_LOW");
+			"POWER_LOW"
+		);
 	}
 	jint Criteria::POWER_MEDIUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.Criteria",
-			"POWER_MEDIUM");
+			"POWER_MEDIUM"
+		);
 	}
 	
 	// Constructors
@@ -141,30 +151,34 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	QAndroidJniObject Criteria::toString()
+	jstring Criteria::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Criteria::getAccuracy()
 	{
 		return __thiz.callMethod<jint>(
 			"getAccuracy",
-			"()I");
+			"()I"
+		);
 	}
 	void Criteria::setAccuracy(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAccuracy",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Criteria::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Criteria::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -172,124 +186,143 @@ namespace __jni_impl::android::location
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint Criteria::getPowerRequirement()
 	{
 		return __thiz.callMethod<jint>(
 			"getPowerRequirement",
-			"()I");
+			"()I"
+		);
 	}
 	void Criteria::setHorizontalAccuracy(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHorizontalAccuracy",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Criteria::getHorizontalAccuracy()
 	{
 		return __thiz.callMethod<jint>(
 			"getHorizontalAccuracy",
-			"()I");
+			"()I"
+		);
 	}
 	void Criteria::setVerticalAccuracy(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVerticalAccuracy",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Criteria::getVerticalAccuracy()
 	{
 		return __thiz.callMethod<jint>(
 			"getVerticalAccuracy",
-			"()I");
+			"()I"
+		);
 	}
 	void Criteria::setSpeedAccuracy(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSpeedAccuracy",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Criteria::getSpeedAccuracy()
 	{
 		return __thiz.callMethod<jint>(
 			"getSpeedAccuracy",
-			"()I");
+			"()I"
+		);
 	}
 	void Criteria::setBearingAccuracy(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBearingAccuracy",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Criteria::getBearingAccuracy()
 	{
 		return __thiz.callMethod<jint>(
 			"getBearingAccuracy",
-			"()I");
+			"()I"
+		);
 	}
 	void Criteria::setPowerRequirement(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPowerRequirement",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Criteria::setCostAllowed(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCostAllowed",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Criteria::isCostAllowed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCostAllowed",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Criteria::setAltitudeRequired(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAltitudeRequired",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Criteria::isAltitudeRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAltitudeRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Criteria::setSpeedRequired(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSpeedRequired",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Criteria::isSpeedRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSpeedRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Criteria::setBearingRequired(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBearingRequired",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Criteria::isBearingRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBearingRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::location
 

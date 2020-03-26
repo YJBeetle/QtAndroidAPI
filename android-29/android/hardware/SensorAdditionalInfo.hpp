@@ -23,8 +23,8 @@ namespace __jni_impl::android::hardware
 		static jint TYPE_SENSOR_PLACEMENT();
 		static jint TYPE_UNTRACKED_DELAY();
 		static jint TYPE_VEC3_CALIBRATION();
-		QAndroidJniObject floatValues();
-		QAndroidJniObject intValues();
+		jfloatArray floatValues();
+		jintArray intValues();
 		QAndroidJniObject sensor();
 		jint serial();
 		jint type();
@@ -45,71 +45,83 @@ namespace __jni_impl::android::hardware
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorAdditionalInfo",
-			"TYPE_FRAME_BEGIN");
+			"TYPE_FRAME_BEGIN"
+		);
 	}
 	jint SensorAdditionalInfo::TYPE_FRAME_END()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorAdditionalInfo",
-			"TYPE_FRAME_END");
+			"TYPE_FRAME_END"
+		);
 	}
 	jint SensorAdditionalInfo::TYPE_INTERNAL_TEMPERATURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorAdditionalInfo",
-			"TYPE_INTERNAL_TEMPERATURE");
+			"TYPE_INTERNAL_TEMPERATURE"
+		);
 	}
 	jint SensorAdditionalInfo::TYPE_SAMPLING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorAdditionalInfo",
-			"TYPE_SAMPLING");
+			"TYPE_SAMPLING"
+		);
 	}
 	jint SensorAdditionalInfo::TYPE_SENSOR_PLACEMENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorAdditionalInfo",
-			"TYPE_SENSOR_PLACEMENT");
+			"TYPE_SENSOR_PLACEMENT"
+		);
 	}
 	jint SensorAdditionalInfo::TYPE_UNTRACKED_DELAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorAdditionalInfo",
-			"TYPE_UNTRACKED_DELAY");
+			"TYPE_UNTRACKED_DELAY"
+		);
 	}
 	jint SensorAdditionalInfo::TYPE_VEC3_CALIBRATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.SensorAdditionalInfo",
-			"TYPE_VEC3_CALIBRATION");
+			"TYPE_VEC3_CALIBRATION"
+		);
 	}
-	QAndroidJniObject SensorAdditionalInfo::floatValues()
+	jfloatArray SensorAdditionalInfo::floatValues()
 	{
 		return __thiz.getObjectField(
 			"floatValues",
-			"[F");
+			"[F"
+		).object<jfloatArray>();
 	}
-	QAndroidJniObject SensorAdditionalInfo::intValues()
+	jintArray SensorAdditionalInfo::intValues()
 	{
 		return __thiz.getObjectField(
 			"intValues",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
 	QAndroidJniObject SensorAdditionalInfo::sensor()
 	{
 		return __thiz.getObjectField(
 			"sensor",
-			"Landroid/hardware/Sensor;");
+			"Landroid/hardware/Sensor;"
+		);
 	}
 	jint SensorAdditionalInfo::serial()
 	{
 		return __thiz.getField<jint>(
-			"serial");
+			"serial"
+		);
 	}
 	jint SensorAdditionalInfo::type()
 	{
 		return __thiz.getField<jint>(
-			"type");
+			"type"
+		);
 	}
 	
 	// Constructors

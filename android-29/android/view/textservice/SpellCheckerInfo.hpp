@@ -9,10 +9,6 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
 namespace __jni_impl::android::content::pm
 {
 	class ServiceInfo;
@@ -24,6 +20,10 @@ namespace __jni_impl::android::content::pm
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::content
+{
+	class ComponentName;
 }
 namespace __jni_impl::android::view::textservice
 {
@@ -42,25 +42,25 @@ namespace __jni_impl::android::view::textservice
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getPackageName();
-		QAndroidJniObject getId();
-		QAndroidJniObject getComponent();
+		jstring getPackageName();
+		jstring getId();
+		QAndroidJniObject getServiceInfo();
+		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
+		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
+		jstring getSettingsActivity();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getServiceInfo();
-		QAndroidJniObject loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
-		QAndroidJniObject getSettingsActivity();
+		QAndroidJniObject getComponent();
 		QAndroidJniObject getSubtypeAt(jint arg0);
 		jint getSubtypeCount();
 	};
 } // namespace __jni_impl::android::view::textservice
 
 #include "../../os/Parcel.hpp"
-#include "../../content/ComponentName.hpp"
 #include "../../content/pm/ServiceInfo.hpp"
 #include "../../content/pm/PackageManager.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
+#include "../../content/ComponentName.hpp"
 #include "SpellCheckerSubtype.hpp"
 
 namespace __jni_impl::android::view::textservice
@@ -71,7 +71,8 @@ namespace __jni_impl::android::view::textservice
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.textservice.SpellCheckerInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -83,29 +84,56 @@ namespace __jni_impl::android::view::textservice
 	}
 	
 	// Methods
-	QAndroidJniObject SpellCheckerInfo::getPackageName()
+	jstring SpellCheckerInfo::getPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SpellCheckerInfo::getId()
+	jstring SpellCheckerInfo::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject SpellCheckerInfo::getComponent()
+	QAndroidJniObject SpellCheckerInfo::getServiceInfo()
 	{
 		return __thiz.callObjectMethod(
-			"getComponent",
-			"()Landroid/content/ComponentName;");
+			"getServiceInfo",
+			"()Landroid/content/pm/ServiceInfo;"
+		);
+	}
+	jstring SpellCheckerInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadLabel",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	QAndroidJniObject SpellCheckerInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadIcon",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring SpellCheckerInfo::getSettingsActivity()
+	{
+		return __thiz.callObjectMethod(
+			"getSettingsActivity",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SpellCheckerInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SpellCheckerInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -113,46 +141,30 @@ namespace __jni_impl::android::view::textservice
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject SpellCheckerInfo::getServiceInfo()
+	QAndroidJniObject SpellCheckerInfo::getComponent()
 	{
 		return __thiz.callObjectMethod(
-			"getServiceInfo",
-			"()Landroid/content/pm/ServiceInfo;");
-	}
-	QAndroidJniObject SpellCheckerInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadLabel",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SpellCheckerInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadIcon",
-			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject SpellCheckerInfo::getSettingsActivity()
-	{
-		return __thiz.callObjectMethod(
-			"getSettingsActivity",
-			"()Ljava/lang/String;");
+			"getComponent",
+			"()Landroid/content/ComponentName;"
+		);
 	}
 	QAndroidJniObject SpellCheckerInfo::getSubtypeAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSubtypeAt",
 			"(I)Landroid/view/textservice/SpellCheckerSubtype;",
-			arg0);
+			arg0
+		);
 	}
 	jint SpellCheckerInfo::getSubtypeCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getSubtypeCount",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::view::textservice
 

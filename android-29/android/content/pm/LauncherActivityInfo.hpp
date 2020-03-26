@@ -9,10 +9,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::os
-{
-	class UserHandle;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -20,6 +16,10 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::android::content
 {
 	class ComponentName;
+}
+namespace __jni_impl::android::os
+{
+	class UserHandle;
 }
 namespace __jni_impl::android::content::pm
 {
@@ -37,21 +37,21 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject getUser();
+		jstring getName();
 		jlong getFirstInstallTime();
 		QAndroidJniObject getBadgedIcon(jint arg0);
 		QAndroidJniObject getComponentName();
-		QAndroidJniObject getLabel();
-		QAndroidJniObject getIcon(jint arg0);
+		QAndroidJniObject getUser();
 		QAndroidJniObject getApplicationInfo();
+		jstring getLabel();
+		QAndroidJniObject getIcon(jint arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
 #include "../Context.hpp"
-#include "../../os/UserHandle.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../ComponentName.hpp"
+#include "../../os/UserHandle.hpp"
 #include "ApplicationInfo.hpp"
 
 namespace __jni_impl::android::content::pm
@@ -67,55 +67,63 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject LauncherActivityInfo::getName()
+	jstring LauncherActivityInfo::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject LauncherActivityInfo::getUser()
-	{
-		return __thiz.callObjectMethod(
-			"getUser",
-			"()Landroid/os/UserHandle;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong LauncherActivityInfo::getFirstInstallTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getFirstInstallTime",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject LauncherActivityInfo::getBadgedIcon(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getBadgedIcon",
 			"(I)Landroid/graphics/drawable/Drawable;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject LauncherActivityInfo::getComponentName()
 	{
 		return __thiz.callObjectMethod(
 			"getComponentName",
-			"()Landroid/content/ComponentName;");
+			"()Landroid/content/ComponentName;"
+		);
 	}
-	QAndroidJniObject LauncherActivityInfo::getLabel()
+	QAndroidJniObject LauncherActivityInfo::getUser()
+	{
+		return __thiz.callObjectMethod(
+			"getUser",
+			"()Landroid/os/UserHandle;"
+		);
+	}
+	QAndroidJniObject LauncherActivityInfo::getApplicationInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getApplicationInfo",
+			"()Landroid/content/pm/ApplicationInfo;"
+		);
+	}
+	jstring LauncherActivityInfo::getLabel()
 	{
 		return __thiz.callObjectMethod(
 			"getLabel",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	QAndroidJniObject LauncherActivityInfo::getIcon(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getIcon",
 			"(I)Landroid/graphics/drawable/Drawable;",
-			arg0);
-	}
-	QAndroidJniObject LauncherActivityInfo::getApplicationInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationInfo",
-			"()Landroid/content/pm/ApplicationInfo;");
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

@@ -32,8 +32,8 @@ namespace __jni_impl::android::graphics::drawable
 		QAndroidJniObject newDrawable(__jni_impl::android::content::res::Resources arg0, __jni_impl::android::content::res::Resources_Theme arg1);
 		QAndroidJniObject newDrawable(__jni_impl::android::content::res::Resources arg0);
 		QAndroidJniObject newDrawable();
-		jboolean canApplyTheme();
 		jint getChangingConfigurations();
+		jboolean canApplyTheme();
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -60,32 +60,37 @@ namespace __jni_impl::android::graphics::drawable
 			"newDrawable",
 			"(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Drawable_ConstantState::newDrawable(__jni_impl::android::content::res::Resources arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newDrawable",
 			"(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Drawable_ConstantState::newDrawable()
 	{
 		return __thiz.callObjectMethod(
 			"newDrawable",
-			"()Landroid/graphics/drawable/Drawable;");
-	}
-	jboolean Drawable_ConstantState::canApplyTheme()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canApplyTheme",
-			"()Z");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	jint Drawable_ConstantState::getChangingConfigurations()
 	{
 		return __thiz.callMethod<jint>(
 			"getChangingConfigurations",
-			"()I");
+			"()I"
+		);
+	}
+	jboolean Drawable_ConstantState::canApplyTheme()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canApplyTheme",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

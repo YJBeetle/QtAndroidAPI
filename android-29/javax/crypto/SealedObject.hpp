@@ -25,10 +25,10 @@ namespace __jni_impl::javax::crypto
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::javax::crypto::Cipher arg1);
 		
 		// Methods
-		QAndroidJniObject getObject(__jni_impl::__JniBaseClass arg0, jstring arg1);
-		QAndroidJniObject getObject(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getObject(__jni_impl::javax::crypto::Cipher arg0);
-		QAndroidJniObject getAlgorithm();
+		jobject getObject(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		jobject getObject(__jni_impl::__JniBaseClass arg0);
+		jobject getObject(__jni_impl::javax::crypto::Cipher arg0);
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::javax::crypto
 
@@ -50,33 +50,37 @@ namespace __jni_impl::javax::crypto
 	}
 	
 	// Methods
-	QAndroidJniObject SealedObject::getObject(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	jobject SealedObject::getObject(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getObject",
 			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jobject>();
 	}
-	QAndroidJniObject SealedObject::getObject(__jni_impl::__JniBaseClass arg0)
+	jobject SealedObject::getObject(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getObject",
 			"(Ljava/security/Key;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject SealedObject::getObject(__jni_impl::javax::crypto::Cipher arg0)
+	jobject SealedObject::getObject(__jni_impl::javax::crypto::Cipher arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getObject",
 			"(Ljavax/crypto/Cipher;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject SealedObject::getAlgorithm()
+	jstring SealedObject::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::crypto
 

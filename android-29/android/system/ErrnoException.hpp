@@ -20,7 +20,7 @@ namespace __jni_impl::android::system
 		void __constructor(jstring arg0, jint arg1, jthrowable arg2);
 		
 		// Methods
-		QAndroidJniObject getMessage();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::android::system
 
@@ -31,7 +31,8 @@ namespace __jni_impl::android::system
 	jint ErrnoException::errno()
 	{
 		return __thiz.getField<jint>(
-			"errno");
+			"errno"
+		);
 	}
 	
 	// Constructors
@@ -54,11 +55,12 @@ namespace __jni_impl::android::system
 	}
 	
 	// Methods
-	QAndroidJniObject ErrnoException::getMessage()
+	jstring ErrnoException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::system
 

@@ -22,7 +22,7 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::webkit
@@ -36,28 +36,32 @@ namespace __jni_impl::android::webkit
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"NORMAL",
-			"Landroid/webkit/WebSettings$LayoutAlgorithm;");
+			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
 	}
 	QAndroidJniObject WebSettings_LayoutAlgorithm::SINGLE_COLUMN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"SINGLE_COLUMN",
-			"Landroid/webkit/WebSettings$LayoutAlgorithm;");
+			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
 	}
 	QAndroidJniObject WebSettings_LayoutAlgorithm::NARROW_COLUMNS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"NARROW_COLUMNS",
-			"Landroid/webkit/WebSettings$LayoutAlgorithm;");
+			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
 	}
 	QAndroidJniObject WebSettings_LayoutAlgorithm::TEXT_AUTOSIZING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"TEXT_AUTOSIZING",
-			"Landroid/webkit/WebSettings$LayoutAlgorithm;");
+			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	QAndroidJniObject WebSettings_LayoutAlgorithm::values()
+	jarray WebSettings_LayoutAlgorithm::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"values",
-			"()[Landroid/webkit/WebSettings$LayoutAlgorithm;");
+			"()[Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		).object<jarray>();
 	}
 	QAndroidJniObject WebSettings_LayoutAlgorithm::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::webkit
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$LayoutAlgorithm;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

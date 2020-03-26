@@ -56,13 +56,15 @@ namespace __jni_impl::android::graphics::drawable
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.drawable.ClipDrawable",
-			"HORIZONTAL");
+			"HORIZONTAL"
+		);
 	}
 	jint ClipDrawable::VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.drawable.ClipDrawable",
-			"VERTICAL");
+			"VERTICAL"
+		);
 	}
 	
 	// Constructors
@@ -85,27 +87,31 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void ClipDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint ClipDrawable::getOpacity()
 	{
 		return __thiz.callMethod<jint>(
 			"getOpacity",
-			"()I");
+			"()I"
+		);
 	}
 	void ClipDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
 		__thiz.callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

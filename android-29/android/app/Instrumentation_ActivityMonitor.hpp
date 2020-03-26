@@ -86,51 +86,59 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"getResult",
-			"()Landroid/app/Instrumentation$ActivityResult;");
+			"()Landroid/app/Instrumentation$ActivityResult;"
+		);
 	}
 	QAndroidJniObject Instrumentation_ActivityMonitor::getFilter()
 	{
 		return __thiz.callObjectMethod(
 			"getFilter",
-			"()Landroid/content/IntentFilter;");
+			"()Landroid/content/IntentFilter;"
+		);
 	}
 	jboolean Instrumentation_ActivityMonitor::isBlocking()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBlocking",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Instrumentation_ActivityMonitor::getHits()
 	{
 		return __thiz.callMethod<jint>(
 			"getHits",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Instrumentation_ActivityMonitor::getLastActivity()
 	{
 		return __thiz.callObjectMethod(
 			"getLastActivity",
-			"()Landroid/app/Activity;");
+			"()Landroid/app/Activity;"
+		);
 	}
 	QAndroidJniObject Instrumentation_ActivityMonitor::waitForActivity()
 	{
 		return __thiz.callObjectMethod(
 			"waitForActivity",
-			"()Landroid/app/Activity;");
+			"()Landroid/app/Activity;"
+		);
 	}
 	QAndroidJniObject Instrumentation_ActivityMonitor::waitForActivityWithTimeout(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"waitForActivityWithTimeout",
 			"(J)Landroid/app/Activity;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Instrumentation_ActivityMonitor::onStartActivity(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onStartActivity",
 			"(Landroid/content/Intent;)Landroid/app/Instrumentation$ActivityResult;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

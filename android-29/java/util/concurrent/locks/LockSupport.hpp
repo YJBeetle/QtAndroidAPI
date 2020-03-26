@@ -28,7 +28,7 @@ namespace __jni_impl::java::util::concurrent::locks
 		static void parkNanos(jobject arg0, jlong arg1);
 		static void parkUntil(jlong arg0);
 		static void parkUntil(jobject arg0, jlong arg1);
-		static QAndroidJniObject getBlocker(__jni_impl::java::lang::Thread arg0);
+		static jobject getBlocker(__jni_impl::java::lang::Thread arg0);
 	};
 } // namespace __jni_impl::java::util::concurrent::locks
 
@@ -52,7 +52,8 @@ namespace __jni_impl::java::util::concurrent::locks
 		QAndroidJniObject::callStaticMethod<void>(
 			"java.util.concurrent.locks.LockSupport",
 			"park",
-			"()V");
+			"()V"
+		);
 	}
 	void LockSupport::park(jobject arg0)
 	{
@@ -60,7 +61,8 @@ namespace __jni_impl::java::util::concurrent::locks
 			"java.util.concurrent.locks.LockSupport",
 			"park",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void LockSupport::unpark(__jni_impl::java::lang::Thread arg0)
 	{
@@ -68,7 +70,8 @@ namespace __jni_impl::java::util::concurrent::locks
 			"java.util.concurrent.locks.LockSupport",
 			"unpark",
 			"(Ljava/lang/Thread;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LockSupport::parkNanos(jlong arg0)
 	{
@@ -76,7 +79,8 @@ namespace __jni_impl::java::util::concurrent::locks
 			"java.util.concurrent.locks.LockSupport",
 			"parkNanos",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void LockSupport::parkNanos(jobject arg0, jlong arg1)
 	{
@@ -85,7 +89,8 @@ namespace __jni_impl::java::util::concurrent::locks
 			"parkNanos",
 			"(Ljava/lang/Object;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void LockSupport::parkUntil(jlong arg0)
 	{
@@ -93,7 +98,8 @@ namespace __jni_impl::java::util::concurrent::locks
 			"java.util.concurrent.locks.LockSupport",
 			"parkUntil",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void LockSupport::parkUntil(jobject arg0, jlong arg1)
 	{
@@ -102,15 +108,17 @@ namespace __jni_impl::java::util::concurrent::locks
 			"parkUntil",
 			"(Ljava/lang/Object;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject LockSupport::getBlocker(__jni_impl::java::lang::Thread arg0)
+	jobject LockSupport::getBlocker(__jni_impl::java::lang::Thread arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.concurrent.locks.LockSupport",
 			"getBlocker",
 			"(Ljava/lang/Thread;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util::concurrent::locks
 

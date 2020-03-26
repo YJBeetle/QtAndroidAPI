@@ -18,14 +18,14 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		jint getSource();
-		jboolean isFromSource(jint arg0);
+		jfloat getResolution();
 		jint getAxis();
 		jfloat getMin();
 		jfloat getRange();
 		jfloat getFlat();
 		jfloat getFuzz();
+		jboolean isFromSource(jint arg0);
 		jfloat getMax();
-		jfloat getResolution();
 	};
 } // namespace __jni_impl::android::view
 
@@ -47,56 +47,65 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callMethod<jint>(
 			"getSource",
-			"()I");
+			"()I"
+		);
+	}
+	jfloat InputDevice_MotionRange::getResolution()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getResolution",
+			"()F"
+		);
+	}
+	jint InputDevice_MotionRange::getAxis()
+	{
+		return __thiz.callMethod<jint>(
+			"getAxis",
+			"()I"
+		);
+	}
+	jfloat InputDevice_MotionRange::getMin()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMin",
+			"()F"
+		);
+	}
+	jfloat InputDevice_MotionRange::getRange()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRange",
+			"()F"
+		);
+	}
+	jfloat InputDevice_MotionRange::getFlat()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFlat",
+			"()F"
+		);
+	}
+	jfloat InputDevice_MotionRange::getFuzz()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFuzz",
+			"()F"
+		);
 	}
 	jboolean InputDevice_MotionRange::isFromSource(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFromSource",
 			"(I)Z",
-			arg0);
-	}
-	jint InputDevice_MotionRange::getAxis()
-	{
-		return __thiz.callMethod<jint>(
-			"getAxis",
-			"()I");
-	}
-	jfloat InputDevice_MotionRange::getMin()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMin",
-			"()F");
-	}
-	jfloat InputDevice_MotionRange::getRange()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRange",
-			"()F");
-	}
-	jfloat InputDevice_MotionRange::getFlat()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFlat",
-			"()F");
-	}
-	jfloat InputDevice_MotionRange::getFuzz()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFuzz",
-			"()F");
+			arg0
+		);
 	}
 	jfloat InputDevice_MotionRange::getMax()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getMax",
-			"()F");
-	}
-	jfloat InputDevice_MotionRange::getResolution()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getResolution",
-			"()F");
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::view
 

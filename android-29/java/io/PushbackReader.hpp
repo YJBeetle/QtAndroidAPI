@@ -66,7 +66,8 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint PushbackReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -75,46 +76,53 @@ namespace __jni_impl::java::io
 			"([CII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void PushbackReader::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void PushbackReader::mark(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"mark",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong PushbackReader::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PushbackReader::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PushbackReader::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void PushbackReader::unread(jcharArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"unread",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	void PushbackReader::unread(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -123,20 +131,23 @@ namespace __jni_impl::java::io
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void PushbackReader::unread(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"unread",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean PushbackReader::ready()
 	{
 		return __thiz.callMethod<jboolean>(
 			"ready",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::io
 

@@ -20,7 +20,7 @@ namespace __jni_impl::android::content::pm
 		static jint FLAG_REQUIRED();
 		static jint GL_ES_VERSION_UNDEFINED();
 		jint flags();
-		QAndroidJniObject name();
+		jstring name();
 		jint reqGlEsVersion();
 		jint version();
 		
@@ -29,10 +29,10 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::FeatureInfo arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getGlEsVersion();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getGlEsVersion();
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -46,40 +46,47 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.FeatureInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint FeatureInfo::FLAG_REQUIRED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.FeatureInfo",
-			"FLAG_REQUIRED");
+			"FLAG_REQUIRED"
+		);
 	}
 	jint FeatureInfo::GL_ES_VERSION_UNDEFINED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.pm.FeatureInfo",
-			"GL_ES_VERSION_UNDEFINED");
+			"GL_ES_VERSION_UNDEFINED"
+		);
 	}
 	jint FeatureInfo::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
-	QAndroidJniObject FeatureInfo::name()
+	jstring FeatureInfo::name()
 	{
 		return __thiz.getObjectField(
 			"name",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint FeatureInfo::reqGlEsVersion()
 	{
 		return __thiz.getField<jint>(
-			"reqGlEsVersion");
+			"reqGlEsVersion"
+		);
 	}
 	jint FeatureInfo::version()
 	{
 		return __thiz.getField<jint>(
-			"version");
+			"version"
+		);
 	}
 	
 	// Constructors
@@ -98,23 +105,19 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject FeatureInfo::toString()
+	jstring FeatureInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject FeatureInfo::getGlEsVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getGlEsVersion",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint FeatureInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void FeatureInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -122,7 +125,15 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring FeatureInfo::getGlEsVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getGlEsVersion",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::content::pm
 

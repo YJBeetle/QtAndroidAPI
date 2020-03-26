@@ -41,13 +41,15 @@ namespace __jni_impl::java::nio::channels::spi
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean AbstractSelectionKey::isValid()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValid",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels::spi
 

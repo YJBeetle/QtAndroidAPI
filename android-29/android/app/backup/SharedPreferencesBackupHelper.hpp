@@ -66,21 +66,24 @@ namespace __jni_impl::android::app::backup
 			"(Landroid/os/ParcelFileDescriptor;Landroid/app/backup/BackupDataOutput;Landroid/os/ParcelFileDescriptor;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void SharedPreferencesBackupHelper::restoreEntity(__jni_impl::android::app::backup::BackupDataInputStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"restoreEntity",
 			"(Landroid/app/backup/BackupDataInputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SharedPreferencesBackupHelper::writeNewStateDescription(__jni_impl::android::os::ParcelFileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
 			"writeNewStateDescription",
 			"(Landroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app::backup
 

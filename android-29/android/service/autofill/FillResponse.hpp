@@ -28,7 +28,7 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -45,19 +45,22 @@ namespace __jni_impl::android::service::autofill
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.FillResponse",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint FillResponse::FLAG_DISABLE_ACTIVITY_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.FillResponse",
-			"FLAG_DISABLE_ACTIVITY_ONLY");
+			"FLAG_DISABLE_ACTIVITY_ONLY"
+		);
 	}
 	jint FillResponse::FLAG_TRACK_CONTEXT_COMMITED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.service.autofill.FillResponse",
-			"FLAG_TRACK_CONTEXT_COMMITED");
+			"FLAG_TRACK_CONTEXT_COMMITED"
+		);
 	}
 	
 	// Constructors
@@ -69,17 +72,19 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject FillResponse::toString()
+	jstring FillResponse::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint FillResponse::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void FillResponse::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -87,7 +92,8 @@ namespace __jni_impl::android::service::autofill
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

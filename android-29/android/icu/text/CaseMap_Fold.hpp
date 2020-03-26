@@ -27,9 +27,9 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		QAndroidJniObject apply(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::Edits arg2);
-		QAndroidJniObject apply(jstring arg0);
-		QAndroidJniObject omitUnchangedText();
+		jstring apply(jstring arg0);
 		QAndroidJniObject turkic();
+		QAndroidJniObject omitUnchangedText();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -56,26 +56,30 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/CharSequence;Ljava/lang/Appendable;Landroid/icu/text/Edits;)Ljava/lang/Appendable;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	QAndroidJniObject CaseMap_Fold::apply(jstring arg0)
+	jstring CaseMap_Fold::apply(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"apply",
 			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject CaseMap_Fold::omitUnchangedText()
-	{
-		return __thiz.callObjectMethod(
-			"omitUnchangedText",
-			"()Landroid/icu/text/CaseMap$Fold;");
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject CaseMap_Fold::turkic()
 	{
 		return __thiz.callObjectMethod(
 			"turkic",
-			"()Landroid/icu/text/CaseMap$Fold;");
+			"()Landroid/icu/text/CaseMap$Fold;"
+		);
+	}
+	QAndroidJniObject CaseMap_Fold::omitUnchangedText()
+	{
+		return __thiz.callObjectMethod(
+			"omitUnchangedText",
+			"()Landroid/icu/text/CaseMap$Fold;"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

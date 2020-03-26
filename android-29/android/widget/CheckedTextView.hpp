@@ -11,6 +11,10 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -27,10 +31,6 @@ namespace __jni_impl::android::graphics
 {
 	class BlendMode;
 }
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
 
 namespace __jni_impl::android::widget
 {
@@ -46,8 +46,18 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setCheckMarkDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onSaveInstanceState();
+		void toggle();
+		jstring getAccessibilityClassName();
+		void jumpDrawablesToCurrentState();
+		void setVisibility(jint arg0);
+		void onRtlPropertiesChanged(jint arg0);
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
+		jboolean isChecked();
+		void setChecked(jboolean arg0);
 		void setCheckMarkDrawable(jint arg0);
+		void setCheckMarkDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setCheckMarkTintList(__jni_impl::android::content::res::ColorStateList arg0);
 		QAndroidJniObject getCheckMarkTintList();
 		void setCheckMarkTintMode(__jni_impl::android::graphics::PorterDuff_Mode arg0);
@@ -55,25 +65,15 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getCheckMarkTintMode();
 		QAndroidJniObject getCheckMarkTintBlendMode();
 		QAndroidJniObject getCheckMarkDrawable();
-		QAndroidJniObject getAccessibilityClassName();
-		void jumpDrawablesToCurrentState();
-		void setVisibility(jint arg0);
-		void onRtlPropertiesChanged(jint arg0);
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
-		void toggle();
-		jboolean isChecked();
-		void setChecked(jboolean arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
+#include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../graphics/PorterDuff_Mode.hpp"
 #include "../graphics/BlendMode.hpp"
-#include "../graphics/Canvas.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -116,90 +116,57 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void CheckedTextView::setCheckMarkDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	void CheckedTextView::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setCheckMarkDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			"onRestoreInstanceState",
+			"(Landroid/os/Parcelable;)V",
+			arg0.__jniObject().object()
+		);
 	}
-	void CheckedTextView::setCheckMarkDrawable(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCheckMarkDrawable",
-			"(I)V",
-			arg0);
-	}
-	void CheckedTextView::setCheckMarkTintList(__jni_impl::android::content::res::ColorStateList arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCheckMarkTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject CheckedTextView::getCheckMarkTintList()
+	QAndroidJniObject CheckedTextView::onSaveInstanceState()
 	{
 		return __thiz.callObjectMethod(
-			"getCheckMarkTintList",
-			"()Landroid/content/res/ColorStateList;");
+			"onSaveInstanceState",
+			"()Landroid/os/Parcelable;"
+		);
 	}
-	void CheckedTextView::setCheckMarkTintMode(__jni_impl::android::graphics::PorterDuff_Mode arg0)
+	void CheckedTextView::toggle()
 	{
 		__thiz.callMethod<void>(
-			"setCheckMarkTintMode",
-			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object());
+			"toggle",
+			"()V"
+		);
 	}
-	void CheckedTextView::setCheckMarkTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCheckMarkTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject CheckedTextView::getCheckMarkTintMode()
-	{
-		return __thiz.callObjectMethod(
-			"getCheckMarkTintMode",
-			"()Landroid/graphics/PorterDuff$Mode;");
-	}
-	QAndroidJniObject CheckedTextView::getCheckMarkTintBlendMode()
-	{
-		return __thiz.callObjectMethod(
-			"getCheckMarkTintBlendMode",
-			"()Landroid/graphics/BlendMode;");
-	}
-	QAndroidJniObject CheckedTextView::getCheckMarkDrawable()
-	{
-		return __thiz.callObjectMethod(
-			"getCheckMarkDrawable",
-			"()Landroid/graphics/drawable/Drawable;");
-	}
-	QAndroidJniObject CheckedTextView::getAccessibilityClassName()
+	jstring CheckedTextView::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void CheckedTextView::jumpDrawablesToCurrentState()
 	{
 		__thiz.callMethod<void>(
 			"jumpDrawablesToCurrentState",
-			"()V");
+			"()V"
+		);
 	}
 	void CheckedTextView::setVisibility(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVisibility",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CheckedTextView::onRtlPropertiesChanged(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onRtlPropertiesChanged",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CheckedTextView::drawableHotspotChanged(jfloat arg0, jfloat arg1)
 	{
@@ -207,39 +174,91 @@ namespace __jni_impl::android::widget
 			"drawableHotspotChanged",
 			"(FF)V",
 			arg0,
-			arg1);
-	}
-	void CheckedTextView::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onRestoreInstanceState",
-			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject CheckedTextView::onSaveInstanceState()
-	{
-		return __thiz.callObjectMethod(
-			"onSaveInstanceState",
-			"()Landroid/os/Parcelable;");
-	}
-	void CheckedTextView::toggle()
-	{
-		__thiz.callMethod<void>(
-			"toggle",
-			"()V");
+			arg1
+		);
 	}
 	jboolean CheckedTextView::isChecked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isChecked",
-			"()Z");
+			"()Z"
+		);
 	}
 	void CheckedTextView::setChecked(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setChecked",
 			"(Z)V",
-			arg0);
+			arg0
+		);
+	}
+	void CheckedTextView::setCheckMarkDrawable(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCheckMarkDrawable",
+			"(I)V",
+			arg0
+		);
+	}
+	void CheckedTextView::setCheckMarkDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCheckMarkDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void CheckedTextView::setCheckMarkTintList(__jni_impl::android::content::res::ColorStateList arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCheckMarkTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CheckedTextView::getCheckMarkTintList()
+	{
+		return __thiz.callObjectMethod(
+			"getCheckMarkTintList",
+			"()Landroid/content/res/ColorStateList;"
+		);
+	}
+	void CheckedTextView::setCheckMarkTintMode(__jni_impl::android::graphics::PorterDuff_Mode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCheckMarkTintMode",
+			"(Landroid/graphics/PorterDuff$Mode;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void CheckedTextView::setCheckMarkTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCheckMarkTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CheckedTextView::getCheckMarkTintMode()
+	{
+		return __thiz.callObjectMethod(
+			"getCheckMarkTintMode",
+			"()Landroid/graphics/PorterDuff$Mode;"
+		);
+	}
+	QAndroidJniObject CheckedTextView::getCheckMarkTintBlendMode()
+	{
+		return __thiz.callObjectMethod(
+			"getCheckMarkTintBlendMode",
+			"()Landroid/graphics/BlendMode;"
+		);
+	}
+	QAndroidJniObject CheckedTextView::getCheckMarkDrawable()
+	{
+		return __thiz.callObjectMethod(
+			"getCheckMarkDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

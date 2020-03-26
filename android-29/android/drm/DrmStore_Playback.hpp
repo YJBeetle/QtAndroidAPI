@@ -32,25 +32,29 @@ namespace __jni_impl::android::drm
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Playback",
-			"PAUSE");
+			"PAUSE"
+		);
 	}
 	jint DrmStore_Playback::RESUME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Playback",
-			"RESUME");
+			"RESUME"
+		);
 	}
 	jint DrmStore_Playback::START()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Playback",
-			"START");
+			"START"
+		);
 	}
 	jint DrmStore_Playback::STOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.drm.DrmStore$Playback",
-			"STOP");
+			"STOP"
+		);
 	}
 	
 	// Constructors

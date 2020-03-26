@@ -42,13 +42,15 @@ namespace __jni_impl::java::security
 	{
 		return __thiz.callObjectMethod(
 			"getPublic",
-			"()Ljava/security/PublicKey;");
+			"()Ljava/security/PublicKey;"
+		);
 	}
 	QAndroidJniObject KeyPair::getPrivate()
 	{
 		return __thiz.callObjectMethod(
 			"getPrivate",
-			"()Ljava/security/PrivateKey;");
+			"()Ljava/security/PrivateKey;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

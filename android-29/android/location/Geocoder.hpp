@@ -63,7 +63,8 @@ namespace __jni_impl::android::location
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.location.Geocoder",
 			"isPresent",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Geocoder::getFromLocation(jdouble arg0, jdouble arg1, jint arg2)
 	{
@@ -72,7 +73,8 @@ namespace __jni_impl::android::location
 			"(DDI)Ljava/util/List;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Geocoder::getFromLocationName(jstring arg0, jint arg1)
 	{
@@ -80,7 +82,8 @@ namespace __jni_impl::android::location
 			"getFromLocationName",
 			"(Ljava/lang/String;I)Ljava/util/List;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Geocoder::getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
 	{
@@ -92,7 +95,8 @@ namespace __jni_impl::android::location
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 } // namespace __jni_impl::android::location
 

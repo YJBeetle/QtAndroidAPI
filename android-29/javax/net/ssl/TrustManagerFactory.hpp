@@ -35,9 +35,9 @@ namespace __jni_impl::javax::net::ssl
 		void init(__jni_impl::java::security::KeyStore arg0);
 		void init(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getProvider();
-		static QAndroidJniObject getDefaultAlgorithm();
-		QAndroidJniObject getTrustManagers();
-		QAndroidJniObject getAlgorithm();
+		static jstring getDefaultAlgorithm();
+		jarray getTrustManagers();
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -65,7 +65,8 @@ namespace __jni_impl::javax::net::ssl
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject TrustManagerFactory::getInstance(jstring arg0)
 	{
@@ -73,7 +74,8 @@ namespace __jni_impl::javax::net::ssl
 			"javax.net.ssl.TrustManagerFactory",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TrustManagerFactory::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
@@ -82,46 +84,53 @@ namespace __jni_impl::javax::net::ssl
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/TrustManagerFactory;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void TrustManagerFactory::init(__jni_impl::java::security::KeyStore arg0)
 	{
 		__thiz.callMethod<void>(
 			"init",
 			"(Ljava/security/KeyStore;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TrustManagerFactory::init(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"init",
 			"(Ljavax/net/ssl/ManagerFactoryParameters;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TrustManagerFactory::getProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
-			"()Ljava/security/Provider;");
+			"()Ljava/security/Provider;"
+		);
 	}
-	QAndroidJniObject TrustManagerFactory::getDefaultAlgorithm()
+	jstring TrustManagerFactory::getDefaultAlgorithm()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.TrustManagerFactory",
 			"getDefaultAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject TrustManagerFactory::getTrustManagers()
+	jarray TrustManagerFactory::getTrustManagers()
 	{
 		return __thiz.callObjectMethod(
 			"getTrustManagers",
-			"()[Ljavax/net/ssl/TrustManager;");
+			"()[Ljavax/net/ssl/TrustManager;"
+		).object<jarray>();
 	}
-	QAndroidJniObject TrustManagerFactory::getAlgorithm()
+	jstring TrustManagerFactory::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::net::ssl
 

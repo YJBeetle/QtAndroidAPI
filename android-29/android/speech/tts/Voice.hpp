@@ -36,17 +36,17 @@ namespace __jni_impl::android::speech::tts
 		void __constructor(jstring arg0, __jni_impl::java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getLocale();
+		jint getLatency();
 		QAndroidJniObject getFeatures();
 		jboolean isNetworkConnectionRequired();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getQuality();
-		jint getLatency();
 	};
 } // namespace __jni_impl::android::speech::tts
 
@@ -61,67 +61,78 @@ namespace __jni_impl::android::speech::tts
 		return QAndroidJniObject::getStaticObjectField(
 			"android.speech.tts.Voice",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Voice::LATENCY_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"LATENCY_HIGH");
+			"LATENCY_HIGH"
+		);
 	}
 	jint Voice::LATENCY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"LATENCY_LOW");
+			"LATENCY_LOW"
+		);
 	}
 	jint Voice::LATENCY_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"LATENCY_NORMAL");
+			"LATENCY_NORMAL"
+		);
 	}
 	jint Voice::LATENCY_VERY_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"LATENCY_VERY_HIGH");
+			"LATENCY_VERY_HIGH"
+		);
 	}
 	jint Voice::LATENCY_VERY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"LATENCY_VERY_LOW");
+			"LATENCY_VERY_LOW"
+		);
 	}
 	jint Voice::QUALITY_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"QUALITY_HIGH");
+			"QUALITY_HIGH"
+		);
 	}
 	jint Voice::QUALITY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"QUALITY_LOW");
+			"QUALITY_LOW"
+		);
 	}
 	jint Voice::QUALITY_NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"QUALITY_NORMAL");
+			"QUALITY_NORMAL"
+		);
 	}
 	jint Voice::QUALITY_VERY_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"QUALITY_VERY_HIGH");
+			"QUALITY_VERY_HIGH"
+		);
 	}
 	jint Voice::QUALITY_VERY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.speech.tts.Voice",
-			"QUALITY_VERY_LOW");
+			"QUALITY_VERY_LOW"
+		);
 	}
 	
 	// Constructors
@@ -139,54 +150,69 @@ namespace __jni_impl::android::speech::tts
 	}
 	
 	// Methods
-	QAndroidJniObject Voice::getName()
+	jstring Voice::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Voice::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Voice::toString()
+	jstring Voice::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Voice::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Voice::getLocale()
 	{
 		return __thiz.callObjectMethod(
 			"getLocale",
-			"()Ljava/util/Locale;");
+			"()Ljava/util/Locale;"
+		);
+	}
+	jint Voice::getLatency()
+	{
+		return __thiz.callMethod<jint>(
+			"getLatency",
+			"()I"
+		);
 	}
 	QAndroidJniObject Voice::getFeatures()
 	{
 		return __thiz.callObjectMethod(
 			"getFeatures",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jboolean Voice::isNetworkConnectionRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNetworkConnectionRequired",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Voice::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Voice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -194,19 +220,15 @@ namespace __jni_impl::android::speech::tts
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint Voice::getQuality()
 	{
 		return __thiz.callMethod<jint>(
 			"getQuality",
-			"()I");
-	}
-	jint Voice::getLatency()
-	{
-		return __thiz.callMethod<jint>(
-			"getLatency",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::speech::tts
 

@@ -24,13 +24,13 @@ namespace __jni_impl::android::content
 	{
 	public:
 		// Fields
-		QAndroidJniObject cookie();
+		jobject cookie();
 		QAndroidJniObject handler();
-		QAndroidJniObject orderBy();
-		QAndroidJniObject projection();
-		QAndroidJniObject result();
-		QAndroidJniObject selection();
-		QAndroidJniObject selectionArgs();
+		jstring orderBy();
+		jarray projection();
+		jobject result();
+		jstring selection();
+		jarray selectionArgs();
 		QAndroidJniObject uri();
 		QAndroidJniObject values();
 		
@@ -48,59 +48,68 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content
 {
 	// Fields
-	QAndroidJniObject AsyncQueryHandler_WorkerArgs::cookie()
+	jobject AsyncQueryHandler_WorkerArgs::cookie()
 	{
 		return __thiz.getObjectField(
 			"cookie",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject AsyncQueryHandler_WorkerArgs::handler()
 	{
 		return __thiz.getObjectField(
 			"handler",
-			"Landroid/os/Handler;");
+			"Landroid/os/Handler;"
+		);
 	}
-	QAndroidJniObject AsyncQueryHandler_WorkerArgs::orderBy()
+	jstring AsyncQueryHandler_WorkerArgs::orderBy()
 	{
 		return __thiz.getObjectField(
 			"orderBy",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AsyncQueryHandler_WorkerArgs::projection()
+	jarray AsyncQueryHandler_WorkerArgs::projection()
 	{
 		return __thiz.getObjectField(
 			"projection",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject AsyncQueryHandler_WorkerArgs::result()
+	jobject AsyncQueryHandler_WorkerArgs::result()
 	{
 		return __thiz.getObjectField(
 			"result",
-			"Ljava/lang/Object;");
+			"Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject AsyncQueryHandler_WorkerArgs::selection()
+	jstring AsyncQueryHandler_WorkerArgs::selection()
 	{
 		return __thiz.getObjectField(
 			"selection",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AsyncQueryHandler_WorkerArgs::selectionArgs()
+	jarray AsyncQueryHandler_WorkerArgs::selectionArgs()
 	{
 		return __thiz.getObjectField(
 			"selectionArgs",
-			"[Ljava/lang/String;");
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	QAndroidJniObject AsyncQueryHandler_WorkerArgs::uri()
 	{
 		return __thiz.getObjectField(
 			"uri",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject AsyncQueryHandler_WorkerArgs::values()
 	{
 		return __thiz.getObjectField(
 			"values",
-			"Landroid/content/ContentValues;");
+			"Landroid/content/ContentValues;"
+		);
 	}
 	
 	// Constructors

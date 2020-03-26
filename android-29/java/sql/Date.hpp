@@ -27,7 +27,7 @@ namespace __jni_impl::java::sql
 		void __constructor(jlong arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(__jni_impl::java::time::LocalDate arg0);
 		jint getSeconds();
@@ -68,11 +68,12 @@ namespace __jni_impl::java::sql
 	}
 	
 	// Methods
-	QAndroidJniObject Date::toString()
+	jstring Date::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Date::valueOf(jstring arg0)
 	{
@@ -80,7 +81,8 @@ namespace __jni_impl::java::sql
 			"java.sql.Date",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Date;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Date::valueOf(__jni_impl::java::time::LocalDate arg0)
 	{
@@ -88,65 +90,75 @@ namespace __jni_impl::java::sql
 			"java.sql.Date",
 			"valueOf",
 			"(Ljava/time/LocalDate;)Ljava/sql/Date;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Date::getSeconds()
 	{
 		return __thiz.callMethod<jint>(
 			"getSeconds",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Date::toInstant()
 	{
 		return __thiz.callObjectMethod(
 			"toInstant",
-			"()Ljava/time/Instant;");
+			"()Ljava/time/Instant;"
+		);
 	}
 	void Date::setTime(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTime",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Date::toLocalDate()
 	{
 		return __thiz.callObjectMethod(
 			"toLocalDate",
-			"()Ljava/time/LocalDate;");
+			"()Ljava/time/LocalDate;"
+		);
 	}
 	void Date::setHours(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHours",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Date::getHours()
 	{
 		return __thiz.callMethod<jint>(
 			"getHours",
-			"()I");
+			"()I"
+		);
 	}
 	jint Date::getMinutes()
 	{
 		return __thiz.callMethod<jint>(
 			"getMinutes",
-			"()I");
+			"()I"
+		);
 	}
 	void Date::setMinutes(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMinutes",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Date::setSeconds(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSeconds",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::sql
 

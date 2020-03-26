@@ -64,7 +64,7 @@ namespace __jni_impl::java::nio::file
 		static QAndroidJniObject copy(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2);
 		static jlong copy(__jni_impl::__JniBaseClass arg0, __jni_impl::java::io::OutputStream arg1);
 		static jlong copy(__jni_impl::java::io::InputStream arg0, __jni_impl::__JniBaseClass arg1, jarray arg2);
-		static QAndroidJniObject readAllBytes(__jni_impl::__JniBaseClass arg0);
+		static jbyteArray readAllBytes(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject find(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jarray arg3);
 		static QAndroidJniObject walk(__jni_impl::__JniBaseClass arg0, jarray arg1);
 		static QAndroidJniObject walk(__jni_impl::__JniBaseClass arg0, jint arg1, jarray arg2);
@@ -72,22 +72,22 @@ namespace __jni_impl::java::nio::file
 		static jlong mismatch(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject createTempDirectory(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2);
 		static QAndroidJniObject createTempDirectory(jstring arg0, jarray arg1);
-		static QAndroidJniObject probeContentType(__jni_impl::__JniBaseClass arg0);
+		static jstring probeContentType(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject walkFileTree(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject walkFileTree(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
 		static QAndroidJniObject newBufferedReader(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1);
 		static QAndroidJniObject newBufferedReader(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject newBufferedWriter(__jni_impl::__JniBaseClass arg0, jarray arg1);
 		static QAndroidJniObject newBufferedWriter(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1, jarray arg2);
-		static QAndroidJniObject readString(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1);
-		static QAndroidJniObject readString(__jni_impl::__JniBaseClass arg0);
+		static jstring readString(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1);
+		static jstring readString(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject readAllLines(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject readAllLines(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1);
 		static QAndroidJniObject writeString(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2);
 		static QAndroidJniObject writeString(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::java::nio::charset::Charset arg2, jarray arg3);
 		static QAndroidJniObject createFile(__jni_impl::__JniBaseClass arg0, jarray arg1);
 		static QAndroidJniObject createDirectories(__jni_impl::__JniBaseClass arg0, jarray arg1);
-		static QAndroidJniObject getAttribute(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2);
+		static jobject getAttribute(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2);
 		static QAndroidJniObject getPosixFilePermissions(__jni_impl::__JniBaseClass arg0, jarray arg1);
 		static QAndroidJniObject setPosixFilePermissions(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		static jboolean notExists(__jni_impl::__JniBaseClass arg0, jarray arg1);
@@ -155,7 +155,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"size",
 			"(Ljava/nio/file/Path;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::lines(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
@@ -164,7 +165,8 @@ namespace __jni_impl::java::nio::file
 			"lines",
 			"(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/util/stream/Stream;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::lines(__jni_impl::__JniBaseClass arg0)
 	{
@@ -172,7 +174,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"lines",
 			"(Ljava/nio/file/Path;)Ljava/util/stream/Stream;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::list(__jni_impl::__JniBaseClass arg0)
 	{
@@ -180,7 +183,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"list",
 			"(Ljava/nio/file/Path;)Ljava/util/stream/Stream;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::write(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::nio::charset::Charset arg2, jarray arg3)
 	{
@@ -191,7 +195,8 @@ namespace __jni_impl::java::nio::file
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Files::write(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2)
 	{
@@ -201,7 +206,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/lang/Iterable;[Ljava/nio/file/OpenOption;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::write(__jni_impl::__JniBaseClass arg0, jbyteArray arg1, jarray arg2)
 	{
@@ -211,7 +217,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;[B[Ljava/nio/file/OpenOption;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Files::_delete(__jni_impl::__JniBaseClass arg0)
 	{
@@ -219,7 +226,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"delete",
 			"(Ljava/nio/file/Path;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::copy(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2)
 	{
@@ -229,7 +237,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jlong Files::copy(__jni_impl::__JniBaseClass arg0, __jni_impl::java::io::OutputStream arg1)
 	{
@@ -238,7 +247,8 @@ namespace __jni_impl::java::nio::file
 			"copy",
 			"(Ljava/nio/file/Path;Ljava/io/OutputStream;)J",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jlong Files::copy(__jni_impl::java::io::InputStream arg0, __jni_impl::__JniBaseClass arg1, jarray arg2)
 	{
@@ -248,15 +258,17 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/io/InputStream;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)J",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject Files::readAllBytes(__jni_impl::__JniBaseClass arg0)
+	jbyteArray Files::readAllBytes(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.Files",
 			"readAllBytes",
 			"(Ljava/nio/file/Path;)[B",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject Files::find(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jarray arg3)
 	{
@@ -267,7 +279,8 @@ namespace __jni_impl::java::nio::file
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Files::walk(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -276,7 +289,8 @@ namespace __jni_impl::java::nio::file
 			"walk",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::walk(__jni_impl::__JniBaseClass arg0, jint arg1, jarray arg2)
 	{
@@ -286,7 +300,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;I[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::getOwner(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -295,7 +310,8 @@ namespace __jni_impl::java::nio::file
 			"getOwner",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/UserPrincipal;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jlong Files::mismatch(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -304,7 +320,8 @@ namespace __jni_impl::java::nio::file
 			"mismatch",
 			"(Ljava/nio/file/Path;Ljava/nio/file/Path;)J",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::createTempDirectory(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2)
 	{
@@ -314,7 +331,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::createTempDirectory(jstring arg0, jarray arg1)
 	{
@@ -323,15 +341,17 @@ namespace __jni_impl::java::nio::file
 			"createTempDirectory",
 			"(Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Files::probeContentType(__jni_impl::__JniBaseClass arg0)
+	jstring Files::probeContentType(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.Files",
 			"probeContentType",
 			"(Ljava/nio/file/Path;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject Files::walkFileTree(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -340,7 +360,8 @@ namespace __jni_impl::java::nio::file
 			"walkFileTree",
 			"(Ljava/nio/file/Path;Ljava/nio/file/FileVisitor;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::walkFileTree(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -351,7 +372,8 @@ namespace __jni_impl::java::nio::file
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::newBufferedReader(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
@@ -360,7 +382,8 @@ namespace __jni_impl::java::nio::file
 			"newBufferedReader",
 			"(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/io/BufferedReader;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::newBufferedReader(__jni_impl::__JniBaseClass arg0)
 	{
@@ -368,7 +391,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"newBufferedReader",
 			"(Ljava/nio/file/Path;)Ljava/io/BufferedReader;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::newBufferedWriter(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -377,7 +401,8 @@ namespace __jni_impl::java::nio::file
 			"newBufferedWriter",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/BufferedWriter;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::newBufferedWriter(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1, jarray arg2)
 	{
@@ -387,24 +412,27 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/nio/charset/Charset;[Ljava/nio/file/OpenOption;)Ljava/io/BufferedWriter;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject Files::readString(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1)
+	jstring Files::readString(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.Files",
 			"readString",
 			"(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject Files::readString(__jni_impl::__JniBaseClass arg0)
+	jstring Files::readString(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.Files",
 			"readString",
 			"(Ljava/nio/file/Path;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject Files::readAllLines(__jni_impl::__JniBaseClass arg0)
 	{
@@ -412,7 +440,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"readAllLines",
 			"(Ljava/nio/file/Path;)Ljava/util/List;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::readAllLines(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
@@ -421,7 +450,8 @@ namespace __jni_impl::java::nio::file
 			"readAllLines",
 			"(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/util/List;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::writeString(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2)
 	{
@@ -431,7 +461,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/lang/CharSequence;[Ljava/nio/file/OpenOption;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::writeString(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::java::nio::charset::Charset arg2, jarray arg3)
 	{
@@ -442,7 +473,8 @@ namespace __jni_impl::java::nio::file
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Files::createFile(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -451,7 +483,8 @@ namespace __jni_impl::java::nio::file
 			"createFile",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::createDirectories(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -460,9 +493,10 @@ namespace __jni_impl::java::nio::file
 			"createDirectories",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Files::getAttribute(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2)
+	jobject Files::getAttribute(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.Files",
@@ -470,7 +504,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/LinkOption;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		).object<jobject>();
 	}
 	QAndroidJniObject Files::getPosixFilePermissions(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -479,7 +514,8 @@ namespace __jni_impl::java::nio::file
 			"getPosixFilePermissions",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Ljava/util/Set;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::setPosixFilePermissions(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -488,7 +524,8 @@ namespace __jni_impl::java::nio::file
 			"setPosixFilePermissions",
 			"(Ljava/nio/file/Path;Ljava/util/Set;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Files::notExists(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -497,7 +534,8 @@ namespace __jni_impl::java::nio::file
 			"notExists",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Files::isReadable(__jni_impl::__JniBaseClass arg0)
 	{
@@ -505,7 +543,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"isReadable",
 			"(Ljava/nio/file/Path;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Files::isWritable(__jni_impl::__JniBaseClass arg0)
 	{
@@ -513,7 +552,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"isWritable",
 			"(Ljava/nio/file/Path;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Files::isExecutable(__jni_impl::__JniBaseClass arg0)
 	{
@@ -521,7 +561,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"isExecutable",
 			"(Ljava/nio/file/Path;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::newDirectoryStream(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -530,7 +571,8 @@ namespace __jni_impl::java::nio::file
 			"newDirectoryStream",
 			"(Ljava/nio/file/Path;Ljava/lang/String;)Ljava/nio/file/DirectoryStream;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::newDirectoryStream(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -539,7 +581,8 @@ namespace __jni_impl::java::nio::file
 			"newDirectoryStream",
 			"(Ljava/nio/file/Path;Ljava/nio/file/DirectoryStream$Filter;)Ljava/nio/file/DirectoryStream;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::newDirectoryStream(__jni_impl::__JniBaseClass arg0)
 	{
@@ -547,7 +590,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"newDirectoryStream",
 			"(Ljava/nio/file/Path;)Ljava/nio/file/DirectoryStream;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::readAttributes(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2)
 	{
@@ -557,7 +601,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/LinkOption;)Ljava/util/Map;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::readAttributes(__jni_impl::__JniBaseClass arg0, jclass arg1, jarray arg2)
 	{
@@ -567,7 +612,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/lang/Class;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/BasicFileAttributes;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::getFileStore(__jni_impl::__JniBaseClass arg0)
 	{
@@ -575,7 +621,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"getFileStore",
 			"(Ljava/nio/file/Path;)Ljava/nio/file/FileStore;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::getFileAttributeView(__jni_impl::__JniBaseClass arg0, jclass arg1, jarray arg2)
 	{
@@ -585,7 +632,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/lang/Class;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/FileAttributeView;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::move(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2)
 	{
@@ -595,7 +643,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jboolean Files::isSameFile(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -604,7 +653,8 @@ namespace __jni_impl::java::nio::file
 			"isSameFile",
 			"(Ljava/nio/file/Path;Ljava/nio/file/Path;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::newByteChannel(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -613,7 +663,8 @@ namespace __jni_impl::java::nio::file
 			"newByteChannel",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/SeekableByteChannel;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::newByteChannel(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2)
 	{
@@ -623,7 +674,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/SeekableByteChannel;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::createSymbolicLink(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2)
 	{
@@ -633,7 +685,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::createLink(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -642,7 +695,8 @@ namespace __jni_impl::java::nio::file
 			"createLink",
 			"(Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::readSymbolicLink(__jni_impl::__JniBaseClass arg0)
 	{
@@ -650,7 +704,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"readSymbolicLink",
 			"(Ljava/nio/file/Path;)Ljava/nio/file/Path;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::setAttribute(__jni_impl::__JniBaseClass arg0, jstring arg1, jobject arg2, jarray arg3)
 	{
@@ -661,7 +716,8 @@ namespace __jni_impl::java::nio::file
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean Files::deleteIfExists(__jni_impl::__JniBaseClass arg0)
 	{
@@ -669,7 +725,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"deleteIfExists",
 			"(Ljava/nio/file/Path;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::newInputStream(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -678,7 +735,8 @@ namespace __jni_impl::java::nio::file
 			"newInputStream",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::newOutputStream(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -687,7 +745,8 @@ namespace __jni_impl::java::nio::file
 			"newOutputStream",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStream;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Files::isSymbolicLink(__jni_impl::__JniBaseClass arg0)
 	{
@@ -695,7 +754,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"isSymbolicLink",
 			"(Ljava/nio/file/Path;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::setOwner(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -704,7 +764,8 @@ namespace __jni_impl::java::nio::file
 			"setOwner",
 			"(Ljava/nio/file/Path;Ljava/nio/file/attribute/UserPrincipal;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Files::isDirectory(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -713,7 +774,8 @@ namespace __jni_impl::java::nio::file
 			"isDirectory",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::getLastModifiedTime(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -722,7 +784,8 @@ namespace __jni_impl::java::nio::file
 			"getLastModifiedTime",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/FileTime;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::createDirectory(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -731,7 +794,8 @@ namespace __jni_impl::java::nio::file
 			"createDirectory",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Files::exists(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -740,7 +804,8 @@ namespace __jni_impl::java::nio::file
 			"exists",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Files::setLastModifiedTime(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::file::attribute::FileTime arg1)
 	{
@@ -749,7 +814,8 @@ namespace __jni_impl::java::nio::file
 			"setLastModifiedTime",
 			"(Ljava/nio/file/Path;Ljava/nio/file/attribute/FileTime;)Ljava/nio/file/Path;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Files::createTempFile(jstring arg0, jstring arg1, jarray arg2)
 	{
@@ -759,7 +825,8 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/lang/String;Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Files::createTempFile(__jni_impl::__JniBaseClass arg0, jstring arg1, jstring arg2, jarray arg3)
 	{
@@ -770,7 +837,8 @@ namespace __jni_impl::java::nio::file
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean Files::isHidden(__jni_impl::__JniBaseClass arg0)
 	{
@@ -778,7 +846,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.Files",
 			"isHidden",
 			"(Ljava/nio/file/Path;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Files::isRegularFile(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
@@ -787,7 +856,8 @@ namespace __jni_impl::java::nio::file
 			"isRegularFile",
 			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

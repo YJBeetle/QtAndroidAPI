@@ -5,6 +5,10 @@
 
 #include "../../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 namespace __jni_impl::android::net::wifi::hotspot2::pps
 {
 	class Credential;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 namespace __jni_impl::android::net::wifi::hotspot2::pps
 {
 	class HomeSp;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::net::wifi::hotspot2
@@ -32,20 +32,20 @@ namespace __jni_impl::android::net::wifi::hotspot2
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void setCredential(__jni_impl::android::net::wifi::hotspot2::pps::Credential arg0);
 		void setHomeSp(__jni_impl::android::net::wifi::hotspot2::pps::HomeSp arg0);
 		QAndroidJniObject getHomeSp();
 		QAndroidJniObject getCredential();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2
 
+#include "../../../os/Parcel.hpp"
 #include "pps/Credential.hpp"
 #include "pps/HomeSp.hpp"
-#include "../../../os/Parcel.hpp"
 
 namespace __jni_impl::android::net::wifi::hotspot2
 {
@@ -55,7 +55,8 @@ namespace __jni_impl::android::net::wifi::hotspot2
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.hotspot2.PasspointConfiguration",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -79,51 +80,29 @@ namespace __jni_impl::android::net::wifi::hotspot2
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PasspointConfiguration::toString()
+	jstring PasspointConfiguration::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PasspointConfiguration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	void PasspointConfiguration::setCredential(__jni_impl::android::net::wifi::hotspot2::pps::Credential arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCredential",
-			"(Landroid/net/wifi/hotspot2/pps/Credential;)V",
-			arg0.__jniObject().object());
-	}
-	void PasspointConfiguration::setHomeSp(__jni_impl::android::net::wifi::hotspot2::pps::HomeSp arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHomeSp",
-			"(Landroid/net/wifi/hotspot2/pps/HomeSp;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject PasspointConfiguration::getHomeSp()
-	{
-		return __thiz.callObjectMethod(
-			"getHomeSp",
-			"()Landroid/net/wifi/hotspot2/pps/HomeSp;");
-	}
-	QAndroidJniObject PasspointConfiguration::getCredential()
-	{
-		return __thiz.callObjectMethod(
-			"getCredential",
-			"()Landroid/net/wifi/hotspot2/pps/Credential;");
+			"()I"
+		);
 	}
 	jint PasspointConfiguration::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PasspointConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -131,7 +110,38 @@ namespace __jni_impl::android::net::wifi::hotspot2
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void PasspointConfiguration::setCredential(__jni_impl::android::net::wifi::hotspot2::pps::Credential arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCredential",
+			"(Landroid/net/wifi/hotspot2/pps/Credential;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PasspointConfiguration::setHomeSp(__jni_impl::android::net::wifi::hotspot2::pps::HomeSp arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHomeSp",
+			"(Landroid/net/wifi/hotspot2/pps/HomeSp;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject PasspointConfiguration::getHomeSp()
+	{
+		return __thiz.callObjectMethod(
+			"getHomeSp",
+			"()Landroid/net/wifi/hotspot2/pps/HomeSp;"
+		);
+	}
+	QAndroidJniObject PasspointConfiguration::getCredential()
+	{
+		return __thiz.callObjectMethod(
+			"getCredential",
+			"()Landroid/net/wifi/hotspot2/pps/Credential;"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::hotspot2
 

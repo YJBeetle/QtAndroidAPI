@@ -25,7 +25,7 @@ namespace __jni_impl::android::transition
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 	};
 } // namespace __jni_impl::android::transition
@@ -39,13 +39,15 @@ namespace __jni_impl::android::transition
 	{
 		return __thiz.getObjectField(
 			"values",
-			"Ljava/util/Map;");
+			"Ljava/util/Map;"
+		);
 	}
 	QAndroidJniObject TransitionValues::view()
 	{
 		return __thiz.getObjectField(
 			"view",
-			"Landroid/view/View;");
+			"Landroid/view/View;"
+		);
 	}
 	
 	// Constructors
@@ -69,19 +71,22 @@ namespace __jni_impl::android::transition
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TransitionValues::toString()
+	jstring TransitionValues::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint TransitionValues::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::transition
 

@@ -36,15 +36,15 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject fromDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		static QAndroidJniObject fromBitmap(__jni_impl::android::graphics::Bitmap arg0);
 		QAndroidJniObject getPrimaryColor();
 		QAndroidJniObject getSecondaryColor();
 		QAndroidJniObject getTertiaryColor();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -61,7 +61,8 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.WallpaperColors",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -88,59 +89,29 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WallpaperColors::toString()
+	jstring WallpaperColors::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WallpaperColors::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	QAndroidJniObject WallpaperColors::fromDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.WallpaperColors",
-			"fromDrawable",
-			"(Landroid/graphics/drawable/Drawable;)Landroid/app/WallpaperColors;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject WallpaperColors::fromBitmap(__jni_impl::android::graphics::Bitmap arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.WallpaperColors",
-			"fromBitmap",
-			"(Landroid/graphics/Bitmap;)Landroid/app/WallpaperColors;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject WallpaperColors::getPrimaryColor()
-	{
-		return __thiz.callObjectMethod(
-			"getPrimaryColor",
-			"()Landroid/graphics/Color;");
-	}
-	QAndroidJniObject WallpaperColors::getSecondaryColor()
-	{
-		return __thiz.callObjectMethod(
-			"getSecondaryColor",
-			"()Landroid/graphics/Color;");
-	}
-	QAndroidJniObject WallpaperColors::getTertiaryColor()
-	{
-		return __thiz.callObjectMethod(
-			"getTertiaryColor",
-			"()Landroid/graphics/Color;");
+			"()I"
+		);
 	}
 	jint WallpaperColors::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void WallpaperColors::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -148,7 +119,47 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject WallpaperColors::fromDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.WallpaperColors",
+			"fromDrawable",
+			"(Landroid/graphics/drawable/Drawable;)Landroid/app/WallpaperColors;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject WallpaperColors::fromBitmap(__jni_impl::android::graphics::Bitmap arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.WallpaperColors",
+			"fromBitmap",
+			"(Landroid/graphics/Bitmap;)Landroid/app/WallpaperColors;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject WallpaperColors::getPrimaryColor()
+	{
+		return __thiz.callObjectMethod(
+			"getPrimaryColor",
+			"()Landroid/graphics/Color;"
+		);
+	}
+	QAndroidJniObject WallpaperColors::getSecondaryColor()
+	{
+		return __thiz.callObjectMethod(
+			"getSecondaryColor",
+			"()Landroid/graphics/Color;"
+		);
+	}
+	QAndroidJniObject WallpaperColors::getTertiaryColor()
+	{
+		return __thiz.callObjectMethod(
+			"getTertiaryColor",
+			"()Landroid/graphics/Color;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

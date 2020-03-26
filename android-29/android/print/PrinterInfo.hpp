@@ -33,16 +33,16 @@ namespace __jni_impl::android::print
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getId();
-		QAndroidJniObject getCapabilities();
-		QAndroidJniObject getDescription();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getStatus();
+		jstring getDescription();
+		QAndroidJniObject getCapabilities();
 	};
 } // namespace __jni_impl::android::print
 
@@ -58,25 +58,29 @@ namespace __jni_impl::android::print
 		return QAndroidJniObject::getStaticObjectField(
 			"android.print.PrinterInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint PrinterInfo::STATUS_BUSY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrinterInfo",
-			"STATUS_BUSY");
+			"STATUS_BUSY"
+		);
 	}
 	jint PrinterInfo::STATUS_IDLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrinterInfo",
-			"STATUS_IDLE");
+			"STATUS_IDLE"
+		);
 	}
 	jint PrinterInfo::STATUS_UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.print.PrinterInfo",
-			"STATUS_UNAVAILABLE");
+			"STATUS_UNAVAILABLE"
+		);
 	}
 	
 	// Constructors
@@ -88,54 +92,48 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
-	QAndroidJniObject PrinterInfo::getName()
+	jstring PrinterInfo::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean PrinterInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PrinterInfo::toString()
+	jstring PrinterInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PrinterInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject PrinterInfo::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Landroid/print/PrinterId;");
-	}
-	QAndroidJniObject PrinterInfo::getCapabilities()
-	{
-		return __thiz.callObjectMethod(
-			"getCapabilities",
-			"()Landroid/print/PrinterCapabilitiesInfo;");
-	}
-	QAndroidJniObject PrinterInfo::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
+			"()Landroid/print/PrinterId;"
+		);
 	}
 	jint PrinterInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PrinterInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -143,13 +141,29 @@ namespace __jni_impl::android::print
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint PrinterInfo::getStatus()
 	{
 		return __thiz.callMethod<jint>(
 			"getStatus",
-			"()I");
+			"()I"
+		);
+	}
+	jstring PrinterInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject PrinterInfo::getCapabilities()
+	{
+		return __thiz.callObjectMethod(
+			"getCapabilities",
+			"()Landroid/print/PrinterCapabilitiesInfo;"
+		);
 	}
 } // namespace __jni_impl::android::print
 

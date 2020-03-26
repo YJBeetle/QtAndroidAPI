@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::media
-{
-	class Session2Command;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::media
+{
+	class Session2Command;
 }
 
 namespace __jni_impl::android::media
@@ -26,16 +26,16 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getCommands();
-		jboolean hasCommand(jint arg0);
-		jboolean hasCommand(__jni_impl::android::media::Session2Command arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getCommands();
+		jboolean hasCommand(__jni_impl::android::media::Session2Command arg0);
+		jboolean hasCommand(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
-#include "Session2Command.hpp"
 #include "../os/Parcel.hpp"
+#include "Session2Command.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -45,7 +45,8 @@ namespace __jni_impl::android::media
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.Session2CommandGroup",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -57,31 +58,12 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject Session2CommandGroup::getCommands()
-	{
-		return __thiz.callObjectMethod(
-			"getCommands",
-			"()Ljava/util/Set;");
-	}
-	jboolean Session2CommandGroup::hasCommand(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasCommand",
-			"(I)Z",
-			arg0);
-	}
-	jboolean Session2CommandGroup::hasCommand(__jni_impl::android::media::Session2Command arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasCommand",
-			"(Landroid/media/Session2Command;)Z",
-			arg0.__jniObject().object());
-	}
 	jint Session2CommandGroup::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Session2CommandGroup::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -89,7 +71,31 @@ namespace __jni_impl::android::media
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject Session2CommandGroup::getCommands()
+	{
+		return __thiz.callObjectMethod(
+			"getCommands",
+			"()Ljava/util/Set;"
+		);
+	}
+	jboolean Session2CommandGroup::hasCommand(__jni_impl::android::media::Session2Command arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasCommand",
+			"(Landroid/media/Session2Command;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Session2CommandGroup::hasCommand(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasCommand",
+			"(I)Z",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

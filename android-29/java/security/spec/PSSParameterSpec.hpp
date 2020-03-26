@@ -20,9 +20,9 @@ namespace __jni_impl::java::security::spec
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jint arg4);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getDigestAlgorithm();
-		QAndroidJniObject getMGFAlgorithm();
+		jstring toString();
+		jstring getDigestAlgorithm();
+		jstring getMGFAlgorithm();
 		QAndroidJniObject getMGFParameters();
 		jint getSaltLength();
 		jint getTrailerField();
@@ -37,14 +37,16 @@ namespace __jni_impl::java::security::spec
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.security.spec.PSSParameterSpec",
-			"TRAILER_FIELD_BC");
+			"TRAILER_FIELD_BC"
+		);
 	}
 	QAndroidJniObject PSSParameterSpec::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.PSSParameterSpec",
 			"DEFAULT",
-			"Ljava/security/spec/PSSParameterSpec;");
+			"Ljava/security/spec/PSSParameterSpec;"
+		);
 	}
 	
 	// Constructors
@@ -68,41 +70,47 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
-	QAndroidJniObject PSSParameterSpec::toString()
+	jstring PSSParameterSpec::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PSSParameterSpec::getDigestAlgorithm()
+	jstring PSSParameterSpec::getDigestAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getDigestAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PSSParameterSpec::getMGFAlgorithm()
+	jstring PSSParameterSpec::getMGFAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getMGFAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject PSSParameterSpec::getMGFParameters()
 	{
 		return __thiz.callObjectMethod(
 			"getMGFParameters",
-			"()Ljava/security/spec/AlgorithmParameterSpec;");
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
+		);
 	}
 	jint PSSParameterSpec::getSaltLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getSaltLength",
-			"()I");
+			"()I"
+		);
 	}
 	jint PSSParameterSpec::getTrailerField()
 	{
 		return __thiz.callMethod<jint>(
 			"getTrailerField",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

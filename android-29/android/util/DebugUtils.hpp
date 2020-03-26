@@ -41,7 +41,8 @@ namespace __jni_impl::android::util
 			"android.util.DebugUtils",
 			"isObjectSelected",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

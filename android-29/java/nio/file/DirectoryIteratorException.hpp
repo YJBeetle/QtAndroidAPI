@@ -53,7 +53,8 @@ namespace __jni_impl::java::nio::file
 	{
 		return __thiz.callObjectMethod(
 			"getCause",
-			"()Ljava/io/IOException;");
+			"()Ljava/io/IOException;"
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

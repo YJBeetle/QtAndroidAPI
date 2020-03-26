@@ -24,11 +24,11 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		jint getModifiers();
-		QAndroidJniObject getLabel();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getKeycode();
 		jchar getBaseCharacter();
+		jstring getLabel();
 	};
 } // namespace __jni_impl::android::view
 
@@ -42,7 +42,8 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.KeyboardShortcutInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -70,19 +71,15 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callMethod<jint>(
 			"getModifiers",
-			"()I");
-	}
-	QAndroidJniObject KeyboardShortcutInfo::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;");
+			"()I"
+		);
 	}
 	jint KeyboardShortcutInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void KeyboardShortcutInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -90,19 +87,29 @@ namespace __jni_impl::android::view
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint KeyboardShortcutInfo::getKeycode()
 	{
 		return __thiz.callMethod<jint>(
 			"getKeycode",
-			"()I");
+			"()I"
+		);
 	}
 	jchar KeyboardShortcutInfo::getBaseCharacter()
 	{
 		return __thiz.callMethod<jchar>(
 			"getBaseCharacter",
-			"()C");
+			"()C"
+		);
+	}
+	jstring KeyboardShortcutInfo::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view
 

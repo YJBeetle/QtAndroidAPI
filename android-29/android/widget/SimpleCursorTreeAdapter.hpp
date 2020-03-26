@@ -105,14 +105,16 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callObjectMethod(
 			"getViewBinder",
-			"()Landroid/widget/SimpleCursorTreeAdapter$ViewBinder;");
+			"()Landroid/widget/SimpleCursorTreeAdapter$ViewBinder;"
+		);
 	}
 	void SimpleCursorTreeAdapter::setViewBinder(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setViewBinder",
 			"(Landroid/widget/SimpleCursorTreeAdapter$ViewBinder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SimpleCursorTreeAdapter::setViewText(__jni_impl::android::widget::TextView arg0, jstring arg1)
 	{
@@ -120,7 +122,8 @@ namespace __jni_impl::android::widget
 			"setViewText",
 			"(Landroid/widget/TextView;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::widget
 

@@ -12,33 +12,33 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION();
-		static QAndroidJniObject COMPANY();
-		static QAndroidJniObject EMAIL();
-		static QAndroidJniObject EMAIL_ISPRIMARY();
-		static QAndroidJniObject EMAIL_TYPE();
-		static QAndroidJniObject FULL_MODE();
-		static QAndroidJniObject IM_HANDLE();
-		static QAndroidJniObject IM_ISPRIMARY();
-		static QAndroidJniObject IM_PROTOCOL();
-		static QAndroidJniObject JOB_TITLE();
-		static QAndroidJniObject NAME();
-		static QAndroidJniObject NOTES();
-		static QAndroidJniObject PHONE();
-		static QAndroidJniObject PHONETIC_NAME();
-		static QAndroidJniObject PHONE_ISPRIMARY();
-		static QAndroidJniObject PHONE_TYPE();
-		static QAndroidJniObject POSTAL();
-		static QAndroidJniObject POSTAL_ISPRIMARY();
-		static QAndroidJniObject POSTAL_TYPE();
-		static QAndroidJniObject SECONDARY_EMAIL();
-		static QAndroidJniObject SECONDARY_EMAIL_TYPE();
-		static QAndroidJniObject SECONDARY_PHONE();
-		static QAndroidJniObject SECONDARY_PHONE_TYPE();
-		static QAndroidJniObject TERTIARY_EMAIL();
-		static QAndroidJniObject TERTIARY_EMAIL_TYPE();
-		static QAndroidJniObject TERTIARY_PHONE();
-		static QAndroidJniObject TERTIARY_PHONE_TYPE();
+		static jstring ACTION();
+		static jstring COMPANY();
+		static jstring EMAIL();
+		static jstring EMAIL_ISPRIMARY();
+		static jstring EMAIL_TYPE();
+		static jstring FULL_MODE();
+		static jstring IM_HANDLE();
+		static jstring IM_ISPRIMARY();
+		static jstring IM_PROTOCOL();
+		static jstring JOB_TITLE();
+		static jstring NAME();
+		static jstring NOTES();
+		static jstring PHONE();
+		static jstring PHONETIC_NAME();
+		static jstring PHONE_ISPRIMARY();
+		static jstring PHONE_TYPE();
+		static jstring POSTAL();
+		static jstring POSTAL_ISPRIMARY();
+		static jstring POSTAL_TYPE();
+		static jstring SECONDARY_EMAIL();
+		static jstring SECONDARY_EMAIL_TYPE();
+		static jstring SECONDARY_PHONE();
+		static jstring SECONDARY_PHONE_TYPE();
+		static jstring TERTIARY_EMAIL();
+		static jstring TERTIARY_EMAIL_TYPE();
+		static jstring TERTIARY_PHONE();
+		static jstring TERTIARY_PHONE_TYPE();
 		
 		// Constructors
 		void __constructor();
@@ -51,194 +51,221 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Contacts_Intents_Insert::ACTION()
+	jstring Contacts_Intents_Insert::ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::COMPANY()
+	jstring Contacts_Intents_Insert::COMPANY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"COMPANY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::EMAIL()
+	jstring Contacts_Intents_Insert::EMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"EMAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::EMAIL_ISPRIMARY()
+	jstring Contacts_Intents_Insert::EMAIL_ISPRIMARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"EMAIL_ISPRIMARY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::EMAIL_TYPE()
+	jstring Contacts_Intents_Insert::EMAIL_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"EMAIL_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::FULL_MODE()
+	jstring Contacts_Intents_Insert::FULL_MODE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"FULL_MODE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::IM_HANDLE()
+	jstring Contacts_Intents_Insert::IM_HANDLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"IM_HANDLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::IM_ISPRIMARY()
+	jstring Contacts_Intents_Insert::IM_ISPRIMARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"IM_ISPRIMARY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::IM_PROTOCOL()
+	jstring Contacts_Intents_Insert::IM_PROTOCOL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"IM_PROTOCOL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::JOB_TITLE()
+	jstring Contacts_Intents_Insert::JOB_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"JOB_TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::NAME()
+	jstring Contacts_Intents_Insert::NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::NOTES()
+	jstring Contacts_Intents_Insert::NOTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"NOTES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::PHONE()
+	jstring Contacts_Intents_Insert::PHONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"PHONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::PHONETIC_NAME()
+	jstring Contacts_Intents_Insert::PHONETIC_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"PHONETIC_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::PHONE_ISPRIMARY()
+	jstring Contacts_Intents_Insert::PHONE_ISPRIMARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"PHONE_ISPRIMARY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::PHONE_TYPE()
+	jstring Contacts_Intents_Insert::PHONE_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"PHONE_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::POSTAL()
+	jstring Contacts_Intents_Insert::POSTAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"POSTAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::POSTAL_ISPRIMARY()
+	jstring Contacts_Intents_Insert::POSTAL_ISPRIMARY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"POSTAL_ISPRIMARY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::POSTAL_TYPE()
+	jstring Contacts_Intents_Insert::POSTAL_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"POSTAL_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::SECONDARY_EMAIL()
+	jstring Contacts_Intents_Insert::SECONDARY_EMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"SECONDARY_EMAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::SECONDARY_EMAIL_TYPE()
+	jstring Contacts_Intents_Insert::SECONDARY_EMAIL_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"SECONDARY_EMAIL_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::SECONDARY_PHONE()
+	jstring Contacts_Intents_Insert::SECONDARY_PHONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"SECONDARY_PHONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::SECONDARY_PHONE_TYPE()
+	jstring Contacts_Intents_Insert::SECONDARY_PHONE_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"SECONDARY_PHONE_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::TERTIARY_EMAIL()
+	jstring Contacts_Intents_Insert::TERTIARY_EMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"TERTIARY_EMAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::TERTIARY_EMAIL_TYPE()
+	jstring Contacts_Intents_Insert::TERTIARY_EMAIL_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"TERTIARY_EMAIL_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::TERTIARY_PHONE()
+	jstring Contacts_Intents_Insert::TERTIARY_PHONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"TERTIARY_PHONE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Contacts_Intents_Insert::TERTIARY_PHONE_TYPE()
+	jstring Contacts_Intents_Insert::TERTIARY_PHONE_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Contacts$Intents$Insert",
 			"TERTIARY_PHONE_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

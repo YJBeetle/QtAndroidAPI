@@ -41,6 +41,8 @@ namespace __jni_impl::android::view::animation
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
+		jint getDirection();
+		jboolean willOverlap();
 		jfloat getColumnDelay();
 		void setColumnDelay(jfloat arg0);
 		jfloat getRowDelay();
@@ -48,8 +50,6 @@ namespace __jni_impl::android::view::animation
 		void setDirection(jint arg0);
 		jint getDirectionPriority();
 		void setDirectionPriority(jint arg0);
-		jboolean willOverlap();
-		jint getDirection();
 	};
 } // namespace __jni_impl::android::view::animation
 
@@ -64,55 +64,64 @@ namespace __jni_impl::android::view::animation
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
-			"DIRECTION_BOTTOM_TO_TOP");
+			"DIRECTION_BOTTOM_TO_TOP"
+		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_HORIZONTAL_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
-			"DIRECTION_HORIZONTAL_MASK");
+			"DIRECTION_HORIZONTAL_MASK"
+		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_LEFT_TO_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
-			"DIRECTION_LEFT_TO_RIGHT");
+			"DIRECTION_LEFT_TO_RIGHT"
+		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_RIGHT_TO_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
-			"DIRECTION_RIGHT_TO_LEFT");
+			"DIRECTION_RIGHT_TO_LEFT"
+		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_TOP_TO_BOTTOM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
-			"DIRECTION_TOP_TO_BOTTOM");
+			"DIRECTION_TOP_TO_BOTTOM"
+		);
 	}
 	jint GridLayoutAnimationController::DIRECTION_VERTICAL_MASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
-			"DIRECTION_VERTICAL_MASK");
+			"DIRECTION_VERTICAL_MASK"
+		);
 	}
 	jint GridLayoutAnimationController::PRIORITY_COLUMN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
-			"PRIORITY_COLUMN");
+			"PRIORITY_COLUMN"
+		);
 	}
 	jint GridLayoutAnimationController::PRIORITY_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
-			"PRIORITY_NONE");
+			"PRIORITY_NONE"
+		);
 	}
 	jint GridLayoutAnimationController::PRIORITY_ROW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.animation.GridLayoutAnimationController",
-			"PRIORITY_ROW");
+			"PRIORITY_ROW"
+		);
 	}
 	
 	// Constructors
@@ -142,63 +151,72 @@ namespace __jni_impl::android::view::animation
 	}
 	
 	// Methods
+	jint GridLayoutAnimationController::getDirection()
+	{
+		return __thiz.callMethod<jint>(
+			"getDirection",
+			"()I"
+		);
+	}
+	jboolean GridLayoutAnimationController::willOverlap()
+	{
+		return __thiz.callMethod<jboolean>(
+			"willOverlap",
+			"()Z"
+		);
+	}
 	jfloat GridLayoutAnimationController::getColumnDelay()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getColumnDelay",
-			"()F");
+			"()F"
+		);
 	}
 	void GridLayoutAnimationController::setColumnDelay(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setColumnDelay",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	jfloat GridLayoutAnimationController::getRowDelay()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getRowDelay",
-			"()F");
+			"()F"
+		);
 	}
 	void GridLayoutAnimationController::setRowDelay(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRowDelay",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void GridLayoutAnimationController::setDirection(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDirection",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint GridLayoutAnimationController::getDirectionPriority()
 	{
 		return __thiz.callMethod<jint>(
 			"getDirectionPriority",
-			"()I");
+			"()I"
+		);
 	}
 	void GridLayoutAnimationController::setDirectionPriority(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDirectionPriority",
 			"(I)V",
-			arg0);
-	}
-	jboolean GridLayoutAnimationController::willOverlap()
-	{
-		return __thiz.callMethod<jboolean>(
-			"willOverlap",
-			"()Z");
-	}
-	jint GridLayoutAnimationController::getDirection()
-	{
-		return __thiz.callMethod<jint>(
-			"getDirection",
-			"()I");
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view::animation
 

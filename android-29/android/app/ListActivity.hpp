@@ -9,13 +9,13 @@
 #include "../view/ContextThemeWrapper.hpp"
 #include "Activity.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::widget
 {
 	class ListView;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 namespace __jni_impl::android::view
 {
@@ -33,18 +33,18 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
+		void setListAdapter(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getListView();
 		jint getSelectedItemPosition();
 		jlong getSelectedItemId();
 		void setSelection(jint arg0);
-		void setListAdapter(__jni_impl::__JniBaseClass arg0);
 		void onContentChanged();
-		QAndroidJniObject getListView();
 		QAndroidJniObject getListAdapter();
 	};
 } // namespace __jni_impl::android::app
 
-#include "../os/Bundle.hpp"
 #include "../widget/ListView.hpp"
+#include "../os/Bundle.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::app
@@ -60,49 +60,56 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	void ListActivity::setListAdapter(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setListAdapter",
+			"(Landroid/widget/ListAdapter;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ListActivity::getListView()
+	{
+		return __thiz.callObjectMethod(
+			"getListView",
+			"()Landroid/widget/ListView;"
+		);
+	}
 	jint ListActivity::getSelectedItemPosition()
 	{
 		return __thiz.callMethod<jint>(
 			"getSelectedItemPosition",
-			"()I");
+			"()I"
+		);
 	}
 	jlong ListActivity::getSelectedItemId()
 	{
 		return __thiz.callMethod<jlong>(
 			"getSelectedItemId",
-			"()J");
+			"()J"
+		);
 	}
 	void ListActivity::setSelection(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSelection",
 			"(I)V",
-			arg0);
-	}
-	void ListActivity::setListAdapter(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setListAdapter",
-			"(Landroid/widget/ListAdapter;)V",
-			arg0.__jniObject().object());
+			arg0
+		);
 	}
 	void ListActivity::onContentChanged()
 	{
 		__thiz.callMethod<void>(
 			"onContentChanged",
-			"()V");
-	}
-	QAndroidJniObject ListActivity::getListView()
-	{
-		return __thiz.callObjectMethod(
-			"getListView",
-			"()Landroid/widget/ListView;");
+			"()V"
+		);
 	}
 	QAndroidJniObject ListActivity::getListAdapter()
 	{
 		return __thiz.callObjectMethod(
 			"getListAdapter",
-			"()Landroid/widget/ListAdapter;");
+			"()Landroid/widget/ListAdapter;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

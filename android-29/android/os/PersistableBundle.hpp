@@ -26,13 +26,13 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject clone();
+		jstring toString();
+		jobject clone();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject deepCopy();
 		void putPersistableBundle(jstring arg0, __jni_impl::android::os::PersistableBundle arg1);
 		QAndroidJniObject getPersistableBundle(jstring arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -46,14 +46,16 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.PersistableBundle",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	QAndroidJniObject PersistableBundle::EMPTY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.PersistableBundle",
 			"EMPTY",
-			"Landroid/os/PersistableBundle;");
+			"Landroid/os/PersistableBundle;"
+		);
 	}
 	
 	// Constructors
@@ -79,44 +81,26 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject PersistableBundle::toString()
+	jstring PersistableBundle::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PersistableBundle::clone()
+	jobject PersistableBundle::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
-	}
-	QAndroidJniObject PersistableBundle::deepCopy()
-	{
-		return __thiz.callObjectMethod(
-			"deepCopy",
-			"()Landroid/os/PersistableBundle;");
-	}
-	void PersistableBundle::putPersistableBundle(jstring arg0, __jni_impl::android::os::PersistableBundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"putPersistableBundle",
-			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
-			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject PersistableBundle::getPersistableBundle(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPersistableBundle",
-			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
-			arg0);
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint PersistableBundle::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PersistableBundle::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -124,7 +108,32 @@ namespace __jni_impl::android::os
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject PersistableBundle::deepCopy()
+	{
+		return __thiz.callObjectMethod(
+			"deepCopy",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	void PersistableBundle::putPersistableBundle(jstring arg0, __jni_impl::android::os::PersistableBundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"putPersistableBundle",
+			"(Ljava/lang/String;Landroid/os/PersistableBundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject PersistableBundle::getPersistableBundle(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPersistableBundle",
+			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::os
 

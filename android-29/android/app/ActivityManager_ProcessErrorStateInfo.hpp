@@ -21,22 +21,22 @@ namespace __jni_impl::android::app
 		static jint NOT_RESPONDING();
 		static jint NO_ERROR();
 		jint condition();
-		QAndroidJniObject crashData();
-		QAndroidJniObject longMsg();
+		jbyteArray crashData();
+		jstring longMsg();
 		jint pid();
-		QAndroidJniObject processName();
-		QAndroidJniObject shortMsg();
-		QAndroidJniObject stackTrace();
-		QAndroidJniObject tag();
+		jstring processName();
+		jstring shortMsg();
+		jstring stackTrace();
+		jstring tag();
 		jint uid();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -49,77 +49,90 @@ namespace __jni_impl::android::app
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
-			"CRASHED");
+			"CRASHED"
+		);
 	}
 	QAndroidJniObject ActivityManager_ProcessErrorStateInfo::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ActivityManager_ProcessErrorStateInfo::NOT_RESPONDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
-			"NOT_RESPONDING");
+			"NOT_RESPONDING"
+		);
 	}
 	jint ActivityManager_ProcessErrorStateInfo::NO_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
-			"NO_ERROR");
+			"NO_ERROR"
+		);
 	}
 	jint ActivityManager_ProcessErrorStateInfo::condition()
 	{
 		return __thiz.getField<jint>(
-			"condition");
+			"condition"
+		);
 	}
-	QAndroidJniObject ActivityManager_ProcessErrorStateInfo::crashData()
+	jbyteArray ActivityManager_ProcessErrorStateInfo::crashData()
 	{
 		return __thiz.getObjectField(
 			"crashData",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject ActivityManager_ProcessErrorStateInfo::longMsg()
+	jstring ActivityManager_ProcessErrorStateInfo::longMsg()
 	{
 		return __thiz.getObjectField(
 			"longMsg",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ActivityManager_ProcessErrorStateInfo::pid()
 	{
 		return __thiz.getField<jint>(
-			"pid");
+			"pid"
+		);
 	}
-	QAndroidJniObject ActivityManager_ProcessErrorStateInfo::processName()
+	jstring ActivityManager_ProcessErrorStateInfo::processName()
 	{
 		return __thiz.getObjectField(
 			"processName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ActivityManager_ProcessErrorStateInfo::shortMsg()
+	jstring ActivityManager_ProcessErrorStateInfo::shortMsg()
 	{
 		return __thiz.getObjectField(
 			"shortMsg",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ActivityManager_ProcessErrorStateInfo::stackTrace()
+	jstring ActivityManager_ProcessErrorStateInfo::stackTrace()
 	{
 		return __thiz.getObjectField(
 			"stackTrace",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ActivityManager_ProcessErrorStateInfo::tag()
+	jstring ActivityManager_ProcessErrorStateInfo::tag()
 	{
 		return __thiz.getObjectField(
 			"tag",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ActivityManager_ProcessErrorStateInfo::uid()
 	{
 		return __thiz.getField<jint>(
-			"uid");
+			"uid"
+		);
 	}
 	
 	// Constructors
@@ -131,18 +144,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ActivityManager_ProcessErrorStateInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
 	jint ActivityManager_ProcessErrorStateInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ActivityManager_ProcessErrorStateInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -150,7 +157,16 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ActivityManager_ProcessErrorStateInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

@@ -34,21 +34,24 @@ namespace __jni_impl::java::io
 		return QAndroidJniObject::getStaticObjectField(
 			"java.io.FileDescriptor",
 			"in",
-			"Ljava/io/FileDescriptor;");
+			"Ljava/io/FileDescriptor;"
+		);
 	}
 	QAndroidJniObject FileDescriptor::out()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.io.FileDescriptor",
 			"out",
-			"Ljava/io/FileDescriptor;");
+			"Ljava/io/FileDescriptor;"
+		);
 	}
 	QAndroidJniObject FileDescriptor::err()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.io.FileDescriptor",
 			"err",
-			"Ljava/io/FileDescriptor;");
+			"Ljava/io/FileDescriptor;"
+		);
 	}
 	
 	// Constructors
@@ -64,13 +67,15 @@ namespace __jni_impl::java::io
 	{
 		__thiz.callMethod<void>(
 			"sync",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean FileDescriptor::valid()
 	{
 		return __thiz.callMethod<jboolean>(
 			"valid",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::io
 

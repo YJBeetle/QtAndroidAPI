@@ -42,7 +42,8 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Fragment$SavedState",
 			"CREATOR",
-			"Landroid/os/Parcelable$ClassLoaderCreator;");
+			"Landroid/os/Parcelable$ClassLoaderCreator;"
+		);
 	}
 	
 	// Constructors
@@ -58,7 +59,8 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Fragment_SavedState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -66,7 +68,8 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app
 

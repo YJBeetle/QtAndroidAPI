@@ -50,7 +50,8 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/util/UUID;)Landroid/media/DrmInitData$SchemeInitData;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media
 

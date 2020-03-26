@@ -76,20 +76,11 @@ namespace __jni_impl::android::telecom
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getHandle();
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getAccountHandle();
-		jint getVideoState();
-		QAndroidJniObject getDisconnectCause();
-		QAndroidJniObject getStatusHints();
-		static QAndroidJniObject capabilitiesToString(jint arg0);
-		static QAndroidJniObject propertiesToString(jint arg0);
-		QAndroidJniObject getCallerDisplayName();
-		jint getCallerDisplayNamePresentation();
-		static jboolean can(jint arg0, jint arg1);
 		jboolean can(jint arg0);
+		static jboolean can(jint arg0, jint arg1);
 		static jboolean hasProperty(jint arg0, jint arg1);
 		jboolean hasProperty(jint arg0);
 		jint getHandlePresentation();
@@ -100,6 +91,15 @@ namespace __jni_impl::android::telecom
 		QAndroidJniObject getIntentExtras();
 		jlong getCreationTimeMillis();
 		jint getCallDirection();
+		QAndroidJniObject getExtras();
+		jint getVideoState();
+		QAndroidJniObject getDisconnectCause();
+		QAndroidJniObject getStatusHints();
+		static jstring capabilitiesToString(jint arg0);
+		static jstring propertiesToString(jint arg0);
+		jstring getCallerDisplayName();
+		jint getCallerDisplayNamePresentation();
+		QAndroidJniObject getAccountHandle();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -117,205 +117,239 @@ namespace __jni_impl::android::telecom
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_CANNOT_DOWNGRADE_VIDEO_TO_AUDIO");
+			"CAPABILITY_CANNOT_DOWNGRADE_VIDEO_TO_AUDIO"
+		);
 	}
 	jint Call_Details::CAPABILITY_CAN_PAUSE_VIDEO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_CAN_PAUSE_VIDEO");
+			"CAPABILITY_CAN_PAUSE_VIDEO"
+		);
 	}
 	jint Call_Details::CAPABILITY_CAN_PULL_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_CAN_PULL_CALL");
+			"CAPABILITY_CAN_PULL_CALL"
+		);
 	}
 	jint Call_Details::CAPABILITY_DISCONNECT_FROM_CONFERENCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_DISCONNECT_FROM_CONFERENCE");
+			"CAPABILITY_DISCONNECT_FROM_CONFERENCE"
+		);
 	}
 	jint Call_Details::CAPABILITY_HOLD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_HOLD");
+			"CAPABILITY_HOLD"
+		);
 	}
 	jint Call_Details::CAPABILITY_MANAGE_CONFERENCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_MANAGE_CONFERENCE");
+			"CAPABILITY_MANAGE_CONFERENCE"
+		);
 	}
 	jint Call_Details::CAPABILITY_MERGE_CONFERENCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_MERGE_CONFERENCE");
+			"CAPABILITY_MERGE_CONFERENCE"
+		);
 	}
 	jint Call_Details::CAPABILITY_MUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_MUTE");
+			"CAPABILITY_MUTE"
+		);
 	}
 	jint Call_Details::CAPABILITY_RESPOND_VIA_TEXT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_RESPOND_VIA_TEXT");
+			"CAPABILITY_RESPOND_VIA_TEXT"
+		);
 	}
 	jint Call_Details::CAPABILITY_SEPARATE_FROM_CONFERENCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SEPARATE_FROM_CONFERENCE");
+			"CAPABILITY_SEPARATE_FROM_CONFERENCE"
+		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_LOCAL_BIDIRECTIONAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SUPPORTS_VT_LOCAL_BIDIRECTIONAL");
+			"CAPABILITY_SUPPORTS_VT_LOCAL_BIDIRECTIONAL"
+		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_LOCAL_RX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SUPPORTS_VT_LOCAL_RX");
+			"CAPABILITY_SUPPORTS_VT_LOCAL_RX"
+		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_LOCAL_TX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SUPPORTS_VT_LOCAL_TX");
+			"CAPABILITY_SUPPORTS_VT_LOCAL_TX"
+		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_REMOTE_BIDIRECTIONAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SUPPORTS_VT_REMOTE_BIDIRECTIONAL");
+			"CAPABILITY_SUPPORTS_VT_REMOTE_BIDIRECTIONAL"
+		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_REMOTE_RX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SUPPORTS_VT_REMOTE_RX");
+			"CAPABILITY_SUPPORTS_VT_REMOTE_RX"
+		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORTS_VT_REMOTE_TX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SUPPORTS_VT_REMOTE_TX");
+			"CAPABILITY_SUPPORTS_VT_REMOTE_TX"
+		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORT_DEFLECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SUPPORT_DEFLECT");
+			"CAPABILITY_SUPPORT_DEFLECT"
+		);
 	}
 	jint Call_Details::CAPABILITY_SUPPORT_HOLD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SUPPORT_HOLD");
+			"CAPABILITY_SUPPORT_HOLD"
+		);
 	}
 	jint Call_Details::CAPABILITY_SWAP_CONFERENCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"CAPABILITY_SWAP_CONFERENCE");
+			"CAPABILITY_SWAP_CONFERENCE"
+		);
 	}
 	jint Call_Details::DIRECTION_INCOMING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"DIRECTION_INCOMING");
+			"DIRECTION_INCOMING"
+		);
 	}
 	jint Call_Details::DIRECTION_OUTGOING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"DIRECTION_OUTGOING");
+			"DIRECTION_OUTGOING"
+		);
 	}
 	jint Call_Details::DIRECTION_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"DIRECTION_UNKNOWN");
+			"DIRECTION_UNKNOWN"
+		);
 	}
 	jint Call_Details::PROPERTY_CONFERENCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_CONFERENCE");
+			"PROPERTY_CONFERENCE"
+		);
 	}
 	jint Call_Details::PROPERTY_EMERGENCY_CALLBACK_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_EMERGENCY_CALLBACK_MODE");
+			"PROPERTY_EMERGENCY_CALLBACK_MODE"
+		);
 	}
 	jint Call_Details::PROPERTY_ENTERPRISE_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_ENTERPRISE_CALL");
+			"PROPERTY_ENTERPRISE_CALL"
+		);
 	}
 	jint Call_Details::PROPERTY_GENERIC_CONFERENCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_GENERIC_CONFERENCE");
+			"PROPERTY_GENERIC_CONFERENCE"
+		);
 	}
 	jint Call_Details::PROPERTY_HAS_CDMA_VOICE_PRIVACY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_HAS_CDMA_VOICE_PRIVACY");
+			"PROPERTY_HAS_CDMA_VOICE_PRIVACY"
+		);
 	}
 	jint Call_Details::PROPERTY_HIGH_DEF_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_HIGH_DEF_AUDIO");
+			"PROPERTY_HIGH_DEF_AUDIO"
+		);
 	}
 	jint Call_Details::PROPERTY_IS_EXTERNAL_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_IS_EXTERNAL_CALL");
+			"PROPERTY_IS_EXTERNAL_CALL"
+		);
 	}
 	jint Call_Details::PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL");
+			"PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL"
+		);
 	}
 	jint Call_Details::PROPERTY_RTT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_RTT");
+			"PROPERTY_RTT"
+		);
 	}
 	jint Call_Details::PROPERTY_SELF_MANAGED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_SELF_MANAGED");
+			"PROPERTY_SELF_MANAGED"
+		);
 	}
 	jint Call_Details::PROPERTY_VOIP_AUDIO_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_VOIP_AUDIO_MODE");
+			"PROPERTY_VOIP_AUDIO_MODE"
+		);
 	}
 	jint Call_Details::PROPERTY_WIFI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call$Details",
-			"PROPERTY_WIFI");
+			"PROPERTY_WIFI"
+		);
 	}
 	
 	// Constructors
@@ -332,83 +366,37 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Call_Details::toString()
+	jstring Call_Details::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Call_Details::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Call_Details::getHandle()
 	{
 		return __thiz.callObjectMethod(
 			"getHandle",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Call_Details::getExtras()
+	jboolean Call_Details::can(jint arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;");
-	}
-	QAndroidJniObject Call_Details::getAccountHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getAccountHandle",
-			"()Landroid/telecom/PhoneAccountHandle;");
-	}
-	jint Call_Details::getVideoState()
-	{
-		return __thiz.callMethod<jint>(
-			"getVideoState",
-			"()I");
-	}
-	QAndroidJniObject Call_Details::getDisconnectCause()
-	{
-		return __thiz.callObjectMethod(
-			"getDisconnectCause",
-			"()Landroid/telecom/DisconnectCause;");
-	}
-	QAndroidJniObject Call_Details::getStatusHints()
-	{
-		return __thiz.callObjectMethod(
-			"getStatusHints",
-			"()Landroid/telecom/StatusHints;");
-	}
-	QAndroidJniObject Call_Details::capabilitiesToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telecom.Call$Details",
-			"capabilitiesToString",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject Call_Details::propertiesToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telecom.Call$Details",
-			"propertiesToString",
-			"(I)Ljava/lang/String;",
-			arg0);
-	}
-	QAndroidJniObject Call_Details::getCallerDisplayName()
-	{
-		return __thiz.callObjectMethod(
-			"getCallerDisplayName",
-			"()Ljava/lang/String;");
-	}
-	jint Call_Details::getCallerDisplayNamePresentation()
-	{
-		return __thiz.callMethod<jint>(
-			"getCallerDisplayNamePresentation",
-			"()I");
+		return __thiz.callMethod<jboolean>(
+			"can",
+			"(I)Z",
+			arg0
+		);
 	}
 	jboolean Call_Details::can(jint arg0, jint arg1)
 	{
@@ -417,14 +405,8 @@ namespace __jni_impl::android::telecom
 			"can",
 			"(II)Z",
 			arg0,
-			arg1);
-	}
-	jboolean Call_Details::can(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"can",
-			"(I)Z",
-			arg0);
+			arg1
+		);
 	}
 	jboolean Call_Details::hasProperty(jint arg0, jint arg1)
 	{
@@ -433,62 +415,139 @@ namespace __jni_impl::android::telecom
 			"hasProperty",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Call_Details::hasProperty(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasProperty",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Call_Details::getHandlePresentation()
 	{
 		return __thiz.callMethod<jint>(
 			"getHandlePresentation",
-			"()I");
+			"()I"
+		);
 	}
 	jint Call_Details::getCallCapabilities()
 	{
 		return __thiz.callMethod<jint>(
 			"getCallCapabilities",
-			"()I");
+			"()I"
+		);
 	}
 	jint Call_Details::getCallProperties()
 	{
 		return __thiz.callMethod<jint>(
 			"getCallProperties",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Call_Details::getConnectTimeMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getConnectTimeMillis",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject Call_Details::getGatewayInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getGatewayInfo",
-			"()Landroid/telecom/GatewayInfo;");
+			"()Landroid/telecom/GatewayInfo;"
+		);
 	}
 	QAndroidJniObject Call_Details::getIntentExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getIntentExtras",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
 	jlong Call_Details::getCreationTimeMillis()
 	{
 		return __thiz.callMethod<jlong>(
 			"getCreationTimeMillis",
-			"()J");
+			"()J"
+		);
 	}
 	jint Call_Details::getCallDirection()
 	{
 		return __thiz.callMethod<jint>(
 			"getCallDirection",
-			"()I");
+			"()I"
+		);
+	}
+	QAndroidJniObject Call_Details::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jint Call_Details::getVideoState()
+	{
+		return __thiz.callMethod<jint>(
+			"getVideoState",
+			"()I"
+		);
+	}
+	QAndroidJniObject Call_Details::getDisconnectCause()
+	{
+		return __thiz.callObjectMethod(
+			"getDisconnectCause",
+			"()Landroid/telecom/DisconnectCause;"
+		);
+	}
+	QAndroidJniObject Call_Details::getStatusHints()
+	{
+		return __thiz.callObjectMethod(
+			"getStatusHints",
+			"()Landroid/telecom/StatusHints;"
+		);
+	}
+	jstring Call_Details::capabilitiesToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telecom.Call$Details",
+			"capabilitiesToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Call_Details::propertiesToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telecom.Call$Details",
+			"propertiesToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Call_Details::getCallerDisplayName()
+	{
+		return __thiz.callObjectMethod(
+			"getCallerDisplayName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Call_Details::getCallerDisplayNamePresentation()
+	{
+		return __thiz.callMethod<jint>(
+			"getCallerDisplayNamePresentation",
+			"()I"
+		);
+	}
+	QAndroidJniObject Call_Details::getAccountHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getAccountHandle",
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

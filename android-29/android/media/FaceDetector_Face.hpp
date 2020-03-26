@@ -46,25 +46,29 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jfloat>(
 			"android.media.FaceDetector$Face",
-			"CONFIDENCE_THRESHOLD");
+			"CONFIDENCE_THRESHOLD"
+		);
 	}
 	jint FaceDetector_Face::EULER_X()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.FaceDetector$Face",
-			"EULER_X");
+			"EULER_X"
+		);
 	}
 	jint FaceDetector_Face::EULER_Y()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.FaceDetector$Face",
-			"EULER_Y");
+			"EULER_Y"
+		);
 	}
 	jint FaceDetector_Face::EULER_Z()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.FaceDetector$Face",
-			"EULER_Z");
+			"EULER_Z"
+		);
 	}
 	
 	// Constructors
@@ -80,27 +84,31 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jfloat>(
 			"confidence",
-			"()F");
+			"()F"
+		);
 	}
 	void FaceDetector_Face::getMidPoint(__jni_impl::android::graphics::PointF arg0)
 	{
 		__thiz.callMethod<void>(
 			"getMidPoint",
 			"(Landroid/graphics/PointF;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jfloat FaceDetector_Face::eyesDistance()
 	{
 		return __thiz.callMethod<jfloat>(
 			"eyesDistance",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat FaceDetector_Face::pose(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"pose",
 			"(I)F",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

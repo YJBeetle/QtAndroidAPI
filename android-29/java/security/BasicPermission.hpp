@@ -34,7 +34,7 @@ namespace __jni_impl::java::security
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
-		QAndroidJniObject getActions();
+		jstring getActions();
 		QAndroidJniObject newPermissionCollection();
 	};
 } // namespace __jni_impl::java::security
@@ -70,32 +70,37 @@ namespace __jni_impl::java::security
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint BasicPermission::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean BasicPermission::implies(__jni_impl::java::security::Permission arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"implies",
 			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject BasicPermission::getActions()
+	jstring BasicPermission::getActions()
 	{
 		return __thiz.callObjectMethod(
 			"getActions",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject BasicPermission::newPermissionCollection()
 	{
 		return __thiz.callObjectMethod(
 			"newPermissionCollection",
-			"()Ljava/security/PermissionCollection;");
+			"()Ljava/security/PermissionCollection;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

@@ -23,7 +23,7 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::util
@@ -37,35 +37,40 @@ namespace __jni_impl::java::util
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"AUTOSELECT_FILTERING",
-			"Ljava/util/Locale$FilteringMode;");
+			"Ljava/util/Locale$FilteringMode;"
+		);
 	}
 	QAndroidJniObject Locale_FilteringMode::EXTENDED_FILTERING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"EXTENDED_FILTERING",
-			"Ljava/util/Locale$FilteringMode;");
+			"Ljava/util/Locale$FilteringMode;"
+		);
 	}
 	QAndroidJniObject Locale_FilteringMode::IGNORE_EXTENDED_RANGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"IGNORE_EXTENDED_RANGES",
-			"Ljava/util/Locale$FilteringMode;");
+			"Ljava/util/Locale$FilteringMode;"
+		);
 	}
 	QAndroidJniObject Locale_FilteringMode::MAP_EXTENDED_RANGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"MAP_EXTENDED_RANGES",
-			"Ljava/util/Locale$FilteringMode;");
+			"Ljava/util/Locale$FilteringMode;"
+		);
 	}
 	QAndroidJniObject Locale_FilteringMode::REJECT_EXTENDED_RANGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Locale$FilteringMode",
 			"REJECT_EXTENDED_RANGES",
-			"Ljava/util/Locale$FilteringMode;");
+			"Ljava/util/Locale$FilteringMode;"
+		);
 	}
 	
 	// Constructors
@@ -77,12 +82,13 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject Locale_FilteringMode::values()
+	jarray Locale_FilteringMode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Locale$FilteringMode",
 			"values",
-			"()[Ljava/util/Locale$FilteringMode;");
+			"()[Ljava/util/Locale$FilteringMode;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Locale_FilteringMode::valueOf(jstring arg0)
 	{
@@ -90,7 +96,8 @@ namespace __jni_impl::java::util
 			"java.util.Locale$FilteringMode",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Locale$FilteringMode;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util
 

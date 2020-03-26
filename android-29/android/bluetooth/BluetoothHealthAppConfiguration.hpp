@@ -22,10 +22,10 @@ namespace __jni_impl::android::bluetooth
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		jint getDataType();
+		jstring getName();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getDataType();
 		jint getRole();
 	};
 } // namespace __jni_impl::android::bluetooth
@@ -40,7 +40,8 @@ namespace __jni_impl::android::bluetooth
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothHealthAppConfiguration",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -52,23 +53,19 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
-	QAndroidJniObject BluetoothHealthAppConfiguration::getName()
+	jstring BluetoothHealthAppConfiguration::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
-	}
-	jint BluetoothHealthAppConfiguration::getDataType()
-	{
-		return __thiz.callMethod<jint>(
-			"getDataType",
-			"()I");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint BluetoothHealthAppConfiguration::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void BluetoothHealthAppConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -76,13 +73,22 @@ namespace __jni_impl::android::bluetooth
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint BluetoothHealthAppConfiguration::getDataType()
+	{
+		return __thiz.callMethod<jint>(
+			"getDataType",
+			"()I"
+		);
 	}
 	jint BluetoothHealthAppConfiguration::getRole()
 	{
 		return __thiz.callMethod<jint>(
 			"getRole",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

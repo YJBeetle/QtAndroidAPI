@@ -23,7 +23,7 @@ namespace __jni_impl::android::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::android::util::Rational arg0);
@@ -51,28 +51,32 @@ namespace __jni_impl::android::util
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Rational",
 			"NEGATIVE_INFINITY",
-			"Landroid/util/Rational;");
+			"Landroid/util/Rational;"
+		);
 	}
 	QAndroidJniObject Rational::NaN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Rational",
 			"NaN",
-			"Landroid/util/Rational;");
+			"Landroid/util/Rational;"
+		);
 	}
 	QAndroidJniObject Rational::POSITIVE_INFINITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Rational",
 			"POSITIVE_INFINITY",
-			"Landroid/util/Rational;");
+			"Landroid/util/Rational;"
+		);
 	}
 	QAndroidJniObject Rational::ZERO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Rational",
 			"ZERO",
-			"Landroid/util/Rational;");
+			"Landroid/util/Rational;"
+		);
 	}
 	
 	// Constructors
@@ -91,99 +95,115 @@ namespace __jni_impl::android::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Rational::toString()
+	jstring Rational::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Rational::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Rational::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Rational::compareTo(__jni_impl::android::util::Rational arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Landroid/util/Rational;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jshort Rational::shortValue()
 	{
 		return __thiz.callMethod<jshort>(
 			"shortValue",
-			"()S");
+			"()S"
+		);
 	}
 	jint Rational::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Rational::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat Rational::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble Rational::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 	jboolean Rational::isNaN()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isNaN",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Rational::isInfinite()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInfinite",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Rational::isFinite()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFinite",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Rational::isZero()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isZero",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Rational::getNumerator()
 	{
 		return __thiz.callMethod<jint>(
 			"getNumerator",
-			"()I");
+			"()I"
+		);
 	}
 	jint Rational::getDenominator()
 	{
 		return __thiz.callMethod<jint>(
 			"getDenominator",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Rational::parseRational(jstring arg0)
 	{
@@ -191,7 +211,8 @@ namespace __jni_impl::android::util
 			"android.util.Rational",
 			"parseRational",
 			"(Ljava/lang/String;)Landroid/util/Rational;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

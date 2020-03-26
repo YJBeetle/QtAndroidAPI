@@ -26,11 +26,11 @@ namespace __jni_impl::android::app::admin
 		jint hashCode();
 		jlong getId();
 		jint getTag();
-		QAndroidJniObject getData();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jlong getTimeNanos();
 		jint getLogLevel();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jobject getData();
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -44,7 +44,8 @@ namespace __jni_impl::android::app::admin
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.SecurityLog$SecurityEvent",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -61,37 +62,50 @@ namespace __jni_impl::android::app::admin
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint SecurityLog_SecurityEvent::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jlong SecurityLog_SecurityEvent::getId()
 	{
 		return __thiz.callMethod<jlong>(
 			"getId",
-			"()J");
+			"()J"
+		);
 	}
 	jint SecurityLog_SecurityEvent::getTag()
 	{
 		return __thiz.callMethod<jint>(
 			"getTag",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SecurityLog_SecurityEvent::getData()
+	jlong SecurityLog_SecurityEvent::getTimeNanos()
 	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()Ljava/lang/Object;");
+		return __thiz.callMethod<jlong>(
+			"getTimeNanos",
+			"()J"
+		);
+	}
+	jint SecurityLog_SecurityEvent::getLogLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getLogLevel",
+			"()I"
+		);
 	}
 	jint SecurityLog_SecurityEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SecurityLog_SecurityEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -99,19 +113,15 @@ namespace __jni_impl::android::app::admin
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	jlong SecurityLog_SecurityEvent::getTimeNanos()
+	jobject SecurityLog_SecurityEvent::getData()
 	{
-		return __thiz.callMethod<jlong>(
-			"getTimeNanos",
-			"()J");
-	}
-	jint SecurityLog_SecurityEvent::getLogLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getLogLevel",
-			"()I");
+		return __thiz.callObjectMethod(
+			"getData",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::app::admin
 

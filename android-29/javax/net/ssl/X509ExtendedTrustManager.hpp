@@ -55,7 +55,8 @@ namespace __jni_impl::javax::net::ssl
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void X509ExtendedTrustManager::checkServerTrusted(jarray arg0, jstring arg1, __jni_impl::java::net::Socket arg2)
 	{
@@ -64,7 +65,8 @@ namespace __jni_impl::javax::net::ssl
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void X509ExtendedTrustManager::checkClientTrusted(jarray arg0, jstring arg1, __jni_impl::javax::net::ssl::SSLEngine arg2)
 	{
@@ -73,7 +75,8 @@ namespace __jni_impl::javax::net::ssl
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void X509ExtendedTrustManager::checkClientTrusted(jarray arg0, jstring arg1, __jni_impl::java::net::Socket arg2)
 	{
@@ -82,7 +85,8 @@ namespace __jni_impl::javax::net::ssl
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

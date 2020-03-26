@@ -51,7 +51,8 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"createIconThumbnail",
 			"(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

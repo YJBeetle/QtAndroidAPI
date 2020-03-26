@@ -22,10 +22,10 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setTracingMode(jint arg0);
-		QAndroidJniObject addCategories(jintArray arg0);
-		QAndroidJniObject addCategories(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject addCategories(jarray arg0);
+		QAndroidJniObject addCategories(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject addCategories(jintArray arg0);
+		QAndroidJniObject setTracingMode(jint arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -48,35 +48,40 @@ namespace __jni_impl::android::webkit
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/webkit/TracingConfig;");
-	}
-	QAndroidJniObject TracingConfig_Builder::setTracingMode(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTracingMode",
-			"(I)Landroid/webkit/TracingConfig$Builder;",
-			arg0);
-	}
-	QAndroidJniObject TracingConfig_Builder::addCategories(jintArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addCategories",
-			"([I)Landroid/webkit/TracingConfig$Builder;",
-			arg0);
-	}
-	QAndroidJniObject TracingConfig_Builder::addCategories(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addCategories",
-			"(Ljava/util/Collection;)Landroid/webkit/TracingConfig$Builder;",
-			arg0.__jniObject().object());
+			"()Landroid/webkit/TracingConfig;"
+		);
 	}
 	QAndroidJniObject TracingConfig_Builder::addCategories(jarray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addCategories",
 			"([Ljava/lang/String;)Landroid/webkit/TracingConfig$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject TracingConfig_Builder::addCategories(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addCategories",
+			"(Ljava/util/Collection;)Landroid/webkit/TracingConfig$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TracingConfig_Builder::addCategories(jintArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addCategories",
+			"([I)Landroid/webkit/TracingConfig$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TracingConfig_Builder::setTracingMode(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setTracingMode",
+			"(I)Landroid/webkit/TracingConfig$Builder;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

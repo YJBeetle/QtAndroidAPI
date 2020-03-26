@@ -35,13 +35,13 @@ namespace __jni_impl::android::view
 		// Methods
 		jint getLayoutDirection();
 		void setLayoutDirection(jint arg0);
-		void resolveLayoutDirection(jint arg0);
 		void setMargins(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setMarginStart(jint arg0);
 		jint getMarginStart();
 		void setMarginEnd(jint arg0);
 		jint getMarginEnd();
 		jboolean isMarginRelative();
+		void resolveLayoutDirection(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -54,22 +54,26 @@ namespace __jni_impl::android::view
 	jint ViewGroup_MarginLayoutParams::bottomMargin()
 	{
 		return __thiz.getField<jint>(
-			"bottomMargin");
+			"bottomMargin"
+		);
 	}
 	jint ViewGroup_MarginLayoutParams::leftMargin()
 	{
 		return __thiz.getField<jint>(
-			"leftMargin");
+			"leftMargin"
+		);
 	}
 	jint ViewGroup_MarginLayoutParams::rightMargin()
 	{
 		return __thiz.getField<jint>(
-			"rightMargin");
+			"rightMargin"
+		);
 	}
 	jint ViewGroup_MarginLayoutParams::topMargin()
 	{
 		return __thiz.getField<jint>(
-			"topMargin");
+			"topMargin"
+		);
 	}
 	
 	// Constructors
@@ -109,21 +113,16 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callMethod<jint>(
 			"getLayoutDirection",
-			"()I");
+			"()I"
+		);
 	}
 	void ViewGroup_MarginLayoutParams::setLayoutDirection(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLayoutDirection",
 			"(I)V",
-			arg0);
-	}
-	void ViewGroup_MarginLayoutParams::resolveLayoutDirection(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"resolveLayoutDirection",
-			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ViewGroup_MarginLayoutParams::setMargins(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -133,39 +132,53 @@ namespace __jni_impl::android::view
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ViewGroup_MarginLayoutParams::setMarginStart(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMarginStart",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint ViewGroup_MarginLayoutParams::getMarginStart()
 	{
 		return __thiz.callMethod<jint>(
 			"getMarginStart",
-			"()I");
+			"()I"
+		);
 	}
 	void ViewGroup_MarginLayoutParams::setMarginEnd(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMarginEnd",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint ViewGroup_MarginLayoutParams::getMarginEnd()
 	{
 		return __thiz.callMethod<jint>(
 			"getMarginEnd",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean ViewGroup_MarginLayoutParams::isMarginRelative()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMarginRelative",
-			"()Z");
+			"()Z"
+		);
+	}
+	void ViewGroup_MarginLayoutParams::resolveLayoutDirection(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"resolveLayoutDirection",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

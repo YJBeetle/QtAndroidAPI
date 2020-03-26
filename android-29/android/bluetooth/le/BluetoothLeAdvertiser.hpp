@@ -85,7 +85,8 @@ namespace __jni_impl::android::bluetooth::le
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void BluetoothLeAdvertiser::startAdvertising(__jni_impl::android::bluetooth::le::AdvertiseSettings arg0, __jni_impl::android::bluetooth::le::AdvertiseData arg1, __jni_impl::android::bluetooth::le::AdvertiseCallback arg2)
 	{
@@ -94,14 +95,16 @@ namespace __jni_impl::android::bluetooth::le
 			"(Landroid/bluetooth/le/AdvertiseSettings;Landroid/bluetooth/le/AdvertiseData;Landroid/bluetooth/le/AdvertiseCallback;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void BluetoothLeAdvertiser::stopAdvertising(__jni_impl::android::bluetooth::le::AdvertiseCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"stopAdvertising",
 			"(Landroid/bluetooth/le/AdvertiseCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BluetoothLeAdvertiser::startAdvertisingSet(__jni_impl::android::bluetooth::le::AdvertisingSetParameters arg0, __jni_impl::android::bluetooth::le::AdvertiseData arg1, __jni_impl::android::bluetooth::le::AdvertiseData arg2, __jni_impl::android::bluetooth::le::PeriodicAdvertisingParameters arg3, __jni_impl::android::bluetooth::le::AdvertiseData arg4, jint arg5, jint arg6, __jni_impl::android::bluetooth::le::AdvertisingSetCallback arg7, __jni_impl::android::os::Handler arg8)
 	{
@@ -116,7 +119,8 @@ namespace __jni_impl::android::bluetooth::le
 			arg5,
 			arg6,
 			arg7.__jniObject().object(),
-			arg8.__jniObject().object());
+			arg8.__jniObject().object()
+		);
 	}
 	void BluetoothLeAdvertiser::startAdvertisingSet(__jni_impl::android::bluetooth::le::AdvertisingSetParameters arg0, __jni_impl::android::bluetooth::le::AdvertiseData arg1, __jni_impl::android::bluetooth::le::AdvertiseData arg2, __jni_impl::android::bluetooth::le::PeriodicAdvertisingParameters arg3, __jni_impl::android::bluetooth::le::AdvertiseData arg4, jint arg5, jint arg6, __jni_impl::android::bluetooth::le::AdvertisingSetCallback arg7)
 	{
@@ -130,7 +134,8 @@ namespace __jni_impl::android::bluetooth::le
 			arg4.__jniObject().object(),
 			arg5,
 			arg6,
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 	void BluetoothLeAdvertiser::startAdvertisingSet(__jni_impl::android::bluetooth::le::AdvertisingSetParameters arg0, __jni_impl::android::bluetooth::le::AdvertiseData arg1, __jni_impl::android::bluetooth::le::AdvertiseData arg2, __jni_impl::android::bluetooth::le::PeriodicAdvertisingParameters arg3, __jni_impl::android::bluetooth::le::AdvertiseData arg4, __jni_impl::android::bluetooth::le::AdvertisingSetCallback arg5, __jni_impl::android::os::Handler arg6)
 	{
@@ -143,7 +148,8 @@ namespace __jni_impl::android::bluetooth::le
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void BluetoothLeAdvertiser::startAdvertisingSet(__jni_impl::android::bluetooth::le::AdvertisingSetParameters arg0, __jni_impl::android::bluetooth::le::AdvertiseData arg1, __jni_impl::android::bluetooth::le::AdvertiseData arg2, __jni_impl::android::bluetooth::le::PeriodicAdvertisingParameters arg3, __jni_impl::android::bluetooth::le::AdvertiseData arg4, __jni_impl::android::bluetooth::le::AdvertisingSetCallback arg5)
 	{
@@ -155,14 +161,16 @@ namespace __jni_impl::android::bluetooth::le
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void BluetoothLeAdvertiser::stopAdvertisingSet(__jni_impl::android::bluetooth::le::AdvertisingSetCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"stopAdvertisingSet",
 			"(Landroid/bluetooth/le/AdvertisingSetCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::bluetooth::le
 

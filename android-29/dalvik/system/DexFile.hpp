@@ -26,9 +26,9 @@ namespace __jni_impl::dalvik::system
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject loadClass(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
-		QAndroidJniObject toString();
+		jstring getName();
+		jclass loadClass(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
+		jstring toString();
 		void close();
 		QAndroidJniObject entries();
 		static QAndroidJniObject loadDex(jstring arg0, jstring arg1, jint arg2);
@@ -60,37 +60,42 @@ namespace __jni_impl::dalvik::system
 	}
 	
 	// Methods
-	QAndroidJniObject DexFile::getName()
+	jstring DexFile::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DexFile::loadClass(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
+	jclass DexFile::loadClass(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
 		return __thiz.callObjectMethod(
 			"loadClass",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jclass>();
 	}
-	QAndroidJniObject DexFile::toString()
+	jstring DexFile::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void DexFile::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject DexFile::entries()
 	{
 		return __thiz.callObjectMethod(
 			"entries",
-			"()Ljava/util/Enumeration;");
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	QAndroidJniObject DexFile::loadDex(jstring arg0, jstring arg1, jint arg2)
 	{
@@ -100,7 +105,8 @@ namespace __jni_impl::dalvik::system
 			"(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean DexFile::isDexOptNeeded(jstring arg0)
 	{
@@ -108,7 +114,8 @@ namespace __jni_impl::dalvik::system
 			"dalvik.system.DexFile",
 			"isDexOptNeeded",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::dalvik::system
 

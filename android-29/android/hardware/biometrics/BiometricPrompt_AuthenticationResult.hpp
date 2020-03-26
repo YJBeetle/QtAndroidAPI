@@ -44,7 +44,8 @@ namespace __jni_impl::android::hardware::biometrics
 	{
 		return __thiz.callObjectMethod(
 			"getCryptoObject",
-			"()Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;");
+			"()Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;"
+		);
 	}
 } // namespace __jni_impl::android::hardware::biometrics
 

@@ -68,35 +68,40 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"setSummaryText",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Notification_BigPictureStyle::bigPicture(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		return __thiz.callObjectMethod(
 			"bigPicture",
 			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Notification_BigPictureStyle::bigLargeIcon(__jni_impl::android::graphics::drawable::Icon arg0)
 	{
 		return __thiz.callObjectMethod(
 			"bigLargeIcon",
 			"(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$BigPictureStyle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Notification_BigPictureStyle::bigLargeIcon(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		return __thiz.callObjectMethod(
 			"bigLargeIcon",
 			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Notification_BigPictureStyle::setBigContentTitle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setBigContentTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app
 

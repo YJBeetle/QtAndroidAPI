@@ -60,14 +60,14 @@ namespace __jni_impl::java::text
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject clone();
+		jobject clone();
 		QAndroidJniObject format(__jni_impl::java::util::Date arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 		void applyPattern(jstring arg0);
-		QAndroidJniObject toPattern();
+		jstring toPattern();
 		void set2DigitYearStart(__jni_impl::java::util::Date arg0);
 		QAndroidJniObject get2DigitYearStart();
-		QAndroidJniObject toLocalizedPattern();
+		jstring toLocalizedPattern();
 		void applyLocalizedPattern(jstring arg0);
 		QAndroidJniObject getDateFormatSymbols();
 		void setDateFormatSymbols(__jni_impl::java::text::DateFormatSymbols arg0);
@@ -126,19 +126,22 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint SimpleDateFormat::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject SimpleDateFormat::clone()
+	jobject SimpleDateFormat::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject SimpleDateFormat::format(__jni_impl::java::util::Date arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
@@ -147,7 +150,8 @@ namespace __jni_impl::java::text
 			"(Ljava/util/Date;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SimpleDateFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
@@ -155,66 +159,76 @@ namespace __jni_impl::java::text
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SimpleDateFormat::applyPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SimpleDateFormat::toPattern()
+	jstring SimpleDateFormat::toPattern()
 	{
 		return __thiz.callObjectMethod(
 			"toPattern",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SimpleDateFormat::set2DigitYearStart(__jni_impl::java::util::Date arg0)
 	{
 		__thiz.callMethod<void>(
 			"set2DigitYearStart",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SimpleDateFormat::get2DigitYearStart()
 	{
 		return __thiz.callObjectMethod(
 			"get2DigitYearStart",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
-	QAndroidJniObject SimpleDateFormat::toLocalizedPattern()
+	jstring SimpleDateFormat::toLocalizedPattern()
 	{
 		return __thiz.callObjectMethod(
 			"toLocalizedPattern",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SimpleDateFormat::applyLocalizedPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyLocalizedPattern",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject SimpleDateFormat::getDateFormatSymbols()
 	{
 		return __thiz.callObjectMethod(
 			"getDateFormatSymbols",
-			"()Ljava/text/DateFormatSymbols;");
+			"()Ljava/text/DateFormatSymbols;"
+		);
 	}
 	void SimpleDateFormat::setDateFormatSymbols(__jni_impl::java::text::DateFormatSymbols arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDateFormatSymbols",
 			"(Ljava/text/DateFormatSymbols;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SimpleDateFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::text
 

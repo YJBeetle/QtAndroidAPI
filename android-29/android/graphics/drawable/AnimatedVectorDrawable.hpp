@@ -14,9 +14,9 @@ namespace __jni_impl::android::content::res
 {
 	class Resources_Theme;
 }
-namespace __jni_impl::android::graphics::drawable
+namespace __jni_impl::android::graphics
 {
-	class Animatable2_AnimationCallback;
+	class ColorFilter;
 }
 namespace __jni_impl::android::graphics
 {
@@ -38,6 +38,14 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable_ConstantState;
 }
+namespace __jni_impl::android::graphics::drawable
+{
+	class Animatable2_AnimationCallback;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
+}
 namespace __jni_impl::android::content::res
 {
 	class ColorStateList;
@@ -45,14 +53,6 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::graphics
 {
 	class BlendMode;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
-namespace __jni_impl::android::graphics
-{
-	class ColorFilter;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -70,10 +70,10 @@ namespace __jni_impl::android::graphics::drawable
 		void start();
 		void stop();
 		void reset();
-		void setAlpha(jint arg0);
-		void registerAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0);
-		jboolean unregisterAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0);
-		void clearAnimationCallbacks();
+		QAndroidJniObject getColorFilter();
+		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		jint getChangingConfigurations();
+		jboolean setVisible(jboolean arg0, jboolean arg1);
 		jboolean onLayoutDirectionChanged(jint arg0);
 		void setHotspot(jfloat arg0, jfloat arg1);
 		void setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3);
@@ -87,30 +87,30 @@ namespace __jni_impl::android::graphics::drawable
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		QAndroidJniObject mutate();
 		QAndroidJniObject getConstantState();
-		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
-		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
+		jboolean unregisterAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0);
+		void clearAnimationCallbacks();
+		void registerAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0);
 		jint getAlpha();
 		void draw(__jni_impl::android::graphics::Canvas arg0);
 		jboolean isRunning();
-		jint getChangingConfigurations();
-		jboolean setVisible(jboolean arg0, jboolean arg1);
-		QAndroidJniObject getColorFilter();
-		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
+		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
+		void setAlpha(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
-#include "Animatable2_AnimationCallback.hpp"
+#include "../ColorFilter.hpp"
 #include "../Rect.hpp"
 #include "../Insets.hpp"
 #include "../Outline.hpp"
 #include "Drawable.hpp"
 #include "Drawable_ConstantState.hpp"
+#include "Animatable2_AnimationCallback.hpp"
+#include "../Canvas.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../BlendMode.hpp"
-#include "../Canvas.hpp"
-#include "../ColorFilter.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -133,59 +133,68 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void AnimatedVectorDrawable::start()
 	{
 		__thiz.callMethod<void>(
 			"start",
-			"()V");
+			"()V"
+		);
 	}
 	void AnimatedVectorDrawable::stop()
 	{
 		__thiz.callMethod<void>(
 			"stop",
-			"()V");
+			"()V"
+		);
 	}
 	void AnimatedVectorDrawable::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
-	void AnimatedVectorDrawable::setAlpha(jint arg0)
+	QAndroidJniObject AnimatedVectorDrawable::getColorFilter()
+	{
+		return __thiz.callObjectMethod(
+			"getColorFilter",
+			"()Landroid/graphics/ColorFilter;"
+		);
+	}
+	void AnimatedVectorDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAlpha",
-			"(I)V",
-			arg0);
+			"setColorFilter",
+			"(Landroid/graphics/ColorFilter;)V",
+			arg0.__jniObject().object()
+		);
 	}
-	void AnimatedVectorDrawable::registerAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0)
+	jint AnimatedVectorDrawable::getChangingConfigurations()
 	{
-		__thiz.callMethod<void>(
-			"registerAnimationCallback",
-			"(Landroid/graphics/drawable/Animatable2$AnimationCallback;)V",
-			arg0.__jniObject().object());
+		return __thiz.callMethod<jint>(
+			"getChangingConfigurations",
+			"()I"
+		);
 	}
-	jboolean AnimatedVectorDrawable::unregisterAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0)
+	jboolean AnimatedVectorDrawable::setVisible(jboolean arg0, jboolean arg1)
 	{
 		return __thiz.callMethod<jboolean>(
-			"unregisterAnimationCallback",
-			"(Landroid/graphics/drawable/Animatable2$AnimationCallback;)Z",
-			arg0.__jniObject().object());
-	}
-	void AnimatedVectorDrawable::clearAnimationCallbacks()
-	{
-		__thiz.callMethod<void>(
-			"clearAnimationCallbacks",
-			"()V");
+			"setVisible",
+			"(ZZ)Z",
+			arg0,
+			arg1
+		);
 	}
 	jboolean AnimatedVectorDrawable::onLayoutDirectionChanged(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onLayoutDirectionChanged",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void AnimatedVectorDrawable::setHotspot(jfloat arg0, jfloat arg1)
 	{
@@ -193,7 +202,8 @@ namespace __jni_impl::android::graphics::drawable
 			"setHotspot",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AnimatedVectorDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -203,129 +213,149 @@ namespace __jni_impl::android::graphics::drawable
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean AnimatedVectorDrawable::isStateful()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isStateful",
-			"()Z");
+			"()Z"
+		);
 	}
 	void AnimatedVectorDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean AnimatedVectorDrawable::canApplyTheme()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canApplyTheme",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint AnimatedVectorDrawable::getOpacity()
 	{
 		return __thiz.callMethod<jint>(
 			"getOpacity",
-			"()I");
+			"()I"
+		);
 	}
 	jint AnimatedVectorDrawable::getIntrinsicWidth()
 	{
 		return __thiz.callMethod<jint>(
 			"getIntrinsicWidth",
-			"()I");
+			"()I"
+		);
 	}
 	jint AnimatedVectorDrawable::getIntrinsicHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getIntrinsicHeight",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject AnimatedVectorDrawable::getOpticalInsets()
 	{
 		return __thiz.callObjectMethod(
 			"getOpticalInsets",
-			"()Landroid/graphics/Insets;");
+			"()Landroid/graphics/Insets;"
+		);
 	}
 	void AnimatedVectorDrawable::getOutline(__jni_impl::android::graphics::Outline arg0)
 	{
 		__thiz.callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AnimatedVectorDrawable::mutate()
 	{
 		return __thiz.callObjectMethod(
 			"mutate",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	QAndroidJniObject AnimatedVectorDrawable::getConstantState()
 	{
 		return __thiz.callObjectMethod(
 			"getConstantState",
-			"()Landroid/graphics/drawable/Drawable$ConstantState;");
+			"()Landroid/graphics/drawable/Drawable$ConstantState;"
+		);
 	}
-	void AnimatedVectorDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
+	jboolean AnimatedVectorDrawable::unregisterAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"unregisterAnimationCallback",
+			"(Landroid/graphics/drawable/Animatable2$AnimationCallback;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void AnimatedVectorDrawable::clearAnimationCallbacks()
 	{
 		__thiz.callMethod<void>(
-			"setTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object());
+			"clearAnimationCallbacks",
+			"()V"
+		);
 	}
-	void AnimatedVectorDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	void AnimatedVectorDrawable::registerAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0)
 	{
 		__thiz.callMethod<void>(
-			"setTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object());
+			"registerAnimationCallback",
+			"(Landroid/graphics/drawable/Animatable2$AnimationCallback;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	jint AnimatedVectorDrawable::getAlpha()
 	{
 		return __thiz.callMethod<jint>(
 			"getAlpha",
-			"()I");
+			"()I"
+		);
 	}
 	void AnimatedVectorDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
 		__thiz.callMethod<void>(
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean AnimatedVectorDrawable::isRunning()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRunning",
-			"()Z");
+			"()Z"
+		);
 	}
-	jint AnimatedVectorDrawable::getChangingConfigurations()
-	{
-		return __thiz.callMethod<jint>(
-			"getChangingConfigurations",
-			"()I");
-	}
-	jboolean AnimatedVectorDrawable::setVisible(jboolean arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setVisible",
-			"(ZZ)Z",
-			arg0,
-			arg1);
-	}
-	QAndroidJniObject AnimatedVectorDrawable::getColorFilter()
-	{
-		return __thiz.callObjectMethod(
-			"getColorFilter",
-			"()Landroid/graphics/ColorFilter;");
-	}
-	void AnimatedVectorDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
+	void AnimatedVectorDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
 	{
 		__thiz.callMethod<void>(
-			"setColorFilter",
-			"(Landroid/graphics/ColorFilter;)V",
-			arg0.__jniObject().object());
+			"setTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AnimatedVectorDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AnimatedVectorDrawable::setAlpha(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

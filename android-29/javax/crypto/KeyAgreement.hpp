@@ -41,11 +41,11 @@ namespace __jni_impl::javax::crypto
 		void init(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::SecureRandom arg2);
 		void init(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getProvider();
-		QAndroidJniObject generateSecret();
+		jbyteArray generateSecret();
 		QAndroidJniObject generateSecret(jstring arg0);
 		jint generateSecret(jbyteArray arg0, jint arg1);
 		QAndroidJniObject doPhase(__jni_impl::__JniBaseClass arg0, jboolean arg1);
-		QAndroidJniObject getAlgorithm();
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::javax::crypto
 
@@ -74,7 +74,8 @@ namespace __jni_impl::javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyAgreement;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyAgreement::getInstance(jstring arg0, jstring arg1)
 	{
@@ -83,7 +84,8 @@ namespace __jni_impl::javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/KeyAgreement;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyAgreement::getInstance(jstring arg0)
 	{
@@ -91,7 +93,8 @@ namespace __jni_impl::javax::crypto
 			"javax.crypto.KeyAgreement",
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/KeyAgreement;",
-			arg0);
+			arg0
+		);
 	}
 	void KeyAgreement::init(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1)
 	{
@@ -99,7 +102,8 @@ namespace __jni_impl::javax::crypto
 			"init",
 			"(Ljava/security/Key;Ljava/security/SecureRandom;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void KeyAgreement::init(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -107,7 +111,8 @@ namespace __jni_impl::javax::crypto
 			"init",
 			"(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void KeyAgreement::init(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::SecureRandom arg2)
 	{
@@ -116,33 +121,38 @@ namespace __jni_impl::javax::crypto
 			"(Ljava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void KeyAgreement::init(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"init",
 			"(Ljava/security/Key;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject KeyAgreement::getProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getProvider",
-			"()Ljava/security/Provider;");
+			"()Ljava/security/Provider;"
+		);
 	}
-	QAndroidJniObject KeyAgreement::generateSecret()
+	jbyteArray KeyAgreement::generateSecret()
 	{
 		return __thiz.callObjectMethod(
 			"generateSecret",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject KeyAgreement::generateSecret(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"generateSecret",
 			"(Ljava/lang/String;)Ljavax/crypto/SecretKey;",
-			arg0);
+			arg0
+		);
 	}
 	jint KeyAgreement::generateSecret(jbyteArray arg0, jint arg1)
 	{
@@ -150,7 +160,8 @@ namespace __jni_impl::javax::crypto
 			"generateSecret",
 			"([BI)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject KeyAgreement::doPhase(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
@@ -158,13 +169,15 @@ namespace __jni_impl::javax::crypto
 			"doPhase",
 			"(Ljava/security/Key;Z)Ljava/security/Key;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject KeyAgreement::getAlgorithm()
+	jstring KeyAgreement::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::crypto
 

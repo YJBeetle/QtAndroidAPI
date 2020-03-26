@@ -35,7 +35,7 @@ namespace __jni_impl::android::database::sqlite
 		void close();
 		jint getCount();
 		jint getColumnIndex(jstring arg0);
-		QAndroidJniObject getColumnNames();
+		jarray getColumnNames();
 		void deactivate();
 		jboolean requery();
 		jboolean onMove(jint arg0, jint arg1);
@@ -80,38 +80,44 @@ namespace __jni_impl::android::database::sqlite
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint SQLiteCursor::getCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint SQLiteCursor::getColumnIndex(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SQLiteCursor::getColumnNames()
+	jarray SQLiteCursor::getColumnNames()
 	{
 		return __thiz.callObjectMethod(
 			"getColumnNames",
-			"()[Ljava/lang/String;");
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	void SQLiteCursor::deactivate()
 	{
 		__thiz.callMethod<void>(
 			"deactivate",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean SQLiteCursor::requery()
 	{
 		return __thiz.callMethod<jboolean>(
 			"requery",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean SQLiteCursor::onMove(jint arg0, jint arg1)
 	{
@@ -119,34 +125,39 @@ namespace __jni_impl::android::database::sqlite
 			"onMove",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject SQLiteCursor::getDatabase()
 	{
 		return __thiz.callObjectMethod(
 			"getDatabase",
-			"()Landroid/database/sqlite/SQLiteDatabase;");
+			"()Landroid/database/sqlite/SQLiteDatabase;"
+		);
 	}
 	void SQLiteCursor::setWindow(__jni_impl::android::database::CursorWindow arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWindow",
 			"(Landroid/database/CursorWindow;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SQLiteCursor::setSelectionArguments(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSelectionArguments",
 			"([Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLiteCursor::setFillWindowForwardOnly(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFillWindowForwardOnly",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::database::sqlite
 

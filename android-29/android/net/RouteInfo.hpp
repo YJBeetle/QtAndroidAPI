@@ -31,16 +31,16 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jboolean matches(__jni_impl::java::net::InetAddress arg0);
 		QAndroidJniObject getDestination();
-		QAndroidJniObject getGateway();
-		jboolean isDefaultRoute();
-		jboolean hasGateway();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getInterface();
+		jstring getInterface();
+		jboolean isDefaultRoute();
+		jboolean hasGateway();
+		QAndroidJniObject getGateway();
 	};
 } // namespace __jni_impl::android::net
 
@@ -56,7 +56,8 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.RouteInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -73,56 +74,44 @@ namespace __jni_impl::android::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject RouteInfo::toString()
+	jstring RouteInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint RouteInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean RouteInfo::matches(__jni_impl::java::net::InetAddress arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"matches",
 			"(Ljava/net/InetAddress;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RouteInfo::getDestination()
 	{
 		return __thiz.callObjectMethod(
 			"getDestination",
-			"()Landroid/net/IpPrefix;");
-	}
-	QAndroidJniObject RouteInfo::getGateway()
-	{
-		return __thiz.callObjectMethod(
-			"getGateway",
-			"()Ljava/net/InetAddress;");
-	}
-	jboolean RouteInfo::isDefaultRoute()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDefaultRoute",
-			"()Z");
-	}
-	jboolean RouteInfo::hasGateway()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasGateway",
-			"()Z");
+			"()Landroid/net/IpPrefix;"
+		);
 	}
 	jint RouteInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void RouteInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -130,13 +119,36 @@ namespace __jni_impl::android::net
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject RouteInfo::getInterface()
+	jstring RouteInfo::getInterface()
 	{
 		return __thiz.callObjectMethod(
 			"getInterface",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean RouteInfo::isDefaultRoute()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDefaultRoute",
+			"()Z"
+		);
+	}
+	jboolean RouteInfo::hasGateway()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasGateway",
+			"()Z"
+		);
+	}
+	QAndroidJniObject RouteInfo::getGateway()
+	{
+		return __thiz.callObjectMethod(
+			"getGateway",
+			"()Ljava/net/InetAddress;"
+		);
 	}
 } // namespace __jni_impl::android::net
 

@@ -32,7 +32,7 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void clear();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -49,52 +49,62 @@ namespace __jni_impl::android::content
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.SyncStats",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jlong SyncStats::numAuthExceptions()
 	{
 		return __thiz.getField<jlong>(
-			"numAuthExceptions");
+			"numAuthExceptions"
+		);
 	}
 	jlong SyncStats::numConflictDetectedExceptions()
 	{
 		return __thiz.getField<jlong>(
-			"numConflictDetectedExceptions");
+			"numConflictDetectedExceptions"
+		);
 	}
 	jlong SyncStats::numDeletes()
 	{
 		return __thiz.getField<jlong>(
-			"numDeletes");
+			"numDeletes"
+		);
 	}
 	jlong SyncStats::numEntries()
 	{
 		return __thiz.getField<jlong>(
-			"numEntries");
+			"numEntries"
+		);
 	}
 	jlong SyncStats::numInserts()
 	{
 		return __thiz.getField<jlong>(
-			"numInserts");
+			"numInserts"
+		);
 	}
 	jlong SyncStats::numIoExceptions()
 	{
 		return __thiz.getField<jlong>(
-			"numIoExceptions");
+			"numIoExceptions"
+		);
 	}
 	jlong SyncStats::numParseExceptions()
 	{
 		return __thiz.getField<jlong>(
-			"numParseExceptions");
+			"numParseExceptions"
+		);
 	}
 	jlong SyncStats::numSkippedEntries()
 	{
 		return __thiz.getField<jlong>(
-			"numSkippedEntries");
+			"numSkippedEntries"
+		);
 	}
 	jlong SyncStats::numUpdates()
 	{
 		return __thiz.getField<jlong>(
-			"numUpdates");
+			"numUpdates"
+		);
 	}
 	
 	// Constructors
@@ -113,23 +123,26 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	QAndroidJniObject SyncStats::toString()
+	jstring SyncStats::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SyncStats::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
+			"()V"
+		);
 	}
 	jint SyncStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SyncStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -137,7 +150,8 @@ namespace __jni_impl::android::content
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content
 

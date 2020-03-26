@@ -36,7 +36,7 @@ namespace __jni_impl::java::nio::file
 		QAndroidJniObject getFileStores();
 		QAndroidJniObject getPathMatcher(jstring arg0);
 		QAndroidJniObject getUserPrincipalLookupService();
-		QAndroidJniObject getSeparator();
+		jstring getSeparator();
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -60,19 +60,22 @@ namespace __jni_impl::java::nio::file
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOpen",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject FileSystem::provider()
 	{
 		return __thiz.callObjectMethod(
 			"provider",
-			"()Ljava/nio/file/spi/FileSystemProvider;");
+			"()Ljava/nio/file/spi/FileSystemProvider;"
+		);
 	}
 	void FileSystem::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject FileSystem::getPath(jstring arg0, jarray arg1)
 	{
@@ -80,56 +83,65 @@ namespace __jni_impl::java::nio::file
 			"getPath",
 			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean FileSystem::isReadOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReadOnly",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject FileSystem::supportedFileAttributeViews()
 	{
 		return __thiz.callObjectMethod(
 			"supportedFileAttributeViews",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject FileSystem::newWatchService()
 	{
 		return __thiz.callObjectMethod(
 			"newWatchService",
-			"()Ljava/nio/file/WatchService;");
+			"()Ljava/nio/file/WatchService;"
+		);
 	}
 	QAndroidJniObject FileSystem::getRootDirectories()
 	{
 		return __thiz.callObjectMethod(
 			"getRootDirectories",
-			"()Ljava/lang/Iterable;");
+			"()Ljava/lang/Iterable;"
+		);
 	}
 	QAndroidJniObject FileSystem::getFileStores()
 	{
 		return __thiz.callObjectMethod(
 			"getFileStores",
-			"()Ljava/lang/Iterable;");
+			"()Ljava/lang/Iterable;"
+		);
 	}
 	QAndroidJniObject FileSystem::getPathMatcher(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPathMatcher",
 			"(Ljava/lang/String;)Ljava/nio/file/PathMatcher;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject FileSystem::getUserPrincipalLookupService()
 	{
 		return __thiz.callObjectMethod(
 			"getUserPrincipalLookupService",
-			"()Ljava/nio/file/attribute/UserPrincipalLookupService;");
+			"()Ljava/nio/file/attribute/UserPrincipalLookupService;"
+		);
 	}
-	QAndroidJniObject FileSystem::getSeparator()
+	jstring FileSystem::getSeparator()
 	{
 		return __thiz.callObjectMethod(
 			"getSeparator",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::file
 

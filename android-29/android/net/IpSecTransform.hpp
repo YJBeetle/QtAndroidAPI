@@ -17,7 +17,7 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void close();
 	};
 } // namespace __jni_impl::android::net
@@ -36,17 +36,19 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject IpSecTransform::toString()
+	jstring IpSecTransform::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void IpSecTransform::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::net
 

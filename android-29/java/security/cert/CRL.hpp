@@ -21,8 +21,8 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getType();
+		jstring toString();
+		jstring getType();
 		jboolean isRevoked(__jni_impl::java::security::cert::Certificate arg0);
 	};
 } // namespace __jni_impl::java::security::cert
@@ -42,24 +42,27 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject CRL::toString()
+	jstring CRL::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CRL::getType()
+	jstring CRL::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean CRL::isRevoked(__jni_impl::java::security::cert::Certificate arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRevoked",
 			"(Ljava/security/cert/Certificate;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

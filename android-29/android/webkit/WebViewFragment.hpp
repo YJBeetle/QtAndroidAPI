@@ -6,6 +6,10 @@
 #include "../../__JniBaseClass.hpp"
 #include "../app/Fragment.hpp"
 
+namespace __jni_impl::android::webkit
+{
+	class WebView;
+}
 namespace __jni_impl::android::view
 {
 	class View;
@@ -22,10 +26,6 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::webkit
-{
-	class WebView;
-}
 
 namespace __jni_impl::android::webkit
 {
@@ -38,20 +38,20 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject getWebView();
+		void onDestroyView();
 		void onResume();
 		void onPause();
 		void onDestroy();
 		QAndroidJniObject onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2);
-		QAndroidJniObject getWebView();
-		void onDestroyView();
 	};
 } // namespace __jni_impl::android::webkit
 
+#include "WebView.hpp"
 #include "../view/View.hpp"
 #include "../view/LayoutInflater.hpp"
 #include "../view/ViewGroup.hpp"
 #include "../os/Bundle.hpp"
-#include "WebView.hpp"
 
 namespace __jni_impl::android::webkit
 {
@@ -66,23 +66,40 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
+	QAndroidJniObject WebViewFragment::getWebView()
+	{
+		return __thiz.callObjectMethod(
+			"getWebView",
+			"()Landroid/webkit/WebView;"
+		);
+	}
+	void WebViewFragment::onDestroyView()
+	{
+		__thiz.callMethod<void>(
+			"onDestroyView",
+			"()V"
+		);
+	}
 	void WebViewFragment::onResume()
 	{
 		__thiz.callMethod<void>(
 			"onResume",
-			"()V");
+			"()V"
+		);
 	}
 	void WebViewFragment::onPause()
 	{
 		__thiz.callMethod<void>(
 			"onPause",
-			"()V");
+			"()V"
+		);
 	}
 	void WebViewFragment::onDestroy()
 	{
 		__thiz.callMethod<void>(
 			"onDestroy",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject WebViewFragment::onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -91,19 +108,8 @@ namespace __jni_impl::android::webkit
 			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject WebViewFragment::getWebView()
-	{
-		return __thiz.callObjectMethod(
-			"getWebView",
-			"()Landroid/webkit/WebView;");
-	}
-	void WebViewFragment::onDestroyView()
-	{
-		__thiz.callMethod<void>(
-			"onDestroyView",
-			"()V");
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

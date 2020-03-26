@@ -40,7 +40,7 @@ namespace __jni_impl::java::nio
 		QAndroidJniObject put(jint arg0, jdoubleArray arg1);
 		QAndroidJniObject put(jint arg0, jdoubleArray arg1, jint arg2, jint arg3);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::java::nio::DoubleBuffer arg0);
@@ -48,7 +48,7 @@ namespace __jni_impl::java::nio
 		QAndroidJniObject limit(jint arg0);
 		jboolean isDirect();
 		jboolean hasArray();
-		QAndroidJniObject array();
+		jdoubleArray array();
 		QAndroidJniObject position(jint arg0);
 		jint arrayOffset();
 		static QAndroidJniObject wrap(jdoubleArray arg0);
@@ -91,27 +91,31 @@ namespace __jni_impl::java::nio
 			"([DII)Ljava/nio/DoubleBuffer;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jdouble DoubleBuffer::get(jint arg0)
 	{
 		return __thiz.callMethod<jdouble>(
 			"get",
 			"(I)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble DoubleBuffer::get()
 	{
 		return __thiz.callMethod<jdouble>(
 			"get",
-			"()D");
+			"()D"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::get(jdoubleArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"([D)Ljava/nio/DoubleBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DoubleBuffer::get(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
 	{
@@ -121,7 +125,8 @@ namespace __jni_impl::java::nio
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject DoubleBuffer::get(jint arg0, jdoubleArray arg1)
 	{
@@ -129,7 +134,8 @@ namespace __jni_impl::java::nio
 			"get",
 			"(I[D)Ljava/nio/DoubleBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DoubleBuffer::put(jint arg0, jdouble arg1)
 	{
@@ -137,21 +143,24 @@ namespace __jni_impl::java::nio
 			"put",
 			"(ID)Ljava/nio/DoubleBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DoubleBuffer::put(jdoubleArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"([D)Ljava/nio/DoubleBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DoubleBuffer::put(__jni_impl::java::nio::DoubleBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DoubleBuffer::put(jdoubleArray arg0, jint arg1, jint arg2)
 	{
@@ -160,14 +169,16 @@ namespace __jni_impl::java::nio
 			"([DII)Ljava/nio/DoubleBuffer;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject DoubleBuffer::put(jdouble arg0)
 	{
 		return __thiz.callObjectMethod(
 			"put",
 			"(D)Ljava/nio/DoubleBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DoubleBuffer::put(jint arg0, jdoubleArray arg1)
 	{
@@ -175,7 +186,8 @@ namespace __jni_impl::java::nio
 			"put",
 			"(I[D)Ljava/nio/DoubleBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DoubleBuffer::put(jint arg0, jdoubleArray arg1, jint arg2, jint arg3)
 	{
@@ -185,84 +197,97 @@ namespace __jni_impl::java::nio
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jboolean DoubleBuffer::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DoubleBuffer::toString()
+	jstring DoubleBuffer::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DoubleBuffer::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint DoubleBuffer::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint DoubleBuffer::compareTo(__jni_impl::java::nio::DoubleBuffer arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/nio/DoubleBuffer;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DoubleBuffer::clear()
 	{
 		return __thiz.callObjectMethod(
 			"clear",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::limit(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"limit",
 			"(I)Ljava/nio/DoubleBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DoubleBuffer::isDirect()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDirect",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean DoubleBuffer::hasArray()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasArray",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject DoubleBuffer::array()
+	jdoubleArray DoubleBuffer::array()
 	{
 		return __thiz.callObjectMethod(
 			"array",
-			"()[D");
+			"()[D"
+		).object<jdoubleArray>();
 	}
 	QAndroidJniObject DoubleBuffer::position(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"position",
 			"(I)Ljava/nio/DoubleBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jint DoubleBuffer::arrayOffset()
 	{
 		return __thiz.callMethod<jint>(
 			"arrayOffset",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::wrap(jdoubleArray arg0)
 	{
@@ -270,7 +295,8 @@ namespace __jni_impl::java::nio
 			"java.nio.DoubleBuffer",
 			"wrap",
 			"([D)Ljava/nio/DoubleBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DoubleBuffer::wrap(jdoubleArray arg0, jint arg1, jint arg2)
 	{
@@ -280,31 +306,36 @@ namespace __jni_impl::java::nio
 			"([DII)Ljava/nio/DoubleBuffer;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject DoubleBuffer::mark()
 	{
 		return __thiz.callObjectMethod(
 			"mark",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::reset()
 	{
 		return __thiz.callObjectMethod(
 			"reset",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::flip()
 	{
 		return __thiz.callObjectMethod(
 			"flip",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::rewind()
 	{
 		return __thiz.callObjectMethod(
 			"rewind",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::slice(jint arg0, jint arg1)
 	{
@@ -312,19 +343,22 @@ namespace __jni_impl::java::nio
 			"slice",
 			"(II)Ljava/nio/DoubleBuffer;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DoubleBuffer::slice()
 	{
 		return __thiz.callObjectMethod(
 			"slice",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::duplicate()
 	{
 		return __thiz.callObjectMethod(
 			"duplicate",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::allocate(jint arg0)
 	{
@@ -332,32 +366,37 @@ namespace __jni_impl::java::nio
 			"java.nio.DoubleBuffer",
 			"allocate",
 			"(I)Ljava/nio/DoubleBuffer;",
-			arg0);
+			arg0
+		);
 	}
 	jint DoubleBuffer::mismatch(__jni_impl::java::nio::DoubleBuffer arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"mismatch",
 			"(Ljava/nio/DoubleBuffer;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DoubleBuffer::asReadOnlyBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"asReadOnlyBuffer",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::compact()
 	{
 		return __thiz.callObjectMethod(
 			"compact",
-			"()Ljava/nio/DoubleBuffer;");
+			"()Ljava/nio/DoubleBuffer;"
+		);
 	}
 	QAndroidJniObject DoubleBuffer::order()
 	{
 		return __thiz.callObjectMethod(
 			"order",
-			"()Ljava/nio/ByteOrder;");
+			"()Ljava/nio/ByteOrder;"
+		);
 	}
 } // namespace __jni_impl::java::nio
 

@@ -46,35 +46,40 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"setCurrency",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_MoneyBuilder::setIntegerPart(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIntegerPart",
 			"(J)Landroid/text/style/TtsSpan$MoneyBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_MoneyBuilder::setIntegerPart(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIntegerPart",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_MoneyBuilder::setFractionalPart(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setFractionalPart",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject TtsSpan_MoneyBuilder::setQuantity(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setQuantity",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MoneyBuilder;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::style
 

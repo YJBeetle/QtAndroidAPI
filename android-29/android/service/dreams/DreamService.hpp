@@ -8,10 +8,6 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::java::io
 {
 	class FileDescriptor;
@@ -56,6 +52,10 @@ namespace __jni_impl::android::view
 {
 	class ActionMode;
 }
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
 
 namespace __jni_impl::android::service::dreams
 {
@@ -63,16 +63,14 @@ namespace __jni_impl::android::service::dreams
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DREAM_META_DATA();
-		static QAndroidJniObject SERVICE_INTERFACE();
+		static jstring DREAM_META_DATA();
+		static jstring SERVICE_INTERFACE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
 		void finish();
-		void wakeUp();
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject getWindowManager();
 		QAndroidJniObject getWindow();
 		void onCreate();
@@ -80,8 +78,8 @@ namespace __jni_impl::android::service::dreams
 		QAndroidJniObject findViewById(jint arg0);
 		QAndroidJniObject requireViewById(jint arg0);
 		void setContentView(jint arg0);
-		void setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		void setContentView(__jni_impl::android::view::View arg0);
+		void setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		void addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		void onWindowAttributesChanged(__jni_impl::android::view::WindowManager_LayoutParams arg0);
 		void onContentChanged();
@@ -106,6 +104,7 @@ namespace __jni_impl::android::service::dreams
 		QAndroidJniObject onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0);
 		void onActionModeStarted(__jni_impl::android::view::ActionMode arg0);
 		void onActionModeFinished(__jni_impl::android::view::ActionMode arg0);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void setInteractive(jboolean arg0);
 		jboolean isInteractive();
 		void setFullscreen(jboolean arg0);
@@ -115,10 +114,10 @@ namespace __jni_impl::android::service::dreams
 		void onDreamingStarted();
 		void onDreamingStopped();
 		void onWakeUp();
+		void wakeUp();
 	};
 } // namespace __jni_impl::android::service::dreams
 
-#include "../../content/Intent.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
 #include "../../view/Window.hpp"
@@ -130,23 +129,26 @@ namespace __jni_impl::android::service::dreams
 #include "../../view/accessibility/AccessibilityEvent.hpp"
 #include "../../view/SearchEvent.hpp"
 #include "../../view/ActionMode.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::dreams
 {
 	// Fields
-	QAndroidJniObject DreamService::DREAM_META_DATA()
+	jstring DreamService::DREAM_META_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.dreams.DreamService",
 			"DREAM_META_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DreamService::SERVICE_INTERFACE()
+	jstring DreamService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.dreams.DreamService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -162,65 +164,68 @@ namespace __jni_impl::android::service::dreams
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
-	}
-	void DreamService::wakeUp()
-	{
-		__thiz.callMethod<void>(
-			"wakeUp",
-			"()V");
-	}
-	QAndroidJniObject DreamService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			"()V"
+		);
 	}
 	QAndroidJniObject DreamService::getWindowManager()
 	{
 		return __thiz.callObjectMethod(
 			"getWindowManager",
-			"()Landroid/view/WindowManager;");
+			"()Landroid/view/WindowManager;"
+		);
 	}
 	QAndroidJniObject DreamService::getWindow()
 	{
 		return __thiz.callObjectMethod(
 			"getWindow",
-			"()Landroid/view/Window;");
+			"()Landroid/view/Window;"
+		);
 	}
 	void DreamService::onCreate()
 	{
 		__thiz.callMethod<void>(
 			"onCreate",
-			"()V");
+			"()V"
+		);
 	}
 	void DreamService::onDestroy()
 	{
 		__thiz.callMethod<void>(
 			"onDestroy",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject DreamService::findViewById(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findViewById",
 			"(I)Landroid/view/View;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DreamService::requireViewById(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"requireViewById",
 			"(I)Landroid/view/View;",
-			arg0);
+			arg0
+		);
 	}
 	void DreamService::setContentView(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentView",
 			"(I)V",
-			arg0);
+			arg0
+		);
+	}
+	void DreamService::setContentView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void DreamService::setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
 	{
@@ -228,14 +233,8 @@ namespace __jni_impl::android::service::dreams
 			"setContentView",
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void DreamService::setContentView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DreamService::addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
 	{
@@ -243,88 +242,101 @@ namespace __jni_impl::android::service::dreams
 			"addContentView",
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DreamService::onWindowAttributesChanged(__jni_impl::android::view::WindowManager_LayoutParams arg0)
 	{
 		__thiz.callMethod<void>(
 			"onWindowAttributesChanged",
 			"(Landroid/view/WindowManager$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DreamService::onContentChanged()
 	{
 		__thiz.callMethod<void>(
 			"onContentChanged",
-			"()V");
+			"()V"
+		);
 	}
 	void DreamService::onWindowFocusChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onWindowFocusChanged",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void DreamService::onAttachedToWindow()
 	{
 		__thiz.callMethod<void>(
 			"onAttachedToWindow",
-			"()V");
+			"()V"
+		);
 	}
 	void DreamService::onDetachedFromWindow()
 	{
 		__thiz.callMethod<void>(
 			"onDetachedFromWindow",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean DreamService::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DreamService::dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchKeyShortcutEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DreamService::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DreamService::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchTrackballEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DreamService::dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean DreamService::dispatchPopulateAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchPopulateAccessibilityEvent",
 			"(Landroid/view/accessibility/AccessibilityEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DreamService::onCreatePanelView(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onCreatePanelView",
 			"(I)Landroid/view/View;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DreamService::onCreatePanelMenu(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -332,7 +344,8 @@ namespace __jni_impl::android::service::dreams
 			"onCreatePanelMenu",
 			"(ILandroid/view/Menu;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean DreamService::onPreparePanel(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -341,7 +354,8 @@ namespace __jni_impl::android::service::dreams
 			"(ILandroid/view/View;Landroid/view/Menu;)Z",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean DreamService::onMenuOpened(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -349,7 +363,8 @@ namespace __jni_impl::android::service::dreams
 			"onMenuOpened",
 			"(ILandroid/view/Menu;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean DreamService::onMenuItemSelected(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -357,7 +372,8 @@ namespace __jni_impl::android::service::dreams
 			"onMenuItemSelected",
 			"(ILandroid/view/MenuItem;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DreamService::onPanelClosed(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -365,20 +381,23 @@ namespace __jni_impl::android::service::dreams
 			"onPanelClosed",
 			"(ILandroid/view/Menu;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean DreamService::onSearchRequested()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onSearchRequested",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean DreamService::onSearchRequested(__jni_impl::android::view::SearchEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onSearchRequested",
 			"(Landroid/view/SearchEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DreamService::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -386,85 +405,113 @@ namespace __jni_impl::android::service::dreams
 			"onWindowStartingActionMode",
 			"(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DreamService::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onWindowStartingActionMode",
 			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DreamService::onActionModeStarted(__jni_impl::android::view::ActionMode arg0)
 	{
 		__thiz.callMethod<void>(
 			"onActionModeStarted",
 			"(Landroid/view/ActionMode;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DreamService::onActionModeFinished(__jni_impl::android::view::ActionMode arg0)
 	{
 		__thiz.callMethod<void>(
 			"onActionModeFinished",
 			"(Landroid/view/ActionMode;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject DreamService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
 	}
 	void DreamService::setInteractive(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInteractive",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DreamService::isInteractive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInteractive",
-			"()Z");
+			"()Z"
+		);
 	}
 	void DreamService::setFullscreen(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFullscreen",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DreamService::isFullscreen()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFullscreen",
-			"()Z");
+			"()Z"
+		);
 	}
 	void DreamService::setScreenBright(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setScreenBright",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean DreamService::isScreenBright()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isScreenBright",
-			"()Z");
+			"()Z"
+		);
 	}
 	void DreamService::onDreamingStarted()
 	{
 		__thiz.callMethod<void>(
 			"onDreamingStarted",
-			"()V");
+			"()V"
+		);
 	}
 	void DreamService::onDreamingStopped()
 	{
 		__thiz.callMethod<void>(
 			"onDreamingStopped",
-			"()V");
+			"()V"
+		);
 	}
 	void DreamService::onWakeUp()
 	{
 		__thiz.callMethod<void>(
 			"onWakeUp",
-			"()V");
+			"()V"
+		);
+	}
+	void DreamService::wakeUp()
+	{
+		__thiz.callMethod<void>(
+			"wakeUp",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::service::dreams
 

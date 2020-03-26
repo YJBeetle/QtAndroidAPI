@@ -42,7 +42,8 @@ namespace __jni_impl::android::media::tv
 			"onTimeShiftStartPositionChanged",
 			"(Ljava/lang/String;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void TvView_TimeShiftPositionCallback::onTimeShiftCurrentPositionChanged(jstring arg0, jlong arg1)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::android::media::tv
 			"onTimeShiftCurrentPositionChanged",
 			"(Ljava/lang/String;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

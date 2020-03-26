@@ -58,12 +58,14 @@ namespace __jni_impl::android::widget
 	jint TableRow_LayoutParams::column()
 	{
 		return __thiz.getField<jint>(
-			"column");
+			"column"
+		);
 	}
 	jint TableRow_LayoutParams::span()
 	{
 		return __thiz.getField<jint>(
-			"span");
+			"span"
+		);
 	}
 	
 	// Constructors

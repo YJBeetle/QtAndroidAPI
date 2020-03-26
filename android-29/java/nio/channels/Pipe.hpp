@@ -51,20 +51,23 @@ namespace __jni_impl::java::nio::channels
 	{
 		return __thiz.callObjectMethod(
 			"source",
-			"()Ljava/nio/channels/Pipe$SourceChannel;");
+			"()Ljava/nio/channels/Pipe$SourceChannel;"
+		);
 	}
 	QAndroidJniObject Pipe::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.Pipe",
 			"open",
-			"()Ljava/nio/channels/Pipe;");
+			"()Ljava/nio/channels/Pipe;"
+		);
 	}
 	QAndroidJniObject Pipe::sink()
 	{
 		return __thiz.callObjectMethod(
 			"sink",
-			"()Ljava/nio/channels/Pipe$SinkChannel;");
+			"()Ljava/nio/channels/Pipe$SinkChannel;"
+		);
 	}
 } // namespace __jni_impl::java::nio::channels
 

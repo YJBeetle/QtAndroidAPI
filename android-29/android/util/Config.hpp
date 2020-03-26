@@ -33,31 +33,36 @@ namespace __jni_impl::android::util
 	{
 		return QAndroidJniObject::getStaticField<jboolean>(
 			"android.util.Config",
-			"DEBUG");
+			"DEBUG"
+		);
 	}
 	jboolean Config::LOGD()
 	{
 		return QAndroidJniObject::getStaticField<jboolean>(
 			"android.util.Config",
-			"LOGD");
+			"LOGD"
+		);
 	}
 	jboolean Config::LOGV()
 	{
 		return QAndroidJniObject::getStaticField<jboolean>(
 			"android.util.Config",
-			"LOGV");
+			"LOGV"
+		);
 	}
 	jboolean Config::PROFILE()
 	{
 		return QAndroidJniObject::getStaticField<jboolean>(
 			"android.util.Config",
-			"PROFILE");
+			"PROFILE"
+		);
 	}
 	jboolean Config::RELEASE()
 	{
 		return QAndroidJniObject::getStaticField<jboolean>(
 			"android.util.Config",
-			"RELEASE");
+			"RELEASE"
+		);
 	}
 	
 	// Constructors

@@ -16,34 +16,34 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject APN();
-		static QAndroidJniObject AUTH_TYPE();
-		static QAndroidJniObject BEARER();
-		static QAndroidJniObject CARRIER_ENABLED();
-		static QAndroidJniObject CARRIER_ID();
+		static jstring APN();
+		static jstring AUTH_TYPE();
+		static jstring BEARER();
+		static jstring CARRIER_ENABLED();
+		static jstring CARRIER_ID();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject CURRENT();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
-		static QAndroidJniObject MCC();
-		static QAndroidJniObject MMSC();
-		static QAndroidJniObject MMSPORT();
-		static QAndroidJniObject MMSPROXY();
-		static QAndroidJniObject MNC();
-		static QAndroidJniObject MVNO_MATCH_DATA();
-		static QAndroidJniObject MVNO_TYPE();
-		static QAndroidJniObject NAME();
-		static QAndroidJniObject NETWORK_TYPE_BITMASK();
-		static QAndroidJniObject NUMERIC();
-		static QAndroidJniObject PASSWORD();
-		static QAndroidJniObject PORT();
-		static QAndroidJniObject PROTOCOL();
-		static QAndroidJniObject PROXY();
-		static QAndroidJniObject ROAMING_PROTOCOL();
-		static QAndroidJniObject SERVER();
+		static jstring CURRENT();
+		static jstring DEFAULT_SORT_ORDER();
+		static jstring MCC();
+		static jstring MMSC();
+		static jstring MMSPORT();
+		static jstring MMSPROXY();
+		static jstring MNC();
+		static jstring MVNO_MATCH_DATA();
+		static jstring MVNO_TYPE();
+		static jstring NAME();
+		static jstring NETWORK_TYPE_BITMASK();
+		static jstring NUMERIC();
+		static jstring PASSWORD();
+		static jstring PORT();
+		static jstring PROTOCOL();
+		static jstring PROXY();
+		static jstring ROAMING_PROTOCOL();
+		static jstring SERVER();
 		static QAndroidJniObject SIM_APN_URI();
-		static QAndroidJniObject SUBSCRIPTION_ID();
-		static QAndroidJniObject TYPE();
-		static QAndroidJniObject USER();
+		static jstring SUBSCRIPTION_ID();
+		static jstring TYPE();
+		static jstring USER();
 		
 		// Constructors
 		void __constructor();
@@ -57,201 +57,229 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Telephony_Carriers::APN()
+	jstring Telephony_Carriers::APN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"APN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::AUTH_TYPE()
+	jstring Telephony_Carriers::AUTH_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"AUTH_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::BEARER()
+	jstring Telephony_Carriers::BEARER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"BEARER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::CARRIER_ENABLED()
+	jstring Telephony_Carriers::CARRIER_ENABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"CARRIER_ENABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::CARRIER_ID()
+	jstring Telephony_Carriers::CARRIER_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"CARRIER_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Telephony_Carriers::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Telephony_Carriers::CURRENT()
+	jstring Telephony_Carriers::CURRENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"CURRENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::DEFAULT_SORT_ORDER()
+	jstring Telephony_Carriers::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::MCC()
+	jstring Telephony_Carriers::MCC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MCC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::MMSC()
+	jstring Telephony_Carriers::MMSC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MMSC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::MMSPORT()
+	jstring Telephony_Carriers::MMSPORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MMSPORT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::MMSPROXY()
+	jstring Telephony_Carriers::MMSPROXY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MMSPROXY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::MNC()
+	jstring Telephony_Carriers::MNC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MNC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::MVNO_MATCH_DATA()
+	jstring Telephony_Carriers::MVNO_MATCH_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MVNO_MATCH_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::MVNO_TYPE()
+	jstring Telephony_Carriers::MVNO_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"MVNO_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::NAME()
+	jstring Telephony_Carriers::NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::NETWORK_TYPE_BITMASK()
+	jstring Telephony_Carriers::NETWORK_TYPE_BITMASK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"NETWORK_TYPE_BITMASK",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::NUMERIC()
+	jstring Telephony_Carriers::NUMERIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"NUMERIC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::PASSWORD()
+	jstring Telephony_Carriers::PASSWORD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"PASSWORD",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::PORT()
+	jstring Telephony_Carriers::PORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"PORT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::PROTOCOL()
+	jstring Telephony_Carriers::PROTOCOL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"PROTOCOL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::PROXY()
+	jstring Telephony_Carriers::PROXY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"PROXY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::ROAMING_PROTOCOL()
+	jstring Telephony_Carriers::ROAMING_PROTOCOL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"ROAMING_PROTOCOL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::SERVER()
+	jstring Telephony_Carriers::SERVER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"SERVER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Telephony_Carriers::SIM_APN_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"SIM_APN_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Telephony_Carriers::SUBSCRIPTION_ID()
+	jstring Telephony_Carriers::SUBSCRIPTION_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"SUBSCRIPTION_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::TYPE()
+	jstring Telephony_Carriers::TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Telephony_Carriers::USER()
+	jstring Telephony_Carriers::USER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Telephony$Carriers",
 			"USER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

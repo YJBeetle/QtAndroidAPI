@@ -50,7 +50,8 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint GLES10Ext::glQueryMatrixxOES(__jni_impl::java::nio::IntBuffer arg0, __jni_impl::java::nio::IntBuffer arg1)
 	{
@@ -59,7 +60,8 @@ namespace __jni_impl::android::opengl
 			"glQueryMatrixxOES",
 			"(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)I",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

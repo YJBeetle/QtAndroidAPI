@@ -22,8 +22,8 @@ namespace __jni_impl::android::telecom
 		
 		// Methods
 		void write(jstring arg0);
-		QAndroidJniObject read();
-		QAndroidJniObject readImmediately();
+		jstring read();
+		jstring readImmediately();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -47,19 +47,22 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"write",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Connection_RttTextStream::read()
+	jstring Connection_RttTextStream::read()
 	{
 		return __thiz.callObjectMethod(
 			"read",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Connection_RttTextStream::readImmediately()
+	jstring Connection_RttTextStream::readImmediately()
 	{
 		return __thiz.callObjectMethod(
 			"readImmediately",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telecom
 

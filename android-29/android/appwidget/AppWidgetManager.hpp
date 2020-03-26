@@ -40,33 +40,33 @@ namespace __jni_impl::android::appwidget
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_APPWIDGET_BIND();
-		static QAndroidJniObject ACTION_APPWIDGET_CONFIGURE();
-		static QAndroidJniObject ACTION_APPWIDGET_DELETED();
-		static QAndroidJniObject ACTION_APPWIDGET_DISABLED();
-		static QAndroidJniObject ACTION_APPWIDGET_ENABLED();
-		static QAndroidJniObject ACTION_APPWIDGET_HOST_RESTORED();
-		static QAndroidJniObject ACTION_APPWIDGET_OPTIONS_CHANGED();
-		static QAndroidJniObject ACTION_APPWIDGET_PICK();
-		static QAndroidJniObject ACTION_APPWIDGET_RESTORED();
-		static QAndroidJniObject ACTION_APPWIDGET_UPDATE();
-		static QAndroidJniObject EXTRA_APPWIDGET_ID();
-		static QAndroidJniObject EXTRA_APPWIDGET_IDS();
-		static QAndroidJniObject EXTRA_APPWIDGET_OLD_IDS();
-		static QAndroidJniObject EXTRA_APPWIDGET_OPTIONS();
-		static QAndroidJniObject EXTRA_APPWIDGET_PREVIEW();
-		static QAndroidJniObject EXTRA_APPWIDGET_PROVIDER();
-		static QAndroidJniObject EXTRA_APPWIDGET_PROVIDER_PROFILE();
-		static QAndroidJniObject EXTRA_CUSTOM_EXTRAS();
-		static QAndroidJniObject EXTRA_CUSTOM_INFO();
-		static QAndroidJniObject EXTRA_HOST_ID();
+		static jstring ACTION_APPWIDGET_BIND();
+		static jstring ACTION_APPWIDGET_CONFIGURE();
+		static jstring ACTION_APPWIDGET_DELETED();
+		static jstring ACTION_APPWIDGET_DISABLED();
+		static jstring ACTION_APPWIDGET_ENABLED();
+		static jstring ACTION_APPWIDGET_HOST_RESTORED();
+		static jstring ACTION_APPWIDGET_OPTIONS_CHANGED();
+		static jstring ACTION_APPWIDGET_PICK();
+		static jstring ACTION_APPWIDGET_RESTORED();
+		static jstring ACTION_APPWIDGET_UPDATE();
+		static jstring EXTRA_APPWIDGET_ID();
+		static jstring EXTRA_APPWIDGET_IDS();
+		static jstring EXTRA_APPWIDGET_OLD_IDS();
+		static jstring EXTRA_APPWIDGET_OPTIONS();
+		static jstring EXTRA_APPWIDGET_PREVIEW();
+		static jstring EXTRA_APPWIDGET_PROVIDER();
+		static jstring EXTRA_APPWIDGET_PROVIDER_PROFILE();
+		static jstring EXTRA_CUSTOM_EXTRAS();
+		static jstring EXTRA_CUSTOM_INFO();
+		static jstring EXTRA_HOST_ID();
 		static jint INVALID_APPWIDGET_ID();
-		static QAndroidJniObject META_DATA_APPWIDGET_PROVIDER();
-		static QAndroidJniObject OPTION_APPWIDGET_HOST_CATEGORY();
-		static QAndroidJniObject OPTION_APPWIDGET_MAX_HEIGHT();
-		static QAndroidJniObject OPTION_APPWIDGET_MAX_WIDTH();
-		static QAndroidJniObject OPTION_APPWIDGET_MIN_HEIGHT();
-		static QAndroidJniObject OPTION_APPWIDGET_MIN_WIDTH();
+		static jstring META_DATA_APPWIDGET_PROVIDER();
+		static jstring OPTION_APPWIDGET_HOST_CATEGORY();
+		static jstring OPTION_APPWIDGET_MAX_HEIGHT();
+		static jstring OPTION_APPWIDGET_MAX_WIDTH();
+		static jstring OPTION_APPWIDGET_MIN_HEIGHT();
+		static jstring OPTION_APPWIDGET_MIN_WIDTH();
 		
 		// Constructors
 		void __constructor();
@@ -90,7 +90,7 @@ namespace __jni_impl::android::appwidget
 		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::os::Bundle arg3);
 		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::os::Bundle arg2);
 		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1);
-		QAndroidJniObject getAppWidgetIds(__jni_impl::android::content::ComponentName arg0);
+		jintArray getAppWidgetIds(__jni_impl::android::content::ComponentName arg0);
 		jboolean isRequestPinAppWidgetSupported();
 		jboolean requestPinAppWidget(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::app::PendingIntent arg2);
 	};
@@ -107,193 +107,220 @@ namespace __jni_impl::android::appwidget
 namespace __jni_impl::android::appwidget
 {
 	// Fields
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_BIND()
+	jstring AppWidgetManager::ACTION_APPWIDGET_BIND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_BIND",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_CONFIGURE()
+	jstring AppWidgetManager::ACTION_APPWIDGET_CONFIGURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_CONFIGURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_DELETED()
+	jstring AppWidgetManager::ACTION_APPWIDGET_DELETED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_DELETED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_DISABLED()
+	jstring AppWidgetManager::ACTION_APPWIDGET_DISABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_DISABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_ENABLED()
+	jstring AppWidgetManager::ACTION_APPWIDGET_ENABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_ENABLED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_HOST_RESTORED()
+	jstring AppWidgetManager::ACTION_APPWIDGET_HOST_RESTORED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_HOST_RESTORED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_OPTIONS_CHANGED()
+	jstring AppWidgetManager::ACTION_APPWIDGET_OPTIONS_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_OPTIONS_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_PICK()
+	jstring AppWidgetManager::ACTION_APPWIDGET_PICK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_PICK",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_RESTORED()
+	jstring AppWidgetManager::ACTION_APPWIDGET_RESTORED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_RESTORED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::ACTION_APPWIDGET_UPDATE()
+	jstring AppWidgetManager::ACTION_APPWIDGET_UPDATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"ACTION_APPWIDGET_UPDATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_APPWIDGET_ID()
+	jstring AppWidgetManager::EXTRA_APPWIDGET_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_APPWIDGET_IDS()
+	jstring AppWidgetManager::EXTRA_APPWIDGET_IDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_IDS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_APPWIDGET_OLD_IDS()
+	jstring AppWidgetManager::EXTRA_APPWIDGET_OLD_IDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_OLD_IDS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_APPWIDGET_OPTIONS()
+	jstring AppWidgetManager::EXTRA_APPWIDGET_OPTIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_OPTIONS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_APPWIDGET_PREVIEW()
+	jstring AppWidgetManager::EXTRA_APPWIDGET_PREVIEW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_PREVIEW",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_APPWIDGET_PROVIDER()
+	jstring AppWidgetManager::EXTRA_APPWIDGET_PROVIDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_PROVIDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_APPWIDGET_PROVIDER_PROFILE()
+	jstring AppWidgetManager::EXTRA_APPWIDGET_PROVIDER_PROFILE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_APPWIDGET_PROVIDER_PROFILE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_CUSTOM_EXTRAS()
+	jstring AppWidgetManager::EXTRA_CUSTOM_EXTRAS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_CUSTOM_EXTRAS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_CUSTOM_INFO()
+	jstring AppWidgetManager::EXTRA_CUSTOM_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_CUSTOM_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::EXTRA_HOST_ID()
+	jstring AppWidgetManager::EXTRA_HOST_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"EXTRA_HOST_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AppWidgetManager::INVALID_APPWIDGET_ID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetManager",
-			"INVALID_APPWIDGET_ID");
+			"INVALID_APPWIDGET_ID"
+		);
 	}
-	QAndroidJniObject AppWidgetManager::META_DATA_APPWIDGET_PROVIDER()
+	jstring AppWidgetManager::META_DATA_APPWIDGET_PROVIDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"META_DATA_APPWIDGET_PROVIDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::OPTION_APPWIDGET_HOST_CATEGORY()
+	jstring AppWidgetManager::OPTION_APPWIDGET_HOST_CATEGORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_HOST_CATEGORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::OPTION_APPWIDGET_MAX_HEIGHT()
+	jstring AppWidgetManager::OPTION_APPWIDGET_MAX_HEIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MAX_HEIGHT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::OPTION_APPWIDGET_MAX_WIDTH()
+	jstring AppWidgetManager::OPTION_APPWIDGET_MAX_WIDTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MAX_WIDTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::OPTION_APPWIDGET_MIN_HEIGHT()
+	jstring AppWidgetManager::OPTION_APPWIDGET_MIN_HEIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MIN_HEIGHT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetManager::OPTION_APPWIDGET_MIN_WIDTH()
+	jstring AppWidgetManager::OPTION_APPWIDGET_MIN_WIDTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetManager",
 			"OPTION_APPWIDGET_MIN_WIDTH",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -311,7 +338,8 @@ namespace __jni_impl::android::appwidget
 			"android.appwidget.AppWidgetManager",
 			"getInstance",
 			"(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AppWidgetManager::updateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1)
 	{
@@ -319,7 +347,8 @@ namespace __jni_impl::android::appwidget
 			"updateAppWidget",
 			"(ILandroid/widget/RemoteViews;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AppWidgetManager::updateAppWidget(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::widget::RemoteViews arg1)
 	{
@@ -327,7 +356,8 @@ namespace __jni_impl::android::appwidget
 			"updateAppWidget",
 			"(Landroid/content/ComponentName;Landroid/widget/RemoteViews;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AppWidgetManager::updateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1)
 	{
@@ -335,7 +365,8 @@ namespace __jni_impl::android::appwidget
 			"updateAppWidget",
 			"([ILandroid/widget/RemoteViews;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AppWidgetManager::updateAppWidgetOptions(jint arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -343,14 +374,16 @@ namespace __jni_impl::android::appwidget
 			"updateAppWidgetOptions",
 			"(ILandroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AppWidgetManager::getAppWidgetOptions(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAppWidgetOptions",
 			"(I)Landroid/os/Bundle;",
-			arg0);
+			arg0
+		);
 	}
 	void AppWidgetManager::partiallyUpdateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1)
 	{
@@ -358,7 +391,8 @@ namespace __jni_impl::android::appwidget
 			"partiallyUpdateAppWidget",
 			"(ILandroid/widget/RemoteViews;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AppWidgetManager::partiallyUpdateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1)
 	{
@@ -366,7 +400,8 @@ namespace __jni_impl::android::appwidget
 			"partiallyUpdateAppWidget",
 			"([ILandroid/widget/RemoteViews;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AppWidgetManager::updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, jstring arg1)
 	{
@@ -374,7 +409,8 @@ namespace __jni_impl::android::appwidget
 			"updateAppWidgetProviderInfo",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void AppWidgetManager::notifyAppWidgetViewDataChanged(jint arg0, jint arg1)
 	{
@@ -382,7 +418,8 @@ namespace __jni_impl::android::appwidget
 			"notifyAppWidgetViewDataChanged",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AppWidgetManager::notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1)
 	{
@@ -390,14 +427,16 @@ namespace __jni_impl::android::appwidget
 			"notifyAppWidgetViewDataChanged",
 			"([II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject AppWidgetManager::getInstalledProvidersForProfile(__jni_impl::android::os::UserHandle arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getInstalledProvidersForProfile",
 			"(Landroid/os/UserHandle;)Ljava/util/List;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AppWidgetManager::getInstalledProvidersForPackage(jstring arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -405,20 +444,23 @@ namespace __jni_impl::android::appwidget
 			"getInstalledProvidersForPackage",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AppWidgetManager::getInstalledProviders()
 	{
 		return __thiz.callObjectMethod(
 			"getInstalledProviders",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject AppWidgetManager::getAppWidgetInfo(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAppWidgetInfo",
 			"(I)Landroid/appwidget/AppWidgetProviderInfo;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::os::Bundle arg3)
 	{
@@ -428,7 +470,8 @@ namespace __jni_impl::android::appwidget
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -437,7 +480,8 @@ namespace __jni_impl::android::appwidget
 			"(ILandroid/content/ComponentName;Landroid/os/Bundle;)Z",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1)
 	{
@@ -445,20 +489,23 @@ namespace __jni_impl::android::appwidget
 			"bindAppWidgetIdIfAllowed",
 			"(ILandroid/content/ComponentName;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject AppWidgetManager::getAppWidgetIds(__jni_impl::android::content::ComponentName arg0)
+	jintArray AppWidgetManager::getAppWidgetIds(__jni_impl::android::content::ComponentName arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAppWidgetIds",
 			"(Landroid/content/ComponentName;)[I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jintArray>();
 	}
 	jboolean AppWidgetManager::isRequestPinAppWidgetSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRequestPinAppWidgetSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AppWidgetManager::requestPinAppWidget(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::app::PendingIntent arg2)
 	{
@@ -467,7 +514,8 @@ namespace __jni_impl::android::appwidget
 			"(Landroid/content/ComponentName;Landroid/os/Bundle;Landroid/app/PendingIntent;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::appwidget
 

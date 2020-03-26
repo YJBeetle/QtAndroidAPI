@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::content
 {
 	class ContentResolver;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::provider
@@ -20,8 +20,8 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NAME();
-		static QAndroidJniObject VALUE();
+		static jstring NAME();
+		static jstring VALUE();
 		
 		// Constructors
 		void __constructor();
@@ -31,25 +31,27 @@ namespace __jni_impl::android::provider
 	};
 } // namespace __jni_impl::android::provider
 
-#include "../net/Uri.hpp"
 #include "../content/ContentResolver.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Settings_NameValueTable::NAME()
+	jstring Settings_NameValueTable::NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$NameValueTable",
 			"NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_NameValueTable::VALUE()
+	jstring Settings_NameValueTable::VALUE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$NameValueTable",
 			"VALUE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -68,7 +70,8 @@ namespace __jni_impl::android::provider
 			"getUriFor",
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::provider
 

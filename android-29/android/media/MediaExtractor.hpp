@@ -96,9 +96,9 @@ namespace __jni_impl::android::media
 		jboolean getSampleCryptoInfo(__jni_impl::android::media::MediaCodec_CryptoInfo arg0);
 		jlong getCachedDuration();
 		jboolean hasCacheReachedEndOfStream();
-		QAndroidJniObject getMetrics();
-		void selectTrack(jint arg0);
 		void seekTo(jlong arg0, jint arg1);
+		void selectTrack(jint arg0);
+		QAndroidJniObject getMetrics();
 	};
 } // namespace __jni_impl::android::media
 
@@ -122,37 +122,43 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaExtractor",
-			"SAMPLE_FLAG_ENCRYPTED");
+			"SAMPLE_FLAG_ENCRYPTED"
+		);
 	}
 	jint MediaExtractor::SAMPLE_FLAG_PARTIAL_FRAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaExtractor",
-			"SAMPLE_FLAG_PARTIAL_FRAME");
+			"SAMPLE_FLAG_PARTIAL_FRAME"
+		);
 	}
 	jint MediaExtractor::SAMPLE_FLAG_SYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaExtractor",
-			"SAMPLE_FLAG_SYNC");
+			"SAMPLE_FLAG_SYNC"
+		);
 	}
 	jint MediaExtractor::SEEK_TO_CLOSEST_SYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaExtractor",
-			"SEEK_TO_CLOSEST_SYNC");
+			"SEEK_TO_CLOSEST_SYNC"
+		);
 	}
 	jint MediaExtractor::SEEK_TO_NEXT_SYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaExtractor",
-			"SEEK_TO_NEXT_SYNC");
+			"SEEK_TO_NEXT_SYNC"
+		);
 	}
 	jint MediaExtractor::SEEK_TO_PREVIOUS_SYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaExtractor",
-			"SEEK_TO_PREVIOUS_SYNC");
+			"SEEK_TO_PREVIOUS_SYNC"
+		);
 	}
 	
 	// Constructors
@@ -168,13 +174,15 @@ namespace __jni_impl::android::media
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean MediaExtractor::advance()
 	{
 		return __thiz.callMethod<jboolean>(
 			"advance",
-			"()Z");
+			"()Z"
+		);
 	}
 	void MediaExtractor::setDataSource(__jni_impl::java::io::FileDescriptor arg0, jlong arg1, jlong arg2)
 	{
@@ -183,7 +191,8 @@ namespace __jni_impl::android::media
 			"(Ljava/io/FileDescriptor;JJ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void MediaExtractor::setDataSource(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -191,7 +200,8 @@ namespace __jni_impl::android::media
 			"setDataSource",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaExtractor::setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -200,88 +210,101 @@ namespace __jni_impl::android::media
 			"(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Map;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void MediaExtractor::setDataSource(__jni_impl::android::media::MediaDataSource arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDataSource",
 			"(Landroid/media/MediaDataSource;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaExtractor::setDataSource(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaExtractor::setDataSource(__jni_impl::android::content::res::AssetFileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDataSource",
 			"(Landroid/content/res/AssetFileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaExtractor::setDataSource(__jni_impl::java::io::FileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDataSource",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaExtractor::setMediaCas(__jni_impl::android::media::MediaCas arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMediaCas",
 			"(Landroid/media/MediaCas;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaExtractor::getCasInfo(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getCasInfo",
 			"(I)Landroid/media/MediaExtractor$CasInfo;",
-			arg0);
+			arg0
+		);
 	}
 	jint MediaExtractor::getTrackCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getTrackCount",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MediaExtractor::getDrmInitData()
 	{
 		return __thiz.callObjectMethod(
 			"getDrmInitData",
-			"()Landroid/media/DrmInitData;");
+			"()Landroid/media/DrmInitData;"
+		);
 	}
 	QAndroidJniObject MediaExtractor::getAudioPresentations(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAudioPresentations",
 			"(I)Ljava/util/List;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaExtractor::getPsshInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getPsshInfo",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 	QAndroidJniObject MediaExtractor::getTrackFormat(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getTrackFormat",
 			"(I)Landroid/media/MediaFormat;",
-			arg0);
+			arg0
+		);
 	}
 	void MediaExtractor::unselectTrack(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"unselectTrack",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint MediaExtractor::readSampleData(__jni_impl::java::nio::ByteBuffer arg0, jint arg1)
 	{
@@ -289,63 +312,58 @@ namespace __jni_impl::android::media
 			"readSampleData",
 			"(Ljava/nio/ByteBuffer;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint MediaExtractor::getSampleTrackIndex()
 	{
 		return __thiz.callMethod<jint>(
 			"getSampleTrackIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jlong MediaExtractor::getSampleTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getSampleTime",
-			"()J");
+			"()J"
+		);
 	}
 	jlong MediaExtractor::getSampleSize()
 	{
 		return __thiz.callMethod<jlong>(
 			"getSampleSize",
-			"()J");
+			"()J"
+		);
 	}
 	jint MediaExtractor::getSampleFlags()
 	{
 		return __thiz.callMethod<jint>(
 			"getSampleFlags",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean MediaExtractor::getSampleCryptoInfo(__jni_impl::android::media::MediaCodec_CryptoInfo arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getSampleCryptoInfo",
 			"(Landroid/media/MediaCodec$CryptoInfo;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong MediaExtractor::getCachedDuration()
 	{
 		return __thiz.callMethod<jlong>(
 			"getCachedDuration",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean MediaExtractor::hasCacheReachedEndOfStream()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasCacheReachedEndOfStream",
-			"()Z");
-	}
-	QAndroidJniObject MediaExtractor::getMetrics()
-	{
-		return __thiz.callObjectMethod(
-			"getMetrics",
-			"()Landroid/os/PersistableBundle;");
-	}
-	void MediaExtractor::selectTrack(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"selectTrack",
-			"(I)V",
-			arg0);
+			"()Z"
+		);
 	}
 	void MediaExtractor::seekTo(jlong arg0, jint arg1)
 	{
@@ -353,7 +371,23 @@ namespace __jni_impl::android::media
 			"seekTo",
 			"(JI)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void MediaExtractor::selectTrack(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"selectTrack",
+			"(I)V",
+			arg0
+		);
+	}
+	QAndroidJniObject MediaExtractor::getMetrics()
+	{
+		return __thiz.callObjectMethod(
+			"getMetrics",
+			"()Landroid/os/PersistableBundle;"
+		);
 	}
 } // namespace __jni_impl::android::media
 

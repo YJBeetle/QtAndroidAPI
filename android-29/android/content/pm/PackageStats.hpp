@@ -25,7 +25,7 @@ namespace __jni_impl::android::content::pm
 		jlong externalDataSize();
 		jlong externalMediaSize();
 		jlong externalObbSize();
-		QAndroidJniObject packageName();
+		jstring packageName();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::content::pm::PackageStats arg0);
@@ -34,7 +34,7 @@ namespace __jni_impl::android::content::pm
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -51,53 +51,63 @@ namespace __jni_impl::android::content::pm
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.pm.PackageStats",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jlong PackageStats::cacheSize()
 	{
 		return __thiz.getField<jlong>(
-			"cacheSize");
+			"cacheSize"
+		);
 	}
 	jlong PackageStats::codeSize()
 	{
 		return __thiz.getField<jlong>(
-			"codeSize");
+			"codeSize"
+		);
 	}
 	jlong PackageStats::dataSize()
 	{
 		return __thiz.getField<jlong>(
-			"dataSize");
+			"dataSize"
+		);
 	}
 	jlong PackageStats::externalCacheSize()
 	{
 		return __thiz.getField<jlong>(
-			"externalCacheSize");
+			"externalCacheSize"
+		);
 	}
 	jlong PackageStats::externalCodeSize()
 	{
 		return __thiz.getField<jlong>(
-			"externalCodeSize");
+			"externalCodeSize"
+		);
 	}
 	jlong PackageStats::externalDataSize()
 	{
 		return __thiz.getField<jlong>(
-			"externalDataSize");
+			"externalDataSize"
+		);
 	}
 	jlong PackageStats::externalMediaSize()
 	{
 		return __thiz.getField<jlong>(
-			"externalMediaSize");
+			"externalMediaSize"
+		);
 	}
 	jlong PackageStats::externalObbSize()
 	{
 		return __thiz.getField<jlong>(
-			"externalObbSize");
+			"externalObbSize"
+		);
 	}
-	QAndroidJniObject PackageStats::packageName()
+	jstring PackageStats::packageName()
 	{
 		return __thiz.getObjectField(
 			"packageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -129,25 +139,29 @@ namespace __jni_impl::android::content::pm
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PackageStats::toString()
+	jstring PackageStats::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PackageStats::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint PackageStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void PackageStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -155,7 +169,8 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

@@ -54,7 +54,7 @@ namespace __jni_impl::android::graphics::drawable
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
 		void setColor(__jni_impl::android::content::res::ColorStateList arg0);
-		void setRadius(jint arg0);
+		jboolean setVisible(jboolean arg0, jboolean arg1);
 		QAndroidJniObject getDirtyBounds();
 		void invalidateSelf();
 		void setHotspot(jfloat arg0, jfloat arg1);
@@ -69,11 +69,11 @@ namespace __jni_impl::android::graphics::drawable
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		QAndroidJniObject mutate();
 		QAndroidJniObject getConstantState();
-		jboolean setDrawableByLayerId(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
-		void setPaddingMode(jint arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0);
 		jint getRadius();
-		jboolean setVisible(jboolean arg0, jboolean arg1);
+		jboolean setDrawableByLayerId(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
+		void setPaddingMode(jint arg0);
+		void setRadius(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -93,7 +93,8 @@ namespace __jni_impl::android::graphics::drawable
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.drawable.RippleDrawable",
-			"RADIUS_AUTO");
+			"RADIUS_AUTO"
+		);
 	}
 	
 	// Constructors
@@ -116,33 +117,39 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void RippleDrawable::setColor(__jni_impl::android::content::res::ColorStateList arg0)
 	{
 		__thiz.callMethod<void>(
 			"setColor",
 			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	void RippleDrawable::setRadius(jint arg0)
+	jboolean RippleDrawable::setVisible(jboolean arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
-			"setRadius",
-			"(I)V",
-			arg0);
+		return __thiz.callMethod<jboolean>(
+			"setVisible",
+			"(ZZ)Z",
+			arg0,
+			arg1
+		);
 	}
 	QAndroidJniObject RippleDrawable::getDirtyBounds()
 	{
 		return __thiz.callObjectMethod(
 			"getDirtyBounds",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 	void RippleDrawable::invalidateSelf()
 	{
 		__thiz.callMethod<void>(
 			"invalidateSelf",
-			"()V");
+			"()V"
+		);
 	}
 	void RippleDrawable::setHotspot(jfloat arg0, jfloat arg1)
 	{
@@ -150,7 +157,8 @@ namespace __jni_impl::android::graphics::drawable
 			"setHotspot",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void RippleDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -160,70 +168,96 @@ namespace __jni_impl::android::graphics::drawable
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void RippleDrawable::getHotspotBounds(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz.callMethod<void>(
 			"getHotspotBounds",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RippleDrawable::isProjected()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isProjected",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RippleDrawable::isStateful()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isStateful",
-			"()Z");
+			"()Z"
+		);
 	}
 	void RippleDrawable::jumpToCurrentState()
 	{
 		__thiz.callMethod<void>(
 			"jumpToCurrentState",
-			"()V");
+			"()V"
+		);
 	}
 	void RippleDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyTheme",
 			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RippleDrawable::canApplyTheme()
 	{
 		return __thiz.callMethod<jboolean>(
 			"canApplyTheme",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint RippleDrawable::getOpacity()
 	{
 		return __thiz.callMethod<jint>(
 			"getOpacity",
-			"()I");
+			"()I"
+		);
 	}
 	void RippleDrawable::getOutline(__jni_impl::android::graphics::Outline arg0)
 	{
 		__thiz.callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject RippleDrawable::mutate()
 	{
 		return __thiz.callObjectMethod(
 			"mutate",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	QAndroidJniObject RippleDrawable::getConstantState()
 	{
 		return __thiz.callObjectMethod(
 			"getConstantState",
-			"()Landroid/graphics/drawable/Drawable$ConstantState;");
+			"()Landroid/graphics/drawable/Drawable$ConstantState;"
+		);
+	}
+	void RippleDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint RippleDrawable::getRadius()
+	{
+		return __thiz.callMethod<jint>(
+			"getRadius",
+			"()I"
+		);
 	}
 	jboolean RippleDrawable::setDrawableByLayerId(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1)
 	{
@@ -231,35 +265,24 @@ namespace __jni_impl::android::graphics::drawable
 			"setDrawableByLayerId",
 			"(ILandroid/graphics/drawable/Drawable;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RippleDrawable::setPaddingMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPaddingMode",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
-	void RippleDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	void RippleDrawable::setRadius(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object());
-	}
-	jint RippleDrawable::getRadius()
-	{
-		return __thiz.callMethod<jint>(
-			"getRadius",
-			"()I");
-	}
-	jboolean RippleDrawable::setVisible(jboolean arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setVisible",
-			"(ZZ)Z",
-			arg0,
-			arg1);
+			"setRadius",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable
 

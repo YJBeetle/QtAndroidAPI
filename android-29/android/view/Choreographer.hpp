@@ -48,14 +48,16 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.Choreographer",
 			"getInstance",
-			"()Landroid/view/Choreographer;");
+			"()Landroid/view/Choreographer;"
+		);
 	}
 	void Choreographer::postFrameCallback(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"postFrameCallback",
 			"(Landroid/view/Choreographer$FrameCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Choreographer::postFrameCallbackDelayed(__jni_impl::__JniBaseClass arg0, jlong arg1)
 	{
@@ -63,14 +65,16 @@ namespace __jni_impl::android::view
 			"postFrameCallbackDelayed",
 			"(Landroid/view/Choreographer$FrameCallback;J)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Choreographer::removeFrameCallback(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeFrameCallback",
 			"(Landroid/view/Choreographer$FrameCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

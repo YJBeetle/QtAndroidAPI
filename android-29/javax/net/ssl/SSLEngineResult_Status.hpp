@@ -22,7 +22,7 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::javax::net::ssl
@@ -36,28 +36,32 @@ namespace __jni_impl::javax::net::ssl
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"BUFFER_UNDERFLOW",
-			"Ljavax/net/ssl/SSLEngineResult$Status;");
+			"Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
 	}
 	QAndroidJniObject SSLEngineResult_Status::BUFFER_OVERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"BUFFER_OVERFLOW",
-			"Ljavax/net/ssl/SSLEngineResult$Status;");
+			"Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
 	}
 	QAndroidJniObject SSLEngineResult_Status::OK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"OK",
-			"Ljavax/net/ssl/SSLEngineResult$Status;");
+			"Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
 	}
 	QAndroidJniObject SSLEngineResult_Status::CLOSED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"CLOSED",
-			"Ljavax/net/ssl/SSLEngineResult$Status;");
+			"Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	QAndroidJniObject SSLEngineResult_Status::values()
+	jarray SSLEngineResult_Status::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"values",
-			"()[Ljavax/net/ssl/SSLEngineResult$Status;");
+			"()[Ljavax/net/ssl/SSLEngineResult$Status;"
+		).object<jarray>();
 	}
 	QAndroidJniObject SSLEngineResult_Status::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::javax::net::ssl
 			"javax.net.ssl.SSLEngineResult$Status",
 			"valueOf",
 			"(Ljava/lang/String;)Ljavax/net/ssl/SSLEngineResult$Status;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

@@ -36,9 +36,10 @@ namespace __jni_impl::android::graphics
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		static QAndroidJniObject create(__jni_impl::android::graphics::Typeface arg0, jint arg1, jboolean arg2);
-		static QAndroidJniObject create(__jni_impl::android::graphics::Typeface arg0, jint arg1);
 		static QAndroidJniObject create(jstring arg0, jint arg1);
+		static QAndroidJniObject create(__jni_impl::android::graphics::Typeface arg0, jint arg1);
+		static QAndroidJniObject create(__jni_impl::android::graphics::Typeface arg0, jint arg1, jboolean arg2);
+		jint getStyle();
 		jint getWeight();
 		jboolean isBold();
 		jboolean isItalic();
@@ -46,7 +47,6 @@ namespace __jni_impl::android::graphics
 		static QAndroidJniObject createFromAsset(__jni_impl::android::content::res::AssetManager arg0, jstring arg1);
 		static QAndroidJniObject createFromFile(__jni_impl::java::io::File arg0);
 		static QAndroidJniObject createFromFile(jstring arg0);
-		jint getStyle();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -60,60 +60,69 @@ namespace __jni_impl::android::graphics
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Typeface",
-			"BOLD");
+			"BOLD"
+		);
 	}
 	jint Typeface::BOLD_ITALIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Typeface",
-			"BOLD_ITALIC");
+			"BOLD_ITALIC"
+		);
 	}
 	QAndroidJniObject Typeface::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
 			"DEFAULT",
-			"Landroid/graphics/Typeface;");
+			"Landroid/graphics/Typeface;"
+		);
 	}
 	QAndroidJniObject Typeface::DEFAULT_BOLD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
 			"DEFAULT_BOLD",
-			"Landroid/graphics/Typeface;");
+			"Landroid/graphics/Typeface;"
+		);
 	}
 	jint Typeface::ITALIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Typeface",
-			"ITALIC");
+			"ITALIC"
+		);
 	}
 	QAndroidJniObject Typeface::MONOSPACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
 			"MONOSPACE",
-			"Landroid/graphics/Typeface;");
+			"Landroid/graphics/Typeface;"
+		);
 	}
 	jint Typeface::NORMAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.graphics.Typeface",
-			"NORMAL");
+			"NORMAL"
+		);
 	}
 	QAndroidJniObject Typeface::SANS_SERIF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
 			"SANS_SERIF",
-			"Landroid/graphics/Typeface;");
+			"Landroid/graphics/Typeface;"
+		);
 	}
 	QAndroidJniObject Typeface::SERIF()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Typeface",
 			"SERIF",
-			"Landroid/graphics/Typeface;");
+			"Landroid/graphics/Typeface;"
+		);
 	}
 	
 	// Constructors
@@ -130,13 +139,35 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Typeface::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
+	}
+	QAndroidJniObject Typeface::create(jstring arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"create",
+			"(Ljava/lang/String;I)Landroid/graphics/Typeface;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject Typeface::create(__jni_impl::android::graphics::Typeface arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"create",
+			"(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	QAndroidJniObject Typeface::create(__jni_impl::android::graphics::Typeface arg0, jint arg1, jboolean arg2)
 	{
@@ -146,43 +177,36 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject Typeface::create(__jni_impl::android::graphics::Typeface arg0, jint arg1)
+	jint Typeface::getStyle()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Typeface",
-			"create",
-			"(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject Typeface::create(jstring arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Typeface",
-			"create",
-			"(Ljava/lang/String;I)Landroid/graphics/Typeface;",
-			arg0,
-			arg1);
+		return __thiz.callMethod<jint>(
+			"getStyle",
+			"()I"
+		);
 	}
 	jint Typeface::getWeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeight",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Typeface::isBold()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBold",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Typeface::isItalic()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isItalic",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Typeface::defaultFromStyle(jint arg0)
 	{
@@ -190,7 +214,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Typeface",
 			"defaultFromStyle",
 			"(I)Landroid/graphics/Typeface;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Typeface::createFromAsset(__jni_impl::android::content::res::AssetManager arg0, jstring arg1)
 	{
@@ -199,7 +224,8 @@ namespace __jni_impl::android::graphics
 			"createFromAsset",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Typeface::createFromFile(__jni_impl::java::io::File arg0)
 	{
@@ -207,7 +233,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Typeface",
 			"createFromFile",
 			"(Ljava/io/File;)Landroid/graphics/Typeface;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Typeface::createFromFile(jstring arg0)
 	{
@@ -215,13 +242,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Typeface",
 			"createFromFile",
 			"(Ljava/lang/String;)Landroid/graphics/Typeface;",
-			arg0);
-	}
-	jint Typeface::getStyle()
-	{
-		return __thiz.callMethod<jint>(
-			"getStyle",
-			"()I");
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

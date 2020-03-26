@@ -46,7 +46,8 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/view/textclassifier/TextClassifierEvent$ConversationActionsEvent;");
+			"()Landroid/view/textclassifier/TextClassifierEvent$ConversationActionsEvent;"
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

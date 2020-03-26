@@ -21,7 +21,7 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 	};
 } // namespace __jni_impl::java::security
 
@@ -40,11 +40,12 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject MessageDigestSpi::clone()
+	jobject MessageDigestSpi::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::security
 

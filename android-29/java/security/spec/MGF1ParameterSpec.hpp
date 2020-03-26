@@ -24,7 +24,7 @@ namespace __jni_impl::java::security::spec
 		void __constructor(jstring arg0);
 		
 		// Methods
-		QAndroidJniObject getDigestAlgorithm();
+		jstring getDigestAlgorithm();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -37,49 +37,56 @@ namespace __jni_impl::java::security::spec
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
 			"SHA1",
-			"Ljava/security/spec/MGF1ParameterSpec;");
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
 	}
 	QAndroidJniObject MGF1ParameterSpec::SHA224()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
 			"SHA224",
-			"Ljava/security/spec/MGF1ParameterSpec;");
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
 	}
 	QAndroidJniObject MGF1ParameterSpec::SHA256()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
 			"SHA256",
-			"Ljava/security/spec/MGF1ParameterSpec;");
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
 	}
 	QAndroidJniObject MGF1ParameterSpec::SHA384()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
 			"SHA384",
-			"Ljava/security/spec/MGF1ParameterSpec;");
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
 	}
 	QAndroidJniObject MGF1ParameterSpec::SHA512()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
 			"SHA512",
-			"Ljava/security/spec/MGF1ParameterSpec;");
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
 	}
 	QAndroidJniObject MGF1ParameterSpec::SHA512_224()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
 			"SHA512_224",
-			"Ljava/security/spec/MGF1ParameterSpec;");
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
 	}
 	QAndroidJniObject MGF1ParameterSpec::SHA512_256()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
 			"SHA512_256",
-			"Ljava/security/spec/MGF1ParameterSpec;");
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
 	}
 	
 	// Constructors
@@ -92,11 +99,12 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
-	QAndroidJniObject MGF1ParameterSpec::getDigestAlgorithm()
+	jstring MGF1ParameterSpec::getDigestAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getDigestAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::spec
 

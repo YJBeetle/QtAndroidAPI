@@ -18,7 +18,7 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint version();
 		jint hashCode();
 		jint compareTo(jobject arg0);
@@ -26,12 +26,12 @@ namespace __jni_impl::java::util
 		jlong timestamp();
 		jlong node();
 		jint variant();
+		static QAndroidJniObject fromString(jstring arg0);
 		static QAndroidJniObject randomUUID();
 		static QAndroidJniObject nameUUIDFromBytes(jbyteArray arg0);
 		jlong getLeastSignificantBits();
 		jlong getMostSignificantBits();
 		jint clockSequence();
-		static QAndroidJniObject fromString(jstring arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -56,90 +56,66 @@ namespace __jni_impl::java::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject UUID::toString()
+	jstring UUID::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint UUID::version()
 	{
 		return __thiz.callMethod<jint>(
 			"version",
-			"()I");
+			"()I"
+		);
 	}
 	jint UUID::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint UUID::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint UUID::compareTo(__jni_impl::java::util::UUID arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/util/UUID;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong UUID::timestamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"timestamp",
-			"()J");
+			"()J"
+		);
 	}
 	jlong UUID::node()
 	{
 		return __thiz.callMethod<jlong>(
 			"node",
-			"()J");
+			"()J"
+		);
 	}
 	jint UUID::variant()
 	{
 		return __thiz.callMethod<jint>(
 			"variant",
-			"()I");
-	}
-	QAndroidJniObject UUID::randomUUID()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.UUID",
-			"randomUUID",
-			"()Ljava/util/UUID;");
-	}
-	QAndroidJniObject UUID::nameUUIDFromBytes(jbyteArray arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.UUID",
-			"nameUUIDFromBytes",
-			"([B)Ljava/util/UUID;",
-			arg0);
-	}
-	jlong UUID::getLeastSignificantBits()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLeastSignificantBits",
-			"()J");
-	}
-	jlong UUID::getMostSignificantBits()
-	{
-		return __thiz.callMethod<jlong>(
-			"getMostSignificantBits",
-			"()J");
-	}
-	jint UUID::clockSequence()
-	{
-		return __thiz.callMethod<jint>(
-			"clockSequence",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject UUID::fromString(jstring arg0)
 	{
@@ -147,7 +123,46 @@ namespace __jni_impl::java::util
 			"java.util.UUID",
 			"fromString",
 			"(Ljava/lang/String;)Ljava/util/UUID;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject UUID::randomUUID()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.UUID",
+			"randomUUID",
+			"()Ljava/util/UUID;"
+		);
+	}
+	QAndroidJniObject UUID::nameUUIDFromBytes(jbyteArray arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.UUID",
+			"nameUUIDFromBytes",
+			"([B)Ljava/util/UUID;",
+			arg0
+		);
+	}
+	jlong UUID::getLeastSignificantBits()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLeastSignificantBits",
+			"()J"
+		);
+	}
+	jlong UUID::getMostSignificantBits()
+	{
+		return __thiz.callMethod<jlong>(
+			"getMostSignificantBits",
+			"()J"
+		);
+	}
+	jint UUID::clockSequence()
+	{
+		return __thiz.callMethod<jint>(
+			"clockSequence",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::util
 

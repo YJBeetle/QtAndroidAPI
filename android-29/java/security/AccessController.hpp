@@ -38,12 +38,12 @@ namespace __jni_impl::java::security
 		
 		// Methods
 		static void checkPermission(__jni_impl::java::security::Permission arg0);
-		static QAndroidJniObject doPrivileged(__jni_impl::__JniBaseClass arg0);
-		static QAndroidJniObject doPrivileged(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1);
-		static QAndroidJniObject doPrivileged(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1, jarray arg2);
+		static jobject doPrivileged(__jni_impl::__JniBaseClass arg0);
+		static jobject doPrivileged(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1);
+		static jobject doPrivileged(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1, jarray arg2);
 		static QAndroidJniObject getContext();
-		static QAndroidJniObject doPrivilegedWithCombiner(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1, jarray arg2);
-		static QAndroidJniObject doPrivilegedWithCombiner(__jni_impl::__JniBaseClass arg0);
+		static jobject doPrivilegedWithCombiner(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1, jarray arg2);
+		static jobject doPrivilegedWithCombiner(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::java::security
 
@@ -72,26 +72,29 @@ namespace __jni_impl::java::security
 			"java.security.AccessController",
 			"checkPermission",
 			"(Ljava/security/Permission;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject AccessController::doPrivileged(__jni_impl::__JniBaseClass arg0)
+	jobject AccessController::doPrivileged(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivileged",
 			"(Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject AccessController::doPrivileged(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1)
+	jobject AccessController::doPrivileged(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivileged",
 			"(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject AccessController::doPrivileged(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1, jarray arg2)
+	jobject AccessController::doPrivileged(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AccessController",
@@ -99,16 +102,18 @@ namespace __jni_impl::java::security
 			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		).object<jobject>();
 	}
 	QAndroidJniObject AccessController::getContext()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AccessController",
 			"getContext",
-			"()Ljava/security/AccessControlContext;");
+			"()Ljava/security/AccessControlContext;"
+		);
 	}
-	QAndroidJniObject AccessController::doPrivilegedWithCombiner(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1, jarray arg2)
+	jobject AccessController::doPrivilegedWithCombiner(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::AccessControlContext arg1, jarray arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AccessController",
@@ -116,15 +121,17 @@ namespace __jni_impl::java::security
 			"(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		).object<jobject>();
 	}
-	QAndroidJniObject AccessController::doPrivilegedWithCombiner(__jni_impl::__JniBaseClass arg0)
+	jobject AccessController::doPrivilegedWithCombiner(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AccessController",
 			"doPrivilegedWithCombiner",
 			"(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
 } // namespace __jni_impl::java::security
 

@@ -17,14 +17,14 @@ namespace __jni_impl::android::mtp
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getVersion();
-		QAndroidJniObject getManufacturer();
-		QAndroidJniObject getOperationsSupported();
-		QAndroidJniObject getEventsSupported();
+		jstring getVersion();
+		jintArray getOperationsSupported();
+		jintArray getEventsSupported();
 		jboolean isOperationSupported(jint arg0);
 		jboolean isEventSupported(jint arg0);
-		QAndroidJniObject getModel();
-		QAndroidJniObject getSerialNumber();
+		jstring getManufacturer();
+		jstring getModel();
+		jstring getSerialNumber();
 	};
 } // namespace __jni_impl::android::mtp
 
@@ -42,55 +42,63 @@ namespace __jni_impl::android::mtp
 	}
 	
 	// Methods
-	QAndroidJniObject MtpDeviceInfo::getVersion()
+	jstring MtpDeviceInfo::getVersion()
 	{
 		return __thiz.callObjectMethod(
 			"getVersion",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MtpDeviceInfo::getManufacturer()
-	{
-		return __thiz.callObjectMethod(
-			"getManufacturer",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject MtpDeviceInfo::getOperationsSupported()
+	jintArray MtpDeviceInfo::getOperationsSupported()
 	{
 		return __thiz.callObjectMethod(
 			"getOperationsSupported",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject MtpDeviceInfo::getEventsSupported()
+	jintArray MtpDeviceInfo::getEventsSupported()
 	{
 		return __thiz.callObjectMethod(
 			"getEventsSupported",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
 	jboolean MtpDeviceInfo::isOperationSupported(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isOperationSupported",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean MtpDeviceInfo::isEventSupported(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEventSupported",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MtpDeviceInfo::getModel()
+	jstring MtpDeviceInfo::getManufacturer()
+	{
+		return __thiz.callObjectMethod(
+			"getManufacturer",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring MtpDeviceInfo::getModel()
 	{
 		return __thiz.callObjectMethod(
 			"getModel",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MtpDeviceInfo::getSerialNumber()
+	jstring MtpDeviceInfo::getSerialNumber()
 	{
 		return __thiz.callObjectMethod(
 			"getSerialNumber",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::mtp
 

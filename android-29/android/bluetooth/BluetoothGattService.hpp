@@ -9,13 +9,13 @@ namespace __jni_impl::java::util
 {
 	class UUID;
 }
-namespace __jni_impl::android::bluetooth
-{
-	class BluetoothGattCharacteristic;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::bluetooth
+{
+	class BluetoothGattCharacteristic;
 }
 
 namespace __jni_impl::android::bluetooth
@@ -33,21 +33,21 @@ namespace __jni_impl::android::bluetooth
 		
 		// Methods
 		jint getType();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getCharacteristic(__jni_impl::java::util::UUID arg0);
 		jint getInstanceId();
+		QAndroidJniObject getUuid();
 		jboolean addService(__jni_impl::android::bluetooth::BluetoothGattService arg0);
 		jboolean addCharacteristic(__jni_impl::android::bluetooth::BluetoothGattCharacteristic arg0);
 		QAndroidJniObject getIncludedServices();
 		QAndroidJniObject getCharacteristics();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getUuid();
 	};
 } // namespace __jni_impl::android::bluetooth
 
 #include "../../java/util/UUID.hpp"
-#include "BluetoothGattCharacteristic.hpp"
 #include "../os/Parcel.hpp"
+#include "BluetoothGattCharacteristic.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -57,19 +57,22 @@ namespace __jni_impl::android::bluetooth
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothGattService",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint BluetoothGattService::SERVICE_TYPE_PRIMARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattService",
-			"SERVICE_TYPE_PRIMARY");
+			"SERVICE_TYPE_PRIMARY"
+		);
 	}
 	jint BluetoothGattService::SERVICE_TYPE_SECONDARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.BluetoothGattService",
-			"SERVICE_TYPE_SECONDARY");
+			"SERVICE_TYPE_SECONDARY"
+		);
 	}
 	
 	// Constructors
@@ -87,52 +90,15 @@ namespace __jni_impl::android::bluetooth
 	{
 		return __thiz.callMethod<jint>(
 			"getType",
-			"()I");
-	}
-	QAndroidJniObject BluetoothGattService::getCharacteristic(__jni_impl::java::util::UUID arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCharacteristic",
-			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;",
-			arg0.__jniObject().object());
-	}
-	jint BluetoothGattService::getInstanceId()
-	{
-		return __thiz.callMethod<jint>(
-			"getInstanceId",
-			"()I");
-	}
-	jboolean BluetoothGattService::addService(__jni_impl::android::bluetooth::BluetoothGattService arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addService",
-			"(Landroid/bluetooth/BluetoothGattService;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean BluetoothGattService::addCharacteristic(__jni_impl::android::bluetooth::BluetoothGattCharacteristic arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addCharacteristic",
-			"(Landroid/bluetooth/BluetoothGattCharacteristic;)Z",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject BluetoothGattService::getIncludedServices()
-	{
-		return __thiz.callObjectMethod(
-			"getIncludedServices",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject BluetoothGattService::getCharacteristics()
-	{
-		return __thiz.callObjectMethod(
-			"getCharacteristics",
-			"()Ljava/util/List;");
+			"()I"
+		);
 	}
 	jint BluetoothGattService::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void BluetoothGattService::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -140,13 +106,60 @@ namespace __jni_impl::android::bluetooth
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject BluetoothGattService::getCharacteristic(__jni_impl::java::util::UUID arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCharacteristic",
+			"(Ljava/util/UUID;)Landroid/bluetooth/BluetoothGattCharacteristic;",
+			arg0.__jniObject().object()
+		);
+	}
+	jint BluetoothGattService::getInstanceId()
+	{
+		return __thiz.callMethod<jint>(
+			"getInstanceId",
+			"()I"
+		);
 	}
 	QAndroidJniObject BluetoothGattService::getUuid()
 	{
 		return __thiz.callObjectMethod(
 			"getUuid",
-			"()Ljava/util/UUID;");
+			"()Ljava/util/UUID;"
+		);
+	}
+	jboolean BluetoothGattService::addService(__jni_impl::android::bluetooth::BluetoothGattService arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"addService",
+			"(Landroid/bluetooth/BluetoothGattService;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean BluetoothGattService::addCharacteristic(__jni_impl::android::bluetooth::BluetoothGattCharacteristic arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"addCharacteristic",
+			"(Landroid/bluetooth/BluetoothGattCharacteristic;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BluetoothGattService::getIncludedServices()
+	{
+		return __thiz.callObjectMethod(
+			"getIncludedServices",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject BluetoothGattService::getCharacteristics()
+	{
+		return __thiz.callObjectMethod(
+			"getCharacteristics",
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

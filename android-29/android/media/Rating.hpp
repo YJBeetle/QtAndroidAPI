@@ -29,7 +29,9 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject newUnratedRating(jint arg0);
 		static QAndroidJniObject newHeartRating(jboolean arg0);
 		jboolean hasHeart();
@@ -41,8 +43,6 @@ namespace __jni_impl::android::media
 		jboolean isThumbUp();
 		jfloat getStarRating();
 		jfloat getPercentRating();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -56,49 +56,57 @@ namespace __jni_impl::android::media
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.Rating",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Rating::RATING_3_STARS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Rating",
-			"RATING_3_STARS");
+			"RATING_3_STARS"
+		);
 	}
 	jint Rating::RATING_4_STARS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Rating",
-			"RATING_4_STARS");
+			"RATING_4_STARS"
+		);
 	}
 	jint Rating::RATING_5_STARS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Rating",
-			"RATING_5_STARS");
+			"RATING_5_STARS"
+		);
 	}
 	jint Rating::RATING_HEART()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Rating",
-			"RATING_HEART");
+			"RATING_HEART"
+		);
 	}
 	jint Rating::RATING_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Rating",
-			"RATING_NONE");
+			"RATING_NONE"
+		);
 	}
 	jint Rating::RATING_PERCENTAGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Rating",
-			"RATING_PERCENTAGE");
+			"RATING_PERCENTAGE"
+		);
 	}
 	jint Rating::RATING_THUMB_UP_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.Rating",
-			"RATING_THUMB_UP_DOWN");
+			"RATING_THUMB_UP_DOWN"
+		);
 	}
 	
 	// Constructors
@@ -110,11 +118,28 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject Rating::toString()
+	jstring Rating::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Rating::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Rating::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	QAndroidJniObject Rating::newUnratedRating(jint arg0)
 	{
@@ -122,7 +147,8 @@ namespace __jni_impl::android::media
 			"android.media.Rating",
 			"newUnratedRating",
 			"(I)Landroid/media/Rating;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Rating::newHeartRating(jboolean arg0)
 	{
@@ -130,13 +156,15 @@ namespace __jni_impl::android::media
 			"android.media.Rating",
 			"newHeartRating",
 			"(Z)Landroid/media/Rating;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Rating::hasHeart()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasHeart",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Rating::newThumbRating(jboolean arg0)
 	{
@@ -144,7 +172,8 @@ namespace __jni_impl::android::media
 			"android.media.Rating",
 			"newThumbRating",
 			"(Z)Landroid/media/Rating;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Rating::newStarRating(jint arg0, jfloat arg1)
 	{
@@ -153,7 +182,8 @@ namespace __jni_impl::android::media
 			"newStarRating",
 			"(IF)Landroid/media/Rating;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Rating::newPercentageRating(jfloat arg0)
 	{
@@ -161,51 +191,43 @@ namespace __jni_impl::android::media
 			"android.media.Rating",
 			"newPercentageRating",
 			"(F)Landroid/media/Rating;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Rating::isRated()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRated",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Rating::getRatingStyle()
 	{
 		return __thiz.callMethod<jint>(
 			"getRatingStyle",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Rating::isThumbUp()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isThumbUp",
-			"()Z");
+			"()Z"
+		);
 	}
 	jfloat Rating::getStarRating()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getStarRating",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat Rating::getPercentRating()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getPercentRating",
-			"()F");
-	}
-	jint Rating::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void Rating::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			"()F"
+		);
 	}
 } // namespace __jni_impl::android::media
 

@@ -54,13 +54,15 @@ namespace __jni_impl::android::view::textclassifier
 		__thiz.callMethod<void>(
 			"onClick",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject TextLinks_TextLinkSpan::getTextLink()
 	{
 		return __thiz.callObjectMethod(
 			"getTextLink",
-			"()Landroid/view/textclassifier/TextLinks$TextLink;");
+			"()Landroid/view/textclassifier/TextLinks$TextLink;"
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

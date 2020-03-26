@@ -31,19 +31,22 @@ namespace __jni_impl::java::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.FormattableFlags",
-			"LEFT_JUSTIFY");
+			"LEFT_JUSTIFY"
+		);
 	}
 	jint FormattableFlags::UPPERCASE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.FormattableFlags",
-			"UPPERCASE");
+			"UPPERCASE"
+		);
 	}
 	jint FormattableFlags::ALTERNATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.FormattableFlags",
-			"ALTERNATE");
+			"ALTERNATE"
+		);
 	}
 	
 	// Constructors

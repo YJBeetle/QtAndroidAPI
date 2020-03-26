@@ -60,27 +60,31 @@ namespace __jni_impl::android::app::backup
 			"android.app.backup.BackupManager",
 			"dataChanged",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void BackupManager::dataChanged()
 	{
 		__thiz.callMethod<void>(
 			"dataChanged",
-			"()V");
+			"()V"
+		);
 	}
 	jint BackupManager::requestRestore(__jni_impl::android::app::backup::RestoreObserver arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"requestRestore",
 			"(Landroid/app/backup/RestoreObserver;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BackupManager::getUserForAncestralSerialNumber(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getUserForAncestralSerialNumber",
 			"(J)Landroid/os/UserHandle;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app::backup
 

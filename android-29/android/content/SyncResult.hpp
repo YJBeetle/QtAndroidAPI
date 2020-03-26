@@ -36,15 +36,15 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void clear();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean hasHardError();
 		jboolean hasSoftError();
 		jboolean madeSomeProgress();
-		QAndroidJniObject toDebugString();
+		jstring toDebugString();
 		jboolean hasError();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
@@ -59,60 +59,71 @@ namespace __jni_impl::android::content
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.SyncResult",
 			"ALREADY_IN_PROGRESS",
-			"Landroid/content/SyncResult;");
+			"Landroid/content/SyncResult;"
+		);
 	}
 	QAndroidJniObject SyncResult::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.SyncResult",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jboolean SyncResult::databaseError()
 	{
 		return __thiz.getField<jboolean>(
-			"databaseError");
+			"databaseError"
+		);
 	}
 	jlong SyncResult::delayUntil()
 	{
 		return __thiz.getField<jlong>(
-			"delayUntil");
+			"delayUntil"
+		);
 	}
 	jboolean SyncResult::fullSyncRequested()
 	{
 		return __thiz.getField<jboolean>(
-			"fullSyncRequested");
+			"fullSyncRequested"
+		);
 	}
 	jboolean SyncResult::moreRecordsToGet()
 	{
 		return __thiz.getField<jboolean>(
-			"moreRecordsToGet");
+			"moreRecordsToGet"
+		);
 	}
 	jboolean SyncResult::partialSyncUnavailable()
 	{
 		return __thiz.getField<jboolean>(
-			"partialSyncUnavailable");
+			"partialSyncUnavailable"
+		);
 	}
 	QAndroidJniObject SyncResult::stats()
 	{
 		return __thiz.getObjectField(
 			"stats",
-			"Landroid/content/SyncStats;");
+			"Landroid/content/SyncStats;"
+		);
 	}
 	jboolean SyncResult::syncAlreadyInProgress()
 	{
 		return __thiz.getField<jboolean>(
-			"syncAlreadyInProgress");
+			"syncAlreadyInProgress"
+		);
 	}
 	jboolean SyncResult::tooManyDeletions()
 	{
 		return __thiz.getField<jboolean>(
-			"tooManyDeletions");
+			"tooManyDeletions"
+		);
 	}
 	jboolean SyncResult::tooManyRetries()
 	{
 		return __thiz.getField<jboolean>(
-			"tooManyRetries");
+			"tooManyRetries"
+		);
 	}
 	
 	// Constructors
@@ -124,53 +135,26 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	QAndroidJniObject SyncResult::toString()
+	jstring SyncResult::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SyncResult::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
-			"()V");
-	}
-	jboolean SyncResult::hasHardError()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasHardError",
-			"()Z");
-	}
-	jboolean SyncResult::hasSoftError()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasSoftError",
-			"()Z");
-	}
-	jboolean SyncResult::madeSomeProgress()
-	{
-		return __thiz.callMethod<jboolean>(
-			"madeSomeProgress",
-			"()Z");
-	}
-	QAndroidJniObject SyncResult::toDebugString()
-	{
-		return __thiz.callObjectMethod(
-			"toDebugString",
-			"()Ljava/lang/String;");
-	}
-	jboolean SyncResult::hasError()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasError",
-			"()Z");
+			"()V"
+		);
 	}
 	jint SyncResult::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SyncResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -178,7 +162,43 @@ namespace __jni_impl::android::content
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jboolean SyncResult::hasHardError()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasHardError",
+			"()Z"
+		);
+	}
+	jboolean SyncResult::hasSoftError()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasSoftError",
+			"()Z"
+		);
+	}
+	jboolean SyncResult::madeSomeProgress()
+	{
+		return __thiz.callMethod<jboolean>(
+			"madeSomeProgress",
+			"()Z"
+		);
+	}
+	jstring SyncResult::toDebugString()
+	{
+		return __thiz.callObjectMethod(
+			"toDebugString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean SyncResult::hasError()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasError",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::content
 

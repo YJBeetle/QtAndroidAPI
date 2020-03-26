@@ -36,22 +36,22 @@ namespace __jni_impl::android::app
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_DOWNLOAD_COMPLETE();
-		static QAndroidJniObject ACTION_NOTIFICATION_CLICKED();
-		static QAndroidJniObject ACTION_VIEW_DOWNLOADS();
-		static QAndroidJniObject COLUMN_BYTES_DOWNLOADED_SO_FAR();
-		static QAndroidJniObject COLUMN_DESCRIPTION();
-		static QAndroidJniObject COLUMN_ID();
-		static QAndroidJniObject COLUMN_LAST_MODIFIED_TIMESTAMP();
-		static QAndroidJniObject COLUMN_LOCAL_FILENAME();
-		static QAndroidJniObject COLUMN_LOCAL_URI();
-		static QAndroidJniObject COLUMN_MEDIAPROVIDER_URI();
-		static QAndroidJniObject COLUMN_MEDIA_TYPE();
-		static QAndroidJniObject COLUMN_REASON();
-		static QAndroidJniObject COLUMN_STATUS();
-		static QAndroidJniObject COLUMN_TITLE();
-		static QAndroidJniObject COLUMN_TOTAL_SIZE_BYTES();
-		static QAndroidJniObject COLUMN_URI();
+		static jstring ACTION_DOWNLOAD_COMPLETE();
+		static jstring ACTION_NOTIFICATION_CLICKED();
+		static jstring ACTION_VIEW_DOWNLOADS();
+		static jstring COLUMN_BYTES_DOWNLOADED_SO_FAR();
+		static jstring COLUMN_DESCRIPTION();
+		static jstring COLUMN_ID();
+		static jstring COLUMN_LAST_MODIFIED_TIMESTAMP();
+		static jstring COLUMN_LOCAL_FILENAME();
+		static jstring COLUMN_LOCAL_URI();
+		static jstring COLUMN_MEDIAPROVIDER_URI();
+		static jstring COLUMN_MEDIA_TYPE();
+		static jstring COLUMN_REASON();
+		static jstring COLUMN_STATUS();
+		static jstring COLUMN_TITLE();
+		static jstring COLUMN_TOTAL_SIZE_BYTES();
+		static jstring COLUMN_URI();
 		static jint ERROR_CANNOT_RESUME();
 		static jint ERROR_DEVICE_NOT_FOUND();
 		static jint ERROR_FILE_ALREADY_EXISTS();
@@ -61,9 +61,9 @@ namespace __jni_impl::android::app
 		static jint ERROR_TOO_MANY_REDIRECTS();
 		static jint ERROR_UNHANDLED_HTTP_CODE();
 		static jint ERROR_UNKNOWN();
-		static QAndroidJniObject EXTRA_DOWNLOAD_ID();
-		static QAndroidJniObject EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS();
-		static QAndroidJniObject INTENT_EXTRAS_SORT_BY_SIZE();
+		static jstring EXTRA_DOWNLOAD_ID();
+		static jstring EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS();
+		static jstring INTENT_EXTRAS_SORT_BY_SIZE();
 		static jint PAUSED_QUEUED_FOR_WIFI();
 		static jint PAUSED_UNKNOWN();
 		static jint PAUSED_WAITING_FOR_NETWORK();
@@ -83,7 +83,7 @@ namespace __jni_impl::android::app
 		QAndroidJniObject query(__jni_impl::android::app::DownloadManager_Query arg0);
 		QAndroidJniObject openDownloadedFile(jlong arg0);
 		QAndroidJniObject getUriForDownloadedFile(jlong arg0);
-		QAndroidJniObject getMimeTypeForDownloadedFile(jlong arg0);
+		jstring getMimeTypeForDownloadedFile(jlong arg0);
 		static QAndroidJniObject getMaxBytesOverMobile(__jni_impl::android::content::Context arg0);
 		static QAndroidJniObject getRecommendedMaxBytesOverMobile(__jni_impl::android::content::Context arg0);
 		jlong addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6);
@@ -101,246 +101,283 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	// Fields
-	QAndroidJniObject DownloadManager::ACTION_DOWNLOAD_COMPLETE()
+	jstring DownloadManager::ACTION_DOWNLOAD_COMPLETE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"ACTION_DOWNLOAD_COMPLETE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::ACTION_NOTIFICATION_CLICKED()
+	jstring DownloadManager::ACTION_NOTIFICATION_CLICKED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"ACTION_NOTIFICATION_CLICKED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::ACTION_VIEW_DOWNLOADS()
+	jstring DownloadManager::ACTION_VIEW_DOWNLOADS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"ACTION_VIEW_DOWNLOADS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_BYTES_DOWNLOADED_SO_FAR()
+	jstring DownloadManager::COLUMN_BYTES_DOWNLOADED_SO_FAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_BYTES_DOWNLOADED_SO_FAR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_DESCRIPTION()
+	jstring DownloadManager::COLUMN_DESCRIPTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_DESCRIPTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_ID()
+	jstring DownloadManager::COLUMN_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_LAST_MODIFIED_TIMESTAMP()
+	jstring DownloadManager::COLUMN_LAST_MODIFIED_TIMESTAMP()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_LAST_MODIFIED_TIMESTAMP",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_LOCAL_FILENAME()
+	jstring DownloadManager::COLUMN_LOCAL_FILENAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_LOCAL_FILENAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_LOCAL_URI()
+	jstring DownloadManager::COLUMN_LOCAL_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_LOCAL_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_MEDIAPROVIDER_URI()
+	jstring DownloadManager::COLUMN_MEDIAPROVIDER_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_MEDIAPROVIDER_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_MEDIA_TYPE()
+	jstring DownloadManager::COLUMN_MEDIA_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_MEDIA_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_REASON()
+	jstring DownloadManager::COLUMN_REASON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_REASON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_STATUS()
+	jstring DownloadManager::COLUMN_STATUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_STATUS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_TITLE()
+	jstring DownloadManager::COLUMN_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_TOTAL_SIZE_BYTES()
+	jstring DownloadManager::COLUMN_TOTAL_SIZE_BYTES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_TOTAL_SIZE_BYTES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::COLUMN_URI()
+	jstring DownloadManager::COLUMN_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"COLUMN_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DownloadManager::ERROR_CANNOT_RESUME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"ERROR_CANNOT_RESUME");
+			"ERROR_CANNOT_RESUME"
+		);
 	}
 	jint DownloadManager::ERROR_DEVICE_NOT_FOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"ERROR_DEVICE_NOT_FOUND");
+			"ERROR_DEVICE_NOT_FOUND"
+		);
 	}
 	jint DownloadManager::ERROR_FILE_ALREADY_EXISTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"ERROR_FILE_ALREADY_EXISTS");
+			"ERROR_FILE_ALREADY_EXISTS"
+		);
 	}
 	jint DownloadManager::ERROR_FILE_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"ERROR_FILE_ERROR");
+			"ERROR_FILE_ERROR"
+		);
 	}
 	jint DownloadManager::ERROR_HTTP_DATA_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"ERROR_HTTP_DATA_ERROR");
+			"ERROR_HTTP_DATA_ERROR"
+		);
 	}
 	jint DownloadManager::ERROR_INSUFFICIENT_SPACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"ERROR_INSUFFICIENT_SPACE");
+			"ERROR_INSUFFICIENT_SPACE"
+		);
 	}
 	jint DownloadManager::ERROR_TOO_MANY_REDIRECTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"ERROR_TOO_MANY_REDIRECTS");
+			"ERROR_TOO_MANY_REDIRECTS"
+		);
 	}
 	jint DownloadManager::ERROR_UNHANDLED_HTTP_CODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"ERROR_UNHANDLED_HTTP_CODE");
+			"ERROR_UNHANDLED_HTTP_CODE"
+		);
 	}
 	jint DownloadManager::ERROR_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"ERROR_UNKNOWN");
+			"ERROR_UNKNOWN"
+		);
 	}
-	QAndroidJniObject DownloadManager::EXTRA_DOWNLOAD_ID()
+	jstring DownloadManager::EXTRA_DOWNLOAD_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"EXTRA_DOWNLOAD_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS()
+	jstring DownloadManager::EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"EXTRA_NOTIFICATION_CLICK_DOWNLOAD_IDS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject DownloadManager::INTENT_EXTRAS_SORT_BY_SIZE()
+	jstring DownloadManager::INTENT_EXTRAS_SORT_BY_SIZE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.DownloadManager",
 			"INTENT_EXTRAS_SORT_BY_SIZE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint DownloadManager::PAUSED_QUEUED_FOR_WIFI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"PAUSED_QUEUED_FOR_WIFI");
+			"PAUSED_QUEUED_FOR_WIFI"
+		);
 	}
 	jint DownloadManager::PAUSED_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"PAUSED_UNKNOWN");
+			"PAUSED_UNKNOWN"
+		);
 	}
 	jint DownloadManager::PAUSED_WAITING_FOR_NETWORK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"PAUSED_WAITING_FOR_NETWORK");
+			"PAUSED_WAITING_FOR_NETWORK"
+		);
 	}
 	jint DownloadManager::PAUSED_WAITING_TO_RETRY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"PAUSED_WAITING_TO_RETRY");
+			"PAUSED_WAITING_TO_RETRY"
+		);
 	}
 	jint DownloadManager::STATUS_FAILED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"STATUS_FAILED");
+			"STATUS_FAILED"
+		);
 	}
 	jint DownloadManager::STATUS_PAUSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"STATUS_PAUSED");
+			"STATUS_PAUSED"
+		);
 	}
 	jint DownloadManager::STATUS_PENDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"STATUS_PENDING");
+			"STATUS_PENDING"
+		);
 	}
 	jint DownloadManager::STATUS_RUNNING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"STATUS_RUNNING");
+			"STATUS_RUNNING"
+		);
 	}
 	jint DownloadManager::STATUS_SUCCESSFUL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.DownloadManager",
-			"STATUS_SUCCESSFUL");
+			"STATUS_SUCCESSFUL"
+		);
 	}
 	
 	// Constructors
@@ -357,42 +394,48 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jint>(
 			"remove",
 			"([J)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong DownloadManager::enqueue(__jni_impl::android::app::DownloadManager_Request arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"enqueue",
 			"(Landroid/app/DownloadManager$Request;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DownloadManager::query(__jni_impl::android::app::DownloadManager_Query arg0)
 	{
 		return __thiz.callObjectMethod(
 			"query",
 			"(Landroid/app/DownloadManager$Query;)Landroid/database/Cursor;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DownloadManager::openDownloadedFile(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"openDownloadedFile",
 			"(J)Landroid/os/ParcelFileDescriptor;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DownloadManager::getUriForDownloadedFile(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getUriForDownloadedFile",
 			"(J)Landroid/net/Uri;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject DownloadManager::getMimeTypeForDownloadedFile(jlong arg0)
+	jstring DownloadManager::getMimeTypeForDownloadedFile(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getMimeTypeForDownloadedFile",
 			"(J)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject DownloadManager::getMaxBytesOverMobile(__jni_impl::android::content::Context arg0)
 	{
@@ -400,7 +443,8 @@ namespace __jni_impl::android::app
 			"android.app.DownloadManager",
 			"getMaxBytesOverMobile",
 			"(Landroid/content/Context;)Ljava/lang/Long;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject DownloadManager::getRecommendedMaxBytesOverMobile(__jni_impl::android::content::Context arg0)
 	{
@@ -408,7 +452,8 @@ namespace __jni_impl::android::app
 			"android.app.DownloadManager",
 			"getRecommendedMaxBytesOverMobile",
 			"(Landroid/content/Context;)Ljava/lang/Long;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong DownloadManager::addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6)
 	{
@@ -421,7 +466,8 @@ namespace __jni_impl::android::app
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	jlong DownloadManager::addCompletedDownload(jstring arg0, jstring arg1, jboolean arg2, jstring arg3, jstring arg4, jlong arg5, jboolean arg6, __jni_impl::android::net::Uri arg7, __jni_impl::android::net::Uri arg8)
 	{
@@ -436,7 +482,8 @@ namespace __jni_impl::android::app
 			arg5,
 			arg6,
 			arg7.__jniObject().object(),
-			arg8.__jniObject().object());
+			arg8.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

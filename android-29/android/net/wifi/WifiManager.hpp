@@ -56,38 +56,38 @@ namespace __jni_impl::android::net::wifi
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_PICK_WIFI_NETWORK();
-		static QAndroidJniObject ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE();
-		static QAndroidJniObject ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION();
+		static jstring ACTION_PICK_WIFI_NETWORK();
+		static jstring ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE();
+		static jstring ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION();
 		static jint ERROR_AUTHENTICATING();
-		static QAndroidJniObject EXTRA_BSSID();
-		static QAndroidJniObject EXTRA_NETWORK_INFO();
-		static QAndroidJniObject EXTRA_NETWORK_SUGGESTION();
-		static QAndroidJniObject EXTRA_NEW_RSSI();
-		static QAndroidJniObject EXTRA_NEW_STATE();
-		static QAndroidJniObject EXTRA_PREVIOUS_WIFI_STATE();
-		static QAndroidJniObject EXTRA_RESULTS_UPDATED();
-		static QAndroidJniObject EXTRA_SUPPLICANT_CONNECTED();
-		static QAndroidJniObject EXTRA_SUPPLICANT_ERROR();
-		static QAndroidJniObject EXTRA_WIFI_INFO();
-		static QAndroidJniObject EXTRA_WIFI_STATE();
-		static QAndroidJniObject NETWORK_IDS_CHANGED_ACTION();
-		static QAndroidJniObject NETWORK_STATE_CHANGED_ACTION();
-		static QAndroidJniObject RSSI_CHANGED_ACTION();
-		static QAndroidJniObject SCAN_RESULTS_AVAILABLE_ACTION();
+		static jstring EXTRA_BSSID();
+		static jstring EXTRA_NETWORK_INFO();
+		static jstring EXTRA_NETWORK_SUGGESTION();
+		static jstring EXTRA_NEW_RSSI();
+		static jstring EXTRA_NEW_STATE();
+		static jstring EXTRA_PREVIOUS_WIFI_STATE();
+		static jstring EXTRA_RESULTS_UPDATED();
+		static jstring EXTRA_SUPPLICANT_CONNECTED();
+		static jstring EXTRA_SUPPLICANT_ERROR();
+		static jstring EXTRA_WIFI_INFO();
+		static jstring EXTRA_WIFI_STATE();
+		static jstring NETWORK_IDS_CHANGED_ACTION();
+		static jstring NETWORK_STATE_CHANGED_ACTION();
+		static jstring RSSI_CHANGED_ACTION();
+		static jstring SCAN_RESULTS_AVAILABLE_ACTION();
 		static jint STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_DUPLICATE();
 		static jint STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_EXCEEDS_MAX_PER_APP();
 		static jint STATUS_NETWORK_SUGGESTIONS_ERROR_APP_DISALLOWED();
 		static jint STATUS_NETWORK_SUGGESTIONS_ERROR_INTERNAL();
 		static jint STATUS_NETWORK_SUGGESTIONS_ERROR_REMOVE_INVALID();
 		static jint STATUS_NETWORK_SUGGESTIONS_SUCCESS();
-		static QAndroidJniObject SUPPLICANT_CONNECTION_CHANGE_ACTION();
-		static QAndroidJniObject SUPPLICANT_STATE_CHANGED_ACTION();
+		static jstring SUPPLICANT_CONNECTION_CHANGE_ACTION();
+		static jstring SUPPLICANT_STATE_CHANGED_ACTION();
 		static jint WIFI_MODE_FULL();
 		static jint WIFI_MODE_FULL_HIGH_PERF();
 		static jint WIFI_MODE_FULL_LOW_LATENCY();
 		static jint WIFI_MODE_SCAN_ONLY();
-		static QAndroidJniObject WIFI_STATE_CHANGED_ACTION();
+		static jstring WIFI_STATE_CHANGED_ACTION();
 		static jint WIFI_STATE_DISABLED();
 		static jint WIFI_STATE_DISABLING();
 		static jint WIFI_STATE_ENABLED();
@@ -103,9 +103,6 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		jboolean disconnect();
-		jboolean startScan();
-		jboolean reconnect();
 		QAndroidJniObject getConfiguredNetworks();
 		jint addNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
 		jint updateNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
@@ -141,13 +138,16 @@ namespace __jni_impl::android::net::wifi
 		void setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1);
 		void startWps(__jni_impl::android::net::wifi::WpsInfo arg0, __jni_impl::android::net::wifi::WifiManager_WpsCallback arg1);
 		void cancelWps(__jni_impl::android::net::wifi::WifiManager_WpsCallback arg0);
-		QAndroidJniObject createWifiLock(jstring arg0);
 		QAndroidJniObject createWifiLock(jint arg0, jstring arg1);
+		QAndroidJniObject createWifiLock(jstring arg0);
 		QAndroidJniObject createMulticastLock(jstring arg0);
 		jboolean isWpa3SaeSupported();
 		jboolean isWpa3SuiteBSupported();
 		jboolean isEnhancedOpenSupported();
 		jboolean isEasyConnectSupported();
+		jboolean reconnect();
+		jboolean startScan();
+		jboolean disconnect();
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -166,278 +166,320 @@ namespace __jni_impl::android::net::wifi
 namespace __jni_impl::android::net::wifi
 {
 	// Fields
-	QAndroidJniObject WifiManager::ACTION_PICK_WIFI_NETWORK()
+	jstring WifiManager::ACTION_PICK_WIFI_NETWORK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"ACTION_PICK_WIFI_NETWORK",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE()
+	jstring WifiManager::ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"ACTION_REQUEST_SCAN_ALWAYS_AVAILABLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION()
+	jstring WifiManager::ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"ACTION_WIFI_NETWORK_SUGGESTION_POST_CONNECTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiManager::ERROR_AUTHENTICATING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"ERROR_AUTHENTICATING");
+			"ERROR_AUTHENTICATING"
+		);
 	}
-	QAndroidJniObject WifiManager::EXTRA_BSSID()
+	jstring WifiManager::EXTRA_BSSID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_BSSID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_NETWORK_INFO()
+	jstring WifiManager::EXTRA_NETWORK_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_NETWORK_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_NETWORK_SUGGESTION()
+	jstring WifiManager::EXTRA_NETWORK_SUGGESTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_NETWORK_SUGGESTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_NEW_RSSI()
+	jstring WifiManager::EXTRA_NEW_RSSI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_NEW_RSSI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_NEW_STATE()
+	jstring WifiManager::EXTRA_NEW_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_NEW_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_PREVIOUS_WIFI_STATE()
+	jstring WifiManager::EXTRA_PREVIOUS_WIFI_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_PREVIOUS_WIFI_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_RESULTS_UPDATED()
+	jstring WifiManager::EXTRA_RESULTS_UPDATED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_RESULTS_UPDATED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_SUPPLICANT_CONNECTED()
+	jstring WifiManager::EXTRA_SUPPLICANT_CONNECTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_SUPPLICANT_CONNECTED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_SUPPLICANT_ERROR()
+	jstring WifiManager::EXTRA_SUPPLICANT_ERROR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_SUPPLICANT_ERROR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_WIFI_INFO()
+	jstring WifiManager::EXTRA_WIFI_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_WIFI_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::EXTRA_WIFI_STATE()
+	jstring WifiManager::EXTRA_WIFI_STATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"EXTRA_WIFI_STATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::NETWORK_IDS_CHANGED_ACTION()
+	jstring WifiManager::NETWORK_IDS_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"NETWORK_IDS_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::NETWORK_STATE_CHANGED_ACTION()
+	jstring WifiManager::NETWORK_STATE_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"NETWORK_STATE_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::RSSI_CHANGED_ACTION()
+	jstring WifiManager::RSSI_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"RSSI_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::SCAN_RESULTS_AVAILABLE_ACTION()
+	jstring WifiManager::SCAN_RESULTS_AVAILABLE_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"SCAN_RESULTS_AVAILABLE_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiManager::STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_DUPLICATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_DUPLICATE");
+			"STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_DUPLICATE"
+		);
 	}
 	jint WifiManager::STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_EXCEEDS_MAX_PER_APP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_EXCEEDS_MAX_PER_APP");
+			"STATUS_NETWORK_SUGGESTIONS_ERROR_ADD_EXCEEDS_MAX_PER_APP"
+		);
 	}
 	jint WifiManager::STATUS_NETWORK_SUGGESTIONS_ERROR_APP_DISALLOWED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"STATUS_NETWORK_SUGGESTIONS_ERROR_APP_DISALLOWED");
+			"STATUS_NETWORK_SUGGESTIONS_ERROR_APP_DISALLOWED"
+		);
 	}
 	jint WifiManager::STATUS_NETWORK_SUGGESTIONS_ERROR_INTERNAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"STATUS_NETWORK_SUGGESTIONS_ERROR_INTERNAL");
+			"STATUS_NETWORK_SUGGESTIONS_ERROR_INTERNAL"
+		);
 	}
 	jint WifiManager::STATUS_NETWORK_SUGGESTIONS_ERROR_REMOVE_INVALID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"STATUS_NETWORK_SUGGESTIONS_ERROR_REMOVE_INVALID");
+			"STATUS_NETWORK_SUGGESTIONS_ERROR_REMOVE_INVALID"
+		);
 	}
 	jint WifiManager::STATUS_NETWORK_SUGGESTIONS_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"STATUS_NETWORK_SUGGESTIONS_SUCCESS");
+			"STATUS_NETWORK_SUGGESTIONS_SUCCESS"
+		);
 	}
-	QAndroidJniObject WifiManager::SUPPLICANT_CONNECTION_CHANGE_ACTION()
+	jstring WifiManager::SUPPLICANT_CONNECTION_CHANGE_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"SUPPLICANT_CONNECTION_CHANGE_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiManager::SUPPLICANT_STATE_CHANGED_ACTION()
+	jstring WifiManager::SUPPLICANT_STATE_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"SUPPLICANT_STATE_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiManager::WIFI_MODE_FULL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WIFI_MODE_FULL");
+			"WIFI_MODE_FULL"
+		);
 	}
 	jint WifiManager::WIFI_MODE_FULL_HIGH_PERF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WIFI_MODE_FULL_HIGH_PERF");
+			"WIFI_MODE_FULL_HIGH_PERF"
+		);
 	}
 	jint WifiManager::WIFI_MODE_FULL_LOW_LATENCY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WIFI_MODE_FULL_LOW_LATENCY");
+			"WIFI_MODE_FULL_LOW_LATENCY"
+		);
 	}
 	jint WifiManager::WIFI_MODE_SCAN_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WIFI_MODE_SCAN_ONLY");
+			"WIFI_MODE_SCAN_ONLY"
+		);
 	}
-	QAndroidJniObject WifiManager::WIFI_STATE_CHANGED_ACTION()
+	jstring WifiManager::WIFI_STATE_CHANGED_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.WifiManager",
 			"WIFI_STATE_CHANGED_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiManager::WIFI_STATE_DISABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WIFI_STATE_DISABLED");
+			"WIFI_STATE_DISABLED"
+		);
 	}
 	jint WifiManager::WIFI_STATE_DISABLING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WIFI_STATE_DISABLING");
+			"WIFI_STATE_DISABLING"
+		);
 	}
 	jint WifiManager::WIFI_STATE_ENABLED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WIFI_STATE_ENABLED");
+			"WIFI_STATE_ENABLED"
+		);
 	}
 	jint WifiManager::WIFI_STATE_ENABLING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WIFI_STATE_ENABLING");
+			"WIFI_STATE_ENABLING"
+		);
 	}
 	jint WifiManager::WIFI_STATE_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WIFI_STATE_UNKNOWN");
+			"WIFI_STATE_UNKNOWN"
+		);
 	}
 	jint WifiManager::WPS_AUTH_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WPS_AUTH_FAILURE");
+			"WPS_AUTH_FAILURE"
+		);
 	}
 	jint WifiManager::WPS_OVERLAP_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WPS_OVERLAP_ERROR");
+			"WPS_OVERLAP_ERROR"
+		);
 	}
 	jint WifiManager::WPS_TIMED_OUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WPS_TIMED_OUT");
+			"WPS_TIMED_OUT"
+		);
 	}
 	jint WifiManager::WPS_TKIP_ONLY_PROHIBITED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WPS_TKIP_ONLY_PROHIBITED");
+			"WPS_TKIP_ONLY_PROHIBITED"
+		);
 	}
 	jint WifiManager::WPS_WEP_PROHIBITED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.WifiManager",
-			"WPS_WEP_PROHIBITED");
+			"WPS_WEP_PROHIBITED"
+		);
 	}
 	
 	// Constructors
@@ -449,90 +491,82 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	jboolean WifiManager::disconnect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"disconnect",
-			"()Z");
-	}
-	jboolean WifiManager::startScan()
-	{
-		return __thiz.callMethod<jboolean>(
-			"startScan",
-			"()Z");
-	}
-	jboolean WifiManager::reconnect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"reconnect",
-			"()Z");
-	}
 	QAndroidJniObject WifiManager::getConfiguredNetworks()
 	{
 		return __thiz.callObjectMethod(
 			"getConfiguredNetworks",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jint WifiManager::addNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"addNetwork",
 			"(Landroid/net/wifi/WifiConfiguration;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint WifiManager::updateNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"updateNetwork",
 			"(Landroid/net/wifi/WifiConfiguration;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint WifiManager::addNetworkSuggestions(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"addNetworkSuggestions",
 			"(Ljava/util/List;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint WifiManager::removeNetworkSuggestions(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"removeNetworkSuggestions",
 			"(Ljava/util/List;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint WifiManager::getMaxNumberOfNetworkSuggestionsPerApp()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxNumberOfNetworkSuggestionsPerApp",
-			"()I");
+			"()I"
+		);
 	}
 	void WifiManager::addOrUpdatePasspointConfiguration(__jni_impl::android::net::wifi::hotspot2::PasspointConfiguration arg0)
 	{
 		__thiz.callMethod<void>(
 			"addOrUpdatePasspointConfiguration",
 			"(Landroid/net/wifi/hotspot2/PasspointConfiguration;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WifiManager::removePasspointConfiguration(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"removePasspointConfiguration",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject WifiManager::getPasspointConfigurations()
 	{
 		return __thiz.callObjectMethod(
 			"getPasspointConfigurations",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean WifiManager::removeNetwork(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeNetwork",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WifiManager::enableNetwork(jint arg0, jboolean arg1)
 	{
@@ -540,111 +574,129 @@ namespace __jni_impl::android::net::wifi
 			"enableNetwork",
 			"(IZ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean WifiManager::disableNetwork(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"disableNetwork",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WifiManager::reassociate()
 	{
 		return __thiz.callMethod<jboolean>(
 			"reassociate",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::pingSupplicant()
 	{
 		return __thiz.callMethod<jboolean>(
 			"pingSupplicant",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::is5GHzBandSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"is5GHzBandSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::isP2pSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isP2pSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::isDeviceToApRttSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDeviceToApRttSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::isPreferredNetworkOffloadSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPreferredNetworkOffloadSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::isTdlsSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTdlsSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::isEnhancedPowerReportingSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnhancedPowerReportingSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject WifiManager::getConnectionInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getConnectionInfo",
-			"()Landroid/net/wifi/WifiInfo;");
+			"()Landroid/net/wifi/WifiInfo;"
+		);
 	}
 	QAndroidJniObject WifiManager::getScanResults()
 	{
 		return __thiz.callObjectMethod(
 			"getScanResults",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	jboolean WifiManager::isScanAlwaysAvailable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isScanAlwaysAvailable",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::saveConfiguration()
 	{
 		return __thiz.callMethod<jboolean>(
 			"saveConfiguration",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject WifiManager::getDhcpInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getDhcpInfo",
-			"()Landroid/net/DhcpInfo;");
+			"()Landroid/net/DhcpInfo;"
+		);
 	}
 	jboolean WifiManager::setWifiEnabled(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setWifiEnabled",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint WifiManager::getWifiState()
 	{
 		return __thiz.callMethod<jint>(
 			"getWifiState",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean WifiManager::isWifiEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWifiEnabled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint WifiManager::calculateSignalLevel(jint arg0, jint arg1)
 	{
@@ -653,7 +705,8 @@ namespace __jni_impl::android::net::wifi
 			"calculateSignalLevel",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint WifiManager::compareSignalLevel(jint arg0, jint arg1)
 	{
@@ -662,7 +715,8 @@ namespace __jni_impl::android::net::wifi
 			"compareSignalLevel",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void WifiManager::startLocalOnlyHotspot(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -670,7 +724,8 @@ namespace __jni_impl::android::net::wifi
 			"startLocalOnlyHotspot",
 			"(Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiManager::setTdlsEnabled(__jni_impl::java::net::InetAddress arg0, jboolean arg1)
 	{
@@ -678,7 +733,8 @@ namespace __jni_impl::android::net::wifi
 			"setTdlsEnabled",
 			"(Ljava/net/InetAddress;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void WifiManager::setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1)
 	{
@@ -686,7 +742,8 @@ namespace __jni_impl::android::net::wifi
 			"setTdlsEnabledWithMacAddress",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void WifiManager::startWps(__jni_impl::android::net::wifi::WpsInfo arg0, __jni_impl::android::net::wifi::WifiManager_WpsCallback arg1)
 	{
@@ -694,21 +751,16 @@ namespace __jni_impl::android::net::wifi
 			"startWps",
 			"(Landroid/net/wifi/WpsInfo;Landroid/net/wifi/WifiManager$WpsCallback;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WifiManager::cancelWps(__jni_impl::android::net::wifi::WifiManager_WpsCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"cancelWps",
 			"(Landroid/net/wifi/WifiManager$WpsCallback;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject WifiManager::createWifiLock(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createWifiLock",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
-			arg0);
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WifiManager::createWifiLock(jint arg0, jstring arg1)
 	{
@@ -716,38 +768,73 @@ namespace __jni_impl::android::net::wifi
 			"createWifiLock",
 			"(ILjava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject WifiManager::createWifiLock(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createWifiLock",
+			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
+			arg0
+		);
 	}
 	QAndroidJniObject WifiManager::createMulticastLock(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createMulticastLock",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$MulticastLock;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean WifiManager::isWpa3SaeSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWpa3SaeSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::isWpa3SuiteBSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isWpa3SuiteBSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::isEnhancedOpenSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnhancedOpenSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean WifiManager::isEasyConnectSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEasyConnectSupported",
-			"()Z");
+			"()Z"
+		);
+	}
+	jboolean WifiManager::reconnect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"reconnect",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::startScan()
+	{
+		return __thiz.callMethod<jboolean>(
+			"startScan",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::disconnect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"disconnect",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi
 

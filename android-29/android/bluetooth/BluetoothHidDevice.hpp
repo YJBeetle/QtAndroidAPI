@@ -32,7 +32,7 @@ namespace __jni_impl::android::bluetooth
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_CONNECTION_STATE_CHANGED();
+		static jstring ACTION_CONNECTION_STATE_CHANGED();
 		static jbyte ERROR_RSP_INVALID_PARAM();
 		static jbyte ERROR_RSP_INVALID_RPT_ID();
 		static jbyte ERROR_RSP_NOT_READY();
@@ -62,14 +62,14 @@ namespace __jni_impl::android::bluetooth
 		// Methods
 		jboolean connect(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		jboolean reportError(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1);
-		jboolean disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0);
-		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
-		QAndroidJniObject getConnectedDevices();
-		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
 		jboolean registerApp(__jni_impl::android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, __jni_impl::android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, __jni_impl::android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::bluetooth::BluetoothHidDevice_Callback arg4);
 		jboolean unregisterApp();
 		jboolean sendReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jbyteArray arg2);
 		jboolean replyReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3);
+		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
+		QAndroidJniObject getConnectedDevices();
+		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
+		jboolean disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -82,144 +82,167 @@ namespace __jni_impl::android::bluetooth
 namespace __jni_impl::android::bluetooth
 {
 	// Fields
-	QAndroidJniObject BluetoothHidDevice::ACTION_CONNECTION_STATE_CHANGED()
+	jstring BluetoothHidDevice::ACTION_CONNECTION_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.bluetooth.BluetoothHidDevice",
 			"ACTION_CONNECTION_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_INVALID_PARAM()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"ERROR_RSP_INVALID_PARAM");
+			"ERROR_RSP_INVALID_PARAM"
+		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_INVALID_RPT_ID()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"ERROR_RSP_INVALID_RPT_ID");
+			"ERROR_RSP_INVALID_RPT_ID"
+		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_NOT_READY()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"ERROR_RSP_NOT_READY");
+			"ERROR_RSP_NOT_READY"
+		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"ERROR_RSP_SUCCESS");
+			"ERROR_RSP_SUCCESS"
+		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"ERROR_RSP_UNKNOWN");
+			"ERROR_RSP_UNKNOWN"
+		);
 	}
 	jbyte BluetoothHidDevice::ERROR_RSP_UNSUPPORTED_REQ()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"ERROR_RSP_UNSUPPORTED_REQ");
+			"ERROR_RSP_UNSUPPORTED_REQ"
+		);
 	}
 	jbyte BluetoothHidDevice::PROTOCOL_BOOT_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"PROTOCOL_BOOT_MODE");
+			"PROTOCOL_BOOT_MODE"
+		);
 	}
 	jbyte BluetoothHidDevice::PROTOCOL_REPORT_MODE()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"PROTOCOL_REPORT_MODE");
+			"PROTOCOL_REPORT_MODE"
+		);
 	}
 	jbyte BluetoothHidDevice::REPORT_TYPE_FEATURE()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"REPORT_TYPE_FEATURE");
+			"REPORT_TYPE_FEATURE"
+		);
 	}
 	jbyte BluetoothHidDevice::REPORT_TYPE_INPUT()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"REPORT_TYPE_INPUT");
+			"REPORT_TYPE_INPUT"
+		);
 	}
 	jbyte BluetoothHidDevice::REPORT_TYPE_OUTPUT()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"REPORT_TYPE_OUTPUT");
+			"REPORT_TYPE_OUTPUT"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS1_COMBO()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS1_COMBO");
+			"SUBCLASS1_COMBO"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS1_KEYBOARD()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS1_KEYBOARD");
+			"SUBCLASS1_KEYBOARD"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS1_MOUSE()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS1_MOUSE");
+			"SUBCLASS1_MOUSE"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS1_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS1_NONE");
+			"SUBCLASS1_NONE"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_CARD_READER()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS2_CARD_READER");
+			"SUBCLASS2_CARD_READER"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_DIGITIZER_TABLET()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS2_DIGITIZER_TABLET");
+			"SUBCLASS2_DIGITIZER_TABLET"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_GAMEPAD()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS2_GAMEPAD");
+			"SUBCLASS2_GAMEPAD"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_JOYSTICK()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS2_JOYSTICK");
+			"SUBCLASS2_JOYSTICK"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_REMOTE_CONTROL()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS2_REMOTE_CONTROL");
+			"SUBCLASS2_REMOTE_CONTROL"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_SENSING_DEVICE()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS2_SENSING_DEVICE");
+			"SUBCLASS2_SENSING_DEVICE"
+		);
 	}
 	jbyte BluetoothHidDevice::SUBCLASS2_UNCATEGORIZED()
 	{
 		return QAndroidJniObject::getStaticField<jbyte>(
 			"android.bluetooth.BluetoothHidDevice",
-			"SUBCLASS2_UNCATEGORIZED");
+			"SUBCLASS2_UNCATEGORIZED"
+		);
 	}
 	
 	// Constructors
@@ -236,7 +259,8 @@ namespace __jni_impl::android::bluetooth
 		return __thiz.callMethod<jboolean>(
 			"connect",
 			"(Landroid/bluetooth/BluetoothDevice;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean BluetoothHidDevice::reportError(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1)
 	{
@@ -244,34 +268,8 @@ namespace __jni_impl::android::bluetooth
 			"reportError",
 			"(Landroid/bluetooth/BluetoothDevice;B)Z",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jboolean BluetoothHidDevice::disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"disconnect",
-			"(Landroid/bluetooth/BluetoothDevice;)Z",
-			arg0.__jniObject().object());
-	}
-	jint BluetoothHidDevice::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getConnectionState",
-			"(Landroid/bluetooth/BluetoothDevice;)I",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject BluetoothHidDevice::getConnectedDevices()
-	{
-		return __thiz.callObjectMethod(
-			"getConnectedDevices",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject BluetoothHidDevice::getDevicesMatchingConnectionStates(jintArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDevicesMatchingConnectionStates",
-			"([I)Ljava/util/List;",
-			arg0);
+			arg1
+		);
 	}
 	jboolean BluetoothHidDevice::registerApp(__jni_impl::android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, __jni_impl::android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, __jni_impl::android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::bluetooth::BluetoothHidDevice_Callback arg4)
 	{
@@ -282,13 +280,15 @@ namespace __jni_impl::android::bluetooth
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	jboolean BluetoothHidDevice::unregisterApp()
 	{
 		return __thiz.callMethod<jboolean>(
 			"unregisterApp",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean BluetoothHidDevice::sendReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jbyteArray arg2)
 	{
@@ -297,7 +297,8 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothDevice;I[B)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean BluetoothHidDevice::replyReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3)
 	{
@@ -307,7 +308,39 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	jint BluetoothHidDevice::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getConnectionState",
+			"(Landroid/bluetooth/BluetoothDevice;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BluetoothHidDevice::getConnectedDevices()
+	{
+		return __thiz.callObjectMethod(
+			"getConnectedDevices",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject BluetoothHidDevice::getDevicesMatchingConnectionStates(jintArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDevicesMatchingConnectionStates",
+			"([I)Ljava/util/List;",
+			arg0
+		);
+	}
+	jboolean BluetoothHidDevice::disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"disconnect",
+			"(Landroid/bluetooth/BluetoothDevice;)Z",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::bluetooth
 

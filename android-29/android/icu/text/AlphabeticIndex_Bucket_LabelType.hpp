@@ -22,7 +22,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -36,28 +36,32 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"NORMAL",
-			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;");
+			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
 	}
 	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::UNDERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"UNDERFLOW",
-			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;");
+			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
 	}
 	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::INFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"INFLOW",
-			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;");
+			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
 	}
 	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::OVERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"OVERFLOW",
-			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;");
+			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::values()
+	jarray AlphabeticIndex_Bucket_LabelType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"values",
-			"()[Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;");
+			"()[Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject AlphabeticIndex_Bucket_LabelType::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

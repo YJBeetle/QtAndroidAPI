@@ -37,8 +37,8 @@ namespace __jni_impl::java::sql
 		void __constructor(jintArray arg0);
 		
 		// Methods
-		QAndroidJniObject getUpdateCounts();
-		QAndroidJniObject getLargeUpdateCounts();
+		jintArray getUpdateCounts();
+		jlongArray getLargeUpdateCounts();
 	};
 } // namespace __jni_impl::java::sql
 
@@ -148,17 +148,19 @@ namespace __jni_impl::java::sql
 	}
 	
 	// Methods
-	QAndroidJniObject BatchUpdateException::getUpdateCounts()
+	jintArray BatchUpdateException::getUpdateCounts()
 	{
 		return __thiz.callObjectMethod(
 			"getUpdateCounts",
-			"()[I");
+			"()[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject BatchUpdateException::getLargeUpdateCounts()
+	jlongArray BatchUpdateException::getLargeUpdateCounts()
 	{
 		return __thiz.callObjectMethod(
 			"getLargeUpdateCounts",
-			"()[J");
+			"()[J"
+		).object<jlongArray>();
 	}
 } // namespace __jni_impl::java::sql
 

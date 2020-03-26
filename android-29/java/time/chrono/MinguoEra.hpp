@@ -28,11 +28,11 @@ namespace __jni_impl::java::time::chrono
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		jint getValue();
 		static QAndroidJniObject of(jint arg0);
-		QAndroidJniObject getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
+		jstring getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
 	};
 } // namespace __jni_impl::java::time::chrono
 
@@ -47,14 +47,16 @@ namespace __jni_impl::java::time::chrono
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.MinguoEra",
 			"BEFORE_ROC",
-			"Ljava/time/chrono/MinguoEra;");
+			"Ljava/time/chrono/MinguoEra;"
+		);
 	}
 	QAndroidJniObject MinguoEra::ROC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.MinguoEra",
 			"ROC",
-			"Ljava/time/chrono/MinguoEra;");
+			"Ljava/time/chrono/MinguoEra;"
+		);
 	}
 	
 	// Constructors
@@ -66,12 +68,13 @@ namespace __jni_impl::java::time::chrono
 	}
 	
 	// Methods
-	QAndroidJniObject MinguoEra::values()
+	jarray MinguoEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.MinguoEra",
 			"values",
-			"()[Ljava/time/chrono/MinguoEra;");
+			"()[Ljava/time/chrono/MinguoEra;"
+		).object<jarray>();
 	}
 	QAndroidJniObject MinguoEra::valueOf(jstring arg0)
 	{
@@ -79,13 +82,15 @@ namespace __jni_impl::java::time::chrono
 			"java.time.chrono.MinguoEra",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/MinguoEra;",
-			arg0);
+			arg0
+		);
 	}
 	jint MinguoEra::getValue()
 	{
 		return __thiz.callMethod<jint>(
 			"getValue",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MinguoEra::of(jint arg0)
 	{
@@ -93,15 +98,17 @@ namespace __jni_impl::java::time::chrono
 			"java.time.chrono.MinguoEra",
 			"of",
 			"(I)Ljava/time/chrono/MinguoEra;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MinguoEra::getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1)
+	jstring MinguoEra::getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getDisplayName",
 			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::time::chrono
 

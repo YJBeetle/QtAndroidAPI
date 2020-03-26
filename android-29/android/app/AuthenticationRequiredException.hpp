@@ -46,7 +46,8 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.AuthenticationRequiredException",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -64,13 +65,15 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"getUserAction",
-			"()Landroid/app/PendingIntent;");
+			"()Landroid/app/PendingIntent;"
+		);
 	}
 	jint AuthenticationRequiredException::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void AuthenticationRequiredException::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -78,7 +81,8 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app
 

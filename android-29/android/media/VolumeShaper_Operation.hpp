@@ -25,7 +25,7 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -42,21 +42,24 @@ namespace __jni_impl::android::media
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Operation",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	QAndroidJniObject VolumeShaper_Operation::PLAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Operation",
 			"PLAY",
-			"Landroid/media/VolumeShaper$Operation;");
+			"Landroid/media/VolumeShaper$Operation;"
+		);
 	}
 	QAndroidJniObject VolumeShaper_Operation::REVERSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.media.VolumeShaper$Operation",
 			"REVERSE",
-			"Landroid/media/VolumeShaper$Operation;");
+			"Landroid/media/VolumeShaper$Operation;"
+		);
 	}
 	
 	// Constructors
@@ -73,25 +76,29 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject VolumeShaper_Operation::toString()
+	jstring VolumeShaper_Operation::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint VolumeShaper_Operation::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint VolumeShaper_Operation::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void VolumeShaper_Operation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -99,7 +106,8 @@ namespace __jni_impl::android::media
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

@@ -49,7 +49,7 @@ namespace __jni_impl::android::icu::util
 		
 		// Methods
 		jint hashCode();
-		QAndroidJniObject getType();
+		jstring getType();
 		void roll(jint arg0, jint arg1);
 		jint getActualMinimum(jint arg0);
 		jint getActualMaximum(jint arg0);
@@ -73,13 +73,15 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.GregorianCalendar",
-			"AD");
+			"AD"
+		);
 	}
 	jint GregorianCalendar::BC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.GregorianCalendar",
-			"BC");
+			"BC"
+		);
 	}
 	
 	// Constructors
@@ -164,13 +166,15 @@ namespace __jni_impl::android::icu::util
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject GregorianCalendar::getType()
+	jstring GregorianCalendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void GregorianCalendar::roll(jint arg0, jint arg1)
 	{
@@ -178,48 +182,55 @@ namespace __jni_impl::android::icu::util
 			"roll",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint GregorianCalendar::getActualMinimum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getActualMinimum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint GregorianCalendar::getActualMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getActualMaximum",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	void GregorianCalendar::setGregorianChange(__jni_impl::java::util::Date arg0)
 	{
 		__thiz.callMethod<void>(
 			"setGregorianChange",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject GregorianCalendar::getGregorianChange()
 	{
 		return __thiz.callObjectMethod(
 			"getGregorianChange",
-			"()Ljava/util/Date;");
+			"()Ljava/util/Date;"
+		);
 	}
 	jboolean GregorianCalendar::isLeapYear(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLeapYear",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean GregorianCalendar::isEquivalentTo(__jni_impl::android::icu::util::Calendar arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEquivalentTo",
 			"(Landroid/icu/util/Calendar;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

@@ -54,7 +54,7 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getLinkUpstreamBandwidthKbps();
 		jint getLinkDownstreamBandwidthKbps();
@@ -77,193 +77,225 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkCapabilities",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_CAPTIVE_PORTAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_CAPTIVE_PORTAL");
+			"NET_CAPABILITY_CAPTIVE_PORTAL"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_CBS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_CBS");
+			"NET_CAPABILITY_CBS"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_DUN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_DUN");
+			"NET_CAPABILITY_DUN"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_EIMS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_EIMS");
+			"NET_CAPABILITY_EIMS"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_FOREGROUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_FOREGROUND");
+			"NET_CAPABILITY_FOREGROUND"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_FOTA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_FOTA");
+			"NET_CAPABILITY_FOTA"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_IA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_IA");
+			"NET_CAPABILITY_IA"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_IMS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_IMS");
+			"NET_CAPABILITY_IMS"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_INTERNET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_INTERNET");
+			"NET_CAPABILITY_INTERNET"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_MCX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_MCX");
+			"NET_CAPABILITY_MCX"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_MMS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_MMS");
+			"NET_CAPABILITY_MMS"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_CONGESTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_NOT_CONGESTED");
+			"NET_CAPABILITY_NOT_CONGESTED"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_METERED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_NOT_METERED");
+			"NET_CAPABILITY_NOT_METERED"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_RESTRICTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_NOT_RESTRICTED");
+			"NET_CAPABILITY_NOT_RESTRICTED"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_ROAMING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_NOT_ROAMING");
+			"NET_CAPABILITY_NOT_ROAMING"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_SUSPENDED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_NOT_SUSPENDED");
+			"NET_CAPABILITY_NOT_SUSPENDED"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_NOT_VPN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_NOT_VPN");
+			"NET_CAPABILITY_NOT_VPN"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_RCS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_RCS");
+			"NET_CAPABILITY_RCS"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_SUPL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_SUPL");
+			"NET_CAPABILITY_SUPL"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_TRUSTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_TRUSTED");
+			"NET_CAPABILITY_TRUSTED"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_VALIDATED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_VALIDATED");
+			"NET_CAPABILITY_VALIDATED"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_WIFI_P2P()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_WIFI_P2P");
+			"NET_CAPABILITY_WIFI_P2P"
+		);
 	}
 	jint NetworkCapabilities::NET_CAPABILITY_XCAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"NET_CAPABILITY_XCAP");
+			"NET_CAPABILITY_XCAP"
+		);
 	}
 	jint NetworkCapabilities::SIGNAL_STRENGTH_UNSPECIFIED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"SIGNAL_STRENGTH_UNSPECIFIED");
+			"SIGNAL_STRENGTH_UNSPECIFIED"
+		);
 	}
 	jint NetworkCapabilities::TRANSPORT_BLUETOOTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"TRANSPORT_BLUETOOTH");
+			"TRANSPORT_BLUETOOTH"
+		);
 	}
 	jint NetworkCapabilities::TRANSPORT_CELLULAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"TRANSPORT_CELLULAR");
+			"TRANSPORT_CELLULAR"
+		);
 	}
 	jint NetworkCapabilities::TRANSPORT_ETHERNET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"TRANSPORT_ETHERNET");
+			"TRANSPORT_ETHERNET"
+		);
 	}
 	jint NetworkCapabilities::TRANSPORT_LOWPAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"TRANSPORT_LOWPAN");
+			"TRANSPORT_LOWPAN"
+		);
 	}
 	jint NetworkCapabilities::TRANSPORT_VPN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"TRANSPORT_VPN");
+			"TRANSPORT_VPN"
+		);
 	}
 	jint NetworkCapabilities::TRANSPORT_WIFI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"TRANSPORT_WIFI");
+			"TRANSPORT_WIFI"
+		);
 	}
 	jint NetworkCapabilities::TRANSPORT_WIFI_AWARE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.NetworkCapabilities",
-			"TRANSPORT_WIFI_AWARE");
+			"TRANSPORT_WIFI_AWARE"
+		);
 	}
 	
 	// Constructors
@@ -281,63 +313,73 @@ namespace __jni_impl::android::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject NetworkCapabilities::toString()
+	jstring NetworkCapabilities::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint NetworkCapabilities::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint NetworkCapabilities::getLinkUpstreamBandwidthKbps()
 	{
 		return __thiz.callMethod<jint>(
 			"getLinkUpstreamBandwidthKbps",
-			"()I");
+			"()I"
+		);
 	}
 	jint NetworkCapabilities::getLinkDownstreamBandwidthKbps()
 	{
 		return __thiz.callMethod<jint>(
 			"getLinkDownstreamBandwidthKbps",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject NetworkCapabilities::getTransportInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getTransportInfo",
-			"()Landroid/net/TransportInfo;");
+			"()Landroid/net/TransportInfo;"
+		);
 	}
 	jint NetworkCapabilities::getSignalStrength()
 	{
 		return __thiz.callMethod<jint>(
 			"getSignalStrength",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean NetworkCapabilities::hasCapability(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasCapability",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean NetworkCapabilities::hasTransport(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasTransport",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint NetworkCapabilities::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void NetworkCapabilities::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -345,7 +387,8 @@ namespace __jni_impl::android::net
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net
 

@@ -22,7 +22,7 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::java::nio::file
@@ -36,28 +36,32 @@ namespace __jni_impl::java::nio::file
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
 			"CONTINUE",
-			"Ljava/nio/file/FileVisitResult;");
+			"Ljava/nio/file/FileVisitResult;"
+		);
 	}
 	QAndroidJniObject FileVisitResult::TERMINATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
 			"TERMINATE",
-			"Ljava/nio/file/FileVisitResult;");
+			"Ljava/nio/file/FileVisitResult;"
+		);
 	}
 	QAndroidJniObject FileVisitResult::SKIP_SUBTREE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
 			"SKIP_SUBTREE",
-			"Ljava/nio/file/FileVisitResult;");
+			"Ljava/nio/file/FileVisitResult;"
+		);
 	}
 	QAndroidJniObject FileVisitResult::SKIP_SIBLINGS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
 			"SKIP_SIBLINGS",
-			"Ljava/nio/file/FileVisitResult;");
+			"Ljava/nio/file/FileVisitResult;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	QAndroidJniObject FileVisitResult::values()
+	jarray FileVisitResult::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.FileVisitResult",
 			"values",
-			"()[Ljava/nio/file/FileVisitResult;");
+			"()[Ljava/nio/file/FileVisitResult;"
+		).object<jarray>();
 	}
 	QAndroidJniObject FileVisitResult::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::java::nio::file
 			"java.nio.file.FileVisitResult",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/FileVisitResult;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

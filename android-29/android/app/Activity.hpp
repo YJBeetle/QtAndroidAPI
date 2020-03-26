@@ -239,7 +239,7 @@ namespace __jni_impl::android::app
 		void stopLocalVoiceInteraction();
 		void onSaveInstanceState(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::PersistableBundle arg1);
 		jboolean onCreateThumbnail(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Canvas arg1);
-		QAndroidJniObject onCreateDescription();
+		jstring onCreateDescription();
 		void onProvideAssistData(__jni_impl::android::os::Bundle arg0);
 		void onProvideAssistContent(__jni_impl::android::app::assist::AssistContent arg0);
 		void onGetDirectActions(__jni_impl::android::os::CancellationSignal arg0, __jni_impl::__JniBaseClass arg1);
@@ -261,8 +261,8 @@ namespace __jni_impl::android::app
 		jint getMaxNumPictureInPictureActions();
 		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
 		jint getChangingConfigurations();
-		QAndroidJniObject getLastNonConfigurationInstance();
-		QAndroidJniObject onRetainNonConfigurationInstance();
+		jobject getLastNonConfigurationInstance();
+		jobject onRetainNonConfigurationInstance();
 		void onLowMemory();
 		void onTrimMemory(jint arg0);
 		QAndroidJniObject getFragmentManager();
@@ -367,7 +367,7 @@ namespace __jni_impl::android::app
 		void overridePendingTransition(jint arg0, jint arg1);
 		QAndroidJniObject getReferrer();
 		QAndroidJniObject onProvideReferrer();
-		QAndroidJniObject getCallingPackage();
+		jstring getCallingPackage();
 		QAndroidJniObject getCallingActivity();
 		void setVisible(jboolean arg0);
 		jboolean isFinishing();
@@ -387,13 +387,13 @@ namespace __jni_impl::android::app
 		jint getTaskId();
 		jboolean isTaskRoot();
 		jboolean moveTaskToBack(jboolean arg0);
-		QAndroidJniObject getLocalClassName();
+		jstring getLocalClassName();
 		QAndroidJniObject getComponentName();
 		QAndroidJniObject getPreferences(jint arg0);
 		void setTitle(jstring arg0);
 		void setTitle(jint arg0);
 		void setTitleColor(jint arg0);
-		QAndroidJniObject getTitle();
+		jstring getTitle();
 		jint getTitleColor();
 		void setTaskDescription(__jni_impl::android::app::ActivityManager_TaskDescription arg0);
 		void setProgressBarVisibility(jboolean arg0);
@@ -442,7 +442,7 @@ namespace __jni_impl::android::app
 		void startActivities(jarray arg0);
 		void startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5);
 		void startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4);
-		QAndroidJniObject getSystemService(jstring arg0);
+		jobject getSystemService(jstring arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -499,49 +499,57 @@ namespace __jni_impl::android::app
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Activity",
-			"DEFAULT_KEYS_DIALER");
+			"DEFAULT_KEYS_DIALER"
+		);
 	}
 	jint Activity::DEFAULT_KEYS_DISABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Activity",
-			"DEFAULT_KEYS_DISABLE");
+			"DEFAULT_KEYS_DISABLE"
+		);
 	}
 	jint Activity::DEFAULT_KEYS_SEARCH_GLOBAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Activity",
-			"DEFAULT_KEYS_SEARCH_GLOBAL");
+			"DEFAULT_KEYS_SEARCH_GLOBAL"
+		);
 	}
 	jint Activity::DEFAULT_KEYS_SEARCH_LOCAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Activity",
-			"DEFAULT_KEYS_SEARCH_LOCAL");
+			"DEFAULT_KEYS_SEARCH_LOCAL"
+		);
 	}
 	jint Activity::DEFAULT_KEYS_SHORTCUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Activity",
-			"DEFAULT_KEYS_SHORTCUT");
+			"DEFAULT_KEYS_SHORTCUT"
+		);
 	}
 	jint Activity::RESULT_CANCELED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Activity",
-			"RESULT_CANCELED");
+			"RESULT_CANCELED"
+		);
 	}
 	jint Activity::RESULT_FIRST_USER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Activity",
-			"RESULT_FIRST_USER");
+			"RESULT_FIRST_USER"
+		);
 	}
 	jint Activity::RESULT_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Activity",
-			"RESULT_OK");
+			"RESULT_OK"
+		);
 	}
 	
 	// Constructors
@@ -557,20 +565,23 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"getParent",
-			"()Landroid/app/Activity;");
+			"()Landroid/app/Activity;"
+		);
 	}
 	jboolean Activity::isDestroyed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isDestroyed",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Activity::setResult(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResult",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setResult(jint arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -578,13 +589,15 @@ namespace __jni_impl::android::app
 			"setResult",
 			"(ILandroid/content/Intent;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
 	{
@@ -594,70 +607,81 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject Activity::getIntent()
 	{
 		return __thiz.callObjectMethod(
 			"getIntent",
-			"()Landroid/content/Intent;");
+			"()Landroid/content/Intent;"
+		);
 	}
 	void Activity::setIntent(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIntent",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::getApplication()
 	{
 		return __thiz.callObjectMethod(
 			"getApplication",
-			"()Landroid/app/Application;");
+			"()Landroid/app/Application;"
+		);
 	}
 	jboolean Activity::isChild()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isChild",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Activity::getWindowManager()
 	{
 		return __thiz.callObjectMethod(
 			"getWindowManager",
-			"()Landroid/view/WindowManager;");
+			"()Landroid/view/WindowManager;"
+		);
 	}
 	QAndroidJniObject Activity::getWindow()
 	{
 		return __thiz.callObjectMethod(
 			"getWindow",
-			"()Landroid/view/Window;");
+			"()Landroid/view/Window;"
+		);
 	}
 	QAndroidJniObject Activity::getLoaderManager()
 	{
 		return __thiz.callObjectMethod(
 			"getLoaderManager",
-			"()Landroid/app/LoaderManager;");
+			"()Landroid/app/LoaderManager;"
+		);
 	}
 	QAndroidJniObject Activity::getCurrentFocus()
 	{
 		return __thiz.callObjectMethod(
 			"getCurrentFocus",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
 	void Activity::registerActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerActivityLifecycleCallbacks",
 			"(Landroid/app/Application$ActivityLifecycleCallbacks;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::unregisterActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterActivityLifecycleCallbacks",
 			"(Landroid/app/Application$ActivityLifecycleCallbacks;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onCreate(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::PersistableBundle arg1)
 	{
@@ -665,7 +689,8 @@ namespace __jni_impl::android::app
 			"onCreate",
 			"(Landroid/os/Bundle;Landroid/os/PersistableBundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::onRestoreInstanceState(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::PersistableBundle arg1)
 	{
@@ -673,7 +698,8 @@ namespace __jni_impl::android::app
 			"onRestoreInstanceState",
 			"(Landroid/os/Bundle;Landroid/os/PersistableBundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::onPostCreate(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::PersistableBundle arg1)
 	{
@@ -681,69 +707,80 @@ namespace __jni_impl::android::app
 			"onPostCreate",
 			"(Landroid/os/Bundle;Landroid/os/PersistableBundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::onStateNotSaved()
 	{
 		__thiz.callMethod<void>(
 			"onStateNotSaved",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onTopResumedActivityChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onTopResumedActivityChanged",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Activity::isVoiceInteraction()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isVoiceInteraction",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Activity::isVoiceInteractionRoot()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isVoiceInteractionRoot",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Activity::getVoiceInteractor()
 	{
 		return __thiz.callObjectMethod(
 			"getVoiceInteractor",
-			"()Landroid/app/VoiceInteractor;");
+			"()Landroid/app/VoiceInteractor;"
+		);
 	}
 	jboolean Activity::isLocalVoiceInteractionSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLocalVoiceInteractionSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Activity::startLocalVoiceInteraction(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"startLocalVoiceInteraction",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onLocalVoiceInteractionStarted()
 	{
 		__thiz.callMethod<void>(
 			"onLocalVoiceInteractionStarted",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onLocalVoiceInteractionStopped()
 	{
 		__thiz.callMethod<void>(
 			"onLocalVoiceInteractionStopped",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::stopLocalVoiceInteraction()
 	{
 		__thiz.callMethod<void>(
 			"stopLocalVoiceInteraction",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onSaveInstanceState(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::PersistableBundle arg1)
 	{
@@ -751,7 +788,8 @@ namespace __jni_impl::android::app
 			"onSaveInstanceState",
 			"(Landroid/os/Bundle;Landroid/os/PersistableBundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Activity::onCreateThumbnail(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Canvas arg1)
 	{
@@ -759,27 +797,31 @@ namespace __jni_impl::android::app
 			"onCreateThumbnail",
 			"(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Activity::onCreateDescription()
+	jstring Activity::onCreateDescription()
 	{
 		return __thiz.callObjectMethod(
 			"onCreateDescription",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void Activity::onProvideAssistData(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"onProvideAssistData",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onProvideAssistContent(__jni_impl::android::app::assist::AssistContent arg0)
 	{
 		__thiz.callMethod<void>(
 			"onProvideAssistContent",
 			"(Landroid/app/assist/AssistContent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onGetDirectActions(__jni_impl::android::os::CancellationSignal arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -787,7 +829,8 @@ namespace __jni_impl::android::app
 			"onGetDirectActions",
 			"(Landroid/os/CancellationSignal;Ljava/util/function/Consumer;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::onPerformDirectAction(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::CancellationSignal arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -797,19 +840,22 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void Activity::requestShowKeyboardShortcuts()
 	{
 		__thiz.callMethod<void>(
 			"requestShowKeyboardShortcuts",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::dismissKeyboardShortcutsHelper()
 	{
 		__thiz.callMethod<void>(
 			"dismissKeyboardShortcutsHelper",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onProvideKeyboardShortcuts(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -818,20 +864,23 @@ namespace __jni_impl::android::app
 			"(Ljava/util/List;Landroid/view/Menu;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	jboolean Activity::showAssist(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"showAssist",
 			"(Landroid/os/Bundle;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::reportFullyDrawn()
 	{
 		__thiz.callMethod<void>(
 			"reportFullyDrawn",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1)
 	{
@@ -839,27 +888,31 @@ namespace __jni_impl::android::app
 			"onMultiWindowModeChanged",
 			"(ZLandroid/content/res/Configuration;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::onMultiWindowModeChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onMultiWindowModeChanged",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Activity::isInMultiWindowMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInMultiWindowMode",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Activity::onPictureInPictureModeChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onPictureInPictureModeChanged",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::onPictureInPictureModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1)
 	{
@@ -867,90 +920,104 @@ namespace __jni_impl::android::app
 			"onPictureInPictureModeChanged",
 			"(ZLandroid/content/res/Configuration;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Activity::isInPictureInPictureMode()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInPictureInPictureMode",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Activity::enterPictureInPictureMode()
 	{
 		__thiz.callMethod<void>(
 			"enterPictureInPictureMode",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Activity::enterPictureInPictureMode(__jni_impl::android::app::PictureInPictureParams arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"enterPictureInPictureMode",
 			"(Landroid/app/PictureInPictureParams;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::setPictureInPictureParams(__jni_impl::android::app::PictureInPictureParams arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPictureInPictureParams",
 			"(Landroid/app/PictureInPictureParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Activity::getMaxNumPictureInPictureActions()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxNumPictureInPictureActions",
-			"()I");
+			"()I"
+		);
 	}
 	void Activity::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
 	{
 		__thiz.callMethod<void>(
 			"onConfigurationChanged",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Activity::getChangingConfigurations()
 	{
 		return __thiz.callMethod<jint>(
 			"getChangingConfigurations",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Activity::getLastNonConfigurationInstance()
+	jobject Activity::getLastNonConfigurationInstance()
 	{
 		return __thiz.callObjectMethod(
 			"getLastNonConfigurationInstance",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject Activity::onRetainNonConfigurationInstance()
+	jobject Activity::onRetainNonConfigurationInstance()
 	{
 		return __thiz.callObjectMethod(
 			"onRetainNonConfigurationInstance",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void Activity::onLowMemory()
 	{
 		__thiz.callMethod<void>(
 			"onLowMemory",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onTrimMemory(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onTrimMemory",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Activity::getFragmentManager()
 	{
 		return __thiz.callObjectMethod(
 			"getFragmentManager",
-			"()Landroid/app/FragmentManager;");
+			"()Landroid/app/FragmentManager;"
+		);
 	}
 	void Activity::onAttachFragment(__jni_impl::android::app::Fragment arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAttachFragment",
 			"(Landroid/app/Fragment;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::managedQuery(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
@@ -961,62 +1028,71 @@ namespace __jni_impl::android::app
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Activity::startManagingCursor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"startManagingCursor",
 			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::stopManagingCursor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"stopManagingCursor",
 			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::findViewById(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findViewById",
 			"(I)Landroid/view/View;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Activity::requireViewById(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"requireViewById",
 			"(I)Landroid/view/View;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Activity::getActionBar()
 	{
 		return __thiz.callObjectMethod(
 			"getActionBar",
-			"()Landroid/app/ActionBar;");
+			"()Landroid/app/ActionBar;"
+		);
 	}
 	void Activity::setActionBar(__jni_impl::android::widget::Toolbar arg0)
 	{
 		__thiz.callMethod<void>(
 			"setActionBar",
 			"(Landroid/widget/Toolbar;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::setContentView(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentView",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setContentView(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentView",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
 	{
@@ -1024,7 +1100,8 @@ namespace __jni_impl::android::app
 			"setContentView",
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
 	{
@@ -1032,40 +1109,46 @@ namespace __jni_impl::android::app
 			"addContentView",
 			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::getContentTransitionManager()
 	{
 		return __thiz.callObjectMethod(
 			"getContentTransitionManager",
-			"()Landroid/transition/TransitionManager;");
+			"()Landroid/transition/TransitionManager;"
+		);
 	}
 	void Activity::setContentTransitionManager(__jni_impl::android::transition::TransitionManager arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentTransitionManager",
 			"(Landroid/transition/TransitionManager;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::getContentScene()
 	{
 		return __thiz.callObjectMethod(
 			"getContentScene",
-			"()Landroid/transition/Scene;");
+			"()Landroid/transition/Scene;"
+		);
 	}
 	void Activity::setFinishOnTouchOutside(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFinishOnTouchOutside",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setDefaultKeyMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDefaultKeyMode",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Activity::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
@@ -1073,7 +1156,8 @@ namespace __jni_impl::android::app
 			"onKeyDown",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Activity::onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
@@ -1081,7 +1165,8 @@ namespace __jni_impl::android::app
 			"onKeyLongPress",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Activity::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
@@ -1089,7 +1174,8 @@ namespace __jni_impl::android::app
 			"onKeyUp",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Activity::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
 	{
@@ -1098,13 +1184,15 @@ namespace __jni_impl::android::app
 			"(IILandroid/view/KeyEvent;)Z",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void Activity::onBackPressed()
 	{
 		__thiz.callMethod<void>(
 			"onBackPressed",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Activity::onKeyShortcut(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
@@ -1112,121 +1200,139 @@ namespace __jni_impl::android::app
 			"onKeyShortcut",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Activity::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onTrackballEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onUserInteraction()
 	{
 		__thiz.callMethod<void>(
 			"onUserInteraction",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onWindowAttributesChanged(__jni_impl::android::view::WindowManager_LayoutParams arg0)
 	{
 		__thiz.callMethod<void>(
 			"onWindowAttributesChanged",
 			"(Landroid/view/WindowManager$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onContentChanged()
 	{
 		__thiz.callMethod<void>(
 			"onContentChanged",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onWindowFocusChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onWindowFocusChanged",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::onAttachedToWindow()
 	{
 		__thiz.callMethod<void>(
 			"onAttachedToWindow",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onDetachedFromWindow()
 	{
 		__thiz.callMethod<void>(
 			"onDetachedFromWindow",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Activity::hasWindowFocus()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasWindowFocus",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Activity::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchKeyShortcutEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchTrackballEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchGenericMotionEvent",
 			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::dispatchPopulateAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"dispatchPopulateAccessibilityEvent",
 			"(Landroid/view/accessibility/AccessibilityEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::onCreatePanelView(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onCreatePanelView",
 			"(I)Landroid/view/View;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Activity::onCreatePanelMenu(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -1234,7 +1340,8 @@ namespace __jni_impl::android::app
 			"onCreatePanelMenu",
 			"(ILandroid/view/Menu;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Activity::onPreparePanel(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -1243,7 +1350,8 @@ namespace __jni_impl::android::app
 			"(ILandroid/view/View;Landroid/view/Menu;)Z",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean Activity::onMenuOpened(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -1251,7 +1359,8 @@ namespace __jni_impl::android::app
 			"onMenuOpened",
 			"(ILandroid/view/Menu;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean Activity::onMenuItemSelected(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -1259,7 +1368,8 @@ namespace __jni_impl::android::app
 			"onMenuItemSelected",
 			"(ILandroid/view/MenuItem;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::onPanelClosed(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -1267,80 +1377,92 @@ namespace __jni_impl::android::app
 			"onPanelClosed",
 			"(ILandroid/view/Menu;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::invalidateOptionsMenu()
 	{
 		__thiz.callMethod<void>(
 			"invalidateOptionsMenu",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Activity::onCreateOptionsMenu(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onCreateOptionsMenu",
 			"(Landroid/view/Menu;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::onPrepareOptionsMenu(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onPrepareOptionsMenu",
 			"(Landroid/view/Menu;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::onOptionsItemSelected(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onOptionsItemSelected",
 			"(Landroid/view/MenuItem;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::onNavigateUp()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onNavigateUp",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Activity::onNavigateUpFromChild(__jni_impl::android::app::Activity arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onNavigateUpFromChild",
 			"(Landroid/app/Activity;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onCreateNavigateUpTaskStack(__jni_impl::android::app::TaskStackBuilder arg0)
 	{
 		__thiz.callMethod<void>(
 			"onCreateNavigateUpTaskStack",
 			"(Landroid/app/TaskStackBuilder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onPrepareNavigateUpTaskStack(__jni_impl::android::app::TaskStackBuilder arg0)
 	{
 		__thiz.callMethod<void>(
 			"onPrepareNavigateUpTaskStack",
 			"(Landroid/app/TaskStackBuilder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onOptionsMenuClosed(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onOptionsMenuClosed",
 			"(Landroid/view/Menu;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::openOptionsMenu()
 	{
 		__thiz.callMethod<void>(
 			"openOptionsMenu",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::closeOptionsMenu()
 	{
 		__thiz.callMethod<void>(
 			"closeOptionsMenu",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onCreateContextMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -1349,55 +1471,63 @@ namespace __jni_impl::android::app
 			"(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void Activity::registerForContextMenu(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerForContextMenu",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::unregisterForContextMenu(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterForContextMenu",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::openContextMenu(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"openContextMenu",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::closeContextMenu()
 	{
 		__thiz.callMethod<void>(
 			"closeContextMenu",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Activity::onContextItemSelected(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onContextItemSelected",
 			"(Landroid/view/MenuItem;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onContextMenuClosed(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onContextMenuClosed",
 			"(Landroid/view/Menu;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::showDialog(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"showDialog",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Activity::showDialog(jint arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -1405,40 +1535,46 @@ namespace __jni_impl::android::app
 			"showDialog",
 			"(ILandroid/os/Bundle;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::dismissDialog(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"dismissDialog",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::removeDialog(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeDialog",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Activity::onSearchRequested(__jni_impl::android::view::SearchEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onSearchRequested",
 			"(Landroid/view/SearchEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::onSearchRequested()
 	{
 		return __thiz.callMethod<jboolean>(
 			"onSearchRequested",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject Activity::getSearchEvent()
 	{
 		return __thiz.callObjectMethod(
 			"getSearchEvent",
-			"()Landroid/view/SearchEvent;");
+			"()Landroid/view/SearchEvent;"
+		);
 	}
 	void Activity::startSearch(jstring arg0, jboolean arg1, __jni_impl::android::os::Bundle arg2, jboolean arg3)
 	{
@@ -1448,7 +1584,8 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void Activity::triggerSearch(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -1456,21 +1593,24 @@ namespace __jni_impl::android::app
 			"triggerSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::takeKeyEvents(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"takeKeyEvents",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Activity::requestWindowFeature(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"requestWindowFeature",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setFeatureDrawableResource(jint arg0, jint arg1)
 	{
@@ -1478,7 +1618,8 @@ namespace __jni_impl::android::app
 			"setFeatureDrawableResource",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Activity::setFeatureDrawableUri(jint arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -1486,7 +1627,8 @@ namespace __jni_impl::android::app
 			"setFeatureDrawableUri",
 			"(ILandroid/net/Uri;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::setFeatureDrawable(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1)
 	{
@@ -1494,7 +1636,8 @@ namespace __jni_impl::android::app
 			"setFeatureDrawable",
 			"(ILandroid/graphics/drawable/Drawable;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::setFeatureDrawableAlpha(jint arg0, jint arg1)
 	{
@@ -1502,19 +1645,22 @@ namespace __jni_impl::android::app
 			"setFeatureDrawableAlpha",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Activity::getLayoutInflater()
 	{
 		return __thiz.callObjectMethod(
 			"getLayoutInflater",
-			"()Landroid/view/LayoutInflater;");
+			"()Landroid/view/LayoutInflater;"
+		);
 	}
 	QAndroidJniObject Activity::getMenuInflater()
 	{
 		return __thiz.callObjectMethod(
 			"getMenuInflater",
-			"()Landroid/view/MenuInflater;");
+			"()Landroid/view/MenuInflater;"
+		);
 	}
 	void Activity::requestPermissions(jarray arg0, jint arg1)
 	{
@@ -1522,7 +1668,8 @@ namespace __jni_impl::android::app
 			"requestPermissions",
 			"([Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Activity::onRequestPermissionsResult(jint arg0, jarray arg1, jintArray arg2)
 	{
@@ -1531,14 +1678,16 @@ namespace __jni_impl::android::app
 			"(I[Ljava/lang/String;[I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jboolean Activity::shouldShowRequestPermissionRationale(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"shouldShowRequestPermissionRationale",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1)
 	{
@@ -1546,7 +1695,8 @@ namespace __jni_impl::android::app
 			"startActivityForResult",
 			"(Landroid/content/Intent;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Activity::startActivityForResult(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -1555,13 +1705,15 @@ namespace __jni_impl::android::app
 			"(Landroid/content/Intent;ILandroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean Activity::isActivityTransitionRunning()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isActivityTransitionRunning",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Activity::startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::os::Bundle arg6)
 	{
@@ -1574,7 +1726,8 @@ namespace __jni_impl::android::app
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void Activity::startIntentSenderForResult(__jni_impl::android::content::IntentSender arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -1586,7 +1739,8 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object(),
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	jboolean Activity::startActivityIfNeeded(__jni_impl::android::content::Intent arg0, jint arg1)
 	{
@@ -1594,7 +1748,8 @@ namespace __jni_impl::android::app
 			"startActivityIfNeeded",
 			"(Landroid/content/Intent;I)Z",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jboolean Activity::startActivityIfNeeded(__jni_impl::android::content::Intent arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -1603,14 +1758,16 @@ namespace __jni_impl::android::app
 			"(Landroid/content/Intent;ILandroid/os/Bundle;)Z",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	jboolean Activity::startNextMatchingActivity(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"startNextMatchingActivity",
 			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::startNextMatchingActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -1618,7 +1775,8 @@ namespace __jni_impl::android::app
 			"startNextMatchingActivity",
 			"(Landroid/content/Intent;Landroid/os/Bundle;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::startActivityFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::Intent arg1, jint arg2)
 	{
@@ -1627,7 +1785,8 @@ namespace __jni_impl::android::app
 			"(Landroid/app/Activity;Landroid/content/Intent;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Activity::startActivityFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::os::Bundle arg3)
 	{
@@ -1637,7 +1796,8 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void Activity::startActivityFromFragment(__jni_impl::android::app::Fragment arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::os::Bundle arg3)
 	{
@@ -1647,7 +1807,8 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void Activity::startActivityFromFragment(__jni_impl::android::app::Fragment arg0, __jni_impl::android::content::Intent arg1, jint arg2)
 	{
@@ -1656,7 +1817,8 @@ namespace __jni_impl::android::app
 			"(Landroid/app/Fragment;Landroid/content/Intent;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Activity::startIntentSenderFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::IntentSender arg1, jint arg2, __jni_impl::android::content::Intent arg3, jint arg4, jint arg5, jint arg6, __jni_impl::android::os::Bundle arg7)
 	{
@@ -1670,7 +1832,8 @@ namespace __jni_impl::android::app
 			arg4,
 			arg5,
 			arg6,
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 	void Activity::startIntentSenderFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::IntentSender arg1, jint arg2, __jni_impl::android::content::Intent arg3, jint arg4, jint arg5, jint arg6)
 	{
@@ -1683,7 +1846,8 @@ namespace __jni_impl::android::app
 			arg3.__jniObject().object(),
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void Activity::overridePendingTransition(jint arg0, jint arg1)
 	{
@@ -1691,82 +1855,95 @@ namespace __jni_impl::android::app
 			"overridePendingTransition",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Activity::getReferrer()
 	{
 		return __thiz.callObjectMethod(
 			"getReferrer",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject Activity::onProvideReferrer()
 	{
 		return __thiz.callObjectMethod(
 			"onProvideReferrer",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Activity::getCallingPackage()
+	jstring Activity::getCallingPackage()
 	{
 		return __thiz.callObjectMethod(
 			"getCallingPackage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Activity::getCallingActivity()
 	{
 		return __thiz.callObjectMethod(
 			"getCallingActivity",
-			"()Landroid/content/ComponentName;");
+			"()Landroid/content/ComponentName;"
+		);
 	}
 	void Activity::setVisible(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVisible",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Activity::isFinishing()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFinishing",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Activity::isChangingConfigurations()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isChangingConfigurations",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Activity::recreate()
 	{
 		__thiz.callMethod<void>(
 			"recreate",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::finishAffinity()
 	{
 		__thiz.callMethod<void>(
 			"finishAffinity",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::finishFromChild(__jni_impl::android::app::Activity arg0)
 	{
 		__thiz.callMethod<void>(
 			"finishFromChild",
 			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::finishAfterTransition()
 	{
 		__thiz.callMethod<void>(
 			"finishAfterTransition",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::finishActivity(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"finishActivity",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::finishActivityFromChild(__jni_impl::android::app::Activity arg0, jint arg1)
 	{
@@ -1774,19 +1951,22 @@ namespace __jni_impl::android::app
 			"finishActivityFromChild",
 			"(Landroid/app/Activity;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Activity::finishAndRemoveTask()
 	{
 		__thiz.callMethod<void>(
 			"finishAndRemoveTask",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean Activity::releaseInstance()
 	{
 		return __thiz.callMethod<jboolean>(
 			"releaseInstance",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Activity::onActivityReenter(jint arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -1794,7 +1974,8 @@ namespace __jni_impl::android::app
 			"onActivityReenter",
 			"(ILandroid/content/Intent;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::createPendingResult(jint arg0, __jni_impl::android::content::Intent arg1, jint arg2)
 	{
@@ -1803,166 +1984,191 @@ namespace __jni_impl::android::app
 			"(ILandroid/content/Intent;I)Landroid/app/PendingIntent;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Activity::setRequestedOrientation(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRequestedOrientation",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Activity::getRequestedOrientation()
 	{
 		return __thiz.callMethod<jint>(
 			"getRequestedOrientation",
-			"()I");
+			"()I"
+		);
 	}
 	jint Activity::getTaskId()
 	{
 		return __thiz.callMethod<jint>(
 			"getTaskId",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean Activity::isTaskRoot()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isTaskRoot",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Activity::moveTaskToBack(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"moveTaskToBack",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Activity::getLocalClassName()
+	jstring Activity::getLocalClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalClassName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Activity::getComponentName()
 	{
 		return __thiz.callObjectMethod(
 			"getComponentName",
-			"()Landroid/content/ComponentName;");
+			"()Landroid/content/ComponentName;"
+		);
 	}
 	QAndroidJniObject Activity::getPreferences(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPreferences",
 			"(I)Landroid/content/SharedPreferences;",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setTitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setTitle(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTitle",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setTitleColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTitleColor",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Activity::getTitle()
+	jstring Activity::getTitle()
 	{
 		return __thiz.callObjectMethod(
 			"getTitle",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint Activity::getTitleColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getTitleColor",
-			"()I");
+			"()I"
+		);
 	}
 	void Activity::setTaskDescription(__jni_impl::android::app::ActivityManager_TaskDescription arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTaskDescription",
 			"(Landroid/app/ActivityManager$TaskDescription;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::setProgressBarVisibility(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setProgressBarVisibility",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setProgressBarIndeterminateVisibility(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setProgressBarIndeterminateVisibility",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setProgressBarIndeterminate(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setProgressBarIndeterminate",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setProgress(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setProgress",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setSecondaryProgress(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSecondaryProgress",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setVolumeControlStream(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVolumeControlStream",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Activity::getVolumeControlStream()
 	{
 		return __thiz.callMethod<jint>(
 			"getVolumeControlStream",
-			"()I");
+			"()I"
+		);
 	}
 	void Activity::setMediaController(__jni_impl::android::media::session::MediaController arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMediaController",
 			"(Landroid/media/session/MediaController;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::getMediaController()
 	{
 		return __thiz.callObjectMethod(
 			"getMediaController",
-			"()Landroid/media/session/MediaController;");
+			"()Landroid/media/session/MediaController;"
+		);
 	}
 	void Activity::runOnUiThread(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"runOnUiThread",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::onCreateView(jstring arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -1971,7 +2177,8 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::onCreateView(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -1981,39 +2188,45 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	jboolean Activity::isImmersive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isImmersive",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Activity::requestVisibleBehind(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"requestVisibleBehind",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::onVisibleBehindCanceled()
 	{
 		__thiz.callMethod<void>(
 			"onVisibleBehindCanceled",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::onEnterAnimationComplete()
 	{
 		__thiz.callMethod<void>(
 			"onEnterAnimationComplete",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::setImmersive(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setImmersive",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setVrModeEnabled(jboolean arg0, __jni_impl::android::content::ComponentName arg1)
 	{
@@ -2021,7 +2234,8 @@ namespace __jni_impl::android::app
 			"setVrModeEnabled",
 			"(ZLandroid/content/ComponentName;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::startActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -2029,21 +2243,24 @@ namespace __jni_impl::android::app
 			"startActionMode",
 			"(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Activity::startActionMode(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"startActionMode",
 			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onWindowStartingActionMode",
 			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
@@ -2051,35 +2268,40 @@ namespace __jni_impl::android::app
 			"onWindowStartingActionMode",
 			"(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Activity::onActionModeStarted(__jni_impl::android::view::ActionMode arg0)
 	{
 		__thiz.callMethod<void>(
 			"onActionModeStarted",
 			"(Landroid/view/ActionMode;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::onActionModeFinished(__jni_impl::android::view::ActionMode arg0)
 	{
 		__thiz.callMethod<void>(
 			"onActionModeFinished",
 			"(Landroid/view/ActionMode;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::shouldUpRecreateTask(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"shouldUpRecreateTask",
 			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::navigateUpTo(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"navigateUpTo",
 			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Activity::navigateUpToFromChild(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::Intent arg1)
 	{
@@ -2087,99 +2309,114 @@ namespace __jni_impl::android::app
 			"navigateUpToFromChild",
 			"(Landroid/app/Activity;Landroid/content/Intent;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Activity::getParentActivityIntent()
 	{
 		return __thiz.callObjectMethod(
 			"getParentActivityIntent",
-			"()Landroid/content/Intent;");
+			"()Landroid/content/Intent;"
+		);
 	}
 	void Activity::setEnterSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEnterSharedElementCallback",
 			"(Landroid/app/SharedElementCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::setExitSharedElementCallback(__jni_impl::android::app::SharedElementCallback arg0)
 	{
 		__thiz.callMethod<void>(
 			"setExitSharedElementCallback",
 			"(Landroid/app/SharedElementCallback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::postponeEnterTransition()
 	{
 		__thiz.callMethod<void>(
 			"postponeEnterTransition",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::startPostponedEnterTransition()
 	{
 		__thiz.callMethod<void>(
 			"startPostponedEnterTransition",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Activity::requestDragAndDropPermissions(__jni_impl::android::view::DragEvent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"requestDragAndDropPermissions",
 			"(Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::startLockTask()
 	{
 		__thiz.callMethod<void>(
 			"startLockTask",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::stopLockTask()
 	{
 		__thiz.callMethod<void>(
 			"stopLockTask",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::showLockTaskEscapeMessage()
 	{
 		__thiz.callMethod<void>(
 			"showLockTaskEscapeMessage",
-			"()V");
+			"()V"
+		);
 	}
 	void Activity::setShowWhenLocked(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setShowWhenLocked",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setInheritShowWhenLocked(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInheritShowWhenLocked",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setTurnScreenOn(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTurnScreenOn",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::setTheme(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTheme",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::startActivity(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"startActivity",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Activity::startActivity(__jni_impl::android::content::Intent arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -2187,7 +2424,8 @@ namespace __jni_impl::android::app
 			"startActivity",
 			"(Landroid/content/Intent;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::startActivities(jarray arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -2195,14 +2433,16 @@ namespace __jni_impl::android::app
 			"startActivities",
 			"([Landroid/content/Intent;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Activity::startActivities(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"startActivities",
 			"([Landroid/content/Intent;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Activity::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5)
 	{
@@ -2214,7 +2454,8 @@ namespace __jni_impl::android::app
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void Activity::startIntentSender(__jni_impl::android::content::IntentSender arg0, __jni_impl::android::content::Intent arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -2225,14 +2466,16 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
-	QAndroidJniObject Activity::getSystemService(jstring arg0)
+	jobject Activity::getSystemService(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSystemService",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::app
 

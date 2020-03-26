@@ -12,14 +12,14 @@ namespace __jni_impl::android::telephony::gsm
 	{
 	public:
 		// Fields
-		QAndroidJniObject encodedMessage();
-		QAndroidJniObject encodedScAddress();
+		jbyteArray encodedMessage();
+		jbyteArray encodedScAddress();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::telephony::gsm
 
@@ -27,17 +27,19 @@ namespace __jni_impl::android::telephony::gsm
 namespace __jni_impl::android::telephony::gsm
 {
 	// Fields
-	QAndroidJniObject SmsMessage_SubmitPdu::encodedMessage()
+	jbyteArray SmsMessage_SubmitPdu::encodedMessage()
 	{
 		return __thiz.getObjectField(
 			"encodedMessage",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject SmsMessage_SubmitPdu::encodedScAddress()
+	jbyteArray SmsMessage_SubmitPdu::encodedScAddress()
 	{
 		return __thiz.getObjectField(
 			"encodedScAddress",
-			"[B");
+			"[B"
+		).object<jbyteArray>();
 	}
 	
 	// Constructors
@@ -49,11 +51,12 @@ namespace __jni_impl::android::telephony::gsm
 	}
 	
 	// Methods
-	QAndroidJniObject SmsMessage_SubmitPdu::toString()
+	jstring SmsMessage_SubmitPdu::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony::gsm
 

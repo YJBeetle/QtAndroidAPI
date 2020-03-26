@@ -22,7 +22,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -36,28 +36,32 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer2$Mode",
 			"COMPOSE",
-			"Landroid/icu/text/Normalizer2$Mode;");
+			"Landroid/icu/text/Normalizer2$Mode;"
+		);
 	}
 	QAndroidJniObject Normalizer2_Mode::DECOMPOSE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer2$Mode",
 			"DECOMPOSE",
-			"Landroid/icu/text/Normalizer2$Mode;");
+			"Landroid/icu/text/Normalizer2$Mode;"
+		);
 	}
 	QAndroidJniObject Normalizer2_Mode::FCD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer2$Mode",
 			"FCD",
-			"Landroid/icu/text/Normalizer2$Mode;");
+			"Landroid/icu/text/Normalizer2$Mode;"
+		);
 	}
 	QAndroidJniObject Normalizer2_Mode::COMPOSE_CONTIGUOUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer2$Mode",
 			"COMPOSE_CONTIGUOUS",
-			"Landroid/icu/text/Normalizer2$Mode;");
+			"Landroid/icu/text/Normalizer2$Mode;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject Normalizer2_Mode::values()
+	jarray Normalizer2_Mode::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Normalizer2$Mode",
 			"values",
-			"()[Landroid/icu/text/Normalizer2$Mode;");
+			"()[Landroid/icu/text/Normalizer2$Mode;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Normalizer2_Mode::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.Normalizer2$Mode",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/Normalizer2$Mode;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

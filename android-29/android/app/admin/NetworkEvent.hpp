@@ -22,11 +22,11 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getPackageName();
+		jstring getPackageName();
 		jlong getId();
-		jlong getTimestamp();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getTimestamp();
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -40,7 +40,8 @@ namespace __jni_impl::android::app::admin
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.admin.NetworkEvent",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -52,29 +53,26 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	QAndroidJniObject NetworkEvent::getPackageName()
+	jstring NetworkEvent::getPackageName()
 	{
 		return __thiz.callObjectMethod(
 			"getPackageName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong NetworkEvent::getId()
 	{
 		return __thiz.callMethod<jlong>(
 			"getId",
-			"()J");
-	}
-	jlong NetworkEvent::getTimestamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimestamp",
-			"()J");
+			"()J"
+		);
 	}
 	jint NetworkEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void NetworkEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -82,7 +80,15 @@ namespace __jni_impl::android::app::admin
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jlong NetworkEvent::getTimestamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimestamp",
+			"()J"
+		);
 	}
 } // namespace __jni_impl::android::app::admin
 

@@ -29,14 +29,14 @@ namespace __jni_impl::android::hardware::camera2
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject get(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0);
+		jobject get(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0);
 		void set(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1);
 		QAndroidJniObject build();
 		void setTag(jobject arg0);
+		QAndroidJniObject setPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2);
+		jobject getPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jstring arg1);
 		void addTarget(__jni_impl::android::view::Surface arg0);
 		void removeTarget(__jni_impl::android::view::Surface arg0);
-		QAndroidJniObject setPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2);
-		QAndroidJniObject getPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
@@ -57,12 +57,13 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Methods
-	QAndroidJniObject CaptureRequest_Builder::get(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0)
+	jobject CaptureRequest_Builder::get(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
 	void CaptureRequest_Builder::set(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1)
 	{
@@ -70,34 +71,23 @@ namespace __jni_impl::android::hardware::camera2
 			"set",
 			"(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject CaptureRequest_Builder::build()
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/hardware/camera2/CaptureRequest;");
+			"()Landroid/hardware/camera2/CaptureRequest;"
+		);
 	}
 	void CaptureRequest_Builder::setTag(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTag",
 			"(Ljava/lang/Object;)V",
-			arg0);
-	}
-	void CaptureRequest_Builder::addTarget(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"addTarget",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
-	}
-	void CaptureRequest_Builder::removeTarget(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeTarget",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
+			arg0
+		);
 	}
 	QAndroidJniObject CaptureRequest_Builder::setPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jobject arg1, jstring arg2)
 	{
@@ -106,15 +96,33 @@ namespace __jni_impl::android::hardware::camera2
 			"(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;Ljava/lang/String;)Landroid/hardware/camera2/CaptureRequest$Builder;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject CaptureRequest_Builder::getPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jstring arg1)
+	jobject CaptureRequest_Builder::getPhysicalCameraKey(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getPhysicalCameraKey",
 			"(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/String;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jobject>();
+	}
+	void CaptureRequest_Builder::addTarget(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"addTarget",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void CaptureRequest_Builder::removeTarget(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeTarget",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

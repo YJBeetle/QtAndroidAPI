@@ -104,13 +104,15 @@ namespace __jni_impl::java::lang
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.StrictMath",
-			"E");
+			"E"
+		);
 	}
 	jdouble StrictMath::PI()
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.StrictMath",
-			"PI");
+			"PI"
+		);
 	}
 	
 	// Constructors
@@ -128,7 +130,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"abs",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jfloat StrictMath::abs(jfloat arg0)
 	{
@@ -136,7 +139,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"abs",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	jint StrictMath::abs(jint arg0)
 	{
@@ -144,7 +148,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"abs",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong StrictMath::abs(jlong arg0)
 	{
@@ -152,7 +157,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"abs",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::sin(jdouble arg0)
 	{
@@ -160,7 +166,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"sin",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::cos(jdouble arg0)
 	{
@@ -168,7 +175,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"cos",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::tan(jdouble arg0)
 	{
@@ -176,7 +184,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"tan",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::atan2(jdouble arg0, jdouble arg1)
 	{
@@ -185,7 +194,8 @@ namespace __jni_impl::java::lang
 			"atan2",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::sqrt(jdouble arg0)
 	{
@@ -193,7 +203,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"sqrt",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::log(jdouble arg0)
 	{
@@ -201,7 +212,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"log",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::log10(jdouble arg0)
 	{
@@ -209,7 +221,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"log10",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::pow(jdouble arg0, jdouble arg1)
 	{
@@ -218,7 +231,8 @@ namespace __jni_impl::java::lang
 			"pow",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::exp(jdouble arg0)
 	{
@@ -226,7 +240,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"exp",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jint StrictMath::min(jint arg0, jint arg1)
 	{
@@ -235,7 +250,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::min(jdouble arg0, jdouble arg1)
 	{
@@ -244,7 +260,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong StrictMath::min(jlong arg0, jlong arg1)
 	{
@@ -253,7 +270,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat StrictMath::min(jfloat arg0, jfloat arg1)
 	{
@@ -262,7 +280,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(FF)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint StrictMath::max(jint arg0, jint arg1)
 	{
@@ -271,7 +290,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong StrictMath::max(jlong arg0, jlong arg1)
 	{
@@ -280,7 +300,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat StrictMath::max(jfloat arg0, jfloat arg1)
 	{
@@ -289,7 +310,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(FF)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::max(jdouble arg0, jdouble arg1)
 	{
@@ -298,7 +320,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint StrictMath::addExact(jint arg0, jint arg1)
 	{
@@ -307,7 +330,8 @@ namespace __jni_impl::java::lang
 			"addExact",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong StrictMath::addExact(jlong arg0, jlong arg1)
 	{
@@ -316,7 +340,8 @@ namespace __jni_impl::java::lang
 			"addExact",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong StrictMath::multiplyExact(jlong arg0, jint arg1)
 	{
@@ -325,7 +350,8 @@ namespace __jni_impl::java::lang
 			"multiplyExact",
 			"(JI)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong StrictMath::multiplyExact(jlong arg0, jlong arg1)
 	{
@@ -334,7 +360,8 @@ namespace __jni_impl::java::lang
 			"multiplyExact",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint StrictMath::multiplyExact(jint arg0, jint arg1)
 	{
@@ -343,7 +370,8 @@ namespace __jni_impl::java::lang
 			"multiplyExact",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong StrictMath::multiplyHigh(jlong arg0, jlong arg1)
 	{
@@ -352,7 +380,8 @@ namespace __jni_impl::java::lang
 			"multiplyHigh",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong StrictMath::subtractExact(jlong arg0, jlong arg1)
 	{
@@ -361,7 +390,8 @@ namespace __jni_impl::java::lang
 			"subtractExact",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint StrictMath::subtractExact(jint arg0, jint arg1)
 	{
@@ -370,7 +400,8 @@ namespace __jni_impl::java::lang
 			"subtractExact",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat StrictMath::fma(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
@@ -380,7 +411,8 @@ namespace __jni_impl::java::lang
 			"(FFF)F",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jdouble StrictMath::fma(jdouble arg0, jdouble arg1, jdouble arg2)
 	{
@@ -390,7 +422,8 @@ namespace __jni_impl::java::lang
 			"(DDD)D",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jdouble StrictMath::scalb(jdouble arg0, jint arg1)
 	{
@@ -399,7 +432,8 @@ namespace __jni_impl::java::lang
 			"scalb",
 			"(DI)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat StrictMath::scalb(jfloat arg0, jint arg1)
 	{
@@ -408,7 +442,8 @@ namespace __jni_impl::java::lang
 			"scalb",
 			"(FI)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat StrictMath::copySign(jfloat arg0, jfloat arg1)
 	{
@@ -417,7 +452,8 @@ namespace __jni_impl::java::lang
 			"copySign",
 			"(FF)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::copySign(jdouble arg0, jdouble arg1)
 	{
@@ -426,7 +462,8 @@ namespace __jni_impl::java::lang
 			"copySign",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint StrictMath::getExponent(jfloat arg0)
 	{
@@ -434,7 +471,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"getExponent",
 			"(F)I",
-			arg0);
+			arg0
+		);
 	}
 	jint StrictMath::getExponent(jdouble arg0)
 	{
@@ -442,7 +480,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"getExponent",
 			"(D)I",
-			arg0);
+			arg0
+		);
 	}
 	jfloat StrictMath::signum(jfloat arg0)
 	{
@@ -450,7 +489,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"signum",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::signum(jdouble arg0)
 	{
@@ -458,7 +498,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"signum",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jint StrictMath::floorMod(jlong arg0, jint arg1)
 	{
@@ -467,7 +508,8 @@ namespace __jni_impl::java::lang
 			"floorMod",
 			"(JI)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong StrictMath::floorMod(jlong arg0, jlong arg1)
 	{
@@ -476,7 +518,8 @@ namespace __jni_impl::java::lang
 			"floorMod",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint StrictMath::floorMod(jint arg0, jint arg1)
 	{
@@ -485,7 +528,8 @@ namespace __jni_impl::java::lang
 			"floorMod",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::asin(jdouble arg0)
 	{
@@ -493,7 +537,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"asin",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::acos(jdouble arg0)
 	{
@@ -501,7 +546,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"acos",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::atan(jdouble arg0)
 	{
@@ -509,7 +555,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"atan",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::cbrt(jdouble arg0)
 	{
@@ -517,7 +564,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"cbrt",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::IEEEremainder(jdouble arg0, jdouble arg1)
 	{
@@ -526,7 +574,8 @@ namespace __jni_impl::java::lang
 			"IEEEremainder",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::ceil(jdouble arg0)
 	{
@@ -534,7 +583,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"ceil",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::floor(jdouble arg0)
 	{
@@ -542,7 +592,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"floor",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::rint(jdouble arg0)
 	{
@@ -550,7 +601,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"rint",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jlong StrictMath::floorDiv(jlong arg0, jlong arg1)
 	{
@@ -559,7 +611,8 @@ namespace __jni_impl::java::lang
 			"floorDiv",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint StrictMath::floorDiv(jint arg0, jint arg1)
 	{
@@ -568,7 +621,8 @@ namespace __jni_impl::java::lang
 			"floorDiv",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong StrictMath::floorDiv(jlong arg0, jint arg1)
 	{
@@ -577,7 +631,8 @@ namespace __jni_impl::java::lang
 			"floorDiv",
 			"(JI)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::sinh(jdouble arg0)
 	{
@@ -585,7 +640,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"sinh",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::cosh(jdouble arg0)
 	{
@@ -593,7 +649,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"cosh",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::tanh(jdouble arg0)
 	{
@@ -601,7 +658,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"tanh",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::hypot(jdouble arg0, jdouble arg1)
 	{
@@ -610,7 +668,8 @@ namespace __jni_impl::java::lang
 			"hypot",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::expm1(jdouble arg0)
 	{
@@ -618,7 +677,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"expm1",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::log1p(jdouble arg0)
 	{
@@ -626,7 +686,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"log1p",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::toRadians(jdouble arg0)
 	{
@@ -634,7 +695,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"toRadians",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::toDegrees(jdouble arg0)
 	{
@@ -642,7 +704,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"toDegrees",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jlong StrictMath::round(jdouble arg0)
 	{
@@ -650,7 +713,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"round",
 			"(D)J",
-			arg0);
+			arg0
+		);
 	}
 	jint StrictMath::round(jfloat arg0)
 	{
@@ -658,14 +722,16 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"round",
 			"(F)I",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::random()
 	{
 		return QAndroidJniObject::callStaticMethod<jdouble>(
 			"java.lang.StrictMath",
 			"random",
-			"()D");
+			"()D"
+		);
 	}
 	jint StrictMath::toIntExact(jlong arg0)
 	{
@@ -673,7 +739,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"toIntExact",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong StrictMath::multiplyFull(jint arg0, jint arg1)
 	{
@@ -682,7 +749,8 @@ namespace __jni_impl::java::lang
 			"multiplyFull",
 			"(II)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat StrictMath::ulp(jfloat arg0)
 	{
@@ -690,7 +758,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"ulp",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::ulp(jdouble arg0)
 	{
@@ -698,7 +767,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"ulp",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jfloat StrictMath::nextAfter(jfloat arg0, jdouble arg1)
 	{
@@ -707,7 +777,8 @@ namespace __jni_impl::java::lang
 			"nextAfter",
 			"(FD)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble StrictMath::nextAfter(jdouble arg0, jdouble arg1)
 	{
@@ -716,7 +787,8 @@ namespace __jni_impl::java::lang
 			"nextAfter",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat StrictMath::nextUp(jfloat arg0)
 	{
@@ -724,7 +796,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"nextUp",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::nextUp(jdouble arg0)
 	{
@@ -732,7 +805,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"nextUp",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble StrictMath::nextDown(jdouble arg0)
 	{
@@ -740,7 +814,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"nextDown",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jfloat StrictMath::nextDown(jfloat arg0)
 	{
@@ -748,7 +823,8 @@ namespace __jni_impl::java::lang
 			"java.lang.StrictMath",
 			"nextDown",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang
 

@@ -30,7 +30,7 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::java::lang::Exception arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getException();
 	};
 } // namespace __jni_impl::java::security
@@ -53,17 +53,19 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject PrivilegedActionException::toString()
+	jstring PrivilegedActionException::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject PrivilegedActionException::getException()
 	{
 		return __thiz.callObjectMethod(
 			"getException",
-			"()Ljava/lang/Exception;");
+			"()Ljava/lang/Exception;"
+		);
 	}
 } // namespace __jni_impl::java::security
 

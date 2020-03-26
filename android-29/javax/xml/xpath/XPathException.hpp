@@ -38,7 +38,7 @@ namespace __jni_impl::javax::xml::xpath
 		void printStackTrace(__jni_impl::java::io::PrintWriter arg0);
 		void printStackTrace(__jni_impl::java::io::PrintStream arg0);
 		void printStackTrace();
-		QAndroidJniObject getCause();
+		jthrowable getCause();
 	};
 } // namespace __jni_impl::javax::xml::xpath
 
@@ -73,26 +73,30 @@ namespace __jni_impl::javax::xml::xpath
 		__thiz.callMethod<void>(
 			"printStackTrace",
 			"(Ljava/io/PrintWriter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void XPathException::printStackTrace(__jni_impl::java::io::PrintStream arg0)
 	{
 		__thiz.callMethod<void>(
 			"printStackTrace",
 			"(Ljava/io/PrintStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void XPathException::printStackTrace()
 	{
 		__thiz.callMethod<void>(
 			"printStackTrace",
-			"()V");
+			"()V"
+		);
 	}
-	QAndroidJniObject XPathException::getCause()
+	jthrowable XPathException::getCause()
 	{
 		return __thiz.callObjectMethod(
 			"getCause",
-			"()Ljava/lang/Throwable;");
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
 	}
 } // namespace __jni_impl::javax::xml::xpath
 

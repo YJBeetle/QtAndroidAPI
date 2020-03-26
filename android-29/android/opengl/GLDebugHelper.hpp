@@ -38,25 +38,29 @@ namespace __jni_impl::android::opengl
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLDebugHelper",
-			"CONFIG_CHECK_GL_ERROR");
+			"CONFIG_CHECK_GL_ERROR"
+		);
 	}
 	jint GLDebugHelper::CONFIG_CHECK_THREAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLDebugHelper",
-			"CONFIG_CHECK_THREAD");
+			"CONFIG_CHECK_THREAD"
+		);
 	}
 	jint GLDebugHelper::CONFIG_LOG_ARGUMENT_NAMES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLDebugHelper",
-			"CONFIG_LOG_ARGUMENT_NAMES");
+			"CONFIG_LOG_ARGUMENT_NAMES"
+		);
 	}
 	jint GLDebugHelper::ERROR_WRONG_THREAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.opengl.GLDebugHelper",
-			"ERROR_WRONG_THREAD");
+			"ERROR_WRONG_THREAD"
+		);
 	}
 	
 	// Constructors
@@ -76,7 +80,8 @@ namespace __jni_impl::android::opengl
 			"(Ljavax/microedition/khronos/opengles/GL;ILjava/io/Writer;)Ljavax/microedition/khronos/opengles/GL;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

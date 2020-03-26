@@ -40,13 +40,15 @@ namespace __jni_impl::android::webkit
 	{
 		return __thiz.callMethod<jint>(
 			"rendererPriorityAtExit",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean RenderProcessGoneDetail::didCrash()
 	{
 		return __thiz.callMethod<jboolean>(
 			"didCrash",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

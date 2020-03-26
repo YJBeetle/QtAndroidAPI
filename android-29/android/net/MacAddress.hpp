@@ -27,15 +27,15 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject toByteArray();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jbyteArray toByteArray();
 		jint getAddressType();
 		jboolean isLocallyAssigned();
-		QAndroidJniObject toOuiString();
+		jstring toOuiString();
 		static QAndroidJniObject fromBytes(jbyteArray arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject fromString(jstring arg0);
 	};
 } // namespace __jni_impl::android::net
@@ -50,32 +50,37 @@ namespace __jni_impl::android::net
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.MacAddress",
 			"BROADCAST_ADDRESS",
-			"Landroid/net/MacAddress;");
+			"Landroid/net/MacAddress;"
+		);
 	}
 	QAndroidJniObject MacAddress::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.MacAddress",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint MacAddress::TYPE_BROADCAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.MacAddress",
-			"TYPE_BROADCAST");
+			"TYPE_BROADCAST"
+		);
 	}
 	jint MacAddress::TYPE_MULTICAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.MacAddress",
-			"TYPE_MULTICAST");
+			"TYPE_MULTICAST"
+		);
 	}
 	jint MacAddress::TYPE_UNICAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.MacAddress",
-			"TYPE_UNICAST");
+			"TYPE_UNICAST"
+		);
 	}
 	
 	// Constructors
@@ -92,57 +97,50 @@ namespace __jni_impl::android::net
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MacAddress::toString()
+	jstring MacAddress::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MacAddress::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject MacAddress::toByteArray()
+	jbyteArray MacAddress::toByteArray()
 	{
 		return __thiz.callObjectMethod(
 			"toByteArray",
-			"()[B");
-	}
-	jint MacAddress::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void MacAddress::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jint MacAddress::getAddressType()
 	{
 		return __thiz.callMethod<jint>(
 			"getAddressType",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean MacAddress::isLocallyAssigned()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLocallyAssigned",
-			"()Z");
+			"()Z"
+		);
 	}
-	QAndroidJniObject MacAddress::toOuiString()
+	jstring MacAddress::toOuiString()
 	{
 		return __thiz.callObjectMethod(
 			"toOuiString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject MacAddress::fromBytes(jbyteArray arg0)
 	{
@@ -150,7 +148,24 @@ namespace __jni_impl::android::net
 			"android.net.MacAddress",
 			"fromBytes",
 			"([B)Landroid/net/MacAddress;",
-			arg0);
+			arg0
+		);
+	}
+	jint MacAddress::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void MacAddress::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	QAndroidJniObject MacAddress::fromString(jstring arg0)
 	{
@@ -158,7 +173,8 @@ namespace __jni_impl::android::net
 			"android.net.MacAddress",
 			"fromString",
 			"(Ljava/lang/String;)Landroid/net/MacAddress;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::net
 

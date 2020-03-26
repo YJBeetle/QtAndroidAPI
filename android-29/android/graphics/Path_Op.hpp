@@ -23,7 +23,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -37,35 +37,40 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$Op",
 			"DIFFERENCE",
-			"Landroid/graphics/Path$Op;");
+			"Landroid/graphics/Path$Op;"
+		);
 	}
 	QAndroidJniObject Path_Op::INTERSECT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$Op",
 			"INTERSECT",
-			"Landroid/graphics/Path$Op;");
+			"Landroid/graphics/Path$Op;"
+		);
 	}
 	QAndroidJniObject Path_Op::UNION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$Op",
 			"UNION",
-			"Landroid/graphics/Path$Op;");
+			"Landroid/graphics/Path$Op;"
+		);
 	}
 	QAndroidJniObject Path_Op::XOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$Op",
 			"XOR",
-			"Landroid/graphics/Path$Op;");
+			"Landroid/graphics/Path$Op;"
+		);
 	}
 	QAndroidJniObject Path_Op::REVERSE_DIFFERENCE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$Op",
 			"REVERSE_DIFFERENCE",
-			"Landroid/graphics/Path$Op;");
+			"Landroid/graphics/Path$Op;"
+		);
 	}
 	
 	// Constructors
@@ -77,12 +82,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject Path_Op::values()
+	jarray Path_Op::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Path$Op",
 			"values",
-			"()[Landroid/graphics/Path$Op;");
+			"()[Landroid/graphics/Path$Op;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Path_Op::valueOf(jstring arg0)
 	{
@@ -90,7 +96,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Path$Op",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Path$Op;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

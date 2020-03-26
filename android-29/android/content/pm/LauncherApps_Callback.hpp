@@ -59,7 +59,8 @@ namespace __jni_impl::android::content::pm
 			"onPackageRemoved",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LauncherApps_Callback::onPackageAdded(jstring arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -67,7 +68,8 @@ namespace __jni_impl::android::content::pm
 			"onPackageAdded",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LauncherApps_Callback::onPackageChanged(jstring arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -75,7 +77,8 @@ namespace __jni_impl::android::content::pm
 			"onPackageChanged",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LauncherApps_Callback::onPackagesAvailable(jarray arg0, __jni_impl::android::os::UserHandle arg1, jboolean arg2)
 	{
@@ -84,7 +87,8 @@ namespace __jni_impl::android::content::pm
 			"([Ljava/lang/String;Landroid/os/UserHandle;Z)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void LauncherApps_Callback::onPackagesUnavailable(jarray arg0, __jni_impl::android::os::UserHandle arg1, jboolean arg2)
 	{
@@ -93,7 +97,8 @@ namespace __jni_impl::android::content::pm
 			"([Ljava/lang/String;Landroid/os/UserHandle;Z)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void LauncherApps_Callback::onPackagesSuspended(jarray arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -101,7 +106,8 @@ namespace __jni_impl::android::content::pm
 			"onPackagesSuspended",
 			"([Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LauncherApps_Callback::onPackagesSuspended(jarray arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -110,7 +116,8 @@ namespace __jni_impl::android::content::pm
 			"([Ljava/lang/String;Landroid/os/UserHandle;Landroid/os/Bundle;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void LauncherApps_Callback::onPackagesUnsuspended(jarray arg0, __jni_impl::android::os::UserHandle arg1)
 	{
@@ -118,7 +125,8 @@ namespace __jni_impl::android::content::pm
 			"onPackagesUnsuspended",
 			"([Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LauncherApps_Callback::onShortcutsChanged(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -127,7 +135,8 @@ namespace __jni_impl::android::content::pm
 			"(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

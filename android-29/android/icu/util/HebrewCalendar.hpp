@@ -56,7 +56,7 @@ namespace __jni_impl::android::icu::util
 		
 		// Methods
 		void add(jint arg0, jint arg1);
-		QAndroidJniObject getType();
+		jstring getType();
 		void roll(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::icu::util
@@ -73,79 +73,92 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"ADAR");
+			"ADAR"
+		);
 	}
 	jint HebrewCalendar::ADAR_1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"ADAR_1");
+			"ADAR_1"
+		);
 	}
 	jint HebrewCalendar::AV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"AV");
+			"AV"
+		);
 	}
 	jint HebrewCalendar::ELUL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"ELUL");
+			"ELUL"
+		);
 	}
 	jint HebrewCalendar::HESHVAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"HESHVAN");
+			"HESHVAN"
+		);
 	}
 	jint HebrewCalendar::IYAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"IYAR");
+			"IYAR"
+		);
 	}
 	jint HebrewCalendar::KISLEV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"KISLEV");
+			"KISLEV"
+		);
 	}
 	jint HebrewCalendar::NISAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"NISAN");
+			"NISAN"
+		);
 	}
 	jint HebrewCalendar::SHEVAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"SHEVAT");
+			"SHEVAT"
+		);
 	}
 	jint HebrewCalendar::SIVAN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"SIVAN");
+			"SIVAN"
+		);
 	}
 	jint HebrewCalendar::TAMUZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"TAMUZ");
+			"TAMUZ"
+		);
 	}
 	jint HebrewCalendar::TEVET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"TEVET");
+			"TEVET"
+		);
 	}
 	jint HebrewCalendar::TISHRI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.HebrewCalendar",
-			"TISHRI");
+			"TISHRI"
+		);
 	}
 	
 	// Constructors
@@ -228,13 +241,15 @@ namespace __jni_impl::android::icu::util
 			"add",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject HebrewCalendar::getType()
+	jstring HebrewCalendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void HebrewCalendar::roll(jint arg0, jint arg1)
 	{
@@ -242,7 +257,8 @@ namespace __jni_impl::android::icu::util
 			"roll",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

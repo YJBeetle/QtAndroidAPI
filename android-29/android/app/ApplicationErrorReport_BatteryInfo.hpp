@@ -16,9 +16,9 @@ namespace __jni_impl::android::app
 	{
 	public:
 		// Fields
-		QAndroidJniObject checkinDetails();
+		jstring checkinDetails();
 		jlong durationMicros();
-		QAndroidJniObject usageDetails();
+		jstring usageDetails();
 		jint usagePercent();
 		
 		// Constructors
@@ -26,8 +26,8 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -36,27 +36,31 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	// Fields
-	QAndroidJniObject ApplicationErrorReport_BatteryInfo::checkinDetails()
+	jstring ApplicationErrorReport_BatteryInfo::checkinDetails()
 	{
 		return __thiz.getObjectField(
 			"checkinDetails",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong ApplicationErrorReport_BatteryInfo::durationMicros()
 	{
 		return __thiz.getField<jlong>(
-			"durationMicros");
+			"durationMicros"
+		);
 	}
-	QAndroidJniObject ApplicationErrorReport_BatteryInfo::usageDetails()
+	jstring ApplicationErrorReport_BatteryInfo::usageDetails()
 	{
 		return __thiz.getObjectField(
 			"usageDetails",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ApplicationErrorReport_BatteryInfo::usagePercent()
 	{
 		return __thiz.getField<jint>(
-			"usagePercent");
+			"usagePercent"
+		);
 	}
 	
 	// Constructors
@@ -75,21 +79,23 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ApplicationErrorReport_BatteryInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
 	void ApplicationErrorReport_BatteryInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ApplicationErrorReport_BatteryInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app
 

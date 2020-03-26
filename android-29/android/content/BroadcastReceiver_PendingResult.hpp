@@ -23,10 +23,10 @@ namespace __jni_impl::android::content
 		// Methods
 		void setResult(jint arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
 		void finish();
-		jint getResultCode();
 		void setResultCode(jint arg0);
+		jint getResultCode();
 		void setResultData(jstring arg0);
-		QAndroidJniObject getResultData();
+		jstring getResultData();
 		void setResultExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject getResultExtras(jboolean arg0);
 		jboolean getAbortBroadcast();
@@ -57,71 +57,82 @@ namespace __jni_impl::android::content
 			"(ILjava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void BroadcastReceiver_PendingResult::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
-	}
-	jint BroadcastReceiver_PendingResult::getResultCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getResultCode",
-			"()I");
+			"()V"
+		);
 	}
 	void BroadcastReceiver_PendingResult::setResultCode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResultCode",
 			"(I)V",
-			arg0);
+			arg0
+		);
+	}
+	jint BroadcastReceiver_PendingResult::getResultCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getResultCode",
+			"()I"
+		);
 	}
 	void BroadcastReceiver_PendingResult::setResultData(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResultData",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject BroadcastReceiver_PendingResult::getResultData()
+	jstring BroadcastReceiver_PendingResult::getResultData()
 	{
 		return __thiz.callObjectMethod(
 			"getResultData",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void BroadcastReceiver_PendingResult::setResultExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResultExtras",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BroadcastReceiver_PendingResult::getResultExtras(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getResultExtras",
 			"(Z)Landroid/os/Bundle;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BroadcastReceiver_PendingResult::getAbortBroadcast()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAbortBroadcast",
-			"()Z");
+			"()Z"
+		);
 	}
 	void BroadcastReceiver_PendingResult::abortBroadcast()
 	{
 		__thiz.callMethod<void>(
 			"abortBroadcast",
-			"()V");
+			"()V"
+		);
 	}
 	void BroadcastReceiver_PendingResult::clearAbortBroadcast()
 	{
 		__thiz.callMethod<void>(
 			"clearAbortBroadcast",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::content
 

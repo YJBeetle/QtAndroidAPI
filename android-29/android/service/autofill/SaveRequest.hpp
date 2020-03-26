@@ -26,11 +26,11 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getClientState();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getFillContexts();
 		QAndroidJniObject getDatasetIds();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getClientState();
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -45,7 +45,8 @@ namespace __jni_impl::android::service::autofill
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.SaveRequest",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -57,17 +58,26 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject SaveRequest::getClientState()
+	QAndroidJniObject SaveRequest::getFillContexts()
 	{
 		return __thiz.callObjectMethod(
-			"getClientState",
-			"()Landroid/os/Bundle;");
+			"getFillContexts",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject SaveRequest::getDatasetIds()
+	{
+		return __thiz.callObjectMethod(
+			"getDatasetIds",
+			"()Ljava/util/List;"
+		);
 	}
 	jint SaveRequest::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SaveRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -75,19 +85,15 @@ namespace __jni_impl::android::service::autofill
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject SaveRequest::getFillContexts()
+	QAndroidJniObject SaveRequest::getClientState()
 	{
 		return __thiz.callObjectMethod(
-			"getFillContexts",
-			"()Ljava/util/List;");
-	}
-	QAndroidJniObject SaveRequest::getDatasetIds()
-	{
-		return __thiz.callObjectMethod(
-			"getDatasetIds",
-			"()Ljava/util/List;");
+			"getClientState",
+			"()Landroid/os/Bundle;"
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

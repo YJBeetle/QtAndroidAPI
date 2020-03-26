@@ -23,7 +23,7 @@ namespace __jni_impl::android::net::wifi::rtt
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -41,7 +41,8 @@ namespace __jni_impl::android::net::wifi::rtt
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.rtt.RangingRequest",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -58,25 +59,29 @@ namespace __jni_impl::android::net::wifi::rtt
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject RangingRequest::toString()
+	jstring RangingRequest::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint RangingRequest::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint RangingRequest::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void RangingRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -84,14 +89,16 @@ namespace __jni_impl::android::net::wifi::rtt
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint RangingRequest::getMaxPeers()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.net.wifi.rtt.RangingRequest",
 			"getMaxPeers",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt
 

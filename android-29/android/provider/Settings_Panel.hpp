@@ -12,10 +12,10 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_INTERNET_CONNECTIVITY();
-		static QAndroidJniObject ACTION_NFC();
-		static QAndroidJniObject ACTION_VOLUME();
-		static QAndroidJniObject ACTION_WIFI();
+		static jstring ACTION_INTERNET_CONNECTIVITY();
+		static jstring ACTION_NFC();
+		static jstring ACTION_VOLUME();
+		static jstring ACTION_WIFI();
 		
 		// Constructors
 		void __constructor();
@@ -28,33 +28,37 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject Settings_Panel::ACTION_INTERNET_CONNECTIVITY()
+	jstring Settings_Panel::ACTION_INTERNET_CONNECTIVITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Panel",
 			"ACTION_INTERNET_CONNECTIVITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Panel::ACTION_NFC()
+	jstring Settings_Panel::ACTION_NFC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Panel",
 			"ACTION_NFC",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Panel::ACTION_VOLUME()
+	jstring Settings_Panel::ACTION_VOLUME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Panel",
 			"ACTION_VOLUME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Settings_Panel::ACTION_WIFI()
+	jstring Settings_Panel::ACTION_WIFI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.Settings$Panel",
 			"ACTION_WIFI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

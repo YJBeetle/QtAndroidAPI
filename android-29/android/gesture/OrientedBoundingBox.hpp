@@ -33,32 +33,38 @@ namespace __jni_impl::android::gesture
 	jfloat OrientedBoundingBox::centerX()
 	{
 		return __thiz.getField<jfloat>(
-			"centerX");
+			"centerX"
+		);
 	}
 	jfloat OrientedBoundingBox::centerY()
 	{
 		return __thiz.getField<jfloat>(
-			"centerY");
+			"centerY"
+		);
 	}
 	jfloat OrientedBoundingBox::height()
 	{
 		return __thiz.getField<jfloat>(
-			"height");
+			"height"
+		);
 	}
 	jfloat OrientedBoundingBox::orientation()
 	{
 		return __thiz.getField<jfloat>(
-			"orientation");
+			"orientation"
+		);
 	}
 	jfloat OrientedBoundingBox::squareness()
 	{
 		return __thiz.getField<jfloat>(
-			"squareness");
+			"squareness"
+		);
 	}
 	jfloat OrientedBoundingBox::width()
 	{
 		return __thiz.getField<jfloat>(
-			"width");
+			"width"
+		);
 	}
 	
 	// Constructors

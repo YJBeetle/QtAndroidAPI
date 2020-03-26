@@ -18,8 +18,8 @@ namespace __jni_impl::android::webkit
 		void __constructor(jstring arg0, jarray arg1);
 		
 		// Methods
-		QAndroidJniObject getData();
-		QAndroidJniObject getPorts();
+		jstring getData();
+		jarray getPorts();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -46,17 +46,19 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	QAndroidJniObject WebMessage::getData()
+	jstring WebMessage::getData()
 	{
 		return __thiz.callObjectMethod(
 			"getData",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WebMessage::getPorts()
+	jarray WebMessage::getPorts()
 	{
 		return __thiz.callObjectMethod(
 			"getPorts",
-			"()[Landroid/webkit/WebMessagePort;");
+			"()[Landroid/webkit/WebMessagePort;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::webkit
 

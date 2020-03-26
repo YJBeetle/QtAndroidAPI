@@ -12,8 +12,8 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEFERRED_SNIPPETING_KEY();
-		static QAndroidJniObject SNIPPET();
+		static jstring DEFERRED_SNIPPETING_KEY();
+		static jstring SNIPPET();
 		
 		// Constructors
 		void __constructor();
@@ -26,19 +26,21 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract_SearchSnippets::DEFERRED_SNIPPETING_KEY()
+	jstring ContactsContract_SearchSnippets::DEFERRED_SNIPPETING_KEY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$SearchSnippets",
 			"DEFERRED_SNIPPETING_KEY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract_SearchSnippets::SNIPPET()
+	jstring ContactsContract_SearchSnippets::SNIPPET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract$SearchSnippets",
 			"SNIPPET",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

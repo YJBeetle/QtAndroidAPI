@@ -19,9 +19,9 @@ namespace __jni_impl::android::mtp
 		// Methods
 		jlong getFreeSpace();
 		jint getStorageId();
-		QAndroidJniObject getDescription();
 		jlong getMaxCapacity();
-		QAndroidJniObject getVolumeIdentifier();
+		jstring getVolumeIdentifier();
+		jstring getDescription();
 	};
 } // namespace __jni_impl::android::mtp
 
@@ -43,31 +43,36 @@ namespace __jni_impl::android::mtp
 	{
 		return __thiz.callMethod<jlong>(
 			"getFreeSpace",
-			"()J");
+			"()J"
+		);
 	}
 	jint MtpStorageInfo::getStorageId()
 	{
 		return __thiz.callMethod<jint>(
 			"getStorageId",
-			"()I");
-	}
-	QAndroidJniObject MtpStorageInfo::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;");
+			"()I"
+		);
 	}
 	jlong MtpStorageInfo::getMaxCapacity()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMaxCapacity",
-			"()J");
+			"()J"
+		);
 	}
-	QAndroidJniObject MtpStorageInfo::getVolumeIdentifier()
+	jstring MtpStorageInfo::getVolumeIdentifier()
 	{
 		return __thiz.callObjectMethod(
 			"getVolumeIdentifier",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring MtpStorageInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::mtp
 

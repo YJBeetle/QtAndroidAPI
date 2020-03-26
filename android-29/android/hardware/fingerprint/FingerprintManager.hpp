@@ -50,9 +50,9 @@ namespace __jni_impl::android::hardware::fingerprint
 		void __constructor();
 		
 		// Methods
+		void authenticate(__jni_impl::android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, jint arg2, __jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, __jni_impl::android::os::Handler arg4);
 		jboolean hasEnrolledFingerprints();
 		jboolean isHardwareDetected();
-		void authenticate(__jni_impl::android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, jint arg2, __jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, __jni_impl::android::os::Handler arg4);
 	};
 } // namespace __jni_impl::android::hardware::fingerprint
 
@@ -68,103 +68,120 @@ namespace __jni_impl::android::hardware::fingerprint
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ACQUIRED_GOOD");
+			"FINGERPRINT_ACQUIRED_GOOD"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_IMAGER_DIRTY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ACQUIRED_IMAGER_DIRTY");
+			"FINGERPRINT_ACQUIRED_IMAGER_DIRTY"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_INSUFFICIENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ACQUIRED_INSUFFICIENT");
+			"FINGERPRINT_ACQUIRED_INSUFFICIENT"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_PARTIAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ACQUIRED_PARTIAL");
+			"FINGERPRINT_ACQUIRED_PARTIAL"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_TOO_FAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ACQUIRED_TOO_FAST");
+			"FINGERPRINT_ACQUIRED_TOO_FAST"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ACQUIRED_TOO_SLOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ACQUIRED_TOO_SLOW");
+			"FINGERPRINT_ACQUIRED_TOO_SLOW"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_CANCELED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_CANCELED");
+			"FINGERPRINT_ERROR_CANCELED"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_HW_NOT_PRESENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_HW_NOT_PRESENT");
+			"FINGERPRINT_ERROR_HW_NOT_PRESENT"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_HW_UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_HW_UNAVAILABLE");
+			"FINGERPRINT_ERROR_HW_UNAVAILABLE"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_LOCKOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_LOCKOUT");
+			"FINGERPRINT_ERROR_LOCKOUT"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_LOCKOUT_PERMANENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_LOCKOUT_PERMANENT");
+			"FINGERPRINT_ERROR_LOCKOUT_PERMANENT"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_NO_FINGERPRINTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_NO_FINGERPRINTS");
+			"FINGERPRINT_ERROR_NO_FINGERPRINTS"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_NO_SPACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_NO_SPACE");
+			"FINGERPRINT_ERROR_NO_SPACE"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_TIMEOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_TIMEOUT");
+			"FINGERPRINT_ERROR_TIMEOUT"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_UNABLE_TO_PROCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_UNABLE_TO_PROCESS");
+			"FINGERPRINT_ERROR_UNABLE_TO_PROCESS"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_USER_CANCELED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_USER_CANCELED");
+			"FINGERPRINT_ERROR_USER_CANCELED"
+		);
 	}
 	jint FingerprintManager::FINGERPRINT_ERROR_VENDOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.hardware.fingerprint.FingerprintManager",
-			"FINGERPRINT_ERROR_VENDOR");
+			"FINGERPRINT_ERROR_VENDOR"
+		);
 	}
 	
 	// Constructors
@@ -176,18 +193,6 @@ namespace __jni_impl::android::hardware::fingerprint
 	}
 	
 	// Methods
-	jboolean FingerprintManager::hasEnrolledFingerprints()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasEnrolledFingerprints",
-			"()Z");
-	}
-	jboolean FingerprintManager::isHardwareDetected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isHardwareDetected",
-			"()Z");
-	}
 	void FingerprintManager::authenticate(__jni_impl::android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, jint arg2, __jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, __jni_impl::android::os::Handler arg4)
 	{
 		__thiz.callMethod<void>(
@@ -197,7 +202,22 @@ namespace __jni_impl::android::hardware::fingerprint
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
+	}
+	jboolean FingerprintManager::hasEnrolledFingerprints()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasEnrolledFingerprints",
+			"()Z"
+		);
+	}
+	jboolean FingerprintManager::isHardwareDetected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHardwareDetected",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::hardware::fingerprint
 

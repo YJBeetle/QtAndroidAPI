@@ -50,7 +50,8 @@ namespace __jni_impl::android::sax
 	{
 		return __thiz.callObjectMethod(
 			"getContentHandler",
-			"()Lorg/xml/sax/ContentHandler;");
+			"()Lorg/xml/sax/ContentHandler;"
+		);
 	}
 } // namespace __jni_impl::android::sax
 

@@ -521,8 +521,8 @@ namespace __jni_impl::android::system
 		static jboolean WIFEXITED(jint arg0);
 		static jboolean WIFSTOPPED(jint arg0);
 		static jboolean WIFSIGNALED(jint arg0);
-		static QAndroidJniObject gaiName(jint arg0);
-		static QAndroidJniObject errnoName(jint arg0);
+		static jstring gaiName(jint arg0);
+		static jstring errnoName(jint arg0);
 	};
 } // namespace __jni_impl::android::system
 
@@ -534,2941 +534,3431 @@ namespace __jni_impl::android::system
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AF_INET");
+			"AF_INET"
+		);
 	}
 	jint OsConstants::AF_INET6()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AF_INET6");
+			"AF_INET6"
+		);
 	}
 	jint OsConstants::AF_NETLINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AF_NETLINK");
+			"AF_NETLINK"
+		);
 	}
 	jint OsConstants::AF_PACKET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AF_PACKET");
+			"AF_PACKET"
+		);
 	}
 	jint OsConstants::AF_UNIX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AF_UNIX");
+			"AF_UNIX"
+		);
 	}
 	jint OsConstants::AF_UNSPEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AF_UNSPEC");
+			"AF_UNSPEC"
+		);
 	}
 	jint OsConstants::AI_ADDRCONFIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AI_ADDRCONFIG");
+			"AI_ADDRCONFIG"
+		);
 	}
 	jint OsConstants::AI_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AI_ALL");
+			"AI_ALL"
+		);
 	}
 	jint OsConstants::AI_CANONNAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AI_CANONNAME");
+			"AI_CANONNAME"
+		);
 	}
 	jint OsConstants::AI_NUMERICHOST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AI_NUMERICHOST");
+			"AI_NUMERICHOST"
+		);
 	}
 	jint OsConstants::AI_NUMERICSERV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AI_NUMERICSERV");
+			"AI_NUMERICSERV"
+		);
 	}
 	jint OsConstants::AI_PASSIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AI_PASSIVE");
+			"AI_PASSIVE"
+		);
 	}
 	jint OsConstants::AI_V4MAPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"AI_V4MAPPED");
+			"AI_V4MAPPED"
+		);
 	}
 	jint OsConstants::ARPHRD_ETHER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ARPHRD_ETHER");
+			"ARPHRD_ETHER"
+		);
 	}
 	jint OsConstants::CAP_AUDIT_CONTROL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_AUDIT_CONTROL");
+			"CAP_AUDIT_CONTROL"
+		);
 	}
 	jint OsConstants::CAP_AUDIT_WRITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_AUDIT_WRITE");
+			"CAP_AUDIT_WRITE"
+		);
 	}
 	jint OsConstants::CAP_BLOCK_SUSPEND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_BLOCK_SUSPEND");
+			"CAP_BLOCK_SUSPEND"
+		);
 	}
 	jint OsConstants::CAP_CHOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_CHOWN");
+			"CAP_CHOWN"
+		);
 	}
 	jint OsConstants::CAP_DAC_OVERRIDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_DAC_OVERRIDE");
+			"CAP_DAC_OVERRIDE"
+		);
 	}
 	jint OsConstants::CAP_DAC_READ_SEARCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_DAC_READ_SEARCH");
+			"CAP_DAC_READ_SEARCH"
+		);
 	}
 	jint OsConstants::CAP_FOWNER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_FOWNER");
+			"CAP_FOWNER"
+		);
 	}
 	jint OsConstants::CAP_FSETID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_FSETID");
+			"CAP_FSETID"
+		);
 	}
 	jint OsConstants::CAP_IPC_LOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_IPC_LOCK");
+			"CAP_IPC_LOCK"
+		);
 	}
 	jint OsConstants::CAP_IPC_OWNER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_IPC_OWNER");
+			"CAP_IPC_OWNER"
+		);
 	}
 	jint OsConstants::CAP_KILL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_KILL");
+			"CAP_KILL"
+		);
 	}
 	jint OsConstants::CAP_LAST_CAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_LAST_CAP");
+			"CAP_LAST_CAP"
+		);
 	}
 	jint OsConstants::CAP_LEASE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_LEASE");
+			"CAP_LEASE"
+		);
 	}
 	jint OsConstants::CAP_LINUX_IMMUTABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_LINUX_IMMUTABLE");
+			"CAP_LINUX_IMMUTABLE"
+		);
 	}
 	jint OsConstants::CAP_MAC_ADMIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_MAC_ADMIN");
+			"CAP_MAC_ADMIN"
+		);
 	}
 	jint OsConstants::CAP_MAC_OVERRIDE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_MAC_OVERRIDE");
+			"CAP_MAC_OVERRIDE"
+		);
 	}
 	jint OsConstants::CAP_MKNOD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_MKNOD");
+			"CAP_MKNOD"
+		);
 	}
 	jint OsConstants::CAP_NET_ADMIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_NET_ADMIN");
+			"CAP_NET_ADMIN"
+		);
 	}
 	jint OsConstants::CAP_NET_BIND_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_NET_BIND_SERVICE");
+			"CAP_NET_BIND_SERVICE"
+		);
 	}
 	jint OsConstants::CAP_NET_BROADCAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_NET_BROADCAST");
+			"CAP_NET_BROADCAST"
+		);
 	}
 	jint OsConstants::CAP_NET_RAW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_NET_RAW");
+			"CAP_NET_RAW"
+		);
 	}
 	jint OsConstants::CAP_SETFCAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SETFCAP");
+			"CAP_SETFCAP"
+		);
 	}
 	jint OsConstants::CAP_SETGID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SETGID");
+			"CAP_SETGID"
+		);
 	}
 	jint OsConstants::CAP_SETPCAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SETPCAP");
+			"CAP_SETPCAP"
+		);
 	}
 	jint OsConstants::CAP_SETUID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SETUID");
+			"CAP_SETUID"
+		);
 	}
 	jint OsConstants::CAP_SYSLOG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYSLOG");
+			"CAP_SYSLOG"
+		);
 	}
 	jint OsConstants::CAP_SYS_ADMIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_ADMIN");
+			"CAP_SYS_ADMIN"
+		);
 	}
 	jint OsConstants::CAP_SYS_BOOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_BOOT");
+			"CAP_SYS_BOOT"
+		);
 	}
 	jint OsConstants::CAP_SYS_CHROOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_CHROOT");
+			"CAP_SYS_CHROOT"
+		);
 	}
 	jint OsConstants::CAP_SYS_MODULE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_MODULE");
+			"CAP_SYS_MODULE"
+		);
 	}
 	jint OsConstants::CAP_SYS_NICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_NICE");
+			"CAP_SYS_NICE"
+		);
 	}
 	jint OsConstants::CAP_SYS_PACCT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_PACCT");
+			"CAP_SYS_PACCT"
+		);
 	}
 	jint OsConstants::CAP_SYS_PTRACE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_PTRACE");
+			"CAP_SYS_PTRACE"
+		);
 	}
 	jint OsConstants::CAP_SYS_RAWIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_RAWIO");
+			"CAP_SYS_RAWIO"
+		);
 	}
 	jint OsConstants::CAP_SYS_RESOURCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_RESOURCE");
+			"CAP_SYS_RESOURCE"
+		);
 	}
 	jint OsConstants::CAP_SYS_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_TIME");
+			"CAP_SYS_TIME"
+		);
 	}
 	jint OsConstants::CAP_SYS_TTY_CONFIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_SYS_TTY_CONFIG");
+			"CAP_SYS_TTY_CONFIG"
+		);
 	}
 	jint OsConstants::CAP_WAKE_ALARM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"CAP_WAKE_ALARM");
+			"CAP_WAKE_ALARM"
+		);
 	}
 	jint OsConstants::E2BIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"E2BIG");
+			"E2BIG"
+		);
 	}
 	jint OsConstants::EACCES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EACCES");
+			"EACCES"
+		);
 	}
 	jint OsConstants::EADDRINUSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EADDRINUSE");
+			"EADDRINUSE"
+		);
 	}
 	jint OsConstants::EADDRNOTAVAIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EADDRNOTAVAIL");
+			"EADDRNOTAVAIL"
+		);
 	}
 	jint OsConstants::EAFNOSUPPORT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAFNOSUPPORT");
+			"EAFNOSUPPORT"
+		);
 	}
 	jint OsConstants::EAGAIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAGAIN");
+			"EAGAIN"
+		);
 	}
 	jint OsConstants::EAI_AGAIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_AGAIN");
+			"EAI_AGAIN"
+		);
 	}
 	jint OsConstants::EAI_BADFLAGS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_BADFLAGS");
+			"EAI_BADFLAGS"
+		);
 	}
 	jint OsConstants::EAI_FAIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_FAIL");
+			"EAI_FAIL"
+		);
 	}
 	jint OsConstants::EAI_FAMILY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_FAMILY");
+			"EAI_FAMILY"
+		);
 	}
 	jint OsConstants::EAI_MEMORY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_MEMORY");
+			"EAI_MEMORY"
+		);
 	}
 	jint OsConstants::EAI_NODATA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_NODATA");
+			"EAI_NODATA"
+		);
 	}
 	jint OsConstants::EAI_NONAME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_NONAME");
+			"EAI_NONAME"
+		);
 	}
 	jint OsConstants::EAI_OVERFLOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_OVERFLOW");
+			"EAI_OVERFLOW"
+		);
 	}
 	jint OsConstants::EAI_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_SERVICE");
+			"EAI_SERVICE"
+		);
 	}
 	jint OsConstants::EAI_SOCKTYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_SOCKTYPE");
+			"EAI_SOCKTYPE"
+		);
 	}
 	jint OsConstants::EAI_SYSTEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EAI_SYSTEM");
+			"EAI_SYSTEM"
+		);
 	}
 	jint OsConstants::EALREADY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EALREADY");
+			"EALREADY"
+		);
 	}
 	jint OsConstants::EBADF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EBADF");
+			"EBADF"
+		);
 	}
 	jint OsConstants::EBADMSG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EBADMSG");
+			"EBADMSG"
+		);
 	}
 	jint OsConstants::EBUSY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EBUSY");
+			"EBUSY"
+		);
 	}
 	jint OsConstants::ECANCELED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ECANCELED");
+			"ECANCELED"
+		);
 	}
 	jint OsConstants::ECHILD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ECHILD");
+			"ECHILD"
+		);
 	}
 	jint OsConstants::ECONNABORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ECONNABORTED");
+			"ECONNABORTED"
+		);
 	}
 	jint OsConstants::ECONNREFUSED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ECONNREFUSED");
+			"ECONNREFUSED"
+		);
 	}
 	jint OsConstants::ECONNRESET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ECONNRESET");
+			"ECONNRESET"
+		);
 	}
 	jint OsConstants::EDEADLK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EDEADLK");
+			"EDEADLK"
+		);
 	}
 	jint OsConstants::EDESTADDRREQ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EDESTADDRREQ");
+			"EDESTADDRREQ"
+		);
 	}
 	jint OsConstants::EDOM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EDOM");
+			"EDOM"
+		);
 	}
 	jint OsConstants::EDQUOT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EDQUOT");
+			"EDQUOT"
+		);
 	}
 	jint OsConstants::EEXIST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EEXIST");
+			"EEXIST"
+		);
 	}
 	jint OsConstants::EFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EFAULT");
+			"EFAULT"
+		);
 	}
 	jint OsConstants::EFBIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EFBIG");
+			"EFBIG"
+		);
 	}
 	jint OsConstants::EHOSTUNREACH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EHOSTUNREACH");
+			"EHOSTUNREACH"
+		);
 	}
 	jint OsConstants::EIDRM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EIDRM");
+			"EIDRM"
+		);
 	}
 	jint OsConstants::EILSEQ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EILSEQ");
+			"EILSEQ"
+		);
 	}
 	jint OsConstants::EINPROGRESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EINPROGRESS");
+			"EINPROGRESS"
+		);
 	}
 	jint OsConstants::EINTR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EINTR");
+			"EINTR"
+		);
 	}
 	jint OsConstants::EINVAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EINVAL");
+			"EINVAL"
+		);
 	}
 	jint OsConstants::EIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EIO");
+			"EIO"
+		);
 	}
 	jint OsConstants::EISCONN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EISCONN");
+			"EISCONN"
+		);
 	}
 	jint OsConstants::EISDIR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EISDIR");
+			"EISDIR"
+		);
 	}
 	jint OsConstants::ELOOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ELOOP");
+			"ELOOP"
+		);
 	}
 	jint OsConstants::EMFILE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EMFILE");
+			"EMFILE"
+		);
 	}
 	jint OsConstants::EMLINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EMLINK");
+			"EMLINK"
+		);
 	}
 	jint OsConstants::EMSGSIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EMSGSIZE");
+			"EMSGSIZE"
+		);
 	}
 	jint OsConstants::EMULTIHOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EMULTIHOP");
+			"EMULTIHOP"
+		);
 	}
 	jint OsConstants::ENAMETOOLONG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENAMETOOLONG");
+			"ENAMETOOLONG"
+		);
 	}
 	jint OsConstants::ENETDOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENETDOWN");
+			"ENETDOWN"
+		);
 	}
 	jint OsConstants::ENETRESET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENETRESET");
+			"ENETRESET"
+		);
 	}
 	jint OsConstants::ENETUNREACH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENETUNREACH");
+			"ENETUNREACH"
+		);
 	}
 	jint OsConstants::ENFILE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENFILE");
+			"ENFILE"
+		);
 	}
 	jint OsConstants::ENOBUFS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOBUFS");
+			"ENOBUFS"
+		);
 	}
 	jint OsConstants::ENODATA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENODATA");
+			"ENODATA"
+		);
 	}
 	jint OsConstants::ENODEV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENODEV");
+			"ENODEV"
+		);
 	}
 	jint OsConstants::ENOENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOENT");
+			"ENOENT"
+		);
 	}
 	jint OsConstants::ENOEXEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOEXEC");
+			"ENOEXEC"
+		);
 	}
 	jint OsConstants::ENOLCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOLCK");
+			"ENOLCK"
+		);
 	}
 	jint OsConstants::ENOLINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOLINK");
+			"ENOLINK"
+		);
 	}
 	jint OsConstants::ENOMEM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOMEM");
+			"ENOMEM"
+		);
 	}
 	jint OsConstants::ENOMSG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOMSG");
+			"ENOMSG"
+		);
 	}
 	jint OsConstants::ENOPROTOOPT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOPROTOOPT");
+			"ENOPROTOOPT"
+		);
 	}
 	jint OsConstants::ENOSPC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOSPC");
+			"ENOSPC"
+		);
 	}
 	jint OsConstants::ENOSR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOSR");
+			"ENOSR"
+		);
 	}
 	jint OsConstants::ENOSTR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOSTR");
+			"ENOSTR"
+		);
 	}
 	jint OsConstants::ENOSYS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOSYS");
+			"ENOSYS"
+		);
 	}
 	jint OsConstants::ENOTCONN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOTCONN");
+			"ENOTCONN"
+		);
 	}
 	jint OsConstants::ENOTDIR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOTDIR");
+			"ENOTDIR"
+		);
 	}
 	jint OsConstants::ENOTEMPTY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOTEMPTY");
+			"ENOTEMPTY"
+		);
 	}
 	jint OsConstants::ENOTSOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOTSOCK");
+			"ENOTSOCK"
+		);
 	}
 	jint OsConstants::ENOTSUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOTSUP");
+			"ENOTSUP"
+		);
 	}
 	jint OsConstants::ENOTTY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENOTTY");
+			"ENOTTY"
+		);
 	}
 	jint OsConstants::ENXIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ENXIO");
+			"ENXIO"
+		);
 	}
 	jint OsConstants::EOPNOTSUPP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EOPNOTSUPP");
+			"EOPNOTSUPP"
+		);
 	}
 	jint OsConstants::EOVERFLOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EOVERFLOW");
+			"EOVERFLOW"
+		);
 	}
 	jint OsConstants::EPERM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EPERM");
+			"EPERM"
+		);
 	}
 	jint OsConstants::EPIPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EPIPE");
+			"EPIPE"
+		);
 	}
 	jint OsConstants::EPROTO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EPROTO");
+			"EPROTO"
+		);
 	}
 	jint OsConstants::EPROTONOSUPPORT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EPROTONOSUPPORT");
+			"EPROTONOSUPPORT"
+		);
 	}
 	jint OsConstants::EPROTOTYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EPROTOTYPE");
+			"EPROTOTYPE"
+		);
 	}
 	jint OsConstants::ERANGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ERANGE");
+			"ERANGE"
+		);
 	}
 	jint OsConstants::EROFS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EROFS");
+			"EROFS"
+		);
 	}
 	jint OsConstants::ESPIPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ESPIPE");
+			"ESPIPE"
+		);
 	}
 	jint OsConstants::ESRCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ESRCH");
+			"ESRCH"
+		);
 	}
 	jint OsConstants::ESTALE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ESTALE");
+			"ESTALE"
+		);
 	}
 	jint OsConstants::ETH_P_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ETH_P_ALL");
+			"ETH_P_ALL"
+		);
 	}
 	jint OsConstants::ETH_P_ARP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ETH_P_ARP");
+			"ETH_P_ARP"
+		);
 	}
 	jint OsConstants::ETH_P_IP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ETH_P_IP");
+			"ETH_P_IP"
+		);
 	}
 	jint OsConstants::ETH_P_IPV6()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ETH_P_IPV6");
+			"ETH_P_IPV6"
+		);
 	}
 	jint OsConstants::ETIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ETIME");
+			"ETIME"
+		);
 	}
 	jint OsConstants::ETIMEDOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ETIMEDOUT");
+			"ETIMEDOUT"
+		);
 	}
 	jint OsConstants::ETXTBSY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ETXTBSY");
+			"ETXTBSY"
+		);
 	}
 	jint OsConstants::EXDEV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EXDEV");
+			"EXDEV"
+		);
 	}
 	jint OsConstants::EXIT_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EXIT_FAILURE");
+			"EXIT_FAILURE"
+		);
 	}
 	jint OsConstants::EXIT_SUCCESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"EXIT_SUCCESS");
+			"EXIT_SUCCESS"
+		);
 	}
 	jint OsConstants::FD_CLOEXEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"FD_CLOEXEC");
+			"FD_CLOEXEC"
+		);
 	}
 	jint OsConstants::FIONREAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"FIONREAD");
+			"FIONREAD"
+		);
 	}
 	jint OsConstants::F_DUPFD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_DUPFD");
+			"F_DUPFD"
+		);
 	}
 	jint OsConstants::F_DUPFD_CLOEXEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_DUPFD_CLOEXEC");
+			"F_DUPFD_CLOEXEC"
+		);
 	}
 	jint OsConstants::F_GETFD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_GETFD");
+			"F_GETFD"
+		);
 	}
 	jint OsConstants::F_GETFL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_GETFL");
+			"F_GETFL"
+		);
 	}
 	jint OsConstants::F_GETLK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_GETLK");
+			"F_GETLK"
+		);
 	}
 	jint OsConstants::F_GETLK64()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_GETLK64");
+			"F_GETLK64"
+		);
 	}
 	jint OsConstants::F_GETOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_GETOWN");
+			"F_GETOWN"
+		);
 	}
 	jint OsConstants::F_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_OK");
+			"F_OK"
+		);
 	}
 	jint OsConstants::F_RDLCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_RDLCK");
+			"F_RDLCK"
+		);
 	}
 	jint OsConstants::F_SETFD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_SETFD");
+			"F_SETFD"
+		);
 	}
 	jint OsConstants::F_SETFL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_SETFL");
+			"F_SETFL"
+		);
 	}
 	jint OsConstants::F_SETLK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_SETLK");
+			"F_SETLK"
+		);
 	}
 	jint OsConstants::F_SETLK64()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_SETLK64");
+			"F_SETLK64"
+		);
 	}
 	jint OsConstants::F_SETLKW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_SETLKW");
+			"F_SETLKW"
+		);
 	}
 	jint OsConstants::F_SETLKW64()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_SETLKW64");
+			"F_SETLKW64"
+		);
 	}
 	jint OsConstants::F_SETOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_SETOWN");
+			"F_SETOWN"
+		);
 	}
 	jint OsConstants::F_UNLCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_UNLCK");
+			"F_UNLCK"
+		);
 	}
 	jint OsConstants::F_WRLCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"F_WRLCK");
+			"F_WRLCK"
+		);
 	}
 	jint OsConstants::ICMP6_ECHO_REPLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ICMP6_ECHO_REPLY");
+			"ICMP6_ECHO_REPLY"
+		);
 	}
 	jint OsConstants::ICMP6_ECHO_REQUEST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ICMP6_ECHO_REQUEST");
+			"ICMP6_ECHO_REQUEST"
+		);
 	}
 	jint OsConstants::ICMP_ECHO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ICMP_ECHO");
+			"ICMP_ECHO"
+		);
 	}
 	jint OsConstants::ICMP_ECHOREPLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ICMP_ECHOREPLY");
+			"ICMP_ECHOREPLY"
+		);
 	}
 	jint OsConstants::IFA_F_DADFAILED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFA_F_DADFAILED");
+			"IFA_F_DADFAILED"
+		);
 	}
 	jint OsConstants::IFA_F_DEPRECATED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFA_F_DEPRECATED");
+			"IFA_F_DEPRECATED"
+		);
 	}
 	jint OsConstants::IFA_F_HOMEADDRESS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFA_F_HOMEADDRESS");
+			"IFA_F_HOMEADDRESS"
+		);
 	}
 	jint OsConstants::IFA_F_NODAD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFA_F_NODAD");
+			"IFA_F_NODAD"
+		);
 	}
 	jint OsConstants::IFA_F_OPTIMISTIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFA_F_OPTIMISTIC");
+			"IFA_F_OPTIMISTIC"
+		);
 	}
 	jint OsConstants::IFA_F_PERMANENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFA_F_PERMANENT");
+			"IFA_F_PERMANENT"
+		);
 	}
 	jint OsConstants::IFA_F_SECONDARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFA_F_SECONDARY");
+			"IFA_F_SECONDARY"
+		);
 	}
 	jint OsConstants::IFA_F_TEMPORARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFA_F_TEMPORARY");
+			"IFA_F_TEMPORARY"
+		);
 	}
 	jint OsConstants::IFA_F_TENTATIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFA_F_TENTATIVE");
+			"IFA_F_TENTATIVE"
+		);
 	}
 	jint OsConstants::IFF_ALLMULTI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_ALLMULTI");
+			"IFF_ALLMULTI"
+		);
 	}
 	jint OsConstants::IFF_AUTOMEDIA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_AUTOMEDIA");
+			"IFF_AUTOMEDIA"
+		);
 	}
 	jint OsConstants::IFF_BROADCAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_BROADCAST");
+			"IFF_BROADCAST"
+		);
 	}
 	jint OsConstants::IFF_DEBUG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_DEBUG");
+			"IFF_DEBUG"
+		);
 	}
 	jint OsConstants::IFF_DYNAMIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_DYNAMIC");
+			"IFF_DYNAMIC"
+		);
 	}
 	jint OsConstants::IFF_LOOPBACK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_LOOPBACK");
+			"IFF_LOOPBACK"
+		);
 	}
 	jint OsConstants::IFF_MASTER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_MASTER");
+			"IFF_MASTER"
+		);
 	}
 	jint OsConstants::IFF_MULTICAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_MULTICAST");
+			"IFF_MULTICAST"
+		);
 	}
 	jint OsConstants::IFF_NOARP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_NOARP");
+			"IFF_NOARP"
+		);
 	}
 	jint OsConstants::IFF_NOTRAILERS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_NOTRAILERS");
+			"IFF_NOTRAILERS"
+		);
 	}
 	jint OsConstants::IFF_POINTOPOINT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_POINTOPOINT");
+			"IFF_POINTOPOINT"
+		);
 	}
 	jint OsConstants::IFF_PORTSEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_PORTSEL");
+			"IFF_PORTSEL"
+		);
 	}
 	jint OsConstants::IFF_PROMISC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_PROMISC");
+			"IFF_PROMISC"
+		);
 	}
 	jint OsConstants::IFF_RUNNING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_RUNNING");
+			"IFF_RUNNING"
+		);
 	}
 	jint OsConstants::IFF_SLAVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_SLAVE");
+			"IFF_SLAVE"
+		);
 	}
 	jint OsConstants::IFF_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IFF_UP");
+			"IFF_UP"
+		);
 	}
 	jint OsConstants::IPPROTO_ICMP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPPROTO_ICMP");
+			"IPPROTO_ICMP"
+		);
 	}
 	jint OsConstants::IPPROTO_ICMPV6()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPPROTO_ICMPV6");
+			"IPPROTO_ICMPV6"
+		);
 	}
 	jint OsConstants::IPPROTO_IP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPPROTO_IP");
+			"IPPROTO_IP"
+		);
 	}
 	jint OsConstants::IPPROTO_IPV6()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPPROTO_IPV6");
+			"IPPROTO_IPV6"
+		);
 	}
 	jint OsConstants::IPPROTO_RAW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPPROTO_RAW");
+			"IPPROTO_RAW"
+		);
 	}
 	jint OsConstants::IPPROTO_TCP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPPROTO_TCP");
+			"IPPROTO_TCP"
+		);
 	}
 	jint OsConstants::IPPROTO_UDP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPPROTO_UDP");
+			"IPPROTO_UDP"
+		);
 	}
 	jint OsConstants::IPV6_CHECKSUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_CHECKSUM");
+			"IPV6_CHECKSUM"
+		);
 	}
 	jint OsConstants::IPV6_MULTICAST_HOPS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_MULTICAST_HOPS");
+			"IPV6_MULTICAST_HOPS"
+		);
 	}
 	jint OsConstants::IPV6_MULTICAST_IF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_MULTICAST_IF");
+			"IPV6_MULTICAST_IF"
+		);
 	}
 	jint OsConstants::IPV6_MULTICAST_LOOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_MULTICAST_LOOP");
+			"IPV6_MULTICAST_LOOP"
+		);
 	}
 	jint OsConstants::IPV6_RECVDSTOPTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_RECVDSTOPTS");
+			"IPV6_RECVDSTOPTS"
+		);
 	}
 	jint OsConstants::IPV6_RECVHOPLIMIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_RECVHOPLIMIT");
+			"IPV6_RECVHOPLIMIT"
+		);
 	}
 	jint OsConstants::IPV6_RECVHOPOPTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_RECVHOPOPTS");
+			"IPV6_RECVHOPOPTS"
+		);
 	}
 	jint OsConstants::IPV6_RECVPKTINFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_RECVPKTINFO");
+			"IPV6_RECVPKTINFO"
+		);
 	}
 	jint OsConstants::IPV6_RECVRTHDR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_RECVRTHDR");
+			"IPV6_RECVRTHDR"
+		);
 	}
 	jint OsConstants::IPV6_RECVTCLASS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_RECVTCLASS");
+			"IPV6_RECVTCLASS"
+		);
 	}
 	jint OsConstants::IPV6_TCLASS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_TCLASS");
+			"IPV6_TCLASS"
+		);
 	}
 	jint OsConstants::IPV6_UNICAST_HOPS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_UNICAST_HOPS");
+			"IPV6_UNICAST_HOPS"
+		);
 	}
 	jint OsConstants::IPV6_V6ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IPV6_V6ONLY");
+			"IPV6_V6ONLY"
+		);
 	}
 	jint OsConstants::IP_MULTICAST_IF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IP_MULTICAST_IF");
+			"IP_MULTICAST_IF"
+		);
 	}
 	jint OsConstants::IP_MULTICAST_LOOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IP_MULTICAST_LOOP");
+			"IP_MULTICAST_LOOP"
+		);
 	}
 	jint OsConstants::IP_MULTICAST_TTL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IP_MULTICAST_TTL");
+			"IP_MULTICAST_TTL"
+		);
 	}
 	jint OsConstants::IP_TOS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IP_TOS");
+			"IP_TOS"
+		);
 	}
 	jint OsConstants::IP_TTL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"IP_TTL");
+			"IP_TTL"
+		);
 	}
 	jint OsConstants::MAP_FIXED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MAP_FIXED");
+			"MAP_FIXED"
+		);
 	}
 	jint OsConstants::MAP_PRIVATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MAP_PRIVATE");
+			"MAP_PRIVATE"
+		);
 	}
 	jint OsConstants::MAP_SHARED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MAP_SHARED");
+			"MAP_SHARED"
+		);
 	}
 	jint OsConstants::MCAST_BLOCK_SOURCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MCAST_BLOCK_SOURCE");
+			"MCAST_BLOCK_SOURCE"
+		);
 	}
 	jint OsConstants::MCAST_JOIN_GROUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MCAST_JOIN_GROUP");
+			"MCAST_JOIN_GROUP"
+		);
 	}
 	jint OsConstants::MCAST_JOIN_SOURCE_GROUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MCAST_JOIN_SOURCE_GROUP");
+			"MCAST_JOIN_SOURCE_GROUP"
+		);
 	}
 	jint OsConstants::MCAST_LEAVE_GROUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MCAST_LEAVE_GROUP");
+			"MCAST_LEAVE_GROUP"
+		);
 	}
 	jint OsConstants::MCAST_LEAVE_SOURCE_GROUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MCAST_LEAVE_SOURCE_GROUP");
+			"MCAST_LEAVE_SOURCE_GROUP"
+		);
 	}
 	jint OsConstants::MCAST_UNBLOCK_SOURCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MCAST_UNBLOCK_SOURCE");
+			"MCAST_UNBLOCK_SOURCE"
+		);
 	}
 	jint OsConstants::MCL_CURRENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MCL_CURRENT");
+			"MCL_CURRENT"
+		);
 	}
 	jint OsConstants::MCL_FUTURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MCL_FUTURE");
+			"MCL_FUTURE"
+		);
 	}
 	jint OsConstants::MSG_CTRUNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MSG_CTRUNC");
+			"MSG_CTRUNC"
+		);
 	}
 	jint OsConstants::MSG_DONTROUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MSG_DONTROUTE");
+			"MSG_DONTROUTE"
+		);
 	}
 	jint OsConstants::MSG_EOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MSG_EOR");
+			"MSG_EOR"
+		);
 	}
 	jint OsConstants::MSG_OOB()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MSG_OOB");
+			"MSG_OOB"
+		);
 	}
 	jint OsConstants::MSG_PEEK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MSG_PEEK");
+			"MSG_PEEK"
+		);
 	}
 	jint OsConstants::MSG_TRUNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MSG_TRUNC");
+			"MSG_TRUNC"
+		);
 	}
 	jint OsConstants::MSG_WAITALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MSG_WAITALL");
+			"MSG_WAITALL"
+		);
 	}
 	jint OsConstants::MS_ASYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MS_ASYNC");
+			"MS_ASYNC"
+		);
 	}
 	jint OsConstants::MS_INVALIDATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MS_INVALIDATE");
+			"MS_INVALIDATE"
+		);
 	}
 	jint OsConstants::MS_SYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"MS_SYNC");
+			"MS_SYNC"
+		);
 	}
 	jint OsConstants::NETLINK_INET_DIAG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"NETLINK_INET_DIAG");
+			"NETLINK_INET_DIAG"
+		);
 	}
 	jint OsConstants::NETLINK_ROUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"NETLINK_ROUTE");
+			"NETLINK_ROUTE"
+		);
 	}
 	jint OsConstants::NI_DGRAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"NI_DGRAM");
+			"NI_DGRAM"
+		);
 	}
 	jint OsConstants::NI_NAMEREQD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"NI_NAMEREQD");
+			"NI_NAMEREQD"
+		);
 	}
 	jint OsConstants::NI_NOFQDN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"NI_NOFQDN");
+			"NI_NOFQDN"
+		);
 	}
 	jint OsConstants::NI_NUMERICHOST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"NI_NUMERICHOST");
+			"NI_NUMERICHOST"
+		);
 	}
 	jint OsConstants::NI_NUMERICSERV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"NI_NUMERICSERV");
+			"NI_NUMERICSERV"
+		);
 	}
 	jint OsConstants::O_ACCMODE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_ACCMODE");
+			"O_ACCMODE"
+		);
 	}
 	jint OsConstants::O_APPEND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_APPEND");
+			"O_APPEND"
+		);
 	}
 	jint OsConstants::O_CLOEXEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_CLOEXEC");
+			"O_CLOEXEC"
+		);
 	}
 	jint OsConstants::O_CREAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_CREAT");
+			"O_CREAT"
+		);
 	}
 	jint OsConstants::O_DSYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_DSYNC");
+			"O_DSYNC"
+		);
 	}
 	jint OsConstants::O_EXCL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_EXCL");
+			"O_EXCL"
+		);
 	}
 	jint OsConstants::O_NOCTTY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_NOCTTY");
+			"O_NOCTTY"
+		);
 	}
 	jint OsConstants::O_NOFOLLOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_NOFOLLOW");
+			"O_NOFOLLOW"
+		);
 	}
 	jint OsConstants::O_NONBLOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_NONBLOCK");
+			"O_NONBLOCK"
+		);
 	}
 	jint OsConstants::O_RDONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_RDONLY");
+			"O_RDONLY"
+		);
 	}
 	jint OsConstants::O_RDWR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_RDWR");
+			"O_RDWR"
+		);
 	}
 	jint OsConstants::O_SYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_SYNC");
+			"O_SYNC"
+		);
 	}
 	jint OsConstants::O_TRUNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_TRUNC");
+			"O_TRUNC"
+		);
 	}
 	jint OsConstants::O_WRONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"O_WRONLY");
+			"O_WRONLY"
+		);
 	}
 	jint OsConstants::POLLERR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLERR");
+			"POLLERR"
+		);
 	}
 	jint OsConstants::POLLHUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLHUP");
+			"POLLHUP"
+		);
 	}
 	jint OsConstants::POLLIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLIN");
+			"POLLIN"
+		);
 	}
 	jint OsConstants::POLLNVAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLNVAL");
+			"POLLNVAL"
+		);
 	}
 	jint OsConstants::POLLOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLOUT");
+			"POLLOUT"
+		);
 	}
 	jint OsConstants::POLLPRI()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLPRI");
+			"POLLPRI"
+		);
 	}
 	jint OsConstants::POLLRDBAND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLRDBAND");
+			"POLLRDBAND"
+		);
 	}
 	jint OsConstants::POLLRDNORM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLRDNORM");
+			"POLLRDNORM"
+		);
 	}
 	jint OsConstants::POLLWRBAND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLWRBAND");
+			"POLLWRBAND"
+		);
 	}
 	jint OsConstants::POLLWRNORM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"POLLWRNORM");
+			"POLLWRNORM"
+		);
 	}
 	jint OsConstants::PROT_EXEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"PROT_EXEC");
+			"PROT_EXEC"
+		);
 	}
 	jint OsConstants::PROT_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"PROT_NONE");
+			"PROT_NONE"
+		);
 	}
 	jint OsConstants::PROT_READ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"PROT_READ");
+			"PROT_READ"
+		);
 	}
 	jint OsConstants::PROT_WRITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"PROT_WRITE");
+			"PROT_WRITE"
+		);
 	}
 	jint OsConstants::PR_GET_DUMPABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"PR_GET_DUMPABLE");
+			"PR_GET_DUMPABLE"
+		);
 	}
 	jint OsConstants::PR_SET_DUMPABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"PR_SET_DUMPABLE");
+			"PR_SET_DUMPABLE"
+		);
 	}
 	jint OsConstants::PR_SET_NO_NEW_PRIVS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"PR_SET_NO_NEW_PRIVS");
+			"PR_SET_NO_NEW_PRIVS"
+		);
 	}
 	jint OsConstants::RTMGRP_NEIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"RTMGRP_NEIGH");
+			"RTMGRP_NEIGH"
+		);
 	}
 	jint OsConstants::RT_SCOPE_HOST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"RT_SCOPE_HOST");
+			"RT_SCOPE_HOST"
+		);
 	}
 	jint OsConstants::RT_SCOPE_LINK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"RT_SCOPE_LINK");
+			"RT_SCOPE_LINK"
+		);
 	}
 	jint OsConstants::RT_SCOPE_NOWHERE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"RT_SCOPE_NOWHERE");
+			"RT_SCOPE_NOWHERE"
+		);
 	}
 	jint OsConstants::RT_SCOPE_SITE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"RT_SCOPE_SITE");
+			"RT_SCOPE_SITE"
+		);
 	}
 	jint OsConstants::RT_SCOPE_UNIVERSE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"RT_SCOPE_UNIVERSE");
+			"RT_SCOPE_UNIVERSE"
+		);
 	}
 	jint OsConstants::R_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"R_OK");
+			"R_OK"
+		);
 	}
 	jint OsConstants::SEEK_CUR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SEEK_CUR");
+			"SEEK_CUR"
+		);
 	}
 	jint OsConstants::SEEK_END()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SEEK_END");
+			"SEEK_END"
+		);
 	}
 	jint OsConstants::SEEK_SET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SEEK_SET");
+			"SEEK_SET"
+		);
 	}
 	jint OsConstants::SHUT_RD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SHUT_RD");
+			"SHUT_RD"
+		);
 	}
 	jint OsConstants::SHUT_RDWR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SHUT_RDWR");
+			"SHUT_RDWR"
+		);
 	}
 	jint OsConstants::SHUT_WR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SHUT_WR");
+			"SHUT_WR"
+		);
 	}
 	jint OsConstants::SIGABRT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGABRT");
+			"SIGABRT"
+		);
 	}
 	jint OsConstants::SIGALRM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGALRM");
+			"SIGALRM"
+		);
 	}
 	jint OsConstants::SIGBUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGBUS");
+			"SIGBUS"
+		);
 	}
 	jint OsConstants::SIGCHLD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGCHLD");
+			"SIGCHLD"
+		);
 	}
 	jint OsConstants::SIGCONT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGCONT");
+			"SIGCONT"
+		);
 	}
 	jint OsConstants::SIGFPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGFPE");
+			"SIGFPE"
+		);
 	}
 	jint OsConstants::SIGHUP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGHUP");
+			"SIGHUP"
+		);
 	}
 	jint OsConstants::SIGILL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGILL");
+			"SIGILL"
+		);
 	}
 	jint OsConstants::SIGINT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGINT");
+			"SIGINT"
+		);
 	}
 	jint OsConstants::SIGIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGIO");
+			"SIGIO"
+		);
 	}
 	jint OsConstants::SIGKILL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGKILL");
+			"SIGKILL"
+		);
 	}
 	jint OsConstants::SIGPIPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGPIPE");
+			"SIGPIPE"
+		);
 	}
 	jint OsConstants::SIGPROF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGPROF");
+			"SIGPROF"
+		);
 	}
 	jint OsConstants::SIGPWR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGPWR");
+			"SIGPWR"
+		);
 	}
 	jint OsConstants::SIGQUIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGQUIT");
+			"SIGQUIT"
+		);
 	}
 	jint OsConstants::SIGRTMAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGRTMAX");
+			"SIGRTMAX"
+		);
 	}
 	jint OsConstants::SIGRTMIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGRTMIN");
+			"SIGRTMIN"
+		);
 	}
 	jint OsConstants::SIGSEGV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGSEGV");
+			"SIGSEGV"
+		);
 	}
 	jint OsConstants::SIGSTKFLT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGSTKFLT");
+			"SIGSTKFLT"
+		);
 	}
 	jint OsConstants::SIGSTOP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGSTOP");
+			"SIGSTOP"
+		);
 	}
 	jint OsConstants::SIGSYS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGSYS");
+			"SIGSYS"
+		);
 	}
 	jint OsConstants::SIGTERM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGTERM");
+			"SIGTERM"
+		);
 	}
 	jint OsConstants::SIGTRAP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGTRAP");
+			"SIGTRAP"
+		);
 	}
 	jint OsConstants::SIGTSTP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGTSTP");
+			"SIGTSTP"
+		);
 	}
 	jint OsConstants::SIGTTIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGTTIN");
+			"SIGTTIN"
+		);
 	}
 	jint OsConstants::SIGTTOU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGTTOU");
+			"SIGTTOU"
+		);
 	}
 	jint OsConstants::SIGURG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGURG");
+			"SIGURG"
+		);
 	}
 	jint OsConstants::SIGUSR1()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGUSR1");
+			"SIGUSR1"
+		);
 	}
 	jint OsConstants::SIGUSR2()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGUSR2");
+			"SIGUSR2"
+		);
 	}
 	jint OsConstants::SIGVTALRM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGVTALRM");
+			"SIGVTALRM"
+		);
 	}
 	jint OsConstants::SIGWINCH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGWINCH");
+			"SIGWINCH"
+		);
 	}
 	jint OsConstants::SIGXCPU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGXCPU");
+			"SIGXCPU"
+		);
 	}
 	jint OsConstants::SIGXFSZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIGXFSZ");
+			"SIGXFSZ"
+		);
 	}
 	jint OsConstants::SIOCGIFADDR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIOCGIFADDR");
+			"SIOCGIFADDR"
+		);
 	}
 	jint OsConstants::SIOCGIFBRDADDR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIOCGIFBRDADDR");
+			"SIOCGIFBRDADDR"
+		);
 	}
 	jint OsConstants::SIOCGIFDSTADDR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIOCGIFDSTADDR");
+			"SIOCGIFDSTADDR"
+		);
 	}
 	jint OsConstants::SIOCGIFNETMASK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SIOCGIFNETMASK");
+			"SIOCGIFNETMASK"
+		);
 	}
 	jint OsConstants::SOCK_CLOEXEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SOCK_CLOEXEC");
+			"SOCK_CLOEXEC"
+		);
 	}
 	jint OsConstants::SOCK_DGRAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SOCK_DGRAM");
+			"SOCK_DGRAM"
+		);
 	}
 	jint OsConstants::SOCK_NONBLOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SOCK_NONBLOCK");
+			"SOCK_NONBLOCK"
+		);
 	}
 	jint OsConstants::SOCK_RAW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SOCK_RAW");
+			"SOCK_RAW"
+		);
 	}
 	jint OsConstants::SOCK_SEQPACKET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SOCK_SEQPACKET");
+			"SOCK_SEQPACKET"
+		);
 	}
 	jint OsConstants::SOCK_STREAM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SOCK_STREAM");
+			"SOCK_STREAM"
+		);
 	}
 	jint OsConstants::SOL_SOCKET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SOL_SOCKET");
+			"SOL_SOCKET"
+		);
 	}
 	jint OsConstants::SO_BINDTODEVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_BINDTODEVICE");
+			"SO_BINDTODEVICE"
+		);
 	}
 	jint OsConstants::SO_BROADCAST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_BROADCAST");
+			"SO_BROADCAST"
+		);
 	}
 	jint OsConstants::SO_DEBUG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_DEBUG");
+			"SO_DEBUG"
+		);
 	}
 	jint OsConstants::SO_DONTROUTE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_DONTROUTE");
+			"SO_DONTROUTE"
+		);
 	}
 	jint OsConstants::SO_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_ERROR");
+			"SO_ERROR"
+		);
 	}
 	jint OsConstants::SO_KEEPALIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_KEEPALIVE");
+			"SO_KEEPALIVE"
+		);
 	}
 	jint OsConstants::SO_LINGER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_LINGER");
+			"SO_LINGER"
+		);
 	}
 	jint OsConstants::SO_OOBINLINE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_OOBINLINE");
+			"SO_OOBINLINE"
+		);
 	}
 	jint OsConstants::SO_PASSCRED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_PASSCRED");
+			"SO_PASSCRED"
+		);
 	}
 	jint OsConstants::SO_PEERCRED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_PEERCRED");
+			"SO_PEERCRED"
+		);
 	}
 	jint OsConstants::SO_RCVBUF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_RCVBUF");
+			"SO_RCVBUF"
+		);
 	}
 	jint OsConstants::SO_RCVLOWAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_RCVLOWAT");
+			"SO_RCVLOWAT"
+		);
 	}
 	jint OsConstants::SO_RCVTIMEO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_RCVTIMEO");
+			"SO_RCVTIMEO"
+		);
 	}
 	jint OsConstants::SO_REUSEADDR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_REUSEADDR");
+			"SO_REUSEADDR"
+		);
 	}
 	jint OsConstants::SO_SNDBUF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_SNDBUF");
+			"SO_SNDBUF"
+		);
 	}
 	jint OsConstants::SO_SNDLOWAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_SNDLOWAT");
+			"SO_SNDLOWAT"
+		);
 	}
 	jint OsConstants::SO_SNDTIMEO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_SNDTIMEO");
+			"SO_SNDTIMEO"
+		);
 	}
 	jint OsConstants::SO_TYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"SO_TYPE");
+			"SO_TYPE"
+		);
 	}
 	jint OsConstants::STDERR_FILENO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"STDERR_FILENO");
+			"STDERR_FILENO"
+		);
 	}
 	jint OsConstants::STDIN_FILENO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"STDIN_FILENO");
+			"STDIN_FILENO"
+		);
 	}
 	jint OsConstants::STDOUT_FILENO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"STDOUT_FILENO");
+			"STDOUT_FILENO"
+		);
 	}
 	jint OsConstants::ST_MANDLOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ST_MANDLOCK");
+			"ST_MANDLOCK"
+		);
 	}
 	jint OsConstants::ST_NOATIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ST_NOATIME");
+			"ST_NOATIME"
+		);
 	}
 	jint OsConstants::ST_NODEV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ST_NODEV");
+			"ST_NODEV"
+		);
 	}
 	jint OsConstants::ST_NODIRATIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ST_NODIRATIME");
+			"ST_NODIRATIME"
+		);
 	}
 	jint OsConstants::ST_NOEXEC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ST_NOEXEC");
+			"ST_NOEXEC"
+		);
 	}
 	jint OsConstants::ST_NOSUID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ST_NOSUID");
+			"ST_NOSUID"
+		);
 	}
 	jint OsConstants::ST_RDONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ST_RDONLY");
+			"ST_RDONLY"
+		);
 	}
 	jint OsConstants::ST_RELATIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ST_RELATIME");
+			"ST_RELATIME"
+		);
 	}
 	jint OsConstants::ST_SYNCHRONOUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"ST_SYNCHRONOUS");
+			"ST_SYNCHRONOUS"
+		);
 	}
 	jint OsConstants::S_IFBLK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IFBLK");
+			"S_IFBLK"
+		);
 	}
 	jint OsConstants::S_IFCHR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IFCHR");
+			"S_IFCHR"
+		);
 	}
 	jint OsConstants::S_IFDIR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IFDIR");
+			"S_IFDIR"
+		);
 	}
 	jint OsConstants::S_IFIFO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IFIFO");
+			"S_IFIFO"
+		);
 	}
 	jint OsConstants::S_IFLNK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IFLNK");
+			"S_IFLNK"
+		);
 	}
 	jint OsConstants::S_IFMT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IFMT");
+			"S_IFMT"
+		);
 	}
 	jint OsConstants::S_IFREG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IFREG");
+			"S_IFREG"
+		);
 	}
 	jint OsConstants::S_IFSOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IFSOCK");
+			"S_IFSOCK"
+		);
 	}
 	jint OsConstants::S_IRGRP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IRGRP");
+			"S_IRGRP"
+		);
 	}
 	jint OsConstants::S_IROTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IROTH");
+			"S_IROTH"
+		);
 	}
 	jint OsConstants::S_IRUSR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IRUSR");
+			"S_IRUSR"
+		);
 	}
 	jint OsConstants::S_IRWXG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IRWXG");
+			"S_IRWXG"
+		);
 	}
 	jint OsConstants::S_IRWXO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IRWXO");
+			"S_IRWXO"
+		);
 	}
 	jint OsConstants::S_IRWXU()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IRWXU");
+			"S_IRWXU"
+		);
 	}
 	jint OsConstants::S_ISGID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_ISGID");
+			"S_ISGID"
+		);
 	}
 	jint OsConstants::S_ISUID()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_ISUID");
+			"S_ISUID"
+		);
 	}
 	jint OsConstants::S_ISVTX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_ISVTX");
+			"S_ISVTX"
+		);
 	}
 	jint OsConstants::S_IWGRP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IWGRP");
+			"S_IWGRP"
+		);
 	}
 	jint OsConstants::S_IWOTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IWOTH");
+			"S_IWOTH"
+		);
 	}
 	jint OsConstants::S_IWUSR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IWUSR");
+			"S_IWUSR"
+		);
 	}
 	jint OsConstants::S_IXGRP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IXGRP");
+			"S_IXGRP"
+		);
 	}
 	jint OsConstants::S_IXOTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IXOTH");
+			"S_IXOTH"
+		);
 	}
 	jint OsConstants::S_IXUSR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"S_IXUSR");
+			"S_IXUSR"
+		);
 	}
 	jint OsConstants::TCP_NODELAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"TCP_NODELAY");
+			"TCP_NODELAY"
+		);
 	}
 	jint OsConstants::TCP_USER_TIMEOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"TCP_USER_TIMEOUT");
+			"TCP_USER_TIMEOUT"
+		);
 	}
 	jint OsConstants::WCONTINUED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"WCONTINUED");
+			"WCONTINUED"
+		);
 	}
 	jint OsConstants::WEXITED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"WEXITED");
+			"WEXITED"
+		);
 	}
 	jint OsConstants::WNOHANG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"WNOHANG");
+			"WNOHANG"
+		);
 	}
 	jint OsConstants::WNOWAIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"WNOWAIT");
+			"WNOWAIT"
+		);
 	}
 	jint OsConstants::WSTOPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"WSTOPPED");
+			"WSTOPPED"
+		);
 	}
 	jint OsConstants::WUNTRACED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"WUNTRACED");
+			"WUNTRACED"
+		);
 	}
 	jint OsConstants::W_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"W_OK");
+			"W_OK"
+		);
 	}
 	jint OsConstants::X_OK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"X_OK");
+			"X_OK"
+		);
 	}
 	jint OsConstants::_SC_2_CHAR_TERM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_CHAR_TERM");
+			"_SC_2_CHAR_TERM"
+		);
 	}
 	jint OsConstants::_SC_2_C_BIND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_C_BIND");
+			"_SC_2_C_BIND"
+		);
 	}
 	jint OsConstants::_SC_2_C_DEV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_C_DEV");
+			"_SC_2_C_DEV"
+		);
 	}
 	jint OsConstants::_SC_2_C_VERSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_C_VERSION");
+			"_SC_2_C_VERSION"
+		);
 	}
 	jint OsConstants::_SC_2_FORT_DEV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_FORT_DEV");
+			"_SC_2_FORT_DEV"
+		);
 	}
 	jint OsConstants::_SC_2_FORT_RUN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_FORT_RUN");
+			"_SC_2_FORT_RUN"
+		);
 	}
 	jint OsConstants::_SC_2_LOCALEDEF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_LOCALEDEF");
+			"_SC_2_LOCALEDEF"
+		);
 	}
 	jint OsConstants::_SC_2_SW_DEV()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_SW_DEV");
+			"_SC_2_SW_DEV"
+		);
 	}
 	jint OsConstants::_SC_2_UPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_UPE");
+			"_SC_2_UPE"
+		);
 	}
 	jint OsConstants::_SC_2_VERSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_2_VERSION");
+			"_SC_2_VERSION"
+		);
 	}
 	jint OsConstants::_SC_AIO_LISTIO_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_AIO_LISTIO_MAX");
+			"_SC_AIO_LISTIO_MAX"
+		);
 	}
 	jint OsConstants::_SC_AIO_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_AIO_MAX");
+			"_SC_AIO_MAX"
+		);
 	}
 	jint OsConstants::_SC_AIO_PRIO_DELTA_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_AIO_PRIO_DELTA_MAX");
+			"_SC_AIO_PRIO_DELTA_MAX"
+		);
 	}
 	jint OsConstants::_SC_ARG_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_ARG_MAX");
+			"_SC_ARG_MAX"
+		);
 	}
 	jint OsConstants::_SC_ASYNCHRONOUS_IO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_ASYNCHRONOUS_IO");
+			"_SC_ASYNCHRONOUS_IO"
+		);
 	}
 	jint OsConstants::_SC_ATEXIT_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_ATEXIT_MAX");
+			"_SC_ATEXIT_MAX"
+		);
 	}
 	jint OsConstants::_SC_AVPHYS_PAGES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_AVPHYS_PAGES");
+			"_SC_AVPHYS_PAGES"
+		);
 	}
 	jint OsConstants::_SC_BC_BASE_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_BC_BASE_MAX");
+			"_SC_BC_BASE_MAX"
+		);
 	}
 	jint OsConstants::_SC_BC_DIM_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_BC_DIM_MAX");
+			"_SC_BC_DIM_MAX"
+		);
 	}
 	jint OsConstants::_SC_BC_SCALE_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_BC_SCALE_MAX");
+			"_SC_BC_SCALE_MAX"
+		);
 	}
 	jint OsConstants::_SC_BC_STRING_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_BC_STRING_MAX");
+			"_SC_BC_STRING_MAX"
+		);
 	}
 	jint OsConstants::_SC_CHILD_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_CHILD_MAX");
+			"_SC_CHILD_MAX"
+		);
 	}
 	jint OsConstants::_SC_CLK_TCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_CLK_TCK");
+			"_SC_CLK_TCK"
+		);
 	}
 	jint OsConstants::_SC_COLL_WEIGHTS_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_COLL_WEIGHTS_MAX");
+			"_SC_COLL_WEIGHTS_MAX"
+		);
 	}
 	jint OsConstants::_SC_DELAYTIMER_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_DELAYTIMER_MAX");
+			"_SC_DELAYTIMER_MAX"
+		);
 	}
 	jint OsConstants::_SC_EXPR_NEST_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_EXPR_NEST_MAX");
+			"_SC_EXPR_NEST_MAX"
+		);
 	}
 	jint OsConstants::_SC_FSYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_FSYNC");
+			"_SC_FSYNC"
+		);
 	}
 	jint OsConstants::_SC_GETGR_R_SIZE_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_GETGR_R_SIZE_MAX");
+			"_SC_GETGR_R_SIZE_MAX"
+		);
 	}
 	jint OsConstants::_SC_GETPW_R_SIZE_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_GETPW_R_SIZE_MAX");
+			"_SC_GETPW_R_SIZE_MAX"
+		);
 	}
 	jint OsConstants::_SC_IOV_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_IOV_MAX");
+			"_SC_IOV_MAX"
+		);
 	}
 	jint OsConstants::_SC_JOB_CONTROL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_JOB_CONTROL");
+			"_SC_JOB_CONTROL"
+		);
 	}
 	jint OsConstants::_SC_LINE_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_LINE_MAX");
+			"_SC_LINE_MAX"
+		);
 	}
 	jint OsConstants::_SC_LOGIN_NAME_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_LOGIN_NAME_MAX");
+			"_SC_LOGIN_NAME_MAX"
+		);
 	}
 	jint OsConstants::_SC_MAPPED_FILES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_MAPPED_FILES");
+			"_SC_MAPPED_FILES"
+		);
 	}
 	jint OsConstants::_SC_MEMLOCK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_MEMLOCK");
+			"_SC_MEMLOCK"
+		);
 	}
 	jint OsConstants::_SC_MEMLOCK_RANGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_MEMLOCK_RANGE");
+			"_SC_MEMLOCK_RANGE"
+		);
 	}
 	jint OsConstants::_SC_MEMORY_PROTECTION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_MEMORY_PROTECTION");
+			"_SC_MEMORY_PROTECTION"
+		);
 	}
 	jint OsConstants::_SC_MESSAGE_PASSING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_MESSAGE_PASSING");
+			"_SC_MESSAGE_PASSING"
+		);
 	}
 	jint OsConstants::_SC_MQ_OPEN_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_MQ_OPEN_MAX");
+			"_SC_MQ_OPEN_MAX"
+		);
 	}
 	jint OsConstants::_SC_MQ_PRIO_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_MQ_PRIO_MAX");
+			"_SC_MQ_PRIO_MAX"
+		);
 	}
 	jint OsConstants::_SC_NGROUPS_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_NGROUPS_MAX");
+			"_SC_NGROUPS_MAX"
+		);
 	}
 	jint OsConstants::_SC_NPROCESSORS_CONF()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_NPROCESSORS_CONF");
+			"_SC_NPROCESSORS_CONF"
+		);
 	}
 	jint OsConstants::_SC_NPROCESSORS_ONLN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_NPROCESSORS_ONLN");
+			"_SC_NPROCESSORS_ONLN"
+		);
 	}
 	jint OsConstants::_SC_OPEN_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_OPEN_MAX");
+			"_SC_OPEN_MAX"
+		);
 	}
 	jint OsConstants::_SC_PAGESIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_PAGESIZE");
+			"_SC_PAGESIZE"
+		);
 	}
 	jint OsConstants::_SC_PAGE_SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_PAGE_SIZE");
+			"_SC_PAGE_SIZE"
+		);
 	}
 	jint OsConstants::_SC_PASS_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_PASS_MAX");
+			"_SC_PASS_MAX"
+		);
 	}
 	jint OsConstants::_SC_PHYS_PAGES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_PHYS_PAGES");
+			"_SC_PHYS_PAGES"
+		);
 	}
 	jint OsConstants::_SC_PRIORITIZED_IO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_PRIORITIZED_IO");
+			"_SC_PRIORITIZED_IO"
+		);
 	}
 	jint OsConstants::_SC_PRIORITY_SCHEDULING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_PRIORITY_SCHEDULING");
+			"_SC_PRIORITY_SCHEDULING"
+		);
 	}
 	jint OsConstants::_SC_REALTIME_SIGNALS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_REALTIME_SIGNALS");
+			"_SC_REALTIME_SIGNALS"
+		);
 	}
 	jint OsConstants::_SC_RE_DUP_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_RE_DUP_MAX");
+			"_SC_RE_DUP_MAX"
+		);
 	}
 	jint OsConstants::_SC_RTSIG_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_RTSIG_MAX");
+			"_SC_RTSIG_MAX"
+		);
 	}
 	jint OsConstants::_SC_SAVED_IDS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_SAVED_IDS");
+			"_SC_SAVED_IDS"
+		);
 	}
 	jint OsConstants::_SC_SEMAPHORES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_SEMAPHORES");
+			"_SC_SEMAPHORES"
+		);
 	}
 	jint OsConstants::_SC_SEM_NSEMS_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_SEM_NSEMS_MAX");
+			"_SC_SEM_NSEMS_MAX"
+		);
 	}
 	jint OsConstants::_SC_SEM_VALUE_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_SEM_VALUE_MAX");
+			"_SC_SEM_VALUE_MAX"
+		);
 	}
 	jint OsConstants::_SC_SHARED_MEMORY_OBJECTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_SHARED_MEMORY_OBJECTS");
+			"_SC_SHARED_MEMORY_OBJECTS"
+		);
 	}
 	jint OsConstants::_SC_SIGQUEUE_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_SIGQUEUE_MAX");
+			"_SC_SIGQUEUE_MAX"
+		);
 	}
 	jint OsConstants::_SC_STREAM_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_STREAM_MAX");
+			"_SC_STREAM_MAX"
+		);
 	}
 	jint OsConstants::_SC_SYNCHRONIZED_IO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_SYNCHRONIZED_IO");
+			"_SC_SYNCHRONIZED_IO"
+		);
 	}
 	jint OsConstants::_SC_THREADS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREADS");
+			"_SC_THREADS"
+		);
 	}
 	jint OsConstants::_SC_THREAD_ATTR_STACKADDR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_ATTR_STACKADDR");
+			"_SC_THREAD_ATTR_STACKADDR"
+		);
 	}
 	jint OsConstants::_SC_THREAD_ATTR_STACKSIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_ATTR_STACKSIZE");
+			"_SC_THREAD_ATTR_STACKSIZE"
+		);
 	}
 	jint OsConstants::_SC_THREAD_DESTRUCTOR_ITERATIONS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_DESTRUCTOR_ITERATIONS");
+			"_SC_THREAD_DESTRUCTOR_ITERATIONS"
+		);
 	}
 	jint OsConstants::_SC_THREAD_KEYS_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_KEYS_MAX");
+			"_SC_THREAD_KEYS_MAX"
+		);
 	}
 	jint OsConstants::_SC_THREAD_PRIORITY_SCHEDULING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_PRIORITY_SCHEDULING");
+			"_SC_THREAD_PRIORITY_SCHEDULING"
+		);
 	}
 	jint OsConstants::_SC_THREAD_PRIO_INHERIT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_PRIO_INHERIT");
+			"_SC_THREAD_PRIO_INHERIT"
+		);
 	}
 	jint OsConstants::_SC_THREAD_PRIO_PROTECT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_PRIO_PROTECT");
+			"_SC_THREAD_PRIO_PROTECT"
+		);
 	}
 	jint OsConstants::_SC_THREAD_SAFE_FUNCTIONS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_SAFE_FUNCTIONS");
+			"_SC_THREAD_SAFE_FUNCTIONS"
+		);
 	}
 	jint OsConstants::_SC_THREAD_STACK_MIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_STACK_MIN");
+			"_SC_THREAD_STACK_MIN"
+		);
 	}
 	jint OsConstants::_SC_THREAD_THREADS_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_THREAD_THREADS_MAX");
+			"_SC_THREAD_THREADS_MAX"
+		);
 	}
 	jint OsConstants::_SC_TIMERS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_TIMERS");
+			"_SC_TIMERS"
+		);
 	}
 	jint OsConstants::_SC_TIMER_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_TIMER_MAX");
+			"_SC_TIMER_MAX"
+		);
 	}
 	jint OsConstants::_SC_TTY_NAME_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_TTY_NAME_MAX");
+			"_SC_TTY_NAME_MAX"
+		);
 	}
 	jint OsConstants::_SC_TZNAME_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_TZNAME_MAX");
+			"_SC_TZNAME_MAX"
+		);
 	}
 	jint OsConstants::_SC_VERSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_VERSION");
+			"_SC_VERSION"
+		);
 	}
 	jint OsConstants::_SC_XBS5_ILP32_OFF32()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XBS5_ILP32_OFF32");
+			"_SC_XBS5_ILP32_OFF32"
+		);
 	}
 	jint OsConstants::_SC_XBS5_ILP32_OFFBIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XBS5_ILP32_OFFBIG");
+			"_SC_XBS5_ILP32_OFFBIG"
+		);
 	}
 	jint OsConstants::_SC_XBS5_LP64_OFF64()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XBS5_LP64_OFF64");
+			"_SC_XBS5_LP64_OFF64"
+		);
 	}
 	jint OsConstants::_SC_XBS5_LPBIG_OFFBIG()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XBS5_LPBIG_OFFBIG");
+			"_SC_XBS5_LPBIG_OFFBIG"
+		);
 	}
 	jint OsConstants::_SC_XOPEN_CRYPT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XOPEN_CRYPT");
+			"_SC_XOPEN_CRYPT"
+		);
 	}
 	jint OsConstants::_SC_XOPEN_ENH_I18N()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XOPEN_ENH_I18N");
+			"_SC_XOPEN_ENH_I18N"
+		);
 	}
 	jint OsConstants::_SC_XOPEN_LEGACY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XOPEN_LEGACY");
+			"_SC_XOPEN_LEGACY"
+		);
 	}
 	jint OsConstants::_SC_XOPEN_REALTIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XOPEN_REALTIME");
+			"_SC_XOPEN_REALTIME"
+		);
 	}
 	jint OsConstants::_SC_XOPEN_REALTIME_THREADS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XOPEN_REALTIME_THREADS");
+			"_SC_XOPEN_REALTIME_THREADS"
+		);
 	}
 	jint OsConstants::_SC_XOPEN_SHM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XOPEN_SHM");
+			"_SC_XOPEN_SHM"
+		);
 	}
 	jint OsConstants::_SC_XOPEN_UNIX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XOPEN_UNIX");
+			"_SC_XOPEN_UNIX"
+		);
 	}
 	jint OsConstants::_SC_XOPEN_VERSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XOPEN_VERSION");
+			"_SC_XOPEN_VERSION"
+		);
 	}
 	jint OsConstants::_SC_XOPEN_XCU_VERSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.system.OsConstants",
-			"_SC_XOPEN_XCU_VERSION");
+			"_SC_XOPEN_XCU_VERSION"
+		);
 	}
 	
 	// Constructors
@@ -3486,7 +3976,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"S_ISBLK",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::S_ISCHR(jint arg0)
 	{
@@ -3494,7 +3985,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"S_ISCHR",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::S_ISDIR(jint arg0)
 	{
@@ -3502,7 +3994,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"S_ISDIR",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::S_ISFIFO(jint arg0)
 	{
@@ -3510,7 +4003,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"S_ISFIFO",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::S_ISREG(jint arg0)
 	{
@@ -3518,7 +4012,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"S_ISREG",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::S_ISLNK(jint arg0)
 	{
@@ -3526,7 +4021,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"S_ISLNK",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::S_ISSOCK(jint arg0)
 	{
@@ -3534,7 +4030,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"S_ISSOCK",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint OsConstants::WEXITSTATUS(jint arg0)
 	{
@@ -3542,7 +4039,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"WEXITSTATUS",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::WCOREDUMP(jint arg0)
 	{
@@ -3550,7 +4048,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"WCOREDUMP",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint OsConstants::WTERMSIG(jint arg0)
 	{
@@ -3558,7 +4057,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"WTERMSIG",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint OsConstants::WSTOPSIG(jint arg0)
 	{
@@ -3566,7 +4066,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"WSTOPSIG",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::WIFEXITED(jint arg0)
 	{
@@ -3574,7 +4075,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"WIFEXITED",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::WIFSTOPPED(jint arg0)
 	{
@@ -3582,7 +4084,8 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"WIFSTOPPED",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean OsConstants::WIFSIGNALED(jint arg0)
 	{
@@ -3590,23 +4093,26 @@ namespace __jni_impl::android::system
 			"android.system.OsConstants",
 			"WIFSIGNALED",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject OsConstants::gaiName(jint arg0)
+	jstring OsConstants::gaiName(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.OsConstants",
 			"gaiName",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject OsConstants::errnoName(jint arg0)
+	jstring OsConstants::errnoName(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.OsConstants",
 			"errnoName",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::system
 

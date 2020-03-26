@@ -22,7 +22,7 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::os
 
@@ -36,7 +36,8 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.StrictMode$VmPolicy",
 			"LAX",
-			"Landroid/os/StrictMode$VmPolicy;");
+			"Landroid/os/StrictMode$VmPolicy;"
+		);
 	}
 	
 	// Constructors
@@ -48,11 +49,12 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject StrictMode_VmPolicy::toString()
+	jstring StrictMode_VmPolicy::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::os
 

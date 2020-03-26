@@ -64,34 +64,39 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toLower",
-			"()Landroid/icu/text/CaseMap$Lower;");
+			"()Landroid/icu/text/CaseMap$Lower;"
+		);
 	}
 	QAndroidJniObject CaseMap::toUpper()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toUpper",
-			"()Landroid/icu/text/CaseMap$Upper;");
+			"()Landroid/icu/text/CaseMap$Upper;"
+		);
 	}
 	QAndroidJniObject CaseMap::omitUnchangedText()
 	{
 		return __thiz.callObjectMethod(
 			"omitUnchangedText",
-			"()Landroid/icu/text/CaseMap;");
+			"()Landroid/icu/text/CaseMap;"
+		);
 	}
 	QAndroidJniObject CaseMap::toTitle()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toTitle",
-			"()Landroid/icu/text/CaseMap$Title;");
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
 	}
 	QAndroidJniObject CaseMap::fold()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"fold",
-			"()Landroid/icu/text/CaseMap$Fold;");
+			"()Landroid/icu/text/CaseMap$Fold;"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

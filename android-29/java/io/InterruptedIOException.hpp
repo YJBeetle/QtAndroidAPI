@@ -31,7 +31,8 @@ namespace __jni_impl::java::io
 	jint InterruptedIOException::bytesTransferred()
 	{
 		return __thiz.getField<jint>(
-			"bytesTransferred");
+			"bytesTransferred"
+		);
 	}
 	
 	// Constructors

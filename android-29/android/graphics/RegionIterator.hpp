@@ -51,7 +51,8 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"next",
 			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -22,7 +22,7 @@ namespace __jni_impl::android::text::method
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::text::method
@@ -36,28 +36,32 @@ namespace __jni_impl::android::text::method
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
 			"NONE",
-			"Landroid/text/method/TextKeyListener$Capitalize;");
+			"Landroid/text/method/TextKeyListener$Capitalize;"
+		);
 	}
 	QAndroidJniObject TextKeyListener_Capitalize::SENTENCES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
 			"SENTENCES",
-			"Landroid/text/method/TextKeyListener$Capitalize;");
+			"Landroid/text/method/TextKeyListener$Capitalize;"
+		);
 	}
 	QAndroidJniObject TextKeyListener_Capitalize::WORDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
 			"WORDS",
-			"Landroid/text/method/TextKeyListener$Capitalize;");
+			"Landroid/text/method/TextKeyListener$Capitalize;"
+		);
 	}
 	QAndroidJniObject TextKeyListener_Capitalize::CHARACTERS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.text.method.TextKeyListener$Capitalize",
 			"CHARACTERS",
-			"Landroid/text/method/TextKeyListener$Capitalize;");
+			"Landroid/text/method/TextKeyListener$Capitalize;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::text::method
 	}
 	
 	// Methods
-	QAndroidJniObject TextKeyListener_Capitalize::values()
+	jarray TextKeyListener_Capitalize::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.TextKeyListener$Capitalize",
 			"values",
-			"()[Landroid/text/method/TextKeyListener$Capitalize;");
+			"()[Landroid/text/method/TextKeyListener$Capitalize;"
+		).object<jarray>();
 	}
 	QAndroidJniObject TextKeyListener_Capitalize::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::text::method
 			"android.text.method.TextKeyListener$Capitalize",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/text/method/TextKeyListener$Capitalize;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::method
 

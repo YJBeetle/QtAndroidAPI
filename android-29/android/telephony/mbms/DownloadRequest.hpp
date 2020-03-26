@@ -28,8 +28,8 @@ namespace __jni_impl::android::telephony::mbms
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject toByteArray();
-		QAndroidJniObject getFileServiceId();
+		jbyteArray toByteArray();
+		jstring getFileServiceId();
 		QAndroidJniObject getSourceUri();
 		QAndroidJniObject getDestinationUri();
 		static jint getMaxAppIntentSize();
@@ -51,7 +51,8 @@ namespace __jni_impl::android::telephony::mbms
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telephony.mbms.DownloadRequest",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -68,57 +69,66 @@ namespace __jni_impl::android::telephony::mbms
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint DownloadRequest::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject DownloadRequest::toByteArray()
+	jbyteArray DownloadRequest::toByteArray()
 	{
 		return __thiz.callObjectMethod(
 			"toByteArray",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
-	QAndroidJniObject DownloadRequest::getFileServiceId()
+	jstring DownloadRequest::getFileServiceId()
 	{
 		return __thiz.callObjectMethod(
 			"getFileServiceId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject DownloadRequest::getSourceUri()
 	{
 		return __thiz.callObjectMethod(
 			"getSourceUri",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	QAndroidJniObject DownloadRequest::getDestinationUri()
 	{
 		return __thiz.callObjectMethod(
 			"getDestinationUri",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
 	}
 	jint DownloadRequest::getMaxAppIntentSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.telephony.mbms.DownloadRequest",
 			"getMaxAppIntentSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint DownloadRequest::getMaxDestinationUriSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.telephony.mbms.DownloadRequest",
 			"getMaxDestinationUriSize",
-			"()I");
+			"()I"
+		);
 	}
 	jint DownloadRequest::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void DownloadRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -126,13 +136,15 @@ namespace __jni_impl::android::telephony::mbms
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	jint DownloadRequest::getSubscriptionId()
 	{
 		return __thiz.callMethod<jint>(
 			"getSubscriptionId",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

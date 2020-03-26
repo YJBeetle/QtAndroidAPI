@@ -30,15 +30,15 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getIntent();
 		QAndroidJniObject getDeleteIntent();
 		jint getDesiredHeight();
 		jint getDesiredHeightResId();
 		jboolean getAutoExpandBubble();
 		jboolean isNotificationSuppressed();
-		QAndroidJniObject getIntent();
 		QAndroidJniObject getIcon();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -54,7 +54,8 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification$BubbleMetadata",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -66,53 +67,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject Notification_BubbleMetadata::getDeleteIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getDeleteIntent",
-			"()Landroid/app/PendingIntent;");
-	}
-	jint Notification_BubbleMetadata::getDesiredHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getDesiredHeight",
-			"()I");
-	}
-	jint Notification_BubbleMetadata::getDesiredHeightResId()
-	{
-		return __thiz.callMethod<jint>(
-			"getDesiredHeightResId",
-			"()I");
-	}
-	jboolean Notification_BubbleMetadata::getAutoExpandBubble()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAutoExpandBubble",
-			"()Z");
-	}
-	jboolean Notification_BubbleMetadata::isNotificationSuppressed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isNotificationSuppressed",
-			"()Z");
-	}
-	QAndroidJniObject Notification_BubbleMetadata::getIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getIntent",
-			"()Landroid/app/PendingIntent;");
-	}
-	QAndroidJniObject Notification_BubbleMetadata::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
-	}
 	jint Notification_BubbleMetadata::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Notification_BubbleMetadata::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -120,7 +80,57 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject Notification_BubbleMetadata::getIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getIntent",
+			"()Landroid/app/PendingIntent;"
+		);
+	}
+	QAndroidJniObject Notification_BubbleMetadata::getDeleteIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getDeleteIntent",
+			"()Landroid/app/PendingIntent;"
+		);
+	}
+	jint Notification_BubbleMetadata::getDesiredHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getDesiredHeight",
+			"()I"
+		);
+	}
+	jint Notification_BubbleMetadata::getDesiredHeightResId()
+	{
+		return __thiz.callMethod<jint>(
+			"getDesiredHeightResId",
+			"()I"
+		);
+	}
+	jboolean Notification_BubbleMetadata::getAutoExpandBubble()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getAutoExpandBubble",
+			"()Z"
+		);
+	}
+	jboolean Notification_BubbleMetadata::isNotificationSuppressed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isNotificationSuppressed",
+			"()Z"
+		);
+	}
+	QAndroidJniObject Notification_BubbleMetadata::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

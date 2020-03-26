@@ -110,13 +110,15 @@ namespace __jni_impl::java::lang
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.Math",
-			"E");
+			"E"
+		);
 	}
 	jdouble Math::PI()
 	{
 		return QAndroidJniObject::getStaticField<jdouble>(
 			"java.lang.Math",
-			"PI");
+			"PI"
+		);
 	}
 	
 	// Constructors
@@ -134,7 +136,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"abs",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jint Math::abs(jint arg0)
 	{
@@ -142,7 +145,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"abs",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong Math::abs(jlong arg0)
 	{
@@ -150,7 +154,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"abs",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jfloat Math::abs(jfloat arg0)
 	{
@@ -158,7 +163,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"abs",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::sin(jdouble arg0)
 	{
@@ -166,7 +172,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"sin",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::cos(jdouble arg0)
 	{
@@ -174,7 +181,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"cos",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::tan(jdouble arg0)
 	{
@@ -182,7 +190,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"tan",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::atan2(jdouble arg0, jdouble arg1)
 	{
@@ -191,7 +200,8 @@ namespace __jni_impl::java::lang
 			"atan2",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::sqrt(jdouble arg0)
 	{
@@ -199,7 +209,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"sqrt",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::log(jdouble arg0)
 	{
@@ -207,7 +218,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"log",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::log10(jdouble arg0)
 	{
@@ -215,7 +227,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"log10",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::pow(jdouble arg0, jdouble arg1)
 	{
@@ -224,7 +237,8 @@ namespace __jni_impl::java::lang
 			"pow",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::exp(jdouble arg0)
 	{
@@ -232,7 +246,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"exp",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jlong Math::min(jlong arg0, jlong arg1)
 	{
@@ -241,7 +256,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::min(jdouble arg0, jdouble arg1)
 	{
@@ -250,7 +266,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat Math::min(jfloat arg0, jfloat arg1)
 	{
@@ -259,7 +276,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(FF)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Math::min(jint arg0, jint arg1)
 	{
@@ -268,7 +286,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat Math::max(jfloat arg0, jfloat arg1)
 	{
@@ -277,7 +296,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(FF)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Math::max(jlong arg0, jlong arg1)
 	{
@@ -286,7 +306,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Math::max(jint arg0, jint arg1)
 	{
@@ -295,7 +316,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::max(jdouble arg0, jdouble arg1)
 	{
@@ -304,7 +326,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Math::addExact(jlong arg0, jlong arg1)
 	{
@@ -313,7 +336,8 @@ namespace __jni_impl::java::lang
 			"addExact",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Math::addExact(jint arg0, jint arg1)
 	{
@@ -322,7 +346,8 @@ namespace __jni_impl::java::lang
 			"addExact",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Math::decrementExact(jlong arg0)
 	{
@@ -330,7 +355,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"decrementExact",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint Math::decrementExact(jint arg0)
 	{
@@ -338,7 +364,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"decrementExact",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Math::incrementExact(jint arg0)
 	{
@@ -346,7 +373,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"incrementExact",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong Math::incrementExact(jlong arg0)
 	{
@@ -354,7 +382,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"incrementExact",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong Math::multiplyExact(jlong arg0, jlong arg1)
 	{
@@ -363,7 +392,8 @@ namespace __jni_impl::java::lang
 			"multiplyExact",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Math::multiplyExact(jlong arg0, jint arg1)
 	{
@@ -372,7 +402,8 @@ namespace __jni_impl::java::lang
 			"multiplyExact",
 			"(JI)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Math::multiplyExact(jint arg0, jint arg1)
 	{
@@ -381,7 +412,8 @@ namespace __jni_impl::java::lang
 			"multiplyExact",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Math::multiplyHigh(jlong arg0, jlong arg1)
 	{
@@ -390,7 +422,8 @@ namespace __jni_impl::java::lang
 			"multiplyHigh",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Math::negateExact(jint arg0)
 	{
@@ -398,7 +431,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"negateExact",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong Math::negateExact(jlong arg0)
 	{
@@ -406,7 +440,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"negateExact",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint Math::subtractExact(jint arg0, jint arg1)
 	{
@@ -415,7 +450,8 @@ namespace __jni_impl::java::lang
 			"subtractExact",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Math::subtractExact(jlong arg0, jlong arg1)
 	{
@@ -424,7 +460,8 @@ namespace __jni_impl::java::lang
 			"subtractExact",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::fma(jdouble arg0, jdouble arg1, jdouble arg2)
 	{
@@ -434,7 +471,8 @@ namespace __jni_impl::java::lang
 			"(DDD)D",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jfloat Math::fma(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
@@ -444,7 +482,8 @@ namespace __jni_impl::java::lang
 			"(FFF)F",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jdouble Math::scalb(jdouble arg0, jint arg1)
 	{
@@ -453,7 +492,8 @@ namespace __jni_impl::java::lang
 			"scalb",
 			"(DI)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat Math::scalb(jfloat arg0, jint arg1)
 	{
@@ -462,7 +502,8 @@ namespace __jni_impl::java::lang
 			"scalb",
 			"(FI)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat Math::copySign(jfloat arg0, jfloat arg1)
 	{
@@ -471,7 +512,8 @@ namespace __jni_impl::java::lang
 			"copySign",
 			"(FF)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::copySign(jdouble arg0, jdouble arg1)
 	{
@@ -480,7 +522,8 @@ namespace __jni_impl::java::lang
 			"copySign",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Math::getExponent(jfloat arg0)
 	{
@@ -488,7 +531,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"getExponent",
 			"(F)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Math::getExponent(jdouble arg0)
 	{
@@ -496,7 +540,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"getExponent",
 			"(D)I",
-			arg0);
+			arg0
+		);
 	}
 	jfloat Math::signum(jfloat arg0)
 	{
@@ -504,7 +549,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"signum",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::signum(jdouble arg0)
 	{
@@ -512,7 +558,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"signum",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jint Math::floorMod(jint arg0, jint arg1)
 	{
@@ -521,7 +568,8 @@ namespace __jni_impl::java::lang
 			"floorMod",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Math::floorMod(jlong arg0, jlong arg1)
 	{
@@ -530,7 +578,8 @@ namespace __jni_impl::java::lang
 			"floorMod",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Math::floorMod(jlong arg0, jint arg1)
 	{
@@ -539,7 +588,8 @@ namespace __jni_impl::java::lang
 			"floorMod",
 			"(JI)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::asin(jdouble arg0)
 	{
@@ -547,7 +597,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"asin",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::acos(jdouble arg0)
 	{
@@ -555,7 +606,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"acos",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::atan(jdouble arg0)
 	{
@@ -563,7 +615,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"atan",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::cbrt(jdouble arg0)
 	{
@@ -571,7 +624,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"cbrt",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::IEEEremainder(jdouble arg0, jdouble arg1)
 	{
@@ -580,7 +634,8 @@ namespace __jni_impl::java::lang
 			"IEEEremainder",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::ceil(jdouble arg0)
 	{
@@ -588,7 +643,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"ceil",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::floor(jdouble arg0)
 	{
@@ -596,7 +652,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"floor",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::rint(jdouble arg0)
 	{
@@ -604,7 +661,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"rint",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jlong Math::floorDiv(jlong arg0, jint arg1)
 	{
@@ -613,7 +671,8 @@ namespace __jni_impl::java::lang
 			"floorDiv",
 			"(JI)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Math::floorDiv(jlong arg0, jlong arg1)
 	{
@@ -622,7 +681,8 @@ namespace __jni_impl::java::lang
 			"floorDiv",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Math::floorDiv(jint arg0, jint arg1)
 	{
@@ -631,7 +691,8 @@ namespace __jni_impl::java::lang
 			"floorDiv",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::sinh(jdouble arg0)
 	{
@@ -639,7 +700,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"sinh",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::cosh(jdouble arg0)
 	{
@@ -647,7 +709,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"cosh",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::tanh(jdouble arg0)
 	{
@@ -655,7 +718,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"tanh",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::hypot(jdouble arg0, jdouble arg1)
 	{
@@ -664,7 +728,8 @@ namespace __jni_impl::java::lang
 			"hypot",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::expm1(jdouble arg0)
 	{
@@ -672,7 +737,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"expm1",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::log1p(jdouble arg0)
 	{
@@ -680,7 +746,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"log1p",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::toRadians(jdouble arg0)
 	{
@@ -688,7 +755,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"toRadians",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::toDegrees(jdouble arg0)
 	{
@@ -696,7 +764,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"toDegrees",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jlong Math::round(jdouble arg0)
 	{
@@ -704,7 +773,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"round",
 			"(D)J",
-			arg0);
+			arg0
+		);
 	}
 	jint Math::round(jfloat arg0)
 	{
@@ -712,14 +782,16 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"round",
 			"(F)I",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::random()
 	{
 		return QAndroidJniObject::callStaticMethod<jdouble>(
 			"java.lang.Math",
 			"random",
-			"()D");
+			"()D"
+		);
 	}
 	jint Math::toIntExact(jlong arg0)
 	{
@@ -727,7 +799,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"toIntExact",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong Math::multiplyFull(jint arg0, jint arg1)
 	{
@@ -736,7 +809,8 @@ namespace __jni_impl::java::lang
 			"multiplyFull",
 			"(II)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::ulp(jdouble arg0)
 	{
@@ -744,7 +818,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"ulp",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jfloat Math::ulp(jfloat arg0)
 	{
@@ -752,7 +827,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"ulp",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::nextAfter(jdouble arg0, jdouble arg1)
 	{
@@ -761,7 +837,8 @@ namespace __jni_impl::java::lang
 			"nextAfter",
 			"(DD)D",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat Math::nextAfter(jfloat arg0, jdouble arg1)
 	{
@@ -770,7 +847,8 @@ namespace __jni_impl::java::lang
 			"nextAfter",
 			"(FD)F",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jdouble Math::nextUp(jdouble arg0)
 	{
@@ -778,7 +856,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"nextUp",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 	jfloat Math::nextUp(jfloat arg0)
 	{
@@ -786,7 +865,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"nextUp",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	jfloat Math::nextDown(jfloat arg0)
 	{
@@ -794,7 +874,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"nextDown",
 			"(F)F",
-			arg0);
+			arg0
+		);
 	}
 	jdouble Math::nextDown(jdouble arg0)
 	{
@@ -802,7 +883,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Math",
 			"nextDown",
 			"(D)D",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang
 

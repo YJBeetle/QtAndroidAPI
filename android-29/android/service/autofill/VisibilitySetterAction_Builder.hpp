@@ -47,7 +47,8 @@ namespace __jni_impl::android::service::autofill
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/service/autofill/VisibilitySetterAction;");
+			"()Landroid/service/autofill/VisibilitySetterAction;"
+		);
 	}
 	QAndroidJniObject VisibilitySetterAction_Builder::setVisibility(jint arg0, jint arg1)
 	{
@@ -55,7 +56,8 @@ namespace __jni_impl::android::service::autofill
 			"setVisibility",
 			"(II)Landroid/service/autofill/VisibilitySetterAction$Builder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

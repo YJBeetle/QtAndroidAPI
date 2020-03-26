@@ -30,12 +30,14 @@ namespace __jni_impl::android::renderscript
 	jint Int2::x()
 	{
 		return __thiz.getField<jint>(
-			"x");
+			"x"
+		);
 	}
 	jint Int2::y()
 	{
 		return __thiz.getField<jint>(
-			"y");
+			"y"
+		);
 	}
 	
 	// Constructors

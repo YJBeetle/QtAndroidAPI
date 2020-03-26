@@ -9,13 +9,13 @@ namespace __jni_impl::android::companion
 {
 	class BluetoothDeviceFilter;
 }
-namespace __jni_impl::android::os
-{
-	class ParcelUuid;
-}
 namespace __jni_impl::java::util::regex
 {
 	class Pattern;
+}
+namespace __jni_impl::android::os
+{
+	class ParcelUuid;
 }
 
 namespace __jni_impl::android::companion
@@ -30,15 +30,15 @@ namespace __jni_impl::android::companion
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject addServiceUuid(__jni_impl::android::os::ParcelUuid arg0, __jni_impl::android::os::ParcelUuid arg1);
 		QAndroidJniObject setAddress(jstring arg0);
 		QAndroidJniObject setNamePattern(__jni_impl::java::util::regex::Pattern arg0);
+		QAndroidJniObject addServiceUuid(__jni_impl::android::os::ParcelUuid arg0, __jni_impl::android::os::ParcelUuid arg1);
 	};
 } // namespace __jni_impl::android::companion
 
 #include "BluetoothDeviceFilter.hpp"
-#include "../os/ParcelUuid.hpp"
 #include "../../java/util/regex/Pattern.hpp"
+#include "../os/ParcelUuid.hpp"
 
 namespace __jni_impl::android::companion
 {
@@ -57,7 +57,24 @@ namespace __jni_impl::android::companion
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/companion/BluetoothDeviceFilter;");
+			"()Landroid/companion/BluetoothDeviceFilter;"
+		);
+	}
+	QAndroidJniObject BluetoothDeviceFilter_Builder::setAddress(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAddress",
+			"(Ljava/lang/String;)Landroid/companion/BluetoothDeviceFilter$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject BluetoothDeviceFilter_Builder::setNamePattern(__jni_impl::java::util::regex::Pattern arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setNamePattern",
+			"(Ljava/util/regex/Pattern;)Landroid/companion/BluetoothDeviceFilter$Builder;",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject BluetoothDeviceFilter_Builder::addServiceUuid(__jni_impl::android::os::ParcelUuid arg0, __jni_impl::android::os::ParcelUuid arg1)
 	{
@@ -65,21 +82,8 @@ namespace __jni_impl::android::companion
 			"addServiceUuid",
 			"(Landroid/os/ParcelUuid;Landroid/os/ParcelUuid;)Landroid/companion/BluetoothDeviceFilter$Builder;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject BluetoothDeviceFilter_Builder::setAddress(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAddress",
-			"(Ljava/lang/String;)Landroid/companion/BluetoothDeviceFilter$Builder;",
-			arg0);
-	}
-	QAndroidJniObject BluetoothDeviceFilter_Builder::setNamePattern(__jni_impl::java::util::regex::Pattern arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setNamePattern",
-			"(Ljava/util/regex/Pattern;)Landroid/companion/BluetoothDeviceFilter$Builder;",
-			arg0.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::companion
 

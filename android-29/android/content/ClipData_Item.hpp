@@ -34,14 +34,14 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::content::Intent arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getText();
-		QAndroidJniObject getUri();
-		QAndroidJniObject getHtmlText();
-		QAndroidJniObject coerceToText(__jni_impl::android::content::Context arg0);
-		QAndroidJniObject coerceToStyledText(__jni_impl::android::content::Context arg0);
-		QAndroidJniObject coerceToHtmlText(__jni_impl::android::content::Context arg0);
+		jstring toString();
+		jstring getText();
 		QAndroidJniObject getIntent();
+		QAndroidJniObject getUri();
+		jstring getHtmlText();
+		jstring coerceToText(__jni_impl::android::content::Context arg0);
+		jstring coerceToStyledText(__jni_impl::android::content::Context arg0);
+		jstring coerceToHtmlText(__jni_impl::android::content::Context arg0);
 	};
 } // namespace __jni_impl::android::content
 
@@ -104,56 +104,64 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	QAndroidJniObject ClipData_Item::toString()
+	jstring ClipData_Item::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ClipData_Item::getText()
+	jstring ClipData_Item::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
-			"()Ljava/lang/CharSequence;");
-	}
-	QAndroidJniObject ClipData_Item::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;");
-	}
-	QAndroidJniObject ClipData_Item::getHtmlText()
-	{
-		return __thiz.callObjectMethod(
-			"getHtmlText",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject ClipData_Item::coerceToText(__jni_impl::android::content::Context arg0)
-	{
-		return __thiz.callObjectMethod(
-			"coerceToText",
-			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ClipData_Item::coerceToStyledText(__jni_impl::android::content::Context arg0)
-	{
-		return __thiz.callObjectMethod(
-			"coerceToStyledText",
-			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ClipData_Item::coerceToHtmlText(__jni_impl::android::content::Context arg0)
-	{
-		return __thiz.callObjectMethod(
-			"coerceToHtmlText",
-			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ClipData_Item::getIntent()
 	{
 		return __thiz.callObjectMethod(
 			"getIntent",
-			"()Landroid/content/Intent;");
+			"()Landroid/content/Intent;"
+		);
+	}
+	QAndroidJniObject ClipData_Item::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jstring ClipData_Item::getHtmlText()
+	{
+		return __thiz.callObjectMethod(
+			"getHtmlText",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring ClipData_Item::coerceToText(__jni_impl::android::content::Context arg0)
+	{
+		return __thiz.callObjectMethod(
+			"coerceToText",
+			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring ClipData_Item::coerceToStyledText(__jni_impl::android::content::Context arg0)
+	{
+		return __thiz.callObjectMethod(
+			"coerceToStyledText",
+			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring ClipData_Item::coerceToHtmlText(__jni_impl::android::content::Context arg0)
+	{
+		return __thiz.callObjectMethod(
+			"coerceToHtmlText",
+			"(Landroid/content/Context;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::content
 

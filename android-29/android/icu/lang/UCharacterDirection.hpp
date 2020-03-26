@@ -17,7 +17,7 @@ namespace __jni_impl::android::icu::lang
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject toString(jint arg0);
+		static jstring toString(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::lang
 
@@ -35,13 +35,14 @@ namespace __jni_impl::android::icu::lang
 	}
 	
 	// Methods
-	QAndroidJniObject UCharacterDirection::toString(jint arg0)
+	jstring UCharacterDirection::toString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacterDirection",
 			"toString",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::lang
 

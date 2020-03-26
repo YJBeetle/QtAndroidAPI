@@ -44,7 +44,7 @@ namespace __jni_impl::java::lang
 		void checkPropertiesAccess();
 		void checkPropertyAccess(jstring arg0);
 		QAndroidJniObject getThreadGroup();
-		QAndroidJniObject getSecurityContext();
+		jobject getSecurityContext();
 		void checkAccess(__jni_impl::java::lang::Thread arg0);
 		void checkAccess(__jni_impl::java::lang::ThreadGroup arg0);
 		void checkExit(jint arg0);
@@ -93,7 +93,8 @@ namespace __jni_impl::java::lang
 		__thiz.callMethod<void>(
 			"checkPackageAccess",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecurityManager::checkPermission(__jni_impl::java::security::Permission arg0, jobject arg1)
 	{
@@ -101,94 +102,108 @@ namespace __jni_impl::java::lang
 			"checkPermission",
 			"(Ljava/security/Permission;Ljava/lang/Object;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void SecurityManager::checkPermission(__jni_impl::java::security::Permission arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkPermission",
 			"(Ljava/security/Permission;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SecurityManager::checkCreateClassLoader()
 	{
 		__thiz.callMethod<void>(
 			"checkCreateClassLoader",
-			"()V");
+			"()V"
+		);
 	}
 	void SecurityManager::checkPropertiesAccess()
 	{
 		__thiz.callMethod<void>(
 			"checkPropertiesAccess",
-			"()V");
+			"()V"
+		);
 	}
 	void SecurityManager::checkPropertyAccess(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkPropertyAccess",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject SecurityManager::getThreadGroup()
 	{
 		return __thiz.callObjectMethod(
 			"getThreadGroup",
-			"()Ljava/lang/ThreadGroup;");
+			"()Ljava/lang/ThreadGroup;"
+		);
 	}
-	QAndroidJniObject SecurityManager::getSecurityContext()
+	jobject SecurityManager::getSecurityContext()
 	{
 		return __thiz.callObjectMethod(
 			"getSecurityContext",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	void SecurityManager::checkAccess(__jni_impl::java::lang::Thread arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkAccess",
 			"(Ljava/lang/Thread;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SecurityManager::checkAccess(__jni_impl::java::lang::ThreadGroup arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkAccess",
 			"(Ljava/lang/ThreadGroup;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SecurityManager::checkExit(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkExit",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecurityManager::checkExec(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkExec",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecurityManager::checkLink(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkLink",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecurityManager::checkRead(__jni_impl::java::io::FileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkRead",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SecurityManager::checkRead(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkRead",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecurityManager::checkRead(jstring arg0, jobject arg1)
 	{
@@ -196,28 +211,32 @@ namespace __jni_impl::java::lang
 			"checkRead",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SecurityManager::checkWrite(__jni_impl::java::io::FileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkWrite",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SecurityManager::checkWrite(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkWrite",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecurityManager::checkDelete(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkDelete",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecurityManager::checkConnect(jstring arg0, jint arg1, jobject arg2)
 	{
@@ -226,7 +245,8 @@ namespace __jni_impl::java::lang
 			"(Ljava/lang/String;ILjava/lang/Object;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void SecurityManager::checkConnect(jstring arg0, jint arg1)
 	{
@@ -234,14 +254,16 @@ namespace __jni_impl::java::lang
 			"checkConnect",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SecurityManager::checkListen(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkListen",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecurityManager::checkAccept(jstring arg0, jint arg1)
 	{
@@ -249,14 +271,16 @@ namespace __jni_impl::java::lang
 			"checkAccept",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SecurityManager::checkMulticast(__jni_impl::java::net::InetAddress arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkMulticast",
 			"(Ljava/net/InetAddress;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SecurityManager::checkMulticast(__jni_impl::java::net::InetAddress arg0, jbyte arg1)
 	{
@@ -264,33 +288,38 @@ namespace __jni_impl::java::lang
 			"checkMulticast",
 			"(Ljava/net/InetAddress;B)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void SecurityManager::checkPrintJobAccess()
 	{
 		__thiz.callMethod<void>(
 			"checkPrintJobAccess",
-			"()V");
+			"()V"
+		);
 	}
 	void SecurityManager::checkPackageDefinition(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkPackageDefinition",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecurityManager::checkSetFactory()
 	{
 		__thiz.callMethod<void>(
 			"checkSetFactory",
-			"()V");
+			"()V"
+		);
 	}
 	void SecurityManager::checkSecurityAccess(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"checkSecurityAccess",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::lang
 

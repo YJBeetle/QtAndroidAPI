@@ -35,25 +35,29 @@ namespace __jni_impl::android::location
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GpsStatus",
-			"GPS_EVENT_FIRST_FIX");
+			"GPS_EVENT_FIRST_FIX"
+		);
 	}
 	jint GpsStatus::GPS_EVENT_SATELLITE_STATUS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GpsStatus",
-			"GPS_EVENT_SATELLITE_STATUS");
+			"GPS_EVENT_SATELLITE_STATUS"
+		);
 	}
 	jint GpsStatus::GPS_EVENT_STARTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GpsStatus",
-			"GPS_EVENT_STARTED");
+			"GPS_EVENT_STARTED"
+		);
 	}
 	jint GpsStatus::GPS_EVENT_STOPPED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.location.GpsStatus",
-			"GPS_EVENT_STOPPED");
+			"GPS_EVENT_STOPPED"
+		);
 	}
 	
 	// Constructors
@@ -69,19 +73,22 @@ namespace __jni_impl::android::location
 	{
 		return __thiz.callMethod<jint>(
 			"getTimeToFirstFix",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject GpsStatus::getSatellites()
 	{
 		return __thiz.callObjectMethod(
 			"getSatellites",
-			"()Ljava/lang/Iterable;");
+			"()Ljava/lang/Iterable;"
+		);
 	}
 	jint GpsStatus::getMaxSatellites()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxSatellites",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::location
 

@@ -20,7 +20,7 @@ namespace __jni_impl::android::icu::util
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::util
@@ -34,14 +34,16 @@ namespace __jni_impl::android::icu::util
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale$Category",
 			"DISPLAY",
-			"Landroid/icu/util/ULocale$Category;");
+			"Landroid/icu/util/ULocale$Category;"
+		);
 	}
 	QAndroidJniObject ULocale_Category::FORMAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.ULocale$Category",
 			"FORMAT",
-			"Landroid/icu/util/ULocale$Category;");
+			"Landroid/icu/util/ULocale$Category;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject ULocale_Category::values()
+	jarray ULocale_Category::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.ULocale$Category",
 			"values",
-			"()[Landroid/icu/util/ULocale$Category;");
+			"()[Landroid/icu/util/ULocale$Category;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ULocale_Category::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.ULocale$Category",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/ULocale$Category;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::util
 

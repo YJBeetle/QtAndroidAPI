@@ -21,7 +21,7 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -35,21 +35,24 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PathDashPathEffect$Style",
 			"TRANSLATE",
-			"Landroid/graphics/PathDashPathEffect$Style;");
+			"Landroid/graphics/PathDashPathEffect$Style;"
+		);
 	}
 	QAndroidJniObject PathDashPathEffect_Style::ROTATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PathDashPathEffect$Style",
 			"ROTATE",
-			"Landroid/graphics/PathDashPathEffect$Style;");
+			"Landroid/graphics/PathDashPathEffect$Style;"
+		);
 	}
 	QAndroidJniObject PathDashPathEffect_Style::MORPH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.PathDashPathEffect$Style",
 			"MORPH",
-			"Landroid/graphics/PathDashPathEffect$Style;");
+			"Landroid/graphics/PathDashPathEffect$Style;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject PathDashPathEffect_Style::values()
+	jarray PathDashPathEffect_Style::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.PathDashPathEffect$Style",
 			"values",
-			"()[Landroid/graphics/PathDashPathEffect$Style;");
+			"()[Landroid/graphics/PathDashPathEffect$Style;"
+		).object<jarray>();
 	}
 	QAndroidJniObject PathDashPathEffect_Style::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.PathDashPathEffect$Style",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/PathDashPathEffect$Style;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

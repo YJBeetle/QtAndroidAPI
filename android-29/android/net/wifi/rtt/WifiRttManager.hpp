@@ -20,7 +20,7 @@ namespace __jni_impl::android::net::wifi::rtt
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_WIFI_RTT_STATE_CHANGED();
+		static jstring ACTION_WIFI_RTT_STATE_CHANGED();
 		
 		// Constructors
 		void __constructor();
@@ -37,12 +37,13 @@ namespace __jni_impl::android::net::wifi::rtt
 namespace __jni_impl::android::net::wifi::rtt
 {
 	// Fields
-	QAndroidJniObject WifiRttManager::ACTION_WIFI_RTT_STATE_CHANGED()
+	jstring WifiRttManager::ACTION_WIFI_RTT_STATE_CHANGED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.rtt.WifiRttManager",
 			"ACTION_WIFI_RTT_STATE_CHANGED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -58,7 +59,8 @@ namespace __jni_impl::android::net::wifi::rtt
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAvailable",
-			"()Z");
+			"()Z"
+		);
 	}
 	void WifiRttManager::startRanging(__jni_impl::android::net::wifi::rtt::RangingRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::net::wifi::rtt::RangingResultCallback arg2)
 	{
@@ -67,7 +69,8 @@ namespace __jni_impl::android::net::wifi::rtt
 			"(Landroid/net/wifi/rtt/RangingRequest;Ljava/util/concurrent/Executor;Landroid/net/wifi/rtt/RangingResultCallback;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt
 

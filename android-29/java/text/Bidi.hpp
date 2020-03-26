@@ -23,7 +23,7 @@ namespace __jni_impl::java::text
 		void __constructor(jstring arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint getLength();
 		jint getLevelAt(jint arg0);
 		QAndroidJniObject createLineBidi(jint arg0, jint arg1);
@@ -49,25 +49,29 @@ namespace __jni_impl::java::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.text.Bidi",
-			"DIRECTION_LEFT_TO_RIGHT");
+			"DIRECTION_LEFT_TO_RIGHT"
+		);
 	}
 	jint Bidi::DIRECTION_RIGHT_TO_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.text.Bidi",
-			"DIRECTION_RIGHT_TO_LEFT");
+			"DIRECTION_RIGHT_TO_LEFT"
+		);
 	}
 	jint Bidi::DIRECTION_DEFAULT_LEFT_TO_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.text.Bidi",
-			"DIRECTION_DEFAULT_LEFT_TO_RIGHT");
+			"DIRECTION_DEFAULT_LEFT_TO_RIGHT"
+		);
 	}
 	jint Bidi::DIRECTION_DEFAULT_RIGHT_TO_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.text.Bidi",
-			"DIRECTION_DEFAULT_RIGHT_TO_LEFT");
+			"DIRECTION_DEFAULT_RIGHT_TO_LEFT"
+		);
 	}
 	
 	// Constructors
@@ -100,24 +104,27 @@ namespace __jni_impl::java::text
 	}
 	
 	// Methods
-	QAndroidJniObject Bidi::toString()
+	jstring Bidi::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Bidi::getLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getLength",
-			"()I");
+			"()I"
+		);
 	}
 	jint Bidi::getLevelAt(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getLevelAt",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Bidi::createLineBidi(jint arg0, jint arg1)
 	{
@@ -125,58 +132,67 @@ namespace __jni_impl::java::text
 			"createLineBidi",
 			"(II)Ljava/text/Bidi;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean Bidi::isMixed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMixed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Bidi::isLeftToRight()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLeftToRight",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Bidi::baseIsLeftToRight()
 	{
 		return __thiz.callMethod<jboolean>(
 			"baseIsLeftToRight",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint Bidi::getBaseLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getBaseLevel",
-			"()I");
+			"()I"
+		);
 	}
 	jint Bidi::getRunCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getRunCount",
-			"()I");
+			"()I"
+		);
 	}
 	jint Bidi::getRunLevel(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getRunLevel",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Bidi::getRunStart(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getRunStart",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Bidi::getRunLimit(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getRunLimit",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Bidi::requiresBidi(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -186,7 +202,8 @@ namespace __jni_impl::java::text
 			"([CII)Z",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Bidi::reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4)
 	{
@@ -198,13 +215,15 @@ namespace __jni_impl::java::text
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	jboolean Bidi::isRightToLeft()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRightToLeft",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::text
 

@@ -27,8 +27,8 @@ namespace __jni_impl::android::text::method
 		
 		// Methods
 		static QAndroidJniObject getInstance();
-		void onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		jboolean onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
+		void onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::text::method
 
@@ -53,16 +53,8 @@ namespace __jni_impl::android::text::method
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.ScrollingMovementMethod",
 			"getInstance",
-			"()Landroid/text/method/MovementMethod;");
-	}
-	void ScrollingMovementMethod::onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onTakeFocus",
-			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2);
+			"()Landroid/text/method/MovementMethod;"
+		);
 	}
 	jboolean ScrollingMovementMethod::onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2)
 	{
@@ -71,7 +63,18 @@ namespace __jni_impl::android::text::method
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void ScrollingMovementMethod::onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"onTakeFocus",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::text::method
 

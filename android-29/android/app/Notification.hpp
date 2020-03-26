@@ -56,66 +56,66 @@ namespace __jni_impl::android::app
 		static jint BADGE_ICON_LARGE();
 		static jint BADGE_ICON_NONE();
 		static jint BADGE_ICON_SMALL();
-		static QAndroidJniObject CATEGORY_ALARM();
-		static QAndroidJniObject CATEGORY_CALL();
-		static QAndroidJniObject CATEGORY_EMAIL();
-		static QAndroidJniObject CATEGORY_ERROR();
-		static QAndroidJniObject CATEGORY_EVENT();
-		static QAndroidJniObject CATEGORY_MESSAGE();
-		static QAndroidJniObject CATEGORY_NAVIGATION();
-		static QAndroidJniObject CATEGORY_PROGRESS();
-		static QAndroidJniObject CATEGORY_PROMO();
-		static QAndroidJniObject CATEGORY_RECOMMENDATION();
-		static QAndroidJniObject CATEGORY_REMINDER();
-		static QAndroidJniObject CATEGORY_SERVICE();
-		static QAndroidJniObject CATEGORY_SOCIAL();
-		static QAndroidJniObject CATEGORY_STATUS();
-		static QAndroidJniObject CATEGORY_SYSTEM();
-		static QAndroidJniObject CATEGORY_TRANSPORT();
+		static jstring CATEGORY_ALARM();
+		static jstring CATEGORY_CALL();
+		static jstring CATEGORY_EMAIL();
+		static jstring CATEGORY_ERROR();
+		static jstring CATEGORY_EVENT();
+		static jstring CATEGORY_MESSAGE();
+		static jstring CATEGORY_NAVIGATION();
+		static jstring CATEGORY_PROGRESS();
+		static jstring CATEGORY_PROMO();
+		static jstring CATEGORY_RECOMMENDATION();
+		static jstring CATEGORY_REMINDER();
+		static jstring CATEGORY_SERVICE();
+		static jstring CATEGORY_SOCIAL();
+		static jstring CATEGORY_STATUS();
+		static jstring CATEGORY_SYSTEM();
+		static jstring CATEGORY_TRANSPORT();
 		static jint COLOR_DEFAULT();
 		static QAndroidJniObject CREATOR();
 		static jint DEFAULT_ALL();
 		static jint DEFAULT_LIGHTS();
 		static jint DEFAULT_SOUND();
 		static jint DEFAULT_VIBRATE();
-		static QAndroidJniObject EXTRA_AUDIO_CONTENTS_URI();
-		static QAndroidJniObject EXTRA_BACKGROUND_IMAGE_URI();
-		static QAndroidJniObject EXTRA_BIG_TEXT();
-		static QAndroidJniObject EXTRA_CHANNEL_GROUP_ID();
-		static QAndroidJniObject EXTRA_CHANNEL_ID();
-		static QAndroidJniObject EXTRA_CHRONOMETER_COUNT_DOWN();
-		static QAndroidJniObject EXTRA_COLORIZED();
-		static QAndroidJniObject EXTRA_COMPACT_ACTIONS();
-		static QAndroidJniObject EXTRA_CONVERSATION_TITLE();
-		static QAndroidJniObject EXTRA_HISTORIC_MESSAGES();
-		static QAndroidJniObject EXTRA_INFO_TEXT();
-		static QAndroidJniObject EXTRA_IS_GROUP_CONVERSATION();
-		static QAndroidJniObject EXTRA_LARGE_ICON();
-		static QAndroidJniObject EXTRA_LARGE_ICON_BIG();
-		static QAndroidJniObject EXTRA_MEDIA_SESSION();
-		static QAndroidJniObject EXTRA_MESSAGES();
-		static QAndroidJniObject EXTRA_MESSAGING_PERSON();
-		static QAndroidJniObject EXTRA_NOTIFICATION_ID();
-		static QAndroidJniObject EXTRA_NOTIFICATION_TAG();
-		static QAndroidJniObject EXTRA_PEOPLE();
-		static QAndroidJniObject EXTRA_PEOPLE_LIST();
-		static QAndroidJniObject EXTRA_PICTURE();
-		static QAndroidJniObject EXTRA_PROGRESS();
-		static QAndroidJniObject EXTRA_PROGRESS_INDETERMINATE();
-		static QAndroidJniObject EXTRA_PROGRESS_MAX();
-		static QAndroidJniObject EXTRA_REMOTE_INPUT_DRAFT();
-		static QAndroidJniObject EXTRA_REMOTE_INPUT_HISTORY();
-		static QAndroidJniObject EXTRA_SELF_DISPLAY_NAME();
-		static QAndroidJniObject EXTRA_SHOW_CHRONOMETER();
-		static QAndroidJniObject EXTRA_SHOW_WHEN();
-		static QAndroidJniObject EXTRA_SMALL_ICON();
-		static QAndroidJniObject EXTRA_SUB_TEXT();
-		static QAndroidJniObject EXTRA_SUMMARY_TEXT();
-		static QAndroidJniObject EXTRA_TEMPLATE();
-		static QAndroidJniObject EXTRA_TEXT();
-		static QAndroidJniObject EXTRA_TEXT_LINES();
-		static QAndroidJniObject EXTRA_TITLE();
-		static QAndroidJniObject EXTRA_TITLE_BIG();
+		static jstring EXTRA_AUDIO_CONTENTS_URI();
+		static jstring EXTRA_BACKGROUND_IMAGE_URI();
+		static jstring EXTRA_BIG_TEXT();
+		static jstring EXTRA_CHANNEL_GROUP_ID();
+		static jstring EXTRA_CHANNEL_ID();
+		static jstring EXTRA_CHRONOMETER_COUNT_DOWN();
+		static jstring EXTRA_COLORIZED();
+		static jstring EXTRA_COMPACT_ACTIONS();
+		static jstring EXTRA_CONVERSATION_TITLE();
+		static jstring EXTRA_HISTORIC_MESSAGES();
+		static jstring EXTRA_INFO_TEXT();
+		static jstring EXTRA_IS_GROUP_CONVERSATION();
+		static jstring EXTRA_LARGE_ICON();
+		static jstring EXTRA_LARGE_ICON_BIG();
+		static jstring EXTRA_MEDIA_SESSION();
+		static jstring EXTRA_MESSAGES();
+		static jstring EXTRA_MESSAGING_PERSON();
+		static jstring EXTRA_NOTIFICATION_ID();
+		static jstring EXTRA_NOTIFICATION_TAG();
+		static jstring EXTRA_PEOPLE();
+		static jstring EXTRA_PEOPLE_LIST();
+		static jstring EXTRA_PICTURE();
+		static jstring EXTRA_PROGRESS();
+		static jstring EXTRA_PROGRESS_INDETERMINATE();
+		static jstring EXTRA_PROGRESS_MAX();
+		static jstring EXTRA_REMOTE_INPUT_DRAFT();
+		static jstring EXTRA_REMOTE_INPUT_HISTORY();
+		static jstring EXTRA_SELF_DISPLAY_NAME();
+		static jstring EXTRA_SHOW_CHRONOMETER();
+		static jstring EXTRA_SHOW_WHEN();
+		static jstring EXTRA_SMALL_ICON();
+		static jstring EXTRA_SUB_TEXT();
+		static jstring EXTRA_SUMMARY_TEXT();
+		static jstring EXTRA_TEMPLATE();
+		static jstring EXTRA_TEXT();
+		static jstring EXTRA_TEXT_LINES();
+		static jstring EXTRA_TITLE();
+		static jstring EXTRA_TITLE_BIG();
 		static jint FLAG_AUTO_CANCEL();
 		static jint FLAG_BUBBLE();
 		static jint FLAG_FOREGROUND_SERVICE();
@@ -130,7 +130,7 @@ namespace __jni_impl::android::app
 		static jint GROUP_ALERT_ALL();
 		static jint GROUP_ALERT_CHILDREN();
 		static jint GROUP_ALERT_SUMMARY();
-		static QAndroidJniObject INTENT_CATEGORY_NOTIFICATION_PREFERENCES();
+		static jstring INTENT_CATEGORY_NOTIFICATION_PREFERENCES();
 		static jint PRIORITY_DEFAULT();
 		static jint PRIORITY_HIGH();
 		static jint PRIORITY_LOW();
@@ -140,11 +140,11 @@ namespace __jni_impl::android::app
 		static jint VISIBILITY_PRIVATE();
 		static jint VISIBILITY_PUBLIC();
 		static jint VISIBILITY_SECRET();
-		QAndroidJniObject actions();
+		jarray actions();
 		QAndroidJniObject audioAttributes();
 		jint audioStreamType();
 		QAndroidJniObject bigContentView();
-		QAndroidJniObject category();
+		jstring category();
 		jint color();
 		QAndroidJniObject contentIntent();
 		QAndroidJniObject contentView();
@@ -164,9 +164,9 @@ namespace __jni_impl::android::app
 		jint priority();
 		QAndroidJniObject publicVersion();
 		QAndroidJniObject sound();
-		QAndroidJniObject tickerText();
+		jstring tickerText();
 		QAndroidJniObject tickerView();
-		QAndroidJniObject vibrate();
+		jlongArray vibrate();
 		jint visibility();
 		jlong when();
 		
@@ -176,23 +176,23 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject clone();
-		QAndroidJniObject getGroup();
-		QAndroidJniObject getSortKey();
-		QAndroidJniObject getChannelId();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getGroup();
+		jstring getSortKey();
+		jstring getChannelId();
 		jlong getTimeoutAfter();
 		jint getBadgeIconType();
-		QAndroidJniObject getShortcutId();
+		jstring getShortcutId();
 		QAndroidJniObject getLocusId();
-		QAndroidJniObject getSettingsText();
+		jstring getSettingsText();
 		jint getGroupAlertBehavior();
 		QAndroidJniObject getBubbleMetadata();
 		jboolean getAllowSystemGeneratedContextualActions();
 		QAndroidJniObject getSmallIcon();
 		QAndroidJniObject getLargeIcon();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -215,746 +215,863 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"AUDIO_ATTRIBUTES_DEFAULT",
-			"Landroid/media/AudioAttributes;");
+			"Landroid/media/AudioAttributes;"
+		);
 	}
 	jint Notification::BADGE_ICON_LARGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"BADGE_ICON_LARGE");
+			"BADGE_ICON_LARGE"
+		);
 	}
 	jint Notification::BADGE_ICON_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"BADGE_ICON_NONE");
+			"BADGE_ICON_NONE"
+		);
 	}
 	jint Notification::BADGE_ICON_SMALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"BADGE_ICON_SMALL");
+			"BADGE_ICON_SMALL"
+		);
 	}
-	QAndroidJniObject Notification::CATEGORY_ALARM()
+	jstring Notification::CATEGORY_ALARM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_ALARM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_CALL()
+	jstring Notification::CATEGORY_CALL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_CALL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_EMAIL()
+	jstring Notification::CATEGORY_EMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_EMAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_ERROR()
+	jstring Notification::CATEGORY_ERROR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_ERROR",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_EVENT()
+	jstring Notification::CATEGORY_EVENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_EVENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_MESSAGE()
+	jstring Notification::CATEGORY_MESSAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_MESSAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_NAVIGATION()
+	jstring Notification::CATEGORY_NAVIGATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_NAVIGATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_PROGRESS()
+	jstring Notification::CATEGORY_PROGRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_PROGRESS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_PROMO()
+	jstring Notification::CATEGORY_PROMO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_PROMO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_RECOMMENDATION()
+	jstring Notification::CATEGORY_RECOMMENDATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_RECOMMENDATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_REMINDER()
+	jstring Notification::CATEGORY_REMINDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_REMINDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_SERVICE()
+	jstring Notification::CATEGORY_SERVICE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_SERVICE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_SOCIAL()
+	jstring Notification::CATEGORY_SOCIAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_SOCIAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_STATUS()
+	jstring Notification::CATEGORY_STATUS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_STATUS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_SYSTEM()
+	jstring Notification::CATEGORY_SYSTEM()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_SYSTEM",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::CATEGORY_TRANSPORT()
+	jstring Notification::CATEGORY_TRANSPORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CATEGORY_TRANSPORT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Notification::COLOR_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"COLOR_DEFAULT");
+			"COLOR_DEFAULT"
+		);
 	}
 	QAndroidJniObject Notification::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint Notification::DEFAULT_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"DEFAULT_ALL");
+			"DEFAULT_ALL"
+		);
 	}
 	jint Notification::DEFAULT_LIGHTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"DEFAULT_LIGHTS");
+			"DEFAULT_LIGHTS"
+		);
 	}
 	jint Notification::DEFAULT_SOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"DEFAULT_SOUND");
+			"DEFAULT_SOUND"
+		);
 	}
 	jint Notification::DEFAULT_VIBRATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"DEFAULT_VIBRATE");
+			"DEFAULT_VIBRATE"
+		);
 	}
-	QAndroidJniObject Notification::EXTRA_AUDIO_CONTENTS_URI()
+	jstring Notification::EXTRA_AUDIO_CONTENTS_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_AUDIO_CONTENTS_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_BACKGROUND_IMAGE_URI()
+	jstring Notification::EXTRA_BACKGROUND_IMAGE_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_BACKGROUND_IMAGE_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_BIG_TEXT()
+	jstring Notification::EXTRA_BIG_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_BIG_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_CHANNEL_GROUP_ID()
+	jstring Notification::EXTRA_CHANNEL_GROUP_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CHANNEL_GROUP_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_CHANNEL_ID()
+	jstring Notification::EXTRA_CHANNEL_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CHANNEL_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_CHRONOMETER_COUNT_DOWN()
+	jstring Notification::EXTRA_CHRONOMETER_COUNT_DOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CHRONOMETER_COUNT_DOWN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_COLORIZED()
+	jstring Notification::EXTRA_COLORIZED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_COLORIZED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_COMPACT_ACTIONS()
+	jstring Notification::EXTRA_COMPACT_ACTIONS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_COMPACT_ACTIONS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_CONVERSATION_TITLE()
+	jstring Notification::EXTRA_CONVERSATION_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_CONVERSATION_TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_HISTORIC_MESSAGES()
+	jstring Notification::EXTRA_HISTORIC_MESSAGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_HISTORIC_MESSAGES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_INFO_TEXT()
+	jstring Notification::EXTRA_INFO_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_INFO_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_IS_GROUP_CONVERSATION()
+	jstring Notification::EXTRA_IS_GROUP_CONVERSATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_IS_GROUP_CONVERSATION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_LARGE_ICON()
+	jstring Notification::EXTRA_LARGE_ICON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_LARGE_ICON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_LARGE_ICON_BIG()
+	jstring Notification::EXTRA_LARGE_ICON_BIG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_LARGE_ICON_BIG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_MEDIA_SESSION()
+	jstring Notification::EXTRA_MEDIA_SESSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_MEDIA_SESSION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_MESSAGES()
+	jstring Notification::EXTRA_MESSAGES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_MESSAGES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_MESSAGING_PERSON()
+	jstring Notification::EXTRA_MESSAGING_PERSON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_MESSAGING_PERSON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_NOTIFICATION_ID()
+	jstring Notification::EXTRA_NOTIFICATION_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_NOTIFICATION_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_NOTIFICATION_TAG()
+	jstring Notification::EXTRA_NOTIFICATION_TAG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_NOTIFICATION_TAG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_PEOPLE()
+	jstring Notification::EXTRA_PEOPLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PEOPLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_PEOPLE_LIST()
+	jstring Notification::EXTRA_PEOPLE_LIST()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PEOPLE_LIST",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_PICTURE()
+	jstring Notification::EXTRA_PICTURE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PICTURE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_PROGRESS()
+	jstring Notification::EXTRA_PROGRESS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PROGRESS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_PROGRESS_INDETERMINATE()
+	jstring Notification::EXTRA_PROGRESS_INDETERMINATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PROGRESS_INDETERMINATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_PROGRESS_MAX()
+	jstring Notification::EXTRA_PROGRESS_MAX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_PROGRESS_MAX",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_REMOTE_INPUT_DRAFT()
+	jstring Notification::EXTRA_REMOTE_INPUT_DRAFT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_REMOTE_INPUT_DRAFT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_REMOTE_INPUT_HISTORY()
+	jstring Notification::EXTRA_REMOTE_INPUT_HISTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_REMOTE_INPUT_HISTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_SELF_DISPLAY_NAME()
+	jstring Notification::EXTRA_SELF_DISPLAY_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SELF_DISPLAY_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_SHOW_CHRONOMETER()
+	jstring Notification::EXTRA_SHOW_CHRONOMETER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SHOW_CHRONOMETER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_SHOW_WHEN()
+	jstring Notification::EXTRA_SHOW_WHEN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SHOW_WHEN",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_SMALL_ICON()
+	jstring Notification::EXTRA_SMALL_ICON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SMALL_ICON",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_SUB_TEXT()
+	jstring Notification::EXTRA_SUB_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SUB_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_SUMMARY_TEXT()
+	jstring Notification::EXTRA_SUMMARY_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_SUMMARY_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_TEMPLATE()
+	jstring Notification::EXTRA_TEMPLATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TEMPLATE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_TEXT()
+	jstring Notification::EXTRA_TEXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TEXT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_TEXT_LINES()
+	jstring Notification::EXTRA_TEXT_LINES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TEXT_LINES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_TITLE()
+	jstring Notification::EXTRA_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TITLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Notification::EXTRA_TITLE_BIG()
+	jstring Notification::EXTRA_TITLE_BIG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"EXTRA_TITLE_BIG",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Notification::FLAG_AUTO_CANCEL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_AUTO_CANCEL");
+			"FLAG_AUTO_CANCEL"
+		);
 	}
 	jint Notification::FLAG_BUBBLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_BUBBLE");
+			"FLAG_BUBBLE"
+		);
 	}
 	jint Notification::FLAG_FOREGROUND_SERVICE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_FOREGROUND_SERVICE");
+			"FLAG_FOREGROUND_SERVICE"
+		);
 	}
 	jint Notification::FLAG_GROUP_SUMMARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_GROUP_SUMMARY");
+			"FLAG_GROUP_SUMMARY"
+		);
 	}
 	jint Notification::FLAG_HIGH_PRIORITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_HIGH_PRIORITY");
+			"FLAG_HIGH_PRIORITY"
+		);
 	}
 	jint Notification::FLAG_INSISTENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_INSISTENT");
+			"FLAG_INSISTENT"
+		);
 	}
 	jint Notification::FLAG_LOCAL_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_LOCAL_ONLY");
+			"FLAG_LOCAL_ONLY"
+		);
 	}
 	jint Notification::FLAG_NO_CLEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_NO_CLEAR");
+			"FLAG_NO_CLEAR"
+		);
 	}
 	jint Notification::FLAG_ONGOING_EVENT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_ONGOING_EVENT");
+			"FLAG_ONGOING_EVENT"
+		);
 	}
 	jint Notification::FLAG_ONLY_ALERT_ONCE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_ONLY_ALERT_ONCE");
+			"FLAG_ONLY_ALERT_ONCE"
+		);
 	}
 	jint Notification::FLAG_SHOW_LIGHTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"FLAG_SHOW_LIGHTS");
+			"FLAG_SHOW_LIGHTS"
+		);
 	}
 	jint Notification::GROUP_ALERT_ALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"GROUP_ALERT_ALL");
+			"GROUP_ALERT_ALL"
+		);
 	}
 	jint Notification::GROUP_ALERT_CHILDREN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"GROUP_ALERT_CHILDREN");
+			"GROUP_ALERT_CHILDREN"
+		);
 	}
 	jint Notification::GROUP_ALERT_SUMMARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"GROUP_ALERT_SUMMARY");
+			"GROUP_ALERT_SUMMARY"
+		);
 	}
-	QAndroidJniObject Notification::INTENT_CATEGORY_NOTIFICATION_PREFERENCES()
+	jstring Notification::INTENT_CATEGORY_NOTIFICATION_PREFERENCES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Notification",
 			"INTENT_CATEGORY_NOTIFICATION_PREFERENCES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Notification::PRIORITY_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"PRIORITY_DEFAULT");
+			"PRIORITY_DEFAULT"
+		);
 	}
 	jint Notification::PRIORITY_HIGH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"PRIORITY_HIGH");
+			"PRIORITY_HIGH"
+		);
 	}
 	jint Notification::PRIORITY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"PRIORITY_LOW");
+			"PRIORITY_LOW"
+		);
 	}
 	jint Notification::PRIORITY_MAX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"PRIORITY_MAX");
+			"PRIORITY_MAX"
+		);
 	}
 	jint Notification::PRIORITY_MIN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"PRIORITY_MIN");
+			"PRIORITY_MIN"
+		);
 	}
 	jint Notification::STREAM_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"STREAM_DEFAULT");
+			"STREAM_DEFAULT"
+		);
 	}
 	jint Notification::VISIBILITY_PRIVATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"VISIBILITY_PRIVATE");
+			"VISIBILITY_PRIVATE"
+		);
 	}
 	jint Notification::VISIBILITY_PUBLIC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"VISIBILITY_PUBLIC");
+			"VISIBILITY_PUBLIC"
+		);
 	}
 	jint Notification::VISIBILITY_SECRET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.Notification",
-			"VISIBILITY_SECRET");
+			"VISIBILITY_SECRET"
+		);
 	}
-	QAndroidJniObject Notification::actions()
+	jarray Notification::actions()
 	{
 		return __thiz.getObjectField(
 			"actions",
-			"[Landroid/app/Notification$Action;");
+			"[Landroid/app/Notification$Action;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Notification::audioAttributes()
 	{
 		return __thiz.getObjectField(
 			"audioAttributes",
-			"Landroid/media/AudioAttributes;");
+			"Landroid/media/AudioAttributes;"
+		);
 	}
 	jint Notification::audioStreamType()
 	{
 		return __thiz.getField<jint>(
-			"audioStreamType");
+			"audioStreamType"
+		);
 	}
 	QAndroidJniObject Notification::bigContentView()
 	{
 		return __thiz.getObjectField(
 			"bigContentView",
-			"Landroid/widget/RemoteViews;");
+			"Landroid/widget/RemoteViews;"
+		);
 	}
-	QAndroidJniObject Notification::category()
+	jstring Notification::category()
 	{
 		return __thiz.getObjectField(
 			"category",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Notification::color()
 	{
 		return __thiz.getField<jint>(
-			"color");
+			"color"
+		);
 	}
 	QAndroidJniObject Notification::contentIntent()
 	{
 		return __thiz.getObjectField(
 			"contentIntent",
-			"Landroid/app/PendingIntent;");
+			"Landroid/app/PendingIntent;"
+		);
 	}
 	QAndroidJniObject Notification::contentView()
 	{
 		return __thiz.getObjectField(
 			"contentView",
-			"Landroid/widget/RemoteViews;");
+			"Landroid/widget/RemoteViews;"
+		);
 	}
 	jint Notification::defaults()
 	{
 		return __thiz.getField<jint>(
-			"defaults");
+			"defaults"
+		);
 	}
 	QAndroidJniObject Notification::deleteIntent()
 	{
 		return __thiz.getObjectField(
 			"deleteIntent",
-			"Landroid/app/PendingIntent;");
+			"Landroid/app/PendingIntent;"
+		);
 	}
 	QAndroidJniObject Notification::extras()
 	{
 		return __thiz.getObjectField(
 			"extras",
-			"Landroid/os/Bundle;");
+			"Landroid/os/Bundle;"
+		);
 	}
 	jint Notification::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
 	QAndroidJniObject Notification::fullScreenIntent()
 	{
 		return __thiz.getObjectField(
 			"fullScreenIntent",
-			"Landroid/app/PendingIntent;");
+			"Landroid/app/PendingIntent;"
+		);
 	}
 	QAndroidJniObject Notification::headsUpContentView()
 	{
 		return __thiz.getObjectField(
 			"headsUpContentView",
-			"Landroid/widget/RemoteViews;");
+			"Landroid/widget/RemoteViews;"
+		);
 	}
 	jint Notification::icon()
 	{
 		return __thiz.getField<jint>(
-			"icon");
+			"icon"
+		);
 	}
 	jint Notification::iconLevel()
 	{
 		return __thiz.getField<jint>(
-			"iconLevel");
+			"iconLevel"
+		);
 	}
 	QAndroidJniObject Notification::largeIcon()
 	{
 		return __thiz.getObjectField(
 			"largeIcon",
-			"Landroid/graphics/Bitmap;");
+			"Landroid/graphics/Bitmap;"
+		);
 	}
 	jint Notification::ledARGB()
 	{
 		return __thiz.getField<jint>(
-			"ledARGB");
+			"ledARGB"
+		);
 	}
 	jint Notification::ledOffMS()
 	{
 		return __thiz.getField<jint>(
-			"ledOffMS");
+			"ledOffMS"
+		);
 	}
 	jint Notification::ledOnMS()
 	{
 		return __thiz.getField<jint>(
-			"ledOnMS");
+			"ledOnMS"
+		);
 	}
 	jint Notification::number()
 	{
 		return __thiz.getField<jint>(
-			"number");
+			"number"
+		);
 	}
 	jint Notification::priority()
 	{
 		return __thiz.getField<jint>(
-			"priority");
+			"priority"
+		);
 	}
 	QAndroidJniObject Notification::publicVersion()
 	{
 		return __thiz.getObjectField(
 			"publicVersion",
-			"Landroid/app/Notification;");
+			"Landroid/app/Notification;"
+		);
 	}
 	QAndroidJniObject Notification::sound()
 	{
 		return __thiz.getObjectField(
 			"sound",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject Notification::tickerText()
+	jstring Notification::tickerText()
 	{
 		return __thiz.getObjectField(
 			"tickerText",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Notification::tickerView()
 	{
 		return __thiz.getObjectField(
 			"tickerView",
-			"Landroid/widget/RemoteViews;");
+			"Landroid/widget/RemoteViews;"
+		);
 	}
-	QAndroidJniObject Notification::vibrate()
+	jlongArray Notification::vibrate()
 	{
 		return __thiz.getObjectField(
 			"vibrate",
-			"[J");
+			"[J"
+		).object<jlongArray>();
 	}
 	jint Notification::visibility()
 	{
 		return __thiz.getField<jint>(
-			"visibility");
+			"visibility"
+		);
 	}
 	jlong Notification::when()
 	{
 		return __thiz.getField<jlong>(
-			"when");
+			"when"
+		);
 	}
 	
 	// Constructors
@@ -982,101 +1099,26 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject Notification::toString()
+	jstring Notification::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Notification::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/app/Notification;");
-	}
-	QAndroidJniObject Notification::getGroup()
-	{
-		return __thiz.callObjectMethod(
-			"getGroup",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject Notification::getSortKey()
-	{
-		return __thiz.callObjectMethod(
-			"getSortKey",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject Notification::getChannelId()
-	{
-		return __thiz.callObjectMethod(
-			"getChannelId",
-			"()Ljava/lang/String;");
-	}
-	jlong Notification::getTimeoutAfter()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeoutAfter",
-			"()J");
-	}
-	jint Notification::getBadgeIconType()
-	{
-		return __thiz.callMethod<jint>(
-			"getBadgeIconType",
-			"()I");
-	}
-	QAndroidJniObject Notification::getShortcutId()
-	{
-		return __thiz.callObjectMethod(
-			"getShortcutId",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject Notification::getLocusId()
-	{
-		return __thiz.callObjectMethod(
-			"getLocusId",
-			"()Landroid/content/LocusId;");
-	}
-	QAndroidJniObject Notification::getSettingsText()
-	{
-		return __thiz.callObjectMethod(
-			"getSettingsText",
-			"()Ljava/lang/CharSequence;");
-	}
-	jint Notification::getGroupAlertBehavior()
-	{
-		return __thiz.callMethod<jint>(
-			"getGroupAlertBehavior",
-			"()I");
-	}
-	QAndroidJniObject Notification::getBubbleMetadata()
-	{
-		return __thiz.callObjectMethod(
-			"getBubbleMetadata",
-			"()Landroid/app/Notification$BubbleMetadata;");
-	}
-	jboolean Notification::getAllowSystemGeneratedContextualActions()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowSystemGeneratedContextualActions",
-			"()Z");
-	}
-	QAndroidJniObject Notification::getSmallIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getSmallIcon",
-			"()Landroid/graphics/drawable/Icon;");
-	}
-	QAndroidJniObject Notification::getLargeIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getLargeIcon",
-			"()Landroid/graphics/drawable/Icon;");
+			"()Landroid/app/Notification;"
+		);
 	}
 	jint Notification::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Notification::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -1084,7 +1126,99 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jstring Notification::getGroup()
+	{
+		return __thiz.callObjectMethod(
+			"getGroup",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Notification::getSortKey()
+	{
+		return __thiz.callObjectMethod(
+			"getSortKey",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Notification::getChannelId()
+	{
+		return __thiz.callObjectMethod(
+			"getChannelId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jlong Notification::getTimeoutAfter()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeoutAfter",
+			"()J"
+		);
+	}
+	jint Notification::getBadgeIconType()
+	{
+		return __thiz.callMethod<jint>(
+			"getBadgeIconType",
+			"()I"
+		);
+	}
+	jstring Notification::getShortcutId()
+	{
+		return __thiz.callObjectMethod(
+			"getShortcutId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Notification::getLocusId()
+	{
+		return __thiz.callObjectMethod(
+			"getLocusId",
+			"()Landroid/content/LocusId;"
+		);
+	}
+	jstring Notification::getSettingsText()
+	{
+		return __thiz.callObjectMethod(
+			"getSettingsText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jint Notification::getGroupAlertBehavior()
+	{
+		return __thiz.callMethod<jint>(
+			"getGroupAlertBehavior",
+			"()I"
+		);
+	}
+	QAndroidJniObject Notification::getBubbleMetadata()
+	{
+		return __thiz.callObjectMethod(
+			"getBubbleMetadata",
+			"()Landroid/app/Notification$BubbleMetadata;"
+		);
+	}
+	jboolean Notification::getAllowSystemGeneratedContextualActions()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getAllowSystemGeneratedContextualActions",
+			"()Z"
+		);
+	}
+	QAndroidJniObject Notification::getSmallIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getSmallIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	QAndroidJniObject Notification::getLargeIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getLargeIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

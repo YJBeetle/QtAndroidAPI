@@ -21,7 +21,7 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		void setName(jstring arg0);
@@ -44,37 +44,42 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	QAndroidJniObject BaseObj::getName()
+	jstring BaseObj::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean BaseObj::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint BaseObj::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	void BaseObj::setName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setName",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void BaseObj::destroy()
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

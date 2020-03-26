@@ -53,7 +53,8 @@ namespace __jni_impl::javax::net::ssl
 	{
 		return __thiz.callObjectMethod(
 			"getParameters",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::javax::net::ssl
 

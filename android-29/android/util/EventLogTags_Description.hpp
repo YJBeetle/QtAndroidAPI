@@ -12,7 +12,7 @@ namespace __jni_impl::android::util
 	{
 	public:
 		// Fields
-		QAndroidJniObject mName();
+		jstring mName();
 		jint mTag();
 		
 		// Constructors
@@ -26,16 +26,18 @@ namespace __jni_impl::android::util
 namespace __jni_impl::android::util
 {
 	// Fields
-	QAndroidJniObject EventLogTags_Description::mName()
+	jstring EventLogTags_Description::mName()
 	{
 		return __thiz.getObjectField(
 			"mName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint EventLogTags_Description::mTag()
 	{
 		return __thiz.getField<jint>(
-			"mTag");
+			"mTag"
+		);
 	}
 	
 	// Constructors

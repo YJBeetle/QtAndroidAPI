@@ -42,7 +42,8 @@ namespace __jni_impl::android::util
 		__thiz.callMethod<void>(
 			"println",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::util
 

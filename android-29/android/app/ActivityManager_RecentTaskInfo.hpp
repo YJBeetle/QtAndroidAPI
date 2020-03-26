@@ -19,7 +19,7 @@ namespace __jni_impl::android::app
 		// Fields
 		static QAndroidJniObject CREATOR();
 		jint affiliatedTaskId();
-		QAndroidJniObject description();
+		jstring description();
 		jint id();
 		jint persistentId();
 		
@@ -27,9 +27,9 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -43,28 +43,33 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$RecentTaskInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ActivityManager_RecentTaskInfo::affiliatedTaskId()
 	{
 		return __thiz.getField<jint>(
-			"affiliatedTaskId");
+			"affiliatedTaskId"
+		);
 	}
-	QAndroidJniObject ActivityManager_RecentTaskInfo::description()
+	jstring ActivityManager_RecentTaskInfo::description()
 	{
 		return __thiz.getObjectField(
 			"description",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint ActivityManager_RecentTaskInfo::id()
 	{
 		return __thiz.getField<jint>(
-			"id");
+			"id"
+		);
 	}
 	jint ActivityManager_RecentTaskInfo::persistentId()
 	{
 		return __thiz.getField<jint>(
-			"persistentId");
+			"persistentId"
+		);
 	}
 	
 	// Constructors
@@ -76,18 +81,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ActivityManager_RecentTaskInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
 	jint ActivityManager_RecentTaskInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ActivityManager_RecentTaskInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -95,7 +94,16 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ActivityManager_RecentTaskInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

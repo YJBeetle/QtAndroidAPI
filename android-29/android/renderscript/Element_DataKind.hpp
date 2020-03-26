@@ -26,7 +26,7 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::renderscript
@@ -40,56 +40,64 @@ namespace __jni_impl::android::renderscript
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"USER",
-			"Landroid/renderscript/Element$DataKind;");
+			"Landroid/renderscript/Element$DataKind;"
+		);
 	}
 	QAndroidJniObject Element_DataKind::PIXEL_L()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_L",
-			"Landroid/renderscript/Element$DataKind;");
+			"Landroid/renderscript/Element$DataKind;"
+		);
 	}
 	QAndroidJniObject Element_DataKind::PIXEL_A()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_A",
-			"Landroid/renderscript/Element$DataKind;");
+			"Landroid/renderscript/Element$DataKind;"
+		);
 	}
 	QAndroidJniObject Element_DataKind::PIXEL_LA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_LA",
-			"Landroid/renderscript/Element$DataKind;");
+			"Landroid/renderscript/Element$DataKind;"
+		);
 	}
 	QAndroidJniObject Element_DataKind::PIXEL_RGB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_RGB",
-			"Landroid/renderscript/Element$DataKind;");
+			"Landroid/renderscript/Element$DataKind;"
+		);
 	}
 	QAndroidJniObject Element_DataKind::PIXEL_RGBA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_RGBA",
-			"Landroid/renderscript/Element$DataKind;");
+			"Landroid/renderscript/Element$DataKind;"
+		);
 	}
 	QAndroidJniObject Element_DataKind::PIXEL_DEPTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_DEPTH",
-			"Landroid/renderscript/Element$DataKind;");
+			"Landroid/renderscript/Element$DataKind;"
+		);
 	}
 	QAndroidJniObject Element_DataKind::PIXEL_YUV()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataKind",
 			"PIXEL_YUV",
-			"Landroid/renderscript/Element$DataKind;");
+			"Landroid/renderscript/Element$DataKind;"
+		);
 	}
 	
 	// Constructors
@@ -101,12 +109,13 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	QAndroidJniObject Element_DataKind::values()
+	jarray Element_DataKind::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.Element$DataKind",
 			"values",
-			"()[Landroid/renderscript/Element$DataKind;");
+			"()[Landroid/renderscript/Element$DataKind;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Element_DataKind::valueOf(jstring arg0)
 	{
@@ -114,7 +123,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Element$DataKind",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Element$DataKind;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

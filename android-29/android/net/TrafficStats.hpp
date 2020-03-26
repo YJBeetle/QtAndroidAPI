@@ -79,7 +79,8 @@ namespace __jni_impl::android::net
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.TrafficStats",
-			"UNSUPPORTED");
+			"UNSUPPORTED"
+		);
 	}
 	
 	// Constructors
@@ -97,7 +98,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"setThreadStatsTag",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint TrafficStats::getAndSetThreadStatsTag(jint arg0)
 	{
@@ -105,21 +107,24 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getAndSetThreadStatsTag",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint TrafficStats::getThreadStatsTag()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.net.TrafficStats",
 			"getThreadStatsTag",
-			"()I");
+			"()I"
+		);
 	}
 	void TrafficStats::clearThreadStatsTag()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"clearThreadStatsTag",
-			"()V");
+			"()V"
+		);
 	}
 	void TrafficStats::setThreadStatsUid(jint arg0)
 	{
@@ -127,21 +132,24 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"setThreadStatsUid",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint TrafficStats::getThreadStatsUid()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.net.TrafficStats",
 			"getThreadStatsUid",
-			"()I");
+			"()I"
+		);
 	}
 	void TrafficStats::clearThreadStatsUid()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.net.TrafficStats",
 			"clearThreadStatsUid",
-			"()V");
+			"()V"
+		);
 	}
 	void TrafficStats::tagSocket(__jni_impl::java::net::Socket arg0)
 	{
@@ -149,7 +157,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"tagSocket",
 			"(Ljava/net/Socket;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TrafficStats::untagSocket(__jni_impl::java::net::Socket arg0)
 	{
@@ -157,7 +166,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"untagSocket",
 			"(Ljava/net/Socket;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TrafficStats::tagDatagramSocket(__jni_impl::java::net::DatagramSocket arg0)
 	{
@@ -165,7 +175,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"tagDatagramSocket",
 			"(Ljava/net/DatagramSocket;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TrafficStats::untagDatagramSocket(__jni_impl::java::net::DatagramSocket arg0)
 	{
@@ -173,7 +184,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"untagDatagramSocket",
 			"(Ljava/net/DatagramSocket;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TrafficStats::tagFileDescriptor(__jni_impl::java::io::FileDescriptor arg0)
 	{
@@ -181,7 +193,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"tagFileDescriptor",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TrafficStats::untagFileDescriptor(__jni_impl::java::io::FileDescriptor arg0)
 	{
@@ -189,7 +202,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"untagFileDescriptor",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TrafficStats::incrementOperationCount(jint arg0, jint arg1)
 	{
@@ -198,7 +212,8 @@ namespace __jni_impl::android::net
 			"incrementOperationCount",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void TrafficStats::incrementOperationCount(jint arg0)
 	{
@@ -206,63 +221,72 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"incrementOperationCount",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getMobileTxPackets()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getMobileTxPackets",
-			"()J");
+			"()J"
+		);
 	}
 	jlong TrafficStats::getMobileRxPackets()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getMobileRxPackets",
-			"()J");
+			"()J"
+		);
 	}
 	jlong TrafficStats::getMobileTxBytes()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getMobileTxBytes",
-			"()J");
+			"()J"
+		);
 	}
 	jlong TrafficStats::getMobileRxBytes()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getMobileRxBytes",
-			"()J");
+			"()J"
+		);
 	}
 	jlong TrafficStats::getTotalTxPackets()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getTotalTxPackets",
-			"()J");
+			"()J"
+		);
 	}
 	jlong TrafficStats::getTotalRxPackets()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getTotalRxPackets",
-			"()J");
+			"()J"
+		);
 	}
 	jlong TrafficStats::getTotalTxBytes()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getTotalTxBytes",
-			"()J");
+			"()J"
+		);
 	}
 	jlong TrafficStats::getTotalRxBytes()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.net.TrafficStats",
 			"getTotalRxBytes",
-			"()J");
+			"()J"
+		);
 	}
 	jlong TrafficStats::getUidTxBytes(jint arg0)
 	{
@@ -270,7 +294,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidTxBytes",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidRxBytes(jint arg0)
 	{
@@ -278,7 +303,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidRxBytes",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidTxPackets(jint arg0)
 	{
@@ -286,7 +312,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidTxPackets",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidRxPackets(jint arg0)
 	{
@@ -294,7 +321,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidRxPackets",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidTcpTxBytes(jint arg0)
 	{
@@ -302,7 +330,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidTcpTxBytes",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidTcpRxBytes(jint arg0)
 	{
@@ -310,7 +339,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidTcpRxBytes",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidUdpTxBytes(jint arg0)
 	{
@@ -318,7 +348,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidUdpTxBytes",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidUdpRxBytes(jint arg0)
 	{
@@ -326,7 +357,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidUdpRxBytes",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidTcpTxSegments(jint arg0)
 	{
@@ -334,7 +366,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidTcpTxSegments",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidTcpRxSegments(jint arg0)
 	{
@@ -342,7 +375,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidTcpRxSegments",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidUdpTxPackets(jint arg0)
 	{
@@ -350,7 +384,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidUdpTxPackets",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong TrafficStats::getUidUdpRxPackets(jint arg0)
 	{
@@ -358,7 +393,8 @@ namespace __jni_impl::android::net
 			"android.net.TrafficStats",
 			"getUidUdpRxPackets",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::net
 

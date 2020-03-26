@@ -25,7 +25,7 @@ namespace __jni_impl::android::widget
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DEFAULT_SHARE_HISTORY_FILE_NAME();
+		static jstring DEFAULT_SHARE_HISTORY_FILE_NAME();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::content::Context arg0);
@@ -47,12 +47,13 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::widget
 {
 	// Fields
-	QAndroidJniObject ShareActionProvider::DEFAULT_SHARE_HISTORY_FILE_NAME()
+	jstring ShareActionProvider::DEFAULT_SHARE_HISTORY_FILE_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.widget.ShareActionProvider",
 			"DEFAULT_SHARE_HISTORY_FILE_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -69,41 +70,47 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callObjectMethod(
 			"onCreateActionView",
-			"()Landroid/view/View;");
+			"()Landroid/view/View;"
+		);
 	}
 	void ShareActionProvider::onPrepareSubMenu(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"onPrepareSubMenu",
 			"(Landroid/view/SubMenu;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ShareActionProvider::setShareHistoryFileName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setShareHistoryFileName",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ShareActionProvider::setOnShareTargetSelectedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnShareTargetSelectedListener",
 			"(Landroid/widget/ShareActionProvider$OnShareTargetSelectedListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ShareActionProvider::setShareIntent(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
 			"setShareIntent",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean ShareActionProvider::hasSubMenu()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasSubMenu",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::widget
 

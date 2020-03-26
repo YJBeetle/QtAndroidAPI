@@ -22,12 +22,12 @@ namespace __jni_impl::java::security
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getValue();
-		QAndroidJniObject getEncoded();
+		jstring getValue();
+		jbyteArray getEncoded();
 	};
 } // namespace __jni_impl::java::security
 
@@ -55,42 +55,48 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject PKCS12Attribute::getName()
+	jstring PKCS12Attribute::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean PKCS12Attribute::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PKCS12Attribute::toString()
+	jstring PKCS12Attribute::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PKCS12Attribute::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject PKCS12Attribute::getValue()
+	jstring PKCS12Attribute::getValue()
 	{
 		return __thiz.callObjectMethod(
 			"getValue",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PKCS12Attribute::getEncoded()
+	jbyteArray PKCS12Attribute::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::java::security
 

@@ -12,13 +12,13 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACTION_FETCH_VOICEMAIL();
-		static QAndroidJniObject ACTION_NEW_VOICEMAIL();
-		static QAndroidJniObject ACTION_SYNC_VOICEMAIL();
-		static QAndroidJniObject AUTHORITY();
-		static QAndroidJniObject EXTRA_PHONE_ACCOUNT_HANDLE();
-		static QAndroidJniObject EXTRA_SELF_CHANGE();
-		static QAndroidJniObject PARAM_KEY_SOURCE_PACKAGE();
+		static jstring ACTION_FETCH_VOICEMAIL();
+		static jstring ACTION_NEW_VOICEMAIL();
+		static jstring ACTION_SYNC_VOICEMAIL();
+		static jstring AUTHORITY();
+		static jstring EXTRA_PHONE_ACCOUNT_HANDLE();
+		static jstring EXTRA_SELF_CHANGE();
+		static jstring PARAM_KEY_SOURCE_PACKAGE();
 		
 		// Constructors
 		void __constructor();
@@ -31,54 +31,61 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject VoicemailContract::ACTION_FETCH_VOICEMAIL()
+	jstring VoicemailContract::ACTION_FETCH_VOICEMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"ACTION_FETCH_VOICEMAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract::ACTION_NEW_VOICEMAIL()
+	jstring VoicemailContract::ACTION_NEW_VOICEMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"ACTION_NEW_VOICEMAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract::ACTION_SYNC_VOICEMAIL()
+	jstring VoicemailContract::ACTION_SYNC_VOICEMAIL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"ACTION_SYNC_VOICEMAIL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract::AUTHORITY()
+	jstring VoicemailContract::AUTHORITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"AUTHORITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract::EXTRA_PHONE_ACCOUNT_HANDLE()
+	jstring VoicemailContract::EXTRA_PHONE_ACCOUNT_HANDLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"EXTRA_PHONE_ACCOUNT_HANDLE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract::EXTRA_SELF_CHANGE()
+	jstring VoicemailContract::EXTRA_SELF_CHANGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"EXTRA_SELF_CHANGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoicemailContract::PARAM_KEY_SOURCE_PACKAGE()
+	jstring VoicemailContract::PARAM_KEY_SOURCE_PACKAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.VoicemailContract",
 			"PARAM_KEY_SOURCE_PACKAGE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors

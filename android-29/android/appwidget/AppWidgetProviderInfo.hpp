@@ -13,6 +13,10 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
+namespace __jni_impl::android::content::pm
+{
+	class PackageManager;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -24,10 +28,6 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::os
 {
 	class UserHandle;
-}
-namespace __jni_impl::android::content::pm
-{
-	class PackageManager;
 }
 
 namespace __jni_impl::android::appwidget
@@ -51,7 +51,7 @@ namespace __jni_impl::android::appwidget
 		jint icon();
 		jint initialKeyguardLayout();
 		jint initialLayout();
-		QAndroidJniObject label();
+		jstring label();
 		jint minHeight();
 		jint minResizeHeight();
 		jint minResizeWidth();
@@ -68,23 +68,23 @@ namespace __jni_impl::android::appwidget
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject clone();
-		QAndroidJniObject loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1);
-		QAndroidJniObject getProfile();
+		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
+		QAndroidJniObject loadIcon(__jni_impl::android::content::Context arg0, jint arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadIcon(__jni_impl::android::content::Context arg0, jint arg1);
+		QAndroidJniObject loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1);
+		QAndroidJniObject getProfile();
 	};
 } // namespace __jni_impl::android::appwidget
 
 #include "../content/ComponentName.hpp"
 #include "../os/Parcel.hpp"
+#include "../content/pm/PackageManager.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../content/Context.hpp"
 #include "../os/UserHandle.hpp"
-#include "../content/pm/PackageManager.hpp"
 
 namespace __jni_impl::android::appwidget
 {
@@ -94,144 +94,170 @@ namespace __jni_impl::android::appwidget
 		return QAndroidJniObject::getStaticObjectField(
 			"android.appwidget.AppWidgetProviderInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint AppWidgetProviderInfo::RESIZE_BOTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
-			"RESIZE_BOTH");
+			"RESIZE_BOTH"
+		);
 	}
 	jint AppWidgetProviderInfo::RESIZE_HORIZONTAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
-			"RESIZE_HORIZONTAL");
+			"RESIZE_HORIZONTAL"
+		);
 	}
 	jint AppWidgetProviderInfo::RESIZE_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
-			"RESIZE_NONE");
+			"RESIZE_NONE"
+		);
 	}
 	jint AppWidgetProviderInfo::RESIZE_VERTICAL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
-			"RESIZE_VERTICAL");
+			"RESIZE_VERTICAL"
+		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_CATEGORY_HOME_SCREEN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
-			"WIDGET_CATEGORY_HOME_SCREEN");
+			"WIDGET_CATEGORY_HOME_SCREEN"
+		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_CATEGORY_KEYGUARD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
-			"WIDGET_CATEGORY_KEYGUARD");
+			"WIDGET_CATEGORY_KEYGUARD"
+		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_CATEGORY_SEARCHBOX()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
-			"WIDGET_CATEGORY_SEARCHBOX");
+			"WIDGET_CATEGORY_SEARCHBOX"
+		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_FEATURE_HIDE_FROM_PICKER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
-			"WIDGET_FEATURE_HIDE_FROM_PICKER");
+			"WIDGET_FEATURE_HIDE_FROM_PICKER"
+		);
 	}
 	jint AppWidgetProviderInfo::WIDGET_FEATURE_RECONFIGURABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.appwidget.AppWidgetProviderInfo",
-			"WIDGET_FEATURE_RECONFIGURABLE");
+			"WIDGET_FEATURE_RECONFIGURABLE"
+		);
 	}
 	jint AppWidgetProviderInfo::autoAdvanceViewId()
 	{
 		return __thiz.getField<jint>(
-			"autoAdvanceViewId");
+			"autoAdvanceViewId"
+		);
 	}
 	QAndroidJniObject AppWidgetProviderInfo::configure()
 	{
 		return __thiz.getObjectField(
 			"configure",
-			"Landroid/content/ComponentName;");
+			"Landroid/content/ComponentName;"
+		);
 	}
 	jint AppWidgetProviderInfo::icon()
 	{
 		return __thiz.getField<jint>(
-			"icon");
+			"icon"
+		);
 	}
 	jint AppWidgetProviderInfo::initialKeyguardLayout()
 	{
 		return __thiz.getField<jint>(
-			"initialKeyguardLayout");
+			"initialKeyguardLayout"
+		);
 	}
 	jint AppWidgetProviderInfo::initialLayout()
 	{
 		return __thiz.getField<jint>(
-			"initialLayout");
+			"initialLayout"
+		);
 	}
-	QAndroidJniObject AppWidgetProviderInfo::label()
+	jstring AppWidgetProviderInfo::label()
 	{
 		return __thiz.getObjectField(
 			"label",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint AppWidgetProviderInfo::minHeight()
 	{
 		return __thiz.getField<jint>(
-			"minHeight");
+			"minHeight"
+		);
 	}
 	jint AppWidgetProviderInfo::minResizeHeight()
 	{
 		return __thiz.getField<jint>(
-			"minResizeHeight");
+			"minResizeHeight"
+		);
 	}
 	jint AppWidgetProviderInfo::minResizeWidth()
 	{
 		return __thiz.getField<jint>(
-			"minResizeWidth");
+			"minResizeWidth"
+		);
 	}
 	jint AppWidgetProviderInfo::minWidth()
 	{
 		return __thiz.getField<jint>(
-			"minWidth");
+			"minWidth"
+		);
 	}
 	jint AppWidgetProviderInfo::previewImage()
 	{
 		return __thiz.getField<jint>(
-			"previewImage");
+			"previewImage"
+		);
 	}
 	QAndroidJniObject AppWidgetProviderInfo::provider()
 	{
 		return __thiz.getObjectField(
 			"provider",
-			"Landroid/content/ComponentName;");
+			"Landroid/content/ComponentName;"
+		);
 	}
 	jint AppWidgetProviderInfo::resizeMode()
 	{
 		return __thiz.getField<jint>(
-			"resizeMode");
+			"resizeMode"
+		);
 	}
 	jint AppWidgetProviderInfo::updatePeriodMillis()
 	{
 		return __thiz.getField<jint>(
-			"updatePeriodMillis");
+			"updatePeriodMillis"
+		);
 	}
 	jint AppWidgetProviderInfo::widgetCategory()
 	{
 		return __thiz.getField<jint>(
-			"widgetCategory");
+			"widgetCategory"
+		);
 	}
 	jint AppWidgetProviderInfo::widgetFeatures()
 	{
 		return __thiz.getField<jint>(
-			"widgetFeatures");
+			"widgetFeatures"
+		);
 	}
 	
 	// Constructors
@@ -250,52 +276,27 @@ namespace __jni_impl::android::appwidget
 	}
 	
 	// Methods
-	QAndroidJniObject AppWidgetProviderInfo::toString()
+	jstring AppWidgetProviderInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject AppWidgetProviderInfo::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/appwidget/AppWidgetProviderInfo;");
+			"()Landroid/appwidget/AppWidgetProviderInfo;"
+		);
 	}
-	QAndroidJniObject AppWidgetProviderInfo::loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"loadPreviewImage",
-			"(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject AppWidgetProviderInfo::getProfile()
-	{
-		return __thiz.callObjectMethod(
-			"getProfile",
-			"()Landroid/os/UserHandle;");
-	}
-	jint AppWidgetProviderInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I");
-	}
-	void AppWidgetProviderInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1);
-	}
-	QAndroidJniObject AppWidgetProviderInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
+	jstring AppWidgetProviderInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
 	{
 		return __thiz.callObjectMethod(
 			"loadLabel",
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	QAndroidJniObject AppWidgetProviderInfo::loadIcon(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -303,7 +304,40 @@ namespace __jni_impl::android::appwidget
 			"loadIcon",
 			"(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint AppWidgetProviderInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void AppWidgetProviderInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject AppWidgetProviderInfo::loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"loadPreviewImage",
+			"(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject AppWidgetProviderInfo::getProfile()
+	{
+		return __thiz.callObjectMethod(
+			"getProfile",
+			"()Landroid/os/UserHandle;"
+		);
 	}
 } // namespace __jni_impl::android::appwidget
 

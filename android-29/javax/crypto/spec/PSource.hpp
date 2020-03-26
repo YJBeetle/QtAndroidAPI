@@ -17,7 +17,7 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getAlgorithm();
+		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -35,11 +35,12 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
-	QAndroidJniObject PSource::getAlgorithm()
+	jstring PSource::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
 			"getAlgorithm",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

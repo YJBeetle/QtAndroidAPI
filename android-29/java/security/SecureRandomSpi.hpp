@@ -17,7 +17,7 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
@@ -35,11 +35,12 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject SecureRandomSpi::toString()
+	jstring SecureRandomSpi::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

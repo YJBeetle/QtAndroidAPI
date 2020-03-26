@@ -29,7 +29,7 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::content::ContentValues arg0);
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getEntityValues();
 		QAndroidJniObject getSubValues();
 		void addSubValue(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1);
@@ -54,23 +54,26 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	QAndroidJniObject Entity::toString()
+	jstring Entity::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Entity::getEntityValues()
 	{
 		return __thiz.callObjectMethod(
 			"getEntityValues",
-			"()Landroid/content/ContentValues;");
+			"()Landroid/content/ContentValues;"
+		);
 	}
 	QAndroidJniObject Entity::getSubValues()
 	{
 		return __thiz.callObjectMethod(
 			"getSubValues",
-			"()Ljava/util/ArrayList;");
+			"()Ljava/util/ArrayList;"
+		);
 	}
 	void Entity::addSubValue(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1)
 	{
@@ -78,7 +81,8 @@ namespace __jni_impl::android::content
 			"addSubValue",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::content
 

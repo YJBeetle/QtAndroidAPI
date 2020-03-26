@@ -16,17 +16,17 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUTHORITY();
+		static jstring AUTHORITY();
 		static QAndroidJniObject AUTHORITY_URI();
-		static QAndroidJniObject CALLER_IS_SYNCADAPTER();
-		static QAndroidJniObject DEFERRED_SNIPPETING();
-		static QAndroidJniObject DEFERRED_SNIPPETING_QUERY();
-		static QAndroidJniObject DIRECTORY_PARAM_KEY();
-		static QAndroidJniObject LIMIT_PARAM_KEY();
-		static QAndroidJniObject PRIMARY_ACCOUNT_NAME();
-		static QAndroidJniObject PRIMARY_ACCOUNT_TYPE();
-		static QAndroidJniObject REMOVE_DUPLICATE_ENTRIES();
-		static QAndroidJniObject STREQUENT_PHONE_ONLY();
+		static jstring CALLER_IS_SYNCADAPTER();
+		static jstring DEFERRED_SNIPPETING();
+		static jstring DEFERRED_SNIPPETING_QUERY();
+		static jstring DIRECTORY_PARAM_KEY();
+		static jstring LIMIT_PARAM_KEY();
+		static jstring PRIMARY_ACCOUNT_NAME();
+		static jstring PRIMARY_ACCOUNT_TYPE();
+		static jstring REMOVE_DUPLICATE_ENTRIES();
+		static jstring STREQUENT_PHONE_ONLY();
 		
 		// Constructors
 		void __constructor();
@@ -41,82 +41,93 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject ContactsContract::AUTHORITY()
+	jstring ContactsContract::AUTHORITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"AUTHORITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject ContactsContract::AUTHORITY_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"AUTHORITY_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject ContactsContract::CALLER_IS_SYNCADAPTER()
+	jstring ContactsContract::CALLER_IS_SYNCADAPTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"CALLER_IS_SYNCADAPTER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract::DEFERRED_SNIPPETING()
+	jstring ContactsContract::DEFERRED_SNIPPETING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"DEFERRED_SNIPPETING",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract::DEFERRED_SNIPPETING_QUERY()
+	jstring ContactsContract::DEFERRED_SNIPPETING_QUERY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"DEFERRED_SNIPPETING_QUERY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract::DIRECTORY_PARAM_KEY()
+	jstring ContactsContract::DIRECTORY_PARAM_KEY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"DIRECTORY_PARAM_KEY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract::LIMIT_PARAM_KEY()
+	jstring ContactsContract::LIMIT_PARAM_KEY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"LIMIT_PARAM_KEY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract::PRIMARY_ACCOUNT_NAME()
+	jstring ContactsContract::PRIMARY_ACCOUNT_NAME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"PRIMARY_ACCOUNT_NAME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract::PRIMARY_ACCOUNT_TYPE()
+	jstring ContactsContract::PRIMARY_ACCOUNT_TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"PRIMARY_ACCOUNT_TYPE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract::REMOVE_DUPLICATE_ENTRIES()
+	jstring ContactsContract::REMOVE_DUPLICATE_ENTRIES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"REMOVE_DUPLICATE_ENTRIES",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ContactsContract::STREQUENT_PHONE_ONLY()
+	jstring ContactsContract::STREQUENT_PHONE_ONLY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.ContactsContract",
 			"STREQUENT_PHONE_ONLY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -134,7 +145,8 @@ namespace __jni_impl::android::provider
 			"android.provider.ContactsContract",
 			"isProfileId",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::provider
 

@@ -27,7 +27,7 @@ namespace __jni_impl::java::lang
 		// Fields
 		static jlong MIN_VALUE();
 		static jlong MAX_VALUE();
-		static QAndroidJniObject TYPE();
+		static jclass TYPE();
 		static jint SIZE();
 		static jint BYTES();
 		
@@ -40,9 +40,9 @@ namespace __jni_impl::java::lang
 		static jint numberOfTrailingZeros(jlong arg0);
 		static jint bitCount(jlong arg0);
 		jboolean equals(jobject arg0);
-		static QAndroidJniObject toString(jlong arg0);
-		static QAndroidJniObject toString(jlong arg0, jint arg1);
-		QAndroidJniObject toString();
+		static jstring toString(jlong arg0);
+		static jstring toString(jlong arg0, jint arg1);
+		jstring toString();
 		static jint hashCode(jlong arg0);
 		jint hashCode();
 		static jlong min(jlong arg0, jlong arg1);
@@ -62,7 +62,7 @@ namespace __jni_impl::java::lang
 		static QAndroidJniObject valueOf(jstring arg0, jint arg1);
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(jlong arg0);
-		static QAndroidJniObject toHexString(jlong arg0);
+		static jstring toHexString(jlong arg0);
 		static QAndroidJniObject decode(jstring arg0);
 		static jint compare(jlong arg0, jlong arg1);
 		QAndroidJniObject resolveConstantDesc(__jni_impl::java::lang::invoke::MethodHandles_Lookup arg0);
@@ -70,13 +70,13 @@ namespace __jni_impl::java::lang
 		static jlong reverse(jlong arg0);
 		static jlong sum(jlong arg0, jlong arg1);
 		static jint compareUnsigned(jlong arg0, jlong arg1);
-		static QAndroidJniObject toUnsignedString(jlong arg0);
-		static QAndroidJniObject toUnsignedString(jlong arg0, jint arg1);
+		static jstring toUnsignedString(jlong arg0);
+		static jstring toUnsignedString(jlong arg0, jint arg1);
 		static jlong parseLong(jstring arg0);
 		static jlong parseLong(jstring arg0, jint arg1);
 		static jlong parseLong(jstring arg0, jint arg1, jint arg2, jint arg3);
-		static QAndroidJniObject toOctalString(jlong arg0);
-		static QAndroidJniObject toBinaryString(jlong arg0);
+		static jstring toOctalString(jlong arg0);
+		static jstring toBinaryString(jlong arg0);
 		static jlong divideUnsigned(jlong arg0, jlong arg1);
 		static jlong remainderUnsigned(jlong arg0, jlong arg1);
 		static jlong highestOneBit(jlong arg0);
@@ -101,32 +101,37 @@ namespace __jni_impl::java::lang
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"java.lang.Long",
-			"MIN_VALUE");
+			"MIN_VALUE"
+		);
 	}
 	jlong Long::MAX_VALUE()
 	{
 		return QAndroidJniObject::getStaticField<jlong>(
 			"java.lang.Long",
-			"MAX_VALUE");
+			"MAX_VALUE"
+		);
 	}
-	QAndroidJniObject Long::TYPE()
+	jclass Long::TYPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Long",
 			"TYPE",
-			"Ljava/lang/Class;");
+			"Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	jint Long::SIZE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Long",
-			"SIZE");
+			"SIZE"
+		);
 	}
 	jint Long::BYTES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.lang.Long",
-			"BYTES");
+			"BYTES"
+		);
 	}
 	
 	// Constructors
@@ -152,7 +157,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"numberOfLeadingZeros",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Long::numberOfTrailingZeros(jlong arg0)
 	{
@@ -160,7 +166,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"numberOfTrailingZeros",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Long::bitCount(jlong arg0)
 	{
@@ -168,37 +175,42 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"bitCount",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jboolean Long::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Long::toString(jlong arg0)
+	jstring Long::toString(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
 			"toString",
 			"(J)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Long::toString(jlong arg0, jint arg1)
+	jstring Long::toString(jlong arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
 			"toString",
 			"(JI)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject Long::toString()
+	jstring Long::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Long::hashCode(jlong arg0)
 	{
@@ -206,13 +218,15 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"hashCode",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Long::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Long::min(jlong arg0, jlong arg1)
 	{
@@ -221,7 +235,8 @@ namespace __jni_impl::java::lang
 			"min",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Long::max(jlong arg0, jlong arg1)
 	{
@@ -230,7 +245,8 @@ namespace __jni_impl::java::lang
 			"max",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Long::reverseBytes(jlong arg0)
 	{
@@ -238,21 +254,24 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"reverseBytes",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jint Long::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Long::compareTo(__jni_impl::java::lang::Long arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Long;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Long::getLong(jstring arg0)
 	{
@@ -260,7 +279,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"getLong",
 			"(Ljava/lang/String;)Ljava/lang/Long;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Long::getLong(jstring arg0, jlong arg1)
 	{
@@ -269,7 +289,8 @@ namespace __jni_impl::java::lang
 			"getLong",
 			"(Ljava/lang/String;J)Ljava/lang/Long;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Long::getLong(jstring arg0, __jni_impl::java::lang::Long arg1)
 	{
@@ -278,43 +299,50 @@ namespace __jni_impl::java::lang
 			"getLong",
 			"(Ljava/lang/String;Ljava/lang/Long;)Ljava/lang/Long;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jbyte Long::byteValue()
 	{
 		return __thiz.callMethod<jbyte>(
 			"byteValue",
-			"()B");
+			"()B"
+		);
 	}
 	jshort Long::shortValue()
 	{
 		return __thiz.callMethod<jshort>(
 			"shortValue",
-			"()S");
+			"()S"
+		);
 	}
 	jint Long::intValue()
 	{
 		return __thiz.callMethod<jint>(
 			"intValue",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Long::longValue()
 	{
 		return __thiz.callMethod<jlong>(
 			"longValue",
-			"()J");
+			"()J"
+		);
 	}
 	jfloat Long::floatValue()
 	{
 		return __thiz.callMethod<jfloat>(
 			"floatValue",
-			"()F");
+			"()F"
+		);
 	}
 	jdouble Long::doubleValue()
 	{
 		return __thiz.callMethod<jdouble>(
 			"doubleValue",
-			"()D");
+			"()D"
+		);
 	}
 	QAndroidJniObject Long::valueOf(jstring arg0, jint arg1)
 	{
@@ -323,7 +351,8 @@ namespace __jni_impl::java::lang
 			"valueOf",
 			"(Ljava/lang/String;I)Ljava/lang/Long;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Long::valueOf(jstring arg0)
 	{
@@ -331,7 +360,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Long;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Long::valueOf(jlong arg0)
 	{
@@ -339,15 +369,17 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"valueOf",
 			"(J)Ljava/lang/Long;",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Long::toHexString(jlong arg0)
+	jstring Long::toHexString(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
 			"toHexString",
 			"(J)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject Long::decode(jstring arg0)
 	{
@@ -355,7 +387,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/Long;",
-			arg0);
+			arg0
+		);
 	}
 	jint Long::compare(jlong arg0, jlong arg1)
 	{
@@ -364,20 +397,23 @@ namespace __jni_impl::java::lang
 			"compare",
 			"(JJ)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Long::resolveConstantDesc(__jni_impl::java::lang::invoke::MethodHandles_Lookup arg0)
 	{
 		return __thiz.callObjectMethod(
 			"resolveConstantDesc",
 			"(Ljava/lang/invoke/MethodHandles$Lookup;)Ljava/lang/Long;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Long::describeConstable()
 	{
 		return __thiz.callObjectMethod(
 			"describeConstable",
-			"()Ljava/util/Optional;");
+			"()Ljava/util/Optional;"
+		);
 	}
 	jlong Long::reverse(jlong arg0)
 	{
@@ -385,7 +421,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"reverse",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong Long::sum(jlong arg0, jlong arg1)
 	{
@@ -394,7 +431,8 @@ namespace __jni_impl::java::lang
 			"sum",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Long::compareUnsigned(jlong arg0, jlong arg1)
 	{
@@ -403,24 +441,27 @@ namespace __jni_impl::java::lang
 			"compareUnsigned",
 			"(JJ)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject Long::toUnsignedString(jlong arg0)
+	jstring Long::toUnsignedString(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
 			"toUnsignedString",
 			"(J)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Long::toUnsignedString(jlong arg0, jint arg1)
+	jstring Long::toUnsignedString(jlong arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
 			"toUnsignedString",
 			"(JI)Ljava/lang/String;",
 			arg0,
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	jlong Long::parseLong(jstring arg0)
 	{
@@ -428,7 +469,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"parseLong",
 			"(Ljava/lang/String;)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong Long::parseLong(jstring arg0, jint arg1)
 	{
@@ -437,7 +479,8 @@ namespace __jni_impl::java::lang
 			"parseLong",
 			"(Ljava/lang/String;I)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Long::parseLong(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -448,23 +491,26 @@ namespace __jni_impl::java::lang
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
-	QAndroidJniObject Long::toOctalString(jlong arg0)
+	jstring Long::toOctalString(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
 			"toOctalString",
 			"(J)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject Long::toBinaryString(jlong arg0)
+	jstring Long::toBinaryString(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.Long",
 			"toBinaryString",
 			"(J)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jlong Long::divideUnsigned(jlong arg0, jlong arg1)
 	{
@@ -473,7 +519,8 @@ namespace __jni_impl::java::lang
 			"divideUnsigned",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Long::remainderUnsigned(jlong arg0, jlong arg1)
 	{
@@ -482,7 +529,8 @@ namespace __jni_impl::java::lang
 			"remainderUnsigned",
 			"(JJ)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Long::highestOneBit(jlong arg0)
 	{
@@ -490,7 +538,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"highestOneBit",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong Long::lowestOneBit(jlong arg0)
 	{
@@ -498,7 +547,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"lowestOneBit",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong Long::rotateLeft(jlong arg0, jint arg1)
 	{
@@ -507,7 +557,8 @@ namespace __jni_impl::java::lang
 			"rotateLeft",
 			"(JI)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong Long::rotateRight(jlong arg0, jint arg1)
 	{
@@ -516,7 +567,8 @@ namespace __jni_impl::java::lang
 			"rotateRight",
 			"(JI)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint Long::signum(jlong arg0)
 	{
@@ -524,7 +576,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"signum",
 			"(J)I",
-			arg0);
+			arg0
+		);
 	}
 	jlong Long::parseUnsignedLong(jstring arg0)
 	{
@@ -532,7 +585,8 @@ namespace __jni_impl::java::lang
 			"java.lang.Long",
 			"parseUnsignedLong",
 			"(Ljava/lang/String;)J",
-			arg0);
+			arg0
+		);
 	}
 	jlong Long::parseUnsignedLong(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -543,7 +597,8 @@ namespace __jni_impl::java::lang
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jlong Long::parseUnsignedLong(jstring arg0, jint arg1)
 	{
@@ -552,7 +607,8 @@ namespace __jni_impl::java::lang
 			"parseUnsignedLong",
 			"(Ljava/lang/String;I)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::lang
 

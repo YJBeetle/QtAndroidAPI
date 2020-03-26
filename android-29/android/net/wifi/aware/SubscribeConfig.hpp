@@ -25,7 +25,7 @@ namespace __jni_impl::android::net::wifi::aware
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -42,19 +42,22 @@ namespace __jni_impl::android::net::wifi::aware
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.aware.SubscribeConfig",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint SubscribeConfig::SUBSCRIBE_TYPE_ACTIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.aware.SubscribeConfig",
-			"SUBSCRIBE_TYPE_ACTIVE");
+			"SUBSCRIBE_TYPE_ACTIVE"
+		);
 	}
 	jint SubscribeConfig::SUBSCRIBE_TYPE_PASSIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.aware.SubscribeConfig",
-			"SUBSCRIBE_TYPE_PASSIVE");
+			"SUBSCRIBE_TYPE_PASSIVE"
+		);
 	}
 	
 	// Constructors
@@ -71,25 +74,29 @@ namespace __jni_impl::android::net::wifi::aware
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject SubscribeConfig::toString()
+	jstring SubscribeConfig::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint SubscribeConfig::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint SubscribeConfig::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void SubscribeConfig::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -97,7 +104,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

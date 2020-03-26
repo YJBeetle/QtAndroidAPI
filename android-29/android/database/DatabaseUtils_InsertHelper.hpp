@@ -66,26 +66,30 @@ namespace __jni_impl::android::database
 		return __thiz.callMethod<jlong>(
 			"replace",
 			"(Landroid/content/ContentValues;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong DatabaseUtils_InsertHelper::execute()
 	{
 		return __thiz.callMethod<jlong>(
 			"execute",
-			"()J");
+			"()J"
+		);
 	}
 	void DatabaseUtils_InsertHelper::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jlong DatabaseUtils_InsertHelper::insert(__jni_impl::android::content::ContentValues arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"insert",
 			"(Landroid/content/ContentValues;)J",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jstring arg1)
 	{
@@ -93,7 +97,8 @@ namespace __jni_impl::android::database
 			"bind",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jlong arg1)
 	{
@@ -101,7 +106,8 @@ namespace __jni_impl::android::database
 			"bind",
 			"(IJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jdouble arg1)
 	{
@@ -109,7 +115,8 @@ namespace __jni_impl::android::database
 			"bind",
 			"(ID)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jbyteArray arg1)
 	{
@@ -117,7 +124,8 @@ namespace __jni_impl::android::database
 			"bind",
 			"(I[B)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jint arg1)
 	{
@@ -125,7 +133,8 @@ namespace __jni_impl::android::database
 			"bind",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jboolean arg1)
 	{
@@ -133,7 +142,8 @@ namespace __jni_impl::android::database
 			"bind",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void DatabaseUtils_InsertHelper::bind(jint arg0, jfloat arg1)
 	{
@@ -141,33 +151,38 @@ namespace __jni_impl::android::database
 			"bind",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint DatabaseUtils_InsertHelper::getColumnIndex(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
-			arg0);
+			arg0
+		);
 	}
 	void DatabaseUtils_InsertHelper::bindNull(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"bindNull",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void DatabaseUtils_InsertHelper::prepareForInsert()
 	{
 		__thiz.callMethod<void>(
 			"prepareForInsert",
-			"()V");
+			"()V"
+		);
 	}
 	void DatabaseUtils_InsertHelper::prepareForReplace()
 	{
 		__thiz.callMethod<void>(
 			"prepareForReplace",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::database
 

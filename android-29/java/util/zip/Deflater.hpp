@@ -69,67 +69,78 @@ namespace __jni_impl::java::util::zip
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"DEFLATED");
+			"DEFLATED"
+		);
 	}
 	jint Deflater::NO_COMPRESSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"NO_COMPRESSION");
+			"NO_COMPRESSION"
+		);
 	}
 	jint Deflater::BEST_SPEED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"BEST_SPEED");
+			"BEST_SPEED"
+		);
 	}
 	jint Deflater::BEST_COMPRESSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"BEST_COMPRESSION");
+			"BEST_COMPRESSION"
+		);
 	}
 	jint Deflater::DEFAULT_COMPRESSION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"DEFAULT_COMPRESSION");
+			"DEFAULT_COMPRESSION"
+		);
 	}
 	jint Deflater::FILTERED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"FILTERED");
+			"FILTERED"
+		);
 	}
 	jint Deflater::HUFFMAN_ONLY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"HUFFMAN_ONLY");
+			"HUFFMAN_ONLY"
+		);
 	}
 	jint Deflater::DEFAULT_STRATEGY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"DEFAULT_STRATEGY");
+			"DEFAULT_STRATEGY"
+		);
 	}
 	jint Deflater::NO_FLUSH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"NO_FLUSH");
+			"NO_FLUSH"
+		);
 	}
 	jint Deflater::SYNC_FLUSH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"SYNC_FLUSH");
+			"SYNC_FLUSH"
+		);
 	}
 	jint Deflater::FULL_FLUSH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.zip.Deflater",
-			"FULL_FLUSH");
+			"FULL_FLUSH"
+		);
 	}
 	
 	// Constructors
@@ -160,20 +171,23 @@ namespace __jni_impl::java::util::zip
 	{
 		__thiz.callMethod<void>(
 			"end",
-			"()V");
+			"()V"
+		);
 	}
 	void Deflater::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void Deflater::setInput(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInput",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Deflater::setInput(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -182,46 +196,53 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Deflater::setInput(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInput",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong Deflater::getBytesWritten()
 	{
 		return __thiz.callMethod<jlong>(
 			"getBytesWritten",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean Deflater::finished()
 	{
 		return __thiz.callMethod<jboolean>(
 			"finished",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Deflater::needsInput()
 	{
 		return __thiz.callMethod<jboolean>(
 			"needsInput",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Deflater::setDictionary(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDictionary",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Deflater::setDictionary(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDictionary",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Deflater::setDictionary(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -230,58 +251,67 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Deflater::getAdler()
 	{
 		return __thiz.callMethod<jint>(
 			"getAdler",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Deflater::getBytesRead()
 	{
 		return __thiz.callMethod<jlong>(
 			"getBytesRead",
-			"()J");
+			"()J"
+		);
 	}
 	jint Deflater::getTotalIn()
 	{
 		return __thiz.callMethod<jint>(
 			"getTotalIn",
-			"()I");
+			"()I"
+		);
 	}
 	jint Deflater::getTotalOut()
 	{
 		return __thiz.callMethod<jint>(
 			"getTotalOut",
-			"()I");
+			"()I"
+		);
 	}
 	void Deflater::setLevel(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLevel",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Deflater::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
-			"()V");
+			"()V"
+		);
 	}
 	void Deflater::setStrategy(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setStrategy",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint Deflater::deflate(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"deflate",
 			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Deflater::deflate(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -291,14 +321,16 @@ namespace __jni_impl::java::util::zip
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	jint Deflater::deflate(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"deflate",
 			"([B)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Deflater::deflate(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -307,7 +339,8 @@ namespace __jni_impl::java::util::zip
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Deflater::deflate(__jni_impl::java::nio::ByteBuffer arg0, jint arg1)
 	{
@@ -315,7 +348,8 @@ namespace __jni_impl::java::util::zip
 			"deflate",
 			"(Ljava/nio/ByteBuffer;I)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

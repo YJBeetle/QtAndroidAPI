@@ -7,6 +7,10 @@
 
 namespace __jni_impl::android::graphics
 {
+	class RecordingCanvas;
+}
+namespace __jni_impl::android::graphics
+{
 	class Matrix;
 }
 namespace __jni_impl::android::graphics
@@ -21,10 +25,6 @@ namespace __jni_impl::android::graphics
 {
 	class Outline;
 }
-namespace __jni_impl::android::graphics
-{
-	class RecordingCanvas;
-}
 
 namespace __jni_impl::android::graphics
 {
@@ -37,10 +37,9 @@ namespace __jni_impl::android::graphics
 		void __constructor(jstring arg0);
 		
 		// Methods
-		jboolean setAlpha(jfloat arg0);
-		jint getWidth();
-		jint getHeight();
-		jlong getUniqueId();
+		QAndroidJniObject beginRecording();
+		QAndroidJniObject beginRecording(jint arg0, jint arg1);
+		void endRecording();
 		void getMatrix(__jni_impl::android::graphics::Matrix arg0);
 		jfloat getCameraDistance();
 		jboolean setCameraDistance(jfloat arg0);
@@ -77,6 +76,7 @@ namespace __jni_impl::android::graphics
 		jboolean setClipToOutline(jboolean arg0);
 		jboolean offsetTopAndBottom(jint arg0);
 		jboolean offsetLeftAndRight(jint arg0);
+		jlong getUniqueId();
 		void discardDisplayList();
 		jboolean hasDisplayList();
 		jboolean hasIdentityMatrix();
@@ -98,20 +98,20 @@ namespace __jni_impl::android::graphics
 		jboolean setRotationZ(jfloat arg0);
 		jfloat getRotationZ();
 		jboolean isPivotExplicitlySet();
-		jboolean setPosition(jint arg0, jint arg1, jint arg2, jint arg3);
 		jboolean setPosition(__jni_impl::android::graphics::Rect arg0);
+		jboolean setPosition(jint arg0, jint arg1, jint arg2, jint arg3);
 		jlong computeApproximateMemoryUsage();
-		QAndroidJniObject beginRecording();
-		QAndroidJniObject beginRecording(jint arg0, jint arg1);
-		void endRecording();
+		jint getWidth();
+		jint getHeight();
+		jboolean setAlpha(jfloat arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
+#include "RecordingCanvas.hpp"
 #include "Matrix.hpp"
 #include "Paint.hpp"
 #include "Rect.hpp"
 #include "Outline.hpp"
-#include "RecordingCanvas.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -127,287 +127,332 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jboolean RenderNode::setAlpha(jfloat arg0)
+	QAndroidJniObject RenderNode::beginRecording()
 	{
-		return __thiz.callMethod<jboolean>(
-			"setAlpha",
-			"(F)Z",
-			arg0);
+		return __thiz.callObjectMethod(
+			"beginRecording",
+			"()Landroid/graphics/RecordingCanvas;"
+		);
 	}
-	jint RenderNode::getWidth()
+	QAndroidJniObject RenderNode::beginRecording(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I");
+		return __thiz.callObjectMethod(
+			"beginRecording",
+			"(II)Landroid/graphics/RecordingCanvas;",
+			arg0,
+			arg1
+		);
 	}
-	jint RenderNode::getHeight()
+	void RenderNode::endRecording()
 	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
-	}
-	jlong RenderNode::getUniqueId()
-	{
-		return __thiz.callMethod<jlong>(
-			"getUniqueId",
-			"()J");
+		__thiz.callMethod<void>(
+			"endRecording",
+			"()V"
+		);
 	}
 	void RenderNode::getMatrix(__jni_impl::android::graphics::Matrix arg0)
 	{
 		__thiz.callMethod<void>(
 			"getMatrix",
 			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jfloat RenderNode::getCameraDistance()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getCameraDistance",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setCameraDistance(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setCameraDistance",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getRotationY()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getRotationY",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setRotationY(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setRotationY",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getRotationX()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getRotationX",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setRotationX(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setRotationX",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getScaleX()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getScaleX",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setScaleX(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setScaleX",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getScaleY()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getScaleY",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setScaleY(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setScaleY",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getPivotX()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getPivotX",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setPivotX(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setPivotX",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getPivotY()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getPivotY",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setPivotY(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setPivotY",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RenderNode::resetPivot()
 	{
 		return __thiz.callMethod<jboolean>(
 			"resetPivot",
-			"()Z");
+			"()Z"
+		);
 	}
 	jfloat RenderNode::getAlpha()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getAlpha",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::hasOverlappingRendering()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasOverlappingRendering",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RenderNode::setForceDarkAllowed(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setForceDarkAllowed",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RenderNode::isForceDarkAllowed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isForceDarkAllowed",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint RenderNode::getTop()
 	{
 		return __thiz.callMethod<jint>(
 			"getTop",
-			"()I");
+			"()I"
+		);
 	}
 	jint RenderNode::getBottom()
 	{
 		return __thiz.callMethod<jint>(
 			"getBottom",
-			"()I");
+			"()I"
+		);
 	}
 	jint RenderNode::getLeft()
 	{
 		return __thiz.callMethod<jint>(
 			"getLeft",
-			"()I");
+			"()I"
+		);
 	}
 	jint RenderNode::getRight()
 	{
 		return __thiz.callMethod<jint>(
 			"getRight",
-			"()I");
+			"()I"
+		);
 	}
 	jfloat RenderNode::getElevation()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getElevation",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setElevation(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setElevation",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getTranslationX()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getTranslationX",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setTranslationX(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setTranslationX",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getTranslationY()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getTranslationY",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setTranslationY(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setTranslationY",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getTranslationZ()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getTranslationZ",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::setTranslationZ(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setTranslationZ",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RenderNode::getClipToOutline()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getClipToOutline",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RenderNode::setClipToOutline(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setClipToOutline",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RenderNode::offsetTopAndBottom(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"offsetTopAndBottom",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RenderNode::offsetLeftAndRight(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"offsetLeftAndRight",
 			"(I)Z",
-			arg0);
+			arg0
+		);
+	}
+	jlong RenderNode::getUniqueId()
+	{
+		return __thiz.callMethod<jlong>(
+			"getUniqueId",
+			"()J"
+		);
 	}
 	void RenderNode::discardDisplayList()
 	{
 		__thiz.callMethod<void>(
 			"discardDisplayList",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean RenderNode::hasDisplayList()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasDisplayList",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RenderNode::hasIdentityMatrix()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasIdentityMatrix",
-			"()Z");
+			"()Z"
+		);
 	}
 	void RenderNode::getInverseMatrix(__jni_impl::android::graphics::Matrix arg0)
 	{
 		__thiz.callMethod<void>(
 			"getInverseMatrix",
 			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RenderNode::setUseCompositingLayer(jboolean arg0, __jni_impl::android::graphics::Paint arg1)
 	{
@@ -415,112 +460,137 @@ namespace __jni_impl::android::graphics
 			"setUseCompositingLayer",
 			"(ZLandroid/graphics/Paint;)Z",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jboolean RenderNode::getUseCompositingLayer()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getUseCompositingLayer",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RenderNode::setClipRect(__jni_impl::android::graphics::Rect arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setClipRect",
 			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RenderNode::setClipToBounds(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setClipToBounds",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RenderNode::getClipToBounds()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getClipToBounds",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RenderNode::setProjectBackwards(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setProjectBackwards",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RenderNode::setProjectionReceiver(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setProjectionReceiver",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RenderNode::setOutline(__jni_impl::android::graphics::Outline arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setOutline",
 			"(Landroid/graphics/Outline;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RenderNode::hasShadow()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasShadow",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RenderNode::setSpotShadowColor(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setSpotShadowColor",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint RenderNode::getSpotShadowColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getSpotShadowColor",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean RenderNode::setAmbientShadowColor(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setAmbientShadowColor",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint RenderNode::getAmbientShadowColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getAmbientShadowColor",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean RenderNode::setHasOverlappingRendering(jboolean arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setHasOverlappingRendering",
 			"(Z)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RenderNode::setRotationZ(jfloat arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setRotationZ",
 			"(F)Z",
-			arg0);
+			arg0
+		);
 	}
 	jfloat RenderNode::getRotationZ()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getRotationZ",
-			"()F");
+			"()F"
+		);
 	}
 	jboolean RenderNode::isPivotExplicitlySet()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPivotExplicitlySet",
-			"()Z");
+			"()Z"
+		);
+	}
+	jboolean RenderNode::setPosition(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setPosition",
+			"(Landroid/graphics/Rect;)Z",
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RenderNode::setPosition(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -530,40 +600,37 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
-	}
-	jboolean RenderNode::setPosition(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setPosition",
-			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object());
+			arg3
+		);
 	}
 	jlong RenderNode::computeApproximateMemoryUsage()
 	{
 		return __thiz.callMethod<jlong>(
 			"computeApproximateMemoryUsage",
-			"()J");
+			"()J"
+		);
 	}
-	QAndroidJniObject RenderNode::beginRecording()
+	jint RenderNode::getWidth()
 	{
-		return __thiz.callObjectMethod(
-			"beginRecording",
-			"()Landroid/graphics/RecordingCanvas;");
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
 	}
-	QAndroidJniObject RenderNode::beginRecording(jint arg0, jint arg1)
+	jint RenderNode::getHeight()
 	{
-		return __thiz.callObjectMethod(
-			"beginRecording",
-			"(II)Landroid/graphics/RecordingCanvas;",
-			arg0,
-			arg1);
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
 	}
-	void RenderNode::endRecording()
+	jboolean RenderNode::setAlpha(jfloat arg0)
 	{
-		__thiz.callMethod<void>(
-			"endRecording",
-			"()V");
+		return __thiz.callMethod<jboolean>(
+			"setAlpha",
+			"(F)Z",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

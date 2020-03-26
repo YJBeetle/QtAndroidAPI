@@ -41,7 +41,8 @@ namespace __jni_impl::android::opengl
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::opengl
 

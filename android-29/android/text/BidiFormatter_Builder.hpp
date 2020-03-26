@@ -67,21 +67,24 @@ namespace __jni_impl::android::text
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/text/BidiFormatter;");
+			"()Landroid/text/BidiFormatter;"
+		);
 	}
 	QAndroidJniObject BidiFormatter_Builder::stereoReset(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"stereoReset",
 			"(Z)Landroid/text/BidiFormatter$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject BidiFormatter_Builder::setTextDirectionHeuristic(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTextDirectionHeuristic",
 			"(Landroid/text/TextDirectionHeuristic;)Landroid/text/BidiFormatter$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::text
 

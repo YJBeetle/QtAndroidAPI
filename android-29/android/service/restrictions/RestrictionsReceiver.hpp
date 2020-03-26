@@ -58,7 +58,8 @@ namespace __jni_impl::android::service::restrictions
 			"onReceive",
 			"(Landroid/content/Context;Landroid/content/Intent;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RestrictionsReceiver::onRequestPermission(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jstring arg3, __jni_impl::android::os::PersistableBundle arg4)
 	{
@@ -69,7 +70,8 @@ namespace __jni_impl::android::service::restrictions
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::service::restrictions
 

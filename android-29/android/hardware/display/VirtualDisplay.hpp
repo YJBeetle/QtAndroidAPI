@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::view
 {
-	class Surface;
+	class Display;
 }
 namespace __jni_impl::android::view
 {
-	class Display;
+	class Surface;
 }
 
 namespace __jni_impl::android::hardware::display
@@ -25,17 +25,17 @@ namespace __jni_impl::android::hardware::display
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void release();
 		void resize(jint arg0, jint arg1, jint arg2);
+		QAndroidJniObject getDisplay();
 		QAndroidJniObject getSurface();
 		void setSurface(__jni_impl::android::view::Surface arg0);
-		QAndroidJniObject getDisplay();
 	};
 } // namespace __jni_impl::android::hardware::display
 
-#include "../../view/Surface.hpp"
 #include "../../view/Display.hpp"
+#include "../../view/Surface.hpp"
 
 namespace __jni_impl::android::hardware::display
 {
@@ -50,17 +50,19 @@ namespace __jni_impl::android::hardware::display
 	}
 	
 	// Methods
-	QAndroidJniObject VirtualDisplay::toString()
+	jstring VirtualDisplay::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void VirtualDisplay::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	void VirtualDisplay::resize(jint arg0, jint arg1, jint arg2)
 	{
@@ -69,26 +71,30 @@ namespace __jni_impl::android::hardware::display
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	QAndroidJniObject VirtualDisplay::getDisplay()
+	{
+		return __thiz.callObjectMethod(
+			"getDisplay",
+			"()Landroid/view/Display;"
+		);
 	}
 	QAndroidJniObject VirtualDisplay::getSurface()
 	{
 		return __thiz.callObjectMethod(
 			"getSurface",
-			"()Landroid/view/Surface;");
+			"()Landroid/view/Surface;"
+		);
 	}
 	void VirtualDisplay::setSurface(__jni_impl::android::view::Surface arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSurface",
 			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject VirtualDisplay::getDisplay()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplay",
-			"()Landroid/view/Display;");
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::hardware::display
 

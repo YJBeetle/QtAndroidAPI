@@ -43,21 +43,24 @@ namespace __jni_impl::android::view
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewOutlineProvider",
 			"BACKGROUND",
-			"Landroid/view/ViewOutlineProvider;");
+			"Landroid/view/ViewOutlineProvider;"
+		);
 	}
 	QAndroidJniObject ViewOutlineProvider::BOUNDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewOutlineProvider",
 			"BOUNDS",
-			"Landroid/view/ViewOutlineProvider;");
+			"Landroid/view/ViewOutlineProvider;"
+		);
 	}
 	QAndroidJniObject ViewOutlineProvider::PADDED_BOUNDS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewOutlineProvider",
 			"PADDED_BOUNDS",
-			"Landroid/view/ViewOutlineProvider;");
+			"Landroid/view/ViewOutlineProvider;"
+		);
 	}
 	
 	// Constructors
@@ -75,7 +78,8 @@ namespace __jni_impl::android::view
 			"getOutline",
 			"(Landroid/view/View;Landroid/graphics/Outline;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

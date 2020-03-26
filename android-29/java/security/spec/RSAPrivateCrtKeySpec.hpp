@@ -74,37 +74,43 @@ namespace __jni_impl::java::security::spec
 	{
 		return __thiz.callObjectMethod(
 			"getCrtCoefficient",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject RSAPrivateCrtKeySpec::getPublicExponent()
 	{
 		return __thiz.callObjectMethod(
 			"getPublicExponent",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject RSAPrivateCrtKeySpec::getPrimeP()
 	{
 		return __thiz.callObjectMethod(
 			"getPrimeP",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject RSAPrivateCrtKeySpec::getPrimeQ()
 	{
 		return __thiz.callObjectMethod(
 			"getPrimeQ",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject RSAPrivateCrtKeySpec::getPrimeExponentP()
 	{
 		return __thiz.callObjectMethod(
 			"getPrimeExponentP",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject RSAPrivateCrtKeySpec::getPrimeExponentQ()
 	{
 		return __thiz.callObjectMethod(
 			"getPrimeExponentQ",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

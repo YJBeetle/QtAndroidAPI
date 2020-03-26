@@ -25,12 +25,10 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getQueue();
 		static void prepare();
 		static void loop();
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
-		static QAndroidJniObject getMainLooper();
 		static void prepareMainLooper();
 		static QAndroidJniObject myLooper();
 		static QAndroidJniObject myQueue();
@@ -39,6 +37,8 @@ namespace __jni_impl::android::os
 		void quit();
 		void quitSafely();
 		QAndroidJniObject getThread();
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		static QAndroidJniObject getMainLooper();
 	};
 } // namespace __jni_impl::android::os
 
@@ -58,31 +58,95 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject Looper::toString()
+	jstring Looper::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Looper::getQueue()
 	{
 		return __thiz.callObjectMethod(
 			"getQueue",
-			"()Landroid/os/MessageQueue;");
+			"()Landroid/os/MessageQueue;"
+		);
 	}
 	void Looper::prepare()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Looper",
 			"prepare",
-			"()V");
+			"()V"
+		);
 	}
 	void Looper::loop()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Looper",
 			"loop",
-			"()V");
+			"()V"
+		);
+	}
+	void Looper::prepareMainLooper()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Looper",
+			"prepareMainLooper",
+			"()V"
+		);
+	}
+	QAndroidJniObject Looper::myLooper()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Looper",
+			"myLooper",
+			"()Landroid/os/Looper;"
+		);
+	}
+	QAndroidJniObject Looper::myQueue()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Looper",
+			"myQueue",
+			"()Landroid/os/MessageQueue;"
+		);
+	}
+	jboolean Looper::isCurrentThread()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCurrentThread",
+			"()Z"
+		);
+	}
+	void Looper::setMessageLogging(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMessageLogging",
+			"(Landroid/util/Printer;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Looper::quit()
+	{
+		__thiz.callMethod<void>(
+			"quit",
+			"()V"
+		);
+	}
+	void Looper::quitSafely()
+	{
+		__thiz.callMethod<void>(
+			"quitSafely",
+			"()V"
+		);
+	}
+	QAndroidJniObject Looper::getThread()
+	{
+		return __thiz.callObjectMethod(
+			"getThread",
+			"()Ljava/lang/Thread;"
+		);
 	}
 	void Looper::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -90,66 +154,16 @@ namespace __jni_impl::android::os
 			"dump",
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Looper::getMainLooper()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Looper",
 			"getMainLooper",
-			"()Landroid/os/Looper;");
-	}
-	void Looper::prepareMainLooper()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Looper",
-			"prepareMainLooper",
-			"()V");
-	}
-	QAndroidJniObject Looper::myLooper()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.Looper",
-			"myLooper",
-			"()Landroid/os/Looper;");
-	}
-	QAndroidJniObject Looper::myQueue()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.Looper",
-			"myQueue",
-			"()Landroid/os/MessageQueue;");
-	}
-	jboolean Looper::isCurrentThread()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCurrentThread",
-			"()Z");
-	}
-	void Looper::setMessageLogging(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMessageLogging",
-			"(Landroid/util/Printer;)V",
-			arg0.__jniObject().object());
-	}
-	void Looper::quit()
-	{
-		__thiz.callMethod<void>(
-			"quit",
-			"()V");
-	}
-	void Looper::quitSafely()
-	{
-		__thiz.callMethod<void>(
-			"quitSafely",
-			"()V");
-	}
-	QAndroidJniObject Looper::getThread()
-	{
-		return __thiz.callObjectMethod(
-			"getThread",
-			"()Ljava/lang/Thread;");
+			"()Landroid/os/Looper;"
+		);
 	}
 } // namespace __jni_impl::android::os
 

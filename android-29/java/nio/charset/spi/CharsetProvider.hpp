@@ -51,13 +51,15 @@ namespace __jni_impl::java::nio::charset::spi
 		return __thiz.callObjectMethod(
 			"charsetForName",
 			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CharsetProvider::charsets()
 	{
 		return __thiz.callObjectMethod(
 			"charsets",
-			"()Ljava/util/Iterator;");
+			"()Ljava/util/Iterator;"
+		);
 	}
 } // namespace __jni_impl::java::nio::charset::spi
 

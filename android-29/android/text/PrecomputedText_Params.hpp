@@ -22,12 +22,12 @@ namespace __jni_impl::android::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
-		QAndroidJniObject getTextDirection();
 		QAndroidJniObject getTextPaint();
 		jint getBreakStrategy();
 		jint getHyphenationFrequency();
+		QAndroidJniObject getTextDirection();
 	};
 } // namespace __jni_impl::android::text
 
@@ -51,43 +51,50 @@ namespace __jni_impl::android::text
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject PrecomputedText_Params::toString()
+	jstring PrecomputedText_Params::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint PrecomputedText_Params::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	QAndroidJniObject PrecomputedText_Params::getTextDirection()
-	{
-		return __thiz.callObjectMethod(
-			"getTextDirection",
-			"()Landroid/text/TextDirectionHeuristic;");
+			"()I"
+		);
 	}
 	QAndroidJniObject PrecomputedText_Params::getTextPaint()
 	{
 		return __thiz.callObjectMethod(
 			"getTextPaint",
-			"()Landroid/text/TextPaint;");
+			"()Landroid/text/TextPaint;"
+		);
 	}
 	jint PrecomputedText_Params::getBreakStrategy()
 	{
 		return __thiz.callMethod<jint>(
 			"getBreakStrategy",
-			"()I");
+			"()I"
+		);
 	}
 	jint PrecomputedText_Params::getHyphenationFrequency()
 	{
 		return __thiz.callMethod<jint>(
 			"getHyphenationFrequency",
-			"()I");
+			"()I"
+		);
+	}
+	QAndroidJniObject PrecomputedText_Params::getTextDirection()
+	{
+		return __thiz.callObjectMethod(
+			"getTextDirection",
+			"()Landroid/text/TextDirectionHeuristic;"
+		);
 	}
 } // namespace __jni_impl::android::text
 

@@ -22,7 +22,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -36,28 +36,32 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
 			"DIALECT_HANDLING",
-			"Landroid/icu/text/DisplayContext$Type;");
+			"Landroid/icu/text/DisplayContext$Type;"
+		);
 	}
 	QAndroidJniObject DisplayContext_Type::CAPITALIZATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
 			"CAPITALIZATION",
-			"Landroid/icu/text/DisplayContext$Type;");
+			"Landroid/icu/text/DisplayContext$Type;"
+		);
 	}
 	QAndroidJniObject DisplayContext_Type::DISPLAY_LENGTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
 			"DISPLAY_LENGTH",
-			"Landroid/icu/text/DisplayContext$Type;");
+			"Landroid/icu/text/DisplayContext$Type;"
+		);
 	}
 	QAndroidJniObject DisplayContext_Type::SUBSTITUTE_HANDLING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
 			"SUBSTITUTE_HANDLING",
-			"Landroid/icu/text/DisplayContext$Type;");
+			"Landroid/icu/text/DisplayContext$Type;"
+		);
 	}
 	
 	// Constructors
@@ -69,12 +73,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject DisplayContext_Type::values()
+	jarray DisplayContext_Type::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DisplayContext$Type",
 			"values",
-			"()[Landroid/icu/text/DisplayContext$Type;");
+			"()[Landroid/icu/text/DisplayContext$Type;"
+		).object<jarray>();
 	}
 	QAndroidJniObject DisplayContext_Type::valueOf(jstring arg0)
 	{
@@ -82,7 +87,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.DisplayContext$Type",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/DisplayContext$Type;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

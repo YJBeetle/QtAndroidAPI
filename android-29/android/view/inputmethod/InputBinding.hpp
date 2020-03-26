@@ -23,11 +23,11 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::InputBinding arg1);
 		
 		// Methods
-		QAndroidJniObject toString();
-		jint getUid();
-		jint getPid();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getUid();
+		jint getPid();
 		QAndroidJniObject getConnection();
 		QAndroidJniObject getConnectionToken();
 	};
@@ -43,7 +43,8 @@ namespace __jni_impl::android::view::inputmethod
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.InputBinding",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -67,29 +68,19 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
-	QAndroidJniObject InputBinding::toString()
+	jstring InputBinding::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
-	}
-	jint InputBinding::getUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getUid",
-			"()I");
-	}
-	jint InputBinding::getPid()
-	{
-		return __thiz.callMethod<jint>(
-			"getPid",
-			"()I");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint InputBinding::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void InputBinding::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -97,19 +88,36 @@ namespace __jni_impl::android::view::inputmethod
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jint InputBinding::getUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getUid",
+			"()I"
+		);
+	}
+	jint InputBinding::getPid()
+	{
+		return __thiz.callMethod<jint>(
+			"getPid",
+			"()I"
+		);
 	}
 	QAndroidJniObject InputBinding::getConnection()
 	{
 		return __thiz.callObjectMethod(
 			"getConnection",
-			"()Landroid/view/inputmethod/InputConnection;");
+			"()Landroid/view/inputmethod/InputConnection;"
+		);
 	}
 	QAndroidJniObject InputBinding::getConnectionToken()
 	{
 		return __thiz.callObjectMethod(
 			"getConnectionToken",
-			"()Landroid/os/IBinder;");
+			"()Landroid/os/IBinder;"
+		);
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

@@ -21,17 +21,17 @@ namespace __jni_impl::javax::xml::validation
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getProperty(jstring arg0);
+		jobject getProperty(jstring arg0);
 		void setProperty(jstring arg0, jobject arg1);
 		void setFeature(jstring arg0, jboolean arg1);
 		jboolean getFeature(jstring arg0);
-		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getErrorHandler();
-		QAndroidJniObject getContentHandler();
 		void setContentHandler(__jni_impl::__JniBaseClass arg0);
 		void setResourceResolver(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getResourceResolver();
 		QAndroidJniObject getTypeInfoProvider();
+		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getErrorHandler();
+		QAndroidJniObject getContentHandler();
 	};
 } // namespace __jni_impl::javax::xml::validation
 
@@ -50,12 +50,13 @@ namespace __jni_impl::javax::xml::validation
 	}
 	
 	// Methods
-	QAndroidJniObject ValidatorHandler::getProperty(jstring arg0)
+	jobject ValidatorHandler::getProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getProperty",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	void ValidatorHandler::setProperty(jstring arg0, jobject arg1)
 	{
@@ -63,7 +64,8 @@ namespace __jni_impl::javax::xml::validation
 			"setProperty",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ValidatorHandler::setFeature(jstring arg0, jboolean arg1)
 	{
@@ -71,59 +73,68 @@ namespace __jni_impl::javax::xml::validation
 			"setFeature",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean ValidatorHandler::getFeature(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"getFeature",
 			"(Ljava/lang/String;)Z",
-			arg0);
-	}
-	void ValidatorHandler::setErrorHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setErrorHandler",
-			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject ValidatorHandler::getErrorHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorHandler",
-			"()Lorg/xml/sax/ErrorHandler;");
-	}
-	QAndroidJniObject ValidatorHandler::getContentHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getContentHandler",
-			"()Lorg/xml/sax/ContentHandler;");
+			arg0
+		);
 	}
 	void ValidatorHandler::setContentHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentHandler",
 			"(Lorg/xml/sax/ContentHandler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ValidatorHandler::setResourceResolver(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResourceResolver",
 			"(Lorg/w3c/dom/ls/LSResourceResolver;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ValidatorHandler::getResourceResolver()
 	{
 		return __thiz.callObjectMethod(
 			"getResourceResolver",
-			"()Lorg/w3c/dom/ls/LSResourceResolver;");
+			"()Lorg/w3c/dom/ls/LSResourceResolver;"
+		);
 	}
 	QAndroidJniObject ValidatorHandler::getTypeInfoProvider()
 	{
 		return __thiz.callObjectMethod(
 			"getTypeInfoProvider",
-			"()Ljavax/xml/validation/TypeInfoProvider;");
+			"()Ljavax/xml/validation/TypeInfoProvider;"
+		);
+	}
+	void ValidatorHandler::setErrorHandler(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setErrorHandler",
+			"(Lorg/xml/sax/ErrorHandler;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ValidatorHandler::getErrorHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getErrorHandler",
+			"()Lorg/xml/sax/ErrorHandler;"
+		);
+	}
+	QAndroidJniObject ValidatorHandler::getContentHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getContentHandler",
+			"()Lorg/xml/sax/ContentHandler;"
+		);
 	}
 } // namespace __jni_impl::javax::xml::validation
 

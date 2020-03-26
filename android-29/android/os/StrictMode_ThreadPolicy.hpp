@@ -18,7 +18,7 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::os
 
@@ -31,7 +31,8 @@ namespace __jni_impl::android::os
 		return QAndroidJniObject::getStaticObjectField(
 			"android.os.StrictMode$ThreadPolicy",
 			"LAX",
-			"Landroid/os/StrictMode$ThreadPolicy;");
+			"Landroid/os/StrictMode$ThreadPolicy;"
+		);
 	}
 	
 	// Constructors
@@ -43,11 +44,12 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject StrictMode_ThreadPolicy::toString()
+	jstring StrictMode_ThreadPolicy::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::os
 

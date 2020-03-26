@@ -12,18 +12,18 @@ namespace __jni_impl::android::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NOTHING();
-		static QAndroidJniObject WILD_CARD();
+		static jintArray NOTHING();
+		static jintArray WILD_CARD();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject trimStateSet(jintArray arg0, jint arg1);
+		static jstring dump(jintArray arg0);
 		static jboolean isWildCard(jintArray arg0);
 		static jboolean stateSetMatches(jintArray arg0, jint arg1);
 		static jboolean stateSetMatches(jintArray arg0, jintArray arg1);
-		static QAndroidJniObject dump(jintArray arg0);
+		static jintArray trimStateSet(jintArray arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::util
 
@@ -31,19 +31,21 @@ namespace __jni_impl::android::util
 namespace __jni_impl::android::util
 {
 	// Fields
-	QAndroidJniObject StateSet::NOTHING()
+	jintArray StateSet::NOTHING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.StateSet",
 			"NOTHING",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
-	QAndroidJniObject StateSet::WILD_CARD()
+	jintArray StateSet::WILD_CARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.StateSet",
 			"WILD_CARD",
-			"[I");
+			"[I"
+		).object<jintArray>();
 	}
 	
 	// Constructors
@@ -55,14 +57,14 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	QAndroidJniObject StateSet::trimStateSet(jintArray arg0, jint arg1)
+	jstring StateSet::dump(jintArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.StateSet",
-			"trimStateSet",
-			"([II)[I",
-			arg0,
-			arg1);
+			"dump",
+			"([I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 	jboolean StateSet::isWildCard(jintArray arg0)
 	{
@@ -70,7 +72,8 @@ namespace __jni_impl::android::util
 			"android.util.StateSet",
 			"isWildCard",
 			"([I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean StateSet::stateSetMatches(jintArray arg0, jint arg1)
 	{
@@ -79,7 +82,8 @@ namespace __jni_impl::android::util
 			"stateSetMatches",
 			"([II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean StateSet::stateSetMatches(jintArray arg0, jintArray arg1)
 	{
@@ -88,15 +92,18 @@ namespace __jni_impl::android::util
 			"stateSetMatches",
 			"([I[I)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject StateSet::dump(jintArray arg0)
+	jintArray StateSet::trimStateSet(jintArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.StateSet",
-			"dump",
-			"([I)Ljava/lang/String;",
-			arg0);
+			"trimStateSet",
+			"([II)[I",
+			arg0,
+			arg1
+		).object<jintArray>();
 	}
 } // namespace __jni_impl::android::util
 

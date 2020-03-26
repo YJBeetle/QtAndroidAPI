@@ -31,13 +31,13 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ClipDescription arg1, __jni_impl::android::net::Uri arg2);
 		
 		// Methods
-		QAndroidJniObject getContentUri();
-		QAndroidJniObject getDescription();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getContentUri();
 		void requestPermission();
 		void releasePermission();
 		QAndroidJniObject getLinkUri();
+		QAndroidJniObject getDescription();
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -53,7 +53,8 @@ namespace __jni_impl::android::view::inputmethod
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.InputContentInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -76,23 +77,12 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
-	QAndroidJniObject InputContentInfo::getContentUri()
-	{
-		return __thiz.callObjectMethod(
-			"getContentUri",
-			"()Landroid/net/Uri;");
-	}
-	QAndroidJniObject InputContentInfo::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Landroid/content/ClipDescription;");
-	}
 	jint InputContentInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void InputContentInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -100,25 +90,43 @@ namespace __jni_impl::android::view::inputmethod
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject InputContentInfo::getContentUri()
+	{
+		return __thiz.callObjectMethod(
+			"getContentUri",
+			"()Landroid/net/Uri;"
+		);
 	}
 	void InputContentInfo::requestPermission()
 	{
 		__thiz.callMethod<void>(
 			"requestPermission",
-			"()V");
+			"()V"
+		);
 	}
 	void InputContentInfo::releasePermission()
 	{
 		__thiz.callMethod<void>(
 			"releasePermission",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject InputContentInfo::getLinkUri()
 	{
 		return __thiz.callObjectMethod(
 			"getLinkUri",
-			"()Landroid/net/Uri;");
+			"()Landroid/net/Uri;"
+		);
+	}
+	QAndroidJniObject InputContentInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Landroid/content/ClipDescription;"
+		);
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

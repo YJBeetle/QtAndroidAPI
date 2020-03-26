@@ -21,7 +21,7 @@ namespace __jni_impl::javax::crypto
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 	};
 } // namespace __jni_impl::javax::crypto
 
@@ -40,11 +40,12 @@ namespace __jni_impl::javax::crypto
 	}
 	
 	// Methods
-	QAndroidJniObject MacSpi::clone()
+	jobject MacSpi::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::javax::crypto
 

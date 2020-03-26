@@ -9,13 +9,13 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::app
-{
-	class Person_Builder;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Icon;
+}
+namespace __jni_impl::android::app
+{
+	class Person_Builder;
 }
 
 namespace __jni_impl::android::app
@@ -30,23 +30,23 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
+		jstring getName();
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		QAndroidJniObject getKey();
-		QAndroidJniObject toBuilder();
-		QAndroidJniObject getUri();
+		jstring getKey();
 		jboolean isImportant();
 		jboolean isBot();
-		QAndroidJniObject getIcon();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getIcon();
+		QAndroidJniObject toBuilder();
+		jstring getUri();
 	};
 } // namespace __jni_impl::android::app
 
 #include "../os/Parcel.hpp"
-#include "Person_Builder.hpp"
 #include "../graphics/drawable/Icon.hpp"
+#include "Person_Builder.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -56,7 +56,8 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.Person",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -68,66 +69,55 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject Person::getName()
+	jstring Person::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jboolean Person::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint Person::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Person::getKey()
+	jstring Person::getKey()
 	{
 		return __thiz.callObjectMethod(
 			"getKey",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject Person::toBuilder()
-	{
-		return __thiz.callObjectMethod(
-			"toBuilder",
-			"()Landroid/app/Person$Builder;");
-	}
-	QAndroidJniObject Person::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean Person::isImportant()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isImportant",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Person::isBot()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBot",
-			"()Z");
-	}
-	QAndroidJniObject Person::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;");
+			"()Z"
+		);
 	}
 	jint Person::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void Person::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -135,7 +125,29 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject Person::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	QAndroidJniObject Person::toBuilder()
+	{
+		return __thiz.callObjectMethod(
+			"toBuilder",
+			"()Landroid/app/Person$Builder;"
+		);
+	}
+	jstring Person::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::app
 

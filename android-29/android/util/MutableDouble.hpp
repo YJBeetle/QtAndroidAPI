@@ -28,7 +28,8 @@ namespace __jni_impl::android::util
 	jdouble MutableDouble::value()
 	{
 		return __thiz.getField<jdouble>(
-			"value");
+			"value"
+		);
 	}
 	
 	// Constructors

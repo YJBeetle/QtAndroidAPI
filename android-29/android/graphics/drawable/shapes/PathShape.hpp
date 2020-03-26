@@ -67,19 +67,22 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint PathShape::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject PathShape::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Landroid/graphics/drawable/shapes/PathShape;");
+			"()Landroid/graphics/drawable/shapes/PathShape;"
+		);
 	}
 	void PathShape::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1)
 	{
@@ -87,7 +90,8 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			"draw",
 			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::graphics::drawable::shapes
 

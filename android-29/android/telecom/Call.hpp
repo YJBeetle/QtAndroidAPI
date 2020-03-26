@@ -44,10 +44,10 @@ namespace __jni_impl::android::telecom
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AVAILABLE_PHONE_ACCOUNTS();
-		static QAndroidJniObject EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS();
-		static QAndroidJniObject EXTRA_SILENT_RINGING_REQUESTED();
-		static QAndroidJniObject EXTRA_SUGGESTED_PHONE_ACCOUNTS();
+		static jstring AVAILABLE_PHONE_ACCOUNTS();
+		static jstring EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS();
+		static jstring EXTRA_SILENT_RINGING_REQUESTED();
+		static jstring EXTRA_SUGGESTED_PHONE_ACCOUNTS();
 		static jint STATE_ACTIVE();
 		static jint STATE_CONNECTING();
 		static jint STATE_DIALING();
@@ -63,12 +63,14 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getParent();
 		jint getState();
 		void answer(jint arg0);
 		QAndroidJniObject getChildren();
 		void putExtras(__jni_impl::android::os::Bundle arg0);
+		void removeExtras(jarray arg0);
+		void removeExtras(__jni_impl::__JniBaseClass arg0);
 		void conference(__jni_impl::android::telecom::Call arg0);
 		void registerCallback(__jni_impl::android::telecom::Call_Callback arg0, __jni_impl::android::os::Handler arg1);
 		void registerCallback(__jni_impl::android::telecom::Call_Callback arg0);
@@ -81,9 +83,7 @@ namespace __jni_impl::android::telecom
 		void stopDtmfTone();
 		void postDialContinue(jboolean arg0);
 		void pullExternalCall();
-		void removeExtras(__jni_impl::__JniBaseClass arg0);
-		void removeExtras(jarray arg0);
-		QAndroidJniObject getRemainingPostDialSequence();
+		jstring getRemainingPostDialSequence();
 		void deflect(__jni_impl::android::net::Uri arg0);
 		void phoneAccountSelected(__jni_impl::android::telecom::PhoneAccountHandle arg0, jboolean arg1);
 		void splitFromConference();
@@ -115,93 +115,107 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::telecom
 {
 	// Fields
-	QAndroidJniObject Call::AVAILABLE_PHONE_ACCOUNTS()
+	jstring Call::AVAILABLE_PHONE_ACCOUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.Call",
 			"AVAILABLE_PHONE_ACCOUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Call::EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS()
+	jstring Call::EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.Call",
 			"EXTRA_LAST_EMERGENCY_CALLBACK_TIME_MILLIS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Call::EXTRA_SILENT_RINGING_REQUESTED()
+	jstring Call::EXTRA_SILENT_RINGING_REQUESTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.Call",
 			"EXTRA_SILENT_RINGING_REQUESTED",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Call::EXTRA_SUGGESTED_PHONE_ACCOUNTS()
+	jstring Call::EXTRA_SUGGESTED_PHONE_ACCOUNTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.telecom.Call",
 			"EXTRA_SUGGESTED_PHONE_ACCOUNTS",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Call::STATE_ACTIVE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_ACTIVE");
+			"STATE_ACTIVE"
+		);
 	}
 	jint Call::STATE_CONNECTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_CONNECTING");
+			"STATE_CONNECTING"
+		);
 	}
 	jint Call::STATE_DIALING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_DIALING");
+			"STATE_DIALING"
+		);
 	}
 	jint Call::STATE_DISCONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_DISCONNECTED");
+			"STATE_DISCONNECTED"
+		);
 	}
 	jint Call::STATE_DISCONNECTING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_DISCONNECTING");
+			"STATE_DISCONNECTING"
+		);
 	}
 	jint Call::STATE_HOLDING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_HOLDING");
+			"STATE_HOLDING"
+		);
 	}
 	jint Call::STATE_NEW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_NEW");
+			"STATE_NEW"
+		);
 	}
 	jint Call::STATE_PULLING_CALL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_PULLING_CALL");
+			"STATE_PULLING_CALL"
+		);
 	}
 	jint Call::STATE_RINGING()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_RINGING");
+			"STATE_RINGING"
+		);
 	}
 	jint Call::STATE_SELECT_PHONE_ACCOUNT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.telecom.Call",
-			"STATE_SELECT_PHONE_ACCOUNT");
+			"STATE_SELECT_PHONE_ACCOUNT"
+		);
 	}
 	
 	// Constructors
@@ -213,50 +227,73 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	QAndroidJniObject Call::toString()
+	jstring Call::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Call::getParent()
 	{
 		return __thiz.callObjectMethod(
 			"getParent",
-			"()Landroid/telecom/Call;");
+			"()Landroid/telecom/Call;"
+		);
 	}
 	jint Call::getState()
 	{
 		return __thiz.callMethod<jint>(
 			"getState",
-			"()I");
+			"()I"
+		);
 	}
 	void Call::answer(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"answer",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Call::getChildren()
 	{
 		return __thiz.callObjectMethod(
 			"getChildren",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	void Call::putExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"putExtras",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	void Call::removeExtras(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeExtras",
+			"([Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Call::removeExtras(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeExtras",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void Call::conference(__jni_impl::android::telecom::Call arg0)
 	{
 		__thiz.callMethod<void>(
 			"conference",
 			"(Landroid/telecom/Call;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Call::registerCallback(__jni_impl::android::telecom::Call_Callback arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -264,21 +301,24 @@ namespace __jni_impl::android::telecom
 			"registerCallback",
 			"(Landroid/telecom/Call$Callback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Call::registerCallback(__jni_impl::android::telecom::Call_Callback arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerCallback",
 			"(Landroid/telecom/Call$Callback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Call::unregisterCallback(__jni_impl::android::telecom::Call_Callback arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterCallback",
 			"(Landroid/telecom/Call$Callback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Call::reject(jboolean arg0, jstring arg1)
 	{
@@ -286,78 +326,74 @@ namespace __jni_impl::android::telecom
 			"reject",
 			"(ZLjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Call::hold()
 	{
 		__thiz.callMethod<void>(
 			"hold",
-			"()V");
+			"()V"
+		);
 	}
 	void Call::unhold()
 	{
 		__thiz.callMethod<void>(
 			"unhold",
-			"()V");
+			"()V"
+		);
 	}
 	void Call::disconnect()
 	{
 		__thiz.callMethod<void>(
 			"disconnect",
-			"()V");
+			"()V"
+		);
 	}
 	void Call::playDtmfTone(jchar arg0)
 	{
 		__thiz.callMethod<void>(
 			"playDtmfTone",
 			"(C)V",
-			arg0);
+			arg0
+		);
 	}
 	void Call::stopDtmfTone()
 	{
 		__thiz.callMethod<void>(
 			"stopDtmfTone",
-			"()V");
+			"()V"
+		);
 	}
 	void Call::postDialContinue(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"postDialContinue",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Call::pullExternalCall()
 	{
 		__thiz.callMethod<void>(
 			"pullExternalCall",
-			"()V");
+			"()V"
+		);
 	}
-	void Call::removeExtras(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeExtras",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
-	}
-	void Call::removeExtras(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeExtras",
-			"([Ljava/lang/String;)V",
-			arg0);
-	}
-	QAndroidJniObject Call::getRemainingPostDialSequence()
+	jstring Call::getRemainingPostDialSequence()
 	{
 		return __thiz.callObjectMethod(
 			"getRemainingPostDialSequence",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Call::deflect(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"deflect",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Call::phoneAccountSelected(__jni_impl::android::telecom::PhoneAccountHandle arg0, jboolean arg1)
 	{
@@ -365,25 +401,29 @@ namespace __jni_impl::android::telecom
 			"phoneAccountSelected",
 			"(Landroid/telecom/PhoneAccountHandle;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Call::splitFromConference()
 	{
 		__thiz.callMethod<void>(
 			"splitFromConference",
-			"()V");
+			"()V"
+		);
 	}
 	void Call::mergeConference()
 	{
 		__thiz.callMethod<void>(
 			"mergeConference",
-			"()V");
+			"()V"
+		);
 	}
 	void Call::swapConference()
 	{
 		__thiz.callMethod<void>(
 			"swapConference",
-			"()V");
+			"()V"
+		);
 	}
 	void Call::sendCallEvent(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -391,13 +431,15 @@ namespace __jni_impl::android::telecom
 			"sendCallEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Call::sendRttRequest()
 	{
 		__thiz.callMethod<void>(
 			"sendRttRequest",
-			"()V");
+			"()V"
+		);
 	}
 	void Call::respondToRttRequest(jint arg0, jboolean arg1)
 	{
@@ -405,7 +447,8 @@ namespace __jni_impl::android::telecom
 			"respondToRttRequest",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Call::handoverTo(__jni_impl::android::telecom::PhoneAccountHandle arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -414,49 +457,57 @@ namespace __jni_impl::android::telecom
 			"(Landroid/telecom/PhoneAccountHandle;ILandroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void Call::stopRtt()
 	{
 		__thiz.callMethod<void>(
 			"stopRtt",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject Call::getConferenceableCalls()
 	{
 		return __thiz.callObjectMethod(
 			"getConferenceableCalls",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject Call::getCannedTextResponses()
 	{
 		return __thiz.callObjectMethod(
 			"getCannedTextResponses",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject Call::getVideoCall()
 	{
 		return __thiz.callObjectMethod(
 			"getVideoCall",
-			"()Landroid/telecom/InCallService$VideoCall;");
+			"()Landroid/telecom/InCallService$VideoCall;"
+		);
 	}
 	QAndroidJniObject Call::getDetails()
 	{
 		return __thiz.callObjectMethod(
 			"getDetails",
-			"()Landroid/telecom/Call$Details;");
+			"()Landroid/telecom/Call$Details;"
+		);
 	}
 	QAndroidJniObject Call::getRttCall()
 	{
 		return __thiz.callObjectMethod(
 			"getRttCall",
-			"()Landroid/telecom/Call$RttCall;");
+			"()Landroid/telecom/Call$RttCall;"
+		);
 	}
 	jboolean Call::isRttActive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRttActive",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::telecom
 

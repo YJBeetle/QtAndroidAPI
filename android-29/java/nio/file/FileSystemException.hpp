@@ -20,10 +20,10 @@ namespace __jni_impl::java::nio::file
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
 		
 		// Methods
-		QAndroidJniObject getMessage();
-		QAndroidJniObject getFile();
-		QAndroidJniObject getReason();
-		QAndroidJniObject getOtherFile();
+		jstring getMessage();
+		jstring getFile();
+		jstring getReason();
+		jstring getOtherFile();
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -51,29 +51,33 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	QAndroidJniObject FileSystemException::getMessage()
+	jstring FileSystemException::getMessage()
 	{
 		return __thiz.callObjectMethod(
 			"getMessage",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FileSystemException::getFile()
+	jstring FileSystemException::getFile()
 	{
 		return __thiz.callObjectMethod(
 			"getFile",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FileSystemException::getReason()
+	jstring FileSystemException::getReason()
 	{
 		return __thiz.callObjectMethod(
 			"getReason",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject FileSystemException::getOtherFile()
+	jstring FileSystemException::getOtherFile()
 	{
 		return __thiz.callObjectMethod(
 			"getOtherFile",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::file
 

@@ -18,7 +18,7 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jboolean isEmpty();
 		QAndroidJniObject stream();
@@ -54,31 +54,36 @@ namespace __jni_impl::java::util
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject OptionalInt::toString()
+	jstring OptionalInt::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint OptionalInt::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean OptionalInt::isEmpty()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject OptionalInt::stream()
 	{
 		return __thiz.callObjectMethod(
 			"stream",
-			"()Ljava/util/stream/IntStream;");
+			"()Ljava/util/stream/IntStream;"
+		);
 	}
 	QAndroidJniObject OptionalInt::of(jint arg0)
 	{
@@ -86,40 +91,46 @@ namespace __jni_impl::java::util
 			"java.util.OptionalInt",
 			"of",
 			"(I)Ljava/util/OptionalInt;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject OptionalInt::empty()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.OptionalInt",
 			"empty",
-			"()Ljava/util/OptionalInt;");
+			"()Ljava/util/OptionalInt;"
+		);
 	}
 	jboolean OptionalInt::isPresent()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPresent",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint OptionalInt::orElse(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"orElse",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint OptionalInt::orElseThrow(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"orElseThrow",
 			"(Ljava/util/function/Supplier;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint OptionalInt::orElseThrow()
 	{
 		return __thiz.callMethod<jint>(
 			"orElseThrow",
-			"()I");
+			"()I"
+		);
 	}
 	void OptionalInt::ifPresentOrElse(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -127,27 +138,31 @@ namespace __jni_impl::java::util
 			"ifPresentOrElse",
 			"(Ljava/util/function/IntConsumer;Ljava/lang/Runnable;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint OptionalInt::orElseGet(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"orElseGet",
 			"(Ljava/util/function/IntSupplier;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void OptionalInt::ifPresent(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"ifPresent",
 			"(Ljava/util/function/IntConsumer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint OptionalInt::getAsInt()
 	{
 		return __thiz.callMethod<jint>(
 			"getAsInt",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::util
 

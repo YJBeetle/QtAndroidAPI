@@ -65,26 +65,30 @@ namespace __jni_impl::android::print::pdf
 	{
 		return __thiz.callMethod<jint>(
 			"getPageWidth",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject PrintedPdfDocument::startPage(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"startPage",
 			"(I)Landroid/graphics/pdf/PdfDocument$Page;",
-			arg0);
+			arg0
+		);
 	}
 	jint PrintedPdfDocument::getPageHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getPageHeight",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject PrintedPdfDocument::getPageContentRect()
 	{
 		return __thiz.callObjectMethod(
 			"getPageContentRect",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 } // namespace __jni_impl::android::print::pdf
 

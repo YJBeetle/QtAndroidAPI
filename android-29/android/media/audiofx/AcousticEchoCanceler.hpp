@@ -43,14 +43,16 @@ namespace __jni_impl::android::media::audiofx
 			"android.media.audiofx.AcousticEchoCanceler",
 			"create",
 			"(I)Landroid/media/audiofx/AcousticEchoCanceler;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AcousticEchoCanceler::isAvailable()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.media.audiofx.AcousticEchoCanceler",
 			"isAvailable",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::media::audiofx
 

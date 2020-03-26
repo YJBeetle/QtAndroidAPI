@@ -18,8 +18,8 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject clone();
+		jstring toString();
+		jobject clone();
 		QAndroidJniObject getCollection();
 	};
 } // namespace __jni_impl::java::security::cert
@@ -45,23 +45,26 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	QAndroidJniObject CollectionCertStoreParameters::toString()
+	jstring CollectionCertStoreParameters::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CollectionCertStoreParameters::clone()
+	jobject CollectionCertStoreParameters::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	QAndroidJniObject CollectionCertStoreParameters::getCollection()
 	{
 		return __thiz.callObjectMethod(
 			"getCollection",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 } // namespace __jni_impl::java::security::cert
 

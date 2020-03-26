@@ -31,7 +31,7 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		QAndroidJniObject apply(__jni_impl::java::util::Locale arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::icu::text::Edits arg3);
-		QAndroidJniObject apply(__jni_impl::java::util::Locale arg0, jstring arg1);
+		jstring apply(__jni_impl::java::util::Locale arg0, jstring arg1);
 		QAndroidJniObject omitUnchangedText();
 	};
 } // namespace __jni_impl::android::icu::text
@@ -61,21 +61,24 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
-	QAndroidJniObject CaseMap_Lower::apply(__jni_impl::java::util::Locale arg0, jstring arg1)
+	jstring CaseMap_Lower::apply(__jni_impl::java::util::Locale arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
 			"apply",
 			"(Ljava/util/Locale;Ljava/lang/CharSequence;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		).object<jstring>();
 	}
 	QAndroidJniObject CaseMap_Lower::omitUnchangedText()
 	{
 		return __thiz.callObjectMethod(
 			"omitUnchangedText",
-			"()Landroid/icu/text/CaseMap$Lower;");
+			"()Landroid/icu/text/CaseMap$Lower;"
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

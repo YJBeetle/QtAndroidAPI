@@ -22,10 +22,10 @@ namespace __jni_impl::android::net::wifi::p2p
 		static jint FAILED();
 		static jint INVITED();
 		static jint UNAVAILABLE();
-		QAndroidJniObject deviceAddress();
-		QAndroidJniObject deviceName();
-		QAndroidJniObject primaryDeviceType();
-		QAndroidJniObject secondaryDeviceType();
+		jstring deviceAddress();
+		jstring deviceName();
+		jstring primaryDeviceType();
+		jstring secondaryDeviceType();
 		jint status();
 		
 		// Constructors
@@ -34,15 +34,15 @@ namespace __jni_impl::android::net::wifi::p2p
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean wpsPbcSupported();
 		jboolean wpsKeypadSupported();
 		jboolean wpsDisplaySupported();
 		jboolean isServiceDiscoveryCapable();
 		jboolean isGroupOwner();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::p2p
 
@@ -55,67 +55,78 @@ namespace __jni_impl::android::net::wifi::p2p
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
-			"AVAILABLE");
+			"AVAILABLE"
+		);
 	}
 	jint WifiP2pDevice::CONNECTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
-			"CONNECTED");
+			"CONNECTED"
+		);
 	}
 	QAndroidJniObject WifiP2pDevice::CREATOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint WifiP2pDevice::FAILED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
-			"FAILED");
+			"FAILED"
+		);
 	}
 	jint WifiP2pDevice::INVITED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
-			"INVITED");
+			"INVITED"
+		);
 	}
 	jint WifiP2pDevice::UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.p2p.WifiP2pDevice",
-			"UNAVAILABLE");
+			"UNAVAILABLE"
+		);
 	}
-	QAndroidJniObject WifiP2pDevice::deviceAddress()
+	jstring WifiP2pDevice::deviceAddress()
 	{
 		return __thiz.getObjectField(
 			"deviceAddress",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pDevice::deviceName()
+	jstring WifiP2pDevice::deviceName()
 	{
 		return __thiz.getObjectField(
 			"deviceName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pDevice::primaryDeviceType()
+	jstring WifiP2pDevice::primaryDeviceType()
 	{
 		return __thiz.getObjectField(
 			"primaryDeviceType",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject WifiP2pDevice::secondaryDeviceType()
+	jstring WifiP2pDevice::secondaryDeviceType()
 	{
 		return __thiz.getObjectField(
 			"secondaryDeviceType",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiP2pDevice::status()
 	{
 		return __thiz.getField<jint>(
-			"status");
+			"status"
+		);
 	}
 	
 	// Constructors
@@ -139,55 +150,29 @@ namespace __jni_impl::android::net::wifi::p2p
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject WifiP2pDevice::toString()
+	jstring WifiP2pDevice::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint WifiP2pDevice::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
-	}
-	jboolean WifiP2pDevice::wpsPbcSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"wpsPbcSupported",
-			"()Z");
-	}
-	jboolean WifiP2pDevice::wpsKeypadSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"wpsKeypadSupported",
-			"()Z");
-	}
-	jboolean WifiP2pDevice::wpsDisplaySupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"wpsDisplaySupported",
-			"()Z");
-	}
-	jboolean WifiP2pDevice::isServiceDiscoveryCapable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isServiceDiscoveryCapable",
-			"()Z");
-	}
-	jboolean WifiP2pDevice::isGroupOwner()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isGroupOwner",
-			"()Z");
+			"()I"
+		);
 	}
 	jint WifiP2pDevice::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void WifiP2pDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -195,7 +180,43 @@ namespace __jni_impl::android::net::wifi::p2p
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	jboolean WifiP2pDevice::wpsPbcSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"wpsPbcSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiP2pDevice::wpsKeypadSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"wpsKeypadSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiP2pDevice::wpsDisplaySupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"wpsDisplaySupported",
+			"()Z"
+		);
+	}
+	jboolean WifiP2pDevice::isServiceDiscoveryCapable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isServiceDiscoveryCapable",
+			"()Z"
+		);
+	}
+	jboolean WifiP2pDevice::isGroupOwner()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isGroupOwner",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p
 

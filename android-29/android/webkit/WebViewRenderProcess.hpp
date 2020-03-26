@@ -39,7 +39,8 @@ namespace __jni_impl::android::webkit
 	{
 		return __thiz.callMethod<jboolean>(
 			"terminate",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

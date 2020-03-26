@@ -25,7 +25,7 @@ namespace __jni_impl::java::security::spec
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		QAndroidJniObject getField();
-		QAndroidJniObject getSeed();
+		jbyteArray getSeed();
 		QAndroidJniObject getA();
 		QAndroidJniObject getB();
 	};
@@ -64,37 +64,43 @@ namespace __jni_impl::java::security::spec
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint EllipticCurve::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject EllipticCurve::getField()
 	{
 		return __thiz.callObjectMethod(
 			"getField",
-			"()Ljava/security/spec/ECField;");
+			"()Ljava/security/spec/ECField;"
+		);
 	}
-	QAndroidJniObject EllipticCurve::getSeed()
+	jbyteArray EllipticCurve::getSeed()
 	{
 		return __thiz.callObjectMethod(
 			"getSeed",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject EllipticCurve::getA()
 	{
 		return __thiz.callObjectMethod(
 			"getA",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 	QAndroidJniObject EllipticCurve::getB()
 	{
 		return __thiz.callObjectMethod(
 			"getB",
-			"()Ljava/math/BigInteger;");
+			"()Ljava/math/BigInteger;"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 

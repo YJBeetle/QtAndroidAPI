@@ -32,17 +32,17 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4, __jni_impl::__JniBaseClass arg5, jint arg6, jarray arg7, jintArray arg8);
 		
 		// Methods
-		QAndroidJniObject newGroupView(jboolean arg0, __jni_impl::android::view::ViewGroup arg1);
-		QAndroidJniObject newChildView(jboolean arg0, __jni_impl::android::view::ViewGroup arg1);
-		QAndroidJniObject getGroup(jint arg0);
-		jint getChildrenCount(jint arg0);
 		jint getGroupCount();
-		QAndroidJniObject getChild(jint arg0, jint arg1);
+		jobject getChild(jint arg0, jint arg1);
+		jint getChildrenCount(jint arg0);
 		jlong getChildId(jint arg0, jint arg1);
 		jboolean hasStableIds();
 		QAndroidJniObject getGroupView(jint arg0, jboolean arg1, __jni_impl::android::view::View arg2, __jni_impl::android::view::ViewGroup arg3);
 		QAndroidJniObject getChildView(jint arg0, jint arg1, jboolean arg2, __jni_impl::android::view::View arg3, __jni_impl::android::view::ViewGroup arg4);
 		jboolean isChildSelectable(jint arg0, jint arg1);
+		QAndroidJniObject newGroupView(jboolean arg0, __jni_impl::android::view::ViewGroup arg1);
+		QAndroidJniObject newChildView(jboolean arg0, __jni_impl::android::view::ViewGroup arg1);
+		jobject getGroup(jint arg0);
 		jlong getGroupId(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
@@ -106,49 +106,29 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject SimpleExpandableListAdapter::newGroupView(jboolean arg0, __jni_impl::android::view::ViewGroup arg1)
+	jint SimpleExpandableListAdapter::getGroupCount()
 	{
-		return __thiz.callObjectMethod(
-			"newGroupView",
-			"(ZLandroid/view/ViewGroup;)Landroid/view/View;",
-			arg0,
-			arg1.__jniObject().object());
+		return __thiz.callMethod<jint>(
+			"getGroupCount",
+			"()I"
+		);
 	}
-	QAndroidJniObject SimpleExpandableListAdapter::newChildView(jboolean arg0, __jni_impl::android::view::ViewGroup arg1)
+	jobject SimpleExpandableListAdapter::getChild(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
-			"newChildView",
-			"(ZLandroid/view/ViewGroup;)Landroid/view/View;",
+			"getChild",
+			"(II)Ljava/lang/Object;",
 			arg0,
-			arg1.__jniObject().object());
-	}
-	QAndroidJniObject SimpleExpandableListAdapter::getGroup(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getGroup",
-			"(I)Ljava/lang/Object;",
-			arg0);
+			arg1
+		).object<jobject>();
 	}
 	jint SimpleExpandableListAdapter::getChildrenCount(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getChildrenCount",
 			"(I)I",
-			arg0);
-	}
-	jint SimpleExpandableListAdapter::getGroupCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getGroupCount",
-			"()I");
-	}
-	QAndroidJniObject SimpleExpandableListAdapter::getChild(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getChild",
-			"(II)Ljava/lang/Object;",
-			arg0,
-			arg1);
+			arg0
+		);
 	}
 	jlong SimpleExpandableListAdapter::getChildId(jint arg0, jint arg1)
 	{
@@ -156,13 +136,15 @@ namespace __jni_impl::android::widget
 			"getChildId",
 			"(II)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean SimpleExpandableListAdapter::hasStableIds()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasStableIds",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject SimpleExpandableListAdapter::getGroupView(jint arg0, jboolean arg1, __jni_impl::android::view::View arg2, __jni_impl::android::view::ViewGroup arg3)
 	{
@@ -172,7 +154,8 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SimpleExpandableListAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, __jni_impl::android::view::View arg3, __jni_impl::android::view::ViewGroup arg4)
 	{
@@ -183,7 +166,8 @@ namespace __jni_impl::android::widget
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	jboolean SimpleExpandableListAdapter::isChildSelectable(jint arg0, jint arg1)
 	{
@@ -191,14 +175,42 @@ namespace __jni_impl::android::widget
 			"isChildSelectable",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject SimpleExpandableListAdapter::newGroupView(jboolean arg0, __jni_impl::android::view::ViewGroup arg1)
+	{
+		return __thiz.callObjectMethod(
+			"newGroupView",
+			"(ZLandroid/view/ViewGroup;)Landroid/view/View;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SimpleExpandableListAdapter::newChildView(jboolean arg0, __jni_impl::android::view::ViewGroup arg1)
+	{
+		return __thiz.callObjectMethod(
+			"newChildView",
+			"(ZLandroid/view/ViewGroup;)Landroid/view/View;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jobject SimpleExpandableListAdapter::getGroup(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getGroup",
+			"(I)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
 	}
 	jlong SimpleExpandableListAdapter::getGroupId(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getGroupId",
 			"(I)J",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

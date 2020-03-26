@@ -27,12 +27,12 @@ namespace __jni_impl::android::database::sqlite
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void execute();
 		jlong executeInsert();
 		jint executeUpdateDelete();
 		jlong simpleQueryForLong();
-		QAndroidJniObject simpleQueryForString();
+		jstring simpleQueryForString();
 		QAndroidJniObject simpleQueryForBlobFileDescriptor();
 	};
 } // namespace __jni_impl::android::database::sqlite
@@ -53,47 +53,54 @@ namespace __jni_impl::android::database::sqlite
 	}
 	
 	// Methods
-	QAndroidJniObject SQLiteStatement::toString()
+	jstring SQLiteStatement::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SQLiteStatement::execute()
 	{
 		__thiz.callMethod<void>(
 			"execute",
-			"()V");
+			"()V"
+		);
 	}
 	jlong SQLiteStatement::executeInsert()
 	{
 		return __thiz.callMethod<jlong>(
 			"executeInsert",
-			"()J");
+			"()J"
+		);
 	}
 	jint SQLiteStatement::executeUpdateDelete()
 	{
 		return __thiz.callMethod<jint>(
 			"executeUpdateDelete",
-			"()I");
+			"()I"
+		);
 	}
 	jlong SQLiteStatement::simpleQueryForLong()
 	{
 		return __thiz.callMethod<jlong>(
 			"simpleQueryForLong",
-			"()J");
+			"()J"
+		);
 	}
-	QAndroidJniObject SQLiteStatement::simpleQueryForString()
+	jstring SQLiteStatement::simpleQueryForString()
 	{
 		return __thiz.callObjectMethod(
 			"simpleQueryForString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject SQLiteStatement::simpleQueryForBlobFileDescriptor()
 	{
 		return __thiz.callObjectMethod(
 			"simpleQueryForBlobFileDescriptor",
-			"()Landroid/os/ParcelFileDescriptor;");
+			"()Landroid/os/ParcelFileDescriptor;"
+		);
 	}
 } // namespace __jni_impl::android::database::sqlite
 

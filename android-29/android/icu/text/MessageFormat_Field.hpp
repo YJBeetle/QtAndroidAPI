@@ -32,7 +32,8 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.MessageFormat$Field",
 			"ARGUMENT",
-			"Landroid/icu/text/MessageFormat$Field;");
+			"Landroid/icu/text/MessageFormat$Field;"
+		);
 	}
 	
 	// Constructors

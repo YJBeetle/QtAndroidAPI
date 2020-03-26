@@ -19,7 +19,7 @@ namespace __jni_impl::android::text
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::text
 
@@ -30,7 +30,8 @@ namespace __jni_impl::android::text
 	jint BoringLayout_Metrics::width()
 	{
 		return __thiz.getField<jint>(
-			"width");
+			"width"
+		);
 	}
 	
 	// Constructors
@@ -42,11 +43,12 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
-	QAndroidJniObject BoringLayout_Metrics::toString()
+	jstring BoringLayout_Metrics::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::text
 

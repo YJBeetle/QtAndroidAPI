@@ -16,32 +16,32 @@ namespace __jni_impl::android::net::wifi
 	{
 	public:
 		// Fields
-		QAndroidJniObject BSSID();
+		jstring BSSID();
 		static jint CHANNEL_WIDTH_160MHZ();
 		static jint CHANNEL_WIDTH_20MHZ();
 		static jint CHANNEL_WIDTH_40MHZ();
 		static jint CHANNEL_WIDTH_80MHZ();
 		static jint CHANNEL_WIDTH_80MHZ_PLUS_MHZ();
-		QAndroidJniObject SSID();
-		QAndroidJniObject capabilities();
+		jstring SSID();
+		jstring capabilities();
 		jint centerFreq0();
 		jint centerFreq1();
 		jint channelWidth();
 		jint frequency();
 		jint level();
-		QAndroidJniObject operatorFriendlyName();
+		jstring operatorFriendlyName();
 		jlong timestamp();
-		QAndroidJniObject venueName();
+		jstring venueName();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring toString();
 		jboolean is80211mcResponder();
 		jboolean isPasspointNetwork();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -50,95 +50,111 @@ namespace __jni_impl::android::net::wifi
 namespace __jni_impl::android::net::wifi
 {
 	// Fields
-	QAndroidJniObject ScanResult::BSSID()
+	jstring ScanResult::BSSID()
 	{
 		return __thiz.getObjectField(
 			"BSSID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ScanResult::CHANNEL_WIDTH_160MHZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.ScanResult",
-			"CHANNEL_WIDTH_160MHZ");
+			"CHANNEL_WIDTH_160MHZ"
+		);
 	}
 	jint ScanResult::CHANNEL_WIDTH_20MHZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.ScanResult",
-			"CHANNEL_WIDTH_20MHZ");
+			"CHANNEL_WIDTH_20MHZ"
+		);
 	}
 	jint ScanResult::CHANNEL_WIDTH_40MHZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.ScanResult",
-			"CHANNEL_WIDTH_40MHZ");
+			"CHANNEL_WIDTH_40MHZ"
+		);
 	}
 	jint ScanResult::CHANNEL_WIDTH_80MHZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.ScanResult",
-			"CHANNEL_WIDTH_80MHZ");
+			"CHANNEL_WIDTH_80MHZ"
+		);
 	}
 	jint ScanResult::CHANNEL_WIDTH_80MHZ_PLUS_MHZ()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.net.wifi.ScanResult",
-			"CHANNEL_WIDTH_80MHZ_PLUS_MHZ");
+			"CHANNEL_WIDTH_80MHZ_PLUS_MHZ"
+		);
 	}
-	QAndroidJniObject ScanResult::SSID()
+	jstring ScanResult::SSID()
 	{
 		return __thiz.getObjectField(
 			"SSID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ScanResult::capabilities()
+	jstring ScanResult::capabilities()
 	{
 		return __thiz.getObjectField(
 			"capabilities",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ScanResult::centerFreq0()
 	{
 		return __thiz.getField<jint>(
-			"centerFreq0");
+			"centerFreq0"
+		);
 	}
 	jint ScanResult::centerFreq1()
 	{
 		return __thiz.getField<jint>(
-			"centerFreq1");
+			"centerFreq1"
+		);
 	}
 	jint ScanResult::channelWidth()
 	{
 		return __thiz.getField<jint>(
-			"channelWidth");
+			"channelWidth"
+		);
 	}
 	jint ScanResult::frequency()
 	{
 		return __thiz.getField<jint>(
-			"frequency");
+			"frequency"
+		);
 	}
 	jint ScanResult::level()
 	{
 		return __thiz.getField<jint>(
-			"level");
+			"level"
+		);
 	}
-	QAndroidJniObject ScanResult::operatorFriendlyName()
+	jstring ScanResult::operatorFriendlyName()
 	{
 		return __thiz.getObjectField(
 			"operatorFriendlyName",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jlong ScanResult::timestamp()
 	{
 		return __thiz.getField<jlong>(
-			"timestamp");
+			"timestamp"
+		);
 	}
-	QAndroidJniObject ScanResult::venueName()
+	jstring ScanResult::venueName()
 	{
 		return __thiz.getObjectField(
 			"venueName",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -150,17 +166,33 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	QAndroidJniObject ScanResult::toString()
+	jstring ScanResult::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean ScanResult::is80211mcResponder()
+	{
+		return __thiz.callMethod<jboolean>(
+			"is80211mcResponder",
+			"()Z"
+		);
+	}
+	jboolean ScanResult::isPasspointNetwork()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPasspointNetwork",
+			"()Z"
+		);
 	}
 	jint ScanResult::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ScanResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -168,19 +200,8 @@ namespace __jni_impl::android::net::wifi
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jboolean ScanResult::is80211mcResponder()
-	{
-		return __thiz.callMethod<jboolean>(
-			"is80211mcResponder",
-			"()Z");
-	}
-	jboolean ScanResult::isPasspointNetwork()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPasspointNetwork",
-			"()Z");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net::wifi
 

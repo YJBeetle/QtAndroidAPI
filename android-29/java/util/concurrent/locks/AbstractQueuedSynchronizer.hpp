@@ -26,7 +26,7 @@ namespace __jni_impl::java::util::concurrent::locks
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jboolean release(jint arg0);
 		void acquire(jint arg0);
 		void acquireInterruptibly(jint arg0);
@@ -67,32 +67,36 @@ namespace __jni_impl::java::util::concurrent::locks
 	}
 	
 	// Methods
-	QAndroidJniObject AbstractQueuedSynchronizer::toString()
+	jstring AbstractQueuedSynchronizer::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean AbstractQueuedSynchronizer::release(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"release",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	void AbstractQueuedSynchronizer::acquire(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"acquire",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AbstractQueuedSynchronizer::acquireInterruptibly(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"acquireInterruptibly",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AbstractQueuedSynchronizer::tryAcquireNanos(jint arg0, jlong arg1)
 	{
@@ -100,74 +104,85 @@ namespace __jni_impl::java::util::concurrent::locks
 			"tryAcquireNanos",
 			"(IJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AbstractQueuedSynchronizer::hasQueuedThreads()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasQueuedThreads",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean AbstractQueuedSynchronizer::isQueued(__jni_impl::java::lang::Thread arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isQueued",
 			"(Ljava/lang/Thread;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint AbstractQueuedSynchronizer::getQueueLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getQueueLength",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject AbstractQueuedSynchronizer::getQueuedThreads()
 	{
 		return __thiz.callObjectMethod(
 			"getQueuedThreads",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 	jboolean AbstractQueuedSynchronizer::hasWaiters(__jni_impl::java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasWaiters",
 			"(Ljava/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionObject;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint AbstractQueuedSynchronizer::getWaitQueueLength(__jni_impl::java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getWaitQueueLength",
 			"(Ljava/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionObject;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AbstractQueuedSynchronizer::getWaitingThreads(__jni_impl::java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getWaitingThreads",
 			"(Ljava/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionObject;)Ljava/util/Collection;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean AbstractQueuedSynchronizer::owns(__jni_impl::java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"owns",
 			"(Ljava/util/concurrent/locks/AbstractQueuedSynchronizer$ConditionObject;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbstractQueuedSynchronizer::acquireShared(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"acquireShared",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AbstractQueuedSynchronizer::acquireSharedInterruptibly(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"acquireSharedInterruptibly",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AbstractQueuedSynchronizer::tryAcquireSharedNanos(jint arg0, jlong arg1)
 	{
@@ -175,44 +190,51 @@ namespace __jni_impl::java::util::concurrent::locks
 			"tryAcquireSharedNanos",
 			"(IJ)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean AbstractQueuedSynchronizer::releaseShared(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"releaseShared",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AbstractQueuedSynchronizer::hasContended()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasContended",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject AbstractQueuedSynchronizer::getFirstQueuedThread()
 	{
 		return __thiz.callObjectMethod(
 			"getFirstQueuedThread",
-			"()Ljava/lang/Thread;");
+			"()Ljava/lang/Thread;"
+		);
 	}
 	jboolean AbstractQueuedSynchronizer::hasQueuedPredecessors()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasQueuedPredecessors",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject AbstractQueuedSynchronizer::getExclusiveQueuedThreads()
 	{
 		return __thiz.callObjectMethod(
 			"getExclusiveQueuedThreads",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 	QAndroidJniObject AbstractQueuedSynchronizer::getSharedQueuedThreads()
 	{
 		return __thiz.callObjectMethod(
 			"getSharedQueuedThreads",
-			"()Ljava/util/Collection;");
+			"()Ljava/util/Collection;"
+		);
 	}
 } // namespace __jni_impl::java::util::concurrent::locks
 

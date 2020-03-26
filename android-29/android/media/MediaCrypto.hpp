@@ -49,7 +49,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean MediaCrypto::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0)
 	{
@@ -57,21 +58,24 @@ namespace __jni_impl::android::media
 			"android.media.MediaCrypto",
 			"isCryptoSchemeSupported",
 			"(Ljava/util/UUID;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean MediaCrypto::requiresSecureDecoderComponent(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"requiresSecureDecoderComponent",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	void MediaCrypto::setMediaDrmSession(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMediaDrmSession",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

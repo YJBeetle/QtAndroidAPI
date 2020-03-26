@@ -34,8 +34,8 @@ namespace __jni_impl::dalvik::system
 		void __constructor(jstring arg0, __jni_impl::java::io::File arg1, jstring arg2, __jni_impl::java::lang::ClassLoader arg3);
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject findLibrary(jstring arg0);
+		jstring toString();
+		jstring findLibrary(jstring arg0);
 	};
 } // namespace __jni_impl::dalvik::system
 
@@ -61,18 +61,20 @@ namespace __jni_impl::dalvik::system
 	}
 	
 	// Methods
-	QAndroidJniObject BaseDexClassLoader::toString()
+	jstring BaseDexClassLoader::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject BaseDexClassLoader::findLibrary(jstring arg0)
+	jstring BaseDexClassLoader::findLibrary(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findLibrary",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::dalvik::system
 

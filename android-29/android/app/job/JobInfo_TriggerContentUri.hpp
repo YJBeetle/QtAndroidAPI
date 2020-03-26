@@ -30,9 +30,9 @@ namespace __jni_impl::android::app::job
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jint getFlags();
-		QAndroidJniObject getUri();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getUri();
 	};
 } // namespace __jni_impl::android::app::job
 
@@ -47,13 +47,15 @@ namespace __jni_impl::android::app::job
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.job.JobInfo$TriggerContentUri",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint JobInfo_TriggerContentUri::FLAG_NOTIFY_FOR_DESCENDANTS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.app.job.JobInfo$TriggerContentUri",
-			"FLAG_NOTIFY_FOR_DESCENDANTS");
+			"FLAG_NOTIFY_FOR_DESCENDANTS"
+		);
 	}
 	
 	// Constructors
@@ -72,31 +74,29 @@ namespace __jni_impl::android::app::job
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint JobInfo_TriggerContentUri::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint JobInfo_TriggerContentUri::getFlags()
 	{
 		return __thiz.callMethod<jint>(
 			"getFlags",
-			"()I");
-	}
-	QAndroidJniObject JobInfo_TriggerContentUri::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;");
+			"()I"
+		);
 	}
 	jint JobInfo_TriggerContentUri::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void JobInfo_TriggerContentUri::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -104,7 +104,15 @@ namespace __jni_impl::android::app::job
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject JobInfo_TriggerContentUri::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
 	}
 } // namespace __jni_impl::android::app::job
 

@@ -20,12 +20,12 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject AUDIO_ID();
-		static QAndroidJniObject CONTENT_DIRECTORY();
-		static QAndroidJniObject DEFAULT_SORT_ORDER();
-		static QAndroidJniObject PLAYLIST_ID();
-		static QAndroidJniObject PLAY_ORDER();
-		static QAndroidJniObject _ID();
+		static jstring AUDIO_ID();
+		static jstring CONTENT_DIRECTORY();
+		static jstring DEFAULT_SORT_ORDER();
+		static jstring PLAYLIST_ID();
+		static jstring PLAY_ORDER();
+		static jstring _ID();
 		
 		// Constructors
 		void __constructor();
@@ -42,47 +42,53 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject MediaStore_Audio_Playlists_Members::AUDIO_ID()
+	jstring MediaStore_Audio_Playlists_Members::AUDIO_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"AUDIO_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Playlists_Members::CONTENT_DIRECTORY()
+	jstring MediaStore_Audio_Playlists_Members::CONTENT_DIRECTORY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"CONTENT_DIRECTORY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Playlists_Members::DEFAULT_SORT_ORDER()
+	jstring MediaStore_Audio_Playlists_Members::DEFAULT_SORT_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Playlists_Members::PLAYLIST_ID()
+	jstring MediaStore_Audio_Playlists_Members::PLAYLIST_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"PLAYLIST_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Playlists_Members::PLAY_ORDER()
+	jstring MediaStore_Audio_Playlists_Members::PLAY_ORDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"PLAY_ORDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaStore_Audio_Playlists_Members::_ID()
+	jstring MediaStore_Audio_Playlists_Members::_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.MediaStore$Audio$Playlists$Members",
 			"_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -101,7 +107,8 @@ namespace __jni_impl::android::provider
 			"getContentUri",
 			"(Ljava/lang/String;J)Landroid/net/Uri;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean MediaStore_Audio_Playlists_Members::moveItem(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2, jint arg3)
 	{
@@ -112,7 +119,8 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::provider
 

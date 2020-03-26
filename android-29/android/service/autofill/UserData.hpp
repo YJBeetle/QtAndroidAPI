@@ -26,17 +26,17 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
-		QAndroidJniObject getId();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring toString();
+		jstring getId();
 		static jint getMaxUserDataSize();
-		QAndroidJniObject getFieldClassificationAlgorithm();
-		QAndroidJniObject getFieldClassificationAlgorithmForCategory(jstring arg0);
+		jstring getFieldClassificationAlgorithm();
+		jstring getFieldClassificationAlgorithmForCategory(jstring arg0);
 		static jint getMaxFieldClassificationIdsSize();
 		static jint getMaxCategoryCount();
 		static jint getMinValueLength();
 		static jint getMaxValueLength();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -51,7 +51,8 @@ namespace __jni_impl::android::service::autofill
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.autofill.UserData",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	
 	// Constructors
@@ -63,23 +64,81 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject UserData::toString()
+	jstring UserData::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject UserData::getId()
+	jstring UserData::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint UserData::getMaxUserDataSize()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.service.autofill.UserData",
+			"getMaxUserDataSize",
+			"()I"
+		);
+	}
+	jstring UserData::getFieldClassificationAlgorithm()
+	{
+		return __thiz.callObjectMethod(
+			"getFieldClassificationAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UserData::getFieldClassificationAlgorithmForCategory(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getFieldClassificationAlgorithmForCategory",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jint UserData::getMaxFieldClassificationIdsSize()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.service.autofill.UserData",
+			"getMaxFieldClassificationIdsSize",
+			"()I"
+		);
+	}
+	jint UserData::getMaxCategoryCount()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.service.autofill.UserData",
+			"getMaxCategoryCount",
+			"()I"
+		);
+	}
+	jint UserData::getMinValueLength()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.service.autofill.UserData",
+			"getMinValueLength",
+			"()I"
+		);
+	}
+	jint UserData::getMaxValueLength()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.service.autofill.UserData",
+			"getMaxValueLength",
+			"()I"
+		);
 	}
 	jint UserData::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void UserData::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -87,55 +146,8 @@ namespace __jni_impl::android::service::autofill
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
-	}
-	jint UserData::getMaxUserDataSize()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.service.autofill.UserData",
-			"getMaxUserDataSize",
-			"()I");
-	}
-	QAndroidJniObject UserData::getFieldClassificationAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getFieldClassificationAlgorithm",
-			"()Ljava/lang/String;");
-	}
-	QAndroidJniObject UserData::getFieldClassificationAlgorithmForCategory(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getFieldClassificationAlgorithmForCategory",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
-	}
-	jint UserData::getMaxFieldClassificationIdsSize()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.service.autofill.UserData",
-			"getMaxFieldClassificationIdsSize",
-			"()I");
-	}
-	jint UserData::getMaxCategoryCount()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.service.autofill.UserData",
-			"getMaxCategoryCount",
-			"()I");
-	}
-	jint UserData::getMinValueLength()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.service.autofill.UserData",
-			"getMinValueLength",
-			"()I");
-	}
-	jint UserData::getMaxValueLength()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.service.autofill.UserData",
-			"getMaxValueLength",
-			"()I");
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

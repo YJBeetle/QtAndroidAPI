@@ -32,7 +32,7 @@ namespace __jni_impl::java::math
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint getPrecision();
 		QAndroidJniObject getRoundingMode();
@@ -50,28 +50,32 @@ namespace __jni_impl::java::math
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
 			"UNLIMITED",
-			"Ljava/math/MathContext;");
+			"Ljava/math/MathContext;"
+		);
 	}
 	QAndroidJniObject MathContext::DECIMAL32()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
 			"DECIMAL32",
-			"Ljava/math/MathContext;");
+			"Ljava/math/MathContext;"
+		);
 	}
 	QAndroidJniObject MathContext::DECIMAL64()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
 			"DECIMAL64",
-			"Ljava/math/MathContext;");
+			"Ljava/math/MathContext;"
+		);
 	}
 	QAndroidJniObject MathContext::DECIMAL128()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
 			"DECIMAL128",
-			"Ljava/math/MathContext;");
+			"Ljava/math/MathContext;"
+		);
 	}
 	
 	// Constructors
@@ -104,31 +108,36 @@ namespace __jni_impl::java::math
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject MathContext::toString()
+	jstring MathContext::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint MathContext::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint MathContext::getPrecision()
 	{
 		return __thiz.callMethod<jint>(
 			"getPrecision",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject MathContext::getRoundingMode()
 	{
 		return __thiz.callObjectMethod(
 			"getRoundingMode",
-			"()Ljava/math/RoundingMode;");
+			"()Ljava/math/RoundingMode;"
+		);
 	}
 } // namespace __jni_impl::java::math
 

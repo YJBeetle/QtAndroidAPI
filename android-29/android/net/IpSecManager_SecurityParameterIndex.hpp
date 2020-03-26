@@ -17,7 +17,7 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void close();
 		jint getSpi();
 	};
@@ -37,23 +37,26 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject IpSecManager_SecurityParameterIndex::toString()
+	jstring IpSecManager_SecurityParameterIndex::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void IpSecManager_SecurityParameterIndex::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint IpSecManager_SecurityParameterIndex::getSpi()
 	{
 		return __thiz.callMethod<jint>(
 			"getSpi",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net
 

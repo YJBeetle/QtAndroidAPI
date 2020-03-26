@@ -37,7 +37,7 @@ namespace __jni_impl::android::view::contentcapture
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void destroy();
 		void close();
 		QAndroidJniObject getContentCaptureSessionId();
@@ -73,63 +73,72 @@ namespace __jni_impl::android::view::contentcapture
 	}
 	
 	// Methods
-	QAndroidJniObject ContentCaptureSession::toString()
+	jstring ContentCaptureSession::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ContentCaptureSession::destroy()
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	void ContentCaptureSession::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject ContentCaptureSession::getContentCaptureSessionId()
 	{
 		return __thiz.callObjectMethod(
 			"getContentCaptureSessionId",
-			"()Landroid/view/contentcapture/ContentCaptureSessionId;");
+			"()Landroid/view/contentcapture/ContentCaptureSessionId;"
+		);
 	}
 	QAndroidJniObject ContentCaptureSession::createContentCaptureSession(__jni_impl::android::view::contentcapture::ContentCaptureContext arg0)
 	{
 		return __thiz.callObjectMethod(
 			"createContentCaptureSession",
 			"(Landroid/view/contentcapture/ContentCaptureContext;)Landroid/view/contentcapture/ContentCaptureSession;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContentCaptureSession::setContentCaptureContext(__jni_impl::android::view::contentcapture::ContentCaptureContext arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentCaptureContext",
 			"(Landroid/view/contentcapture/ContentCaptureContext;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContentCaptureSession::getContentCaptureContext()
 	{
 		return __thiz.callObjectMethod(
 			"getContentCaptureContext",
-			"()Landroid/view/contentcapture/ContentCaptureContext;");
+			"()Landroid/view/contentcapture/ContentCaptureContext;"
+		);
 	}
 	void ContentCaptureSession::notifyViewAppeared(__jni_impl::android::view::ViewStructure arg0)
 	{
 		__thiz.callMethod<void>(
 			"notifyViewAppeared",
 			"(Landroid/view/ViewStructure;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContentCaptureSession::notifyViewDisappeared(__jni_impl::android::view::autofill::AutofillId arg0)
 	{
 		__thiz.callMethod<void>(
 			"notifyViewDisappeared",
 			"(Landroid/view/autofill/AutofillId;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContentCaptureSession::notifyViewsDisappeared(__jni_impl::android::view::autofill::AutofillId arg0, jlongArray arg1)
 	{
@@ -137,7 +146,8 @@ namespace __jni_impl::android::view::contentcapture
 			"notifyViewsDisappeared",
 			"(Landroid/view/autofill/AutofillId;[J)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ContentCaptureSession::notifyViewTextChanged(__jni_impl::android::view::autofill::AutofillId arg0, jstring arg1)
 	{
@@ -145,14 +155,16 @@ namespace __jni_impl::android::view::contentcapture
 			"notifyViewTextChanged",
 			"(Landroid/view/autofill/AutofillId;Ljava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContentCaptureSession::newViewStructure(__jni_impl::android::view::View arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newViewStructure",
 			"(Landroid/view/View;)Landroid/view/ViewStructure;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ContentCaptureSession::newAutofillId(__jni_impl::android::view::autofill::AutofillId arg0, jlong arg1)
 	{
@@ -160,7 +172,8 @@ namespace __jni_impl::android::view::contentcapture
 			"newAutofillId",
 			"(Landroid/view/autofill/AutofillId;J)Landroid/view/autofill/AutofillId;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ContentCaptureSession::newVirtualViewStructure(__jni_impl::android::view::autofill::AutofillId arg0, jlong arg1)
 	{
@@ -168,7 +181,8 @@ namespace __jni_impl::android::view::contentcapture
 			"newVirtualViewStructure",
 			"(Landroid/view/autofill/AutofillId;J)Landroid/view/ViewStructure;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view::contentcapture
 

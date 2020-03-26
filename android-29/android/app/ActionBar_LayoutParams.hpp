@@ -45,7 +45,8 @@ namespace __jni_impl::android::app
 	jint ActionBar_LayoutParams::gravity()
 	{
 		return __thiz.getField<jint>(
-			"gravity");
+			"gravity"
+		);
 	}
 	
 	// Constructors

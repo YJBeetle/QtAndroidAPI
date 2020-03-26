@@ -29,17 +29,17 @@ namespace __jni_impl::android::preference
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void setSummaryOn(jint arg0);
 		void setSummaryOn(jstring arg0);
-		QAndroidJniObject getSummaryOn();
-		void setSummaryOff(jint arg0);
+		void setSummaryOn(jint arg0);
+		jstring getSummaryOn();
 		void setSummaryOff(jstring arg0);
-		QAndroidJniObject getSummaryOff();
+		void setSummaryOff(jint arg0);
+		jstring getSummaryOff();
 		jboolean getDisableDependentsState();
 		void setDisableDependentsState(jboolean arg0);
-		jboolean shouldDisableDependents();
 		jboolean isChecked();
 		void setChecked(jboolean arg0);
+		jboolean shouldDisableDependents();
 	};
 } // namespace __jni_impl::android::preference
 
@@ -87,77 +87,88 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
-	void TwoStatePreference::setSummaryOn(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSummaryOn",
-			"(I)V",
-			arg0);
-	}
 	void TwoStatePreference::setSummaryOn(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSummaryOn",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TwoStatePreference::getSummaryOn()
+	void TwoStatePreference::setSummaryOn(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSummaryOn",
+			"(I)V",
+			arg0
+		);
+	}
+	jstring TwoStatePreference::getSummaryOn()
 	{
 		return __thiz.callObjectMethod(
 			"getSummaryOn",
-			"()Ljava/lang/CharSequence;");
-	}
-	void TwoStatePreference::setSummaryOff(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSummaryOff",
-			"(I)V",
-			arg0);
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void TwoStatePreference::setSummaryOff(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSummaryOff",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject TwoStatePreference::getSummaryOff()
+	void TwoStatePreference::setSummaryOff(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSummaryOff",
+			"(I)V",
+			arg0
+		);
+	}
+	jstring TwoStatePreference::getSummaryOff()
 	{
 		return __thiz.callObjectMethod(
 			"getSummaryOff",
-			"()Ljava/lang/CharSequence;");
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jboolean TwoStatePreference::getDisableDependentsState()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getDisableDependentsState",
-			"()Z");
+			"()Z"
+		);
 	}
 	void TwoStatePreference::setDisableDependentsState(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDisableDependentsState",
 			"(Z)V",
-			arg0);
-	}
-	jboolean TwoStatePreference::shouldDisableDependents()
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldDisableDependents",
-			"()Z");
+			arg0
+		);
 	}
 	jboolean TwoStatePreference::isChecked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isChecked",
-			"()Z");
+			"()Z"
+		);
 	}
 	void TwoStatePreference::setChecked(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setChecked",
 			"(Z)V",
-			arg0);
+			arg0
+		);
+	}
+	jboolean TwoStatePreference::shouldDisableDependents()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldDisableDependents",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::preference
 

@@ -67,7 +67,8 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callObjectMethod(
 			"spliterator",
-			"()Ljava/util/Spliterator;");
+			"()Ljava/util/Spliterator;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

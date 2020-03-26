@@ -62,25 +62,29 @@ namespace __jni_impl::android::renderscript
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Landroid/renderscript/Type;");
+			"()Landroid/renderscript/Type;"
+		);
 	}
 	QAndroidJniObject Script_FieldBase::getElement()
 	{
 		return __thiz.callObjectMethod(
 			"getElement",
-			"()Landroid/renderscript/Element;");
+			"()Landroid/renderscript/Element;"
+		);
 	}
 	QAndroidJniObject Script_FieldBase::getAllocation()
 	{
 		return __thiz.callObjectMethod(
 			"getAllocation",
-			"()Landroid/renderscript/Allocation;");
+			"()Landroid/renderscript/Allocation;"
+		);
 	}
 	void Script_FieldBase::updateAllocation()
 	{
 		__thiz.callMethod<void>(
 			"updateAllocation",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

@@ -50,7 +50,8 @@ namespace __jni_impl::android::util
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void FloatProperty::set(jobject arg0, __jni_impl::java::lang::Float arg1)
 	{
@@ -58,7 +59,8 @@ namespace __jni_impl::android::util
 			"set",
 			"(Ljava/lang/Object;Ljava/lang/Float;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void FloatProperty::setValue(jobject arg0, jfloat arg1)
 	{
@@ -66,7 +68,8 @@ namespace __jni_impl::android::util
 			"setValue",
 			"(Ljava/lang/Object;F)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::util
 

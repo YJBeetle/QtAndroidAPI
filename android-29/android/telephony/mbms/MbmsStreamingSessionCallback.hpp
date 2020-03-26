@@ -17,8 +17,8 @@ namespace __jni_impl::android::telephony::mbms
 		void __constructor();
 		
 		// Methods
-		void onError(jint arg0, jstring arg1);
 		void onStreamingServicesUpdated(__jni_impl::__JniBaseClass arg0);
+		void onError(jint arg0, jstring arg1);
 		void onMiddlewareReady();
 	};
 } // namespace __jni_impl::android::telephony::mbms
@@ -37,26 +37,29 @@ namespace __jni_impl::android::telephony::mbms
 	}
 	
 	// Methods
+	void MbmsStreamingSessionCallback::onStreamingServicesUpdated(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onStreamingServicesUpdated",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void MbmsStreamingSessionCallback::onError(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
 			"onError",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
-	}
-	void MbmsStreamingSessionCallback::onStreamingServicesUpdated(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onStreamingServicesUpdated",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg1
+		);
 	}
 	void MbmsStreamingSessionCallback::onMiddlewareReady()
 	{
 		__thiz.callMethod<void>(
 			"onMiddlewareReady",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::telephony::mbms
 

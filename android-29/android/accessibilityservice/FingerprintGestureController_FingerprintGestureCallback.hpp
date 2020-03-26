@@ -41,14 +41,16 @@ namespace __jni_impl::android::accessibilityservice
 		__thiz.callMethod<void>(
 			"onGestureDetected",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void FingerprintGestureController_FingerprintGestureCallback::onGestureDetectionAvailabilityChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onGestureDetectionAvailabilityChanged",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::accessibilityservice
 

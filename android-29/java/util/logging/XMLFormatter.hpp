@@ -34,9 +34,9 @@ namespace __jni_impl::java::util::logging
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject format(__jni_impl::java::util::logging::LogRecord arg0);
-		QAndroidJniObject getHead(__jni_impl::java::util::logging::Handler arg0);
-		QAndroidJniObject getTail(__jni_impl::java::util::logging::Handler arg0);
+		jstring format(__jni_impl::java::util::logging::LogRecord arg0);
+		jstring getHead(__jni_impl::java::util::logging::Handler arg0);
+		jstring getTail(__jni_impl::java::util::logging::Handler arg0);
 	};
 } // namespace __jni_impl::java::util::logging
 
@@ -58,26 +58,29 @@ namespace __jni_impl::java::util::logging
 	}
 	
 	// Methods
-	QAndroidJniObject XMLFormatter::format(__jni_impl::java::util::logging::LogRecord arg0)
+	jstring XMLFormatter::format(__jni_impl::java::util::logging::LogRecord arg0)
 	{
 		return __thiz.callObjectMethod(
 			"format",
 			"(Ljava/util/logging/LogRecord;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject XMLFormatter::getHead(__jni_impl::java::util::logging::Handler arg0)
+	jstring XMLFormatter::getHead(__jni_impl::java::util::logging::Handler arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getHead",
 			"(Ljava/util/logging/Handler;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject XMLFormatter::getTail(__jni_impl::java::util::logging::Handler arg0)
+	jstring XMLFormatter::getTail(__jni_impl::java::util::logging::Handler arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getTail",
 			"(Ljava/util/logging/Handler;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::logging
 

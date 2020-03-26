@@ -38,7 +38,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -52,140 +52,160 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"GENERIC_LOCATION",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::GENERIC_LONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"GENERIC_LONG",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::GENERIC_SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"GENERIC_SHORT",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::SPECIFIC_LONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"SPECIFIC_LONG",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::SPECIFIC_SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"SPECIFIC_SHORT",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::LOCALIZED_GMT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"LOCALIZED_GMT",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::LOCALIZED_GMT_SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"LOCALIZED_GMT_SHORT",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_BASIC_SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_BASIC_SHORT",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_BASIC_LOCAL_SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_BASIC_LOCAL_SHORT",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_BASIC_FIXED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_BASIC_FIXED",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_BASIC_LOCAL_FIXED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_BASIC_LOCAL_FIXED",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_BASIC_FULL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_BASIC_FULL",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_BASIC_LOCAL_FULL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_BASIC_LOCAL_FULL",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_EXTENDED_FIXED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_EXTENDED_FIXED",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_EXTENDED_LOCAL_FIXED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_EXTENDED_LOCAL_FIXED",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_EXTENDED_FULL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_EXTENDED_FULL",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ISO_EXTENDED_LOCAL_FULL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ISO_EXTENDED_LOCAL_FULL",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ZONE_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ZONE_ID",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::ZONE_ID_SHORT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"ZONE_ID_SHORT",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	QAndroidJniObject TimeZoneFormat_Style::EXEMPLAR_LOCATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$Style",
 			"EXEMPLAR_LOCATION",
-			"Landroid/icu/text/TimeZoneFormat$Style;");
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
 	}
 	
 	// Constructors
@@ -197,12 +217,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject TimeZoneFormat_Style::values()
+	jarray TimeZoneFormat_Style::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.TimeZoneFormat$Style",
 			"values",
-			"()[Landroid/icu/text/TimeZoneFormat$Style;");
+			"()[Landroid/icu/text/TimeZoneFormat$Style;"
+		).object<jarray>();
 	}
 	QAndroidJniObject TimeZoneFormat_Style::valueOf(jstring arg0)
 	{
@@ -210,7 +231,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.TimeZoneFormat$Style",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$Style;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

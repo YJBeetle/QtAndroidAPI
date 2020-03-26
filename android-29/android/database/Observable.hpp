@@ -47,20 +47,23 @@ namespace __jni_impl::android::database
 		__thiz.callMethod<void>(
 			"registerObserver",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Observable::unregisterObserver(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterObserver",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Observable::unregisterAll()
 	{
 		__thiz.callMethod<void>(
 			"unregisterAll",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::database
 

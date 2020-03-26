@@ -72,7 +72,8 @@ namespace __jni_impl::java::util::zip
 		return __thiz.callMethod<jint>(
 			"inflate",
 			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Inflater::inflate(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -81,26 +82,30 @@ namespace __jni_impl::java::util::zip
 			"([BII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Inflater::inflate(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"inflate",
 			"([B)I",
-			arg0);
+			arg0
+		);
 	}
 	void Inflater::end()
 	{
 		__thiz.callMethod<void>(
 			"end",
-			"()V");
+			"()V"
+		);
 	}
 	void Inflater::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	void Inflater::setInput(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -109,59 +114,68 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Inflater::setInput(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInput",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Inflater::setInput(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInput",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jlong Inflater::getBytesWritten()
 	{
 		return __thiz.callMethod<jlong>(
 			"getBytesWritten",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean Inflater::finished()
 	{
 		return __thiz.callMethod<jboolean>(
 			"finished",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Inflater::needsDictionary()
 	{
 		return __thiz.callMethod<jboolean>(
 			"needsDictionary",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean Inflater::needsInput()
 	{
 		return __thiz.callMethod<jboolean>(
 			"needsInput",
-			"()Z");
+			"()Z"
+		);
 	}
 	void Inflater::setDictionary(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDictionary",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Inflater::setDictionary(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDictionary",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Inflater::setDictionary(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -170,37 +184,43 @@ namespace __jni_impl::java::util::zip
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Inflater::getAdler()
 	{
 		return __thiz.callMethod<jint>(
 			"getAdler",
-			"()I");
+			"()I"
+		);
 	}
 	jlong Inflater::getBytesRead()
 	{
 		return __thiz.callMethod<jlong>(
 			"getBytesRead",
-			"()J");
+			"()J"
+		);
 	}
 	jint Inflater::getRemaining()
 	{
 		return __thiz.callMethod<jint>(
 			"getRemaining",
-			"()I");
+			"()I"
+		);
 	}
 	jint Inflater::getTotalIn()
 	{
 		return __thiz.callMethod<jint>(
 			"getTotalIn",
-			"()I");
+			"()I"
+		);
 	}
 	jint Inflater::getTotalOut()
 	{
 		return __thiz.callMethod<jint>(
 			"getTotalOut",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::util::zip
 

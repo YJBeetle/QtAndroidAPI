@@ -31,10 +31,10 @@ namespace __jni_impl::android::media
 		void setTimestamp(jlong arg0);
 		QAndroidJniObject getCropRect();
 		void setCropRect(__jni_impl::android::graphics::Rect arg0);
-		QAndroidJniObject getPlanes();
+		jarray getPlanes();
+		jlong getTimestamp();
 		jint getWidth();
 		jint getHeight();
-		jlong getTimestamp();
 	};
 } // namespace __jni_impl::android::media
 
@@ -58,63 +58,73 @@ namespace __jni_impl::android::media
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	jint Image::getFormat()
 	{
 		return __thiz.callMethod<jint>(
 			"getFormat",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Image::getHardwareBuffer()
 	{
 		return __thiz.callObjectMethod(
 			"getHardwareBuffer",
-			"()Landroid/hardware/HardwareBuffer;");
+			"()Landroid/hardware/HardwareBuffer;"
+		);
 	}
 	void Image::setTimestamp(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTimestamp",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Image::getCropRect()
 	{
 		return __thiz.callObjectMethod(
 			"getCropRect",
-			"()Landroid/graphics/Rect;");
+			"()Landroid/graphics/Rect;"
+		);
 	}
 	void Image::setCropRect(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCropRect",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Image::getPlanes()
+	jarray Image::getPlanes()
 	{
 		return __thiz.callObjectMethod(
 			"getPlanes",
-			"()[Landroid/media/Image$Plane;");
-	}
-	jint Image::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I");
-	}
-	jint Image::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I");
+			"()[Landroid/media/Image$Plane;"
+		).object<jarray>();
 	}
 	jlong Image::getTimestamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTimestamp",
-			"()J");
+			"()J"
+		);
+	}
+	jint Image::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint Image::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

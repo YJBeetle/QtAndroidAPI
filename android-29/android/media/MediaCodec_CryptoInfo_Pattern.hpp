@@ -45,19 +45,22 @@ namespace __jni_impl::android::media
 			"set",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jint MediaCodec_CryptoInfo_Pattern::getSkipBlocks()
 	{
 		return __thiz.callMethod<jint>(
 			"getSkipBlocks",
-			"()I");
+			"()I"
+		);
 	}
 	jint MediaCodec_CryptoInfo_Pattern::getEncryptBlocks()
 	{
 		return __thiz.callMethod<jint>(
 			"getEncryptBlocks",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

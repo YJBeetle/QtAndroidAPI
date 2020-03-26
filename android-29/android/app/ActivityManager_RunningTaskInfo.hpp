@@ -22,7 +22,7 @@ namespace __jni_impl::android::app
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
-		QAndroidJniObject description();
+		jstring description();
 		jint id();
 		jint numRunning();
 		QAndroidJniObject thumbnail();
@@ -31,9 +31,9 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -48,29 +48,34 @@ namespace __jni_impl::android::app
 		return QAndroidJniObject::getStaticObjectField(
 			"android.app.ActivityManager$RunningTaskInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
-	QAndroidJniObject ActivityManager_RunningTaskInfo::description()
+	jstring ActivityManager_RunningTaskInfo::description()
 	{
 		return __thiz.getObjectField(
 			"description",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint ActivityManager_RunningTaskInfo::id()
 	{
 		return __thiz.getField<jint>(
-			"id");
+			"id"
+		);
 	}
 	jint ActivityManager_RunningTaskInfo::numRunning()
 	{
 		return __thiz.getField<jint>(
-			"numRunning");
+			"numRunning"
+		);
 	}
 	QAndroidJniObject ActivityManager_RunningTaskInfo::thumbnail()
 	{
 		return __thiz.getObjectField(
 			"thumbnail",
-			"Landroid/graphics/Bitmap;");
+			"Landroid/graphics/Bitmap;"
+		);
 	}
 	
 	// Constructors
@@ -82,18 +87,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ActivityManager_RunningTaskInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
 	jint ActivityManager_RunningTaskInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ActivityManager_RunningTaskInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -101,7 +100,16 @@ namespace __jni_impl::android::app
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ActivityManager_RunningTaskInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::app
 

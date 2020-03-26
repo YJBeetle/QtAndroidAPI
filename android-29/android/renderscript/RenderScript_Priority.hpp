@@ -20,7 +20,7 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::renderscript
@@ -34,14 +34,16 @@ namespace __jni_impl::android::renderscript
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$Priority",
 			"LOW",
-			"Landroid/renderscript/RenderScript$Priority;");
+			"Landroid/renderscript/RenderScript$Priority;"
+		);
 	}
 	QAndroidJniObject RenderScript_Priority::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.RenderScript$Priority",
 			"NORMAL",
-			"Landroid/renderscript/RenderScript$Priority;");
+			"Landroid/renderscript/RenderScript$Priority;"
+		);
 	}
 	
 	// Constructors
@@ -53,12 +55,13 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	QAndroidJniObject RenderScript_Priority::values()
+	jarray RenderScript_Priority::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.renderscript.RenderScript$Priority",
 			"values",
-			"()[Landroid/renderscript/RenderScript$Priority;");
+			"()[Landroid/renderscript/RenderScript$Priority;"
+		).object<jarray>();
 	}
 	QAndroidJniObject RenderScript_Priority::valueOf(jstring arg0)
 	{
@@ -66,7 +69,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.RenderScript$Priority",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$Priority;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

@@ -31,17 +31,20 @@ namespace __jni_impl::android::renderscript
 	jdouble Double3::x()
 	{
 		return __thiz.getField<jdouble>(
-			"x");
+			"x"
+		);
 	}
 	jdouble Double3::y()
 	{
 		return __thiz.getField<jdouble>(
-			"y");
+			"y"
+		);
 	}
 	jdouble Double3::z()
 	{
 		return __thiz.getField<jdouble>(
-			"z");
+			"z"
+		);
 	}
 	
 	// Constructors

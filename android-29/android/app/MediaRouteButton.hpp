@@ -33,16 +33,16 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void jumpDrawablesToCurrentState();
-		jboolean performClick();
-		void setContentDescription(jstring arg0);
-		void setVisibility(jint arg0);
+		jint getRouteTypes();
 		void setRouteTypes(jint arg0);
 		void setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0);
 		void onAttachedToWindow();
 		void onDetachedFromWindow();
 		void showDialog();
-		jint getRouteTypes();
+		void jumpDrawablesToCurrentState();
+		jboolean performClick();
+		void setContentDescription(jstring arg0);
+		void setVisibility(jint arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -91,69 +91,79 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void MediaRouteButton::jumpDrawablesToCurrentState()
+	jint MediaRouteButton::getRouteTypes()
 	{
-		__thiz.callMethod<void>(
-			"jumpDrawablesToCurrentState",
-			"()V");
-	}
-	jboolean MediaRouteButton::performClick()
-	{
-		return __thiz.callMethod<jboolean>(
-			"performClick",
-			"()Z");
-	}
-	void MediaRouteButton::setContentDescription(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)V",
-			arg0);
-	}
-	void MediaRouteButton::setVisibility(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVisibility",
-			"(I)V",
-			arg0);
+		return __thiz.callMethod<jint>(
+			"getRouteTypes",
+			"()I"
+		);
 	}
 	void MediaRouteButton::setRouteTypes(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRouteTypes",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaRouteButton::setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setExtendedSettingsClickListener",
 			"(Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaRouteButton::onAttachedToWindow()
 	{
 		__thiz.callMethod<void>(
 			"onAttachedToWindow",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaRouteButton::onDetachedFromWindow()
 	{
 		__thiz.callMethod<void>(
 			"onDetachedFromWindow",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaRouteButton::showDialog()
 	{
 		__thiz.callMethod<void>(
 			"showDialog",
-			"()V");
+			"()V"
+		);
 	}
-	jint MediaRouteButton::getRouteTypes()
+	void MediaRouteButton::jumpDrawablesToCurrentState()
 	{
-		return __thiz.callMethod<jint>(
-			"getRouteTypes",
-			"()I");
+		__thiz.callMethod<void>(
+			"jumpDrawablesToCurrentState",
+			"()V"
+		);
+	}
+	jboolean MediaRouteButton::performClick()
+	{
+		return __thiz.callMethod<jboolean>(
+			"performClick",
+			"()Z"
+		);
+	}
+	void MediaRouteButton::setContentDescription(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentDescription",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void MediaRouteButton::setVisibility(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVisibility",
+			"(I)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app
 

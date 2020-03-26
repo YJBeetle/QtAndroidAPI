@@ -34,31 +34,36 @@ namespace __jni_impl::android::view
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.SoundEffectConstants",
-			"CLICK");
+			"CLICK"
+		);
 	}
 	jint SoundEffectConstants::NAVIGATION_DOWN()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.SoundEffectConstants",
-			"NAVIGATION_DOWN");
+			"NAVIGATION_DOWN"
+		);
 	}
 	jint SoundEffectConstants::NAVIGATION_LEFT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.SoundEffectConstants",
-			"NAVIGATION_LEFT");
+			"NAVIGATION_LEFT"
+		);
 	}
 	jint SoundEffectConstants::NAVIGATION_RIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.SoundEffectConstants",
-			"NAVIGATION_RIGHT");
+			"NAVIGATION_RIGHT"
+		);
 	}
 	jint SoundEffectConstants::NAVIGATION_UP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.view.SoundEffectConstants",
-			"NAVIGATION_UP");
+			"NAVIGATION_UP"
+		);
 	}
 	
 	// Constructors
@@ -76,7 +81,8 @@ namespace __jni_impl::android::view
 			"android.view.SoundEffectConstants",
 			"getContantForFocusDirection",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::view
 

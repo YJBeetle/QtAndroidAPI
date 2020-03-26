@@ -8,10 +8,6 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::java::io
 {
 	class FileDescriptor;
@@ -19,6 +15,10 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class PrintWriter;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 namespace __jni_impl::android::content
 {
@@ -51,8 +51,8 @@ namespace __jni_impl::android::service::voice
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SERVICE_INTERFACE();
-		static QAndroidJniObject SERVICE_META_DATA();
+		static jstring SERVICE_INTERFACE();
+		static jstring SERVICE_META_DATA();
 		
 		// Constructors
 		void __constructor();
@@ -61,20 +61,20 @@ namespace __jni_impl::android::service::voice
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void setDisabledShowContext(jint arg0);
 		jint getDisabledShowContext();
-		void onReady();
-		void onLaunchVoiceAssistFromKeyguard();
 		static jboolean isActiveService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
-		void onShutdown();
+		void onLaunchVoiceAssistFromKeyguard();
 		void showSession(__jni_impl::android::os::Bundle arg0, jint arg1);
+		QAndroidJniObject onGetSupportedVoiceActions(__jni_impl::__JniBaseClass arg0);
+		void onShutdown();
 		QAndroidJniObject createAlwaysOnHotwordDetector(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::android::service::voice::AlwaysOnHotwordDetector_Callback arg2);
 		void setUiHints(__jni_impl::android::os::Bundle arg0);
-		QAndroidJniObject onGetSupportedVoiceActions(__jni_impl::__JniBaseClass arg0);
+		void onReady();
 	};
 } // namespace __jni_impl::android::service::voice
 
-#include "../../content/Intent.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
+#include "../../content/Intent.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../os/Bundle.hpp"
@@ -85,19 +85,21 @@ namespace __jni_impl::android::service::voice
 namespace __jni_impl::android::service::voice
 {
 	// Fields
-	QAndroidJniObject VoiceInteractionService::SERVICE_INTERFACE()
+	jstring VoiceInteractionService::SERVICE_INTERFACE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.voice.VoiceInteractionService",
 			"SERVICE_INTERFACE",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject VoiceInteractionService::SERVICE_META_DATA()
+	jstring VoiceInteractionService::SERVICE_META_DATA()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.service.voice.VoiceInteractionService",
 			"SERVICE_META_DATA",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -114,32 +116,23 @@ namespace __jni_impl::android::service::voice
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void VoiceInteractionService::setDisabledShowContext(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDisabledShowContext",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint VoiceInteractionService::getDisabledShowContext()
 	{
 		return __thiz.callMethod<jint>(
 			"getDisabledShowContext",
-			"()I");
-	}
-	void VoiceInteractionService::onReady()
-	{
-		__thiz.callMethod<void>(
-			"onReady",
-			"()V");
-	}
-	void VoiceInteractionService::onLaunchVoiceAssistFromKeyguard()
-	{
-		__thiz.callMethod<void>(
-			"onLaunchVoiceAssistFromKeyguard",
-			"()V");
+			"()I"
+		);
 	}
 	jboolean VoiceInteractionService::isActiveService(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1)
 	{
@@ -148,13 +141,15 @@ namespace __jni_impl::android::service::voice
 			"isActiveService",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)Z",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
-	void VoiceInteractionService::onShutdown()
+	void VoiceInteractionService::onLaunchVoiceAssistFromKeyguard()
 	{
 		__thiz.callMethod<void>(
-			"onShutdown",
-			"()V");
+			"onLaunchVoiceAssistFromKeyguard",
+			"()V"
+		);
 	}
 	void VoiceInteractionService::showSession(__jni_impl::android::os::Bundle arg0, jint arg1)
 	{
@@ -162,7 +157,23 @@ namespace __jni_impl::android::service::voice
 			"showSession",
 			"(Landroid/os/Bundle;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	QAndroidJniObject VoiceInteractionService::onGetSupportedVoiceActions(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onGetSupportedVoiceActions",
+			"(Ljava/util/Set;)Ljava/util/Set;",
+			arg0.__jniObject().object()
+		);
+	}
+	void VoiceInteractionService::onShutdown()
+	{
+		__thiz.callMethod<void>(
+			"onShutdown",
+			"()V"
+		);
 	}
 	QAndroidJniObject VoiceInteractionService::createAlwaysOnHotwordDetector(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::android::service::voice::AlwaysOnHotwordDetector_Callback arg2)
 	{
@@ -171,21 +182,23 @@ namespace __jni_impl::android::service::voice
 			"(Ljava/lang/String;Ljava/util/Locale;Landroid/service/voice/AlwaysOnHotwordDetector$Callback;)Landroid/service/voice/AlwaysOnHotwordDetector;",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void VoiceInteractionService::setUiHints(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
 			"setUiHints",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject VoiceInteractionService::onGetSupportedVoiceActions(__jni_impl::__JniBaseClass arg0)
+	void VoiceInteractionService::onReady()
 	{
-		return __thiz.callObjectMethod(
-			"onGetSupportedVoiceActions",
-			"(Ljava/util/Set;)Ljava/util/Set;",
-			arg0.__jniObject().object());
+		__thiz.callMethod<void>(
+			"onReady",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::service::voice
 

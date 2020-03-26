@@ -20,18 +20,18 @@ namespace __jni_impl::android::provider
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ACCOUNT_TYPE_LOCAL();
-		static QAndroidJniObject ACTION_EVENT_REMINDER();
-		static QAndroidJniObject ACTION_HANDLE_CUSTOM_EVENT();
-		static QAndroidJniObject ACTION_VIEW_MANAGED_PROFILE_CALENDAR_EVENT();
-		static QAndroidJniObject AUTHORITY();
-		static QAndroidJniObject CALLER_IS_SYNCADAPTER();
+		static jstring ACCOUNT_TYPE_LOCAL();
+		static jstring ACTION_EVENT_REMINDER();
+		static jstring ACTION_HANDLE_CUSTOM_EVENT();
+		static jstring ACTION_VIEW_MANAGED_PROFILE_CALENDAR_EVENT();
+		static jstring AUTHORITY();
+		static jstring CALLER_IS_SYNCADAPTER();
 		static QAndroidJniObject CONTENT_URI();
-		static QAndroidJniObject EXTRA_CUSTOM_APP_URI();
-		static QAndroidJniObject EXTRA_EVENT_ALL_DAY();
-		static QAndroidJniObject EXTRA_EVENT_BEGIN_TIME();
-		static QAndroidJniObject EXTRA_EVENT_END_TIME();
-		static QAndroidJniObject EXTRA_EVENT_ID();
+		static jstring EXTRA_CUSTOM_APP_URI();
+		static jstring EXTRA_EVENT_ALL_DAY();
+		static jstring EXTRA_EVENT_BEGIN_TIME();
+		static jstring EXTRA_EVENT_END_TIME();
+		static jstring EXTRA_EVENT_ID();
 		
 		// Constructors
 		void __constructor();
@@ -47,89 +47,101 @@ namespace __jni_impl::android::provider
 namespace __jni_impl::android::provider
 {
 	// Fields
-	QAndroidJniObject CalendarContract::ACCOUNT_TYPE_LOCAL()
+	jstring CalendarContract::ACCOUNT_TYPE_LOCAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"ACCOUNT_TYPE_LOCAL",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract::ACTION_EVENT_REMINDER()
+	jstring CalendarContract::ACTION_EVENT_REMINDER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"ACTION_EVENT_REMINDER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract::ACTION_HANDLE_CUSTOM_EVENT()
+	jstring CalendarContract::ACTION_HANDLE_CUSTOM_EVENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"ACTION_HANDLE_CUSTOM_EVENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract::ACTION_VIEW_MANAGED_PROFILE_CALENDAR_EVENT()
+	jstring CalendarContract::ACTION_VIEW_MANAGED_PROFILE_CALENDAR_EVENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"ACTION_VIEW_MANAGED_PROFILE_CALENDAR_EVENT",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract::AUTHORITY()
+	jstring CalendarContract::AUTHORITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"AUTHORITY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract::CALLER_IS_SYNCADAPTER()
+	jstring CalendarContract::CALLER_IS_SYNCADAPTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"CALLER_IS_SYNCADAPTER",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject CalendarContract::CONTENT_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"CONTENT_URI",
-			"Landroid/net/Uri;");
+			"Landroid/net/Uri;"
+		);
 	}
-	QAndroidJniObject CalendarContract::EXTRA_CUSTOM_APP_URI()
+	jstring CalendarContract::EXTRA_CUSTOM_APP_URI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"EXTRA_CUSTOM_APP_URI",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract::EXTRA_EVENT_ALL_DAY()
+	jstring CalendarContract::EXTRA_EVENT_ALL_DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"EXTRA_EVENT_ALL_DAY",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract::EXTRA_EVENT_BEGIN_TIME()
+	jstring CalendarContract::EXTRA_EVENT_BEGIN_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"EXTRA_EVENT_BEGIN_TIME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract::EXTRA_EVENT_END_TIME()
+	jstring CalendarContract::EXTRA_EVENT_END_TIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"EXTRA_EVENT_END_TIME",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject CalendarContract::EXTRA_EVENT_ID()
+	jstring CalendarContract::EXTRA_EVENT_ID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.provider.CalendarContract",
 			"EXTRA_EVENT_ID",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -152,7 +164,8 @@ namespace __jni_impl::android::provider
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 } // namespace __jni_impl::android::provider
 

@@ -67,13 +67,15 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"getCurrentActivity",
-			"()Landroid/app/Activity;");
+			"()Landroid/app/Activity;"
+		);
 	}
 	QAndroidJniObject ActivityGroup::getLocalActivityManager()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalActivityManager",
-			"()Landroid/app/LocalActivityManager;");
+			"()Landroid/app/LocalActivityManager;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

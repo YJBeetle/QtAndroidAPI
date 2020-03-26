@@ -34,12 +34,12 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject createAudioThumbnail(__jni_impl::java::io::File arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2);
+		static QAndroidJniObject createAudioThumbnail(jstring arg0, jint arg1);
 		static QAndroidJniObject createImageThumbnail(__jni_impl::java::io::File arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2);
 		static QAndroidJniObject createImageThumbnail(jstring arg0, jint arg1);
 		static QAndroidJniObject createVideoThumbnail(__jni_impl::java::io::File arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2);
 		static QAndroidJniObject createVideoThumbnail(jstring arg0, jint arg1);
-		static QAndroidJniObject createAudioThumbnail(__jni_impl::java::io::File arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2);
-		static QAndroidJniObject createAudioThumbnail(jstring arg0, jint arg1);
 		static QAndroidJniObject extractThumbnail(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2);
 		static QAndroidJniObject extractThumbnail(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3);
 	};
@@ -57,7 +57,8 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.ThumbnailUtils",
-			"OPTIONS_RECYCLE_INPUT");
+			"OPTIONS_RECYCLE_INPUT"
+		);
 	}
 	
 	// Constructors
@@ -69,6 +70,27 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	QAndroidJniObject ThumbnailUtils::createAudioThumbnail(__jni_impl::java::io::File arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.ThumbnailUtils",
+			"createAudioThumbnail",
+			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ThumbnailUtils::createAudioThumbnail(jstring arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.ThumbnailUtils",
+			"createAudioThumbnail",
+			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
+			arg0,
+			arg1
+		);
+	}
 	QAndroidJniObject ThumbnailUtils::createImageThumbnail(__jni_impl::java::io::File arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -77,7 +99,8 @@ namespace __jni_impl::android::media
 			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThumbnailUtils::createImageThumbnail(jstring arg0, jint arg1)
 	{
@@ -86,7 +109,8 @@ namespace __jni_impl::android::media
 			"createImageThumbnail",
 			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ThumbnailUtils::createVideoThumbnail(__jni_impl::java::io::File arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2)
 	{
@@ -96,7 +120,8 @@ namespace __jni_impl::android::media
 			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ThumbnailUtils::createVideoThumbnail(jstring arg0, jint arg1)
 	{
@@ -105,26 +130,8 @@ namespace __jni_impl::android::media
 			"createVideoThumbnail",
 			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
 			arg0,
-			arg1);
-	}
-	QAndroidJniObject ThumbnailUtils::createAudioThumbnail(__jni_impl::java::io::File arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.ThumbnailUtils",
-			"createAudioThumbnail",
-			"(Ljava/io/File;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
-	}
-	QAndroidJniObject ThumbnailUtils::createAudioThumbnail(jstring arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.ThumbnailUtils",
-			"createAudioThumbnail",
-			"(Ljava/lang/String;I)Landroid/graphics/Bitmap;",
-			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject ThumbnailUtils::extractThumbnail(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2)
 	{
@@ -134,7 +141,8 @@ namespace __jni_impl::android::media
 			"(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject ThumbnailUtils::extractThumbnail(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -145,7 +153,8 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 } // namespace __jni_impl::android::media
 

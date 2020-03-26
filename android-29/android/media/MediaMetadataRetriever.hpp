@@ -86,7 +86,7 @@ namespace __jni_impl::android::media
 		void setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
 		void setDataSource(__jni_impl::java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
 		void setDataSource(__jni_impl::java::io::FileDescriptor arg0);
-		QAndroidJniObject extractMetadata(jint arg0);
+		jstring extractMetadata(jint arg0);
 		QAndroidJniObject getFrameAtTime();
 		QAndroidJniObject getFrameAtTime(jlong arg0, jint arg1);
 		QAndroidJniObject getFrameAtTime(jlong arg0);
@@ -99,7 +99,7 @@ namespace __jni_impl::android::media
 		QAndroidJniObject getImageAtIndex(jint arg0);
 		QAndroidJniObject getPrimaryImage();
 		QAndroidJniObject getPrimaryImage(__jni_impl::android::media::MediaMetadataRetriever_BitmapParams arg0);
-		QAndroidJniObject getEmbeddedPicture();
+		jbyteArray getEmbeddedPicture();
 	};
 } // namespace __jni_impl::android::media
 
@@ -117,223 +117,260 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_ALBUM");
+			"METADATA_KEY_ALBUM"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_ALBUMARTIST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_ALBUMARTIST");
+			"METADATA_KEY_ALBUMARTIST"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_ARTIST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_ARTIST");
+			"METADATA_KEY_ARTIST"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_AUTHOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_AUTHOR");
+			"METADATA_KEY_AUTHOR"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_BITRATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_BITRATE");
+			"METADATA_KEY_BITRATE"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_CAPTURE_FRAMERATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_CAPTURE_FRAMERATE");
+			"METADATA_KEY_CAPTURE_FRAMERATE"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_CD_TRACK_NUMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_CD_TRACK_NUMBER");
+			"METADATA_KEY_CD_TRACK_NUMBER"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_COMPILATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_COMPILATION");
+			"METADATA_KEY_COMPILATION"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_COMPOSER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_COMPOSER");
+			"METADATA_KEY_COMPOSER"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_DATE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_DATE");
+			"METADATA_KEY_DATE"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_DISC_NUMBER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_DISC_NUMBER");
+			"METADATA_KEY_DISC_NUMBER"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_DURATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_DURATION");
+			"METADATA_KEY_DURATION"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_EXIF_LENGTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_EXIF_LENGTH");
+			"METADATA_KEY_EXIF_LENGTH"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_EXIF_OFFSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_EXIF_OFFSET");
+			"METADATA_KEY_EXIF_OFFSET"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_GENRE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_GENRE");
+			"METADATA_KEY_GENRE"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_HAS_AUDIO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_HAS_AUDIO");
+			"METADATA_KEY_HAS_AUDIO"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_HAS_IMAGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_HAS_IMAGE");
+			"METADATA_KEY_HAS_IMAGE"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_HAS_VIDEO()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_HAS_VIDEO");
+			"METADATA_KEY_HAS_VIDEO"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_COUNT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_IMAGE_COUNT");
+			"METADATA_KEY_IMAGE_COUNT"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_HEIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_IMAGE_HEIGHT");
+			"METADATA_KEY_IMAGE_HEIGHT"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_PRIMARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_IMAGE_PRIMARY");
+			"METADATA_KEY_IMAGE_PRIMARY"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_ROTATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_IMAGE_ROTATION");
+			"METADATA_KEY_IMAGE_ROTATION"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_IMAGE_WIDTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_IMAGE_WIDTH");
+			"METADATA_KEY_IMAGE_WIDTH"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_LOCATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_LOCATION");
+			"METADATA_KEY_LOCATION"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_MIMETYPE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_MIMETYPE");
+			"METADATA_KEY_MIMETYPE"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_NUM_TRACKS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_NUM_TRACKS");
+			"METADATA_KEY_NUM_TRACKS"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_TITLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_TITLE");
+			"METADATA_KEY_TITLE"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_VIDEO_FRAME_COUNT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_VIDEO_FRAME_COUNT");
+			"METADATA_KEY_VIDEO_FRAME_COUNT"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_VIDEO_HEIGHT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_VIDEO_HEIGHT");
+			"METADATA_KEY_VIDEO_HEIGHT"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_VIDEO_ROTATION()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_VIDEO_ROTATION");
+			"METADATA_KEY_VIDEO_ROTATION"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_VIDEO_WIDTH()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_VIDEO_WIDTH");
+			"METADATA_KEY_VIDEO_WIDTH"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_WRITER()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_WRITER");
+			"METADATA_KEY_WRITER"
+		);
 	}
 	jint MediaMetadataRetriever::METADATA_KEY_YEAR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"METADATA_KEY_YEAR");
+			"METADATA_KEY_YEAR"
+		);
 	}
 	jint MediaMetadataRetriever::OPTION_CLOSEST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"OPTION_CLOSEST");
+			"OPTION_CLOSEST"
+		);
 	}
 	jint MediaMetadataRetriever::OPTION_CLOSEST_SYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"OPTION_CLOSEST_SYNC");
+			"OPTION_CLOSEST_SYNC"
+		);
 	}
 	jint MediaMetadataRetriever::OPTION_NEXT_SYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"OPTION_NEXT_SYNC");
+			"OPTION_NEXT_SYNC"
+		);
 	}
 	jint MediaMetadataRetriever::OPTION_PREVIOUS_SYNC()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.MediaMetadataRetriever",
-			"OPTION_PREVIOUS_SYNC");
+			"OPTION_PREVIOUS_SYNC"
+		);
 	}
 	
 	// Constructors
@@ -349,13 +386,15 @@ namespace __jni_impl::android::media
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaMetadataRetriever::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaMetadataRetriever::setDataSource(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -363,21 +402,24 @@ namespace __jni_impl::android::media
 			"setDataSource",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaMetadataRetriever::setDataSource(__jni_impl::android::media::MediaDataSource arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDataSource",
 			"(Landroid/media/MediaDataSource;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MediaMetadataRetriever::setDataSource(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDataSource",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void MediaMetadataRetriever::setDataSource(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -385,7 +427,8 @@ namespace __jni_impl::android::media
 			"setDataSource",
 			"(Landroid/content/Context;Landroid/net/Uri;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MediaMetadataRetriever::setDataSource(__jni_impl::java::io::FileDescriptor arg0, jlong arg1, jlong arg2)
 	{
@@ -394,27 +437,31 @@ namespace __jni_impl::android::media
 			"(Ljava/io/FileDescriptor;JJ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void MediaMetadataRetriever::setDataSource(__jni_impl::java::io::FileDescriptor arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDataSource",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::extractMetadata(jint arg0)
+	jstring MediaMetadataRetriever::extractMetadata(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"extractMetadata",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject MediaMetadataRetriever::getFrameAtTime()
 	{
 		return __thiz.callObjectMethod(
 			"getFrameAtTime",
-			"()Landroid/graphics/Bitmap;");
+			"()Landroid/graphics/Bitmap;"
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getFrameAtTime(jlong arg0, jint arg1)
 	{
@@ -422,14 +469,16 @@ namespace __jni_impl::android::media
 			"getFrameAtTime",
 			"(JI)Landroid/graphics/Bitmap;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getFrameAtTime(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getFrameAtTime",
 			"(J)Landroid/graphics/Bitmap;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getScaledFrameAtTime(jlong arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -439,7 +488,8 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getFrameAtIndex(jint arg0, __jni_impl::android::media::MediaMetadataRetriever_BitmapParams arg1)
 	{
@@ -447,14 +497,16 @@ namespace __jni_impl::android::media
 			"getFrameAtIndex",
 			"(ILandroid/media/MediaMetadataRetriever$BitmapParams;)Landroid/graphics/Bitmap;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getFrameAtIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getFrameAtIndex",
 			"(I)Landroid/graphics/Bitmap;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1)
 	{
@@ -462,7 +514,8 @@ namespace __jni_impl::android::media
 			"getFramesAtIndex",
 			"(II)Ljava/util/List;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1, __jni_impl::android::media::MediaMetadataRetriever_BitmapParams arg2)
 	{
@@ -471,7 +524,8 @@ namespace __jni_impl::android::media
 			"(IILandroid/media/MediaMetadataRetriever$BitmapParams;)Ljava/util/List;",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getImageAtIndex(jint arg0, __jni_impl::android::media::MediaMetadataRetriever_BitmapParams arg1)
 	{
@@ -479,33 +533,38 @@ namespace __jni_impl::android::media
 			"getImageAtIndex",
 			"(ILandroid/media/MediaMetadataRetriever$BitmapParams;)Landroid/graphics/Bitmap;",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getImageAtIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getImageAtIndex",
 			"(I)Landroid/graphics/Bitmap;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getPrimaryImage()
 	{
 		return __thiz.callObjectMethod(
 			"getPrimaryImage",
-			"()Landroid/graphics/Bitmap;");
+			"()Landroid/graphics/Bitmap;"
+		);
 	}
 	QAndroidJniObject MediaMetadataRetriever::getPrimaryImage(__jni_impl::android::media::MediaMetadataRetriever_BitmapParams arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPrimaryImage",
 			"(Landroid/media/MediaMetadataRetriever$BitmapParams;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject MediaMetadataRetriever::getEmbeddedPicture()
+	jbyteArray MediaMetadataRetriever::getEmbeddedPicture()
 	{
 		return __thiz.callObjectMethod(
 			"getEmbeddedPicture",
-			"()[B");
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::media
 

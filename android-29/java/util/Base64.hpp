@@ -56,14 +56,16 @@ namespace __jni_impl::java::util
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
 			"getEncoder",
-			"()Ljava/util/Base64$Encoder;");
+			"()Ljava/util/Base64$Encoder;"
+		);
 	}
 	QAndroidJniObject Base64::getUrlEncoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
 			"getUrlEncoder",
-			"()Ljava/util/Base64$Encoder;");
+			"()Ljava/util/Base64$Encoder;"
+		);
 	}
 	QAndroidJniObject Base64::getMimeEncoder(jint arg0, jbyteArray arg1)
 	{
@@ -72,35 +74,40 @@ namespace __jni_impl::java::util
 			"getMimeEncoder",
 			"(I[B)Ljava/util/Base64$Encoder;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject Base64::getMimeEncoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
 			"getMimeEncoder",
-			"()Ljava/util/Base64$Encoder;");
+			"()Ljava/util/Base64$Encoder;"
+		);
 	}
 	QAndroidJniObject Base64::getDecoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
 			"getDecoder",
-			"()Ljava/util/Base64$Decoder;");
+			"()Ljava/util/Base64$Decoder;"
+		);
 	}
 	QAndroidJniObject Base64::getUrlDecoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
 			"getUrlDecoder",
-			"()Ljava/util/Base64$Decoder;");
+			"()Ljava/util/Base64$Decoder;"
+		);
 	}
 	QAndroidJniObject Base64::getMimeDecoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
 			"getMimeDecoder",
-			"()Ljava/util/Base64$Decoder;");
+			"()Ljava/util/Base64$Decoder;"
+		);
 	}
 } // namespace __jni_impl::java::util
 

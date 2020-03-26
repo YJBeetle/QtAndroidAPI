@@ -31,12 +31,12 @@ namespace __jni_impl::android::widget
 		void cancel();
 		void setText(jstring arg0);
 		void setText(jint arg0);
+		QAndroidJniObject getView();
+		void setView(__jni_impl::android::view::View arg0);
 		void show();
 		void setGravity(jint arg0, jint arg1, jint arg2);
 		jint getGravity();
 		void setDuration(jint arg0);
-		void setView(__jni_impl::android::view::View arg0);
-		QAndroidJniObject getView();
 		void setMargin(jfloat arg0, jfloat arg1);
 		jfloat getHorizontalMargin();
 		jfloat getVerticalMargin();
@@ -57,13 +57,15 @@ namespace __jni_impl::android::widget
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.Toast",
-			"LENGTH_LONG");
+			"LENGTH_LONG"
+		);
 	}
 	jint Toast::LENGTH_SHORT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.widget.Toast",
-			"LENGTH_SHORT");
+			"LENGTH_SHORT"
+		);
 	}
 	
 	// Constructors
@@ -80,33 +82,53 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callMethod<jint>(
 			"getDuration",
-			"()I");
+			"()I"
+		);
 	}
 	void Toast::cancel()
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
 	}
 	void Toast::setText(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
 	}
 	void Toast::setText(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setText",
 			"(I)V",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject Toast::getView()
+	{
+		return __thiz.callObjectMethod(
+			"getView",
+			"()Landroid/view/View;"
+		);
+	}
+	void Toast::setView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void Toast::show()
 	{
 		__thiz.callMethod<void>(
 			"show",
-			"()V");
+			"()V"
+		);
 	}
 	void Toast::setGravity(jint arg0, jint arg1, jint arg2)
 	{
@@ -115,33 +137,23 @@ namespace __jni_impl::android::widget
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Toast::getGravity()
 	{
 		return __thiz.callMethod<jint>(
 			"getGravity",
-			"()I");
+			"()I"
+		);
 	}
 	void Toast::setDuration(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDuration",
 			"(I)V",
-			arg0);
-	}
-	void Toast::setView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject Toast::getView()
-	{
-		return __thiz.callObjectMethod(
-			"getView",
-			"()Landroid/view/View;");
+			arg0
+		);
 	}
 	void Toast::setMargin(jfloat arg0, jfloat arg1)
 	{
@@ -149,31 +161,36 @@ namespace __jni_impl::android::widget
 			"setMargin",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jfloat Toast::getHorizontalMargin()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getHorizontalMargin",
-			"()F");
+			"()F"
+		);
 	}
 	jfloat Toast::getVerticalMargin()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getVerticalMargin",
-			"()F");
+			"()F"
+		);
 	}
 	jint Toast::getXOffset()
 	{
 		return __thiz.callMethod<jint>(
 			"getXOffset",
-			"()I");
+			"()I"
+		);
 	}
 	jint Toast::getYOffset()
 	{
 		return __thiz.callMethod<jint>(
 			"getYOffset",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject Toast::makeText(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
 	{
@@ -183,7 +200,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;II)Landroid/widget/Toast;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject Toast::makeText(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2)
 	{
@@ -193,7 +211,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::android::widget
 

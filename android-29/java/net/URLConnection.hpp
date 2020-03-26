@@ -45,11 +45,11 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		void connect();
 		QAndroidJniObject getInputStream();
-		QAndroidJniObject getContent();
-		QAndroidJniObject getContent(jarray arg0);
+		jobject getContent();
+		jobject getContent(jarray arg0);
 		jlong getDate();
 		jint getContentLength();
 		void setRequestProperty(jstring arg0, jstring arg1);
@@ -58,16 +58,16 @@ namespace __jni_impl::java::net
 		QAndroidJniObject getPermission();
 		jlong getLastModified();
 		static QAndroidJniObject getFileNameMap();
-		QAndroidJniObject getHeaderField(jint arg0);
-		QAndroidJniObject getHeaderField(jstring arg0);
-		QAndroidJniObject getHeaderFieldKey(jint arg0);
+		jstring getHeaderField(jint arg0);
+		jstring getHeaderField(jstring arg0);
+		jstring getHeaderFieldKey(jint arg0);
 		jlong getContentLengthLong();
-		static QAndroidJniObject guessContentTypeFromStream(__jni_impl::java::io::InputStream arg0);
-		static QAndroidJniObject guessContentTypeFromName(jstring arg0);
+		static jstring guessContentTypeFromStream(__jni_impl::java::io::InputStream arg0);
+		static jstring guessContentTypeFromName(jstring arg0);
 		void addRequestProperty(jstring arg0, jstring arg1);
-		QAndroidJniObject getRequestProperty(jstring arg0);
+		jstring getRequestProperty(jstring arg0);
 		QAndroidJniObject getRequestProperties();
-		QAndroidJniObject getContentType();
+		jstring getContentType();
 		jboolean getDefaultUseCaches();
 		static jboolean getDefaultUseCaches(jstring arg0);
 		jlong getHeaderFieldLong(jstring arg0, jlong arg1);
@@ -77,7 +77,7 @@ namespace __jni_impl::java::net
 		jint getConnectTimeout();
 		void setReadTimeout(jint arg0);
 		jint getReadTimeout();
-		QAndroidJniObject getContentEncoding();
+		jstring getContentEncoding();
 		jlong getExpiration();
 		QAndroidJniObject getHeaderFields();
 		jint getHeaderFieldInt(jstring arg0, jint arg1);
@@ -96,7 +96,7 @@ namespace __jni_impl::java::net
 		static void setDefaultUseCaches(jstring arg0, jboolean arg1);
 		void setDefaultUseCaches(jboolean arg0);
 		static void setDefaultRequestProperty(jstring arg0, jstring arg1);
-		static QAndroidJniObject getDefaultRequestProperty(jstring arg0);
+		static jstring getDefaultRequestProperty(jstring arg0);
 		static void setContentHandlerFactory(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::java::net
@@ -122,48 +122,55 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject URLConnection::toString()
+	jstring URLConnection::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void URLConnection::connect()
 	{
 		__thiz.callMethod<void>(
 			"connect",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject URLConnection::getInputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getInputStream",
-			"()Ljava/io/InputStream;");
+			"()Ljava/io/InputStream;"
+		);
 	}
-	QAndroidJniObject URLConnection::getContent()
+	jobject URLConnection::getContent()
 	{
 		return __thiz.callObjectMethod(
 			"getContent",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	QAndroidJniObject URLConnection::getContent(jarray arg0)
+	jobject URLConnection::getContent(jarray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getContent",
 			"([Ljava/lang/Class;)Ljava/lang/Object;",
-			arg0);
+			arg0
+		).object<jobject>();
 	}
 	jlong URLConnection::getDate()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDate",
-			"()J");
+			"()J"
+		);
 	}
 	jint URLConnection::getContentLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getContentLength",
-			"()I");
+			"()I"
+		);
 	}
 	void URLConnection::setRequestProperty(jstring arg0, jstring arg1)
 	{
@@ -171,82 +178,94 @@ namespace __jni_impl::java::net
 			"setRequestProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject URLConnection::getURL()
 	{
 		return __thiz.callObjectMethod(
 			"getURL",
-			"()Ljava/net/URL;");
+			"()Ljava/net/URL;"
+		);
 	}
 	void URLConnection::setUseCaches(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setUseCaches",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject URLConnection::getPermission()
 	{
 		return __thiz.callObjectMethod(
 			"getPermission",
-			"()Ljava/security/Permission;");
+			"()Ljava/security/Permission;"
+		);
 	}
 	jlong URLConnection::getLastModified()
 	{
 		return __thiz.callMethod<jlong>(
 			"getLastModified",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject URLConnection::getFileNameMap()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLConnection",
 			"getFileNameMap",
-			"()Ljava/net/FileNameMap;");
+			"()Ljava/net/FileNameMap;"
+		);
 	}
-	QAndroidJniObject URLConnection::getHeaderField(jint arg0)
+	jstring URLConnection::getHeaderField(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getHeaderField",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject URLConnection::getHeaderField(jstring arg0)
+	jstring URLConnection::getHeaderField(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getHeaderField",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
-	QAndroidJniObject URLConnection::getHeaderFieldKey(jint arg0)
+	jstring URLConnection::getHeaderFieldKey(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getHeaderFieldKey",
 			"(I)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	jlong URLConnection::getContentLengthLong()
 	{
 		return __thiz.callMethod<jlong>(
 			"getContentLengthLong",
-			"()J");
+			"()J"
+		);
 	}
-	QAndroidJniObject URLConnection::guessContentTypeFromStream(__jni_impl::java::io::InputStream arg0)
+	jstring URLConnection::guessContentTypeFromStream(__jni_impl::java::io::InputStream arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLConnection",
 			"guessContentTypeFromStream",
 			"(Ljava/io/InputStream;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject URLConnection::guessContentTypeFromName(jstring arg0)
+	jstring URLConnection::guessContentTypeFromName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLConnection",
 			"guessContentTypeFromName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void URLConnection::addRequestProperty(jstring arg0, jstring arg1)
 	{
@@ -254,32 +273,37 @@ namespace __jni_impl::java::net
 			"addRequestProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject URLConnection::getRequestProperty(jstring arg0)
+	jstring URLConnection::getRequestProperty(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getRequestProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject URLConnection::getRequestProperties()
 	{
 		return __thiz.callObjectMethod(
 			"getRequestProperties",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
-	QAndroidJniObject URLConnection::getContentType()
+	jstring URLConnection::getContentType()
 	{
 		return __thiz.callObjectMethod(
 			"getContentType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean URLConnection::getDefaultUseCaches()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getDefaultUseCaches",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean URLConnection::getDefaultUseCaches(jstring arg0)
 	{
@@ -287,7 +311,8 @@ namespace __jni_impl::java::net
 			"java.net.URLConnection",
 			"getDefaultUseCaches",
 			"(Ljava/lang/String;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jlong URLConnection::getHeaderFieldLong(jstring arg0, jlong arg1)
 	{
@@ -295,7 +320,8 @@ namespace __jni_impl::java::net
 			"getHeaderFieldLong",
 			"(Ljava/lang/String;J)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jlong URLConnection::getHeaderFieldDate(jstring arg0, jlong arg1)
 	{
@@ -303,7 +329,8 @@ namespace __jni_impl::java::net
 			"getHeaderFieldDate",
 			"(Ljava/lang/String;J)J",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void URLConnection::setFileNameMap(__jni_impl::__JniBaseClass arg0)
 	{
@@ -311,51 +338,59 @@ namespace __jni_impl::java::net
 			"java.net.URLConnection",
 			"setFileNameMap",
 			"(Ljava/net/FileNameMap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void URLConnection::setConnectTimeout(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setConnectTimeout",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint URLConnection::getConnectTimeout()
 	{
 		return __thiz.callMethod<jint>(
 			"getConnectTimeout",
-			"()I");
+			"()I"
+		);
 	}
 	void URLConnection::setReadTimeout(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setReadTimeout",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint URLConnection::getReadTimeout()
 	{
 		return __thiz.callMethod<jint>(
 			"getReadTimeout",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject URLConnection::getContentEncoding()
+	jstring URLConnection::getContentEncoding()
 	{
 		return __thiz.callObjectMethod(
 			"getContentEncoding",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong URLConnection::getExpiration()
 	{
 		return __thiz.callMethod<jlong>(
 			"getExpiration",
-			"()J");
+			"()J"
+		);
 	}
 	QAndroidJniObject URLConnection::getHeaderFields()
 	{
 		return __thiz.callObjectMethod(
 			"getHeaderFields",
-			"()Ljava/util/Map;");
+			"()Ljava/util/Map;"
+		);
 	}
 	jint URLConnection::getHeaderFieldInt(jstring arg0, jint arg1)
 	{
@@ -363,52 +398,60 @@ namespace __jni_impl::java::net
 			"getHeaderFieldInt",
 			"(Ljava/lang/String;I)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject URLConnection::getOutputStream()
 	{
 		return __thiz.callObjectMethod(
 			"getOutputStream",
-			"()Ljava/io/OutputStream;");
+			"()Ljava/io/OutputStream;"
+		);
 	}
 	void URLConnection::setDoInput(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDoInput",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean URLConnection::getDoInput()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getDoInput",
-			"()Z");
+			"()Z"
+		);
 	}
 	void URLConnection::setDoOutput(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDoOutput",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean URLConnection::getDoOutput()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getDoOutput",
-			"()Z");
+			"()Z"
+		);
 	}
 	void URLConnection::setAllowUserInteraction(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAllowUserInteraction",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean URLConnection::getAllowUserInteraction()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getAllowUserInteraction",
-			"()Z");
+			"()Z"
+		);
 	}
 	void URLConnection::setDefaultAllowUserInteraction(jboolean arg0)
 	{
@@ -416,33 +459,38 @@ namespace __jni_impl::java::net
 			"java.net.URLConnection",
 			"setDefaultAllowUserInteraction",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean URLConnection::getDefaultAllowUserInteraction()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"java.net.URLConnection",
 			"getDefaultAllowUserInteraction",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean URLConnection::getUseCaches()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getUseCaches",
-			"()Z");
+			"()Z"
+		);
 	}
 	void URLConnection::setIfModifiedSince(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setIfModifiedSince",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong URLConnection::getIfModifiedSince()
 	{
 		return __thiz.callMethod<jlong>(
 			"getIfModifiedSince",
-			"()J");
+			"()J"
+		);
 	}
 	void URLConnection::setDefaultUseCaches(jstring arg0, jboolean arg1)
 	{
@@ -451,14 +499,16 @@ namespace __jni_impl::java::net
 			"setDefaultUseCaches",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void URLConnection::setDefaultUseCaches(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDefaultUseCaches",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void URLConnection::setDefaultRequestProperty(jstring arg0, jstring arg1)
 	{
@@ -467,15 +517,17 @@ namespace __jni_impl::java::net
 			"setDefaultRequestProperty",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject URLConnection::getDefaultRequestProperty(jstring arg0)
+	jstring URLConnection::getDefaultRequestProperty(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.URLConnection",
 			"getDefaultRequestProperty",
 			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0);
+			arg0
+		).object<jstring>();
 	}
 	void URLConnection::setContentHandlerFactory(__jni_impl::__JniBaseClass arg0)
 	{
@@ -483,7 +535,8 @@ namespace __jni_impl::java::net
 			"java.net.URLConnection",
 			"setContentHandlerFactory",
 			"(Ljava/net/ContentHandlerFactory;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::net
 

@@ -48,13 +48,15 @@ namespace __jni_impl::android::database
 		__thiz.callMethod<void>(
 			"onChange",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean AbstractCursor_SelfContentObserver::deliverSelfNotifications()
 	{
 		return __thiz.callMethod<jboolean>(
 			"deliverSelfNotifications",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::database
 

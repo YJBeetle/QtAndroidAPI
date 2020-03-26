@@ -29,7 +29,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clone();
+		jobject clone();
 		static jint compare(jint arg0, jint arg1, jint arg2);
 		static jint compare(jcharArray arg0, jcharArray arg1, jint arg2);
 		static jint compare(jint arg0, jstring arg1, jint arg2);
@@ -47,52 +47,60 @@ namespace __jni_impl::android::icu::text
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.Normalizer",
-			"COMPARE_CODE_POINT_ORDER");
+			"COMPARE_CODE_POINT_ORDER"
+		);
 	}
 	jint Normalizer::COMPARE_IGNORE_CASE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.Normalizer",
-			"COMPARE_IGNORE_CASE");
+			"COMPARE_IGNORE_CASE"
+		);
 	}
 	jint Normalizer::FOLD_CASE_DEFAULT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.Normalizer",
-			"FOLD_CASE_DEFAULT");
+			"FOLD_CASE_DEFAULT"
+		);
 	}
 	jint Normalizer::FOLD_CASE_EXCLUDE_SPECIAL_I()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.Normalizer",
-			"FOLD_CASE_EXCLUDE_SPECIAL_I");
+			"FOLD_CASE_EXCLUDE_SPECIAL_I"
+		);
 	}
 	jint Normalizer::INPUT_IS_FCD()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.text.Normalizer",
-			"INPUT_IS_FCD");
+			"INPUT_IS_FCD"
+		);
 	}
 	QAndroidJniObject Normalizer::MAYBE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer",
 			"MAYBE",
-			"Landroid/icu/text/Normalizer$QuickCheckResult;");
+			"Landroid/icu/text/Normalizer$QuickCheckResult;"
+		);
 	}
 	QAndroidJniObject Normalizer::NO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer",
 			"NO",
-			"Landroid/icu/text/Normalizer$QuickCheckResult;");
+			"Landroid/icu/text/Normalizer$QuickCheckResult;"
+		);
 	}
 	QAndroidJniObject Normalizer::YES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer",
 			"YES",
-			"Landroid/icu/text/Normalizer$QuickCheckResult;");
+			"Landroid/icu/text/Normalizer$QuickCheckResult;"
+		);
 	}
 	
 	// Constructors
@@ -104,11 +112,12 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject Normalizer::clone()
+	jobject Normalizer::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
-			"()Ljava/lang/Object;");
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jint Normalizer::compare(jint arg0, jint arg1, jint arg2)
 	{
@@ -118,7 +127,8 @@ namespace __jni_impl::android::icu::text
 			"(III)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Normalizer::compare(jcharArray arg0, jcharArray arg1, jint arg2)
 	{
@@ -128,7 +138,8 @@ namespace __jni_impl::android::icu::text
 			"([C[CI)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Normalizer::compare(jint arg0, jstring arg1, jint arg2)
 	{
@@ -138,7 +149,8 @@ namespace __jni_impl::android::icu::text
 			"(ILjava/lang/String;I)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Normalizer::compare(jstring arg0, jstring arg1, jint arg2)
 	{
@@ -148,7 +160,8 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;Ljava/lang/String;I)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	jint Normalizer::compare(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5, jint arg6)
 	{
@@ -162,7 +175,8 @@ namespace __jni_impl::android::icu::text
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

@@ -13,13 +13,13 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
-}
 namespace __jni_impl::android::content::pm
 {
 	class PackageManager;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
 }
 
 namespace __jni_impl::android::content::pm
@@ -33,29 +33,29 @@ namespace __jni_impl::android::content::pm
 		jint labelRes();
 		jint logo();
 		QAndroidJniObject metaData();
-		QAndroidJniObject name();
-		QAndroidJniObject nonLocalizedLabel();
-		QAndroidJniObject packageName();
+		jstring name();
+		jstring nonLocalizedLabel();
+		jstring packageName();
 		
 		// Constructors
 		void __constructor(__jni_impl::android::content::pm::PackageItemInfo arg0);
 		void __constructor();
 		
 		// Methods
+		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
+		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject loadUnbadgedIcon(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadBanner(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadLogo(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadXmlMetaData(__jni_impl::android::content::pm::PackageManager arg0, jstring arg1);
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
-#include "../../graphics/drawable/Drawable.hpp"
 #include "PackageManager.hpp"
+#include "../../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -63,46 +63,54 @@ namespace __jni_impl::android::content::pm
 	jint PackageItemInfo::banner()
 	{
 		return __thiz.getField<jint>(
-			"banner");
+			"banner"
+		);
 	}
 	jint PackageItemInfo::icon()
 	{
 		return __thiz.getField<jint>(
-			"icon");
+			"icon"
+		);
 	}
 	jint PackageItemInfo::labelRes()
 	{
 		return __thiz.getField<jint>(
-			"labelRes");
+			"labelRes"
+		);
 	}
 	jint PackageItemInfo::logo()
 	{
 		return __thiz.getField<jint>(
-			"logo");
+			"logo"
+		);
 	}
 	QAndroidJniObject PackageItemInfo::metaData()
 	{
 		return __thiz.getObjectField(
 			"metaData",
-			"Landroid/os/Bundle;");
+			"Landroid/os/Bundle;"
+		);
 	}
-	QAndroidJniObject PackageItemInfo::name()
+	jstring PackageItemInfo::name()
 	{
 		return __thiz.getObjectField(
 			"name",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PackageItemInfo::nonLocalizedLabel()
+	jstring PackageItemInfo::nonLocalizedLabel()
 	{
 		return __thiz.getObjectField(
 			"nonLocalizedLabel",
-			"Ljava/lang/CharSequence;");
+			"Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	QAndroidJniObject PackageItemInfo::packageName()
+	jstring PackageItemInfo::packageName()
 	{
 		return __thiz.getObjectField(
 			"packageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -121,34 +129,21 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject PackageItemInfo::loadUnbadgedIcon(__jni_impl::android::content::pm::PackageManager arg0)
+	jstring PackageItemInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
 	{
 		return __thiz.callObjectMethod(
-			"loadUnbadgedIcon",
-			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object());
+			"loadLabel",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
-	QAndroidJniObject PackageItemInfo::loadBanner(__jni_impl::android::content::pm::PackageManager arg0)
+	QAndroidJniObject PackageItemInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
 	{
 		return __thiz.callObjectMethod(
-			"loadBanner",
+			"loadIcon",
 			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject PackageItemInfo::loadLogo(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadLogo",
-			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject PackageItemInfo::loadXmlMetaData(__jni_impl::android::content::pm::PackageManager arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"loadXmlMetaData",
-			"(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;",
-			arg0.__jniObject().object(),
-			arg1);
+			arg0.__jniObject().object()
+		);
 	}
 	void PackageItemInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -156,21 +151,41 @@ namespace __jni_impl::android::content::pm
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
-	QAndroidJniObject PackageItemInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
+	QAndroidJniObject PackageItemInfo::loadUnbadgedIcon(__jni_impl::android::content::pm::PackageManager arg0)
 	{
 		return __thiz.callObjectMethod(
-			"loadLabel",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object());
-	}
-	QAndroidJniObject PackageItemInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadIcon",
+			"loadUnbadgedIcon",
 			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject PackageItemInfo::loadBanner(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadBanner",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject PackageItemInfo::loadLogo(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadLogo",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject PackageItemInfo::loadXmlMetaData(__jni_impl::android::content::pm::PackageManager arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"loadXmlMetaData",
+			"(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

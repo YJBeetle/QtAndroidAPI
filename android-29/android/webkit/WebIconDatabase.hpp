@@ -46,26 +46,30 @@ namespace __jni_impl::android::webkit
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.webkit.WebIconDatabase",
 			"getInstance",
-			"()Landroid/webkit/WebIconDatabase;");
+			"()Landroid/webkit/WebIconDatabase;"
+		);
 	}
 	void WebIconDatabase::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void WebIconDatabase::open(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"open",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebIconDatabase::removeAllIcons()
 	{
 		__thiz.callMethod<void>(
 			"removeAllIcons",
-			"()V");
+			"()V"
+		);
 	}
 	void WebIconDatabase::requestIconForPageUrl(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -73,21 +77,24 @@ namespace __jni_impl::android::webkit
 			"requestIconForPageUrl",
 			"(Ljava/lang/String;Landroid/webkit/WebIconDatabase$IconListener;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void WebIconDatabase::retainIconForPageUrl(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"retainIconForPageUrl",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	void WebIconDatabase::releaseIconForPageUrl(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"releaseIconForPageUrl",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

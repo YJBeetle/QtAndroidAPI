@@ -55,7 +55,7 @@ namespace __jni_impl::android::icu::util
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
 		
 		// Methods
-		QAndroidJniObject getType();
+		jstring getType();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -71,79 +71,92 @@ namespace __jni_impl::android::icu::util
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"AMSHIR");
+			"AMSHIR"
+		);
 	}
 	jint CopticCalendar::BABA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"BABA");
+			"BABA"
+		);
 	}
 	jint CopticCalendar::BARAMHAT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"BARAMHAT");
+			"BARAMHAT"
+		);
 	}
 	jint CopticCalendar::BARAMOUDA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"BARAMOUDA");
+			"BARAMOUDA"
+		);
 	}
 	jint CopticCalendar::BASHANS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"BASHANS");
+			"BASHANS"
+		);
 	}
 	jint CopticCalendar::EPEP()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"EPEP");
+			"EPEP"
+		);
 	}
 	jint CopticCalendar::HATOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"HATOR");
+			"HATOR"
+		);
 	}
 	jint CopticCalendar::KIAHK()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"KIAHK");
+			"KIAHK"
+		);
 	}
 	jint CopticCalendar::MESRA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"MESRA");
+			"MESRA"
+		);
 	}
 	jint CopticCalendar::NASIE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"NASIE");
+			"NASIE"
+		);
 	}
 	jint CopticCalendar::PAONA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"PAONA");
+			"PAONA"
+		);
 	}
 	jint CopticCalendar::TOBA()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"TOBA");
+			"TOBA"
+		);
 	}
 	jint CopticCalendar::TOUT()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.icu.util.CopticCalendar",
-			"TOUT");
+			"TOUT"
+		);
 	}
 	
 	// Constructors
@@ -220,11 +233,12 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	QAndroidJniObject CopticCalendar::getType()
+	jstring CopticCalendar::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

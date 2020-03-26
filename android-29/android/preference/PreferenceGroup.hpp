@@ -33,6 +33,7 @@ namespace __jni_impl::android::preference
 		
 		// Methods
 		void removeAll();
+		QAndroidJniObject findPreference(jstring arg0);
 		void notifyDependencyChange(jboolean arg0);
 		void setOrderingAsAdded(jboolean arg0);
 		jboolean isOrderingAsAdded();
@@ -41,7 +42,6 @@ namespace __jni_impl::android::preference
 		QAndroidJniObject getPreference(jint arg0);
 		jboolean addPreference(__jni_impl::android::preference::Preference arg0);
 		jboolean removePreference(__jni_impl::android::preference::Preference arg0);
-		QAndroidJniObject findPreference(jstring arg0);
 	};
 } // namespace __jni_impl::android::preference
 
@@ -87,68 +87,78 @@ namespace __jni_impl::android::preference
 	{
 		__thiz.callMethod<void>(
 			"removeAll",
-			"()V");
-	}
-	void PreferenceGroup::notifyDependencyChange(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"notifyDependencyChange",
-			"(Z)V",
-			arg0);
-	}
-	void PreferenceGroup::setOrderingAsAdded(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOrderingAsAdded",
-			"(Z)V",
-			arg0);
-	}
-	jboolean PreferenceGroup::isOrderingAsAdded()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOrderingAsAdded",
-			"()Z");
-	}
-	void PreferenceGroup::addItemFromInflater(__jni_impl::android::preference::Preference arg0)
-	{
-		__thiz.callMethod<void>(
-			"addItemFromInflater",
-			"(Landroid/preference/Preference;)V",
-			arg0.__jniObject().object());
-	}
-	jint PreferenceGroup::getPreferenceCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getPreferenceCount",
-			"()I");
-	}
-	QAndroidJniObject PreferenceGroup::getPreference(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPreference",
-			"(I)Landroid/preference/Preference;",
-			arg0);
-	}
-	jboolean PreferenceGroup::addPreference(__jni_impl::android::preference::Preference arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addPreference",
-			"(Landroid/preference/Preference;)Z",
-			arg0.__jniObject().object());
-	}
-	jboolean PreferenceGroup::removePreference(__jni_impl::android::preference::Preference arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removePreference",
-			"(Landroid/preference/Preference;)Z",
-			arg0.__jniObject().object());
+			"()V"
+		);
 	}
 	QAndroidJniObject PreferenceGroup::findPreference(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"findPreference",
 			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
-			arg0);
+			arg0
+		);
+	}
+	void PreferenceGroup::notifyDependencyChange(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"notifyDependencyChange",
+			"(Z)V",
+			arg0
+		);
+	}
+	void PreferenceGroup::setOrderingAsAdded(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOrderingAsAdded",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean PreferenceGroup::isOrderingAsAdded()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOrderingAsAdded",
+			"()Z"
+		);
+	}
+	void PreferenceGroup::addItemFromInflater(__jni_impl::android::preference::Preference arg0)
+	{
+		__thiz.callMethod<void>(
+			"addItemFromInflater",
+			"(Landroid/preference/Preference;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint PreferenceGroup::getPreferenceCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getPreferenceCount",
+			"()I"
+		);
+	}
+	QAndroidJniObject PreferenceGroup::getPreference(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPreference",
+			"(I)Landroid/preference/Preference;",
+			arg0
+		);
+	}
+	jboolean PreferenceGroup::addPreference(__jni_impl::android::preference::Preference arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"addPreference",
+			"(Landroid/preference/Preference;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean PreferenceGroup::removePreference(__jni_impl::android::preference::Preference arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removePreference",
+			"(Landroid/preference/Preference;)Z",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::preference
 

@@ -36,9 +36,9 @@ namespace __jni_impl::android::print
 		// Methods
 		QAndroidJniObject setName(jstring arg0);
 		QAndroidJniObject build();
+		QAndroidJniObject setStatus(jint arg0);
 		QAndroidJniObject setDescription(jstring arg0);
 		QAndroidJniObject setCapabilities(__jni_impl::android::print::PrinterCapabilitiesInfo arg0);
-		QAndroidJniObject setStatus(jint arg0);
 		QAndroidJniObject setIconResourceId(jint arg0);
 		QAndroidJniObject setHasCustomPrinterIcon(jboolean arg0);
 		QAndroidJniObject setInfoIntent(__jni_impl::android::app::PendingIntent arg0);
@@ -78,55 +78,63 @@ namespace __jni_impl::android::print
 		return __thiz.callObjectMethod(
 			"setName",
 			"(Ljava/lang/String;)Landroid/print/PrinterInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PrinterInfo_Builder::build()
 	{
 		return __thiz.callObjectMethod(
 			"build",
-			"()Landroid/print/PrinterInfo;");
-	}
-	QAndroidJniObject PrinterInfo_Builder::setDescription(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDescription",
-			"(Ljava/lang/String;)Landroid/print/PrinterInfo$Builder;",
-			arg0);
-	}
-	QAndroidJniObject PrinterInfo_Builder::setCapabilities(__jni_impl::android::print::PrinterCapabilitiesInfo arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCapabilities",
-			"(Landroid/print/PrinterCapabilitiesInfo;)Landroid/print/PrinterInfo$Builder;",
-			arg0.__jniObject().object());
+			"()Landroid/print/PrinterInfo;"
+		);
 	}
 	QAndroidJniObject PrinterInfo_Builder::setStatus(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setStatus",
 			"(I)Landroid/print/PrinterInfo$Builder;",
-			arg0);
+			arg0
+		);
+	}
+	QAndroidJniObject PrinterInfo_Builder::setDescription(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDescription",
+			"(Ljava/lang/String;)Landroid/print/PrinterInfo$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject PrinterInfo_Builder::setCapabilities(__jni_impl::android::print::PrinterCapabilitiesInfo arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCapabilities",
+			"(Landroid/print/PrinterCapabilitiesInfo;)Landroid/print/PrinterInfo$Builder;",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject PrinterInfo_Builder::setIconResourceId(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setIconResourceId",
 			"(I)Landroid/print/PrinterInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PrinterInfo_Builder::setHasCustomPrinterIcon(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setHasCustomPrinterIcon",
 			"(Z)Landroid/print/PrinterInfo$Builder;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject PrinterInfo_Builder::setInfoIntent(__jni_impl::android::app::PendingIntent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setInfoIntent",
 			"(Landroid/app/PendingIntent;)Landroid/print/PrinterInfo$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::print
 

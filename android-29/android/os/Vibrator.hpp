@@ -26,14 +26,14 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		void cancel();
-		void vibrate(__jni_impl::android::os::VibrationEffect arg0, __jni_impl::android::media::AudioAttributes arg1);
-		void vibrate(__jni_impl::android::os::VibrationEffect arg0);
-		void vibrate(jlongArray arg0, jint arg1);
-		void vibrate(jlong arg0);
-		void vibrate(jlong arg0, __jni_impl::android::media::AudioAttributes arg1);
-		void vibrate(jlongArray arg0, jint arg1, __jni_impl::android::media::AudioAttributes arg2);
 		jboolean hasVibrator();
 		jboolean hasAmplitudeControl();
+		void vibrate(__jni_impl::android::os::VibrationEffect arg0);
+		void vibrate(__jni_impl::android::os::VibrationEffect arg0, __jni_impl::android::media::AudioAttributes arg1);
+		void vibrate(jlongArray arg0, jint arg1);
+		void vibrate(jlongArray arg0, jint arg1, __jni_impl::android::media::AudioAttributes arg2);
+		void vibrate(jlong arg0, __jni_impl::android::media::AudioAttributes arg1);
+		void vibrate(jlong arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -57,7 +57,30 @@ namespace __jni_impl::android::os
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
+	}
+	jboolean Vibrator::hasVibrator()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasVibrator",
+			"()Z"
+		);
+	}
+	jboolean Vibrator::hasAmplitudeControl()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasAmplitudeControl",
+			"()Z"
+		);
+	}
+	void Vibrator::vibrate(__jni_impl::android::os::VibrationEffect arg0)
+	{
+		__thiz.callMethod<void>(
+			"vibrate",
+			"(Landroid/os/VibrationEffect;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void Vibrator::vibrate(__jni_impl::android::os::VibrationEffect arg0, __jni_impl::android::media::AudioAttributes arg1)
 	{
@@ -65,14 +88,8 @@ namespace __jni_impl::android::os
 			"vibrate",
 			"(Landroid/os/VibrationEffect;Landroid/media/AudioAttributes;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
-	}
-	void Vibrator::vibrate(__jni_impl::android::os::VibrationEffect arg0)
-	{
-		__thiz.callMethod<void>(
-			"vibrate",
-			"(Landroid/os/VibrationEffect;)V",
-			arg0.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Vibrator::vibrate(jlongArray arg0, jint arg1)
 	{
@@ -80,22 +97,8 @@ namespace __jni_impl::android::os
 			"vibrate",
 			"([JI)V",
 			arg0,
-			arg1);
-	}
-	void Vibrator::vibrate(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"vibrate",
-			"(J)V",
-			arg0);
-	}
-	void Vibrator::vibrate(jlong arg0, __jni_impl::android::media::AudioAttributes arg1)
-	{
-		__thiz.callMethod<void>(
-			"vibrate",
-			"(JLandroid/media/AudioAttributes;)V",
-			arg0,
-			arg1.__jniObject().object());
+			arg1
+		);
 	}
 	void Vibrator::vibrate(jlongArray arg0, jint arg1, __jni_impl::android::media::AudioAttributes arg2)
 	{
@@ -104,19 +107,25 @@ namespace __jni_impl::android::os
 			"([JILandroid/media/AudioAttributes;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
-	jboolean Vibrator::hasVibrator()
+	void Vibrator::vibrate(jlong arg0, __jni_impl::android::media::AudioAttributes arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasVibrator",
-			"()Z");
+		__thiz.callMethod<void>(
+			"vibrate",
+			"(JLandroid/media/AudioAttributes;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
 	}
-	jboolean Vibrator::hasAmplitudeControl()
+	void Vibrator::vibrate(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasAmplitudeControl",
-			"()Z");
+		__thiz.callMethod<void>(
+			"vibrate",
+			"(J)V",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::os
 

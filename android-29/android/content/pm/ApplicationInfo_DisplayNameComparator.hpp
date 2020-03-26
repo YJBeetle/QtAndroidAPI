@@ -53,7 +53,8 @@ namespace __jni_impl::android::content::pm
 			"compare",
 			"(Landroid/content/pm/ApplicationInfo;Landroid/content/pm/ApplicationInfo;)I",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	jint ApplicationInfo_DisplayNameComparator::compare(jobject arg0, jobject arg1)
 	{
@@ -61,7 +62,8 @@ namespace __jni_impl::android::content::pm
 			"compare",
 			"(Ljava/lang/Object;Ljava/lang/Object;)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

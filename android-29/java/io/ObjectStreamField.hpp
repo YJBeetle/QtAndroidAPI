@@ -26,13 +26,13 @@ namespace __jni_impl::java::io
 		void __constructor(jstring arg0, jclass arg1, jboolean arg2);
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject toString();
+		jstring getName();
+		jstring toString();
 		jboolean isPrimitive();
 		jint compareTo(jobject arg0);
-		QAndroidJniObject getType();
+		jclass getType();
 		jchar getTypeCode();
-		QAndroidJniObject getTypeString();
+		jstring getTypeString();
 		jint getOffset();
 		jboolean isUnshared();
 	};
@@ -65,60 +65,69 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	QAndroidJniObject ObjectStreamField::getName()
+	jstring ObjectStreamField::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ObjectStreamField::toString()
+	jstring ObjectStreamField::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean ObjectStreamField::isPrimitive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPrimitive",
-			"()Z");
+			"()Z"
+		);
 	}
 	jint ObjectStreamField::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject ObjectStreamField::getType()
+	jclass ObjectStreamField::getType()
 	{
 		return __thiz.callObjectMethod(
 			"getType",
-			"()Ljava/lang/Class;");
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	jchar ObjectStreamField::getTypeCode()
 	{
 		return __thiz.callMethod<jchar>(
 			"getTypeCode",
-			"()C");
+			"()C"
+		);
 	}
-	QAndroidJniObject ObjectStreamField::getTypeString()
+	jstring ObjectStreamField::getTypeString()
 	{
 		return __thiz.callObjectMethod(
 			"getTypeString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ObjectStreamField::getOffset()
 	{
 		return __thiz.callMethod<jint>(
 			"getOffset",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean ObjectStreamField::isUnshared()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUnshared",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::io
 

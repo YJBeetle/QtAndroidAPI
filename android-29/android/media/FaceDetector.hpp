@@ -49,7 +49,8 @@ namespace __jni_impl::android::media
 			"findFaces",
 			"(Landroid/graphics/Bitmap;[Landroid/media/FaceDetector$Face;)I",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

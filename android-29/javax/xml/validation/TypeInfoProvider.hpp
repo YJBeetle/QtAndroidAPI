@@ -42,28 +42,32 @@ namespace __jni_impl::javax::xml::validation
 	{
 		return __thiz.callObjectMethod(
 			"getElementTypeInfo",
-			"()Lorg/w3c/dom/TypeInfo;");
+			"()Lorg/w3c/dom/TypeInfo;"
+		);
 	}
 	QAndroidJniObject TypeInfoProvider::getAttributeTypeInfo(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAttributeTypeInfo",
 			"(I)Lorg/w3c/dom/TypeInfo;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean TypeInfoProvider::isIdAttribute(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isIdAttribute",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean TypeInfoProvider::isSpecified(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSpecified",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::javax::xml::validation
 

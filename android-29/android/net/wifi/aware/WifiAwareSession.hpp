@@ -78,7 +78,8 @@ namespace __jni_impl::android::net::wifi::aware
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void WifiAwareSession::publish(__jni_impl::android::net::wifi::aware::PublishConfig arg0, __jni_impl::android::net::wifi::aware::DiscoverySessionCallback arg1, __jni_impl::android::os::Handler arg2)
 	{
@@ -87,7 +88,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"(Landroid/net/wifi/aware/PublishConfig;Landroid/net/wifi/aware/DiscoverySessionCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	QAndroidJniObject WifiAwareSession::createNetworkSpecifierOpen(jint arg0, jbyteArray arg1)
 	{
@@ -95,7 +97,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"createNetworkSpecifierOpen",
 			"(I[B)Landroid/net/NetworkSpecifier;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject WifiAwareSession::createNetworkSpecifierPassphrase(jint arg0, jbyteArray arg1, jstring arg2)
 	{
@@ -104,7 +107,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"(I[BLjava/lang/String;)Landroid/net/NetworkSpecifier;",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void WifiAwareSession::subscribe(__jni_impl::android::net::wifi::aware::SubscribeConfig arg0, __jni_impl::android::net::wifi::aware::DiscoverySessionCallback arg1, __jni_impl::android::os::Handler arg2)
 	{
@@ -113,7 +117,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"(Landroid/net/wifi/aware/SubscribeConfig;Landroid/net/wifi/aware/DiscoverySessionCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware
 

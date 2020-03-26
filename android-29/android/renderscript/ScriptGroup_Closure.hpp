@@ -57,20 +57,23 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz.callMethod<void>(
 			"destroy",
-			"()V");
+			"()V"
+		);
 	}
 	QAndroidJniObject ScriptGroup_Closure::getGlobal(__jni_impl::android::renderscript::Script_FieldID arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getGlobal",
 			"(Landroid/renderscript/Script$FieldID;)Landroid/renderscript/ScriptGroup$Future;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject ScriptGroup_Closure::getReturn()
 	{
 		return __thiz.callObjectMethod(
 			"getReturn",
-			"()Landroid/renderscript/ScriptGroup$Future;");
+			"()Landroid/renderscript/ScriptGroup$Future;"
+		);
 	}
 } // namespace __jni_impl::android::renderscript
 

@@ -12,13 +12,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
 }
 
 namespace __jni_impl::android::widget
@@ -40,7 +40,6 @@ namespace __jni_impl::android::widget
 		void setFirstDayOfWeek(jint arg0);
 		void setDate(jlong arg0);
 		void setDate(jlong arg0, jboolean arg1, jboolean arg2);
-		QAndroidJniObject getAccessibilityClassName();
 		void setShownWeekCount(jint arg0);
 		jint getShownWeekCount();
 		void setSelectedWeekBackgroundColor(jint arg0);
@@ -63,6 +62,7 @@ namespace __jni_impl::android::widget
 		void setShowWeekNumber(jboolean arg0);
 		jboolean getShowWeekNumber();
 		void setOnDateChangeListener(__jni_impl::__JniBaseClass arg0);
+		jstring getAccessibilityClassName();
 		jlong getMinDate();
 		void setMinDate(jlong arg0);
 		jlong getMaxDate();
@@ -71,8 +71,8 @@ namespace __jni_impl::android::widget
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../content/res/Configuration.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../content/res/Configuration.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -119,27 +119,31 @@ namespace __jni_impl::android::widget
 	{
 		return __thiz.callMethod<jlong>(
 			"getDate",
-			"()J");
+			"()J"
+		);
 	}
 	jint CalendarView::getFirstDayOfWeek()
 	{
 		return __thiz.callMethod<jint>(
 			"getFirstDayOfWeek",
-			"()I");
+			"()I"
+		);
 	}
 	void CalendarView::setFirstDayOfWeek(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFirstDayOfWeek",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CalendarView::setDate(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDate",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void CalendarView::setDate(jlong arg0, jboolean arg1, jboolean arg2)
 	{
@@ -148,183 +152,211 @@ namespace __jni_impl::android::widget
 			"(JZZ)V",
 			arg0,
 			arg1,
-			arg2);
-	}
-	QAndroidJniObject CalendarView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
+			arg2
+		);
 	}
 	void CalendarView::setShownWeekCount(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setShownWeekCount",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CalendarView::getShownWeekCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getShownWeekCount",
-			"()I");
+			"()I"
+		);
 	}
 	void CalendarView::setSelectedWeekBackgroundColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSelectedWeekBackgroundColor",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CalendarView::getSelectedWeekBackgroundColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getSelectedWeekBackgroundColor",
-			"()I");
+			"()I"
+		);
 	}
 	void CalendarView::setFocusedMonthDateColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFocusedMonthDateColor",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CalendarView::getFocusedMonthDateColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getFocusedMonthDateColor",
-			"()I");
+			"()I"
+		);
 	}
 	void CalendarView::setUnfocusedMonthDateColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setUnfocusedMonthDateColor",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CalendarView::getUnfocusedMonthDateColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getUnfocusedMonthDateColor",
-			"()I");
+			"()I"
+		);
 	}
 	void CalendarView::setWeekNumberColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWeekNumberColor",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CalendarView::getWeekNumberColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeekNumberColor",
-			"()I");
+			"()I"
+		);
 	}
 	void CalendarView::setWeekSeparatorLineColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWeekSeparatorLineColor",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CalendarView::getWeekSeparatorLineColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeekSeparatorLineColor",
-			"()I");
+			"()I"
+		);
 	}
 	void CalendarView::setSelectedDateVerticalBar(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSelectedDateVerticalBar",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CalendarView::setSelectedDateVerticalBar(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSelectedDateVerticalBar",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject CalendarView::getSelectedDateVerticalBar()
 	{
 		return __thiz.callObjectMethod(
 			"getSelectedDateVerticalBar",
-			"()Landroid/graphics/drawable/Drawable;");
+			"()Landroid/graphics/drawable/Drawable;"
+		);
 	}
 	void CalendarView::setWeekDayTextAppearance(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWeekDayTextAppearance",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CalendarView::getWeekDayTextAppearance()
 	{
 		return __thiz.callMethod<jint>(
 			"getWeekDayTextAppearance",
-			"()I");
+			"()I"
+		);
 	}
 	void CalendarView::setDateTextAppearance(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDateTextAppearance",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jint CalendarView::getDateTextAppearance()
 	{
 		return __thiz.callMethod<jint>(
 			"getDateTextAppearance",
-			"()I");
+			"()I"
+		);
 	}
 	void CalendarView::setShowWeekNumber(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setShowWeekNumber",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	jboolean CalendarView::getShowWeekNumber()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getShowWeekNumber",
-			"()Z");
+			"()Z"
+		);
 	}
 	void CalendarView::setOnDateChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnDateChangeListener",
 			"(Landroid/widget/CalendarView$OnDateChangeListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
+	}
+	jstring CalendarView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jlong CalendarView::getMinDate()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMinDate",
-			"()J");
+			"()J"
+		);
 	}
 	void CalendarView::setMinDate(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMinDate",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong CalendarView::getMaxDate()
 	{
 		return __thiz.callMethod<jlong>(
 			"getMaxDate",
-			"()J");
+			"()J"
+		);
 	}
 	void CalendarView::setMaxDate(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMaxDate",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::widget
 

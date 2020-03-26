@@ -40,31 +40,36 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseCallback",
-			"ADVERTISE_FAILED_ALREADY_STARTED");
+			"ADVERTISE_FAILED_ALREADY_STARTED"
+		);
 	}
 	jint AdvertiseCallback::ADVERTISE_FAILED_DATA_TOO_LARGE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseCallback",
-			"ADVERTISE_FAILED_DATA_TOO_LARGE");
+			"ADVERTISE_FAILED_DATA_TOO_LARGE"
+		);
 	}
 	jint AdvertiseCallback::ADVERTISE_FAILED_FEATURE_UNSUPPORTED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseCallback",
-			"ADVERTISE_FAILED_FEATURE_UNSUPPORTED");
+			"ADVERTISE_FAILED_FEATURE_UNSUPPORTED"
+		);
 	}
 	jint AdvertiseCallback::ADVERTISE_FAILED_INTERNAL_ERROR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseCallback",
-			"ADVERTISE_FAILED_INTERNAL_ERROR");
+			"ADVERTISE_FAILED_INTERNAL_ERROR"
+		);
 	}
 	jint AdvertiseCallback::ADVERTISE_FAILED_TOO_MANY_ADVERTISERS()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.bluetooth.le.AdvertiseCallback",
-			"ADVERTISE_FAILED_TOO_MANY_ADVERTISERS");
+			"ADVERTISE_FAILED_TOO_MANY_ADVERTISERS"
+		);
 	}
 	
 	// Constructors
@@ -81,14 +86,16 @@ namespace __jni_impl::android::bluetooth::le
 		__thiz.callMethod<void>(
 			"onStartSuccess",
 			"(Landroid/bluetooth/le/AdvertiseSettings;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AdvertiseCallback::onStartFailure(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onStartFailure",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::bluetooth::le
 

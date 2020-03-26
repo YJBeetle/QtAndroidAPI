@@ -38,9 +38,9 @@ namespace __jni_impl::android::print
 		jboolean isCompleted();
 		void restart();
 		jboolean isBlocked();
-		jboolean isStarted();
 		QAndroidJniObject getInfo();
 		jboolean isFailed();
+		jboolean isStarted();
 	};
 } // namespace __jni_impl::android::print
 
@@ -66,73 +66,85 @@ namespace __jni_impl::android::print
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
 	jint PrintJob::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject PrintJob::getId()
 	{
 		return __thiz.callObjectMethod(
 			"getId",
-			"()Landroid/print/PrintJobId;");
+			"()Landroid/print/PrintJobId;"
+		);
 	}
 	jboolean PrintJob::isQueued()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isQueued",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PrintJob::cancel()
 	{
 		__thiz.callMethod<void>(
 			"cancel",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean PrintJob::isCancelled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCancelled",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean PrintJob::isCompleted()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCompleted",
-			"()Z");
+			"()Z"
+		);
 	}
 	void PrintJob::restart()
 	{
 		__thiz.callMethod<void>(
 			"restart",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean PrintJob::isBlocked()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBlocked",
-			"()Z");
-	}
-	jboolean PrintJob::isStarted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStarted",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject PrintJob::getInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getInfo",
-			"()Landroid/print/PrintJobInfo;");
+			"()Landroid/print/PrintJobInfo;"
+		);
 	}
 	jboolean PrintJob::isFailed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFailed",
-			"()Z");
+			"()Z"
+		);
+	}
+	jboolean PrintJob::isStarted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStarted",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::print
 

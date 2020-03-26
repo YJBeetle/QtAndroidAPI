@@ -27,7 +27,7 @@ namespace __jni_impl::java::nio::file::attribute
 		// Methods
 		QAndroidJniObject type();
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject flags();
 		jint hashCode();
 		QAndroidJniObject permissions();
@@ -57,45 +57,52 @@ namespace __jni_impl::java::nio::file::attribute
 	{
 		return __thiz.callObjectMethod(
 			"type",
-			"()Ljava/nio/file/attribute/AclEntryType;");
+			"()Ljava/nio/file/attribute/AclEntryType;"
+		);
 	}
 	jboolean AclEntry::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject AclEntry::toString()
+	jstring AclEntry::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject AclEntry::flags()
 	{
 		return __thiz.callObjectMethod(
 			"flags",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	jint AclEntry::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	QAndroidJniObject AclEntry::permissions()
 	{
 		return __thiz.callObjectMethod(
 			"permissions",
-			"()Ljava/util/Set;");
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject AclEntry::newBuilder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.attribute.AclEntry",
 			"newBuilder",
-			"()Ljava/nio/file/attribute/AclEntry$Builder;");
+			"()Ljava/nio/file/attribute/AclEntry$Builder;"
+		);
 	}
 	QAndroidJniObject AclEntry::newBuilder(__jni_impl::java::nio::file::attribute::AclEntry arg0)
 	{
@@ -103,13 +110,15 @@ namespace __jni_impl::java::nio::file::attribute
 			"java.nio.file.attribute.AclEntry",
 			"newBuilder",
 			"(Ljava/nio/file/attribute/AclEntry;)Ljava/nio/file/attribute/AclEntry$Builder;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject AclEntry::principal()
 	{
 		return __thiz.callObjectMethod(
 			"principal",
-			"()Ljava/nio/file/attribute/UserPrincipal;");
+			"()Ljava/nio/file/attribute/UserPrincipal;"
+		);
 	}
 } // namespace __jni_impl::java::nio::file::attribute
 

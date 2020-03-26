@@ -16,17 +16,17 @@ namespace __jni_impl::android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EXTRA_PROXY_INFO();
-		static QAndroidJniObject PROXY_CHANGE_ACTION();
+		static jstring EXTRA_PROXY_INFO();
+		static jstring PROXY_CHANGE_ACTION();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getHost(__jni_impl::android::content::Context arg0);
+		static jstring getHost(__jni_impl::android::content::Context arg0);
 		static jint getPort(__jni_impl::android::content::Context arg0);
 		static jint getDefaultPort();
-		static QAndroidJniObject getDefaultHost();
+		static jstring getDefaultHost();
 	};
 } // namespace __jni_impl::android::net
 
@@ -35,19 +35,21 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::net
 {
 	// Fields
-	QAndroidJniObject Proxy::EXTRA_PROXY_INFO()
+	jstring Proxy::EXTRA_PROXY_INFO()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.Proxy",
 			"EXTRA_PROXY_INFO",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject Proxy::PROXY_CHANGE_ACTION()
+	jstring Proxy::PROXY_CHANGE_ACTION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.Proxy",
 			"PROXY_CHANGE_ACTION",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	
 	// Constructors
@@ -59,13 +61,14 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	QAndroidJniObject Proxy::getHost(__jni_impl::android::content::Context arg0)
+	jstring Proxy::getHost(__jni_impl::android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Proxy",
 			"getHost",
 			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	jint Proxy::getPort(__jni_impl::android::content::Context arg0)
 	{
@@ -73,21 +76,24 @@ namespace __jni_impl::android::net
 			"android.net.Proxy",
 			"getPort",
 			"(Landroid/content/Context;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Proxy::getDefaultPort()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.net.Proxy",
 			"getDefaultPort",
-			"()I");
+			"()I"
+		);
 	}
-	QAndroidJniObject Proxy::getDefaultHost()
+	jstring Proxy::getDefaultHost()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.Proxy",
 			"getDefaultHost",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net
 

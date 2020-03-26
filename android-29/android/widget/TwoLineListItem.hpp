@@ -31,9 +31,9 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject getAccessibilityClassName();
 		QAndroidJniObject getText1();
 		QAndroidJniObject getText2();
+		jstring getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -81,23 +81,26 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject TwoLineListItem::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;");
-	}
 	QAndroidJniObject TwoLineListItem::getText1()
 	{
 		return __thiz.callObjectMethod(
 			"getText1",
-			"()Landroid/widget/TextView;");
+			"()Landroid/widget/TextView;"
+		);
 	}
 	QAndroidJniObject TwoLineListItem::getText2()
 	{
 		return __thiz.callObjectMethod(
 			"getText2",
-			"()Landroid/widget/TextView;");
+			"()Landroid/widget/TextView;"
+		);
+	}
+	jstring TwoLineListItem::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

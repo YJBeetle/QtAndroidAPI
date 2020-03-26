@@ -21,15 +21,15 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject getCanonicalName();
+		jstring getName();
+		jstring getCanonicalName();
+		jboolean isHardwareAccelerated();
+		jarray getSupportedTypes();
 		jboolean isAlias();
 		jboolean isEncoder();
 		jboolean isVendor();
 		jboolean isSoftwareOnly();
 		QAndroidJniObject getCapabilitiesForType(jstring arg0);
-		QAndroidJniObject getSupportedTypes();
-		jboolean isHardwareAccelerated();
 	};
 } // namespace __jni_impl::android::media
 
@@ -48,60 +48,69 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaCodecInfo::getName()
+	jstring MediaCodecInfo::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject MediaCodecInfo::getCanonicalName()
+	jstring MediaCodecInfo::getCanonicalName()
 	{
 		return __thiz.callObjectMethod(
 			"getCanonicalName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean MediaCodecInfo::isHardwareAccelerated()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHardwareAccelerated",
+			"()Z"
+		);
+	}
+	jarray MediaCodecInfo::getSupportedTypes()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedTypes",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jboolean MediaCodecInfo::isAlias()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAlias",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean MediaCodecInfo::isEncoder()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEncoder",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean MediaCodecInfo::isVendor()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isVendor",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean MediaCodecInfo::isSoftwareOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSoftwareOnly",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject MediaCodecInfo::getCapabilitiesForType(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getCapabilitiesForType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;",
-			arg0);
-	}
-	QAndroidJniObject MediaCodecInfo::getSupportedTypes()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedTypes",
-			"()[Ljava/lang/String;");
-	}
-	jboolean MediaCodecInfo::isHardwareAccelerated()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isHardwareAccelerated",
-			"()Z");
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

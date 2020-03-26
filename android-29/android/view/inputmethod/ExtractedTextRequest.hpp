@@ -41,27 +41,32 @@ namespace __jni_impl::android::view::inputmethod
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.inputmethod.ExtractedTextRequest",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ExtractedTextRequest::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
 	jint ExtractedTextRequest::hintMaxChars()
 	{
 		return __thiz.getField<jint>(
-			"hintMaxChars");
+			"hintMaxChars"
+		);
 	}
 	jint ExtractedTextRequest::hintMaxLines()
 	{
 		return __thiz.getField<jint>(
-			"hintMaxLines");
+			"hintMaxLines"
+		);
 	}
 	jint ExtractedTextRequest::token()
 	{
 		return __thiz.getField<jint>(
-			"token");
+			"token"
+		);
 	}
 	
 	// Constructors
@@ -77,7 +82,8 @@ namespace __jni_impl::android::view::inputmethod
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ExtractedTextRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -85,7 +91,8 @@ namespace __jni_impl::android::view::inputmethod
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

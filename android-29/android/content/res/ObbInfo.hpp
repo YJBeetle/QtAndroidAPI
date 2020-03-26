@@ -18,16 +18,16 @@ namespace __jni_impl::android::content::res
 		// Fields
 		static QAndroidJniObject CREATOR();
 		static jint OBB_OVERLAY();
-		QAndroidJniObject filename();
+		jstring filename();
 		jint flags();
-		QAndroidJniObject packageName();
+		jstring packageName();
 		jint version();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -43,35 +43,41 @@ namespace __jni_impl::android::content::res
 		return QAndroidJniObject::getStaticObjectField(
 			"android.content.res.ObbInfo",
 			"CREATOR",
-			"Landroid/os/Parcelable$Creator;");
+			"Landroid/os/Parcelable$Creator;"
+		);
 	}
 	jint ObbInfo::OBB_OVERLAY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.content.res.ObbInfo",
-			"OBB_OVERLAY");
+			"OBB_OVERLAY"
+		);
 	}
-	QAndroidJniObject ObbInfo::filename()
+	jstring ObbInfo::filename()
 	{
 		return __thiz.getObjectField(
 			"filename",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ObbInfo::flags()
 	{
 		return __thiz.getField<jint>(
-			"flags");
+			"flags"
+		);
 	}
-	QAndroidJniObject ObbInfo::packageName()
+	jstring ObbInfo::packageName()
 	{
 		return __thiz.getObjectField(
 			"packageName",
-			"Ljava/lang/String;");
+			"Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ObbInfo::version()
 	{
 		return __thiz.getField<jint>(
-			"version");
+			"version"
+		);
 	}
 	
 	// Constructors
@@ -83,17 +89,19 @@ namespace __jni_impl::android::content::res
 	}
 	
 	// Methods
-	QAndroidJniObject ObbInfo::toString()
+	jstring ObbInfo::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint ObbInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
-			"()I");
+			"()I"
+		);
 	}
 	void ObbInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -101,7 +109,8 @@ namespace __jni_impl::android::content::res
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::res
 

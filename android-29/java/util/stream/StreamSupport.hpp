@@ -50,7 +50,8 @@ namespace __jni_impl::java::util::stream
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/Stream;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject StreamSupport::stream(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
@@ -59,7 +60,8 @@ namespace __jni_impl::java::util::stream
 			"stream",
 			"(Ljava/util/Spliterator;Z)Ljava/util/stream/Stream;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject StreamSupport::intStream(__jni_impl::__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
@@ -69,7 +71,8 @@ namespace __jni_impl::java::util::stream
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/IntStream;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject StreamSupport::intStream(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
@@ -78,7 +81,8 @@ namespace __jni_impl::java::util::stream
 			"intStream",
 			"(Ljava/util/Spliterator$OfInt;Z)Ljava/util/stream/IntStream;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject StreamSupport::longStream(__jni_impl::__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
@@ -88,7 +92,8 @@ namespace __jni_impl::java::util::stream
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/LongStream;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject StreamSupport::longStream(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
@@ -97,7 +102,8 @@ namespace __jni_impl::java::util::stream
 			"longStream",
 			"(Ljava/util/Spliterator$OfLong;Z)Ljava/util/stream/LongStream;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject StreamSupport::doubleStream(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
@@ -106,7 +112,8 @@ namespace __jni_impl::java::util::stream
 			"doubleStream",
 			"(Ljava/util/Spliterator$OfDouble;Z)Ljava/util/stream/DoubleStream;",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject StreamSupport::doubleStream(__jni_impl::__JniBaseClass arg0, jint arg1, jboolean arg2)
 	{
@@ -116,7 +123,8 @@ namespace __jni_impl::java::util::stream
 			"(Ljava/util/function/Supplier;IZ)Ljava/util/stream/DoubleStream;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 } // namespace __jni_impl::java::util::stream
 

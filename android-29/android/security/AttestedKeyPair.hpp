@@ -45,13 +45,15 @@ namespace __jni_impl::android::security
 	{
 		return __thiz.callObjectMethod(
 			"getKeyPair",
-			"()Ljava/security/KeyPair;");
+			"()Ljava/security/KeyPair;"
+		);
 	}
 	QAndroidJniObject AttestedKeyPair::getAttestationRecord()
 	{
 		return __thiz.callObjectMethod(
 			"getAttestationRecord",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::security
 

@@ -27,7 +27,7 @@ namespace __jni_impl::android::text::method
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
+		jstring filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
 		static QAndroidJniObject getInstance(jboolean arg0, jboolean arg1);
 		static QAndroidJniObject getInstance(jstring arg0);
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0, jboolean arg1, jboolean arg2);
@@ -76,7 +76,7 @@ namespace __jni_impl::android::text::method
 	}
 	
 	// Methods
-	QAndroidJniObject DigitsKeyListener::filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
+	jstring DigitsKeyListener::filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
 	{
 		return __thiz.callObjectMethod(
 			"filter",
@@ -86,7 +86,8 @@ namespace __jni_impl::android::text::method
 			arg2,
 			arg3.__jniObject().object(),
 			arg4,
-			arg5);
+			arg5
+		).object<jstring>();
 	}
 	QAndroidJniObject DigitsKeyListener::getInstance(jboolean arg0, jboolean arg1)
 	{
@@ -95,7 +96,8 @@ namespace __jni_impl::android::text::method
 			"getInstance",
 			"(ZZ)Landroid/text/method/DigitsKeyListener;",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	QAndroidJniObject DigitsKeyListener::getInstance(jstring arg0)
 	{
@@ -103,7 +105,8 @@ namespace __jni_impl::android::text::method
 			"android.text.method.DigitsKeyListener",
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/text/method/DigitsKeyListener;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject DigitsKeyListener::getInstance(__jni_impl::java::util::Locale arg0, jboolean arg1, jboolean arg2)
 	{
@@ -113,14 +116,16 @@ namespace __jni_impl::android::text::method
 			"(Ljava/util/Locale;ZZ)Landroid/text/method/DigitsKeyListener;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	QAndroidJniObject DigitsKeyListener::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.method.DigitsKeyListener",
 			"getInstance",
-			"()Landroid/text/method/DigitsKeyListener;");
+			"()Landroid/text/method/DigitsKeyListener;"
+		);
 	}
 	QAndroidJniObject DigitsKeyListener::getInstance(__jni_impl::java::util::Locale arg0)
 	{
@@ -128,13 +133,15 @@ namespace __jni_impl::android::text::method
 			"android.text.method.DigitsKeyListener",
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/method/DigitsKeyListener;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint DigitsKeyListener::getInputType()
 	{
 		return __thiz.callMethod<jint>(
 			"getInputType",
-			"()I");
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::text::method
 

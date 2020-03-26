@@ -58,13 +58,15 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.RemoteController",
-			"POSITION_SYNCHRONIZATION_CHECK");
+			"POSITION_SYNCHRONIZATION_CHECK"
+		);
 	}
 	jint RemoteController::POSITION_SYNCHRONIZATION_NONE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.RemoteController",
-			"POSITION_SYNCHRONIZATION_NONE");
+			"POSITION_SYNCHRONIZATION_NONE"
+		);
 	}
 	
 	// Constructors
@@ -91,27 +93,31 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"editMetadata",
-			"()Landroid/media/RemoteController$MetadataEditor;");
+			"()Landroid/media/RemoteController$MetadataEditor;"
+		);
 	}
 	jlong RemoteController::getEstimatedMediaPosition()
 	{
 		return __thiz.callMethod<jlong>(
 			"getEstimatedMediaPosition",
-			"()J");
+			"()J"
+		);
 	}
 	jboolean RemoteController::sendMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"sendMediaKeyEvent",
 			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean RemoteController::seekTo(jlong arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"seekTo",
 			"(J)Z",
-			arg0);
+			arg0
+		);
 	}
 	jboolean RemoteController::setArtworkConfiguration(jint arg0, jint arg1)
 	{
@@ -119,20 +125,23 @@ namespace __jni_impl::android::media
 			"setArtworkConfiguration",
 			"(II)Z",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	jboolean RemoteController::clearArtworkConfiguration()
 	{
 		return __thiz.callMethod<jboolean>(
 			"clearArtworkConfiguration",
-			"()Z");
+			"()Z"
+		);
 	}
 	jboolean RemoteController::setSynchronizationMode(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"setSynchronizationMode",
 			"(I)Z",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::media
 

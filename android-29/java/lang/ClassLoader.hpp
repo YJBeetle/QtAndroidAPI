@@ -53,8 +53,8 @@ namespace __jni_impl::java::lang
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getName();
-		QAndroidJniObject loadClass(jstring arg0);
+		jstring getName();
+		jclass loadClass(jstring arg0);
 		static QAndroidJniObject getPlatformClassLoader();
 		static QAndroidJniObject getSystemClassLoader();
 		static QAndroidJniObject getSystemResourceAsStream(jstring arg0);
@@ -68,7 +68,7 @@ namespace __jni_impl::java::lang
 		static QAndroidJniObject getSystemResources(jstring arg0);
 		QAndroidJniObject getParent();
 		QAndroidJniObject getUnnamedModule();
-		QAndroidJniObject getDefinedPackages();
+		jarray getDefinedPackages();
 		void setDefaultAssertionStatus(jboolean arg0);
 		void setPackageAssertionStatus(jstring arg0, jboolean arg1);
 		void setClassAssertionStatus(jstring arg0, jboolean arg1);
@@ -99,32 +99,36 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	QAndroidJniObject ClassLoader::getName()
+	jstring ClassLoader::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	QAndroidJniObject ClassLoader::loadClass(jstring arg0)
+	jclass ClassLoader::loadClass(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"loadClass",
 			"(Ljava/lang/String;)Ljava/lang/Class;",
-			arg0);
+			arg0
+		).object<jclass>();
 	}
 	QAndroidJniObject ClassLoader::getPlatformClassLoader()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getPlatformClassLoader",
-			"()Ljava/lang/ClassLoader;");
+			"()Ljava/lang/ClassLoader;"
+		);
 	}
 	QAndroidJniObject ClassLoader::getSystemClassLoader()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ClassLoader",
 			"getSystemClassLoader",
-			"()Ljava/lang/ClassLoader;");
+			"()Ljava/lang/ClassLoader;"
+		);
 	}
 	QAndroidJniObject ClassLoader::getSystemResourceAsStream(jstring arg0)
 	{
@@ -132,14 +136,16 @@ namespace __jni_impl::java::lang
 			"java.lang.ClassLoader",
 			"getSystemResourceAsStream",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ClassLoader::getResourceAsStream(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getResourceAsStream",
 			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ClassLoader::getSystemResource(jstring arg0)
 	{
@@ -147,41 +153,47 @@ namespace __jni_impl::java::lang
 			"java.lang.ClassLoader",
 			"getSystemResource",
 			"(Ljava/lang/String;)Ljava/net/URL;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ClassLoader::getResource(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getResource",
 			"(Ljava/lang/String;)Ljava/net/URL;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ClassLoader::getResources(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ClassLoader::getDefinedPackage(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDefinedPackage",
 			"(Ljava/lang/String;)Ljava/lang/Package;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ClassLoader::resources(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"resources",
 			"(Ljava/lang/String;)Ljava/util/stream/Stream;",
-			arg0);
+			arg0
+		);
 	}
 	jboolean ClassLoader::isRegisteredAsParallelCapable()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRegisteredAsParallelCapable",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject ClassLoader::getSystemResources(jstring arg0)
 	{
@@ -189,32 +201,37 @@ namespace __jni_impl::java::lang
 			"java.lang.ClassLoader",
 			"getSystemResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject ClassLoader::getParent()
 	{
 		return __thiz.callObjectMethod(
 			"getParent",
-			"()Ljava/lang/ClassLoader;");
+			"()Ljava/lang/ClassLoader;"
+		);
 	}
 	QAndroidJniObject ClassLoader::getUnnamedModule()
 	{
 		return __thiz.callObjectMethod(
 			"getUnnamedModule",
-			"()Ljava/lang/Module;");
+			"()Ljava/lang/Module;"
+		);
 	}
-	QAndroidJniObject ClassLoader::getDefinedPackages()
+	jarray ClassLoader::getDefinedPackages()
 	{
 		return __thiz.callObjectMethod(
 			"getDefinedPackages",
-			"()[Ljava/lang/Package;");
+			"()[Ljava/lang/Package;"
+		).object<jarray>();
 	}
 	void ClassLoader::setDefaultAssertionStatus(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDefaultAssertionStatus",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void ClassLoader::setPackageAssertionStatus(jstring arg0, jboolean arg1)
 	{
@@ -222,7 +239,8 @@ namespace __jni_impl::java::lang
 			"setPackageAssertionStatus",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ClassLoader::setClassAssertionStatus(jstring arg0, jboolean arg1)
 	{
@@ -230,13 +248,15 @@ namespace __jni_impl::java::lang
 			"setClassAssertionStatus",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ClassLoader::clearAssertionStatus()
 	{
 		__thiz.callMethod<void>(
 			"clearAssertionStatus",
-			"()V");
+			"()V"
+		);
 	}
 } // namespace __jni_impl::java::lang
 

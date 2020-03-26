@@ -21,7 +21,7 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject values();
+		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -35,21 +35,24 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"STANDARD_ELEMENT_COMPARISON",
-			"Landroid/icu/text/SearchIterator$ElementComparisonType;");
+			"Landroid/icu/text/SearchIterator$ElementComparisonType;"
+		);
 	}
 	QAndroidJniObject SearchIterator_ElementComparisonType::PATTERN_BASE_WEIGHT_IS_WILDCARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"PATTERN_BASE_WEIGHT_IS_WILDCARD",
-			"Landroid/icu/text/SearchIterator$ElementComparisonType;");
+			"Landroid/icu/text/SearchIterator$ElementComparisonType;"
+		);
 	}
 	QAndroidJniObject SearchIterator_ElementComparisonType::ANY_BASE_WEIGHT_IS_WILDCARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"ANY_BASE_WEIGHT_IS_WILDCARD",
-			"Landroid/icu/text/SearchIterator$ElementComparisonType;");
+			"Landroid/icu/text/SearchIterator$ElementComparisonType;"
+		);
 	}
 	
 	// Constructors
@@ -61,12 +64,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject SearchIterator_ElementComparisonType::values()
+	jarray SearchIterator_ElementComparisonType::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"values",
-			"()[Landroid/icu/text/SearchIterator$ElementComparisonType;");
+			"()[Landroid/icu/text/SearchIterator$ElementComparisonType;"
+		).object<jarray>();
 	}
 	QAndroidJniObject SearchIterator_ElementComparisonType::valueOf(jstring arg0)
 	{
@@ -74,7 +78,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.SearchIterator$ElementComparisonType",
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/SearchIterator$ElementComparisonType;",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

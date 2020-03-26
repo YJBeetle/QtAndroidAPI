@@ -26,7 +26,7 @@ namespace __jni_impl::java::io
 		QAndroidJniObject lines();
 		jint read();
 		jint read(jcharArray arg0, jint arg1, jint arg2);
-		QAndroidJniObject readLine();
+		jstring readLine();
 		void close();
 		void mark(jint arg0);
 		jlong skip(jlong arg0);
@@ -64,13 +64,15 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.callObjectMethod(
 			"lines",
-			"()Ljava/util/stream/Stream;");
+			"()Ljava/util/stream/Stream;"
+		);
 	}
 	jint BufferedReader::read()
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I");
+			"()I"
+		);
 	}
 	jint BufferedReader::read(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -79,51 +81,59 @@ namespace __jni_impl::java::io
 			"([CII)I",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
-	QAndroidJniObject BufferedReader::readLine()
+	jstring BufferedReader::readLine()
 	{
 		return __thiz.callObjectMethod(
 			"readLine",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void BufferedReader::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
-			"()V");
+			"()V"
+		);
 	}
 	void BufferedReader::mark(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"mark",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	jlong BufferedReader::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
-			arg0);
+			arg0
+		);
 	}
 	jboolean BufferedReader::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
-			"()Z");
+			"()Z"
+		);
 	}
 	void BufferedReader::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
-			"()V");
+			"()V"
+		);
 	}
 	jboolean BufferedReader::ready()
 	{
 		return __thiz.callMethod<jboolean>(
 			"ready",
-			"()Z");
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::java::io
 

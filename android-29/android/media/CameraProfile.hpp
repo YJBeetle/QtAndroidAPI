@@ -33,19 +33,22 @@ namespace __jni_impl::android::media
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CameraProfile",
-			"QUALITY_HIGH");
+			"QUALITY_HIGH"
+		);
 	}
 	jint CameraProfile::QUALITY_LOW()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CameraProfile",
-			"QUALITY_LOW");
+			"QUALITY_LOW"
+		);
 	}
 	jint CameraProfile::QUALITY_MEDIUM()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.media.CameraProfile",
-			"QUALITY_MEDIUM");
+			"QUALITY_MEDIUM"
+		);
 	}
 	
 	// Constructors
@@ -63,7 +66,8 @@ namespace __jni_impl::android::media
 			"android.media.CameraProfile",
 			"getJpegEncodingQualityParameter",
 			"(I)I",
-			arg0);
+			arg0
+		);
 	}
 	jint CameraProfile::getJpegEncodingQualityParameter(jint arg0, jint arg1)
 	{
@@ -72,7 +76,8 @@ namespace __jni_impl::android::media
 			"getJpegEncodingQualityParameter",
 			"(II)I",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

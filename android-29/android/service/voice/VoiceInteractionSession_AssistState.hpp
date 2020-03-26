@@ -65,43 +65,50 @@ namespace __jni_impl::android::service::voice
 	{
 		return __thiz.callMethod<jint>(
 			"getIndex",
-			"()I");
+			"()I"
+		);
 	}
 	jint VoiceInteractionSession_AssistState::getCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getCount",
-			"()I");
+			"()I"
+		);
 	}
 	jboolean VoiceInteractionSession_AssistState::isFocused()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFocused",
-			"()Z");
+			"()Z"
+		);
 	}
 	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistStructure()
 	{
 		return __thiz.callObjectMethod(
 			"getAssistStructure",
-			"()Landroid/app/assist/AssistStructure;");
+			"()Landroid/app/assist/AssistStructure;"
+		);
 	}
 	QAndroidJniObject VoiceInteractionSession_AssistState::getActivityId()
 	{
 		return __thiz.callObjectMethod(
 			"getActivityId",
-			"()Landroid/service/voice/VoiceInteractionSession$ActivityId;");
+			"()Landroid/service/voice/VoiceInteractionSession$ActivityId;"
+		);
 	}
 	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistData()
 	{
 		return __thiz.callObjectMethod(
 			"getAssistData",
-			"()Landroid/os/Bundle;");
+			"()Landroid/os/Bundle;"
+		);
 	}
 	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistContent()
 	{
 		return __thiz.callObjectMethod(
 			"getAssistContent",
-			"()Landroid/app/assist/AssistContent;");
+			"()Landroid/app/assist/AssistContent;"
+		);
 	}
 } // namespace __jni_impl::android::service::voice
 

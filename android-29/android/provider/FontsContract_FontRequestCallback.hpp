@@ -41,37 +41,43 @@ namespace __jni_impl::android::provider
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
-			"FAIL_REASON_FONT_LOAD_ERROR");
+			"FAIL_REASON_FONT_LOAD_ERROR"
+		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_FONT_NOT_FOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
-			"FAIL_REASON_FONT_NOT_FOUND");
+			"FAIL_REASON_FONT_NOT_FOUND"
+		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_FONT_UNAVAILABLE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
-			"FAIL_REASON_FONT_UNAVAILABLE");
+			"FAIL_REASON_FONT_UNAVAILABLE"
+		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_MALFORMED_QUERY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
-			"FAIL_REASON_MALFORMED_QUERY");
+			"FAIL_REASON_MALFORMED_QUERY"
+		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_PROVIDER_NOT_FOUND()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
-			"FAIL_REASON_PROVIDER_NOT_FOUND");
+			"FAIL_REASON_PROVIDER_NOT_FOUND"
+		);
 	}
 	jint FontsContract_FontRequestCallback::FAIL_REASON_WRONG_CERTIFICATES()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"android.provider.FontsContract$FontRequestCallback",
-			"FAIL_REASON_WRONG_CERTIFICATES");
+			"FAIL_REASON_WRONG_CERTIFICATES"
+		);
 	}
 	
 	// Constructors
@@ -88,14 +94,16 @@ namespace __jni_impl::android::provider
 		__thiz.callMethod<void>(
 			"onTypefaceRetrieved",
 			"(Landroid/graphics/Typeface;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FontsContract_FontRequestCallback::onTypefaceRequestFailed(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onTypefaceRequestFailed",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::provider
 

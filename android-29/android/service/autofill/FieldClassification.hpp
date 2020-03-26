@@ -21,7 +21,7 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject toString();
+		jstring toString();
 		QAndroidJniObject getMatches();
 	};
 } // namespace __jni_impl::android::service::autofill
@@ -41,17 +41,19 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject FieldClassification::toString()
+	jstring FieldClassification::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject FieldClassification::getMatches()
 	{
 		return __thiz.callObjectMethod(
 			"getMatches",
-			"()Ljava/util/List;");
+			"()Ljava/util/List;"
+		);
 	}
 } // namespace __jni_impl::android::service::autofill
 

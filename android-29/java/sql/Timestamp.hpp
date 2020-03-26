@@ -33,7 +33,7 @@ namespace __jni_impl::java::sql
 		// Methods
 		jboolean equals(__jni_impl::java::sql::Timestamp arg0);
 		jboolean equals(jobject arg0);
-		QAndroidJniObject toString();
+		jstring toString();
 		jint hashCode();
 		jint compareTo(__jni_impl::java::sql::Timestamp arg0);
 		jint compareTo(jobject arg0);
@@ -88,47 +88,54 @@ namespace __jni_impl::java::sql
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/sql/Timestamp;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Timestamp::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0);
+			arg0
+		);
 	}
-	QAndroidJniObject Timestamp::toString()
+	jstring Timestamp::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;");
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint Timestamp::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I");
+			"()I"
+		);
 	}
 	jint Timestamp::compareTo(__jni_impl::java::sql::Timestamp arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/sql/Timestamp;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jint Timestamp::compareTo(jobject arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/lang/Object;)I",
-			arg0);
+			arg0
+		);
 	}
 	jint Timestamp::compareTo(__jni_impl::java::util::Date arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"compareTo",
 			"(Ljava/util/Date;)I",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Timestamp::valueOf(__jni_impl::java::time::LocalDateTime arg0)
 	{
@@ -136,7 +143,8 @@ namespace __jni_impl::java::sql
 			"java.sql.Timestamp",
 			"valueOf",
 			"(Ljava/time/LocalDateTime;)Ljava/sql/Timestamp;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Timestamp::valueOf(jstring arg0)
 	{
@@ -144,7 +152,8 @@ namespace __jni_impl::java::sql
 			"java.sql.Timestamp",
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Timestamp;",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Timestamp::from(__jni_impl::java::time::Instant arg0)
 	{
@@ -152,59 +161,68 @@ namespace __jni_impl::java::sql
 			"java.sql.Timestamp",
 			"from",
 			"(Ljava/time/Instant;)Ljava/sql/Timestamp;",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Timestamp::before(__jni_impl::java::sql::Timestamp arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"before",
 			"(Ljava/sql/Timestamp;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Timestamp::after(__jni_impl::java::sql::Timestamp arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"after",
 			"(Ljava/sql/Timestamp;)Z",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Timestamp::toInstant()
 	{
 		return __thiz.callObjectMethod(
 			"toInstant",
-			"()Ljava/time/Instant;");
+			"()Ljava/time/Instant;"
+		);
 	}
 	jlong Timestamp::getTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTime",
-			"()J");
+			"()J"
+		);
 	}
 	void Timestamp::setTime(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTime",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	QAndroidJniObject Timestamp::toLocalDateTime()
 	{
 		return __thiz.callObjectMethod(
 			"toLocalDateTime",
-			"()Ljava/time/LocalDateTime;");
+			"()Ljava/time/LocalDateTime;"
+		);
 	}
 	jint Timestamp::getNanos()
 	{
 		return __thiz.callMethod<jint>(
 			"getNanos",
-			"()I");
+			"()I"
+		);
 	}
 	void Timestamp::setNanos(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNanos",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::sql
 
