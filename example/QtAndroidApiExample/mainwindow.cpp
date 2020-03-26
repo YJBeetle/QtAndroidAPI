@@ -9,27 +9,29 @@
 #include "../../android-29/android/widget/Toast.hpp"
 #include "../../android-29/android/app/ProgressDialog.hpp"
 
+using namespace android::widget;
+using namespace android::app;
+
 #define PROGRESS_DIALOG_MAX 170001
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+	: QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+	delete ui;
 }
 
 void MainWindow::on_showToast_clicked()
 {
 	auto message = ui->toastText->text();
 	QtAndroid::runOnAndroidThreadSync([message] {
-		android::widget::Toast toast = android::widget::Toast::makeText(android::content::Context(QtAndroid::androidContext()),
-																		QAndroidJniObject::fromString(message).object<jstring>(),
-																		0);
+		Toast toast = Toast::makeText(android::content::Context(QtAndroid::androidContext()),
+									  QAndroidJniObject::fromString(message).object<jstring>(),
+									  0);
 		toast.show();
 	});
 }
@@ -39,19 +41,19 @@ void MainWindow::on_showProgressDialogSpinner_clicked()
 	auto title = ui->progressDialogTitle->text();
 	auto message = ui->progressDialogText->text();
 
-	std::shared_ptr<android::app::ProgressDialog> progressDialog;
+	std::shared_ptr<ProgressDialog> progressDialog;
 
-	QtAndroid::runOnAndroidThreadSync([&progressDialog,title, message] {
-		progressDialog = std::make_shared<android::app::ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
+	QtAndroid::runOnAndroidThreadSync([&progressDialog, title, message] {
+		progressDialog = std::make_shared<ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
 
 		progressDialog->setCancelable(false);
 		progressDialog->setTitle(QAndroidJniObject::fromString(title).object<jstring>());
 		progressDialog->setMessage(QAndroidJniObject::fromString(message).object<jstring>());
 
-		progressDialog->android::app::Dialog::show();
+		progressDialog->Dialog::show();
 	});
 
-	QTimer::singleShot(1000, [progressDialog](){
+	QTimer::singleShot(1000, [progressDialog]() {
 		progressDialog->cancel();
 	});
 }
@@ -61,26 +63,26 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
 	auto title = ui->progressDialogTitle->text();
 	auto message = ui->progressDialogText->text();
 
-	std::shared_ptr<android::app::ProgressDialog> progressDialog;
+	std::shared_ptr<ProgressDialog> progressDialog;
 
-	QtAndroid::runOnAndroidThreadSync([&progressDialog,title, message] {
-		progressDialog = std::make_shared<android::app::ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
+	QtAndroid::runOnAndroidThreadSync([&progressDialog, title, message] {
+		progressDialog = std::make_shared<ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
 
 		progressDialog->setCancelable(false);
 		progressDialog->setTitle(QAndroidJniObject::fromString(title).object<jstring>());
 		progressDialog->setMessage(QAndroidJniObject::fromString(message).object<jstring>());
 
-		progressDialog->setProgressStyle(android::app::ProgressDialog::STYLE_HORIZONTAL());
+		progressDialog->setProgressStyle(ProgressDialog::STYLE_HORIZONTAL());
 		progressDialog->setMax(PROGRESS_DIALOG_MAX);
 
-		progressDialog->android::app::Dialog::show();
+		progressDialog->Dialog::show();
 	});
 
 	static int i;
 	i = 0;
 	QTimer *timer = new QTimer(this);
-	connect(timer, &QTimer::timeout, [progressDialog, timer](){
-		if(i < PROGRESS_DIALOG_MAX)
+	connect(timer, &QTimer::timeout, [progressDialog, timer]() {
+		if (i < PROGRESS_DIALOG_MAX)
 		{
 			i += PROGRESS_DIALOG_MAX / 500;
 			progressDialog->setProgress(i);
